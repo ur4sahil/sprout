@@ -17,7 +17,7 @@ This plan builds the whole IXL platform feature set for one family, then fills i
 | Explanation after a wrong answer | Yes, spoken and visual | 5 |
 | Learn with an example | Yes, on every skill, plus a narrated mini-lesson and optional concept videos | 5 |
 | Audio for early grades | Yes, every prompt is read aloud | 4 |
-| Real-time diagnostic with grade-level estimate | Yes, per strand | 7 |
+| Real-time diagnostic with grade-level estimate | Yes, per ladder | 7 |
 | Personal recommendations | Yes, "Today's picks" | 2, 5 |
 | Awards board and certificates | Yes | 7 |
 | Parent analytics: usage, scores, trouble spots, question log | Yes | 8 |
@@ -44,8 +44,11 @@ This plan builds the whole IXL platform feature set for one family, then fills i
 - **Local-first.** The app works fully with no account and no keys. Sync is added last, behind a flag, so nothing blocks on credentials.
 - **Deterministic questions.** Every question comes from a skill, a level and a seed number. Tests can replay any question, and the parent log can redraw it exactly.
 - **Tap, never drag.** Sorting and matching use tap-then-tap. It suits small hands and needs no drag library.
-- **Few dependencies.** Six runtime libraries. No CSS framework, no chart library, no drag library.
+- **Few dependencies.** Seven runtime packages. No CSS framework, no chart library, no drag library.
 - **One build phase per session.** Small steps with a gate each, not one giant prompt.
+- **Install first.** On an iPad the Home Screen app keeps its own storage, separate from Safari. Children are created inside the installed app, so nothing is left behind in a browser tab.
+- **Ids, never positions.** Anything saved about a skill or a ladder stores the skill id. Adding content later can then never shift saved progress.
+- **Listen and read questions never leak.** A question that asks a child to hear a target never prints it, and a question that asks a child to read never speaks the words.
 
 ## 2. How to run this plan in Claude Code
 
@@ -56,6 +59,7 @@ Export this doc as Markdown, save it as `docs/PLAN.md` in a new empty repo, then
 1. Create an empty GitHub repo, for example `sprout`.
 2. Add this plan as `docs/PLAN.md`.
 3. Open the repo in Claude Code and paste the kickoff prompt below.
+4. After Phase 0, import the repo into Vercel so every push gets an HTTPS address. The iPad hand checks need HTTPS. A plain local-network address will not run the app, because speech, saved storage and id creation all need a secure address.
 
 ### Kickoff prompt
 
@@ -99,13 +103,20 @@ Claude Code reads this file at the start of every session, so these rules hold a
 - Every route is registered in `src/app/routes.tsx` and nowhere else.
 - No secrets in the repo. Supabase keys come from env vars and the app must run without them.
 - No `window.open`. External links use `<a target="_blank" rel="noopener noreferrer">` and exist only in parent mode.
-- Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers, no negative sounds.
+- Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on, nothing that moves away before the child answers, no negative sounds.
 - Layout: mobile first, flex column, scroll inside panels, never horizontal page scroll. Use `dvh`, not `vh`.
 - Every new skill needs: a generator file, a catalogue row, and a pass from the generator test suite.
 - Before finishing any phase run the audit in section 13 of the plan.
 - The score is called "Skill Score" everywhere in the app. Never show the word SmartScore.
 - The main device is an iPad running the app from the Home Screen. Follow the iPad rules in section 3.
 - Never change what an existing seed produces without bumping that skill's version and its golden file.
+- Day boundaries use `localDay()` from `src/lib/clock.ts`. Never work out a day from a UTC string.
+- A `listen` question never shows its target and its options never speak. A `read` question never speaks the words the child must read.
+- Saved references are skill ids, never positions in a list.
+- Kid navigation replaces history. It never pushes a new entry.
+- Dev routes exist only when `import.meta.env.DEV` is true.
+- Spoken text is built from `Say` parts. Letters, numbers, times and money are typed parts, never digits or symbols inside a string.
+- New fields on a stored record always have a zod default, so old records still load.
 ```
 
 ## 3. Stack, setup and file structure
@@ -125,7 +136,9 @@ The stack is Vite, React and TypeScript, hosted on Vercel, with Supabase added i
 | `vite`, `typescript`, `@vitejs/plugin-react` | Build | Phase 0 |
 | `vitest`, `jsdom`, `@testing-library/react`, `@testing-library/user-event`, `fake-indexeddb` | Tests | Phase 0 |
 | `eslint`, `typescript-eslint`, `eslint-plugin-react-hooks` | Lint | Phase 0 |
-| `@playwright/test` | One browser smoke test | Phase 5 |
+| `@playwright/test` | Gallery screenshot and browser smoke tests | Phase 4a |
+| `tsx` | Runs the TypeScript scripts, such as the content dump | Phase 1 |
+| `@types/react`, `@types/react-dom`, `@types/node` | Type definitions that strict TypeScript needs | Phase 0 |
 | `vite-plugin-pwa` | Installable, offline | Phase 9 |
 
 Version rule: install the current stable release of each on the current Node LTS, commit `package-lock.json`, and do not upgrade during the build.
@@ -142,13 +155,15 @@ Deliberately left out: Tailwind, UI kits, chart libraries, drag-and-drop librari
   "lint": "eslint . --max-warnings 0",
   "test": "vitest run",
   "e2e": "playwright test",
+  "content:dump": "tsx scripts/content-dump.ts",
+  "check:videos": "node scripts/check-videos.mjs",
   "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
 }
 ```
 
 ### Styling
 
-Plain CSS with custom properties in `src/styles/tokens.css`, plus one CSS module per component. No framework. Tokens cover colour, spacing, radius, type scale and the five score-stage colours.
+Plain CSS with custom properties in `src/styles/tokens.css`, plus one CSS module per component. No framework. Tokens cover colour, spacing, radius, type scale and the six score-stage colours.
 
 ### File structure
 
@@ -157,7 +172,12 @@ sprout/
   CLAUDE.md
   docs/PLAN.md
   index.html
+  vercel.json                rewrite of every path to /index.html
   public/                    icons, manifest
+  scripts/
+    content-dump.ts          writes review/<batch>.md
+    check-videos.mjs         Phase 12
+  review/                    content dumps and the gallery screenshot
   supabase/migrations/       SQL from section 4 (Phase 10)
   e2e/smoke.spec.ts
   src/
@@ -167,21 +187,28 @@ sprout/
       routes.tsx             the only place routes are declared
       store.ts               zustand store: active child, settings, session
     lib/
-      clock.ts               now() wrapper, freezable in tests
+      clock.ts               now(), nowIso(), localDay(), freezable in tests
       ids.ts                 uuid helper
+      errorLog.ts            last 20 errors, saved in the device record
     engine/                  pure TypeScript, no React, no browser APIs
       rng.ts                 seeded random (mulberry32) + helpers
-      types.ts               Question, Visual, Response, Skill types
+      seed.ts                seedFor(child, skill, kind, n), section 5
+      types.ts               Question, Visual, Say, Response, Skill types
       check.ts               check(question, response) -> boolean
       validate.ts            invariants every question must satisfy
+      canonical.ts           canonical form of a Visual, used to compare options
       skillscore.ts          section 6
       review.ts              spaced review boxes, section 7
       recommend.ts           Today's picks, section 7
-      diagnostic.ts          placement staircase, section 7
+      diagnostic.ts          placement walk, section 7
+      merge.ts               merges two copies of one record, section 4
       awards.ts              award rules
     content/
       catalogue.ts           every Skill row, section 8
+      ladders.ts             every ladder as a list of skill ids, section 7
+      templates.ts           prompt and explanation wording by family, section 8
       registry.ts            skillId -> generator, built from generators/
+      videos.json            Phase 12
       data/                  word lists and emoji sets, section 9
       generators/
         math/pk/*.ts  math/k/*.ts  math/g1/*.ts  math/g2/*.ts
@@ -193,21 +220,31 @@ sprout/
       idbRepo.ts             IndexedDB implementation
       memoryRepo.ts          in-memory, used in tests and as fallback
       schema.ts              zod schemas for every stored record
+      exportFile.ts          export and import, with share-sheet hand-off
       sync.ts                Supabase sync (Phase 10)
     audio/
       speech.ts              speak(), stop(), voice selection
+      say.ts                 turns Say parts into words a voice reads correctly
+      clips.ts               plays a parent's recorded clip in place of the voice
       sfx.ts                 short tones made with WebAudio, no files
     visuals/                 one component per Visual kind, section 5
     items/                   one component per question type, section 5
     screens/
-      kid/                   ProfilePicker, Home, SubjectPage, Practice,
-                             LearnExample, SessionSummary, Awards,
-                             Diagnostic
+      kid/                   ProfilePicker, InstallGuide, Home, Play, SubjectPage,
+                             Practice, Lesson, Review, SessionSummary, Awards,
+                             Diagnostic, Pop, Pairs
       parent/                ParentGate, Dashboard, Scores, TroubleSpots,
-                             QuestionLog, Plans, Settings, DataTools
-    components/              shared UI: ScoreRing, BigButton, Modal, Bar
+                             QuestionLog, Plans, Settings, DataTools,
+                             SoundCheck, VoicePack
+      dev/                   Gallery, ReviewSamples (development builds only)
+    components/              shared UI: ScoreRing, BigButton, Modal, Bar,
+                             ErrorBoundary
     styles/tokens.css
-  tests/                     mirrors src/, plus tests/generators.all.test.ts
+  tests/                     mirrors src/, plus:
+    generators.all.test.ts   every skill, every level, 300 seeds
+    oracles.test.ts
+    oracles/                 one file per oracle, never imported by src/
+    golden/                  one file per skill, plus lists.json
 ```
 
 The `engine/` and `content/` folders must not import from React or touch `window`. That keeps all scoring and question logic testable in plain Node.
@@ -218,7 +255,8 @@ The main device is an iPad running the app from its Home Screen icon. Phones and
 
 | iPad behaviour | Rule for the build |
 | --- | --- |
-| Safari can clear a site's saved data after about a week without visits, unless the site is installed to the Home Screen | Call `navigator.storage.persist()` on first run. Show an "Add to Home Screen" guide until the app runs standalone. Install and sync are built straight after the kid flow |
+| Safari can clear a site's saved data after about a week without visits, unless the site is installed to the Home Screen | Call `navigator.storage.persist()` on first run. In a Safari tab on an iPad or iPhone the app shows only the install guide. Children are created inside the installed app |
+| The Home Screen app has its own storage, separate from Safari | Nothing made in a Safari tab carries over. The manifest, icons and Apple meta tags ship in Phase 0, so the app can be installed before the first hand check. The parent gate offers "Use in this browser anyway" with a warning, for laptops and for testing |
 | iPads show no automatic install prompt | The guide shows the Share button, then "Add to Home Screen", with pictures |
 | A link in an email opens Safari, not the installed app | Sync sign-in uses a typed six-digit code |
 | Speech is silent until the first tap | The profile tap speaks first |
@@ -228,31 +266,43 @@ The main device is an iPad running the app from its Home Screen icon. Phones and
 | The screen dims mid-lesson | Request a screen wake lock during practice and lessons, and ignore a refusal |
 | Emoji look the same on every Apple device | No picture set needs bundling for version 1 |
 | Voices differ by device | Prefer the voices named Samantha, Ava or Allison, then any English (US) voice |
+| A download link is unreliable inside the Home Screen app | Export hands the file to the share sheet (`navigator.share` with a file). A download link is the fallback on laptops |
+| Swiping in from the left edge goes back a page | Kid navigation replaces history, so there is no page to swipe back to. A `popstate` guard puts the child back on the current kid screen |
+| The Home Screen app can stay open for days without reloading | Check for a new build on launch and each time the app comes back to the front, at most once an hour. Apply it on the profile picker or home screen, never in the middle of a question |
+| Sound effects stay silent until the audio context is resumed inside a tap | The profile tap resumes the WebAudio context as well as speaking |
+| The mute setting in Control Center can silence sound effects while the voice still plays | The sound check screen says so in plain words |
+| Speech, saved storage and `crypto.randomUUID` need HTTPS | Hand checks use the Vercel address, never a local-network address |
+| Unmuted video cannot be started from a button outside the video frame | The child taps YouTube's own play button. See Video safety in section 10 |
+| The microphone permission can be asked again on a later launch | The voice pack handles a refusal every time and never assumes an earlier yes |
+| Speaking straight after cancelling can drop the new sentence | `speak()` waits 60 ms between cancel and speak |
 
-Browser tests run in Playwright's WebKit engine at 1024 by 768, 820 by 1180 and 390 by 844.
+Browser tests run in Playwright's WebKit engine at 1024 by 768, 820 by 1180 and 390 by 844. Playwright's WebKit is not iPad Safari: it has no Home Screen mode, no real voices, and may not run the service worker. Where a browser test cannot run in WebKit, it runs in Chromium and the iPad hand check in section 12 covers the gap.
 
 ### Continuous checks
 
-Add `.github/workflows/verify.yml` in Phase 0. It runs `npm ci` and `npm run verify` on every push and pull request. Wrap the app in one error boundary that shows "Something went wrong" with a button back to the profile picker, and keeps the last 20 errors for the parent data screen.
+Add `.github/workflows/verify.yml` in Phase 0. It runs `npm ci` and `npm run verify` on every push and pull request. The workflow does not run Playwright. If GitHub Actions is not available on the repo, `npm run verify` run locally before every push is the gate. Wrap the app in one error boundary that shows "Something went wrong" with a button back to the profile picker, and keeps the last 20 errors in the device record (section 4) for the parent data screen.
 
 ## 4. Data model
 
-Ten record types hold everything: the seven below and three more under Additions at the end of this section. They live in IndexedDB on the device and, from Phase 10, in matching Supabase tables.
+Eleven record types hold everything: the seven below and four more under Additions at the end of this section. They live in IndexedDB on the device. From Phase 10, nine of them also live in matching Supabase tables. Recorded sounds and the device record stay on the device.
 
 ### Records (src/storage/schema.ts)
 
-Define each as a zod schema and infer the TypeScript type from it. All ids are UUID strings made on the device. All times are ISO strings.
+Define each as a zod schema and infer the TypeScript type from it. All ids are UUID strings made on the device. All times are ISO strings in UTC. A `day` is the device's local calendar date, `YYYY-MM-DD`, stamped by `localDay()` when the record is made. Daily goals, daily minutes, days practised, the 14-day charts and "one check-in a day" all read `day`, never a UTC time.
 
 ```ts
 type Grade = 'PK' | 'K' | '1' | '2' | '3' | '4' | '5';
+type SkillGrade = Grade | 'all';             // 'all' is used by Reasoning
+type ItemType = 'choice' | 'multiSelect' | 'tapCount' | 'numberPad'
+              | 'order' | 'sort' | 'match' | 'tiles';
 
 interface ChildSettings {
   gentleScoring: boolean;      // default true for PK and K, false above
   sessionLength: number;       // questions per session: PK 6, K 8, 1+ 10
   speechRate: number;          // 0.7 to 1.1, default 0.85
   autoSpeak: boolean;          // default true for PK, K, 1
-  showTimer: boolean;          // default false
-  dailyGoalQuestions: number;  // default 15
+  showTimer: boolean;          // default false. The only clock a child can ever see
+  dailyGoalQuestions: number;  // default 15, shown as a ring of stars on the home screen
   allowVideos: boolean;        // default true
   dailyMinutes: number;        // 0 means no limit, default 0
   preReader: boolean;          // default true for PK and K
@@ -261,32 +311,38 @@ interface ChildSettings {
 interface Child {
   id: string; name: string; avatar: string;   // avatar = one emoji
   grade: Grade; settings: ChildSettings;
+  resetAt: string | null;      // rows for this child made before this time are dead, see Reset
   createdAt: string; updatedAt: string; deletedAt: string | null;
 }
 
 interface SkillState {
   childId: string; skillId: string;
   score: number;               // 0..100 integer
+  bestScore: number;           // highest score ever reached, drives milestone celebrations
   streak: number;              // consecutive correct, resets on a miss
   attempts: number; correct: number;
   recent: boolean[];           // last 10 results, newest last
   masteredAt: string | null;
   placedOut: boolean;          // set by the diagnostic
   reviewBox: number;           // 0..4
-  reviewDueAt: string | null;
+  reviewDueAt: string | null;  // due once today's local day reaches this time's local day
   lastPracticedAt: string | null;
   updatedAt: string;
 }
 
 interface Attempt {
   id: string; childId: string; skillId: string; sessionId: string;
-  level: 1 | 2 | 3 | 4; seed: number; itemType: ItemType;
+  level: 1 | 2 | 3 | 4;        // the level actually asked, after clamping to the skill's maxLevel
+  seed: number;                // the seed that produced the question shown
+  itemType: ItemType;
   response: unknown;           // exactly what the child submitted
   contentVersion: number;      // the skill's version when answered
   snapshot: { prompt: string; correct: string; given: string };  // plain-text record that never changes
-  correct: boolean; ms: number;
+  correct: boolean;
+  ms: number;                  // question shown to answer submitted, capped at 120,000
   scoreBefore: number; scoreAfter: number;
   kind: 'practice' | 'review' | 'diagnostic';
+  day: string;                 // local calendar date
   createdAt: string;
 }
 
@@ -295,6 +351,7 @@ interface Session {
   kind: 'practice' | 'review' | 'diagnostic';
   skillId: string | null; startedAt: string; endedAt: string | null;
   questions: number; correct: number;
+  day: string;                 // local calendar date of startedAt
 }
 
 interface AwardEarned { childId: string; awardId: string; earnedAt: string; }
@@ -305,23 +362,33 @@ interface Plan {
 }
 
 interface DiagnosticResult {
-  id: string; childId: string; ladderId: string;
-  placementIndex: number;      // index into the strand's skill ladder
-  levelEstimate: number;       // e.g. 0.4 = 40% through kindergarten
+  id: string; childId: string;
+  subject: 'math' | 'ela';
+  ladderId: string;
+  placementSkillId: string | null;  // the skill to start on. null = passed the whole ladder
+  estimateGrade: Grade | null;      // grade of the placement skill. null when there is no estimate
+  estimateFraction: number | null;  // 0.4 = 40% through that grade on this ladder
   takenAt: string;
 }
 ```
+
+Notes on these records:
+
+- **Minutes** for a day are the sum of that day's capped `ms`. The cap stops one abandoned question from counting as an hour. The daily limit and the dashboard both use this sum.
+- **`bestScore`** only goes up. A milestone at 50, 80, 90 or 100 is celebrated when a new score crosses it and `bestScore` was below it. Dropping and climbing back never celebrates twice. Placing out sets `bestScore` to 80 with no celebration.
+- **Every field added after version 1** gets a zod default. An old record then loads with the default instead of failing.
 
 ### Repo interface (src/storage/repo.ts)
 
 ```ts
 interface Repo {
-  listChildren(): Promise<Child[]>;
+  listChildren(): Promise<Child[]>;               // leaves out soft-deleted children
   saveChild(c: Child): Promise<void>;
+  resetChild(childId: string): Promise<void>;     // see Reset
   getSkillStates(childId: string): Promise<SkillState[]>;
   saveSkillState(s: SkillState): Promise<void>;
   addAttempt(a: Attempt): Promise<void>;
-  listAttempts(childId: string, opts: { since?: string; skillId?: string; limit?: number }): Promise<Attempt[]>;
+  listAttempts(childId: string, opts: { since?: string; until?: string; skillId?: string; limit?: number }): Promise<Attempt[]>;
   saveSession(s: Session): Promise<void>;
   listSessions(childId: string, since?: string): Promise<Session[]>;
   listAwards(childId: string): Promise<AwardEarned[]>;
@@ -330,19 +397,34 @@ interface Repo {
   savePlan(p: Plan): Promise<void>;
   listDiagnostics(childId: string): Promise<DiagnosticResult[]>;
   saveDiagnostic(d: DiagnosticResult): Promise<void>;
-  exportAll(): Promise<ExportFile>;
-  importAll(file: ExportFile): Promise<void>;   // validates with zod first
+  listFlags(): Promise<Flag[]>;
+  saveFlag(f: Flag): Promise<void>;
+  getDiagnosticProgress(childId: string, subject: 'math' | 'ela'): Promise<DiagnosticProgress | null>;
+  saveDiagnosticProgress(p: DiagnosticProgress): Promise<void>;
+  getClip(key: string): Promise<AudioClip | null>;
+  saveClip(c: AudioClip): Promise<void>;
+  deleteClip(key: string): Promise<void>;
+  listClipKeys(): Promise<string[]>;
+  getDeviceState(): Promise<DeviceState>;         // returns defaults when nothing is saved
+  saveDeviceState(d: DeviceState): Promise<void>;
+  countQuarantined(): Promise<number>;
+  exportAll(opts: { includeClips: boolean }): Promise<ExportFile>;
+  importAll(file: ExportFile): Promise<ImportReport>;   // validates with zod first
 }
 ```
 
 Rules:
 
-- `idbRepo` opens database `sprout` version 1 with one object store per record type. Attempts are indexed by `childId` and by `[childId, skillId]`.
+- `idbRepo` opens database `sprout` version 1 with one object store per record type, plus a `quarantine` store. Attempts are indexed by `childId`, by `[childId, skillId]` and by `[childId, createdAt]`.
 - If IndexedDB fails to open, the app falls back to `memoryRepo` and shows a banner: "Progress will not be saved on this device."
-- Every record read from storage passes through its zod schema. A record that fails is skipped and logged, never crashes a screen.
-- First run seeds nothing. The parent creates each child in a two-step setup (name and avatar, then grade). From Phase 7, a child's first visit opens the diagnostic before the home screen, with a "Skip for now" button.
+- Every record read from storage passes through its zod schema. A record that still fails after defaults are applied is copied to `quarantine`, logged, and left out of the result. It never crashes a screen and is never silently overwritten. The parent data screen shows "N saved items could not be read" when the count is above zero, and the export file includes them untouched.
+- First run creates no children and no plans. The parent creates each child in a two-step setup (name and avatar, then grade). From Phase 7, a child's first visit opens the diagnostic before the home screen, with a "Skip for now" button.
+- **Import merges.** `importAll` adds the file to what is on the device using the same merge rules as sync, below. It never wipes the device. The report says how many records were added, updated and skipped.
+- **Reset.** `resetChild` sets the child's `resetAt` to now and deletes that child's skill states, attempts, sessions, awards, diagnostic results, diagnostic progress and flags from the device. Any row for that child made before `resetAt` is dead everywhere: every read ignores it, import skips it, and sync removes it. This is what lets a reset survive a second iPad and a sync. A reset cannot be undone by importing an older export, so the reset dialog says it is final and offers an export first.
 
-### Supabase schema (Phase 10, supabase/migrations/0001\_init.sql)
+### Supabase schema (Phase 10, `supabase/migrations/0001_init.sql`)
+
+Every table carries `synced_at`, stamped by the server on every insert and update. Devices use it to fetch only what changed since their last pull.
 
 ```sql
 create table children (
@@ -352,9 +434,11 @@ create table children (
   avatar text not null,
   grade text not null,
   settings jsonb not null default '{}'::jsonb,
+  reset_at timestamptz,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  deleted_at timestamptz
+  deleted_at timestamptz,
+  synced_at timestamptz not null default now()
 );
 
 create table skill_state (
@@ -362,6 +446,7 @@ create table skill_state (
   skill_id text not null,
   owner uuid not null default auth.uid(),
   score int not null check (score between 0 and 100),
+  best_score int not null default 0 check (best_score between 0 and 100),
   streak int not null default 0,
   attempts int not null default 0,
   correct int not null default 0,
@@ -372,6 +457,7 @@ create table skill_state (
   review_due_at timestamptz,
   last_practiced_at timestamptz,
   updated_at timestamptz not null default now(),
+  synced_at timestamptz not null default now(),
   primary key (child_id, skill_id)
 );
 
@@ -392,7 +478,9 @@ create table attempts (
   score_before int not null,
   score_after int not null,
   kind text not null,
-  created_at timestamptz not null
+  day date not null,
+  created_at timestamptz not null,
+  synced_at timestamptz not null default now()
 );
 create index attempts_child_time on attempts (child_id, created_at desc);
 
@@ -405,7 +493,9 @@ create table sessions (
   started_at timestamptz not null,
   ended_at timestamptz,
   questions int not null default 0,
-  correct int not null default 0
+  correct int not null default 0,
+  day date not null,
+  synced_at timestamptz not null default now()
 );
 
 create table awards (
@@ -413,6 +503,7 @@ create table awards (
   award_id text not null,
   owner uuid not null default auth.uid(),
   earned_at timestamptz not null,
+  synced_at timestamptz not null default now(),
   primary key (child_id, award_id)
 );
 
@@ -424,66 +515,23 @@ create table plans (
   child_ids uuid[] not null default '{}',
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
-  deleted_at timestamptz
+  deleted_at timestamptz,
+  synced_at timestamptz not null default now()
 );
 
 create table diagnostic_results (
   id uuid primary key,
   child_id uuid not null references children(id) on delete cascade,
   owner uuid not null default auth.uid(),
+  subject text not null,
   ladder_id text not null,
-  placement_index int not null,
-  level_estimate numeric not null,
-  taken_at timestamptz not null
+  placement_skill_id text,
+  estimate_grade text,
+  estimate_fraction numeric,
+  taken_at timestamptz not null,
+  synced_at timestamptz not null default now()
 );
 
--- Row level security: a signed-in parent sees only their own rows.
-do $$
-declare t text;
-begin
-  foreach t in array array['children','skill_state','attempts','sessions',
-                           'awards','plans','diagnostic_results',
-                           'flags','diagnostic_progress'] loop
-    execute format('alter table %I enable row level security', t);
-    execute format(
-      'create policy own_rows on %I for all using (owner = auth.uid()) with check (owner = auth.uid())', t);
-  end loop;
-end $$;
-```
-
-### Sync rules (Phase 10)
-
-- Sign-in is parent email with a six-digit code typed into the app. On an iPad a magic link opens in Safari, not in the installed app, so the sign-in would never reach it. Children never sign in.
-- The device is always the source the app reads from. Sync runs in the background on start, on session end, and every 5 minutes while online.
-- Attempts, sessions, awards and diagnostics are append-only. Push with upsert on the primary key, so a retry never duplicates.
-- Children, plans and skill state use last write wins on `updated_at`.
-- Deletes are soft (`deleted_at`) so they sync.
-- With no Supabase env vars, the sync module is a no-op and the sign-in button is hidden.
-
-### Additions: flags, diagnostic progress, recorded sounds
-
-```ts
-interface Flag {                    // a parent marks a question as wrong or confusing
-  id: string; childId: string; attemptId: string;
-  skillId: string; level: number; seed: number;
-  note: string; createdAt: string; resolvedAt: string | null;
-}
-
-interface DiagnosticProgress {      // lets a diagnostic stop and resume
-  childId: string; subject: 'math' | 'ela' | 'reasoning';
-  ladders: Record<string, { index: number; passed: number[]; failed: number[]; asked: number; done: boolean }>;
-  sittings: number; done: boolean; updatedAt: string;
-}
-
-interface AudioClip {               // a sound the parent recorded, kept on the device
-  key: string;                      // 'letter:a', 'sound:sh', 'number:7'
-  blob: Blob; createdAt: string;
-}
-```
-
-Add to `Repo`: `listFlags`, `saveFlag`, `getDiagnosticProgress`, `saveDiagnosticProgress`, `getClip`, `saveClip`, `listClipKeys`. Flags and diagnostic progress sync. Audio clips stay local in version 1.
-
-```sql
 create table flags (
   id uuid primary key,
   child_id uuid not null references children(id) on delete cascade,
@@ -494,7 +542,8 @@ create table flags (
   seed bigint not null,
   note text not null default '',
   created_at timestamptz not null,
-  resolved_at timestamptz
+  resolved_at timestamptz,
+  synced_at timestamptz not null default now()
 );
 
 create table diagnostic_progress (
@@ -505,32 +554,129 @@ create table diagnostic_progress (
   sittings int not null default 0,
   done boolean not null default false,
   updated_at timestamptz not null default now(),
+  synced_at timestamptz not null default now(),
   primary key (child_id, subject)
 );
+
+-- The server stamps synced_at on every write.
+create function touch_synced_at() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  new.synced_at := now();
+  return new;
+end $$;
+
+-- Row level security: a signed-in parent sees only their own rows.
+do $$
+declare t text;
+begin
+  foreach t in array array['children','skill_state','attempts','sessions',
+                           'awards','plans','diagnostic_results',
+                           'flags','diagnostic_progress'] loop
+    execute format('alter table %I enable row level security', t);
+    execute format(
+      'create policy own_rows on %I for all to authenticated using (owner = (select auth.uid())) with check (owner = (select auth.uid()))', t);
+    execute format(
+      'create trigger touch_synced_at before insert or update on %I for each row execute function touch_synced_at()', t);
+    execute format('create index %I on %I (owner, synced_at)', t || '_owner_synced', t);
+  end loop;
+end $$;
 ```
 
-Place both `create table` statements above the row level security block in the migration.
+### Sync rules (Phase 10)
+
+- Sign-in is parent email with a six-digit code typed into the app. On an iPad a magic link opens in Safari, not in the installed app, so the sign-in would never reach it. Children never sign in.
+- The device is always the source the app reads from. Sync runs in the background on start, on session end, and every 5 minutes while online.
+- With no Supabase env vars, the sync module is a no-op and the sign-in button is hidden.
+
+**Push**
+
+- Push in this order, so a row never arrives before the row it points to: children, plans, sessions, attempts, skill state, awards, diagnostic results, diagnostic progress, flags.
+- Push in batches of 200 rows. A failed batch is retried on the next run and never blocks the app.
+- Attempts, sessions, awards, diagnostic results and flags only ever get added. Push them with "insert, ignore if the id exists", so a retry never duplicates.
+
+**Pull**
+
+- The device record holds one `syncCursor` time per table. A pull asks for rows with `synced_at` later than the cursor minus 60 seconds, ordered by `synced_at`, 500 rows a page, and keeps paging until a page comes back short. The 60-second overlap covers rows that were still being written during the last pull. Every write is safe to repeat, so the overlap costs nothing.
+- A first pull on a new device fetches everything, page by page.
+
+**Merging two copies of one record (`src/engine/merge.ts`)**
+
+- Children and plans: the copy with the later `updatedAt` wins. For a child, `resetAt` is the later of the two.
+- Skill state: `attempts`, `correct` and `recent` are recounted from the attempt log after any pull that brought in attempts for that skill, so two iPads never lose each other's answers. `score`, `streak`, `masteredAt` and the review fields come from the copy with the later `lastPracticedAt`. `bestScore` is the higher of the two. `placedOut` is true if either copy says so.
+- Diagnostic progress: the copy with the later `updatedAt` wins.
+- Deletes of children and plans are soft (`deletedAt`), so they sync like any other change.
+
+**Reset across devices**
+
+- After pushing a child whose `resetAt` changed, the device deletes that child's server rows made before `resetAt`.
+- A device that pulls a child with a later `resetAt` than its own deletes its local rows for that child made before it, and never pushes them again.
+
+### Additions: flags, diagnostic progress, recorded sounds, device record
+
+```ts
+interface Flag {                    // a parent marks a question as wrong or confusing
+  id: string; childId: string; attemptId: string;
+  skillId: string; level: number; seed: number;
+  note: string; createdAt: string; resolvedAt: string | null;
+}
+
+interface DiagnosticProgress {      // lets a diagnostic stop and resume
+  childId: string; subject: 'math' | 'ela';
+  ladders: Record<string, {         // keyed by ladder id
+    currentSkillId: string | null;  // the skill being tested now
+    passed: string[];               // skill ids
+    failed: string[];               // skill ids
+    asked: number; done: boolean;
+  }>;
+  sittings: number; done: boolean; updatedAt: string;
+}
+
+interface AudioClip {               // a sound the parent recorded, kept on the device
+  key: string;                      // 'letter:a', 'sound:sh', 'number:7'
+  bytes: ArrayBuffer;               // raw audio. Never a Blob: Blobs do not export and do not store reliably
+  mimeType: string;                 // whatever the device recorded, such as 'audio/mp4' on an iPad
+  createdAt: string;
+}
+
+interface DeviceState {             // one record per device, never synced
+  id: 'device';
+  muted: boolean;                   // covers the voice and sound effects
+  parentPin: string | null;         // optional 4-digit gate, see Parent side
+  persistGranted: boolean | null;   // answer from navigator.storage.persist()
+  lastExportAt: string | null;
+  browserModeAccepted: boolean;     // parent chose "Use in this browser anyway"
+  syncCursors: Record<string, string>;   // table name -> last pulled synced_at
+  catalogueVersion: number;         // see Catalogue growth in section 7
+  errors: { at: string; message: string; stack: string | null }[];   // last 20
+}
+```
+
+Flags and diagnostic progress sync. Audio clips and the device record stay on the device. An export includes the clips, as base64 text, when the parent ticks "Include my recordings".
 
 ### Versions and changes over time
 
 - **Local database.** `idbRepo` keeps a numbered list of upgrade steps. Opening an older database runs the missing steps in order. A test opens a version 1 fixture with the newest code.
 - **Export file.** Every export starts with `{ "format": "sprout-export", "version": 1 }`. Import refuses a newer version with a clear message and upgrades an older one.
 - **Skill ids are permanent.** Never rename or reuse one. A retired skill stays in the catalogue with `retired: true` and is hidden from children. Its history stays in parent reports.
-- **Skill versions.** Each skill has a `version`. `tests/golden/<skillId>.json` stores the output of `example()` and seeds 1, 2 and 3 at each level. If output changes, the test fails until the version is bumped and the golden file is regenerated on purpose.
+- **Skill versions.** Each skill has a `version`. `tests/golden/<skillId>.json` stores the output of `example()` and seeds 1 to 10 at each level. If output changes, the test fails until the version is bumped and the golden file is regenerated on purpose.
+- **Word lists.** Every generator names the data files it reads in `lists`. `tests/golden/lists.json` holds a hash of each data file. Changing a list fails the test and prints every skill that reads it. Each of those skills gets a version bump and a new golden file in the same change.
 - **Old attempts stay true.** Each attempt stores a plain-text `snapshot` of the prompt, the correct answer and the child's answer. The question log redraws the full question only when the attempt's `contentVersion` matches the skill's current version. Otherwise it shows the snapshot.
 
 ### Keeping progress safe
 
+- **Install before anything else.** In a Safari tab on an iPad or iPhone the app shows the install guide and nothing else. The Home Screen app has its own storage, so a child created in the tab would be left behind. A parent can pass the gate and choose "Use in this browser anyway" after reading that warning. Laptops and desktop browsers skip the guide.
 - Ask for persistent storage on first run and show the result on the parent data screen.
-- Until the app runs from the Home Screen, show a parent-side banner: "Install Sprout so progress is not cleared."
 - Until sync is signed in, the parent data screen shows the date of the last export and nudges for a new one every 7 days.
+- Export hands the file to the share sheet, so it can be saved to Files or sent by AirDrop from inside the Home Screen app.
 
 ### Your Supabase checklist (Phase 10)
 
 - [ ] Create the project and run `0001_init.sql` in the SQL editor.
 - [ ] Authentication, Email: keep email sign-in on, and edit the template so it shows the six-digit code (`{{ .Token }}`), not only a link.
 - [ ] Authentication, URL configuration: set the site URL to the Vercel address and add `http://localhost:5173` as a redirect.
-- [ ] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel, then redeploy.
+- [ ] Authentication, SMTP: connect your own sender, such as Resend. Supabase's built-in email is limited to a few messages an hour and is meant for testing.
+- [ ] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel, then redeploy. On a new project the second value is the key Supabase labels "publishable".
 - [ ] Sign in once on each iPad from the parent data screen.
 
 ## 5. Question engine
@@ -547,7 +693,7 @@ A `Visual` is a small description of a picture. One React component draws each k
 
 | Kind | Fields | Draws |
 | --- | --- | --- |
-| `emojiGroup` | emoji, count, layout: `row`, `grid5`, `scatter` | Countable objects. `grid5` wraps every 5. `scatter` uses fixed non-overlapping slots |
+| `emojiGroup` | emoji, count, layout: `row`, `grid5`, `scatter`, slots (scatter only) | Countable objects. `grid5` wraps every 5. `scatter` puts the objects in the listed slots of a fixed 5 by 4 grid of positions that never overlap. The generator picks the slots with its rng, so two groups of 7 do not look alike |
 | `text` | value, size: `m`, `l`, `xl` | A numeral, letter or word |
 | `shape` | shape, color, size: `s`, `m`, `l`, rotation | Inline SVG: circle, square, triangle, rectangle, hexagon, star, heart, oval, diamond |
 | `solid` | solid: cube, sphere, cone, cylinder | Inline SVG 3D shape |
@@ -557,14 +703,15 @@ A `Visual` is a small description of a picture. One React component draws each k
 | `equation` | parts: (number, operator or `blank`)\[\] | `3 + □ = 7`, horizontal |
 | `sequence` | items: (Visual or `blank`)\[\] | A row with a missing slot, for patterns |
 | `matrix` | cells: (Visual or `blank`)\[4\] | 2 by 2 reasoning grid |
-| `clock` | hour, minute | Analog clock face |
-| `coins` | coins: (`penny`, `nickel`, `dime`, `quarter`)\[\] | Drawn coins with value-neutral faces |
+| `clock` | hour, minute | Analog clock face. The hour hand sits at hour plus minute/60, so at half past it is halfway to the next number |
+| `coins` | coins: a list of `penny`, `nickel`, `dime`, `quarter` | Drawn coins, described under More visuals |
 | `graph` | type: `picture` or `bar`, categories: {label, emoji, value}\[\] | Simple graph |
-| `ruler` | lengthUnits, object emoji | Object above a ruler |
-| `fraction` | shape, parts, shaded | Partitioned circle or rectangle |
+| `ruler` | lengthUnits, startUnit, object: `pencil`, `crayon`, `ribbon` | A drawn object lying above a ruler, from startUnit to startUnit plus lengthUnits. Never an emoji, which would stretch out of shape |
+| `fraction` | shape, parts, shaded, equal | Partitioned circle or rectangle. `equal: false` draws parts of clearly different sizes |
 | `row` | children: Visual\[\] | Lays visuals side by side |
 
-Rules: every visual scales to its container, has an `aria-label` built from its fields, and never relies on colour alone when colour is not the thing being asked. Every visual may also carry an optional \`speak\` label, read aloud when a non-reader taps it. \`emojiGroup\` takes an optional \`crossed\` count for subtraction pictures.
+Rules: every visual scales to its container, has an `aria-label` built from its fields, and never relies on colour alone when colour is not the thing being asked. Red against green, or blue against purple, is never the only difference between two options, except in Find the colour above level 1. Every visual may also carry an optional \`speak\` label, read aloud when a non-reader taps it. \`emojiGroup\` takes an optional \`crossed\` count for subtraction pictures.
+A `speak` label is dropped in `listen` and `read` questions, as set out under Question data. Two visuals count as the same picture when `canonical.ts` gives them the same form: a turned circle is still a circle, a square turned a quarter turn is the same square, and a flipped symmetric shape is unchanged.
 
 ### Question types
 
@@ -579,34 +726,62 @@ Eight types, all tap-based. IXL's drag-and-drop becomes tap-then-tap.
 | `order` | Taps items in order; tap again to undo | `{ order[] }` | order equals `answerOrder` |
 | `sort` | Taps an item, then a bin | `{ bins: number[] }` | every item is in its `answerBin` |
 | `match` | Taps a left item, then its partner on the right | `{ pairs: [l, r][] }` | pairs equal `answerPairs` |
-| `tiles` | Taps letter or word tiles into blanks | `{ tiles: string[] }` | joined tiles equal `answer` |
+| `tiles` | Taps letter or word tiles into blanks | `{ tiles: string[] }` | the tiles, joined with nothing between them, equal `answer` |
 
 ### Question data (src/engine/types.ts)
 
 ```ts
+type FactValue = number | string | boolean | FactValue[] | { [key: string]: FactValue };
+
+// Spoken text is a list of parts, so say.ts knows what each piece is.
+type SayPart =
+  | string                                        // plain words: no digits, no symbols
+  | { letter: string }                            // a letter name: 'a' is said "ay"
+  | { word: string }                              // a word said as a word: 'a', 'I', 'read'
+  | { number: number }
+  | { time: { hour: number; minute: number } }
+  | { cents: number };
+type Say = SayPart[];
+
 interface QuestionBase {
   skillId: string; level: 1 | 2 | 3 | 4; seed: number;
-  key: string;                 // canonical content key, used to avoid repeats
-  facts: Record<string, number | string | boolean | number[] | string[]>;  // raw values behind the question
-  prompt: { text: string; speak: string };
+  key: string;                 // skillId | level | canonical JSON of facts, leaving out facts.options
+  facts: Record<string, FactValue>;   // every value that decides the content. The oracle reads only this
+  mode: 'look' | 'listen' | 'read';
+  prompt: { text: string; speak: Say };
   stimulus?: Visual;
   explanation: {
-    speak: string;             // one or two short sentences
+    speak: Say;                // one or two short sentences
     steps: string[];           // 1 to 4 short lines shown on screen
     visual?: Visual;           // the picture that shows why
   };
 }
 
 type Question =
-  | QuestionBase & { type: 'choice'; options: Visual[]; answerIndex: number }
+  | QuestionBase & { type: 'choice'; options: Visual[]; answerIndex: number; fixedOrder?: true; twins?: true }
   | QuestionBase & { type: 'multiSelect'; options: Visual[]; answerIndexes: number[] }
   | QuestionBase & { type: 'tapCount'; emoji: string; shown: number; answer: number }
   | QuestionBase & { type: 'numberPad'; answer: number; maxDigits: number }
   | QuestionBase & { type: 'order'; items: Visual[]; answerOrder: number[] }
-  | QuestionBase & { type: 'sort'; items: Visual[]; bins: { label: string; speak: string; icon?: Visual }[]; answerBin: number[] }
+  | QuestionBase & { type: 'sort'; items: Visual[]; bins: { label: string; speak: Say; icon?: Visual }[]; answerBin: number[] }
   | QuestionBase & { type: 'match'; left: Visual[]; right: Visual[]; answerPairs: [number, number][] }
   | QuestionBase & { type: 'tiles'; slots: number; bank: string[]; answer: string };
 ```
+
+**The three modes**
+
+| Mode | Used for | Rules |
+| --- | --- | --- |
+| `look` | Most questions | The on-screen prompt and the spoken prompt say the same thing. Options and pictures may carry a `speak` label |
+| `listen` | Hear a letter, number or word and find it | The target is only in `prompt.speak`. `prompt.text` is the neutral sentence, such as "Find the letter." No option or stimulus carries a `speak` label, so tapping around cannot reveal the answer. The screen shows a large speaker button to hear it again |
+| `read` | Read a word, sentence or story | The words the child must read are never spoken, before or after a tap. Only the instruction is spoken |
+
+When the device is muted or has no voice, a `listen` question cannot be answered. Picks leave those skills out, and opening one shows a picture card asking for the sound to be turned on.
+
+**Two flags on `choice`**
+
+- `fixedOrder` is for answers that always sit in the same place, such as True and False, the signs greater, less and equal, or the three end marks. They are not shuffled.
+- `twins` is for "Which one is different". The wrong options are all the same picture, and the answer is the one that differs.
 
 ### Generator contract (src/content/generators)
 
@@ -614,31 +789,52 @@ type Question =
 interface SkillGenerator {
   skillId: string;
   maxLevel: 1 | 2 | 3 | 4;
-  generate(level: number, rng: Rng): Question;   // pure, no Date, no Math.random
-  example(): Question;                            // fixed seed, used by Learn with an example
-  lesson(): LessonStep[];                         // four beats, section 8
-  oracle: OracleId;                               // independent answer check, see Facts and oracles
+  itemTypes: ItemType[];
+  lists: string[];                                  // data files it reads, such as ['countables']
+  pool?: Partial<Record<1 | 2 | 3 | 4, number>>;    // how many different questions a level has, when fewer than 8
+  generate(level: number, rng: Rng): Question;      // pure, no Date, no Math.random
+  example(): Question;                              // fixed seed, used by Learn with an example
+  lesson(): LessonStep[];                           // four beats, section 8
+  oracle: OracleId;                                 // independent answer check, see Facts and oracles
 }
 ```
 
-`registry.ts` exposes `nextQuestion(skillId, level, seed, recentKeys)`. It clamps level to `maxLevel`, generates, and if the question's `key` is in `recentKeys` (the last 6 for that child and skill) it retries with `seed + 1`, up to 20 times.
+`maxLevel` and `itemTypes` also appear on the catalogue row, where screens read them. A test fails if the two disagree.
+
+**Keys.** A question's `key` is its skill id, its level and the canonical JSON of its `facts`, leaving out `facts.options`. Two questions with the same key are the same question to a child, whatever order the options are in.
+
+**Seeds (`src/engine/seed.ts`).** `seedFor(childId, skillId, kind, n)` is a 32-bit FNV-1a hash of those four values joined with `|`. `n` is how many attempts the child has already made at that skill and kind. No clock and no random call is involved, so any question can be replayed.
+
+**Registry.** `registry.ts` exposes `nextQuestion(skillId, level, seed, recentKeys)`.
+
+1. It clamps `level` to the skill's `maxLevel` and generates.
+2. If the question's `key` is in the repeat window it retries with `seed + 1`, up to 20 times.
+3. The repeat window is the child's last 6 keys for that skill. For a level with a declared `pool`, the window is the smaller of 6 and the pool size minus 1, so a level with 2 questions only avoids an immediate repeat.
+4. If all 20 tries repeat, it returns the last one. It never throws.
+5. The question it returns carries the seed that actually produced it, and that seed is what the attempt stores.
 
 ### Invariants (src/engine/validate.ts)
 
 `validateQuestion(q)` returns a list of problems. An empty list means valid. The generator test suite runs it over every skill, every level, 300 seeds.
 
-1. `prompt.speak` and `explanation.speak` are non-empty and contain no symbols a voice would misread (`+`, `=`, `□`, `<`, `>`). Write "plus", "equals", "blank".
+1. `prompt.speak` and `explanation.speak` are non-empty. Their string parts contain no digits and none of `+`, `-` between numbers, `=`, `□`, `<`, `>`, `_`. Numbers, letters, times and money are typed `Say` parts. Words such as "plus", "equals" and "blank" are written out.
 2. No field is `undefined`, `NaN` or an empty array.
-3. `choice`: 2 to 4 options, all visually distinct (compare canonical JSON), `answerIndex` in range. Exactly one option is correct by the skill's own rule.
+3. `choice`: 2 to 4 options, `answerIndex` in range. Without `twins`, every pair of options is a different picture by canonical form. With `twins`, the wrong options are all the same picture and the answer is different from them.
 4. `multiSelect`: 1 or more correct, at least 1 incorrect.
 5. `tapCount`: `1 <= answer <= shown <= 12`.
 6. `numberPad`: answer is a non-negative integer that fits `maxDigits`.
 7. `order`, `sort`, `match`: answers cover every item exactly once. `sort` uses every bin at least once.
-8. `tiles`: the answer can be built from the bank, and the bank holds at least 2 tiles that are not needed.
+8. `tiles`: the answer can be built from the bank, and the bank holds at least 2 tiles that are not needed. No other arrangement of bank tiles that fills the slots spells a word that sounds like the answer, using the sound-alike list in section 9.
 9. Same skill, level and seed always produce a deeply equal question.
-10. Across 300 seeds each level yields at least 8 distinct `key` values, or the skill declares a smaller finite set in the catalogue.
-11. The position of the correct option is spread out: over 300 seeds no single index holds more than 45% of answers.
-12. Pre-K and kindergarten questions use at most 3 options. Grade 1 and above use up to 4.
+10. Across 300 seeds each level yields at least 8 distinct `key` values. A level with a declared `pool` must yield at least the smaller of 8 and the pool, and never more keys than the pool.
+11. The position of the correct option is spread out. For a question with n options, over 300 seeds no index holds more than 1/n plus 15% of the answers: 65% for 2 options, 48% for 3, 40% for 4. A `fixedOrder` question is checked the other way round: each option is the right answer in at least 10% of seeds.
+12. Option counts by the skill's grade: pre-K and kindergarten use at most 3. Grade 1 and above use up to 4. Reasoning (`all`) uses 3 at levels 1 and 2 and 4 at levels 3 and 4.
+13. `facts` is present, holds every key its oracle needs, and `key` matches the facts.
+14. `listen`: `prompt.text` does not contain the target named in `facts.target`, and no option or stimulus carries a `speak` label.
+15. `read`: no visual that shows the words in `facts.read` carries a `speak` label, and `prompt.speak` does not contain those words.
+16. Look-alikes that a screen font cannot tell apart never share a question: capital I with lowercase l or the digit 1, and the letter O with the digit 0.
+
+Whether exactly one option is right is the oracle test's job, not `validateQuestion`'s.
 
 ### Distractor rules
 
@@ -651,10 +847,15 @@ Wrong options must be plausible mistakes, not random noise.
 - **Letters:** prefer look-alikes (b d p q, m n, u v, E F, O Q) from level 2 up.
 - **Shapes and colours:** when the question is about shape, all options share one colour. When it is about colour, all share one shape.
 - **Words:** distractors come from the same list and differ in the feature being tested.
+- **Letter or number sorting:** never use O, I, l, S, Z or B, nor 0, 1, 2, 5 or 8. Each has a look-alike on the other side.
+- **Number order:** numeral options are shown smallest to largest and are not shuffled. The right answer still moves, because it is a different numeral each time.
+- **Plants and food:** these two groups never appear in the same question, because fruit and vegetables are both. Fish is never offered against the food group.
+- **Number rules:** a "what is the rule" question always shows two example pairs, and the generator throws away any set that more than one rule fits. "2 is to 4" alone fits both plus 2 and double.
+- **Mirror and turn:** only the L shape and the flag are used for mirror questions. Every other shape is its own mirror image, or looks like a turn of itself.
 
 ### Authored item banks (src/content/banks)
 
-Some skills cannot be generated, such as reading a short passage. Those live in JSON files as arrays of `Question` objects without `seed`. A bank skill's generator picks one by `rng`. Banks are validated by the same `validateQuestion` at test time.
+Some skills cannot be generated, such as reading a short passage. Those live in JSON files as arrays of `Question` objects without `seed`. Each carries `facts: { id }`, which gives it a key, and its skill names the `authored` oracle. A bank skill's generator picks one by `rng`. Banks are validated by the same `validateQuestion` at test time.
 
 ### More visuals the catalogue needs
 
@@ -665,47 +866,107 @@ These complete the visual set. Build them in Phase 4a with the rest.
 | `bar` | length in units, color | A horizontal or vertical bar, for comparing and ordering lengths |
 | `array` | rows, cols, emoji | Objects in equal rows, for repeated addition |
 | `tally` | count | Tally marks in bundles of five |
-| `foldPunch` | fold: `vertical` or `horizontal`, hole: {col, row} on a 4 by 4 grid, state: `folded` or `unfolded` | A paper square, folded with one punched hole, or unfolded with its holes |
+| `scale` | left: a list of numbers and at most one `blank`, right: a list of numbers | A balance scale sitting level, with number blocks on each pan |
+| `foldPunch` | fold: `vertical` or `horizontal`, state: `folded` or `unfolded`, holes: a list of {col, row} | A paper square, folded with its punched holes, or unfolded with all its holes |
 | `emojiGroup.layout` | adds `dice` | Dot positions as on a die, 1 to 6 |
 | `emojiGroup.numbered` | boolean | A small count under each object, used in explanations |
-| `shape.shape` | adds `arrow`, `lShape`, `flag` | Shapes with no symmetry, so turns and flips are visible |
+| `emojiGroup.emoji2`, `count2` | a second emoji and its count | A second kind of object in the same group, for two-colour dot cards |
+| `shape.shape` | adds `arrow`, `lShape`, `flag`, `pentagon`, `trapezoid` | The first three have no symmetry, so turns and flips are visible. The last two are for naming shapes by sides |
 | `shape.flip` | boolean | Mirrors the shape left to right |
+| `shape.open` | boolean | Draws the outline with a gap, for open and closed shapes |
 | `matrix.cells` | 4 or 9 cells | A 3 by 3 grid for pattern completion |
 
-Coins are drawn as SVG with their true relative sizes and colours: a copper penny, then nickel, dime and quarter in silver, with the dime smallest. Each shows the words real coins carry: ONE CENT, FIVE CENTS, ONE DIME, QUARTER DOLLAR. No portraits.
+**Paper folding.** The paper is a 4 by 4 grid of cells. Column 0 is at the left and row 0 is at the top. A `vertical` fold brings the right half over onto the left, so the folded paper shows columns 0 and 1. A `horizontal` fold brings the bottom half up onto the top, so the folded paper shows rows 0 and 1. A hole is always given as a cell of the half that shows. Unfolding a vertical fold copies each hole to column 3 minus its column. Unfolding a horizontal fold copies each hole to row 3 minus its row. Holes sit inside cells, never on the fold line.
+
+**Coins.** Coins are drawn as SVG with their true relative sizes and colours: a copper penny, then nickel, dime and quarter in silver, with the dime smallest. The dime and quarter have ridged edges. Each face carries a simple emblem and no words or numbers, so the picture never gives away the name or the value: a shield on the penny, a domed building on the nickel, a torch on the dime, an eagle on the quarter. No portraits.
 
 ### Facts and oracles
 
 Structure checks cannot tell whether the marked answer is true. Oracles do that.
 
-- Every question carries `facts`: the raw values the generator chose, such as `{ a: 3, b: 4 }`.
-- Every skill names an `oracle`. An oracle is a small function in `tests/oracles/` that works out the right answer from `facts` alone.
-- Oracles are written in Phase 1, before any content, and generators must never import them. Two separate pieces of code then have to agree.
-- `tests/oracles.test.ts` runs every skill, level and 300 seeds. It fails if the marked answer differs from the oracle's, or if any wrong option equals the oracle's answer.
+- Every question carries `facts`: every value the generator chose, such as `{ a: 3, b: 4 }`.
+- For `choice` and `multiSelect`, `facts.options` lists the plain value of each option in the order shown, such as `[2, 3, 4]`. It is left out of the `key`.
+- Every skill names an `oracle`. An oracle is a small function in `tests/oracles/` that works out the right answer from `facts` alone, in the shape of the question type: one value, a set of values, an order, a bin for each item, or pairs.
+- Generators never import oracles, and oracles never import generators or templates. Two separate pieces of code then have to agree.
+- `tests/oracles.test.ts` runs every skill, level and 300 seeds. It fails if the marked answer differs from the oracle's, or if any wrong option is also right by the oracle.
+- **A known limit.** The arithmetic and logic oracles are fully independent. The word-list oracles read the same section 9 lists as the generators. They catch a generator misusing a list, not a mistake in the list. The review sheet covers the lists.
+- **When they are written.** Phase 1 writes the oracles marked P1. Every content phase writes any oracle it still needs first, with unit tests, before the first generator that uses it.
 
-| Oracle | Facts it needs | Right answer |
-| --- | --- | --- |
-| `count` | n | n |
-| `add`, `subtract` | a, b, and c for three addends | a plus b (plus c), or a minus b |
-| `missing` | a, b, total, blank | The value that makes a plus b equal total |
-| `compare` | values, ask: `most`, `least` or `equal` | Index of the greatest or least, or whether all are equal |
-| `order` | values | Indexes sorted smallest to largest |
-| `sequence` | start, step, length, blankIndex | start plus step times blankIndex |
-| `pattern` | unit, shown | unit at position shown modulo unit length |
-| `place` | hundreds, tens, ones, ask | The number, or the digit or value asked for |
-| `time` | hour, minute | The time as text |
-| `money` | cents | Sum of cents, or the coin name |
-| `graph` | values, ask | The value, the largest, the smallest, or the difference |
-| `fraction` | parts, equal | Name of the fraction, or whether parts are equal |
-| `attribute` | target, optionAttrs | Index of the option whose attribute equals the target |
-| `wordSet` | target, relation: `firstSound`, `rhyme`, `family`, `category`, `syllables` | Looked up in the section 9 lists |
-| `spell` | word | The word's letters in order |
-| `analogy` | from, to, base | base with the same attribute change applied |
-| `matrix` | rowAttrs, colAttrs, blank | The cell that fits its row and column |
-| `truth` | left, right | Whether the two sides are equal |
-| `authored` | none | Skipped by the oracle test. Covered by the review sheet only |
+| Oracle | Facts it needs | Right answer | Phase |
+| --- | --- | --- | --- |
+| `count` | n | n | P1 |
+| `add` | a, b, and c for three addends | a plus b (plus c) | P1 |
+| `subtract` | a, b | a minus b | P1 |
+| `missing` | a, b, total, blank | The value that makes a plus b equal total | P1 |
+| `compare` | values, ask: `most`, `least`, `equal` or `sign` | Index of the greatest or least, whether all are equal, or the sign between two values | P1 |
+| `order` | values | Indexes sorted smallest to largest | P1 |
+| `sequence` | start, step, length, blankIndex | start plus step times blankIndex | P1 |
+| `pattern` | unit, shown | unit at position shown modulo unit length | P1 |
+| `attribute` | target, optionAttrs | Index of the option whose attribute equals the target | P1 |
+| `oddOne` | optionAttrs | Index of the one option whose attribute differs from all the others | P1 |
+| `sortBy` | itemAttrs, binAttrs | The bin for each item | P1 |
+| `matchEqual` | leftValues, rightValues | The pairs whose values are equal | P1 |
+| `twoStep` | a, op1, b, op2, c | a, then op1 b, then op2 c | Content |
+| `multiply` | rows, cols, ask | rows times cols, or the matching repeated addition | Content |
+| `makeTen` | a, b | "10 plus" a plus b minus 10 | Content |
+| `series` | start, steps (a repeating list), blankIndex | The value at the blank | Content |
+| `numberRule` | examples (pairs), base | The one rule among plus n, minus n and double that fits every example, applied to base. Fails when more than one rule fits | Content |
+| `line` | min, step, index | min plus step times index | Content |
+| `place` | hundreds, tens, ones, ask | The number, the digit, the value of a digit, or the expanded form | Content |
+| `parity` | values | Even or odd for each value | Content |
+| `time` | hour, minute | The time as text | Content |
+| `money` | coins, ask | Sum of cents, the coin name, or the coin worth more | Content |
+| `measure` | startUnit, lengthUnits | lengthUnits | Content |
+| `graph` | values, ask | The value, the largest, the smallest, or the difference | Content |
+| `fraction` | parts, equal, ask | Name of the fraction, or whether parts are equal | Content |
+| `shapeFacts` | shape, ask: `sides`, `corners`, `name`, `solid`, `closed` | Looked up in a table inside the oracle | Content |
+| `letter` | letter, ask: `upper`, `lower`, `next`, `before`, `kind` | The matching letter, the neighbour in the alphabet, or letter against number | Content |
+| `wordSet` | target, relation | Looked up in the section 9 lists. Relations: `firstSound`, `firstLetter`, `lastLetter`, `middleVowel`, `rhyme`, `family`, `category`, `syllables`, `opposite`, `same`, `plural`, `partOfSpeech`, `describing`, `vowelLength`, `digraph`, `blend`, `vowelTeam`, `silentE`, `analogyPair`, `riddle`, `sentencePicture`, `sightWord` | Content |
+| `spell` | word, parts | The word's letters in order, or its word parts for a compound word | Content |
+| `sentence` | base, ask: `capital`, `period`, `both`, `endMark` | The correctly written sentence, or its end mark | Content |
+| `analogy` | from, to, base | base with the same attribute change applied | Content |
+| `matrix` | rowAttrs, colAttrs, blank | The cell that fits its row and column, for 2 by 2 and 3 by 3 | Content |
+| `transform` | shape, startTurn, turns, flip | The quarter-turn position and flip of the result | Content |
+| `fold` | fold, holes | The list of holes after unfolding | Content |
+| `truth` | left, right | Whether the two sides are equal | Content |
+| `authored` | none | Skipped by the oracle test. Covered by the review sheet only | Content |
 
-Add this as invariant 13: `facts` is present and holds every key its oracle needs.
+**Which oracle each skill uses**
+
+```text
+Math PK  A.1-A.4 count      A.5-A.6 attribute   A.7 matchEqual   A.8 count
+         B.1-B.2 compare    C.1-C.2 attribute   C.3 compare      D.1 oddOne
+         D.2 pattern        D.3 sortBy
+Math K   A.1-A.3 count      A.4-A.7 sequence    B.1-B.2 compare  B.3 order
+         C.1-C.4 add        C.5-C.7 subtract    C.8-C.9 missing  C.10 add
+         C.11 subtract      D.1 place           E.1-E.2 attribute
+         E.3 shapeFacts     F.1 compare         F.2 sortBy (levels 1-2), compare (level 3)
+         G.1 pattern
+Math 1   A.1-A.2 sequence   A.3 place           A.4 compare      A.5 add, subtract
+         B.1 add            B.2 subtract        B.3 add          B.4 makeTen
+         B.5 missing        B.6 truth           B.7-B.8 add      B.9-B.10 add, subtract
+         C.1 time           C.2 order           C.3 graph        C.4 money
+         D.1 fraction       D.2 shapeFacts      E.1 sequence
+Math 2   A.1-A.2 place      A.3 compare         A.4 sequence     A.5 parity
+         A.6 line           B.1-B.2 add         B.3-B.4 subtract B.5 add
+         B.6 subtract       B.7 add, subtract   B.8 multiply     B.9 add, subtract
+         B.10 twoStep       C.1 time            C.2 money        C.3 measure
+         C.4 graph          D.1 shapeFacts      D.2 fraction
+ELA PK   A.1-A.2 letter     A.3 matchEqual      A.4 letter       A.5 sortBy
+         B.1-B.3 wordSet    C.1-C.2 wordSet
+ELA K    A.1 letter         A.2 matchEqual      B.1-B.4 wordSet  B.5 spell
+         B.6 wordSet        B.7 sortBy          C.1-C.2 wordSet  C.3 wordSet, spell
+         D.1 sentence       D.2 sortBy          D.3 wordSet      E.1 wordSet
+ELA 1    A.1 wordSet        A.2 wordSet, spell  A.3-A.4 wordSet  A.5 sortBy
+         B.1 wordSet, spell B.2 spell           B.3 wordSet      C.1 sortBy
+         C.2 wordSet        C.3 sentence        D.1 authored
+Reason.  A.1 oddOne         A.2 wordSet         A.3 analogy      A.4 matrix
+         A.5-A.6 transform  A.7 pattern         A.8 numberRule   A.9 wordSet
+         A.10 series        A.11 missing        A.12 fold        A.13 matrix
+         A.14 wordSet
+```
+
+A skill with two oracles uses the first for its lower levels and the second where its question type or its ask changes. The generator names the oracle on each question through `facts.oracle` when it has more than one.
 
 ### Content review sheet
 
@@ -718,19 +979,21 @@ Tests cannot judge whether a question reads well to a child. A review sheet lets
 
 ## 6. Skill Score
 
-The score runs 0 to 100, rises quickly at first, slows near the top, and needs five correct answers in a row to finish. That mirrors how IXL's score feels. The numbers are an original design.
+The score runs 0 to 100, rises quickly at first, slows near the top, and climbs the last ten points two at a time. That mirrors how IXL's score feels. The numbers are an original design.
 
 ### Stages
 
 | Score | Stage | Question level | Shown as |
 | --- | --- | --- | --- |
 | 0, never tried | Not started | 1 | Grey ring |
-| 0 to 39 | Getting started | 1 | Blue ring |
+| 0 to 39 | Getting started | 1 | Light blue ring |
 | 40 to 69 | Practising | 2 | Blue ring |
 | 70 to 79 | Practising | 3 | Blue ring |
 | 80 to 89 | Proficient | 3 | Green ring, ribbon |
 | 90 to 99 | Challenge zone | 4 | Gold ring, flame |
-| 100 | Mastered | 4 | Gold medal |
+| 100 | Mastered | 4 | Deep gold medal |
+
+There are six stages and six stage colours, defined once in `tokens.css`.
 
 ### Rules (src/engine/skillscore.ts)
 
@@ -749,9 +1012,11 @@ The score runs 0 to 100, rises quickly at first, slows near the top, and needs f
 2. **Challenge gate.** A gain from below 90 can never land above 90. The child enters the challenge zone at exactly 90.
 3. **Bounds.** The score never goes below 0 or above 100.
 4. **Streak.** A correct answer adds 1. A wrong answer resets it to 0.
-5. **Mastery.** Reaching 100 sets `masteredAt` and schedules the first review. After that, extra practice never lowers the score. Only a failed review does (section 7).
+5. **Mastery.** Reaching 100 sets `masteredAt` and schedules the first review. After that, extra practice never lowers the score. Only a failed review does (section 7). A failed review sets the score to 85, clears `masteredAt` and the review date, and puts the skill back in box 0. Awards already earned are kept.
 6. **After a miss.** The next single question is one level easier, minimum level 1.
 7. **Gentle mode** is on by default for pre-K and kindergarten profiles. A parent can switch it per child.
+8. **Level asked.** Take the stage's level, lower it by one after a miss (rule 6), then clamp it to the skill's `maxLevel`. Many pre-K skills have two or three levels.
+9. **Best score.** `bestScore` is the highest score the skill has reached. A milestone is celebrated only when a new score crosses it and `bestScore` was below it.
 
 A child who answers everything correctly from zero masters a skill in 15 questions. A typical run is 20 to 30.
 
@@ -773,7 +1038,7 @@ A child who answers everything correctly from zero masters a skill in 15 questio
 | 1, 0 | wrong | standard | 0, 0 |
 | 100 mastered, 2 | wrong | standard | 100, 0 |
 
-Also test: fifteen correct answers in a row from 0 reach exactly 100, and no sequence of 1,000 random answers ever leaves the 0 to 100 range.
+Also test: fifteen correct answers in a row from 0 reach exactly 100, and no sequence of 1,000 seeded random answers ever leaves the 0 to 100 range. A child who drops from 82 to 77 and climbs back past 80 crosses the 80 milestone once, not twice. A failed review of a mastered skill gives 85, no medal and box 0. A skill with `maxLevel` 2 is never asked at level 3.
 
 ## 7. Adaptive layer
 
@@ -785,21 +1050,27 @@ Every skill is open to every child at all times. Nothing is locked. Prerequisite
 
 ### Diagnostic (src/engine/diagnostic.ts)
 
-A ladder is a chain of skills that build on each other across grades. The ladders are listed at the end of this section. The diagnostic walks one ladder at a time.
+A ladder is an ordered list of skill ids that build on each other across grades. The ladders are listed at the end of this section. The diagnostic covers Math and Language Arts and walks one ladder at a time. Reasoning is not diagnosed.
 
-1. Start at the first skill of the child's grade on that ladder, or at the last placement if one exists.
-2. Ask 2 questions from the current skill at level 2.
-3. Both correct: mark the skill passed and move up 2 skills. Both wrong: mark it failed and move down 2. One of each: ask a third and let the majority decide, then move 1.
-4. Stop the ladder when the lowest failed skill sits directly above the highest passed skill, or after 12 questions (8 for pre-K), or when the walk hits either end of the ladder twice.
-5. Placement is the skill after the highest pass, or the first skill if nothing passed.
+**Which ladders are walked.** A ladder is walked when it has 4 or more skills and its first skill is at or below the child's grade. On every other ladder no questions are asked, and the placement is the ladder's first skill at or above the child's grade.
+
+**The walk.** The walk keeps the set of skills passed and the set failed. Positions are places on the ladder.
+
+1. **Start** at the last placement if there is one. Otherwise start at the first skill of the child's grade on that ladder. If the ladder has no skill in that grade, start at the first skill of the next grade up that has one, or at the top skill if there is none.
+2. **Test a skill** with 2 questions at level 2, clamped to the skill's `maxLevel`. Both correct is a pass. Both wrong is a fail. One of each: ask a third and let the majority decide.
+3. **Keep the record consistent.** If a fail lands at or below an earlier pass, the fail wins and the passes at or above it are dropped.
+4. **Pick the next skill.** With no fail yet, climb: 2 positions above the pass, then 4, then 8, stopping at the top skill. With no pass yet, go down the same way, stopping at the bottom skill. Once there is both a pass and a fail, test the middle untested skill between them, rounding down. A skill is never tested twice in one diagnostic.
+5. **Stop** when the lowest fail sits directly above the highest pass, when the top skill is passed, when the bottom skill is failed, or after 14 questions (8 for pre-K).
+6. **Placement** is the skill directly above the highest pass, the first skill if nothing passed, or none if the top skill passed.
 
 Effects:
 
-- Skills below the placement with a score under 80 are set to 80 and flagged `placedOut`. An existing higher score is never lowered.
-- The level estimate is the grade plus the fraction of that grade's ladder skills below the placement. Show it as "Kindergarten, 40% through".
+- Skills below the placement with a score under 80 are set to 80 and flagged `placedOut`, with `bestScore` raised to 80. An existing higher score is never lowered. Nothing is celebrated.
+- The estimate is the grade of the placement skill, plus the share of that grade's skills on the ladder that sit below the placement. Show it as "Kindergarten, 40% through" when the ladder has 3 or more skills in that grade. With fewer, show "Working on" and the skill's name. When the top skill passed, show "Finished this ladder" and no estimate.
 - A large "I don't know yet" button counts as wrong and keeps a child from guessing.
 - A child can stop at any point. Progress is saved after every answer, so a stopped diagnostic picks up where it left off.
-- Diagnostic answers are logged with kind `diagnostic` and never change a Skill Score directly.
+- Diagnostic answers are logged with kind `diagnostic`, with the same score before and after. They never change a Skill Score directly.
+- Results store skill ids, never positions, so adding skills to a ladder later cannot move a saved placement.
 
 ### Today's picks (src/engine/recommend.ts)
 
@@ -811,27 +1082,35 @@ Effects:
 | 2 | `plan` | The first unmastered skill in a plan assigned to this child |
 | 3 | `troubleSpot` | A flagged skill. If any prerequisite is under 70, pick that prerequisite instead |
 | 4 | `continue` | A skill scored 1 to 99 and practised in the last 14 days. Highest score first |
-| 5 | `next` | The placement skill of each strand, or the first unmastered skill of the child's grade |
+| 5 | `next` | The placement skill of each ladder. For a ladder with no placement yet, its first unmastered skill at or above the child's grade |
 
-Variety rules: the three picks cover at least two strands when possible, never repeat a skill, and never lead with the skill from the child's last session.
+Variety rules: the three picks cover at least two strands when possible, never repeat a skill, and never lead with the skill from the child's last session. A skill whose next question would be a `listen` question is left out while the device is muted or has no voice. Retired skills and catalogue rows with no generator yet are never picked.
 
 ### Trouble spots
 
-A skill is flagged when it has 5 or more attempts in the last 14 days, fewer than 6 of the last 10 answers correct, and a score under 80.
+A skill is flagged when all three are true:
+
+- It has 5 or more attempts in the last 14 days.
+- Under 60% of its recent answers are correct. "Recent" is the last 10 answers, or all of them when there are fewer than 10.
+- Its score is under 80.
+
+Five right out of five is 100%, so a child who is doing well is never flagged for having answered only a few.
 
 ### Spaced review (src/engine/review.ts)
 
 - Intervals by box: 2, 5, 12, 30, 60 days.
 - Mastering a skill puts it in box 0, due in 2 days.
-- A review asks 3 questions at level 3. A review session covers up to 4 due skills.
-- 3 correct: move up one box. 2 correct: stay in the box. Either way the next due date is today plus that box's interval.
-- 0 or 1 correct: the skill drops to a score of 85, loses its medal and returns to normal practice.
+- A skill is due once today's local day reaches the local day of `reviewDueAt`. The time of day does not matter, so a child who practised at 5 pm on Monday can review at 9 am on Wednesday.
+- A review asks 3 questions at level 3, clamped to the skill's `maxLevel`. A review session covers up to 4 due skills.
+- 3 correct: move up one box, staying in box 4 at the top. 2 correct: stay in the box. Either way the next due date is today plus that box's interval.
+- 0 or 1 correct: the skill drops to a score of 85, loses its medal, returns to box 0 with no due date, and goes back to normal practice.
+- Review answers are logged with kind `review`. Apart from that drop to 85, they never change the score.
 
 Every attempt is logged with a timestamp, so a research-grade scheduler such as FSRS, or Bayesian knowledge tracing, can replace these rules later without losing history.
 
 ### Ladders
 
-A ladder holds only skills that truly build on each other. Telling time and counting coins both sit in measurement, yet neither prepares a child for the other, so they are separate ladders. Skills run in the order listed.
+A ladder holds only skills that truly build on each other. Telling time and counting coins both sit in measurement, yet neither prepares a child for the other, so they are separate ladders. Skills run in the order listed. `src/content/ladders.ts` stores each ladder as a list of skill ids.
 
 | Subject | Ladder | Skills, in order |
 | --- | --- | --- |
@@ -856,17 +1135,22 @@ A ladder holds only skills that truly build on each other. Telling time and coun
 | Reasoning | figures | A.1 to A.7, A.12, A.13 |
 | Reasoning | words-numbers | A.9, A.14, A.8, A.10, A.11 |
 
-The diagnostic walks only ladders with 4 or more skills. On shorter ladders the child simply starts at their grade's skill.
+**Prerequisites come from ladders.** A skill's default prerequisite is the skill before it on its ladder, across grades. The first skill on a ladder has none. A catalogue row may add more. Prerequisites never come from a skill's position in its lettered category, because a category can mix unrelated ideas.
+
+**Reasoning ladders are an order, not a staircase.** Odd one out does not prepare a child for paper folding. The two reasoning ladders only set the order in which picks offer the skills, easiest style first. They are never walked by the diagnostic, and every child starts at the first skill of each.
+
+**Catalogue growth.** The code holds a `CATALOGUE_VERSION` number, raised in every content phase. On start, when it is higher than the device record's `catalogueVersion`, the app goes through each child's saved placements. Any skill that now sits below a placement on its ladder and has no saved state is placed out at 80. Then the device record is updated. A grade 1 skill added in a later phase therefore lands on the right side of every child's placement.
 
 ### Short sittings
 
 A full diagnostic is far too long for one go, so it runs as short sittings over several days.
 
 - One sitting covers one subject and ends at 12 questions for pre-K, 16 for kindergarten, 20 above that, or after 8 minutes, whichever comes first.
-- A sitting works through 2 or 3 ladders, then stops with a sticker.
-- The first visit opens sitting 1 in math. After that the home screen offers at most one "check-in" sitting a day until every ladder is placed.
+- A sitting works through the subject's ladders in the order of the table above. It may stop part-way through a ladder and pick it up next time. It ends with a sticker.
+- The first visit opens sitting 1 in math. After that the home screen offers at most one "check-in" sitting per local day, swapping between math and Language Arts, until every walked ladder is placed.
+- Expected length: a pre-K child has 5 math ladders and 3 Language Arts ladders to walk, about 5 sittings. A grade 2 child has up to 13, about 8 sittings.
 - Picks work from the first day. Ladders not yet placed start at the child's grade.
-- A parent can restart the diagnostic for one subject from settings.
+- A parent can restart the diagnostic for one subject from settings. That clears the saved progress and results for the subject. It does not touch Skill Scores.
 
 ## 8. Skill catalogue
 
@@ -878,33 +1162,40 @@ The launch catalogue holds 140 skills, organised the way IXL organises them: sub
 interface Skill {
   id: string;          // 'M-K-C4' = Math, Kindergarten, category C, skill 4
   subject: 'math' | 'ela' | 'reasoning';
-  grade: Grade;
+  grade: SkillGrade;   // 'PK', 'K', '1', '2', or 'all' for Reasoning
   category: string;    // 'C. Addition'
   code: string;        // 'C.4', shown to the child and parent
   name: string;        // 'Add to 10'
   strand: string;      // reporting group
-  ladder: string;      // diagnostic ladder, section 7
+  ladder: string;      // ladder id, section 7
   icon: Visual;        // picture tile for children who cannot read yet
-  speakName: string;   // short spoken name, e.g. 'Count to five'
+  speakName: Say;      // short spoken name, such as 'Count to five'
   version: number;     // starts at 1; bump when any seed's output changes
   itemTypes: ItemType[];
   maxLevel: 1 | 2 | 3 | 4;
-  prereqs: string[];   // skill ids
+  prereqs: string[];   // extra prerequisites, on top of the ladder default in section 7
+  retired?: true;      // hidden from children, history kept
   ccss?: string;       // Common Core code where one applies
   vaSol?: string;      // Virginia SOL code, filled in a later content pass
-  video?: { youtubeId: string; title: string; source: string };  // curated in Phase 12
+  video?: { youtubeId: string; title: string; source: string; seconds: number };  // curated in Phase 12
 }
 ```
+
+Ids: the subject letter is `M`, `E` or `R`. The grade part is `PK`, `K`, `1` or `2`. Reasoning has no grade part, so its ids look like `R-A4`.
 
 Standards note: Virginia does not use Common Core. It uses its own Standards of Learning, revised in 2023, with strands NS, CE, MG, PS and PFA. The build ships with Common Core codes because they are stable and well documented. Mapping each skill to a Virginia code from the VDOE documents is a content task after Phase 11.
 
 ### How to read the tables
 
-- **Type** is the question type from section 5. Two types means lower levels use the first and upper levels the second.
+- **Type** is the question type from section 5. A level marked "typed" uses `numberPad`. A level that names another type, such as "sort:" or "tiles:", uses that type. Every other level uses the first type listed.
 - **Rule** gives the levels in order, separated by slashes. A skill with fewer than four levels stops early.
-- Default prerequisite: each skill depends on the one before it in its category, unless the rule names another.
+- **Prerequisites** come from the ladder: each skill depends on the one before it on its ladder (section 7), not on the one before it in its category.
 - Strands: CC counting, OA operations, NBT place value, MD measurement and data, G geometry, PA patterns.
-- Spoken prompts are written out in words. The on-screen prompt is the same sentence.
+- Spoken prompts are written out in words. For a `look` question the on-screen prompt is the same sentence.
+- **Listen skills** hide the target on screen and give no spoken labels to options: Math pre-K A.5 and A.6. Language Arts pre-K A.1 and A.2, kindergarten C.1 to C.3, grade 1 A.3 (levels 1 and 2) and B.1.
+- **Read skills** never speak the words to be read: Language Arts kindergarten B.4, B.6, B.7, D.1, D.3 (level 2) and E.1. Grade 1 A.3 (level 3), A.4, A.5, B.3, C.1, C.2, C.3 and D.1.
+- **Fixed places.** True and False, the signs greater, less and equal, and the end marks use `fixedOrder`.
+- **Small levels.** A level with fewer than 8 different questions declares its `pool`. Examples: cube or sphere, the four coins, count to 3.
 
 ### Math, pre-K (16 skills)
 
@@ -923,7 +1214,7 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | C.1 | Find the shape | G | choice | Circle, square, triangle / adds rectangle, star, heart / mixed sizes and turns |
 | C.2 | Find the colour | G | choice | Red, blue, yellow / adds green, orange, purple / adds pink, brown, black |
 | C.3 | Big and small | MD | choice | Big or small, 2 options / biggest or smallest of 3 / tall, short, long |
-| D.1 | Which one is different | PA | choice | Two alike and one different by colour / by shape / by size |
+| D.1 | Which one is different | PA | choice | Two alike and one different by colour / by shape / by size. Uses `twins` |
 | D.2 | What comes next: AB patterns | PA | choice | AB by colour / by shape / by picture |
 | D.3 | Sort into two groups | PA | sort | 4 items by colour / by shape / 6 items by size |
 
@@ -931,7 +1222,7 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 
 | Code | Skill | Strand | Type | Rule by level |
 | --- | --- | --- | --- | --- |
-| A.1 | Count to 20 | CC | choice, numberPad | 6 to 12 in rows of five / 11 to 20 / type the count / scattered to 20, typed |
+| A.1 | Count to 20 | CC | choice, numberPad | 6 to 12 in rows of five / 11 to 20 / typed / scattered to 20, typed |
 | A.2 | Ten frames to 10 | CC | choice, numberPad | 1 to 5 / 6 to 10 / typed |
 | A.3 | Ten frames to 20 | NBT | choice, numberPad | 11 to 15 / 11 to 20 / typed |
 | A.4 | What comes next | CC | choice, numberPad | To 10 / to 20 / to 50 / to 100, typed |
@@ -944,7 +1235,7 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | C.1 | Add with pictures to 5 | OA | choice | Two picture groups, sums to 3 / to 5 |
 | C.2 | Add to 5 | OA | choice, numberPad | Equation, sums to 5 / with zero / typed |
 | C.3 | Add with pictures to 10 | OA | choice | Sums 4 to 7 / 6 to 10 |
-| C.4 | Add to 10 | OA | choice, numberPad | Sums to 7 / to 10 / typed / missing sum on the left |
+| C.4 | Add to 10 | OA | choice, numberPad | Sums to 7 / to 10 / typed / missing sum on the left, typed |
 | C.5 | Subtract with pictures to 5 | OA | choice | Crossed-out pictures, start 2 to 3 / start 4 to 5 |
 | C.6 | Subtract to 5 | OA | choice, numberPad | Equation within 5 / with zero / typed |
 | C.7 | Subtract to 10 | OA | choice, numberPad | Within 7 / within 10 / typed |
@@ -957,16 +1248,16 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | E.2 | Name solid shapes | G | choice | Cube and sphere / adds cone and cylinder / flat or solid |
 | E.3 | Sides and corners | G | choice, numberPad | Count sides of triangle, square / adds rectangle, hexagon / count corners, typed |
 | F.1 | Compare length and height | MD | choice | Longer of 2 bars / shorter or taller of 2 / longest or shortest of 3 |
-| F.2 | Sort and count | MD | sort, choice | Sort 5 items into 2 groups / 6 items / then "which group has more" |
+| F.2 | Sort and count | MD | sort, choice | Sort 5 items into 2 groups / sort 6 items / choice: a picture already sorted, which group has more |
 | G.1 | Patterns: AAB, ABB, ABC | PA | choice | ABB or AAB / ABC / blank in the middle |
 
 ### Math, grade 1 (22 skills)
 
 | Code | Skill | Strand | Type | Rule by level |
 | --- | --- | --- | --- | --- |
-| A.1 | Count to 120 | CC | choice, numberPad | Next number to 50 / to 100 / across 100, typed / before and after to 120 |
+| A.1 | Count to 120 | CC | choice, numberPad | Next number to 50 / to 100 / across 100, typed / before and after to 120, typed |
 | A.2 | Skip count by 2s, 5s, 10s | CC | choice, numberPad | By 10s / by 5s / by 2s / missing number anywhere, typed |
-| A.3 | Tens and ones | NBT | choice, numberPad | Blocks to numeral, to 30 / to 99 / typed / "how many tens in 47" |
+| A.3 | Tens and ones | NBT | choice, numberPad | Blocks to numeral, to 30 / to 99 / typed / "how many tens in 47", typed |
 | A.4 | Compare two-digit numbers | NBT | choice | Greater of two, different tens / same tens / pick the sign: greater, less, equal |
 | A.5 | Ten more, ten less | NBT | choice, numberPad | Ten more / ten less / typed, either |
 | B.1 | Add within 20 | OA | choice, numberPad | Sums to 12 / to 20 / typed |
@@ -984,18 +1275,18 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | C.3 | Picture graphs | MD | choice, numberPad | Read one category / most or least / how many more, typed |
 | C.4 | Coins | MD | choice | Name penny, nickel, dime, quarter / value of one coin / which coin is worth more |
 | D.1 | Halves and fourths | G | choice | Equal or not equal parts / pick the shape showing halves / halves or fourths |
-| D.2 | Shape attributes | G | choice, multiSelect | Pick the shape with 4 sides / pick all with 3 corners / closed or open shapes |
+| D.2 | Shape attributes | G | choice, multiSelect | Pick the shape with 4 sides / multiSelect: pick all with 3 corners / choice: closed or open shape |
 | E.1 | Number patterns | PA | choice, numberPad | Plus 1 and plus 2 rows / plus 5, plus 10 / minus patterns, typed |
 
 ### Math, grade 2 (22 skills)
 
 | Code | Skill | Strand | Type | Rule by level |
 | --- | --- | --- | --- | --- |
-| A.1 | Hundreds, tens, ones | NBT | choice, numberPad | Blocks to numeral to 199 / to 999 / typed / value of a digit |
+| A.1 | Hundreds, tens, ones | NBT | choice, numberPad | Blocks to numeral to 199 / to 999 / typed / choice: value of a digit |
 | A.2 | Expanded form | NBT | choice, numberPad | 300 plus 40 plus 2 to numeral / numeral to expanded / with zeros, typed |
 | A.3 | Compare three-digit numbers | NBT | choice | Different hundreds / same hundreds / pick the sign |
 | A.4 | Skip count by 5s, 10s, 100s | NBT | choice, numberPad | By 100s / by 10s from any number / by 5s, typed |
-| A.5 | Even and odd | OA | choice, sort | Pairs of objects to 10 / numerals to 20 / sort numerals to 100 |
+| A.5 | Even and odd | OA | choice, sort | Pairs of objects to 10 / numerals to 20 / sort: numerals to 100 |
 | A.6 | Number lines to 100 | NBT | choice, numberPad | Marked point, steps of 10 / steps of 5 / steps of 1, typed |
 | B.1 | Add within 100, no regrouping | NBT | choice, numberPad | Two-digit plus one-digit / two-digit plus two-digit / typed |
 | B.2 | Add within 100, regrouping | NBT | choice, numberPad | Plus one-digit / plus two-digit / typed |
@@ -1011,7 +1302,7 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | C.2 | Count coins | MD | choice, numberPad | Same coins / two kinds / three kinds, typed in cents |
 | C.3 | Measure with a ruler | MD | choice, numberPad | Whole units from zero / typed / object not starting at zero |
 | C.4 | Bar graphs | MD | choice, numberPad | Read a bar / most and least / how many more, typed |
-| D.1 | Name shapes by sides | G | choice | Triangle, quadrilateral / pentagon, hexagon / pick by number of angles |
+| D.1 | Name shapes by sides | G | choice | Triangle or four-sided shape (square, rectangle, trapezoid, diamond) / pentagon, hexagon / pick by number of corners |
 | D.2 | Halves, thirds, fourths | G | choice | Name the fraction shown / pick the shape showing thirds / equal shares of different shapes |
 
 ### Language Arts, pre-K (10 skills)
@@ -1024,7 +1315,7 @@ Strands: LT letters, PH sounds and phonics, WD words, GR grammar, RD reading.
 | A.2 | Find the lowercase letter | LT | choice | 2 options / 3 options / look-alikes: b d p q |
 | A.3 | Match uppercase and lowercase | LT | match | 3 pairs, different shapes (A a, B b) / 3 pairs with look-alikes |
 | A.4 | Find the same letter | LT | choice | See a letter, tap its twin: 2 options / 3 options / look-alikes |
-| A.5 | Letter or number | LT | sort | 4 items / 6 items |
+| A.5 | Letter or number | LT | sort | 4 items / 6 items. Never the look-alikes listed under Distractor rules |
 | B.1 | Starts with the same sound | PH | choice | "Which one starts like ball?" 2 spoken pictures / 3 pictures |
 | B.2 | Rhymes | PH | choice | "Which one rhymes with cat?" 2 spoken pictures / 3 pictures |
 | B.3 | Count syllables | PH | choice | Spoken word, 1 or 2 claps / 1 to 3 claps |
@@ -1039,54 +1330,54 @@ Strands: LT letters, PH sounds and phonics, WD words, GR grammar, RD reading.
 | A.2 | Uppercase and lowercase, all letters | LT | match | 4 pairs / 4 pairs with look-alikes |
 | B.1 | First letter of a word | PH | choice | Picture and spoken word, pick its first letter: 3 options / look-alikes |
 | B.2 | Last letter of a word | PH | choice | Same, last letter, short words only |
-| B.3 | Middle vowel | PH | choice | Picture, spoken word and c\_t: pick from 3 vowels / all 5 vowels |
+| B.3 | Middle vowel | PH | choice | Picture, spoken word, and the word with its vowel missing. Words with a, i or o, 3 options / all short vowels, 3 options that include the closest sound (e with i, o with u) |
 | B.4 | Read a word, pick the picture | PH | choice | Short a words / all short vowels / words that differ by one letter |
 | B.5 | Spell a word | PH | tiles | Picture and spoken word: 3 tiles in order plus 2 extra / plus 4 extra |
 | B.6 | Rhyming words | PH | choice | Written words: which rhymes with cat / pick the one that does not rhyme |
 | B.7 | Word families | PH | sort | Sort 4 words into two families / 6 words |
 | C.1 | Sight words, set 1 | WD | choice | Hear a word, tap it: 3 options very different / similar length / same first letter |
 | C.2 | Sight words, set 2 | WD | choice | Same rule as C.1 |
-| C.3 | Sight words, set 3 | WD | choice, tiles | Same as C.1 / spell it with tiles |
-| D.1 | Capitals and periods | GR | choice | Pick the correct sentence: capital / period / both |
+| C.3 | Sight words, set 3 | WD | choice, tiles | Levels 1 to 3 as C.1 / tiles: spell it |
+| D.1 | Capitals and periods | GR | choice | Pick the correctly written sentence, built from the telling sentences in section 9: capital / period / both |
 | D.2 | Naming words | GR | sort | Sort pictures with words into people, animals, things: 4 items / 6 items |
-| D.3 | One and more than one | GR | choice | Picture of one or many, pick cat or cats / written only |
-| E.1 | Read a sentence | RD | choice | Short sentence, pick the matching picture: 2 options / 3 options |
+| D.3 | One and more than one | GR | choice | Picture of one or many, pick cat or cats / written only. Skips words whose plural looks the same, such as fish |
+| E.1 | Read a sentence | RD | choice | A sentence from the sentence-picture list in section 9, pick the matching picture: 2 options / 3 options |
 
 ### Language Arts, grade 1 (12 skills)
 
 | Code | Skill | Strand | Type | Rule by level |
 | --- | --- | --- | --- | --- |
-| A.1 | Digraphs: sh, ch, th, wh | PH | choice | Picture and word with a blank, pick the digraph: at the start / at the end |
+| A.1 | Digraphs: sh, ch, th, wh | PH | choice | Picture and word with a blank, pick the digraph: at the start / at the end (sh, ch and th only) |
 | A.2 | Consonant blends | PH | choice, tiles | Pick the starting blend / pick the ending blend / spell with tiles |
-| A.3 | Silent e | PH | choice | cap or cape for a picture / pick the long-vowel word / read and match |
+| A.3 | Silent e | PH | choice | Hear a word, pick cap or cape / hear a word, pick it from 3 / see a picture, pick its word |
 | A.4 | Vowel teams | PH | choice | ai, ee, oa words to pictures / pick the missing team |
 | A.5 | Short or long vowel | PH | sort | Sort 4 words / 6 words |
 | B.1 | Sight words, set 4 | WD | choice, tiles | Hear and tap / spell with tiles |
-| B.2 | Compound words | WD | match | Match 3 pairs of halves / 4 pairs |
+| B.2 | Compound words | WD | tiles | Picture and spoken word, build it from 2 word tiles: 2 extra tiles / 4 extra tiles |
 | B.3 | Opposites and same meanings | WD | choice | Opposites / same meaning / mixed |
 | C.1 | Naming and action words | GR | sort | Sort 4 words into nouns and verbs / 6 words |
-| C.2 | Describing words | GR | choice | Pick the describing word in a short sentence / pick one that fits a picture |
+| C.2 | Describing words | GR | choice | Pick the describing word in a sentence from section 9 / pick the describing word that fits a picture |
 | C.3 | End marks | GR | choice | Period or question mark / adds exclamation mark |
 | D.1 | Read a short story | RD | choice | Authored bank: 3-sentence story, who or what question / why question |
 
 ### Reasoning (14 skills, all grades)
 
-These follow the figure-based style of gifted-screening tests. All share the strand RS and use the `shape`, `sequence` and `matrix` visuals.
+These follow the figure-based style of gifted-screening tests. All share the strand RS and use the `shape`, `sequence` and `matrix` visuals. Reasoning skills have grade `all`: one page with no grade tabs, and one awards board.
 
 | Code | Skill | Type | Rule by level |
 | --- | --- | --- | --- |
-| A.1 | Odd one out | choice | 3 pictures, one from another group / 4 pictures / 4 shapes differing by one attribute |
+| A.1 | Odd one out | choice | 3 pictures, one from another group / 3 pictures from closer groups / 4 shapes, three the same and one differing by one attribute (`twins`) |
 | A.2 | Which belongs | choice | Two examples from a group, pick a third / closer distractors |
 | A.3 | Figure analogies | choice | Big red circle is to small red circle as big blue square is to blank: one attribute changes / two change |
 | A.4 | Figure matrices | choice | 2 by 2 grid, rows share shape and columns share colour / size and count / rotation |
-| A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn |
-| A.6 | Mirror images | choice | Pick the flip of a simple shape / of an L or flag shape |
+| A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn. Colour and starting turn vary |
+| A.6 | Mirror images | choice | Pick the mirror of a flag / of an L shape / the wrong options are turned copies |
 | A.7 | Two-rule patterns | choice | Colour and size alternate on different beats / colour and shape |
-| A.8 | Number analogies | choice, numberPad | 2 is to 4 as 3 is to blank: plus n / doubles / typed |
+| A.8 | Number analogies | choice, numberPad | Two example pairs, then a third to finish: plus n / double / typed |
 
 ### Adding skills later
 
-Grades 3 to 5 and new subjects need no engine changes. Each new skill is one catalogue row plus one generator file, and the generator suite tests it automatically. Add them in batches of about 20 with the Phase 11 gate.
+Grades 3 to 5 and new subjects need no engine changes. Each new skill is one catalogue row plus one generator file, and the generator suite tests it automatically. Add them in batches of 10 to 16 with the content gate, and raise `CATALOGUE_VERSION` each time.
 
 ### More reasoning skills
 
@@ -1096,8 +1387,8 @@ Six more skills round out the reasoning set to cover picture, number and spatial
 | --- | --- | --- | --- |
 | A.9 | Picture analogies | choice | "Sock is to foot as glove is to blank": wrong options from other relations / from the same relation |
 | A.10 | Number series | choice, numberPad | Plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed |
-| A.11 | Number puzzles | choice, numberPad | Balance scale: 3 plus blank matches 5 / both sides are sums / typed |
-| A.12 | Paper folding | choice | One fold, hole in a corner / hole near the fold / hole on the fold line |
+| A.11 | Number puzzles | choice, numberPad | Balance scale: 3 and blank balance 5 / both pans hold sums / typed |
+| A.12 | Paper folding | choice | One fold, one hole at an outer corner / one hole next to the fold / two holes |
 | A.13 | Pattern completion | choice | 3 by 3 striped tile with a missing corner / checkerboard with a missing middle / two attributes |
 | A.14 | Picture riddles | choice | Spoken riddle with 2 pictures / 3 pictures |
 
@@ -1109,7 +1400,7 @@ Every generator uses its family's wording. Text in braces is filled from `facts`
 | --- | --- | --- | --- |
 | Count objects | How many {things} are there? | Let's count. {1, 2, ... n}. There are {n} {things}. | Touch each one once and say one number. |
 | Tap that many | Tap {n} {things}. | Count as you tap. {1, 2, ... n}. Stop at {n}. | Stop when you say the number. |
-| Find the number | Find the number {n}. | This is {n}. | Every number has its own shape. |
+| Find the number | Spoken: Find the number {n}. On screen: Find the number. | This is {n}. | Every number has its own shape. |
 | More or fewer | Which group has more? | This group has {a}. This group has {b}. {a} is more than {b}. | More means a bigger count. |
 | Find the shape | Find the {shape}. | This is a {shape}. {shape fact}. | Count the sides and corners. |
 | Find the colour | Find the {colour} one. | This one is {colour}. | Colours have names. |
@@ -1120,22 +1411,22 @@ Every generator uses its family's wording. Text in braces is filled from `facts`
 | Ten frames | How many counters? | A full row is 5. {5 and k more} makes {n}. | A full frame is 10. |
 | Compare numbers | Which number is greater? | {a} comes after {b} when we count. {a} is greater. | Later numbers are bigger. |
 | Add with pictures | How many in all? | {a} and {b} more. Count them all. {sum}. | Adding puts groups together. |
-| Add | {a} plus {b} equals what? | Start at {bigger}. Count on {smaller} more. {sum}. | Start with the bigger number. |
-| Subtract | {a} take away {b} equals what? | Start with {a}. Take away {b}. {difference} are left. | Subtracting takes some away. |
+| Add | {a} plus {b} equals what? | Within 20: Start at {bigger}. Count on {smaller} more. {sum}. Larger numbers use the place-value rows in the next table. | Start with the bigger number. |
+| Subtract | {a} take away {b} equals what? Grade 1 and up say "minus". | Within 20: Start with {a}. Take away {b}. {difference} are left. Larger numbers use the place-value rows in the next table. | Subtracting takes some away. |
 | Make 10 | How many more to make 10? | {a} boxes are full. {b} are empty. {a} and {b} make 10. | Know your pairs that make 10. |
 | Break apart | {n} is {a} and what? | {a} and {b} make {n}. | A number can split in many ways. |
 | Teen numbers | 10 and {k} more is what number? | A full ten and {k} more is {10+k}. | Teen numbers are ten and some more. |
 | Stories | The story from section 9. | {a} {plus or take away} {b} is {answer}. | Listen for joining or taking away. |
 | Tens and ones | What number is this? | {t} tens is {10t}. {o} more ones makes {n}. | Count tens first, then ones. |
-| Time | What time is it? | The short hand points to {h}. The long hand points to {12 or 6}. It is {time}. | Short hand shows the hour. |
-| Coins | Which coin is this? | This is a {coin}. It is worth {v} cents. | Each coin has its own size and value. |
+| Time | What time is it? | On the hour: The long hand points to 12. The short hand points to {h}. It is {h} o'clock. Half past: The long hand points to 6. The short hand is halfway between {h} and {h+1}. It is half past {h}. Other times: The short hand is just past {h}. The long hand points to {k}. Count by fives to {m}. It is {h} {m}. | Short hand shows the hour. |
+| Coins | Which coin is this? | This is a {coin}. It is worth {v} cents. Look at its size, its colour and its picture. | Each coin has its own size and value. |
 | Graphs | How many chose {x}? | Find {x}. Count its row. {n}. | Read one row at a time. |
 | Equal shares | Which shape shows {halves}? | {halves} are {k} equal parts. | Equal parts are the same size. |
-| Find the letter | Find the letter {L}. | This is the letter {L}. | Every letter has a name. |
+| Find the letter | Spoken: Find the letter {L}. On screen: Find the letter. | This is the letter {L}. | Every letter has a name. |
 | First sound | Which one starts like {word}? | {word} and {answer} start with the same sound. | Listen to the very start. |
 | Rhymes | Which one rhymes with {word}? | {word} and {answer} end the same way. They rhyme. | Rhymes sound the same at the end. |
-| Syllables | How many claps in {word}? | {syl, la, ble}. {n} claps. | Each clap has one vowel sound. |
-| Sight words | Find the word {w}. | This word is {w}. | Some words we know by sight. |
+| Syllables | How many claps in {word}? | The whole word is spoken. The screen shows it split into its parts, with one clap sound for each part. {n} claps. | Each clap has one vowel sound. |
+| Sight words | Spoken: Find the word {w}. On screen: Find the word. | This word is {w}. | Some words we know by sight. |
 | Read a word | Which picture matches this word? | The letters {c, a, t} spell {cat}. | Read left to right. |
 | Spell a word | Spell {word}. | {word} is spelled {c, a, t}. | Say it slowly and listen. |
 | Sorting | Put each one in its group. | {item} is {group}, for each item. | Things in a group share something. |
@@ -1149,6 +1440,64 @@ Every generator uses its family's wording. Text in braces is filled from `facts`
 Shape facts: a circle is round with no corners. A square has 4 equal sides. A triangle has 3 sides. A rectangle has 2 long sides and 2 short sides. A hexagon has 6 sides. A star has 5 points. An oval is a stretched circle. A diamond is a square standing on a corner.
 
 Praise phrases, chosen at random: Great job. You got it. Nice work. That's right. Well done.
+
+### More templates
+
+These cover every family the first table leaves out. Solid facts: a cube has 6 square faces. A sphere is round like a ball. A cone has a point and a round base. A cylinder has two round ends.
+
+| Family | Prompt | Explanation | Remember |
+| --- | --- | --- | --- |
+| Put numbers in order | Put the numbers in order, smallest first. | {a} is the smallest. Then {b}. Then {c}. | Smaller numbers come first when we count. |
+| Order by length | Put them in order, shortest first. | This one is the shortest. This one is the longest. | Line up one end, then look at the other. |
+| Skip counting | What comes next? | We are counting by {step}s. {..., ...}. Next is {answer}. | Add the same amount each time. |
+| Missing number in a row | Which number is missing? | Count along the row. The missing number is {answer}. | Count on from a number you know. |
+| Missing part | {a} plus what equals {total}? | Start at {a}. Count up to {total}. That is {answer} more. | Count up to find the missing part. |
+| True or false | Is this true? | The left side is {x}. The right side is {y}. They are {the same or not the same}. | Both sides must be the same amount. |
+| Doubles | {a} plus {a} equals what? | Two groups of {a} make {sum}. | Doubles are two of the same. |
+| Make ten to add | {a} plus {b}. Make a ten first. Which one is the same? | Move {k} from the {b} to the {a}. Now it is 10 and {r}. | Fill the ten first. |
+| Hundreds, tens, ones | What number is this? | {h} hundreds is {100h}. {t} tens is {10t}. {o} ones. That makes {n}. | Hundreds, then tens, then ones. |
+| Expanded form | {300} plus {40} plus {2} is what number? | {h} hundreds, {t} tens and {o} ones is {n}. | Each digit has its own place. |
+| Compare with signs | Which sign goes between {a} and {b}? | Look at the biggest place first. {a} has more {hundreds or tens}. {a} is greater than {b}. | Compare the biggest place first. |
+| Add, no regrouping | {a} plus {b} equals what? | Add the ones: {x} plus {y} is {z}. Add the tens. The answer is {sum}. | Ones with ones, tens with tens. |
+| Add, regrouping | {a} plus {b} equals what? | Add the ones: {x} plus {y} is {z}. That is 1 ten and {r} ones. Add the tens and the extra ten. {sum}. | Ten ones make one ten. |
+| Subtract, no regrouping | {a} minus {b} equals what? | Take away the ones. Take away the tens. {difference}. | Ones from ones, tens from tens. |
+| Subtract, regrouping | {a} minus {b} equals what? | There are not enough ones. Trade 1 ten for 10 ones. Take away the ones, then the tens. {difference}. | Trade a ten when you need more ones. |
+| Ten or a hundred more or less | What is {10} more than {n}? | Only the {tens} digit changes. {answer}. | Ten more changes the tens. |
+| Even and odd | Is {n} even or odd? | Make pairs. {Every one has a partner, or one is left over}. {n} is {even or odd}. | Even numbers make pairs with none left over. |
+| Number line | Which number is at the dot? | The marks go up by {step}. Count along. The dot is at {answer}. | Find the size of each jump first. |
+| Arrays | How many in all? | There are {rows} rows of {cols}. {cols} plus {cols} is {total}. | Rows of the same size can be added. |
+| Two-step stories | The story from section 9. | First, {a} {plus or minus} {b} is {x}. Then, {x} {plus or minus} {c} is {answer}. | Do one step at a time. |
+| Ruler | How long is the {object}? | It starts at {s} and ends at {e}. Count the spaces between: {n}. | Count the spaces, not the marks. |
+| How many more | How many more chose {x} than {y}? | {x} has {a}. {y} has {b}. {a} minus {b} is {n}. | "How many more" means subtract. |
+| Count coins | How much money is this? | Start with the biggest coin and count on. {total} cents. | Start with the coin worth the most. |
+| Sides and corners | How many sides does this shape have? | Count each side once. {n}. | Trace round the shape and count. |
+| Name shapes by sides | Which shape is a {name}? | A {name} has {n} sides. | The number of sides gives the name. |
+| Solid shapes | Find the {solid}. | This is a {solid}. {solid fact}. | Solid shapes are not flat. |
+| Name a fraction | What part is shaded? | The shape has {k} equal parts. {s} is shaded. That is {name}. | Count the equal parts. |
+| ABC order | Which letter comes next? | {A, B, C}. After {B} comes {C}. | Sing the alphabet to check. |
+| Match letters | Match each big letter to its small letter. | Big {A} goes with small {a}, for each pair. | Every letter has a big shape and a small shape. |
+| First, last or middle letter | Which letter does {word} start with? | {word} starts with the letter {L}. | Say the word slowly and listen. |
+| Word families | Put each word in its family. | {cat} and {hat} both end in {at}. | Words in a family end the same way. |
+| Digraphs and blends | Which letters are missing? | {ship} starts with {sh}. | Two letters can work together. |
+| Silent e | Spoken: Find the word {cape}. On screen: Find the word. | The e at the end makes the {a} say its name. | An e at the end can change the vowel. |
+| Vowel teams | Which letters are missing? | {rain} has {ai} in the middle. | Two vowels can make one sound. |
+| Short or long vowel | Put each word in its group. | {cap} has a short vowel. {cape} has a long vowel. | A long vowel says its name. |
+| Compound words | Build the word {sunflower}. | {sun} and {flower} make {sunflower}. | Two small words can make one big word. |
+| Capitals and periods | Which sentence is written correctly? | A sentence starts with a capital letter and ends with a period. | Capital at the start, period at the end. |
+| End marks | Which mark goes at the end? | A telling sentence ends with a period. An asking sentence ends with a question mark. A shout ends with an exclamation mark. Use the line that fits. | Asking sentences end with a question mark. |
+| One and more than one | Which word matches the picture? | There {is one or are more than one}. We say {word}. | Add s for more than one. |
+| Naming, action and describing words | Put each word in its group. | {dog} names something. {run} is something you do. | Naming words are people, animals and things. |
+| Read a sentence | Which picture matches the sentence? | The sentence says {key word}. | Read every word. |
+| Read a story | The question for that story. | The story says: {the sentence that holds the answer}. | Look back at the story. |
+| Odd one out | Which one does not belong? | These are all {group}. This one is not. | Find what the others share. |
+| Which belongs | Which one belongs with these? | These are both {group}. So is {answer}. | Find what they share. |
+| Two-rule patterns | What comes next? | The colour goes {rule one}. The size goes {rule two}. Next is {answer}. | Follow one rule at a time. |
+| Number analogies | Look at the pairs. What number finishes the last pair? | Each pair {adds n or doubles}. {base} becomes {answer}. | Find the rule that fits every pair. |
+| Number series | What comes next? | The numbers go {up by n}. Next is {answer}. | Find the jump. |
+| Number puzzles | What number makes the scale balance? | This side is {total}. The other side needs {answer} more. | Both sides must weigh the same. |
+| Picture analogies | {Sock} goes with {foot}. {Glove} goes with what? | A {sock} goes on a {foot}. A {glove} goes on a {hand}. | Find how the first two go together. |
+| Pattern completion | Which piece finishes the picture? | Follow the lines and colours into the gap. | The piece must match every edge. |
+| Picture riddles | The riddle from section 9. | {answer} is the one that {riddle fact}. | Listen to every clue. |
 
 ### Lesson beats
 
@@ -1182,12 +1531,30 @@ R-A4 Figure matrices, level 1          facts { rowAttrs: [circle, square], colAt
   explanation  The top row is circles. The bottom row is squares. The first column is
                red. The second column is blue. The box needs a blue square.
 
-R-A12 Paper folding, level 1           facts { fold: vertical, hole: { col: 0, row: 0 } }
-  stimulus     foldPunch folded, left half over right, hole top left
+R-A12 Paper folding, level 1           facts { fold: vertical, holes: [{ col: 0, row: 0 }] }
+  stimulus     foldPunch folded: the right half lies over the left, one hole at the top left
   options      unfolded with holes at (0,0) and (3,0)   <- answer
                unfolded with one hole at (0,0)
                unfolded with holes at (0,0) and (0,3)
-  note         the unfolded state takes a list of holes
+  note         a vertical fold copies each hole to column 3 minus its column
+
+R-A8 Number analogies, level 1         facts { examples: [[2, 5], [4, 7]], base: 6 }
+  prompt       Look at the pairs. What number finishes the last pair?
+  stimulus     2 and 5, 4 and 7, 6 and blank
+  options      8, 9, 12                 answer 9
+  note         one pair such as [2, 4] is never enough: it fits both plus 2 and double
+
+E-PK-A1 Find the uppercase letter, level 1   mode listen   facts { target: B }
+  prompt.text  Find the letter.
+  prompt.speak "Find the letter", then the letter part B
+  options      B, M                     no spoken labels
+  explanation  This is the letter B.
+
+M-1-C1 Tell time, level 2              facts { hour: 3, minute: 30 }
+  stimulus     clock, short hand halfway between 3 and 4, long hand on 6
+  options      half past 3, half past 4, 3 o'clock      answer half past 3
+  explanation  The long hand points to 6. The short hand is halfway between 3 and 4.
+               It is half past 3.
 
 E-PK-C2 Opposites, level 2             facts { target: hot, relation: opposite }
   prompt       Which one is the opposite of hot?
@@ -1198,7 +1565,7 @@ E-PK-C2 Opposites, level 2             facts { target: hot, relation: opposite }
 
 ### Common Core codes by skill
 
-These are from memory and are the reviewer's starting point, not the final word. The Virginia mapping pass checks them against the Common Standards Project data. Pre-K and reasoning skills carry no code.
+These are from memory and are the reviewer's starting point, not the final word. The Virginia mapping pass checks them against the Common Standards Project data. Pre-K and reasoning skills carry no code. Three grade 1 skills carry a grade 2 code, because Common Core places the idea a year later: skip counting (A.2), coins (C.4) and compound words (Language Arts B.2). Common Core has no code at all for counting by 2s.
 
 ```text
 Math K   A.1 K.CC.B.5   A.2 K.CC.B.5   A.3 K.NBT.A.1  A.4 K.CC.A.2   A.5 K.CC.A.2
@@ -1226,19 +1593,22 @@ ELA 1    A.1 RF.1.3.a   A.2 RF.1.2.b   A.3 RF.1.3.c   A.4 RF.1.3.c   A.5 RF.1.2.
 
 ### Reading stories (Language Arts grade 1, D.1)
 
-Claude Code writes 20 original stories into `src/content/banks/stories.json` in the Language Arts grade 1 phase.
+Claude Code writes 20 original stories into `src/content/banks/readingStories.json` in the Language Arts grade 1 phase.
 
 - Three sentences each, 5 to 8 words a sentence.
-- Words come only from the sight word sets, the short-vowel list and the grade 1 phonics lists in section 9, the word family list, and the six story names. The endings s, es, ed and ing are allowed. A test enforces this for stories, questions and options.
+- Story words come only from the sight word sets, the short-vowel list, the grade 1 phonics lists and the word family list in section 9, plus the six story names. The endings s, es, ed and ing are allowed.
+- Questions and options may also use these question words: why, does, because. The question is read aloud, so a child does not have to decode them.
+- A test enforces both word rules for every story, question and option.
 - Two questions a story: one who or what, one why or how. Three written options each.
+- The answer to every question must be stated in the story. A reader should never have to guess.
 - The story is not read aloud. The question is.
 
 ```text
 Sam has a red hat. The hat is too big. Sam gives the hat to Max.
   Who gets the hat?  Max / Sam / Mia        Why does Sam give it away?  It is too big / It is red / It is wet
 
-Mia can see a frog. The frog jumps in a pot. Now Mia has a wet hat.
-  What jumps?  the frog / the dog / Mia     How did the hat get wet?  The frog jumped in / Mia ran / It was hot
+Mia can see a frog. The frog jumps on her hat. Now Mia has a wet hat.
+  What jumps?  the frog / the dog / Mia     How did the hat get wet?  The frog jumped on it / Mia ran / It was hot
 ```
 
 ## 9. Content data
@@ -1251,6 +1621,8 @@ Generators draw words and pictures from these fixed lists, so Claude Code never 
 - Use only the emoji listed here. All are from 2018 or earlier, so they draw on older tablets.
 - A picture a child must name always has its word spoken. Never rely on a child guessing what an emoji is called.
 - Shapes, coins, clocks, blocks and frames are drawn as SVG, never emoji.
+- One picture has one name. Where two lists once named the same picture differently, the lists below have been changed so they agree. The one exception is a picture that stands for a quality in an opposites or describing question: the fire picture is "hot" and the turtle is "slow" there.
+- Letters are drawn in the system rounded font. Its lowercase a and g may not match the shapes a child is taught to write. That is a known limit, listed in section 14.
 
 ### Counting objects (countables.ts)
 
@@ -1263,6 +1635,8 @@ Generators draw words and pictures from these fixed lists, so Claude Code never 
 ['🐝','bee','bees'], ['🚀','rocket','rockets'], ['🐢','turtle','turtles'],
 ['🍌','banana','bananas']
 ```
+
+Fish has the same word for one and many, so plural questions skip it. Story problems use only things that can sit on a table or in a box: apples, cookies, balls, strawberries, bananas, cars, balloons and flowers.
 
 ### Colours (colors.ts)
 
@@ -1282,7 +1656,7 @@ Never put red and green, or blue and purple, as the only two options in a colour
 ['dog','d','d','🐶'], ['duck','d','d','🦆'], ['door','d','d','🚪'],
 ['egg','e','e','🥚'], ['fish','f','f','🐟'], ['fox','f','f','🦊'], ['fire','f','f','🔥'],
 ['goat','g','g','🐐'], ['hat','h','h','🎩'], ['horse','h','h','🐴'], ['house','h','h','🏠'],
-['jet','j','j','✈️'], ['key','k','k','🔑'], ['lion','l','l','🦁'], ['lemon','l','l','🍋'],
+['jacket','j','j','🧥'], ['key','k','k','🔑'], ['lion','l','l','🦁'], ['lemon','l','l','🍋'],
 ['moon','m','m','🌙'], ['mouse','m','m','🐭'], ['milk','m','m','🥛'],
 ['nose','n','n','👃'], ['octopus','o','o','🐙'],
 ['pig','p','p','🐷'], ['pizza','p','p','🍕'], ['pear','p','p','🍐'],
@@ -1315,11 +1689,13 @@ Options in one question must come from different sound groups. Cat and key share
 
 ### Syllables (syllables.ts)
 
+Each word is stored with its parts, because the explanation shows the split on screen. The voice says only the whole word. It cannot say a lone syllable reliably.
+
 ```ts
 1: cat, dog, sun, fish, star, moon, frog, cake
-2: apple, rabbit, turtle, pizza, monkey, rocket, lemon, tiger, rainbow
-3: banana 🍌, octopus 🐙, umbrella ☂️, elephant 🐘, butterfly 🦋,
-   strawberry 🍓, dinosaur 🦕, tomato 🍅
+2: ap-ple, rab-bit, tur-tle, piz-za, mon-key, rock-et, lem-on, ti-ger, rain-bow
+3: ba-na-na 🍌, oc-to-pus 🐙, um-brel-la ☂️, el-e-phant 🐘, but-ter-fly 🦋,
+   straw-ber-ry 🍓, di-no-saur 🦕, to-ma-to 🍅
 ```
 
 ### Word groups (categories.ts)
@@ -1328,17 +1704,23 @@ Options in one question must come from different sound groups. Cat and key share
 animals:  cat 🐱, dog 🐶, fish 🐟, frog 🐸, duck 🦆, pig 🐷, lion 🦁, elephant 🐘, monkey 🐵, rabbit 🐰
 food:     apple 🍎, banana 🍌, pizza 🍕, cookie 🍪, bread 🍞, cheese 🧀, carrot 🥕, grapes 🍇
 vehicles: car 🚗, bus 🚌, bike 🚲, plane ✈️, train 🚂, boat ⛵, rocket 🚀, tractor 🚜
-clothes:  shirt 👕, pants 👖, dress 👗, socks 🧦, hat 🎩, shoe 👟, gloves 🧤, scarf 🧣
+clothes:  shirt 👕, pants 👖, dress 👗, sock 🧦, hat 🎩, shoe 👟, glove 🧤, scarf 🧣
 plants:   tree 🌳, flower 🌸, cactus 🌵, clover 🍀
+people:   girl 👧, boy 👦, baby 👶, man 👨, woman 👩, king 🤴
+things:   cup 🥤, bed 🛏️, box 📦, key 🔑, ball ⚽, clock 🕐, book 📖, door 🚪
 ```
+
+Plants and food never appear in the same question, and fish is never offered against food. Kindergarten D.2 sorts people, animals and things.
 
 ### Opposites (opposites.ts)
 
 ```ts
 hot 🔥 / cold ❄️, day ☀️ / night 🌙, happy 😀 / sad 😢, up ⬆️ / down ⬇️,
-open 🔓 / closed 🔒, fast 🐇 / slow 🐢, loud 🔊 / quiet 🔇
+fast 🐇 / slow 🐢, loud 🔊 / quiet 🔇
 big / small: drawn with the shape visual at sizes l and s
 ```
+
+Open and closed is left out, because the lock picture is already "lock" in the rhyme list.
 
 ### Short-vowel words (cvc.ts)
 
@@ -1346,9 +1728,11 @@ big / small: drawn with the shape visual at sizes l and s
 a: cat 🐱, hat 🎩, bat 🦇, van 🚐, pan 🍳, map 🗺️, bag 👜
 e: bed 🛏️, hen 🐔, pen 🖊️, web 🕸️, leg 🦵
 i: pig 🐷, pin 📌, lip 👄
-o: dog 🐶, fox 🦊, box 📦, pot 🍲
+o: dog 🐶, fox 🦊, box 📦
 u: sun ☀️, bus 🚌, bug 🐛, cup 🥤, nut 🥜
 ```
+
+Pot is left out of the picture list, because its picture is "soup" in the analogy list. It stays in the word family list as a written word.
 
 ### Word families (families.ts, text only)
 
@@ -1374,36 +1758,85 @@ set4: after again an any as ask by could every fly from give going had has her h
       think walk were when
 ```
 
-Never put words that sound alike in one question: to, two, too; for, four; no, know; one, won; there, their; by, buy; be, bee; see, sea; I, eye; new, knew; our, hour; red, read.
+Never put words that sound alike in one question: to, two, too; for, four; no, know; one, won; there, their; by, buy; be, bee; see, sea; I, eye; new, knew; our, hour; our, are; red, read; then, them; an, and, in, on; were, where; of, off; when, went, want.
+
+The words "a" and "I" are spoken with a `word` part, so the voice says the word and not the letter name.
 
 ### Grade 1 phonics lists (phonics1.ts)
 
 ```ts
-digraphs:    ship 🚢, shoe 👟, shell 🐚, fish 🐟, cheese 🧀, chick 🐥, thumb 👍, bath 🛁, whale 🐋
-blends:      frog 🐸, flag 🚩, star ⭐, snake 🐍, drum 🥁, crab 🦀, clock 🕐, plane ✈️,
-             spoon 🥄, truck 🚚, grapes 🍇, hand ✋, milk 🥛, tent ⛺
-silent e:    cap/cape, kit/kite, tub/tube, pin/pine, can/cane, hop/hope, cub/cube, man/mane, not/note
-vowel teams: rain 🌧️, train 🚂, snail 🐌, bee 🐝, tree 🌳, feet 🦶, boat ⛵, goat 🐐, soap 🧼
-compounds:   sun+flower, rain+bow, cup+cake, foot+ball, butter+fly, star+fish, snow+man,
-             pop+corn, bed+room, tooth+brush
-nouns:       dog ball tree bed girl car      verbs: run jump eat sing read swim
-adjectives:  big red soft tall cold happy loud tiny
-opposites:   big/small, hot/cold, up/down, fast/slow, happy/sad, open/shut, wet/dry, day/night
-same:        big/large, small/little, happy/glad, fast/quick, shut/close, start/begin
+digraph starts:   ship 🚢, shoe 👟, shell 🐚, sheep 🐑, cheese 🧀, chick 🐥, cherry 🍒, thumb 👍, whale 🐋
+digraph ends:     fish 🐟, dish 🍽️, brush 🖌️, peach 🍑, beach 🏖️, bath 🛁, tooth 🦷
+blend starts:     frog 🐸, flag 🚩, star ⭐, snake 🐍, drum 🥁, crab 🦀, clock 🕐, plane ✈️,
+                  spoon 🥄, truck 🚚, grapes 🍇
+blend ends:       hand ✋, milk 🥛, tent ⛺, gift 🎁, ant 🐜, mask 😷, bank 🏦, plant 🌱
+silent e:         cap/cape, kit/kite, tub/tube, pin/pine, can/cane, hop/hope, cub/cube, man/mane, not/note
+silent e pictures: cap 🧢, pin 📌, pine 🌲, can 🥫, man 👨, note 📝
+vowel teams:      rain 🌧️, train 🚂, snail 🐌, bee 🐝, tree 🌳, sheep 🐑, boat ⛵, goat 🐐, soap 🧼
+compounds:        sun+flower 🌻, rain+bow 🌈, cup+cake 🧁, foot+ball 🏈, butter+fly 🦋, snow+man ⛄,
+                  pop+corn 🍿, lady+bug 🐞, pan+cake 🥞, basket+ball 🏀, pine+apple 🍍, mail+box 📫
+nouns:            dog ball tree bed girl car      verbs: run jump eat sing read swim
+adjectives:       big red soft tall cold happy loud tiny
+describing pictures: cold ❄️, happy 😀, loud 🔊, red 🍎, big 🐘, tiny 🐜, tall 🦒, soft 🧸
+opposites:        big/small, hot/cold, up/down, fast/slow, happy/sad, open/shut, wet/dry, day/night
+same:             big/large, small/little, happy/glad, fast/quick, shut/close, start/begin
 ```
 
-### Story templates (stories.ts)
+- Digraph ends has 7 words, so that level declares a pool of 7.
+- Compound words are built with word tiles from a picture and the spoken word. They are not matched half to half, because halves cross-match into other real words: snowball and footman, sunfish and starflower, sunroom.
+- A describing-picture question never offers big and tall together.
+
+### Sentences (sentences.ts)
+
+```ts
+telling:  "The cat is big."  "I see a red hat."  "We can run."  "The dog can jump."
+          "I like my bed."  "The sun is hot."  "She has a pet."  "He can hop."
+          "The pig is big."  "I have a cup."  "The fox ran."  "We go to the bus."
+asking:   "Can you see the cat?"  "Where is my hat?"  "Is the sun hot?"  "Who has the cup?"
+          "Do you like the dog?"  "What is in the box?"  "Can we go?"  "Is it a bug?"
+shouting: "Look out!"  "Stop!"  "Help!"  "Oh no!"  "Wow!"  "We did it!"
+```
+
+- Kindergarten D.1 takes a telling sentence and builds the wrong options by lowering the first letter, dropping the period, or both.
+- Grade 1 C.3 shows a sentence with its end mark taken off. Level 1 uses telling and asking sentences. Level 2 adds the shouting ones.
+
+### Sentences with a picture (sentencePictures.ts)
+
+```ts
+"I see a cat." 🐱        "The sun is up." ☀️      "It is a red bus." 🚌     "I see a pig." 🐷
+"Look at the dog." 🐶    "I have a hat." 🎩       "It is a big box." 📦     "The bug is little." 🐛
+"I see a fox." 🦊        "Here is a cup." 🥤      "Look at my bed." 🛏️      "It is a pan." 🍳
+"I see a bat." 🦇        "Here is a pen." 🖊️      "It is a van." 🚐         "I see a hen." 🐔
+```
+
+The wrong pictures are the answers to other sentences on this list.
+
+### Sentences with a describing word (describing.ts)
+
+```ts
+"The big dog ran."  big          "I have a red ball."  red        "The bed is soft."  soft
+"A tall tree fell."  tall        "The milk is cold."  cold        "The happy girl sang."  happy
+"The loud drum woke me."  loud   "A tiny bug sat on me."  tiny
+```
+
+The options are words from the same sentence: the describing word, one naming word and one action word.
+
+### Story templates (storyProblems.ts)
 
 ```ts
 names: Sam, Mia, Leo, Ava, Max, Zoe
 add:      "{name} has {a} {things}. {name} gets {b} more. How many {things} does {name} have now?"
 add:      "{a} {things} are on the table. {b} more are in the box. How many {things} are there in all?"
 subtract: "{name} has {a} {things}. {name} gives away {b}. How many {things} are left?"
-subtract: "There are {a} {things}. {b} roll away. How many are left?"
+subtract: "There are {a} {things}. {name} takes {b}. How many are left?"
 compare:  "{name} has {a} {things}. {name2} has {b}. How many more does {name} have?"
+addAdd:   "{name} has {a} {things}. {name} gets {b} more. Then {name} gets {c} more. How many {things} does {name} have now?"
+addSub:   "{name} has {a} {things}. {name} gets {b} more. Then {name} gives away {c}. How many {things} does {name} have now?"
 ```
 
-Use the plural from the countables list, and the singular when the number is 1.
+- Use the plural from the countables list, and the singular when the number is 1.
+- In a compare story the first number is always the bigger one.
+- A story is spoken one sentence at a time, each as its own utterance, so no single utterance runs past 12 seconds.
 
 ### A voice cannot say letter sounds
 
@@ -1411,32 +1844,33 @@ Browser speech cannot reliably pronounce a lone sound such as the first sound in
 
 ### How things are said aloud (src/audio/say.ts)
 
-A voice reading a lone letter often says the wrong thing, such as "uh" for a. All spoken text passes through `say.ts`, which swaps letters and numbers for spellings a voice reads correctly.
+A voice reading a lone letter often says the wrong thing, such as "uh" for a. Spoken text is therefore never one plain string. It is a list of `Say` parts (section 5), and `say.ts` turns each part into words a voice reads correctly. Because each part says what it is, the letter a, the word "a" and the "a" inside "Tap a balloon" can never be mixed up.
 
 ```ts
-letters: a 'ay', b 'bee', c 'see', d 'dee', e 'ee', f 'eff', g 'jee', h 'aitch', i 'eye',
-         j 'jay', k 'kay', l 'el', m 'em', n 'en', o 'oh', p 'pee', q 'cue', r 'are',
-         s 'ess', t 'tee', u 'you', v 'vee', w 'double you', x 'ex', y 'why', z 'zee'
-numbers: written as words by a function, 0 to 1,000 ('forty-seven')
-symbols: + 'plus', - 'take away' (K) or 'minus' (grade 1 up), = 'equals', blank 'blank',
-         > 'is greater than', < 'is less than'
-times:   3:00 'three o'clock', 3:30 'half past three', 3:15 'three fifteen'
-money:   25 cents 'twenty-five cents'
+letter parts: a 'ay', b 'bee', c 'see', d 'dee', e 'ee', f 'eff', g 'jee', h 'aitch', i 'eye',
+              j 'jay', k 'kay', l 'el', m 'em', n 'en', o 'oh', p 'pee', q 'cue', r 'are',
+              s 'ess', t 'tee', u 'you', v 'vee', w 'double you', x 'ex', y 'why', z 'zee'
+word parts:   passed to the voice as written
+number parts: written as words by a function, 0 to 1,000 ('forty-seven')
+time parts:   3:00 'three o'clock', 3:30 'half past three', 3:15 'three fifteen'
+cents parts:  25 'twenty-five cents'
+plain strings: must not contain digits or symbols. Write 'plus', 'take away' (K) or 'minus'
+               (grade 1 up), 'equals', 'blank', 'is greater than', 'is less than'
 ```
 
-Lookup order for any letter, number or sound: a clip the parent recorded, then the spelling above through the device voice. Uppercase and lowercase use the same name.
+Lookup order for a letter, number or sound part: a clip the parent recorded, then the spelling above through the device voice. Uppercase and lowercase use the same name. Parts are played one after another, so a recorded clip can sit in the middle of a spoken sentence.
 
 ### Analogy pairs (analogies.ts)
 
 ```ts
-wornOn:   sock 🧦 : foot 🦶,  glove 🧤 : hand ✋,  hat 🎩 : head (face 🙂)
+wornOn:   sock 🧦 : foot 🦶,  glove 🧤 : hand ✋,  glasses 👓 : eyes 👀
 makes:    bee 🐝 : honey 🍯,  cow 🐄 : milk 🥛,  hen 🐔 : egg 🥚
 usedWith: key 🔑 : lock 🔒,  pencil ✏️ : paper 📄,  spoon 🥄 : soup 🍲
 livesIn:  fish 🐟 : water 🌊,  bird 🐦 : tree 🌳,  spider 🕷️ : web 🕸️
 weather:  rain 🌧️ : umbrella ☂️,  sun ☀️ : sunglasses 🕶️,  snow ❄️ : scarf 🧣
 ```
 
-An analogy uses two pairs from one relation. Every picture is spoken when tapped.
+An analogy uses two pairs from one relation. Every picture is spoken when tapped. At level 2 the wrong options come from the same relation: the second half of the third pair, and the second half of the example pair.
 
 ### Picture riddles (riddles.ts)
 
@@ -1448,7 +1882,7 @@ An analogy uses two pairs from one relation. Every picture is spoken when tapped
 'Which one gives us milk?'                 cow 🐄
 'Which one keeps you dry in the rain?'     umbrella ☂️
 'Which one has wheels?'                    car 🚗
-'Which one is very cold?'                  snowflake ❄️
+'Which one is very cold?'                  snow ❄️
 'Which one opens a lock?'                  key 🔑
 'Which one do you sleep in?'               bed 🛏️
 'Which one can you read?'                  book 📖
@@ -1465,14 +1899,17 @@ The app has two sides: a kid side that follows IXL's practice flow, and a parent
 
 | Path | Screen | Side |
 | --- | --- | --- |
-| `/` | Profile picker: one big avatar button per child | Kid |
-| `/home` | Today's picks, subjects, awards, review badge | Kid |
-| `/subject/:subject` | Grade tabs, lettered categories, skills with score rings | Kid |
+| `/` | Profile picker: one big avatar button per child. In a Safari tab on an iPad or iPhone, the install guide instead | Kid |
+| `/home` | Today's picks, daily goal, subjects, awards, review badge | Kid |
+| `/play` | Runs today's picks one after another | Kid |
+| `/subject/:subject` | Grade tabs, lettered categories, skills with score rings. Reasoning has no grade tabs | Kid |
 | `/skill/:skillId` | Practice | Kid |
 | `/skill/:skillId/learn` | Lesson: example, mini-lesson, video | Kid |
 | `/review` | Review session for due skills | Kid |
-| `/diagnostic` | Diagnostic, one strand at a time | Kid |
-| `/awards` | Awards board | Kid |
+| `/diagnostic` | Diagnostic, one sitting at a time | Kid |
+| `/awards` | Awards boards | Kid |
+| `/games/pop` | Pop | Kid |
+| `/games/pairs` | Pairs | Kid |
 | `/parent` | Parent gate | Parent |
 | `/parent/dashboard` | Usage and summary per child | Parent |
 | `/parent/scores` | Score grid | Parent |
@@ -1480,16 +1917,19 @@ The app has two sides: a kid side that follows IXL's practice flow, and a parent
 | `/parent/log` | Question log | Parent |
 | `/parent/plans` | Skill plans | Parent |
 | `/parent/settings` | Child profiles and settings | Parent |
-| `/parent/data` | Export, import, reset, sync sign-in | Parent |
+| `/parent/sound` | Sound check | Parent |
+| `/parent/voice` | Voice pack | Parent |
+| `/parent/data` | Export, import, reset, sync sign-in, credits | Parent |
+| `/dev/gallery`, `/dev/review/:skillId` | Visual gallery and content samples. Registered only when `import.meta.env.DEV` is true, so they are not in the production build | Dev |
 
-Add a `vercel.json` rewrite of every path to `/index.html` so deep links load.
+`vercel.json` rewrites every path to `/index.html` so deep links load. It ships in Phase 0.
 
 ### Practice screen
 
 Layout follows IXL: the question on the left, a status panel on the right. On phones the panel becomes a strip above the question.
 
 - **Top bar:** back button, skill code and name, a Learn button.
-- **Question area:** prompt with a speaker button, stimulus, answer area, Submit.
+- **Question area:** prompt with a speaker button, stimulus, answer area, Submit. A `listen` question shows a large speaker button where the target would be.
 - **Status panel:** questions answered, Skill Score out of 100 in its stage colour, time elapsed only if the parent turned the timer on.
 
 Answer flow:
@@ -1497,11 +1937,11 @@ Answer flow:
 1. The prompt is read aloud when the question appears, if auto-speak is on.
 2. The child selects an answer and taps Submit. Pre-K profiles answer `choice` questions with one tap, unless the options carry spoken labels.
 3. Inputs lock on submit. Taps in the first 400 ms after a question appears are ignored, which stops double-tap carry-over.
-4. **Correct:** green highlight, a short chime, one spoken praise phrase, the score animates up, and the next question loads after 1.2 seconds.
+4. **Correct:** green highlight, a short chime, one spoken praise phrase, the score animates up, and the next question loads once the praise has finished: 1.2 seconds at the earliest, 2.5 at the latest. The next prompt never cuts the praise off.
 5. **Wrong:** no buzzer. A panel shows "You answered" and "Correct answer" side by side, then the explanation steps and picture, read aloud. A "Got it" button loads the next question.
 6. Each answer is saved before the next question renders. Leaving mid-session loses nothing.
 
-Milestones at 50, 80, 90 and 100 each trigger a short full-screen celebration the first time they are crossed. At 100 the child sees the medal and the next pick.
+Milestones at 50, 80, 90 and 100 each trigger a short full-screen celebration the first time they are crossed. "First time" is judged against `bestScore` (section 6), so dropping and climbing back never celebrates twice. At 100 the child sees the medal and the next pick.
 
 IXL has no session end, so neither does this. After the child's session length, a soft break offers "Keep going" or "All done".
 
@@ -1510,55 +1950,55 @@ IXL has no session end, so neither does this. After the child's session length, 
 Every skill offers three kinds of help from its Learn button.
 
 1. **Learn with an example.** The generator's fixed `example()` question, solved step by step with narration.
-2. **Mini-lesson.** A narrated, animated walk-through built from the same visuals. Each generator may export `lesson(): { speak: string; text: string; visual: Visual }[]` with four steps. Every generator must export it, following the four beats in section 8. The player has play, pause, replay and step dots, and works offline.
-3. **Video.** Shown only when the skill has a `video` entry, the device is online, and videos are on for that child, which is the default and a parent can switch off. It opens in a modal using the privacy-enhanced YouTube embed with related videos limited. Add `allowVideos: boolean`, default true, to `ChildSettings`.
+2. **Mini-lesson.** A narrated, animated walk-through built from the same visuals. Every generator exports `lesson(): { speak: Say; text: string; visual: Visual }[]` with four steps, following the four beats in section 8. The player has play, pause, replay and step dots, and works offline.
+3. **Video.** Shown only when the skill has a `video` entry, the device is online, and videos are on for that child, which is the default and a parent can switch off. It opens in a modal, as set out under Video safety.
 
 Video links are not written into this plan. Phase 12 curates them, mostly from Khan Academy, and a script checks that each one loads before it is committed.
 
 ### Audio (src/audio)
 
-- `speak(text, rate)` cancels anything playing, then speaks. It resolves when speech ends or after a timeout.
-- The first speech must happen inside a tap, or mobile browsers stay silent. Tapping a child on the profile picker says "Hi" and their name, which unlocks audio.
+- `speak(say, rate)` cancels anything playing, waits 60 ms, then plays each `Say` part in turn. It resolves when speech ends or after a timeout.
+- The first speech must happen inside a tap, or mobile browsers stay silent. Tapping a child on the profile picker says "Hi" and their name, which unlocks the voice. The same tap resumes the WebAudio context, or sound effects stay silent.
 - Wait up to one second for the voice list, then prefer a local English (US) voice.
 - Start speech from an effect keyed on the question's `key`, and cancel in its cleanup. This avoids double speech in React strict mode.
 - Keep every utterance under about 12 seconds. Long ones cut off on some phones.
 - If speech is unavailable, show a muted speaker icon and carry on. Text stays visible.
-- Sound effects are short tones made with WebAudio: a chime for correct, a fanfare for mastery. There is no sound for wrong. A mute setting covers both.
+- Sound effects are short tones made with WebAudio: a chime for correct, a fanfare for mastery, a soft clap for syllables. There is no sound for wrong. One mute setting in the device record covers the voice and the effects.
 
 ### Awards (src/engine/awards.ts)
 
-Each subject and grade has a board of covered squares. Earning an award uncovers a sticker. `evaluateAwards(states, totals)` is a pure function that returns every award id earned so far.
+There is one board for each subject and grade that has skills (Math pre-K, K, 1 and 2, Language Arts pre-K, K and 1), one board for Reasoning, and one Milestones board. A board is a grid of covered squares. Earning an award uncovers a sticker. `evaluateAwards(states, totals)` is a pure function that returns every award id earned so far.
 
-| Award family | Thresholds |
-| --- | --- |
-| Skills mastered in a grade | 1, 3, 5, 10, 15, all |
-| Questions answered | 25, 50, 100, 250, 500, 1,000 |
-| Days practised | 3, 7, 14, 30 |
-| Every skill in a category at 80 or above | One per category |
-| Diagnostic finished | One per subject |
+| Award family | Board | Thresholds |
+| --- | --- | --- |
+| Skills mastered | Each subject board | 1, 3, 5, 10, 15, all. A threshold above the board's number of skills is left out |
+| Every skill in a category at 80 or above | Each subject board | One per category. Placed-out skills count as done, but at least one skill in the category must have reached 80 through practice |
+| Questions answered, all subjects together | Milestones | 25, 50, 100, 250, 500, 1,000 |
+| Days practised | Milestones | 3, 7, 14, 30 |
+| Diagnostic finished | Milestones | One each for Math and Language Arts |
 
-Days practised counts total days, not an unbroken streak, so a missed day never takes anything away. A parent can open a printable certificate for any completed category.
+Days practised counts the different local `day` values with at least one answer. It is a total, not an unbroken streak, so a missed day never takes anything away. An award, once earned, is never taken back, even after a failed review. A parent can open a printable certificate for any completed category.
 
 ### Parent side
 
-- **Gate:** "Grown-ups only" with a multiplication question, two numbers from 6 to 9, typed on the number pad. A pass lasts 10 minutes and is held in memory only.
-- **Dashboard:** per child, questions and minutes per day for the last 14 days as SVG bars, skills mastered, current picks, and diagnostic levels by strand.
+- **Gate:** "Grown-ups only" with a multiplication question, two numbers from 6 to 9, typed on the number pad. A parent can set a 4-digit PIN in settings to use instead, for the day a child learns their times tables. A pass lasts 10 minutes and is held in memory only.
+- **Dashboard:** per child, questions and minutes per day for the last 14 local days as SVG bars, the daily goal, skills mastered, current picks, and diagnostic levels by ladder.
 - **Scores:** every skill by subject, grade and category with score, stage chip, attempts, accuracy, time spent and last practised. Sortable.
 - **Trouble spots:** flagged skills, each with the three most recent missed questions redrawn, and a button to add the skill to a plan.
 - **Question log:** every attempt, newest first, filtered by child, skill and date. Each row redraws the question from its skill, level and seed and shows the child's answer beside the correct one.
-- **Plans:** name a plan, pick skills, order them, assign children. Ships with one starter plan, "Reasoning practice", holding the eight reasoning skills.
-- **Settings:** per child grade, gentle scoring, session length, speech rate, auto-speak, timer, daily goal, videos.
-- **Data:** export everything to a JSON file, import a file, reset one child, sign in for sync.
+- **Plans:** name a plan, pick skills, order them, assign children. Nothing is created on first run. The screen offers one ready-made template, "Reasoning practice", holding all 14 reasoning skills in ladder order. Tapping "Use this plan" makes an ordinary plan from it.
+- **Settings:** per child: grade, gentle scoring, session length, speech rate, auto-speak, timer, daily goal, daily minutes, pre-reader mode, videos, and restart diagnostic. For the device: mute and the parent PIN.
+- **Data:** export everything through the share sheet, import a file (it merges and never wipes), reset one child, sign in for sync, storage and install status, any saved items that could not be read, flags, the last 20 errors, and credits.
 
 ### Look and feel
 
-Use an original visual identity, not IXL's colours or layout details. Bright and calm, with a system rounded font stack so nothing loads from the network, large type, and five stage colours defined once in `tokens.css`. Support portrait and landscape from 360 px wide to desktop.
+Use an original visual identity, not IXL's colours or layout details. Bright and calm, with a system rounded font stack so nothing loads from the network, large type, and six stage colours defined once in `tokens.css`. Support portrait and landscape from 360 px wide to desktop.
 
 ### Pre-reader mode
 
 A child who cannot read must be able to use the whole kid side alone. Profiles with `preReader` on get these changes.
 
-- **Home** shows one large Play button and three picture tiles for today's picks. Play runs the picks back to back, 6 questions each, with no menus in between.
+- **Home** shows one large Play button and three picture tiles for today's picks. Play runs the picks one after another. Each pick lasts one session length, and the spoken soft break between picks offers "Next one" or "All done". There are no menus in between.
 - **Every skill is a picture tile:** its `icon`, its score ring, and its name in small text. Tapping the speaker corner says its `speakName`.
 - **Subject pages** are a grid of tiles grouped by colour band, not a text list.
 - **Buttons carry icons:** a house for home, a star for awards, a check mark for Submit, an arrow for Next.
@@ -1567,22 +2007,27 @@ A child who cannot read must be able to use the whole kid side alone. Profiles w
 ### Kid lock and daily limit
 
 - Leaving practice needs a press and hold of 2 seconds on the back button. A plain tap does nothing.
+- Kid screens replace history instead of adding to it, so the iPad's swipe from the left edge has no page to go back to.
 - When `dailyMinutes` is set and used up, the child sees a spoken "All done for today" screen with their stickers. A parent can add 10 minutes through the gate.
+- Minutes are the sum of the day's answer times, each capped at two minutes, counted by local day.
 - The setup guide tells the parent how to turn on the iPad's Guided Access, which keeps a child inside one app.
 
 ### Sound check and voice pack
 
 - **Sound check** in parent settings plays every letter name, the numbers 0 to 20 and each sound-effect, so a parent can hear exactly what the child will hear on that iPad.
-- **Voice pack** lets a parent record any of those in their own voice, plus the pure letter sounds a device voice cannot make. Recording uses the iPad microphone and asks permission once. Each clip can be replayed, redone or deleted.
+- If the voice plays but the chime does not, the sound check says to turn off mute in Control Center.
+- **Voice pack** lets a parent record any of those in their own voice, plus the pure letter sounds a device voice cannot make. Recording uses the iPad microphone. The iPad may ask for permission again on a later launch, and a refusal shows a plain message instead of failing silently. Each clip can be replayed, redone or deleted.
 - Recorded letter sounds unlock sound-based prompts later, such as "Which word starts with this sound?"
 
 ### Video safety
 
-Videos are on by default, so the player keeps a young child inside the app.
+Videos are on by default, so the player has to keep a young child inside the app, and it has to do that within YouTube's rules.
 
-- The embed hides YouTube's own controls. The app draws its own play, pause and close buttons.
-- Clear panels cover the title bar and the YouTube logo, so taps there do nothing.
-- Each entry in `videos.json` stores the video's length. Playback stops 3 seconds before the end, before suggestions appear.
+- The player is YouTube's privacy-enhanced embed with YouTube's own controls. Nothing is drawn over it. YouTube's terms do not allow its player to be covered, and an iPad will not start unmuted video from a button outside the video frame. The child taps YouTube's own play button.
+- The frame is sandboxed. Scripts are allowed. Pop-ups and top-level navigation are not. A tap on the YouTube logo or the video title then has nowhere to go.
+- The app draws one control of its own, outside the frame: a large Close button.
+- Each entry in `videos.json` stores the video's length in seconds. The app follows the play time through YouTube's player API and closes the modal 3 seconds before the end, before suggestions appear. Related videos are limited to the same channel.
+- The Phase 12 gate includes a hand check on the iPad: tapping the logo and the title must not leave the app. If the sandbox does not hold there, videos move behind the parent gate until the self-hosted player in section 14 replaces YouTube.
 - A parent can remove any single video from the skill's row on the scores screen.
 - Expect thin coverage for pre-K. Khan Academy's library starts in earnest at kindergarten, and the built-in lesson covers the rest.
 
@@ -1592,10 +2037,10 @@ From grade 1, a pencil button on the practice screen opens a drawing layer over 
 
 ### Games
 
-IXL now offers skill games, so version 1 includes two. Each uses real questions from the child's own in-progress skills, logs attempts as normal practice, and is offered after a finished session.
+IXL now offers skill games, so version 1 includes two. Both are offered after a finished session.
 
-- **Pop:** balloons drift up carrying answer options. The child taps the one that answers the spoken question. Ten questions a round.
-- **Pairs:** a memory game of 6 face-down pairs built from `match` content, such as numerals and dot groups or uppercase and lowercase letters.
+- **Pop:** balloons bob in place, each carrying an answer option. The child taps the one that answers the spoken question. Nothing floats away and nothing is timed. Ten questions a round. Pop draws on the child's in-progress skills whose current level is a `choice` question. Each answer is logged as normal practice and moves the Skill Score. When the child has no such skill, Pop is not offered.
+- **Pairs:** a memory game of 6 face-down pairs, such as numerals and dot groups or uppercase and lowercase letters, drawn from the content lists for the child's grade. Pairs is a reward. It logs no attempts and never changes a Skill Score, because a missed flip is a slip of memory, not a wrong answer.
 
 ### Flagging a question
 
@@ -1621,7 +2066,7 @@ Each source supplies the layer it does best. IXL supplies the shape of the produ
 | [Oppia](https://github.com/oppia/oppia) | Apache 2.0 | Reference for lesson design. Its stack is Python and Angular, so no code is reused | Reference |
 | FSRS, pyBKT | Open source, from memory | Later upgrades for review timing and mastery estimates | Roadmap |
 
-Some licences above are marked "from memory" or come from a secondary source. Confirm them on the publisher's site before leaning on that content.
+Some licences above are marked "from memory" or come from a secondary source. Confirm them on the publisher's site before leaning on that content. Illustrative Mathematics is CC BY, which asks for credit, so the parent data screen carries a short credits page naming it and every other open source used.
 
 ### Why Perseus is left out of version 1
 
@@ -1633,39 +2078,41 @@ I described OpenMoji as CC BY. It is CC BY-SA 4.0, which also asks that adapted 
 
 ## 12. Build phases and gates
 
-Twenty build steps, one per Claude Code session, run in the order shown. Phase labels are names, not the order. A phase is done only when `npm run verify` passes and every item in its gate is shown to pass.
+Twenty-one build steps, run in the order shown. Each step is one Claude Code session, except step 19, which is six. That makes 26 sessions. Phase labels are names, not the order. A phase is done only when `npm run verify` passes and every item in its gate is shown to pass.
 
 | Step | Phase | Builds | Gate, beyond `npm run verify` |
 | --- | --- | --- | --- |
-| 1 | 0. Scaffold | Vite, React, TypeScript, dependencies, scripts, lint, test setup, `CLAUDE.md`, `tokens.css`, app shell with router, error boundary, GitHub Actions workflow | Dev server starts. One render test passes. The workflow file runs `npm run verify` |
-| 2 | 1. Engine core | `rng`, `types` with `facts`, `check`, `validate`, registry, all oracles in `tests/oracles/`, generator and oracle harnesses, golden-file test, the content dump script, three reference generators: M-PK-A2, M-K-B3, M-K-C4 | Same seed gives the same output. `check` tested for all 8 types. `validate` rejects one crafted bad question per invariant. Each oracle has its own unit tests. Harnesses pass for the 3 generators |
-| 3 | 2. Scoring and adaptive | `skillscore`, `review`, `recommend`, `diagnostic` with ladders and sittings, `awards` | Every row of the section 6 test table. One test per recommendation rule and variety rule. A simulated child who knows the first N skills of a ladder is placed at N, give or take 1, for five values of N. A sitting stops at its question cap and resumes. Award thresholds |
-| 4 | 3. Storage | zod schemas for all ten records, `memoryRepo`, `idbRepo` with upgrade steps, export and import with version header, persistent-storage request | One contract suite runs against both repos. Export then import round-trips. A corrupted record is skipped without a crash. A version 1 fixture opens with the newest code |
-| 5 | 4a. Visuals | Every visual in section 5, including the added ones, and the dev gallery at `/dev/gallery` | Each visual has an `aria-label`. A WebKit screenshot of the gallery is saved to `review/gallery.png`, and Claude Code looks at it and reports anything overlapping, clipped or unreadable |
-| 6 | 4b. Question types and audio | All 8 item components, `speech`, `say`, `sfx`, clip playback | Each item component turns simulated taps into the right response. `say` tests for letters, numbers, symbols and times. Speech tests with a mocked browser API: cancels before speaking, never throws when the API is missing |
-| 7 | 5a. Practice flow | Store, child setup, profile picker, practice screen, explanation panel, milestones, soft break, snapshots on attempts | Integration test: new child, 15 correct answers, score 100, medal shown, 15 attempts stored with snapshots, review scheduled. A wrong answer shows the explanation and moves the score per section 6. WebKit smoke test at the three sizes in section 3: no sideways scroll, a 3-question session completes |
-| 8 | 5b. Kid navigation and lessons | Home, pre-reader mode with picture tiles and Play, subject pages, lesson player, review, kid lock, daily limit, wake lock | A pre-reader profile can go from the profile picker through a full Play run without any text-only control. The lesson player steps through four beats. Hold-to-exit works and a tap does not. The daily limit screen appears when minutes run out |
-| 9 | 9. Install and deploy | Web app manifest, icons, service worker, `vercel.json`, Add to Home Screen guide, install banner | Build output contains the manifest and service worker. Browser test: load, go offline, reload, answer a question |
-| 10 | 10. Sync | Supabase client, `sync.ts`, migration file, sign-in by emailed code on the data screen | Tests against a mocked client: a repeated push creates no duplicates, last write wins, sync is a no-op with no env vars. Your part: the Supabase checklist in section 4 |
+| 1 | 0. Scaffold | Vite, React, TypeScript, dependencies, scripts, lint, test setup, `CLAUDE.md`, `tokens.css` with six stage colours, app shell with router, error boundary, GitHub Actions workflow, `vercel.json`, web app manifest, icons, Apple meta tags | Dev server starts. One render test passes. The workflow file runs `npm run verify`. The build output contains the manifest. Your part: import the repo into Vercel and add the app to the iPad Home Screen |
+| 2 | 1. Engine core | First, anything Phase 0 is missing if it was built before this revision. Then `rng`, `seed`, `types` with `facts`, `Say` and the three modes, `check`, `validate`, `canonical`, the registry with pools, the P1 oracles in `tests/oracles/`, generator and oracle harnesses, golden-file and list-hash tests, the content dump script, three reference generators: M-PK-A2, M-K-B3, M-K-C4 | Same seed gives the same output. `seedFor` is stable. `check` tested for all 8 types. `validate` rejects one crafted bad question for each of the 16 invariants. Each oracle has its own unit tests. Harnesses pass for the 3 generators. A level with a pool of 2 never repeats back to back and never throws |
+| 3 | 2. Scoring and adaptive | `skillscore`, `review`, `recommend`, `diagnostic`, `merge`, `awards`, and `ladders.ts` listing every ladder by skill id | Every row of the section 6 test table and its extra tests. One test per recommendation rule and variety rule. Trouble spots: 5 right out of 5 is not flagged, 2 right out of 5 is. Diagnostic, on made-up ladders: a simulated child who knows the first N skills is placed at N, give or take 1, for five values of N within 8 skills of the start, and is never placed above N plus 1 for any N. No skill is tested twice. A ladder that starts above the child's grade asks nothing. A sitting stops at its question cap and resumes. Merge: two copies of a skill state keep both devices' answer counts. Award thresholds, including the placed-out rule |
+| 4 | 3. Storage | zod schemas with defaults for all eleven records, `memoryRepo`, `idbRepo` with upgrade steps and quarantine, reset, export and import with version header and merge, persistent-storage request | One contract suite runs against both repos. Export, wipe, import restores everything, recorded clips included. Import onto a device that already has data merges and wipes nothing. A corrupted record is quarantined, counted and not overwritten. A record missing a newer field loads with its default. A reset child's older rows are ignored on read and on import. A version 1 fixture opens with the newest code |
+| 5 | 4a. Visuals | Playwright. Every visual in section 5, including the added ones, canonical forms, and the dev gallery at `/dev/gallery` | Each visual has an `aria-label`. Canonical tests: a turned square equals itself, a flipped L does not. The clock's hour hand at 3:30 sits halfway between 3 and 4. A WebKit screenshot of the gallery is saved to `review/gallery.png`, and Claude Code looks at it and reports anything overlapping, clipped or unreadable |
+| 6 | 4b. Question types and audio | All 8 item components with the three modes, `speech`, `say`, `sfx`, `clips` | Each item component turns simulated taps into the right response. A `listen` question shows no target and its options do not speak. `say` tests for every part type, including the letter a against the word "a". Speech tests with a mocked browser API: cancels and waits before speaking, never throws when the API is missing, plays parts in order with a recorded clip in the middle |
+| 7 | 5a. Practice flow | Store, install guide, child setup, profile picker, practice screen, explanation panel, milestones, soft break, snapshots and `day` on attempts | Integration test: new child, 15 correct answers, score 100, medal shown, 15 attempts stored with snapshots and days, review scheduled. A wrong answer shows the explanation and moves the score per section 6. A milestone is not shown twice. A Safari tab on an iPad sees only the install guide. WebKit smoke test at the three sizes in section 3: no sideways scroll, a 3-question session completes |
+| 8 | 5b. Kid navigation and lessons | Home with the daily goal ring, pre-reader mode with picture tiles and Play, subject pages, lesson player, review, kid lock, history replacement, daily limit, wake lock | A pre-reader profile can go from the profile picker through a full Play run without any text-only control. The lesson player steps through four beats. Hold-to-exit works, a tap does not, and a browser Back press leaves the child on the practice screen. The daily limit screen appears when the local day's minutes run out |
+| 9 | 9. Offline and updates | Service worker, offline cache, update check on launch and on return to the front | Build output contains the service worker. Browser test: load, go offline, reload, answer a question. A newer build is picked up when the app returns to the front and is not applied in the middle of a question |
+| 10 | 10. Sync | Supabase client, `sync.ts`, migration file, sign-in by emailed code on the data screen | Tests against a mocked client: a repeated push creates no duplicates. Rows are pushed in the stated order. A pull pages past 500 rows and resumes from its cursor. Two copies of a skill state merge by the rules in section 4. A reset on one device removes the child's old rows on the other. Sync is a no-op with no env vars. Your part: the Supabase checklist in section 4 |
 | 11 | 6a. Math pre-K | Data files, 16 skills | Content gate, below |
 | 12 | 6b. Math K, part 1 | Categories A, B, E, F, G: 16 skills | Content gate |
 | 13 | 6c. Math K, part 2 | Categories C and D: 12 skills | Content gate |
-| 14 | 6d. Language Arts pre-K and Reasoning | 10 and 14 skills, analogy and riddle data | Content gate |
-| 15 | 7. Diagnostic and awards | Diagnostic sittings screen, first-run flow, check-in card, awards board, celebrations | A simulated run over two sittings saves placements and flags placed-out skills. Mastering a skill uncovers the right award |
-| 16 | 8a. Parent side, part 1 | Gate, dashboard, scores, settings, data tools, sound check, voice pack | The gate rejects a wrong answer. Export, reset, import restores everything. A recorded clip is used in place of the device voice |
-| 17 | 8b. Parent side, part 2 | Trouble spots, question log, flags, plans, the `/dev/review` route | A logged question redraws when versions match and shows its snapshot when they do not. A flag is saved and exported. An assigned plan changes the picks |
-| 18 | 11a to 11f. Later content | Six sessions: Math grade 1 A, C, D, E (12). Math grade 1 B (10). Math grade 2 A, C, D (12). Math grade 2 B (10). Language Arts K (16). Language Arts grade 1 (12) with the 20 stories | Content gate each session. The story word-list test passes |
-| 19 | 12. Videos | `src/content/videos.json` with lengths, `scripts/check-videos.mjs`, safe player | The script requests YouTube's oEmbed endpoint for every id and fails on any that does not load. Playback stops before the end. Skills with no good video stay empty |
-| 20 | 13. Scratchpad and games | Scratchpad layer, Pop, Pairs | Drawing works with touch and does not scroll the page. Each game logs attempts as practice and ends cleanly |
+| 14 | 6d. Language Arts pre-K | 10 skills, including the first `listen` skills | Content gate |
+| 15 | 6e. Reasoning | 14 skills, analogy and riddle data | Content gate |
+| 16 | 7. Diagnostic and awards | Diagnostic sittings screen, first-run flow, check-in card, the catalogue growth step, awards boards, celebrations | A simulated run over two sittings saves placements by skill id and flags placed-out skills. Raising `CATALOGUE_VERSION` with a new skill below a placement places that skill out. Mastering a skill uncovers the right award. A category made only of placed-out skills earns nothing |
+| 17 | 8a. Parent side, part 1 | Gate with optional PIN, dashboard, scores, settings, data tools with share-sheet export, credits, sound check, voice pack | The gate rejects a wrong answer. Export, wipe the device, import restores everything. Export, reset a child, import: the child stays reset. A recorded clip is used in place of the device voice |
+| 18 | 8b. Parent side, part 2 | Trouble spots, question log, flags, plans with the ready-made template, the `/dev/review` route | A logged question redraws when versions match and shows its snapshot when they do not. A flag is saved and exported. An assigned plan changes the picks. No plan exists until a parent makes one |
+| 19 | 11a to 11f. Later content | Six sessions: Math grade 1 A, C, D, E (12). Math grade 1 B (10). Math grade 2 A, C, D (12). Math grade 2 B (10). Language Arts K (16). Language Arts grade 1 (12) with the 20 stories | Content gate each session. The story word-list test passes |
+| 20 | 12. Videos | `src/content/videos.json` with lengths, `scripts/check-videos.mjs`, the sandboxed player | The script requests YouTube's oEmbed endpoint for every id and fails on any that does not load. Playback closes before the end. Your hand check on the iPad: tapping the YouTube logo and the title does not leave the app. Skills with no good video stay empty |
+| 21 | 13. Scratchpad and games | Scratchpad layer, Pop, Pairs | Drawing works with touch and does not scroll the page. Pop logs attempts as practice, has nothing that moves away, and ends cleanly. Pairs logs nothing |
 
 ### Content gate
 
 Every content step must show all of these.
 
 - The generator suite passes for every new skill at every level over 300 seeds.
+- Any oracle the batch needs was written and unit-tested before the first generator that uses it.
 - The oracle test passes for every new skill.
-- Golden files exist for every new skill.
-- The catalogue test passes: ids unique, every row has a generator and the reverse, every skill has an icon, a ladder and a spoken name, prerequisites exist with no cycles.
+- Golden files exist for every new skill, `tests/golden/lists.json` is up to date, and `CATALOGUE_VERSION` is raised by one.
+- The catalogue test passes: ids unique, every row has a generator and the reverse, every skill has an icon, a ladder and a spoken name, prerequisites exist with no cycles, `maxLevel` and item types agree between row and generator, and every level with fewer than 8 questions declares its pool.
 - Every skill exports a four-beat lesson.
 - Claude Code has run `content:dump`, read it against the section 8 templates, and listed anything doubtful.
 
@@ -1677,7 +2124,7 @@ Every content step must show all of these.
 
 ### Your hand check on the iPad after each step from 5a on
 
-- [ ] Open the app on a phone and a tablet.
+- [ ] Open the installed app from the Home Screen, at the Vercel address. Test children made during the build can be cleared with Reset.
 - [ ] Tap a child, hear the greeting.
 - [ ] Answer five questions, one wrong on purpose.
 - [ ] Close the app, reopen it, confirm the score is still there.
@@ -1692,10 +2139,12 @@ Three layers of tests catch problems before you see them, a pitfall list heads o
 | Layer | Tool | Covers |
 | --- | --- | --- |
 | Engine unit tests | Vitest in Node | Random numbers, answer checking, scoring, review, recommendations, diagnostic, awards |
-| Generator suite | Vitest, `tests/generators.all.test.ts` | Every skill, every level, 300 seeds, all 12 invariants from section 5 |
+| Generator suite | Vitest, `tests/generators.all.test.ts` | Every skill, every level, 300 seeds, every invariant from section 5 |
+| Oracle suite | Vitest, `tests/oracles.test.ts` | Every skill, level and 300 seeds against an independent answer |
+| Golden files | Vitest | Fixed seeds per skill, and a hash of every word list |
 | Storage contract | Vitest with `fake-indexeddb` | The same tests against both repos |
 | Component and flow tests | Testing Library with jsdom | Each question type, the practice loop, the parent gate, the question log |
-| Browser smoke test | Playwright | WebKit at three screen sizes, a full session, offline reload |
+| Browser smoke test | Playwright | WebKit at three screen sizes, a full session, offline reload. The offline reload runs in Chromium if WebKit cannot run the service worker |
 
 All time-dependent tests freeze the clock through `lib/clock.ts`. No test uses the network.
 
@@ -1708,10 +2157,10 @@ All time-dependent tests freeze the clock through `lib/clock.ts`. No test uses t
 | Prompt spoken twice in development | Speech runs in an effect keyed on the question, with cancel in cleanup |
 | A voice reads symbols oddly | Spoken text spells out plus, minus, equals and blank. Invariant 1 enforces it |
 | A voice cannot say single letter sounds | Phonics prompts use whole words only |
-| Two options look the same, or two are correct | Invariant 3, plus the pattern and sound-group rules |
+| Two options look the same, or two are correct | Invariant 3 with canonical forms, the oracle test, plus the pattern and sound-group rules |
 | Sound-alike words as options in a listening question | The sound-alike list in section 9 |
 | The correct answer is always in the same place | Invariant 11 |
-| The same question twice in a row | The registry skips the last 6 keys |
+| The same question twice in a row | The registry skips the last 6 keys, or fewer for a level with a small pool |
 | Emoji missing on an older tablet | Only the listed emoji, all from 2018 or earlier |
 | Scattered objects overlap and cannot be counted | The scatter layout uses fixed slots, never random coordinates |
 | A double tap answers the next question | Inputs lock on submit and ignore the first 400 ms |
@@ -1720,7 +2169,7 @@ All time-dependent tests freeze the clock through `lib/clock.ts`. No test uses t
 | A bad stored record crashes a screen | Every read is validated and bad records are skipped |
 | Layout breaks under mobile browser bars | Use `dvh` units and scroll inside panels |
 | Deep links return 404 on Vercel | The `vercel.json` rewrite |
-| A stale service worker serves an old build | The worker updates on reload and the app shows "Update ready" |
+| A stale service worker serves an old build | The app checks for a new build on launch and whenever it returns to the front, and applies it on the profile picker or home screen |
 | The build breaks with no Supabase keys | Sync is a no-op without env vars. Phase 10 tests this |
 | Non-deterministic tests | No `Math.random`, no raw `Date` anywhere in engine or content |
 | A video is removed or wrong | The check script, and the built-in mini-lesson never depends on a video |
@@ -1741,6 +2190,41 @@ Pitfalls added after the plan review:
 | A skill is renamed and its progress is orphaned | Permanent skill ids |
 | A blank white screen after an error | The error boundary |
 
+Pitfalls added after the second review:
+
+| Pitfall | Prevention written into this plan |
+| --- | --- |
+| A hear-and-tap question prints its own answer | `listen` mode and invariant 14 |
+| Tapping an option reads the answer aloud | No spoken labels in `listen` and `read` questions, invariants 14 and 15 |
+| A child doing well is flagged as struggling | Trouble spots use a share of recent answers |
+| A stuck child is sent to an unrelated skill | Prerequisites follow ladders, not categories |
+| The diagnostic tests one skill twice or never stops | The walk in section 7: no skill twice, clear stop rules |
+| New content shifts a saved placement | Placements store skill ids, and the catalogue growth step runs on start |
+| A reset child comes back after a sync | `resetAt` on the child, honoured by every read, import and sync |
+| Two iPads overwrite each other's progress | Answer counts are rebuilt from the attempt log. `merge.ts` |
+| A new field makes old records unreadable | zod defaults. Unreadable records are quarantined, never dropped or overwritten |
+| Progress made in Safari vanishes after installing | The install guide comes first. Children are made inside the installed app |
+| Evening practice counts as tomorrow | Every attempt and session carries the local `day` |
+| The same milestone is celebrated again and again | `bestScore` |
+| "2 is to 4" has two right answers | Two example pairs and the `numberRule` oracle |
+| A flipped shape looks unchanged | Mirror questions use only the L and the flag. Canonical forms |
+| Compound halves match more than one way | Compound words are built from tiles with a picture |
+| The clock explanation is wrong at half past | Separate wording for half past, and an hour hand that moves with the minutes |
+| A coin's printed words give away the answer | Emblems only, no words or numbers |
+| Letters and digits that look alike are sorted against each other | The exclusion list in the distractor rules, and invariant 16 |
+| The voice says "ay" for the word "a" | Typed `Say` parts |
+| A two-option question fails the position check | Invariant 11 scales with the number of options |
+| "Which one is different" fails the distinct-options check | `twins` |
+| A small skill cannot reach 8 different questions | A declared `pool` |
+| A memory game lowers a Skill Score | Pairs logs nothing |
+| A drifting balloon acts as a timer | Pop balloons stay put |
+| A video tap leads out to YouTube | A sandboxed frame, checked by hand on the iPad in Phase 12 |
+| Swiping back skips the hold-to-exit | Kid navigation replaces history |
+| Export does nothing inside the Home Screen app | The share sheet |
+| Recorded clips cannot be exported or tested | Stored as bytes with a type, never as a Blob |
+| Sign-in emails stop arriving | Your own email sender, in the Supabase checklist |
+| Hand checks fail on a local address | The Vercel address from Phase 0 |
+
 ### Audit before any phase is reported done
 
 This adapts your standing code audit to this project.
@@ -1757,6 +2241,8 @@ This adapts your standing code audit to this project.
 - [ ] Every screen is registered in `routes.tsx`, and every route points to a real component
 - [ ] Every catalogue skill has a generator, and every generator has a catalogue row
 - [ ] Deleting or resetting a child removes or hides its skill states, attempts, sessions and awards
+- [ ] No saved record points at a skill or ladder by position
+- [ ] Every skill on the listen and read lists in section 8 uses that mode
 
 **Security**
 
@@ -1772,6 +2258,8 @@ This adapts your standing code audit to this project.
 - [ ] Screens are flex columns with inner scroll, no sideways scroll at 360 px
 - [ ] Tap targets on kid screens are at least 64 px
 - [ ] The app starts and runs a full session with the network off
+- [ ] Kid navigation never pushes a history entry
+- [ ] No day is worked out from a UTC time
 
 ## 14. After version 1
 
@@ -1790,6 +2278,9 @@ These close the remaining gap with IXL. None needs a change to the engine.
 | Weekly parent email | A summary of time, mastered skills and trouble spots | Sync |
 | Printable worksheets | Any skill at any level as a PDF page from the same generators | None |
 | Voice pack sync | Recorded clips shared across iPads | Supabase storage |
+| Self-hosted videos | Khan Academy's videos served from your own storage in a plain player, with no YouTube frame at all | Confirming the licence on Khan Academy's site, and R2 storage |
+| Schoolbook letter shapes | A bundled font with the lowercase a and g that children are taught to write | A font cleared for use |
+| Reasoning check-in | A light placement for reasoning, if picks prove too easy or too hard | A few weeks of data |
 
 ### Decisions made on Nov 15, 2026
 
@@ -1799,3 +2290,24 @@ These close the remaining gap with IXL. None needs a change to the engine.
 - **Standards:** both. Common Core codes ship with the build and Virginia codes follow in a mapping pass.
 
 Main device: iPad, running the app from the Home Screen. All 22 gaps from the plan review of Nov 15, 2026 are folded into the sections above.
+
+### Choices made in the second plan fix, Nov 15, 2026
+
+The second review found 78 problems. All are fixed in the sections above. These are the fixes that changed a rule, a score or what a child sees. Each is open to change.
+
+- **Trouble spots:** flagged at under 60% of recent answers, not "fewer than 6 of 10".
+- **Prerequisites:** follow the ladder, not the category.
+- **Diagnostic:** Math and Language Arts only. A ladder that starts above the child's grade is skipped. The walk climbs 2, 4, then 8 skills and then halves the gap. The cap is 14 questions a ladder, 8 for pre-K.
+- **Placed-out skills and awards:** they count as done, but a category award needs one skill earned through practice.
+- **Reset:** final. It survives sync and cannot be undone by import.
+- **Two iPads:** answer counts are rebuilt from the log. The score comes from the copy practised most recently.
+- **Import:** merges, never wipes.
+- **Install first:** no children can be created in a Safari tab on an iPad without a parent choosing to.
+- **Play:** one session length per pick, with a break between picks.
+- **Pop:** balloons do not float away. **Pairs:** not scored.
+- **Videos:** YouTube's own controls in a sandboxed frame, with a hand check on the iPad.
+- **Parent gate:** an optional 4-digit PIN.
+- **Starter plan:** a template the parent chooses to use, with all 14 reasoning skills.
+- **Stage colours:** six, with light blue for Getting started.
+- **Content changes:** middle vowel shows 3 options. Compound words are built from tiles. Silent e starts as hear-and-tap. Coins carry emblems, not words. Paper folding level 3 is two holes. Number analogies show two example pairs. Open and closed left the opposites list. Jet became jacket, feet became sheep, and pot left the picture list.
+- **Build order:** the manifest and Vercel move to Phase 0, Playwright to Phase 4a, and Reasoning gets its own session.
