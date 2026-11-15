@@ -1,0 +1,80 @@
+:root {
+  /* colour */
+  --color-bg: #f6f8f4;
+  --color-surface: #ffffff;
+  --color-ink: #1f2a30;
+  --color-ink-soft: #55646d;
+  --color-line: #dbe3dc;
+  --color-brand: #2e9e6b;
+  --color-brand-ink: #ffffff;
+  --color-correct: #2e9e6b;
+  --color-warn: #b45309;
+  --color-focus: #1e6fd9;
+
+  /* the five score stages */
+  --stage-not-started: #9aa5ab;
+  --stage-getting-started: #1e88e5;
+  --stage-proficient: #43a047;
+  --stage-challenge: #f2a900;
+  --stage-mastered: #d98e04;
+
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* radius */
+  --radius-s: 8px;
+  --radius-m: 16px;
+  --radius-l: 28px;
+  --radius-pill: 999px;
+
+  /* type scale */
+  --font-family: ui-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', 'Arial Rounded MT Bold',
+    system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --text-s: 0.9rem;
+  --text-m: 1.125rem;
+  --text-l: 1.5rem;
+  --text-xl: 2.25rem;
+  --text-xxl: 3.5rem;
+
+  /* kid tap target */
+  --tap-min: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--text-m);
+  color: var(--color-ink);
+  background: var(--color-bg);
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+button {
+  font: inherit;
+  touch-action: manipulation;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}

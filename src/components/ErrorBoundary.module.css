@@ -1,0 +1,31 @@
+.wrap {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.face {
+  font-size: var(--text-xxl);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-xl);
+}
+
+.button {
+  min-height: var(--tap-min);
+  min-width: 200px;
+  padding: 0 var(--space-6);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+  font-size: var(--text-l);
+  font-weight: 700;
+}

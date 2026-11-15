@@ -1,0 +1,24 @@
+.screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  overflow-y: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.mark {
+  font-size: var(--text-xxl);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-xxl);
+  color: var(--color-brand);
+}
