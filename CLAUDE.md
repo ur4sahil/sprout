@@ -54,4 +54,8 @@
 - To change what a skill produces: raise its `version` in `catalogue.ts`, then run `npm run golden`. The golden test refuses a change without a version bump.
 - A generator returns a `QuestionDraft`. The registry adds the skill id, level, seed and key.
 - M-PK-A2 level 2 uses the `dice` layout. The plan says "grid", but a 5-wide grid of 1 to 5 objects is the same picture as a row.
-- Next: step 4, Phase 2, scoring and adaptive.
+- Step 4, Phase 2 (scoring and adaptive), is built: `skillscore`, `review`, `recommend` with trouble spots, `diagnostic` with sittings, `merge`, `awards`, `ladders.ts` with all 140 skill ids, and the zod record schemas in `src/storage/schema.ts` (written here because the engine needs the record types; Phase 3 adds the repos).
+- Engine code reads dates only through `src/lib/clock.ts` (`localDayOf`, `addDays`, `daysBetween`). A test fails on `new Date` or `Date.now` inside `src/engine` or `src/content`.
+- A ladder walk in `DiagnosticProgress` also saves `right` and `wrong` for the skill being tested, so a diagnostic stopped in the middle of a skill resumes exactly.
+- `evaluateAwards(states, totals, skills)` takes the catalogue as a third argument.
+- Next: step 5, Phase 3, storage.

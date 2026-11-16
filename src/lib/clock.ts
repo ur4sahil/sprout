@@ -17,6 +17,27 @@ export function localDay(at: Date = now()): string {
   return `${year}-${month}-${day}`;
 }
 
+// The local calendar date of a saved UTC time.
+export function localDayOf(iso: string): string {
+  return localDay(new Date(iso));
+}
+
+// The same time of day, a number of local calendar days later.
+export function addDays(iso: string, days: number): string {
+  const at = new Date(iso);
+  at.setDate(at.getDate() + days);
+  return at.toISOString();
+}
+
+// How many local calendar days lie between two saved times. Later minus earlier.
+export function daysBetween(earlierIso: string, laterIso: string): number {
+  const a = new Date(earlierIso);
+  const b = new Date(laterIso);
+  const startA = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+  const startB = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+  return Math.round((startB - startA) / 86_400_000);
+}
+
 export function freezeClock(at: Date | string): void {
   frozen = new Date(at);
 }
