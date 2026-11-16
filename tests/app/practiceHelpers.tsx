@@ -14,7 +14,8 @@ export const NOW = new Date(2026, 2, 9, 16, 30); // a Monday afternoon, local ti
 export type User = ReturnType<typeof userEvent.setup>;
 
 // A signed-in device with one child, at a fixed time, with the answer-flow waits switched off.
-export async function setUp(grade: Grade = '1', change: Partial<Child['settings']> = {}): Promise<Child> {
+// The check-in is marked finished, so home shows picks straight away. A test about the check-in passes `checkIn: 'new'`.
+export async function setUp(grade: Grade = '1', change: Partial<Child['settings']> = {}, options: { checkIn?: 'done' | 'new' } = {}): Promise<Child> {
   freezeClock(NOW);
   setTimingForTests({ tapGuardMs: 0, praiseMinMs: 0, praiseMaxMs: 0, holdToExitMs: 30, tryPauseMs: 0, beatGapMs: 0 });
   useAppStore.getState().setAccount({ status: 'signedIn', email: 'parent.one@example.com', expiresAt: new Date(NOW.getTime() + 20 * 86_400_000).toISOString() });
@@ -29,8 +30,21 @@ export async function setUp(grade: Grade = '1', change: Partial<Child['settings'
     updatedAt: NOW.toISOString(),
     deletedAt: null,
   };
-  await (await openRepo()).repo.saveChild(child);
+  const { repo } = await openRepo();
+  await repo.saveChild(child);
+  if (options.checkIn !== 'new') {
+    await finishCheckIn(child.id);
+  }
   return child;
+}
+
+// Marks both check-ins finished for a child, with their two stickers already on the board.
+export async function finishCheckIn(childId: string): Promise<void> {
+  const { repo } = await openRepo();
+  for (const subject of ['math', 'ela'] as const) {
+    await repo.saveDiagnosticProgress({ childId, subject, ladders: {}, sittings: 1, done: true, lastSittingDay: '', updatedAt: NOW.toISOString() });
+    await repo.addAward({ childId, awardId: `diagnostic:${subject}`, earnedAt: NOW.toISOString() });
+  }
 }
 
 export function openApp(path = '/'): User {

@@ -185,7 +185,7 @@ export type DiagnosticStep =
   | { kind: 'done' }; // every walked ladder is placed
 
 export function newProgress(childId: string, subject: DiagnosticSubject, nowIso: string): DiagnosticProgress {
-  return { childId, subject, ladders: {}, sittings: 0, done: false, updatedAt: nowIso };
+  return { childId, subject, ladders: {}, sittings: 0, done: false, lastSittingDay: '', updatedAt: nowIso };
 }
 
 function walkFor(

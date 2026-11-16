@@ -13,10 +13,9 @@ import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
 import { gradeRank } from '../../engine/grades';
 import type { Say, SkillGrade } from '../../engine/types';
-import { SUBJECTS } from './Home';
+import { GRADE_NAME, SUBJECTS } from './Home';
 import styles from './SubjectPage.module.css';
 
-const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', all: 'All' };
 
 // One subject: grade tabs, then lettered categories of skill tiles, each category in its own colour band.
 export default function SubjectPage() {

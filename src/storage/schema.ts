@@ -164,6 +164,7 @@ export const diagnosticProgressSchema = z.object({
   ladders: z.record(z.string(), ladderWalkSchema), // keyed by ladder id
   sittings: z.number().int().min(0),
   done: z.boolean(),
+  lastSittingDay: z.string().default(''), // the local day the latest sitting ended, so home offers one check-in a day
   updatedAt: iso,
 });
 export type DiagnosticProgress = z.infer<typeof diagnosticProgressSchema>;

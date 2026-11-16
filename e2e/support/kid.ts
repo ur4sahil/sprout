@@ -8,8 +8,39 @@ export async function shoot(page: Page, name: string): Promise<void> {
   await page.screenshot({ path: path.join(DIR, 'shots', `${test.info().project.name}-${name}.png`) });
 }
 
+// Marks the placement check-in finished for every child on this device, with its two stickers already on the board.
+// Written straight into the device's storage: the app reads it the next time a child's home opens.
+export async function finishCheckIn(page: Page): Promise<void> {
+  await page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const open = indexedDB.open('sprout');
+      open.onsuccess = () => resolve(open.result);
+      open.onerror = () => reject(open.error);
+    });
+    const tx = db.transaction(['children', 'diagnosticProgress', 'awards'], 'readwrite');
+    const children = await new Promise<{ id: string }[]>((resolve) => {
+      const all = tx.objectStore('children').getAll();
+      all.onsuccess = () => resolve(all.result as { id: string }[]);
+    });
+    const at = new Date().toISOString();
+    for (const child of children) {
+      for (const subject of ['math', 'ela']) {
+        tx.objectStore('diagnosticProgress').put({ childId: child.id, subject, ladders: {}, sittings: 1, done: true, lastSittingDay: '', updatedAt: at }, `${child.id}|${subject}`);
+        tx.objectStore('awards').put({ childId: child.id, awardId: `diagnostic:${subject}`, earnedAt: at }, `${child.id}|diagnostic:${subject}`);
+      }
+    }
+    await new Promise<void>((resolve, reject) => {
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+    db.close();
+  });
+}
+
 // Adds a child through the screens. Ends on the profile picker.
-export async function addChild(page: Page, name: string, grade: string): Promise<void> {
+// A new child would start with the placement check-in. Tests about anything else skip it: the check-in
+// is marked finished unless `checkIn` is 'new'.
+export async function addChild(page: Page, name: string, grade: string, checkIn: 'done' | 'new' = 'done'): Promise<void> {
   await page.getByRole('button', { name: 'Add a child' }).click();
   await page.getByLabel('First name').fill(name);
   await page.getByRole('button', { name: 'turtle' }).click();
@@ -17,6 +48,7 @@ export async function addChild(page: Page, name: string, grade: string): Promise
   await page.getByRole('button', { name: grade, exact: true }).click();
   await page.getByRole('button', { name: 'Save' }).click();
   await expect(page.getByRole('button', { name, exact: true })).toBeVisible();
+  if (checkIn === 'done') await finishCheckIn(page);
 }
 
 // From home: opens Math and taps a skill's tile, looking under each grade tab.

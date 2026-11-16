@@ -2,6 +2,8 @@ import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import SignIn from '../screens/account/SignIn';
 import Gallery from '../screens/dev/Gallery';
+import Awards from '../screens/kid/Awards';
+import Diagnostic from '../screens/kid/Diagnostic';
 import Home from '../screens/kid/Home';
 import Lesson from '../screens/kid/Lesson';
 import Play from '../screens/kid/Play';
@@ -19,6 +21,8 @@ export const routes: RouteObject[] = [
   { path: '/skill/:skillId', element: <Practice /> },
   { path: '/skill/:skillId/learn', element: <Lesson /> },
   { path: '/review', element: <Review /> },
+  { path: '/diagnostic', element: <Diagnostic /> },
+  { path: '/awards', element: <Awards /> },
   { path: '/signin', element: <SignIn /> },
   // Dev routes exist only in development builds.
   ...(import.meta.env.DEV ? [{ path: '/dev/gallery', element: <Gallery /> }] : []),

@@ -1,0 +1,44 @@
+.square {
+  margin: 0;
+  padding: var(--space-3);
+  min-height: var(--size-bin-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-align: center;
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+  background: var(--color-surface);
+  border: var(--border) dashed var(--color-line);
+  border-radius: var(--radius-m);
+}
+
+.earned {
+  color: var(--color-ink);
+  font-weight: 700;
+  border-style: solid;
+  border-color: var(--color-star);
+}
+
+.sticker {
+  font-size: var(--emoji-avatar);
+  line-height: 1;
+}
+
+.covered {
+  filter: grayscale(1);
+  opacity: 0.35;
+}
+
+.fresh {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-l);
+  font-weight: 700;
+}

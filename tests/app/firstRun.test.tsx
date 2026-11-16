@@ -10,7 +10,7 @@ import { isInstalled, isIosDevice } from '../../src/lib/platform';
 import { openRepo } from '../../src/storage/index';
 import { newSkillState } from '../../src/storage/schema';
 import { stubServer } from '../storage/serverStub';
-import { NOW, openApp, setUp } from './practiceHelpers';
+import { NOW, finishCheckIn, openApp, setUp } from './practiceHelpers';
 
 const spoken = vi.hoisted(() => ({ said: [] as unknown[], sounds: [] as string[] }));
 vi.mock('../../src/audio/speech', async (original) => ({
@@ -132,6 +132,8 @@ describe('the profile picker', () => {
   it('shows one big button for each child, and tapping one says hi, unlocks sound and opens home', async () => {
     const child = await setUp('K');
     await (await repo()).saveChild({ ...child, id: 'kid-2', name: 'Ada', avatar: '🦄', createdAt: new Date(NOW.getTime() + 1000).toISOString() });
+    // Ada has finished her check-in too, so home opens for her.
+    await finishCheckIn('kid-2');
     const user = openApp();
     const group = await screen.findByRole('group', { name: 'Who is playing?' });
     expect([...group.querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual(['Robin', 'Ada']);

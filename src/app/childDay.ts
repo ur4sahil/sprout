@@ -13,7 +13,8 @@ import { lastWasMiss, levelToAsk } from '../engine/skillscore';
 import { addDays, localDay, now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { openRepo } from '../storage/index';
-import type { Attempt, Child, DiagnosticResult, Plan, Session, SkillState } from '../storage/schema';
+import type { Attempt, Child, DiagnosticProgress, DiagnosticResult, DiagnosticSubject, Plan, Session, SkillState } from '../storage/schema';
+import { checkInToday, isFirstVisit, latestPlacements } from './checkIn';
 
 // What a child's home screen needs to know about today: picks, the daily goal, reviews due and minutes used.
 
@@ -24,6 +25,8 @@ export interface ChildDay {
   minutesToday: number;
   limitReached: boolean; // the parent's daily minutes are used up
   reviewsDue: string[]; // skill ids, at most one session's worth
+  checkIn: DiagnosticSubject | null; // the check-in sitting offered today, if any
+  firstVisit: boolean; // the child has never opened the check-in
 }
 
 const READY = (): Set<string> => new Set(allGenerators().map((generator) => generator.skillId));
@@ -42,6 +45,7 @@ export function summariseDay(input: {
   sessions: Session[];
   plans: Plan[];
   diagnostics: DiagnosticResult[];
+  progress?: Readonly<Record<DiagnosticSubject, DiagnosticProgress | null>>; // left out: nothing to check in on
   canListen: boolean;
   skills?: readonly Skill[];
 }): ChildDay {
@@ -51,9 +55,7 @@ export function summariseDay(input: {
   const today = localDay(new Date(nowIso));
   const todays = attempts.filter((attempt) => attempt.day === today);
 
-  // The latest placement on each ladder.
-  const placements: Record<string, string | null> = {};
-  for (const result of diagnostics.slice().sort((a, b) => a.takenAt.localeCompare(b.takenAt))) placements[result.ladderId] = result.placementSkillId;
+  const placements = latestPlacements(diagnostics);
 
   const attemptsLast14Days: Record<string, number> = {};
   for (const attempt of attempts) attemptsLast14Days[attempt.skillId] = (attemptsLast14Days[attempt.skillId] ?? 0) + 1;
@@ -91,20 +93,24 @@ export function summariseDay(input: {
     reviewsDue: dueForReview(states, nowIso)
       .map((state) => state.skillId)
       .filter((skillId) => ready.has(skillId)),
+    checkIn: input.progress ? checkInToday(child.grade, input.progress, today) : null,
+    firstVisit: input.progress ? isFirstVisit(child.grade, input.progress) : false,
   };
 }
 
 export async function loadChildDay(child: Child): Promise<ChildDay> {
   const { repo } = await openRepo();
   const nowIso = now().toISOString();
-  const [states, attempts, sessions, plans, diagnostics] = await Promise.all([
+  const [states, attempts, sessions, plans, diagnostics, math, ela] = await Promise.all([
     repo.getSkillStates(child.id),
     repo.listAttempts(child.id, { since: addDays(nowIso, -14) }),
     repo.listSessions(child.id, addDays(nowIso, -14)),
     repo.listPlans(),
     repo.listDiagnostics(child.id),
+    repo.getDiagnosticProgress(child.id, 'math'),
+    repo.getDiagnosticProgress(child.id, 'ela'),
   ]);
-  return summariseDay({ child, nowIso, states, attempts, sessions, plans, diagnostics, canListen: !isMuted() && isSpeechAvailable() });
+  return summariseDay({ child, nowIso, states, attempts, sessions, plans, diagnostics, progress: { math, ela }, canListen: !isMuted() && isSpeechAvailable() });
 }
 
 // Loads the child's day once for a screen. `failed` means saved data could not be read.

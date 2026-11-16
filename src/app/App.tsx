@@ -7,11 +7,14 @@ import SignIn from '../screens/account/SignIn';
 import InstallGuide from '../screens/kid/InstallGuide';
 import { loadClipKeys, syncVoicePack } from '../audio/clips';
 import { setMuted } from '../audio/mute';
+import { CATALOGUE_VERSION } from '../content/catalogue';
+import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { needsInstallGuide } from '../lib/platform';
 import { checkSession } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
 import styles from './App.module.css';
+import { runCatalogueGrowth } from './checkIn';
 import { routes } from './routes';
 import { applyUpdate, checkForUpdate, finishUpdate, isSafeToUpdate, startUpdates } from './updates';
 import { syncIfDue } from '../storage/sync';
@@ -47,6 +50,8 @@ export default function App() {
         const { repo, saved } = await openRepo();
         useAppStore.getState().setStorageSaved(saved);
         await keepErrorsInDeviceRecord(repo);
+        // New skills below a child's saved placement are placed out, once for each catalogue version.
+        await runCatalogueGrowth(repo, CATALOGUE_VERSION, now().toISOString()).catch(logError);
         const device = await repo.getDeviceState();
         setMuted(device.muted);
         useAppStore.getState().setInstallGuide(needsInstallGuide() && !device.browserModeAccepted);

@@ -57,6 +57,7 @@ export function progress(childId: string, updatedAt: string, change: Partial<Dia
     ladders: { counting: { currentSkillId: 'M-K-A1', right: 1, wrong: 0, passed: ['M-PK-A8'], failed: [], asked: 3, done: false } },
     sittings: 1,
     done: false,
+    lastSittingDay: '',
     updatedAt,
     ...change,
   };
