@@ -173,9 +173,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       const reviewed = last ? applyReview(self.state as SkillState, right, now().toISOString()) : null;
       try {
         const { repo } = await openRepo();
-        await repo.addAttempt(outcome.attempt);
-        if (reviewed) await repo.saveSkillState(reviewed.state);
-        await repo.saveSession(outcome.session);
+        await repo.saveAnswer({ attempt: outcome.attempt, states: reviewed ? [reviewed.state] : [], session: outcome.session });
       } catch (error) {
         logError(error);
         if (!self.alive) return;

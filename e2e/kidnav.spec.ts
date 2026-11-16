@@ -19,7 +19,7 @@ test.describe('kid navigation', () => {
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten'); // pre-reader mode is on by default
     // The child's own button is a picture. ("Add a child" on this screen is for grown-ups.)
-    await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]')).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]').first()).toBeVisible();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     const picks = page.getByRole('group', { name: "Today's picks" });
     await expect(picks.locator('[data-skill]')).toHaveCount(3);

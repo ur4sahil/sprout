@@ -32,7 +32,7 @@ interface Props {
 // The practice screen: the question on the left, the status panel on the right.
 export default function PracticeSession({ child, skill, play }: Props) {
   const navigate = useNavigate();
-  const practice = usePractice(child, skill);
+  const practice = usePractice(child, skill, { sessions: play !== undefined });
   const { phase, question, state } = practice;
   const [seconds, setSeconds] = useState(0);
   const rate = child.settings.speechRate;
@@ -75,10 +75,11 @@ export default function PracticeSession({ child, skill, play }: Props) {
   const [drawing, setDrawing] = useState(false);
   useEffect(() => setDrawing(false), [questionId]);
 
-  // The games are offered at the break. Pop needs a skill in progress whose next question is a choice.
+  // The games are offered when a skill is mastered, and between the picks of a Play run.
+  // Pop needs a skill in progress whose next question is a choice.
   const [popOffered, setPopOffered] = useState(false);
   useEffect(() => {
-    if (phase !== 'break') return;
+    if (phase !== 'break' && phase !== 'celebrating') return;
     let alive = true;
     void (async () => {
       const { repo } = await openRepo();
@@ -129,9 +130,9 @@ export default function PracticeSession({ child, skill, play }: Props) {
         />
       )}
       {phase === 'celebrating' && practice.milestone !== null && (
-        <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} />
+        <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} />
       )}
-      {phase === 'break' && <SoftBreak answered={practice.answered} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} />}
+      {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
     </KidScreen>
   );

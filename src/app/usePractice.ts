@@ -47,7 +47,10 @@ function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: reado
   return nextQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state.attempts), keys);
 }
 
-export function usePractice(child: Child, skill: Skill): Practice {
+// `sessions` is set for a pick in a Play run: it lasts one session length, then stops for the next pick.
+// Practice opened by itself has no sessions: it carries on until the score reaches 100, or the child leaves.
+export function usePractice(child: Child, skill: Skill, options: { sessions?: boolean } = {}): Practice {
+  const sessions = options.sessions === true;
   const [phase, setPhase] = useState<PracticePhase>('loading');
   const [question, setQuestion] = useState<Question | null>(null);
   const [state, setState] = useState<SkillState | null>(null);
@@ -126,13 +129,13 @@ export function usePractice(child: Child, skill: Skill): Practice {
   const advance = useCallback((): void => {
     const self = live.current;
     if (!self.state) return;
-    if (self.answered > 0 && self.answered % child.settings.sessionLength === 0) {
+    if (sessions && self.answered > 0 && self.answered % child.settings.sessionLength === 0) {
       setPhase('break');
-      void speak(['Nice work! Keep going, or all done?'], child.settings.speechRate);
+      void speak(['Nice work! On to the next one?'], child.settings.speechRate);
       return;
     }
     show(self.state, self.keys);
-  }, [child, show]);
+  }, [child, show, sessions]);
 
   const afterAnswer = useCallback((): void => {
     const self = live.current;
@@ -168,9 +171,7 @@ export function usePractice(child: Child, skill: Skill): Practice {
         try {
           // Each answer is saved before the next question renders. Leaving mid-session loses nothing.
           const { repo } = await openRepo();
-          await repo.addAttempt(outcome.attempt);
-          await repo.saveSkillState(outcome.state);
-          await repo.saveSession(outcome.session);
+          await repo.saveAnswer({ attempt: outcome.attempt, states: [outcome.state], session: outcome.session });
         } catch (error) {
           logError(error);
           if (!self.alive) return;

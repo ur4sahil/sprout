@@ -54,3 +54,14 @@ describe('parseParentEmails', () => {
     expect(parseParentEmails('')).toEqual([]);
   });
 });
+
+describe('the Worker entry file', () => {
+  it('exports only functions beside its default: the runtime refuses to start on any other named value', async () => {
+    const entry = (await import('../../worker/index')) as Record<string, unknown>;
+    for (const [name, value] of Object.entries(entry)) {
+      if (name === 'default') continue;
+      expect(typeof value, `export ${name}`).toBe('function');
+    }
+    expect(typeof (entry.default as { fetch?: unknown }).fetch).toBe('function');
+  });
+});

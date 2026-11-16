@@ -84,23 +84,12 @@ async function remember(session: { email: string; expiresAt: string } | null): P
   }
 }
 
-async function neverSynced(): Promise<boolean> {
-  try {
-    return (await (await openRepo()).repo.getDeviceState()).lastSyncAt === null;
-  } catch (error) {
-    logError(error);
-    return false;
-  }
-}
-
 async function acceptSession(reply: Response | null): Promise<AuthResult> {
   if (!reply) return { ok: false, reason: 'offline' };
   if (!reply.ok) return { ok: false, reason: await failureOf(reply) };
   const parsed = sessionReply.safeParse(await readJson(reply));
   if (!parsed.success) return { ok: false, reason: 'server' };
   await remember(parsed.data);
-  // A device that has never synced is a new iPad: it fetches the family's progress before anything else.
-  useAppStore.getState().setFirstSync(await neverSynced());
   useAppStore.getState().setAccount({ status: 'signedIn', ...parsed.data });
   return { ok: true };
 }

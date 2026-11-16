@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { memoryBackend } from '../../src/storage/backend';
 import { DB_VERSION, idbBackend, idbRepo, openSproutDb } from '../../src/storage/idbRepo';
 import { memoryRepo } from '../../src/storage/memoryRepo';
+import { trackedBackend } from '../../src/storage/online';
 import { T, attempt, child, state } from './fixtures';
 import { repoContract } from './repo.contract';
 
@@ -12,6 +13,8 @@ const freshName = (): string => `sprout-test-${(counter += 1)}`;
 
 repoContract('memory', async () => memoryBackend());
 repoContract('IndexedDB', async () => idbBackend(await openSproutDb(freshName())));
+// As the app uses it: the device's store with every family change noted for sending.
+repoContract('tracked', async () => trackedBackend(memoryBackend()));
 
 describe('memoryRepo', () => {
   it('each one starts empty and keeps to itself', async () => {
@@ -45,7 +48,7 @@ describe('idbRepo', () => {
   it('has one object store for each record type plus quarantine, and the three attempt indexes', async () => {
     const db = await openSproutDb(freshName());
     expect([...db.objectStoreNames].sort()).toEqual(
-      ['attempts', 'awards', 'children', 'clips', 'device', 'diagnosticProgress', 'diagnostics', 'family', 'flags', 'plans', 'quarantine', 'sessions', 'skillStates'],
+      ['attempts', 'awards', 'children', 'clips', 'device', 'diagnosticProgress', 'diagnostics', 'family', 'flags', 'outbox', 'plans', 'quarantine', 'sessions', 'skillStates'],
     );
     const tx = db.transaction('attempts');
     expect([...tx.store.indexNames].sort()).toEqual(['childCreated', 'childId', 'childSkill']);

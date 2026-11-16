@@ -17,7 +17,8 @@ type UpgradeTx = IDBPTransaction<unknown, string[], 'versionchange'>;
 const UPGRADES: ((db: IDBPDatabase, tx: UpgradeTx) => void)[] = [
   // Version 1
   (db) => {
-    for (const name of STORES) {
+    // The stores as they were in version 1. Later steps add the rest.
+    for (const name of STORES.filter((each) => each !== 'outbox')) {
       const store = db.createObjectStore(name);
       if (CHILD_STORES.includes(name)) store.createIndex('childId', 'childId');
       if (name === 'attempts') {
@@ -26,6 +27,10 @@ const UPGRADES: ((db: IDBPDatabase, tx: UpgradeTx) => void)[] = [
       }
     }
     db.createObjectStore(QUARANTINE);
+  },
+  // Version 2: the list of records waiting to be sent to the server.
+  (db) => {
+    db.createObjectStore('outbox');
   },
 ];
 

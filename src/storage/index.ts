@@ -1,34 +1,113 @@
 import type { LoggedError } from '../lib/errorLog';
 import { connectErrorLog, logError } from '../lib/errorLog';
-import { idbRepo } from './idbRepo';
-import { memoryRepo } from './memoryRepo';
+import type { Backend } from './backend';
+import { memoryBackend } from './backend';
+import { idbBackend, openSproutDb } from './idbRepo';
+import type { DataApi } from './online';
+import { httpDataApi, trackedBackend } from './online';
 import type { Repo } from './repo';
+import { makeRepo } from './repoCore';
+import type { SyncResult, Syncer } from './sync';
+import { makeSyncer } from './sync';
 
-// The one Repo the app uses. IndexedDB when it opens; otherwise memory, with a banner.
+// The one Repo the app uses. The device keeps a copy of the family's records, so the app opens
+// and works with no internet. The server holds the main copy: every change is noted in the
+// device's outbox and sent at once, or when the internet is back. See online.ts and sync.ts.
 
 export interface OpenRepo {
   repo: Repo;
-  saved: boolean; // false means progress will not be saved on this device
+  saved: boolean; // false means nothing can be kept on this device between visits
 }
 
-let opened: Promise<OpenRepo> | null = null;
+interface Opened extends OpenRepo {
+  syncer: Syncer | null; // null in unit tests that run with no server
+}
 
-export function openRepo(): Promise<OpenRepo> {
+let opened: Promise<Opened> | null = null;
+// Unit tests have no server. A test that wants one passes a stand-in here, with the device database to use.
+let testApi: DataApi | null = null;
+let testDevice: Backend | null = null;
+// Told after every run: the app shows whether the device is in step with the server.
+let onResult: ((result: SyncResult) => void) | null = null;
+export function watchSync(listener: ((result: SyncResult) => void) | null): void {
+  onResult = listener;
+}
+
+// A change is sent a moment after it is made, so several changes made together go in one request.
+export const SEND_AFTER_MS = 300;
+let sendTimer: ReturnType<typeof setTimeout> | null = null;
+
+function serverApi(): DataApi | null {
+  if (import.meta.env.MODE === 'test') return testApi;
+  return httpDataApi();
+}
+
+function open(): Promise<Opened> {
   opened ??= (async () => {
+    let device: Backend;
+    let saved = true;
     try {
-      if (typeof indexedDB === 'undefined') throw new Error('IndexedDB is not available');
-      return { repo: await idbRepo(), saved: true };
+      if (testDevice) device = testDevice;
+      else {
+        if (typeof indexedDB === 'undefined') throw new Error('IndexedDB is not available');
+        device = idbBackend(await openSproutDb());
+      }
     } catch (error) {
       logError(error);
-      return { repo: memoryRepo(), saved: false };
+      device = memoryBackend();
+      saved = false;
     }
+    const tracked = trackedBackend(device);
+    const repo = makeRepo(tracked);
+    const api = serverApi();
+    const syncer = api ? makeSyncer(repo, tracked, api) : null;
+    if (syncer) {
+      tracked.onChange(() => {
+        if (sendTimer) clearTimeout(sendTimer);
+        sendTimer = setTimeout(() => {
+          sendTimer = null;
+          void syncer.send().then((result) => onResult?.(result));
+        }, SEND_AFTER_MS);
+      });
+    }
+    return { repo, saved, syncer };
   })();
   return opened;
 }
 
+export function openRepo(): Promise<OpenRepo> {
+  return open();
+}
+
 // For tests: use this repo, or pass null to open afresh.
 export function setRepoForTests(repo: Repo | null, saved = true): void {
-  opened = repo ? Promise.resolve({ repo, saved }) : null;
+  opened = repo ? Promise.resolve({ repo, saved, syncer: null }) : null;
+}
+
+// For tests: the app talks to this stand-in for the server. Pass null for none. Opens afresh.
+export function setDataApiForTests(api: DataApi | null, device: Backend | null = null): void {
+  testApi = api;
+  testDevice = device;
+  opened = null;
+  if (sendTimer) clearTimeout(sendTimer);
+  sendTimer = null;
+}
+
+const NOTHING: SyncResult = { outcome: 'done', changed: false, sent: 0 };
+
+// Fetches what other devices have saved, then sends what this device has waiting.
+export async function syncFamily(): Promise<SyncResult> {
+  const { syncer } = await open();
+  if (!syncer) return NOTHING;
+  const result = await syncer.run();
+  onResult?.(result);
+  return result;
+}
+
+// How many records on this device are still waiting to be sent.
+export async function waitingToSend(): Promise<number> {
+  const { syncer } = await open();
+  return syncer ? syncer.waiting() : 0;
 }
 
 // Asks the browser not to clear saved data, once, and remembers the answer.

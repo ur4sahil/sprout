@@ -61,7 +61,8 @@ describe('SignIn', () => {
     // The guard lets go, then the router sends /home to the start screen.
     await waitFor(() => expect(screen.queryByLabelText('Password')).toBeNull());
     expect(await screen.findByRole('heading', { name: 'Sprout' })).toBeTruthy();
-    expect(screen.queryByRole('button', { name: /Sign/ })).toBeNull();
+    // The sign-in form is gone. (The start screen has its own Sign out, behind the PIN.)
+    expect(screen.queryByRole('button', { name: 'Sign in' })).toBeNull();
   });
 
   it('gives a wrong password and an unlisted email the same message', async () => {

@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 import { expect, signUp, test } from './support/fixtures';
-import { addChild, answerAnything } from './support/kid';
+import { addChild, answerAnything, holdHome } from './support/kid';
 import { checkScreen } from './support/layout';
 import { openFromMath } from './support/sweep';
 
@@ -44,33 +44,24 @@ test.describe('the scratchpad', () => {
   });
 });
 
-// A kindergarten child finishes one session (8 questions) of a skill that asks choice questions at every level.
-async function toBreak(page: Page): Promise<void> {
+// A kindergarten child answers one question on a skill that asks choice questions, then goes home.
+// Practice never stops for a break now: the games are offered on home, and when a skill is mastered.
+async function toHome(page: Page): Promise<void> {
   await signUp(page);
   await addChild(page, 'Robin', 'Kindergarten');
   await page.getByRole('button', { name: 'Robin', exact: true }).click();
   await openFromMath(page, 'Compare numbers');
-  const rest = page.locator('[data-break]');
-  for (let i = 0; i < 8; i += 1) {
-    // A milestone may be celebrated on the way. Tap past it.
-    const party = page.locator('[data-celebration]');
-    if (await party.isVisible()) await party.getByRole('button').first().click();
-    if (await rest.isVisible()) break;
-    await answerAnything(page);
-  }
-  const party = page.locator('[data-celebration]');
-  if (await party.isVisible()) await party.getByRole('button').first().click();
-  await expect(rest).toBeVisible({ timeout: 15_000 });
+  await answerAnything(page);
+  await expect(page.locator('[data-break]')).toHaveCount(0);
+  await holdHome(page);
 }
 
 test.describe('the games', () => {
-  test('Pop is offered after a finished session, and asks balloon questions that stay in place', async ({ page }) => {
+  test('Pop is offered on home once a skill is in progress, and asks balloon questions that stay in place', async ({ page }) => {
     test.setTimeout(180_000);
-    await toBreak(page);
-    const rest = page.locator('[data-break]');
-    await expect(rest.getByRole('button', { name: /Play Pairs/ })).toBeVisible();
-    await checkScreen(page, 'break with games', 64);
-    await rest.getByRole('button', { name: /Play Pop/ }).click();
+    await toHome(page);
+    await expect(page.getByRole('button', { name: 'Pairs', exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'Pop', exact: true }).click();
     const balloons = page.locator('[data-balloon]');
     await expect(balloons.first()).toBeVisible();
     await expect(page.locator('[data-pop-count="0"]')).toBeVisible();
@@ -95,8 +86,8 @@ test.describe('the games', () => {
 
   test('Pairs is offered too: twelve face-down cards that fit the screen and turn when tapped', async ({ page }) => {
     test.setTimeout(180_000);
-    await toBreak(page);
-    await page.locator('[data-break]').getByRole('button', { name: /Play Pairs/ }).click();
+    await toHome(page);
+    await page.getByRole('button', { name: 'Pairs', exact: true }).click();
     await expect(page.locator('[data-card]')).toHaveCount(12);
     await checkScreen(page, 'Pairs', 64);
     await page.locator('[data-card="0"]').click();

@@ -57,6 +57,9 @@ export interface Repo {
   addAttempt(a: Attempt): Promise<void>;
   // Oldest first. With a limit, the newest `limit` of them.
   listAttempts(childId: string, opts: { since?: string; until?: string; skillId?: string; limit?: number }): Promise<Attempt[]>;
+  // One answer and everything it changes, saved together in one step: the attempt (only ever added),
+  // then any skill states, check-in results, the session and the check-in progress.
+  saveAnswer(parts: { attempt: Attempt; states?: SkillState[]; session?: Session; diagnostics?: DiagnosticResult[]; progress?: DiagnosticProgress }): Promise<void>;
   saveSession(s: Session): Promise<void>;
   listSessions(childId: string, since?: string): Promise<Session[]>;
   listAwards(childId: string): Promise<AwardEarned[]>;

@@ -25,7 +25,7 @@ import {
 
 // Every rule a Repo follows, written once over a plain Backend:
 // each record read passes its schema, a record that fails is quarantined and left out,
-// rows made before a child's reset are dead, and any write to a backed-up record sets `dirty`.
+// and rows made before a child's reset are dead.
 
 const EPOCH = '1970-01-01T00:00:00.000Z';
 
@@ -96,14 +96,8 @@ export function makeRepo(backend: Backend): Repo {
     return parsed ?? deviceStateSchema.parse({ id: 'device' });
   }
 
-  // The extra write that marks the device as holding changes not yet backed up.
-  async function dirtyPut(): Promise<Put[]> {
-    const device = await readDevice();
-    return device.dirty ? [] : [{ store: 'device', key: 'device', value: { ...device, dirty: true } }];
-  }
-
-  // The device record is changed by several background jobs: the session check, sync, the voice pack,
-  // and every save that marks the device as changed. Each reads it, then writes it back. They take turns,
+  // The device record is changed by several background jobs: the session check, the voice pack and
+  // the error log. Each reads it, then writes it back. They take turns,
   // so one can never write over another's change with an old copy.
   let turn: Promise<unknown> = Promise.resolve();
   function inTurn<T>(work: () => Promise<T>): Promise<T> {
@@ -114,7 +108,7 @@ export function makeRepo(backend: Backend): Repo {
 
   function save(puts: Put[], removes: Remove[] = []): Promise<void> {
     return inTurn(async () => {
-      await backend.write({ puts: [...puts, ...(await dirtyPut())], removes });
+      await backend.write({ puts, removes });
     });
   }
 
@@ -151,6 +145,16 @@ export function makeRepo(backend: Backend): Repo {
         .filter((a) => (opts.skillId === undefined || a.skillId === opts.skillId) && (opts.since === undefined || a.createdAt >= opts.since) && (opts.until === undefined || a.createdAt <= opts.until))
         .sort((a, b) => a.createdAt.localeCompare(b.createdAt) || a.id.localeCompare(b.id));
       return opts.limit === undefined ? rows : rows.slice(Math.max(0, rows.length - Math.max(0, opts.limit)));
+    },
+    async saveAnswer({ attempt, states = [], session, diagnostics = [], progress }) {
+      const puts: Put[] = [];
+      // An attempt is only ever added: one that is already there is left as it is.
+      if ((await backend.get('attempts', attempt.id)) === undefined) puts.push({ store: 'attempts', key: attempt.id, value: attemptSchema.parse(attempt) });
+      for (const result of diagnostics) puts.push({ store: 'diagnostics', key: result.id, value: diagnosticResultSchema.parse(result) });
+      for (const state of states) puts.push({ store: 'skillStates', key: keys.skillState(state), value: skillStateSchema.parse(state) });
+      if (session) puts.push({ store: 'sessions', key: session.id, value: sessionSchema.parse(session) });
+      if (progress) puts.push({ store: 'diagnosticProgress', key: keys.progress(progress), value: diagnosticProgressSchema.parse(progress) });
+      if (puts.length > 0) await save(puts);
     },
     async saveSession(s) {
       await save([{ store: 'sessions', key: s.id, value: sessionSchema.parse(s) }]);
@@ -198,7 +202,7 @@ export function makeRepo(backend: Backend): Repo {
     async saveDiagnosticProgress(p) {
       await save([{ store: 'diagnosticProgress', key: keys.progress(p), value: diagnosticProgressSchema.parse(p) }]);
     },
-    // Voice clips and the device record stay on the device, so they never set `dirty`.
+    // Voice clips and the device record stay on the device.
     async getClip(key) {
       const raw = await backend.get('clips', key);
       return raw === undefined ? null : await parse('clips', key, raw, audioClipSchema);
@@ -215,7 +219,7 @@ export function makeRepo(backend: Backend): Repo {
     async getFamily() {
       const raw = await backend.get('family', 'family');
       const parsed = raw === undefined ? null : await parse('family', 'family', raw, familySchema);
-      return parsed ?? { id: 'family', pinSalt: null, pinHash: null, updatedAt: EPOCH };
+      return parsed ?? { id: 'family', pinSalt: null, pinHash: null, removedVideos: [], updatedAt: EPOCH };
     },
     async saveFamily(f) {
       await save([{ store: 'family', key: 'family', value: familySchema.parse(f) }]);

@@ -176,12 +176,8 @@ export function useDiagnostic(child: Child, subject: DiagnosticSubject): Diagnos
         const nextSession = { ...session, questions: session.questions + 1, correct: session.correct + (correct ? 1 : 0) };
         try {
           const { repo } = await openRepo();
-          await repo.addAttempt(attempt);
-          for (const result of settled.results) await repo.saveDiagnostic(result);
-          for (const state of settled.states) await repo.saveSkillState(state);
-          await repo.saveSession(nextSession);
-          // The progress is saved last: if the app closes before this, the question is asked again.
-          await repo.saveDiagnosticProgress(after);
+          // All of it in one step: either the whole answer is saved, or the question is asked again.
+          await repo.saveAnswer({ attempt, diagnostics: settled.results, states: settled.states, session: nextSession, progress: after });
         } catch (error) {
           logError(error);
           if (!self.alive) return;

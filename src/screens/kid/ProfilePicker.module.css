@@ -1,36 +1,60 @@
-.mark {
-  font-size: var(--text-xxl);
-  line-height: 1;
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  min-height: 100%;
 }
 
-.title {
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   margin: 0;
   font-size: var(--text-xl);
   color: var(--color-brand);
 }
 
-.children {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--space-4);
-}
-
-.avatar {
-  font-size: var(--emoji-avatar);
+.mark {
   line-height: 1;
 }
 
-.grownUps {
+.ask {
+  margin: 0;
+  font-size: var(--text-l);
+  font-weight: 700;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+/* As many cards across as fit, centred. */
+.children {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, var(--size-play));
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* For grown-ups: one slim bar at the foot of the page. */
+.bar {
   margin-top: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-1);
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: var(--width-question);
+  padding-top: var(--space-3);
+  border-top: var(--border-thin) solid var(--color-line);
 }
 
 .small {
+  flex-basis: 100%;
   margin: 0;
   font-size: var(--text-s);
   color: var(--color-ink-soft);
+  text-align: center;
 }

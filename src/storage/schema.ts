@@ -176,6 +176,7 @@ export const familySchema = z.object({
   id: z.literal('family'),
   pinSalt: z.string().nullable(), // null until a parent sets the PIN
   pinHash: z.string().nullable(), // PBKDF2 of the 4-digit PIN with pinSalt. Never the PIN itself
+  removedVideos: z.array(z.string()).default([]), // skill ids whose video a parent took away, for every device
   updatedAt: iso,
 });
 export type Family = z.infer<typeof familySchema>;
@@ -195,7 +196,8 @@ export const deviceStateSchema = z.object({
   lastExportAt: iso.nullable().default(null),
   browserModeAccepted: z.boolean().default(false), // parent chose "Use in this browser anyway"
   catalogueVersion: z.number().int().min(0).default(0),
-  removedVideos: z.array(z.string()).default([]), // skill ids whose video a parent took away on this device
+  removedVideos: z.array(z.string()).default([]), // from before online storage. Moved into the family record, and no longer read
+  movedOnline: z.boolean().default(false), // this device's older records have been sent up to the server
   errors: z.array(loggedErrorSchema).max(20).default([]), // last 20
 });
 export type DeviceState = z.infer<typeof deviceStateSchema>;

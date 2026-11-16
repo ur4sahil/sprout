@@ -106,9 +106,7 @@ function PopRound({ child }: { child: Child }) {
       const outcome = recordAnswer({ child, skill: turn.skill, state: turn.state, session, question: turn.question, response: { index }, shownAt: self.shownAt, answeredAt: now() });
       try {
         const { repo } = await openRepo();
-        await repo.addAttempt(outcome.attempt);
-        await repo.saveSkillState(outcome.state);
-        await repo.saveSession(outcome.session);
+        await repo.saveAnswer({ attempt: outcome.attempt, states: [outcome.state], session: outcome.session });
       } catch (error) {
         logError(error);
         if (self.alive) setPhase('failed');

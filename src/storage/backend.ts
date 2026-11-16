@@ -16,6 +16,7 @@ export const STORES = [
   'clips',
   'family',
   'device',
+  'outbox', // which family records this device has changed and not yet sent to the server
 ] as const;
 export type StoreName = (typeof STORES)[number];
 

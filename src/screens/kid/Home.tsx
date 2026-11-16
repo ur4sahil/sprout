@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { stickerFor, syncAwards } from '../../app/awardsRun';
 import { useChildDay } from '../../app/childDay';
+import { popSkills } from '../../app/games';
 import { useAppStore } from '../../app/store';
 import { speak } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
@@ -47,6 +48,21 @@ export default function Home() {
   const child = useAppStore((s) => s.child);
   const { day, failed } = useChildDay(child);
   const [fresh, setFresh] = useState<AwardDef[]>([]);
+  // Pop is offered when the child has a skill in progress whose next question is a choice.
+  const [popOffered, setPopOffered] = useState(false);
+  useEffect(() => {
+    if (!child) return;
+    let alive = true;
+    void openRepo()
+      .then(async ({ repo }) => popSkills(child, await repo.getSkillStates(child.id)).length > 0)
+      .then((found) => {
+        if (alive) setPopOffered(found);
+      })
+      .catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, [child]);
   // Stickers are worked out each time home opens: after practice, a review, a check-in or a backup from another iPad.
   useEffect(() => {
     if (!child || !day || day.firstVisit) return;
@@ -139,6 +155,14 @@ export default function Home() {
             ))}
             <BigButton size="kid" onClick={() => go('/awards')}>
               <span aria-hidden="true">⭐ </span>Stickers
+            </BigButton>
+            {popOffered && (
+              <BigButton size="kid" onClick={() => go('/games/pop')}>
+                <span aria-hidden="true">🎈 </span>Pop
+              </BigButton>
+            )}
+            <BigButton size="kid" onClick={() => go('/games/pairs')}>
+              <span aria-hidden="true">🃏 </span>Pairs
             </BigButton>
           </CenterRow>
         </>

@@ -1,10 +1,13 @@
 import BigButton from './BigButton';
+import CenterRow from './CenterRow';
 import styles from './Celebration.module.css';
 
 interface Props {
   milestone: number; // 50, 80, 90 or 100
   skillName: string;
   onDone: () => void;
+  // At 100, the games are offered. Pop is left out when the child has no skill it can draw on.
+  games?: { onPop: (() => void) | null; onPairs: () => void };
 }
 
 export const MILESTONE_WORDS: Record<number, { emoji: string; title: string; line: string }> = {
@@ -15,7 +18,7 @@ export const MILESTONE_WORDS: Record<number, { emoji: string; title: string; lin
 };
 
 // A short full-screen celebration, the first time a milestone is crossed.
-export default function Celebration({ milestone, skillName, onDone }: Props) {
+export default function Celebration({ milestone, skillName, onDone, games }: Props) {
   const words = MILESTONE_WORDS[milestone] ?? (MILESTONE_WORDS[50] as { emoji: string; title: string; line: string });
   return (
     <div className={styles.cover} role="dialog" aria-modal="true" aria-label={words.title} data-celebration={milestone}>
@@ -29,6 +32,18 @@ export default function Celebration({ milestone, skillName, onDone }: Props) {
         <span aria-hidden="true">➡️ </span>
         {milestone === 100 ? 'All done' : 'Keep going'}
       </BigButton>
+      {milestone === 100 && games && (
+        <CenterRow>
+          {games.onPop && (
+            <BigButton size="kid" onClick={games.onPop}>
+              <span aria-hidden="true">🎈 </span>Play Pop
+            </BigButton>
+          )}
+          <BigButton size="kid" onClick={games.onPairs}>
+            <span aria-hidden="true">🃏 </span>Play Pairs
+          </BigButton>
+        </CenterRow>
+      )}
     </div>
   );
 }

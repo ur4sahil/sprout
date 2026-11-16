@@ -1,199 +1,176 @@
-import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
-import { parseExportText } from './exportFile';
-import { gunzip, gzip } from './gzip';
-import { openRepo } from './index';
-import type { Repo } from './repo';
+import { nowIso } from '../lib/clock';
+import { EXPORT_FORMAT, EXPORT_VERSION } from './exportFile';
+import type { DataApi, OutboxEntry, ServerRow, TrackedBackend } from './online';
+import { MAX_CHANGES, OfflineError, outboxKey, ServerError } from './online';
+import type { ExportFile, Repo } from './repo';
+import {
+  attemptSchema,
+  awardEarnedSchema,
+  childSchema,
+  diagnosticProgressSchema,
+  diagnosticResultSchema,
+  familySchema,
+  flagSchema,
+  planSchema,
+  sessionSchema,
+  skillStateSchema,
+} from './schema';
 
-// Backup sync (plan section 4). The whole family's progress is one gzip file on the server.
-// The device is always what the app reads and writes. Sync runs in the background:
-//   1. ask for the file, saying which version this device last saw
-//   2. if a newer one came back, check it and merge it in, with the same code import uses
-//   3. if this device has changes, upload, naming the version the upload was built on
-//   4. if another device uploaded in between, go back to 1. After 3 rounds, wait for the next run
-//   5. on success, clear `dirty` and remember the version and the time
-// A failed run leaves the device's records as they were, and is tried again next time.
+// Keeping this device and the server the same, record by record.
+//
+//   fetch  every record on the server is merged into the device with the rules a backup import
+//          uses: the later copy of a record wins, answers are only ever added, and a score is
+//          recounted from the joined answers. A record that fails its check is left out.
+//   send   every record in the device's outbox goes to the server, as it is on the device now.
+//
+// One run fetches, then sends. It runs when the app opens, when it comes back to the front, on
+// the picker and home, and straight after any change. With no internet nothing is lost: the
+// outbox keeps what is waiting, and the next run sends it.
 
-export const SYNC_EVERY_MS = 5 * 60_000;
-export const SYNC_ROUNDS = 3;
-const VERSION_HEADER = 'X-Backup-Version';
-const BASE_HEADER = 'X-Backup-Base';
-
-export type SyncOutcome =
-  | 'uploaded' // this device's changes are on the server
-  | 'upToDate' // nothing to send
-  | 'offline'
-  | 'signedOut'
-  | 'gaveUp' // other devices kept uploading first. Nothing is lost: next run tries again
-  | 'badFile' // the server's file could not be read, so it was not merged
-  | 'failed';
+export type SyncOutcome = 'done' | 'offline' | 'signedOut' | 'failed';
 
 export interface SyncResult {
   outcome: SyncOutcome;
-  merged: boolean; // a newer file from the server was merged into this device
+  changed: boolean; // records from the server changed what is on this device
+  sent: number; // records sent to the server
 }
 
-// What a parent reads on the data screen.
-export const SYNC_MESSAGES: Record<SyncOutcome, string> = {
-  uploaded: 'Backed up.',
-  upToDate: 'Backed up.',
-  offline: 'No internet. The backup will run when this device is online again.',
-  signedOut: 'Sign in again to back up.',
-  gaveUp: 'Another device was backing up at the same time. It will try again soon.',
-  badFile: 'The backup on the server could not be read, so it was left alone. Export a copy from this device.',
-  failed: 'The backup did not work. It will try again soon.',
-};
+const SCHEMAS = {
+  children: childSchema,
+  skillStates: skillStateSchema,
+  attempts: attemptSchema,
+  sessions: sessionSchema,
+  awards: awardEarnedSchema,
+  plans: planSchema,
+  diagnostics: diagnosticResultSchema,
+  flags: flagSchema,
+  diagnosticProgress: diagnosticProgressSchema,
+} as const;
 
-type Pulled = { kind: 'none' } | { kind: 'same' } | { kind: 'file'; version: string; text: string } | { kind: 'stop'; outcome: SyncOutcome };
-
-async function pull(have: string | null): Promise<Pulled> {
-  let reply: Response;
-  try {
-    reply = await fetch(`/api/backup${have ? `?have=${encodeURIComponent(have)}` : ''}`, { credentials: 'same-origin' });
-  } catch {
-    return { kind: 'stop', outcome: 'offline' };
-  }
-  if (reply.status === 401) return { kind: 'stop', outcome: 'signedOut' };
-  if (!reply.ok) return { kind: 'stop', outcome: 'failed' };
-  const version = reply.headers.get(VERSION_HEADER);
-  if (version === null) {
-    const body = (await reply.json().catch(() => null)) as { version?: unknown; unchanged?: unknown } | null;
-    if (body && body.version === null) return { kind: 'none' };
-    if (body && body.unchanged === true && typeof body.version === 'string' && body.version === have) return { kind: 'same' };
-    return { kind: 'stop', outcome: 'failed' };
-  }
-  try {
-    return { kind: 'file', version, text: await gunzip(new Uint8Array(await reply.arrayBuffer())) };
-  } catch {
-    return { kind: 'stop', outcome: 'badFile' };
-  }
-}
-
-type Pushed = { kind: 'stored'; version: string } | { kind: 'moved' } | { kind: 'stop'; outcome: SyncOutcome };
-
-async function push(bytes: Uint8Array, base: string | null): Promise<Pushed> {
-  let reply: Response;
-  try {
-    reply = await fetch('/api/backup', {
-      method: 'PUT',
-      credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/gzip', [BASE_HEADER]: base ?? 'none' },
-      body: bytes as BodyInit,
-    });
-  } catch {
-    return { kind: 'stop', outcome: 'offline' };
-  }
-  if (reply.status === 409) return { kind: 'moved' };
-  if (reply.status === 401) return { kind: 'stop', outcome: 'signedOut' };
-  if (!reply.ok) return { kind: 'stop', outcome: 'failed' };
-  const body = (await reply.json().catch(() => null)) as { version?: unknown } | null;
-  return body && typeof body.version === 'string' ? { kind: 'stored', version: body.version } : { kind: 'stop', outcome: 'failed' };
-}
-
-// One sync run on one device.
-export async function syncRepo(repo: Repo): Promise<SyncResult> {
-  let merged = false;
-  for (let round = 0; round < SYNC_ROUNDS; round += 1) {
-    const before = await repo.getDeviceState();
-    const pulled = await pull(before.backupVersion);
-    if (pulled.kind === 'stop') return { outcome: pulled.outcome, merged };
-
-    let serverVersion = pulled.kind === 'none' ? null : before.backupVersion;
-    if (pulled.kind === 'file') {
-      // Checked in full before anything changes. A file that does not pass is never merged.
-      let file;
-      try {
-        file = parseExportText(pulled.text);
-      } catch {
-        return { outcome: 'badFile', merged };
-      }
-      // Read just before the merge, so practice saved while the file was downloading still counts as a change.
-      const wasDirty = (await repo.getDeviceState()).dirty;
-      await repo.importAll(file);
-      merged = true;
-      serverVersion = pulled.version;
-      // Merging writes records, which marks the device as changed. If it had nothing of its own
-      // to send before the merge, it still has nothing to send.
-      await repo.updateDeviceState({ backupVersion: pulled.version, dirty: wasDirty });
+// The server's rows as an import file. A row that does not pass its schema is left out and logged.
+export async function fileFrom(rows: readonly ServerRow[], repo: Repo): Promise<ExportFile> {
+  const read = <K extends keyof typeof SCHEMAS>(store: K): ExportFile[K] => {
+    const out: unknown[] = [];
+    for (const row of rows) {
+      if (row.store !== store) continue;
+      const parsed = SCHEMAS[store].safeParse(row.value);
+      if (parsed.success) out.push(parsed.data);
+      else logError(new Error(`A ${store} record from the server could not be read (${row.key})`));
     }
-
-    const device = await repo.getDeviceState();
-    // The server has no file but this device once backed up: send everything again.
-    const lostFile = pulled.kind === 'none' && device.backupVersion !== null;
-    if (!device.dirty && !lostFile) {
-      await repo.updateDeviceState({ lastSyncAt: now().toISOString() });
-      return { outcome: 'upToDate', merged };
-    }
-
-    // `dirty` is cleared before the export, so a change made while the upload is on its way sets it again.
-    await repo.updateDeviceState({ dirty: false });
-    const bytes = await gzip(JSON.stringify(await repo.exportAll()));
-    const pushed = await push(bytes, serverVersion);
-    if (pushed.kind !== 'stored') {
-      await repo.updateDeviceState({ dirty: true });
-      if (pushed.kind === 'stop') return { outcome: pushed.outcome, merged };
-      continue; // another device uploaded in between: fetch its file, merge, try again
-    }
-    await repo.updateDeviceState({ backupVersion: pushed.version, lastSyncAt: now().toISOString() });
-    return { outcome: 'uploaded', merged };
-  }
-  return { outcome: 'gaveUp', merged };
+    return out as ExportFile[K];
+  };
+  const family = rows.find((row) => row.store === 'family' && row.key === 'family');
+  const parsedFamily = family ? familySchema.safeParse(family.value) : null;
+  return {
+    format: EXPORT_FORMAT,
+    version: EXPORT_VERSION,
+    exportedAt: nowIso(),
+    children: read('children'),
+    skillStates: read('skillStates'),
+    attempts: read('attempts'),
+    sessions: read('sessions'),
+    awards: read('awards'),
+    plans: read('plans'),
+    diagnostics: read('diagnostics'),
+    flags: read('flags'),
+    diagnosticProgress: read('diagnosticProgress'),
+    // With no family record on the server yet, the device's own stands.
+    family: parsedFamily?.success ? parsedFamily.data : await repo.getFamily(),
+    quarantined: [],
+  };
 }
 
-// ---- The app's one sync at a time ----
-
-export interface SyncStatus {
-  running: boolean;
-  last: SyncOutcome | null; // the result of the last run since the app opened
+export interface Syncer {
+  run(): Promise<SyncResult>; // fetch, then send. A second call while one is running joins it
+  send(): Promise<SyncResult>; // send only: used straight after a change
+  waiting(): Promise<number>; // records not yet sent
 }
 
-let running: Promise<SyncResult> | null = null;
-let lastRunAt = 0;
-let status: SyncStatus = { running: false, last: null };
-const listeners = new Set<(status: SyncStatus) => void>();
+export function makeSyncer(repo: Repo, backend: TrackedBackend, api: DataApi): Syncer {
+  let running: Promise<SyncResult> | null = null;
 
-function setStatus(next: SyncStatus): void {
-  status = next;
-  listeners.forEach((listener) => listener(status));
-}
-
-export function syncStatus(): SyncStatus {
-  return status;
-}
-
-export function onSyncStatus(listener: (status: SyncStatus) => void): () => void {
-  listeners.add(listener);
-  return () => listeners.delete(listener);
-}
-
-// Runs a sync now. A second call while one is running joins it.
-export function syncNow(): Promise<SyncResult> {
-  running ??= (async () => {
-    lastRunAt = now().getTime();
-    setStatus({ ...status, running: true });
-    let result: SyncResult;
+  async function fetchAndMerge(): Promise<boolean> {
+    const rows = await api.load();
+    const file = await fileFrom(rows, repo);
+    backend.mergingFrom(new Map(rows.map((row) => [outboxKey(row.store, row.key), row.value])));
     try {
-      result = await syncRepo((await openRepo()).repo);
-    } catch (error) {
-      logError(error);
-      result = { outcome: 'failed', merged: false };
+      const report = await repo.importAll(file);
+      return report.added + report.updated > 0;
+    } finally {
+      backend.mergingFrom(null);
     }
-    running = null;
-    setStatus({ running: false, last: result.outcome });
-    return result;
-  })();
-  return running;
-}
+  }
 
-// Runs a sync unless one ran in the last 5 minutes.
-export function syncIfDue(): void {
-  if (running || now().getTime() - lastRunAt < SYNC_EVERY_MS) return;
-  void syncNow();
-}
+  async function send(): Promise<number> {
+    let sent = 0;
+    for (;;) {
+      const entries = (await backend.waiting()).slice(0, MAX_CHANGES);
+      if (entries.length === 0) return sent;
+      const puts: ServerRow[] = [];
+      const removes: { store: string; key: string }[] = [];
+      for (const entry of entries) {
+        // The record as it is on the device now. One that is gone is removed on the server too.
+        const value = entry.removed ? undefined : await backend.get(entry.store, entry.key);
+        if (value === undefined) removes.push({ store: entry.store, key: entry.key });
+        else puts.push({ store: entry.store, key: entry.key, value });
+      }
+      await api.save({ puts, removes });
+      await backend.sent(entries as OutboxEntry[]);
+      sent += entries.length;
+    }
+  }
 
-export function resetSyncForTests(): void {
-  running = null;
-  lastRunAt = 0;
-  status = { running: false, last: null };
-  listeners.clear();
+  async function once(): Promise<SyncResult> {
+    let changed = false;
+    let sent = 0;
+    try {
+      changed = await fetchAndMerge();
+      // A device joining online storage sends up everything it holds, once.
+      if (!(await repo.getDeviceState()).movedOnline) {
+        await backend.noteEverything();
+        await repo.updateDeviceState({ movedOnline: true });
+      }
+      sent = await send();
+      await repo.updateDeviceState({ lastSyncAt: nowIso() });
+      return { outcome: 'done', changed, sent };
+    } catch (error) {
+      if (error instanceof OfflineError) return { outcome: 'offline', changed, sent };
+      if (error instanceof ServerError && error.status === 401) return { outcome: 'signedOut', changed, sent };
+      logError(error);
+      return { outcome: 'failed', changed, sent };
+    }
+  }
+
+  async function sendOnly(): Promise<SyncResult> {
+    try {
+      return { outcome: 'done', changed: false, sent: await send() };
+    } catch (error) {
+      if (error instanceof OfflineError) return { outcome: 'offline', changed: false, sent: 0 };
+      if (error instanceof ServerError && error.status === 401) return { outcome: 'signedOut', changed: false, sent: 0 };
+      logError(error);
+      return { outcome: 'failed', changed: false, sent: 0 };
+    }
+  }
+
+  // One job at a time: a send never runs in the middle of a fetch and merge.
+  let last: Promise<unknown> = Promise.resolve();
+  const queued = <T>(work: () => Promise<T>): Promise<T> => {
+    const next = last.then(work, work);
+    last = next.catch(() => undefined);
+    return next;
+  };
+
+  return {
+    run() {
+      running ??= queued(once).finally(() => {
+        running = null;
+      });
+      return running;
+    },
+    send: () => queued(sendOnly),
+    async waiting() {
+      return (await backend.waiting()).length;
+    },
+  };
 }

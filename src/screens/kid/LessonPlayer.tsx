@@ -53,8 +53,8 @@ export default function LessonPlayer({ child, skill }: Props) {
     let alive = true;
     void (async () => {
       const { repo } = await openRepo();
-      const device = await repo.getDeviceState();
-      if (alive) setRemoved(device.removedVideos);
+      const family = await repo.getFamily();
+      if (alive) setRemoved(family.removedVideos);
     })().catch(logError);
     return () => {
       alive = false;

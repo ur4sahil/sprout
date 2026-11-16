@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useNavigationType, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Notice from '../components/Notice';
-import FirstSync from '../screens/account/FirstSync';
 import ChoosePin from '../screens/parent/ChoosePin';
 import SignIn from '../screens/account/SignIn';
 import InstallGuide from '../screens/kid/InstallGuide';
@@ -13,14 +12,19 @@ import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { needsInstallGuide } from '../lib/platform';
 import { checkSession } from '../storage/account';
-import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
+import { keepErrorsInDeviceRecord, openRepo, requestPersistence, syncFamily, watchSync } from '../storage/index';
+import type { SyncResult } from '../storage/sync';
 import styles from './App.module.css';
 import { runCatalogueGrowth } from './checkIn';
 import { hasPin } from './pin';
 import { routes } from './routes';
 import { applyUpdate, checkForUpdate, finishUpdate, isSafeToUpdate, startUpdates } from './updates';
-import { syncIfDue } from '../storage/sync';
 import { useAppStore } from './store';
+
+// A run is not started more often than this, however many screens are passed through.
+const RUN_GAP_MS = 10_000;
+const RETRY_MS = 30_000;
+const lastRun = { at: 0 };
 
 export default function App() {
   const navigate = useNavigate();
@@ -54,8 +58,6 @@ export default function App() {
         const { repo, saved } = await openRepo();
         useAppStore.getState().setStorageSaved(saved);
         await keepErrorsInDeviceRecord(repo);
-        // New skills below a child's saved placement are placed out, once for each catalogue version.
-        await runCatalogueGrowth(repo, CATALOGUE_VERSION, now().toISOString()).catch(logError);
         const device = await repo.getDeviceState();
         setMuted(device.muted);
         useAppStore.getState().setInstallGuide(needsInstallGuide() && !device.browserModeAccepted);
@@ -98,24 +100,85 @@ export default function App() {
     if (status === 'signedIn') void syncVoicePack();
   }, [status]);
 
-  // Backup sync, in the background: at launch, when a session ends (the child is back on the picker or home)
-  // and when the app returns to the front. At most once every 5 minutes, and never in the middle of a question.
-  const firstSync = useAppStore((s) => s.firstSync);
+  // The device keeps a copy of the family's records, so the app opens at once, with or without the
+  // internet. The server holds the main copy: a run fetches what other devices saved and sends what
+  // this one has waiting.
+  const link = useAppStore((s) => s.link);
+  const dataVersion = useAppStore((s) => s.dataVersion);
+  useEffect(() => {
+    // Every run, whoever started it, says how it went.
+    watchSync((result: SyncResult) => {
+      const store = useAppStore.getState();
+      // A run the server refused changes nothing here. Whether the device is still signed in is
+      // settled by the sign-in check alone: the app stays open this launch and locks at the next.
+      if (result.outcome === 'signedOut') return;
+      if (result.changed) store.bumpData();
+      // 'waiting' is ended only by the first run below, never by a send in the background.
+      if (store.link !== 'waiting') store.setLink(result.outcome === 'offline' ? 'offline' : 'ready');
+    });
+    return () => watchSync(null);
+  }, []);
+
+  useEffect(() => {
+    if (status !== 'signedIn') return;
+    let alive = true;
+    void (async () => {
+      const { repo } = await openRepo();
+      // A device that has never fetched the family's records waits for them: an empty picker
+      // would look as if everything was gone. Any other device opens straight away.
+      const first = (await repo.getDeviceState()).lastSyncAt === null && import.meta.env.MODE !== 'test';
+      useAppStore.getState().setLink(first ? 'waiting' : 'ready');
+      const result = await syncFamily();
+      // New skills below a child's saved placement are placed out, once for each catalogue version.
+      await runCatalogueGrowth(repo, CATALOGUE_VERSION, now().toISOString()).catch(logError);
+      if (alive && useAppStore.getState().account.status === 'signedIn') useAppStore.getState().setLink(result.outcome === 'offline' ? 'offline' : 'ready');
+    })().catch((error: unknown) => {
+      logError(error);
+      useAppStore.getState().setLink('ready');
+    });
+    return () => {
+      alive = false;
+    };
+  }, [status]);
+
+  // The device says when it loses the network and when it finds it again. While it is offline,
+  // the app also tries by itself every half minute.
+  useEffect(() => {
+    if (status !== 'signedIn') return;
+    const lost = (): void => {
+      if (useAppStore.getState().link === 'ready') useAppStore.getState().setLink('offline');
+    };
+    const found = (): void => void syncFamily();
+    window.addEventListener('offline', lost);
+    window.addEventListener('online', found);
+    const retry = link === 'offline' ? setInterval(() => void syncFamily(), RETRY_MS) : null;
+    return () => {
+      window.removeEventListener('offline', lost);
+      window.removeEventListener('online', found);
+      if (retry) clearInterval(retry);
+    };
+  }, [status, link]);
+
+  // Another device may have saved something. A run starts when the app comes back to the front and
+  // whenever the child is back on the picker or home, never in the middle of a question.
   const quietScreen = !steppedBack && isSafeToUpdate(location.pathname);
   useEffect(() => {
-    // An update goes first, by itself: a request on its way would hold up the hand-over to the new version.
-    // The page then loads again, and the launch sync runs.
-    if (status !== 'signedIn' || firstSync || !quietScreen || updateReady || updateTookOver) return;
-    syncIfDue();
+    if (status !== 'signedIn' || link === 'waiting' || !quietScreen || updateReady || updateTookOver) return;
+    const again = (): void => {
+      if (now().getTime() - lastRun.at < RUN_GAP_MS) return;
+      lastRun.at = now().getTime();
+      void syncFamily();
+    };
+    again();
     const onShow = (): void => {
-      if (document.visibilityState === 'visible') syncIfDue();
+      if (document.visibilityState === 'visible') again();
     };
     document.addEventListener('visibilitychange', onShow);
     return () => document.removeEventListener('visibilitychange', onShow);
-  }, [status, firstSync, quietScreen, updateReady, updateTookOver, location.pathname]);
+  }, [status, link, quietScreen, updateReady, updateTookOver, location.pathname]);
 
   useEffect(() => {
-    if (status !== 'signedIn' || firstSync) return;
+    if (status !== 'signedIn' || link === 'waiting') return;
     let alive = true;
     void openRepo()
       .then(({ repo }) => repo.getFamily())
@@ -129,7 +192,7 @@ export default function App() {
     return () => {
       alive = false;
     };
-  }, [status, firstSync, location.pathname]);
+  }, [status, link, location.pathname, dataVersion]);
 
   // The sign-in guard: without a session nothing else can be reached, on any path.
   let content = screen;
@@ -144,8 +207,12 @@ export default function App() {
     content = <InstallGuide onUseBrowser={useBrowser} />;
   } else if (status === 'signedOut') {
     content = <SignIn />;
-  } else if (firstSync) {
-    content = <FirstSync />;
+  } else if (link === 'waiting') {
+    content = (
+      <main className={styles.splash} aria-busy="true" aria-label="Getting your family's progress">
+        <span aria-hidden="true">🌱</span>
+      </main>
+    );
   } else if (pinNeeded === true) {
     content = <ChoosePin onDone={() => setPinNeeded(false)} />;
   }
@@ -154,7 +221,12 @@ export default function App() {
     <div className={styles.shell}>
       {!storageSaved && (
         <Notice role="status" banner>
-          Progress will not be saved on this device.
+          Progress will not be kept on this device. It is still saved online while the internet is on.
+        </Notice>
+      )}
+      {status === 'signedIn' && link === 'offline' && (
+        <Notice role="status" banner>
+          No internet. Progress is saved on this device and will be sent when the internet is back.
         </Notice>
       )}
       <ErrorBoundary onHome={() => navigate('/')}>{content}</ErrorBoundary>

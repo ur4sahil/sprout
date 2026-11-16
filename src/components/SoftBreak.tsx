@@ -4,6 +4,7 @@ import styles from './Celebration.module.css';
 
 interface Props {
   answered: number;
+  score: number; // the skill's score now, out of 100
   keepGoingLabel?: string; // "Next one" between the picks of a Play run
   onKeepGoing: () => void;
   onAllDone: () => void;
@@ -11,21 +12,24 @@ interface Props {
   games?: { onPop: (() => void) | null; onPairs: () => void };
 }
 
-// After the child's session length: a soft break. There is no forced end.
-export default function SoftBreak({ answered, keepGoingLabel = 'Keep going', onKeepGoing, onAllDone, games }: Props) {
+// Between the picks of a Play run: the score so far, and on to the next one. It never says a skill
+// is done: only a score of 100 does that.
+export default function SoftBreak({ answered, score, keepGoingLabel = 'Keep going', onKeepGoing, onAllDone, games }: Props) {
   return (
-    <div className={styles.cover} role="dialog" aria-modal="true" aria-label="Time for a break?" data-break="">
+    <div className={styles.cover} role="dialog" aria-modal="true" aria-label="Nice work!" data-break="">
       <div className={styles.emoji} aria-hidden="true">
         🌱
       </div>
       <h2 className={styles.title}>Nice work!</h2>
-      <p className={styles.line}>You answered {answered} questions.</p>
+      <p className={styles.line}>
+        You answered {answered} questions. Score {score} of 100.
+      </p>
       <BigButton size="kid" onClick={onKeepGoing}>
         <span aria-hidden="true">➡️ </span>
         {keepGoingLabel}
       </BigButton>
       <BigButton size="kid" onClick={onAllDone}>
-        <span aria-hidden="true">🏠 </span>All done
+        <span aria-hidden="true">🏠 </span>Stop for now
       </BigButton>
       {games && (
         <CenterRow>

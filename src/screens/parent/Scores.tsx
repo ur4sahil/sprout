@@ -7,7 +7,7 @@ import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import Tabs from '../../components/Tabs';
 import { videoFor, VIDEOS_ENABLED } from '../../content/videos';
-import { localDayOf } from '../../lib/clock';
+import { localDayOf, now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import { SUBJECTS } from '../kid/Home';
@@ -30,14 +30,14 @@ export default function Scores() {
   const navigate = useNavigate();
   const [rows, setRows] = useState<ScoreRow[] | null>(null);
   const [sort, setSort] = useState<ScoreSort>('skill');
-  // Videos a parent has taken away on this device.
+  // Videos a parent has taken away.
   const [removed, setRemoved] = useState<string[]>([]);
   useEffect(() => {
     let alive = true;
     void (async () => {
       const { repo } = await openRepo();
-      const device = await repo.getDeviceState();
-      if (alive) setRemoved(device.removedVideos);
+      const family = await repo.getFamily();
+      if (alive) setRemoved(family.removedVideos);
     })().catch(logError);
     return () => {
       alive = false;
@@ -48,7 +48,8 @@ export default function Scores() {
     const next = [...new Set([...removed, skillId])];
     setRemoved(next);
     const { repo } = await openRepo();
-    await repo.updateDeviceState({ removedVideos: next });
+    // Saved with the family, so the video is gone on every device.
+    await repo.saveFamily({ ...(await repo.getFamily()), removedVideos: next, updatedAt: now().toISOString() });
   }
 
   useEffect(() => {

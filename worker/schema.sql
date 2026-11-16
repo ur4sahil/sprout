@@ -28,3 +28,15 @@ create table if not exists login_attempts (
   window_start text not null,
   count        integer not null
 );
+
+-- The family's records: children, scores, answers, stickers, plans and check-in results.
+-- One row for each record. `value` is the record as JSON, exactly as the app sent it.
+-- Every listed parent shares one family. Only the local test server keeps accounts apart.
+create table if not exists records (
+  family     text not null,
+  store      text not null,           -- which kind of record, such as 'children' or 'attempts'
+  key        text not null,           -- its id within that kind
+  value      text not null,
+  updated_at text not null,
+  primary key (family, store, key)
+);

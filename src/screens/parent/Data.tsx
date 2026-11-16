@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { importText, shareExport } from '../../app/dataTools';
 import { endPass } from '../../app/pin';
 import { useAppStore } from '../../app/store';
-import BackupStatus from '../../components/BackupStatus';
 import BigButton from '../../components/BigButton';
 import CenterRow from '../../components/CenterRow';
 import Notice from '../../components/Notice';
@@ -14,6 +13,7 @@ import { failureMessage, signOut, signOutEverywhere } from '../../storage/accoun
 import { ImportError } from '../../storage/exportFile';
 import { openRepo } from '../../storage/index';
 import type { DeviceState, Flag } from '../../storage/schema';
+import OnlineStatus from '../../components/OnlineStatus';
 import ParentArea from './ParentArea';
 import styles from './Parent.module.css';
 import { useChildren } from './useChildren';
@@ -135,9 +135,10 @@ export default function Data() {
         {device?.lastExportAt && <p className={styles.soft}>Last export: {localDayOf(device.lastExportAt)}</p>}
       </section>
 
-      <section className={styles.panel} aria-label="Online backup">
-        <h2>Online backup</h2>
-        <BackupStatus />
+      <section className={styles.panel} aria-label="Saved online">
+        <h2>Saved online</h2>
+        <p className={styles.soft}>Your family's progress is kept online and on this device. Each change is sent as it happens, or when the internet is back, and every signed-in device shows the same children and scores.</p>
+        <OnlineStatus />
       </section>
 
       {children !== null && children.length > 0 && child && (

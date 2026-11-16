@@ -28,7 +28,7 @@ async function signedIn(): Promise<ServerStub> {
 async function relaunch(path = '/'): Promise<void> {
   // A real launch starts with nothing in memory.
   useAppStore.getState().setAccount({ status: 'checking' });
-  useAppStore.getState().setFirstSync(false);
+  useAppStore.getState().setLink('waiting');
   render(
     <MemoryRouter initialEntries={[path]}>
       <App />
@@ -146,7 +146,7 @@ describe('storage at start-up', () => {
     stubServer();
     setRepoForTests(memoryRepo(), false);
     await relaunch();
-    expect(screen.getByRole('status').textContent).toBe('Progress will not be saved on this device.');
+    expect(screen.getByRole('status').textContent).toBe('Progress will not be kept on this device. It is still saved online while the internet is on.');
   });
 
   it('shows no banner on a device that saves', async () => {
@@ -163,7 +163,7 @@ describe('storage at start-up', () => {
     await opened.repo.saveDeviceState({ ...(await opened.repo.getDeviceState()), muted: true });
     expect((await (await openRepo()).repo.getDeviceState()).muted).toBe(true); // one repo for the whole launch
     await relaunch();
-    expect(screen.getByRole('status').textContent).toContain('will not be saved');
+    expect(screen.getByRole('status').textContent).toContain('will not be kept on this device');
   });
 
   it('asks for persistent storage once and remembers the answer', async () => {

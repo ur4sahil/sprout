@@ -185,3 +185,26 @@
 - Balloons bob forever, so a browser test must call `page.emulateMedia({ reducedMotion: 'reduce' })` before tapping one or checking the layout.
 - The printable certificate is built: `/parent/certificate/:childId/:skillId` (`screens/parent/Certificate.tsx`), linked from a finished group's heading on the scores screen. A group is finished when every skill in it is mastered (`categoryComplete` in `parentData.ts`). Print leaves the buttons off the page.
 - A long skill name breaks inside the practice bar on a 360-wide phone, where the pencil button takes room.
+
+## The server and the device (decided by the owner on Nov 16, 2026: this replaces the plan's backup-file sync)
+
+- The owner first chose online-only storage, then settled on: the server holds the main copy, each device keeps its own copy, and the app opens and practises with no internet.
+- Server: the D1 table `records` (family, store, key, value). `worker/data.ts` has `GET /api/data` (paged) and `POST /api/data` (one transaction). The Worker never looks inside a record. Every listed parent shares the family `family`; on the local test server each account is its own family.
+- `worker/index.ts` may export only functions beside its default. Any other named value stops the Worker from starting. `tests/worker/config.test.ts` guards this.
+- Device: `src/storage/online.ts` `trackedBackend(device)` wraps the IndexedDB backend. Every write to a family store also writes a note in the `outbox` store (IndexedDB version 2), in the same transaction. `device`, `clips` and `outbox` never leave the device.
+- `src/storage/sync.ts` `makeSyncer`: `run()` fetches every server row, merges it with `importAll` (so the tested merge rules apply), then sends the outbox. `send()` only sends. A row merged in from the server that equals the server's copy is not noted, so it is never sent back. A device's first run notes everything it holds (`movedOnline`).
+- `src/storage/index.ts`: a change is sent 300 ms after it is made. `syncFamily()` runs at launch, on the picker and home, when the app returns to the front (at most every 10 seconds), on the `online` event, and every 30 seconds while offline. `watchSync` tells the app how each run went. A run the server refuses (401) changes nothing: the sign-in check alone decides whether the device is signed in.
+- `store.link` is `waiting` only on a device that has never fetched (the picker would look empty), otherwise `ready` or `offline`. Offline shows a notice, never a blocking screen. `store.dataVersion` goes up when records arrive, and the picker and the grown-up screens read again.
+- `repo.saveAnswer` saves one answer and everything it changes in one write, so it goes up in one request.
+- The removed-videos list is in the family record now. `savePin` keeps the rest of the family record.
+- Gone: the R2 backup sync, `FirstSync`, `BackupStatus`, the `dirty` flag. `/api/backup` and the R2 file are still there, unused, as a safety copy. The Data screen shows `OnlineStatus`.
+- Unit tests run with no server. A test that wants one calls `setDataApiForTests(fakeDataApi(), device)`; see `tests/app/online.test.tsx` and `tests/storage/online.test.ts`.
+- Browser-test helpers that write straight into IndexedDB must also write the outbox note, or the record never reaches a second device (`finishCheckIn` in `e2e/support/kid.ts` does).
+- Before deploying a schema change: `npx wrangler d1 execute sprout --remote --file worker/schema.sql` (safe to run more than once).
+
+## Changes the owner asked for on Nov 16, 2026
+
+- Practice opened by itself never stops for a break: it runs until the score reaches 100 or the child leaves. Only a pick in a Play run has sessions (`usePractice(child, skill, { sessions: true })`), and its card says the score with "Next one" and "Stop for now", never "All done".
+- The games are offered on the medal at 100, on home (Pop only when a skill fits), and between Play picks.
+- The profile page: `components/ProfileCard.tsx` cards (avatar, name, grade, today's progress), an "Add a child" card in the grid, and a grown-ups bar with Grown-ups and Sign out. Adding a child and signing out ask for the PIN.
+- The owner finds the look plain and wants it reworked. Two directions are mocked up for him to choose from; do not restyle screens until he picks.

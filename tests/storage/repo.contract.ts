@@ -38,7 +38,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
       await target.saveDiagnostic(diagnostic('d1', 'a', T(5)));
       await target.saveFlag(flag('f1', 'a', T(5)));
       await target.saveDiagnosticProgress(progress('a', T(5)));
-      await target.saveFamily({ id: 'family', pinSalt: 'salt', pinHash: 'hash', updatedAt: T(5) });
+      await target.saveFamily({ id: 'family', pinSalt: 'salt', pinHash: 'hash', removedVideos: [], updatedAt: T(5) });
     }
 
     async function everything(target: Repo): Promise<Omit<ExportFile, 'exportedAt'>> {
@@ -58,10 +58,10 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
           repo.updateDeviceState({ signedInEmail: 'parent.one@example.com' }),
           repo.updateDeviceState({ lastSyncAt: T(9) }),
           repo.updateDeviceState({ voicePackVersion: 'pack-2' }),
-          repo.saveChild(child('a')), // marks the device as changed
+          repo.saveChild(child('a')),
           repo.updateDeviceState({ muted: true }),
         ]);
-        expect(await repo.getDeviceState()).toMatchObject({ signedInEmail: 'parent.one@example.com', lastSyncAt: T(9), voicePackVersion: 'pack-2', muted: true, dirty: true });
+        expect(await repo.getDeviceState()).toMatchObject({ signedInEmail: 'parent.one@example.com', lastSyncAt: T(9), voicePackVersion: 'pack-2', muted: true });
       });
 
       it('a slow job cannot undo a sign-out that happened while it was working', async () => {
@@ -95,7 +95,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
       });
 
       it('gives default family and device records when nothing is saved', async () => {
-        expect(await repo.getFamily()).toEqual({ id: 'family', pinSalt: null, pinHash: null, updatedAt: '1970-01-01T00:00:00.000Z' });
+        expect(await repo.getFamily()).toEqual({ id: 'family', pinSalt: null, pinHash: null, removedVideos: [], updatedAt: '1970-01-01T00:00:00.000Z' });
         expect(await repo.getDeviceState()).toEqual({
           id: 'device',
           muted: false,
@@ -110,6 +110,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
           browserModeAccepted: false,
           catalogueVersion: 0,
           removedVideos: [],
+          movedOnline: false,
           errors: [],
         });
       });
@@ -210,7 +211,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
         expect(await repo.getDiagnosticProgress('a', 'math')).toEqual(progress('a', T(5)));
         expect(await repo.getDiagnosticProgress('a', 'ela')).toBeNull();
         expect(await repo.getDiagnosticProgress('b', 'math')).toBeNull();
-        expect(await repo.getFamily()).toEqual({ id: 'family', pinSalt: 'salt', pinHash: 'hash', updatedAt: T(5) });
+        expect(await repo.getFamily()).toEqual({ id: 'family', pinSalt: 'salt', pinHash: 'hash', removedVideos: [], updatedAt: T(5) });
       });
     });
 
@@ -230,33 +231,13 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
     });
 
     describe('the device record', () => {
-      it('is marked dirty by any write to a backed-up record, and by nothing else', async () => {
-        expect((await repo.getDeviceState()).dirty).toBe(false);
-        await repo.saveClip({ key: 'k', bytes: new ArrayBuffer(1), mimeType: 'audio/mp4', packVersion: 'v1' });
+      it('is changed only by writes to the device itself: saving a family record leaves it alone', async () => {
         await repo.saveDeviceState({ ...(await repo.getDeviceState()), muted: true });
-        expect((await repo.getDeviceState()).dirty).toBe(false);
+        const before = await repo.getDeviceState();
         await repo.saveChild(child('a'));
-        expect((await repo.getDeviceState()).dirty).toBe(true);
-        expect((await repo.getDeviceState()).muted).toBe(true);
-      });
-
-      it('each kind of backed-up write sets dirty', async () => {
-        const writes: [string, (r: Repo) => Promise<void>][] = [
-          ['skill state', (r) => r.saveSkillState(state('a', 'S'))],
-          ['attempt', (r) => r.addAttempt(attempt('x', 'a', 'S', true, T(3)))],
-          ['session', (r) => r.saveSession(session('s', 'a', T(3)))],
-          ['award', (r) => r.addAward({ childId: 'a', awardId: 'days:3', earnedAt: T(3) })],
-          ['plan', (r) => r.savePlan(plan('p'))],
-          ['diagnostic', (r) => r.saveDiagnostic(diagnostic('d', 'a', T(3)))],
-          ['flag', (r) => r.saveFlag(flag('f', 'a', T(3)))],
-          ['progress', (r) => r.saveDiagnosticProgress(progress('a', T(3)))],
-          ['family', (r) => r.saveFamily({ id: 'family', pinSalt: null, pinHash: null, updatedAt: T(3) })],
-        ];
-        for (const [what, write] of writes) {
-          const fresh = makeRepo(await open());
-          await write(fresh);
-          expect((await fresh.getDeviceState()).dirty, what).toBe(true);
-        }
+        await repo.addAttempt(attempt('x', 'a', 'S', true, T(3)));
+        await repo.saveFamily({ id: 'family', pinSalt: null, pinHash: null, removedVideos: [], updatedAt: T(3) });
+        expect(await repo.getDeviceState()).toEqual(before);
       });
 
       it('keeps the sign-in state and the last 20 errors', async () => {
@@ -359,7 +340,6 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
         expect((await wiped.listAttempts('a', {})).map((a) => a.id)).toEqual(['att-1', 'att-2', 'att-3']);
         expect((await wiped.getSkillStates('a'))[0]?.score).toBe(41);
         expect(await wiped.getDiagnosticProgress('a', 'math')).toEqual(progress('a', T(5)));
-        expect((await wiped.getDeviceState()).dirty).toBe(true);
       });
 
       it('importing the same file twice changes nothing the second time', async () => {

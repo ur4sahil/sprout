@@ -421,7 +421,7 @@ describe('data tools', () => {
     expect(document.querySelector('[data-fact="storage"]')?.textContent).toBe('Progress is saved on this device.');
     expect(document.querySelector('[data-fact="flags"]')?.textContent).toBe('Flagged questions: 0');
     expect(screen.getByRole('region', { name: 'Credits' }).textContent).toContain('Illustrative Mathematics');
-    expect(screen.getByRole('region', { name: 'Online backup' })).toBeTruthy();
+    expect(screen.getByRole('region', { name: 'Saved online' })).toBeTruthy();
   });
 
   it('signing out keeps the children and their progress on the device', async () => {

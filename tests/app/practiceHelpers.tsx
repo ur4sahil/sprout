@@ -6,6 +6,7 @@ import { grantPass, resetGateForTests, savePin } from '../../src/app/pin';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
 import { advanceClock, freezeClock } from '../../src/lib/clock';
+import { CATALOGUE_VERSION } from '../../src/content/catalogue';
 import { openRepo } from '../../src/storage/index';
 import type { Child, Grade } from '../../src/storage/schema';
 import { defaultSettings } from '../../src/storage/schema';
@@ -37,6 +38,8 @@ export async function setUp(grade: Grade = '1', change: Partial<Child['settings'
   await savePin(repo, PIN);
   resetGateForTests();
   if (options.gate !== 'closed') grantPass();
+  // As on a device that has been open before: the catalogue's new skills have already been placed.
+  await repo.updateDeviceState({ catalogueVersion: CATALOGUE_VERSION });
   await repo.saveChild(child);
   if (options.checkIn !== 'new') {
     await finishCheckIn(child.id);

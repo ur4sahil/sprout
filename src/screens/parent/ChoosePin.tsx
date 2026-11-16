@@ -6,7 +6,6 @@ import Notice from '../../components/Notice';
 import PinPad from '../../components/PinPad';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
-import { syncNow } from '../../storage/sync';
 
 interface Props {
   title?: string;
@@ -35,8 +34,6 @@ export default function ChoosePin({ title = 'Choose a grown-ups PIN', onDone, on
     try {
       await savePin((await openRepo()).repo, pin);
       grantPass();
-      // The new PIN goes to the family's other iPads with the next backup. Start one now.
-      void syncNow();
       onDone();
     } catch (error) {
       logError(error);

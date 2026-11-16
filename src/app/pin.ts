@@ -33,7 +33,8 @@ export function hasPin(family: Family): boolean {
 export async function savePin(repo: Repo, pin: string): Promise<void> {
   if (!isPin(pin)) throw new Error('A PIN is four digits');
   const salt = hex(crypto.getRandomValues(new Uint8Array(16)));
-  await repo.saveFamily({ id: 'family', pinSalt: salt, pinHash: await hashPin(pin, salt), updatedAt: now().toISOString() });
+  // Only the PIN changes. Whatever else the family record holds is kept.
+  await repo.saveFamily({ ...(await repo.getFamily()), pinSalt: salt, pinHash: await hashPin(pin, salt), updatedAt: now().toISOString() });
 }
 
 // The gate, in memory only: closing the app closes the gate.

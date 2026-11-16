@@ -490,6 +490,9 @@ describe('Play', () => {
     }
     expect(document.querySelector('[data-break]')).not.toBeNull();
     expect(screen.queryByRole('button', { name: /Keep going/ })).toBeNull();
+    // Between picks the card says the score, and never that the skill is done.
+    expect(document.querySelector('[data-break]')?.textContent).toMatch(/You answered 2 questions\. Score \d+ of 100\./);
+    expect(screen.getByRole('button', { name: /Stop for now/ })).toBeTruthy();
     await user.click(screen.getByRole('button', { name: /Next one/ }));
     expect(await screen.findByRole('dialog', { name: 'All done!' })).toBeTruthy();
     await user.click(screen.getByRole('button', { name: /Home/ }));

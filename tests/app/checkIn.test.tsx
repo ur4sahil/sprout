@@ -347,6 +347,8 @@ describe('catalogue growth', () => {
   it('a new skill below a saved placement is placed out, once, and a skill the child has touched is left alone', async () => {
     const child = await setUp('K');
     const store = await repo();
+    // A device that has not yet seen this catalogue.
+    await store.updateDeviceState({ catalogueVersion: 0 });
     await store.saveDiagnostic({ id: 'd-1', childId: 'kid-1', subject: 'math', ladderId: 'counting', placementSkillId: 'M-K-A3', estimateGrade: 'K', estimateFraction: 0.28, takenAt: NOW.toISOString() });
     // The child has practised one skill below the placement, badly. Everything else below it has no state: as if just added.
     await store.saveSkillState({ ...newSkillState('kid-1', 'M-PK-A2', NOW.toISOString()), score: 20, attempts: 4 });

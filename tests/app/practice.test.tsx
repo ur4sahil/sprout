@@ -5,6 +5,7 @@ import { setTimingForTests } from '../../src/app/timing';
 import { advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
+import { newSkillState } from '../../src/storage/schema';
 import { NOW, answer, findOnMath, holdHome, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
@@ -59,8 +60,8 @@ describe('a new child masters a skill', () => {
     expect(document.querySelector('[data-celebration="100"]')).not.toBeNull();
     expect(screen.getByRole('heading', { name: 'Mastered!' })).toBeTruthy();
     expect(screen.getByText('You earned a medal.')).toBeTruthy();
-    // The 10th answer reaches 90 and is also the end of a grade 1 session: the celebration comes first, then the break.
-    expect(between).toEqual(['celebration:50', 'celebration:80', 'celebration:90', 'break', 'celebration:100']);
+    // Nothing but the milestones interrupts: practice carries on to 100, however long a session is.
+    expect(between).toEqual(['celebration:50', 'celebration:80', 'celebration:90', 'celebration:100']);
     expect(spoken.sounds.filter((s) => s === 'fanfare')).toHaveLength(1);
 
     const state = await stateOf();
@@ -290,11 +291,11 @@ describe('the answer flow', () => {
     const user = openApp();
     await openSkill(user, 'Add to 10');
     const store = await repo();
-    const real = store.saveSkillState.bind(store);
+    const real = store.saveAnswer.bind(store);
     let fail = true;
-    store.saveSkillState = async (s) => {
+    store.saveAnswer = async (parts) => {
       if (fail) throw new Error('storage is full');
-      return real(s);
+      return real(parts);
     };
     const prompt = screen.getByRole('region', { name: 'Question' }).querySelector('p')?.textContent;
     await answer(user, sumOnScreen());
@@ -311,29 +312,41 @@ describe('the answer flow', () => {
     expect(screen.queryByRole('alert')).toBeNull();
   });
 
-  it('offers a soft break after the session length, with no forced end', async () => {
+  it('never stops for a break: practice carries on past the session length, until the child leaves', async () => {
     await setUp('1', { sessionLength: 3 });
     const user = openApp();
     await openSkill(user, 'Add to 10');
-    for (let i = 0; i < 3; i += 1) {
-      await answer(user, sumOnScreen());
-      await settled();
-    }
-    const rest = screen.getByRole('dialog', { name: 'Time for a break?' });
-    expect(rest.textContent).toContain('You answered 3 questions.');
-    await user.click(screen.getByRole('button', { name: /Keep going/ }));
-    await screen.findByRole('region', { name: 'Question' });
-    for (let i = 0; i < 3; i += 1) {
+    for (let i = 0; i < 7; i += 1) {
       await answer(user, sumOnScreen());
       await settled();
       await passInterruptionsExceptBreak(user);
+      // No break card, and nothing that says the skill is done.
+      expect(document.querySelector('[data-break]')).toBeNull();
+      expect(screen.queryByRole('button', { name: /All done|Stop for now/ })).toBeNull();
+      expect(screen.getByRole('region', { name: 'Question' })).toBeTruthy();
     }
-    expect(screen.getByRole('dialog', { name: 'Time for a break?' }).textContent).toContain('You answered 6 questions.');
-    await user.click(screen.getByRole('button', { name: /All done/ }));
+    expect(document.querySelector('[data-answered]')?.textContent).toBe('7');
+    await holdHome();
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
-    expect(await screen.findByRole('button', { name: /Math/ })).toBeTruthy();
     // Leaving closed the session.
     await waitFor(async () => expect((await (await repo()).listSessions('kid-1'))[0]?.endedAt).not.toBeNull());
+  });
+
+  it('the medal offers the games', async () => {
+    await setUp('1');
+    const store = await repo();
+    await store.saveSkillState({ ...newSkillState('kid-1', 'M-K-C4', NOW.toISOString()), score: 97, bestScore: 97, attempts: 20, correct: 20, streak: 5, recent: [true, true, true, true, true] });
+    const user = openApp();
+    await openSkill(user, 'Add to 10');
+    for (let i = 0; i < 4 && !document.querySelector('[data-celebration="100"]'); i += 1) {
+      await answer(user, sumOnScreen());
+      await settled();
+    }
+    const medal = document.querySelector('[data-celebration="100"]') as HTMLElement;
+    expect(medal).not.toBeNull();
+    expect(await screen.findByRole('button', { name: /Play Pairs/ })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: /Play Pairs/ }));
+    await waitFor(() => expect(document.querySelectorAll('[data-card]')).toHaveLength(12));
   });
 
   it('shows the timer only when the parent turned it on', async () => {

@@ -6,6 +6,7 @@ import { skillById } from '../../src/content/catalogue';
 import { generateQuestion } from '../../src/content/registry';
 import { describeAnswer, describePrompt, describeResponse } from '../../src/engine/describe';
 import type { Question, QuestionBase, Visual } from '../../src/engine/types';
+import { localDay } from '../../src/lib/clock';
 import { isInstalled, isIosDevice } from '../../src/lib/platform';
 import { openRepo } from '../../src/storage/index';
 import { newSkillState } from '../../src/storage/schema';
@@ -46,7 +47,9 @@ describe('child setup', () => {
   it('first run has no children: the start screen offers "Add a child"', async () => {
     const user = await emptyDevice();
     expect(await screen.findByRole('heading', { name: 'Sprout' })).toBeTruthy();
-    expect(screen.queryByRole('group', { name: 'Who is playing?' })).toBeNull();
+    // No child yet: the only card is the one that adds a child.
+    expect(screen.getByRole('group', { name: 'Who is playing?' }).querySelectorAll('button')).toHaveLength(1);
+    expect(screen.getByText('Add your first child to begin.')).toBeTruthy();
     await user.click(await screen.findByRole('button', { name: 'Add a child' }));
     expect(screen.getByRole('heading', { name: 'Add a child' })).toBeTruthy();
   });
@@ -136,7 +139,12 @@ describe('the profile picker', () => {
     await finishCheckIn('kid-2');
     const user = openApp();
     const group = await screen.findByRole('group', { name: 'Who is playing?' });
-    expect([...group.querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual(['Robin', 'Ada']);
+    expect([...group.querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual(['Robin', 'Ada', 'Add a child']);
+    // Each card says who it is, their grade and how far along today's goal they are.
+    const card = group.querySelector('[data-profile="Robin"]') as HTMLElement;
+    expect(card.textContent).toContain('Kindergarten');
+    expect(card.textContent).toContain('0 of 15 today');
+    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 15 questions today.');
     await user.click(screen.getByRole('button', { name: 'Ada' }));
     expect(spoken.sounds).toEqual(['unlock']);
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
@@ -325,5 +333,29 @@ describe('the saved record of an answer', () => {
     expect(describeResponse(cases[0]![0], { value: 9 })).toBe('{"value":9}');
     expect(describePrompt({ ...base, type: 'numberPad', answer: 1, maxDigits: 1, stimulus: { kind: 'equation', parts: [1, '+', 0, '=', 'blank'] } })).toBe('Pick. [1 + 0 = □]');
     expect(describePrompt({ ...base, type: 'numberPad', answer: 1, maxDigits: 1 })).toBe('Pick.');
+  });
+});
+
+describe('the grown-ups bar on the profile page', () => {
+  it('signing out asks for the PIN first, and Cancel changes nothing', async () => {
+    await setUp('K', {}, { gate: 'closed' });
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Sign out' }));
+    expect(await screen.findByRole('heading', { name: 'Grown-ups only' })).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: 'Cancel' }));
+    expect(await screen.findByRole('button', { name: 'Robin' })).toBeTruthy();
+    expect(useAppStore.getState().account.status).toBe('signedIn');
+  });
+
+  it('holds Grown-ups and Sign out, and a card shows the answers given today', async () => {
+    const child = await setUp('K');
+    const store = await repo();
+    for (let i = 0; i < 4; i += 1) {
+      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: 'M-K-C4', sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: NOW.toISOString() });
+    }
+    openApp();
+    const bar = await screen.findByRole('group', { name: 'For grown-ups' });
+    expect([...bar.querySelectorAll('button')].map((b) => b.textContent?.replace(/^\W+/, ''))).toEqual(['Grown-ups', 'Sign out']);
+    await waitFor(() => expect(document.querySelector('[data-profile="Robin"] [data-today]')?.getAttribute('data-today')).toBe('4'));
   });
 });

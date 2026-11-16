@@ -17,16 +17,24 @@ export async function finishCheckIn(page: Page): Promise<void> {
       open.onsuccess = () => resolve(open.result);
       open.onerror = () => reject(open.error);
     });
-    const tx = db.transaction(['children', 'diagnosticProgress', 'awards'], 'readwrite');
+    const tx = db.transaction(['children', 'diagnosticProgress', 'awards', 'outbox'], 'readwrite');
     const children = await new Promise<{ id: string }[]>((resolve) => {
       const all = tx.objectStore('children').getAll();
       all.onsuccess = () => resolve(all.result as { id: string }[]);
     });
     const at = new Date().toISOString();
+    // As the app does it: each record is noted in the outbox, so it is sent to the server like any other change.
+    let mark = Date.now() + 1_000_000;
+    const note = (store: string, key: string): void => {
+      mark += 1;
+      tx.objectStore('outbox').put({ store, key, removed: false, mark }, `${store}\n${key}`);
+    };
     for (const child of children) {
       for (const subject of ['math', 'ela']) {
         tx.objectStore('diagnosticProgress').put({ childId: child.id, subject, ladders: {}, sittings: 1, done: true, lastSittingDay: '', updatedAt: at }, `${child.id}|${subject}`);
         tx.objectStore('awards').put({ childId: child.id, awardId: `diagnostic:${subject}`, earnedAt: at }, `${child.id}|diagnostic:${subject}`);
+        note('diagnosticProgress', `${child.id}|${subject}`);
+        note('awards', `${child.id}|diagnostic:${subject}`);
       }
     }
     await new Promise<void>((resolve, reject) => {

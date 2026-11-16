@@ -12,9 +12,10 @@ import {
   start,
 } from './auth';
 import { getBackup, putBackup } from './backup';
+import { FAMILY, getData, postData } from './data';
 import { cloudflareMailer, consoleMailer } from './mailer';
-import type { BackupStore, PackStore } from './store';
-import { d1Store, r2BackupStore, r2PackStore } from './store';
+import type { BackupStore, DataStore, PackStore } from './store';
+import { d1DataStore, d1Store, r2BackupStore, r2PackStore } from './store';
 import { voicePack } from './voicePack';
 
 // Routes /api. Everything else is the built app.
@@ -35,6 +36,9 @@ export interface ApiDeps extends AuthDeps {
   appOrigin: string;
   pack: PackStore;
   backup: BackupStore;
+  data: DataStore;
+  // Whose records a signed-in parent reads and writes. Every listed parent shares one family.
+  familyOf: (email: string) => string;
 }
 
 type Handler = (deps: ApiDeps, request: Request) => Promise<Response>;
@@ -83,6 +87,10 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return await getBackup(deps.backup, request);
       case 'PUT /api/backup':
         return await putBackup(deps.backup, request, deps.now());
+      case 'GET /api/data':
+        return await getData(deps.data, deps.familyOf(session.email), request);
+      case 'POST /api/data':
+        return await postData(deps.data, deps.familyOf(session.email), request, deps.now());
       case 'GET /api/voice-pack':
         return await voicePack(deps.pack, request);
       default:
@@ -109,6 +117,9 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     appOrigin: env.APP_ORIGIN,
     pack: r2PackStore(env.BACKUPS),
     backup: r2BackupStore(env.BACKUPS),
+    data: d1DataStore(env.DB),
+    // On the local test server each account keeps to itself, so one test never sees another's children.
+    familyOf: (email) => (dev ? email : FAMILY),
   };
 }
 

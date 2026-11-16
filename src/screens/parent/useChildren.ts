@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { useAppStore } from '../../app/store';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
@@ -8,6 +9,7 @@ export function useChildren(): { children: Child[] | null; child: Child | null; 
   const [children, setChildren] = useState<Child[] | null>(null);
   const [picked, setPicked] = useState<string | null>(null);
   const [round, setRound] = useState(0);
+  const dataVersion = useAppStore((s) => s.dataVersion);
   useEffect(() => {
     let alive = true;
     void openRepo()
@@ -19,7 +21,7 @@ export function useChildren(): { children: Child[] | null; child: Child | null; 
     return () => {
       alive = false;
     };
-  }, [round]);
+  }, [round, dataVersion]);
   const reload = useCallback(() => setRound((n) => n + 1), []);
   const child = children?.find((candidate) => candidate.id === picked) ?? children?.[0] ?? null;
   return { children, child, pick: setPicked, reload };

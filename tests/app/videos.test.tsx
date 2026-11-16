@@ -112,7 +112,7 @@ describe('a parent removes a video', () => {
     await user.click(remove);
     await waitFor(() => expect(document.querySelector(`[data-remove-video="${WITH_VIDEO}"]`)).toBeNull());
     const { repo } = await openRepo();
-    await waitFor(async () => expect((await repo.getDeviceState()).removedVideos).toEqual([WITH_VIDEO]));
+    await waitFor(async () => expect((await repo.getFamily()).removedVideos).toEqual([WITH_VIDEO]));
     document.body.innerHTML = '';
 
     const child = (await repo.listChildren())[0]!;

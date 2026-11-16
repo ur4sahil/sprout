@@ -335,3 +335,76 @@ export function r2BackupStore(bucket: R2Bucket): BackupStore {
     },
   };
 }
+
+// ---- The family's records: the one copy of children, scores, answers and the rest ----
+
+export interface RecordRow {
+  store: string;
+  key: string;
+  value: string; // the record as JSON text, exactly as the app sent it
+}
+
+export interface DataStore {
+  // Up to `limit` of one family's rows after the given one, ordered by store and then key. Pass null to start.
+  page(family: string, after: { store: string; key: string } | null, limit: number): Promise<RecordRow[]>;
+  // Every change lands together or not at all.
+  apply(family: string, puts: RecordRow[], removes: { store: string; key: string }[], at: string): Promise<void>;
+}
+
+export interface MemoryDataStore extends DataStore {
+  rows(family?: string): RecordRow[];
+  failNext(): void; // the next apply fails, as a database error would
+}
+
+const rowOrder = (one: { store: string; key: string }, two: { store: string; key: string }): number => (one.store === two.store ? (one.key < two.key ? -1 : one.key > two.key ? 1 : 0) : one.store < two.store ? -1 : 1);
+
+export function memoryDataStore(): MemoryDataStore {
+  const families = new Map<string, Map<string, RecordRow>>();
+  let failing = false;
+  const id = (row: { store: string; key: string }): string => `${row.store}\u0000${row.key}`;
+  const held = (family: string): Map<string, RecordRow> => {
+    const found = families.get(family) ?? new Map<string, RecordRow>();
+    families.set(family, found);
+    return found;
+  };
+  const sorted = (family: string): RecordRow[] => [...held(family).values()].sort(rowOrder);
+  return {
+    rows: (family = 'family') => sorted(family).map((row) => ({ ...row })),
+    failNext() {
+      failing = true;
+    },
+    async page(family, after, limit) {
+      return sorted(family)
+        .filter((row) => after === null || rowOrder(row, after) > 0)
+        .slice(0, limit)
+        .map((row) => ({ ...row }));
+    },
+    async apply(family, puts, removes) {
+      if (failing) {
+        failing = false;
+        throw new Error('the database is not answering');
+      }
+      for (const put of puts) held(family).set(id(put), { ...put });
+      for (const remove of removes) held(family).delete(id(remove));
+    },
+  };
+}
+
+export function d1DataStore(db: D1Database): DataStore {
+  return {
+    async page(family, after, limit) {
+      const found =
+        after === null
+          ? await db.prepare('select store, key, value from records where family = ?1 order by store, key limit ?2').bind(family, limit).all<RecordRow>()
+          : await db.prepare('select store, key, value from records where family = ?1 and (store > ?2 or (store = ?2 and key > ?3)) order by store, key limit ?4').bind(family, after.store, after.key, limit).all<RecordRow>();
+      return found.results;
+    },
+    async apply(family, puts, removes, at) {
+      const upsert = db.prepare('insert into records (family, store, key, value, updated_at) values (?1, ?2, ?3, ?4, ?5) on conflict (family, store, key) do update set value = excluded.value, updated_at = excluded.updated_at');
+      const remove = db.prepare('delete from records where family = ?1 and store = ?2 and key = ?3');
+      const work = [...puts.map((put) => upsert.bind(family, put.store, put.key, put.value, at)), ...removes.map((each) => remove.bind(family, each.store, each.key))];
+      // One batch is one transaction: all of it lands, or none of it.
+      if (work.length > 0) await db.batch(work);
+    },
+  };
+}
