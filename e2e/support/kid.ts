@@ -64,6 +64,8 @@ export async function answer(page: Page, value: number): Promise<void> {
 }
 
 export async function answerRight(page: Page): Promise<number> {
+  // The question must be on screen and ready before anything is read off it.
+  await expect(page.locator('[data-phase="asking"]')).toBeVisible();
   const value = await sum(page);
   const before = await page.locator('[data-answered]').textContent();
   await answer(page, value);
@@ -102,4 +104,10 @@ export async function answerAnything(page: Page): Promise<void> {
     await gotIt.click();
     await expect(settled.first()).toBeVisible();
   }
+}
+
+// A child's name no other test run has used. For tests that use the real backup,
+// where every run adds to the one test family.
+export function freshName(): string {
+  return `Kid ${Date.now().toString(36).slice(-6)}`;
 }

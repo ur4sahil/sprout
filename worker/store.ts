@@ -257,3 +257,81 @@ export function r2PackStore(bucket: R2Bucket): PackStore {
     },
   };
 }
+
+// ---- The family backup: one gzip file in R2, plus one history copy a day ----
+
+export type BackupBase = { version: string } | 'none'; // what an upload was built on
+
+export interface BackupStore {
+  version(): Promise<string | null>;
+  read(): Promise<{ version: string; body: ArrayBuffer } | null>;
+  // Stores the file only if the current one is still the version the upload was built on
+  // ('none': only if there is no file yet). Returns the new version, or null when refused.
+  write(body: ArrayBuffer, base: BackupBase): Promise<string | null>;
+  // Copies the current file to the day's history copy, unless that day already has one. True if it copied.
+  keepHistory(day: string): Promise<boolean>;
+}
+
+export const BACKUP_KEY = 'family.json.gz';
+export const historyKey = (day: string): string => `history/${day}.json.gz`;
+
+export interface MemoryBackupStore extends BackupStore {
+  history(): Record<string, ArrayBuffer>;
+  writes(): number;
+}
+
+export function memoryBackupStore(): MemoryBackupStore {
+  let held: { version: string; body: ArrayBuffer } | null = null;
+  const kept: Record<string, ArrayBuffer> = {};
+  let count = 0;
+  return {
+    history: () => kept,
+    writes: () => count,
+    async version() {
+      return held ? held.version : null;
+    },
+    async read() {
+      return held ? { version: held.version, body: held.body.slice(0) } : null;
+    },
+    async write(body, base) {
+      if (base === 'none' ? held !== null : held?.version !== base.version) return null;
+      count += 1;
+      held = { version: `v${count}`, body: body.slice(0) };
+      return held.version;
+    },
+    async keepHistory(day) {
+      if (!held || kept[day]) return false;
+      kept[day] = held.body.slice(0);
+      return true;
+    },
+  };
+}
+
+// The version is the R2 object's etag. R2 checks the condition as part of the write itself,
+// so two iPads uploading at the same moment can never both succeed.
+export function r2BackupStore(bucket: R2Bucket): BackupStore {
+  return {
+    async version() {
+      const head = await bucket.head(BACKUP_KEY);
+      return head ? head.etag : null;
+    },
+    async read() {
+      const object = await bucket.get(BACKUP_KEY);
+      return object ? { version: object.etag, body: await object.arrayBuffer() } : null;
+    },
+    async write(body, base) {
+      // "Only if none exists" is the standard If-None-Match: * header, which R2 accepts in place of a condition object.
+      const ifNone = new Headers({ 'If-None-Match': '*' }) as unknown as import('@cloudflare/workers-types').Headers;
+      const onlyIf = base === 'none' ? ifNone : { etagMatches: base.version };
+      const stored = await bucket.put(BACKUP_KEY, body, { onlyIf, httpMetadata: { contentType: 'application/gzip' } });
+      return stored ? stored.etag : null;
+    },
+    async keepHistory(day) {
+      if (await bucket.head(historyKey(day))) return false;
+      const current = await bucket.get(BACKUP_KEY);
+      if (!current) return false;
+      await bucket.put(historyKey(day), await current.arrayBuffer(), { httpMetadata: { contentType: 'application/gzip' } });
+      return true;
+    },
+  };
+}

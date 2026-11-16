@@ -102,8 +102,20 @@ export function makeRepo(backend: Backend): Repo {
     return device.dirty ? [] : [{ store: 'device', key: 'device', value: { ...device, dirty: true } }];
   }
 
-  async function save(puts: Put[], removes: Remove[] = []): Promise<void> {
-    await backend.write({ puts: [...puts, ...(await dirtyPut())], removes });
+  // The device record is changed by several background jobs: the session check, sync, the voice pack,
+  // and every save that marks the device as changed. Each reads it, then writes it back. They take turns,
+  // so one can never write over another's change with an old copy.
+  let turn: Promise<unknown> = Promise.resolve();
+  function inTurn<T>(work: () => Promise<T>): Promise<T> {
+    const next = turn.then(work, work);
+    turn = next.catch(() => undefined);
+    return next;
+  }
+
+  function save(puts: Put[], removes: Remove[] = []): Promise<void> {
+    return inTurn(async () => {
+      await backend.write({ puts: [...puts, ...(await dirtyPut())], removes });
+    });
   }
 
   const repo: Repo = {
@@ -209,8 +221,17 @@ export function makeRepo(backend: Backend): Repo {
       await save([{ store: 'family', key: 'family', value: familySchema.parse(f) }]);
     },
     getDeviceState: readDevice,
-    async saveDeviceState(d) {
-      await backend.write({ puts: [{ store: 'device', key: 'device', value: deviceStateSchema.parse(d) }] });
+    saveDeviceState(d) {
+      return inTurn(async () => {
+        await backend.write({ puts: [{ store: 'device', key: 'device', value: deviceStateSchema.parse(d) }] });
+      });
+    },
+    updateDeviceState(change) {
+      return inTurn(async () => {
+        const next = deviceStateSchema.parse({ ...(await readDevice()), ...change, id: 'device' });
+        await backend.write({ puts: [{ store: 'device', key: 'device', value: next }] });
+        return next;
+      });
     },
     async countQuarantined() {
       return (await backend.quarantined()).length;

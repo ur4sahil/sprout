@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import type { Page } from '@playwright/test';
+import type { BrowserContext, Page } from '@playwright/test';
 import { expect, test as base } from '@playwright/test';
 import { BASE_URL, COUNTER, POOL_SIZE, WORKER_LOG, poolEmail } from './paths';
 
@@ -151,6 +151,20 @@ export async function signOutFully(page: Page): Promise<void> {
 interface Fixtures {
   // Fails a test if the page throws or logs an error nobody expected.
   problems: string[];
+  // Every test address belongs to the one test family, so they would all share one backup file.
+  // By default a test sees a server with no backup, and its uploads go nowhere. The sync tests turn this on.
+  realBackup: boolean;
+}
+
+async function noBackup(context: BrowserContext): Promise<void> {
+  await context.route('**/api/backup**', (route) =>
+    route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ version: route.request().method() === 'PUT' ? 'not-kept' : null }) }),
+  );
+}
+
+// For a context a test opens by itself, such as a second iPad: the same silence as every other page.
+export async function quiet(context: BrowserContext): Promise<void> {
+  await context.addInitScript(silence);
 }
 
 // Browser tests make no noise on the machine that runs them. The voice is replaced by a silent one
@@ -191,8 +205,10 @@ export async function isSilent(page: Page): Promise<boolean> {
 }
 
 export const test = base.extend<Fixtures>({
-  context: async ({ context }, run) => {
+  realBackup: [false, { option: true }],
+  context: async ({ context, realBackup }, run) => {
     await context.addInitScript(silence);
+    if (!realBackup) await noBackup(context);
     await run(context);
   },
   problems: [

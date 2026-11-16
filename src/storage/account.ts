@@ -77,11 +77,19 @@ async function failureOf(reply: Response): Promise<AuthFailure> {
 async function remember(session: { email: string; expiresAt: string } | null): Promise<void> {
   try {
     const { repo } = await openRepo();
-    const device = await repo.getDeviceState();
-    await repo.saveDeviceState({ ...device, signedInEmail: session?.email ?? null, sessionExpiresAt: session?.expiresAt ?? null });
+    await repo.updateDeviceState({ signedInEmail: session?.email ?? null, sessionExpiresAt: session?.expiresAt ?? null });
   } catch (error) {
     // The sign-in still holds for this launch. It will be asked for again at the next one.
     logError(error);
+  }
+}
+
+async function neverSynced(): Promise<boolean> {
+  try {
+    return (await (await openRepo()).repo.getDeviceState()).lastSyncAt === null;
+  } catch (error) {
+    logError(error);
+    return false;
   }
 }
 
@@ -91,6 +99,8 @@ async function acceptSession(reply: Response | null): Promise<AuthResult> {
   const parsed = sessionReply.safeParse(await readJson(reply));
   if (!parsed.success) return { ok: false, reason: 'server' };
   await remember(parsed.data);
+  // A device that has never synced is a new iPad: it fetches the family's progress before anything else.
+  useAppStore.getState().setFirstSync(await neverSynced());
   useAppStore.getState().setAccount({ status: 'signedIn', ...parsed.data });
   return { ok: true };
 }

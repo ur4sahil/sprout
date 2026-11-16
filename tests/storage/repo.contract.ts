@@ -52,6 +52,40 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
       return sorted;
     }
 
+    describe('the device record under several jobs at once', () => {
+      it('changes made at the same moment all land, none written over by an old copy', async () => {
+        await Promise.all([
+          repo.updateDeviceState({ signedInEmail: 'parent.one@example.com' }),
+          repo.updateDeviceState({ lastSyncAt: T(9) }),
+          repo.updateDeviceState({ voicePackVersion: 'pack-2' }),
+          repo.saveChild(child('a')), // marks the device as changed
+          repo.updateDeviceState({ muted: true }),
+        ]);
+        expect(await repo.getDeviceState()).toMatchObject({ signedInEmail: 'parent.one@example.com', lastSyncAt: T(9), voicePackVersion: 'pack-2', muted: true, dirty: true });
+      });
+
+      it('a slow job cannot undo a sign-out that happened while it was working', async () => {
+        await repo.updateDeviceState({ signedInEmail: 'parent.one@example.com', sessionExpiresAt: T(28) });
+        // The job reads the record, works for a while, then records only its own result.
+        const job = (async () => {
+          await repo.getDeviceState();
+          await new Promise((resolve) => setTimeout(resolve, 20));
+          await repo.updateDeviceState({ lastSyncAt: T(9) });
+        })();
+        await repo.updateDeviceState({ signedInEmail: null, sessionExpiresAt: null });
+        await job;
+        expect(await repo.getDeviceState()).toMatchObject({ signedInEmail: null, sessionExpiresAt: null, lastSyncAt: T(9) });
+      });
+
+      it('an update is checked like any other write, and returns the record as saved', async () => {
+        await expect(repo.updateDeviceState({ errors: 'none' as unknown as [] })).rejects.toThrow();
+        const saved = await repo.updateDeviceState({ muted: true });
+        expect(saved).toEqual(await repo.getDeviceState());
+        // A failed update does not block the ones after it.
+        expect(saved.muted).toBe(true);
+      });
+    });
+
     describe('first run', () => {
       it('creates no children and no plans', async () => {
         expect(await repo.listChildren()).toEqual([]);

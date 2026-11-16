@@ -14,6 +14,12 @@ interface AppState {
   account: AccountState;
   storageSaved: boolean; // false when progress cannot be saved on this device
   installGuide: boolean; // true in a Safari tab on an iPad or iPhone, until a parent chooses to carry on
+  firstSync: boolean; // just signed in on a device that has never synced: fetch the family's progress first
+  setFirstSync: (run: boolean) => void;
+  updateReady: boolean; // a newer version of the app has been fetched and is waiting
+  setUpdateReady: (ready: boolean) => void;
+  updateTookOver: boolean; // the new version is in charge. The page loads again at the next safe moment
+  setUpdateTookOver: (took: boolean) => void;
   setChild: (child: Child | null) => void;
   setSession: (sessionId: string | null) => void;
   setMuted: (muted: boolean) => void;
@@ -30,6 +36,12 @@ export const useAppStore = create<AppState>((set) => ({
   account: { status: 'checking' },
   storageSaved: true,
   installGuide: false,
+  firstSync: false,
+  setFirstSync: (firstSync) => set({ firstSync }),
+  updateReady: false,
+  setUpdateReady: (updateReady) => set({ updateReady }),
+  updateTookOver: false,
+  setUpdateTookOver: (updateTookOver) => set({ updateTookOver }),
   setChild: (child) => set({ child, activeChildId: child ? child.id : null, sessionId: null }),
   setSession: (sessionId) => set({ sessionId }),
   setMuted: (muted) => set({ muted }),

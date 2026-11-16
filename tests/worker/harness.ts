@@ -3,8 +3,8 @@ import type { ApiDeps } from '../../worker/index';
 import { handleApi } from '../../worker/index';
 import type { MemoryMailer } from '../../worker/mailer';
 import { memoryMailer } from '../../worker/mailer';
-import type { MemoryPackStore, Store } from '../../worker/store';
-import { memoryPackStore, memoryStore } from '../../worker/store';
+import type { MemoryBackupStore, MemoryPackStore, Store } from '../../worker/store';
+import { memoryBackupStore, memoryPackStore, memoryStore } from '../../worker/store';
 
 export const ORIGIN = 'https://sprout.test';
 export const PARENT = 'parent.one@example.com';
@@ -17,13 +17,15 @@ export interface CallOptions {
   cookie?: string | null;
   origin?: string | null;
   contentType?: string | null;
-  rawBody?: string;
+  rawBody?: string | Uint8Array;
+  headers?: Record<string, string>;
 }
 
 export interface Harness {
   store: Store;
   mailer: MemoryMailer;
   pack: MemoryPackStore;
+  backup: MemoryBackupStore;
   deps: ApiDeps;
   advance(ms: number): void;
   call(method: string, path: string, body?: unknown, options?: CallOptions): Promise<Response>;
@@ -44,6 +46,7 @@ export function makeHarness(): Harness {
   const store = memoryStore();
   const mailer = memoryMailer();
   const pack = memoryPackStore();
+  const backup = memoryBackupStore();
   // A real email takes time. The delay makes sure no test passes only because
   // the code happened to be sent before the test looked for it.
   const instant = mailer.sendCode;
@@ -64,6 +67,7 @@ export function makeHarness(): Harness {
     },
     appOrigin: ORIGIN,
     pack,
+    backup,
   };
 
   async function call(method: string, path: string, body?: unknown, options: CallOptions = {}) {
@@ -73,9 +77,10 @@ export function makeHarness(): Harness {
     const contentType = options.contentType === undefined ? 'application/json' : options.contentType;
     if (write && origin !== null) headers.set('Origin', origin);
     if (write && contentType !== null) headers.set('Content-Type', contentType);
+    for (const [name, value] of Object.entries(options.headers ?? {})) headers.set(name, value);
     if (options.cookie) headers.set('Cookie', `${COOKIE_NAME}=${options.cookie}`);
     const init: RequestInit = { method, headers };
-    if (write) init.body = options.rawBody ?? JSON.stringify(body ?? {});
+    if (write) init.body = (options.rawBody ?? JSON.stringify(body ?? {})) as BodyInit;
     const reply = await handleApi(new Request(`${ORIGIN}${path}`, init), deps);
     await flush();
     return reply;
@@ -103,6 +108,7 @@ export function makeHarness(): Harness {
     store,
     mailer,
     pack,
+    backup,
     deps,
     advance: (ms) => {
       clock += ms;

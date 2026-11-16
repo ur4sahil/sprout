@@ -76,7 +76,9 @@ export interface Repo {
   getFamily(): Promise<Family>; // returns defaults when nothing is saved
   saveFamily(f: Family): Promise<void>;
   getDeviceState(): Promise<DeviceState>; // returns defaults when nothing is saved
-  saveDeviceState(d: DeviceState): Promise<void>;
+  saveDeviceState(d: DeviceState): Promise<void>; // replaces the whole record. App code uses updateDeviceState
+  // Changes only the fields given, on the record as it is at that moment. Safe when several jobs run at once.
+  updateDeviceState(change: Partial<Omit<DeviceState, 'id'>>): Promise<DeviceState>;
   countQuarantined(): Promise<number>;
   exportAll(): Promise<ExportFile>; // the ten backed-up record types
   importAll(file: ExportFile): Promise<ImportReport>; // validates with zod first

@@ -19,19 +19,27 @@ export default defineConfig({
   use: {
     baseURL: BASE_URL,
     ignoreHTTPSErrors: true,
+    // Only the offline project runs the service worker, so every other test sees the app with nothing cached.
+    serviceWorkers: 'block',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
   projects: [
     { name: 'api', testMatch: /api\.spec\.ts/ },
-    { name: 'ipad-landscape', testIgnore: /api\.spec\.ts/, use: { ...touch, viewport: { width: 1024, height: 768 } } },
-    { name: 'ipad-portrait', testIgnore: /api\.spec\.ts/, use: { ...touch, viewport: { width: 820, height: 1180 } } },
-    { name: 'phone', testIgnore: /api\.spec\.ts/, use: { ...touch, viewport: { width: 390, height: 844 } } },
-    { name: 'narrow-360', testIgnore: /api\.spec\.ts/, use: { ...touch, viewport: { width: 360, height: 640 } } },
+    { name: 'ipad-landscape', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 1024, height: 768 } } },
+    { name: 'ipad-portrait', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 820, height: 1180 } } },
+    { name: 'phone', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 390, height: 844 } } },
+    { name: 'narrow-360', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 360, height: 640 } } },
     {
       name: 'laptop-chromium',
-      testIgnore: /api\.spec\.ts/,
+      testIgnore: /(api|offline)\.spec\.ts/,
       use: { browserName: 'chromium', viewport: { width: 1280, height: 800 } },
+    },
+    {
+      // Offline use and updates. Playwright's WebKit cannot run a service worker reliably, so this runs in Chromium.
+      name: 'offline-chromium',
+      testMatch: /offline\.spec\.ts/,
+      use: { browserName: 'chromium', viewport: { width: 1024, height: 768 }, serviceWorkers: 'allow', launchOptions: { args: ['--ignore-certificate-errors'] } },
     },
   ],
 });

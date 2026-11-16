@@ -87,4 +87,19 @@
 - A child sees picks only from skills that are ready. With three skills so far, a grade 1 child has no picks and reaches skills through the Math page.
 - Browser tests answer a question only after `[data-phase="asking"]` shows, because the last question stays on screen during the praise.
 - Not covered by a browser test: the daily limit screen, because no screen sets daily minutes until Phase 8b. Unit tests cover it.
-- Next: step 10, Phase 9, offline and updates (the service worker).
+- Step 10, Phase 9 (offline and updates), is built: the service worker (made by `vite-plugin-pwa` at build time, settings in `vite.config.ts`) keeps every app file on the device, and `src/app/updates.ts` finds and applies new builds.
+- The service worker has no route for `/api`, and page loads under `/api` are on its deny list. Never add a runtime cache for `/api`.
+- Updates: the app asks for a new build at launch and when it returns to the front, at most once an hour. A new build waits. On `/` or `/home` (`isSafeToUpdate`) `App.tsx` tells it to take over. A browser can be slow to hand over, so the page is loaded again only once the new build is in charge and the app is on one of those two screens. Add a screen to that list only if nothing a child is doing can be lost there.
+- While a new build is taking over, the app starts no backup sync: a request on its way delays the hand-over in Chromium.
+- `/sw.js` and `/index.html` are served with `Cache-Control: no-cache` (`public/_headers`), so a new build is always seen.
+- Browser tests block the service worker in every project except `offline-chromium`, which runs `e2e/offline.spec.ts`: offline reload and practice, and a new build arriving in the middle of a question.
+- Step 11, Phase 10 (backup sync), is built: `worker/backup.ts` (`GET` and `PUT /api/backup`), the backup store in `worker/store.ts`, `src/storage/sync.ts`, `gzip.ts`, the first-sync screen on a new iPad, and `BackupStatus` for the data screen.
+- The backup is one gzip file in R2, `family.json.gz`. Its version is the R2 etag. An upload names the version it was built on in the `X-Backup-Base` header (`none` for the first). R2 checks that as part of the write, so two iPads cannot overwrite each other.
+- One sync run: fetch (skipped by the server if this device has the current version), check and merge with the import code, upload if `dirty`, and on a refusal fetch, merge and retry, 3 rounds at most. `dirty` is cleared before the export and set again if the upload fails, so a change made during the upload is never lost.
+- A server file that cannot be read is never merged and never overwritten from the device (`badFile`). The parent is told to export a copy.
+- When sync runs: at launch, when the child is back on the picker or home, and when the app returns to the front on one of those two screens. At most once every 5 minutes (`syncIfDue`). `syncNow` ignores the 5 minutes.
+- After a sign-in on a device that has never synced, `FirstSync` runs one sync before the profile picker.
+- The device record is changed by several background jobs. App code changes it only with `repo.updateDeviceState({ field })`, which takes turns with every other write. Never read it, wait, and write the whole record back.
+- Every browser-test address belongs to one test family, so all tests would share one backup. By default `e2e/support/fixtures.ts` answers `/api/backup` with "no file". `test.use({ realBackup: true })` turns the real one on; such a test names its child with `freshName()`. The offline project needs it, because Playwright's request interception stops a new service worker taking over.
+- `BackupStatus` is built and tested but not on a screen yet. Phase 8b puts it on the parent data screen.
+- Next: step 12, Phase 6a, Math pre-K: the data files and 16 skills, to the content gate in plan section 12.

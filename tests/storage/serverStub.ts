@@ -9,6 +9,7 @@ export interface ServerStub {
   server: Harness;
   calls: { method: string; path: string; body: string | null }[];
   cookie(): string | null;
+  useCookie(value: string | null): void; // sign this device in, or out, without the screens
   goOffline(): void;
   goOnline(): void;
 }
@@ -32,7 +33,9 @@ export function stubServer(): ServerStub {
     const headers = new Headers(init.headers);
     if (method !== 'GET') headers.set('Origin', ORIGIN);
     if (cookie) headers.set('Cookie', `${COOKIE_NAME}=${cookie}`);
-    const reply = await handleApi(new Request(`${ORIGIN}${path}`, { method, headers, body }), server.deps);
+    // A file upload is bytes, not text.
+    const sent = typeof init.body === 'string' || init.body == null ? body : (init.body as BodyInit);
+    const reply = await handleApi(new Request(`${ORIGIN}${path}`, { method, headers, body: sent }), server.deps);
     // Like the Worker runtime, finish the put-off work before the request is over.
     await server.flush();
     const setCookie = reply.headers.get('Set-Cookie');
@@ -44,6 +47,9 @@ export function stubServer(): ServerStub {
     server,
     calls,
     cookie: () => cookie,
+    useCookie: (value) => {
+      cookie = value;
+    },
     goOffline: () => {
       offline = true;
     },

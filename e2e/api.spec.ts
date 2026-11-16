@@ -84,7 +84,8 @@ test.describe('the guard over /api', () => {
   test('with a session an unknown path answers 404 in JSON', async ({ playwright }) => {
     const request = await playwright.request.newContext({ baseURL: BASE_URL, ignoreHTTPSErrors: true });
     expect((await signUp(request, listedEmail())).status()).toBe(200);
-    for (const path of paths) {
+    // The backup and the voice pack are real addresses now. Every other path is unknown.
+    for (const path of paths.filter((p) => p !== '/api/backup' && p !== '/api/voice-pack')) {
       const reply = await request.get(path);
       expect(reply.status(), path).toBe(404);
       expect(reply.headers()['content-type'], path).toBe('application/json');

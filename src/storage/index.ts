@@ -44,7 +44,7 @@ export async function requestPersistence(repo: Repo): Promise<void> {
     logError(error);
   }
   if (granted === null) return; // not supported here: ask again another time
-  await repo.saveDeviceState({ ...(await repo.getDeviceState()), persistGranted: granted });
+  await repo.updateDeviceState({ persistGranted: granted });
 }
 
 // Keeps the last 20 errors in the device record, for the parent data screen.
@@ -59,7 +59,7 @@ export async function keepErrorsInDeviceRecord(repo: Repo): Promise<void> {
     saving = true;
     void (async () => {
       try {
-        await repo.saveDeviceState({ ...(await repo.getDeviceState()), errors: list });
+        await repo.updateDeviceState({ errors: list });
       } catch {
         // Storage itself is failing. The list stays in memory.
       } finally {

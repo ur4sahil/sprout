@@ -117,7 +117,7 @@ export async function syncVoicePack(): Promise<PackResult> {
     for (const old of await repo.listClipKeys()) {
       if (!fresh.includes(old)) await repo.deleteClip(old);
     }
-    await repo.saveDeviceState({ ...(await repo.getDeviceState()), voicePackVersion: version });
+    await repo.updateDeviceState({ voicePackVersion: version });
     await loadClipKeys();
     return 'downloaded';
   } catch (error) {

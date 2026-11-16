@@ -315,7 +315,7 @@ describe('sessions', () => {
 });
 
 describe('the guard over /api', () => {
-  const unknownPaths = ['/api/nothing-here', '/api', '/api/auth', '/api/backup', '/api/voice-pack', '/api/auth/session/x'];
+  const unknownPaths = ['/api/nothing-here', '/api', '/api/auth', '/api/backup', '/api/backup/history', '/api/voice-pack', '/api/auth/session/x'];
 
   it('answers 401 in JSON on any unknown path without a session, never the app page', async () => {
     for (const path of unknownPaths) {
@@ -330,7 +330,7 @@ describe('the guard over /api', () => {
 
   it('answers 404 on an unknown path with a session', async () => {
     const cookie = await h.signUp();
-    for (const path of unknownPaths.filter((p) => p !== '/api/voice-pack')) {
+    for (const path of unknownPaths.filter((p) => p !== '/api/voice-pack' && p !== '/api/backup')) {
       const reply = await h.call('GET', path, undefined, { cookie });
       expect(reply.status, path).toBe(404);
       expect(reply.headers.get('Content-Type')).toBe('application/json');

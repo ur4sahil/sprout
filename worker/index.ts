@@ -11,9 +11,10 @@ import {
   setPassword,
   start,
 } from './auth';
+import { getBackup, putBackup } from './backup';
 import { cloudflareMailer, consoleMailer } from './mailer';
-import type { PackStore } from './store';
-import { d1Store, r2PackStore } from './store';
+import type { BackupStore, PackStore } from './store';
+import { d1Store, r2BackupStore, r2PackStore } from './store';
 import { voicePack } from './voicePack';
 
 // Routes /api. Everything else is the built app.
@@ -33,6 +34,7 @@ export interface Env {
 export interface ApiDeps extends AuthDeps {
   appOrigin: string;
   pack: PackStore;
+  backup: BackupStore;
 }
 
 type Handler = (deps: ApiDeps, request: Request) => Promise<Response>;
@@ -44,10 +46,11 @@ const SIGN_IN_ROUTES: Record<string, Handler> = {
   'POST /api/auth/login': login,
 };
 
-// A request that changes something must be JSON sent by the app itself.
-function isTrustedWrite(deps: ApiDeps, request: Request): boolean {
-  const type = request.headers.get('Content-Type') ?? '';
-  return type.toLowerCase().startsWith('application/json') && request.headers.get('Origin') === deps.appOrigin;
+// A request that changes something must be JSON, or the gzip file for the backup, sent by the app itself.
+function isTrustedWrite(deps: ApiDeps, request: Request, route = ''): boolean {
+  const type = (request.headers.get('Content-Type') ?? '').toLowerCase();
+  const wanted = route === 'PUT /api/backup' ? 'application/gzip' : 'application/json';
+  return type.startsWith(wanted) && request.headers.get('Origin') === deps.appOrigin;
 }
 
 function isRead(request: Request): boolean {
@@ -67,7 +70,7 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
     // The one guard for every other path under /api, known or not.
     const session = await findSession(deps, request);
     if (!session) return json(401, { error: 'signed_out' });
-    if (!isRead(request) && !isTrustedWrite(deps, request)) return json(403, { error: 'forbidden' });
+    if (!isRead(request) && !isTrustedWrite(deps, request, route)) return json(403, { error: 'forbidden' });
 
     switch (route) {
       case 'GET /api/auth/session':
@@ -76,6 +79,10 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return await logout(deps, session);
       case 'POST /api/auth/logout-all':
         return await logoutAll(deps, session);
+      case 'GET /api/backup':
+        return await getBackup(deps.backup, request);
+      case 'PUT /api/backup':
+        return await putBackup(deps.backup, request, deps.now());
       case 'GET /api/voice-pack':
         return await voicePack(deps.pack, request);
       default:
@@ -101,6 +108,7 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     defer: (work) => ctx.waitUntil(work),
     appOrigin: env.APP_ORIGIN,
     pack: r2PackStore(env.BACKUPS),
+    backup: r2BackupStore(env.BACKUPS),
   };
 }
 

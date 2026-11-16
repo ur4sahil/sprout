@@ -25,6 +25,14 @@ test.describe('the live site', () => {
     await expect(page.getByRole('alert')).toHaveText('That email or password is not right.');
   });
 
+  test('serves the service worker, never cached, so the app can open offline and pick up new builds', async ({ request }) => {
+    const worker = await request.get('/sw.js');
+    expect(worker.status()).toBe(200);
+    expect(worker.headers()['content-type']).toContain('javascript');
+    expect(worker.headers()['cache-control']).toContain('no-cache');
+    expect(await worker.text()).toMatch(/denylist:\[\/\^\\\/api/);
+  });
+
   test('serves the manifest and icons over HTTPS only', async ({ request }) => {
     const manifest = await request.get('/manifest.webmanifest');
     expect(manifest.status()).toBe(200);

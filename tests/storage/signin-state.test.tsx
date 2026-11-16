@@ -24,7 +24,9 @@ async function signedIn(): Promise<ServerStub> {
 
 // As if the app was closed and opened again: the screen state is gone, the device record is not.
 async function relaunch(path = '/'): Promise<void> {
+  // A real launch starts with nothing in memory.
   useAppStore.getState().setAccount({ status: 'checking' });
+  useAppStore.getState().setFirstSync(false);
   render(
     <MemoryRouter initialEntries={[path]}>
       <App />
@@ -126,7 +128,7 @@ describe('the sign-in state kept in the device record', () => {
   it('signs in for this launch even when the device record cannot be written', async () => {
     const stub = stubServer();
     const repo = memoryRepo();
-    repo.saveDeviceState = async () => {
+    repo.updateDeviceState = async () => {
       throw new Error('storage is full');
     };
     setRepoForTests(repo);

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useNavigationType, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Notice from '../components/Notice';
+import FirstSync from '../screens/account/FirstSync';
 import SignIn from '../screens/account/SignIn';
 import InstallGuide from '../screens/kid/InstallGuide';
 import { loadClipKeys, syncVoicePack } from '../audio/clips';
@@ -12,6 +13,8 @@ import { checkSession } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
 import styles from './App.module.css';
 import { routes } from './routes';
+import { applyUpdate, checkForUpdate, finishUpdate, isSafeToUpdate, startUpdates } from './updates';
+import { syncIfDue } from '../storage/sync';
 import { useAppStore } from './store';
 
 export default function App() {
@@ -33,7 +36,7 @@ export default function App() {
   // A parent chose "Use in this browser anyway". Remembered on this device.
   async function useBrowser(): Promise<void> {
     const { repo } = await openRepo();
-    await repo.saveDeviceState({ ...(await repo.getDeviceState()), browserModeAccepted: true });
+    await repo.updateDeviceState({ browserModeAccepted: true });
     useAppStore.getState().setInstallGuide(false);
   }
 
@@ -57,6 +60,25 @@ export default function App() {
     })();
   }, []);
 
+  // Offline use and updates. The service worker exists only in a built app.
+  const updateReady = useAppStore((s) => s.updateReady);
+  useEffect(() => {
+    if (!import.meta.env.PROD) return;
+    void startUpdates();
+    const onShow = (): void => {
+      if (document.visibilityState === 'visible') checkForUpdate();
+    };
+    document.addEventListener('visibilitychange', onShow);
+    return () => document.removeEventListener('visibilitychange', onShow);
+  }, []);
+  // A waiting version is applied on the profile picker or home, never in the middle of a question.
+  const updateTookOver = useAppStore((s) => s.updateTookOver);
+  useEffect(() => {
+    if (steppedBack || !isSafeToUpdate(location.pathname)) return;
+    if (updateTookOver) finishUpdate();
+    else if (updateReady) applyUpdate();
+  }, [updateReady, updateTookOver, steppedBack, location.pathname]);
+
   useEffect(() => {
     if (steppedBack) void navigate(1);
   }, [steppedBack, location, navigate]);
@@ -66,6 +88,22 @@ export default function App() {
   useEffect(() => {
     if (status === 'signedIn') void syncVoicePack();
   }, [status]);
+
+  // Backup sync, in the background: at launch, when a session ends (the child is back on the picker or home)
+  // and when the app returns to the front. At most once every 5 minutes, and never in the middle of a question.
+  const firstSync = useAppStore((s) => s.firstSync);
+  const quietScreen = !steppedBack && isSafeToUpdate(location.pathname);
+  useEffect(() => {
+    // An update goes first, by itself: a request on its way would hold up the hand-over to the new version.
+    // The page then loads again, and the launch sync runs.
+    if (status !== 'signedIn' || firstSync || !quietScreen || updateReady || updateTookOver) return;
+    syncIfDue();
+    const onShow = (): void => {
+      if (document.visibilityState === 'visible') syncIfDue();
+    };
+    document.addEventListener('visibilitychange', onShow);
+    return () => document.removeEventListener('visibilitychange', onShow);
+  }, [status, firstSync, quietScreen, updateReady, updateTookOver, location.pathname]);
 
   // The sign-in guard: without a session nothing else can be reached, on any path.
   let content = screen;
@@ -80,6 +118,8 @@ export default function App() {
     content = <InstallGuide onUseBrowser={useBrowser} />;
   } else if (status === 'signedOut') {
     content = <SignIn />;
+  } else if (firstSync) {
+    content = <FirstSync />;
   }
 
   return (
