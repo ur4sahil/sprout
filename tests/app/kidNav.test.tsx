@@ -136,11 +136,14 @@ describe('home', () => {
 
 describe('the subject page', () => {
   it('opens on the nearest grade the child has, groups skills by category, and switches grade by tab', async () => {
-    await setUp('1');
+    // A grade 3 child: no skill is built for that grade, so the page opens on the highest grade below it.
+    await setUp('3');
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     await user.click(await screen.findByRole('button', { name: /Math/ }));
-    expect((await screen.findByRole('tab', { name: 'Kindergarten' })).getAttribute('aria-selected')).toBe('true');
+    const tabs = await screen.findAllByRole('tab');
+    expect(tabs.map((tab) => tab.getAttribute('aria-selected'))).toEqual(tabs.map((_, i) => (i === tabs.length - 1 ? 'true' : 'false')));
+    await user.click(screen.getByRole('tab', { name: 'Kindergarten' }));
     const kinder = [...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'));
     expect(kinder.slice(0, 2)).toEqual(['M-K-A1', 'M-K-A2']);
     expect(kinder).toContain(ORDER);

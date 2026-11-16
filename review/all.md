@@ -1,6 +1,6 @@
 # Content review: all
 
-68 skills, 3 samples for each level.
+80 skills, 3 samples for each level.
 
 ## M-PK-A1 A.1 Count to 3
 
@@ -4446,6 +4446,1320 @@
 - try: What comes next? (picture: small red circle, small blue circle, small yellow circle, small red circle, small blue circle, small yellow circle, small red circle, blank)
   - then: The pattern is red, blue, yellow, and it repeats. After red comes blue.
 - remember: Find the part that repeats. (picture: small red circle, small blue circle, small blue circle)
+
+## M-1-A1 A.1 Count to 120
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What number comes after 38?
+- Picture: 38
+- Options: 37 | 38 | **39**
+- Answer: 39
+- Explanation, spoken: Count 37 38 39. 39 comes after 38.
+- Explanation, shown: Count 37, 38, 39. / 39 comes after 38.
+- Explanation picture: 37, 38, 39
+
+**Seed 2** (choice, look)
+
+- On screen: What number comes after 42?
+- Picture: 42
+- Options: 41 | 42 | **43**
+- Answer: 43
+- Explanation, spoken: Count 41 42 43. 43 comes after 42.
+- Explanation, shown: Count 41, 42, 43. / 43 comes after 42.
+- Explanation picture: 41, 42, 43
+
+**Seed 3** (choice, look)
+
+- On screen: What number comes after 41?
+- Picture: 41
+- Options: 40 | 41 | **42**
+- Answer: 42
+- Explanation, spoken: Count 40 41 42. 42 comes after 41.
+- Explanation, shown: Count 40, 41, 42. / 42 comes after 41.
+- Explanation picture: 40, 41, 42
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What number comes after 81?
+- Picture: 81
+- Options: 80 | 81 | **82**
+- Answer: 82
+- Explanation, spoken: Count 80 81 82. 82 comes after 81.
+- Explanation, shown: Count 80, 81, 82. / 82 comes after 81.
+- Explanation picture: 80, 81, 82
+
+**Seed 2** (choice, look)
+
+- On screen: What number comes after 86?
+- Picture: 86
+- Options: 85 | 86 | **87**
+- Answer: 87
+- Explanation, spoken: Count 85 86 87. 87 comes after 86.
+- Explanation, shown: Count 85, 86, 87. / 87 comes after 86.
+- Explanation picture: 85, 86, 87
+
+**Seed 3** (choice, look)
+
+- On screen: What number comes after 86?
+- Picture: 86
+- Options: 85 | 86 | **87**
+- Answer: 87
+- Explanation, spoken: Count 85 86 87. 87 comes after 86.
+- Explanation, shown: Count 85, 86, 87. / 87 comes after 86.
+- Explanation picture: 85, 86, 87
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: What number comes after 104?
+- Picture: 104
+- Answer: type 105
+- Explanation, spoken: Count 103 104 105. 105 comes after 104.
+- Explanation, shown: Count 103, 104, 105. / 105 comes after 104.
+- Explanation picture: 103, 104, 105
+
+**Seed 2** (numberPad, look)
+
+- On screen: What number comes after 106?
+- Picture: 106
+- Answer: type 107
+- Explanation, spoken: Count 105 106 107. 107 comes after 106.
+- Explanation, shown: Count 105, 106, 107. / 107 comes after 106.
+- Explanation picture: 105, 106, 107
+
+**Seed 3** (numberPad, look)
+
+- On screen: What number comes after 105?
+- Picture: 105
+- Answer: type 106
+- Explanation, spoken: Count 104 105 106. 106 comes after 105.
+- Explanation, shown: Count 104, 105, 106. / 106 comes after 105.
+- Explanation picture: 104, 105, 106
+
+### Level 4
+
+**Seed 1** (numberPad, look)
+
+- On screen: What number comes before 61?
+- Picture: 61
+- Answer: type 60
+- Explanation, spoken: Count 60 61 62. 60 comes before 61.
+- Explanation, shown: Count 60, 61, 62. / 60 comes before 61.
+- Explanation picture: 60, 61, 62
+
+**Seed 2** (numberPad, look)
+
+- On screen: What number comes before 80?
+- Picture: 80
+- Answer: type 79
+- Explanation, spoken: Count 79 80 81. 79 comes before 80.
+- Explanation, shown: Count 79, 80, 81. / 79 comes before 80.
+- Explanation picture: 79, 80, 81
+
+**Seed 3** (numberPad, look)
+
+- On screen: What number comes before 63?
+- Picture: 63
+- Answer: type 62
+- Explanation, spoken: Count 62 63 64. 62 comes before 63.
+- Explanation, shown: Count 62, 63, 64. / 62 comes before 63.
+- Explanation picture: 62, 63, 64
+
+### Lesson
+
+- see: Counting goes on past 100. After 99 comes 100, then 101. (picture: 99, 100, 101)
+- watch: Count 46, 47, 48. 48 comes after 47. (picture: 46, 47, 48)
+- try: What number comes after 109? (picture: 109)
+  - then: Count 108, 109, 110. 110 comes after 109.
+- remember: Counting goes up by one. (picture: 118, 119, 120)
+
+## M-1-A2 A.2 Skip count by 2s, 5s, 10s
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What comes next?
+- Picture: 60, 70, 80, 90, blank
+- Options: **100** | 101 | 110
+- Answer: 100
+- Explanation, spoken: We are counting by tens. 60 70 80 90 100 Next is 100.
+- Explanation, shown: We are counting by 10s. / 60, 70, 80, 90, 100. / Next is 100.
+- Explanation picture: 60, 70, 80, 90, 100
+
+**Seed 2** (choice, look)
+
+- On screen: What comes next?
+- Picture: 60, 70, 80, 90, blank
+- Options: **100** | 101 | 110
+- Answer: 100
+- Explanation, spoken: We are counting by tens. 60 70 80 90 100 Next is 100.
+- Explanation, shown: We are counting by 10s. / 60, 70, 80, 90, 100. / Next is 100.
+- Explanation picture: 60, 70, 80, 90, 100
+
+**Seed 3** (choice, look)
+
+- On screen: What comes next?
+- Picture: 60, 70, 80, 90, blank
+- Options: **100** | 101 | 110
+- Answer: 100
+- Explanation, spoken: We are counting by tens. 60 70 80 90 100 Next is 100.
+- Explanation, shown: We are counting by 10s. / 60, 70, 80, 90, 100. / Next is 100.
+- Explanation picture: 60, 70, 80, 90, 100
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What comes next?
+- Picture: 40, 45, 50, 55, blank
+- Options: **60** | 61 | 65
+- Answer: 60
+- Explanation, spoken: We are counting by fives. 40 45 50 55 60 Next is 60.
+- Explanation, shown: We are counting by 5s. / 40, 45, 50, 55, 60. / Next is 60.
+- Explanation picture: 40, 45, 50, 55, 60
+
+**Seed 2** (choice, look)
+
+- On screen: What comes next?
+- Picture: 45, 50, 55, 60, blank
+- Options: **65** | 66 | 70
+- Answer: 65
+- Explanation, spoken: We are counting by fives. 45 50 55 60 65 Next is 65.
+- Explanation, shown: We are counting by 5s. / 45, 50, 55, 60, 65. / Next is 65.
+- Explanation picture: 45, 50, 55, 60, 65
+
+**Seed 3** (choice, look)
+
+- On screen: What comes next?
+- Picture: 45, 50, 55, 60, blank
+- Options: **65** | 66 | 70
+- Answer: 65
+- Explanation, spoken: We are counting by fives. 45 50 55 60 65 Next is 65.
+- Explanation, shown: We are counting by 5s. / 45, 50, 55, 60, 65. / Next is 65.
+- Explanation picture: 45, 50, 55, 60, 65
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: What comes next?
+- Picture: 26, 28, 30, 32, blank
+- Options: **34** | 35 | 36
+- Answer: 34
+- Explanation, spoken: We are counting by twos. 26 28 30 32 34 Next is 34.
+- Explanation, shown: We are counting by 2s. / 26, 28, 30, 32, 34. / Next is 34.
+- Explanation picture: 26, 28, 30, 32, 34
+
+**Seed 2** (choice, look)
+
+- On screen: What comes next?
+- Picture: 30, 32, 34, 36, blank
+- Options: **38** | 39 | 40
+- Answer: 38
+- Explanation, spoken: We are counting by twos. 30 32 34 36 38 Next is 38.
+- Explanation, shown: We are counting by 2s. / 30, 32, 34, 36, 38. / Next is 38.
+- Explanation picture: 30, 32, 34, 36, 38
+
+**Seed 3** (choice, look)
+
+- On screen: What comes next?
+- Picture: 30, 32, 34, 36, blank
+- Options: **38** | 39 | 40
+- Answer: 38
+- Explanation, spoken: We are counting by twos. 30 32 34 36 38 Next is 38.
+- Explanation, shown: We are counting by 2s. / 30, 32, 34, 36, 38. / Next is 38.
+- Explanation picture: 30, 32, 34, 36, 38
+
+### Level 4
+
+**Seed 1** (numberPad, look)
+
+- On screen: Which number is missing?
+- Picture: 5, 10, blank, 20, 25
+- Answer: type 15
+- Explanation, spoken: We are counting by fives. 5 10 15 20 25 The missing number is 15.
+- Explanation, shown: We are counting by 5s. / 5, 10, 15, 20, 25. / The missing number is 15.
+- Explanation picture: 5, 10, 15, 20, 25
+
+**Seed 2** (numberPad, look)
+
+- On screen: Which number is missing?
+- Picture: 30, blank, 50, 60, 70
+- Answer: type 40
+- Explanation, spoken: We are counting by tens. 30 40 50 60 70 The missing number is 40.
+- Explanation, shown: We are counting by 10s. / 30, 40, 50, 60, 70. / The missing number is 40.
+- Explanation picture: 30, 40, 50, 60, 70
+
+**Seed 3** (numberPad, look)
+
+- On screen: Which number is missing?
+- Picture: 10, blank, 30, 40, 50
+- Answer: type 20
+- Explanation, spoken: We are counting by tens. 10 20 30 40 50 The missing number is 20.
+- Explanation, shown: We are counting by 10s. / 10, 20, 30, 40, 50. / The missing number is 20.
+- Explanation picture: 10, 20, 30, 40, 50
+
+### Lesson
+
+- see: Skip counting jumps by the same amount each time. (picture: 10, 20, 30, 40, 50)
+- watch: We are counting by 5s. 5, 10, 15, 20, 25. Next is 25. (picture: 5, 10, 15, 20, 25)
+- try: What comes next? (picture: 2, 4, 6, 8, blank)
+  - then: We are counting by 2s. 2, 4, 6, 8, 10. Next is 10.
+- remember: Add the same amount each time. (picture: 10, 20, 30, 40, 50)
+
+## M-1-A3 A.3 Tens and ones
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What number is this?
+- Picture: 2 tens, 3 ones
+- Options: **23** | 24 | 32
+- Answer: 23
+- Explanation, spoken: 2 tens is 20. 3 more ones makes 23.
+- Explanation, shown: 2 tens is 20. / 3 more ones makes 23.
+- Explanation picture: 2 tens, 3 ones
+
+**Seed 2** (choice, look)
+
+- On screen: What number is this?
+- Picture: 2 tens, 5 ones
+- Options: **25** | 26 | 52
+- Answer: 25
+- Explanation, spoken: 2 tens is 20. 5 more ones makes 25.
+- Explanation, shown: 2 tens is 20. / 5 more ones makes 25.
+- Explanation picture: 2 tens, 5 ones
+
+**Seed 3** (choice, look)
+
+- On screen: What number is this?
+- Picture: 2 tens, 5 ones
+- Options: **25** | 26 | 52
+- Answer: 25
+- Explanation, spoken: 2 tens is 20. 5 more ones makes 25.
+- Explanation, shown: 2 tens is 20. / 5 more ones makes 25.
+- Explanation picture: 2 tens, 5 ones
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What number is this?
+- Picture: 7 tens, 4 ones
+- Options: **74** | 75 | 84
+- Answer: 74
+- Explanation, spoken: 7 tens is 70. 4 more ones makes 74.
+- Explanation, shown: 7 tens is 70. / 4 more ones makes 74.
+- Explanation picture: 7 tens, 4 ones
+
+**Seed 2** (choice, look)
+
+- On screen: What number is this?
+- Picture: 8 tens, 1 one
+- Options: **81** | 82 | 91
+- Answer: 81
+- Explanation, spoken: 8 tens is 80. 1 more one makes 81.
+- Explanation, shown: 8 tens is 80. / 1 more one makes 81.
+- Explanation picture: 8 tens, 1 one
+
+**Seed 3** (choice, look)
+
+- On screen: What number is this?
+- Picture: 8 tens, 0 ones
+- Options: **80** | 81 | 90
+- Answer: 80
+- Explanation, spoken: 8 tens is 80. There are no ones.
+- Explanation, shown: 8 tens is 80. / There are no ones.
+- Explanation picture: 8 tens, 0 ones
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: What number is this?
+- Picture: 6 tens, 6 ones
+- Answer: type 66
+- Explanation, spoken: 6 tens is 60. 6 more ones makes 66.
+- Explanation, shown: 6 tens is 60. / 6 more ones makes 66.
+- Explanation picture: 6 tens, 6 ones
+
+**Seed 2** (numberPad, look)
+
+- On screen: What number is this?
+- Picture: 7 tens, 6 ones
+- Answer: type 76
+- Explanation, spoken: 7 tens is 70. 6 more ones makes 76.
+- Explanation, shown: 7 tens is 70. / 6 more ones makes 76.
+- Explanation picture: 7 tens, 6 ones
+
+**Seed 3** (numberPad, look)
+
+- On screen: What number is this?
+- Picture: 7 tens, 5 ones
+- Answer: type 75
+- Explanation, spoken: 7 tens is 70. 5 more ones makes 75.
+- Explanation, shown: 7 tens is 70. / 5 more ones makes 75.
+- Explanation picture: 7 tens, 5 ones
+
+### Level 4
+
+**Seed 1** (numberPad, look)
+
+- On screen: How many tens are in 66?
+- Picture: 66
+- Answer: type 6
+- Explanation, spoken: 66 is 6 tens and 6 ones.
+- Explanation, shown: 66 is 6 tens and 6 ones.
+- Explanation picture: 6 tens, 6 ones
+
+**Seed 2** (numberPad, look)
+
+- On screen: How many tens are in 76?
+- Picture: 76
+- Answer: type 7
+- Explanation, spoken: 76 is 7 tens and 6 ones.
+- Explanation, shown: 76 is 7 tens and 6 ones.
+- Explanation picture: 7 tens, 6 ones
+
+**Seed 3** (numberPad, look)
+
+- On screen: How many tens are in 75?
+- Picture: 75
+- Answer: type 7
+- Explanation, spoken: 75 is 7 tens and 5 ones.
+- Explanation, shown: 75 is 7 tens and 5 ones.
+- Explanation picture: 7 tens, 5 ones
+
+### Lesson
+
+- see: A long block is one ten. A small block is one. (picture: 1 ten, 1 one)
+- watch: 2 tens is 20. 3 more ones makes 23. (picture: 2 tens, 3 ones)
+- try: What number is this? (picture: 3 tens, 5 ones)
+  - then: 3 tens is 30. 5 more ones makes 35.
+- remember: Count tens first, then ones. (picture: 2 tens, 3 ones)
+
+## M-1-A4 A.4 Compare two-digit numbers
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which number is less?
+- Options: 66 | **10**
+- Answer: 10
+- Explanation, spoken: Look at the biggest place first. 66 has more tens. 10 is less than 66.
+- Explanation, shown: Look at the biggest place first. / 66 has more tens. / 10 is less than 66.
+- Explanation picture: 66 > 10
+
+**Seed 2** (choice, look)
+
+- On screen: Which number is greater?
+- Options: **76** | 39
+- Answer: 76
+- Explanation, spoken: Look at the biggest place first. 76 has more tens. 76 is greater than 39.
+- Explanation, shown: Look at the biggest place first. / 76 has more tens. / 76 is greater than 39.
+- Explanation picture: 76 > 39
+
+**Seed 3** (choice, look)
+
+- On screen: Which number is greater?
+- Options: **74** | 13
+- Answer: 74
+- Explanation, spoken: Look at the biggest place first. 74 has more tens. 74 is greater than 13.
+- Explanation, shown: Look at the biggest place first. / 74 has more tens. / 74 is greater than 13.
+- Explanation picture: 74 > 13
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which number is less?
+- Options: 66 | **60**
+- Answer: 60
+- Explanation, spoken: The tens are the same. Look at the ones. 66 has more ones. 60 is less than 66.
+- Explanation, shown: The tens are the same. Look at the ones. / 66 has more ones. / 60 is less than 66.
+- Explanation picture: 66 > 60
+
+**Seed 2** (choice, look)
+
+- On screen: Which number is greater?
+- Options: **76** | 73
+- Answer: 76
+- Explanation, spoken: The tens are the same. Look at the ones. 76 has more ones. 76 is greater than 73.
+- Explanation, shown: The tens are the same. Look at the ones. / 76 has more ones. / 76 is greater than 73.
+- Explanation picture: 76 > 73
+
+**Seed 3** (choice, look)
+
+- On screen: Which number is greater?
+- Options: **74** | 70
+- Answer: 74
+- Explanation, spoken: The tens are the same. Look at the ones. 74 has more ones. 74 is greater than 70.
+- Explanation, shown: The tens are the same. Look at the ones. / 74 has more ones. / 74 is greater than 70.
+- Explanation picture: 74 > 70
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which sign goes between 66 and 10?
+- Picture: 66 □ 10
+- Options: **>** | < | =
+- Answer: >
+- Explanation, spoken: Look at the biggest place first. 66 has more tens. 66 is greater than 10.
+- Explanation, shown: Look at the biggest place first. / 66 has more tens. / 66 is greater than 10.
+- Explanation picture: 66 > 10
+
+**Seed 2** (choice, look)
+
+- On screen: Which sign goes between 76 and 39?
+- Picture: 76 □ 39
+- Options: **>** | < | =
+- Answer: >
+- Explanation, spoken: Look at the biggest place first. 76 has more tens. 76 is greater than 39.
+- Explanation, shown: Look at the biggest place first. / 76 has more tens. / 76 is greater than 39.
+- Explanation picture: 76 > 39
+
+**Seed 3** (choice, look)
+
+- On screen: Which sign goes between 74 and 13?
+- Picture: 74 □ 13
+- Options: **>** | < | =
+- Answer: >
+- Explanation, spoken: Look at the biggest place first. 74 has more tens. 74 is greater than 13.
+- Explanation, shown: Look at the biggest place first. / 74 has more tens. / 74 is greater than 13.
+- Explanation picture: 74 > 13
+
+### Lesson
+
+- see: To compare two numbers, look at the tens first. (picture: 52 and 38)
+- watch: Look at the biggest place first. 52 has more tens. 52 is greater than 38. (picture: 52 > 38)
+- try: Which number is greater? (picture: 64 and 67)
+  - then: The tens are the same. Look at the ones. 67 has more ones. 67 is greater than 64.
+- remember: Compare the biggest place first. (picture: 52 > 38)
+
+## M-1-A5 A.5 Ten more, ten less
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What is 10 more than 56?
+- Picture: 56
+- Options: **66** | 67 | 68
+- Answer: 66
+- Explanation, spoken: Only the tens digit changes. 66.
+- Explanation, shown: Only the tens digit changes. / 10 more than 56 is 66.
+- Explanation picture: 6 tens, 6 ones
+
+**Seed 2** (choice, look)
+
+- On screen: What is 10 more than 66?
+- Picture: 66
+- Options: **76** | 77 | 78
+- Answer: 76
+- Explanation, spoken: Only the tens digit changes. 76.
+- Explanation, shown: Only the tens digit changes. / 10 more than 66 is 76.
+- Explanation picture: 7 tens, 6 ones
+
+**Seed 3** (choice, look)
+
+- On screen: What is 10 more than 65?
+- Picture: 65
+- Options: **75** | 76 | 77
+- Answer: 75
+- Explanation, spoken: Only the tens digit changes. 75.
+- Explanation, shown: Only the tens digit changes. / 10 more than 65 is 75.
+- Explanation picture: 7 tens, 5 ones
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What is 10 less than 66?
+- Picture: 66
+- Options: **56** | 57 | 67
+- Answer: 56
+- Explanation, spoken: Only the tens digit changes. 56.
+- Explanation, shown: Only the tens digit changes. / 10 less than 66 is 56.
+- Explanation picture: 5 tens, 6 ones
+
+**Seed 2** (choice, look)
+
+- On screen: What is 10 less than 76?
+- Picture: 76
+- Options: **66** | 67 | 77
+- Answer: 66
+- Explanation, spoken: Only the tens digit changes. 66.
+- Explanation, shown: Only the tens digit changes. / 10 less than 76 is 66.
+- Explanation picture: 6 tens, 6 ones
+
+**Seed 3** (choice, look)
+
+- On screen: What is 10 less than 75?
+- Picture: 75
+- Options: **65** | 76 | 85
+- Answer: 65
+- Explanation, spoken: Only the tens digit changes. 65.
+- Explanation, shown: Only the tens digit changes. / 10 less than 75 is 65.
+- Explanation picture: 6 tens, 5 ones
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: What is 10 less than 11?
+- Picture: 11
+- Answer: type 1
+- Explanation, spoken: Only the tens digit changes. 1.
+- Explanation, shown: Only the tens digit changes. / 10 less than 11 is 1.
+- Explanation picture: 1 one
+
+**Seed 2** (numberPad, look)
+
+- On screen: What is 10 less than 39?
+- Picture: 39
+- Answer: type 29
+- Explanation, spoken: Only the tens digit changes. 29.
+- Explanation, shown: Only the tens digit changes. / 10 less than 39 is 29.
+- Explanation picture: 2 tens, 9 ones
+
+**Seed 3** (numberPad, look)
+
+- On screen: What is 10 less than 14?
+- Picture: 14
+- Answer: type 4
+- Explanation, spoken: Only the tens digit changes. 4.
+- Explanation, shown: Only the tens digit changes. / 10 less than 14 is 4.
+- Explanation picture: 4 ones
+
+### Lesson
+
+- see: Ten more adds one ten. 24 has 2 tens. 34 has 3 tens. (picture: 2 tens, 4 ones)
+- watch: What is 10 more than 36? Only the tens digit changes. 10 more than 36 is 46. (picture: 4 tens, 6 ones)
+- try: What is 10 less than 52? (picture: 52)
+  - then: Only the tens digit changes. 10 less than 52 is 42.
+- remember: Ten more changes the tens. (picture: 3 tens, 4 ones)
+
+## M-1-C1 C.1 Tell time: hour and half hour
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 8:00
+- Options: **8:00** | 8:30 | 7:00
+- Answer: 8:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 8. It is 8:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 8. / It is 8 o'clock.
+- Explanation picture: clock showing 8:00
+
+**Seed 2** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 9:00
+- Options: **9:00** | 9:30 | 8:00
+- Answer: 9:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 9. It is 9:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 9. / It is 9 o'clock.
+- Explanation picture: clock showing 9:00
+
+**Seed 3** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 9:00
+- Options: 9:30 | 8:00 | **9:00**
+- Answer: 9:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 9. It is 9:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 9. / It is 9 o'clock.
+- Explanation picture: clock showing 9:00
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 8:30
+- Options: **8:30** | 8:00 | 7:30
+- Answer: 8:30
+- Explanation, spoken: The long hand points to 6. The short hand is halfway between 8 and 9. It is 8:30.
+- Explanation, shown: The long hand points to 6. / The short hand is halfway between 8 and 9. / It is half past 8.
+- Explanation picture: clock showing 8:30
+
+**Seed 2** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 9:30
+- Options: **9:30** | 9:00 | 8:30
+- Answer: 9:30
+- Explanation, spoken: The long hand points to 6. The short hand is halfway between 9 and 10. It is 9:30.
+- Explanation, shown: The long hand points to 6. / The short hand is halfway between 9 and 10. / It is half past 9.
+- Explanation picture: clock showing 9:30
+
+**Seed 3** (choice, look)
+
+- On screen: What time is it?
+- Picture: clock showing 9:30
+- Options: 9:00 | 8:30 | **9:30**
+- Answer: 9:30
+- Explanation, spoken: The long hand points to 6. The short hand is halfway between 9 and 10. It is 9:30.
+- Explanation, shown: The long hand points to 6. / The short hand is halfway between 9 and 10. / It is half past 9.
+- Explanation picture: clock showing 9:30
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which clock shows 8:00?
+- Picture: 8:00
+- Options: clock showing 9:00 | **clock showing 8:00** | clock showing 8:30
+- Answer: clock showing 8:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 8. It is 8:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 8. / It is 8 o'clock.
+- Explanation picture: clock showing 8:00
+
+**Seed 2** (choice, look)
+
+- On screen: Which clock shows 9:00?
+- Picture: 9:00
+- Options: **clock showing 9:00** | clock showing 9:30 | clock showing 8:00
+- Answer: clock showing 9:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 9. It is 9:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 9. / It is 9 o'clock.
+- Explanation picture: clock showing 9:00
+
+**Seed 3** (choice, look)
+
+- On screen: Which clock shows 9:00?
+- Picture: 9:00
+- Options: clock showing 9:30 | **clock showing 9:00** | clock showing 10:00
+- Answer: clock showing 9:00
+- Explanation, spoken: The long hand points to 12. The short hand points to 9. It is 9:00.
+- Explanation, shown: The long hand points to 12. / The short hand points to 9. / It is 9 o'clock.
+- Explanation picture: clock showing 9:00
+
+### Lesson
+
+- see: A clock has two hands. The short hand shows the hour. The long hand shows the minutes. (picture: clock showing 3:00)
+- watch: The long hand points to 12. The short hand points to 3. It is 3 o'clock. (picture: clock showing 3:00)
+- try: What time is it? (picture: clock showing 7:30)
+  - then: The long hand points to 6. The short hand is halfway between 7 and 8. It is half past 7.
+- remember: Short hand shows the hour. (picture: clock showing 9:00)
+
+## M-1-C2 C.2 Order by length
+
+### Level 1
+
+**Seed 1** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: black bar 6 units long | black bar 2 units long | black bar 10 units long
+- Answer: black bar 2 units long, black bar 6 units long, black bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: black bar 2 units long and black bar 10 units long
+
+**Seed 2** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: blue bar 1 unit long | blue bar 10 units long | blue bar 5 units long
+- Answer: blue bar 1 unit long, blue bar 5 units long, blue bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: blue bar 1 unit long and blue bar 10 units long
+
+**Seed 3** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: pink bar 10 units long | pink bar 2 units long | pink bar 8 units long
+- Answer: pink bar 2 units long, pink bar 8 units long, pink bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: pink bar 2 units long and pink bar 10 units long
+
+### Level 2
+
+**Seed 1** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: blue bar 6 units long | blue bar 9 units long | blue bar 1 unit long | blue bar 4 units long
+- Answer: blue bar 1 unit long, blue bar 4 units long, blue bar 6 units long, blue bar 9 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: blue bar 1 unit long and blue bar 9 units long
+
+**Seed 2** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: brown bar 4 units long | brown bar 2 units long | brown bar 7 units long | brown bar 10 units long
+- Answer: brown bar 2 units long, brown bar 4 units long, brown bar 7 units long, brown bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: brown bar 2 units long and brown bar 10 units long
+
+**Seed 3** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: brown bar 7 units long | brown bar 10 units long | brown bar 5 units long | brown bar 1 unit long
+- Answer: brown bar 1 unit long, brown bar 5 units long, brown bar 7 units long, brown bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: brown bar 1 unit long and brown bar 10 units long
+
+### Level 3
+
+**Seed 1** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: green bar 6 units long | green bar 8 units long | green bar 9 units long | green bar 7 units long
+- Answer: green bar 6 units long, green bar 7 units long, green bar 8 units long, green bar 9 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: green bar 6 units long and green bar 9 units long
+
+**Seed 2** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: purple bar 2 units long | purple bar 4 units long | purple bar 3 units long | purple bar 5 units long
+- Answer: purple bar 2 units long, purple bar 3 units long, purple bar 4 units long, purple bar 5 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: purple bar 2 units long and purple bar 5 units long
+
+**Seed 3** (order, look)
+
+- On screen: Put them in order, shortest first.
+- Items: yellow bar 10 units long | yellow bar 9 units long | yellow bar 8 units long | yellow bar 7 units long
+- Answer: yellow bar 7 units long, yellow bar 8 units long, yellow bar 9 units long, yellow bar 10 units long
+- Explanation, spoken: This one is the shortest. This one is the longest.
+- Explanation, shown: This one is the shortest. / This one is the longest.
+- Explanation picture: yellow bar 7 units long and yellow bar 10 units long
+
+### Lesson
+
+- see: Some things are longer than others. Line them up at one end to see. (picture: blue bar 6 units long and blue bar 3 units long)
+- watch: This one is the shortest. This one is the longest. (picture: green bar 2 units long and green bar 5 units long and green bar 8 units long)
+- try: Put them in order, shortest first. (picture: orange bar 7 units long and orange bar 2 units long and orange bar 4 units long)
+  - then: This one is the shortest. This one is the longest.
+- remember: Line up one end, then look at the other. (picture: green bar 2 units long and green bar 5 units long and green bar 8 units long)
+
+## M-1-C3 C.3 Picture graphs
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many chose balloons?
+- Picture: picture graph: balloons 6, cars 1, strawberries 2
+- Options: 1 | **6** | 8
+- Answer: 6
+- Explanation, spoken: Find balloons. Count its row. 6.
+- Explanation, shown: Find balloons. / Count its row: 6.
+- Explanation picture: picture graph: balloons 6, cars 1, strawberries 2
+
+**Seed 2** (choice, look)
+
+- On screen: How many chose apples?
+- Picture: picture graph: cookies 2, apples 5, bananas 6
+- Options: 2 | 4 | **5**
+- Answer: 5
+- Explanation, spoken: Find apples. Count its row. 5.
+- Explanation, shown: Find apples. / Count its row: 5.
+- Explanation picture: picture graph: cookies 2, apples 5, bananas 6
+
+**Seed 3** (choice, look)
+
+- On screen: How many chose cars?
+- Picture: picture graph: bananas 5, cookies 4, cars 6
+- Options: 5 | **6** | 7
+- Answer: 6
+- Explanation, spoken: Find cars. Count its row. 6.
+- Explanation, shown: Find cars. / Count its row: 6.
+- Explanation picture: picture graph: bananas 5, cookies 4, cars 6
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which one has the most?
+- Picture: picture graph: balloons 6, cars 1, strawberries 2
+- Options: **balloons** | cars | strawberries
+- Answer: balloons
+- Explanation, spoken: The balloons row is the longest. It has 6.
+- Explanation, shown: The balloons row is the longest. / It has 6.
+- Explanation picture: picture graph: balloons 6, cars 1, strawberries 2
+
+**Seed 2** (choice, look)
+
+- On screen: Which one has the most?
+- Picture: picture graph: cookies 2, apples 5, bananas 6
+- Options: cookies | apples | **bananas**
+- Answer: bananas
+- Explanation, spoken: The bananas row is the longest. It has 6.
+- Explanation, shown: The bananas row is the longest. / It has 6.
+- Explanation picture: picture graph: cookies 2, apples 5, bananas 6
+
+**Seed 3** (choice, look)
+
+- On screen: Which one has the fewest?
+- Picture: picture graph: bananas 5, cookies 4, cars 6
+- Options: bananas | **cookies** | cars
+- Answer: cookies
+- Explanation, spoken: The cookies row is the shortest. It has 4.
+- Explanation, shown: The cookies row is the shortest. / It has 4.
+- Explanation picture: picture graph: bananas 5, cookies 4, cars 6
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: How many more chose strawberries than cars?
+- Picture: picture graph: balloons 6, cars 1, strawberries 2
+- Answer: type 1
+- Explanation, spoken: The strawberries row has 2. The cars row has 1. 2 minus 1 is 1.
+- Explanation, shown: The strawberries row has 2. / The cars row has 1. / 2 minus 1 is 1.
+- Explanation picture: picture graph: balloons 6, cars 1, strawberries 2
+
+**Seed 2** (numberPad, look)
+
+- On screen: How many more chose bananas than cookies?
+- Picture: picture graph: cookies 2, apples 5, bananas 6
+- Answer: type 4
+- Explanation, spoken: The bananas row has 6. The cookies row has 2. 6 minus 2 is 4.
+- Explanation, shown: The bananas row has 6. / The cookies row has 2. / 6 minus 2 is 4.
+- Explanation picture: picture graph: cookies 2, apples 5, bananas 6
+
+**Seed 3** (numberPad, look)
+
+- On screen: How many more chose bananas than cookies?
+- Picture: picture graph: bananas 5, cookies 4, cars 6
+- Answer: type 1
+- Explanation, spoken: The bananas row has 5. The cookies row has 4. 5 minus 4 is 1.
+- Explanation, shown: The bananas row has 5. / The cookies row has 4. / 5 minus 4 is 1.
+- Explanation picture: picture graph: bananas 5, cookies 4, cars 6
+
+### Lesson
+
+- see: A picture graph shows how many. Each picture stands for one. (picture: picture graph: apples 4, cars 2, balloons 5)
+- watch: How many chose apples? Find apples. Count its row: 4. (picture: picture graph: apples 4, cars 2, balloons 5)
+- try: How many chose balloons? (picture: picture graph: apples 4, cars 2, balloons 5)
+  - then: Find balloons. Count its row: 5.
+- remember: Read one row at a time. (picture: picture graph: apples 4, cars 2, balloons 5)
+
+## M-1-C4 C.4 Coins
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which coin is this?
+- Picture: dime
+- Options: penny | nickel | **dime** | quarter
+- Answer: dime
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+**Seed 2** (choice, look)
+
+- On screen: Which coin is this?
+- Picture: dime
+- Options: penny | nickel | **dime** | quarter
+- Answer: dime
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+**Seed 3** (choice, look)
+
+- On screen: Which coin is this?
+- Picture: dime
+- Options: penny | nickel | **dime** | quarter
+- Answer: dime
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: How much is this coin worth?
+- Picture: dime
+- Options: 1¢ | 5¢ | **10¢** | 25¢
+- Answer: 10¢
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+**Seed 2** (choice, look)
+
+- On screen: How much is this coin worth?
+- Picture: dime
+- Options: 1¢ | 5¢ | **10¢** | 25¢
+- Answer: 10¢
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+**Seed 3** (choice, look)
+
+- On screen: How much is this coin worth?
+- Picture: dime
+- Options: 1¢ | 5¢ | **10¢** | 25¢
+- Answer: 10¢
+- Explanation, spoken: This is a dime. It is worth 10¢. Look at its size, its colour and its picture.
+- Explanation, shown: This is a dime. / It is worth 10 cents. / Look at its size, its colour and its picture.
+- Explanation picture: dime
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which coin is worth more?
+- Options: **quarter** | nickel
+- Answer: quarter
+- Explanation, spoken: A quarter is worth 25¢. A nickel is worth 5¢. The quarter is worth more.
+- Explanation, shown: A quarter is worth 25 cents. / A nickel is worth 5 cents. / The quarter is worth more.
+- Explanation picture: quarter
+
+**Seed 2** (choice, look)
+
+- On screen: Which coin is worth more?
+- Options: nickel | **quarter**
+- Answer: quarter
+- Explanation, spoken: A quarter is worth 25¢. A nickel is worth 5¢. The quarter is worth more.
+- Explanation, shown: A quarter is worth 25 cents. / A nickel is worth 5 cents. / The quarter is worth more.
+- Explanation picture: quarter
+
+**Seed 3** (choice, look)
+
+- On screen: Which coin is worth more?
+- Options: nickel | **quarter**
+- Answer: quarter
+- Explanation, spoken: A quarter is worth 25¢. A nickel is worth 5¢. The quarter is worth more.
+- Explanation, shown: A quarter is worth 25 cents. / A nickel is worth 5 cents. / The quarter is worth more.
+- Explanation picture: quarter
+
+### Lesson
+
+- see: There are four coins: penny, nickel, dime and quarter. (picture: penny, nickel, dime, quarter)
+- watch: This is a penny. It is worth 1 cent. Look at its size, its colour and its picture. (picture: penny)
+- try: Which coin is this? (picture: quarter)
+  - then: This is a quarter. It is worth 25 cents. Look at its size, its colour and its picture.
+- remember: Each coin has its own size and value. (picture: penny, nickel, dime, quarter)
+
+## M-1-D1 D.1 Halves and fourths
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Are the parts equal?
+- Picture: rectangle in 2 unequal parts, 0 shaded
+- Options: Yes | **No**
+- Answer: No
+- Explanation, spoken: Equal parts are the same size. These parts are not the same size.
+- Explanation, shown: Equal parts are the same size. / These parts are not the same size.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 2** (choice, look)
+
+- On screen: Are the parts equal?
+- Picture: rectangle in 2 equal parts, 0 shaded
+- Options: **Yes** | No
+- Answer: Yes
+- Explanation, spoken: Equal parts are the same size. These parts are equal.
+- Explanation, shown: Equal parts are the same size. / These parts are equal.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 3** (choice, look)
+
+- On screen: Are the parts equal?
+- Picture: rectangle in 2 equal parts, 0 shaded
+- Options: **Yes** | No
+- Answer: Yes
+- Explanation, spoken: Equal parts are the same size. These parts are equal.
+- Explanation, shown: Equal parts are the same size. / These parts are equal.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: **rectangle in 2 equal parts, 0 shaded** | rectangle in 2 unequal parts, 0 shaded | rectangle in 4 equal parts, 0 shaded
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 2** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: rectangle in 2 unequal parts, 0 shaded | rectangle in 4 equal parts, 0 shaded | **rectangle in 2 equal parts, 0 shaded**
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 3** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: rectangle in 2 unequal parts, 0 shaded | **rectangle in 2 equal parts, 0 shaded** | rectangle in 4 equal parts, 0 shaded
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: **rectangle in 2 equal parts, 0 shaded** | rectangle in 4 equal parts, 0 shaded | rectangle in 4 unequal parts, 0 shaded
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 2** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: **rectangle in 2 equal parts, 0 shaded** | rectangle in 2 unequal parts, 0 shaded | rectangle in 4 equal parts, 0 shaded
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+**Seed 3** (choice, look)
+
+- On screen: Which shape shows halves?
+- Options: rectangle in 2 unequal parts, 0 shaded | rectangle in 4 equal parts, 0 shaded | **rectangle in 2 equal parts, 0 shaded**
+- Answer: rectangle in 2 equal parts, 0 shaded
+- Explanation, spoken: Halves are two equal parts.
+- Explanation, shown: Halves are 2 equal parts.
+- Explanation picture: rectangle in 2 equal parts, 0 shaded
+
+### Lesson
+
+- see: A shape can be cut into equal parts. Equal parts are the same size. (picture: circle in 2 equal parts, 0 shaded)
+- watch: Halves are 2 equal parts. (picture: rectangle in 2 equal parts, 0 shaded)
+- try: Which shape shows fourths? (picture: circle in 2 equal parts, 0 shaded and circle in 4 equal parts, 0 shaded)
+  - then: Fourths are 4 equal parts.
+- remember: Equal parts are the same size. (picture: rectangle in 4 equal parts, 0 shaded)
+
+## M-1-D2 D.2 Shape attributes
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which shape has 3 sides?
+- Options: purple square | **purple triangle** | purple hexagon | purple circle
+- Answer: purple triangle
+- Explanation, spoken: A triangle has three sides.
+- Explanation, shown: A triangle has 3 sides.
+- Explanation picture: large purple triangle
+
+**Seed 2** (choice, look)
+
+- On screen: Which shape has 4 sides?
+- Options: pink hexagon | **pink square** | pink circle | pink pentagon
+- Answer: pink square
+- Explanation, spoken: A square has four sides.
+- Explanation, shown: A square has 4 sides.
+- Explanation picture: large pink square
+
+**Seed 3** (choice, look)
+
+- On screen: Which shape has 3 sides?
+- Options: pink hexagon | pink pentagon | **pink triangle** | pink square
+- Answer: pink triangle
+- Explanation, spoken: A triangle has three sides.
+- Explanation, shown: A triangle has 3 sides.
+- Explanation picture: large pink triangle
+
+### Level 2
+
+**Seed 1** (multiSelect, look)
+
+- On screen: Pick all the shapes with 3 corners.
+- Options: purple hexagon | purple pentagon | large black triangle | purple triangle
+- Answer: large black triangle, purple triangle
+- Explanation, spoken: A triangle has three corners.
+- Explanation, shown: A triangle has 3 corners.
+- Explanation picture: large purple triangle
+
+**Seed 2** (multiSelect, look)
+
+- On screen: Pick all the shapes with 3 corners.
+- Options: pink square | pink hexagon | pink triangle | pink rectangle
+- Answer: pink triangle
+- Explanation, spoken: A triangle has three corners.
+- Explanation, shown: A triangle has 3 corners.
+- Explanation picture: large pink triangle
+
+**Seed 3** (multiSelect, look)
+
+- On screen: Pick all the shapes with 3 corners.
+- Options: pink hexagon | large black triangle | pink triangle | pink pentagon
+- Answer: large black triangle, pink triangle
+- Explanation, spoken: A triangle has three corners.
+- Explanation, shown: A triangle has 3 corners.
+- Explanation picture: large pink triangle
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Is this shape closed or open?
+- Picture: large purple triangle
+- Options: **Closed** | Open
+- Answer: Closed
+- Explanation, spoken: This shape has no gap. It is closed.
+- Explanation, shown: This shape has no gap. It is closed.
+- Explanation picture: large purple triangle
+
+**Seed 2** (choice, look)
+
+- On screen: Is this shape closed or open?
+- Picture: large pink square, open
+- Options: Closed | **Open**
+- Answer: Open
+- Explanation, spoken: This shape has a gap. It is open.
+- Explanation, shown: This shape has a gap. It is open.
+- Explanation picture: large pink square, open
+
+**Seed 3** (choice, look)
+
+- On screen: Is this shape closed or open?
+- Picture: large pink triangle, open
+- Options: Closed | **Open**
+- Answer: Open
+- Explanation, spoken: This shape has a gap. It is open.
+- Explanation, shown: This shape has a gap. It is open.
+- Explanation picture: large pink triangle, open
+
+### Lesson
+
+- see: Shapes have sides and corners. A triangle has 3 sides and 3 corners. (picture: large blue triangle)
+- watch: Which shape has 4 sides? A square has 4 sides. (picture: blue triangle and blue square)
+- try: Which shape has 6 sides? (picture: green hexagon and green rectangle)
+  - then: A hexagon has 6 sides.
+- remember: Trace round the shape and count. (picture: large blue pentagon)
+
+## M-1-E1 E.1 Number patterns
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: What comes next?
+- Picture: 1, 3, 5, 7, blank
+- Options: 8 | **9** | 10
+- Answer: 9
+- Explanation, spoken: The numbers go up by 2. Next is 9.
+- Explanation, shown: The numbers go up by 2. / Next is 9.
+- Explanation picture: 1, 3, 5, 7, 9
+
+**Seed 2** (choice, look)
+
+- On screen: What comes next?
+- Picture: 13, 15, 17, 19, blank
+- Options: **21** | 22 | 23
+- Answer: 21
+- Explanation, spoken: The numbers go up by 2. Next is 21.
+- Explanation, shown: The numbers go up by 2. / Next is 21.
+- Explanation picture: 13, 15, 17, 19, 21
+
+**Seed 3** (choice, look)
+
+- On screen: What comes next?
+- Picture: 2, 4, 6, 8, blank
+- Options: 8 | **10** | 11
+- Answer: 10
+- Explanation, spoken: The numbers go up by 2. Next is 10.
+- Explanation, shown: The numbers go up by 2. / Next is 10.
+- Explanation picture: 2, 4, 6, 8, 10
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: What comes next?
+- Picture: 1, 11, 21, 31, blank
+- Options: 40 | **41** | 51
+- Answer: 41
+- Explanation, spoken: The numbers go up by 10. Next is 41.
+- Explanation, shown: The numbers go up by 10. / Next is 41.
+- Explanation picture: 1, 11, 21, 31, 41
+
+**Seed 2** (choice, look)
+
+- On screen: What comes next?
+- Picture: 13, 23, 33, 43, blank
+- Options: **53** | 54 | 63
+- Answer: 53
+- Explanation, spoken: The numbers go up by 10. Next is 53.
+- Explanation, shown: The numbers go up by 10. / Next is 53.
+- Explanation picture: 13, 23, 33, 43, 53
+
+**Seed 3** (choice, look)
+
+- On screen: What comes next?
+- Picture: 2, 12, 22, 32, blank
+- Options: 33 | **42** | 52
+- Answer: 42
+- Explanation, spoken: The numbers go up by 10. Next is 42.
+- Explanation, shown: The numbers go up by 10. / Next is 42.
+- Explanation picture: 2, 12, 22, 32, 42
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: What comes next?
+- Picture: 25, 20, 15, 10, blank
+- Answer: type 5
+- Explanation, spoken: The numbers go down by 5. Next is 5.
+- Explanation, shown: The numbers go down by 5. / Next is 5.
+- Explanation picture: 25, 20, 15, 10, 5
+
+**Seed 2** (numberPad, look)
+
+- On screen: What comes next?
+- Picture: 38, 33, 28, 23, blank
+- Answer: type 18
+- Explanation, spoken: The numbers go down by 5. Next is 18.
+- Explanation, shown: The numbers go down by 5. / Next is 18.
+- Explanation picture: 38, 33, 28, 23, 18
+
+**Seed 3** (numberPad, look)
+
+- On screen: What comes next?
+- Picture: 26, 21, 16, 11, blank
+- Answer: type 6
+- Explanation, spoken: The numbers go down by 5. Next is 6.
+- Explanation, shown: The numbers go down by 5. / Next is 6.
+- Explanation picture: 26, 21, 16, 11, 6
+
+### Lesson
+
+- see: A number pattern follows a rule. Here the rule is plus 2. (picture: 3, 5, 7, 9, 11)
+- watch: The numbers go up by 5. Next is 24. (picture: 4, 9, 14, 19, 24)
+- try: What comes next? (picture: 30, 28, 26, 24, blank)
+  - then: The numbers go down by 2. Next is 22.
+- remember: Find the jump. (picture: 3, 5, 7, 9, 11)
 
 ## E-PK-A1 A.1 Find the uppercase letter
 

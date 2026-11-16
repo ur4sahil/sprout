@@ -5,10 +5,13 @@ import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
 import { fold } from './fold';
+import { fraction } from './fraction';
+import { graph } from './graph';
 import { letter } from './letter';
 import { matchEqual } from './matchEqual';
 import { matrix } from './matrix';
 import { missing } from './missing';
+import { money } from './money';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
@@ -19,6 +22,7 @@ import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
+import { time } from './time';
 import { transform } from './transform';
 import type { Oracle } from './types';
 import { wordSet } from './wordSet';
@@ -47,4 +51,8 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   numberRule,
   series,
   fold,
+  time,
+  graph,
+  money,
+  fraction,
 };

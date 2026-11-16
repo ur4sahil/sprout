@@ -7,6 +7,10 @@ import { letterOrNumberGenerator, matchLettersGenerator } from './generators/ela
 import { clapsGenerator, rhymesGenerator, startsLikeGenerator } from './generators/ela/pk/sounds';
 import { oppositesGenerator, wordGroupsGenerator } from './generators/ela/pk/words';
 import { addPicturesTo10Generator, addPicturesTo5Generator, addTo5Generator } from './generators/math/k/adding';
+import { coinsGenerator, orderByLengthGenerator, pictureGraphsGenerator, tellTimeGenerator } from './generators/math/g1/measure';
+import { countTo120Generator, numberPatternsGenerator, skipCountGenerator, tenMoreLessGenerator } from './generators/math/g1/numbers';
+import { compareTwoDigitGenerator, tensAndOnesGenerator } from './generators/math/g1/placeValue';
+import { halvesAndFourthsGenerator, shapeAttributesGenerator } from './generators/math/g1/shapes';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
@@ -70,6 +74,18 @@ const ALL: readonly SkillGenerator[] = [
   compareLengthGenerator,
   sortAndCountGenerator,
   patternsGenerator,
+  countTo120Generator,
+  skipCountGenerator,
+  tensAndOnesGenerator,
+  compareTwoDigitGenerator,
+  tenMoreLessGenerator,
+  tellTimeGenerator,
+  orderByLengthGenerator,
+  pictureGraphsGenerator,
+  coinsGenerator,
+  halvesAndFourthsGenerator,
+  shapeAttributesGenerator,
+  numberPatternsGenerator,
   findUppercaseGenerator,
   findLowercaseGenerator,
   matchLettersGenerator,

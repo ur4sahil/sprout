@@ -8,12 +8,15 @@ import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
 import { fold } from './fold';
+import { fraction } from './fraction';
+import { graph } from './graph';
 import { ORACLES } from './index';
 import { judge } from './judge';
 import { letter } from './letter';
 import { matchEqual } from './matchEqual';
 import { matrix } from './matrix';
 import { missing } from './missing';
+import { money } from './money';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
@@ -24,6 +27,7 @@ import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
+import { time } from './time';
 import { transform } from './transform';
 import { wordSet } from './wordSet';
 
@@ -209,7 +213,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'letter', 'matchEqual', 'matrix', 'missing', 'numberRule', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'transform', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'matchEqual', 'matrix', 'missing', 'money', 'numberRule', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -541,5 +545,76 @@ describe('wordSet, the reasoning relations', () => {
     expect(wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['bird', 'fish', 'car'] })).toEqual({ kind: 'index', index: 0 });
     expect(() => wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
     expect(() => wordSet({ target: 'Which one can swim?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
+  });
+});
+
+describe('time', () => {
+  it('writes the time with two digits for the minutes', () => {
+    expect(time({ hour: 3, minute: 0 })).toEqual({ kind: 'value', value: '3:00' });
+    expect(time({ hour: 3, minute: 30 })).toEqual({ kind: 'value', value: '3:30' });
+    expect(time({ hour: 12, minute: 5 })).toEqual({ kind: 'value', value: '12:05' });
+  });
+  it('refuses an hour or minute no clock shows', () => {
+    expect(() => time({ hour: 0, minute: 0 })).toThrow();
+    expect(() => time({ hour: 13, minute: 0 })).toThrow();
+    expect(() => time({ hour: 3, minute: 60 })).toThrow();
+    expect(() => time({ hour: 3.5, minute: 0 })).toThrow();
+    expect(() => time({ hour: 3 })).toThrow();
+  });
+});
+
+describe('graph', () => {
+  const values = [4, 7, 2];
+  it('reads one category, finds the most and the least, and takes the difference', () => {
+    expect(graph({ values, ask: 'value', index: 1 })).toEqual({ kind: 'value', value: 7 });
+    expect(graph({ values, ask: 'most' })).toEqual({ kind: 'index', index: 1 });
+    expect(graph({ values, ask: 'least' })).toEqual({ kind: 'index', index: 2 });
+    expect(graph({ values, ask: 'difference', index: 1, other: 0 })).toEqual({ kind: 'value', value: 3 });
+  });
+  it('refuses a tie for most or least, "how many more" asked the wrong way round, and a category that is not there', () => {
+    expect(() => graph({ values: [4, 4, 2], ask: 'most' })).toThrow();
+    expect(() => graph({ values: [4, 2, 2], ask: 'least' })).toThrow();
+    expect(() => graph({ values, ask: 'difference', index: 0, other: 1 })).toThrow();
+    expect(() => graph({ values, ask: 'difference', index: 1, other: 1 })).toThrow();
+    expect(() => graph({ values, ask: 'value', index: 3 })).toThrow();
+    expect(() => graph({ values, ask: 'middle' })).toThrow();
+  });
+});
+
+describe('money', () => {
+  it('knows what each coin is worth, and adds them up', () => {
+    expect(money({ coins: ['penny'], ask: 'value' })).toEqual({ kind: 'value', value: 1 });
+    expect(money({ coins: ['nickel'], ask: 'value' })).toEqual({ kind: 'value', value: 5 });
+    expect(money({ coins: ['dime'], ask: 'value' })).toEqual({ kind: 'value', value: 10 });
+    expect(money({ coins: ['quarter'], ask: 'value' })).toEqual({ kind: 'value', value: 25 });
+    expect(money({ coins: ['quarter', 'dime', 'dime', 'nickel', 'penny'], ask: 'total' })).toEqual({ kind: 'value', value: 51 });
+    expect(money({ coins: ['dime'], ask: 'name' })).toEqual({ kind: 'value', value: 'dime' });
+  });
+  it('says which coin is worth more: a dime beats a nickel though it is smaller', () => {
+    expect(money({ coins: ['nickel', 'dime'], ask: 'worthMore' })).toEqual({ kind: 'index', index: 1 });
+    expect(money({ coins: ['quarter', 'penny'], ask: 'worthMore' })).toEqual({ kind: 'index', index: 0 });
+    expect(() => money({ coins: ['dime', 'dime'], ask: 'worthMore' })).toThrow();
+    expect(() => money({ coins: ['dime'], ask: 'worthMore' })).toThrow();
+  });
+  it('refuses a coin it does not know and naming two coins at once', () => {
+    expect(() => money({ coins: ['dollar'], ask: 'total' })).toThrow();
+    expect(() => money({ coins: ['dime', 'penny'], ask: 'name' })).toThrow();
+    expect(() => money({ coins: ['dime'], ask: 'colour' })).toThrow();
+  });
+});
+
+describe('fraction', () => {
+  it('says whether the parts are equal, and names equal parts', () => {
+    expect(fraction({ parts: 2, equal: true, ask: 'equal' })).toEqual({ kind: 'value', value: true });
+    expect(fraction({ parts: 2, equal: false, ask: 'equal' })).toEqual({ kind: 'value', value: false });
+    expect(fraction({ parts: 2, equal: true, ask: 'name' })).toEqual({ kind: 'value', value: 'halves' });
+    expect(fraction({ parts: 3, equal: true, ask: 'name' })).toEqual({ kind: 'value', value: 'thirds' });
+    expect(fraction({ parts: 4, equal: true, ask: 'name' })).toEqual({ kind: 'value', value: 'fourths' });
+  });
+  it('gives unequal parts no name, and refuses what it does not know', () => {
+    expect(() => fraction({ parts: 2, equal: false, ask: 'name' })).toThrow();
+    expect(() => fraction({ parts: 5, equal: true, ask: 'name' })).toThrow();
+    expect(() => fraction({ parts: 2, ask: 'equal' })).toThrow();
+    expect(() => fraction({ parts: 2, equal: true, ask: 'size' })).toThrow();
   });
 });

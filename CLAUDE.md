@@ -151,4 +151,11 @@
 - New shared components: `PinPad`, `SelectField`, `ToggleField`. Screens may not use a raw `<button>` or `<label>`.
 - Tests: `setUp` gives the family the PIN 1234 and an open gate (`gate: 'closed'` to close it). Other tests that reach the picker call `giveFamilyPin()` from `tests/helpers/familyPin.ts`. In browser tests `expectStartScreen` chooses 1234 when asked, and `typePin(page)` types it.
 - Not built yet from the plan's parent list: trouble spots, question log, flags, plans (step 19), the printable certificate, removing a video from a skill (videos are step 21).
-- Next: step 19, Phase 8b, parent side part 2.
+- Step 19, Phase 8b (parent side, part 2), is built: `Trouble` (trouble spots), `Log` (the question log, with flags) and `Plans`, at `/parent/trouble`, `/parent/log` and `/parent/plans`. `/dev/review/:skillId` shows a skill's sample questions in a development build only.
+- `redraw` in `src/app/parentData.ts` makes a logged question again from its skill, level and seed when the skill's version matches, and shows the saved snapshot when it does not. `LoggedQuestion` draws it.
+- `src/app/plans.ts`: the ready-made "Reasoning practice" plan, `moveSkill`, and `addToExtraPractice` (the "Add to a plan" button on a trouble spot adds to the child's "Extra practice" plan). Removing a plan sets `deletedAt`, so the removal reaches the other iPads. "Use this plan" assigns it to every child; the parent can change that.
+- Step 20, Phase 11a (Math grade 1, part 1), is built: A.1 to A.5, C.1 to C.4, D.1, D.2 and E.1, in `src/content/generators/math/g1/`: `numbers.ts` (A.1, A.2, A.5, E.1), `placeValue.ts` (A.3, A.4), `measure.ts` (C.1 to C.4), `shapes.ts` (D.1, D.2). `CATALOGUE_VERSION` is 7. Grade 1 categories so far: A. Numbers to 120, C. Time, measuring and money, D. Shapes and parts, E. Patterns.
+- New oracles: `time` ("3:30"), `graph` (value, most, least, difference), `money` (total, name, value, worthMore) and `fraction` (equal, name).
+- A.5 uses two oracles, so every question names its own in `facts.oracle`. A.4 level 3 and C.4 levels 1 and 2 use `fixedOrder`.
+- Browser sweeps give a child high scores, which earns stickers: `sweepHardestLevels` taps past the "New sticker" card.
+- Next: Phase 11b, Math grade 1 part 2 (category B, 10 skills). Then 11c to 11f: Math grade 2 (22), Language Arts K (16), Language Arts grade 1 (12).
