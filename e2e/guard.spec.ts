@@ -1,4 +1,4 @@
-import { expect, openSignedOut, signUp, test } from './support/fixtures';
+import { expect, isSilent, openSignedOut, signUp, test } from './support/fixtures';
 import { BASE_URL } from './support/paths';
 
 // Every path in the plan's route table, plus ones that do not exist.
@@ -49,6 +49,15 @@ test.describe('the sign-in guard', () => {
       await expect(page.getByLabel('Email'), path).toHaveCount(0);
       await expect(page, path).toHaveURL(`${BASE_URL}/`);
     }
+  });
+
+  test('these tests make no noise: the page has a silent voice and no audio output, before and after a reload', async ({ page }) => {
+    await openSignedOut(page);
+    expect(await isSilent(page)).toBe(true);
+    await page.reload();
+    expect(await isSilent(page)).toBe(true);
+    await page.goto('/home');
+    expect(await isSilent(page)).toBe(true);
   });
 
   test('the page has the install tags an iPad needs', async ({ page }) => {

@@ -115,6 +115,23 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE): Promise<bool
   }
 }
 
+// Says a ready-made phrase: its voice-pack clip when the device has it, otherwise the words through the device voice.
+export async function speakPhrase(clipKey: string, say: Say, rate: number = DEFAULT_RATE): Promise<boolean> {
+  if (!hasClip(clipKey)) return speak(say, rate);
+  const mine = (generation += 1);
+  stopClip();
+  try {
+    synth()?.cancel();
+  } catch {
+    // Nothing was playing.
+  }
+  if (isMuted()) return false;
+  await wait(CANCEL_WAIT_MS);
+  if (mine !== generation) return false;
+  if (await playClip(clipKey)) return mine === generation;
+  return mine === generation ? speak(say, rate) : false;
+}
+
 // Stops anything being said.
 export function stop(): void {
   generation += 1;

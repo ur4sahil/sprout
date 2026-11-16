@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CenterRow from '../components/CenterRow';
 import { describeVisual } from '../engine/describe';
 import VisualView from '../visuals/VisualView';
 import type { ItemProps } from './itemProps';
@@ -39,7 +40,7 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
           ) : null,
         )}
       </div>
-      <div className={styles.bins}>
+      <CenterRow>
         {question.bins.map((bin, binIndex) => (
           <div
             key={binIndex}
@@ -85,7 +86,7 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
             </div>
           </div>
         ))}
-      </div>
+      </CenterRow>
     </div>
   );
 }

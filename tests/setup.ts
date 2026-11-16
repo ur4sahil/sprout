@@ -21,4 +21,6 @@ afterEach(() => {
   vi.unstubAllGlobals();
   useAppStore.getState().setAccount({ status: 'checking' });
   useAppStore.getState().setStorageSaved(true);
+  useAppStore.getState().setChild(null);
+  useAppStore.getState().setInstallGuide(false);
 });

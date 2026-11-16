@@ -73,4 +73,10 @@
 - A question component reports the child's answer so far through `onChange`, or null while it is incomplete. The screen owns Submit. Give `ItemView` a `key` that changes with the question.
 - A picture's spoken label is said on tap, except in a `listen` question. `speakable()` in `itemProps.ts` is the one place that decides.
 - `npm run clips` makes the voice pack on the Mac and uploads it to R2. It was run on Nov 15, 2026 (132 clips). The pack's version is the R2 object's etag. A signed-in device downloads it in the background at launch.
-- Next: step 8, Phase 5a, practice flow.
+- Step 8, Phase 5a (practice flow), is built: the install guide, child setup, the profile picker, a first home with a tile for each ready skill, the practice screen with its status panel, the explanation panel, milestone celebrations, the soft break, and attempts saved with a snapshot and local day.
+- `usePractice` (in `src/app/`) runs one child on one skill. Each answer is saved (attempt, skill state, session) before the next question shows. A failed save keeps the question and reuses the same attempt on retry, so nothing is saved twice.
+- Child setup opens from the profile picker for now. Phase 8a moves it behind the PIN gate.
+- Home in this step lists every ready skill. Phase 5b replaces it with today's picks, the daily goal and subject pages.
+- Browser tests are silent: `e2e/support/fixtures.ts` swaps the page's voice for a silent stand-in and removes audio output. A test checks that it is in place.
+- Not covered by a test yet: a pre-K child answering a choice with one tap, because every option in the three skills so far says its number when tapped. Test it with the first skill whose options carry no spoken label.
+- Next: step 9, Phase 5b, kid navigation and lessons.

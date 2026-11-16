@@ -3,9 +3,11 @@ import { useNavigate, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Notice from '../components/Notice';
 import SignIn from '../screens/account/SignIn';
+import InstallGuide from '../screens/kid/InstallGuide';
 import { loadClipKeys, syncVoicePack } from '../audio/clips';
 import { setMuted } from '../audio/mute';
 import { logError } from '../lib/errorLog';
+import { needsInstallGuide } from '../lib/platform';
 import { checkSession } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
 import styles from './App.module.css';
@@ -18,6 +20,14 @@ export default function App() {
   const status = useAppStore((s) => s.account.status);
 
   const storageSaved = useAppStore((s) => s.storageSaved);
+  const installGuide = useAppStore((s) => s.installGuide);
+
+  // A parent chose "Use in this browser anyway". Remembered on this device.
+  async function useBrowser(): Promise<void> {
+    const { repo } = await openRepo();
+    await repo.saveDeviceState({ ...(await repo.getDeviceState()), browserModeAccepted: true });
+    useAppStore.getState().setInstallGuide(false);
+  }
 
   useEffect(() => {
     if (useAppStore.getState().account.status !== 'checking') return;
@@ -26,7 +36,9 @@ export default function App() {
         const { repo, saved } = await openRepo();
         useAppStore.getState().setStorageSaved(saved);
         await keepErrorsInDeviceRecord(repo);
-        setMuted((await repo.getDeviceState()).muted);
+        const device = await repo.getDeviceState();
+        setMuted(device.muted);
+        useAppStore.getState().setInstallGuide(needsInstallGuide() && !device.browserModeAccepted);
         await loadClipKeys();
         await checkSession();
         await requestPersistence(repo);
@@ -51,6 +63,9 @@ export default function App() {
         <span aria-hidden="true">🌱</span>
       </main>
     );
+  } else if (installGuide) {
+    // First of all, before sign-in: in a Safari tab on an iPad or iPhone, only the install guide.
+    content = <InstallGuide onUseBrowser={useBrowser} />;
   } else if (status === 'signedOut') {
     content = <SignIn />;
   }

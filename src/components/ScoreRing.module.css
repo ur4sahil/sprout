@@ -1,0 +1,29 @@
+.ring {
+  width: var(--size-ring);
+  height: var(--size-ring);
+  flex: none;
+}
+
+.small {
+  width: var(--size-ring-small);
+  height: var(--size-ring-small);
+}
+
+.track {
+  fill: none;
+  stroke: var(--color-line);
+  stroke-width: 10;
+}
+
+.fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.number {
+  font-size: 1.9em;
+  font-weight: 700;
+  fill: var(--color-ink);
+}

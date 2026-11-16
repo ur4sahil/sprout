@@ -1,0 +1,32 @@
+.avatar {
+  font-size: var(--emoji-l);
+  line-height: 1;
+}
+
+.name {
+  margin: 0;
+  font-size: var(--text-l);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-bin-basis), 1fr));
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--width-question);
+}
+
+.icon {
+  --visual-emoji: var(--emoji-graph);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.skillName {
+  font-size: var(--text-s);
+  text-align: center;
+}

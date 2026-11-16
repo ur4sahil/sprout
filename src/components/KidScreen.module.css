@@ -1,0 +1,65 @@
+.screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-thin) solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.main {
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5) var(--space-4);
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: var(--border-thin) solid var(--color-line);
+  background: var(--color-surface);
+}
+
+/* From tablet width up: the question on the left, the status panel on the right. */
+@media (min-width: 48em) {
+  .body {
+    flex-direction: row;
+  }
+
+  .side {
+    flex: none;
+    width: var(--width-panel);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--space-5) var(--space-4);
+    border-bottom: 0;
+    border-left: var(--border-thin) solid var(--color-line);
+  }
+}

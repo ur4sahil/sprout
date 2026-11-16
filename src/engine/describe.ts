@@ -1,4 +1,4 @@
-import type { Say, SayPart, Visual } from './types';
+import type { Question, Response, Say, SayPart, Visual } from './types';
 
 // Plain-text descriptions. Used for aria-labels, the question log snapshot and the review sheet.
 
@@ -87,4 +87,48 @@ export function describeVisual(visual: Visual | 'blank'): string {
     case 'foldPunch':
       return `${visual.state} paper, ${visual.fold} fold, holes at ${visual.holes.map((hole) => `(${hole.col},${hole.row})`).join(' ')}`;
   }
+}
+
+const list = (visuals: readonly (Visual | undefined)[]): string => visuals.map((visual) => describeVisual(visual ?? 'blank')).join(', ');
+
+// The right answer to a question, in plain words. Kept in the attempt snapshot, which never changes.
+export function describeAnswer(question: Question): string {
+  switch (question.type) {
+    case 'choice':
+      return describeVisual(question.options[question.answerIndex] ?? 'blank');
+    case 'multiSelect':
+      return list(question.answerIndexes.map((index) => question.options[index]));
+    case 'tapCount':
+    case 'numberPad':
+    case 'tiles':
+      return String(question.answer);
+    case 'order':
+      return list(question.answerOrder.map((index) => question.items[index]));
+    case 'sort':
+      return question.items.map((item, index) => `${describeVisual(item)}: ${question.bins[question.answerBin[index] ?? -1]?.label ?? '?'}`).join(', ');
+    case 'match':
+      return question.answerPairs.map(([l, r]) => `${describeVisual(question.left[l] ?? 'blank')} with ${describeVisual(question.right[r] ?? 'blank')}`).join(', ');
+  }
+}
+
+// What the child answered, in plain words. An answer of the wrong shape is recorded as it is.
+export function describeResponse(question: Question, response: Response): string {
+  if (question.type === 'choice' && 'index' in response) return describeVisual(question.options[response.index] ?? 'blank');
+  if (question.type === 'multiSelect' && 'indexes' in response) return list(response.indexes.map((index) => question.options[index]));
+  if (question.type === 'tapCount' && 'count' in response) return String(response.count);
+  if (question.type === 'numberPad' && 'value' in response) return String(response.value);
+  if (question.type === 'tiles' && 'tiles' in response) return response.tiles.join('');
+  if (question.type === 'order' && 'order' in response) return list(response.order.map((index) => question.items[index]));
+  if (question.type === 'sort' && 'bins' in response) {
+    return question.items.map((item, index) => `${describeVisual(item)}: ${question.bins[response.bins[index] ?? -1]?.label ?? '?'}`).join(', ');
+  }
+  if (question.type === 'match' && 'pairs' in response) {
+    return response.pairs.map(([l, r]) => `${describeVisual(question.left[l] ?? 'blank')} with ${describeVisual(question.right[r] ?? 'blank')}`).join(', ');
+  }
+  return JSON.stringify(response);
+}
+
+// The question as the child saw it, in plain words.
+export function describePrompt(question: Question): string {
+  return question.stimulus ? `${question.prompt.text} [${describeVisual(question.stimulus)}]` : question.prompt.text;
 }

@@ -153,7 +153,48 @@ interface Fixtures {
   problems: string[];
 }
 
+// Browser tests make no noise on the machine that runs them. The voice is replaced by a silent one
+// that still reports each sentence as finished, and sound effects have no audio output to play through.
+// What is said, and when, is checked by the unit tests.
+function silence(): void {
+  // A whole stand-in for the voice. Assigning over the real object's `speak` is ignored by WebKit.
+  const silent = {
+    speaking: false,
+    pending: false,
+    paused: false,
+    onvoiceschanged: null,
+    getVoices: (): SpeechSynthesisVoice[] => [],
+    speak: (utterance: SpeechSynthesisUtterance): void => {
+      setTimeout(() => utterance.onend?.(new Event('end') as SpeechSynthesisEvent), 20);
+    },
+    cancel: (): void => undefined,
+    pause: (): void => undefined,
+    resume: (): void => undefined,
+    addEventListener: (): void => undefined,
+    removeEventListener: (): void => undefined,
+    dispatchEvent: (): boolean => true,
+    silentForTests: true,
+  };
+  Object.defineProperty(window, 'speechSynthesis', { configurable: true, get: () => silent });
+  for (const name of ['AudioContext', 'webkitAudioContext']) {
+    Object.defineProperty(window, name, { configurable: true, value: undefined });
+  }
+}
+
+// True when the page's voice is the silent stand-in and it has no audio output.
+export async function isSilent(page: Page): Promise<boolean> {
+  return page.evaluate(() => {
+    const synth = window.speechSynthesis as unknown as { silentForTests?: boolean };
+    const w = window as unknown as { AudioContext?: unknown; webkitAudioContext?: unknown };
+    return synth.silentForTests === true && w.AudioContext === undefined && w.webkitAudioContext === undefined;
+  });
+}
+
 export const test = base.extend<Fixtures>({
+  context: async ({ context }, run) => {
+    await context.addInitScript(silence);
+    await run(context);
+  },
   problems: [
     async ({ page }, use) => {
       const problems: string[] = [];
