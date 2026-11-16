@@ -2,6 +2,10 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { findLowercaseGenerator, findUppercaseGenerator, sameLetterGenerator } from './generators/ela/pk/letters';
+import { letterOrNumberGenerator, matchLettersGenerator } from './generators/ela/pk/matchAndSort';
+import { clapsGenerator, rhymesGenerator, startsLikeGenerator } from './generators/ela/pk/sounds';
+import { oppositesGenerator, wordGroupsGenerator } from './generators/ela/pk/words';
 import { addPicturesTo10Generator, addPicturesTo5Generator, addTo5Generator } from './generators/math/k/adding';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
@@ -62,6 +66,16 @@ const ALL: readonly SkillGenerator[] = [
   compareLengthGenerator,
   sortAndCountGenerator,
   patternsGenerator,
+  findUppercaseGenerator,
+  findLowercaseGenerator,
+  matchLettersGenerator,
+  sameLetterGenerator,
+  letterOrNumberGenerator,
+  startsLikeGenerator,
+  rhymesGenerator,
+  clapsGenerator,
+  wordGroupsGenerator,
+  oppositesGenerator,
 ];
 
 const BY_ID = new Map<string, SkillGenerator>(ALL.map((generator) => [generator.skillId, generator]));

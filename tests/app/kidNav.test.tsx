@@ -76,8 +76,9 @@ describe('home', () => {
     expect(screen.getByRole('button', { name: /Play/ })).toBeTruthy();
     expect(screen.getByRole('img', { name: '0 of 15 questions today' })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Language Arts/ })).toBeTruthy();
     // Subjects with no skill ready are not offered, and nothing is due for review.
-    expect(screen.queryByRole('button', { name: /Language Arts/ })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Reasoning/ })).toBeNull();
     expect(screen.queryByRole('button', { name: /Review/ })).toBeNull();
     // A reader sees why each skill was picked.
     expect(screen.getAllByText('Next up').length).toBe(3);

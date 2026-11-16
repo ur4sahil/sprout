@@ -1,0 +1,3122 @@
+{
+ "skillId": "E-PK-A5",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "itemAttrs": [
+    "number",
+    "letter",
+    "letter",
+    "number"
+   ],
+   "binAttrs": [
+    "letter",
+    "number"
+   ],
+   "items": [
+    "3",
+    "f",
+    "t",
+    "6"
+   ]
+  },
+  "prompt": {
+   "text": "Put each one in its group.",
+   "speak": [
+    "Put each one in its group."
+   ]
+  },
+  "items": [
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl"
+   },
+   {
+    "kind": "text",
+    "value": "f",
+    "size": "xl"
+   },
+   {
+    "kind": "text",
+    "value": "t",
+    "size": "xl"
+   },
+   {
+    "kind": "text",
+    "value": "6",
+    "size": "xl"
+   }
+  ],
+  "bins": [
+   {
+    "label": "Letters",
+    "speak": [
+     "Letters"
+    ],
+    "icon": {
+     "kind": "text",
+     "value": "abc",
+     "size": "m"
+    }
+   },
+   {
+    "label": "Numbers",
+    "speak": [
+     "Numbers"
+    ],
+    "icon": {
+     "kind": "text",
+     "value": "123",
+     "size": "m"
+    }
+   }
+  ],
+  "answerBin": [
+   1,
+   0,
+   0,
+   1
+  ],
+  "explanation": {
+   "speak": [
+    "The letters are",
+    {
+     "letter": "f"
+    },
+    {
+     "letter": "t"
+    },
+    ". The numbers are",
+    {
+     "number": 3
+    },
+    {
+     "number": 6
+    },
+    "."
+   ],
+   "steps": [
+    "Letters: f, t.",
+    "Numbers: 3, 6."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "f",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "f"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-PK-A5",
+  "level": 1,
+  "seed": 55,
+  "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"letter\",\"number\"],\"items\":[\"3\",\"f\",\"t\",\"6\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "t",
+      "4",
+      "M",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "M",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "t"
+      },
+      {
+       "letter": "M"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: t, M.",
+      "Numbers: 4, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "t",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "t"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "M",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "M"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 1,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"letter\",\"number\"],\"items\":[\"t\",\"4\",\"M\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "letter",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "6",
+      "W",
+      "X",
+      "n"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "W",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "X",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "W"
+      },
+      {
+       "letter": "X"
+      },
+      {
+       "letter": "n"
+      },
+      ". The number is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: W, X, n.",
+      "Number: 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "W",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "W"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "X",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "X"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "n",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "n"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 2,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"letter\",\"letter\"],\"items\":[\"6\",\"W\",\"X\",\"n\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "letter",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "K",
+      "V",
+      "4",
+      "m"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "K",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "V",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "K"
+      },
+      {
+       "letter": "V"
+      },
+      {
+       "letter": "m"
+      },
+      ". The number is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: K, V, m.",
+      "Number: 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "K",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "K"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "V",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "V"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "m",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "m"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"letter\",\"number\",\"letter\"],\"items\":[\"K\",\"V\",\"4\",\"m\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "letter",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "Y",
+      "W",
+      "x",
+      "7"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "Y",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "W",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "x",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "Y"
+      },
+      {
+       "letter": "W"
+      },
+      {
+       "letter": "x"
+      },
+      ". The number is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: Y, W, x.",
+      "Number: 7."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "Y",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "Y"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "W",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "W"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "x",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "x"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 4,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"letter\",\"letter\",\"number\"],\"items\":[\"Y\",\"W\",\"x\",\"7\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "letter",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "9",
+      "p",
+      "w",
+      "C"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "w",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "C",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "w"
+      },
+      {
+       "letter": "C"
+      },
+      ". The number is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: p, w, C.",
+      "Number: 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "p",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "p"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "w",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "w"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "C",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "C"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 5,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"letter\",\"letter\"],\"items\":[\"9\",\"p\",\"w\",\"C\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "N",
+      "4",
+      "3",
+      "e"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "N",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "N"
+      },
+      {
+       "letter": "e"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: N, e.",
+      "Numbers: 4, 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "N",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "N"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "e",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "e"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 6,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"number\",\"letter\"],\"items\":[\"N\",\"4\",\"3\",\"e\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "number",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "4",
+      "c",
+      "7",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "c",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letter is",
+      {
+       "letter": "c"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 7
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letter: c.",
+      "Numbers: 4, 7, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "c",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "c"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 7,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"number\",\"number\"],\"items\":[\"4\",\"c\",\"7\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "number",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "7",
+      "m",
+      "6",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letter is",
+      {
+       "letter": "m"
+      },
+      ". The numbers are",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letter: m.",
+      "Numbers: 7, 6, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "m",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "m"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 8,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"number\",\"number\"],\"items\":[\"7\",\"m\",\"6\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "number",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "4",
+      "9",
+      "Q",
+      "3"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "Q",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letter is",
+      {
+       "letter": "Q"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 9
+      },
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Letter: Q.",
+      "Numbers: 4, 9, 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "Q",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "Q"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"number\",\"letter\",\"number\"],\"items\":[\"4\",\"9\",\"Q\",\"3\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "6",
+      "R",
+      "9",
+      "u"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "R",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "R"
+      },
+      {
+       "letter": "u"
+      },
+      ". The numbers are",
+      {
+       "number": 6
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: R, u.",
+      "Numbers: 6, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "R",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "R"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "u",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "u"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-A5|1|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"number\",\"letter\"],\"items\":[\"6\",\"R\",\"9\",\"u\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "number",
+      "letter",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "y",
+      "7",
+      "4",
+      "t",
+      "M",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "y",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "M",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "y"
+      },
+      {
+       "letter": "t"
+      },
+      {
+       "letter": "M"
+      },
+      ". The numbers are",
+      {
+       "number": 7
+      },
+      {
+       "number": 4
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: y, t, M.",
+      "Numbers: 7, 4, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "y",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "y"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "t",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "t"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "M",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "M"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 1,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"number\",\"letter\",\"letter\",\"number\"],\"items\":[\"y\",\"7\",\"4\",\"t\",\"M\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "letter",
+      "letter",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "9",
+      "W",
+      "n",
+      "m",
+      "X",
+      "6"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "W",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "X",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "W"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "m"
+      },
+      {
+       "letter": "X"
+      },
+      ". The numbers are",
+      {
+       "number": 9
+      },
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: W, n, m, X.",
+      "Numbers: 9, 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "W",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "W"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "n",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "n"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "m",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "m"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "X",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "X"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 2,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"letter\",\"letter\",\"letter\",\"number\"],\"items\":[\"9\",\"W\",\"n\",\"m\",\"X\",\"6\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "letter",
+      "number",
+      "letter",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "m",
+      "V",
+      "7",
+      "K",
+      "4",
+      "r"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "V",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "K",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "r",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "m"
+      },
+      {
+       "letter": "V"
+      },
+      {
+       "letter": "K"
+      },
+      {
+       "letter": "r"
+      },
+      ". The numbers are",
+      {
+       "number": 7
+      },
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: m, V, K, r.",
+      "Numbers: 7, 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "m",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "m"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "V",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "V"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "K",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "K"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "r",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "r"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"letter\",\"number\",\"letter\",\"number\",\"letter\"],\"items\":[\"m\",\"V\",\"7\",\"K\",\"4\",\"r\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "letter",
+      "letter",
+      "letter",
+      "number",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "x",
+      "V",
+      "W",
+      "Y",
+      "7",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "x",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "V",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "W",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "Y",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "x"
+      },
+      {
+       "letter": "V"
+      },
+      {
+       "letter": "W"
+      },
+      {
+       "letter": "Y"
+      },
+      ". The numbers are",
+      {
+       "number": 7
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: x, V, W, Y.",
+      "Numbers: 7, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "x",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "x"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "V",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "V"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "W",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "W"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "Y",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "Y"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 4,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"letter\",\"letter\",\"letter\",\"number\",\"number\"],\"items\":[\"x\",\"V\",\"W\",\"Y\",\"7\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "number",
+      "letter",
+      "letter",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "p",
+      "3",
+      "9",
+      "w",
+      "C",
+      "X"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "w",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "C",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "X",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "w"
+      },
+      {
+       "letter": "C"
+      },
+      {
+       "letter": "X"
+      },
+      ". The numbers are",
+      {
+       "number": 3
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: p, w, C, X.",
+      "Numbers: 3, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "p",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "p"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "w",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "w"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "C",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "C"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "X",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "X"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 5,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"number\",\"letter\",\"letter\",\"letter\"],\"items\":[\"p\",\"3\",\"9\",\"w\",\"C\",\"X\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "letter",
+      "letter",
+      "number",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "9",
+      "R",
+      "N",
+      "3",
+      "4",
+      "e"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "R",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "N",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "R"
+      },
+      {
+       "letter": "N"
+      },
+      {
+       "letter": "e"
+      },
+      ". The numbers are",
+      {
+       "number": 9
+      },
+      {
+       "number": 3
+      },
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: R, N, e.",
+      "Numbers: 9, 3, 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "R",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "R"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "N",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "N"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "e",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "e"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 6,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"letter\",\"letter\",\"number\",\"number\",\"letter\"],\"items\":[\"9\",\"R\",\"N\",\"3\",\"4\",\"e\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "number",
+      "letter",
+      "number",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "c",
+      "4",
+      "7",
+      "T",
+      "3",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "c",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "T",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "c"
+      },
+      {
+       "letter": "T"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 7
+      },
+      {
+       "number": 3
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: c, T.",
+      "Numbers: 4, 7, 3, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "c",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "c"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "T",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "T"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 7,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"number\",\"letter\",\"number\",\"number\"],\"items\":[\"c\",\"4\",\"7\",\"T\",\"3\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "number",
+      "letter",
+      "letter",
+      "number",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "3",
+      "7",
+      "T",
+      "m",
+      "6",
+      "9"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "T",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "T"
+      },
+      {
+       "letter": "m"
+      },
+      ". The numbers are",
+      {
+       "number": 3
+      },
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: T, m.",
+      "Numbers: 3, 7, 6, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "T",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "T"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "m",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "m"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 8,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"number\",\"letter\",\"letter\",\"number\",\"number\"],\"items\":[\"3\",\"7\",\"T\",\"m\",\"6\",\"9\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "letter",
+      "number",
+      "number",
+      "number",
+      "letter",
+      "number"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "Q",
+      "4",
+      "7",
+      "9",
+      "F",
+      "3"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "Q",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "F",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "Q"
+      },
+      {
+       "letter": "F"
+      },
+      ". The numbers are",
+      {
+       "number": 4
+      },
+      {
+       "number": 7
+      },
+      {
+       "number": 9
+      },
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: Q, F.",
+      "Numbers: 4, 7, 9, 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "Q",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "Q"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "F",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "F"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"letter\",\"number\",\"number\",\"number\",\"letter\",\"number\"],\"items\":[\"Q\",\"4\",\"7\",\"9\",\"F\",\"3\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "number",
+      "number",
+      "letter",
+      "letter",
+      "number",
+      "letter"
+     ],
+     "binAttrs": [
+      "letter",
+      "number"
+     ],
+     "items": [
+      "6",
+      "4",
+      "u",
+      "f",
+      "9",
+      "R"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "f",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "R",
+      "size": "xl"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letters",
+      "speak": [
+       "Letters"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "abc",
+       "size": "m"
+      }
+     },
+     {
+      "label": "Numbers",
+      "speak": [
+       "Numbers"
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "123",
+       "size": "m"
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "The letters are",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "f"
+      },
+      {
+       "letter": "R"
+      },
+      ". The numbers are",
+      {
+       "number": 6
+      },
+      {
+       "number": 4
+      },
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Letters: u, f, R.",
+      "Numbers: 6, 4, 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "u",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "u"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "f",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "f"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "R",
+        "size": "xl",
+        "speak": [
+         {
+          "letter": "R"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-A5",
+    "level": 2,
+    "seed": 10,
+    "key": "E-PK-A5|2|{\"binAttrs\":[\"letter\",\"number\"],\"itemAttrs\":[\"number\",\"number\",\"letter\",\"letter\",\"number\",\"letter\"],\"items\":[\"6\",\"4\",\"u\",\"f\",\"9\",\"R\"]}"
+   }
+  ]
+ }
+}

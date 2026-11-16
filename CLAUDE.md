@@ -124,4 +124,12 @@
 - Speech longer than 12 words is said one sentence at a time (`saySegments`), so a story never runs past the 12-second limit.
 - Two groups of things side by side (`row` of `emojiGroup`) get a wide gap from one CSS rule in `visuals.module.css`.
 - `tests/content/mathKAddSubtract.test.ts` checks each level's rule from the plan table. Write one like it for every content step: the golden files catch any change, so they do not show a rule is right.
-- Next: step 15, Phase 6d, Language Arts pre-K.
+- Step 15, Phase 6d (Language Arts pre-K), is built: 10 skills in `src/content/generators/ela/pk/`: `letters.ts` (A.1, A.2, A.4), `matchAndSort.ts` (A.3, A.5), `sounds.ts` (B.1 to B.3), `words.ts` (C.1, C.2), with `parts.ts` for what they share. `CATALOGUE_VERSION` is 5. Categories: A. Letters, B. Sounds, C. Words.
+- Word lists from plan section 9 are in `src/content/data/`: `letters.ts`, `firstSounds.ts`, `rhymes.ts`, `syllables.ts`, `categories.ts`, `opposites.ts`. A test checks that one picture has one name across the lists.
+- The `letter` and `wordSet` oracles are written. `wordSet` reads the lists in `src/content/data/`, which the purity test now allows; it may import nothing else from `src/content`. Its relations so far: `firstSound`, `rhyme`, `category`, `opposite`, `syllables`. Add a relation there before the first generator that needs it.
+- One named picture is an `emojiGroup` of 1 with a `speak` label (`picture()` in `ela/pk/parts.ts`). `describeVisual` gives its word, so its `aria-label` is "cat", not "1 🐱".
+- A.1 and A.2 are listen skills with silent letter tiles, so a pre-K child answers them with one tap. Picture questions (B and C) say each word on a tap, so they keep the Submit step.
+- Choices where the plan was silent: look-alike sets beyond the plan's (h with n, M with W, P R B, C G); A.3 level 1 uses letters whose big and small shapes differ; A.5 also leaves out small o, s, z, b, g and q; C.1 never asks for "things", level 2 takes both wrong pictures from one other group and level 3 from two; C.2 level 1 is big against small, with another shape of the same size as the wrong option, level 2 is hot, cold, day and night.
+- A.4's letters do not say their names when tapped. B.3 has no clap sound: the explanation shows the word split into its parts and says the count.
+- `e2e/support/sweep.ts`: `openFromSubject(page, 'Language Arts', name)`, and `sweepHardestLevels` takes the subject as its last argument. `answer(page, n, 'index')` taps an option by its place.
+- Next: step 16, Phase 6e, Reasoning (14 skills, analogy and riddle data).

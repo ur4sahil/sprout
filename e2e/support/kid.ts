@@ -50,9 +50,12 @@ export async function sum(page: Page): Promise<number> {
   return (numbers[0] ?? 0) + (numbers[1] ?? 0);
 }
 
-export async function answer(page: Page, value: number): Promise<void> {
+// Answers with a number: a numeral option, or digits on the number pad.
+// With `by` set to 'index', `value` is the place of the option to tap, counted from 0.
+export async function answer(page: Page, value: number, by: 'label' | 'index' = 'label'): Promise<void> {
   const type = await page.getByRole('region', { name: 'Question' }).getAttribute('data-type');
-  if (type === 'choice') await page.locator(`[data-option][aria-label="${value}"]`).click();
+  if (type === 'choice' && by === 'index') await page.locator('[data-option]').nth(value).click();
+  else if (type === 'choice') await page.locator(`[data-option][aria-label="${value}"]`).click();
   else for (const digit of String(value)) await page.getByRole('button', { name: digit, exact: true }).click();
   const submit = page.getByRole('button', { name: /Submit/ });
   await expect(submit).toBeEnabled();

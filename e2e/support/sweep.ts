@@ -36,13 +36,15 @@ export async function saveScores(page: Page, ids: string[], score: number): Prom
   await page.reload();
 }
 
-// Opens a skill from its tile on the Math page. `tab` is the grade tab to switch to first, when it is not the child's own.
-export async function openFromMath(page: Page, name: string, tab?: string): Promise<void> {
-  await page.getByRole('button', { name: /Math/ }).click();
+// Opens a skill from its tile on a subject's page. `tab` is the grade tab to switch to first, when it is not the child's own.
+export async function openFromSubject(page: Page, subject: string, name: string, tab?: string): Promise<void> {
+  await page.getByRole('button', { name: new RegExp(subject) }).click();
   if (tab) await page.getByRole('tab', { name: tab }).click();
   await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();
   await expect(page.locator('[data-phase="asking"]')).toBeVisible();
 }
+
+export const openFromMath = (page: Page, name: string, tab?: string): Promise<void> => openFromSubject(page, 'Math', name, tab);
 
 export const submit = async (page: Page): Promise<void> => {
   const button = page.getByRole('button', { name: /Submit/ });
@@ -55,13 +57,13 @@ export const submit = async (page: Page): Promise<void> => {
 
 
 // The layout check every content step runs: each skill, at its hardest level, at this screen size.
-export async function sweepHardestLevels(page: Page, grade: string, skills: [string, string][], shotPrefix: string): Promise<void> {
+export async function sweepHardestLevels(page: Page, grade: string, skills: [string, string][], shotPrefix: string, subject = 'Math'): Promise<void> {
   await signUp(page);
   await addChild(page, 'Robin', grade);
   await saveScores(page, skills.map(([id]) => id), 85);
   await page.getByRole('button', { name: 'Robin', exact: true }).click();
   for (const [id, name] of skills) {
-    await openFromMath(page, name);
+    await openFromSubject(page, subject, name);
     await checkScreen(page, `${id} at its hardest level`, 64);
     // Nothing a child must see is cut off by its own box.
     const cut = await page.evaluate(() =>

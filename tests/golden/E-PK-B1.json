@@ -1,0 +1,2335 @@
+{
+ "skillId": "E-PK-B1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "target": "lion",
+   "relation": "firstSound",
+   "answer": "lemon",
+   "options": [
+    "cow",
+    "lemon"
+   ]
+  },
+  "prompt": {
+   "text": "Which one starts like lion?",
+   "speak": [
+    "Which one starts like",
+    {
+     "word": "lion"
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🦁",
+   "count": 1,
+   "layout": "row",
+   "speak": [
+    {
+     "word": "lion"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐄",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "cow"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍋",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "lemon"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    {
+     "word": "lion"
+    },
+    "and",
+    {
+     "word": "lemon"
+    },
+    "start with the same sound."
+   ],
+   "steps": [
+    "Lion and lemon start with the same sound."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-PK-B1",
+  "level": 1,
+  "seed": 61,
+  "key": "E-PK-B1|1|{\"answer\":\"lemon\",\"relation\":\"firstSound\",\"target\":\"lion\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "mouse",
+     "relation": "firstSound",
+     "answer": "moon",
+     "options": [
+      "moon",
+      "ring"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like mouse?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "mouse"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "mouse"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Mouse and moon start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 1,
+    "key": "E-PK-B1|1|{\"answer\":\"moon\",\"relation\":\"firstSound\",\"target\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pizza",
+     "relation": "firstSound",
+     "answer": "pig",
+     "options": [
+      "goat",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pizza?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pizza"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍕",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pizza"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "goat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pizza and pig start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 2,
+    "key": "E-PK-B1|1|{\"answer\":\"pig\",\"relation\":\"firstSound\",\"target\":\"pizza\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pizza",
+     "relation": "firstSound",
+     "answer": "pig",
+     "options": [
+      "octopus",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pizza?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pizza"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍕",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pizza"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "octopus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pizza and pig start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-B1|1|{\"answer\":\"pig\",\"relation\":\"firstSound\",\"target\":\"pizza\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sock",
+     "relation": "firstSound",
+     "answer": "sun",
+     "options": [
+      "sun",
+      "ring"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like sock?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "sock"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🧦",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "sock"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "sock"
+      },
+      "and",
+      {
+       "word": "sun"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Sock and sun start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 4,
+    "key": "E-PK-B1|1|{\"answer\":\"sun\",\"relation\":\"firstSound\",\"target\":\"sock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pig",
+     "relation": "firstSound",
+     "answer": "pear",
+     "options": [
+      "moon",
+      "pear"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pig?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pig"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐷",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pig"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "pear"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pig and pear start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 5,
+    "key": "E-PK-B1|1|{\"answer\":\"pear\",\"relation\":\"firstSound\",\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "lion",
+     "relation": "firstSound",
+     "answer": "lemon",
+     "options": [
+      "lemon",
+      "sun"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like lion?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "lion"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🦁",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "lion"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "lion"
+      },
+      "and",
+      {
+       "word": "lemon"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Lion and lemon start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍋",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lemon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 6,
+    "key": "E-PK-B1|1|{\"answer\":\"lemon\",\"relation\":\"firstSound\",\"target\":\"lion\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "ball",
+     "relation": "firstSound",
+     "answer": "bear",
+     "options": [
+      "bear",
+      "tiger"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like ball?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "ball"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "ball"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "ball"
+      },
+      "and",
+      {
+       "word": "bear"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Ball and bear start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-PK-B1|1|{\"answer\":\"bear\",\"relation\":\"firstSound\",\"target\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "car",
+     "relation": "firstSound",
+     "answer": "cow",
+     "options": [
+      "cow",
+      "sun"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like car?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "car"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "car"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "car"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Car and cow start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 8,
+    "key": "E-PK-B1|1|{\"answer\":\"cow\",\"relation\":\"firstSound\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "dog",
+     "relation": "firstSound",
+     "answer": "door",
+     "options": [
+      "rabbit",
+      "door"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like dog?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "dog"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "dog"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dog"
+      },
+      "and",
+      {
+       "word": "door"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Dog and door start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "door"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-B1|1|{\"answer\":\"door\",\"relation\":\"firstSound\",\"target\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "key",
+     "relation": "firstSound",
+     "answer": "cow",
+     "options": [
+      "cow",
+      "horse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like key?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "key"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔑",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "key"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Key and cow start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-B1|1|{\"answer\":\"cow\",\"relation\":\"firstSound\",\"target\":\"key\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "mouse",
+     "relation": "firstSound",
+     "answer": "moon",
+     "options": [
+      "moon",
+      "ring",
+      "umbrella"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like mouse?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "mouse"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "mouse"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☂️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "umbrella"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Mouse and moon start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 1,
+    "key": "E-PK-B1|2|{\"answer\":\"moon\",\"relation\":\"firstSound\",\"target\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pizza",
+     "relation": "firstSound",
+     "answer": "pig",
+     "options": [
+      "yarn",
+      "goat",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pizza?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pizza"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍕",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pizza"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "yarn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "goat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pizza and pig start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 2,
+    "key": "E-PK-B1|2|{\"answer\":\"pig\",\"relation\":\"firstSound\",\"target\":\"pizza\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pizza",
+     "relation": "firstSound",
+     "answer": "pig",
+     "options": [
+      "pig",
+      "ball",
+      "octopus"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pizza?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pizza"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍕",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pizza"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "octopus"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pizza and pig start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-B1|2|{\"answer\":\"pig\",\"relation\":\"firstSound\",\"target\":\"pizza\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sock",
+     "relation": "firstSound",
+     "answer": "sun",
+     "options": [
+      "sun",
+      "ring",
+      "lion"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like sock?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "sock"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🧦",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "sock"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "sock"
+      },
+      "and",
+      {
+       "word": "sun"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Sock and sun start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 4,
+    "key": "E-PK-B1|2|{\"answer\":\"sun\",\"relation\":\"firstSound\",\"target\":\"sock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pig",
+     "relation": "firstSound",
+     "answer": "pear",
+     "options": [
+      "sun",
+      "moon",
+      "pear"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like pig?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "pig"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐷",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "pig"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "pear"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Pig and pear start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 5,
+    "key": "E-PK-B1|2|{\"answer\":\"pear\",\"relation\":\"firstSound\",\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "lion",
+     "relation": "firstSound",
+     "answer": "lemon",
+     "options": [
+      "rabbit",
+      "lemon",
+      "sun"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like lion?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "lion"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🦁",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "lion"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "lion"
+      },
+      "and",
+      {
+       "word": "lemon"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Lion and lemon start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍋",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lemon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 6,
+    "key": "E-PK-B1|2|{\"answer\":\"lemon\",\"relation\":\"firstSound\",\"target\":\"lion\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "ball",
+     "relation": "firstSound",
+     "answer": "bear",
+     "options": [
+      "tiger",
+      "bear",
+      "octopus"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like ball?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "ball"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "ball"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "octopus"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "ball"
+      },
+      "and",
+      {
+       "word": "bear"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Ball and bear start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 7,
+    "key": "E-PK-B1|2|{\"answer\":\"bear\",\"relation\":\"firstSound\",\"target\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "car",
+     "relation": "firstSound",
+     "answer": "cow",
+     "options": [
+      "cow",
+      "sun",
+      "octopus"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like car?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "car"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "car"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "octopus"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "car"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Car and cow start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 8,
+    "key": "E-PK-B1|2|{\"answer\":\"cow\",\"relation\":\"firstSound\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "dog",
+     "relation": "firstSound",
+     "answer": "door",
+     "options": [
+      "tiger",
+      "rabbit",
+      "door"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like dog?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "dog"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "dog"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dog"
+      },
+      "and",
+      {
+       "word": "door"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Dog and door start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "door"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-B1|2|{\"answer\":\"door\",\"relation\":\"firstSound\",\"target\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "key",
+     "relation": "firstSound",
+     "answer": "cow",
+     "options": [
+      "horse",
+      "cow",
+      "mouse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts like key?",
+     "speak": [
+      "Which one starts like",
+      {
+       "word": "key"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔑",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "key"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with the same sound."
+     ],
+     "steps": [
+      "Key and cow start with the same sound."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B1",
+    "level": 2,
+    "seed": 10,
+    "key": "E-PK-B1|2|{\"answer\":\"cow\",\"relation\":\"firstSound\",\"target\":\"key\"}"
+   }
+  ]
+ }
+}

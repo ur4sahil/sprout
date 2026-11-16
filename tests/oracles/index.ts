@@ -3,6 +3,7 @@ import { add } from './add';
 import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
+import { letter } from './letter';
 import { matchEqual } from './matchEqual';
 import { missing } from './missing';
 import { oddOne } from './oddOne';
@@ -14,6 +15,7 @@ import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
 import type { Oracle } from './types';
+import { wordSet } from './wordSet';
 
 // The oracles written so far. A content phase adds the ones it needs before its first generator.
 export const ORACLES: Partial<Record<OracleId, Oracle>> = {
@@ -31,4 +33,6 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   matchEqual,
   shapeFacts,
   place,
+  letter,
+  wordSet,
 };

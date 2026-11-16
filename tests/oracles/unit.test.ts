@@ -8,6 +8,7 @@ import { compare } from './compare';
 import { count } from './count';
 import { ORACLES } from './index';
 import { judge } from './judge';
+import { letter } from './letter';
 import { matchEqual } from './matchEqual';
 import { missing } from './missing';
 import { oddOne } from './oddOne';
@@ -18,6 +19,7 @@ import { sequence } from './sequence';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
+import { wordSet } from './wordSet';
 
 describe('count', () => {
   it('is n', () => {
@@ -201,7 +203,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'attribute', 'compare', 'count', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'shapeFacts', 'sortBy', 'subtract'],
+      ['add', 'attribute', 'compare', 'count', 'letter', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'shapeFacts', 'sortBy', 'subtract', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -327,5 +329,82 @@ describe('place', () => {
     expect(() => place({ hundreds: 0, tens: 1.5, ones: 4, ask: 'number' })).toThrow();
     expect(() => place({ hundreds: 0, tens: 1, ones: 4, ask: 'digits' })).toThrow();
     expect(() => place({ hundreds: 0, tens: 1, ones: 4 })).toThrow();
+  });
+});
+
+describe('letter', () => {
+  it('gives a letter in the case asked for', () => {
+    expect(letter({ letter: 'b', ask: 'upper' })).toEqual({ kind: 'value', value: 'B' });
+    expect(letter({ letter: 'B', ask: 'upper' })).toEqual({ kind: 'value', value: 'B' });
+    expect(letter({ letter: 'Q', ask: 'lower' })).toEqual({ kind: 'value', value: 'q' });
+    expect(letter({ letter: 'q', ask: 'lower' })).toEqual({ kind: 'value', value: 'q' });
+  });
+  it('gives the neighbour in the alphabet, in the same case', () => {
+    expect(letter({ letter: 'b', ask: 'next' })).toEqual({ kind: 'value', value: 'c' });
+    expect(letter({ letter: 'B', ask: 'next' })).toEqual({ kind: 'value', value: 'C' });
+    expect(letter({ letter: 'y', ask: 'next' })).toEqual({ kind: 'value', value: 'z' });
+    expect(letter({ letter: 'b', ask: 'before' })).toEqual({ kind: 'value', value: 'a' });
+    expect(letter({ letter: 'Z', ask: 'before' })).toEqual({ kind: 'value', value: 'Y' });
+  });
+  it('tells a letter from a number', () => {
+    expect(letter({ letter: 'm', ask: 'kind' })).toEqual({ kind: 'value', value: 'letter' });
+    expect(letter({ letter: 'M', ask: 'kind' })).toEqual({ kind: 'value', value: 'letter' });
+    expect(letter({ letter: '7', ask: 'kind' })).toEqual({ kind: 'value', value: 'number' });
+  });
+  it('refuses the ends of the alphabet, more than one letter, and an ask it does not know', () => {
+    expect(() => letter({ letter: 'z', ask: 'next' })).toThrow();
+    expect(() => letter({ letter: 'A', ask: 'before' })).toThrow();
+    expect(() => letter({ letter: 'ab', ask: 'upper' })).toThrow();
+    expect(() => letter({ letter: '7', ask: 'upper' })).toThrow();
+    expect(() => letter({ letter: '?', ask: 'kind' })).toThrow();
+    expect(() => letter({ letter: 'a', ask: 'sound' })).toThrow();
+    expect(() => letter({ ask: 'upper' })).toThrow();
+  });
+});
+
+describe('wordSet', () => {
+  it('firstSound: the option that starts with the same sound, by sound and not by letter', () => {
+    expect(wordSet({ target: 'ball', relation: 'firstSound', options: ['cat', 'bear'] })).toEqual({ kind: 'index', index: 1 });
+    // Cat and key start with the same sound and different letters.
+    expect(wordSet({ target: 'cat', relation: 'firstSound', options: ['key', 'sun', 'dog'] })).toEqual({ kind: 'index', index: 0 });
+    // Two options with the target's sound, or none, is a broken question.
+    expect(() => wordSet({ target: 'cat', relation: 'firstSound', options: ['key', 'cow'] })).toThrow();
+    expect(() => wordSet({ target: 'cat', relation: 'firstSound', options: ['sun', 'dog'] })).toThrow();
+    // The target itself is not an answer.
+    expect(() => wordSet({ target: 'cat', relation: 'firstSound', options: ['cat', 'dog'] })).toThrow();
+    expect(() => wordSet({ target: 'xylophone', relation: 'firstSound', options: ['cat', 'dog'] })).toThrow();
+  });
+  it('rhyme: the option in the same rhyme family', () => {
+    expect(wordSet({ target: 'cat', relation: 'rhyme', options: ['dog', 'hat'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'sock', relation: 'rhyme', options: ['clock', 'fox', 'bee'] })).toEqual({ kind: 'index', index: 0 });
+    expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: ['hat', 'bat'] })).toThrow();
+    expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: ['dog', 'bee'] })).toThrow();
+    expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: ['cat', 'bee'] })).toThrow();
+  });
+  it('category: the option that belongs to the group named', () => {
+    expect(wordSet({ target: 'animals', relation: 'category', options: ['car', 'dog'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'clothes', relation: 'category', options: ['sock', 'apple', 'bus'] })).toEqual({ kind: 'index', index: 0 });
+    expect(() => wordSet({ target: 'animals', relation: 'category', options: ['cat', 'dog'] })).toThrow();
+    expect(() => wordSet({ target: 'animals', relation: 'category', options: ['car', 'bus'] })).toThrow();
+    expect(() => wordSet({ target: 'toys', relation: 'category', options: ['car', 'dog'] })).toThrow();
+  });
+  it('opposite: the option that is the opposite, both ways round, and big with small', () => {
+    expect(wordSet({ target: 'hot', relation: 'opposite', options: ['cold', 'night', 'slow'] })).toEqual({ kind: 'index', index: 0 });
+    expect(wordSet({ target: 'cold', relation: 'opposite', options: ['night', 'hot'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'big', relation: 'opposite', options: ['night', 'small'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'small', relation: 'opposite', options: ['big', 'sad'] })).toEqual({ kind: 'index', index: 0 });
+    expect(() => wordSet({ target: 'hot', relation: 'opposite', options: ['night', 'slow'] })).toThrow();
+    expect(() => wordSet({ target: 'warm', relation: 'opposite', options: ['cold', 'slow'] })).toThrow();
+  });
+  it('syllables: the number of parts in the word', () => {
+    expect(wordSet({ target: 'cat', relation: 'syllables' })).toEqual({ kind: 'value', value: 1 });
+    expect(wordSet({ target: 'apple', relation: 'syllables' })).toEqual({ kind: 'value', value: 2 });
+    expect(wordSet({ target: 'umbrella', relation: 'syllables' })).toEqual({ kind: 'value', value: 3 });
+    expect(() => wordSet({ target: 'hippopotamus', relation: 'syllables' })).toThrow();
+  });
+  it('refuses a relation that is not written yet, and options that are not words', () => {
+    expect(() => wordSet({ target: 'cat', relation: 'vowelTeam', options: ['a', 'b'] })).toThrow(/not written yet/);
+    expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: [1, 2] })).toThrow();
+    expect(() => wordSet({ relation: 'rhyme', options: ['hat'] })).toThrow();
   });
 });

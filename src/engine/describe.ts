@@ -29,6 +29,8 @@ export function describeVisual(visual: Visual | 'blank'): string {
   if (visual === 'blank') return 'blank';
   switch (visual.kind) {
     case 'emojiGroup': {
+      // One picture with a spoken name is described by that name: "cat", not "1 🐱".
+      if (visual.count === 1 && !visual.count2 && !visual.crossed && visual.speak) return sayText(visual.speak);
       const second = visual.emoji2 !== undefined && visual.count2 ? ` and ${visual.count2} ${visual.emoji2}` : '';
       const crossed = visual.crossed ? `, ${visual.crossed} crossed out` : '';
       const layout =

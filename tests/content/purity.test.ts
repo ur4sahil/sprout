@@ -30,10 +30,12 @@ describe('engine and content code', () => {
     expect(path.endsWith('.tsx'), 'is a React file').toBe(false);
   });
 
+  // A word-list oracle reads the section 9 lists in src/content/data. Nothing else in content is allowed.
   it('oracles never import generators or templates', () => {
     for (const path of files('tests/oracles').filter((name) => !name.endsWith('.test.ts'))) {
       const code = readFileSync(path, 'utf8');
-      expect(code, path).not.toMatch(/src\/content/);
+      expect(code, path).not.toMatch(/src\/content\/(?!data\/)/);
+      expect(code, path).not.toMatch(/from\s+['"][^'"]*(generators|registry|catalogue)/);
     }
   });
 });
