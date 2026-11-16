@@ -5,6 +5,7 @@ import { GRADE_NAME, STAGE_NAME, scoreRows, sortRows } from '../../app/parentDat
 import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import Tabs from '../../components/Tabs';
+import { videoFor, VIDEOS_ENABLED } from '../../content/videos';
 import { localDayOf } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
@@ -27,6 +28,26 @@ export default function Scores() {
   const { children, child, pick } = useChildren();
   const [rows, setRows] = useState<ScoreRow[] | null>(null);
   const [sort, setSort] = useState<ScoreSort>('skill');
+  // Videos a parent has taken away on this device.
+  const [removed, setRemoved] = useState<string[]>([]);
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const { repo } = await openRepo();
+      const device = await repo.getDeviceState();
+      if (alive) setRemoved(device.removedVideos);
+    })().catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  async function removeVideo(skillId: string): Promise<void> {
+    const next = [...new Set([...removed, skillId])];
+    setRemoved(next);
+    const { repo } = await openRepo();
+    await repo.updateDeviceState({ removedVideos: next });
+  }
 
   useEffect(() => {
     if (!child) return;
@@ -60,11 +81,12 @@ export default function Scores() {
                     </th>
                   ))}
                   <th scope="col">Stage</th>
+                  {VIDEOS_ENABLED && <th scope="col">Video</th>}
                 </tr>
               </thead>
               <tbody>
                 {shown.map((row, index) => (
-                  <ScoreLine key={row.skill.id} row={row} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
+                  <ScoreLine key={row.skill.id} row={row} videos={VIDEOS_ENABLED} video={videoFor(row.skill.id, removed)?.title ?? null} onRemoveVideo={() => void removeVideo(row.skill.id).catch(logError)} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
                 ))}
               </tbody>
             </table>
@@ -75,12 +97,12 @@ export default function Scores() {
   );
 }
 
-function ScoreLine({ row, group }: { row: ScoreRow; group: string | null }) {
+function ScoreLine({ row, group, videos, video, onRemoveVideo }: { row: ScoreRow; group: string | null; videos: boolean; video: string | null; onRemoveVideo: () => void }) {
   return (
     <>
       {group && (
         <tr data-group={group}>
-          <th colSpan={7} scope="colgroup">
+          <th colSpan={videos ? 8 : 7} scope="colgroup">
             {group}
           </th>
         </tr>
@@ -99,6 +121,15 @@ function ScoreLine({ row, group }: { row: ScoreRow; group: string | null }) {
             {STAGE_NAME[row.stage]}
           </span>
         </td>
+        {videos && (
+          <td data-cell="video">
+            {video && (
+              <LinkButton onClick={onRemoveVideo} aria-label={`Remove the video from ${row.skill.name}`} data-remove-video={row.skill.id} title={video}>
+                Remove
+              </LinkButton>
+            )}
+          </td>
+        )}
       </tr>
     </>
   );

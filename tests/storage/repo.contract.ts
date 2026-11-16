@@ -109,6 +109,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
           lastExportAt: null,
           browserModeAccepted: false,
           catalogueVersion: 0,
+          removedVideos: [],
           errors: [],
         });
       });

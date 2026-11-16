@@ -1,0 +1,20 @@
+.cover {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--color-bg);
+}
+
+/* As large as fits, in the shape of a video, with room left for the Close button. */
+.frame {
+  width: min(100%, calc((100dvh - var(--tap-min) - 3 * var(--space-4)) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: var(--radius-m);
+}

@@ -195,6 +195,7 @@ export const deviceStateSchema = z.object({
   lastExportAt: iso.nullable().default(null),
   browserModeAccepted: z.boolean().default(false), // parent chose "Use in this browser anyway"
   catalogueVersion: z.number().int().min(0).default(0),
+  removedVideos: z.array(z.string()).default([]), // skill ids whose video a parent took away on this device
   errors: z.array(loggedErrorSchema).max(20).default([]), // last 20
 });
 export type DeviceState = z.infer<typeof deviceStateSchema>;

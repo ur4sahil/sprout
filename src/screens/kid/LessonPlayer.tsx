@@ -11,9 +11,13 @@ import KidScreen from '../../components/KidScreen';
 import StepDots from '../../components/StepDots';
 import StepList from '../../components/StepList';
 import Tabs from '../../components/Tabs';
+import VideoPlayer from '../../components/VideoPlayer';
 import type { Skill } from '../../content/catalogue';
 import { exampleQuestion, generatorFor } from '../../content/registry';
+import { videoFor } from '../../content/videos';
 import { describeAnswer } from '../../engine/describe';
+import { logError } from '../../lib/errorLog';
+import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
 import VisualView from '../../visuals/VisualView';
 import styles from './LessonPlayer.module.css';
@@ -27,7 +31,7 @@ const BEAT_NAME = { see: 'See it', watch: 'Watch me', try: 'Try it together', re
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Two kinds of help: a narrated mini-lesson in four beats, and one example solved step by step.
-// It uses the same pictures as the questions and works with no network.
+// They use the same pictures as the questions and work with no network. Some skills add a third: a video.
 export default function LessonPlayer({ child, skill }: Props) {
   const navigate = useNavigate();
   const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
@@ -40,6 +44,23 @@ export default function LessonPlayer({ child, skill }: Props) {
   const [stepsShown, setStepsShown] = useState(0);
   const rate = child.settings.speechRate;
   useWakeLock();
+
+  // A video is offered only when the skill has one, the device is online, videos are on for this
+  // child, and a parent has not removed it.
+  const [removed, setRemoved] = useState<string[] | null>(null);
+  const [watching, setWatching] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      const { repo } = await openRepo();
+      const device = await repo.getDeviceState();
+      if (alive) setRemoved(device.removedVideos);
+    })().catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, []);
+  const video = removed !== null && child.settings.allowVideos && navigator.onLine ? videoFor(skill.id, removed) : null;
 
   const beat = beats[index];
 
@@ -110,9 +131,17 @@ export default function LessonPlayer({ child, skill }: Props) {
         tabs={[
           { id: 'lesson', label: '🎬 Lesson' },
           { id: 'example', label: '✏️ Example' },
+          ...(video ? [{ id: 'video', label: '📺 Video' }] : []),
         ]}
         current={mode}
         onPick={(id) => {
+          // The video opens over the lesson, which waits behind it.
+          if (id === 'video') {
+            stop();
+            setPlaying(false);
+            setWatching(true);
+            return;
+          }
           setMode(id as 'lesson' | 'example');
           setPlaying(id === 'lesson');
           setStepsShown(0);
@@ -170,6 +199,7 @@ export default function LessonPlayer({ child, skill }: Props) {
           </CenterRow>
         </Column>
       )}
+      {watching && video && <VideoPlayer video={video} onClose={() => setWatching(false)} />}
     </KidScreen>
   );
 }

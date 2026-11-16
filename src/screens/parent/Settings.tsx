@@ -9,6 +9,7 @@ import Notice from '../../components/Notice';
 import SelectField from '../../components/SelectField';
 import Tabs from '../../components/Tabs';
 import ToggleField from '../../components/ToggleField';
+import { VIDEOS_ENABLED } from '../../content/videos';
 import { newProgress } from '../../engine/diagnostic';
 import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -111,7 +112,7 @@ export default function Settings() {
           <ToggleField label="Pre-reader mode" hint="Picture tiles and spoken buttons, for a child who cannot read yet." checked={child.settings.preReader} onChange={(preReader) => set({ preReader })} />
           <ToggleField label="Gentle scoring" hint="A wrong answer takes fewer points away." checked={child.settings.gentleScoring} onChange={(gentleScoring) => set({ gentleScoring })} />
           <ToggleField label="Show a timer" checked={child.settings.showTimer} onChange={(showTimer) => set({ showTimer })} />
-          <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />
+          {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
           <h3>Check-in</h3>
           <CenterRow>
             {CHECK_IN_SUBJECTS.map((subject) => (

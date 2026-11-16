@@ -173,4 +173,9 @@
 - Kindergarten questions never have more than three options (validation rule 12). A fixed-order option must be right at least 10% of the time, so a rare answer (th, wh) is chosen first and its word second.
 - Listen questions: the on-screen line must not show the word asked for. Sight words use "Listen. Tap the word.", or "Listen. Tap one word." when the word is "the".
 - A long equation shrinks to fit a narrow screen: `EquationVisual` sets `--ems` (its width in letter heights) and the style divides the screen width by it.
-- Next: step 21 videos (`src/content/videos.json`, `scripts/check-videos.mjs`, the sandboxed player), then step 22 scratchpad and games (Pop, Pairs).
+- Step 21 (videos) is built. `src/content/videos.json` holds 50 Khan Academy videos for Math skills, with lengths, and one `enabled` switch. `npm run check:videos` asks YouTube's oEmbed address about each (needs the network, not part of verify). `src/content/videos.ts` has the rules, `components/VideoPlayer.tsx` the player.
+- The player is YouTube's privacy-enhanced embed in a frame with `sandbox="allow-scripts allow-same-origin"`: no pop-ups, no top-level navigation. WebKit rejects `allow-presentation`, so it is not used. The app's one control is Close. The play time comes from the player's messages and the video closes 3 seconds before its end.
+- A lesson shows the Video tab only when the skill has a video, the device is online, videos are on for the child, and a parent has not removed it. Removed videos are skill ids in the device record (`removedVideos`), set from the Video column on the scores screen. They are kept on that device only.
+- A text picture of three or more words wraps (`TextVisual`): sentences and stories fit a phone. Numerals, words and sums stay on one line.
+- Still owed for step 21: the owner's hand check on the iPad (tapping the YouTube logo and the title must not leave the app). If it fails, set `"enabled": false` in `videos.json`.
+- Next: step 22 scratchpad and games (Pop, Pairs).

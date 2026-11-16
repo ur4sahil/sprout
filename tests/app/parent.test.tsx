@@ -283,7 +283,7 @@ describe('the grown-up pages', () => {
       return found;
     });
     expect(document.querySelectorAll('[data-skill-row]')).toHaveLength(CATALOGUE.length);
-    expect([...row.querySelectorAll('td')].map((cell) => cell.textContent)).toEqual(['C.4 Add to 10', '100', '5', '100%', '3', localDay(NOW), 'Mastered']);
+    expect([...row.querySelectorAll('td')].map((cell) => cell.textContent)).toEqual(['C.4 Add to 10', '100', '5', '100%', '3', localDay(NOW), 'Mastered', 'Remove']);
     expect(document.querySelector('[data-group]')?.textContent).toBe('Math, Pre-K, A. Counting');
     await user.click(screen.getByRole('button', { name: 'Score' }));
     expect(document.querySelector('[data-skill-row]')?.getAttribute('data-skill-row')).toBe('M-K-C4');
