@@ -9,6 +9,14 @@ export function nowIso(): string {
   return now().toISOString();
 }
 
+// The device's local calendar date, YYYY-MM-DD. Never work a day out from a UTC string.
+export function localDay(at: Date = now()): string {
+  const year = String(at.getFullYear()).padStart(4, '0');
+  const month = String(at.getMonth() + 1).padStart(2, '0');
+  const day = String(at.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export function freezeClock(at: Date | string): void {
   frozen = new Date(at);
 }

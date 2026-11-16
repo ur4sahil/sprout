@@ -1,0 +1,117 @@
+import type { D1Database, SendEmail } from '@cloudflare/workers-types';
+import type { AuthDeps } from './auth';
+import {
+  findSession,
+  json,
+  login,
+  logout,
+  logoutAll,
+  parseParentEmails,
+  sessionInfo,
+  setPassword,
+  start,
+} from './auth';
+import { cloudflareMailer, consoleMailer } from './mailer';
+import { d1Store } from './store';
+
+// Routes /api. Everything else is the built app.
+
+export interface Env {
+  DB: D1Database;
+  MAIL: SendEmail;
+  ASSETS: { fetch(request: Request): Promise<Response> };
+  ENVIRONMENT: string;
+  APP_ORIGIN: string;
+  PARENT_EMAILS?: string;
+  AUTH_PEPPER?: string;
+  MAIL_FROM?: string;
+}
+
+export interface ApiDeps extends AuthDeps {
+  appOrigin: string;
+}
+
+type Handler = (deps: ApiDeps, request: Request) => Promise<Response>;
+
+// The only routes that work without a session.
+const SIGN_IN_ROUTES: Record<string, Handler> = {
+  'POST /api/auth/start': start,
+  'POST /api/auth/password': setPassword,
+  'POST /api/auth/login': login,
+};
+
+// A request that changes something must be JSON sent by the app itself.
+function isTrustedWrite(deps: ApiDeps, request: Request): boolean {
+  const type = request.headers.get('Content-Type') ?? '';
+  return type.toLowerCase().startsWith('application/json') && request.headers.get('Origin') === deps.appOrigin;
+}
+
+function isRead(request: Request): boolean {
+  return request.method === 'GET' || request.method === 'HEAD';
+}
+
+export async function handleApi(request: Request, deps: ApiDeps): Promise<Response> {
+  const path = new URL(request.url).pathname;
+  const route = `${request.method} ${path}`;
+  try {
+    const signIn = SIGN_IN_ROUTES[route];
+    if (signIn) {
+      if (!isTrustedWrite(deps, request)) return json(403, { error: 'forbidden' });
+      return await signIn(deps, request);
+    }
+
+    // The one guard for every other path under /api, known or not.
+    const session = await findSession(deps, request);
+    if (!session) return json(401, { error: 'signed_out' });
+    if (!isRead(request) && !isTrustedWrite(deps, request)) return json(403, { error: 'forbidden' });
+
+    switch (route) {
+      case 'GET /api/auth/session':
+        return sessionInfo(session);
+      case 'POST /api/auth/logout':
+        return await logout(deps, session);
+      case 'POST /api/auth/logout-all':
+        return await logoutAll(deps, session);
+      default:
+        return json(404, { error: 'not_found' });
+    }
+  } catch (error) {
+    // Never log an address, a code, a password key or a cookie.
+    console.error('api error on', route, error instanceof Error ? error.name : 'error');
+    return json(500, { error: 'server' });
+  }
+}
+
+function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): ApiDeps | null {
+  if (!env.AUTH_PEPPER || env.AUTH_PEPPER.length < 32) return null;
+  const dev = env.ENVIRONMENT === 'dev';
+  if (!dev && !env.MAIL_FROM) return null;
+  return {
+    store: d1Store(env.DB),
+    mailer: dev ? consoleMailer() : cloudflareMailer(env.MAIL, env.MAIL_FROM ?? ''),
+    pepper: env.AUTH_PEPPER,
+    parentEmails: parseParentEmails(env.PARENT_EMAILS),
+    now: () => new Date(),
+    defer: (work) => ctx.waitUntil(work),
+    appOrigin: env.APP_ORIGIN,
+  };
+}
+
+export default {
+  async fetch(
+    request: Request,
+    env: Env,
+    ctx: { waitUntil(work: Promise<unknown>): void },
+  ): Promise<Response> {
+    const path = new URL(request.url).pathname;
+    if (path === '/api' || path.startsWith('/api/')) {
+      const deps = buildDeps(env, ctx);
+      if (!deps) {
+        console.error('the Worker is missing a private setting');
+        return json(500, { error: 'server' });
+      }
+      return handleApi(request, deps);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};

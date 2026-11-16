@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sprout",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-11-15",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "sprout.logstocks.com", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist/",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api", "/api/*"]
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "sprout", "database_id": "f97e2bb8-3b85-490a-8017-600ba07c8e18" }
+  ],
+  "r2_buckets": [{ "binding": "BACKUPS", "bucket_name": "sprout-backups" }],
+  "send_email": [{ "name": "MAIL" }],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "APP_ORIGIN": "https://sprout.logstocks.com"
+  },
+  "observability": { "enabled": true }
+}

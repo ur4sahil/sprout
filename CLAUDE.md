@@ -43,6 +43,8 @@
 
 ## Build status
 
-- Step 1, Phase 0 (scaffold), is built. It was built before the plan revisions of Nov 15, 2026.
-- Next: step 2, Phase A, hosting and sign-in. It starts with what the scaffold lacks: the web app manifest, icons, Apple meta tags, six stage colours in `tokens.css`, `localDay()` in `clock.ts`, the `tsx` dev dependency, and removing `.github/workflows/verify.yml`.
-- Before step A can finish, the owner does the Cloudflare checklist in plan section 4.
+- Step 1, Phase 0 (scaffold), is built.
+- Step 2, Phase A (hosting and sign-in), is built: the scaffold gaps, `wrangler.jsonc`, `worker/`, `account.ts`, the SignIn and SetPassword screens and the sign-in guard. Until Phase 3 adds the device record, the app asks the server for the session at every launch, so it does not open offline yet.
+- `APP_ORIGIN` is a plain setting next to `ENVIRONMENT`. The Worker compares the `Origin` header of every write against it.
+- Local run: copy `.dev.vars.example` to `.dev.vars`, run `npx wrangler d1 execute sprout --local --file worker/schema.sql` once, then `npm run dev:worker` and `npm run dev`. The sign-in code is printed in the Worker's terminal.
+- Next: step 3, Phase 1, engine core.
