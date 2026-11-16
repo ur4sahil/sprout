@@ -255,6 +255,8 @@ describe('D.1 Name shapes by sides and D.2 Halves, thirds, fourths', () => {
       // The other of the two is always offered.
       expect(question.options.map(sides).sort().slice(-2)).toEqual([5, 6]);
     }
+    // Both five-sided and six-sided shapes are asked for.
+    expect(new Set(all('M-2-D1', 2).map((question) => question.facts.shape))).toEqual(new Set(['pentagon', 'hexagon']));
     for (const question of all('M-2-D1', 3)) {
       if (question.type !== 'choice') throw new Error('not a choice');
       const counts = question.options.map(sides);

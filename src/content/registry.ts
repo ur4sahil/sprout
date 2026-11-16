@@ -14,9 +14,11 @@ import { coinsGenerator, orderByLengthGenerator, pictureGraphsGenerator, tellTim
 import { countTo120Generator, numberPatternsGenerator, skipCountGenerator, tenMoreLessGenerator } from './generators/math/g1/numbers';
 import { compareTwoDigitGenerator, tensAndOnesGenerator } from './generators/math/g1/placeValue';
 import { halvesAndFourthsGenerator, shapeAttributesGenerator } from './generators/math/g1/shapes';
+import { addNoRegroupGenerator, addRegroupGenerator, addWithin1000Generator, subtractNoRegroupGenerator, subtractRegroupGenerator, subtractWithin1000Generator, tenOrHundredGenerator } from './generators/math/g2/addSubtract';
 import { barGraphsGenerator, countCoinsGenerator, rulerGenerator, timeToFiveGenerator } from './generators/math/g2/measure';
 import { compareThreeDigitGenerator, evenOddGenerator, expandedFormGenerator, hundredsTensOnesGenerator, numberLinesGenerator, skipCountBigGenerator } from './generators/math/g2/numbers';
 import { halvesThirdsFourthsGenerator, nameBySidesGenerator } from './generators/math/g2/shapes';
+import { arraysGenerator, twoStepGenerator, wordProblems100Generator } from './generators/math/g2/stories';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
@@ -108,6 +110,16 @@ const ALL: readonly SkillGenerator[] = [
   skipCountBigGenerator,
   evenOddGenerator,
   numberLinesGenerator,
+  addNoRegroupGenerator,
+  addRegroupGenerator,
+  subtractNoRegroupGenerator,
+  subtractRegroupGenerator,
+  addWithin1000Generator,
+  subtractWithin1000Generator,
+  tenOrHundredGenerator,
+  arraysGenerator,
+  wordProblems100Generator,
+  twoStepGenerator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,

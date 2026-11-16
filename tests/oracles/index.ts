@@ -15,6 +15,7 @@ import { matrix } from './matrix';
 import { measure } from './measure';
 import { missing } from './missing';
 import { money } from './money';
+import { multiply } from './multiply';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
@@ -29,6 +30,7 @@ import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
 import { truth } from './truth';
+import { twoStep } from './twoStep';
 import type { Oracle } from './types';
 import { wordSet } from './wordSet';
 
@@ -65,4 +67,6 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   parity,
   line,
   measure,
+  multiply,
+  twoStep,
 };

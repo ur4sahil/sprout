@@ -2,7 +2,7 @@ import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer } from './support/kid';
 import { openFromMath, sweepHardestLevels } from './support/sweep';
 
-// Math grade 2, part 1 (Phase 11c): categories A, C and D.
+// Math grade 2 (Phases 11c and 11d): all 22 skills.
 const SKILLS: [string, string][] = [
   ['M-2-A1', 'Hundreds, tens, ones'],
   ['M-2-A2', 'Expanded form'],
@@ -10,6 +10,16 @@ const SKILLS: [string, string][] = [
   ['M-2-A4', 'Skip count by 5s, 10s, 100s'],
   ['M-2-A5', 'Even and odd'],
   ['M-2-A6', 'Number lines to 100'],
+  ['M-2-B1', 'Add within 100, no regrouping'],
+  ['M-2-B2', 'Add within 100, regrouping'],
+  ['M-2-B3', 'Subtract within 100, no regrouping'],
+  ['M-2-B4', 'Subtract within 100, regrouping'],
+  ['M-2-B5', 'Add within 1,000'],
+  ['M-2-B6', 'Subtract within 1,000'],
+  ['M-2-B7', 'Add or subtract 10 or 100'],
+  ['M-2-B8', 'Arrays and repeated addition'],
+  ['M-2-B9', 'One-step word problems to 100'],
+  ['M-2-B10', 'Two-step word problems'],
   ['M-2-C1', 'Time to five minutes'],
   ['M-2-C2', 'Count coins'],
   ['M-2-C3', 'Measure with a ruler'],
@@ -18,14 +28,14 @@ const SKILLS: [string, string][] = [
   ['M-2-D2', 'Halves, thirds, fourths'],
 ];
 
-test.describe('Math grade 2, part 1', () => {
+test.describe('Math grade 2', () => {
   test('every skill fits the screen at its hardest level, with every control big enough to tap', async ({ page }) => {
-    test.setTimeout(300_000);
+    test.setTimeout(480_000);
     await sweepHardestLevels(page, 'Grade 2', SKILLS, 'math2');
   });
 
   test('every skill fits the screen at its first level too', async ({ page }) => {
-    test.setTimeout(300_000);
+    test.setTimeout(480_000);
     await signUp(page);
     await addChild(page, 'Robin', 'Grade 2');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
@@ -38,6 +48,16 @@ test.describe('Math grade 2, part 1', () => {
       await page.getByRole('button', { name: /^Back to home\. Press and hold/ }).dispatchEvent('pointerdown');
       await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible({ timeout: 8000 });
     }
+  });
+
+  test('the Math page opens on Grade 2 for a grade 2 child, with its four groups', async ({ page }) => {
+    await signUp(page);
+    await addChild(page, 'Robin', 'Grade 2');
+    await page.getByRole('button', { name: 'Robin', exact: true }).click();
+    await page.getByRole('button', { name: /Math/ }).click();
+    await expect(page.getByRole('tab', { name: 'Grade 2' })).toHaveAttribute('aria-selected', 'true');
+    await expect(page.locator('[data-skill]')).toHaveCount(22);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Numbers to 1,000', 'B. Adding and subtracting', 'C. Time, money and measuring', 'D. Shapes and parts']);
   });
 
   test('a ruler is read from zero by touch, and the dot on a number line does not give its number away', async ({ page }) => {

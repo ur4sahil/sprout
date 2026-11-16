@@ -1,0 +1,2110 @@
+{
+ "skillId": "M-2-B10",
+ "version": 1,
+ "example": {
+  "type": "numberPad",
+  "mode": "look",
+  "facts": {
+   "a": 5,
+   "op1": "+",
+   "b": 20,
+   "op2": "+",
+   "c": 10,
+   "name": "Max",
+   "thing": "balloon",
+   "story": "addAdd"
+  },
+  "prompt": {
+   "text": "Max has 5 balloons. Max gets 20 more. Then Max gets 10 more. How many balloons does Max have now?",
+   "speak": [
+    "Max has",
+    {
+     "number": 5
+    },
+    "balloons.",
+    "Max gets",
+    {
+     "number": 20
+    },
+    "more.",
+    "Then Max gets",
+    {
+     "number": 10
+    },
+    "more.",
+    "How many balloons does Max have now?"
+   ]
+  },
+  "answer": 35,
+  "maxDigits": 2,
+  "explanation": {
+   "speak": [
+    "First step:",
+    {
+     "number": 5
+    },
+    "plus",
+    {
+     "number": 20
+    },
+    "is",
+    {
+     "number": 25
+    },
+    ".",
+    "Second step:",
+    {
+     "number": 25
+    },
+    "plus",
+    {
+     "number": 10
+    },
+    "is",
+    {
+     "number": 35
+    },
+    "."
+   ],
+   "steps": [
+    "First step: 5 plus 20 is 25.",
+    "Second step: 25 plus 10 is 35."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       20,
+       "=",
+       25
+      ]
+     },
+     {
+      "kind": "equation",
+      "parts": [
+       25,
+       "+",
+       10,
+       "=",
+       35
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "M-2-B10",
+  "level": 1,
+  "seed": 220,
+  "key": "M-2-B10|1|{\"a\":5,\"b\":20,\"c\":10,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"balloon\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 21,
+     "op1": "+",
+     "b": 2,
+     "op2": "+",
+     "c": 12,
+     "name": "Zoe",
+     "thing": "banana",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Zoe has 21 bananas. Zoe gets 2 more. Then Zoe gets 12 more. How many bananas does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 21
+      },
+      "bananas.",
+      "Zoe gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Zoe gets",
+      {
+       "number": 12
+      },
+      "more.",
+      "How many bananas does Zoe have now?"
+     ]
+    },
+    "answer": 35,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 21
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 23
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 35
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 21 plus 2 is 23.",
+      "Second step: 23 plus 12 is 35."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         21,
+         "+",
+         2,
+         "=",
+         23
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         23,
+         "+",
+         12,
+         "=",
+         35
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B10|1|{\"a\":21,\"b\":2,\"c\":12,\"name\":\"Zoe\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 24,
+     "op1": "+",
+     "b": 8,
+     "op2": "+",
+     "c": 7,
+     "name": "Ava",
+     "thing": "banana",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Ava has 24 bananas. Ava gets 8 more. Then Ava gets 7 more. How many bananas does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 24
+      },
+      "bananas.",
+      "Ava gets",
+      {
+       "number": 8
+      },
+      "more.",
+      "Then Ava gets",
+      {
+       "number": 7
+      },
+      "more.",
+      "How many bananas does Ava have now?"
+     ]
+    },
+    "answer": 39,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 24
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 32
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 32
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 39
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 24 plus 8 is 32.",
+      "Second step: 32 plus 7 is 39."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         24,
+         "+",
+         8,
+         "=",
+         32
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         32,
+         "+",
+         7,
+         "=",
+         39
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B10|1|{\"a\":24,\"b\":8,\"c\":7,\"name\":\"Ava\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 23,
+     "op1": "+",
+     "b": 2,
+     "op2": "+",
+     "c": 10,
+     "name": "Sam",
+     "thing": "strawberry",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Sam has 23 strawberries. Sam gets 2 more. Then Sam gets 10 more. How many strawberries does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 23
+      },
+      "strawberries.",
+      "Sam gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Sam gets",
+      {
+       "number": 10
+      },
+      "more.",
+      "How many strawberries does Sam have now?"
+     ]
+    },
+    "answer": 35,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 25
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 35
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 23 plus 2 is 25.",
+      "Second step: 25 plus 10 is 35."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         23,
+         "+",
+         2,
+         "=",
+         25
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         25,
+         "+",
+         10,
+         "=",
+         35
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B10|1|{\"a\":23,\"b\":2,\"c\":10,\"name\":\"Sam\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 29,
+     "op1": "+",
+     "b": 8,
+     "op2": "+",
+     "c": 6,
+     "name": "Sam",
+     "thing": "car",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Sam has 29 cars. Sam gets 8 more. Then Sam gets 6 more. How many cars does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 29
+      },
+      "cars.",
+      "Sam gets",
+      {
+       "number": 8
+      },
+      "more.",
+      "Then Sam gets",
+      {
+       "number": 6
+      },
+      "more.",
+      "How many cars does Sam have now?"
+     ]
+    },
+    "answer": 43,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 29
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 37
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 43
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 29 plus 8 is 37.",
+      "Second step: 37 plus 6 is 43."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         29,
+         "+",
+         8,
+         "=",
+         37
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         37,
+         "+",
+         6,
+         "=",
+         43
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B10|1|{\"a\":29,\"b\":8,\"c\":6,\"name\":\"Sam\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 22,
+     "op1": "+",
+     "b": 16,
+     "op2": "+",
+     "c": 6,
+     "name": "Ava",
+     "thing": "apple",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Ava has 22 apples. Ava gets 16 more. Then Ava gets 6 more. How many apples does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 22
+      },
+      "apples.",
+      "Ava gets",
+      {
+       "number": 16
+      },
+      "more.",
+      "Then Ava gets",
+      {
+       "number": 6
+      },
+      "more.",
+      "How many apples does Ava have now?"
+     ]
+    },
+    "answer": 44,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 22
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "is",
+      {
+       "number": 38
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 38
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 44
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 22 plus 16 is 38.",
+      "Second step: 38 plus 6 is 44."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         22,
+         "+",
+         16,
+         "=",
+         38
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         38,
+         "+",
+         6,
+         "=",
+         44
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B10|1|{\"a\":22,\"b\":16,\"c\":6,\"name\":\"Ava\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"apple\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "op1": "+",
+     "b": 2,
+     "op2": "+",
+     "c": 14,
+     "name": "Mia",
+     "thing": "cookie",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Mia has 18 cookies. Mia gets 2 more. Then Mia gets 14 more. How many cookies does Mia have now?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 18
+      },
+      "cookies.",
+      "Mia gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Mia gets",
+      {
+       "number": 14
+      },
+      "more.",
+      "How many cookies does Mia have now?"
+     ]
+    },
+    "answer": 34,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 14
+      },
+      "is",
+      {
+       "number": 34
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 18 plus 2 is 20.",
+      "Second step: 20 plus 14 is 34."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         18,
+         "+",
+         2,
+         "=",
+         20
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         20,
+         "+",
+         14,
+         "=",
+         34
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B10|1|{\"a\":18,\"b\":2,\"c\":14,\"name\":\"Mia\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "op1": "+",
+     "b": 3,
+     "op2": "+",
+     "c": 20,
+     "name": "Max",
+     "thing": "cookie",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Max has 5 cookies. Max gets 3 more. Then Max gets 20 more. How many cookies does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 5
+      },
+      "cookies.",
+      "Max gets",
+      {
+       "number": 3
+      },
+      "more.",
+      "Then Max gets",
+      {
+       "number": 20
+      },
+      "more.",
+      "How many cookies does Max have now?"
+     ]
+    },
+    "answer": 28,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 28
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 5 plus 3 is 8.",
+      "Second step: 8 plus 20 is 28."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         5,
+         "+",
+         3,
+         "=",
+         8
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         8,
+         "+",
+         20,
+         "=",
+         28
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B10|1|{\"a\":5,\"b\":3,\"c\":20,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "op1": "+",
+     "b": 13,
+     "op2": "+",
+     "c": 7,
+     "name": "Max",
+     "thing": "cookie",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Max has 9 cookies. Max gets 13 more. Then Max gets 7 more. How many cookies does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 9
+      },
+      "cookies.",
+      "Max gets",
+      {
+       "number": 13
+      },
+      "more.",
+      "Then Max gets",
+      {
+       "number": 7
+      },
+      "more.",
+      "How many cookies does Max have now?"
+     ]
+    },
+    "answer": 29,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 22
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 22
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 29
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 9 plus 13 is 22.",
+      "Second step: 22 plus 7 is 29."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         9,
+         "+",
+         13,
+         "=",
+         22
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         22,
+         "+",
+         7,
+         "=",
+         29
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B10|1|{\"a\":9,\"b\":13,\"c\":7,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "op1": "+",
+     "b": 18,
+     "op2": "+",
+     "c": 4,
+     "name": "Max",
+     "thing": "ball",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Max has 10 balls. Max gets 18 more. Then Max gets 4 more. How many balls does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 10
+      },
+      "balls.",
+      "Max gets",
+      {
+       "number": 18
+      },
+      "more.",
+      "Then Max gets",
+      {
+       "number": 4
+      },
+      "more.",
+      "How many balls does Max have now?"
+     ]
+    },
+    "answer": 32,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 18
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 28
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 10 plus 18 is 28.",
+      "Second step: 28 plus 4 is 32."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         10,
+         "+",
+         18,
+         "=",
+         28
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         28,
+         "+",
+         4,
+         "=",
+         32
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B10|1|{\"a\":10,\"b\":18,\"c\":4,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "op1": "+",
+     "b": 19,
+     "op2": "+",
+     "c": 15,
+     "name": "Max",
+     "thing": "flower",
+     "story": "addAdd"
+    },
+    "prompt": {
+     "text": "Max has 18 flowers. Max gets 19 more. Then Max gets 15 more. How many flowers does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 18
+      },
+      "flowers.",
+      "Max gets",
+      {
+       "number": 19
+      },
+      "more.",
+      "Then Max gets",
+      {
+       "number": 15
+      },
+      "more.",
+      "How many flowers does Max have now?"
+     ]
+    },
+    "answer": 52,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 19
+      },
+      "is",
+      {
+       "number": 37
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 52
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 18 plus 19 is 37.",
+      "Second step: 37 plus 15 is 52."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         18,
+         "+",
+         19,
+         "=",
+         37
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         37,
+         "+",
+         15,
+         "=",
+         52
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B10|1|{\"a\":18,\"b\":19,\"c\":15,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"+\",\"story\":\"addAdd\",\"thing\":\"flower\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 21,
+     "op1": "+",
+     "b": 2,
+     "op2": "-",
+     "c": 12,
+     "name": "Zoe",
+     "thing": "banana",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Zoe has 21 bananas. Zoe gets 2 more. Then Zoe gives away 12. How many bananas does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 21
+      },
+      "bananas.",
+      "Zoe gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Zoe gives away",
+      {
+       "number": 12
+      },
+      ".",
+      "How many bananas does Zoe have now?"
+     ]
+    },
+    "answer": 11,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 21
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 23
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 23
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 21 plus 2 is 23.",
+      "Second step: 23 minus 12 is 11."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         21,
+         "+",
+         2,
+         "=",
+         23
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         23,
+         "-",
+         12,
+         "=",
+         11
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B10|2|{\"a\":21,\"b\":2,\"c\":12,\"name\":\"Zoe\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 24,
+     "op1": "+",
+     "b": 8,
+     "op2": "-",
+     "c": 7,
+     "name": "Ava",
+     "thing": "banana",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Ava has 24 bananas. Ava gets 8 more. Then Ava gives away 7. How many bananas does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 24
+      },
+      "bananas.",
+      "Ava gets",
+      {
+       "number": 8
+      },
+      "more.",
+      "Then Ava gives away",
+      {
+       "number": 7
+      },
+      ".",
+      "How many bananas does Ava have now?"
+     ]
+    },
+    "answer": 25,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 24
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 32
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 32
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 25
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 24 plus 8 is 32.",
+      "Second step: 32 minus 7 is 25."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         24,
+         "+",
+         8,
+         "=",
+         32
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         32,
+         "-",
+         7,
+         "=",
+         25
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B10|2|{\"a\":24,\"b\":8,\"c\":7,\"name\":\"Ava\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 23,
+     "op1": "+",
+     "b": 2,
+     "op2": "-",
+     "c": 10,
+     "name": "Sam",
+     "thing": "strawberry",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Sam has 23 strawberries. Sam gets 2 more. Then Sam gives away 10. How many strawberries does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 23
+      },
+      "strawberries.",
+      "Sam gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Sam gives away",
+      {
+       "number": 10
+      },
+      ".",
+      "How many strawberries does Sam have now?"
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 25
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 23 plus 2 is 25.",
+      "Second step: 25 minus 10 is 15."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         23,
+         "+",
+         2,
+         "=",
+         25
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         25,
+         "-",
+         10,
+         "=",
+         15
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B10|2|{\"a\":23,\"b\":2,\"c\":10,\"name\":\"Sam\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 29,
+     "op1": "+",
+     "b": 8,
+     "op2": "-",
+     "c": 6,
+     "name": "Sam",
+     "thing": "car",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Sam has 29 cars. Sam gets 8 more. Then Sam gives away 6. How many cars does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 29
+      },
+      "cars.",
+      "Sam gets",
+      {
+       "number": 8
+      },
+      "more.",
+      "Then Sam gives away",
+      {
+       "number": 6
+      },
+      ".",
+      "How many cars does Sam have now?"
+     ]
+    },
+    "answer": 31,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 29
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 37
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 37
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 31
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 29 plus 8 is 37.",
+      "Second step: 37 minus 6 is 31."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         29,
+         "+",
+         8,
+         "=",
+         37
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         37,
+         "-",
+         6,
+         "=",
+         31
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B10|2|{\"a\":29,\"b\":8,\"c\":6,\"name\":\"Sam\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 22,
+     "op1": "+",
+     "b": 16,
+     "op2": "-",
+     "c": 6,
+     "name": "Ava",
+     "thing": "apple",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Ava has 22 apples. Ava gets 16 more. Then Ava gives away 6. How many apples does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 22
+      },
+      "apples.",
+      "Ava gets",
+      {
+       "number": 16
+      },
+      "more.",
+      "Then Ava gives away",
+      {
+       "number": 6
+      },
+      ".",
+      "How many apples does Ava have now?"
+     ]
+    },
+    "answer": 32,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 22
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "is",
+      {
+       "number": 38
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 38
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 22 plus 16 is 38.",
+      "Second step: 38 minus 6 is 32."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         22,
+         "+",
+         16,
+         "=",
+         38
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         38,
+         "-",
+         6,
+         "=",
+         32
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B10|2|{\"a\":22,\"b\":16,\"c\":6,\"name\":\"Ava\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"apple\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "op1": "+",
+     "b": 2,
+     "op2": "-",
+     "c": 13,
+     "name": "Mia",
+     "thing": "cookie",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Mia has 18 cookies. Mia gets 2 more. Then Mia gives away 13. How many cookies does Mia have now?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 18
+      },
+      "cookies.",
+      "Mia gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "Then Mia gives away",
+      {
+       "number": 13
+      },
+      ".",
+      "How many cookies does Mia have now?"
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 18 plus 2 is 20.",
+      "Second step: 20 minus 13 is 7."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         18,
+         "+",
+         2,
+         "=",
+         20
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         20,
+         "-",
+         13,
+         "=",
+         7
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B10|2|{\"a\":18,\"b\":2,\"c\":13,\"name\":\"Mia\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "op1": "+",
+     "b": 3,
+     "op2": "-",
+     "c": 7,
+     "name": "Max",
+     "thing": "cookie",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Max has 5 cookies. Max gets 3 more. Then Max gives away 7. How many cookies does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 5
+      },
+      "cookies.",
+      "Max gets",
+      {
+       "number": 3
+      },
+      "more.",
+      "Then Max gives away",
+      {
+       "number": 7
+      },
+      ".",
+      "How many cookies does Max have now?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 5 plus 3 is 8.",
+      "Second step: 8 minus 7 is 1."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         5,
+         "+",
+         3,
+         "=",
+         8
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         8,
+         "-",
+         7,
+         "=",
+         1
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B10|2|{\"a\":5,\"b\":3,\"c\":7,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "op1": "+",
+     "b": 13,
+     "op2": "-",
+     "c": 7,
+     "name": "Max",
+     "thing": "cookie",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Max has 9 cookies. Max gets 13 more. Then Max gives away 7. How many cookies does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 9
+      },
+      "cookies.",
+      "Max gets",
+      {
+       "number": 13
+      },
+      "more.",
+      "Then Max gives away",
+      {
+       "number": 7
+      },
+      ".",
+      "How many cookies does Max have now?"
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 22
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 22
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 9 plus 13 is 22.",
+      "Second step: 22 minus 7 is 15."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         9,
+         "+",
+         13,
+         "=",
+         22
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         22,
+         "-",
+         7,
+         "=",
+         15
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B10|2|{\"a\":9,\"b\":13,\"c\":7,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "op1": "+",
+     "b": 18,
+     "op2": "-",
+     "c": 4,
+     "name": "Max",
+     "thing": "ball",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Max has 10 balls. Max gets 18 more. Then Max gives away 4. How many balls does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 10
+      },
+      "balls.",
+      "Max gets",
+      {
+       "number": 18
+      },
+      "more.",
+      "Then Max gives away",
+      {
+       "number": 4
+      },
+      ".",
+      "How many balls does Max have now?"
+     ]
+    },
+    "answer": 24,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 18
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 28
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 10 plus 18 is 28.",
+      "Second step: 28 minus 4 is 24."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         10,
+         "+",
+         18,
+         "=",
+         28
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         28,
+         "-",
+         4,
+         "=",
+         24
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B10|2|{\"a\":10,\"b\":18,\"c\":4,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "op1": "+",
+     "b": 19,
+     "op2": "-",
+     "c": 15,
+     "name": "Max",
+     "thing": "flower",
+     "story": "addSub"
+    },
+    "prompt": {
+     "text": "Max has 18 flowers. Max gets 19 more. Then Max gives away 15. How many flowers does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 18
+      },
+      "flowers.",
+      "Max gets",
+      {
+       "number": 19
+      },
+      "more.",
+      "Then Max gives away",
+      {
+       "number": 15
+      },
+      ".",
+      "How many flowers does Max have now?"
+     ]
+    },
+    "answer": 22,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "First step:",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 19
+      },
+      "is",
+      {
+       "number": 37
+      },
+      ".",
+      "Second step:",
+      {
+       "number": 37
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 22
+      },
+      "."
+     ],
+     "steps": [
+      "First step: 18 plus 19 is 37.",
+      "Second step: 37 minus 15 is 22."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "equation",
+        "parts": [
+         18,
+         "+",
+         19,
+         "=",
+         37
+        ]
+       },
+       {
+        "kind": "equation",
+        "parts": [
+         37,
+         "-",
+         15,
+         "=",
+         22
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-B10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B10|2|{\"a\":18,\"b\":19,\"c\":15,\"name\":\"Max\",\"op1\":\"+\",\"op2\":\"-\",\"story\":\"addSub\",\"thing\":\"flower\"}"
+   }
+  ]
+ }
+}

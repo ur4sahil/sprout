@@ -20,6 +20,7 @@ import { matrix } from './matrix';
 import { measure } from './measure';
 import { missing } from './missing';
 import { money } from './money';
+import { multiply } from './multiply';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
@@ -34,6 +35,7 @@ import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
 import { truth } from './truth';
+import { twoStep } from './twoStep';
 import { wordSet } from './wordSet';
 
 describe('count', () => {
@@ -218,7 +220,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'truth', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'multiply', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -694,5 +696,33 @@ describe('measure', () => {
     expect(() => measure({ startUnit: 0, lengthUnits: 0 })).toThrow();
     expect(() => measure({ startUnit: -1, lengthUnits: 3 })).toThrow();
     expect(() => measure({ startUnit: 0 })).toThrow();
+  });
+});
+
+describe('multiply', () => {
+  it('counts an array, and writes it as one number added for each row', () => {
+    expect(multiply({ rows: 3, cols: 4, ask: 'total' })).toEqual({ kind: 'value', value: 12 });
+    expect(multiply({ rows: 3, cols: 4, ask: 'addition' })).toEqual({ kind: 'value', value: '4 + 4 + 4' });
+    expect(multiply({ rows: 2, cols: 5, ask: 'addition' })).toEqual({ kind: 'value', value: '5 + 5' });
+    expect(multiply({ rows: 5, cols: 5, ask: 'total' })).toEqual({ kind: 'value', value: 25 });
+  });
+  it('refuses an array with no rows, and an ask it does not know', () => {
+    expect(() => multiply({ rows: 0, cols: 4, ask: 'total' })).toThrow();
+    expect(() => multiply({ rows: 2.5, cols: 4, ask: 'total' })).toThrow();
+    expect(() => multiply({ rows: 2, cols: 4, ask: 'area' })).toThrow();
+  });
+});
+
+describe('twoStep', () => {
+  it('does one step, then the next', () => {
+    expect(twoStep({ a: 5, op1: '+', b: 3, op2: '+', c: 4 })).toEqual({ kind: 'value', value: 12 });
+    expect(twoStep({ a: 5, op1: '+', b: 3, op2: '-', c: 4 })).toEqual({ kind: 'value', value: 4 });
+    expect(twoStep({ a: 9, op1: '-', b: 3, op2: '+', c: 4 })).toEqual({ kind: 'value', value: 10 });
+  });
+  it('refuses a story that goes below zero, and a sign it does not know', () => {
+    expect(() => twoStep({ a: 2, op1: '-', b: 5, op2: '+', c: 9 })).toThrow();
+    expect(() => twoStep({ a: 2, op1: '+', b: 1, op2: '-', c: 9 })).toThrow();
+    expect(() => twoStep({ a: 2, op1: 'x', b: 1, op2: '+', c: 9 })).toThrow();
+    expect(() => twoStep({ a: 2, op1: '+', b: 1, op2: '+' })).toThrow();
   });
 });

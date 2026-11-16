@@ -164,4 +164,7 @@
 - `graphQuestion` in `g1/measure.ts` makes both picture graphs (grade 1) and bar graphs (grade 2). A number part in speech must be 0 to 1,000, so number options stop at 999 or 1,000.
 - A dot on a hidden number of a number line is described as "dot on a hidden number", so the description never gives the answer.
 - Browser runs are slow when unit tests run beside them. Give the full run the machine to itself.
-- Next: Phase 11d, Math grade 2 part 2 (category B, 10 skills). Then 11e Language Arts K (16), 11f Language Arts grade 1 (12).
+- Phase 11d (Math grade 2, part 2) is built: B.1 to B.10, in `g2/addSubtract.ts` (B.1 to B.7) and `g2/stories.ts` (B.8 to B.10). `CATALOGUE_VERSION` is 10. Math is complete: 82 skills. New oracles: `multiply`, `twoStep`.
+- `addExplanation` and `subtractExplanation` in `g2/addSubtract.ts` talk through any sum to 999 place by place, one step for each place, never more than four steps. `line(...)` builds a sentence's text and speech together. `carries` and `borrows` list the places that regroup.
+- A pre-K child now walks five math ladders in the check-in (length reached four skills), ten questions, still one sitting.
+- Next: Phase 11e, Language Arts K (16). Then 11f Language Arts grade 1 (12, with 20 stories). Then step 21 videos and step 22 scratchpad and games.

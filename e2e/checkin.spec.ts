@@ -132,9 +132,9 @@ test.describe('a short check-in', () => {
     await addChild(page, 'Robin', 'Pre-K', 'new');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await expect(page.getByRole('heading', { name: /Check-in: Math/ })).toBeVisible();
-    // Four ladders start in pre-K (counting, comparing, shapes, patterns). Two questions each: the bottom
-    // skill of every ladder is not known, so each stops there.
-    for (let i = 0; i < 8; i += 1) await dontKnow(page);
+    // Five ladders start in pre-K (counting, comparing, shapes, patterns, length). Two questions each: the
+    // bottom skill of every ladder is not known, so each stops there. Ten fits in one pre-K sitting of 12.
+    for (let i = 0; i < 10; i += 1) await dontKnow(page);
     const card = page.locator('[data-card="check-in-done"]');
     await expect(card).toBeVisible();
     await expect(card).toContainText('Check-in finished');

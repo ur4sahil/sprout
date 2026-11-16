@@ -1,6 +1,6 @@
 # Content review: all
 
-102 skills, 3 samples for each level.
+112 skills, 3 samples for each level.
 
 ## M-PK-A1 A.1 Count to 3
 
@@ -7434,6 +7434,986 @@
 - try: Which number is at the dot? (picture: number line from 20 to 70 by 5, dot on a hidden number)
   - then: The marks go up by 5. Count along. The dot is at 35.
 - remember: Find the size of each jump first. (picture: number line from 0 to 100 by 10)
+
+## M-2-B1 B.1 Add within 100, no regrouping
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 21 plus 4 equals what?
+- Picture: 21 + 4 = □
+- Options: **25** | 26 | 61
+- Answer: 25
+- Explanation, spoken: Add the ones: 1 plus 4 is 5. The tens stay the same. The answer is 25.
+- Explanation, shown: Add the ones: 1 plus 4 is 5. / The tens stay the same. / The answer is 25.
+- Explanation picture: 21 + 4 = 25
+
+**Seed 2** (choice, look)
+
+- On screen: 33 plus 5 equals what?
+- Picture: 33 + 5 = □
+- Options: 28 | 37 | **38**
+- Answer: 38
+- Explanation, spoken: Add the ones: 3 plus 5 is 8. The tens stay the same. The answer is 38.
+- Explanation, shown: Add the ones: 3 plus 5 is 8. / The tens stay the same. / The answer is 38.
+- Explanation picture: 33 + 5 = 38
+
+**Seed 3** (choice, look)
+
+- On screen: 67 plus 1 equals what?
+- Picture: 67 + 1 = □
+- Options: 58 | **68** | 78
+- Answer: 68
+- Explanation, spoken: Add the ones: 7 plus 1 is 8. The tens stay the same. The answer is 68.
+- Explanation, shown: Add the ones: 7 plus 1 is 8. / The tens stay the same. / The answer is 68.
+- Explanation picture: 67 + 1 = 68
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 21 plus 38 equals what?
+- Picture: 21 + 38 = □
+- Options: **59** | 60 | 69
+- Answer: 59
+- Explanation, spoken: Add the ones: 1 plus 8 is 9. Add the tens: 2 plus 3 is 5. The answer is 59.
+- Explanation, shown: Add the ones: 1 plus 8 is 9. / Add the tens: 2 plus 3 is 5. / The answer is 59.
+- Explanation picture: 21 + 38 = 59
+
+**Seed 2** (choice, look)
+
+- On screen: 73 plus 24 equals what?
+- Picture: 73 + 24 = □
+- Options: 96 | **97** | 98
+- Answer: 97
+- Explanation, spoken: Add the ones: 3 plus 4 is 7. Add the tens: 7 plus 2 is 9. The answer is 97.
+- Explanation, shown: Add the ones: 3 plus 4 is 7. / Add the tens: 7 plus 2 is 9. / The answer is 97.
+- Explanation picture: 73 + 24 = 97
+
+**Seed 3** (choice, look)
+
+- On screen: 53 plus 11 equals what?
+- Picture: 53 + 11 = □
+- Options: 54 | 63 | **64**
+- Answer: 64
+- Explanation, spoken: Add the ones: 3 plus 1 is 4. Add the tens: 5 plus 1 is 6. The answer is 64.
+- Explanation, shown: Add the ones: 3 plus 1 is 4. / Add the tens: 5 plus 1 is 6. / The answer is 64.
+- Explanation picture: 53 + 11 = 64
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 11 plus 5 equals what?
+- Picture: 11 + 5 = □
+- Answer: type 16
+- Explanation, spoken: Add the ones: 1 plus 5 is 6. The tens stay the same. The answer is 16.
+- Explanation, shown: Add the ones: 1 plus 5 is 6. / The tens stay the same. / The answer is 16.
+- Explanation picture: 11 + 5 = 16
+
+**Seed 2** (numberPad, look)
+
+- On screen: 36 plus 3 equals what?
+- Picture: 36 + 3 = □
+- Answer: type 39
+- Explanation, spoken: Add the ones: 6 plus 3 is 9. The tens stay the same. The answer is 39.
+- Explanation, shown: Add the ones: 6 plus 3 is 9. / The tens stay the same. / The answer is 39.
+- Explanation picture: 36 + 3 = 39
+
+**Seed 3** (numberPad, look)
+
+- On screen: 14 plus 5 equals what?
+- Picture: 14 + 5 = □
+- Answer: type 19
+- Explanation, spoken: Add the ones: 4 plus 5 is 9. The tens stay the same. The answer is 19.
+- Explanation, shown: Add the ones: 4 plus 5 is 9. / The tens stay the same. / The answer is 19.
+- Explanation picture: 14 + 5 = 19
+
+### Lesson
+
+- see: To add big numbers, add the ones, then add the tens. (picture: 42 + 35)
+- watch: 42 plus 35. Add the ones: 2 plus 5 is 7. Add the tens: 4 plus 3 is 7. The answer is 77. (picture: 42 + 35 = 77)
+- try: 51 plus 27 equals what? (picture: 51 + 27 = □)
+  - then: Add the ones: 1 plus 7 is 8. Add the tens: 5 plus 2 is 7. The answer is 78.
+- remember: Ones with ones, tens with tens. (picture: 42 + 35 = 77)
+
+## M-2-B2 B.2 Add within 100, regrouping
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 52 plus 9 equals what?
+- Picture: 52 + 9 = □
+- Options: 51 | 60 | **61**
+- Answer: 61
+- Explanation, spoken: Add the ones: 2 plus 9 is 11. That is 1 ten and 1 one. The new ten makes 6 tens. The answer is 61.
+- Explanation, shown: Add the ones: 2 plus 9 is 11. That is 1 ten and 1 one. / The new ten makes 6 tens. / The answer is 61.
+- Explanation picture: 52 + 9 = 61
+
+**Seed 2** (choice, look)
+
+- On screen: 69 plus 3 equals what?
+- Picture: 69 + 3 = □
+- Options: **72** | 73 | 82
+- Answer: 72
+- Explanation, spoken: Add the ones: 9 plus 3 is 12. That is 1 ten and 2 ones. The new ten makes 7 tens. The answer is 72.
+- Explanation, shown: Add the ones: 9 plus 3 is 12. That is 1 ten and 2 ones. / The new ten makes 7 tens. / The answer is 72.
+- Explanation picture: 69 + 3 = 72
+
+**Seed 3** (choice, look)
+
+- On screen: 49 plus 2 equals what?
+- Picture: 49 + 2 = □
+- Options: **51** | 61 | 69
+- Answer: 51
+- Explanation, spoken: Add the ones: 9 plus 2 is 11. That is 1 ten and 1 one. The new ten makes 5 tens. The answer is 51.
+- Explanation, shown: Add the ones: 9 plus 2 is 11. That is 1 ten and 1 one. / The new ten makes 5 tens. / The answer is 51.
+- Explanation picture: 49 + 2 = 51
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 46 plus 44 equals what?
+- Picture: 46 + 44 = □
+- Options: **90** | 91 | 100
+- Answer: 90
+- Explanation, spoken: Add the ones: 6 plus 4 is 10. That is 1 ten and 0 ones. Add the tens: 4 plus 4 plus 1 more is 9. The answer is 90.
+- Explanation, shown: Add the ones: 6 plus 4 is 10. That is 1 ten and 0 ones. / Add the tens: 4 plus 4 plus 1 more is 9. / The answer is 90.
+- Explanation picture: 46 + 44 = 90
+
+**Seed 2** (choice, look)
+
+- On screen: 33 plus 48 equals what?
+- Picture: 33 + 48 = □
+- Options: 71 | 80 | **81**
+- Answer: 81
+- Explanation, spoken: Add the ones: 3 plus 8 is 11. That is 1 ten and 1 one. Add the tens: 3 plus 4 plus 1 more is 8. The answer is 81.
+- Explanation, shown: Add the ones: 3 plus 8 is 11. That is 1 ten and 1 one. / Add the tens: 3 plus 4 plus 1 more is 8. / The answer is 81.
+- Explanation picture: 33 + 48 = 81
+
+**Seed 3** (choice, look)
+
+- On screen: 67 plus 13 equals what?
+- Picture: 67 + 13 = □
+- Options: 70 | **80** | 81
+- Answer: 80
+- Explanation, spoken: Add the ones: 7 plus 3 is 10. That is 1 ten and 0 ones. Add the tens: 6 plus 1 plus 1 more is 8. The answer is 80.
+- Explanation, shown: Add the ones: 7 plus 3 is 10. That is 1 ten and 0 ones. / Add the tens: 6 plus 1 plus 1 more is 8. / The answer is 80.
+- Explanation picture: 67 + 13 = 80
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 88 plus 9 equals what?
+- Picture: 88 + 9 = □
+- Answer: type 97
+- Explanation, spoken: Add the ones: 8 plus 9 is 17. That is 1 ten and 7 ones. The new ten makes 9 tens. The answer is 97.
+- Explanation, shown: Add the ones: 8 plus 9 is 17. That is 1 ten and 7 ones. / The new ten makes 9 tens. / The answer is 97.
+- Explanation picture: 88 + 9 = 97
+
+**Seed 2** (numberPad, look)
+
+- On screen: 53 plus 8 equals what?
+- Picture: 53 + 8 = □
+- Answer: type 61
+- Explanation, spoken: Add the ones: 3 plus 8 is 11. That is 1 ten and 1 one. The new ten makes 6 tens. The answer is 61.
+- Explanation, shown: Add the ones: 3 plus 8 is 11. That is 1 ten and 1 one. / The new ten makes 6 tens. / The answer is 61.
+- Explanation picture: 53 + 8 = 61
+
+**Seed 3** (numberPad, look)
+
+- On screen: 16 plus 7 equals what?
+- Picture: 16 + 7 = □
+- Answer: type 23
+- Explanation, spoken: Add the ones: 6 plus 7 is 13. That is 1 ten and 3 ones. The new ten makes 2 tens. The answer is 23.
+- Explanation, shown: Add the ones: 6 plus 7 is 13. That is 1 ten and 3 ones. / The new ten makes 2 tens. / The answer is 23.
+- Explanation picture: 16 + 7 = 23
+
+### Lesson
+
+- see: When the ones make ten or more, they make a new ten. (picture: 27 + 5)
+- watch: 27 plus 5. Add the ones: 7 plus 5 is 12. That is 1 ten and 2 ones. The new ten makes 3 tens. The answer is 32. (picture: 27 + 5 = 32)
+- try: 38 plus 24 equals what? (picture: 38 + 24 = □)
+  - then: Add the ones: 8 plus 4 is 12. That is 1 ten and 2 ones. Add the tens: 3 plus 2 plus 1 more is 6. The answer is 62.
+- remember: Ten ones make a new ten. (picture: 27 + 5 = 32)
+
+## M-2-B3 B.3 Subtract within 100, no regrouping
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 97 minus 3 equals what?
+- Picture: 97 - 3 = □
+- Options: 93 | **94** | 104
+- Answer: 94
+- Explanation, spoken: Take away the ones: 7 minus 3 is 4. The tens stay the same. The answer is 94.
+- Explanation, shown: Take away the ones: 7 minus 3 is 4. / The tens stay the same. / The answer is 94.
+- Explanation picture: 97 - 3 = 94
+
+**Seed 2** (choice, look)
+
+- On screen: 79 minus 3 equals what?
+- Picture: 79 - 3 = □
+- Options: **76** | 77 | 86
+- Answer: 76
+- Explanation, spoken: Take away the ones: 9 minus 3 is 6. The tens stay the same. The answer is 76.
+- Explanation, shown: Take away the ones: 9 minus 3 is 6. / The tens stay the same. / The answer is 76.
+- Explanation picture: 79 - 3 = 76
+
+**Seed 3** (choice, look)
+
+- On screen: 77 minus 1 equals what?
+- Picture: 77 - 1 = □
+- Options: 66 | **76** | 77
+- Answer: 76
+- Explanation, spoken: Take away the ones: 7 minus 1 is 6. The tens stay the same. The answer is 76.
+- Explanation, shown: Take away the ones: 7 minus 1 is 6. / The tens stay the same. / The answer is 76.
+- Explanation picture: 77 - 1 = 76
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 97 minus 33 equals what?
+- Picture: 97 - 33 = □
+- Options: 63 | **64** | 74
+- Answer: 64
+- Explanation, spoken: Take away the ones: 7 minus 3 is 4. Take away the tens: 9 minus 3 is 6. The answer is 64.
+- Explanation, shown: Take away the ones: 7 minus 3 is 4. / Take away the tens: 9 minus 3 is 6. / The answer is 64.
+- Explanation picture: 97 - 33 = 64
+
+**Seed 2** (choice, look)
+
+- On screen: 79 minus 36 equals what?
+- Picture: 79 - 36 = □
+- Options: **43** | 44 | 53
+- Answer: 43
+- Explanation, spoken: Take away the ones: 9 minus 6 is 3. Take away the tens: 7 minus 3 is 4. The answer is 43.
+- Explanation, shown: Take away the ones: 9 minus 6 is 3. / Take away the tens: 7 minus 3 is 4. / The answer is 43.
+- Explanation picture: 79 - 36 = 43
+
+**Seed 3** (choice, look)
+
+- On screen: 77 minus 14 equals what?
+- Picture: 77 - 14 = □
+- Options: 53 | **63** | 64
+- Answer: 63
+- Explanation, spoken: Take away the ones: 7 minus 4 is 3. Take away the tens: 7 minus 1 is 6. The answer is 63.
+- Explanation, shown: Take away the ones: 7 minus 4 is 3. / Take away the tens: 7 minus 1 is 6. / The answer is 63.
+- Explanation picture: 77 - 14 = 63
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 77 minus 4 equals what?
+- Picture: 77 - 4 = □
+- Answer: type 73
+- Explanation, spoken: Take away the ones: 7 minus 4 is 3. The tens stay the same. The answer is 73.
+- Explanation, shown: Take away the ones: 7 minus 4 is 3. / The tens stay the same. / The answer is 73.
+- Explanation picture: 77 - 4 = 73
+
+**Seed 2** (numberPad, look)
+
+- On screen: 46 minus 3 equals what?
+- Picture: 46 - 3 = □
+- Answer: type 43
+- Explanation, spoken: Take away the ones: 6 minus 3 is 3. The tens stay the same. The answer is 43.
+- Explanation, shown: Take away the ones: 6 minus 3 is 3. / The tens stay the same. / The answer is 43.
+- Explanation picture: 46 - 3 = 43
+
+**Seed 3** (numberPad, look)
+
+- On screen: 59 minus 5 equals what?
+- Picture: 59 - 5 = □
+- Answer: type 54
+- Explanation, spoken: Take away the ones: 9 minus 5 is 4. The tens stay the same. The answer is 54.
+- Explanation, shown: Take away the ones: 9 minus 5 is 4. / The tens stay the same. / The answer is 54.
+- Explanation picture: 59 - 5 = 54
+
+### Lesson
+
+- see: To subtract big numbers, take away the ones, then the tens. (picture: 68 - 25)
+- watch: 68 minus 25. Take away the ones: 8 minus 5 is 3. Take away the tens: 6 minus 2 is 4. The answer is 43. (picture: 68 - 25 = 43)
+- try: 79 minus 34 equals what? (picture: 79 - 34 = □)
+  - then: Take away the ones: 9 minus 4 is 5. Take away the tens: 7 minus 3 is 4. The answer is 45.
+- remember: Ones from ones, tens from tens. (picture: 68 - 25 = 43)
+
+## M-2-B4 B.4 Subtract within 100, regrouping
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 70 minus 1 equals what?
+- Picture: 70 - 1 = □
+- Options: 68 | **69** | 79
+- Answer: 69
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. Now there are 6 tens. The answer is 69.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. / Now there are 6 tens. / The answer is 69.
+- Explanation picture: 70 - 1 = 69
+
+**Seed 2** (choice, look)
+
+- On screen: 43 minus 5 equals what?
+- Picture: 43 - 5 = □
+- Options: 28 | 37 | **38**
+- Answer: 38
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 13 minus 5 is 8. Now there are 3 tens. The answer is 38.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 13 minus 5 is 8. / Now there are 3 tens. / The answer is 38.
+- Explanation picture: 43 - 5 = 38
+
+**Seed 3** (choice, look)
+
+- On screen: 81 minus 5 equals what?
+- Picture: 81 - 5 = □
+- Options: 66 | **76** | 84
+- Answer: 76
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6. Now there are 7 tens. The answer is 76.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6. / Now there are 7 tens. / The answer is 76.
+- Explanation picture: 81 - 5 = 76
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 70 minus 11 equals what?
+- Picture: 70 - 11 = □
+- Options: 58 | **59** | 69
+- Answer: 59
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. Now there are 6 tens. Take away the tens: 6 minus 1 is 5. The answer is 59.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. / Now there are 6 tens. Take away the tens: 6 minus 1 is 5. / The answer is 59.
+- Explanation picture: 70 - 11 = 59
+
+**Seed 2** (choice, look)
+
+- On screen: 60 minus 39 equals what?
+- Picture: 60 - 39 = □
+- Options: 11 | 20 | **21**
+- Answer: 21
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 10 minus 9 is 1. Now there are 5 tens. Take away the tens: 5 minus 3 is 2. The answer is 21.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 10 minus 9 is 1. / Now there are 5 tens. Take away the tens: 5 minus 3 is 2. / The answer is 21.
+- Explanation picture: 60 - 39 = 21
+
+**Seed 3** (choice, look)
+
+- On screen: 81 minus 49 equals what?
+- Picture: 81 - 49 = □
+- Options: 22 | **32** | 48
+- Answer: 32
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 11 minus 9 is 2. Now there are 7 tens. Take away the tens: 7 minus 4 is 3. The answer is 32.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 11 minus 9 is 2. / Now there are 7 tens. Take away the tens: 7 minus 4 is 3. / The answer is 32.
+- Explanation picture: 81 - 49 = 32
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 21 minus 5 equals what?
+- Picture: 21 - 5 = □
+- Answer: type 16
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6. Now there is 1 ten. The answer is 16.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 11 minus 5 is 6. / Now there is 1 ten. / The answer is 16.
+- Explanation picture: 21 - 5 = 16
+
+**Seed 2** (numberPad, look)
+
+- On screen: 63 minus 8 equals what?
+- Picture: 63 - 8 = □
+- Answer: type 55
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 13 minus 8 is 5. Now there are 5 tens. The answer is 55.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 13 minus 8 is 5. / Now there are 5 tens. / The answer is 55.
+- Explanation picture: 63 - 8 = 55
+
+**Seed 3** (numberPad, look)
+
+- On screen: 24 minus 5 equals what?
+- Picture: 24 - 5 = □
+- Answer: type 19
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 14 minus 5 is 9. Now there is 1 ten. The answer is 19.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 14 minus 5 is 9. / Now there is 1 ten. / The answer is 19.
+- Explanation picture: 24 - 5 = 19
+
+### Lesson
+
+- see: When there are not enough ones, break a ten into ten ones. (picture: 42 - 7)
+- watch: 42 minus 7. There are not enough ones. Break a ten into 10 ones. 12 minus 7 is 5. Now there are 3 tens. The answer is 35. (picture: 42 - 7 = 35)
+- try: 53 minus 26 equals what? (picture: 53 - 26 = □)
+  - then: There are not enough ones. Break a ten into 10 ones. 13 minus 6 is 7. Now there are 4 tens. Take away the tens: 4 minus 2 is 2. The answer is 27.
+- remember: Not enough ones? Break a ten. (picture: 42 - 7 = 35)
+
+## M-2-B5 B.5 Add within 1,000
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 602 plus 100 equals what?
+- Picture: 602 + 100 = □
+- Options: 701 | **702** | 802
+- Answer: 702
+- Explanation, spoken: Add the hundreds: 6 plus 1 is 7. The ones and tens stay the same. The answer is 702.
+- Explanation, shown: Add the hundreds: 6 plus 1 is 7. / The ones and tens stay the same. / The answer is 702.
+- Explanation picture: 602 + 100 = 702
+
+**Seed 2** (choice, look)
+
+- On screen: 687 plus 100 equals what?
+- Picture: 687 + 100 = □
+- Options: **787** | 788 | 887
+- Answer: 787
+- Explanation, spoken: Add the hundreds: 6 plus 1 is 7. The ones and tens stay the same. The answer is 787.
+- Explanation, shown: Add the hundreds: 6 plus 1 is 7. / The ones and tens stay the same. / The answer is 787.
+- Explanation picture: 687 + 100 = 787
+
+**Seed 3** (choice, look)
+
+- On screen: 676 plus 100 equals what?
+- Picture: 676 + 100 = □
+- Options: 676 | **776** | 876
+- Answer: 776
+- Explanation, spoken: Add the hundreds: 6 plus 1 is 7. The ones and tens stay the same. The answer is 776.
+- Explanation, shown: Add the hundreds: 6 plus 1 is 7. / The ones and tens stay the same. / The answer is 776.
+- Explanation picture: 676 + 100 = 776
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 602 plus 13 equals what?
+- Picture: 602 + 13 = □
+- Options: 614 | **615** | 715
+- Answer: 615
+- Explanation, spoken: Add the ones: 2 plus 3 is 5. Add the tens: 0 plus 1 is 1. The hundreds stay the same. The answer is 615.
+- Explanation, shown: Add the ones: 2 plus 3 is 5. / Add the tens: 0 plus 1 is 1. / The hundreds stay the same. / The answer is 615.
+- Explanation picture: 602 + 13 = 615
+
+**Seed 2** (choice, look)
+
+- On screen: 728 plus 170 equals what?
+- Picture: 728 + 170 = □
+- Options: 897 | **898** | 998
+- Answer: 898
+- Explanation, spoken: Add the tens: 2 plus 7 is 9. Add the hundreds: 7 plus 1 is 8. The ones stay the same. The answer is 898.
+- Explanation, shown: Add the tens: 2 plus 7 is 9. / Add the hundreds: 7 plus 1 is 8. / The ones stay the same. / The answer is 898.
+- Explanation picture: 728 + 170 = 898
+
+**Seed 3** (choice, look)
+
+- On screen: 311 plus 447 equals what?
+- Picture: 311 + 447 = □
+- Options: **758** | 759 | 858
+- Answer: 758
+- Explanation, spoken: Add the ones: 1 plus 7 is 8. Add the tens: 1 plus 4 is 5. Add the hundreds: 3 plus 4 is 7. The answer is 758.
+- Explanation, shown: Add the ones: 1 plus 7 is 8. / Add the tens: 1 plus 4 is 5. / Add the hundreds: 3 plus 4 is 7. / The answer is 758.
+- Explanation picture: 311 + 447 = 758
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 212 plus 329 equals what?
+- Picture: 212 + 329 = □
+- Answer: type 541
+- Explanation, spoken: Add the ones: 2 plus 9 is 11. That is 1 ten and 1 one. Add the tens: 1 plus 2 plus 1 more is 4. Add the hundreds: 2 plus 3 is 5. The answer is 541.
+- Explanation, shown: Add the ones: 2 plus 9 is 11. That is 1 ten and 1 one. / Add the tens: 1 plus 2 plus 1 more is 4. / Add the hundreds: 2 plus 3 is 5. / The answer is 541.
+- Explanation picture: 212 + 329 = 541
+
+**Seed 2** (numberPad, look)
+
+- On screen: 328 plus 435 equals what?
+- Picture: 328 + 435 = □
+- Answer: type 763
+- Explanation, spoken: Add the ones: 8 plus 5 is 13. That is 1 ten and 3 ones. Add the tens: 2 plus 3 plus 1 more is 6. Add the hundreds: 3 plus 4 is 7. The answer is 763.
+- Explanation, shown: Add the ones: 8 plus 5 is 13. That is 1 ten and 3 ones. / Add the tens: 2 plus 3 plus 1 more is 6. / Add the hundreds: 3 plus 4 is 7. / The answer is 763.
+- Explanation picture: 328 + 435 = 763
+
+**Seed 3** (numberPad, look)
+
+- On screen: 676 plus 41 equals what?
+- Picture: 676 + 41 = □
+- Answer: type 717
+- Explanation, spoken: Add the ones: 6 plus 1 is 7. Add the tens: 7 plus 4 is 11. That is 1 hundred and 1 ten. The new hundred makes 7 hundreds. The answer is 717.
+- Explanation, shown: Add the ones: 6 plus 1 is 7. / Add the tens: 7 plus 4 is 11. That is 1 hundred and 1 ten. / The new hundred makes 7 hundreds. / The answer is 717.
+- Explanation picture: 676 + 41 = 717
+
+### Lesson
+
+- see: Three-digit numbers add the same way: ones, then tens, then hundreds. (picture: 342 + 215)
+- watch: 342 plus 215. Add the ones: 2 plus 5 is 7. Add the tens: 4 plus 1 is 5. Add the hundreds: 3 plus 2 is 5. The answer is 557. (picture: 342 + 215 = 557)
+- try: 431 plus 200 equals what? (picture: 431 + 200 = □)
+  - then: Add the hundreds: 4 plus 2 is 6. The ones and tens stay the same. The answer is 631.
+- remember: Ones, then tens, then hundreds. (picture: 342 + 215 = 557)
+
+## M-2-B6 B.6 Subtract within 1,000
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 702 minus 100 equals what?
+- Picture: 702 - 100 = □
+- Options: 601 | **602** | 702
+- Answer: 602
+- Explanation, spoken: Take away the hundreds: 7 minus 1 is 6. The ones and tens stay the same. The answer is 602.
+- Explanation, shown: Take away the hundreds: 7 minus 1 is 6. / The ones and tens stay the same. / The answer is 602.
+- Explanation picture: 702 - 100 = 602
+
+**Seed 2** (choice, look)
+
+- On screen: 787 minus 200 equals what?
+- Picture: 787 - 200 = □
+- Options: **587** | 588 | 687
+- Answer: 587
+- Explanation, spoken: Take away the hundreds: 7 minus 2 is 5. The ones and tens stay the same. The answer is 587.
+- Explanation, shown: Take away the hundreds: 7 minus 2 is 5. / The ones and tens stay the same. / The answer is 587.
+- Explanation picture: 787 - 200 = 587
+
+**Seed 3** (choice, look)
+
+- On screen: 776 minus 100 equals what?
+- Picture: 776 - 100 = □
+- Options: 576 | **676** | 776
+- Answer: 676
+- Explanation, spoken: Take away the hundreds: 7 minus 1 is 6. The ones and tens stay the same. The answer is 676.
+- Explanation, shown: Take away the hundreds: 7 minus 1 is 6. / The ones and tens stay the same. / The answer is 676.
+- Explanation picture: 776 - 100 = 676
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 974 minus 260 equals what?
+- Picture: 974 - 260 = □
+- Options: 704 | **714** | 724
+- Answer: 714
+- Explanation, spoken: Take away the tens: 7 minus 6 is 1. Take away the hundreds: 9 minus 2 is 7. The ones stay the same. The answer is 714.
+- Explanation, shown: Take away the tens: 7 minus 6 is 1. / Take away the hundreds: 9 minus 2 is 7. / The ones stay the same. / The answer is 714.
+- Explanation picture: 974 - 260 = 714
+
+**Seed 2** (choice, look)
+
+- On screen: 599 minus 328 equals what?
+- Picture: 599 - 328 = □
+- Options: 171 | 261 | **271**
+- Answer: 271
+- Explanation, spoken: Take away the ones: 9 minus 8 is 1. Take away the tens: 9 minus 2 is 7. Take away the hundreds: 5 minus 3 is 2. The answer is 271.
+- Explanation, shown: Take away the ones: 9 minus 8 is 1. / Take away the tens: 9 minus 2 is 7. / Take away the hundreds: 5 minus 3 is 2. / The answer is 271.
+- Explanation picture: 599 - 328 = 271
+
+**Seed 3** (choice, look)
+
+- On screen: 776 minus 45 equals what?
+- Picture: 776 - 45 = □
+- Options: 631 | **731** | 831
+- Answer: 731
+- Explanation, spoken: Take away the ones: 6 minus 5 is 1. Take away the tens: 7 minus 4 is 3. The hundreds stay the same. The answer is 731.
+- Explanation, shown: Take away the ones: 6 minus 5 is 1. / Take away the tens: 7 minus 4 is 3. / The hundreds stay the same. / The answer is 731.
+- Explanation picture: 776 - 45 = 731
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 690 minus 651 equals what?
+- Picture: 690 - 651 = □
+- Answer: type 39
+- Explanation, spoken: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. Now there are 8 tens. Take away the tens: 8 minus 5 is 3. Take away the hundreds: 6 minus 6 is 0. The answer is 39.
+- Explanation, shown: There are not enough ones. Break a ten into 10 ones. 10 minus 1 is 9. / Now there are 8 tens. Take away the tens: 8 minus 5 is 3. / Take away the hundreds: 6 minus 6 is 0. / The answer is 39.
+- Explanation picture: 690 - 651 = 39
+
+**Seed 2** (numberPad, look)
+
+- On screen: 828 minus 190 equals what?
+- Picture: 828 - 190 = □
+- Answer: type 638
+- Explanation, spoken: There are not enough tens. Break a hundred into 10 tens. 12 minus 9 is 3. Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6. The ones stay the same. The answer is 638.
+- Explanation, shown: There are not enough tens. Break a hundred into 10 tens. 12 minus 9 is 3. / Now there are 7 hundreds. Take away the hundreds: 7 minus 1 is 6. / The ones stay the same. / The answer is 638.
+- Explanation picture: 828 - 190 = 638
+
+**Seed 3** (numberPad, look)
+
+- On screen: 356 minus 85 equals what?
+- Picture: 356 - 85 = □
+- Answer: type 271
+- Explanation, spoken: Take away the ones: 6 minus 5 is 1. There are not enough tens. Break a hundred into 10 tens. 15 minus 8 is 7. Now there are 2 hundreds. The answer is 271.
+- Explanation, shown: Take away the ones: 6 minus 5 is 1. / There are not enough tens. Break a hundred into 10 tens. 15 minus 8 is 7. / Now there are 2 hundreds. / The answer is 271.
+- Explanation picture: 356 - 85 = 271
+
+### Lesson
+
+- see: Three-digit numbers subtract the same way: ones, then tens, then hundreds. (picture: 568 - 245)
+- watch: 568 minus 245. Take away the ones: 8 minus 5 is 3. Take away the tens: 6 minus 4 is 2. Take away the hundreds: 5 minus 2 is 3. The answer is 323. (picture: 568 - 245 = 323)
+- try: 749 minus 300 equals what? (picture: 749 - 300 = □)
+  - then: Take away the hundreds: 7 minus 3 is 4. The ones and tens stay the same. The answer is 449.
+- remember: Ones, then tens, then hundreds. (picture: 568 - 245 = 323)
+
+## M-2-B7 B.7 Add or subtract 10 or 100
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 159 minus 10 equals what?
+- Picture: 159 - 10 = □
+- Options: 49 | 139 | **149**
+- Answer: 149
+- Explanation, spoken: Take away the tens: 5 minus 1 is 4. The ones and hundreds stay the same. The answer is 149.
+- Explanation, shown: Take away the tens: 5 minus 1 is 4. / The ones and hundreds stay the same. / The answer is 149.
+- Explanation picture: 159 - 10 = 149
+
+**Seed 2** (choice, look)
+
+- On screen: 335 minus 10 equals what?
+- Picture: 335 - 10 = □
+- Options: 225 | 324 | **325**
+- Answer: 325
+- Explanation, spoken: Take away the tens: 3 minus 1 is 2. The ones and hundreds stay the same. The answer is 325.
+- Explanation, shown: Take away the tens: 3 minus 1 is 2. / The ones and hundreds stay the same. / The answer is 325.
+- Explanation picture: 335 - 10 = 325
+
+**Seed 3** (choice, look)
+
+- On screen: 150 minus 10 equals what?
+- Picture: 150 - 10 = □
+- Options: 40 | 139 | **140**
+- Answer: 140
+- Explanation, spoken: Take away the tens: 5 minus 1 is 4. The ones and hundreds stay the same. The answer is 140.
+- Explanation, shown: Take away the tens: 5 minus 1 is 4. / The ones and hundreds stay the same. / The answer is 140.
+- Explanation picture: 150 - 10 = 140
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 203 minus 100 equals what?
+- Picture: 203 - 100 = □
+- Options: 102 | **103** | 203
+- Answer: 103
+- Explanation, spoken: Take away the hundreds: 2 minus 1 is 1. The ones and tens stay the same. The answer is 103.
+- Explanation, shown: Take away the hundreds: 2 minus 1 is 1. / The ones and tens stay the same. / The answer is 103.
+- Explanation picture: 203 - 100 = 103
+
+**Seed 2** (choice, look)
+
+- On screen: 460 minus 100 equals what?
+- Picture: 460 - 100 = □
+- Options: **360** | 361 | 460
+- Answer: 360
+- Explanation, spoken: Take away the hundreds: 4 minus 1 is 3. The ones and tens stay the same. The answer is 360.
+- Explanation, shown: Take away the hundreds: 4 minus 1 is 3. / The ones and tens stay the same. / The answer is 360.
+- Explanation picture: 460 - 100 = 360
+
+**Seed 3** (choice, look)
+
+- On screen: 231 minus 100 equals what?
+- Picture: 231 - 100 = □
+- Options: 31 | **131** | 231
+- Answer: 131
+- Explanation, spoken: Take away the hundreds: 2 minus 1 is 1. The ones and tens stay the same. The answer is 131.
+- Explanation, shown: Take away the hundreds: 2 minus 1 is 1. / The ones and tens stay the same. / The answer is 131.
+- Explanation picture: 231 - 100 = 131
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 105 minus 10 equals what?
+- Picture: 105 - 10 = □
+- Answer: type 95
+- Explanation, spoken: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. Now there are no hundreds. The ones stay the same. The answer is 95.
+- Explanation, shown: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. / Now there are no hundreds. / The ones stay the same. / The answer is 95.
+- Explanation picture: 105 - 10 = 95
+
+**Seed 2** (numberPad, look)
+
+- On screen: 302 minus 10 equals what?
+- Picture: 302 - 10 = □
+- Answer: type 292
+- Explanation, spoken: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. Now there are 2 hundreds. The ones stay the same. The answer is 292.
+- Explanation, shown: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. / Now there are 2 hundreds. / The ones stay the same. / The answer is 292.
+- Explanation picture: 302 - 10 = 292
+
+**Seed 3** (numberPad, look)
+
+- On screen: 104 minus 10 equals what?
+- Picture: 104 - 10 = □
+- Answer: type 94
+- Explanation, spoken: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. Now there are no hundreds. The ones stay the same. The answer is 94.
+- Explanation, shown: There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9. / Now there are no hundreds. / The ones stay the same. / The answer is 94.
+- Explanation picture: 104 - 10 = 94
+
+### Lesson
+
+- see: Adding 10 changes the tens digit. Adding 100 changes the hundreds digit. (picture: 2 hundreds, 4 tens, 3 ones)
+- watch: 243 plus 10. Add the tens: 4 plus 1 is 5. The ones and hundreds stay the same. The answer is 253. (picture: 243 + 10 = 253)
+- try: 567 minus 100 equals what? (picture: 567 - 100 = □)
+  - then: Take away the hundreds: 5 minus 1 is 4. The ones and tens stay the same. The answer is 467.
+- remember: Change only the place you add to. (picture: 243 + 10 = 253)
+
+## M-2-B8 B.8 Arrays and repeated addition
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many are there in all?
+- Picture: 3 rows of 2 ⚽
+- Options: 4 | 5 | **6**
+- Answer: 6
+- Explanation, spoken: There are 3 rows with 2 in each row. 2 plus 2 plus 2 is 6.
+- Explanation, shown: There are 3 rows with 2 in each row. / 2 + 2 + 2 = 6.
+- Explanation picture: 3 rows of 2 ⚽
+
+**Seed 2** (choice, look)
+
+- On screen: How many are there in all?
+- Picture: 3 rows of 2 🎈
+- Options: 5 | **6** | 7
+- Answer: 6
+- Explanation, spoken: There are 3 rows with 2 in each row. 2 plus 2 plus 2 is 6.
+- Explanation, shown: There are 3 rows with 2 in each row. / 2 + 2 + 2 = 6.
+- Explanation picture: 3 rows of 2 🎈
+
+**Seed 3** (choice, look)
+
+- On screen: How many are there in all?
+- Picture: 3 rows of 2 🍪
+- Options: **6** | 7 | 8
+- Answer: 6
+- Explanation, spoken: There are 3 rows with 2 in each row. 2 plus 2 plus 2 is 6.
+- Explanation, shown: There are 3 rows with 2 in each row. / 2 + 2 + 2 = 6.
+- Explanation picture: 3 rows of 2 🍪
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which adding matches the rows?
+- Picture: 3 rows of 2 ⚽
+- Options: **2 + 2 + 2** | 3 + 3 | 2 + 2 + 2 + 2
+- Answer: 2 + 2 + 2
+- Explanation, spoken: There are 3 rows with 2 in each row. 2 plus 2 plus 2 is 6.
+- Explanation, shown: There are 3 rows with 2 in each row. / 2 + 2 + 2 = 6.
+- Explanation picture: 3 rows of 2 ⚽
+
+**Seed 2** (choice, look)
+
+- On screen: Which adding matches the rows?
+- Picture: 2 rows of 4 🐢
+- Options: 4 + 4 + 4 | **4 + 4** | 2 + 2 + 2 + 2
+- Answer: 4 + 4
+- Explanation, spoken: There are 2 rows with 4 in each row. 4 plus 4 is 8.
+- Explanation, shown: There are 2 rows with 4 in each row. / 4 + 4 = 8.
+- Explanation picture: 2 rows of 4 🐢
+
+**Seed 3** (choice, look)
+
+- On screen: Which adding matches the rows?
+- Picture: 3 rows of 2 🍪
+- Options: 2 + 2 + 2 + 2 | 3 + 3 | **2 + 2 + 2**
+- Answer: 2 + 2 + 2
+- Explanation, spoken: There are 3 rows with 2 in each row. 2 plus 2 plus 2 is 6.
+- Explanation, shown: There are 3 rows with 2 in each row. / 2 + 2 + 2 = 6.
+- Explanation picture: 3 rows of 2 🍪
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: How many are there in all?
+- Picture: 4 rows of 2 ⚽
+- Answer: type 8
+- Explanation, spoken: There are 4 rows with 2 in each row. 2 plus 2 plus 2 plus 2 is 8.
+- Explanation, shown: There are 4 rows with 2 in each row. / 2 + 2 + 2 + 2 = 8.
+- Explanation picture: 4 rows of 2 ⚽
+
+**Seed 2** (numberPad, look)
+
+- On screen: How many are there in all?
+- Picture: 4 rows of 3 🎈
+- Answer: type 12
+- Explanation, spoken: There are 4 rows with 3 in each row. 3 plus 3 plus 3 plus 3 is 12.
+- Explanation, shown: There are 4 rows with 3 in each row. / 3 + 3 + 3 + 3 = 12.
+- Explanation picture: 4 rows of 3 🎈
+
+**Seed 3** (numberPad, look)
+
+- On screen: How many are there in all?
+- Picture: 4 rows of 2 🍪
+- Answer: type 8
+- Explanation, spoken: There are 4 rows with 2 in each row. 2 plus 2 plus 2 plus 2 is 8.
+- Explanation, shown: There are 4 rows with 2 in each row. / 2 + 2 + 2 + 2 = 8.
+- Explanation picture: 4 rows of 2 🍪
+
+### Lesson
+
+- see: An array has rows with the same number in each row. (picture: 2 rows of 3 ⭐)
+- watch: There are 2 rows with 3 in each row. 3 + 3 = 6. (picture: 2 rows of 3 ⭐)
+- try: How many are there in all? (picture: 3 rows of 2 ⭐)
+  - then: There are 3 rows with 2 in each row. 2 + 2 + 2 = 6.
+- remember: Add one row at a time. (picture: 2 rows of 3 ⭐)
+
+## M-2-B9 B.9 One-step word problems to 100
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 61 cookies are on the table. 22 more are in the box. How many cookies are there in all?
+- Options: 73 | 82 | **83**
+- Answer: 83
+- Explanation, spoken: In all means add. 61 plus 22 is 83.
+- Explanation, shown: In all means add. / 61 plus 22 is 83.
+- Explanation picture: 61 + 22 = 83
+
+**Seed 2** (choice, look)
+
+- On screen: 36 flowers are on the table. 52 more are in the box. How many flowers are there in all?
+- Options: **88** | 89 | 98
+- Answer: 88
+- Explanation, spoken: In all means add. 36 plus 52 is 88.
+- Explanation, shown: In all means add. / 36 plus 52 is 88.
+- Explanation picture: 36 + 52 = 88
+
+**Seed 3** (choice, look)
+
+- On screen: 23 flowers are on the table. 28 more are in the box. How many flowers are there in all?
+- Options: 5 | **51** | 52
+- Answer: 51
+- Explanation, spoken: In all means add. 23 plus 28 is 51.
+- Explanation, shown: In all means add. / 23 plus 28 is 51.
+- Explanation picture: 23 + 28 = 51
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: There are 79 cookies. Mia takes 38. How many are left?
+- Options: 31 | 40 | **41**
+- Answer: 41
+- Explanation, spoken: Taking away means subtract. 79 minus 38 is 41.
+- Explanation, shown: Taking away means subtract. / 79 minus 38 is 41.
+- Explanation picture: 79 - 38 = 41
+
+**Seed 2** (choice, look)
+
+- On screen: There are 51 flowers. Sam takes 39. How many are left?
+- Options: **12** | 22 | 90
+- Answer: 12
+- Explanation, spoken: Taking away means subtract. 51 minus 39 is 12.
+- Explanation, shown: Taking away means subtract. / 51 minus 39 is 12.
+- Explanation picture: 51 - 39 = 12
+
+**Seed 3** (choice, look)
+
+- On screen: There are 37 flowers. Mia takes 16. How many are left?
+- Options: 11 | **21** | 31
+- Answer: 21
+- Explanation, spoken: Taking away means subtract. 37 minus 16 is 21.
+- Explanation, shown: Taking away means subtract. / 37 minus 16 is 21.
+- Explanation picture: 37 - 16 = 21
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: Max has 70 balloons. Mia has 50. How many more does Max have?
+- Answer: type 20
+- Explanation, spoken: How many more means subtract. 70 minus 50 is 20.
+- Explanation, shown: How many more means subtract. / 70 minus 50 is 20.
+- Explanation picture: 70 - 50 = 20
+
+**Seed 2** (numberPad, look)
+
+- On screen: Sam has 62 balls. Leo has 27. How many more does Sam have?
+- Answer: type 35
+- Explanation, spoken: How many more means subtract. 62 minus 27 is 35.
+- Explanation, shown: How many more means subtract. / 62 minus 27 is 35.
+- Explanation picture: 62 - 27 = 35
+
+**Seed 3** (numberPad, look)
+
+- On screen: Leo has 61 flowers. Ava has 18. How many more does Leo have?
+- Answer: type 43
+- Explanation, spoken: How many more means subtract. 61 minus 18 is 43.
+- Explanation, shown: How many more means subtract. / 61 minus 18 is 43.
+- Explanation picture: 61 - 18 = 43
+
+### Lesson
+
+- see: A story tells us what to do. Getting more means add. Giving away means subtract. (picture: 24 + 15)
+- watch: Sam has 24 apples. Sam gets 15 more. How many apples does Sam have now? Getting more means add. 24 plus 15 is 39. (picture: 24 + 15 = 39)
+- try: Mia has 48 apples. Mia gives away 12. How many apples are left? (picture: 48 - 12 = □)
+  - then: Giving away means subtract. 48 minus 12 is 36.
+- remember: Listen for joining or taking away. (picture: 48 - 12 = 36)
+
+## M-2-B10 B.10 Two-step word problems
+
+### Level 1
+
+**Seed 1** (numberPad, look)
+
+- On screen: Zoe has 21 bananas. Zoe gets 2 more. Then Zoe gets 12 more. How many bananas does Zoe have now?
+- Answer: type 35
+- Explanation, spoken: First step: 21 plus 2 is 23. Second step: 23 plus 12 is 35.
+- Explanation, shown: First step: 21 plus 2 is 23. / Second step: 23 plus 12 is 35.
+- Explanation picture: 21 + 2 = 23 and 23 + 12 = 35
+
+**Seed 2** (numberPad, look)
+
+- On screen: Ava has 24 bananas. Ava gets 8 more. Then Ava gets 7 more. How many bananas does Ava have now?
+- Answer: type 39
+- Explanation, spoken: First step: 24 plus 8 is 32. Second step: 32 plus 7 is 39.
+- Explanation, shown: First step: 24 plus 8 is 32. / Second step: 32 plus 7 is 39.
+- Explanation picture: 24 + 8 = 32 and 32 + 7 = 39
+
+**Seed 3** (numberPad, look)
+
+- On screen: Sam has 23 strawberries. Sam gets 2 more. Then Sam gets 10 more. How many strawberries does Sam have now?
+- Answer: type 35
+- Explanation, spoken: First step: 23 plus 2 is 25. Second step: 25 plus 10 is 35.
+- Explanation, shown: First step: 23 plus 2 is 25. / Second step: 25 plus 10 is 35.
+- Explanation picture: 23 + 2 = 25 and 25 + 10 = 35
+
+### Level 2
+
+**Seed 1** (numberPad, look)
+
+- On screen: Zoe has 21 bananas. Zoe gets 2 more. Then Zoe gives away 12. How many bananas does Zoe have now?
+- Answer: type 11
+- Explanation, spoken: First step: 21 plus 2 is 23. Second step: 23 minus 12 is 11.
+- Explanation, shown: First step: 21 plus 2 is 23. / Second step: 23 minus 12 is 11.
+- Explanation picture: 21 + 2 = 23 and 23 - 12 = 11
+
+**Seed 2** (numberPad, look)
+
+- On screen: Ava has 24 bananas. Ava gets 8 more. Then Ava gives away 7. How many bananas does Ava have now?
+- Answer: type 25
+- Explanation, spoken: First step: 24 plus 8 is 32. Second step: 32 minus 7 is 25.
+- Explanation, shown: First step: 24 plus 8 is 32. / Second step: 32 minus 7 is 25.
+- Explanation picture: 24 + 8 = 32 and 32 - 7 = 25
+
+**Seed 3** (numberPad, look)
+
+- On screen: Sam has 23 strawberries. Sam gets 2 more. Then Sam gives away 10. How many strawberries does Sam have now?
+- Answer: type 15
+- Explanation, spoken: First step: 23 plus 2 is 25. Second step: 25 minus 10 is 15.
+- Explanation, shown: First step: 23 plus 2 is 25. / Second step: 25 minus 10 is 15.
+- Explanation picture: 23 + 2 = 25 and 25 - 10 = 15
+
+### Lesson
+
+- see: Some stories have two steps. Do one step at a time. (picture: 6 + 4 + 3)
+- watch: Leo has 6 apples. Leo gets 4 more. Then Leo gets 3 more. How many apples does Leo have now? First step: 6 plus 4 is 10. Second step: 10 plus 3 is 13. (picture: 6 + 4 = 10 and 10 + 3 = 13)
+- try: Ava has 8 apples. Ava gets 5 more. Then Ava gives away 2. How many apples does Ava have now? (picture: 8 + 5 - 2 = □)
+  - then: First step: 8 plus 5 is 13. Second step: 13 minus 2 is 11.
+- remember: One step, then the next. (picture: 6 + 4 = 10 and 10 + 3 = 13)
 
 ## M-2-C1 C.1 Time to five minutes
 

@@ -1,0 +1,3231 @@
+{
+ "skillId": "M-2-B7",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "544 plus 10 equals what?",
+   "speak": [
+    {
+     "number": 544
+    },
+    "plus",
+    {
+     "number": 10
+    },
+    "equals what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "equation",
+   "parts": [
+    544,
+    "+",
+    10,
+    "=",
+    "blank"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Add the tens:",
+    {
+     "number": 4
+    },
+    "plus",
+    {
+     "number": 1
+    },
+    "is",
+    {
+     "number": 5
+    },
+    ".",
+    "The ones and hundreds stay the same.",
+    "The answer is",
+    {
+     "number": 554
+    },
+    "."
+   ],
+   "steps": [
+    "Add the tens: 4 plus 1 is 5.",
+    "The ones and hundreds stay the same.",
+    "The answer is 554."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     544,
+     "+",
+     10,
+     "=",
+     554
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "a": 544,
+   "b": 10,
+   "oracle": "add",
+   "options": [
+    544,
+    553,
+    554
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "544",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 544
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "553",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 553
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "554",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 554
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "skillId": "M-2-B7",
+  "level": 1,
+  "seed": 217,
+  "key": "M-2-B7|1|{\"a\":544,\"b\":10,\"oracle\":\"add\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "159 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 159
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      159,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 149
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 5 minus 1 is 4.",
+      "The ones and hundreds stay the same.",
+      "The answer is 149."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       159,
+       "-",
+       10,
+       "=",
+       149
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 159,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      49,
+      139,
+      149
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "49",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 49
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "139",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 139
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "149",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 149
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B7|1|{\"a\":159,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "335 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 335
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      335,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 3
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 325
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 3 minus 1 is 2.",
+      "The ones and hundreds stay the same.",
+      "The answer is 325."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       335,
+       "-",
+       10,
+       "=",
+       325
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 335,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      225,
+      324,
+      325
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "225",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 225
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "324",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 324
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "325",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 325
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B7|1|{\"a\":335,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "150 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 150
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      150,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 5 minus 1 is 4.",
+      "The ones and hundreds stay the same.",
+      "The answer is 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       150,
+       "-",
+       10,
+       "=",
+       140
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 150,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      40,
+      139,
+      140
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "139",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 139
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B7|1|{\"a\":150,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "320 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 320
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      320,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 310
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 2 minus 1 is 1.",
+      "The ones and hundreds stay the same.",
+      "The answer is 310."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       320,
+       "-",
+       10,
+       "=",
+       310
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 320,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      310,
+      311,
+      320
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "310",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 310
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "311",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 311
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "320",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 320
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B7|1|{\"a\":320,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "726 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 726
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      726,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 716
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 2 minus 1 is 1.",
+      "The ones and hundreds stay the same.",
+      "The answer is 716."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       726,
+       "-",
+       10,
+       "=",
+       716
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 726,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      716,
+      717,
+      816
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "716",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 716
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "717",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 717
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "816",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 816
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B7|1|{\"a\":726,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "162 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 162
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      162,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 152
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 6 minus 1 is 5.",
+      "The ones and hundreds stay the same.",
+      "The answer is 152."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       162,
+       "-",
+       10,
+       "=",
+       152
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 162,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      142,
+      152,
+      153
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "142",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 142
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "152",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 152
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "153",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 153
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B7|1|{\"a\":162,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "186 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 186
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      186,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 196
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 8 plus 1 is 9.",
+      "The ones and hundreds stay the same.",
+      "The answer is 196."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       186,
+       "+",
+       10,
+       "=",
+       196
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 186,
+     "b": 10,
+     "oracle": "add",
+     "options": [
+      96,
+      196,
+      296
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "96",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 96
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "196",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 196
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "296",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 296
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B7|1|{\"a\":186,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "626 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 626
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      626,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 636
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 2 plus 1 is 3.",
+      "The ones and hundreds stay the same.",
+      "The answer is 636."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       626,
+       "+",
+       10,
+       "=",
+       636
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 626,
+     "b": 10,
+     "oracle": "add",
+     "options": [
+      635,
+      636,
+      736
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "635",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 635
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "636",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 636
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "736",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 736
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B7|1|{\"a\":626,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "818 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 818
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      818,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 828
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 1 plus 1 is 2.",
+      "The ones and hundreds stay the same.",
+      "The answer is 828."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       818,
+       "+",
+       10,
+       "=",
+       828
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 818,
+     "b": 10,
+     "oracle": "add",
+     "options": [
+      818,
+      827,
+      828
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "818",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 818
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "827",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 827
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "828",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 828
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B7|1|{\"a\":818,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "978 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 978
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      978,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the tens:",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The ones and hundreds stay the same.",
+      "The answer is",
+      {
+       "number": 968
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the tens: 7 minus 1 is 6.",
+      "The ones and hundreds stay the same.",
+      "The answer is 968."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       978,
+       "-",
+       10,
+       "=",
+       968
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 978,
+     "b": 10,
+     "oracle": "subtract",
+     "options": [
+      868,
+      968,
+      978
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "868",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 868
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "968",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 968
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "978",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 978
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B7|1|{\"a\":978,\"b\":10,\"oracle\":\"subtract\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "203 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 203
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      203,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 103
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 2 minus 1 is 1.",
+      "The ones and tens stay the same.",
+      "The answer is 103."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       203,
+       "-",
+       100,
+       "=",
+       103
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 203,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      102,
+      103,
+      203
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "102",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 102
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "103",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 103
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "203",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 203
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B7|2|{\"a\":203,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "460 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 460
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      460,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 360
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 4 minus 1 is 3.",
+      "The ones and tens stay the same.",
+      "The answer is 360."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       460,
+       "-",
+       100,
+       "=",
+       360
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 460,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      360,
+      361,
+      460
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "360",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 360
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "361",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 361
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "460",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 460
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B7|2|{\"a\":460,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "231 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 231
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      231,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 131
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 2 minus 1 is 1.",
+      "The ones and tens stay the same.",
+      "The answer is 131."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       231,
+       "-",
+       100,
+       "=",
+       131
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 231,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      31,
+      131,
+      231
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "31",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 31
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "131",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 131
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "231",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 231
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B7|2|{\"a\":231,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "467 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 467
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      467,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 367
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 4 minus 1 is 3.",
+      "The ones and tens stay the same.",
+      "The answer is 367."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       467,
+       "-",
+       100,
+       "=",
+       367
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 467,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      367,
+      368,
+      467
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "367",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 367
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "368",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 368
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "467",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 467
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B7|2|{\"a\":467,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "818 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 818
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      818,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 718
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 8 minus 1 is 7.",
+      "The ones and tens stay the same.",
+      "The answer is 718."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       818,
+       "-",
+       100,
+       "=",
+       718
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 818,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      718,
+      719,
+      818
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "718",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 718
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "719",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 719
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "818",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 818
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B7|2|{\"a\":818,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "202 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 202
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      202,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 102
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 2 minus 1 is 1.",
+      "The ones and tens stay the same.",
+      "The answer is 102."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       202,
+       "-",
+       100,
+       "=",
+       102
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 202,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      2,
+      102,
+      112
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "102",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 102
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "112",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 112
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B7|2|{\"a\":202,\"b\":100,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "150 plus 100 equals what?",
+     "speak": [
+      {
+       "number": 150
+      },
+      "plus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      150,
+      "+",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the hundreds:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 250
+      },
+      "."
+     ],
+     "steps": [
+      "Add the hundreds: 1 plus 1 is 2.",
+      "The ones and tens stay the same.",
+      "The answer is 250."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       150,
+       "+",
+       100,
+       "=",
+       250
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 150,
+     "b": 100,
+     "oracle": "add",
+     "options": [
+      240,
+      249,
+      250
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "240",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 240
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "249",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 249
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "250",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 250
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B7|2|{\"a\":150,\"b\":100,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 plus 100 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "plus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "+",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the hundreds:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 700
+      },
+      "."
+     ],
+     "steps": [
+      "Add the hundreds: 6 plus 1 is 7.",
+      "The ones and tens stay the same.",
+      "The answer is 700."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "+",
+       100,
+       "=",
+       700
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 600,
+     "b": 100,
+     "oracle": "add",
+     "options": [
+      700,
+      701,
+      800
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "700",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 700
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "701",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 701
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "800",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 800
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B7|2|{\"a\":600,\"b\":100,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "781 plus 100 equals what?",
+     "speak": [
+      {
+       "number": 781
+      },
+      "plus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      781,
+      "+",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the hundreds:",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 881
+      },
+      "."
+     ],
+     "steps": [
+      "Add the hundreds: 7 plus 1 is 8.",
+      "The ones and tens stay the same.",
+      "The answer is 881."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       781,
+       "+",
+       100,
+       "=",
+       881
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 781,
+     "b": 100,
+     "oracle": "add",
+     "options": [
+      881,
+      882,
+      891
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "881",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 881
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "882",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 882
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "891",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 891
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B7|2|{\"a\":781,\"b\":100,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "934 minus 100 equals what?",
+     "speak": [
+      {
+       "number": 934
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      934,
+      "-",
+      100,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Take away the hundreds:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "The ones and tens stay the same.",
+      "The answer is",
+      {
+       "number": 834
+      },
+      "."
+     ],
+     "steps": [
+      "Take away the hundreds: 9 minus 1 is 8.",
+      "The ones and tens stay the same.",
+      "The answer is 834."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       934,
+       "-",
+       100,
+       "=",
+       834
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 934,
+     "b": 100,
+     "oracle": "subtract",
+     "options": [
+      824,
+      833,
+      834
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "824",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 824
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "833",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 833
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "834",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 834
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B7",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B7|2|{\"a\":934,\"b\":100,\"oracle\":\"subtract\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "105 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 105
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      105,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 95
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is 95."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       105,
+       "-",
+       10,
+       "=",
+       95
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 105,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 95,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-B7|3|{\"a\":105,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "302 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 302
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      302,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there",
+      "are",
+      {
+       "number": 2
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 292
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are 2 hundreds.",
+      "The ones stay the same.",
+      "The answer is 292."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       302,
+       "-",
+       10,
+       "=",
+       292
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 302,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 292,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-B7|3|{\"a\":302,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "104 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 104
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      104,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 94
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is 94."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       104,
+       "-",
+       10,
+       "=",
+       94
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 104,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 94,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-B7|3|{\"a\":104,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "302 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 302
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      302,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there",
+      "are",
+      {
+       "number": 2
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 292
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are 2 hundreds.",
+      "The ones stay the same.",
+      "The answer is 292."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       302,
+       "-",
+       10,
+       "=",
+       292
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 302,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 292,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-B7|3|{\"a\":302,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "702 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 702
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      702,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there",
+      "are",
+      {
+       "number": 6
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 692
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are 6 hundreds.",
+      "The ones stay the same.",
+      "The answer is 692."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       702,
+       "-",
+       10,
+       "=",
+       692
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 702,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 692,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-B7|3|{\"a\":702,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "106 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 106
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      106,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 96
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are no hundreds.",
+      "The ones stay the same.",
+      "The answer is 96."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       106,
+       "-",
+       10,
+       "=",
+       96
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 106,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 96,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-B7|3|{\"a\":106,\"b\":10,\"oracle\":\"subtract\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "199 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 199
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      199,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      "That is",
+      {
+       "number": 1
+      },
+      "hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "The new hundred makes",
+      {
+       "number": 2
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 209
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 9 plus 1 is 10. That is 1 hundred and 0 tens.",
+      "The new hundred makes 2 hundreds.",
+      "The ones stay the same.",
+      "The answer is 209."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       199,
+       "+",
+       10,
+       "=",
+       209
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 199,
+     "b": 10,
+     "oracle": "add"
+    },
+    "answer": 209,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-B7|3|{\"a\":199,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "693 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 693
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      693,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      "That is",
+      {
+       "number": 1
+      },
+      "hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "The new hundred makes",
+      {
+       "number": 7
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 703
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 9 plus 1 is 10. That is 1 hundred and 0 tens.",
+      "The new hundred makes 7 hundreds.",
+      "The ones stay the same.",
+      "The answer is 703."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       693,
+       "+",
+       10,
+       "=",
+       703
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 693,
+     "b": 10,
+     "oracle": "add"
+    },
+    "answer": 703,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-B7|3|{\"a\":693,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "791 plus 10 equals what?",
+     "speak": [
+      {
+       "number": 791
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      791,
+      "+",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Add the tens:",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      "That is",
+      {
+       "number": 1
+      },
+      "hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "The new hundred makes",
+      {
+       "number": 8
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 801
+      },
+      "."
+     ],
+     "steps": [
+      "Add the tens: 9 plus 1 is 10. That is 1 hundred and 0 tens.",
+      "The new hundred makes 8 hundreds.",
+      "The ones stay the same.",
+      "The answer is 801."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       791,
+       "+",
+       10,
+       "=",
+       801
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 791,
+     "b": 10,
+     "oracle": "add"
+    },
+    "answer": 801,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-B7|3|{\"a\":791,\"b\":10,\"oracle\":\"add\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "906 minus 10 equals what?",
+     "speak": [
+      {
+       "number": 906
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      906,
+      "-",
+      10,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough tens. Break a hundred into",
+      {
+       "number": 10
+      },
+      "tens.",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ".",
+      "Now there",
+      "are",
+      {
+       "number": 8
+      },
+      "hundreds.",
+      "The ones stay the same.",
+      "The answer is",
+      {
+       "number": 896
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough tens. Break a hundred into 10 tens. 10 minus 1 is 9.",
+      "Now there are 8 hundreds.",
+      "The ones stay the same.",
+      "The answer is 896."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       906,
+       "-",
+       10,
+       "=",
+       896
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 906,
+     "b": 10,
+     "oracle": "subtract"
+    },
+    "answer": 896,
+    "maxDigits": 3,
+    "skillId": "M-2-B7",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-B7|3|{\"a\":906,\"b\":10,\"oracle\":\"subtract\"}"
+   }
+  ]
+ }
+}

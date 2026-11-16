@@ -1,0 +1,2772 @@
+{
+ "skillId": "M-2-B9",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "Ava has 64 apples. Ava gets 12 more. How many apples does Ava have now?",
+   "speak": [
+    "Ava has",
+    {
+     "number": 64
+    },
+    "apples.",
+    "Ava gets",
+    {
+     "number": 12
+    },
+    "more.",
+    "How many apples does Ava have now?"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Getting more means add.",
+    {
+     "number": 64
+    },
+    "plus",
+    {
+     "number": 12
+    },
+    "is",
+    {
+     "number": 76
+    },
+    "."
+   ],
+   "steps": [
+    "Getting more means add.",
+    "64 plus 12 is 76."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     64,
+     "+",
+     12,
+     "=",
+     76
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "a": 64,
+   "b": 12,
+   "thing": "apple",
+   "story": "gets",
+   "oracle": "add",
+   "name": "Ava",
+   "options": [
+    75,
+    76,
+    77
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "75",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 75
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "76",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 76
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "77",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 77
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "skillId": "M-2-B9",
+  "level": 1,
+  "seed": 219,
+  "key": "M-2-B9|1|{\"a\":64,\"b\":12,\"name\":\"Ava\",\"oracle\":\"add\",\"story\":\"gets\",\"thing\":\"apple\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "61 cookies are on the table. 22 more are in the box. How many cookies are there in all?",
+     "speak": [
+      {
+       "number": 61
+      },
+      "cookies are on the table.",
+      {
+       "number": 22
+      },
+      "more are in the box.",
+      "How many cookies are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 61
+      },
+      "plus",
+      {
+       "number": 22
+      },
+      "is",
+      {
+       "number": 83
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "61 plus 22 is 83."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       61,
+       "+",
+       22,
+       "=",
+       83
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 61,
+     "b": 22,
+     "thing": "cookie",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      73,
+      82,
+      83
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "73",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 73
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "82",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 82
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "83",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 83
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B9|1|{\"a\":61,\"b\":22,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"cookie\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "36 flowers are on the table. 52 more are in the box. How many flowers are there in all?",
+     "speak": [
+      {
+       "number": 36
+      },
+      "flowers are on the table.",
+      {
+       "number": 52
+      },
+      "more are in the box.",
+      "How many flowers are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 36
+      },
+      "plus",
+      {
+       "number": 52
+      },
+      "is",
+      {
+       "number": 88
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "36 plus 52 is 88."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       36,
+       "+",
+       52,
+       "=",
+       88
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 36,
+     "b": 52,
+     "thing": "flower",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      88,
+      89,
+      98
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "88",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 88
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "89",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 89
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "98",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 98
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B9|1|{\"a\":36,\"b\":52,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "23 flowers are on the table. 28 more are in the box. How many flowers are there in all?",
+     "speak": [
+      {
+       "number": 23
+      },
+      "flowers are on the table.",
+      {
+       "number": 28
+      },
+      "more are in the box.",
+      "How many flowers are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 28
+      },
+      "is",
+      {
+       "number": 51
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "23 plus 28 is 51."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       23,
+       "+",
+       28,
+       "=",
+       51
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 23,
+     "b": 28,
+     "thing": "flower",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      5,
+      51,
+      52
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "51",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 51
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "52",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 52
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B9|1|{\"a\":23,\"b\":28,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "79 apples are on the table. 17 more are in the box. How many apples are there in all?",
+     "speak": [
+      {
+       "number": 79
+      },
+      "apples are on the table.",
+      {
+       "number": 17
+      },
+      "more are in the box.",
+      "How many apples are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 79
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "is",
+      {
+       "number": 96
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "79 plus 17 is 96."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       79,
+       "+",
+       17,
+       "=",
+       96
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 79,
+     "b": 17,
+     "thing": "apple",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      62,
+      95,
+      96
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "62",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 62
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "95",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 95
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "96",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 96
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B9|1|{\"a\":79,\"b\":17,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"apple\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "43 balls are on the table. 52 more are in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 43
+      },
+      "balls are on the table.",
+      {
+       "number": 52
+      },
+      "more are in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 43
+      },
+      "plus",
+      {
+       "number": 52
+      },
+      "is",
+      {
+       "number": 95
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "43 plus 52 is 95."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       43,
+       "+",
+       52,
+       "=",
+       95
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 43,
+     "b": 52,
+     "thing": "ball",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      95,
+      96,
+      105
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "95",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 95
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "96",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 96
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "105",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 105
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B9|1|{\"a\":43,\"b\":52,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"ball\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "75 apples are on the table. 24 more are in the box. How many apples are there in all?",
+     "speak": [
+      {
+       "number": 75
+      },
+      "apples are on the table.",
+      {
+       "number": 24
+      },
+      "more are in the box.",
+      "How many apples are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 75
+      },
+      "plus",
+      {
+       "number": 24
+      },
+      "is",
+      {
+       "number": 99
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "75 plus 24 is 99."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       75,
+       "+",
+       24,
+       "=",
+       99
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 75,
+     "b": 24,
+     "thing": "apple",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      99,
+      100,
+      109
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "99",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 99
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "109",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 109
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B9|1|{\"a\":75,\"b\":24,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"apple\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 28 flowers. Ava gets 44 more. How many flowers does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 28
+      },
+      "flowers.",
+      "Ava gets",
+      {
+       "number": 44
+      },
+      "more.",
+      "How many flowers does Ava have now?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Getting more means add.",
+      {
+       "number": 28
+      },
+      "plus",
+      {
+       "number": 44
+      },
+      "is",
+      {
+       "number": 72
+      },
+      "."
+     ],
+     "steps": [
+      "Getting more means add.",
+      "28 plus 44 is 72."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "+",
+       44,
+       "=",
+       72
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 28,
+     "b": 44,
+     "thing": "flower",
+     "story": "gets",
+     "oracle": "add",
+     "name": "Ava",
+     "options": [
+      16,
+      62,
+      72
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "62",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 62
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "72",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 72
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B9|1|{\"a\":28,\"b\":44,\"name\":\"Ava\",\"oracle\":\"add\",\"story\":\"gets\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 28 strawberries. Zoe gets 41 more. How many strawberries does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 28
+      },
+      "strawberries.",
+      "Zoe gets",
+      {
+       "number": 41
+      },
+      "more.",
+      "How many strawberries does Zoe have now?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Getting more means add.",
+      {
+       "number": 28
+      },
+      "plus",
+      {
+       "number": 41
+      },
+      "is",
+      {
+       "number": 69
+      },
+      "."
+     ],
+     "steps": [
+      "Getting more means add.",
+      "28 plus 41 is 69."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "+",
+       41,
+       "=",
+       69
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 28,
+     "b": 41,
+     "thing": "strawberry",
+     "story": "gets",
+     "oracle": "add",
+     "name": "Zoe",
+     "options": [
+      69,
+      70,
+      79
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "69",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 69
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "70",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 70
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "79",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 79
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B9|1|{\"a\":28,\"b\":41,\"name\":\"Zoe\",\"oracle\":\"add\",\"story\":\"gets\",\"thing\":\"strawberry\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 75 balloons. Max gets 12 more. How many balloons does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "number": 75
+      },
+      "balloons.",
+      "Max gets",
+      {
+       "number": 12
+      },
+      "more.",
+      "How many balloons does Max have now?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Getting more means add.",
+      {
+       "number": 75
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 87
+      },
+      "."
+     ],
+     "steps": [
+      "Getting more means add.",
+      "75 plus 12 is 87."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       75,
+       "+",
+       12,
+       "=",
+       87
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 75,
+     "b": 12,
+     "thing": "balloon",
+     "story": "gets",
+     "oracle": "add",
+     "name": "Max",
+     "options": [
+      86,
+      87,
+      97
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "86",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 86
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "87",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 87
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "97",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 97
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B9|1|{\"a\":75,\"b\":12,\"name\":\"Max\",\"oracle\":\"add\",\"story\":\"gets\",\"thing\":\"balloon\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "17 cars are on the table. 13 more are in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 17
+      },
+      "cars are on the table.",
+      {
+       "number": 13
+      },
+      "more are in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "In all means add.",
+      {
+       "number": 17
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "In all means add.",
+      "17 plus 13 is 30."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       17,
+       "+",
+       13,
+       "=",
+       30
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 17,
+     "b": 13,
+     "thing": "car",
+     "story": "table",
+     "oracle": "add",
+     "options": [
+      4,
+      29,
+      30
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "29",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 29
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B9|1|{\"a\":17,\"b\":13,\"oracle\":\"add\",\"story\":\"table\",\"thing\":\"car\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 79 cookies. Mia takes 38. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 79
+      },
+      "cookies.",
+      "Mia takes",
+      {
+       "number": 38
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 79
+      },
+      "minus",
+      {
+       "number": 38
+      },
+      "is",
+      {
+       "number": 41
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "79 minus 38 is 41."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       79,
+       "-",
+       38,
+       "=",
+       41
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 79,
+     "b": 38,
+     "thing": "cookie",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Mia",
+     "options": [
+      31,
+      40,
+      41
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "31",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 31
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "41",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 41
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B9|2|{\"a\":79,\"b\":38,\"name\":\"Mia\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"cookie\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 51 flowers. Sam takes 39. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 51
+      },
+      "flowers.",
+      "Sam takes",
+      {
+       "number": 39
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 51
+      },
+      "minus",
+      {
+       "number": 39
+      },
+      "is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "51 minus 39 is 12."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       51,
+       "-",
+       39,
+       "=",
+       12
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 51,
+     "b": 39,
+     "thing": "flower",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Sam",
+     "options": [
+      12,
+      22,
+      90
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 90
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B9|2|{\"a\":51,\"b\":39,\"name\":\"Sam\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 37 flowers. Mia takes 16. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 37
+      },
+      "flowers.",
+      "Mia takes",
+      {
+       "number": 16
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 37
+      },
+      "minus",
+      {
+       "number": 16
+      },
+      "is",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "37 minus 16 is 21."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       37,
+       "-",
+       16,
+       "=",
+       21
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 37,
+     "b": 16,
+     "thing": "flower",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Mia",
+     "options": [
+      11,
+      21,
+      31
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "31",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 31
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B9|2|{\"a\":37,\"b\":16,\"name\":\"Mia\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 98 apples. Leo takes 62. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 98
+      },
+      "apples.",
+      "Leo takes",
+      {
+       "number": 62
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 98
+      },
+      "minus",
+      {
+       "number": 62
+      },
+      "is",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "98 minus 62 is 36."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       98,
+       "-",
+       62,
+       "=",
+       36
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 98,
+     "b": 62,
+     "thing": "apple",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Leo",
+     "options": [
+      26,
+      35,
+      36
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 36
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B9|2|{\"a\":98,\"b\":62,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"apple\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 59 balls. Ava takes 50. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 59
+      },
+      "balls.",
+      "Ava takes",
+      {
+       "number": 50
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 59
+      },
+      "minus",
+      {
+       "number": 50
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "59 minus 50 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       59,
+       "-",
+       50,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 59,
+     "b": 50,
+     "thing": "ball",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Ava",
+     "options": [
+      9,
+      10,
+      109
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "109",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 109
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B9|2|{\"a\":59,\"b\":50,\"name\":\"Ava\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 94 apples. Leo takes 87. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 94
+      },
+      "apples.",
+      "Leo takes",
+      {
+       "number": 87
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 94
+      },
+      "minus",
+      {
+       "number": 87
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "94 minus 87 is 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       94,
+       "-",
+       87,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 94,
+     "b": 87,
+     "thing": "apple",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Leo",
+     "options": [
+      7,
+      8,
+      17
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B9|2|{\"a\":94,\"b\":87,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"apple\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 42 flowers. Ava gives away 25. How many flowers are left?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 42
+      },
+      "flowers.",
+      "Ava gives away",
+      {
+       "number": 25
+      },
+      ".",
+      "How many flowers are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Giving away means subtract.",
+      {
+       "number": 42
+      },
+      "minus",
+      {
+       "number": 25
+      },
+      "is",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Giving away means subtract.",
+      "42 minus 25 is 17."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       42,
+       "-",
+       25,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 42,
+     "b": 25,
+     "thing": "flower",
+     "story": "givesAway",
+     "oracle": "subtract",
+     "name": "Ava",
+     "options": [
+      7,
+      16,
+      17
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B9|2|{\"a\":42,\"b\":25,\"name\":\"Ava\",\"oracle\":\"subtract\",\"story\":\"givesAway\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 42 strawberries. Zoe gives away 24. How many strawberries are left?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 42
+      },
+      "strawberries.",
+      "Zoe gives away",
+      {
+       "number": 24
+      },
+      ".",
+      "How many strawberries are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Giving away means subtract.",
+      {
+       "number": 42
+      },
+      "minus",
+      {
+       "number": 24
+      },
+      "is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Giving away means subtract.",
+      "42 minus 24 is 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       42,
+       "-",
+       24,
+       "=",
+       18
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 42,
+     "b": 24,
+     "thing": "strawberry",
+     "story": "givesAway",
+     "oracle": "subtract",
+     "name": "Zoe",
+     "options": [
+      18,
+      28,
+      66
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 28
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "66",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 66
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B9|2|{\"a\":42,\"b\":24,\"name\":\"Zoe\",\"oracle\":\"subtract\",\"story\":\"givesAway\",\"thing\":\"strawberry\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 93 balloons. Max gives away 21. How many balloons are left?",
+     "speak": [
+      "Max has",
+      {
+       "number": 93
+      },
+      "balloons.",
+      "Max gives away",
+      {
+       "number": 21
+      },
+      ".",
+      "How many balloons are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Giving away means subtract.",
+      {
+       "number": 93
+      },
+      "minus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 72
+      },
+      "."
+     ],
+     "steps": [
+      "Giving away means subtract.",
+      "93 minus 21 is 72."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       93,
+       "-",
+       21,
+       "=",
+       72
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 93,
+     "b": 21,
+     "thing": "balloon",
+     "story": "givesAway",
+     "oracle": "subtract",
+     "name": "Max",
+     "options": [
+      71,
+      72,
+      82
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "71",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 71
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "72",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 72
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "82",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 82
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B9|2|{\"a\":93,\"b\":21,\"name\":\"Max\",\"oracle\":\"subtract\",\"story\":\"givesAway\",\"thing\":\"balloon\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 31 cars. Leo takes 11. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 31
+      },
+      "cars.",
+      "Leo takes",
+      {
+       "number": 11
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Taking away means subtract.",
+      {
+       "number": 31
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "Taking away means subtract.",
+      "31 minus 11 is 20."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       31,
+       "-",
+       11,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 31,
+     "b": 11,
+     "thing": "car",
+     "story": "takes",
+     "oracle": "subtract",
+     "name": "Leo",
+     "options": [
+      10,
+      19,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B9",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B9|2|{\"a\":31,\"b\":11,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"takes\",\"thing\":\"car\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 70 balloons. Mia has 50. How many more does Max have?",
+     "speak": [
+      "Max has",
+      {
+       "number": 70
+      },
+      "balloons.",
+      "Mia has",
+      {
+       "number": 50
+      },
+      ".",
+      "How many more does Max have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 70
+      },
+      "minus",
+      {
+       "number": 50
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "70 minus 50 is 20."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       70,
+       "-",
+       50,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 70,
+     "b": 50,
+     "thing": "balloon",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Max",
+     "name2": "Mia"
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-B9|3|{\"a\":70,\"b\":50,\"name\":\"Max\",\"name2\":\"Mia\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"balloon\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Sam has 62 balls. Leo has 27. How many more does Sam have?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 62
+      },
+      "balls.",
+      "Leo has",
+      {
+       "number": 27
+      },
+      ".",
+      "How many more does Sam have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 62
+      },
+      "minus",
+      {
+       "number": 27
+      },
+      "is",
+      {
+       "number": 35
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "62 minus 27 is 35."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       62,
+       "-",
+       27,
+       "=",
+       35
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 62,
+     "b": 27,
+     "thing": "ball",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Sam",
+     "name2": "Leo"
+    },
+    "answer": 35,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-B9|3|{\"a\":62,\"b\":27,\"name\":\"Sam\",\"name2\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"ball\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo has 61 flowers. Ava has 18. How many more does Leo have?",
+     "speak": [
+      "Leo has",
+      {
+       "number": 61
+      },
+      "flowers.",
+      "Ava has",
+      {
+       "number": 18
+      },
+      ".",
+      "How many more does Leo have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 61
+      },
+      "minus",
+      {
+       "number": 18
+      },
+      "is",
+      {
+       "number": 43
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "61 minus 18 is 43."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       61,
+       "-",
+       18,
+       "=",
+       43
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 61,
+     "b": 18,
+     "thing": "flower",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Leo",
+     "name2": "Ava"
+    },
+    "answer": 43,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-B9|3|{\"a\":61,\"b\":18,\"name\":\"Leo\",\"name2\":\"Ava\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 30 cookies. Leo has 25. How many more does Max have?",
+     "speak": [
+      "Max has",
+      {
+       "number": 30
+      },
+      "cookies.",
+      "Leo has",
+      {
+       "number": 25
+      },
+      ".",
+      "How many more does Max have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 30
+      },
+      "minus",
+      {
+       "number": 25
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "30 minus 25 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       30,
+       "-",
+       25,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 30,
+     "b": 25,
+     "thing": "cookie",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Max",
+     "name2": "Leo"
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-B9|3|{\"a\":30,\"b\":25,\"name\":\"Max\",\"name2\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"cookie\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo has 79 cookies. Zoe has 40. How many more does Leo have?",
+     "speak": [
+      "Leo has",
+      {
+       "number": 79
+      },
+      "cookies.",
+      "Zoe has",
+      {
+       "number": 40
+      },
+      ".",
+      "How many more does Leo have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 79
+      },
+      "minus",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 39
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "79 minus 40 is 39."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       79,
+       "-",
+       40,
+       "=",
+       39
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 79,
+     "b": 40,
+     "thing": "cookie",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Leo",
+     "name2": "Zoe"
+    },
+    "answer": 39,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-B9|3|{\"a\":79,\"b\":40,\"name\":\"Leo\",\"name2\":\"Zoe\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"cookie\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 25 apples. Mia has 20. How many more does Zoe have?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 25
+      },
+      "apples.",
+      "Mia has",
+      {
+       "number": 20
+      },
+      ".",
+      "How many more does Zoe have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 25
+      },
+      "minus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "25 minus 20 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       25,
+       "-",
+       20,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 25,
+     "b": 20,
+     "thing": "apple",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Zoe",
+     "name2": "Mia"
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-B9|3|{\"a\":25,\"b\":20,\"name\":\"Zoe\",\"name2\":\"Mia\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"apple\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 59 flowers. Mia has 21. How many more does Max have?",
+     "speak": [
+      "Max has",
+      {
+       "number": 59
+      },
+      "flowers.",
+      "Mia has",
+      {
+       "number": 21
+      },
+      ".",
+      "How many more does Max have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 59
+      },
+      "minus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 38
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "59 minus 21 is 38."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       59,
+       "-",
+       21,
+       "=",
+       38
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 59,
+     "b": 21,
+     "thing": "flower",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Max",
+     "name2": "Mia"
+    },
+    "answer": 38,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-B9|3|{\"a\":59,\"b\":21,\"name\":\"Max\",\"name2\":\"Mia\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 86 flowers. Max has 27. How many more does Zoe have?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 86
+      },
+      "flowers.",
+      "Max has",
+      {
+       "number": 27
+      },
+      ".",
+      "How many more does Zoe have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 86
+      },
+      "minus",
+      {
+       "number": 27
+      },
+      "is",
+      {
+       "number": 59
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "86 minus 27 is 59."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       86,
+       "-",
+       27,
+       "=",
+       59
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 86,
+     "b": 27,
+     "thing": "flower",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Zoe",
+     "name2": "Max"
+    },
+    "answer": 59,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-B9|3|{\"a\":86,\"b\":27,\"name\":\"Zoe\",\"name2\":\"Max\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"flower\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 44 balls. Zoe has 37. How many more does Ava have?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 44
+      },
+      "balls.",
+      "Zoe has",
+      {
+       "number": 37
+      },
+      ".",
+      "How many more does Ava have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 44
+      },
+      "minus",
+      {
+       "number": 37
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "44 minus 37 is 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       44,
+       "-",
+       37,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 44,
+     "b": 37,
+     "thing": "ball",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Ava",
+     "name2": "Zoe"
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-B9|3|{\"a\":44,\"b\":37,\"name\":\"Ava\",\"name2\":\"Zoe\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"ball\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia has 40 flowers. Sam has 13. How many more does Mia have?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 40
+      },
+      "flowers.",
+      "Sam has",
+      {
+       "number": 13
+      },
+      ".",
+      "How many more does Mia have?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "How many more means subtract.",
+      {
+       "number": 40
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 27
+      },
+      "."
+     ],
+     "steps": [
+      "How many more means subtract.",
+      "40 minus 13 is 27."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       40,
+       "-",
+       13,
+       "=",
+       27
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 40,
+     "b": 13,
+     "thing": "flower",
+     "story": "compare",
+     "oracle": "subtract",
+     "name": "Mia",
+     "name2": "Sam"
+    },
+    "answer": 27,
+    "maxDigits": 2,
+    "skillId": "M-2-B9",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-B9|3|{\"a\":40,\"b\":13,\"name\":\"Mia\",\"name2\":\"Sam\",\"oracle\":\"subtract\",\"story\":\"compare\",\"thing\":\"flower\"}"
+   }
+  ]
+ }
+}
