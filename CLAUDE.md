@@ -9,7 +9,11 @@
 - Every storage write is awaited inside try/catch and surfaces a visible error state on failure.
 - One React component per file, one default export, file name matches component name.
 - Every route is registered in `src/app/routes.tsx` and nowhere else.
-- No secrets in the repo. Supabase keys come from env vars and the app must run without them.
+- The repo is public. No secrets, no email addresses and no real names in it, in code, tests, fixtures or commit messages. Secrets live in Cloudflare Worker settings and in `.dev.vars`, which git ignores.
+- Every `/api` route except the sign-in routes checks the session before doing anything else.
+- The Worker reaches D1, R2 and email only through the interfaces in `worker/store.ts` and `worker/mailer.ts`, so tests run with in-memory versions.
+- The Worker never reads or changes the backup file's contents. Merging happens on the device.
+- No GitHub Actions. The Cloudflare build runs `npm run verify` before every deploy.
 - No `window.open`. External links use `<a target="_blank" rel="noopener noreferrer">` and exist only in parent mode.
 - Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on, nothing that moves away before the child answers, no negative sounds.
 - Layout: mobile first, flex column, scroll inside panels, never horizontal page scroll. Use `dvh`, not `vh`.
@@ -34,9 +38,11 @@
 - Do not add a dependency that is not listed in plan section 3. Ask first.
 - No placeholders, no TODO stubs, no mock data in shipped screens.
 - Commit at the end of the phase with message "Phase N: <name>".
+- Ask the owner in multiple-choice form before deciding anything the plan leaves open. Do not assume.
+- A push to `main` deploys the family's live app. Push only when the owner asks.
 
 ## Build status
 
-- Phase 0 (scaffold) was built before the plan revision of Nov 15, 2026.
-- Phase 1 starts by adding what the revised Phase 0 asks for and the scaffold lacks: `vercel.json`, the web app manifest, icons, Apple meta tags, six stage colours in `tokens.css`, `localDay()` in `clock.ts`, and the `tsx` dev dependency.
-- Next: Phase 1, engine core.
+- Step 1, Phase 0 (scaffold), is built. It was built before the plan revisions of Nov 15, 2026.
+- Next: step 2, Phase A, hosting and sign-in. It starts with what the scaffold lacks: the web app manifest, icons, Apple meta tags, six stage colours in `tokens.css`, `localDay()` in `clock.ts`, the `tsx` dev dependency, and removing `.github/workflows/verify.yml`.
+- Before step A can finish, the owner does the Cloudflare checklist in plan section 4.

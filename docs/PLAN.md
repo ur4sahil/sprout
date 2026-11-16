@@ -23,7 +23,8 @@ This plan builds the whole IXL platform feature set for one family, then fills i
 | Parent analytics: usage, scores, trouble spots, question log | Yes | 8 |
 | Skill plans a parent assigns | Yes | 8 |
 | Works on phone, tablet, laptop, offline | Yes, installable web app | 9 |
-| Sync across devices | Yes, Supabase | 10 |
+| Sync across devices | Yes, one family backup file on Cloudflare | 10 |
+| Parent sign-in | Yes, email and password, with a forgot-password code by email | A |
 | Science, social studies, Spanish | Engine supports them. Content comes after version 1 | Roadmap |
 
 ### Content at launch
@@ -41,14 +42,16 @@ This plan builds the whole IXL platform feature set for one family, then fills i
 
 ### Design decisions that protect the first run
 
-- **Local-first.** The app works fully with no account and no keys. Sync is added last, behind a flag, so nothing blocks on credentials.
+- **Sign in once, then offline.** A parent signs in on each iPad at first run. After that the app reads and writes only the device, so it works with no network. The network is needed again only to sign in after 30 days and to back up.
 - **Deterministic questions.** Every question comes from a skill, a level and a seed number. Tests can replay any question, and the parent log can redraw it exactly.
 - **Tap, never drag.** Sorting and matching use tap-then-tap. It suits small hands and needs no drag library.
-- **Few dependencies.** Seven runtime packages. No CSS framework, no chart library, no drag library.
+- **Few dependencies.** Six runtime packages. No CSS framework, no chart library, no drag library.
 - **One build phase per session.** Small steps with a gate each, not one giant prompt.
 - **Install first.** On an iPad the Home Screen app keeps its own storage, separate from Safari. Children are created inside the installed app, so nothing is left behind in a browser tab.
 - **Ids, never positions.** Anything saved about a skill or a ladder stores the skill id. Adding content later can then never shift saved progress.
 - **Listen and read questions never leak.** A question that asks a child to hear a target never prints it, and a question that asks a child to read never speaks the words.
+- **One free service.** One Cloudflare Worker serves the app, signs parents in, sends the sign-in code and holds the backup. There is no second provider and nothing to pay for.
+- **A public repo with nothing private in it.** No secret, no email address and no real name is ever committed. They live in Cloudflare settings.
 
 ## 2. How to run this plan in Claude Code
 
@@ -56,10 +59,10 @@ Export this doc as Markdown, save it as `docs/PLAN.md` in a new empty repo, then
 
 ### Setup, once
 
-1. Create an empty GitHub repo, for example `sprout`.
+1. Create an empty public GitHub repo, for example `sprout`. Because it is public, nothing private ever goes into it.
 2. Add this plan as `docs/PLAN.md`.
 3. Open the repo in Claude Code and paste the kickoff prompt below.
-4. After Phase 0, import the repo into Vercel so every push gets an HTTPS address. The iPad hand checks need HTTPS. A plain local-network address will not run the app, because speech, saved storage and id creation all need a secure address.
+4. After Phase 0, do step A (hosting and sign-in). It puts the app at `https://sprout.logstocks.com`, and every push to `main` is tested and deployed by Cloudflare. The iPad hand checks need HTTPS. A plain local-network address will not run the app, because speech, saved storage and id creation all need a secure address.
 
 ### Kickoff prompt
 
@@ -101,7 +104,11 @@ Claude Code reads this file at the start of every session, so these rules hold a
 - Every storage write is awaited inside try/catch and surfaces a visible error state on failure.
 - One React component per file, one default export, file name matches component name.
 - Every route is registered in `src/app/routes.tsx` and nowhere else.
-- No secrets in the repo. Supabase keys come from env vars and the app must run without them.
+- The repo is public. No secrets, no email addresses and no real names in it, in code, tests, fixtures or commit messages. Secrets live in Cloudflare Worker settings and in `.dev.vars`, which git ignores.
+- Every `/api` route except the sign-in routes checks the session before doing anything else.
+- The Worker reaches D1, R2 and email only through the interfaces in `worker/store.ts` and `worker/mailer.ts`, so tests run with in-memory versions.
+- The Worker never reads or changes the backup file's contents. Merging happens on the device.
+- No GitHub Actions. The Cloudflare build runs `npm run verify` before every deploy.
 - No `window.open`. External links use `<a target="_blank" rel="noopener noreferrer">` and exist only in parent mode.
 - Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on, nothing that moves away before the child answers, no negative sounds.
 - Layout: mobile first, flex column, scroll inside panels, never horizontal page scroll. Use `dvh`, not `vh`.
@@ -121,7 +128,7 @@ Claude Code reads this file at the start of every session, so these rules hold a
 
 ## 3. Stack, setup and file structure
 
-The stack is Vite, React and TypeScript, hosted on Vercel, with Supabase added in Phase 10. It matches your other projects.
+The stack is Vite, React and TypeScript. One Cloudflare Worker on the LogStocks account serves the built app and a small `/api` for sign-in and backup, at `sprout.logstocks.com`. It uses D1 for accounts, R2 for the backup file and the voice pack, and Cloudflare email for the sign-in code. All of it is on the free plan.
 
 ### Dependencies
 
@@ -131,8 +138,8 @@ The stack is Vite, React and TypeScript, hosted on Vercel, with Supabase added i
 | `react-router-dom` | Routes | Phase 0 |
 | `zustand` | App state | Phase 0 |
 | `idb` | IndexedDB wrapper for local storage | Phase 3 |
-| `zod` | Validates stored data, imports and item banks | Phase 1 |
-| `@supabase/supabase-js` | Sync | Phase 10 |
+| `zod` | Validates stored data, imports, item banks and API requests | Step A |
+| `wrangler`, `@cloudflare/workers-types` | Runs, types and deploys the Worker. Build-time only | Step A |
 | `vite`, `typescript`, `@vitejs/plugin-react` | Build | Phase 0 |
 | `vitest`, `jsdom`, `@testing-library/react`, `@testing-library/user-event`, `fake-indexeddb` | Tests | Phase 0 |
 | `eslint`, `typescript-eslint`, `eslint-plugin-react-hooks` | Lint | Phase 0 |
@@ -155,11 +162,16 @@ Deliberately left out: Tailwind, UI kits, chart libraries, drag-and-drop librari
   "lint": "eslint . --max-warnings 0",
   "test": "vitest run",
   "e2e": "playwright test",
+  "dev:worker": "wrangler dev",
+  "deploy": "npm run verify && wrangler deploy",
+  "clips": "bash scripts/make-clips.sh",
   "content:dump": "tsx scripts/content-dump.ts",
   "check:videos": "node scripts/check-videos.mjs",
   "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
 }
 ```
+
+`npm run dev` proxies `/api` to the local Worker started by `npm run dev:worker`. The local Worker uses wrangler's local D1 and R2, and prints the sign-in code in the terminal instead of sending an email.
 
 ### Styling
 
@@ -172,13 +184,22 @@ sprout/
   CLAUDE.md
   docs/PLAN.md
   index.html
-  vercel.json                rewrite of every path to /index.html
+  wrangler.jsonc             the Worker: static files, D1, R2, email, address
+  .dev.vars                  local secrets, ignored by git
+  worker/                    runs on Cloudflare, no React, no browser APIs
+    index.ts                 routes /api, everything else is the built app
+    auth.ts                  sign-in, password, sessions, lockout
+    backup.ts                GET and PUT of the family backup file (Phase 10)
+    voicePack.ts             GET of the voice pack (Phase 4b)
+    store.ts                 Store interface, D1 version, in-memory version
+    mailer.ts                Mailer interface, Cloudflare version, in-memory version
+    schema.sql               D1 tables, section 4
   public/                    icons, manifest
   scripts/
     content-dump.ts          writes review/<batch>.md
     check-videos.mjs         Phase 12
+    make-clips.sh            makes the voice pack on the Mac (Phase 4b)
   review/                    content dumps and the gallery screenshot
-  supabase/migrations/       SQL from section 4 (Phase 10)
   e2e/smoke.spec.ts
   src/
     main.tsx
@@ -221,11 +242,12 @@ sprout/
       memoryRepo.ts          in-memory, used in tests and as fallback
       schema.ts              zod schemas for every stored record
       exportFile.ts          export and import, with share-sheet hand-off
-      sync.ts                Supabase sync (Phase 10)
+      account.ts             talks to /api/auth, keeps the sign-in state
+      sync.ts                backup sync with the Worker (Phase 10)
     audio/
       speech.ts              speak(), stop(), voice selection
       say.ts                 turns Say parts into words a voice reads correctly
-      clips.ts               plays a parent's recorded clip in place of the voice
+      clips.ts               plays a voice-pack clip in place of the device voice
       sfx.ts                 short tones made with WebAudio, no files
     visuals/                 one component per Visual kind, section 5
     items/                   one component per question type, section 5
@@ -235,12 +257,13 @@ sprout/
                              Diagnostic, Pop, Pairs
       parent/                ParentGate, Dashboard, Scores, TroubleSpots,
                              QuestionLog, Plans, Settings, DataTools,
-                             SoundCheck, VoicePack
+                             SoundCheck, SetPin
+      account/               SignIn, SetPassword
       dev/                   Gallery, ReviewSamples (development builds only)
     components/              shared UI: ScoreRing, BigButton, Modal, Bar,
                              ErrorBoundary
     styles/tokens.css
-  tests/                     mirrors src/, plus:
+  tests/                     mirrors src/ and worker/, plus:
     generators.all.test.ts   every skill, every level, 300 seeds
     oracles.test.ts
     oracles/                 one file per oracle, never imported by src/
@@ -256,9 +279,9 @@ The main device is an iPad running the app from its Home Screen icon. Phones and
 | iPad behaviour | Rule for the build |
 | --- | --- |
 | Safari can clear a site's saved data after about a week without visits, unless the site is installed to the Home Screen | Call `navigator.storage.persist()` on first run. In a Safari tab on an iPad or iPhone the app shows only the install guide. Children are created inside the installed app |
-| The Home Screen app has its own storage, separate from Safari | Nothing made in a Safari tab carries over. The manifest, icons and Apple meta tags ship in Phase 0, so the app can be installed before the first hand check. The parent gate offers "Use in this browser anyway" with a warning, for laptops and for testing |
+| The Home Screen app has its own storage and its own sign-in, separate from Safari | Nothing made in a Safari tab carries over. The manifest, icons and Apple meta tags ship in step A, so the app can be installed before the first hand check. The parent signs in inside the installed app. The install guide has a small "Use in this browser anyway" link with a warning, for laptops and for testing. It leads to the sign-in screen, which only a parent can pass |
 | iPads show no automatic install prompt | The guide shows the Share button, then "Add to Home Screen", with pictures |
-| A link in an email opens Safari, not the installed app | Sync sign-in uses a typed six-digit code |
+| A link in an email opens Safari, not the installed app | The sign-in email carries a six-digit code to type into the app. It never carries a link |
 | Speech is silent until the first tap | The profile tap speaks first |
 | Double-tap zooms and long-press opens a menu | `touch-action: manipulation`, `-webkit-touch-callout: none` and `user-select: none` on kid screens |
 | Pulling down reloads the page | `overscroll-behavior: none` on the app shell |
@@ -271,20 +294,20 @@ The main device is an iPad running the app from its Home Screen icon. Phones and
 | The Home Screen app can stay open for days without reloading | Check for a new build on launch and each time the app comes back to the front, at most once an hour. Apply it on the profile picker or home screen, never in the middle of a question |
 | Sound effects stay silent until the audio context is resumed inside a tap | The profile tap resumes the WebAudio context as well as speaking |
 | The mute setting in Control Center can silence sound effects while the voice still plays | The sound check screen says so in plain words |
-| Speech, saved storage and `crypto.randomUUID` need HTTPS | Hand checks use the Vercel address, never a local-network address |
+| Speech, saved storage and `crypto.randomUUID` need HTTPS | Hand checks use `https://sprout.logstocks.com`, never a local-network address |
 | Unmuted video cannot be started from a button outside the video frame | The child taps YouTube's own play button. See Video safety in section 10 |
-| The microphone permission can be asked again on a later launch | The voice pack handles a refusal every time and never assumes an earlier yes |
+| Script-written storage can be cleared, a server cookie is sturdier | The session is a server-set `HttpOnly` cookie. The device record only remembers when it expires |
 | Speaking straight after cancelling can drop the new sentence | `speak()` waits 60 ms between cancel and speak |
 
 Browser tests run in Playwright's WebKit engine at 1024 by 768, 820 by 1180 and 390 by 844. Playwright's WebKit is not iPad Safari: it has no Home Screen mode, no real voices, and may not run the service worker. Where a browser test cannot run in WebKit, it runs in Chromium and the iPad hand check in section 12 covers the gap.
 
 ### Continuous checks
 
-Add `.github/workflows/verify.yml` in Phase 0. It runs `npm ci` and `npm run verify` on every push and pull request. The workflow does not run Playwright. If GitHub Actions is not available on the repo, `npm run verify` run locally before every push is the gate. Wrap the app in one error boundary that shows "Something went wrong" with a button back to the profile picker, and keeps the last 20 errors in the device record (section 4) for the parent data screen.
+There is no GitHub Actions workflow. The repo is connected to Cloudflare Workers Builds, with `npm run verify` as the build command and `npx wrangler deploy` as the deploy command. A push to `main` that fails any check is never deployed, and the build log shows why. The build does not run Playwright. `npm run verify` is also run locally before every push. Step A removes the `.github/workflows/verify.yml` file that the first scaffold added. Wrap the app in one error boundary that shows "Something went wrong" with a button back to the profile picker, and keeps the last 20 errors in the device record (section 4) for the parent data screen.
 
 ## 4. Data model
 
-Eleven record types hold everything: the seven below and four more under Additions at the end of this section. They live in IndexedDB on the device. From Phase 10, nine of them also live in matching Supabase tables. Recorded sounds and the device record stay on the device.
+Twelve record types hold everything: the seven below and five more under Additions at the end of this section. They live in IndexedDB on the device. From Phase 10, ten of them are also kept in one family backup file on Cloudflare. Voice clips and the device record stay on the device.
 
 ### Records (src/storage/schema.ts)
 
@@ -405,10 +428,12 @@ interface Repo {
   saveClip(c: AudioClip): Promise<void>;
   deleteClip(key: string): Promise<void>;
   listClipKeys(): Promise<string[]>;
+  getFamily(): Promise<Family>;                   // returns defaults when nothing is saved
+  saveFamily(f: Family): Promise<void>;
   getDeviceState(): Promise<DeviceState>;         // returns defaults when nothing is saved
   saveDeviceState(d: DeviceState): Promise<void>;
   countQuarantined(): Promise<number>;
-  exportAll(opts: { includeClips: boolean }): Promise<ExportFile>;
+  exportAll(): Promise<ExportFile>;               // the ten backed-up record types
   importAll(file: ExportFile): Promise<ImportReport>;   // validates with zod first
 }
 ```
@@ -422,197 +447,131 @@ Rules:
 - **Import merges.** `importAll` adds the file to what is on the device using the same merge rules as sync, below. It never wipes the device. The report says how many records were added, updated and skipped.
 - **Reset.** `resetChild` sets the child's `resetAt` to now and deletes that child's skill states, attempts, sessions, awards, diagnostic results, diagnostic progress and flags from the device. Any row for that child made before `resetAt` is dead everywhere: every read ignores it, import skips it, and sync removes it. This is what lets a reset survive a second iPad and a sync. A reset cannot be undone by importing an older export, so the reset dialog says it is final and offers an export first.
 
-### Supabase schema (Phase 10, `supabase/migrations/0001_init.sql`)
+### Sign-in and backup service (`worker/`)
 
-Every table carries `synced_at`, stamped by the server on every insert and update. Devices use it to fetch only what changed since their last pull.
+One Cloudflare Worker does four jobs: it serves the built app, signs parents in, emails the sign-in code, and stores the family backup file. It runs on the LogStocks Cloudflare account at `sprout.logstocks.com`, on the free plan.
+
+**Settings in `wrangler.jsonc`.** Claude Code checks the current Cloudflare docs for the exact key names when it builds step A.
+
+| Setting | Value |
+| --- | --- |
+| Static files | The `dist` folder. Unknown paths return `index.html`, so deep links load. Paths under `/api` go to the Worker first |
+| D1 database | `sprout`, bound as `DB` |
+| R2 bucket | `sprout-backups`, bound as `BACKUPS` |
+| Email | A `send_email` binding, `MAIL`. It can only send to addresses verified on the account, which costs nothing |
+| Address | `sprout.logstocks.com` as a custom domain |
+| Plain setting | `ENVIRONMENT` is `production` |
+
+**Private settings, set with `wrangler secret put`, never in the repo.**
+
+| Secret | Holds |
+| --- | --- |
+| `PARENT_EMAILS` | The one or two email addresses allowed to have an account, separated by commas |
+| `AUTH_PEPPER` | A long random value mixed into every stored password hash |
+| `MAIL_FROM` | The sender address. Chosen in step A after checking the domain's existing mail records |
+
+`.dev.vars` holds test values for local runs, with `ENVIRONMENT` set to `dev`. Git ignores it. Only when `ENVIRONMENT` is `dev` does the Worker print the code instead of emailing it. A test reads `wrangler.jsonc` and fails if it says anything but `production`.
+
+**D1 tables (`worker/schema.sql`).**
 
 ```sql
-create table children (
-  id uuid primary key,
-  owner uuid not null default auth.uid() references auth.users(id) on delete cascade,
-  name text not null,
-  avatar text not null,
-  grade text not null,
-  settings jsonb not null default '{}'::jsonb,
-  reset_at timestamptz,
-  created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now(),
-  deleted_at timestamptz,
-  synced_at timestamptz not null default now()
+create table users (
+  email      text primary key,        -- lower case
+  pw_hash    text not null,
+  pw_salt    text not null,
+  created_at text not null,
+  updated_at text not null
 );
-
-create table skill_state (
-  child_id uuid not null references children(id) on delete cascade,
-  skill_id text not null,
-  owner uuid not null default auth.uid(),
-  score int not null check (score between 0 and 100),
-  best_score int not null default 0 check (best_score between 0 and 100),
-  streak int not null default 0,
-  attempts int not null default 0,
-  correct int not null default 0,
-  recent jsonb not null default '[]'::jsonb,
-  mastered_at timestamptz,
-  placed_out boolean not null default false,
-  review_box int not null default 0,
-  review_due_at timestamptz,
-  last_practiced_at timestamptz,
-  updated_at timestamptz not null default now(),
-  synced_at timestamptz not null default now(),
-  primary key (child_id, skill_id)
-);
-
-create table attempts (
-  id uuid primary key,
-  child_id uuid not null references children(id) on delete cascade,
-  owner uuid not null default auth.uid(),
-  skill_id text not null,
-  session_id uuid not null,
-  level int not null,
-  seed bigint not null,
-  item_type text not null,
-  response jsonb,
-  content_version int not null default 1,
-  snapshot jsonb,
-  correct boolean not null,
-  ms int not null,
-  score_before int not null,
-  score_after int not null,
-  kind text not null,
-  day date not null,
-  created_at timestamptz not null,
-  synced_at timestamptz not null default now()
-);
-create index attempts_child_time on attempts (child_id, created_at desc);
 
 create table sessions (
-  id uuid primary key,
-  child_id uuid not null references children(id) on delete cascade,
-  owner uuid not null default auth.uid(),
-  kind text not null,
-  skill_id text,
-  started_at timestamptz not null,
-  ended_at timestamptz,
-  questions int not null default 0,
-  correct int not null default 0,
-  day date not null,
-  synced_at timestamptz not null default now()
+  token_hash text primary key,        -- SHA-256 of the cookie value
+  email      text not null,
+  created_at text not null,
+  expires_at text not null
+);
+create index sessions_email on sessions (email);
+
+create table email_codes (
+  email      text primary key,        -- one live code per address
+  code_hash  text not null,
+  sent_at    text not null,
+  expires_at text not null,
+  tries      integer not null default 0
 );
 
-create table awards (
-  child_id uuid not null references children(id) on delete cascade,
-  award_id text not null,
-  owner uuid not null default auth.uid(),
-  earned_at timestamptz not null,
-  synced_at timestamptz not null default now(),
-  primary key (child_id, award_id)
+create table login_attempts (
+  email        text primary key,
+  window_start text not null,
+  count        integer not null
 );
-
-create table plans (
-  id uuid primary key,
-  owner uuid not null default auth.uid(),
-  name text not null,
-  skill_ids text[] not null default '{}',
-  child_ids uuid[] not null default '{}',
-  created_at timestamptz not null default now(),
-  updated_at timestamptz not null default now(),
-  deleted_at timestamptz,
-  synced_at timestamptz not null default now()
-);
-
-create table diagnostic_results (
-  id uuid primary key,
-  child_id uuid not null references children(id) on delete cascade,
-  owner uuid not null default auth.uid(),
-  subject text not null,
-  ladder_id text not null,
-  placement_skill_id text,
-  estimate_grade text,
-  estimate_fraction numeric,
-  taken_at timestamptz not null,
-  synced_at timestamptz not null default now()
-);
-
-create table flags (
-  id uuid primary key,
-  child_id uuid not null references children(id) on delete cascade,
-  owner uuid not null default auth.uid(),
-  attempt_id uuid not null,
-  skill_id text not null,
-  level int not null,
-  seed bigint not null,
-  note text not null default '',
-  created_at timestamptz not null,
-  resolved_at timestamptz,
-  synced_at timestamptz not null default now()
-);
-
-create table diagnostic_progress (
-  child_id uuid not null references children(id) on delete cascade,
-  subject text not null,
-  owner uuid not null default auth.uid(),
-  ladders jsonb not null default '{}'::jsonb,
-  sittings int not null default 0,
-  done boolean not null default false,
-  updated_at timestamptz not null default now(),
-  synced_at timestamptz not null default now(),
-  primary key (child_id, subject)
-);
-
--- The server stamps synced_at on every write.
-create function touch_synced_at() returns trigger
-language plpgsql set search_path = '' as $$
-begin
-  new.synced_at := now();
-  return new;
-end $$;
-
--- Row level security: a signed-in parent sees only their own rows.
-do $$
-declare t text;
-begin
-  foreach t in array array['children','skill_state','attempts','sessions',
-                           'awards','plans','diagnostic_results',
-                           'flags','diagnostic_progress'] loop
-    execute format('alter table %I enable row level security', t);
-    execute format(
-      'create policy own_rows on %I for all to authenticated using (owner = (select auth.uid())) with check (owner = (select auth.uid()))', t);
-    execute format(
-      'create trigger touch_synced_at before insert or update on %I for each row execute function touch_synced_at()', t);
-    execute format('create index %I on %I (owner, synced_at)', t || '_owner_synced', t);
-  end loop;
-end $$;
 ```
 
-### Sync rules (Phase 10)
+**Routes.** Requests and replies are JSON, checked with zod.
 
-- Sign-in is parent email with a six-digit code typed into the app. On an iPad a magic link opens in Safari, not in the installed app, so the sign-in would never reach it. Children never sign in.
-- The device is always the source the app reads from. Sync runs in the background on start, on session end, and every 5 minutes while online.
-- With no Supabase env vars, the sync module is a no-op and the sign-in button is hidden.
+| Route | Needs a session | What it does |
+| --- | --- | --- |
+| `POST /api/auth/start` | No | Takes an email. If it is on the list, emails a six-digit code. The reply is the same whether or not it is on the list |
+| `POST /api/auth/password` | No | Takes the email, the code and a new password key. Checks the code, saves the password, ends every older session for that email and starts a new one. Used for the first sign-up and for a forgotten password |
+| `POST /api/auth/login` | No | Takes the email and password key. Starts a session |
+| `GET /api/auth/session` | Yes | Returns the email and when the session ends |
+| `POST /api/auth/logout` | Yes | Ends this session |
+| `POST /api/auth/logout-all` | Yes | Ends every session for this email, on every device |
+| `GET /api/backup` | Yes | Returns the backup file and its version. Phase 10 |
+| `PUT /api/backup` | Yes | Stores a new backup file if the version it was built on is still the current one. Phase 10 |
+| `GET /api/voice-pack` | Yes | Returns the voice pack. Phase 4b |
 
-**Push**
+Any other path under `/api` returns 401 without a session and 404 with one. It never returns the app page.
 
-- Push in this order, so a row never arrives before the row it points to: children, plans, sessions, attempts, skill state, awards, diagnostic results, diagnostic progress, flags.
-- Push in batches of 200 rows. A failed batch is retried on the next run and never blocks the app.
-- Attempts, sessions, awards, diagnostic results and flags only ever get added. Push them with "insert, ignore if the id exists", so a retry never duplicates.
+**Sign-in rules.**
 
-**Pull**
+- Only addresses in `PARENT_EMAILS` can have an account. All of them share the one family. There is no second family and no sign-up for anyone else.
+- A code is six digits, lasts 10 minutes and allows 5 tries. Only its hash is stored. A new code can be asked for once a minute, and it replaces the old one.
+- A password is at least 10 characters. The app never sends the password itself. The device stretches it first: PBKDF2 with SHA-256, 310,000 rounds, salted with `sprout:` plus the lower-case email. The result is the password key. The Worker stores an HMAC-SHA256 of the user's random salt plus the password key, keyed with `AUTH_PEPPER`, and compares in constant time. The slow step runs on the device because the free plan gives a Worker only a few milliseconds of processor time per request.
+- Five wrong passwords for one email lock sign-in for that email for 15 minutes. Setting a new password by emailed code clears the lock.
+- A session is 32 random bytes in a cookie named `__Host-sprout`, set `Secure`, `HttpOnly`, `SameSite=Strict`, `Path=/`, for 30 days. D1 stores only its hash. The 30 days are fixed from sign-in and are never extended.
+- Every request that changes something must be JSON, or the gzip file for the backup, and its `Origin` must be the app's own address.
+- The Worker logs no email address, code, password key or cookie.
 
-- The device record holds one `syncCursor` time per table. A pull asks for rows with `synced_at` later than the cursor minus 60 seconds, ordered by `synced_at`, 500 rows a page, and keeps paging until a page comes back short. The 60-second overlap covers rows that were still being written during the last pull. Every write is safe to repeat, so the overlap costs nothing.
-- A first pull on a new device fetches everything, page by page.
+### Backup sync rules (Phase 10)
+
+Sync is one file. The whole family's progress is saved as a single compressed file in R2, `family.json.gz`. Its contents are exactly an export file (see Versions, below) holding the ten backed-up record types.
+
+- The device is always what the app reads from and writes to. Sync runs in the background and never blocks a screen.
+- Sync runs on launch, at the end of each session and when the app returns to the front, at most once every 5 minutes, and never in the middle of a question.
+- The repo sets `dirty` in the device record on any write to a backed-up record.
+
+**One sync run (`src/storage/sync.ts`)**
+
+1. Ask for the file, sending the version this device last saw. "Not changed" means the server has nothing new.
+2. If a newer file came back: unzip it, check it with zod, and merge it into the device with the same code that import uses. Remember its version.
+3. If `dirty` is set: export, zip, and upload, naming the version this upload was built on. With no file on the server yet, the upload says "only if none exists".
+4. If the server answers that the version has moved on (another iPad uploaded in between), go back to step 1. After 3 rounds, stop and wait for the next run.
+5. On success, clear `dirty` and save the new version and the time in the device record.
+
+A failed run changes nothing on the device and is tried again next time. The parent data screen shows "Last backup" with the time, or the last error in plain words.
+
+**The Worker's side (`worker/backup.ts`)**
+
+- It checks the session, that the upload is a gzip file, and that it is under 25 MB. It never opens the file.
+- The version is the R2 object's etag. A conditional write refuses an upload built on an older version, so two iPads can never overwrite each other blindly.
+- Before the first upload of each day, it copies the current file to `history/<date>.json.gz`. An R2 lifecycle rule deletes history copies after 14 days. To go back to an earlier day, download that copy from the Cloudflare dashboard and import it in the app. Import merges, so it restores what is missing without wiping anything.
+
+**A new iPad.** Straight after the first sign-in the app runs one sync before showing the profile picker, with the message "Getting your family's progress". The children and their scores then appear on the new iPad.
 
 **Merging two copies of one record (`src/engine/merge.ts`)**
 
 - Children and plans: the copy with the later `updatedAt` wins. For a child, `resetAt` is the later of the two.
-- Skill state: `attempts`, `correct` and `recent` are recounted from the attempt log after any pull that brought in attempts for that skill, so two iPads never lose each other's answers. `score`, `streak`, `masteredAt` and the review fields come from the copy with the later `lastPracticedAt`. `bestScore` is the higher of the two. `placedOut` is true if either copy says so.
-- Diagnostic progress: the copy with the later `updatedAt` wins.
-- Deletes of children and plans are soft (`deletedAt`), so they sync like any other change.
+- Attempts, sessions, awards, diagnostic results and flags are only ever added. A record whose id is already on the device is skipped.
+- Skill state: `attempts`, `correct` and `recent` are recounted from the attempt log after any merge that brought in attempts for that skill, so two iPads never lose each other's answers. `score`, `streak`, `masteredAt` and the review fields come from the copy with the later `lastPracticedAt`. `bestScore` is the higher of the two. `placedOut` is true if either copy says so.
+- Diagnostic progress and the family record: the copy with the later `updatedAt` wins.
+- Deletes of children and plans are soft (`deletedAt`), so they travel like any other change.
 
 **Reset across devices**
 
-- After pushing a child whose `resetAt` changed, the device deletes that child's server rows made before `resetAt`.
-- A device that pulls a child with a later `resetAt` than its own deletes its local rows for that child made before it, and never pushes them again.
+- A reset sets the child's `resetAt`. The next upload from that device no longer contains the child's older rows.
+- A device that merges a child with a later `resetAt` than its own deletes its local rows for that child made before it, and never uploads them again.
 
-### Additions: flags, diagnostic progress, recorded sounds, device record
+### Additions: flags, diagnostic progress, voice clips, family, device record
 
 ```ts
 interface Flag {                    // a parent marks a question as wrong or confusing
@@ -632,27 +591,38 @@ interface DiagnosticProgress {      // lets a diagnostic stop and resume
   sittings: number; done: boolean; updatedAt: string;
 }
 
-interface AudioClip {               // a sound the parent recorded, kept on the device
-  key: string;                      // 'letter:a', 'sound:sh', 'number:7'
-  bytes: ArrayBuffer;               // raw audio. Never a Blob: Blobs do not export and do not store reliably
-  mimeType: string;                 // whatever the device recorded, such as 'audio/mp4' on an iPad
-  createdAt: string;
+interface AudioClip {               // one clip from the voice pack, kept on the device only
+  key: string;                      // 'letter:a', 'number:7', 'phrase:great-job'
+  bytes: ArrayBuffer;               // raw audio. Never a Blob: Blobs do not store reliably
+  mimeType: string;                 // 'audio/mp4'
+  packVersion: string;              // the voice pack this clip came from
 }
 
-interface DeviceState {             // one record per device, never synced
+interface Family {                  // one record for the whole family, backed up
+  id: 'family';
+  pinSalt: string | null;           // null until a parent sets the PIN
+  pinHash: string | null;           // PBKDF2 of the 4-digit PIN with pinSalt. Never the PIN itself
+  updatedAt: string;
+}
+
+interface DeviceState {             // one record per device, never backed up
   id: 'device';
   muted: boolean;                   // covers the voice and sound effects
-  parentPin: string | null;         // optional 4-digit gate, see Parent side
+  signedInEmail: string | null;     // kept on the device only, never exported
+  sessionExpiresAt: string | null;  // from the server. Past this, the app locks
+  lastSyncAt: string | null;
+  backupVersion: string | null;     // the server file version this device last merged
+  dirty: boolean;                   // a backed-up record changed since the last upload
+  voicePackVersion: string | null;
   persistGranted: boolean | null;   // answer from navigator.storage.persist()
   lastExportAt: string | null;
   browserModeAccepted: boolean;     // parent chose "Use in this browser anyway"
-  syncCursors: Record<string, string>;   // table name -> last pulled synced_at
   catalogueVersion: number;         // see Catalogue growth in section 7
   errors: { at: string; message: string; stack: string | null }[];   // last 20
 }
 ```
 
-Flags and diagnostic progress sync. Audio clips and the device record stay on the device. An export includes the clips, as base64 text, when the parent ticks "Include my recordings".
+Flags, diagnostic progress and the family record are backed up. Voice clips and the device record stay on the device. An export does not include the clips, because any signed-in iPad can download the voice pack again.
 
 ### Versions and changes over time
 
@@ -665,19 +635,23 @@ Flags and diagnostic progress sync. Audio clips and the device record stay on th
 
 ### Keeping progress safe
 
-- **Install before anything else.** In a Safari tab on an iPad or iPhone the app shows the install guide and nothing else. The Home Screen app has its own storage, so a child created in the tab would be left behind. A parent can pass the gate and choose "Use in this browser anyway" after reading that warning. Laptops and desktop browsers skip the guide.
+- **Install before anything else.** In a Safari tab on an iPad or iPhone the app shows the install guide and nothing else. The Home Screen app has its own storage and its own sign-in, so a child created in the tab would be left behind. The guide has a small "Use in this browser anyway" link with that warning. It leads to the sign-in screen, which only a parent can pass. Laptops and desktop browsers skip the guide.
 - Ask for persistent storage on first run and show the result on the parent data screen.
-- Until sync is signed in, the parent data screen shows the date of the last export and nudges for a new one every 7 days.
+- Until backup sync ships in Phase 10, the parent data screen shows the date of the last export and nudges for a new one every 7 days. After that it shows the time of the last backup, and nudges only if no backup has succeeded for 7 days.
 - Export hands the file to the share sheet, so it can be saved to Files or sent by AirDrop from inside the Home Screen app.
 
-### Your Supabase checklist (Phase 10)
+### Your Cloudflare checklist (step A)
 
-- [ ] Create the project and run `0001_init.sql` in the SQL editor.
-- [ ] Authentication, Email: keep email sign-in on, and edit the template so it shows the six-digit code (`{{ .Token }}`), not only a link.
-- [ ] Authentication, URL configuration: set the site URL to the Vercel address and add `http://localhost:5173` as a redirect.
-- [ ] Authentication, SMTP: connect your own sender, such as Resend. Supabase's built-in email is limited to a few messages an hour and is meant for testing.
-- [ ] Add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in Vercel, then redeploy. On a new project the second value is the key Supabase labels "publishable".
-- [ ] Sign in once on each iPad from the parent data screen.
+Claude Code does everything it can through `wrangler`. These are the parts only you can do.
+
+- [ ] Run `npx wrangler login` and choose the LogStocks account.
+- [ ] Give Claude Code the one or two parent email addresses. They go into a private Cloudflare setting, never into the repo.
+- [ ] Cloudflare emails each of those addresses a confirmation link. Click it. Only confirmed addresses can be sent a sign-in code.
+- [ ] Create the public GitHub repo and connect it under Workers Builds, with `npm run verify` as the build command and `npx wrangler deploy` as the deploy command.
+- [ ] Answer one question about the domain's mail. Claude Code reads the existing mail records for `logstocks.com` first and changes nothing there without asking.
+- [ ] Open `https://sprout.logstocks.com` on each iPad, add it to the Home Screen, and sign in inside the installed app.
+
+Claude Code does these with `wrangler`, and reports each one: create the D1 database and run `schema.sql`, create the R2 bucket and its 14-day history rule, set the three secrets, and attach the address.
 
 ## 5. Question engine
 
@@ -1858,7 +1832,7 @@ plain strings: must not contain digits or symbols. Write 'plus', 'take away' (K)
                (grade 1 up), 'equals', 'blank', 'is greater than', 'is less than'
 ```
 
-Lookup order for a letter, number or sound part: a clip the parent recorded, then the spelling above through the device voice. Uppercase and lowercase use the same name. Parts are played one after another, so a recorded clip can sit in the middle of a spoken sentence.
+Lookup order for a letter or number part: a voice-pack clip, then the spelling above through the device voice. Uppercase and lowercase use the same name. Parts are played one after another, so a clip can sit in the middle of a spoken sentence. With no voice pack on the device, everything goes through the device voice and nothing breaks.
 
 ### Analogy pairs (analogies.ts)
 
@@ -1918,11 +1892,39 @@ The app has two sides: a kid side that follows IXL's practice flow, and a parent
 | `/parent/plans` | Skill plans | Parent |
 | `/parent/settings` | Child profiles and settings | Parent |
 | `/parent/sound` | Sound check | Parent |
-| `/parent/voice` | Voice pack | Parent |
-| `/parent/data` | Export, import, reset, sync sign-in, credits | Parent |
+| `/parent/pin` | Set or change the family PIN | Parent |
+| `/signin` | Sign in, first sign-up and forgotten password | Account |
+| `/parent/data` | Export, import, reset, backup status, sign out, credits | Parent |
 | `/dev/gallery`, `/dev/review/:skillId` | Visual gallery and content samples. Registered only when `import.meta.env.DEV` is true, so they are not in the production build | Dev |
 
-`vercel.json` rewrites every path to `/index.html` so deep links load. It ships in Phase 0.
+The Worker returns `index.html` for any path that is not a file and not under `/api`, so deep links load.
+
+### Sign-in and first run
+
+A parent signs in once on each iPad. Children never sign in and never see an email address or a password.
+
+**What the app shows on launch, in this order**
+
+1. In a Safari tab on an iPad or iPhone: the install guide.
+2. If this device has no sign-in, or its 30 days have run out: the sign-in screen. Nothing else can be reached, on any path.
+3. If the family has no PIN yet: the "Choose a grown-ups PIN" screen. This step arrives with the parent side in Phase 8a.
+4. The profile picker.
+
+**The sign-in screen**
+
+- It asks for the email and password, with two links: "First time here" and "Forgot password". Both links do the same thing. They ask for the email, send a six-digit code, then show one screen asking for the code and a new password, typed twice.
+- A wrong email, a wrong password and an address that is not on the list all get the same message: "That email or password is not right." The screen never says which.
+- After five wrong passwords it says to wait 15 minutes or use "Forgot password".
+- Signing in needs the network. With none, the screen says so in plain words.
+- The fields are marked so the iPad's password manager can save and fill them.
+
+**After signing in**
+
+- The device record keeps the email and the date the session ends. From then on the app opens with no network.
+- From 5 days before the end date, the profile picker shows one small line for grown-ups, "Sign in again by" and the date, and the parent dashboard shows a banner with a button. Signing in early starts a fresh 30 days.
+- On the end date the app locks at its next launch, with or without a network. It never locks in the middle of a session. Nothing on the device is deleted. Progress is all there after the parent signs in.
+- If the server says the session is no longer good before that date, because a parent chose "Sign out everywhere" or set a new password, the app locks at its next launch in the same way.
+- "Sign out" and "Sign out everywhere" are on the parent data screen. Signing out leaves the children's progress on the device.
 
 ### Practice screen
 
@@ -1972,7 +1974,7 @@ There is one board for each subject and grade that has skills (Math pre-K, K, 1 
 | Award family | Board | Thresholds |
 | --- | --- | --- |
 | Skills mastered | Each subject board | 1, 3, 5, 10, 15, all. A threshold above the board's number of skills is left out |
-| Every skill in a category at 80 or above | Each subject board | One per category. Placed-out skills count as done, but at least one skill in the category must have reached 80 through practice |
+| Every skill in a category at 80 or above | Each subject board | One per category. Placed-out skills count in full, so a category the child placed out of shows its sticker straight away, with no celebration |
 | Questions answered, all subjects together | Milestones | 25, 50, 100, 250, 500, 1,000 |
 | Days practised | Milestones | 3, 7, 14, 30 |
 | Diagnostic finished | Milestones | One each for Math and Language Arts |
@@ -1981,14 +1983,15 @@ Days practised counts the different local `day` values with at least one answer.
 
 ### Parent side
 
-- **Gate:** "Grown-ups only" with a multiplication question, two numbers from 6 to 9, typed on the number pad. A parent can set a 4-digit PIN in settings to use instead, for the day a child learns their times tables. A pass lasts 10 minutes and is held in memory only.
+- **Gate:** "Grown-ups only" with a number pad for the family's 4-digit PIN. There is no maths question. A pass lasts 10 minutes and is held in memory only. Five wrong tries lock the gate for 1 minute. The PIN is one for the whole family: it is saved scrambled in the family record and travels to every iPad with the backup. A 4-digit PIN keeps a child out. It is not a security barrier, and the password is what protects the account.
+- **Forgot the PIN:** the gate has a "Forgot PIN" link. It asks for the account password, checks it with the server, and then lets the parent choose a new PIN. It needs the network.
 - **Dashboard:** per child, questions and minutes per day for the last 14 local days as SVG bars, the daily goal, skills mastered, current picks, and diagnostic levels by ladder.
 - **Scores:** every skill by subject, grade and category with score, stage chip, attempts, accuracy, time spent and last practised. Sortable.
 - **Trouble spots:** flagged skills, each with the three most recent missed questions redrawn, and a button to add the skill to a plan.
 - **Question log:** every attempt, newest first, filtered by child, skill and date. Each row redraws the question from its skill, level and seed and shows the child's answer beside the correct one.
 - **Plans:** name a plan, pick skills, order them, assign children. Nothing is created on first run. The screen offers one ready-made template, "Reasoning practice", holding all 14 reasoning skills in ladder order. Tapping "Use this plan" makes an ordinary plan from it.
-- **Settings:** per child: grade, gentle scoring, session length, speech rate, auto-speak, timer, daily goal, daily minutes, pre-reader mode, videos, and restart diagnostic. For the device: mute and the parent PIN.
-- **Data:** export everything through the share sheet, import a file (it merges and never wipes), reset one child, sign in for sync, storage and install status, any saved items that could not be read, flags, the last 20 errors, and credits.
+- **Settings:** per child: grade, gentle scoring, session length, speech rate, auto-speak, timer, daily goal, daily minutes, pre-reader mode, videos, and restart diagnostic. For the device: mute. For the family: change the PIN.
+- **Data:** export everything through the share sheet, import a file (it merges and never wipes), reset one child, the time of the last backup with a "Back up now" button, who is signed in and until when, sign out, sign out everywhere, storage and install status, any saved items that could not be read, flags, the last 20 errors, and credits.
 
 ### Look and feel
 
@@ -2012,12 +2015,17 @@ A child who cannot read must be able to use the whole kid side alone. Profiles w
 - Minutes are the sum of the day's answer times, each capped at two minutes, counted by local day.
 - The setup guide tells the parent how to turn on the iPad's Guided Access, which keeps a child inside one app.
 
-### Sound check and voice pack
+### Voice pack and sound check
 
-- **Sound check** in parent settings plays every letter name, the numbers 0 to 20 and each sound-effect, so a parent can hear exactly what the child will hear on that iPad.
+A device voice says some letter names badly and differs from iPad to iPad. So the letter names, the numbers and a few short phrases are made once, ahead of time, as audio clips.
+
+- **Making the pack.** `npm run clips` runs `scripts/make-clips.sh` on the Mac. It uses the built-in `say` command with the Samantha voice and `afconvert` to make about 150 small AAC clips: the 26 letter names, the numbers 0 to 100, and about 20 short phrases such as "Great job". It writes them into one file, `voice-pack.json`, with a version, and uploads that file to the R2 bucket.
+- **Keeping it private.** Apple allows its voices for personal use, not for handing out. The clips are therefore never committed to the public repo. They sit in R2 and are served only to a signed-in iPad.
+- **Getting it onto an iPad.** After sign-in, and whenever the pack's version changes, the app downloads the pack once and stores each clip in the device's `clips` store. After that it plays with no network.
+- **Without the pack.** Every part falls back to the device voice. The app never waits for the pack.
+- **Sound check** in parent settings plays every letter name, the numbers 0 to 20 and each sound effect, so a parent can hear exactly what the child will hear on that iPad. It also says whether the voice pack is on the device.
 - If the voice plays but the chime does not, the sound check says to turn off mute in Control Center.
-- **Voice pack** lets a parent record any of those in their own voice, plus the pure letter sounds a device voice cannot make. Recording uses the iPad microphone. The iPad may ask for permission again on a later launch, and a refusal shows a plain message instead of failing silently. Each clip can be replayed, redone or deleted.
-- Recorded letter sounds unlock sound-based prompts later, such as "Which word starts with this sound?"
+- A screen for recording clips in a parent's own voice, including the pure letter sounds no computer voice can make, is on the roadmap in section 14.
 
 ### Video safety
 
@@ -2027,7 +2035,7 @@ Videos are on by default, so the player has to keep a young child inside the app
 - The frame is sandboxed. Scripts are allowed. Pop-ups and top-level navigation are not. A tap on the YouTube logo or the video title then has nowhere to go.
 - The app draws one control of its own, outside the frame: a large Close button.
 - Each entry in `videos.json` stores the video's length in seconds. The app follows the play time through YouTube's player API and closes the modal 3 seconds before the end, before suggestions appear. Related videos are limited to the same channel.
-- The Phase 12 gate includes a hand check on the iPad: tapping the logo and the title must not leave the app. If the sandbox does not hold there, videos move behind the parent gate until the self-hosted player in section 14 replaces YouTube.
+- The Phase 12 gate includes a hand check on the iPad: tapping the logo and the title must not leave the app. If the sandbox does not hold there, videos are switched off for every child: `videos.json` carries `"enabled": false`, the lesson shows no video button, and the per-child videos setting is hidden. They stay off until the self-hosted player in section 14 replaces YouTube.
 - A parent can remove any single video from the skill's row on the scores screen.
 - Expect thin coverage for pre-K. Khan Academy's library starts in earnest at kindergarten, and the built-in lesson covers the rest.
 
@@ -2078,31 +2086,32 @@ I described OpenMoji as CC BY. It is CC BY-SA 4.0, which also asks that adapted 
 
 ## 12. Build phases and gates
 
-Twenty-one build steps, run in the order shown. Each step is one Claude Code session, except step 19, which is six. That makes 26 sessions. Phase labels are names, not the order. A phase is done only when `npm run verify` passes and every item in its gate is shown to pass.
+Twenty-two build steps, run in the order shown. Each step is one Claude Code session, except step 20, which is six. That makes 27 sessions. Phase labels are names, not the order. A phase is done only when `npm run verify` passes and every item in its gate is shown to pass.
 
 | Step | Phase | Builds | Gate, beyond `npm run verify` |
 | --- | --- | --- | --- |
-| 1 | 0. Scaffold | Vite, React, TypeScript, dependencies, scripts, lint, test setup, `CLAUDE.md`, `tokens.css` with six stage colours, app shell with router, error boundary, GitHub Actions workflow, `vercel.json`, web app manifest, icons, Apple meta tags | Dev server starts. One render test passes. The workflow file runs `npm run verify`. The build output contains the manifest. Your part: import the repo into Vercel and add the app to the iPad Home Screen |
-| 2 | 1. Engine core | First, anything Phase 0 is missing if it was built before this revision. Then `rng`, `seed`, `types` with `facts`, `Say` and the three modes, `check`, `validate`, `canonical`, the registry with pools, the P1 oracles in `tests/oracles/`, generator and oracle harnesses, golden-file and list-hash tests, the content dump script, three reference generators: M-PK-A2, M-K-B3, M-K-C4 | Same seed gives the same output. `seedFor` is stable. `check` tested for all 8 types. `validate` rejects one crafted bad question for each of the 16 invariants. Each oracle has its own unit tests. Harnesses pass for the 3 generators. A level with a pool of 2 never repeats back to back and never throws |
-| 3 | 2. Scoring and adaptive | `skillscore`, `review`, `recommend`, `diagnostic`, `merge`, `awards`, and `ladders.ts` listing every ladder by skill id | Every row of the section 6 test table and its extra tests. One test per recommendation rule and variety rule. Trouble spots: 5 right out of 5 is not flagged, 2 right out of 5 is. Diagnostic, on made-up ladders: a simulated child who knows the first N skills is placed at N, give or take 1, for five values of N within 8 skills of the start, and is never placed above N plus 1 for any N. No skill is tested twice. A ladder that starts above the child's grade asks nothing. A sitting stops at its question cap and resumes. Merge: two copies of a skill state keep both devices' answer counts. Award thresholds, including the placed-out rule |
-| 4 | 3. Storage | zod schemas with defaults for all eleven records, `memoryRepo`, `idbRepo` with upgrade steps and quarantine, reset, export and import with version header and merge, persistent-storage request | One contract suite runs against both repos. Export, wipe, import restores everything, recorded clips included. Import onto a device that already has data merges and wipes nothing. A corrupted record is quarantined, counted and not overwritten. A record missing a newer field loads with its default. A reset child's older rows are ignored on read and on import. A version 1 fixture opens with the newest code |
-| 5 | 4a. Visuals | Playwright. Every visual in section 5, including the added ones, canonical forms, and the dev gallery at `/dev/gallery` | Each visual has an `aria-label`. Canonical tests: a turned square equals itself, a flipped L does not. The clock's hour hand at 3:30 sits halfway between 3 and 4. A WebKit screenshot of the gallery is saved to `review/gallery.png`, and Claude Code looks at it and reports anything overlapping, clipped or unreadable |
-| 6 | 4b. Question types and audio | All 8 item components with the three modes, `speech`, `say`, `sfx`, `clips` | Each item component turns simulated taps into the right response. A `listen` question shows no target and its options do not speak. `say` tests for every part type, including the letter a against the word "a". Speech tests with a mocked browser API: cancels and waits before speaking, never throws when the API is missing, plays parts in order with a recorded clip in the middle |
-| 7 | 5a. Practice flow | Store, install guide, child setup, profile picker, practice screen, explanation panel, milestones, soft break, snapshots and `day` on attempts | Integration test: new child, 15 correct answers, score 100, medal shown, 15 attempts stored with snapshots and days, review scheduled. A wrong answer shows the explanation and moves the score per section 6. A milestone is not shown twice. A Safari tab on an iPad sees only the install guide. WebKit smoke test at the three sizes in section 3: no sideways scroll, a 3-question session completes |
-| 8 | 5b. Kid navigation and lessons | Home with the daily goal ring, pre-reader mode with picture tiles and Play, subject pages, lesson player, review, kid lock, history replacement, daily limit, wake lock | A pre-reader profile can go from the profile picker through a full Play run without any text-only control. The lesson player steps through four beats. Hold-to-exit works, a tap does not, and a browser Back press leaves the child on the practice screen. The daily limit screen appears when the local day's minutes run out |
-| 9 | 9. Offline and updates | Service worker, offline cache, update check on launch and on return to the front | Build output contains the service worker. Browser test: load, go offline, reload, answer a question. A newer build is picked up when the app returns to the front and is not applied in the middle of a question |
-| 10 | 10. Sync | Supabase client, `sync.ts`, migration file, sign-in by emailed code on the data screen | Tests against a mocked client: a repeated push creates no duplicates. Rows are pushed in the stated order. A pull pages past 500 rows and resumes from its cursor. Two copies of a skill state merge by the rules in section 4. A reset on one device removes the child's old rows on the other. Sync is a no-op with no env vars. Your part: the Supabase checklist in section 4 |
-| 11 | 6a. Math pre-K | Data files, 16 skills | Content gate, below |
-| 12 | 6b. Math K, part 1 | Categories A, B, E, F, G: 16 skills | Content gate |
-| 13 | 6c. Math K, part 2 | Categories C and D: 12 skills | Content gate |
-| 14 | 6d. Language Arts pre-K | 10 skills, including the first `listen` skills | Content gate |
-| 15 | 6e. Reasoning | 14 skills, analogy and riddle data | Content gate |
-| 16 | 7. Diagnostic and awards | Diagnostic sittings screen, first-run flow, check-in card, the catalogue growth step, awards boards, celebrations | A simulated run over two sittings saves placements by skill id and flags placed-out skills. Raising `CATALOGUE_VERSION` with a new skill below a placement places that skill out. Mastering a skill uncovers the right award. A category made only of placed-out skills earns nothing |
-| 17 | 8a. Parent side, part 1 | Gate with optional PIN, dashboard, scores, settings, data tools with share-sheet export, credits, sound check, voice pack | The gate rejects a wrong answer. Export, wipe the device, import restores everything. Export, reset a child, import: the child stays reset. A recorded clip is used in place of the device voice |
-| 18 | 8b. Parent side, part 2 | Trouble spots, question log, flags, plans with the ready-made template, the `/dev/review` route | A logged question redraws when versions match and shows its snapshot when they do not. A flag is saved and exported. An assigned plan changes the picks. No plan exists until a parent makes one |
-| 19 | 11a to 11f. Later content | Six sessions: Math grade 1 A, C, D, E (12). Math grade 1 B (10). Math grade 2 A, C, D (12). Math grade 2 B (10). Language Arts K (16). Language Arts grade 1 (12) with the 20 stories | Content gate each session. The story word-list test passes |
-| 20 | 12. Videos | `src/content/videos.json` with lengths, `scripts/check-videos.mjs`, the sandboxed player | The script requests YouTube's oEmbed endpoint for every id and fails on any that does not load. Playback closes before the end. Your hand check on the iPad: tapping the YouTube logo and the title does not leave the app. Skills with no good video stay empty |
-| 21 | 13. Scratchpad and games | Scratchpad layer, Pop, Pairs | Drawing works with touch and does not scroll the page. Pop logs attempts as practice, has nothing that moves away, and ends cleanly. Pairs logs nothing |
+| 1 | 0. Scaffold | Vite, React, TypeScript, dependencies, scripts, lint, test setup, `CLAUDE.md`, `tokens.css`, app shell with router, error boundary | Dev server starts. One render test passes. Built before the plan was revised, so step A finishes what it lacks |
+| 2 | A. Hosting and sign-in | First, what the scaffold lacks: web app manifest, icons, Apple meta tags, six stage colours, `localDay()`, `tsx`, and removing `.github/workflows/verify.yml`. Then `wrangler.jsonc`, `worker/` with the auth routes, `schema.sql`, the D1 and in-memory stores, the mailer, `account.ts`, the SignIn and SetPassword screens, and the sign-in guard in the app shell | Worker tests with the in-memory store and mailer: an unlisted email gets the same reply and no email. A code fails after 10 minutes and after 5 wrong tries. Setting a password ends older sessions. Five wrong passwords lock for 15 minutes. A wrong email and a wrong password give the same reply. The cookie has every flag in section 4. An unknown `/api` path gives 401 without a session, never the app page. App tests: with no session every route shows the sign-in screen. A test searches the repo and fails on any email address other than `example.com` ones. The build output contains the manifest. Your part: the Cloudflare checklist in section 4, then sign in on the iPad |
+| 3 | 1. Engine core | `rng`, `seed`, `types` with `facts`, `Say` and the three modes, `check`, `validate`, `canonical`, the registry with pools, the P1 oracles in `tests/oracles/`, generator and oracle harnesses, golden-file and list-hash tests, the content dump script, three reference generators: M-PK-A2, M-K-B3, M-K-C4 | Same seed gives the same output. `seedFor` is stable. `check` tested for all 8 types. `validate` rejects one crafted bad question for each of the 16 invariants. Each oracle has its own unit tests. Harnesses pass for the 3 generators. A level with a pool of 2 never repeats back to back and never throws |
+| 4 | 2. Scoring and adaptive | `skillscore`, `review`, `recommend`, `diagnostic`, `merge`, `awards`, and `ladders.ts` listing every ladder by skill id | Every row of the section 6 test table and its extra tests. One test per recommendation rule and variety rule. Trouble spots: 5 right out of 5 is not flagged, 2 right out of 5 is. Diagnostic, on made-up ladders: a simulated child who knows the first N skills is placed at N, give or take 1, for five values of N within 8 skills of the start, and is never placed above N plus 1 for any N. No skill is tested twice. A ladder that starts above the child's grade asks nothing. A sitting stops at its question cap and resumes. Merge: two copies of a skill state keep both devices' answer counts. Award thresholds, including the placed-out rule |
+| 5 | 3. Storage | zod schemas with defaults for all twelve records, `memoryRepo`, `idbRepo` with upgrade steps and quarantine, reset, export and import with version header and merge, persistent-storage request, and the sign-in state kept in the device record | One contract suite runs against both repos. Export, wipe, import restores everything. The export holds no email address and no clips. After one sign-in, the app opens with the network off, and locks once the saved end date has passed. Import onto a device that already has data merges and wipes nothing. A corrupted record is quarantined, counted and not overwritten. A record missing a newer field loads with its default. A reset child's older rows are ignored on read and on import. A version 1 fixture opens with the newest code |
+| 6 | 4a. Visuals | Playwright. Every visual in section 5, including the added ones, canonical forms, and the dev gallery at `/dev/gallery` | Each visual has an `aria-label`. Canonical tests: a turned square equals itself, a flipped L does not. The clock's hour hand at 3:30 sits halfway between 3 and 4. A WebKit screenshot of the gallery is saved to `review/gallery.png`, and Claude Code looks at it and reports anything overlapping, clipped or unreadable |
+| 7 | 4b. Question types and audio | All 8 item components with the three modes, `speech`, `say`, `sfx`, `clips`, `scripts/make-clips.sh`, the `/api/voice-pack` route and the one-time pack download | Each item component turns simulated taps into the right response. A `listen` question shows no target and its options do not speak. `say` tests for every part type, including the letter a against the word "a". Speech tests with a mocked browser API: cancels and waits before speaking, never throws when the API is missing, plays parts in order with a clip in the middle. With no voice pack on the device, every part uses the device voice. The pack route gives 401 without a session. No audio file is in the repo. Your part: run `npm run clips` once on the Mac |
+| 8 | 5a. Practice flow | Store, install guide, child setup, profile picker, practice screen, explanation panel, milestones, soft break, snapshots and `day` on attempts | Integration test: new child, 15 correct answers, score 100, medal shown, 15 attempts stored with snapshots and days, review scheduled. A wrong answer shows the explanation and moves the score per section 6. A milestone is not shown twice. A Safari tab on an iPad sees only the install guide. WebKit smoke test at the three sizes in section 3: no sideways scroll, a 3-question session completes |
+| 9 | 5b. Kid navigation and lessons | Home with the daily goal ring, pre-reader mode with picture tiles and Play, subject pages, lesson player, review, kid lock, history replacement, daily limit, wake lock | A pre-reader profile can go from the profile picker through a full Play run without any text-only control. The lesson player steps through four beats. Hold-to-exit works, a tap does not, and a browser Back press leaves the child on the practice screen. The daily limit screen appears when the local day's minutes run out |
+| 10 | 9. Offline and updates | Service worker, offline cache, update check on launch and on return to the front | Build output contains the service worker. Browser test: load, go offline, reload, answer a question. A newer build is picked up when the app returns to the front and is not applied in the middle of a question |
+| 11 | 10. Backup sync | `worker/backup.ts`, `sync.ts`, the first-sync screen on a new iPad, backup status on the data screen | Worker tests: both routes give 401 without a session. An upload built on an old version is refused. The first upload of a day makes a history copy and the second does not. Something that is not a gzip file is refused. Client tests against a fake server: a second run with nothing changed uploads nothing. Two devices that both practised end with both sets of attempts and the same skill state. A refused upload merges and retries, and gives up after 3 rounds without losing anything. A reset on one device removes the child's old rows on the other. A failed run leaves the device untouched. A corrupt file from the server is refused and never merged |
+| 12 | 6a. Math pre-K | Data files, 16 skills | Content gate, below |
+| 13 | 6b. Math K, part 1 | Categories A, B, E, F, G: 16 skills | Content gate |
+| 14 | 6c. Math K, part 2 | Categories C and D: 12 skills | Content gate |
+| 15 | 6d. Language Arts pre-K | 10 skills, including the first `listen` skills | Content gate |
+| 16 | 6e. Reasoning | 14 skills, analogy and riddle data | Content gate |
+| 17 | 7. Diagnostic and awards | Diagnostic sittings screen, first-run flow, check-in card, the catalogue growth step, awards boards, celebrations | A simulated run over two sittings saves placements by skill id and flags placed-out skills. Raising `CATALOGUE_VERSION` with a new skill below a placement places that skill out. Mastering a skill uncovers the right award. A category made only of placed-out skills shows its sticker with no celebration |
+| 18 | 8a. Parent side, part 1 | The PIN gate, the "Choose a PIN" step in first run, forgot PIN, dashboard with the sign-in reminder, scores, settings, data tools with share-sheet export, sign out, credits, sound check | The gate rejects a wrong PIN and locks for a minute after five. A PIN set on one device opens the gate on another after a sync. The saved family record never holds the PIN itself. Forgot PIN accepts the right password and refuses a wrong one. Export, wipe the device, import restores everything. Export, reset a child, import: the child stays reset. Signing out keeps the children's progress on the device |
+| 19 | 8b. Parent side, part 2 | Trouble spots, question log, flags, plans with the ready-made template, the `/dev/review` route | A logged question redraws when versions match and shows its snapshot when they do not. A flag is saved and exported. An assigned plan changes the picks. No plan exists until a parent makes one |
+| 20 | 11a to 11f. Later content | Six sessions: Math grade 1 A, C, D, E (12). Math grade 1 B (10). Math grade 2 A, C, D (12). Math grade 2 B (10). Language Arts K (16). Language Arts grade 1 (12) with the 20 stories | Content gate each session. The story word-list test passes |
+| 21 | 12. Videos | `src/content/videos.json` with lengths, `scripts/check-videos.mjs`, the sandboxed player | The script requests YouTube's oEmbed endpoint for every id and fails on any that does not load. Playback closes before the end. Your hand check on the iPad: tapping the YouTube logo and the title does not leave the app. Skills with no good video stay empty. If the hand check fails, `"enabled": false` hides every video |
+| 22 | 13. Scratchpad and games | Scratchpad layer, Pop, Pairs | Drawing works with touch and does not scroll the page. Pop logs attempts as practice, has nothing that moves away, and ends cleanly. Pairs logs nothing |
 
 ### Content gate
 
@@ -2124,7 +2133,7 @@ Every content step must show all of these.
 
 ### Your hand check on the iPad after each step from 5a on
 
-- [ ] Open the installed app from the Home Screen, at the Vercel address. Test children made during the build can be cleared with Reset.
+- [ ] Open the installed app from the Home Screen, at `sprout.logstocks.com`. Test children made during the build can be cleared with Reset.
 - [ ] Tap a child, hear the greeting.
 - [ ] Answer five questions, one wrong on purpose.
 - [ ] Close the app, reopen it, confirm the score is still there.
@@ -2168,9 +2177,9 @@ All time-dependent tests freeze the clock through `lib/clock.ts`. No test uses t
 | Storage unavailable in private browsing | Falls back to memory with a visible banner |
 | A bad stored record crashes a screen | Every read is validated and bad records are skipped |
 | Layout breaks under mobile browser bars | Use `dvh` units and scroll inside panels |
-| Deep links return 404 on Vercel | The `vercel.json` rewrite |
+| Deep links return 404 | The Worker returns `index.html` for unknown paths outside `/api` |
 | A stale service worker serves an old build | The app checks for a new build on launch and whenever it returns to the front, and applies it on the profile picker or home screen |
-| The build breaks with no Supabase keys | Sync is a no-op without env vars. Phase 10 tests this |
+| A test needs a real Cloudflare account | The Worker reaches D1, R2 and email through interfaces with in-memory versions |
 | Non-deterministic tests | No `Math.random`, no raw `Date` anywhere in engine or content |
 | A video is removed or wrong | The check script, and the built-in mini-lesson never depends on a video |
 
@@ -2178,12 +2187,12 @@ Pitfalls added after the plan review:
 
 | Pitfall | Prevention written into this plan |
 | --- | --- |
-| Safari clears saved progress on an iPad | Persistent storage request, Home Screen install, early sync, export nudges |
+| Safari clears saved progress on an iPad | Persistent storage request, Home Screen install, the backup on Cloudflare, export nudges until it ships |
 | The sign-in email opens Safari instead of the app | Sign-in by typed code |
 | A generator marks the wrong answer as correct | Oracles written separately from generators |
 | Editing a generator rewrites history in the question log | Skill versions, golden files and attempt snapshots |
 | A session runs out of room building too many skills | Content steps of 10 to 16 skills |
-| A voice says "uh" for the letter a | The `say.ts` table, sound check and voice pack |
+| A voice says "uh" for the letter a | The `say.ts` table, pre-made clips for letter names, and the sound check |
 | A child cannot read the menus | Pre-reader mode |
 | A video leads a child out to YouTube | The safe player in section 10 |
 | A first diagnostic exhausts a 3-year-old | Short sittings |
@@ -2221,9 +2230,29 @@ Pitfalls added after the second review:
 | A video tap leads out to YouTube | A sandboxed frame, checked by hand on the iPad in Phase 12 |
 | Swiping back skips the hold-to-exit | Kid navigation replaces history |
 | Export does nothing inside the Home Screen app | The share sheet |
-| Recorded clips cannot be exported or tested | Stored as bytes with a type, never as a Blob |
-| Sign-in emails stop arriving | Your own email sender, in the Supabase checklist |
-| Hand checks fail on a local address | The Vercel address from Phase 0 |
+| Voice clips cannot be stored or tested | Stored as bytes with a type, never as a Blob |
+| Sign-in emails stop arriving | Cloudflare email to confirmed addresses only. A parent who is already signed in on one iPad is not locked out of it |
+| Hand checks fail on a local address | `https://sprout.logstocks.com` from step A |
+
+Pitfalls added after the question round:
+
+| Pitfall | Prevention written into this plan |
+| --- | --- |
+| A secret, an email address or a real name lands in the public repo | Private Cloudflare settings, `.dev.vars` ignored by git, and a test that searches the repo |
+| A stranger makes an account | Only listed addresses can, and every other address gets the same reply and no email |
+| Someone guesses the password | Ten characters at least, a 15-minute lock after five misses, and "Sign out everywhere" |
+| The Worker runs out of processor time hashing a password | The slow stretch runs on the device. The Worker does one fast keyed hash |
+| A stolen database copy reveals passwords | Only a salted, peppered hash of an already stretched key is stored. The pepper is not in the database |
+| The app locks a child out in the middle of a session | The lock is checked at launch only, with a warning from 5 days before |
+| A parent is offline on the day the sign-in runs out | The reminder, and early sign-in starts a fresh 30 days |
+| Two iPads upload at once and one wipes the other | The upload names the version it was built on and is refused if that has moved on |
+| A bad upload ruins the backup | Daily history copies for 14 days, and the file is checked with zod before any merge |
+| An `/api` route is added without a session check | One guard in `worker/index.ts` covers every path outside the sign-in routes, and a test calls an unknown path |
+| The backup file grows large after years of practice | The Worker's 25 MB limit is far above a year of family use. Splitting the file by month is on the roadmap |
+| Apple voice clips are handed out publicly | They are never in the repo. R2 serves them only to a signed-in device |
+| A sign-in stub ships in the real app | There is no stub. Local runs use wrangler's local services, and a test pins `ENVIRONMENT` to `production` |
+| The child learns the PIN | The parent changes it in settings. It reaches the other iPad with the next backup |
+| Changing mail records breaks the domain's existing mail | Existing records are read first and nothing is changed without asking |
 
 ### Audit before any phase is reported done
 
@@ -2246,11 +2275,12 @@ This adapts your standing code audit to this project.
 
 **Security**
 
-- [ ] No secrets or keys in the repo. Env vars only
+- [ ] No secrets, keys, email addresses or real names in the repo. Private Cloudflare settings only
 - [ ] No undefined variables, no `any`, no unchecked data from storage or imports
 - [ ] No `window.open`. Any external link has `rel="noopener noreferrer"` and sits behind the parent gate
 - [ ] Every storage and sync write is awaited in try/catch with a visible error state
-- [ ] Row level security is on for every Supabase table
+- [ ] Every `/api` route outside the sign-in routes checks the session first
+- [ ] No reply or log line tells a listed email from an unlisted one, or carries a code, a password key or a cookie
 
 **Runtime**
 
@@ -2270,14 +2300,15 @@ These close the remaining gap with IXL. None needs a change to the engine.
 | Virginia SOL mapping | Each skill tagged with its 2023 Virginia code, a parent view by standard, and a check of the Common Core codes | VDOE documents |
 | Grades 3 to 5 math | Multiplication, division, fractions, decimals, area. Adds KaTeX and a fraction keypad | The later-content pattern |
 | Language Arts grade 2 and up | Longer reading passages, grammar, vocabulary | Item bank loader |
-| Sound-based phonics skills | Blending and segmenting, using the parent's recorded letter sounds | Voice pack |
+| Sound-based phonics skills | Blending and segmenting, using the parent's recorded letter sounds | Parent voice recording |
 | Science and social studies | Authored item banks by grade | Item bank loader |
 | More reasoning | Harder matrices, two-fold paper folding, verbal classification | Reasoning visuals |
 | Smarter scheduling | FSRS for review timing, knowledge tracing for mastery, both fed by the attempt log | A few months of data |
 | Real coin pictures | Photographs in place of drawn coins | An image source cleared for use |
-| Weekly parent email | A summary of time, mastered skills and trouble spots | Sync |
+| Weekly parent email | A summary of time, mastered skills and trouble spots | The Worker and its email sender |
 | Printable worksheets | Any skill at any level as a PDF page from the same generators | None |
-| Voice pack sync | Recorded clips shared across iPads | Supabase storage |
+| Parent voice recording | A screen where a parent records letter names and pure letter sounds in their own voice, shared across iPads | The iPad microphone and R2 |
+| Backup split by month | Older attempts move into one file per month, so each sync uploads only the current month | A backup file that has grown large |
 | Self-hosted videos | Khan Academy's videos served from your own storage in a plain player, with no YouTube frame at all | Confirming the licence on Khan Academy's site, and R2 storage |
 | Schoolbook letter shapes | A bundled font with the lowercase a and g that children are taught to write | A font cleared for use |
 | Reasoning check-in | A light placement for reasoning, if picks prove too easy or too hard | A few weeks of data |
@@ -2298,16 +2329,70 @@ The second review found 78 problems. All are fixed in the sections above. These 
 - **Trouble spots:** flagged at under 60% of recent answers, not "fewer than 6 of 10".
 - **Prerequisites:** follow the ladder, not the category.
 - **Diagnostic:** Math and Language Arts only. A ladder that starts above the child's grade is skipped. The walk climbs 2, 4, then 8 skills and then halves the gap. The cap is 14 questions a ladder, 8 for pre-K.
-- **Placed-out skills and awards:** they count as done, but a category award needs one skill earned through practice.
+- **Placed-out skills and awards:** they count in full. Changed in the question round, below.
 - **Reset:** final. It survives sync and cannot be undone by import.
 - **Two iPads:** answer counts are rebuilt from the log. The score comes from the copy practised most recently.
 - **Import:** merges, never wipes.
 - **Install first:** no children can be created in a Safari tab on an iPad without a parent choosing to.
 - **Play:** one session length per pick, with a break between picks.
 - **Pop:** balloons do not float away. **Pairs:** not scored.
-- **Videos:** YouTube's own controls in a sandboxed frame, with a hand check on the iPad.
-- **Parent gate:** an optional 4-digit PIN.
+- **Videos:** YouTube's own controls in a sandboxed frame, with a hand check on the iPad. If the check fails, videos are switched off.
+- **Parent gate:** a 4-digit PIN only. Changed in the question round, below.
 - **Starter plan:** a template the parent chooses to use, with all 14 reasoning skills.
 - **Stage colours:** six, with light blue for Getting started.
 - **Content changes:** middle vowel shows 3 options. Compound words are built from tiles. Silent e starts as hear-and-tap. Coins carry emblems, not words. Paper folding level 3 is two holes. Number analogies show two example pairs. Open and closed left the opposites list. Jet became jacket, feet became sheep, and pot left the picture list.
-- **Build order:** the manifest and Vercel move to Phase 0, Playwright to Phase 4a, and Reasoning gets its own session.
+- **Build order:** Playwright moves to Phase 4a, and Reasoning gets its own session. Hosting and sign-in become step A, straight after the scaffold.
+
+### Choices you made in the question round, Nov 15, 2026
+
+Each of these was your answer to a question. They replace anything earlier in this list that says otherwise.
+
+**Hosting and cost**
+
+- **Where it lives:** the LogStocks Cloudflare account, at `sprout.logstocks.com`.
+- **One Worker for everything:** the app, sign-in, the sign-in email and the backup. No Supabase and no Vercel.
+- **Repo:** public on GitHub. Nothing private goes into it.
+- **Tests on every push:** run by the Cloudflare deploy build. No GitHub Actions.
+
+**Sign-in**
+
+- **How:** email and password, with a forgot-password code by email.
+- **Who:** only the listed parent emails. They are kept as a private Cloudflare setting.
+- **First sign-up:** a code by email proves the address, then the parent sets a password.
+- **Email sender:** Cloudflare email, to confirmed addresses.
+- **When:** required at first run. After one sign-in the iPad works offline.
+- **How long:** 30 days. Then the app locks until a parent signs in again.
+- **Build order:** sign-in is built first, before the learning engine.
+- **Existing mail on logstocks.com:** not known yet. The records are checked first and nothing is changed without asking.
+
+**Grown-ups gate**
+
+- **Gate:** a 4-digit PIN only, with no maths question.
+- **One PIN for the family:** saved scrambled and shared across iPads.
+- **Forgot PIN:** reset by typing the account password.
+
+**Sync**
+
+- **How:** one family backup file on Cloudflare.
+- **Two iPads:** the most recent practice wins for the score, and answer counts from both are kept.
+
+**Learning rules**
+
+- **Trouble spot:** under 60% right.
+- **Placement check:** Math and Language Arts.
+- **Skills a child placed out of:** count in full toward stickers.
+- **Reset:** final, with an export offered first.
+- **Play button:** one session for each pick.
+- **Reasoning plan:** a template the parent chooses to use.
+- **Three rule fixes:** ladder prerequisites, the 14-question cap and six stage colours, all accepted.
+- **Content swaps:** all accepted.
+
+**Voice, time and extras**
+
+- **Voice:** clips made ahead of time. Recording in a parent's voice moves to after launch.
+- **Time limit:** both the in-app daily minutes and the Guided Access guide.
+- **In version 1:** concept videos, Pop, Pairs and the Scratchpad all stay.
+- **If the YouTube block fails on the iPad:** videos are switched off.
+- **Name:** Sprout.
+
+Two details were settled by the build plan, not by a question, and are open to change. The voice clips are kept in private storage, not in the public repo, because Apple allows its voices for personal use only. The password is stretched on the device, because the free Cloudflare plan gives very little processor time per request.
