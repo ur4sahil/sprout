@@ -109,4 +109,11 @@
 - Sorting: with an item in hand, a tap anywhere in a group drops it there, even on a picture already inside.
 - `e2e/prek.spec.ts` saves a score straight into IndexedDB to reach each skill's hardest level, then checks the layout at every size. Copy it for each content step.
 - Not covered by a browser test: a correct answer at the hardest level of each skill. The 300-seed suite and the oracles cover correctness.
-- Next: step 13, Phase 6b, Math K part 1: categories A, B, E, F, G (16 skills), to the content gate.
+- Step 13, Phase 6b (Math K, part 1), is built: categories A, B, E, F and G, 16 skills. Generators are grouped by family in `src/content/generators/math/k/`: `counting.ts` (A.1 to A.3), `numberRows.ts` (A.4 to A.7), `comparing.ts` (B.1, B.2), `shapes.ts` (E.1 to E.3), `measuring.ts` (F.1, F.2, G.1). `CATALOGUE_VERSION` is 3.
+- Kindergarten categories so far: A. Counting, B. Comparing, C. Addition, E. Shapes, F. Measuring and sorting, G. Patterns. Phase 6c fills C and adds D, and should rename C to cover subtraction too.
+- The `shapeFacts` oracle is written (`tests/oracles/shapeFacts.ts`). It refuses a star: points are not plain sides.
+- Turned shapes (E.1 level 3) leave out the diamond, because a turned diamond and a turned square are the same picture, and the circle, because a turn does not show.
+- B.1 level 3 mixes "Are the groups equal?" (Yes or No, fixed places) with more-or-fewer questions one apart. F.2 level 3 is a `choice` judged by the `compare` oracle, named in `facts.oracle`.
+- Tests that need a known set of today's picks call `masterAllBut([...])` (`tests/app/kidNav.test.tsx`), so they do not depend on how many skills exist.
+- `e2e/support/sweep.ts` holds the hardest-level layout sweep. Each content step adds one spec that calls `sweepHardestLevels` with its skills.
+- Next: step 14, Phase 6c, Math K part 2: categories C and D (12 skills), to the content gate.

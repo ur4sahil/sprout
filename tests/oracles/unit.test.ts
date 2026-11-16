@@ -14,6 +14,7 @@ import { oddOne } from './oddOne';
 import { order } from './order';
 import { pattern } from './pattern';
 import { sequence } from './sequence';
+import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
 
@@ -196,10 +197,10 @@ describe('matchEqual', () => {
 });
 
 describe('the oracle list', () => {
-  it('has all twelve Phase 1 oracles, each naming facts the engine knows about', () => {
+  it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'attribute', 'compare', 'count', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'sequence', 'sortBy', 'subtract'],
+      ['add', 'attribute', 'compare', 'count', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'sequence', 'shapeFacts', 'sortBy', 'subtract'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -262,5 +263,35 @@ describe('judge', () => {
     expect(judge(choice(1), { kind: 'order', order: [0, 1, 2] })).not.toEqual([]);
     const pad: Question = { ...base, facts: { a: 3, b: 4 }, type: 'numberPad', answer: 7, maxDigits: 2 };
     expect(judge(pad, { kind: 'index', index: 0 })).not.toEqual([]);
+  });
+});
+
+describe('shapeFacts', () => {
+  it('knows the sides and corners of flat shapes', () => {
+    expect(shapeFacts({ shape: 'triangle', ask: 'sides' })).toEqual({ kind: 'value', value: 3 });
+    expect(shapeFacts({ shape: 'square', ask: 'corners' })).toEqual({ kind: 'value', value: 4 });
+    expect(shapeFacts({ shape: 'rectangle', ask: 'sides' })).toEqual({ kind: 'value', value: 4 });
+    expect(shapeFacts({ shape: 'hexagon', ask: 'corners' })).toEqual({ kind: 'value', value: 6 });
+    expect(shapeFacts({ shape: 'pentagon', ask: 'sides' })).toEqual({ kind: 'value', value: 5 });
+    expect(shapeFacts({ shape: 'circle', ask: 'sides' })).toEqual({ kind: 'value', value: 0 });
+    expect(shapeFacts({ shape: 'oval', ask: 'corners' })).toEqual({ kind: 'value', value: 0 });
+  });
+  it('tells a solid from a flat shape, and gives a shape its name', () => {
+    expect(shapeFacts({ shape: 'cube', ask: 'solid' })).toEqual({ kind: 'value', value: true });
+    expect(shapeFacts({ shape: 'cylinder', ask: 'solid' })).toEqual({ kind: 'value', value: true });
+    expect(shapeFacts({ shape: 'circle', ask: 'solid' })).toEqual({ kind: 'value', value: false });
+    expect(shapeFacts({ shape: 'cone', ask: 'name' })).toEqual({ kind: 'value', value: 'cone' });
+  });
+  it('tells an open outline from a closed one', () => {
+    expect(shapeFacts({ shape: 'square', ask: 'closed' })).toEqual({ kind: 'value', value: true });
+    expect(shapeFacts({ shape: 'square', ask: 'closed', open: true })).toEqual({ kind: 'value', value: false });
+  });
+  it('refuses what it does not know', () => {
+    expect(() => shapeFacts({ shape: 'blob', ask: 'sides' })).toThrow();
+    expect(() => shapeFacts({ shape: 'cube', ask: 'sides' })).toThrow();
+    expect(() => shapeFacts({ shape: 'sphere', ask: 'closed' })).toThrow();
+    expect(() => shapeFacts({ shape: 'star', ask: 'sides' })).toThrow(); // points, not plain sides: never asked
+    expect(() => shapeFacts({ shape: 'square', ask: 'colour' })).toThrow();
+    expect(() => shapeFacts({ shape: 'square' })).toThrow();
   });
 });

@@ -1,7 +1,6 @@
-import type { Page } from '@playwright/test';
 import { expect, signUp, test } from './support/fixtures';
-import { addChild, holdHome, shoot } from './support/kid';
-import { checkScreen } from './support/layout';
+import { addChild, holdHome } from './support/kid';
+import { openFromMath, submit, sweepHardestLevels } from './support/sweep';
 
 const SKILLS: [string, string][] = [
   ['M-PK-A1', 'Count to 3'],
@@ -22,74 +21,10 @@ const SKILLS: [string, string][] = [
   ['M-PK-D3', 'Sort into two groups'],
 ];
 
-// Gives the one child on this device a saved score on every pre-K skill, so the hardest level is asked.
-async function saveScores(page: Page, score: number): Promise<void> {
-  await page.evaluate(
-    async ({ ids, value }) => {
-      const db = await new Promise<IDBDatabase>((resolve, reject) => {
-        const open = indexedDB.open('sprout');
-        open.onsuccess = () => resolve(open.result);
-        open.onerror = () => reject(open.error);
-      });
-      const tx = db.transaction(['children', 'skillStates'], 'readwrite');
-      const children = await new Promise<{ id: string }[]>((resolve) => {
-        const all = tx.objectStore('children').getAll();
-        all.onsuccess = () => resolve(all.result as { id: string }[]);
-      });
-      const childId = (children[0] as { id: string }).id;
-      const at = new Date().toISOString();
-      for (const skillId of ids) {
-        tx.objectStore('skillStates').put(
-          { childId, skillId, score: value, bestScore: value, streak: 3, attempts: 20, correct: 18, recent: Array.from({ length: 10 }, () => true), masteredAt: null, placedOut: false, reviewBox: 0, reviewDueAt: null, lastPracticedAt: at, updatedAt: at },
-          `${childId}|${skillId}`,
-        );
-      }
-      await new Promise<void>((resolve, reject) => {
-        tx.oncomplete = () => resolve();
-        tx.onerror = () => reject(tx.error);
-      });
-      db.close();
-    },
-    { ids: SKILLS.map(([id]) => id), value: score },
-  );
-  await page.reload();
-}
-
-async function openFromMath(page: Page, name: string): Promise<void> {
-  await page.getByRole('button', { name: /Math/ }).click();
-  await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();
-  await expect(page.locator('[data-phase="asking"]')).toBeVisible();
-}
-
-const submit = async (page: Page): Promise<void> => {
-  const button = page.getByRole('button', { name: /Submit/ });
-  await expect(button).toBeEnabled();
-  await expect(async () => {
-    if (await button.isVisible()) await button.click();
-    await expect(button).toBeHidden({ timeout: 300 });
-  }).toPass();
-};
-
 test.describe('Math pre-K', () => {
   test('every skill fits the screen at its hardest level, with every control big enough to tap', async ({ page }) => {
     test.setTimeout(240_000);
-    await signUp(page);
-    await addChild(page, 'Robin', 'Pre-K');
-    await saveScores(page, 85);
-    await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    for (const [id, name] of SKILLS) {
-      await openFromMath(page, name);
-      await checkScreen(page, `${id} at its hardest level`, 64);
-      // Nothing a child must see is cut off by its own box.
-      const cut = await page.evaluate(() =>
-        [...document.querySelectorAll('[aria-label="Question"] [data-visual]')]
-          .filter((el) => el.scrollWidth > el.clientWidth + 1 || el.getBoundingClientRect().right > window.innerWidth + 0.5)
-          .map((el) => el.getAttribute('aria-label') ?? ''),
-      );
-      expect(cut, `${id}: a picture is cut off`).toEqual([]);
-      await shoot(page, `prek-${id}`);
-      await holdHome(page);
-    }
+    await sweepHardestLevels(page, 'Pre-K', SKILLS, 'prek');
   });
 
   test('tapping, matching and sorting work by touch, and a right answer scores', async ({ page }) => {

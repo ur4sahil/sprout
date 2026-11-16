@@ -6,7 +6,7 @@ import App from '../../src/app/App';
 import { summariseDay } from '../../src/app/childDay';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
-import { generatorFor } from '../../src/content/registry';
+import { allGenerators, generatorFor } from '../../src/content/registry';
 import { addDays, advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
@@ -55,6 +55,15 @@ function mastered(skillId: string, dueInDays: number): SkillState {
   return { childId: 'kid-1', skillId, score: 100, bestScore: 100, streak: 6, attempts: 20, correct: 19, recent: Array.from({ length: 10 }, () => true), masteredAt: at, placedOut: false, reviewBox: 0, reviewDueAt: addDays(NOW.toISOString(), dueInDays), lastPracticedAt: at, updatedAt: at };
 }
 
+// Marks every skill that is ready as mastered and not due, except the ones named.
+// What is left is what today's picks can choose from, however large the catalogue grows.
+async function masterAllBut(keep: string[]): Promise<void> {
+  const store = await repo();
+  for (const generator of allGenerators()) {
+    if (!keep.includes(generator.skillId)) await store.saveSkillState(mastered(generator.skillId, 20));
+  }
+}
+
 const picksOnScreen = async (): Promise<string[]> => [...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill') ?? '');
 
 describe('home', () => {
@@ -62,7 +71,8 @@ describe('home', () => {
     await setUp('K', { preReader: false });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    expect(await picksOnScreen()).toEqual([ORDER, ADD]);
+    // One pick from each of the first three ladders that have a kindergarten skill to start on.
+    expect(await picksOnScreen()).toEqual(['M-K-A1', 'M-K-B1', ADD]);
     expect(screen.getByRole('button', { name: /Play/ })).toBeTruthy();
     expect(screen.getByRole('img', { name: '0 of 15 questions today' })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
@@ -70,7 +80,7 @@ describe('home', () => {
     expect(screen.queryByRole('button', { name: /Language Arts/ })).toBeNull();
     expect(screen.queryByRole('button', { name: /Review/ })).toBeNull();
     // A reader sees why each skill was picked.
-    expect(screen.getAllByText('Next up').length).toBe(2);
+    expect(screen.getAllByText('Next up').length).toBe(3);
   });
 
   it('for a pre-reader, tiles carry no reason text, and the speaker corner says the skill name', async () => {
@@ -130,8 +140,15 @@ describe('the subject page', () => {
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     await user.click(await screen.findByRole('button', { name: /Math/ }));
     expect((await screen.findByRole('tab', { name: 'Kindergarten' })).getAttribute('aria-selected')).toBe('true');
-    expect([...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'))).toEqual([ORDER, ADD]);
-    expect(document.querySelectorAll('section h2').length).toBe(2); // two categories, one band each
+    const kinder = [...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'));
+    expect(kinder.slice(0, 2)).toEqual(['M-K-A1', 'M-K-A2']);
+    expect(kinder).toContain(ORDER);
+    expect(kinder).toContain(ADD);
+    expect(kinder.every((id) => id?.startsWith('M-K-'))).toBe(true);
+    // One band for each lettered category, in order.
+    const letters = [...document.querySelectorAll('section h2')].map((el) => (el.textContent ?? '').charAt(0));
+    expect(letters).toEqual([...letters].sort());
+    expect(new Set(letters).size).toBe(letters.length);
     await user.click(screen.getByRole('tab', { name: 'Pre-K' }));
     // Pre-K: 16 skills in 4 lettered categories, in catalogue order.
     const preK = [...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'));
@@ -457,7 +474,7 @@ describe('review', () => {
 describe('Play', () => {
   it('runs a pick for one session length, then "Next one" moves on with no menu in between', async () => {
     await setUp('K', { sessionLength: 2 });
-    await (await repo()).saveSkillState(mastered(ORDER, 20)); // leaves "Add to 10" as the only pick
+    await masterAllBut([ADD]); // leaves "Add to 10" as the only pick
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD]);
@@ -478,8 +495,8 @@ describe('Play', () => {
 
   it('a review pick runs as a review, then moves on', async () => {
     await setUp('K');
+    await masterAllBut([]);
     await (await repo()).saveSkillState(mastered(ADD, -1));
-    await (await repo()).saveSkillState(mastered(ORDER, 20));
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD]);
@@ -505,8 +522,7 @@ describe('Play', () => {
     await holdHome();
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
     document.body.innerHTML = '';
-    await (await repo()).saveSkillState(mastered(ADD, 20));
-    await (await repo()).saveSkillState(mastered(ORDER, 20));
+    await masterAllBut([]);
     useAppStore.getState().setChild(child);
     openApp('/play');
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();

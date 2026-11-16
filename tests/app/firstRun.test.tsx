@@ -140,11 +140,11 @@ describe('the profile picker', () => {
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
     expect(await screen.findByRole('heading', { name: 'Ada' })).toBeTruthy();
     expect(useAppStore.getState().child?.id).toBe('kid-2');
-    // Home shows today's picks for a kindergarten child: the two kindergarten skills, not the pre-K one.
-    expect([...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill] > button:first-child')].map((b) => b.getAttribute('aria-label'))).toEqual([
-      'Put numbers in order. Score 0',
-      'Add to 10. Score 0',
-    ]);
+    // Home shows today's picks for a kindergarten child: three kindergarten skills, each with a score of 0.
+    const picks = [...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill]')];
+    expect(picks).toHaveLength(3);
+    expect(picks.every((tile) => tile.getAttribute('data-skill')?.startsWith('M-K-'))).toBe(true);
+    expect(picks.every((tile) => tile.querySelector('button')?.getAttribute('aria-label')?.endsWith('. Score 0'))).toBe(true);
   });
 
   it('"Change who is playing" goes back to the picker and forgets the child', async () => {

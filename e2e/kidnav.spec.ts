@@ -15,20 +15,20 @@ async function expectNoTextOnlyControls(page: import('@playwright/test').Page, w
 
 test.describe('kid navigation', () => {
   test('a child who cannot read goes from the picker through a full Play run with no text-only control', async ({ page }) => {
-    test.setTimeout(180_000);
+    test.setTimeout(240_000);
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten'); // pre-reader mode is on by default
     // The child's own button is a picture. ("Add a child" on this screen is for grown-ups.)
     await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]')).toBeVisible();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     const picks = page.getByRole('group', { name: "Today's picks" });
-    await expect(picks.locator('[data-skill]')).toHaveCount(2);
+    await expect(picks.locator('[data-skill]')).toHaveCount(3);
     await expect(page.getByText('Next up')).toHaveCount(0);
     await expectNoTextOnlyControls(page, 'home');
     await page.getByRole('button', { name: /Play/ }).click();
 
     // Each pick lasts one session: 8 questions for kindergarten. Then a break, with no menu.
-    for (const pick of [1, 2]) {
+    for (const pick of [1, 2, 3]) {
       await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
       for (;;) {
         if (await page.locator('[data-break]').isVisible()) break;
@@ -48,7 +48,7 @@ test.describe('kid navigation', () => {
     await expect(page.getByRole('dialog', { name: 'All done!' })).toBeVisible();
     await expectNoTextOnlyControls(page, 'all done');
     await page.getByRole('button', { name: /Home/ }).click();
-    await expect(page.getByRole('img', { name: 'Daily goal reached: 16 questions today' })).toBeVisible();
+    await expect(page.getByRole('img', { name: 'Daily goal reached: 24 questions today' })).toBeVisible();
     await shoot(page, 'home-goal-reached');
   });
 
@@ -99,7 +99,7 @@ test.describe('kid navigation', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Kindergarten' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(2);
+    await expect(page.locator('[data-skill]')).toHaveCount(17);
     await checkScreen(page, 'subject page', 64);
     await shoot(page, 'subject');
     await page.getByRole('button', { name: 'Hear the name: Add to 10' }).click();

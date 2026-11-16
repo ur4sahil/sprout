@@ -2,8 +2,13 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
+import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
 import { generator as mkc4 } from './generators/math/k/M-K-C4';
+import { compareLengthGenerator, patternsGenerator, sortAndCountGenerator } from './generators/math/k/measuring';
+import { beforeAndAfterGenerator, countByTensGenerator, missingNumberGenerator, whatComesNextGenerator } from './generators/math/k/numberRows';
+import { nameFlatGenerator, nameSolidGenerator, sidesAndCornersGenerator } from './generators/math/k/shapes';
 import { generator as mpka1 } from './generators/math/pk/M-PK-A1';
 import { generator as mpka2 } from './generators/math/pk/M-PK-A2';
 import { generator as mpka3 } from './generators/math/pk/M-PK-A3';
@@ -24,8 +29,23 @@ import { generator as mpkd3 } from './generators/math/pk/M-PK-D3';
 // skillId -> generator. Every generator in generators/ is listed here.
 const ALL: readonly SkillGenerator[] = [
   mpka1, mpka2, mpka3, mpka4, mpka5, mpka6, mpka7, mpka8, mpkb1, mpkb2, mpkc1, mpkc2, mpkc3, mpkd1, mpkd2, mpkd3,
+  countTo20Generator,
+  framesTo10Generator,
+  framesTo20Generator,
+  whatComesNextGenerator,
+  beforeAndAfterGenerator,
+  missingNumberGenerator,
+  countByTensGenerator,
+  moreFewerEqualGenerator,
+  compareNumbersGenerator,
   mkb3,
   mkc4,
+  nameFlatGenerator,
+  nameSolidGenerator,
+  sidesAndCornersGenerator,
+  compareLengthGenerator,
+  sortAndCountGenerator,
+  patternsGenerator,
 ];
 
 const BY_ID = new Map<string, SkillGenerator>(ALL.map((generator) => [generator.skillId, generator]));

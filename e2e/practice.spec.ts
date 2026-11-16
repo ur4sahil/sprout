@@ -82,8 +82,7 @@ test.describe('practice', () => {
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '10');
     await holdHome(page);
 
-    await page.getByRole('button', { name: /^Put numbers in order\./ }).click();
-    await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
+    await openOnMath(page, 'Put numbers in order');
     await tapInOrder(page);
     const submit = page.getByRole('button', { name: /Submit/ });
     await expect(async () => {
