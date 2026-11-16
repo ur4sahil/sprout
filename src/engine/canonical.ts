@@ -35,7 +35,6 @@ const TURN_SYMMETRY: Record<string, number> = {
   star: 72,
   pentagon: 72,
   oval: 180,
-  diamond: 180,
   heart: 360,
   trapezoid: 360,
   arrow: 360,
@@ -60,12 +59,15 @@ export function canonicalVisual(visual: Visual | 'blank'): Plain {
   if (visual === 'blank') return 'blank';
   switch (visual.kind) {
     case 'shape': {
+      // A diamond is drawn as a square standing on a corner, so it is the same picture as a square turned 45 degrees.
+      const shape = visual.shape === 'diamond' ? 'square' : visual.shape;
+      const turned = visual.shape === 'diamond' ? visual.rotation + 45 : visual.rotation;
       const out: { [key: string]: Plain } = {
         kind: 'shape',
-        shape: visual.shape,
+        shape,
         color: visual.color,
         size: visual.size,
-        rotation: normalTurn(visual.shape, visual.rotation),
+        rotation: normalTurn(shape, turned),
       };
       if (visual.flip && NO_MIRROR.has(visual.shape)) out.flip = true;
       if (visual.open) out.open = true;

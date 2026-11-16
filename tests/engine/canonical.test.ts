@@ -58,6 +58,14 @@ describe('samePicture', () => {
     expect(samePicture(shape('arrow', -90), shape('arrow', 270))).toBe(true);
   });
 
+  it('a diamond is a square standing on a corner: the same picture as a square turned 45 degrees', () => {
+    expect(samePicture(shape('diamond', 0), shape('square', 45))).toBe(true);
+    expect(samePicture(shape('diamond', 45), shape('square', 0))).toBe(true);
+    expect(samePicture(shape('diamond', 0), shape('diamond', 90))).toBe(true);
+    // Upright, they are two different pictures a child can tell apart.
+    expect(samePicture(shape('diamond', 0), shape('square', 0))).toBe(false);
+  });
+
   it('a flipped symmetric shape is unchanged, a flipped L or flag is not', () => {
     expect(samePicture(shape('heart'), shape('heart', 0, { flip: true }))).toBe(true);
     expect(samePicture(shape('square'), shape('square', 0, { flip: true }))).toBe(true);

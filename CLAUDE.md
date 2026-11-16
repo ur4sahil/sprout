@@ -62,4 +62,8 @@
 - Launch rule: a saved end date that has not passed opens the app with or without a network. One that has passed locks it. If the server says the session is gone, the app stays open for that launch, clears the saved sign-in in the background, and locks at the next launch.
 - To add an IndexedDB change: add a new step to `UPGRADES` in `idbRepo.ts`. Never edit a step that has shipped.
 - In tests, every test starts with an empty `memoryRepo` (`tests/setup.ts`), and `stubServer()` freezes the app clock to the test server's clock.
-- Next: step 6, Phase 4a, visuals.
+- Step 6, Phase 4a (visuals), is built: one drawing component for each `Visual` kind in `src/visuals/`, `VisualView` to draw any of them, pure geometry in `geometry.ts`, the colour list, and the dev-only gallery at `/dev/gallery`.
+- `npm run e2e:gallery` draws the gallery in WebKit, checks every picture fits its frame and has a label, and saves `review/gallery.png` (iPad width), and a phone-width copy plus one image for each section under `.e2e/gallery/`. Look at them after any change to a picture.
+- A diamond is drawn as a square standing on a corner, so `canonical.ts` treats it as a square turned 45 degrees.
+- Clock hands stop short of the numbers. A browser test fails if a hand reaches them.
+- Next: step 7, Phase 4b, question types and audio.
