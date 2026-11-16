@@ -1,7 +1,9 @@
+import { ANALOGY_PAIRS } from '../../src/content/data/analogies';
 import { GROUP_WORDS } from '../../src/content/data/categories';
 import { FIRST_SOUNDS } from '../../src/content/data/firstSounds';
 import { OPPOSITE_PAIRS, SIZE_PAIR } from '../../src/content/data/opposites';
 import { RHYME_FAMILIES } from '../../src/content/data/rhymes';
+import { RIDDLES } from '../../src/content/data/riddles';
 import { SYLLABLE_WORDS } from '../../src/content/data/syllables';
 import type { Oracle, OracleAnswer } from './types';
 import { list, text } from './types';
@@ -15,6 +17,8 @@ import { list, text } from './types';
 //   category    the one option in the group the target names
 //   opposite    the one option that is the target's opposite
 //   syllables   how many parts the target word has
+//   analogyPair the one option that is the second half of the pair the target starts
+//   riddle      the one option that answers the riddle the target spells out
 
 function theOne(options: string[], fits: (word: string) => boolean, relation: string): OracleAnswer {
   const found = options.flatMap((word, index) => (fits(word) ? [index] : []));
@@ -65,6 +69,16 @@ export const wordSet: Oracle = (facts) => {
       const entry = SYLLABLE_WORDS.find((candidate) => candidate.word === target);
       if (!entry) throw new Error(`oracle wordSet syllables: ${target} is not in the list`);
       return { kind: 'value', value: entry.parts.length };
+    }
+    case 'analogyPair': {
+      const pair = ANALOGY_PAIRS.find((candidate) => candidate.first.word === target);
+      if (!pair) throw new Error(`oracle wordSet analogyPair: ${target} starts no pair in the list`);
+      return theOne(words(facts), (word) => word === pair.second.word, relation);
+    }
+    case 'riddle': {
+      const riddle = RIDDLES.find((candidate) => candidate.riddle === target);
+      if (!riddle) throw new Error('oracle wordSet riddle: that riddle is not in the list');
+      return theOne(words(facts), (word) => word === riddle.word, relation);
     }
     default:
       throw new Error(`oracle wordSet: the relation ${relation} is not written yet`);

@@ -18,6 +18,10 @@ import { additionStoriesGenerator, subtractionStoriesGenerator } from './generat
 import { subtractPicturesTo5Generator, subtractTo10Generator, subtractTo5Generator } from './generators/math/k/subtracting';
 import { teenNumbersGenerator } from './generators/math/k/teens';
 import { nameFlatGenerator, nameSolidGenerator, sidesAndCornersGenerator } from './generators/math/k/shapes';
+import { figureAnalogiesGenerator, figureMatricesGenerator, patternCompletionGenerator, twoRulePatternsGenerator } from './generators/reasoning/figures';
+import { numberAnalogiesGenerator, numberPuzzlesGenerator, numberSeriesGenerator } from './generators/reasoning/numbers';
+import { oddOneOutGenerator, pictureAnalogiesGenerator, pictureRiddlesGenerator, whichBelongsGenerator } from './generators/reasoning/pictures';
+import { mirrorImagesGenerator, paperFoldingGenerator, turningShapesGenerator } from './generators/reasoning/turns';
 import { generator as mpka1 } from './generators/math/pk/M-PK-A1';
 import { generator as mpka2 } from './generators/math/pk/M-PK-A2';
 import { generator as mpka3 } from './generators/math/pk/M-PK-A3';
@@ -76,6 +80,20 @@ const ALL: readonly SkillGenerator[] = [
   clapsGenerator,
   wordGroupsGenerator,
   oppositesGenerator,
+  oddOneOutGenerator,
+  whichBelongsGenerator,
+  figureAnalogiesGenerator,
+  figureMatricesGenerator,
+  turningShapesGenerator,
+  mirrorImagesGenerator,
+  twoRulePatternsGenerator,
+  numberAnalogiesGenerator,
+  pictureAnalogiesGenerator,
+  numberSeriesGenerator,
+  numberPuzzlesGenerator,
+  paperFoldingGenerator,
+  patternCompletionGenerator,
+  pictureRiddlesGenerator,
 ];
 
 const BY_ID = new Map<string, SkillGenerator>(ALL.map((generator) => [generator.skillId, generator]));

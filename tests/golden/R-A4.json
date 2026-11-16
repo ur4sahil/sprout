@@ -1,0 +1,3745 @@
+{
+ "skillId": "R-A4",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "rowAttrs": [
+    "circle",
+    "square"
+   ],
+   "colAttrs": [
+    "black",
+    "orange"
+   ],
+   "blank": 2,
+   "options": [
+    "square|black",
+    "circle|black",
+    "square|orange"
+   ]
+  },
+  "prompt": {
+   "text": "Which one goes in the empty box?",
+   "speak": [
+    "Which one goes in the empty box?"
+   ]
+  },
+  "stimulus": {
+   "kind": "matrix",
+   "cells": [
+    {
+     "kind": "shape",
+     "shape": "circle",
+     "color": "black",
+     "size": "m",
+     "rotation": 0
+    },
+    {
+     "kind": "shape",
+     "shape": "circle",
+     "color": "orange",
+     "size": "m",
+     "rotation": 0
+    },
+    "blank",
+    {
+     "kind": "shape",
+     "shape": "square",
+     "color": "orange",
+     "size": "m",
+     "rotation": 0
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "shape",
+    "shape": "square",
+    "color": "black",
+    "size": "m",
+    "rotation": 0
+   },
+   {
+    "kind": "shape",
+    "shape": "circle",
+    "color": "black",
+    "size": "m",
+    "rotation": 0
+   },
+   {
+    "kind": "shape",
+    "shape": "square",
+    "color": "orange",
+    "size": "m",
+    "rotation": 0
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "Each row has the same shape. Each column has the same colour. The box needs a black square."
+   ],
+   "steps": [
+    "Each row has the same shape.",
+    "Each column has the same colour.",
+    "The box needs a black square."
+   ],
+   "visual": {
+    "kind": "shape",
+    "shape": "square",
+    "color": "black",
+    "size": "m",
+    "rotation": 0
+   }
+  },
+  "skillId": "R-A4",
+  "level": 1,
+  "seed": 84,
+  "key": "R-A4|1|{\"blank\":2,\"colAttrs\":[\"black\",\"orange\"],\"rowAttrs\":[\"circle\",\"square\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "heart",
+      "triangle"
+     ],
+     "colAttrs": [
+      "purple",
+      "red"
+     ],
+     "blank": 0,
+     "options": [
+      "triangle|purple",
+      "heart|purple",
+      "heart|red"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a purple heart."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a purple heart."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A4|1|{\"blank\":0,\"colAttrs\":[\"purple\",\"red\"],\"rowAttrs\":[\"heart\",\"triangle\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "triangle",
+      "heart"
+     ],
+     "colAttrs": [
+      "blue",
+      "orange"
+     ],
+     "blank": 1,
+     "options": [
+      "triangle|orange",
+      "triangle|blue",
+      "heart|orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs an orange triangle."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs an orange triangle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A4|1|{\"blank\":1,\"colAttrs\":[\"blue\",\"orange\"],\"rowAttrs\":[\"triangle\",\"heart\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "triangle",
+      "heart"
+     ],
+     "colAttrs": [
+      "orange",
+      "black"
+     ],
+     "blank": 2,
+     "options": [
+      "heart|orange",
+      "triangle|orange",
+      "heart|black"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs an orange heart."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs an orange heart."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A4|1|{\"blank\":2,\"colAttrs\":[\"orange\",\"black\"],\"rowAttrs\":[\"triangle\",\"heart\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "star",
+      "triangle"
+     ],
+     "colAttrs": [
+      "blue",
+      "pink"
+     ],
+     "blank": 2,
+     "options": [
+      "triangle|blue",
+      "triangle|pink",
+      "star|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a blue triangle."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a blue triangle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A4|1|{\"blank\":2,\"colAttrs\":[\"blue\",\"pink\"],\"rowAttrs\":[\"star\",\"triangle\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "triangle",
+      "square"
+     ],
+     "colAttrs": [
+      "green",
+      "blue"
+     ],
+     "blank": 2,
+     "options": [
+      "square|blue",
+      "triangle|green",
+      "square|green"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a green square."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a green square."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A4|1|{\"blank\":2,\"colAttrs\":[\"green\",\"blue\"],\"rowAttrs\":[\"triangle\",\"square\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "heart",
+      "star"
+     ],
+     "colAttrs": [
+      "blue",
+      "green"
+     ],
+     "blank": 0,
+     "options": [
+      "heart|green",
+      "star|blue",
+      "heart|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a blue heart."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a blue heart."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A4|1|{\"blank\":0,\"colAttrs\":[\"blue\",\"green\"],\"rowAttrs\":[\"heart\",\"star\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "star",
+      "square"
+     ],
+     "colAttrs": [
+      "orange",
+      "black"
+     ],
+     "blank": 0,
+     "options": [
+      "star|orange",
+      "star|black",
+      "square|orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs an orange star."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs an orange star."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A4|1|{\"blank\":0,\"colAttrs\":[\"orange\",\"black\"],\"rowAttrs\":[\"star\",\"square\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "star",
+      "square"
+     ],
+     "colAttrs": [
+      "orange",
+      "brown"
+     ],
+     "blank": 2,
+     "options": [
+      "square|brown",
+      "star|orange",
+      "square|orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs an orange square."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs an orange square."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A4|1|{\"blank\":2,\"colAttrs\":[\"orange\",\"brown\"],\"rowAttrs\":[\"star\",\"square\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "triangle",
+      "square"
+     ],
+     "colAttrs": [
+      "orange",
+      "black"
+     ],
+     "blank": 1,
+     "options": [
+      "triangle|orange",
+      "triangle|black",
+      "square|black"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a black triangle."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a black triangle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A4|1|{\"blank\":1,\"colAttrs\":[\"orange\",\"black\"],\"rowAttrs\":[\"triangle\",\"square\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "circle",
+      "square"
+     ],
+     "colAttrs": [
+      "pink",
+      "black"
+     ],
+     "blank": 1,
+     "options": [
+      "square|black",
+      "circle|black",
+      "circle|pink"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same shape. Each column has the same colour. The box needs a black circle."
+     ],
+     "steps": [
+      "Each row has the same shape.",
+      "Each column has the same colour.",
+      "The box needs a black circle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A4|1|{\"blank\":1,\"colAttrs\":[\"pink\",\"black\"],\"rowAttrs\":[\"circle\",\"square\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      1,
+      2
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 3,
+     "shape": "star",
+     "color": "red",
+     "options": [
+      "1|m",
+      "2|s",
+      "2|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs two big stars."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs two big stars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A4|2|{\"blank\":3,\"colAttrs\":[\"s\",\"m\"],\"color\":\"red\",\"rowAttrs\":[1,2],\"shape\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 3,
+     "shape": "star",
+     "color": "yellow",
+     "options": [
+      "2|m",
+      "1|m",
+      "1|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "yellow",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "yellow",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs one big star."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs one big star."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A4|2|{\"blank\":3,\"colAttrs\":[\"s\",\"m\"],\"color\":\"yellow\",\"rowAttrs\":[2,1],\"shape\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "m",
+      "s"
+     ],
+     "blank": 3,
+     "shape": "star",
+     "color": "red",
+     "options": [
+      "2|s",
+      "1|s",
+      "1|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs one small star."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs one small star."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A4|2|{\"blank\":3,\"colAttrs\":[\"m\",\"s\"],\"color\":\"red\",\"rowAttrs\":[2,1],\"shape\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "m",
+      "s"
+     ],
+     "blank": 0,
+     "shape": "heart",
+     "color": "yellow",
+     "options": [
+      "1|m",
+      "2|m",
+      "2|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "heart",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "heart",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "heart",
+         "color": "yellow",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "heart",
+         "color": "yellow",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs two big hearts."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs two big hearts."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A4|2|{\"blank\":0,\"colAttrs\":[\"m\",\"s\"],\"color\":\"yellow\",\"rowAttrs\":[2,1],\"shape\":\"heart\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 0,
+     "shape": "star",
+     "color": "pink",
+     "options": [
+      "2|s",
+      "1|s",
+      "2|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "pink",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "pink",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "pink",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "star",
+         "color": "pink",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs two small stars."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs two small stars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A4|2|{\"blank\":0,\"colAttrs\":[\"s\",\"m\"],\"color\":\"pink\",\"rowAttrs\":[2,1],\"shape\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      1,
+      2
+     ],
+     "colAttrs": [
+      "m",
+      "s"
+     ],
+     "blank": 2,
+     "shape": "triangle",
+     "color": "red",
+     "options": [
+      "2|s",
+      "1|m",
+      "2|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs two big triangles."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs two big triangles."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A4|2|{\"blank\":2,\"colAttrs\":[\"m\",\"s\"],\"color\":\"red\",\"rowAttrs\":[1,2],\"shape\":\"triangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      1,
+      2
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 2,
+     "shape": "circle",
+     "color": "red",
+     "options": [
+      "1|s",
+      "2|s",
+      "2|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "red",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "red",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs two small circles."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs two small circles."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A4|2|{\"blank\":2,\"colAttrs\":[\"s\",\"m\"],\"color\":\"red\",\"rowAttrs\":[1,2],\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 2,
+     "shape": "circle",
+     "color": "purple",
+     "options": [
+      "1|s",
+      "2|s",
+      "1|m"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "purple",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "purple",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "purple",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "purple",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "purple",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs one small circle."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs one small circle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A4|2|{\"blank\":2,\"colAttrs\":[\"s\",\"m\"],\"color\":\"purple\",\"rowAttrs\":[2,1],\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      2,
+      1
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 2,
+     "shape": "circle",
+     "color": "brown",
+     "options": [
+      "1|m",
+      "1|s",
+      "2|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "brown",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "brown",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "brown",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "brown",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "circle",
+         "color": "brown",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs one small circle."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs one small circle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A4|2|{\"blank\":2,\"colAttrs\":[\"s\",\"m\"],\"color\":\"brown\",\"rowAttrs\":[2,1],\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      1,
+      2
+     ],
+     "colAttrs": [
+      "s",
+      "m"
+     ],
+     "blank": 1,
+     "shape": "triangle",
+     "color": "black",
+     "options": [
+      "2|m",
+      "1|m",
+      "1|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "black",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "black",
+         "size": "s",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "black",
+         "size": "s",
+         "rotation": 0
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "black",
+         "size": "m",
+         "rotation": 0
+        },
+        {
+         "kind": "shape",
+         "shape": "triangle",
+         "color": "black",
+         "size": "m",
+         "rotation": 0
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same number of shapes. Each column has the same size. The box needs one big triangle."
+     ],
+     "steps": [
+      "Each row has the same number of shapes.",
+      "Each column has the same size.",
+      "The box needs one big triangle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A4|2|{\"blank\":1,\"colAttrs\":[\"s\",\"m\"],\"color\":\"black\",\"rowAttrs\":[1,2],\"shape\":\"triangle\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "brown",
+      "yellow"
+     ],
+     "colAttrs": [
+      3,
+      0
+     ],
+     "blank": 1,
+     "options": [
+      "yellow|0",
+      "brown|2",
+      "brown|3",
+      "brown|0"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 270
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a brown arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a brown arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A4|3|{\"blank\":1,\"colAttrs\":[3,0],\"rowAttrs\":[\"brown\",\"yellow\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "purple",
+      "red"
+     ],
+     "colAttrs": [
+      2,
+      1
+     ],
+     "blank": 0,
+     "options": [
+      "purple|2",
+      "purple|0",
+      "red|2",
+      "purple|1"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "red",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "red",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "red",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a purple arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a purple arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[2,1],\"rowAttrs\":[\"purple\",\"red\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "yellow",
+      "purple"
+     ],
+     "colAttrs": [
+      2,
+      0
+     ],
+     "blank": 0,
+     "options": [
+      "yellow|2",
+      "yellow|3",
+      "yellow|0",
+      "purple|2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a yellow arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a yellow arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 180
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[2,0],\"rowAttrs\":[\"yellow\",\"purple\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "green",
+      "orange"
+     ],
+     "colAttrs": [
+      0,
+      1
+     ],
+     "blank": 1,
+     "options": [
+      "green|1",
+      "green|0",
+      "green|3",
+      "orange|1"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "orange",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "orange",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A4|3|{\"blank\":1,\"colAttrs\":[0,1],\"rowAttrs\":[\"green\",\"orange\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "brown",
+      "orange"
+     ],
+     "colAttrs": [
+      2,
+      1
+     ],
+     "blank": 2,
+     "options": [
+      "orange|1",
+      "orange|0",
+      "orange|2",
+      "brown|2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 90
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "orange",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "orange",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "orange",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs an orange arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs an orange arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "orange",
+      "size": "m",
+      "rotation": 180
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A4|3|{\"blank\":2,\"colAttrs\":[2,1],\"rowAttrs\":[\"brown\",\"orange\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "green",
+      "purple"
+     ],
+     "colAttrs": [
+      3,
+      0
+     ],
+     "blank": 0,
+     "options": [
+      "green|0",
+      "green|3",
+      "purple|3",
+      "green|1"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[3,0],\"rowAttrs\":[\"green\",\"purple\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "purple",
+      "brown"
+     ],
+     "colAttrs": [
+      1,
+      0
+     ],
+     "blank": 0,
+     "options": [
+      "brown|1",
+      "purple|1",
+      "purple|0",
+      "purple|3"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 270
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a purple arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a purple arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[1,0],\"rowAttrs\":[\"purple\",\"brown\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "black",
+      "blue"
+     ],
+     "colAttrs": [
+      1,
+      3
+     ],
+     "blank": 0,
+     "options": [
+      "black|1",
+      "black|0",
+      "black|3",
+      "blue|1"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "black",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "blue",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "blue",
+       "size": "m",
+       "rotation": 270
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "blue",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a black arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a black arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 90
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[1,3],\"rowAttrs\":[\"black\",\"blue\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "purple",
+      "black"
+     ],
+     "colAttrs": [
+      3,
+      2
+     ],
+     "blank": 2,
+     "options": [
+      "black|1",
+      "black|3",
+      "purple|3",
+      "black|2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "black",
+       "size": "m",
+       "rotation": 180
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a black arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a black arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "black",
+      "size": "m",
+      "rotation": 270
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A4|3|{\"blank\":2,\"colAttrs\":[3,2],\"rowAttrs\":[\"purple\",\"black\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rowAttrs": [
+      "green",
+      "purple"
+     ],
+     "colAttrs": [
+      3,
+      1
+     ],
+     "blank": 0,
+     "options": [
+      "purple|3",
+      "green|3",
+      "green|2",
+      "green|1"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "green",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each column has the same turn. The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each column has the same turn.",
+      "The box needs a green arrow that points the same way as the other one in its column."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     }
+    },
+    "skillId": "R-A4",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[3,1],\"rowAttrs\":[\"green\",\"purple\"]}"
+   }
+  ]
+ }
+}

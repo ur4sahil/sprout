@@ -1,0 +1,3160 @@
+{
+ "skillId": "R-A9",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "target": "sun",
+   "relation": "analogyPair",
+   "example": [
+    "rain",
+    "umbrella"
+   ],
+   "options": [
+    "honey",
+    "soup",
+    "sunglasses"
+   ]
+  },
+  "prompt": {
+   "text": "Rain goes with umbrella. Sun goes with what?",
+   "speak": [
+    {
+     "word": "rain"
+    },
+    "goes with",
+    {
+     "word": "umbrella"
+    },
+    ".",
+    {
+     "word": "sun"
+    },
+    "goes with what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "matrix",
+   "cells": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🌧️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "rain"
+      }
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "☂️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "umbrella"
+      }
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "☀️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "sun"
+      }
+     ]
+    },
+    "blank"
+   ]
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍯",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "honey"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍲",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "soup"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🕶️",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "sunglasses"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "In the rain we use an umbrella.",
+    "In the sun we wear sunglasses."
+   ],
+   "steps": [
+    "In the rain we use an umbrella.",
+    "In the sun we wear sunglasses."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕶️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sunglasses"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "R-A9",
+  "level": 1,
+  "seed": 89,
+  "key": "R-A9|1|{\"example\":[\"rain\",\"umbrella\"],\"relation\":\"analogyPair\",\"target\":\"sun\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "fish",
+     "relation": "analogyPair",
+     "example": [
+      "bird",
+      "tree"
+     ],
+     "options": [
+      "scarf",
+      "foot",
+      "water"
+     ]
+    },
+    "prompt": {
+     "text": "Bird goes with tree. Fish goes with what?",
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "goes with",
+      {
+       "word": "tree"
+      },
+      ".",
+      {
+       "word": "fish"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "foot"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "steps": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌊",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "water"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A9|1|{\"example\":[\"bird\",\"tree\"],\"relation\":\"analogyPair\",\"target\":\"fish\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "spider",
+     "relation": "analogyPair",
+     "example": [
+      "fish",
+      "water"
+     ],
+     "options": [
+      "web",
+      "hand",
+      "lock"
+     ]
+    },
+    "prompt": {
+     "text": "Fish goes with water. Spider goes with what?",
+     "speak": [
+      {
+       "word": "fish"
+      },
+      "goes with",
+      {
+       "word": "water"
+      },
+      ".",
+      {
+       "word": "spider"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕷️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕸️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lock"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕷️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "spider"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕸️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A9|1|{\"example\":[\"fish\",\"water\"],\"relation\":\"analogyPair\",\"target\":\"spider\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bird",
+     "relation": "analogyPair",
+     "example": [
+      "fish",
+      "water"
+     ],
+     "options": [
+      "milk",
+      "tree",
+      "umbrella"
+     ]
+    },
+    "prompt": {
+     "text": "Fish goes with water. Bird goes with what?",
+     "speak": [
+      {
+       "word": "fish"
+      },
+      "goes with",
+      {
+       "word": "water"
+      },
+      ".",
+      {
+       "word": "bird"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☂️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "umbrella"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A9|1|{\"example\":[\"fish\",\"water\"],\"relation\":\"analogyPair\",\"target\":\"bird\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sun",
+     "relation": "analogyPair",
+     "example": [
+      "rain",
+      "umbrella"
+     ],
+     "options": [
+      "sunglasses",
+      "hand",
+      "lock"
+     ]
+    },
+    "prompt": {
+     "text": "Rain goes with umbrella. Sun goes with what?",
+     "speak": [
+      {
+       "word": "rain"
+      },
+      "goes with",
+      {
+       "word": "umbrella"
+      },
+      ".",
+      {
+       "word": "sun"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌧️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "rain"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "☂️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "umbrella"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "☀️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sun"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕶️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sunglasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lock"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "steps": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕶️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sunglasses"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A9|1|{\"example\":[\"rain\",\"umbrella\"],\"relation\":\"analogyPair\",\"target\":\"sun\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bird",
+     "relation": "analogyPair",
+     "example": [
+      "spider",
+      "web"
+     ],
+     "options": [
+      "hand",
+      "tree",
+      "honey"
+     ]
+    },
+    "prompt": {
+     "text": "Spider goes with web. Bird goes with what?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "goes with",
+      {
+       "word": "web"
+      },
+      ".",
+      {
+       "word": "bird"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕷️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "honey"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A9|1|{\"example\":[\"spider\",\"web\"],\"relation\":\"analogyPair\",\"target\":\"bird\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pencil",
+     "relation": "analogyPair",
+     "example": [
+      "key",
+      "lock"
+     ],
+     "options": [
+      "sunglasses",
+      "scarf",
+      "paper"
+     ]
+    },
+    "prompt": {
+     "text": "Key goes with lock. Pencil goes with what?",
+     "speak": [
+      {
+       "word": "key"
+      },
+      "goes with",
+      {
+       "word": "lock"
+      },
+      ".",
+      {
+       "word": "pencil"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔑",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "key"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lock"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pencil"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕶️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sunglasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A9|1|{\"example\":[\"key\",\"lock\"],\"relation\":\"analogyPair\",\"target\":\"pencil\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sock",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "paper",
+      "foot",
+      "egg"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Sock goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "sock"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sock"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "foot"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥚",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "egg"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "foot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A9|1|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"sock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "glasses",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "umbrella",
+      "sunglasses",
+      "eyes"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Glasses goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "glasses"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glasses"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☂️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "umbrella"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕶️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sunglasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A9|1|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"glasses\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "glasses",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "paper",
+      "eyes",
+      "soup"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Glasses goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "glasses"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glasses"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soup"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A9|1|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"glasses\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pencil",
+     "relation": "analogyPair",
+     "example": [
+      "spoon",
+      "soup"
+     ],
+     "options": [
+      "eyes",
+      "paper",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Spoon goes with soup. Pencil goes with what?",
+     "speak": [
+      {
+       "word": "spoon"
+      },
+      "goes with",
+      {
+       "word": "soup"
+      },
+      ".",
+      {
+       "word": "pencil"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spoon"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍲",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "soup"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pencil"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A9|1|{\"example\":[\"spoon\",\"soup\"],\"relation\":\"analogyPair\",\"target\":\"pencil\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "fish",
+     "relation": "analogyPair",
+     "example": [
+      "bird",
+      "tree"
+     ],
+     "options": [
+      "water",
+      "web",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Bird goes with tree. Fish goes with what?",
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "goes with",
+      {
+       "word": "tree"
+      },
+      ".",
+      {
+       "word": "fish"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕸️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "steps": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌊",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "water"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A9|2|{\"example\":[\"bird\",\"tree\"],\"relation\":\"analogyPair\",\"target\":\"fish\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "spider",
+     "relation": "analogyPair",
+     "example": [
+      "fish",
+      "water"
+     ],
+     "options": [
+      "tree",
+      "water",
+      "web"
+     ]
+    },
+    "prompt": {
+     "text": "Fish goes with water. Spider goes with what?",
+     "speak": [
+      {
+       "word": "fish"
+      },
+      "goes with",
+      {
+       "word": "water"
+      },
+      ".",
+      {
+       "word": "spider"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕷️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕸️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕷️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "spider"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕸️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A9|2|{\"example\":[\"fish\",\"water\"],\"relation\":\"analogyPair\",\"target\":\"spider\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bird",
+     "relation": "analogyPair",
+     "example": [
+      "fish",
+      "water"
+     ],
+     "options": [
+      "web",
+      "tree",
+      "water"
+     ]
+    },
+    "prompt": {
+     "text": "Fish goes with water. Bird goes with what?",
+     "speak": [
+      {
+       "word": "fish"
+      },
+      "goes with",
+      {
+       "word": "water"
+      },
+      ".",
+      {
+       "word": "bird"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕸️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A9|2|{\"example\":[\"fish\",\"water\"],\"relation\":\"analogyPair\",\"target\":\"bird\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sun",
+     "relation": "analogyPair",
+     "example": [
+      "rain",
+      "umbrella"
+     ],
+     "options": [
+      "umbrella",
+      "scarf",
+      "sunglasses"
+     ]
+    },
+    "prompt": {
+     "text": "Rain goes with umbrella. Sun goes with what?",
+     "speak": [
+      {
+       "word": "rain"
+      },
+      "goes with",
+      {
+       "word": "umbrella"
+      },
+      ".",
+      {
+       "word": "sun"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌧️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "rain"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "☂️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "umbrella"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "☀️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sun"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☂️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "umbrella"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕶️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sunglasses"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "steps": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕶️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sunglasses"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A9|2|{\"example\":[\"rain\",\"umbrella\"],\"relation\":\"analogyPair\",\"target\":\"sun\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bird",
+     "relation": "analogyPair",
+     "example": [
+      "spider",
+      "web"
+     ],
+     "options": [
+      "web",
+      "water",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Spider goes with web. Bird goes with what?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "goes with",
+      {
+       "word": "web"
+      },
+      ".",
+      {
+       "word": "bird"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕷️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕸️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A9|2|{\"example\":[\"spider\",\"web\"],\"relation\":\"analogyPair\",\"target\":\"bird\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pencil",
+     "relation": "analogyPair",
+     "example": [
+      "key",
+      "lock"
+     ],
+     "options": [
+      "soup",
+      "paper",
+      "lock"
+     ]
+    },
+    "prompt": {
+     "text": "Key goes with lock. Pencil goes with what?",
+     "speak": [
+      {
+       "word": "key"
+      },
+      "goes with",
+      {
+       "word": "lock"
+      },
+      ".",
+      {
+       "word": "pencil"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔑",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "key"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lock"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pencil"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soup"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lock"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A9|2|{\"example\":[\"key\",\"lock\"],\"relation\":\"analogyPair\",\"target\":\"pencil\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sock",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "foot",
+      "hand",
+      "eyes"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Sock goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "sock"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sock"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "foot"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "foot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A9|2|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"sock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "glasses",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "hand",
+      "foot",
+      "eyes"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Glasses goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "glasses"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glasses"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "foot"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A9|2|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"glasses\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "glasses",
+     "relation": "analogyPair",
+     "example": [
+      "glove",
+      "hand"
+     ],
+     "options": [
+      "hand",
+      "foot",
+      "eyes"
+     ]
+    },
+    "prompt": {
+     "text": "Glove goes with hand. Glasses goes with what?",
+     "speak": [
+      {
+       "word": "glove"
+      },
+      "goes with",
+      {
+       "word": "hand"
+      },
+      ".",
+      {
+       "word": "glasses"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glasses"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hand"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "foot"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "eyes"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A9|2|{\"example\":[\"glove\",\"hand\"],\"relation\":\"analogyPair\",\"target\":\"glasses\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "pencil",
+     "relation": "analogyPair",
+     "example": [
+      "spoon",
+      "soup"
+     ],
+     "options": [
+      "paper",
+      "lock",
+      "soup"
+     ]
+    },
+    "prompt": {
+     "text": "Spoon goes with soup. Pencil goes with what?",
+     "speak": [
+      {
+       "word": "spoon"
+      },
+      "goes with",
+      {
+       "word": "soup"
+      },
+      ".",
+      {
+       "word": "pencil"
+      },
+      "goes with what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spoon"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍲",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "soup"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pencil"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "paper"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soup"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A9|2|{\"example\":[\"spoon\",\"soup\"],\"relation\":\"analogyPair\",\"target\":\"pencil\"}"
+   }
+  ]
+ }
+}

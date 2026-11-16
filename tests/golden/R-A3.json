@@ -1,0 +1,2173 @@
+{
+ "skillId": "R-A3",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "from": [
+    "star",
+    "yellow",
+    "l"
+   ],
+   "to": [
+    "square",
+    "yellow",
+    "l"
+   ],
+   "base": [
+    "star",
+    "yellow",
+    "s"
+   ],
+   "options": [
+    "square|yellow|l",
+    "star|yellow|s",
+    "square|yellow|s"
+   ]
+  },
+  "prompt": {
+   "text": "Look at the first pair. Which one finishes the second pair the same way?",
+   "speak": [
+    "Look at the first pair. Which one finishes the second pair the same way?"
+   ]
+  },
+  "stimulus": {
+   "kind": "matrix",
+   "cells": [
+    {
+     "kind": "shape",
+     "shape": "star",
+     "color": "yellow",
+     "size": "l",
+     "rotation": 0
+    },
+    {
+     "kind": "shape",
+     "shape": "square",
+     "color": "yellow",
+     "size": "l",
+     "rotation": 0
+    },
+    {
+     "kind": "shape",
+     "shape": "star",
+     "color": "yellow",
+     "size": "s",
+     "rotation": 0
+    },
+    "blank"
+   ]
+  },
+  "options": [
+   {
+    "kind": "shape",
+    "shape": "square",
+    "color": "yellow",
+    "size": "l",
+    "rotation": 0
+   },
+   {
+    "kind": "shape",
+    "shape": "star",
+    "color": "yellow",
+    "size": "s",
+    "rotation": 0
+   },
+   {
+    "kind": "shape",
+    "shape": "square",
+    "color": "yellow",
+    "size": "s",
+    "rotation": 0
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The first pair changes shape from star to square. Do the same here."
+   ],
+   "steps": [
+    "The first pair changes shape from star to square.",
+    "Do the same here."
+   ],
+   "visual": {
+    "kind": "shape",
+    "shape": "square",
+    "color": "yellow",
+    "size": "s",
+    "rotation": 0
+   }
+  },
+  "skillId": "R-A3",
+  "level": 1,
+  "seed": 83,
+  "key": "R-A3|1|{\"base\":[\"star\",\"yellow\",\"s\"],\"from\":[\"star\",\"yellow\",\"l\"],\"to\":[\"square\",\"yellow\",\"l\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "red",
+      "l"
+     ],
+     "to": [
+      "square",
+      "red",
+      "l"
+     ],
+     "base": [
+      "star",
+      "purple",
+      "s"
+     ],
+     "options": [
+      "star|purple|s",
+      "square|purple|s",
+      "square|red|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from star to square. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from star to square.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A3|1|{\"base\":[\"star\",\"purple\",\"s\"],\"from\":[\"star\",\"red\",\"l\"],\"to\":[\"square\",\"red\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "yellow",
+      "s"
+     ],
+     "to": [
+      "triangle",
+      "yellow",
+      "s"
+     ],
+     "base": [
+      "star",
+      "yellow",
+      "l"
+     ],
+     "options": [
+      "star|yellow|l",
+      "triangle|yellow|l",
+      "triangle|yellow|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "yellow",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from star to triangle. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from star to triangle.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A3|1|{\"base\":[\"star\",\"yellow\",\"l\"],\"from\":[\"star\",\"yellow\",\"s\"],\"to\":[\"triangle\",\"yellow\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "red",
+      "s"
+     ],
+     "to": [
+      "star",
+      "red",
+      "l"
+     ],
+     "base": [
+      "star",
+      "blue",
+      "s"
+     ],
+     "options": [
+      "star|red|l",
+      "star|blue|s",
+      "star|blue|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A3|1|{\"base\":[\"star\",\"blue\",\"s\"],\"from\":[\"star\",\"red\",\"s\"],\"to\":[\"star\",\"red\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "heart",
+      "yellow",
+      "s"
+     ],
+     "to": [
+      "heart",
+      "purple",
+      "s"
+     ],
+     "base": [
+      "triangle",
+      "yellow",
+      "s"
+     ],
+     "options": [
+      "triangle|purple|s",
+      "triangle|yellow|s",
+      "heart|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes colour from yellow to purple. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes colour from yellow to purple.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A3|1|{\"base\":[\"triangle\",\"yellow\",\"s\"],\"from\":[\"heart\",\"yellow\",\"s\"],\"to\":[\"heart\",\"purple\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "pink",
+      "s"
+     ],
+     "to": [
+      "star",
+      "pink",
+      "l"
+     ],
+     "base": [
+      "square",
+      "black",
+      "s"
+     ],
+     "options": [
+      "star|pink|l",
+      "square|black|s",
+      "square|black|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A3|1|{\"base\":[\"square\",\"black\",\"s\"],\"from\":[\"star\",\"pink\",\"s\"],\"to\":[\"star\",\"pink\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "triangle",
+      "red",
+      "l"
+     ],
+     "to": [
+      "triangle",
+      "red",
+      "s"
+     ],
+     "base": [
+      "triangle",
+      "black",
+      "l"
+     ],
+     "options": [
+      "triangle|black|l",
+      "triangle|black|s",
+      "triangle|red|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The first pair changes size from big to small. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes size from big to small.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A3|1|{\"base\":[\"triangle\",\"black\",\"l\"],\"from\":[\"triangle\",\"red\",\"l\"],\"to\":[\"triangle\",\"red\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "red",
+      "l"
+     ],
+     "to": [
+      "triangle",
+      "red",
+      "l"
+     ],
+     "base": [
+      "circle",
+      "red",
+      "s"
+     ],
+     "options": [
+      "triangle|red|s",
+      "triangle|red|l",
+      "circle|red|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to triangle. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to triangle.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A3|1|{\"base\":[\"circle\",\"red\",\"s\"],\"from\":[\"circle\",\"red\",\"l\"],\"to\":[\"triangle\",\"red\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "purple",
+      "s"
+     ],
+     "to": [
+      "triangle",
+      "purple",
+      "s"
+     ],
+     "base": [
+      "circle",
+      "orange",
+      "l"
+     ],
+     "options": [
+      "triangle|purple|s",
+      "circle|orange|l",
+      "triangle|orange|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "orange",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to triangle. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to triangle.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A3|1|{\"base\":[\"circle\",\"orange\",\"l\"],\"from\":[\"circle\",\"purple\",\"s\"],\"to\":[\"triangle\",\"purple\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "brown",
+      "s"
+     ],
+     "to": [
+      "star",
+      "brown",
+      "s"
+     ],
+     "base": [
+      "circle",
+      "red",
+      "s"
+     ],
+     "options": [
+      "star|red|s",
+      "star|brown|s",
+      "circle|red|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "brown",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to star. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to star.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A3|1|{\"base\":[\"circle\",\"red\",\"s\"],\"from\":[\"circle\",\"brown\",\"s\"],\"to\":[\"star\",\"brown\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "triangle",
+      "black",
+      "l"
+     ],
+     "to": [
+      "triangle",
+      "green",
+      "l"
+     ],
+     "base": [
+      "triangle",
+      "black",
+      "s"
+     ],
+     "options": [
+      "triangle|green|l",
+      "triangle|black|s",
+      "triangle|green|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "green",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes colour from black to green. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes colour from black to green.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A3|1|{\"base\":[\"triangle\",\"black\",\"s\"],\"from\":[\"triangle\",\"black\",\"l\"],\"to\":[\"triangle\",\"green\",\"l\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "red",
+      "l"
+     ],
+     "to": [
+      "square",
+      "brown",
+      "l"
+     ],
+     "base": [
+      "star",
+      "red",
+      "s"
+     ],
+     "options": [
+      "square|red|s",
+      "square|brown|s",
+      "star|brown|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from star to square, and colour from red to brown. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from star to square, and colour from red to brown.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A3|2|{\"base\":[\"star\",\"red\",\"s\"],\"from\":[\"star\",\"red\",\"l\"],\"to\":[\"square\",\"brown\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "yellow",
+      "s"
+     ],
+     "to": [
+      "triangle",
+      "yellow",
+      "l"
+     ],
+     "base": [
+      "star",
+      "purple",
+      "s"
+     ],
+     "options": [
+      "triangle|purple|l",
+      "star|purple|l",
+      "triangle|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "yellow",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from star to triangle, and size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from star to triangle, and size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A3|2|{\"base\":[\"star\",\"purple\",\"s\"],\"from\":[\"star\",\"yellow\",\"s\"],\"to\":[\"triangle\",\"yellow\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "red",
+      "s"
+     ],
+     "to": [
+      "star",
+      "purple",
+      "l"
+     ],
+     "base": [
+      "square",
+      "red",
+      "s"
+     ],
+     "options": [
+      "square|red|l",
+      "square|purple|s",
+      "square|purple|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "purple",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes colour from red to purple, and size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes colour from red to purple, and size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A3|2|{\"base\":[\"square\",\"red\",\"s\"],\"from\":[\"star\",\"red\",\"s\"],\"to\":[\"star\",\"purple\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "heart",
+      "yellow",
+      "s"
+     ],
+     "to": [
+      "heart",
+      "purple",
+      "l"
+     ],
+     "base": [
+      "circle",
+      "yellow",
+      "s"
+     ],
+     "options": [
+      "circle|purple|l",
+      "circle|purple|s",
+      "circle|yellow|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "yellow",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes colour from yellow to purple, and size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes colour from yellow to purple, and size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A3|2|{\"base\":[\"circle\",\"yellow\",\"s\"],\"from\":[\"heart\",\"yellow\",\"s\"],\"to\":[\"heart\",\"purple\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "star",
+      "pink",
+      "s"
+     ],
+     "to": [
+      "triangle",
+      "pink",
+      "l"
+     ],
+     "base": [
+      "star",
+      "brown",
+      "s"
+     ],
+     "options": [
+      "triangle|brown|l",
+      "triangle|brown|s",
+      "star|brown|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "pink",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from star to triangle, and size from small to big. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from star to triangle, and size from small to big.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A3|2|{\"base\":[\"star\",\"brown\",\"s\"],\"from\":[\"star\",\"pink\",\"s\"],\"to\":[\"triangle\",\"pink\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "triangle",
+      "red",
+      "l"
+     ],
+     "to": [
+      "triangle",
+      "blue",
+      "s"
+     ],
+     "base": [
+      "circle",
+      "red",
+      "l"
+     ],
+     "options": [
+      "circle|blue|s",
+      "circle|red|s",
+      "circle|blue|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The first pair changes colour from red to blue, and size from big to small. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes colour from red to blue, and size from big to small.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A3|2|{\"base\":[\"circle\",\"red\",\"l\"],\"from\":[\"triangle\",\"red\",\"l\"],\"to\":[\"triangle\",\"blue\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "red",
+      "l"
+     ],
+     "to": [
+      "triangle",
+      "purple",
+      "l"
+     ],
+     "base": [
+      "circle",
+      "red",
+      "s"
+     ],
+     "options": [
+      "circle|purple|s",
+      "triangle|red|s",
+      "triangle|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "red",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to triangle, and colour from red to purple. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to triangle, and colour from red to purple.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A3|2|{\"base\":[\"circle\",\"red\",\"s\"],\"from\":[\"circle\",\"red\",\"l\"],\"to\":[\"triangle\",\"purple\",\"l\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "purple",
+      "s"
+     ],
+     "to": [
+      "triangle",
+      "brown",
+      "s"
+     ],
+     "base": [
+      "circle",
+      "purple",
+      "l"
+     ],
+     "options": [
+      "circle|brown|l",
+      "triangle|purple|l",
+      "triangle|brown|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "purple",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "brown",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "purple",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to triangle, and colour from purple to brown. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to triangle, and colour from purple to brown.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A3|2|{\"base\":[\"circle\",\"purple\",\"l\"],\"from\":[\"circle\",\"purple\",\"s\"],\"to\":[\"triangle\",\"brown\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "circle",
+      "brown",
+      "s"
+     ],
+     "to": [
+      "star",
+      "blue",
+      "s"
+     ],
+     "base": [
+      "circle",
+      "brown",
+      "l"
+     ],
+     "options": [
+      "star|brown|l",
+      "star|blue|l",
+      "circle|blue|l"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "brown",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "s",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "brown",
+       "size": "l",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from circle to star, and colour from brown to blue. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from circle to star, and colour from brown to blue.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A3|2|{\"base\":[\"circle\",\"brown\",\"l\"],\"from\":[\"circle\",\"brown\",\"s\"],\"to\":[\"star\",\"blue\",\"s\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "triangle",
+      "black",
+      "l"
+     ],
+     "to": [
+      "circle",
+      "green",
+      "l"
+     ],
+     "base": [
+      "triangle",
+      "black",
+      "s"
+     ],
+     "options": [
+      "triangle|green|s",
+      "circle|black|s",
+      "circle|green|s"
+     ]
+    },
+    "prompt": {
+     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "speak": [
+      "Look at the first pair. Which one finishes the second pair the same way?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "green",
+       "size": "l",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "s",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The first pair changes shape from triangle to circle, and colour from black to green. Do the same here."
+     ],
+     "steps": [
+      "The first pair changes shape from triangle to circle, and colour from black to green.",
+      "Do the same here."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A3",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A3|2|{\"base\":[\"triangle\",\"black\",\"s\"],\"from\":[\"triangle\",\"black\",\"l\"],\"to\":[\"circle\",\"green\",\"l\"]}"
+   }
+  ]
+ }
+}

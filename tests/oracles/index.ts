@@ -1,19 +1,25 @@
 import type { OracleId } from '../../src/engine/types';
 import { add } from './add';
+import { analogy } from './analogy';
 import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
+import { fold } from './fold';
 import { letter } from './letter';
 import { matchEqual } from './matchEqual';
+import { matrix } from './matrix';
 import { missing } from './missing';
+import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
 import { pattern } from './pattern';
 import { place } from './place';
 import { sequence } from './sequence';
+import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
+import { transform } from './transform';
 import type { Oracle } from './types';
 import { wordSet } from './wordSet';
 
@@ -35,4 +41,10 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   place,
   letter,
   wordSet,
+  analogy,
+  matrix,
+  transform,
+  numberRule,
+  series,
+  fold,
 };

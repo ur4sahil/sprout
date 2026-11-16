@@ -1,0 +1,2706 @@
+{
+ "skillId": "R-A1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "optionAttrs": [
+    "people",
+    "people",
+    "things"
+   ],
+   "odd": "book",
+   "pair": [
+    "man",
+    "woman"
+   ],
+   "options": [
+    "man",
+    "woman",
+    "book"
+   ]
+  },
+  "prompt": {
+   "text": "Which one does not belong?",
+   "speak": [
+    "Which one does not belong?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "👨",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "man"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "👩",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "woman"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "📖",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "book"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "These are both people. This one is not.",
+    {
+     "word": "book"
+    },
+    "."
+   ],
+   "steps": [
+    "These are both people.",
+    "This one is not: book."
+   ],
+   "visual": {
+    "kind": "emojiGroup",
+    "emoji": "📖",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "book"
+     }
+    ]
+   }
+  },
+  "skillId": "R-A1",
+  "level": 1,
+  "seed": 81,
+  "key": "R-A1|1|{\"odd\":\"book\",\"optionAttrs\":[\"people\",\"people\",\"things\"],\"pair\":[\"man\",\"woman\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "clothes",
+      "clothes",
+      "food"
+     ],
+     "odd": "cheese",
+     "pair": [
+      "dress",
+      "scarf"
+     ],
+     "options": [
+      "dress",
+      "scarf",
+      "cheese"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dress"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cheese"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "cheese"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cheese"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A1|1|{\"odd\":\"cheese\",\"optionAttrs\":[\"clothes\",\"clothes\",\"food\"],\"pair\":[\"dress\",\"scarf\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "plants",
+      "clothes",
+      "clothes"
+     ],
+     "odd": "cactus",
+     "pair": [
+      "shirt",
+      "shoe"
+     ],
+     "options": [
+      "cactus",
+      "shirt",
+      "shoe"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cactus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shirt"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shoe"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "cactus"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: cactus."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cactus"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A1|1|{\"odd\":\"cactus\",\"optionAttrs\":[\"plants\",\"clothes\",\"clothes\"],\"pair\":[\"shirt\",\"shoe\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "animals",
+      "clothes",
+      "clothes"
+     ],
+     "odd": "rabbit",
+     "pair": [
+      "dress",
+      "shoe"
+     ],
+     "options": [
+      "rabbit",
+      "dress",
+      "shoe"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dress"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shoe"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "rabbit"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: rabbit."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A1|1|{\"odd\":\"rabbit\",\"optionAttrs\":[\"animals\",\"clothes\",\"clothes\"],\"pair\":[\"dress\",\"shoe\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "people",
+      "food"
+     ],
+     "odd": "pizza",
+     "pair": [
+      "baby",
+      "woman"
+     ],
+     "options": [
+      "baby",
+      "woman",
+      "pizza"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are both people. This one is not.",
+      {
+       "word": "pizza"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both people.",
+      "This one is not: pizza."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A1|1|{\"odd\":\"pizza\",\"optionAttrs\":[\"people\",\"people\",\"food\"],\"pair\":[\"baby\",\"woman\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "clothes",
+      "clothes"
+     ],
+     "odd": "baby",
+     "pair": [
+      "hat",
+      "scarf"
+     ],
+     "options": [
+      "baby",
+      "hat",
+      "scarf"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "baby"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: baby."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A1|1|{\"odd\":\"baby\",\"optionAttrs\":[\"people\",\"clothes\",\"clothes\"],\"pair\":[\"hat\",\"scarf\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "vehicles",
+      "vehicles"
+     ],
+     "odd": "woman",
+     "pair": [
+      "boat",
+      "rocket"
+     ],
+     "options": [
+      "woman",
+      "boat",
+      "rocket"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rocket"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both vehicles. This one is not.",
+      {
+       "word": "woman"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both vehicles.",
+      "This one is not: woman."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A1|1|{\"odd\":\"woman\",\"optionAttrs\":[\"people\",\"vehicles\",\"vehicles\"],\"pair\":[\"boat\",\"rocket\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "vehicles",
+      "animals",
+      "animals"
+     ],
+     "odd": "car",
+     "pair": [
+      "duck",
+      "lion"
+     ],
+     "options": [
+      "car",
+      "duck",
+      "lion"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: car."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A1|1|{\"odd\":\"car\",\"optionAttrs\":[\"vehicles\",\"animals\",\"animals\"],\"pair\":[\"duck\",\"lion\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "clothes",
+      "animals",
+      "animals"
+     ],
+     "odd": "shirt",
+     "pair": [
+      "elephant",
+      "frog"
+     ],
+     "options": [
+      "shirt",
+      "frog",
+      "elephant"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shirt"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "shirt"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: shirt."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shirt"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A1|1|{\"odd\":\"shirt\",\"optionAttrs\":[\"clothes\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"frog\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "things",
+      "animals",
+      "animals"
+     ],
+     "odd": "cup",
+     "pair": [
+      "elephant",
+      "fish"
+     ],
+     "options": [
+      "cup",
+      "fish",
+      "elephant"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "cup"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: cup."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A1|1|{\"odd\":\"cup\",\"optionAttrs\":[\"things\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"fish\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "vehicles",
+      "vehicles",
+      "animals"
+     ],
+     "odd": "dog",
+     "pair": [
+      "boat",
+      "plane"
+     ],
+     "options": [
+      "plane",
+      "boat",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "plane"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are both vehicles. This one is not.",
+      {
+       "word": "dog"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both vehicles.",
+      "This one is not: dog."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A1|1|{\"odd\":\"dog\",\"optionAttrs\":[\"vehicles\",\"vehicles\",\"animals\"],\"pair\":[\"boat\",\"plane\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "people",
+      "animals"
+     ],
+     "odd": "lion",
+     "pair": [
+      "boy",
+      "king"
+     ],
+     "options": [
+      "king",
+      "boy",
+      "lion"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are both people. This one is not.",
+      {
+       "word": "lion"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both people.",
+      "This one is not: lion."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A1|2|{\"odd\":\"lion\",\"optionAttrs\":[\"people\",\"people\",\"animals\"],\"pair\":[\"boy\",\"king\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "animals",
+      "people"
+     ],
+     "odd": "duck",
+     "pair": [
+      "girl",
+      "woman"
+     ],
+     "options": [
+      "girl",
+      "duck",
+      "woman"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "These are both people. This one is not.",
+      {
+       "word": "duck"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both people.",
+      "This one is not: duck."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A1|2|{\"odd\":\"duck\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"girl\",\"woman\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "animals",
+      "people"
+     ],
+     "odd": "duck",
+     "pair": [
+      "boy",
+      "man"
+     ],
+     "options": [
+      "man",
+      "duck",
+      "boy"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "These are both people. This one is not.",
+      {
+       "word": "duck"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both people.",
+      "This one is not: duck."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A1|2|{\"odd\":\"duck\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"boy\",\"man\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "animals",
+      "plants",
+      "plants"
+     ],
+     "odd": "fish",
+     "pair": [
+      "cactus",
+      "clover"
+     ],
+     "options": [
+      "fish",
+      "clover",
+      "cactus"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "clover"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cactus"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both plants. This one is not.",
+      {
+       "word": "fish"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both plants.",
+      "This one is not: fish."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A1|2|{\"odd\":\"fish\",\"optionAttrs\":[\"animals\",\"plants\",\"plants\"],\"pair\":[\"cactus\",\"clover\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "animals",
+      "people"
+     ],
+     "odd": "elephant",
+     "pair": [
+      "king",
+      "man"
+     ],
+     "options": [
+      "man",
+      "elephant",
+      "king"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "These are both people. This one is not.",
+      {
+       "word": "elephant"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both people.",
+      "This one is not: elephant."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A1|2|{\"odd\":\"elephant\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"king\",\"man\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "things",
+      "clothes",
+      "clothes"
+     ],
+     "odd": "door",
+     "pair": [
+      "glove",
+      "shoe"
+     ],
+     "options": [
+      "door",
+      "shoe",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shoe"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glove"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "door"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: door."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A1|2|{\"odd\":\"door\",\"optionAttrs\":[\"things\",\"clothes\",\"clothes\"],\"pair\":[\"glove\",\"shoe\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "plants",
+      "animals",
+      "animals"
+     ],
+     "odd": "cactus",
+     "pair": [
+      "duck",
+      "lion"
+     ],
+     "options": [
+      "cactus",
+      "duck",
+      "lion"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cactus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "cactus"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: cactus."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cactus"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A1|2|{\"odd\":\"cactus\",\"optionAttrs\":[\"plants\",\"animals\",\"animals\"],\"pair\":[\"duck\",\"lion\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "animals",
+      "animals"
+     ],
+     "odd": "boy",
+     "pair": [
+      "elephant",
+      "frog"
+     ],
+     "options": [
+      "boy",
+      "frog",
+      "elephant"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "boy"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: boy."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A1|2|{\"odd\":\"boy\",\"optionAttrs\":[\"people\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"frog\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "people",
+      "animals",
+      "animals"
+     ],
+     "odd": "baby",
+     "pair": [
+      "elephant",
+      "fish"
+     ],
+     "options": [
+      "baby",
+      "fish",
+      "elephant"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are both animals. This one is not.",
+      {
+       "word": "baby"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both animals.",
+      "This one is not: baby."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A1|2|{\"odd\":\"baby\",\"optionAttrs\":[\"people\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"fish\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "clothes",
+      "clothes",
+      "things"
+     ],
+     "odd": "cup",
+     "pair": [
+      "shoe",
+      "sock"
+     ],
+     "options": [
+      "sock",
+      "shoe",
+      "cup"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shoe"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are both clothes. This one is not.",
+      {
+       "word": "cup"
+      },
+      "."
+     ],
+     "steps": [
+      "These are both clothes.",
+      "This one is not: cup."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A1|2|{\"odd\":\"cup\",\"optionAttrs\":[\"clothes\",\"clothes\",\"things\"],\"pair\":[\"shoe\",\"sock\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "purple",
+      "purple",
+      "red",
+      "purple"
+     ],
+     "by": "colour",
+     "shape": "triangle",
+     "options": [
+      "purple",
+      "purple",
+      "red",
+      "purple"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all purple. This one is red."
+     ],
+     "steps": [
+      "These three are all purple.",
+      "This one is red."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"purple\",\"purple\",\"red\",\"purple\"],\"shape\":\"triangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "blue",
+      "blue",
+      "orange",
+      "blue"
+     ],
+     "by": "colour",
+     "shape": "square",
+     "options": [
+      "blue",
+      "blue",
+      "orange",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all blue. This one is orange."
+     ],
+     "steps": [
+      "These three are all blue.",
+      "This one is orange."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"blue\",\"blue\",\"orange\",\"blue\"],\"shape\":\"square\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "orange",
+      "orange",
+      "black",
+      "orange"
+     ],
+     "by": "colour",
+     "shape": "triangle",
+     "options": [
+      "orange",
+      "orange",
+      "black",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all orange. This one is black."
+     ],
+     "steps": [
+      "These three are all orange.",
+      "This one is black."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"orange\",\"orange\",\"black\",\"orange\"],\"shape\":\"triangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "blue",
+      "blue",
+      "blue",
+      "pink"
+     ],
+     "by": "colour",
+     "shape": "square",
+     "options": [
+      "blue",
+      "blue",
+      "blue",
+      "pink"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "These three are all blue. This one is pink."
+     ],
+     "steps": [
+      "These three are all blue.",
+      "This one is pink."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"blue\",\"blue\",\"blue\",\"pink\"],\"shape\":\"square\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "big",
+      "big",
+      "small",
+      "big"
+     ],
+     "by": "size",
+     "shape": "square",
+     "color": "purple",
+     "options": [
+      "big",
+      "big",
+      "small",
+      "big"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all big. This one is small."
+     ],
+     "steps": [
+      "These three are all big.",
+      "This one is small."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A1|3|{\"by\":\"size\",\"color\":\"purple\",\"optionAttrs\":[\"big\",\"big\",\"small\",\"big\"],\"shape\":\"square\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "blue",
+      "blue",
+      "green",
+      "blue"
+     ],
+     "by": "colour",
+     "shape": "star",
+     "options": [
+      "blue",
+      "blue",
+      "green",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all blue. This one is green."
+     ],
+     "steps": [
+      "These three are all blue.",
+      "This one is green."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"blue\",\"blue\",\"green\",\"blue\"],\"shape\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "black",
+      "orange",
+      "orange",
+      "orange"
+     ],
+     "by": "colour",
+     "shape": "heart",
+     "options": [
+      "black",
+      "orange",
+      "orange",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all orange. This one is black."
+     ],
+     "steps": [
+      "These three are all orange.",
+      "This one is black."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A1|3|{\"by\":\"colour\",\"optionAttrs\":[\"black\",\"orange\",\"orange\",\"orange\"],\"shape\":\"heart\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "circle",
+      "star",
+      "star",
+      "star"
+     ],
+     "by": "shape",
+     "color": "pink",
+     "options": [
+      "circle",
+      "star",
+      "star",
+      "star"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all stars. This one is a circle."
+     ],
+     "steps": [
+      "These three are all stars.",
+      "This one is a circle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A1|3|{\"by\":\"shape\",\"color\":\"pink\",\"optionAttrs\":[\"circle\",\"star\",\"star\",\"star\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "big",
+      "small",
+      "small",
+      "small"
+     ],
+     "by": "size",
+     "shape": "circle",
+     "color": "brown",
+     "options": [
+      "big",
+      "small",
+      "small",
+      "small"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all small. This one is big."
+     ],
+     "steps": [
+      "These three are all small.",
+      "This one is big."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A1|3|{\"by\":\"size\",\"color\":\"brown\",\"optionAttrs\":[\"big\",\"small\",\"small\",\"small\"],\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "twins": true,
+    "facts": {
+     "optionAttrs": [
+      "big",
+      "big",
+      "small",
+      "big"
+     ],
+     "by": "size",
+     "shape": "star",
+     "color": "brown",
+     "options": [
+      "big",
+      "big",
+      "small",
+      "big"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all big. This one is small."
+     ],
+     "steps": [
+      "These three are all big.",
+      "This one is small."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A1|3|{\"by\":\"size\",\"color\":\"brown\",\"optionAttrs\":[\"big\",\"big\",\"small\",\"big\"],\"shape\":\"star\"}"
+   }
+  ]
+ }
+}

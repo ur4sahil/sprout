@@ -3,22 +3,28 @@ import { describe, expect, it } from 'vitest';
 import { ORACLE_FACTS } from '../../src/engine/types';
 import type { Question, QuestionBase, Visual } from '../../src/engine/types';
 import { add } from './add';
+import { analogy } from './analogy';
 import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
+import { fold } from './fold';
 import { ORACLES } from './index';
 import { judge } from './judge';
 import { letter } from './letter';
 import { matchEqual } from './matchEqual';
+import { matrix } from './matrix';
 import { missing } from './missing';
+import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
 import { pattern } from './pattern';
 import { place } from './place';
 import { sequence } from './sequence';
+import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
 import { subtract } from './subtract';
+import { transform } from './transform';
 import { wordSet } from './wordSet';
 
 describe('count', () => {
@@ -203,7 +209,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'attribute', 'compare', 'count', 'letter', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'shapeFacts', 'sortBy', 'subtract', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'letter', 'matchEqual', 'matrix', 'missing', 'numberRule', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'transform', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -406,5 +412,134 @@ describe('wordSet', () => {
     expect(() => wordSet({ target: 'cat', relation: 'vowelTeam', options: ['a', 'b'] })).toThrow(/not written yet/);
     expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: [1, 2] })).toThrow();
     expect(() => wordSet({ relation: 'rhyme', options: ['hat'] })).toThrow();
+  });
+});
+
+describe('analogy', () => {
+  it('applies the change of the first pair to the second', () => {
+    expect(analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'red', 's'], base: ['square', 'blue', 'l'] })).toEqual({ kind: 'value', value: 'square|blue|s' });
+    expect(analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'green', 'l'], base: ['star', 'red', 's'] })).toEqual({ kind: 'value', value: 'star|green|s' });
+    // Two attributes change at once.
+    expect(analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'blue', 's'], base: ['heart', 'red', 'l'] })).toEqual({ kind: 'value', value: 'heart|blue|s' });
+  });
+  it('refuses a first pair with no change, a second pair that starts differently, and the same pair twice', () => {
+    expect(() => analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'red', 'l'], base: ['square', 'blue', 'l'] })).toThrow();
+    expect(() => analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'red', 's'], base: ['square', 'blue', 's'] })).toThrow();
+    expect(() => analogy({ from: ['circle', 'red', 'l'], to: ['circle', 'red', 's'], base: ['circle', 'red', 'l'] })).toThrow();
+    expect(() => analogy({ from: ['circle', 'red'], to: ['circle', 'red', 's'], base: ['circle', 'red', 'l'] })).toThrow();
+  });
+});
+
+describe('matrix', () => {
+  it('gives the cell that fits its row and its column', () => {
+    const facts = { rowAttrs: ['circle', 'square'], colAttrs: ['red', 'blue'] };
+    expect(matrix({ ...facts, blank: 3 })).toEqual({ kind: 'value', value: 'square|blue' });
+    expect(matrix({ ...facts, blank: 0 })).toEqual({ kind: 'value', value: 'circle|red' });
+    expect(matrix({ ...facts, blank: 1 })).toEqual({ kind: 'value', value: 'circle|blue' });
+    expect(matrix({ ...facts, blank: 2 })).toEqual({ kind: 'value', value: 'square|red' });
+    expect(matrix({ rowAttrs: ['a', 'b', 'c'], colAttrs: ['x', 'y', 'z'], blank: 5 })).toEqual({ kind: 'value', value: 'b|z' });
+    // Stripes: every column is the same, the rows differ.
+    expect(matrix({ rowAttrs: ['red', 'blue', 'red'], colAttrs: ['square', 'square', 'square'], blank: 8 })).toEqual({ kind: 'value', value: 'red|square' });
+  });
+  it('gives the colour of a checkerboard square', () => {
+    const facts = { rowAttrs: [0, 1, 2], colAttrs: [0, 1, 2], rule: 'checker', colors: ['red', 'blue'] };
+    expect(matrix({ ...facts, blank: 4 })).toEqual({ kind: 'value', value: 'red' });
+    expect(matrix({ ...facts, blank: 1 })).toEqual({ kind: 'value', value: 'blue' });
+    expect(matrix({ ...facts, blank: 8 })).toEqual({ kind: 'value', value: 'red' });
+    expect(() => matrix({ ...facts, colors: ['red', 'red'], blank: 4 })).toThrow();
+  });
+  it('refuses a grid of the wrong size, a box outside it, and a grid where every cell is the same', () => {
+    expect(() => matrix({ rowAttrs: ['a'], colAttrs: ['x'], blank: 0 })).toThrow();
+    expect(() => matrix({ rowAttrs: ['a', 'b'], colAttrs: ['x', 'y', 'z'], blank: 0 })).toThrow();
+    expect(() => matrix({ rowAttrs: ['a', 'b'], colAttrs: ['x', 'y'], blank: 4 })).toThrow();
+    expect(() => matrix({ rowAttrs: ['a', 'a'], colAttrs: ['x', 'x'], blank: 0 })).toThrow();
+  });
+});
+
+describe('transform', () => {
+  it('turns by quarter turns, round and round', () => {
+    expect(transform({ shape: 'arrow', startTurn: 0, turns: 3, flip: false })).toEqual({ kind: 'value', value: '3' });
+    expect(transform({ shape: 'arrow', startTurn: 2, turns: 3, flip: false })).toEqual({ kind: 'value', value: '1' });
+    expect(transform({ shape: 'lShape', startTurn: 1, turns: 6, flip: false })).toEqual({ kind: 'value', value: '3' });
+    expect(transform({ shape: 'lShape', startTurn: 3, turns: 0, flip: false })).toEqual({ kind: 'value', value: '3' });
+  });
+  it('mirrors left to right, which reverses a quarter turn', () => {
+    expect(transform({ shape: 'flag', startTurn: 0, turns: 0, flip: true })).toEqual({ kind: 'value', value: '0f' });
+    expect(transform({ shape: 'flag', startTurn: 1, turns: 0, flip: true })).toEqual({ kind: 'value', value: '3f' });
+    expect(transform({ shape: 'flag', startTurn: 2, turns: 0, flip: true })).toEqual({ kind: 'value', value: '2f' });
+    expect(transform({ shape: 'flag', startTurn: 3, turns: 0, flip: true })).toEqual({ kind: 'value', value: '1f' });
+  });
+  it('refuses turns that are not whole, and a flip that is not yes or no', () => {
+    expect(() => transform({ shape: 'flag', startTurn: 0.5, turns: 0, flip: true })).toThrow();
+    expect(() => transform({ shape: 'flag', startTurn: 0, turns: -1, flip: false })).toThrow();
+    expect(() => transform({ shape: 'flag', startTurn: 0, turns: 1 })).toThrow();
+    expect(() => transform({ startTurn: 0, turns: 1, flip: false })).toThrow();
+  });
+});
+
+describe('numberRule', () => {
+  it('finds plus n, minus n or double, and applies it', () => {
+    expect(numberRule({ examples: [[2, 5], [4, 7]], base: 6 })).toEqual({ kind: 'value', value: 9 });
+    expect(numberRule({ examples: [[3, 6], [5, 10]], base: 4 })).toEqual({ kind: 'value', value: 8 });
+    expect(numberRule({ examples: [[9, 7], [5, 3]], base: 8 })).toEqual({ kind: 'value', value: 6 });
+  });
+  it('fails when two rules fit: "2 is to 4" alone is plus 2 and double', () => {
+    expect(() => numberRule({ examples: [[2, 4]], base: 6 })).toThrow(/2 rules/);
+    expect(() => numberRule({ examples: [[2, 4], [2, 4]], base: 6 })).toThrow(/2 rules/);
+  });
+  it('fails when no rule fits, and on broken examples', () => {
+    expect(() => numberRule({ examples: [[2, 5], [4, 8]], base: 6 })).toThrow(/0 rules/);
+    expect(() => numberRule({ examples: [[3, 3], [5, 5]], base: 6 })).toThrow();
+    expect(() => numberRule({ examples: [[2]], base: 6 })).toThrow();
+    expect(() => numberRule({ examples: [], base: 6 })).toThrow();
+  });
+});
+
+describe('series', () => {
+  it('follows one step, or steps that take turns', () => {
+    expect(series({ start: 3, steps: [2], blankIndex: 4 })).toEqual({ kind: 'value', value: 11 });
+    expect(series({ start: 10, steps: [-1], blankIndex: 3 })).toEqual({ kind: 'value', value: 7 });
+    expect(series({ start: 1, steps: [1, 2], blankIndex: 4 })).toEqual({ kind: 'value', value: 7 }); // 1 2 4 5 7
+    expect(series({ start: 1, steps: [1, 2], blankIndex: 5 })).toEqual({ kind: 'value', value: 8 });
+    expect(series({ start: 5, steps: [5], blankIndex: 0 })).toEqual({ kind: 'value', value: 5 });
+  });
+  it('refuses a row that never changes and a blank that is not a place', () => {
+    expect(() => series({ start: 3, steps: [0], blankIndex: 2 })).toThrow();
+    expect(() => series({ start: 3, steps: [2], blankIndex: -1 })).toThrow();
+    expect(() => series({ start: 3, steps: [], blankIndex: 2 })).toThrow();
+  });
+});
+
+describe('fold', () => {
+  it('copies each hole across a vertical fold to column 3 minus its column', () => {
+    expect(fold({ fold: 'vertical', holes: [{ col: 0, row: 0 }] })).toEqual({ kind: 'value', value: '0,0 3,0' });
+    expect(fold({ fold: 'vertical', holes: [{ col: 1, row: 2 }] })).toEqual({ kind: 'value', value: '1,2 2,2' });
+    expect(fold({ fold: 'vertical', holes: [{ col: 0, row: 3 }, { col: 1, row: 0 }] })).toEqual({ kind: 'value', value: '0,3 1,0 2,0 3,3' });
+  });
+  it('copies each hole across a horizontal fold to row 3 minus its row', () => {
+    expect(fold({ fold: 'horizontal', holes: [{ col: 0, row: 0 }] })).toEqual({ kind: 'value', value: '0,0 0,3' });
+    expect(fold({ fold: 'horizontal', holes: [{ col: 2, row: 1 }] })).toEqual({ kind: 'value', value: '2,1 2,2' });
+  });
+  it('refuses a hole off the folded paper, two holes in one place, and an unknown fold', () => {
+    expect(() => fold({ fold: 'vertical', holes: [{ col: 2, row: 0 }] })).toThrow();
+    expect(() => fold({ fold: 'horizontal', holes: [{ col: 0, row: 2 }] })).toThrow();
+    expect(() => fold({ fold: 'vertical', holes: [{ col: 0, row: 0 }, { col: 0, row: 0 }] })).toThrow();
+    expect(() => fold({ fold: 'diagonal', holes: [{ col: 0, row: 0 }] })).toThrow();
+    expect(() => fold({ fold: 'vertical', holes: [{ col: 0 }] })).toThrow();
+  });
+});
+
+describe('wordSet, the reasoning relations', () => {
+  it('analogyPair: the second half of the pair the target starts', () => {
+    expect(wordSet({ target: 'glove', relation: 'analogyPair', options: ['hand', 'honey', 'tree'] })).toEqual({ kind: 'index', index: 0 });
+    expect(wordSet({ target: 'bee', relation: 'analogyPair', options: ['milk', 'egg', 'honey'] })).toEqual({ kind: 'index', index: 2 });
+    expect(() => wordSet({ target: 'bee', relation: 'analogyPair', options: ['milk', 'egg'] })).toThrow();
+    expect(() => wordSet({ target: 'honey', relation: 'analogyPair', options: ['bee', 'egg'] })).toThrow();
+  });
+  it('riddle: the answer to the riddle', () => {
+    expect(wordSet({ target: 'Which one tells the time?', relation: 'riddle', options: ['shoe', 'clock'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['bird', 'fish', 'car'] })).toEqual({ kind: 'index', index: 0 });
+    expect(() => wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
+    expect(() => wordSet({ target: 'Which one can swim?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
   });
 });
