@@ -1,6 +1,6 @@
 import type { Page } from '@playwright/test';
 import path from 'node:path';
-import { expect, test } from './fixtures';
+import { expect, test, typePin } from './fixtures';
 import { DIR } from './paths';
 
 // Saved for a person to look at: .e2e/shots/<device>-<screen>.png
@@ -42,6 +42,11 @@ export async function finishCheckIn(page: Page): Promise<void> {
 // is marked finished unless `checkIn` is 'new'.
 export async function addChild(page: Page, name: string, grade: string, checkIn: 'done' | 'new' = 'done'): Promise<void> {
   await page.getByRole('button', { name: 'Add a child' }).click();
+  // Adding a child is behind the grown-ups gate. A grown-up who has just chosen the PIN is let through.
+  // One who signed in on a device that already knew the family's PIN is asked for it.
+  const gate = page.getByRole('heading', { name: 'Grown-ups only' });
+  await expect(gate.or(page.getByLabel('First name'))).toBeVisible();
+  if (await gate.isVisible()) await typePin(page);
   await page.getByLabel('First name').fill(name);
   await page.getByRole('button', { name: 'turtle' }).click();
   await page.getByRole('button', { name: 'Next' }).click();

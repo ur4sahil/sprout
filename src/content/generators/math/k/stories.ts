@@ -15,12 +15,14 @@ import { crossedGroup } from './subtracting';
 // Math K C.10 and C.11. Family: Stories. Oracles: add, subtract.
 // Levels: spoken story with pictures, to 5 / to 10 / no pictures, typed.
 
-interface Told {
+export interface Told {
   kind: StoryKind;
   name: string;
+  name2?: string; // the second child in a compare story
   thing: Countable;
   a: number;
   b: number;
+  c?: number; // the third number in a two-step story
 }
 
 const isAre = (n: number): string => (n === 1 ? 'is' : 'are');
@@ -35,6 +37,8 @@ export function tellStory(told: Told): { text: string; speak: Say } {
     areB: isAre(told.b),
   };
   const numbers: Record<string, number> = { a: told.a, b: told.b };
+  if (told.name2 !== undefined) words.name2 = told.name2;
+  if (told.c !== undefined) numbers.c = told.c;
   const lines: string[] = [];
   const speak: Say = [];
   for (const sentence of STORY_TEMPLATES[told.kind]) {

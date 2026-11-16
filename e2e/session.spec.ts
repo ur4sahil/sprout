@@ -20,7 +20,7 @@ test.describe('the session on a device', () => {
     await signUp(page);
     await page.reload();
     await expectStartScreen(page);
-    await page.goto('/parent/dashboard');
+    await page.goto('/parent/no-such-page');
     await expectStartScreen(page);
   });
 
@@ -64,7 +64,7 @@ test.describe('the session on a device', () => {
     await page.route('**/api/**', (route) => route.abort('internetdisconnected'));
     await page.reload();
     await expectStartScreen(page);
-    await page.goto('/parent/dashboard');
+    await page.goto('/parent/no-such-page');
     await expectStartScreen(page);
     await expect(page.getByRole('alert')).toHaveCount(0);
     // Being offline did not sign the device out.
