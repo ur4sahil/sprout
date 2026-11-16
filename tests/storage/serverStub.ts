@@ -1,4 +1,5 @@
 import { vi } from 'vitest';
+import { freezeClock } from '../../src/lib/clock';
 import { COOKIE_NAME } from '../../worker/auth';
 import { handleApi } from '../../worker/index';
 import type { Harness } from '../worker/harness';
@@ -9,12 +10,15 @@ export interface ServerStub {
   calls: { method: string; path: string; body: string | null }[];
   cookie(): string | null;
   goOffline(): void;
+  goOnline(): void;
 }
 
 // Replaces fetch with the real Worker code and an in-memory store.
 // It plays the browser's part: it adds the Origin header and keeps the cookie.
 export function stubServer(): ServerStub {
   const server = makeHarness();
+  // The device and the server agree on what time it is.
+  freezeClock(server.deps.now());
   const calls: ServerStub['calls'] = [];
   let cookie: string | null = null;
   let offline = false;
@@ -42,6 +46,9 @@ export function stubServer(): ServerStub {
     cookie: () => cookie,
     goOffline: () => {
       offline = true;
+    },
+    goOnline: () => {
+      offline = false;
     },
   };
 }

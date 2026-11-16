@@ -58,4 +58,8 @@
 - Engine code reads dates only through `src/lib/clock.ts` (`localDayOf`, `addDays`, `daysBetween`). A test fails on `new Date` or `Date.now` inside `src/engine` or `src/content`.
 - A ladder walk in `DiagnosticProgress` also saves `right` and `wrong` for the skill being tested, so a diagnostic stopped in the middle of a skill resumes exactly.
 - `evaluateAwards(states, totals, skills)` takes the catalogue as a third argument.
-- Next: step 5, Phase 3, storage.
+- Step 5, Phase 3 (storage), is built: the `Repo` interface, `memoryRepo` and `idbRepo` over one shared rule layer (`repoCore.ts` on a plain `Backend`), quarantine, reset, export and import with merge, the persistent-storage request, the error list and the sign-in state in the device record.
+- Launch rule: a saved end date that has not passed opens the app with or without a network. One that has passed locks it. If the server says the session is gone, the app stays open for that launch, clears the saved sign-in in the background, and locks at the next launch.
+- To add an IndexedDB change: add a new step to `UPGRADES` in `idbRepo.ts`. Never edit a step that has shipped.
+- In tests, every test starts with an empty `memoryRepo` (`tests/setup.ts`), and `stubServer()` freezes the app clock to the test server's clock.
+- Next: step 6, Phase 4a, visuals.

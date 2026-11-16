@@ -95,6 +95,42 @@ export async function signUp(page: Page, email = listedEmail(), password = PASSW
   return email;
 }
 
+// What the device record in IndexedDB says about the sign-in.
+export async function savedSignIn(page: Page): Promise<{ email: string | null; expiresAt: string | null } | null> {
+  return page.evaluate(
+    () =>
+      new Promise<{ email: string | null; expiresAt: string | null } | null>((resolve) => {
+        const request = indexedDB.open('sprout');
+        request.onerror = () => resolve(null);
+        request.onsuccess = () => {
+          const db = request.result;
+          if (!db.objectStoreNames.contains('device')) {
+            db.close();
+            resolve(null);
+            return;
+          }
+          const get = db.transaction('device').objectStore('device').get('device');
+          get.onsuccess = () => {
+            const device = get.result as { signedInEmail?: string | null; sessionExpiresAt?: string | null } | undefined;
+            db.close();
+            resolve(device ? { email: device.signedInEmail ?? null, expiresAt: device.sessionExpiresAt ?? null } : null);
+          };
+          get.onerror = () => resolve(null);
+        };
+      }),
+  );
+}
+
+// The server no longer accepts this device's session. The app stays open for this launch,
+// notices in the background, and locks at the next launch.
+export async function expectLockedAtNextLaunch(page: Page): Promise<void> {
+  await page.goto('/');
+  await expectStartScreen(page);
+  await expect.poll(async () => (await savedSignIn(page))?.email ?? null).toBeNull();
+  await openSignedOut(page, '/');
+}
+
+// Ends the session on the server only, as another device or the server itself would.
 export async function signOutByApi(page: Page): Promise<number> {
   return page.evaluate(async () => {
     const reply = await fetch('/api/auth/logout', {
@@ -104,6 +140,12 @@ export async function signOutByApi(page: Page): Promise<number> {
     });
     return reply.status;
   });
+}
+
+// Signs out the way the app does: the server session ends and the device forgets the sign-in.
+export async function signOutFully(page: Page): Promise<void> {
+  expect(await signOutByApi(page)).toBe(200);
+  await expectLockedAtNextLaunch(page);
 }
 
 interface Fixtures {

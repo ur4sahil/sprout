@@ -1,7 +1,11 @@
 import { z } from 'zod';
 import { useAppStore } from '../app/store';
+import { now } from '../lib/clock';
+import { logError } from '../lib/errorLog';
+import { openRepo } from './index';
 
-// Talks to /api/auth and keeps the sign-in state in the app store.
+// Talks to /api/auth and keeps the sign-in state: in the app store for this launch, and in the
+// device record, so the app opens with no network after one sign-in.
 // The password itself never leaves the device: it is stretched here first.
 
 export const MIN_PASSWORD_LENGTH = 10;
@@ -69,28 +73,92 @@ async function failureOf(reply: Response): Promise<AuthFailure> {
   return 'server';
 }
 
+// What the device record remembers: who is signed in and when the session ends. Never the password.
+async function remember(session: { email: string; expiresAt: string } | null): Promise<void> {
+  try {
+    const { repo } = await openRepo();
+    const device = await repo.getDeviceState();
+    await repo.saveDeviceState({ ...device, signedInEmail: session?.email ?? null, sessionExpiresAt: session?.expiresAt ?? null });
+  } catch (error) {
+    // The sign-in still holds for this launch. It will be asked for again at the next one.
+    logError(error);
+  }
+}
+
 async function acceptSession(reply: Response | null): Promise<AuthResult> {
   if (!reply) return { ok: false, reason: 'offline' };
   if (!reply.ok) return { ok: false, reason: await failureOf(reply) };
   const parsed = sessionReply.safeParse(await readJson(reply));
   if (!parsed.success) return { ok: false, reason: 'server' };
+  await remember(parsed.data);
   useAppStore.getState().setAccount({ status: 'signedIn', ...parsed.data });
   return { ok: true };
 }
 
-// Asks the server who is signed in on this device. Run once at launch.
-export async function checkSession(): Promise<void> {
-  const { setAccount } = useAppStore.getState();
+type ServerAnswer = { kind: 'session'; email: string; expiresAt: string } | { kind: 'none' } | { kind: 'unreachable' };
+
+async function askServer(): Promise<ServerAnswer> {
   let reply: Response;
   try {
     reply = await fetch('/api/auth/session', { credentials: 'same-origin' });
   } catch {
-    setAccount({ status: 'signedOut', offline: true });
+    return { kind: 'unreachable' };
+  }
+  if (reply.status === 401) return { kind: 'none' };
+  const parsed = reply.ok ? sessionReply.safeParse(await readJson(reply)) : null;
+  // Anything else (a server fault, a reply that makes no sense) settles nothing either way.
+  return parsed && parsed.success ? { kind: 'session', ...parsed.data } : { kind: 'unreachable' };
+}
+
+// Set while the launch check is still comparing the saved sign-in with the server. Tests wait on it.
+let background: Promise<void> = Promise.resolve();
+export function accountSettled(): Promise<void> {
+  return background;
+}
+
+// Run once at launch. Decides whether this device is signed in.
+//  - A saved end date that has not passed: the app opens, with or without a network.
+//  - A saved end date that has passed: the app locks, with or without a network.
+//  - Nothing saved: ask the server.
+// If the server says the session is no longer good, the app locks at its next launch,
+// never in the middle of this one.
+export async function checkSession(): Promise<void> {
+  const { setAccount } = useAppStore.getState();
+  let saved: { email: string; expiresAt: string } | null = null;
+  try {
+    const device = await (await openRepo()).repo.getDeviceState();
+    if (device.signedInEmail !== null && device.sessionExpiresAt !== null) {
+      saved = { email: device.signedInEmail, expiresAt: device.sessionExpiresAt };
+    }
+  } catch (error) {
+    logError(error);
+  }
+
+  if (saved) {
+    const kept = saved;
+    if (now().getTime() >= new Date(kept.expiresAt).getTime()) {
+      await remember(null);
+      setAccount({ status: 'signedOut', offline: false });
+      return;
+    }
+    setAccount({ status: 'signedIn', ...kept });
+    // In the background: keep the saved end date in step with the server.
+    background = askServer().then(async (answer) => {
+      if (answer.kind === 'none') await remember(null);
+      else if (answer.kind === 'session' && (answer.email !== kept.email || answer.expiresAt !== kept.expiresAt)) {
+        await remember({ email: answer.email, expiresAt: answer.expiresAt });
+      }
+    });
     return;
   }
-  const parsed = reply.ok ? sessionReply.safeParse(await readJson(reply)) : null;
-  if (parsed && parsed.success) setAccount({ status: 'signedIn', ...parsed.data });
-  else setAccount({ status: 'signedOut', offline: false });
+
+  const answer = await askServer();
+  if (answer.kind === 'session') {
+    await remember({ email: answer.email, expiresAt: answer.expiresAt });
+    setAccount({ status: 'signedIn', email: answer.email, expiresAt: answer.expiresAt });
+  } else {
+    setAccount({ status: 'signedOut', offline: answer.kind === 'unreachable' });
+  }
 }
 
 // Emails a six-digit code if the address is on the family list.
@@ -116,6 +184,7 @@ async function endSession(path: string): Promise<AuthResult> {
   if (!reply) return { ok: false, reason: 'offline' };
   // 401 means the server had already ended it.
   if (!reply.ok && reply.status !== 401) return { ok: false, reason: 'server' };
+  await remember(null);
   useAppStore.getState().setAccount({ status: 'signedOut', offline: false });
   return { ok: true };
 }

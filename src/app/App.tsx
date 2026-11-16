@@ -2,7 +2,9 @@ import { useEffect } from 'react';
 import { useNavigate, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import SignIn from '../screens/account/SignIn';
+import { logError } from '../lib/errorLog';
 import { checkSession } from '../storage/account';
+import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
 import styles from './App.module.css';
 import { routes } from './routes';
 import { useAppStore } from './store';
@@ -12,8 +14,22 @@ export default function App() {
   const screen = useRoutes(routes);
   const status = useAppStore((s) => s.account.status);
 
+  const storageSaved = useAppStore((s) => s.storageSaved);
+
   useEffect(() => {
-    if (useAppStore.getState().account.status === 'checking') void checkSession();
+    if (useAppStore.getState().account.status !== 'checking') return;
+    void (async () => {
+      try {
+        const { repo, saved } = await openRepo();
+        useAppStore.getState().setStorageSaved(saved);
+        await keepErrorsInDeviceRecord(repo);
+        await checkSession();
+        await requestPersistence(repo);
+      } catch (error) {
+        logError(error);
+        useAppStore.getState().setAccount({ status: 'signedOut', offline: false });
+      }
+    })();
   }, []);
 
   // The sign-in guard: without a session nothing else can be reached, on any path.
@@ -30,6 +46,11 @@ export default function App() {
 
   return (
     <div className={styles.shell}>
+      {!storageSaved && (
+        <p className={styles.banner} role="status">
+          Progress will not be saved on this device.
+        </p>
+      )}
       <ErrorBoundary onHome={() => navigate('/')}>{content}</ErrorBoundary>
     </div>
   );

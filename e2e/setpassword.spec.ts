@@ -11,7 +11,7 @@ import {
   listedEmail,
   logMark,
   openSignedOut,
-  signOutByApi,
+  signOutFully,
   signUp,
   strangerEmail,
   test,
@@ -175,8 +175,7 @@ test.describe('first sign-up and forgotten password', () => {
 
   test('forgotten password: the new password works and the old one stops working', async ({ page }) => {
     const email = await signUp(page);
-    expect(await signOutByApi(page)).toBe(200);
-    await openSignedOut(page);
+    await signOutFully(page);
 
     // Wait out nothing: this is a new code for an address whose last code was used.
     await page.getByLabel('Email').fill(email);
@@ -188,8 +187,7 @@ test.describe('first sign-up and forgotten password', () => {
     await fillNewPassword(page, code, 'a-brand-new-password');
     await expectStartScreen(page);
 
-    expect(await signOutByApi(page)).toBe(200);
-    await openSignedOut(page);
+    await signOutFully(page);
     await fillSignIn(page, email, PASSWORD);
     await page.getByRole('button', { name: 'Sign in' }).click();
     await expect(page.getByRole('alert')).toHaveText(SAME_MESSAGE);
@@ -200,8 +198,7 @@ test.describe('first sign-up and forgotten password', () => {
 
   test('forgotten password clears a 15-minute lock', async ({ page }) => {
     const email = await signUp(page);
-    expect(await signOutByApi(page)).toBe(200);
-    await openSignedOut(page);
+    await signOutFully(page);
     for (let i = 1; i <= 5; i += 1) {
       await fillSignIn(page, email, `wrong-password-${i}`);
       await page.getByRole('button', { name: 'Sign in' }).click();
@@ -243,8 +240,7 @@ test.describe('first sign-up and forgotten password', () => {
       if (request.url().includes('/api/')) bodies.push(request.postData() ?? '');
     });
     const email = await signUp(page);
-    expect(await signOutByApi(page)).toBe(200);
-    await openSignedOut(page);
+    await signOutFully(page);
     await fillSignIn(page, email, PASSWORD);
     await page.getByRole('button', { name: 'Sign in' }).click();
     await expectStartScreen(page);

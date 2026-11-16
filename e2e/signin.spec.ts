@@ -6,7 +6,7 @@ import {
   fillSignIn,
   listedEmail,
   openSignedOut,
-  signOutByApi,
+  signOutFully,
   signUp,
   strangerEmail,
   test,
@@ -15,8 +15,7 @@ import {
 // A parent who has an account and is signed out again.
 async function parentWithAccount(page: import('@playwright/test').Page): Promise<string> {
   const email = await signUp(page);
-  expect(await signOutByApi(page)).toBe(200);
-  await openSignedOut(page);
+  await signOutFully(page);
   return email;
 }
 

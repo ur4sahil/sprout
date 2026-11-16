@@ -2,7 +2,9 @@ import {
   PASSWORD,
   askForCode,
   expect,
+  expectLockedAtNextLaunch,
   expectStartScreen,
+  savedSignIn,
   fillNewPassword,
   fillSignIn,
   openSignedOut,
@@ -54,22 +56,60 @@ test.describe('the session on a device', () => {
     await other.close();
   });
 
-  test('is gone after signing out, and the app locks at the next launch', async ({ page }) => {
+  test('is kept in the device record, so the app opens when the server cannot be reached', async ({ page, problems }) => {
+    const email = await signUp(page);
+    const saved = await savedSignIn(page);
+    expect(saved?.email).toBe(email);
+    expect(new Date(saved?.expiresAt ?? 0).getTime() - Date.now()).toBeGreaterThan(29 * DAY * 1000);
+    await page.route('**/api/**', (route) => route.abort('internetdisconnected'));
+    await page.reload();
+    await expectStartScreen(page);
+    await page.goto('/parent/dashboard');
+    await expectStartScreen(page);
+    await expect(page.getByRole('alert')).toHaveCount(0);
+    // Being offline did not sign the device out.
+    expect((await savedSignIn(page))?.email).toBe(email);
+    problems.length = 0; // the blocked requests are expected
+  });
+
+  test('opens offline until the saved end date, then locks even with no network', async ({ page, problems }) => {
+    await signUp(page);
+    await page.clock.setFixedTime(new Date(Date.now() + 29 * DAY * 1000));
+    await page.reload();
+    await expectStartScreen(page);
+
+    await page.clock.setFixedTime(new Date(Date.now() + 31 * DAY * 1000));
+    await page.route('**/api/**', (route) => route.abort('internetdisconnected'));
+    await page.reload();
+    await expect(page.getByRole('button', { name: 'Sign in' })).toBeVisible();
+    expect((await savedSignIn(page))?.email).toBeNull();
+    // (With the network on, the server's own clock decides. The unit tests cover that with both clocks moved.)
+    problems.length = 0;
+  });
+
+  test('when the server ends the session, the app stays open this launch and locks at the next', async ({ page }) => {
     await signUp(page);
     expect(await signOutByApi(page)).toBe(200);
-    await openSignedOut(page, '/');
+    await expectLockedAtNextLaunch(page);
     // Signing out twice is refused quietly.
     expect(await signOutByApi(page)).toBe(401);
   });
 
-  test('is gone when the cookie is removed or made up', async ({ page, context }) => {
+  test('a removed or made-up cookie locks the app at the next launch', async ({ page, context }) => {
     await signUp(page);
     const [cookie] = await context.cookies();
     if (!cookie) throw new Error('no cookie');
     await context.clearCookies();
-    await openSignedOut(page, '/');
     await context.addCookies([{ ...cookie, value: 'x'.repeat(43) }]);
-    await openSignedOut(page, '/');
+    await expectLockedAtNextLaunch(page);
+  });
+
+  test('the device record survives a lost cookie only until the server is asked', async ({ page, context }) => {
+    await signUp(page);
+    await context.clearCookies();
+    await page.reload();
+    await expectStartScreen(page); // opens from the device record
+    await expect.poll(async () => (await savedSignIn(page))?.email ?? null).toBeNull();
   });
 
   test('/signin lets a signed-in parent sign in again', async ({ page }) => {
@@ -91,7 +131,7 @@ test.describe('the session on a device', () => {
     await fillNewPassword(second, code, 'second-device-password');
     await expectStartScreen(second);
 
-    await openSignedOut(page, '/');
+    await expectLockedAtNextLaunch(page);
     await second.reload();
     await expectStartScreen(second);
     await other.close();
@@ -115,18 +155,29 @@ test.describe('the session on a device', () => {
       return reply.status;
     });
     expect(status).toBe(200);
-    await openSignedOut(page, '/');
-    await openSignedOut(second, '/');
+    await expectLockedAtNextLaunch(page);
+    await expectLockedAtNextLaunch(second);
     await other.close();
   });
 
-  test('shows the sign-in screen with a plain message when the session cannot be checked', async ({ page, problems }) => {
-    await signUp(page);
+  test('a device with no saved sign-in shows the sign-in screen, with a plain message, when the server cannot be reached', async ({
+    page,
+    problems,
+  }) => {
     await page.route('**/api/auth/session', (route) => route.abort('internetdisconnected'));
-    await page.reload();
+    await page.goto('/home');
     await expect(page.getByRole('button', { name: 'Sign in' })).toBeVisible();
     await expect(page.getByRole('alert')).toContainText('No internet connection');
     problems.length = 0; // the blocked request is expected
+  });
+
+  test('saves to this device: no warning banner, and nothing about the account outside the device record', async ({ page }) => {
+    const email = await signUp(page);
+    await expect(page.getByRole('status')).toHaveCount(0);
+    const names = await page.evaluate(async () => (await indexedDB.databases()).map((db) => db.name));
+    expect(names).toContain('sprout');
+    const stored = await page.evaluate(() => JSON.stringify([{ ...localStorage }, { ...sessionStorage }]));
+    expect(stored).not.toContain(email);
   });
 
   test('going back in the browser after signing in does not return to the sign-in form', async ({ page }) => {
