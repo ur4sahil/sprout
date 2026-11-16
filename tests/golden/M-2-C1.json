@@ -1,0 +1,3306 @@
+{
+ "skillId": "M-2-C1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "hour": 3,
+   "minute": 45,
+   "options": [
+    "3:30",
+    "2:45",
+    "3:45"
+   ]
+  },
+  "prompt": {
+   "text": "What time is it?",
+   "speak": [
+    "What time is it?"
+   ]
+  },
+  "stimulus": {
+   "kind": "clock",
+   "hour": 3,
+   "minute": 45
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "3:30",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 3,
+       "minute": 30
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "2:45",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 2,
+       "minute": 45
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3:45",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 3,
+       "minute": 45
+      }
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The short hand is past",
+    {
+     "number": 3
+    },
+    "and getting close to",
+    {
+     "number": 4
+    },
+    ".",
+    "The long hand points to",
+    {
+     "number": 9
+    },
+    ". Count by fives to",
+    {
+     "number": 45
+    },
+    ". It is",
+    {
+     "time": {
+      "hour": 3,
+      "minute": 45
+     }
+    },
+    "."
+   ],
+   "steps": [
+    "The short hand is past 3 and getting close to 4.",
+    "The long hand points to 9.",
+    "Count by fives to 45.",
+    "It is 3:45."
+   ],
+   "visual": {
+    "kind": "clock",
+    "hour": 3,
+    "minute": 45
+   }
+  },
+  "skillId": "M-2-C1",
+  "level": 1,
+  "seed": 231,
+  "key": "M-2-C1|1|{\"hour\":3,\"minute\":45}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 30,
+     "options": [
+      "1:30",
+      "12:30",
+      "1:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 1 and 2.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 1:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-C1|1|{\"hour\":1,\"minute\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 45,
+     "options": [
+      "4:00",
+      "4:45",
+      "5:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 4:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-C1|1|{\"hour\":4,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 45,
+     "options": [
+      "1:09",
+      "1:45",
+      "1:00"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:09",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 9
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 1
+      },
+      "and getting close to",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 1 and getting close to 2.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 1:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-C1|1|{\"hour\":1,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 45,
+     "options": [
+      "4:00",
+      "4:30",
+      "4:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 4:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-C1|1|{\"hour\":4,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 45,
+     "options": [
+      "10:09",
+      "10:45",
+      "10:00"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 10,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:09",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 9
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 10
+      },
+      "and getting close to",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 10 and getting close to 11.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 10:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-C1|1|{\"hour\":10,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 30,
+     "options": [
+      "1:06",
+      "1:15",
+      "1:30"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:06",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 6
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 1 and 2.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 1:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-C1|1|{\"hour\":1,\"minute\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 15,
+     "options": [
+      "12:15",
+      "1:15",
+      "1:03"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:03",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 3
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 3
+      },
+      ". Count by fives to",
+      {
+       "number": 15
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 1.",
+      "The long hand points to 3.",
+      "Count by fives to 15.",
+      "It is 1:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 15
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-C1|1|{\"hour\":1,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 15,
+     "options": [
+      "8:03",
+      "8:15",
+      "9:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 8,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:03",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 3
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 8
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 3
+      },
+      ". Count by fives to",
+      {
+       "number": 15
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 8.",
+      "The long hand points to 3.",
+      "Count by fives to 15.",
+      "It is 8:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 15
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-C1|1|{\"hour\":8,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 15,
+     "options": [
+      "11:30",
+      "12:15",
+      "11:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 11,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 3
+      },
+      ". Count by fives to",
+      {
+       "number": 15
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 11.",
+      "The long hand points to 3.",
+      "Count by fives to 15.",
+      "It is 11:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 15
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-C1|1|{\"hour\":11,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 30,
+     "options": [
+      "12:15",
+      "11:30",
+      "12:30"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 12,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 12
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 12 and 1.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 12:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-C1|1|{\"hour\":12,\"minute\":30}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 35,
+     "options": [
+      "1:35",
+      "12:35",
+      "1:40"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 35
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 40
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 1
+      },
+      "and getting close to",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 7
+      },
+      ". Count by fives to",
+      {
+       "number": 35
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 35
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 1 and getting close to 2.",
+      "The long hand points to 7.",
+      "Count by fives to 35.",
+      "It is 1:35."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 35
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-C1|2|{\"hour\":1,\"minute\":35}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 45,
+     "options": [
+      "4:50",
+      "4:45",
+      "5:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:50",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 50
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 4:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-C1|2|{\"hour\":4,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 40,
+     "options": [
+      "1:08",
+      "1:40",
+      "1:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 40
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:08",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 8
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 40
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 1
+      },
+      "and getting close to",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 8
+      },
+      ". Count by fives to",
+      {
+       "number": 40
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 40
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 1 and getting close to 2.",
+      "The long hand points to 8.",
+      "Count by fives to 40.",
+      "It is 1:40."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 40
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-C1|2|{\"hour\":1,\"minute\":40}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 55,
+     "options": [
+      "4:00",
+      "4:50",
+      "4:55"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 55
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:50",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 50
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:55",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 55
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 11
+      },
+      ". Count by fives to",
+      {
+       "number": 55
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 55
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 11.",
+      "Count by fives to 55.",
+      "It is 4:55."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 55
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-C1|2|{\"hour\":4,\"minute\":55}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 40,
+     "options": [
+      "10:08",
+      "10:40",
+      "10:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 10,
+     "minute": 40
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:08",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 8
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 40
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 10
+      },
+      "and getting close to",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 8
+      },
+      ". Count by fives to",
+      {
+       "number": 40
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 10 and getting close to 11.",
+      "The long hand points to 8.",
+      "Count by fives to 40.",
+      "It is 10:40."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 40
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-C1|2|{\"hour\":10,\"minute\":40}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 30,
+     "options": [
+      "1:06",
+      "1:25",
+      "1:30"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:06",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 6
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:25",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 25
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 1 and 2.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 1:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-C1|2|{\"hour\":1,\"minute\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 5,
+     "options": [
+      "12:05",
+      "1:05",
+      "1:01"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 5
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 5
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 5
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:01",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 1
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 1.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 1:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-C1|2|{\"hour\":1,\"minute\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 10,
+     "options": [
+      "8:02",
+      "8:10",
+      "9:10"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 8,
+     "minute": 10
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:02",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 2
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:10",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 10
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:10",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 10
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 8
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 2
+      },
+      ". Count by fives to",
+      {
+       "number": 10
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 10
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 8.",
+      "The long hand points to 2.",
+      "Count by fives to 10.",
+      "It is 8:10."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 10
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-C1|2|{\"hour\":8,\"minute\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 15,
+     "options": [
+      "11:20",
+      "12:15",
+      "11:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 11,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:20",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 20
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 3
+      },
+      ". Count by fives to",
+      {
+       "number": 15
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 11.",
+      "The long hand points to 3.",
+      "Count by fives to 15.",
+      "It is 11:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 15
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-C1|2|{\"hour\":11,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 30,
+     "options": [
+      "12:25",
+      "11:30",
+      "12:30"
+     ]
+    },
+    "prompt": {
+     "text": "What time is it?",
+     "speak": [
+      "What time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 12,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:25",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 25
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 12
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 12 and 1.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 12:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-C1|2|{\"hour\":12,\"minute\":30}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 35,
+     "options": [
+      "1:40",
+      "12:35",
+      "1:35"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:35?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 35
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:35",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 35
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 40
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 35
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 35
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 1
+      },
+      "and getting close to",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 7
+      },
+      ". Count by fives to",
+      {
+       "number": 35
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 35
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 1 and getting close to 2.",
+      "The long hand points to 7.",
+      "Count by fives to 35.",
+      "It is 1:35."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 35
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-C1|3|{\"hour\":1,\"minute\":35,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 45,
+     "options": [
+      "4:40",
+      "4:45",
+      "5:45"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 4:45?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4:45",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 40
+     },
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 45
+     },
+     {
+      "kind": "clock",
+      "hour": 5,
+      "minute": 45
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 4:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-C1|3|{\"hour\":4,\"minute\":45,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 40,
+     "options": [
+      "1:45",
+      "1:40",
+      "1:35"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:40?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 40
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:40",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 40
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 45
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 40
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 35
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 1
+      },
+      "and getting close to",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 8
+      },
+      ". Count by fives to",
+      {
+       "number": 40
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 40
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 1 and getting close to 2.",
+      "The long hand points to 8.",
+      "Count by fives to 40.",
+      "It is 1:40."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 40
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-C1|3|{\"hour\":1,\"minute\":40,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 55,
+     "options": [
+      "4:50",
+      "4:55",
+      "4:00"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 4:55?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 55
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4:55",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 4,
+        "minute": 55
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 50
+     },
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 55
+     },
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 4
+      },
+      "and getting close to",
+      {
+       "number": 5
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 11
+      },
+      ". Count by fives to",
+      {
+       "number": 55
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 55
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 4 and getting close to 5.",
+      "The long hand points to 11.",
+      "Count by fives to 55.",
+      "It is 4:55."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 55
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-C1|3|{\"hour\":4,\"minute\":55,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 40,
+     "options": [
+      "10:40",
+      "11:40",
+      "10:35"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 10:40?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "10:40",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 40
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 40
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 35
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 10
+      },
+      "and getting close to",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 8
+      },
+      ". Count by fives to",
+      {
+       "number": 40
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 10 and getting close to 11.",
+      "The long hand points to 8.",
+      "Count by fives to 40.",
+      "It is 10:40."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 40
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-C1|3|{\"hour\":10,\"minute\":40,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 30,
+     "options": [
+      "1:25",
+      "1:35",
+      "1:30"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:30?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:30",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 25
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 35
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 30
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 1 and 2.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 1:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-C1|3|{\"hour\":1,\"minute\":30,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 5,
+     "options": [
+      "1:10",
+      "1:05",
+      "12:05"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:05?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:05",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 10
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 5
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 5
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 1.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 1:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-C1|3|{\"hour\":1,\"minute\":5,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 10,
+     "options": [
+      "8:10",
+      "8:15",
+      "9:10"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 8:10?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 10
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "8:10",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 8,
+        "minute": 10
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 10
+     },
+     {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 15
+     },
+     {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 10
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 8
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 2
+      },
+      ". Count by fives to",
+      {
+       "number": 10
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 10
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 8.",
+      "The long hand points to 2.",
+      "Count by fives to 10.",
+      "It is 8:10."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 10
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-C1|3|{\"hour\":8,\"minute\":10,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 15,
+     "options": [
+      "12:15",
+      "11:15",
+      "11:20"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 11:15?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "11:15",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 15
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 15
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 20
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 3
+      },
+      ". Count by fives to",
+      {
+       "number": 15
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 11.",
+      "The long hand points to 3.",
+      "Count by fives to 15.",
+      "It is 11:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 15
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-C1|3|{\"hour\":11,\"minute\":15,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 30,
+     "options": [
+      "11:30",
+      "12:30",
+      "12:35"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 12:30?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "12:30",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 30
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 30
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 35
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand is halfway between",
+      {
+       "number": 12
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 6
+      },
+      ". Count by fives to",
+      {
+       "number": 30
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is halfway between 12 and 1.",
+      "The long hand points to 6.",
+      "Count by fives to 30.",
+      "It is 12:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 30
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-C1|3|{\"hour\":12,\"minute\":30,\"show\":\"clocks\"}"
+   }
+  ]
+ }
+}

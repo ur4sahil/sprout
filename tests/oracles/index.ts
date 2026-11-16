@@ -8,13 +8,17 @@ import { fold } from './fold';
 import { fraction } from './fraction';
 import { graph } from './graph';
 import { letter } from './letter';
+import { line } from './line';
+import { makeTen } from './makeTen';
 import { matchEqual } from './matchEqual';
 import { matrix } from './matrix';
+import { measure } from './measure';
 import { missing } from './missing';
 import { money } from './money';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
+import { parity } from './parity';
 import { pattern } from './pattern';
 import { place } from './place';
 import { sequence } from './sequence';
@@ -24,6 +28,7 @@ import { sortBy } from './sortBy';
 import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
+import { truth } from './truth';
 import type { Oracle } from './types';
 import { wordSet } from './wordSet';
 
@@ -55,4 +60,9 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   graph,
   money,
   fraction,
+  makeTen,
+  truth,
+  parity,
+  line,
+  measure,
 };

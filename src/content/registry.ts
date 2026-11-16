@@ -7,10 +7,16 @@ import { letterOrNumberGenerator, matchLettersGenerator } from './generators/ela
 import { clapsGenerator, rhymesGenerator, startsLikeGenerator } from './generators/ela/pk/sounds';
 import { oppositesGenerator, wordGroupsGenerator } from './generators/ela/pk/words';
 import { addPicturesTo10Generator, addPicturesTo5Generator, addTo5Generator } from './generators/math/k/adding';
+import { addThreeGenerator, addWithin20Generator, doublesGenerator, subtractWithin20Generator } from './generators/math/g1/addSubtract';
+import { addSubtractTensGenerator, twoDigitPlusOneGenerator, wordProblemsGenerator } from './generators/math/g1/bigger';
+import { makeTenToAddGenerator, missingInEquationGenerator, trueOrFalseGenerator } from './generators/math/g1/equations';
 import { coinsGenerator, orderByLengthGenerator, pictureGraphsGenerator, tellTimeGenerator } from './generators/math/g1/measure';
 import { countTo120Generator, numberPatternsGenerator, skipCountGenerator, tenMoreLessGenerator } from './generators/math/g1/numbers';
 import { compareTwoDigitGenerator, tensAndOnesGenerator } from './generators/math/g1/placeValue';
 import { halvesAndFourthsGenerator, shapeAttributesGenerator } from './generators/math/g1/shapes';
+import { barGraphsGenerator, countCoinsGenerator, rulerGenerator, timeToFiveGenerator } from './generators/math/g2/measure';
+import { compareThreeDigitGenerator, evenOddGenerator, expandedFormGenerator, hundredsTensOnesGenerator, numberLinesGenerator, skipCountBigGenerator } from './generators/math/g2/numbers';
+import { halvesThirdsFourthsGenerator, nameBySidesGenerator } from './generators/math/g2/shapes';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
@@ -79,6 +85,16 @@ const ALL: readonly SkillGenerator[] = [
   tensAndOnesGenerator,
   compareTwoDigitGenerator,
   tenMoreLessGenerator,
+  addWithin20Generator,
+  subtractWithin20Generator,
+  doublesGenerator,
+  makeTenToAddGenerator,
+  missingInEquationGenerator,
+  trueOrFalseGenerator,
+  addThreeGenerator,
+  twoDigitPlusOneGenerator,
+  addSubtractTensGenerator,
+  wordProblemsGenerator,
   tellTimeGenerator,
   orderByLengthGenerator,
   pictureGraphsGenerator,
@@ -86,6 +102,18 @@ const ALL: readonly SkillGenerator[] = [
   halvesAndFourthsGenerator,
   shapeAttributesGenerator,
   numberPatternsGenerator,
+  hundredsTensOnesGenerator,
+  expandedFormGenerator,
+  compareThreeDigitGenerator,
+  skipCountBigGenerator,
+  evenOddGenerator,
+  numberLinesGenerator,
+  timeToFiveGenerator,
+  countCoinsGenerator,
+  rulerGenerator,
+  barGraphsGenerator,
+  nameBySidesGenerator,
+  halvesThirdsFourthsGenerator,
   findUppercaseGenerator,
   findLowercaseGenerator,
   matchLettersGenerator,

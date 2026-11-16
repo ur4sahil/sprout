@@ -13,13 +13,17 @@ import { graph } from './graph';
 import { ORACLES } from './index';
 import { judge } from './judge';
 import { letter } from './letter';
+import { line } from './line';
+import { makeTen } from './makeTen';
 import { matchEqual } from './matchEqual';
 import { matrix } from './matrix';
+import { measure } from './measure';
 import { missing } from './missing';
 import { money } from './money';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
+import { parity } from './parity';
 import { pattern } from './pattern';
 import { place } from './place';
 import { sequence } from './sequence';
@@ -29,6 +33,7 @@ import { sortBy } from './sortBy';
 import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
+import { truth } from './truth';
 import { wordSet } from './wordSet';
 
 describe('count', () => {
@@ -213,7 +218,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'matchEqual', 'matrix', 'missing', 'money', 'numberRule', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'truth', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -616,5 +621,78 @@ describe('fraction', () => {
     expect(() => fraction({ parts: 5, equal: true, ask: 'name' })).toThrow();
     expect(() => fraction({ parts: 2, ask: 'equal' })).toThrow();
     expect(() => fraction({ parts: 2, equal: true, ask: 'size' })).toThrow();
+  });
+});
+
+describe('makeTen', () => {
+  it('writes the sum as ten and what is left over', () => {
+    expect(makeTen({ a: 9, b: 4 })).toEqual({ kind: 'value', value: '10 plus 3' });
+    expect(makeTen({ a: 8, b: 5 })).toEqual({ kind: 'value', value: '10 plus 3' });
+    expect(makeTen({ a: 7, b: 4 })).toEqual({ kind: 'value', value: '10 plus 1' });
+    expect(makeTen({ a: 9, b: 9 })).toEqual({ kind: 'value', value: '10 plus 8' });
+  });
+  it('refuses a sum that does not go past ten, and numbers that are not 1 to 9', () => {
+    expect(() => makeTen({ a: 6, b: 4 })).toThrow();
+    expect(() => makeTen({ a: 3, b: 4 })).toThrow();
+    expect(() => makeTen({ a: 10, b: 4 })).toThrow();
+    expect(() => makeTen({ a: 9 })).toThrow();
+  });
+});
+
+describe('truth', () => {
+  it('says whether the two sides are worth the same', () => {
+    expect(truth({ left: [4, '+', 1], right: [5] })).toEqual({ kind: 'value', value: true });
+    expect(truth({ left: [4, '+', 1], right: [6] })).toEqual({ kind: 'value', value: false });
+    expect(truth({ left: [3, '+', 2], right: [2, '+', 3] })).toEqual({ kind: 'value', value: true });
+    expect(truth({ left: [9, '-', 4], right: [2, '+', 3] })).toEqual({ kind: 'value', value: true });
+    expect(truth({ left: [12, '-', 4], right: [15, '-', 8] })).toEqual({ kind: 'value', value: false });
+    expect(truth({ left: [7], right: [7] })).toEqual({ kind: 'value', value: true });
+    expect(truth({ left: [2, '+', 3, '+', 4], right: [9] })).toEqual({ kind: 'value', value: true });
+  });
+  it('refuses a side that is not numbers joined by plus or minus', () => {
+    expect(() => truth({ left: [4, '+'], right: [5] })).toThrow();
+    expect(() => truth({ left: [4, 'x', 2], right: [8] })).toThrow();
+    expect(() => truth({ left: ['+', 4], right: [4] })).toThrow();
+    expect(() => truth({ left: [4, '+', 1] })).toThrow();
+  });
+});
+
+describe('parity', () => {
+  it('names one number even or odd, and sorts several into even (0) and odd (1)', () => {
+    expect(parity({ values: [6] })).toEqual({ kind: 'value', value: 'even' });
+    expect(parity({ values: [7] })).toEqual({ kind: 'value', value: 'odd' });
+    expect(parity({ values: [0] })).toEqual({ kind: 'value', value: 'even' });
+    expect(parity({ values: [12, 35, 40, 99] })).toEqual({ kind: 'bins', bins: [0, 1, 0, 1] });
+  });
+  it('refuses a number that is not whole or is below zero', () => {
+    expect(() => parity({ values: [2.5] })).toThrow();
+    expect(() => parity({ values: [-3] })).toThrow();
+    expect(() => parity({ values: [] })).toThrow();
+  });
+});
+
+describe('line', () => {
+  it('gives the number at a mark', () => {
+    expect(line({ min: 0, step: 10, index: 4 })).toEqual({ kind: 'value', value: 40 });
+    expect(line({ min: 20, step: 5, index: 3 })).toEqual({ kind: 'value', value: 35 });
+    expect(line({ min: 37, step: 1, index: 0 })).toEqual({ kind: 'value', value: 37 });
+  });
+  it('refuses a step of zero and a mark that is not on the line', () => {
+    expect(() => line({ min: 0, step: 0, index: 2 })).toThrow();
+    expect(() => line({ min: 0, step: 10, index: -1 })).toThrow();
+    expect(() => line({ min: 0, step: 10, index: 1.5 })).toThrow();
+  });
+});
+
+describe('measure', () => {
+  it('gives the length in units, wherever the object starts', () => {
+    expect(measure({ startUnit: 0, lengthUnits: 5 })).toEqual({ kind: 'value', value: 5 });
+    // Starting at 2 and ending at 7 is 5 long, not 7.
+    expect(measure({ startUnit: 2, lengthUnits: 5 })).toEqual({ kind: 'value', value: 5 });
+  });
+  it('refuses an object with no length or a start off the ruler', () => {
+    expect(() => measure({ startUnit: 0, lengthUnits: 0 })).toThrow();
+    expect(() => measure({ startUnit: -1, lengthUnits: 3 })).toThrow();
+    expect(() => measure({ startUnit: 0 })).toThrow();
   });
 });

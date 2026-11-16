@@ -300,7 +300,7 @@ describe('stickers', () => {
     expect(board.querySelector('[data-award="mastered:math-K:3"]')?.getAttribute('data-earned')).toBe('no');
     expect(board.querySelector('h2')?.textContent).toMatch(/^Math, Kindergarten: 1 of \d+$/);
     // One board for each subject and grade with skills, one for Reasoning, one for Milestones.
-    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'ela-PK', 'reasoning', 'milestones']);
+    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'math-2', 'ela-PK', 'reasoning', 'milestones']);
     // The check-in stickers the child already had are on the Milestones board.
     expect(document.querySelector('[data-award="diagnostic:math"]')?.getAttribute('data-earned')).toBe('yes');
 
@@ -378,6 +378,6 @@ describe('catalogue growth', () => {
     expect(growthStates(child, [], [], NOW.toISOString())).toEqual([]);
     await store.saveDiagnostic({ id: 'd-2', childId: 'kid-1', subject: 'math', ladderId: 'comparing', placementSkillId: null, estimateGrade: null, estimateFraction: null, takenAt: NOW.toISOString() });
     const grown = growthStates(child, await store.listDiagnostics('kid-1'), [], NOW.toISOString());
-    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-1-A4']);
+    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-1-A4', 'M-2-A3']);
   });
 });

@@ -56,8 +56,12 @@ export function describeVisual(visual: Visual | 'blank'): string {
         .filter((part) => part.length > 0)
         .join(', ');
     case 'numberLine': {
-      const marked = visual.marked && visual.marked.length > 0 ? `, dot at ${visual.marked.join(' and ')}` : '';
-      const hidden = visual.hidden && visual.hidden.length > 0 ? `, ${plural(visual.hidden.length, 'number', 'numbers')} hidden` : '';
+      // A dot on a number that is hidden does not name it: the description must not give the answer away.
+      const secret = (visual.marked ?? []).filter((value) => (visual.hidden ?? []).includes(value));
+      const open = (visual.marked ?? []).filter((value) => !secret.includes(value));
+      const marked = `${open.length > 0 ? `, dot at ${open.join(' and ')}` : ''}${secret.length > 0 ? ', dot on a hidden number' : ''}`;
+      const others = (visual.hidden ?? []).filter((value) => !secret.includes(value));
+      const hidden = others.length > 0 ? `, ${plural(others.length, 'number', 'numbers')} hidden` : '';
       return `number line from ${visual.min} to ${visual.max} by ${visual.step}${marked}${hidden}`;
     }
     case 'equation':

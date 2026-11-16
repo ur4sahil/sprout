@@ -161,24 +161,26 @@ interface Chart {
   things: Countable[];
   values: number[];
 }
-const chartVisual = (chart: Chart): Visual => ({ kind: 'graph', type: 'picture', categories: chart.things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: chart.values[i] as number })) });
+const chartVisual = (chart: Chart, type: 'picture' | 'bar' = 'picture'): Visual => ({ kind: 'graph', type, categories: chart.things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: chart.values[i] as number })) });
 
 // Three things with three different values, so there is one most and one least.
-function newChart(rng: Rng): Chart {
-  return { things: rng.sample(STORY_COUNTABLES, 3), values: rng.sample([1, 2, 3, 4, 5, 6], 3) };
+function newChart(rng: Rng, most: number): Chart {
+  return { things: rng.sample(STORY_COUNTABLES, 3), values: rng.sample(Array.from({ length: most }, (_, i) => i + 1), 3) };
 }
 
-function pictureGraph(level: Level, rng: Rng): QuestionDraft {
-  const chart = newChart(rng);
+// A graph question. Grade 1 reads picture graphs with up to 6 in a row. Grade 2 reads bar graphs up to 10.
+export function graphQuestion(level: Level, rng: Rng, type: 'picture' | 'bar', most: number): QuestionDraft {
+  const chart = newChart(rng, most);
   const names = chart.things.map((thing) => thing.many);
-  const stimulus = chartVisual(chart);
+  const stimulus = chartVisual(chart, type);
+  const row = type === 'picture' ? 'row' : 'bar';
   const base = { values: chart.values, things: chart.things.map((thing) => thing.one) };
   if (level === 1) {
     const index = rng.int(0, 2);
     const value = chart.values[index] as number;
     const prompt = `How many chose ${names[index]}?`;
     // The slips: reading another row.
-    const values = numeralChoices(value, chart.values, 0, 8, rng);
+    const values = numeralChoices(value, chart.values, 0, most + 2, rng);
     return {
       type: 'choice',
       mode: 'look',
@@ -187,7 +189,7 @@ function pictureGraph(level: Level, rng: Rng): QuestionDraft {
       stimulus,
       options: values.map((each) => numeral(each)),
       answerIndex: values.indexOf(value),
-      explanation: { speak: [`Find ${names[index]}. Count its row.`, { number: value }, '.'], steps: [`Find ${names[index]}.`, `Count its row: ${value}.`], visual: stimulus },
+      explanation: { speak: [`Find ${names[index]}. ${type === 'picture' ? 'Count its row.' : 'Read the end of its bar.'}`, { number: value }, '.'], steps: [`Find ${names[index]}.`, `${type === 'picture' ? 'Count its row' : 'Read the end of its bar'}: ${value}.`], visual: stimulus },
     };
   }
   if (level === 2) {
@@ -195,7 +197,7 @@ function pictureGraph(level: Level, rng: Rng): QuestionDraft {
     const wanted = ask === 'most' ? Math.max(...chart.values) : Math.min(...chart.values);
     const index = chart.values.indexOf(wanted);
     const prompt = `Which one has the ${ask === 'most' ? 'most' : 'fewest'}?`;
-    const line = `The ${names[index]} row is the ${ask === 'most' ? 'longest' : 'shortest'}.`;
+    const line = `The ${names[index]} ${row} is the ${ask === 'most' ? 'longest' : 'shortest'}.`;
     return {
       type: 'choice',
       mode: 'look',
@@ -221,14 +223,16 @@ function pictureGraph(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     stimulus,
     answer: a - b,
-    maxDigits: 1,
+    maxDigits: most > 9 ? 2 : 1,
     explanation: {
-      speak: [`The ${names[index]} row has`, { number: a }, `. The ${names[other]} row has`, { number: b }, '.', { number: a }, 'minus', { number: b }, 'is', { number: a - b }, '.'],
-      steps: [`The ${names[index]} row has ${a}.`, `The ${names[other]} row has ${b}.`, `${a} minus ${b} is ${a - b}.`],
+      speak: [`The ${names[index]} ${row} has`, { number: a }, `. The ${names[other]} ${row} has`, { number: b }, '.', { number: a }, 'minus', { number: b }, 'is', { number: a - b }, '.'],
+      steps: [`The ${names[index]} ${row} has ${a}.`, `The ${names[other]} ${row} has ${b}.`, `${a} minus ${b} is ${a - b}.`],
       visual: stimulus,
     },
   };
 }
+
+const pictureGraph = (level: Level, rng: Rng): QuestionDraft => graphQuestion(level, rng, 'picture', 6);
 
 export const pictureGraphsGenerator: SkillGenerator = {
   skillId: 'M-1-C3',

@@ -158,4 +158,10 @@
 - New oracles: `time` ("3:30"), `graph` (value, most, least, difference), `money` (total, name, value, worthMore) and `fraction` (equal, name).
 - A.5 uses two oracles, so every question names its own in `facts.oracle`. A.4 level 3 and C.4 levels 1 and 2 use `fixedOrder`.
 - Browser sweeps give a child high scores, which earns stickers: `sweepHardestLevels` taps past the "New sticker" card.
-- Next: Phase 11b, Math grade 1 part 2 (category B, 10 skills). Then 11c to 11f: Math grade 2 (22), Language Arts K (16), Language Arts grade 1 (12).
+- Phase 11b (Math grade 1, part 2) is built: B.1 to B.10, in `g1/addSubtract.ts` (B.1 to B.3, B.7), `g1/equations.ts` (B.4 to B.6) and `g1/bigger.ts` (B.8 to B.10). `CATALOGUE_VERSION` is 8. All 22 grade 1 Math skills exist. New oracles: `makeTen` ("10 plus 3") and `truth` (each side is a list such as `[4, '+', 1]`).
+- From grade 1 the word is "minus", not "take away". `tellStory` now takes `name2` and `c`, for compare and two-step stories.
+- Phase 11c (Math grade 2, part 1) is built: A.1 to A.6, C.1 to C.4, D.1 and D.2, in `src/content/generators/math/g2/`: `numbers.ts` (A.1 to A.6), `measure.ts` (C.1 to C.4), `shapes.ts` (D.1, D.2). `CATALOGUE_VERSION` is 9. Categories: A. Numbers to 1,000, C. Time, money and measuring, D. Shapes and parts. New oracles: `parity`, `line`, `measure`.
+- `graphQuestion` in `g1/measure.ts` makes both picture graphs (grade 1) and bar graphs (grade 2). A number part in speech must be 0 to 1,000, so number options stop at 999 or 1,000.
+- A dot on a hidden number of a number line is described as "dot on a hidden number", so the description never gives the answer.
+- Browser runs are slow when unit tests run beside them. Give the full run the machine to itself.
+- Next: Phase 11d, Math grade 2 part 2 (category B, 10 skills). Then 11e Language Arts K (16), 11f Language Arts grade 1 (12).
