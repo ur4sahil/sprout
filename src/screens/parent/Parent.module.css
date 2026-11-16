@@ -1,0 +1,106 @@
+.area {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+
+.bar {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.heading {
+  margin: 0;
+  font-size: var(--text-l);
+}
+
+.panel {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-m);
+  padding: var(--space-4);
+}
+
+.panel h2,
+.panel h3 {
+  margin: 0;
+  font-size: var(--text-m);
+}
+
+.facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.soft {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: var(--text-s);
+}
+
+.scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-s);
+}
+
+.table th,
+.table td {
+  padding: var(--space-2);
+  text-align: left;
+  border-bottom: var(--border-thin) solid var(--color-line);
+  white-space: nowrap;
+}
+
+.table td:first-child {
+  white-space: normal;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-picked-bg);
+}
+
+.bars {
+  width: 100%;
+  height: auto;
+}
+
+.barFill {
+  fill: var(--color-brand);
+}
+
+.barAxis {
+  stroke: var(--color-line);
+}
+
+.barText {
+  fill: var(--color-ink-soft);
+  font-size: var(--text-s);
+}

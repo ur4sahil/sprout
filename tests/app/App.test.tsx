@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import App from '../../src/app/App';
+import { giveFamilyPin } from '../helpers/familyPin';
 import { requestCode, setPasswordWithCode } from '../../src/storage/account';
 import { stubServer } from '../storage/serverStub';
 import { PARENT } from '../worker/harness';
@@ -71,6 +72,7 @@ describe('App shell with a session', () => {
     const stub = stubServer();
     await requestCode(PARENT);
     await setPasswordWithCode(PARENT, stub.server.lastCode(), 'a long password');
+    await giveFamilyPin();
   }
 
   it('renders the start screen at /', async () => {

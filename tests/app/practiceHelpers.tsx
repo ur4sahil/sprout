@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../../src/app/App';
+import { grantPass, resetGateForTests, savePin } from '../../src/app/pin';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
 import { advanceClock, freezeClock } from '../../src/lib/clock';
@@ -15,7 +16,9 @@ export type User = ReturnType<typeof userEvent.setup>;
 
 // A signed-in device with one child, at a fixed time, with the answer-flow waits switched off.
 // The check-in is marked finished, so home shows picks straight away. A test about the check-in passes `checkIn: 'new'`.
-export async function setUp(grade: Grade = '1', change: Partial<Child['settings']> = {}, options: { checkIn?: 'done' | 'new' } = {}): Promise<Child> {
+// The family PIN is 1234. A grown-up has just passed the gate, unless a test passes `gate: 'closed'`.
+export const PIN = '1234';
+export async function setUp(grade: Grade = '1', change: Partial<Child['settings']> = {}, options: { checkIn?: 'done' | 'new'; gate?: 'open' | 'closed' } = {}): Promise<Child> {
   freezeClock(NOW);
   setTimingForTests({ tapGuardMs: 0, praiseMinMs: 0, praiseMaxMs: 0, holdToExitMs: 30, tryPauseMs: 0, beatGapMs: 0 });
   useAppStore.getState().setAccount({ status: 'signedIn', email: 'parent.one@example.com', expiresAt: new Date(NOW.getTime() + 20 * 86_400_000).toISOString() });
@@ -31,6 +34,9 @@ export async function setUp(grade: Grade = '1', change: Partial<Child['settings'
     deletedAt: null,
   };
   const { repo } = await openRepo();
+  await savePin(repo, PIN);
+  resetGateForTests();
+  if (options.gate !== 'closed') grantPass();
   await repo.saveChild(child);
   if (options.checkIn !== 'new') {
     await finishCheckIn(child.id);

@@ -11,6 +11,11 @@ import Practice from '../screens/kid/Practice';
 import ProfilePicker from '../screens/kid/ProfilePicker';
 import Review from '../screens/kid/Review';
 import SubjectPage from '../screens/kid/SubjectPage';
+import Dashboard from '../screens/parent/Dashboard';
+import Data from '../screens/parent/Data';
+import Scores from '../screens/parent/Scores';
+import Settings from '../screens/parent/Settings';
+import SoundCheck from '../screens/parent/SoundCheck';
 
 // The only place routes are declared.
 export const routes: RouteObject[] = [
@@ -23,6 +28,12 @@ export const routes: RouteObject[] = [
   { path: '/review', element: <Review /> },
   { path: '/diagnostic', element: <Diagnostic /> },
   { path: '/awards', element: <Awards /> },
+  { path: '/parent', element: <Navigate to="/parent/dashboard" replace /> },
+  { path: '/parent/dashboard', element: <Dashboard /> },
+  { path: '/parent/scores', element: <Scores /> },
+  { path: '/parent/settings', element: <Settings /> },
+  { path: '/parent/sound', element: <SoundCheck /> },
+  { path: '/parent/data', element: <Data /> },
   { path: '/signin', element: <SignIn /> },
   // Dev routes exist only in development builds.
   ...(import.meta.env.DEV ? [{ path: '/dev/gallery', element: <Gallery /> }] : []),

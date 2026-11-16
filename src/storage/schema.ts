@@ -22,6 +22,8 @@ export const childSettingsSchema = z.object({
   allowVideos: z.boolean(), // default true
   dailyMinutes: z.number().int().min(0).max(600), // 0 means no limit
   preReader: z.boolean(), // default true for PK and K
+  // Minutes a parent added through the gate on one local day, on top of dailyMinutes.
+  extraMinutes: z.object({ day: z.string(), minutes: z.number().int().min(0).max(600) }).default({ day: '', minutes: 0 }),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -37,6 +39,7 @@ export function defaultSettings(grade: Grade): ChildSettings {
     allowVideos: true,
     dailyMinutes: 0,
     preReader: young,
+    extraMinutes: { day: '', minutes: 0 },
   };
 }
 

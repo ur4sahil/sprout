@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { hasPass } from '../../app/pin';
 import { useAppStore } from '../../app/store';
 import { unlockAudio } from '../../audio/sfx';
 import { speak } from '../../audio/speech';
@@ -13,6 +14,7 @@ import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
 import ChildSetup from '../parent/ChildSetup';
+import Gate from '../parent/Gate';
 import styles from './ProfilePicker.module.css';
 
 const REMIND_DAYS = 5;
@@ -25,6 +27,7 @@ export default function ProfilePicker() {
   const [children, setChildren] = useState<Child[] | null>(null);
   const [adding, setAdding] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [, setPassed] = useState(0);
 
   useEffect(() => {
     let alive = true;
@@ -53,6 +56,8 @@ export default function ProfilePicker() {
     void navigate('/home');
   }
 
+  // Adding a child is for grown-ups: the PIN gate comes first, unless a grown-up passed it in the last few minutes.
+  if (adding && !hasPass()) return <Gate onPass={() => setPassed((n) => n + 1)} onCancel={() => setAdding(false)} />;
   if (adding) return <ChildSetup onDone={() => setAdding(false)} onCancel={() => setAdding(false)} />;
 
   const daysLeft = account.status === 'signedIn' ? daysBetween(now().toISOString(), account.expiresAt) : null;
@@ -83,6 +88,7 @@ export default function ProfilePicker() {
       )}
       <div className={styles.grownUps}>
         {children !== null && children.length > 0 && <LinkButton onClick={() => setAdding(true)}>Add a child</LinkButton>}
+        <LinkButton onClick={() => void navigate('/parent/dashboard')}>Grown-ups</LinkButton>
         {account.status === 'signedIn' && daysLeft !== null && daysLeft <= REMIND_DAYS && (
           <p className={styles.small} data-signin-reminder="">
             Grown-ups: sign in again by {localDayOf(account.expiresAt)}.

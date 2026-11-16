@@ -12,6 +12,7 @@ import { memoryRepo } from '../../src/storage/memoryRepo';
 import { PARENT } from '../worker/harness';
 import type { ServerStub } from './serverStub';
 import { stubServer } from './serverStub';
+import { giveFamilyPin } from '../helpers/familyPin';
 
 const DAY = 24 * 60 * 60 * 1000;
 
@@ -19,6 +20,7 @@ async function signedIn(): Promise<ServerStub> {
   const stub = stubServer();
   await requestCode(PARENT);
   await setPasswordWithCode(PARENT, stub.server.lastCode(), 'a long password');
+  await giveFamilyPin();
   return stub;
 }
 

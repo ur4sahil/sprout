@@ -1,0 +1,105 @@
+import { useEffect, useState } from 'react';
+import { awardSkills } from '../../app/awardsRun';
+import type { ScoreRow, ScoreSort } from '../../app/parentData';
+import { GRADE_NAME, STAGE_NAME, scoreRows, sortRows } from '../../app/parentData';
+import LinkButton from '../../components/LinkButton';
+import Notice from '../../components/Notice';
+import Tabs from '../../components/Tabs';
+import { localDayOf } from '../../lib/clock';
+import { logError } from '../../lib/errorLog';
+import { openRepo } from '../../storage/index';
+import { SUBJECTS } from '../kid/Home';
+import ParentArea from './ParentArea';
+import styles from './Parent.module.css';
+import { useChildren } from './useChildren';
+
+const COLUMNS: { id: ScoreSort; label: string }[] = [
+  { id: 'skill', label: 'Skill' },
+  { id: 'score', label: 'Score' },
+  { id: 'attempts', label: 'Answers' },
+  { id: 'accuracy', label: 'Right' },
+  { id: 'minutes', label: 'Minutes' },
+  { id: 'last', label: 'Last practised' },
+];
+
+// Every skill with its score, stage, answers, accuracy, time spent and when it was last practised. Sortable.
+export default function Scores() {
+  const { children, child, pick } = useChildren();
+  const [rows, setRows] = useState<ScoreRow[] | null>(null);
+  const [sort, setSort] = useState<ScoreSort>('skill');
+
+  useEffect(() => {
+    if (!child) return;
+    let alive = true;
+    setRows(null);
+    void (async () => {
+      const { repo } = await openRepo();
+      const [states, attempts] = await Promise.all([repo.getSkillStates(child.id), repo.listAttempts(child.id, {})]);
+      if (alive) setRows(scoreRows(awardSkills(), states, attempts));
+    })().catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, [child]);
+
+  const shown = rows ? sortRows(rows, sort) : [];
+  const groupOf = (row: ScoreRow): string => `${SUBJECTS.find((subject) => subject.id === row.skill.subject)?.label ?? ''}, ${GRADE_NAME[row.skill.grade] ?? row.skill.grade}, ${row.skill.category}`;
+  return (
+    <ParentArea page="scores" title="Scores">
+      {children !== null && children.length === 0 && <Notice role="status">No children yet. Add one from Settings.</Notice>}
+      {children !== null && children.length > 1 && child && <Tabs label="Child" tabs={children.map((each) => ({ id: each.id, label: each.name }))} current={child.id} onPick={pick} />}
+      {child && rows && (
+        <div className={styles.panel}>
+          <div className={styles.scroll}>
+            <table className={styles.table} data-sort={sort}>
+              <thead>
+                <tr>
+                  {COLUMNS.map((column) => (
+                    <th key={column.id} scope="col" aria-sort={sort === column.id ? (column.id === 'skill' ? 'ascending' : 'descending') : 'none'}>
+                      <LinkButton onClick={() => setSort(column.id)}>{column.label}</LinkButton>
+                    </th>
+                  ))}
+                  <th scope="col">Stage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shown.map((row, index) => (
+                  <ScoreLine key={row.skill.id} row={row} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+    </ParentArea>
+  );
+}
+
+function ScoreLine({ row, group }: { row: ScoreRow; group: string | null }) {
+  return (
+    <>
+      {group && (
+        <tr data-group={group}>
+          <th colSpan={7} scope="colgroup">
+            {group}
+          </th>
+        </tr>
+      )}
+      <tr data-skill-row={row.skill.id}>
+        <td>
+          {row.skill.code} {row.skill.name}
+        </td>
+        <td data-cell="score">{row.score}</td>
+        <td>{row.attempts}</td>
+        <td>{row.accuracy === null ? '' : `${row.accuracy}%`}</td>
+        <td>{row.minutes}</td>
+        <td>{row.lastPracticedAt ? localDayOf(row.lastPracticedAt) : ''}</td>
+        <td>
+          <span className={styles.chip} data-stage={row.stage}>
+            {STAGE_NAME[row.stage]}
+          </span>
+        </td>
+      </tr>
+    </>
+  );
+}

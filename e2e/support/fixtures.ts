@@ -62,8 +62,27 @@ export async function fillSignIn(page: Page, email: string, password: string): P
   await page.getByLabel('Password', { exact: true }).fill(password);
 }
 
+export const PIN = '1234';
+
+// Types a PIN on the grown-ups number pad.
+export async function typePin(page: Page, pin = PIN): Promise<void> {
+  for (const digit of pin) await page.getByRole('button', { name: digit, exact: true }).click();
+}
+
+// A family with no PIN yet is asked to choose one before the start screen. Chooses 1234.
+export async function choosePinIfAsked(page: Page): Promise<void> {
+  const start = page.getByRole('heading', { name: 'Sprout' });
+  const choose = page.getByRole('heading', { name: 'Choose a grown-ups PIN' });
+  await expect(start.or(choose)).toBeVisible();
+  if (!(await choose.isVisible())) return;
+  await typePin(page);
+  await expect(page.getByText('Type it once more.')).toBeVisible();
+  await typePin(page);
+}
+
 export async function expectStartScreen(page: Page): Promise<void> {
   await expect(page.getByLabel('Email')).toHaveCount(0);
+  await choosePinIfAsked(page);
   await expect(page.getByRole('heading', { name: 'Sprout' })).toBeVisible();
   await expect(page).toHaveURL(`${BASE_URL}/`);
 }
@@ -214,7 +233,12 @@ export const test = base.extend<Fixtures>({
   problems: [
     async ({ page }, use) => {
       const problems: string[] = [];
-      page.on('pageerror', (error) => problems.push(`page error: ${error.message}`));
+      page.on('pageerror', (error) => {
+        // WebKit reports a request that was cut off by leaving the page in these words. Every request the app
+        // makes is to its own address, so this is never a real cross-site refusal. The app catches the failure itself.
+        if (/due to access control checks/.test(error.message)) return;
+        problems.push(`page error: ${error.message}`);
+      });
       page.on('console', (message) => {
         if (message.type() !== 'error') return;
         const text = message.text();

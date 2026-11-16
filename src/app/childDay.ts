@@ -89,7 +89,8 @@ export function summariseDay(input: {
     picks,
     answeredToday: todays.length,
     minutesToday,
-    limitReached: child.settings.dailyMinutes > 0 && minutesToday >= child.settings.dailyMinutes,
+    // Minutes a parent added today through the gate count on top of the daily limit.
+    limitReached: child.settings.dailyMinutes > 0 && minutesToday >= child.settings.dailyMinutes + (child.settings.extraMinutes.day === today ? child.settings.extraMinutes.minutes : 0),
     reviewsDue: dueForReview(states, nowIso)
       .map((state) => state.skillId)
       .filter((skillId) => ready.has(skillId)),

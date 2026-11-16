@@ -1,8 +1,9 @@
 import { gzipSync } from 'node:zlib';
+import { giveFamilyPin } from '../helpers/familyPin';
 import { act, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../../src/app/App';
 import { useAppStore } from '../../src/app/store';
 import BackupStatus from '../../src/components/BackupStatus';
@@ -51,6 +52,13 @@ const uploads = (stub: ServerStub): number => stub.calls.filter((call) => call.m
 const pulls = (stub: ServerStub): number => stub.calls.filter((call) => call.method === 'GET' && call.path.startsWith('/api/backup')).length;
 
 describe('a new iPad', () => {
+  // The family already has a PIN, so the app opens past "Choose a PIN".
+  // It counts as backed up already: saving it here must not look like a change waiting to upload.
+  beforeEach(async () => {
+    await giveFamilyPin();
+    await (await openRepo()).repo.updateDeviceState({ dirty: false });
+  });
+
   it('fetches the family\'s progress straight after the first sign-in, before the profile picker', async () => {
     const stub = stubServer();
     await stub.server.signUp(PARENT, KEY_A);

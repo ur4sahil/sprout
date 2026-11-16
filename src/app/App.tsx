@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useNavigationType, useRoutes } from 'react-ro
 import ErrorBoundary from '../components/ErrorBoundary';
 import Notice from '../components/Notice';
 import FirstSync from '../screens/account/FirstSync';
+import ChoosePin from '../screens/parent/ChoosePin';
 import SignIn from '../screens/account/SignIn';
 import InstallGuide from '../screens/kid/InstallGuide';
 import { loadClipKeys, syncVoicePack } from '../audio/clips';
@@ -15,6 +16,7 @@ import { checkSession } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
 import styles from './App.module.css';
 import { runCatalogueGrowth } from './checkIn';
+import { hasPin } from './pin';
 import { routes } from './routes';
 import { applyUpdate, checkForUpdate, finishUpdate, isSafeToUpdate, startUpdates } from './updates';
 import { syncIfDue } from '../storage/sync';
@@ -34,6 +36,8 @@ export default function App() {
   const status = useAppStore((s) => s.account.status);
 
   const storageSaved = useAppStore((s) => s.storageSaved);
+  // The family's grown-ups PIN. A family that has none yet chooses one before the profile picker.
+  const [pinNeeded, setPinNeeded] = useState<boolean | null>(null);
   const installGuide = useAppStore((s) => s.installGuide);
 
   // A parent chose "Use in this browser anyway". Remembered on this device.
@@ -110,6 +114,23 @@ export default function App() {
     return () => document.removeEventListener('visibilitychange', onShow);
   }, [status, firstSync, quietScreen, updateReady, updateTookOver, location.pathname]);
 
+  useEffect(() => {
+    if (status !== 'signedIn' || firstSync) return;
+    let alive = true;
+    void openRepo()
+      .then(({ repo }) => repo.getFamily())
+      .then((family) => {
+        if (alive) setPinNeeded(!hasPin(family));
+      })
+      .catch((error: unknown) => {
+        logError(error);
+        if (alive) setPinNeeded(false);
+      });
+    return () => {
+      alive = false;
+    };
+  }, [status, firstSync, location.pathname]);
+
   // The sign-in guard: without a session nothing else can be reached, on any path.
   let content = screen;
   if (status === 'checking') {
@@ -125,6 +146,8 @@ export default function App() {
     content = <SignIn />;
   } else if (firstSync) {
     content = <FirstSync />;
+  } else if (pinNeeded === true) {
+    content = <ChoosePin onDone={() => setPinNeeded(false)} />;
   }
 
   return (

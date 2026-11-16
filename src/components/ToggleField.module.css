@@ -1,0 +1,27 @@
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--size-link);
+  font-size: var(--text-m);
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.hint {
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
+.field input {
+  flex: none;
+  font-size: var(--text-m);
+  width: var(--size-link);
+  height: var(--size-link);
+  accent-color: var(--color-brand);
+}

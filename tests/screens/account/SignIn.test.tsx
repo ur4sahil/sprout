@@ -6,6 +6,7 @@ import App from '../../../src/app/App';
 import { useAppStore } from '../../../src/app/store';
 import { requestCode, setPasswordWithCode, signOut } from '../../../src/storage/account';
 import { stubServer } from '../../storage/serverStub';
+import { giveFamilyPin } from '../../helpers/familyPin';
 import type { ServerStub } from '../../storage/serverStub';
 import { PARENT, STRANGER } from '../../worker/harness';
 
@@ -27,6 +28,7 @@ async function withAccount(): Promise<ServerStub> {
   await requestCode(PARENT);
   await setPasswordWithCode(PARENT, stub.server.lastCode(), PASSWORD);
   await signOut();
+  await giveFamilyPin();
   useAppStore.getState().setAccount({ status: 'checking' });
   return stub;
 }
