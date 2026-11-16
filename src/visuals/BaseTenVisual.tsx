@@ -2,6 +2,7 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'baseTen' }> };
 
@@ -31,7 +32,7 @@ export default function BaseTenVisual({ visual }: Props) {
         if (part.kind === 'hundred') {
           return (
             <g key={index} data-block="hundred">
-              <rect x={part.x} y={2} width={U * 10} height={U * 10} fill="#8ecae6" stroke={INK} strokeWidth="1.2" />
+              <rect x={part.x} y={2} width={U * 10} height={U * 10} fill={PALETTE.hundred} stroke={INK} strokeWidth="1.2" />
               {Array.from({ length: 9 }, (_, i) => (
                 <g key={i}>
                   <line x1={part.x + (i + 1) * U} y1={2} x2={part.x + (i + 1) * U} y2={2 + U * 10} stroke={INK} strokeWidth="0.5" />
@@ -44,14 +45,14 @@ export default function BaseTenVisual({ visual }: Props) {
         if (part.kind === 'ten') {
           return (
             <g key={index} data-block="ten">
-              <rect x={part.x} y={2} width={U} height={U * 10} fill="#a7d67a" stroke={INK} strokeWidth="1.2" />
+              <rect x={part.x} y={2} width={U} height={U * 10} fill={PALETTE.ten} stroke={INK} strokeWidth="1.2" />
               {Array.from({ length: 9 }, (_, i) => (
                 <line key={i} x1={part.x} y1={2 + (i + 1) * U} x2={part.x + U} y2={2 + (i + 1) * U} stroke={INK} strokeWidth="0.5" />
               ))}
             </g>
           );
         }
-        return <rect key={index} data-block="one" x={part.x} y={2 + U * 10 - U - (part.row ?? 0) * (U + 3)} width={U} height={U} fill="#f4c152" stroke={INK} strokeWidth="1.2" />;
+        return <rect key={index} data-block="one" x={part.x} y={2 + U * 10 - U - (part.row ?? 0) * (U + 3)} width={U} height={U} fill={PALETTE.one} stroke={INK} strokeWidth="1.2" />;
       })}
     </svg>
   );

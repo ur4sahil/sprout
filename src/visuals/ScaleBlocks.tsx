@@ -1,4 +1,5 @@
 import { INK } from './geometry';
+import { PALETTE } from './palette';
 
 const BLOCK = 30;
 
@@ -9,7 +10,7 @@ export default function ScaleBlocks({ values, centre }: { values: (number | 'bla
     <>
       {values.map((value, i) => (
         <g key={i} data-block={value}>
-          <rect x={left + i * (BLOCK + 4)} y={52 - BLOCK} width={BLOCK} height={BLOCK} rx="4" fill={value === 'blank' ? '#ffffff' : '#f4c152'} stroke={INK} strokeWidth="2" strokeDasharray={value === 'blank' ? '5 3' : undefined} />
+          <rect x={left + i * (BLOCK + 4)} y={52 - BLOCK} width={BLOCK} height={BLOCK} rx="4" fill={value === 'blank' ? PALETTE.paper : PALETTE.block} stroke={INK} strokeWidth="2" strokeDasharray={value === 'blank' ? '5 3' : undefined} />
           <text x={left + i * (BLOCK + 4) + BLOCK / 2} y={52 - BLOCK / 2 + 6} textAnchor="middle" fontSize="17" fontWeight="700" fill={INK}>
             {value === 'blank' ? '?' : value}
           </text>

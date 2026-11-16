@@ -1,5 +1,6 @@
 import { Component, type ReactNode } from 'react';
 import { logError } from '../lib/errorLog';
+import BigButton from './BigButton';
 import styles from './ErrorBoundary.module.css';
 
 interface Props {
@@ -35,9 +36,9 @@ export default class ErrorBoundary extends Component<Props, State> {
           🌱
         </div>
         <h1 className={styles.title}>Something went wrong</h1>
-        <button type="button" className={styles.button} onClick={this.handleHome}>
+        <BigButton size="kid" onClick={this.handleHome}>
           Back to start
-        </button>
+        </BigButton>
       </main>
     );
   }

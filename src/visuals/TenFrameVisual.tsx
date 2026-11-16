@@ -2,6 +2,7 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'tenFrame' }> };
 
@@ -22,8 +23,8 @@ export default function TenFrameVisual({ visual }: Props) {
               const y = 2 + Math.floor(i / 5) * CELL;
               return (
                 <g key={i}>
-                  <rect x={x} y={y} width={CELL} height={CELL} fill="#ffffff" stroke={INK} strokeWidth="2" />
-                  {i < filled && <circle cx={x + CELL / 2} cy={y + CELL / 2} r={CELL * 0.34} fill="#E53935" stroke={INK} strokeWidth="1.5" data-counter="" />}
+                  <rect x={x} y={y} width={CELL} height={CELL} fill={PALETTE.paper} stroke={INK} strokeWidth="2" />
+                  {i < filled && <circle cx={x + CELL / 2} cy={y + CELL / 2} r={CELL * 0.34} fill={PALETTE.counter} stroke={INK} strokeWidth="1.5" data-counter="" />}
                 </g>
               );
             })}

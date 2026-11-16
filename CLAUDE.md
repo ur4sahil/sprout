@@ -29,6 +29,9 @@
 - Dev routes exist only when `import.meta.env.DEV` is true.
 - Spoken text is built from `Say` parts. Letters, numbers, times and money are typed parts, never digits or symbols inside a string.
 - New fields on a stored record always have a zod default, so old records still load.
+- Colours are named once: UI colours in `src/styles/tokens.css`, colours a child is asked about in `src/content/data/colors.ts`, picture colours in `src/visuals/palette.ts`. No colour is written anywhere else.
+- Component style files hold no pixel or rem sizes. Sizes, borders and icon sizes are tokens in `tokens.css`.
+- Screens use the shared components in `src/components/` (`BigButton`, `LinkButton`, `TextField`, `Notice`, `FormCard`, `FormLinks`). A screen never writes its own `<button>`, `<label>` or alert box. `tests/repo/style.test.ts` enforces these three rules.
 
 ## Working rules for every phase
 

@@ -2,6 +2,7 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'ruler' }> };
 
@@ -19,22 +20,22 @@ export default function RulerVisual({ visual }: Props) {
       <g data-object={visual.object} data-from={x0} data-to={x1}>
         {visual.object === 'pencil' && (
           <>
-            <rect x={x0} y="10" width={Math.max(x1 - x0 - 14, 2)} height="16" fill="#FDD835" stroke={INK} strokeWidth="1.5" />
-            <polygon points={`${x1 - 14},10 ${x1},18 ${x1 - 14},26`} fill="#f1d3a8" stroke={INK} strokeWidth="1.5" strokeLinejoin="round" />
+            <rect x={x0} y="10" width={Math.max(x1 - x0 - 14, 2)} height="16" fill={PALETTE.pencil} stroke={INK} strokeWidth="1.5" />
+            <polygon points={`${x1 - 14},10 ${x1},18 ${x1 - 14},26`} fill={PALETTE.pencilWood} stroke={INK} strokeWidth="1.5" strokeLinejoin="round" />
             <polygon points={`${x1 - 5},15.2 ${x1},18 ${x1 - 5},20.8`} fill={INK} />
-            <rect x={x0} y="10" width="7" height="16" fill="#EC407A" stroke={INK} strokeWidth="1.5" />
+            <rect x={x0} y="10" width="7" height="16" fill={PALETTE.eraser} stroke={INK} strokeWidth="1.5" />
           </>
         )}
         {visual.object === 'crayon' && (
           <>
-            <rect x={x0} y="10" width={Math.max(x1 - x0 - 10, 2)} height="16" rx="2" fill="#E53935" stroke={INK} strokeWidth="1.5" />
-            <polygon points={`${x1 - 10},12 ${x1},18 ${x1 - 10},24`} fill="#c62828" stroke={INK} strokeWidth="1.5" strokeLinejoin="round" />
-            <rect x={x0 + 8} y="10" width={Math.max((x1 - x0) * 0.4, 2)} height="16" fill="#ffffff" opacity="0.45" />
+            <rect x={x0} y="10" width={Math.max(x1 - x0 - 10, 2)} height="16" rx="2" fill={PALETTE.crayon} stroke={INK} strokeWidth="1.5" />
+            <polygon points={`${x1 - 10},12 ${x1},18 ${x1 - 10},24`} fill={PALETTE.crayonTip} stroke={INK} strokeWidth="1.5" strokeLinejoin="round" />
+            <rect x={x0 + 8} y="10" width={Math.max((x1 - x0) * 0.4, 2)} height="16" fill={PALETTE.paper} opacity="0.45" />
           </>
         )}
-        {visual.object === 'ribbon' && <rect x={x0} y="12" width={x1 - x0} height="12" fill="#8E24AA" stroke={INK} strokeWidth="1.5" />}
+        {visual.object === 'ribbon' && <rect x={x0} y="12" width={x1 - x0} height="12" fill={PALETTE.ribbon} stroke={INK} strokeWidth="1.5" />}
       </g>
-      <rect x="4" y="38" width={width - 8} height="34" rx="3" fill="#f4e3b1" stroke={INK} strokeWidth="1.5" />
+      <rect x="4" y="38" width={width - 8} height="34" rx="3" fill={PALETTE.ruler} stroke={INK} strokeWidth="1.5" />
       {Array.from({ length: marks + 1 }, (_, i) => {
         const x = 12 + i * UNIT;
         return (

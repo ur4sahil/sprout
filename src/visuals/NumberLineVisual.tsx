@@ -2,6 +2,7 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'numberLine' }> };
 
@@ -22,13 +23,13 @@ export default function NumberLineVisual({ visual }: Props) {
           <g key={value}>
             <line x1={x} y1="16" x2={x} y2="32" stroke={INK} strokeWidth="2" />
             {hidden.has(value) ? (
-              <rect x={x - 9} y="38" width="18" height="18" rx="3" fill="#ffffff" stroke={INK} strokeWidth="1.5" strokeDasharray="3 2" data-hidden="" />
+              <rect x={x - 9} y="38" width="18" height="18" rx="3" fill={PALETTE.paper} stroke={INK} strokeWidth="1.5" strokeDasharray="3 2" data-hidden="" />
             ) : (
               <text x={x} y="52" textAnchor="middle" fontSize="13" fontWeight="700" fill={INK}>
                 {value}
               </text>
             )}
-            {marked.has(value) && <circle cx={x} cy="24" r="6.5" fill="#E53935" stroke={INK} strokeWidth="1.5" data-dot="" />}
+            {marked.has(value) && <circle cx={x} cy="24" r="6.5" fill={PALETTE.counter} stroke={INK} strokeWidth="1.5" data-dot="" />}
           </g>
         );
       })}

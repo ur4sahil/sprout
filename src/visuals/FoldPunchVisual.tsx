@@ -2,6 +2,7 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'foldPunch' }> };
 
@@ -17,7 +18,7 @@ export default function FoldPunchVisual({ visual }: Props) {
   const height = rows * CELL;
   return (
     <svg className={styles.svg} viewBox={`-4 -4 ${4 * CELL + 8} ${4 * CELL + 8}`} width="150" role="img" aria-label={describeVisual(visual)} data-visual="foldPunch">
-      <rect x="0" y="0" width={width} height={height} fill="#fff8e1" stroke={INK} strokeWidth="2" />
+      <rect x="0" y="0" width={width} height={height} fill={PALETTE.foldPaper} stroke={INK} strokeWidth="2" />
       {folded && <rect x="3" y="3" width={width} height={height} fill="none" stroke={INK} strokeWidth="1" opacity="0.35" />}
       {folded ? (
         visual.fold === 'vertical' ? (

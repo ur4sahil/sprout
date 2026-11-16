@@ -1,8 +1,9 @@
 import type { CoinName, ShapeName } from '../engine/types';
+import { PALETTE } from './palette';
 
 // Pure geometry behind the pictures, kept apart so it can be tested without drawing.
 
-export const INK = '#1f2a30';
+export const INK = PALETTE.ink;
 
 // Degrees clockwise from 12 o'clock. The hour hand sits at hour plus minute/60,
 // so at half past it is halfway to the next number.
@@ -62,7 +63,7 @@ export function shapeTransform(rotation: number, flip: boolean): string {
 
 // Real coin widths in millimetres. The dime is the smallest.
 export const COIN_MM: Record<CoinName, number> = { penny: 19.05, nickel: 21.21, dime: 17.91, quarter: 24.26 };
-export const COIN_COLOR: Record<CoinName, string> = { penny: '#b8733a', nickel: '#c4c8cc', dime: '#c4c8cc', quarter: '#c4c8cc' };
+export const COIN_COLOR: Record<CoinName, string> = { penny: PALETTE.copper, nickel: PALETTE.silver, dime: PALETTE.silver, quarter: PALETTE.silver };
 export const COIN_RIDGED: Record<CoinName, boolean> = { penny: false, nickel: false, dime: true, quarter: true };
 
 // Where each dot sits on a die face, as cells of a 3 by 3 grid numbered left to right, top to bottom.

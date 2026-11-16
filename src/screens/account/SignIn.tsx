@@ -2,9 +2,14 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../app/store';
+import BigButton from '../../components/BigButton';
+import FormCard from '../../components/FormCard';
+import FormLinks from '../../components/FormLinks';
+import LinkButton from '../../components/LinkButton';
+import Notice from '../../components/Notice';
+import TextField from '../../components/TextField';
 import { failureMessage, signIn } from '../../storage/account';
 import SetPassword from './SetPassword';
-import styles from './SignIn.module.css';
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -13,9 +18,7 @@ export default function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState<string | null>(
-    startedOffline ? failureMessage('offline') : null,
-  );
+  const [message, setMessage] = useState<string | null>(startedOffline ? failureMessage('offline') : null);
 
   function done() {
     navigate('/', { replace: true });
@@ -42,59 +45,17 @@ export default function SignIn() {
   }
 
   return (
-    <main className={styles.screen}>
-      <form className={styles.card} onSubmit={submit}>
-        <div className={styles.mark} aria-hidden="true">
-          🌱
-        </div>
-        <h1 className={styles.title}>Sprout</h1>
-        <p className={styles.lead}>Grown-ups: sign in to set up this device.</p>
-
-        <label className={styles.field}>
-          <span>Email</span>
-          <input
-            type="email"
-            name="email"
-            autoComplete="username"
-            autoCapitalize="none"
-            autoCorrect="off"
-            spellCheck={false}
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <label className={styles.field}>
-          <span>Password</span>
-          <input
-            type="password"
-            name="password"
-            autoComplete="current-password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-
-        {message && (
-          <p className={styles.message} role="alert">
-            {message}
-          </p>
-        )}
-
-        <button className={styles.primary} type="submit" disabled={busy}>
-          {busy ? 'Signing in…' : 'Sign in'}
-        </button>
-
-        <div className={styles.links}>
-          <button type="button" className={styles.link} onClick={() => setMode('setPassword')}>
-            First time here
-          </button>
-          <button type="button" className={styles.link} onClick={() => setMode('setPassword')}>
-            Forgot password
-          </button>
-        </div>
-      </form>
-    </main>
+    <FormCard mark="🌱" title="Sprout" lead="Grown-ups: sign in to set up this device." onSubmit={submit}>
+      <TextField label="Email" type="email" name="email" autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} required value={email} onValue={setEmail} />
+      <TextField label="Password" type="password" name="password" autoComplete="current-password" required value={password} onValue={setPassword} />
+      {message && <Notice role="alert">{message}</Notice>}
+      <BigButton type="submit" disabled={busy}>
+        {busy ? 'Signing in…' : 'Sign in'}
+      </BigButton>
+      <FormLinks>
+        <LinkButton onClick={() => setMode('setPassword')}>First time here</LinkButton>
+        <LinkButton onClick={() => setMode('setPassword')}>Forgot password</LinkButton>
+      </FormLinks>
+    </FormCard>
   );
 }

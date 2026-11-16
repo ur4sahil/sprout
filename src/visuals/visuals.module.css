@@ -8,7 +8,7 @@
 .group {
   display: inline-grid;
   gap: 0.15em;
-  font-size: var(--visual-emoji, 2.5rem);
+  font-size: var(--visual-emoji, var(--emoji-l));
   line-height: 1.15;
   justify-items: center;
   align-items: center;
@@ -32,7 +32,7 @@
   grid-template-columns: repeat(3, 1.3em);
   grid-template-rows: repeat(3, 1.3em);
   padding: 0.2em;
-  border: 2px solid var(--color-line);
+  border: var(--border) solid var(--color-line);
   border-radius: var(--radius-m);
   background: var(--color-surface);
 }
@@ -49,8 +49,8 @@
   position: absolute;
   inset: 12% 0;
   background:
-    linear-gradient(to top right, transparent 44%, #c62828 44%, #c62828 56%, transparent 56%),
-    linear-gradient(to top left, transparent 44%, #c62828 44%, #c62828 56%, transparent 56%);
+    linear-gradient(to top right, transparent 44%, var(--color-cross) 44%, var(--color-cross) 56%, transparent 56%),
+    linear-gradient(to top left, transparent 44%, var(--color-cross) 44%, var(--color-cross) 56%, transparent 56%);
 }
 
 .number {
@@ -103,7 +103,7 @@
   justify-content: center;
   min-width: 1.2em;
   height: 1.2em;
-  border: 3px dashed var(--color-ink-soft);
+  border: var(--border-thick) dashed var(--color-ink-soft);
   border-radius: var(--radius-s);
   color: var(--color-ink-soft);
 }
@@ -111,7 +111,7 @@
 .matrix {
   display: inline-grid;
   gap: 0;
-  border: 3px solid var(--color-ink);
+  border: var(--border-thick) solid var(--color-ink);
   border-radius: var(--radius-s);
   background: var(--color-surface);
 }
@@ -128,10 +128,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 96px;
-  min-height: 96px;
+  min-width: var(--size-tile);
+  min-height: var(--size-tile);
   padding: var(--space-2);
-  border: 1.5px solid var(--color-ink);
+  border: var(--border-thin) solid var(--color-ink);
 }
 
 .graph {
@@ -141,7 +141,7 @@
   align-items: center;
   font-size: var(--text-m);
   padding: var(--space-3);
-  border: 2px solid var(--color-line);
+  border: var(--border) solid var(--color-line);
   border-radius: var(--radius-m);
   background: var(--color-surface);
 }
@@ -154,15 +154,15 @@
 .graphRow {
   display: flex;
   gap: 0.15em;
-  font-size: 1.6rem;
+  font-size: var(--emoji-graph);
   min-height: 1.3em;
-  border-left: 3px solid var(--color-ink);
+  border-left: var(--border-thick) solid var(--color-ink);
   padding-left: var(--space-2);
 }
 
 .arrayGrid {
   display: inline-grid;
   gap: 0.2em;
-  font-size: var(--visual-emoji, 2rem);
+  font-size: var(--visual-emoji, var(--emoji-m));
   line-height: 1.15;
 }

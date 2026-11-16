@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import {
-  MIN_PASSWORD_LENGTH,
-  failureMessage,
-  requestCode,
-  setPasswordWithCode,
-} from '../../storage/account';
+import BigButton from '../../components/BigButton';
+import FormCard from '../../components/FormCard';
+import LinkButton from '../../components/LinkButton';
+import Notice from '../../components/Notice';
+import TextField from '../../components/TextField';
+import { MIN_PASSWORD_LENGTH, failureMessage, requestCode, setPasswordWithCode } from '../../storage/account';
 import styles from './SetPassword.module.css';
 
 interface Props {
@@ -71,116 +71,37 @@ export default function SetPassword({ initialEmail, onBack, onDone }: Props) {
 
   if (step === 'email') {
     return (
-      <main className={styles.screen}>
-        <form className={styles.card} onSubmit={sendCode}>
-          <h1 className={styles.title}>Set a password</h1>
-          <p className={styles.lead}>We will email you a six-digit code.</p>
-          <label className={styles.field}>
-            <span>Email</span>
-            <input
-              type="email"
-              name="email"
-              autoComplete="username"
-              autoCapitalize="none"
-              autoCorrect="off"
-              spellCheck={false}
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-          {message && (
-            <p className={styles.message} role="alert">
-              {message}
-            </p>
-          )}
-          <button className={styles.primary} type="submit" disabled={busy}>
-            {busy ? 'Sending…' : 'Email me a code'}
-          </button>
-          <button type="button" className={styles.link} onClick={onBack}>
-            Back to sign in
-          </button>
-        </form>
-      </main>
+      <FormCard title="Set a password" lead="We will email you a six-digit code." onSubmit={sendCode}>
+        <TextField label="Email" type="email" name="email" autoComplete="username" autoCapitalize="none" autoCorrect="off" spellCheck={false} required value={email} onValue={setEmail} />
+        {message && <Notice role="alert">{message}</Notice>}
+        <BigButton type="submit" disabled={busy}>
+          {busy ? 'Sending…' : 'Email me a code'}
+        </BigButton>
+        <LinkButton onClick={onBack}>Back to sign in</LinkButton>
+      </FormCard>
     );
   }
 
   return (
-    <main className={styles.screen}>
-      <form className={styles.card} onSubmit={savePassword}>
-        <h1 className={styles.title}>Check your email</h1>
-        <p className={styles.lead}>
-          If that email is on the family list, a six-digit code is on its way. It works for 10
-          minutes.
-        </p>
-        {/* Lets the password manager save the email with the new password. */}
-        <input
-          className={styles.hidden}
-          type="email"
-          name="email"
-          autoComplete="username"
-          value={email}
-          readOnly
-          tabIndex={-1}
-          aria-hidden="true"
-        />
-        <label className={styles.field}>
-          <span>Code from the email</span>
-          <input
-            type="text"
-            name="code"
-            inputMode="numeric"
-            autoComplete="one-time-code"
-            maxLength={6}
-            required
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-          />
-        </label>
-        <label className={styles.field}>
-          <span>New password</span>
-          <input
-            type="password"
-            name="new-password"
-            autoComplete="new-password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <label className={styles.field}>
-          <span>New password again</span>
-          <input
-            type="password"
-            name="new-password-again"
-            autoComplete="new-password"
-            required
-            value={again}
-            onChange={(e) => setAgain(e.target.value)}
-          />
-        </label>
-        {message && (
-          <p className={styles.message} role="alert">
-            {message}
-          </p>
-        )}
-        <button className={styles.primary} type="submit" disabled={busy}>
-          {busy ? 'Saving…' : 'Save password and sign in'}
-        </button>
-        <button
-          type="button"
-          className={styles.link}
-          onClick={() => {
-            setMessage(null);
-            setStep('email');
-          }}
-        >
-          Send a new code
-        </button>
-        <button type="button" className={styles.link} onClick={onBack}>
-          Back to sign in
-        </button>
-      </form>
-    </main>
+    <FormCard title="Check your email" lead="If that email is on the family list, a six-digit code is on its way. It works for 10 minutes." onSubmit={savePassword}>
+      {/* Lets the password manager save the email with the new password. */}
+      <input className={styles.hidden} type="email" name="email" autoComplete="username" value={email} readOnly tabIndex={-1} aria-hidden="true" />
+      <TextField label="Code from the email" type="text" name="code" inputMode="numeric" autoComplete="one-time-code" maxLength={6} required value={code} onValue={setCode} />
+      <TextField label="New password" type="password" name="new-password" autoComplete="new-password" required value={password} onValue={setPassword} />
+      <TextField label="New password again" type="password" name="new-password-again" autoComplete="new-password" required value={again} onValue={setAgain} />
+      {message && <Notice role="alert">{message}</Notice>}
+      <BigButton type="submit" disabled={busy}>
+        {busy ? 'Saving…' : 'Save password and sign in'}
+      </BigButton>
+      <LinkButton
+        onClick={() => {
+          setMessage(null);
+          setStep('email');
+        }}
+      >
+        Send a new code
+      </LinkButton>
+      <LinkButton onClick={onBack}>Back to sign in</LinkButton>
+    </FormCard>
   );
 }

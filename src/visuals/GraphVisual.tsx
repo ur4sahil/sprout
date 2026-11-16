@@ -2,10 +2,11 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'graph' }> };
 
-const BAR = ['#1E88E5', '#FB8C00', '#43A047', '#8E24AA', '#E53935'];
+const BAR = PALETTE.bars;
 
 // A simple picture graph or bar graph, one row for each category.
 export default function GraphVisual({ visual }: Props) {

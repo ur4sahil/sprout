@@ -11,6 +11,11 @@
   --color-warn: #b45309;
   --color-focus: #1e6fd9;
 
+  --color-notice-bg: #fff4e5;
+  --color-picked-bg: #e8f1fd;
+  --color-on-accent: #ffffff;
+  --color-cross: #c62828;
+
   /* the six score stages (plan section 6) */
   --stage-not-started: #9aa5ab;
   --stage-getting-started: #7cc4f5;
@@ -45,6 +50,35 @@
 
   /* kid tap target */
   --tap-min: 64px;
+
+  /* borders */
+  --border-thin: 1px;
+  --border: 2px;
+  --border-thick: 3px;
+
+  /* controls */
+  --size-field: 52px;
+  --size-button: 56px;
+  --size-link: 44px;
+  --size-tile: 96px;
+  --size-badge: 30px;
+  --size-speaker-big: 128px;
+  --size-display-width: 140px;
+  --size-display-height: 72px;
+  --size-bin-height: 150px;
+  --size-bin-basis: 200px;
+  --size-bin-max: 320px;
+  --size-button-min-width: 200px;
+  --width-form: 420px;
+  --width-objects: 560px;
+
+  /* pictures and icons */
+  --emoji-m: 2rem;
+  --emoji-l: 2.5rem;
+  --emoji-xl: 2.6rem;
+  --emoji-graph: 1.6rem;
+  --icon-speaker: 1.6rem;
+  --icon-speaker-big: 3.2rem;
 }
 
 *,
@@ -76,6 +110,6 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
+  outline: var(--border-thick) solid var(--color-focus);
+  outline-offset: var(--border);
 }

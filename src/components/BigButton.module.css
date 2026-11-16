@@ -1,0 +1,23 @@
+.button {
+  min-height: var(--size-button);
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+  font-size: var(--text-m);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.kid {
+  min-height: var(--tap-min);
+  min-width: var(--size-button-min-width);
+  padding: 0 var(--space-6);
+  font-size: var(--text-l);
+}

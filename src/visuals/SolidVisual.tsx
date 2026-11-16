@@ -2,12 +2,13 @@ import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'solid' }> };
 
-const LIGHT = '#9cc7f0';
-const MID = '#5fa3e0';
-const DARK = '#2f79c2';
+const LIGHT = PALETTE.solidLight;
+const MID = PALETTE.solidMid;
+const DARK = PALETTE.solidDark;
 const edge = { stroke: INK, strokeWidth: 2.5, strokeLinejoin: 'round' as const };
 
 // A solid shape, drawn so that it looks three-dimensional.
@@ -25,7 +26,7 @@ export default function SolidVisual({ visual }: Props) {
         <>
           <circle cx="50" cy="50" r="42" fill={MID} {...edge} />
           <path d="M 8 50 A 42 14 0 0 0 92 50" fill="none" stroke={INK} strokeWidth="2" strokeDasharray="0" opacity="0.55" />
-          <ellipse cx="36" cy="32" rx="12" ry="7" fill="#ffffff" opacity="0.6" transform="rotate(-30 36 32)" />
+          <ellipse cx="36" cy="32" rx="12" ry="7" fill={PALETTE.paper} opacity="0.6" transform="rotate(-30 36 32)" />
         </>
       )}
       {visual.solid === 'cone' && (

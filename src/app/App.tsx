@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Notice from '../components/Notice';
 import SignIn from '../screens/account/SignIn';
 import { loadClipKeys, syncVoicePack } from '../audio/clips';
 import { setMuted } from '../audio/mute';
@@ -57,9 +58,9 @@ export default function App() {
   return (
     <div className={styles.shell}>
       {!storageSaved && (
-        <p className={styles.banner} role="status">
+        <Notice role="status" banner>
           Progress will not be saved on this device.
-        </p>
+        </Notice>
       )}
       <ErrorBoundary onHome={() => navigate('/')}>{content}</ErrorBoundary>
     </div>

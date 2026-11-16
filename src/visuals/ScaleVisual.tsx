@@ -3,6 +3,7 @@ import type { Visual } from '../engine/types';
 import { INK } from './geometry';
 import ScaleBlocks from './ScaleBlocks';
 import styles from './visuals.module.css';
+import { PALETTE } from './palette';
 
 type Props = { visual: Extract<Visual, { kind: 'scale' }> };
 
@@ -20,12 +21,12 @@ export default function ScaleVisual({ visual }: Props) {
       <ScaleBlocks values={visual.left} centre={leftCentre} />
       <ScaleBlocks values={visual.right} centre={rightCentre} />
       {[leftCentre, rightCentre].map((centre) => (
-        <path key={centre} d={`M ${centre - pan / 2} 54 H ${centre + pan / 2} L ${centre + pan / 2 - 10} 62 H ${centre - pan / 2 + 10} Z`} fill="#b0bec5" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+        <path key={centre} d={`M ${centre - pan / 2} 54 H ${centre + pan / 2} L ${centre + pan / 2 - 10} 62 H ${centre - pan / 2 + 10} Z`} fill={PALETTE.pan} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
       ))}
       <line x1={leftCentre} y1="62" x2={leftCentre} y2="72" stroke={INK} strokeWidth="2.5" />
       <line x1={rightCentre} y1="62" x2={rightCentre} y2="72" stroke={INK} strokeWidth="2.5" />
       <line x1={leftCentre} y1="72" x2={rightCentre} y2="72" stroke={INK} strokeWidth="4" strokeLinecap="round" />
-      <polygon points={`${width / 2},72 ${width / 2 + 20},106 ${width / 2 - 20},106`} fill="#78909c" stroke={INK} strokeWidth="2" strokeLinejoin="round" />
+      <polygon points={`${width / 2},72 ${width / 2 + 20},106 ${width / 2 - 20},106`} fill={PALETTE.stand} stroke={INK} strokeWidth="2" strokeLinejoin="round" />
     </svg>
   );
 }
