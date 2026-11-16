@@ -12,9 +12,9 @@ import { letterSaid, letterTile, pickApart, row } from './parts';
 // Family: Match letters. Oracle: matchEqual.
 // Levels: 3 pairs, different shapes (A a, B b) / 3 pairs with look-alikes.
 
-const looksLike = (one: string, two: string): boolean => LOOK_ALIKE_LOWER.some((set) => set.includes(one) && set.includes(two));
+export const looksLike = (one: string, two: string): boolean => LOOK_ALIKE_LOWER.some((set) => set.includes(one) && set.includes(two));
 
-function pairsExplanation(letters: string[]): Explanation {
+export function pairsExplanation(letters: string[]): Explanation {
   const speak: Say = [];
   for (const letter of letters) speak.push('Big', { letter: letter.toUpperCase() }, 'goes with small', { letter }, '.');
   const first = letters[0] as string;
@@ -24,7 +24,7 @@ function pairsExplanation(letters: string[]): Explanation {
 const MATCH = 'Match each big letter to its small letter.';
 
 // `letters` is the left column, top to bottom, as small letters. `smalls` is the right column.
-function matchQuestion(letters: string[], smalls: string[]): QuestionDraft {
+export function matchQuestion(letters: string[], smalls: string[]): QuestionDraft {
   return {
     type: 'match',
     mode: 'look',

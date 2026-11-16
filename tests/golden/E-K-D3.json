@@ -1,0 +1,1728 @@
+{
+ "skillId": "E-K-D3",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "target": "star",
+   "relation": "plural",
+   "many": false,
+   "options": [
+    "stars",
+    "star"
+   ],
+   "count": 1
+  },
+  "prompt": {
+   "text": "Which word matches the picture?",
+   "speak": [
+    "Which word matches the picture?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "⭐",
+   "count": 1,
+   "layout": "row"
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "stars",
+    "size": "l",
+    "speak": [
+     {
+      "word": "stars"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "star",
+    "size": "l",
+    "speak": [
+     {
+      "word": "star"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "There is just one.",
+    "We say",
+    {
+     "word": "star"
+    },
+    "."
+   ],
+   "steps": [
+    "There is just one.",
+    "We say star."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "text",
+      "value": "star",
+      "size": "l",
+      "speak": [
+       {
+        "word": "star"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-D3",
+  "level": 1,
+  "seed": 333,
+  "key": "E-K-D3|1|{\"count\":1,\"many\":false,\"relation\":\"plural\",\"target\":\"star\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "duck",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "duck",
+      "ducks"
+     ],
+     "count": 3
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🦆",
+     "count": 3,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "duck",
+      "size": "l",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ducks",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ducks"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "ducks"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say ducks."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ducks",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ducks"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-D3|1|{\"count\":3,\"many\":true,\"relation\":\"plural\",\"target\":\"duck\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bee",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "bee",
+      "bees"
+     ],
+     "count": 2
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "bee",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "bees",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bees"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "bees"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say bees."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐝",
+        "count": 2,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "bees",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bees"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-D3|1|{\"count\":2,\"many\":true,\"relation\":\"plural\",\"target\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "bee",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "bees",
+      "bee"
+     ],
+     "count": 3
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 3,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "bees",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bees"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "bee",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "bees"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say bees."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐝",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "bees",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bees"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-D3|1|{\"count\":3,\"many\":true,\"relation\":\"plural\",\"target\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "turtle",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "turtles",
+      "turtle"
+     ],
+     "count": 2
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐢",
+     "count": 2,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "turtles",
+      "size": "l",
+      "speak": [
+       {
+        "word": "turtles"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "turtle",
+      "size": "l",
+      "speak": [
+       {
+        "word": "turtle"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "turtles"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say turtles."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐢",
+        "count": 2,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "turtles",
+        "size": "l",
+        "speak": [
+         {
+          "word": "turtles"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-D3|1|{\"count\":2,\"many\":true,\"relation\":\"plural\",\"target\":\"turtle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "frog",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "frogs",
+      "frog"
+     ],
+     "count": 1
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐸",
+     "count": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "frogs",
+      "size": "l",
+      "speak": [
+       {
+        "word": "frogs"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "frog",
+      "size": "l",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "frog"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "l",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-D3|1|{\"count\":1,\"many\":false,\"relation\":\"plural\",\"target\":\"frog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "ball",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "balls",
+      "ball"
+     ],
+     "count": 3
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 3,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "balls",
+      "size": "l",
+      "speak": [
+       {
+        "word": "balls"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "balls"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say balls."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "balls",
+        "size": "l",
+        "speak": [
+         {
+          "word": "balls"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-D3|1|{\"count\":3,\"many\":true,\"relation\":\"plural\",\"target\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "apple",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "apple",
+      "apples"
+     ],
+     "count": 4
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 4,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "apple",
+      "size": "l",
+      "speak": [
+       {
+        "word": "apple"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "apples",
+      "size": "l",
+      "speak": [
+       {
+        "word": "apples"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "apples"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say apples."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 4,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "apples",
+        "size": "l",
+        "speak": [
+         {
+          "word": "apples"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-D3|1|{\"count\":4,\"many\":true,\"relation\":\"plural\",\"target\":\"apple\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "car",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "cars",
+      "car"
+     ],
+     "count": 1
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cars",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cars"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say car."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-D3|1|{\"count\":1,\"many\":false,\"relation\":\"plural\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "car",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "cars",
+      "car"
+     ],
+     "count": 1
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cars",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cars"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say car."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-D3|1|{\"count\":1,\"many\":false,\"relation\":\"plural\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "ball",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "ball",
+      "balls"
+     ],
+     "count": 1
+    },
+    "prompt": {
+     "text": "Which word matches the picture?",
+     "speak": [
+      "Which word matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "balls",
+      "size": "l",
+      "speak": [
+       {
+        "word": "balls"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "ball"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say ball."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-D3|1|{\"count\":1,\"many\":false,\"relation\":\"plural\",\"target\":\"ball\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "duck",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "duck",
+      "ducks"
+     ],
+     "read": [
+      "duck",
+      "ducks"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "duck",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ducks",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "ducks"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say ducks."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ducks",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ducks"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"duck\",\"ducks\"],\"relation\":\"plural\",\"target\":\"duck\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "bee",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "bee",
+      "bees"
+     ],
+     "read": [
+      "bee",
+      "bees"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "bee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bees",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "bees"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say bees."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐝",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "bees",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bees"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"bee\",\"bees\"],\"relation\":\"plural\",\"target\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "bee",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "bees",
+      "bee"
+     ],
+     "read": [
+      "bee",
+      "bees"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "bees",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bee",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "bees"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say bees."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐝",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "bees",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bees"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"bee\",\"bees\"],\"relation\":\"plural\",\"target\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "turtle",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "turtles",
+      "turtle"
+     ],
+     "read": [
+      "turtle",
+      "turtles"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "turtles",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "turtle",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "turtles"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say turtles."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐢",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "turtles",
+        "size": "l",
+        "speak": [
+         {
+          "word": "turtles"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"turtle\",\"turtles\"],\"relation\":\"plural\",\"target\":\"turtle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "frog",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "frogs",
+      "frog"
+     ],
+     "read": [
+      "frog",
+      "frogs"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means just one?",
+     "speak": [
+      "Which word means just one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "frogs",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "frog",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "frog"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "l",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-D3|2|{\"many\":false,\"read\":[\"frog\",\"frogs\"],\"relation\":\"plural\",\"target\":\"frog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "ball",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "balls",
+      "ball"
+     ],
+     "read": [
+      "ball",
+      "balls"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "balls",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "balls"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say balls."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "balls",
+        "size": "l",
+        "speak": [
+         {
+          "word": "balls"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"ball\",\"balls\"],\"relation\":\"plural\",\"target\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "apple",
+     "relation": "plural",
+     "many": true,
+     "options": [
+      "apple",
+      "apples"
+     ],
+     "read": [
+      "apple",
+      "apples"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means more than one?",
+     "speak": [
+      "Which word means more than one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "apple",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "apples",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is more than one.",
+      "We say",
+      {
+       "word": "apples"
+      },
+      "."
+     ],
+     "steps": [
+      "There is more than one.",
+      "We say apples."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "apples",
+        "size": "l",
+        "speak": [
+         {
+          "word": "apples"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-D3|2|{\"many\":true,\"read\":[\"apple\",\"apples\"],\"relation\":\"plural\",\"target\":\"apple\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "car",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "cars",
+      "car"
+     ],
+     "read": [
+      "car",
+      "cars"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means just one?",
+     "speak": [
+      "Which word means just one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cars",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say car."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-D3|2|{\"many\":false,\"read\":[\"car\",\"cars\"],\"relation\":\"plural\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "car",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "cars",
+      "car"
+     ],
+     "read": [
+      "car",
+      "cars"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means just one?",
+     "speak": [
+      "Which word means just one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cars",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say car."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-D3|2|{\"many\":false,\"read\":[\"car\",\"cars\"],\"relation\":\"plural\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "ball",
+     "relation": "plural",
+     "many": false,
+     "options": [
+      "ball",
+      "balls"
+     ],
+     "read": [
+      "ball",
+      "balls"
+     ]
+    },
+    "prompt": {
+     "text": "Which word means just one?",
+     "speak": [
+      "Which word means just one?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "balls",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There is just one.",
+      "We say",
+      {
+       "word": "ball"
+      },
+      "."
+     ],
+     "steps": [
+      "There is just one.",
+      "We say ball."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D3",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-D3|2|{\"many\":false,\"read\":[\"ball\",\"balls\"],\"relation\":\"plural\",\"target\":\"ball\"}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,2089 @@
+{
+ "skillId": "E-K-C1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "listen",
+  "facts": {
+   "target": "for",
+   "relation": "sightWord",
+   "options": [
+    "for",
+    "help",
+    "jump"
+   ]
+  },
+  "prompt": {
+   "text": "Listen. Tap the word.",
+   "speak": [
+    "Tap the word",
+    {
+     "word": "for"
+    },
+    "."
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "for",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "help",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "jump",
+    "size": "l"
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "This word is",
+    {
+     "word": "for"
+    },
+    "."
+   ],
+   "steps": [
+    "This word is for."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "for",
+    "size": "xl",
+    "speak": [
+     {
+      "word": "for"
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-C1",
+  "level": 1,
+  "seed": 321,
+  "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"for\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "help",
+     "relation": "sightWord",
+     "options": [
+      "it",
+      "little",
+      "help"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "help"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "it",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "little",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "help",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "help"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is help."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "help",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "help"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"help\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "for",
+      "find",
+      "I"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "for",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "find",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "help",
+      "I",
+      "jump"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "help",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "jump",
+     "relation": "sightWord",
+     "options": [
+      "jump",
+      "and",
+      "go"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "jump"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "and",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "go",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "jump"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is jump."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "jump",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"jump\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "here",
+     "relation": "sightWord",
+     "options": [
+      "and",
+      "here",
+      "can"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "here"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "and",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "here"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is here."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "here",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "here"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"here\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "it",
+      "funny",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "it",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "a",
+     "relation": "sightWord",
+     "options": [
+      "go",
+      "is",
+      "a"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "a"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "go",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "is",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is a."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "a"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"a\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "big",
+      "away",
+      "funny"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "away",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "big",
+      "down",
+      "a"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "down",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "funny",
+      "big",
+      "is"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "is",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-C1|1|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "help",
+     "relation": "sightWord",
+     "options": [
+      "help",
+      "jump",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "help"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "help",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "help"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is help."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "help",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "help"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"help\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "a",
+      "go",
+      "I"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "go",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "a",
+      "I",
+      "go"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "go",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "jump",
+     "relation": "sightWord",
+     "options": [
+      "jump",
+      "here",
+      "down"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "jump"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "down",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "jump"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is jump."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "jump",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "jump"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"jump\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "here",
+     "relation": "sightWord",
+     "options": [
+      "down",
+      "here",
+      "jump"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "here"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "down",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "here"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is here."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "here",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "here"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"here\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "jump",
+      "funny",
+      "here"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "a",
+     "relation": "sightWord",
+     "options": [
+      "I",
+      "a",
+      "it"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "a"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "it",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is a."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "a"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"a\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "big",
+      "for",
+      "and"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "for",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "and",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "big",
+      "can",
+      "and"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "and",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "here",
+      "down",
+      "funny"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "down",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-C1|2|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "help",
+     "relation": "sightWord",
+     "options": [
+      "his",
+      "help",
+      "how"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "help"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "his",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "help",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "how",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "help"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is help."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "help",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "help"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 1,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"help\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "I",
+      "it",
+      "into"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "it",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "into",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 2,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "I",
+     "relation": "sightWord",
+     "options": [
+      "it",
+      "I",
+      "into"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "I"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "it",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "into",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "I"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is I."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "I",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "I"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 3,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"I\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "come",
+     "relation": "sightWord",
+     "options": [
+      "could",
+      "came",
+      "come"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "come"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "could",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "came",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "come",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "come"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is come."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "come",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "come"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 4,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"come\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "here",
+     "relation": "sightWord",
+     "options": [
+      "had",
+      "her",
+      "here"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "here"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "had",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "her",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "here",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "here"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is here."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "here",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "here"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 5,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"here\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "fly",
+      "for",
+      "funny"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "fly",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "for",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 6,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "a",
+     "relation": "sightWord",
+     "options": [
+      "are",
+      "a",
+      "all"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "a"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "are",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "all",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is a."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "a"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 7,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"a\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "by",
+      "big",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "by",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 8,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "big",
+     "relation": "sightWord",
+     "options": [
+      "be",
+      "but",
+      "big"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "big"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "be",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "but",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "big"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is big."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 9,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"big\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "target": "funny",
+     "relation": "sightWord",
+     "options": [
+      "find",
+      "funny",
+      "for"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Tap the word.",
+     "speak": [
+      "Tap the word",
+      {
+       "word": "funny"
+      },
+      "."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "find",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "funny",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "for",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "funny"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is funny."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "funny",
+      "size": "xl",
+      "speak": [
+       {
+        "word": "funny"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-C1",
+    "level": 3,
+    "seed": 10,
+    "key": "E-K-C1|3|{\"relation\":\"sightWord\",\"target\":\"funny\"}"
+   }
+  ]
+ }
+}

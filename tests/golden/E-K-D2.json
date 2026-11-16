@@ -1,0 +1,5467 @@
+{
+ "skillId": "E-K-D2",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "itemAttrs": [
+    "things",
+    "animals",
+    "animals",
+    "people"
+   ],
+   "binAttrs": [
+    "people",
+    "animals",
+    "things"
+   ],
+   "items": [
+    "cup",
+    "cat",
+    "duck",
+    "king"
+   ]
+  },
+  "prompt": {
+   "text": "Put each word in its group.",
+   "speak": [
+    "Put each word in its group."
+   ]
+  },
+  "items": [
+   {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "text",
+      "value": "cup",
+      "size": "m"
+     }
+    ],
+    "speak": [
+     {
+      "word": "cup"
+     }
+    ]
+   },
+   {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "text",
+      "value": "cat",
+      "size": "m"
+     }
+    ],
+    "speak": [
+     {
+      "word": "cat"
+     }
+    ]
+   },
+   {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "text",
+      "value": "duck",
+      "size": "m"
+     }
+    ],
+    "speak": [
+     {
+      "word": "duck"
+     }
+    ]
+   },
+   {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "text",
+      "value": "king",
+      "size": "m"
+     }
+    ],
+    "speak": [
+     {
+      "word": "king"
+     }
+    ]
+   }
+  ],
+  "bins": [
+   {
+    "label": "People",
+    "speak": [
+     "People"
+    ]
+   },
+   {
+    "label": "Animals",
+    "speak": [
+     "Animals"
+    ]
+   },
+   {
+    "label": "Things",
+    "speak": [
+     "Things"
+    ]
+   }
+  ],
+  "answerBin": [
+   2,
+   1,
+   1,
+   0
+  ],
+  "explanation": {
+   "speak": [
+    "A",
+    {
+     "word": "king"
+    },
+    "is a person.",
+    "A",
+    {
+     "word": "cat"
+    },
+    "is an animal.",
+    "A",
+    {
+     "word": "cup"
+    },
+    "is a thing."
+   ],
+   "steps": [
+    "A king is a person.",
+    "A cat is an animal.",
+    "A cup is a thing."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-D2",
+  "level": 1,
+  "seed": 332,
+  "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"animals\",\"animals\",\"people\"],\"items\":[\"cup\",\"cat\",\"duck\",\"king\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "things",
+      "animals",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "pig",
+      "key",
+      "frog",
+      "woman"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "key",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "woman"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "pig"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "key"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A woman is a person.",
+      "A pig is an animal.",
+      "A key is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👩",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "woman",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐷",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "pig",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🔑",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "key",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"things\",\"animals\",\"people\"],\"items\":[\"pig\",\"key\",\"frog\",\"woman\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "things",
+      "animals",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "monkey",
+      "box",
+      "dog",
+      "girl"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "monkey",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "dog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "girl"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "monkey"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "box"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A girl is a person.",
+      "A monkey is an animal.",
+      "A box is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👧",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "girl",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐵",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "monkey",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "monkey"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "📦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "box",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"things\",\"animals\",\"people\"],\"items\":[\"monkey\",\"box\",\"dog\",\"girl\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "things",
+      "animals",
+      "people",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "ball",
+      "lion",
+      "baby",
+      "cup"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "lion",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "baby"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "lion"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A baby is a person.",
+      "A lion is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👶",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "baby",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦁",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "lion",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"animals\",\"people\",\"things\"],\"items\":[\"ball\",\"lion\",\"baby\",\"cup\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "people",
+      "things",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "girl",
+      "woman",
+      "cup",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "monkey",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "girl"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "monkey"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "cup"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A girl is a person.",
+      "A monkey is an animal.",
+      "A cup is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👧",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "girl",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐵",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "monkey",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "monkey"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🥤",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "cup",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "cup"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"people\",\"things\",\"animals\"],\"items\":[\"girl\",\"woman\",\"cup\",\"monkey\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "things",
+      "people",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "duck",
+      "ball",
+      "baby",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "duck",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "baby"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "duck"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A baby is a person.",
+      "A duck is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👶",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "baby",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦆",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "duck",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"things\",\"people\",\"animals\"],\"items\":[\"duck\",\"ball\",\"baby\",\"cat\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "things",
+      "things",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "king",
+      "book",
+      "ball",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "book",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "king"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "frog"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "book"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A king is a person.",
+      "A frog is an animal.",
+      "A book is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🤴",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "king",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "king"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐸",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "frog",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "📖",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "book",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "book"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"things\",\"things\",\"animals\"],\"items\":[\"king\",\"book\",\"ball\",\"frog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "things",
+      "things",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "lion",
+      "key",
+      "clock",
+      "woman"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "lion",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "key",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕐",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "clock",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "clock"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "woman"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "lion"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "key"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A woman is a person.",
+      "A lion is an animal.",
+      "A key is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👩",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "woman",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦁",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "lion",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🔑",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "key",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"things\",\"things\",\"people\"],\"items\":[\"lion\",\"key\",\"clock\",\"woman\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "people",
+      "things",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "rabbit",
+      "king",
+      "box",
+      "girl"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "rabbit",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "king"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "rabbit"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "box"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A king is a person.",
+      "A rabbit is an animal.",
+      "A box is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🤴",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "king",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "king"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐰",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "rabbit",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "📦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "box",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"people\",\"things\",\"people\"],\"items\":[\"rabbit\",\"king\",\"box\",\"girl\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "things",
+      "animals",
+      "people",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "cup",
+      "duck",
+      "man",
+      "girl"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "duck",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "man"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "duck"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "cup"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A man is a person.",
+      "A duck is an animal.",
+      "A cup is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👨",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "man",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦆",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "duck",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🥤",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "cup",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "cup"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"animals\",\"people\",\"people\"],\"items\":[\"cup\",\"duck\",\"man\",\"girl\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "things",
+      "people",
+      "animals",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "cup",
+      "boy",
+      "fish",
+      "clock"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "boy",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕐",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "clock",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "clock"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "boy"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "fish"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "cup"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A boy is a person.",
+      "A fish is an animal.",
+      "A cup is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "boy",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐟",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "fish",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🥤",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "cup",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "cup"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-D2|1|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"people\",\"animals\",\"things\"],\"items\":[\"cup\",\"boy\",\"fish\",\"clock\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "things",
+      "animals",
+      "animals",
+      "things",
+      "people",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "key",
+      "frog",
+      "duck",
+      "ball",
+      "woman",
+      "boy"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "key",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "duck",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "boy",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     1,
+     2,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "woman"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "frog"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "key"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A woman is a person.",
+      "A frog is an animal.",
+      "A key is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👩",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "woman",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐸",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "frog",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🔑",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "key",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"animals\",\"animals\",\"things\",\"people\",\"people\"],\"items\":[\"key\",\"frog\",\"duck\",\"ball\",\"woman\",\"boy\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "people",
+      "animals",
+      "things",
+      "things",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "monkey",
+      "baby",
+      "elephant",
+      "box",
+      "clock",
+      "girl"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "monkey",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "elephant",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕐",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "clock",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "clock"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     2,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "baby"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "monkey"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "box"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A baby is a person.",
+      "A monkey is an animal.",
+      "A box is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👶",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "baby",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐵",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "monkey",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "monkey"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "📦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "box",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"people\",\"animals\",\"things\",\"things\",\"people\"],\"items\":[\"monkey\",\"baby\",\"elephant\",\"box\",\"clock\",\"girl\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "animals",
+      "things",
+      "people",
+      "animals",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "man",
+      "pig",
+      "ball",
+      "baby",
+      "lion",
+      "cup"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "lion",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "man"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "pig"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A man is a person.",
+      "A pig is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👨",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "man",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐷",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "pig",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"animals\",\"things\",\"people\",\"animals\",\"things\"],\"items\":[\"man\",\"pig\",\"ball\",\"baby\",\"lion\",\"cup\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "things",
+      "things",
+      "people",
+      "animals",
+      "people",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "bed",
+      "cup",
+      "woman",
+      "rabbit",
+      "baby",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🛏️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "bed"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "rabbit",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "monkey",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "woman"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "rabbit"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "bed"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A woman is a person.",
+      "A rabbit is an animal.",
+      "A bed is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👩",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "woman",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐰",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "rabbit",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🛏️",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "bed",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"things\",\"things\",\"people\",\"animals\",\"people\",\"animals\"],\"items\":[\"bed\",\"cup\",\"woman\",\"rabbit\",\"baby\",\"monkey\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "animals",
+      "things",
+      "things",
+      "animals",
+      "people"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "king",
+      "duck",
+      "ball",
+      "cup",
+      "cat",
+      "baby"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "duck",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "baby",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "king"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "duck"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A king is a person.",
+      "A duck is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🤴",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "king",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "king"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦆",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "duck",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"animals\",\"things\",\"things\",\"animals\",\"people\"],\"items\":[\"king\",\"duck\",\"ball\",\"cup\",\"cat\",\"baby\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "things",
+      "animals",
+      "animals",
+      "people",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "king",
+      "ball",
+      "frog",
+      "fish",
+      "boy",
+      "book"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "boy",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "book",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     1,
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "king"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "frog"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A king is a person.",
+      "A frog is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🤴",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "king",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "king"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐸",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "frog",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"things\",\"animals\",\"animals\",\"people\",\"things\"],\"items\":[\"king\",\"ball\",\"frog\",\"fish\",\"boy\",\"book\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "animals",
+      "animals",
+      "things",
+      "people",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "boy",
+      "lion",
+      "pig",
+      "key",
+      "woman",
+      "cup"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "boy",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "lion",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "key",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     2,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "boy"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "lion"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "key"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A boy is a person.",
+      "A lion is an animal.",
+      "A key is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "boy",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦁",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "lion",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🔑",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "key",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"animals\",\"animals\",\"things\",\"people\",\"things\"],\"items\":[\"boy\",\"lion\",\"pig\",\"key\",\"woman\",\"cup\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "things",
+      "people",
+      "things",
+      "animals",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "woman",
+      "door",
+      "king",
+      "box",
+      "lion",
+      "rabbit"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "woman",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "door",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "lion",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "rabbit",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     0,
+     2,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "woman"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "lion"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "door"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A woman is a person.",
+      "A lion is an animal.",
+      "A door is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👩",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "woman",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🦁",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "lion",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🚪",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "door",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "door"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"things\",\"people\",\"things\",\"animals\",\"animals\"],\"items\":[\"woman\",\"door\",\"king\",\"box\",\"lion\",\"rabbit\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "people",
+      "animals",
+      "things",
+      "people",
+      "things",
+      "animals"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "king",
+      "dog",
+      "ball",
+      "man",
+      "cup",
+      "duck"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🤴",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "king",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "dog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "ball",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "cup"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "duck",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "king"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "dog"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "ball"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A king is a person.",
+      "A dog is an animal.",
+      "A ball is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🤴",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "king",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "king"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐶",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "dog",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "⚽",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "ball",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"people\",\"animals\",\"things\",\"people\",\"things\",\"animals\"],\"items\":[\"king\",\"dog\",\"ball\",\"man\",\"cup\",\"duck\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "things",
+      "people",
+      "people",
+      "animals",
+      "things"
+     ],
+     "binAttrs": [
+      "people",
+      "animals",
+      "things"
+     ],
+     "items": [
+      "frog",
+      "box",
+      "boy",
+      "girl",
+      "fish",
+      "clock"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "frog",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "boy",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "girl",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕐",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "text",
+        "value": "clock",
+        "size": "m"
+       }
+      ],
+      "speak": [
+       {
+        "word": "clock"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "People",
+      "speak": [
+       "People"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "Animals"
+      ]
+     },
+     {
+      "label": "Things",
+      "speak": [
+       "Things"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A",
+      {
+       "word": "boy"
+      },
+      "is a person.",
+      "A",
+      {
+       "word": "frog"
+      },
+      "is an animal.",
+      "A",
+      {
+       "word": "box"
+      },
+      "is a thing."
+     ],
+     "steps": [
+      "A boy is a person.",
+      "A frog is an animal.",
+      "A box is a thing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "👦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "boy",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "🐸",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "frog",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "emojiGroup",
+          "emoji": "📦",
+          "count": 1,
+          "layout": "row"
+         },
+         {
+          "kind": "text",
+          "value": "box",
+          "size": "m"
+         }
+        ],
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D2",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-D2|2|{\"binAttrs\":[\"people\",\"animals\",\"things\"],\"itemAttrs\":[\"animals\",\"things\",\"people\",\"people\",\"animals\",\"things\"],\"items\":[\"frog\",\"box\",\"boy\",\"girl\",\"fish\",\"clock\"]}"
+   }
+  ]
+ }
+}

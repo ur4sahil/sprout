@@ -1,0 +1,2585 @@
+{
+ "skillId": "E-1-A5",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "read",
+  "facts": {
+   "itemAttrs": [
+    "long",
+    "short",
+    "long",
+    "short"
+   ],
+   "binAttrs": [
+    "short",
+    "long"
+   ],
+   "read": [
+    "pine",
+    "man",
+    "cube",
+    "can"
+   ]
+  },
+  "prompt": {
+   "text": "Put each word in its group.",
+   "speak": [
+    "Put each word in its group."
+   ]
+  },
+  "items": [
+   {
+    "kind": "text",
+    "value": "pine",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "man",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "cube",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "can",
+    "size": "l"
+   }
+  ],
+  "bins": [
+   {
+    "label": "Short vowel",
+    "speak": [
+     "Short vowel"
+    ]
+   },
+   {
+    "label": "Long vowel",
+    "speak": [
+     "Long vowel"
+    ]
+   }
+  ],
+  "answerBin": [
+   1,
+   0,
+   1,
+   0
+  ],
+  "explanation": {
+   "speak": [
+    {
+     "word": "man"
+    },
+    "has a short vowel.",
+    {
+     "word": "pine"
+    },
+    "has a long vowel."
+   ],
+   "steps": [
+    "Man has a short vowel.",
+    "Pine has a long vowel."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pine"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-1-A5",
+  "level": 1,
+  "seed": 405,
+  "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\"],\"read\":[\"pine\",\"man\",\"cube\",\"can\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "kite",
+      "man",
+      "cube",
+      "tub"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tub",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "man"
+      },
+      "has a short vowel.",
+      {
+       "word": "kite"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Man has a short vowel.",
+      "Kite has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "l",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "kite",
+        "size": "l",
+        "speak": [
+         {
+          "word": "kite"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 1,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\"],\"read\":[\"kite\",\"man\",\"cube\",\"tub\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "note",
+      "cap",
+      "hop",
+      "mane"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "note",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "cap"
+      },
+      "has a short vowel.",
+      {
+       "word": "note"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Cap has a short vowel.",
+      "Note has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cap"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "note",
+        "size": "l",
+        "speak": [
+         {
+          "word": "note"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 2,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"short\",\"long\"],\"read\":[\"note\",\"cap\",\"hop\",\"mane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "cane",
+      "tub",
+      "kite",
+      "hop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tub",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tub"
+      },
+      "has a short vowel.",
+      {
+       "word": "cane"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Tub has a short vowel.",
+      "Cane has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tub",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tub"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cane",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cane"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 3,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\"],\"read\":[\"cane\",\"tub\",\"kite\",\"hop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "long",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pin",
+      "can",
+      "mane",
+      "hope"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hope",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "has a short vowel.",
+      {
+       "word": "mane"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Pin has a short vowel.",
+      "Mane has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "mane",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mane"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 4,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"long\",\"long\"],\"read\":[\"pin\",\"can\",\"mane\",\"hope\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "hope",
+      "can",
+      "man",
+      "tube"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "hope",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "can"
+      },
+      "has a short vowel.",
+      {
+       "word": "hope"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Can has a short vowel.",
+      "Hope has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "can",
+        "size": "l",
+        "speak": [
+         {
+          "word": "can"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hope",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hope"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 5,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"short\",\"long\"],\"read\":[\"hope\",\"can\",\"man\",\"tube\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pine",
+      "hop",
+      "cub",
+      "mane"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cub",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hop"
+      },
+      "has a short vowel.",
+      {
+       "word": "pine"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Hop has a short vowel.",
+      "Pine has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hop",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hop"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pine",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pine"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 6,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"short\",\"long\"],\"read\":[\"pine\",\"hop\",\"cub\",\"mane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "long",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "man",
+      "hop",
+      "kite",
+      "pine"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "man"
+      },
+      "has a short vowel.",
+      {
+       "word": "kite"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Man has a short vowel.",
+      "Kite has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "l",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "kite",
+        "size": "l",
+        "speak": [
+         {
+          "word": "kite"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 7,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"long\",\"long\"],\"read\":[\"man\",\"hop\",\"kite\",\"pine\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "note",
+      "cap",
+      "pin",
+      "mane"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "note",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "cap"
+      },
+      "has a short vowel.",
+      {
+       "word": "note"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Cap has a short vowel.",
+      "Note has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cap"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "note",
+        "size": "l",
+        "speak": [
+         {
+          "word": "note"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 8,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"short\",\"long\"],\"read\":[\"note\",\"cap\",\"pin\",\"mane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "long",
+      "short",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "tube",
+      "mane",
+      "not",
+      "hop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "not",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "not"
+      },
+      "has a short vowel.",
+      {
+       "word": "tube"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Not has a short vowel.",
+      "Tube has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "not",
+        "size": "l",
+        "speak": [
+         {
+          "word": "not"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "tube",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tube"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 9,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"long\",\"short\",\"short\"],\"read\":[\"tube\",\"mane\",\"not\",\"hop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "kite",
+      "hop",
+      "cape",
+      "pin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cape",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hop"
+      },
+      "has a short vowel.",
+      {
+       "word": "kite"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Hop has a short vowel.",
+      "Kite has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hop",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hop"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "kite",
+        "size": "l",
+        "speak": [
+         {
+          "word": "kite"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 1,
+    "seed": 10,
+    "key": "E-1-A5|1|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\"],\"read\":[\"kite\",\"hop\",\"cape\",\"pin\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "long",
+      "short",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "note",
+      "man",
+      "kite",
+      "tub",
+      "cane",
+      "cub"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "note",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tub",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cub",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "man"
+      },
+      "has a short vowel.",
+      {
+       "word": "note"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Man has a short vowel.",
+      "Note has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "l",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "note",
+        "size": "l",
+        "speak": [
+         {
+          "word": "note"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 1,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\",\"long\",\"short\"],\"read\":[\"note\",\"man\",\"kite\",\"tub\",\"cane\",\"cub\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "long",
+      "long",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "cap",
+      "not",
+      "pine",
+      "mane",
+      "hop",
+      "cane"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "cap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "not",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "cap"
+      },
+      "has a short vowel.",
+      {
+       "word": "pine"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Cap has a short vowel.",
+      "Pine has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cap"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pine",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pine"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 2,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"long\",\"long\",\"short\",\"long\"],\"read\":[\"cap\",\"not\",\"pine\",\"mane\",\"hop\",\"cane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "long",
+      "long",
+      "short",
+      "short",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "note",
+      "mane",
+      "kite",
+      "tub",
+      "can",
+      "hop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "note",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tub",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tub"
+      },
+      "has a short vowel.",
+      {
+       "word": "note"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Tub has a short vowel.",
+      "Note has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tub",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tub"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "note",
+        "size": "l",
+        "speak": [
+         {
+          "word": "note"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 3,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"long\",\"long\",\"short\",\"short\",\"short\"],\"read\":[\"note\",\"mane\",\"kite\",\"tub\",\"can\",\"hop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "short",
+      "long",
+      "long",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pin",
+      "hop",
+      "can",
+      "cube",
+      "cape",
+      "mane"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cape",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     0,
+     1,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "has a short vowel.",
+      {
+       "word": "cube"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Pin has a short vowel.",
+      "Cube has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cube",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cube"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 4,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"short\",\"long\",\"long\",\"long\"],\"read\":[\"pin\",\"hop\",\"can\",\"cube\",\"cape\",\"mane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "long",
+      "short",
+      "long",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "man",
+      "cape",
+      "hop",
+      "tube",
+      "can",
+      "pine"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cape",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "man"
+      },
+      "has a short vowel.",
+      {
+       "word": "cape"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Man has a short vowel.",
+      "Cape has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "man",
+        "size": "l",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cape",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cape"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 5,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"long\",\"short\",\"long\",\"short\",\"long\"],\"read\":[\"man\",\"cape\",\"hop\",\"tube\",\"can\",\"pine\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "long",
+      "long",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pin",
+      "cub",
+      "tube",
+      "mane",
+      "hop",
+      "kite"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cub",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "has a short vowel.",
+      {
+       "word": "tube"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Pin has a short vowel.",
+      "Tube has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "tube",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tube"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 6,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"long\",\"long\",\"short\",\"long\"],\"read\":[\"pin\",\"cub\",\"tube\",\"mane\",\"hop\",\"kite\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "long",
+      "short",
+      "short",
+      "long",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pin",
+      "tube",
+      "hop",
+      "man",
+      "cane",
+      "kite"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "has a short vowel.",
+      {
+       "word": "tube"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Pin has a short vowel.",
+      "Tube has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "tube",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tube"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 7,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"long\",\"short\",\"short\",\"long\",\"long\"],\"read\":[\"pin\",\"tube\",\"hop\",\"man\",\"cane\",\"kite\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "short",
+      "long",
+      "short",
+      "short",
+      "long"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "cane",
+      "cap",
+      "cube",
+      "man",
+      "pin",
+      "note"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "note",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "cap"
+      },
+      "has a short vowel.",
+      {
+       "word": "cane"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Cap has a short vowel.",
+      "Cane has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cap"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cane",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cane"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 8,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"short\",\"long\",\"short\",\"short\",\"long\"],\"read\":[\"cane\",\"cap\",\"cube\",\"man\",\"pin\",\"note\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "long",
+      "long",
+      "short",
+      "short",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "pine",
+      "cane",
+      "not",
+      "man",
+      "tube",
+      "hop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pine",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cane",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "not",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "man",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "not"
+      },
+      "has a short vowel.",
+      {
+       "word": "pine"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Not has a short vowel.",
+      "Pine has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "not",
+        "size": "l",
+        "speak": [
+         {
+          "word": "not"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pine",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pine"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 9,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"long\",\"long\",\"short\",\"short\",\"long\",\"short\"],\"read\":[\"pine\",\"cane\",\"not\",\"man\",\"tube\",\"hop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "short",
+      "short",
+      "long",
+      "long",
+      "long",
+      "short"
+     ],
+     "binAttrs": [
+      "short",
+      "long"
+     ],
+     "read": [
+      "hop",
+      "cap",
+      "cube",
+      "kite",
+      "tube",
+      "pin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its group.",
+     "speak": [
+      "Put each word in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cap",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kite",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "tube",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Short vowel",
+      "speak": [
+       "Short vowel"
+      ]
+     },
+     {
+      "label": "Long vowel",
+      "speak": [
+       "Long vowel"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hop"
+      },
+      "has a short vowel.",
+      {
+       "word": "cube"
+      },
+      "has a long vowel."
+     ],
+     "steps": [
+      "Hop has a short vowel.",
+      "Cube has a long vowel."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hop",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hop"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cube",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cube"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A5",
+    "level": 2,
+    "seed": 10,
+    "key": "E-1-A5|2|{\"binAttrs\":[\"short\",\"long\"],\"itemAttrs\":[\"short\",\"short\",\"long\",\"long\",\"long\",\"short\"],\"read\":[\"hop\",\"cap\",\"cube\",\"kite\",\"tube\",\"pin\"]}"
+   }
+  ]
+ }
+}

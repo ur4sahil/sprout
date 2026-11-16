@@ -27,10 +27,12 @@ import { order } from './order';
 import { parity } from './parity';
 import { pattern } from './pattern';
 import { place } from './place';
+import { sentence } from './sentence';
 import { sequence } from './sequence';
 import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
+import { spell } from './spell';
 import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
@@ -220,7 +222,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'multiply', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sequence', 'series', 'shapeFacts', 'sortBy', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'multiply', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -420,7 +422,7 @@ describe('wordSet', () => {
     expect(() => wordSet({ target: 'hippopotamus', relation: 'syllables' })).toThrow();
   });
   it('refuses a relation that is not written yet, and options that are not words', () => {
-    expect(() => wordSet({ target: 'cat', relation: 'vowelTeam', options: ['a', 'b'] })).toThrow(/not written yet/);
+    expect(() => wordSet({ target: 'cat', relation: 'homophone', options: ['a', 'b'] })).toThrow(/not written yet/);
     expect(() => wordSet({ target: 'cat', relation: 'rhyme', options: [1, 2] })).toThrow();
     expect(() => wordSet({ relation: 'rhyme', options: ['hat'] })).toThrow();
   });
@@ -724,5 +726,111 @@ describe('twoStep', () => {
     expect(() => twoStep({ a: 2, op1: '+', b: 1, op2: '-', c: 9 })).toThrow();
     expect(() => twoStep({ a: 2, op1: 'x', b: 1, op2: '+', c: 9 })).toThrow();
     expect(() => twoStep({ a: 2, op1: '+', b: 1, op2: '+' })).toThrow();
+  });
+});
+
+describe('spell', () => {
+  it('takes a word letter by letter, or a compound word as its two words', () => {
+    expect(spell({ word: 'cat', parts: ['c', 'a', 't'] })).toEqual({ kind: 'value', value: 'cat' });
+    expect(spell({ word: 'sunflower', parts: ['sun', 'flower'] })).toEqual({ kind: 'value', value: 'sunflower' });
+    expect(spell({ word: 'at', parts: ['a', 't'] })).toEqual({ kind: 'value', value: 'at' });
+  });
+  it('refuses parts that do not make the word, or that are neither letters nor two words', () => {
+    expect(() => spell({ word: 'cat', parts: ['c', 't', 'a'] })).toThrow();
+    expect(() => spell({ word: 'cat', parts: ['ca', 't'] })).toThrow();
+    expect(() => spell({ word: 'sunflower', parts: ['sun', 'flow', 'er'] })).toThrow();
+    expect(() => spell({ word: 'cat', parts: [] })).toThrow();
+  });
+});
+
+describe('sentence', () => {
+  it('writes a telling sentence with its capital and its period', () => {
+    expect(sentence({ base: 'the cat is big', ask: 'capital' })).toEqual({ kind: 'value', value: 'The cat is big.' });
+    expect(sentence({ base: 'we go to the bus', ask: 'period' })).toEqual({ kind: 'value', value: 'We go to the bus.' });
+    expect(sentence({ base: 'i see a red hat', ask: 'both' })).toEqual({ kind: 'value', value: 'I see a red hat.' });
+  });
+  it('gives the end mark of a telling, asking or shouting sentence', () => {
+    expect(sentence({ base: 'the sun is hot', ask: 'endMark' })).toEqual({ kind: 'value', value: '.' });
+    expect(sentence({ base: 'is the sun hot', ask: 'endMark' })).toEqual({ kind: 'value', value: '?' });
+    expect(sentence({ base: 'look out', ask: 'endMark' })).toEqual({ kind: 'value', value: '!' });
+  });
+  it('refuses a sentence that is not in the lists, and an asking sentence where a telling one is needed', () => {
+    expect(() => sentence({ base: 'the cow is big', ask: 'capital' })).toThrow();
+    expect(() => sentence({ base: 'is the sun hot', ask: 'both' })).toThrow();
+    expect(() => sentence({ base: 'the cat is big', ask: 'comma' })).toThrow();
+  });
+});
+
+describe('letter: a run of letters', () => {
+  it('gives the letters that follow, in the same case', () => {
+    expect(letter({ letter: 'd', ask: 'run', length: 3 })).toEqual({ kind: 'value', value: 'efg' });
+    expect(letter({ letter: 'W', ask: 'run', length: 3 })).toEqual({ kind: 'value', value: 'XYZ' });
+  });
+  it('refuses a run past z, and a run with no length', () => {
+    expect(() => letter({ letter: 'x', ask: 'run', length: 3 })).toThrow();
+    expect(() => letter({ letter: 'd', ask: 'run' })).toThrow();
+  });
+});
+
+describe('wordSet: kindergarten relations', () => {
+  it('finds the first letter, the last letter and the middle vowel of a word', () => {
+    expect(wordSet({ target: 'cat', relation: 'firstLetter' })).toEqual({ kind: 'value', value: 'c' });
+    expect(wordSet({ target: 'key', relation: 'firstLetter' })).toEqual({ kind: 'value', value: 'k' });
+    expect(wordSet({ target: 'bus', relation: 'lastLetter' })).toEqual({ kind: 'value', value: 's' });
+    expect(wordSet({ target: 'hen', relation: 'middleVowel' })).toEqual({ kind: 'value', value: 'e' });
+    expect(() => wordSet({ target: 'zebra', relation: 'lastLetter' })).toThrow();
+    expect(() => wordSet({ target: 'pot', relation: 'middleVowel' })).toThrow();
+  });
+  it('finds a written word, a family member and the word outside a family', () => {
+    expect(wordSet({ target: 'pin', relation: 'cvc', options: ['pan', 'pin', 'pen'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'cat', relation: 'family', options: ['can', 'hat', 'cup'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'cat', relation: 'family', options: ['hat', 'bat', 'cup'] })).toThrow();
+    expect(wordSet({ target: 'ug', relation: 'notFamily', options: ['bug', 'hug', 'big', 'rug'] })).toEqual({ kind: 'index', index: 2 });
+    expect(() => wordSet({ target: 'ug', relation: 'notFamily', options: ['bug', 'hug', 'rug'] })).toThrow();
+  });
+  it('finds a sight word, and refuses a question that offers a word sounding like it', () => {
+    expect(wordSet({ target: 'said', relation: 'sightWord', options: ['see', 'said', 'red'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'to', relation: 'sightWord', options: ['to', 'two', 'me'] })).toThrow();
+    expect(() => wordSet({ target: 'in', relation: 'sightWord', options: ['in', 'on', 'me'] })).toThrow();
+    expect(() => wordSet({ target: 'zebra', relation: 'sightWord', options: ['zebra', 'me'] })).toThrow();
+  });
+  it('gives the word for one or for many, and skips fish', () => {
+    expect(wordSet({ target: 'apple', relation: 'plural', many: true })).toEqual({ kind: 'value', value: 'apples' });
+    expect(wordSet({ target: 'apple', relation: 'plural', many: false })).toEqual({ kind: 'value', value: 'apple' });
+    expect(() => wordSet({ target: 'fish', relation: 'plural', many: true })).toThrow();
+    expect(() => wordSet({ target: 'apple', relation: 'plural' })).toThrow();
+  });
+  it('finds the picture a sentence is about', () => {
+    expect(wordSet({ target: 'It is a red bus.', relation: 'sentencePicture', options: ['van', 'bus'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'It is a blue bus.', relation: 'sentencePicture', options: ['van', 'bus'] })).toThrow();
+  });
+});
+
+describe('wordSet: grade 1 relations', () => {
+  it('finds the letters missing from a digraph, blend or vowel team word', () => {
+    expect(wordSet({ target: 'ship', relation: 'digraph' })).toEqual({ kind: 'value', value: 'sh' });
+    expect(wordSet({ target: 'tooth', relation: 'digraph' })).toEqual({ kind: 'value', value: 'th' });
+    expect(wordSet({ target: 'frog', relation: 'blend' })).toEqual({ kind: 'value', value: 'fr' });
+    expect(wordSet({ target: 'hand', relation: 'blend' })).toEqual({ kind: 'value', value: 'nd' });
+    expect(wordSet({ target: 'boat', relation: 'vowelTeam' })).toEqual({ kind: 'value', value: 'oa' });
+    expect(() => wordSet({ target: 'boat', relation: 'digraph' })).toThrow();
+  });
+  it('finds a vowel team word and a silent e word among the options', () => {
+    expect(wordSet({ target: 'rain', relation: 'teamWord', options: ['bee', 'rain', 'goat'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'cape', relation: 'silentE', options: ['cap', 'cape'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'cat', relation: 'silentE', options: ['cat', 'cape'] })).toThrow();
+  });
+  it('finds an opposite and a word that means the same', () => {
+    expect(wordSet({ target: 'hot', relation: 'opposite1', options: ['glad', 'cold', 'up'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'shut', relation: 'opposite1', options: ['open', 'close', 'wet'] })).toEqual({ kind: 'index', index: 0 });
+    expect(wordSet({ target: 'big', relation: 'same', options: ['small', 'large', 'up'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'hot', relation: 'same', options: ['cold', 'up'] })).toThrow();
+    expect(() => wordSet({ target: 'hot', relation: 'opposite1', options: ['glad', 'up'] })).toThrow();
+  });
+  it('finds the describing word of a sentence, and of a picture', () => {
+    expect(wordSet({ target: 'The big dog ran.', relation: 'describing', options: ['dog', 'ran', 'big'] })).toEqual({ kind: 'index', index: 2 });
+    expect(wordSet({ target: 'cold', relation: 'describingPicture', options: ['happy', 'cold', 'red'] })).toEqual({ kind: 'index', index: 1 });
+    expect(() => wordSet({ target: 'big', relation: 'describingPicture', options: ['big', 'tall', 'red'] })).toThrow();
+    expect(() => wordSet({ target: 'wet', relation: 'describingPicture', options: ['wet', 'red'] })).toThrow();
   });
 });

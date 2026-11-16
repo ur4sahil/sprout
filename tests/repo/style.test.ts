@@ -45,8 +45,9 @@ describe('one place for colours and sizes', () => {
       const text = readFileSync(path, 'utf8');
       for (const match of text.matchAll(/var\((--[a-z0-9-]+)/g)) {
         const name = match[1] as string;
-        // --visual-emoji is set by a parent to resize a picture, and always has a fallback.
-        if (!defined.has(name) && name !== '--visual-emoji') missing.push(`${path}: ${name}`);
+        // --visual-emoji is set by a parent to resize a picture, and --ems by an equation to say how
+        // wide it is. Both are numbers set in code, and both always have a fallback.
+        if (!defined.has(name) && name !== '--visual-emoji' && name !== '--ems') missing.push(`${path}: ${name}`);
       }
     }
     expect(missing).toEqual([]);

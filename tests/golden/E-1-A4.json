@@ -1,0 +1,2357 @@
+{
+ "skillId": "E-1-A4",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "read",
+  "facts": {
+   "target": "bee",
+   "relation": "teamWord",
+   "read": [
+    "bee"
+   ],
+   "options": [
+    "goat",
+    "boat",
+    "bee"
+   ]
+  },
+  "prompt": {
+   "text": "Read the word. Which picture matches?",
+   "speak": [
+    "Read the word. Which picture matches?"
+   ]
+  },
+  "stimulus": {
+   "kind": "text",
+   "value": "bee",
+   "size": "xl"
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐐",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "goat"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "⛵",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "boat"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐝",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "bee"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "This word is",
+    {
+     "word": "bee"
+    },
+    ".",
+    {
+     "word": "bee"
+    },
+    "ends with",
+    {
+     "letter": "e"
+    },
+    {
+     "letter": "e"
+    },
+    "."
+   ],
+   "steps": [
+    "This word is bee.",
+    "Bee ends with ee."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "bee",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-1-A4",
+  "level": 1,
+  "seed": 404,
+  "key": "E-1-A4|1|{\"read\":[\"bee\"],\"relation\":\"teamWord\",\"target\":\"bee\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "sheep",
+     "relation": "teamWord",
+     "read": [
+      "sheep"
+     ],
+     "options": [
+      "sheep",
+      "snail",
+      "soap"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "sheep",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sheep"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snail"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧼",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soap"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "sheep"
+      },
+      ".",
+      {
+       "word": "sheep"
+      },
+      "has",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is sheep.",
+      "Sheep has ee in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "sheep",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sheep"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sheep"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 1,
+    "key": "E-1-A4|1|{\"read\":[\"sheep\"],\"relation\":\"teamWord\",\"target\":\"sheep\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "boat",
+     "relation": "teamWord",
+     "read": [
+      "boat"
+     ],
+     "options": [
+      "sheep",
+      "boat",
+      "rain"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "boat",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sheep"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "boat"
+      },
+      ".",
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is boat.",
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 2,
+    "key": "E-1-A4|1|{\"read\":[\"boat\"],\"relation\":\"teamWord\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "boat",
+     "relation": "teamWord",
+     "read": [
+      "boat"
+     ],
+     "options": [
+      "sheep",
+      "snail",
+      "boat"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "boat",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sheep"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snail"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "boat"
+      },
+      ".",
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is boat.",
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 3,
+    "key": "E-1-A4|1|{\"read\":[\"boat\"],\"relation\":\"teamWord\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "soap",
+     "relation": "teamWord",
+     "read": [
+      "soap"
+     ],
+     "options": [
+      "soap",
+      "tree",
+      "bee"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "soap",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧼",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soap"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "soap"
+      },
+      ".",
+      {
+       "word": "soap"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is soap.",
+      "Soap has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "soap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "soap"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧼",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "soap"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 4,
+    "key": "E-1-A4|1|{\"read\":[\"soap\"],\"relation\":\"teamWord\",\"target\":\"soap\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "boat",
+     "relation": "teamWord",
+     "read": [
+      "boat"
+     ],
+     "options": [
+      "soap",
+      "boat",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "boat",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧼",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soap"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "boat"
+      },
+      ".",
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is boat.",
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 5,
+    "key": "E-1-A4|1|{\"read\":[\"boat\"],\"relation\":\"teamWord\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "tree",
+     "relation": "teamWord",
+     "read": [
+      "tree"
+     ],
+     "options": [
+      "goat",
+      "tree",
+      "boat"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "tree",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "goat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "tree"
+      },
+      ".",
+      {
+       "word": "tree"
+      },
+      "ends with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is tree.",
+      "Tree ends with ee."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 6,
+    "key": "E-1-A4|1|{\"read\":[\"tree\"],\"relation\":\"teamWord\",\"target\":\"tree\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "rain",
+     "relation": "teamWord",
+     "read": [
+      "rain"
+     ],
+     "options": [
+      "rain",
+      "soap",
+      "boat"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "rain",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧼",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "soap"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "rain"
+      },
+      ".",
+      {
+       "word": "rain"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is rain.",
+      "Rain has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "rain",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌧️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 7,
+    "key": "E-1-A4|1|{\"read\":[\"rain\"],\"relation\":\"teamWord\",\"target\":\"rain\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "train",
+     "relation": "teamWord",
+     "read": [
+      "train"
+     ],
+     "options": [
+      "rain",
+      "train",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "train",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "train"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "train"
+      },
+      ".",
+      {
+       "word": "train"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is train.",
+      "Train has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 8,
+    "key": "E-1-A4|1|{\"read\":[\"train\"],\"relation\":\"teamWord\",\"target\":\"train\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "train",
+     "relation": "teamWord",
+     "read": [
+      "train"
+     ],
+     "options": [
+      "snail",
+      "boat",
+      "train"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "train",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snail"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "train"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "train"
+      },
+      ".",
+      {
+       "word": "train"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "This word is train.",
+      "Train has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 9,
+    "key": "E-1-A4|1|{\"read\":[\"train\"],\"relation\":\"teamWord\",\"target\":\"train\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "target": "tree",
+     "relation": "teamWord",
+     "read": [
+      "tree"
+     ],
+     "options": [
+      "boat",
+      "bee",
+      "tree"
+     ]
+    },
+    "prompt": {
+     "text": "Read the word. Which picture matches?",
+     "speak": [
+      "Read the word. Which picture matches?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "tree",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "tree"
+      },
+      ".",
+      {
+       "word": "tree"
+      },
+      "ends with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "This word is tree.",
+      "Tree ends with ee."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 1,
+    "seed": 10,
+    "key": "E-1-A4|1|{\"read\":[\"tree\"],\"relation\":\"teamWord\",\"target\":\"tree\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "sheep",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "sheep"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐑",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "sh__p",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "sheep"
+      },
+      "has",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Sheep has ee in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sheep"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sheep",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sheep"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 1,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"sheep\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "boat",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "boat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⛵",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "b__t",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 2,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "boat",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "boat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⛵",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "b__t",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 3,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "soap",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "soap"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧼",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "s__p",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "soap"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Soap has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧼",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "soap"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "soap",
+        "size": "l",
+        "speak": [
+         {
+          "word": "soap"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 4,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"soap\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "boat",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "boat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⛵",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "b__t",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "boat"
+      },
+      "has",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "a"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Boat has oa in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 5,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"boat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "tree",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "tree"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "tr__",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "ends with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "Tree ends with ee."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 6,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"tree\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "rain",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "rain"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌧️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "r__n",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "rain"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Rain has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌧️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rain",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 7,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"rain\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "train",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "train"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚂",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "tr__n",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "train"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Train has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 8,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"train\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "train",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "train"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚂",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "tr__n",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "train"
+      },
+      "has",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "i"
+      },
+      "in the middle."
+     ],
+     "steps": [
+      "Train has ai in the middle."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 9,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"train\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "fixedOrder": true,
+    "facts": {
+     "target": "tree",
+     "relation": "vowelTeam",
+     "options": [
+      "ai",
+      "ee",
+      "oa"
+     ]
+    },
+    "prompt": {
+     "text": "Which letters are missing?",
+     "speak": [
+      "Which letters are missing in",
+      {
+       "word": "tree"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "text",
+       "value": "tr__",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ai",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ee",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "oa",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "ends with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "Tree ends with ee."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "tree",
+        "size": "l",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-1-A4",
+    "level": 2,
+    "seed": 10,
+    "key": "E-1-A4|2|{\"relation\":\"vowelTeam\",\"target\":\"tree\"}"
+   }
+  ]
+ }
+}

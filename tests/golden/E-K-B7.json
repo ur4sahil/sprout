@@ -1,0 +1,3273 @@
+{
+ "skillId": "E-K-B7",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "read",
+  "facts": {
+   "itemAttrs": [
+    "in",
+    "in",
+    "an",
+    "an"
+   ],
+   "binAttrs": [
+    "an",
+    "in"
+   ],
+   "read": [
+    "fin",
+    "pin",
+    "pan",
+    "ran"
+   ]
+  },
+  "prompt": {
+   "text": "Put each word in its family.",
+   "speak": [
+    "Put each word in its family."
+   ]
+  },
+  "items": [
+   {
+    "kind": "text",
+    "value": "fin",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "pin",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "pan",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "ran",
+    "size": "l"
+   }
+  ],
+  "bins": [
+   {
+    "label": "-an",
+    "speak": [
+     "Words like",
+     {
+      "word": "can"
+     }
+    ]
+   },
+   {
+    "label": "-in",
+    "speak": [
+     "Words like",
+     {
+      "word": "bin"
+     }
+    ]
+   }
+  ],
+  "answerBin": [
+   1,
+   1,
+   0,
+   0
+  ],
+  "explanation": {
+   "speak": [
+    {
+     "word": "pan"
+    },
+    "and",
+    {
+     "word": "ran"
+    },
+    "both end in",
+    {
+     "letter": "a"
+    },
+    {
+     "letter": "n"
+    },
+    ".",
+    {
+     "word": "fin"
+    },
+    "and",
+    {
+     "word": "pin"
+    },
+    "both end in",
+    {
+     "letter": "i"
+    },
+    {
+     "letter": "n"
+    },
+    "."
+   ],
+   "steps": [
+    "Pan and ran both end in an.",
+    "Fin and pin both end in in."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "pan",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pan"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ran"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-B7",
+  "level": 1,
+  "seed": 317,
+  "key": "E-K-B7|1|{\"binAttrs\":[\"an\",\"in\"],\"itemAttrs\":[\"in\",\"in\",\"an\",\"an\"],\"read\":[\"fin\",\"pin\",\"pan\",\"ran\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "an",
+      "an",
+      "ig",
+      "ig"
+     ],
+     "binAttrs": [
+      "ig",
+      "an"
+     ],
+     "read": [
+      "van",
+      "pan",
+      "wig",
+      "big"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "van",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pan",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     },
+     {
+      "label": "-an",
+      "speak": [
+       "Words like",
+       {
+        "word": "can"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "wig"
+      },
+      "and",
+      {
+       "word": "big"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "van"
+      },
+      "and",
+      {
+       "word": "pan"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Wig and big both end in ig.",
+      "Van and pan both end in an."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "wig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "big",
+        "size": "l",
+        "speak": [
+         {
+          "word": "big"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ig\",\"an\"],\"itemAttrs\":[\"an\",\"an\",\"ig\",\"ig\"],\"read\":[\"van\",\"pan\",\"wig\",\"big\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ug",
+      "at",
+      "at",
+      "ug"
+     ],
+     "binAttrs": [
+      "ug",
+      "at"
+     ],
+     "read": [
+      "bug",
+      "mat",
+      "cat",
+      "rug"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "bug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "bug"
+      },
+      "and",
+      {
+       "word": "rug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "mat"
+      },
+      "and",
+      {
+       "word": "cat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Bug and rug both end in ug.",
+      "Mat and cat both end in at."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ug\",\"at\"],\"itemAttrs\":[\"ug\",\"at\",\"at\",\"ug\"],\"read\":[\"bug\",\"mat\",\"cat\",\"rug\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ot",
+      "ug",
+      "ug",
+      "ot"
+     ],
+     "binAttrs": [
+      "ot",
+      "ug"
+     ],
+     "read": [
+      "pot",
+      "hug",
+      "mug",
+      "hot"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pot"
+      },
+      "and",
+      {
+       "word": "hot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "hug"
+      },
+      "and",
+      {
+       "word": "mug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Pot and hot both end in ot.",
+      "Hug and mug both end in ug."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ot\",\"ug\"],\"itemAttrs\":[\"ot\",\"ug\",\"ug\",\"ot\"],\"read\":[\"pot\",\"hug\",\"mug\",\"hot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "in",
+      "op",
+      "in",
+      "op"
+     ],
+     "binAttrs": [
+      "in",
+      "op"
+     ],
+     "read": [
+      "bin",
+      "hop",
+      "pin",
+      "pop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     },
+     {
+      "label": "-op",
+      "speak": [
+       "Words like",
+       {
+        "word": "hop"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "bin"
+      },
+      "and",
+      {
+       "word": "pin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      ".",
+      {
+       "word": "hop"
+      },
+      "and",
+      {
+       "word": "pop"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Bin and pin both end in in.",
+      "Hop and pop both end in op."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"in\",\"op\"],\"itemAttrs\":[\"in\",\"op\",\"in\",\"op\"],\"read\":[\"bin\",\"hop\",\"pin\",\"pop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ig",
+      "ig",
+      "ug",
+      "ug"
+     ],
+     "binAttrs": [
+      "ug",
+      "ig"
+     ],
+     "read": [
+      "wig",
+      "big",
+      "rug",
+      "bug"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bug",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "rug"
+      },
+      "and",
+      {
+       "word": "bug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "wig"
+      },
+      "and",
+      {
+       "word": "big"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Rug and bug both end in ug.",
+      "Wig and big both end in ig."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ug\",\"ig\"],\"itemAttrs\":[\"ig\",\"ig\",\"ug\",\"ug\"],\"read\":[\"wig\",\"big\",\"rug\",\"bug\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "et",
+      "et",
+      "ot",
+      "ot"
+     ],
+     "binAttrs": [
+      "ot",
+      "et"
+     ],
+     "read": [
+      "jet",
+      "pet",
+      "dot",
+      "hot"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "jet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-et",
+      "speak": [
+       "Words like",
+       {
+        "word": "jet"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "dot"
+      },
+      "and",
+      {
+       "word": "hot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "jet"
+      },
+      "and",
+      {
+       "word": "pet"
+      },
+      "both end in",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Dot and hot both end in ot.",
+      "Jet and pet both end in et."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ot\",\"et\"],\"itemAttrs\":[\"et\",\"et\",\"ot\",\"ot\"],\"read\":[\"jet\",\"pet\",\"dot\",\"hot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ug",
+      "in",
+      "ug",
+      "in"
+     ],
+     "binAttrs": [
+      "ug",
+      "in"
+     ],
+     "read": [
+      "mug",
+      "win",
+      "rug",
+      "pin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "mug"
+      },
+      "and",
+      {
+       "word": "rug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "win"
+      },
+      "and",
+      {
+       "word": "pin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Mug and rug both end in ug.",
+      "Win and pin both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ug\",\"in\"],\"itemAttrs\":[\"ug\",\"in\",\"ug\",\"in\"],\"read\":[\"mug\",\"win\",\"rug\",\"pin\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "at",
+      "at",
+      "in",
+      "in"
+     ],
+     "binAttrs": [
+      "at",
+      "in"
+     ],
+     "read": [
+      "mat",
+      "sat",
+      "fin",
+      "win"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "mat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "mat"
+      },
+      "and",
+      {
+       "word": "sat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "fin"
+      },
+      "and",
+      {
+       "word": "win"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Mat and sat both end in at.",
+      "Fin and win both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"at\",\"in\"],\"itemAttrs\":[\"at\",\"at\",\"in\",\"in\"],\"read\":[\"mat\",\"sat\",\"fin\",\"win\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "in",
+      "ot",
+      "ot",
+      "in"
+     ],
+     "binAttrs": [
+      "ot",
+      "in"
+     ],
+     "read": [
+      "win",
+      "hot",
+      "pot",
+      "bin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hot"
+      },
+      "and",
+      {
+       "word": "pot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "win"
+      },
+      "and",
+      {
+       "word": "bin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Hot and pot both end in ot.",
+      "Win and bin both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ot\",\"in\"],\"itemAttrs\":[\"in\",\"ot\",\"ot\",\"in\"],\"read\":[\"win\",\"hot\",\"pot\",\"bin\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ig",
+      "at",
+      "at",
+      "ig"
+     ],
+     "binAttrs": [
+      "ig",
+      "at"
+     ],
+     "read": [
+      "pig",
+      "bat",
+      "rat",
+      "dig"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dig",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     },
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "dig"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "bat"
+      },
+      "and",
+      {
+       "word": "rat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig and dig both end in ig.",
+      "Bat and rat both end in at."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-B7|1|{\"binAttrs\":[\"ig\",\"at\"],\"itemAttrs\":[\"ig\",\"at\",\"at\",\"ig\"],\"read\":[\"pig\",\"bat\",\"rat\",\"dig\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "an",
+      "an",
+      "an",
+      "ig",
+      "ig",
+      "ig"
+     ],
+     "binAttrs": [
+      "ig",
+      "an"
+     ],
+     "read": [
+      "pan",
+      "van",
+      "ran",
+      "big",
+      "wig",
+      "fig"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pan",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "van",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fig",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     },
+     {
+      "label": "-an",
+      "speak": [
+       "Words like",
+       {
+        "word": "can"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "big"
+      },
+      "and",
+      {
+       "word": "wig"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "pan"
+      },
+      "and",
+      {
+       "word": "van"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Big and wig both end in ig.",
+      "Pan and van both end in an."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "big",
+        "size": "l",
+        "speak": [
+         {
+          "word": "big"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "wig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "fig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ig\",\"an\"],\"itemAttrs\":[\"an\",\"an\",\"an\",\"ig\",\"ig\",\"ig\"],\"read\":[\"pan\",\"van\",\"ran\",\"big\",\"wig\",\"fig\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "at",
+      "at",
+      "ug",
+      "ug",
+      "at",
+      "ug"
+     ],
+     "binAttrs": [
+      "ug",
+      "at"
+     ],
+     "read": [
+      "mat",
+      "bat",
+      "mug",
+      "bug",
+      "cat",
+      "rug"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "mat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "mug"
+      },
+      "and",
+      {
+       "word": "bug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "mat"
+      },
+      "and",
+      {
+       "word": "bat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Mug and bug both end in ug.",
+      "Mat and bat both end in at."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ug\",\"at\"],\"itemAttrs\":[\"at\",\"at\",\"ug\",\"ug\",\"at\",\"ug\"],\"read\":[\"mat\",\"bat\",\"mug\",\"bug\",\"cat\",\"rug\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ug",
+      "ot",
+      "ot",
+      "ug",
+      "ug",
+      "ot"
+     ],
+     "binAttrs": [
+      "ot",
+      "ug"
+     ],
+     "read": [
+      "rug",
+      "hot",
+      "pot",
+      "hug",
+      "mug",
+      "not"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "not",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hot"
+      },
+      "and",
+      {
+       "word": "pot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "rug"
+      },
+      "and",
+      {
+       "word": "hug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Hot and pot both end in ot.",
+      "Rug and hug both end in ug."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "not",
+        "size": "l",
+        "speak": [
+         {
+          "word": "not"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ot\",\"ug\"],\"itemAttrs\":[\"ug\",\"ot\",\"ot\",\"ug\",\"ug\",\"ot\"],\"read\":[\"rug\",\"hot\",\"pot\",\"hug\",\"mug\",\"not\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "op",
+      "in",
+      "in",
+      "op",
+      "in",
+      "op"
+     ],
+     "binAttrs": [
+      "in",
+      "op"
+     ],
+     "read": [
+      "hop",
+      "bin",
+      "pin",
+      "pop",
+      "fin",
+      "mop"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "hop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mop",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     },
+     {
+      "label": "-op",
+      "speak": [
+       "Words like",
+       {
+        "word": "hop"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "bin"
+      },
+      "and",
+      {
+       "word": "pin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      ".",
+      {
+       "word": "hop"
+      },
+      "and",
+      {
+       "word": "pop"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Bin and pin both end in in.",
+      "Hop and pop both end in op."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "fin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"in\",\"op\"],\"itemAttrs\":[\"op\",\"in\",\"in\",\"op\",\"in\",\"op\"],\"read\":[\"hop\",\"bin\",\"pin\",\"pop\",\"fin\",\"mop\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ig",
+      "ig",
+      "ug",
+      "ig",
+      "ug",
+      "ug"
+     ],
+     "binAttrs": [
+      "ug",
+      "ig"
+     ],
+     "read": [
+      "dig",
+      "big",
+      "rug",
+      "wig",
+      "bug",
+      "mug"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "dig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "rug"
+      },
+      "and",
+      {
+       "word": "bug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "dig"
+      },
+      "and",
+      {
+       "word": "big"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Rug and bug both end in ug.",
+      "Dig and big both end in ig."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "mug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ug\",\"ig\"],\"itemAttrs\":[\"ig\",\"ig\",\"ug\",\"ig\",\"ug\",\"ug\"],\"read\":[\"dig\",\"big\",\"rug\",\"wig\",\"bug\",\"mug\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "et",
+      "et",
+      "ot",
+      "et",
+      "ot",
+      "ot"
+     ],
+     "binAttrs": [
+      "ot",
+      "et"
+     ],
+     "read": [
+      "jet",
+      "net",
+      "dot",
+      "pet",
+      "pot",
+      "hot"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "jet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "net",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-et",
+      "speak": [
+       "Words like",
+       {
+        "word": "jet"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "dot"
+      },
+      "and",
+      {
+       "word": "pot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "jet"
+      },
+      "and",
+      {
+       "word": "net"
+      },
+      "both end in",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Dot and pot both end in ot.",
+      "Jet and net both end in et."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ot\",\"et\"],\"itemAttrs\":[\"et\",\"et\",\"ot\",\"et\",\"ot\",\"ot\"],\"read\":[\"jet\",\"net\",\"dot\",\"pet\",\"pot\",\"hot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "ug",
+      "in",
+      "in",
+      "ug",
+      "ug",
+      "in"
+     ],
+     "binAttrs": [
+      "ug",
+      "in"
+     ],
+     "read": [
+      "hug",
+      "bin",
+      "win",
+      "mug",
+      "rug",
+      "pin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "hug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ug",
+      "speak": [
+       "Words like",
+       {
+        "word": "bug"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hug"
+      },
+      "and",
+      {
+       "word": "mug"
+      },
+      "both end in",
+      {
+       "letter": "u"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "bin"
+      },
+      "and",
+      {
+       "word": "win"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Hug and mug both end in ug.",
+      "Bin and win both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "mug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ug\",\"in\"],\"itemAttrs\":[\"ug\",\"in\",\"in\",\"ug\",\"ug\",\"in\"],\"read\":[\"hug\",\"bin\",\"win\",\"mug\",\"rug\",\"pin\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "at",
+      "at",
+      "in",
+      "at",
+      "in",
+      "in"
+     ],
+     "binAttrs": [
+      "at",
+      "in"
+     ],
+     "read": [
+      "mat",
+      "rat",
+      "win",
+      "sat",
+      "fin",
+      "bin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "mat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "mat"
+      },
+      "and",
+      {
+       "word": "rat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "win"
+      },
+      "and",
+      {
+       "word": "fin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Mat and rat both end in at.",
+      "Win and fin both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "rat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "rat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"at\",\"in\"],\"itemAttrs\":[\"at\",\"at\",\"in\",\"at\",\"in\",\"in\"],\"read\":[\"mat\",\"rat\",\"win\",\"sat\",\"fin\",\"bin\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "in",
+      "ot",
+      "in",
+      "ot",
+      "ot",
+      "in"
+     ],
+     "binAttrs": [
+      "ot",
+      "in"
+     ],
+     "read": [
+      "win",
+      "pot",
+      "bin",
+      "dot",
+      "hot",
+      "fin"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "win",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fin",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ot",
+      "speak": [
+       "Words like",
+       {
+        "word": "dot"
+       }
+      ]
+     },
+     {
+      "label": "-in",
+      "speak": [
+       "Words like",
+       {
+        "word": "bin"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pot"
+      },
+      "and",
+      {
+       "word": "dot"
+      },
+      "both end in",
+      {
+       "letter": "o"
+      },
+      {
+       "letter": "t"
+      },
+      ".",
+      {
+       "word": "win"
+      },
+      "and",
+      {
+       "word": "bin"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Pot and dot both end in ot.",
+      "Win and bin both end in in."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ot\",\"in\"],\"itemAttrs\":[\"in\",\"ot\",\"in\",\"ot\",\"ot\",\"in\"],\"read\":[\"win\",\"pot\",\"bin\",\"dot\",\"hot\",\"fin\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "read",
+    "facts": {
+     "itemAttrs": [
+      "at",
+      "ig",
+      "ig",
+      "at",
+      "at",
+      "ig"
+     ],
+     "binAttrs": [
+      "ig",
+      "at"
+     ],
+     "read": [
+      "mat",
+      "fig",
+      "pig",
+      "rat",
+      "bat",
+      "dig"
+     ]
+    },
+    "prompt": {
+     "text": "Put each word in its family.",
+     "speak": [
+      "Put each word in its family."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "mat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dig",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "-ig",
+      "speak": [
+       "Words like",
+       {
+        "word": "big"
+       }
+      ]
+     },
+     {
+      "label": "-at",
+      "speak": [
+       "Words like",
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "fig"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "both end in",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "g"
+      },
+      ".",
+      {
+       "word": "mat"
+      },
+      "and",
+      {
+       "word": "rat"
+      },
+      "both end in",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Fig and pig both end in ig.",
+      "Mat and rat both end in at."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B7",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-B7|2|{\"binAttrs\":[\"ig\",\"at\"],\"itemAttrs\":[\"at\",\"ig\",\"ig\",\"at\",\"at\",\"ig\"],\"read\":[\"mat\",\"fig\",\"pig\",\"rat\",\"bat\",\"dig\"]}"
+   }
+  ]
+ }
+}

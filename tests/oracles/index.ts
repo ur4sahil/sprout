@@ -22,10 +22,12 @@ import { order } from './order';
 import { parity } from './parity';
 import { pattern } from './pattern';
 import { place } from './place';
+import { sentence } from './sentence';
 import { sequence } from './sequence';
 import { series } from './series';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
+import { spell } from './spell';
 import { subtract } from './subtract';
 import { time } from './time';
 import { transform } from './transform';
@@ -69,4 +71,6 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   measure,
   multiply,
   twoStep,
+  spell,
+  sentence,
 };

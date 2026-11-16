@@ -167,4 +167,10 @@
 - Phase 11d (Math grade 2, part 2) is built: B.1 to B.10, in `g2/addSubtract.ts` (B.1 to B.7) and `g2/stories.ts` (B.8 to B.10). `CATALOGUE_VERSION` is 10. Math is complete: 82 skills. New oracles: `multiply`, `twoStep`.
 - `addExplanation` and `subtractExplanation` in `g2/addSubtract.ts` talk through any sum to 999 place by place, one step for each place, never more than four steps. `line(...)` builds a sentence's text and speech together. `carries` and `borrows` list the places that regroup.
 - A pre-K child now walks five math ladders in the check-in (length reached four skills), ten questions, still one sitting.
-- Next: Phase 11e, Language Arts K (16). Then 11f Language Arts grade 1 (12, with 20 stories). Then step 21 videos and step 22 scratchpad and games.
+- Phases 11e and 11f (Language Arts K and grade 1) are built: 16 skills in `generators/ela/k/` (`letters.ts`, `phonics.ts`, `sightWords.ts`, `sentences.ts`) and 12 in `generators/ela/g1/` (`phonics.ts`, `words.ts`, `grammar.ts`). All 140 skills exist. `CATALOGUE_VERSION` is 12.
+- New lists in `src/content/data/`: `cvc`, `families`, `sightWords` (with `SOUND_ALIKE`), `sentences`, `sentencePictures`, `phonics1`, `describing`. New oracles: `spell`, `sentence`. `wordSet` gained the kindergarten and grade 1 relations.
+- The 20 reading stories are `src/content/banks/readingStories.json` (40 questions). `tests/content/ela1.test.ts` enforces the word rules: every story word is from the section 9 lists.
+- Kindergarten questions never have more than three options (validation rule 12). A fixed-order option must be right at least 10% of the time, so a rare answer (th, wh) is chosen first and its word second.
+- Listen questions: the on-screen line must not show the word asked for. Sight words use "Listen. Tap the word.", or "Listen. Tap one word." when the word is "the".
+- A long equation shrinks to fit a narrow screen: `EquationVisual` sets `--ems` (its width in letter heights) and the style divides the screen width by it.
+- Next: step 21 videos (`src/content/videos.json`, `scripts/check-videos.mjs`, the sandboxed player), then step 22 scratchpad and games (Pop, Pairs).

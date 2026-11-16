@@ -60,8 +60,8 @@ describe('which check-in home offers', () => {
     const ready = new Set(allGenerators().map((generator) => generator.skillId));
     const math = diagnosticLadders('math');
     expect(math.map((ladder) => ladder.id)).toEqual(['counting', 'comparing', 'add-subtract', 'place-value', 'shapes', 'length', 'patterns', 'data', 'time', 'money', 'fractions']);
-    // A ladder with no skill built yet is not a ladder yet: Language Arts has none for grammar or reading so far.
-    expect(diagnosticLadders('ela').map((ladder) => ladder.id)).toEqual(['letters', 'sounds', 'vocabulary']);
+    // A ladder with no skill built yet is not a ladder yet. Every Language Arts ladder now has at least one.
+    expect(diagnosticLadders('ela').map((ladder) => ladder.id)).toEqual(['letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading']);
     for (const ladder of [...math, ...diagnosticLadders('ela')]) for (const skill of ladder.skills) expect(ready.has(skill.id)).toBe(true);
     expect(math[0]?.skills.map((skill) => skill.id).slice(0, 9)).toEqual(['M-PK-A1', 'M-PK-A2', 'M-PK-A3', 'M-PK-A4', 'M-PK-A5', 'M-PK-A6', 'M-PK-A7', 'M-PK-A8', 'M-K-A1']);
     // Reasoning is never checked.
@@ -300,7 +300,7 @@ describe('stickers', () => {
     expect(board.querySelector('[data-award="mastered:math-K:3"]')?.getAttribute('data-earned')).toBe('no');
     expect(board.querySelector('h2')?.textContent).toMatch(/^Math, Kindergarten: 1 of \d+$/);
     // One board for each subject and grade with skills, one for Reasoning, one for Milestones.
-    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'math-2', 'ela-PK', 'reasoning', 'milestones']);
+    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'math-2', 'ela-PK', 'ela-K', 'ela-1', 'reasoning', 'milestones']);
     // The check-in stickers the child already had are on the Milestones board.
     expect(document.querySelector('[data-award="diagnostic:math"]')?.getAttribute('data-earned')).toBe('yes');
 

@@ -2,6 +2,13 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { describingGenerator, endMarksGenerator, nounsAndVerbsGenerator, readStoryGenerator } from './generators/ela/g1/grammar';
+import { blendsGenerator, digraphsGenerator, shortOrLongGenerator, silentEGenerator, vowelTeamsGenerator } from './generators/ela/g1/phonics';
+import { compoundsGenerator, meaningsGenerator, sightWordsFourGenerator } from './generators/ela/g1/words';
+import { abcOrderGenerator, matchAllLettersGenerator } from './generators/ela/k/letters';
+import { firstLetterGenerator, lastLetterGenerator, middleVowelGenerator, readWordGenerator, rhymingWordsGenerator, spellWordGenerator, wordFamiliesGenerator } from './generators/ela/k/phonics';
+import { capitalsGenerator, namingWordsGenerator, oneOrManyGenerator, readSentenceGenerator } from './generators/ela/k/sentences';
+import { sightWordsOneGenerator, sightWordsThreeGenerator, sightWordsTwoGenerator } from './generators/ela/k/sightWords';
 import { findLowercaseGenerator, findUppercaseGenerator, sameLetterGenerator } from './generators/ela/pk/letters';
 import { letterOrNumberGenerator, matchLettersGenerator } from './generators/ela/pk/matchAndSort';
 import { clapsGenerator, rhymesGenerator, startsLikeGenerator } from './generators/ela/pk/sounds';
@@ -136,6 +143,34 @@ const ALL: readonly SkillGenerator[] = [
   clapsGenerator,
   wordGroupsGenerator,
   oppositesGenerator,
+  abcOrderGenerator,
+  matchAllLettersGenerator,
+  firstLetterGenerator,
+  lastLetterGenerator,
+  middleVowelGenerator,
+  readWordGenerator,
+  spellWordGenerator,
+  rhymingWordsGenerator,
+  wordFamiliesGenerator,
+  sightWordsOneGenerator,
+  sightWordsTwoGenerator,
+  sightWordsThreeGenerator,
+  capitalsGenerator,
+  namingWordsGenerator,
+  oneOrManyGenerator,
+  readSentenceGenerator,
+  digraphsGenerator,
+  blendsGenerator,
+  silentEGenerator,
+  vowelTeamsGenerator,
+  shortOrLongGenerator,
+  sightWordsFourGenerator,
+  compoundsGenerator,
+  meaningsGenerator,
+  nounsAndVerbsGenerator,
+  describingGenerator,
+  endMarksGenerator,
+  readStoryGenerator,
   oddOneOutGenerator,
   whichBelongsGenerator,
   figureAnalogiesGenerator,

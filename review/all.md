@@ -1,6 +1,6 @@
 # Content review: all
 
-112 skills, 3 samples for each level.
+140 skills, 3 samples for each level.
 
 ## M-PK-A1 A.1 Count to 3
 
@@ -9899,6 +9899,2427 @@
 - try: Which one is the opposite of day? (picture: cold and night)
   - then: Day and night are opposites.
 - remember: Opposites are as different as can be. (picture: large blue circle and small blue circle)
+
+## E-K-A1 A.1 ABC order
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: a, b, c, blank
+- Options: f | e | **d**
+- Answer: d
+- Explanation, spoken: a b c d. After c comes d.
+- Explanation, shown: a, b, c, d. / After c comes d.
+- Explanation picture: a, b, c, d
+
+**Seed 2** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: b, c, d, blank
+- Options: h | **e** | f
+- Answer: e
+- Explanation, spoken: b c d e. After d comes e.
+- Explanation, shown: b, c, d, e. / After d comes e.
+- Explanation picture: b, c, d, e
+
+**Seed 3** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: a, b, c, blank
+- Options: h | **d** | g
+- Answer: d
+- Explanation, spoken: a b c d. After c comes d.
+- Explanation, shown: a, b, c, d. / After c comes d.
+- Explanation picture: a, b, c, d
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: a, b, c, blank
+- Options: f | e | **d**
+- Answer: d
+- Explanation, spoken: a b c d. After c comes d.
+- Explanation, shown: a, b, c, d. / After c comes d.
+- Explanation picture: a, b, c, d
+
+**Seed 2** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: h, i, j, blank
+- Options: n | **k** | l
+- Answer: k
+- Explanation, spoken: h i j k. After j comes k.
+- Explanation, shown: h, i, j, k. / After j comes k.
+- Explanation picture: h, i, j, k
+
+**Seed 3** (choice, look)
+
+- On screen: Which letter comes next?
+- Picture: a, b, c, blank
+- Options: h | **d** | g
+- Answer: d
+- Explanation, spoken: a b c d. After c comes d.
+- Explanation, shown: a, b, c, d. / After c comes d.
+- Explanation picture: a, b, c, d
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which letter is missing?
+- Picture: blank, b, c, d
+- Options: f | e | **a**
+- Answer: a
+- Explanation, spoken: a b c d. Before b comes a.
+- Explanation, shown: a, b, c, d. / Before b comes a.
+- Explanation picture: a, b, c, d
+
+**Seed 2** (choice, look)
+
+- On screen: Which letter is missing?
+- Picture: blank, i, j, k
+- Options: e | **h** | g
+- Answer: h
+- Explanation, spoken: h i j k. Before i comes h.
+- Explanation, shown: h, i, j, k. / Before i comes h.
+- Explanation picture: h, i, j, k
+
+**Seed 3** (choice, look)
+
+- On screen: Which letter is missing?
+- Picture: blank, b, c, d
+- Options: h | **a** | g
+- Answer: a
+- Explanation, spoken: a b c d. Before b comes a.
+- Explanation, shown: a, b, c, d. / Before b comes a.
+- Explanation picture: a, b, c, d
+
+### Level 4
+
+**Seed 1** (tiles, look)
+
+- On screen: Put the next letters in ABC order.
+- Picture: a, blank, blank, blank
+- Tiles: n d o c b
+- Answer: bcd
+- Explanation, spoken: a b c d.
+- Explanation, shown: a, b, c, d.
+- Explanation picture: a, b, c, d
+
+**Seed 2** (tiles, look)
+
+- On screen: Put the next letters in ABC order.
+- Picture: h, blank, blank, blank
+- Tiles: j k t u i
+- Answer: ijk
+- Explanation, spoken: h i j k.
+- Explanation, shown: h, i, j, k.
+- Explanation picture: h, i, j, k
+
+**Seed 3** (tiles, look)
+
+- On screen: Put the next letters in ABC order.
+- Picture: a, blank, blank, blank
+- Tiles: c f x b d
+- Answer: bcd
+- Explanation, spoken: a b c d.
+- Explanation, shown: a, b, c, d.
+- Explanation picture: a, b, c, d
+
+### Lesson
+
+- see: The letters of the alphabet always come in the same order. (picture: A, B, C, D)
+- watch: Which letter comes next? A, B, C, D. After C comes D. (picture: A, B, C, D)
+- try: Which letter comes next? (picture: d, e, f, blank)
+  - then: d, e, f, g. After f comes g.
+- remember: Sing the alphabet to check. (picture: A, B, C, D)
+
+## E-K-A2 A.2 Uppercase and lowercase, all letters
+
+### Level 1
+
+**Seed 1** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: O ↔ o, L ↔ l, G ↔ g, J ↔ j
+- Explanation, spoken: Big O goes with small o. Big L goes with small l. Big G goes with small g. Big J goes with small j.
+- Explanation, shown: Big O goes with small o. / Big L goes with small l. / Big G goes with small g. / Big J goes with small j.
+- Explanation picture: O and o
+
+**Seed 2** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: P ↔ p, C ↔ c, Y ↔ y, E ↔ e
+- Explanation, spoken: Big P goes with small p. Big C goes with small c. Big Y goes with small y. Big E goes with small e.
+- Explanation, shown: Big P goes with small p. / Big C goes with small c. / Big Y goes with small y. / Big E goes with small e.
+- Explanation picture: P and p
+
+**Seed 3** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: F ↔ f, O ↔ o, Y ↔ y, H ↔ h
+- Explanation, spoken: Big F goes with small f. Big O goes with small o. Big Y goes with small y. Big H goes with small h.
+- Explanation, shown: Big F goes with small f. / Big O goes with small o. / Big Y goes with small y. / Big H goes with small h.
+- Explanation picture: F and f
+
+### Level 2
+
+**Seed 1** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: E ↔ e, P ↔ p, U ↔ u, V ↔ v
+- Explanation, spoken: Big E goes with small e. Big P goes with small p. Big U goes with small u. Big V goes with small v.
+- Explanation, shown: Big E goes with small e. / Big P goes with small p. / Big U goes with small u. / Big V goes with small v.
+- Explanation picture: E and e
+
+**Seed 2** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: V ↔ v, R ↔ r, Q ↔ q, U ↔ u
+- Explanation, spoken: Big V goes with small v. Big R goes with small r. Big Q goes with small q. Big U goes with small u.
+- Explanation, shown: Big V goes with small v. / Big R goes with small r. / Big Q goes with small q. / Big U goes with small u.
+- Explanation picture: V and v
+
+**Seed 3** (match, look)
+
+- On screen: Match each big letter to its small letter.
+- Answer: U ↔ u, V ↔ v, P ↔ p, Y ↔ y
+- Explanation, spoken: Big U goes with small u. Big V goes with small v. Big P goes with small p. Big Y goes with small y.
+- Explanation, shown: Big U goes with small u. / Big V goes with small v. / Big P goes with small p. / Big Y goes with small y.
+- Explanation picture: U and u
+
+### Lesson
+
+- see: Every letter has a big shape and a small shape. Big Q and small q. (picture: Q and q)
+- watch: Big D goes with small d. (picture: D and d)
+- try: Which small letter goes with big B? (picture: B and d and b)
+  - then: Big B goes with small b.
+- remember: Every letter has a big shape and a small shape. (picture: M and m)
+
+## E-K-B1 B.1 First letter of a word
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does octopus start with?
+- Picture: 1 🐙
+- Options: p | **o** | l
+- Answer: o
+- Explanation, spoken: octopus starts with the letter o.
+- Explanation, shown: Octopus starts with the letter o.
+- Explanation picture: octopus and octopus
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does rabbit start with?
+- Picture: 1 🐰
+- Options: p | **r** | c
+- Answer: r
+- Explanation, spoken: rabbit starts with the letter r.
+- Explanation, shown: Rabbit starts with the letter r.
+- Explanation picture: rabbit and rabbit
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does rabbit start with?
+- Picture: 1 🐰
+- Options: o | f | **r**
+- Answer: r
+- Explanation, spoken: rabbit starts with the letter r.
+- Explanation, shown: Rabbit starts with the letter r.
+- Explanation picture: rabbit and rabbit
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does milk start with?
+- Picture: 1 🥛
+- Options: **m** | v | n
+- Answer: m
+- Explanation, spoken: milk starts with the letter m.
+- Explanation, shown: Milk starts with the letter m.
+- Explanation picture: milk and milk
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does pig start with?
+- Picture: 1 🐷
+- Options: q | d | **p**
+- Answer: p
+- Explanation, spoken: pig starts with the letter p.
+- Explanation, shown: Pig starts with the letter p.
+- Explanation picture: pig and pig
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter does this word start with?
+- Spoken: Which letter does nose start with?
+- Picture: 1 👃
+- Options: h | **n** | m
+- Answer: n
+- Explanation, spoken: nose starts with the letter n.
+- Explanation, shown: Nose starts with the letter n.
+- Explanation picture: nose and nose
+
+### Lesson
+
+- see: Every word starts with a letter. Sun starts with the letter s. (picture: sun and sun)
+- watch: Which letter does sun start with? Sun starts with the letter s. (picture: sun and s)
+- try: Which letter does moon start with? (picture: moon)
+  - then: Moon starts with the letter m.
+- remember: Say the word slowly and listen. (picture: sun and sun)
+
+## E-K-B2 B.2 Last letter of a word
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does lip end with?
+- Picture: 1 👄
+- Options: l | k | **p**
+- Answer: p
+- Explanation, spoken: lip ends with the letter p.
+- Explanation, shown: Lip ends with the letter p.
+- Explanation picture: lip and lip
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does fox end with?
+- Picture: 1 🦊
+- Options: p | r | **x**
+- Answer: x
+- Explanation, spoken: fox ends with the letter x.
+- Explanation, shown: Fox ends with the letter x.
+- Explanation picture: fox and fox
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does fox end with?
+- Picture: 1 🦊
+- Options: **x** | m | u
+- Answer: x
+- Explanation, spoken: fox ends with the letter x.
+- Explanation, shown: Fox ends with the letter x.
+- Explanation picture: fox and fox
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does web end with?
+- Picture: 1 🕸️
+- Options: **b** | p | q
+- Answer: b
+- Explanation, spoken: web ends with the letter b.
+- Explanation, shown: Web ends with the letter b.
+- Explanation picture: web and web
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does lip end with?
+- Picture: 1 👄
+- Options: q | d | **p**
+- Answer: p
+- Explanation, spoken: lip ends with the letter p.
+- Explanation, shown: Lip ends with the letter p.
+- Explanation picture: lip and lip
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter does this word end with?
+- Spoken: Which letter does pin end with?
+- Picture: 1 📌
+- Options: h | **n** | m
+- Answer: n
+- Explanation, spoken: pin ends with the letter n.
+- Explanation, shown: Pin ends with the letter n.
+- Explanation picture: pin and pin
+
+### Lesson
+
+- see: Every word ends with a letter. Cat ends with the letter t. (picture: cat and cat)
+- watch: Which letter does cat end with? Cat ends with the letter t. (picture: cat and t)
+- try: Which letter does bus end with? (picture: bus)
+  - then: Bus ends with the letter s.
+- remember: Say the word slowly and listen. (picture: cat and cat)
+
+## E-K-B3 B.3 Middle vowel
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in pin?
+- Picture: 1 📌 and p_n
+- Options: a | **i** | o
+- Answer: i
+- Explanation, spoken: pin has the letter i in the middle.
+- Explanation, shown: Pin has the letter i in the middle.
+- Explanation picture: pin and pin
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in lip?
+- Picture: 1 👄 and l_p
+- Options: a | **i** | o
+- Answer: i
+- Explanation, spoken: lip has the letter i in the middle.
+- Explanation, shown: Lip has the letter i in the middle.
+- Explanation picture: lip and lip
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in lip?
+- Picture: 1 👄 and l_p
+- Options: a | **i** | o
+- Answer: i
+- Explanation, spoken: lip has the letter i in the middle.
+- Explanation, shown: Lip has the letter i in the middle.
+- Explanation picture: lip and lip
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in lip?
+- Picture: 1 👄 and l_p
+- Options: a | e | **i**
+- Answer: i
+- Explanation, spoken: lip has the letter i in the middle.
+- Explanation, shown: Lip has the letter i in the middle.
+- Explanation picture: lip and lip
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in fox?
+- Picture: 1 🦊 and f_x
+- Options: a | **o** | u
+- Answer: o
+- Explanation, spoken: fox has the letter o in the middle.
+- Explanation, shown: Fox has the letter o in the middle.
+- Explanation picture: fox and fox
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letter is missing?
+- Spoken: Which letter is missing in fox?
+- Picture: 1 🦊 and f_x
+- Options: a | **o** | u
+- Answer: o
+- Explanation, spoken: fox has the letter o in the middle.
+- Explanation, shown: Fox has the letter o in the middle.
+- Explanation picture: fox and fox
+
+### Lesson
+
+- see: Short words have a vowel in the middle. The vowels are a, e, i, o and u. (picture: cat and cat)
+- watch: Which letter is missing in cat? Cat has the letter a in the middle. (picture: cat and c_t)
+- try: Which letter is missing in dog? (picture: dog and d_g)
+  - then: Dog has the letter o in the middle.
+- remember: Say the word slowly and listen. (picture: cat and cat)
+
+## E-K-B4 B.4 Read a word, pick the picture
+
+### Level 1
+
+**Seed 1** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: pan
+- Options: map | **pan** | hen
+- Answer: pan
+- Explanation, spoken: This word is pan.
+- Explanation, shown: This word is pan.
+- Explanation picture: pan and pan
+
+**Seed 2** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: map
+- Options: nut | van | **map**
+- Answer: map
+- Explanation, spoken: This word is map.
+- Explanation, shown: This word is map.
+- Explanation picture: map and map
+
+**Seed 3** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: map
+- Options: bus | **map** | nut
+- Answer: map
+- Explanation, spoken: This word is map.
+- Explanation, shown: This word is map.
+- Explanation picture: map and map
+
+### Level 2
+
+**Seed 1** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: lip
+- Options: pen | hen | **lip**
+- Answer: lip
+- Explanation, spoken: This word is lip.
+- Explanation, shown: This word is lip.
+- Explanation picture: lip and lip
+
+**Seed 2** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: fox
+- Options: pin | lip | **fox**
+- Answer: fox
+- Explanation, spoken: This word is fox.
+- Explanation, shown: This word is fox.
+- Explanation picture: fox and fox
+
+**Seed 3** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: fox
+- Options: **fox** | web | sun
+- Answer: fox
+- Explanation, spoken: This word is fox.
+- Explanation, shown: This word is fox.
+- Explanation picture: fox and fox
+
+### Level 3
+
+**Seed 1** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: pig
+- Options: pin | hen | **pig**
+- Answer: pig
+- Explanation, spoken: This word is pig.
+- Explanation, shown: This word is pig.
+- Explanation picture: pig and pig
+
+**Seed 2** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: fox
+- Options: box | pin | **fox**
+- Answer: fox
+- Explanation, spoken: This word is fox.
+- Explanation, shown: This word is fox.
+- Explanation picture: fox and fox
+
+**Seed 3** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: fox
+- Options: **fox** | box | web
+- Answer: fox
+- Explanation, spoken: This word is fox.
+- Explanation, shown: This word is fox.
+- Explanation picture: fox and fox
+
+### Lesson
+
+- see: Letters make words. Say each letter sound, then put them together. (picture: hat)
+- watch: This word is hat. (picture: hat and hat)
+- try: Read the word. Which picture matches? (picture: map and bag and map)
+  - then: This word is map.
+- remember: Look at every letter. (picture: hat)
+
+## E-K-B5 B.5 Spell a word
+
+### Level 1
+
+**Seed 1** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word lip.
+- Picture: 1 👄
+- Tiles: w p l k i
+- Answer: lip
+- Explanation, spoken: lip is spelled l i p.
+- Explanation, shown: Lip is spelled l, i, p.
+- Explanation picture: lip and lip
+
+**Seed 2** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word fox.
+- Picture: 1 🦊
+- Tiles: p n o x f
+- Answer: fox
+- Explanation, spoken: fox is spelled f o x.
+- Explanation, shown: Fox is spelled f, o, x.
+- Explanation picture: fox and fox
+
+**Seed 3** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word fox.
+- Picture: 1 🦊
+- Tiles: v f x o y
+- Answer: fox
+- Explanation, spoken: fox is spelled f o x.
+- Explanation, shown: Fox is spelled f, o, x.
+- Explanation picture: fox and fox
+
+### Level 2
+
+**Seed 1** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word lip.
+- Picture: 1 👄
+- Tiles: k w e l i q p
+- Answer: lip
+- Explanation, spoken: lip is spelled l i p.
+- Explanation, shown: Lip is spelled l, i, p.
+- Explanation picture: lip and lip
+
+**Seed 2** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word fox.
+- Picture: 1 🦊
+- Tiles: x p g u o n f
+- Answer: fox
+- Explanation, spoken: fox is spelled f o x.
+- Explanation, shown: Fox is spelled f, o, x.
+- Explanation picture: fox and fox
+
+**Seed 3** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word fox.
+- Picture: 1 🦊
+- Tiles: f v x y u o t
+- Answer: fox
+- Explanation, spoken: fox is spelled f o x.
+- Explanation, shown: Fox is spelled f, o, x.
+- Explanation picture: fox and fox
+
+### Lesson
+
+- see: To spell a word, listen for each sound and find its letter. (picture: sun and sun)
+- watch: Sun is spelled s, u, n. (picture: sun and sun)
+- try: Spell the word pig. (picture: pig)
+  - then: Pig is spelled p, i, g.
+- remember: First sound, middle sound, last sound. (picture: sun and sun)
+
+## E-K-B6 B.6 Rhyming words
+
+### Level 1
+
+**Seed 1** (choice, read)
+
+- On screen: Which word rhymes with this word?
+- Picture: jet
+- Options: fig | man | **wet**
+- Answer: wet
+- Explanation, spoken: jet and wet both end in e t. They rhyme.
+- Explanation, shown: Jet and wet both end in et. / They rhyme.
+- Explanation picture: jet and wet
+
+**Seed 2** (choice, read)
+
+- On screen: Which word rhymes with this word?
+- Picture: wet
+- Options: **jet** | hat | rug
+- Answer: jet
+- Explanation, spoken: wet and jet both end in e t. They rhyme.
+- Explanation, shown: Wet and jet both end in et. / They rhyme.
+- Explanation picture: wet and jet
+
+**Seed 3** (choice, read)
+
+- On screen: Which word rhymes with this word?
+- Picture: pet
+- Options: bin | **net** | bug
+- Answer: net
+- Explanation, spoken: pet and net both end in e t. They rhyme.
+- Explanation, shown: Pet and net both end in et. / They rhyme.
+- Explanation picture: pet and net
+
+### Level 2
+
+**Seed 1** (choice, read)
+
+- On screen: Two words rhyme. Which word is different?
+- Options: **fig** | jet | wet
+- Answer: fig
+- Explanation, spoken: jet and wet both end in e t. fig does not.
+- Explanation, shown: Jet and wet both end in et. / Fig does not.
+- Explanation picture: jet and wet
+
+**Seed 2** (choice, read)
+
+- On screen: Two words rhyme. Which word is different?
+- Options: jet | **rug** | wet
+- Answer: rug
+- Explanation, spoken: wet and jet both end in e t. rug does not.
+- Explanation, shown: Wet and jet both end in et. / Rug does not.
+- Explanation picture: wet and jet
+
+**Seed 3** (choice, read)
+
+- On screen: Two words rhyme. Which word is different?
+- Options: **bin** | net | pet
+- Answer: bin
+- Explanation, spoken: pet and net both end in e t. bin does not.
+- Explanation, shown: Pet and net both end in et. / Bin does not.
+- Explanation picture: pet and net
+
+### Lesson
+
+- see: Words that rhyme end the same way. Cat and hat rhyme. (picture: cat and hat)
+- watch: Cat and hat both end in at. They rhyme. (picture: cat and hat)
+- try: Which word rhymes with bat? (picture: bat and bug and sat)
+  - then: Bat and sat both end in at. They rhyme.
+- remember: Rhyming words end the same way. (picture: cat and hat)
+
+## E-K-B7 B.7 Word families
+
+### Level 1
+
+**Seed 1** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ig | -an
+- Answer: van → -an, pan → -an, wig → -ig, big → -ig
+- Explanation, spoken: wig and big both end in i g. van and pan both end in a n.
+- Explanation, shown: Wig and big both end in ig. / Van and pan both end in an.
+- Explanation picture: wig and big
+
+**Seed 2** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ug | -at
+- Answer: bug → -ug, mat → -at, cat → -at, rug → -ug
+- Explanation, spoken: bug and rug both end in u g. mat and cat both end in a t.
+- Explanation, shown: Bug and rug both end in ug. / Mat and cat both end in at.
+- Explanation picture: bug and rug
+
+**Seed 3** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ot | -ug
+- Answer: pot → -ot, hug → -ug, mug → -ug, hot → -ot
+- Explanation, spoken: pot and hot both end in o t. hug and mug both end in u g.
+- Explanation, shown: Pot and hot both end in ot. / Hug and mug both end in ug.
+- Explanation picture: pot and hot
+
+### Level 2
+
+**Seed 1** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ig | -an
+- Answer: pan → -an, van → -an, ran → -an, big → -ig, wig → -ig, fig → -ig
+- Explanation, spoken: big and wig both end in i g. pan and van both end in a n.
+- Explanation, shown: Big and wig both end in ig. / Pan and van both end in an.
+- Explanation picture: big and wig and fig
+
+**Seed 2** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ug | -at
+- Answer: mat → -at, bat → -at, mug → -ug, bug → -ug, cat → -at, rug → -ug
+- Explanation, spoken: mug and bug both end in u g. mat and bat both end in a t.
+- Explanation, shown: Mug and bug both end in ug. / Mat and bat both end in at.
+- Explanation picture: mug and bug and rug
+
+**Seed 3** (sort, read)
+
+- On screen: Put each word in its family.
+- Bins: -ot | -ug
+- Answer: rug → -ug, hot → -ot, pot → -ot, hug → -ug, mug → -ug, not → -ot
+- Explanation, spoken: hot and pot both end in o t. rug and hug both end in u g.
+- Explanation, shown: Hot and pot both end in ot. / Rug and hug both end in ug.
+- Explanation picture: hot and pot and not
+
+### Lesson
+
+- see: A word family is a group of words that end the same way. (picture: cat and hat and bat)
+- watch: Cat and hat both end in at. (picture: cat and hat)
+- try: Which word is in the same family as pig? (picture: pig and wig and pan)
+  - then: Pig and wig both end in ig.
+- remember: Words in a family end the same way. (picture: cat and hat and bat)
+
+## E-K-C1 C.1 Sight words, set 1
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word help.
+- Options: it | little | **help**
+- Answer: help
+- Explanation, spoken: This word is help.
+- Explanation, shown: This word is help.
+- Explanation picture: help
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: for | find | **I**
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: help | **I** | jump
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word help.
+- Options: **help** | jump | blue
+- Answer: help
+- Explanation, spoken: This word is help.
+- Explanation, shown: This word is help.
+- Explanation picture: help
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: a | go | **I**
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: a | **I** | go
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+### Level 3
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word help.
+- Options: his | **help** | how
+- Answer: help
+- Explanation, spoken: This word is help.
+- Explanation, shown: This word is help.
+- Explanation picture: help
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: **I** | it | into
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word I.
+- Options: it | **I** | into
+- Answer: I
+- Explanation, spoken: This word is I.
+- Explanation, shown: This word is I.
+- Explanation picture: I
+
+### Lesson
+
+- see: Some words are used all the time. Learn to know them when you see them. (picture: can and little)
+- watch: This word is can. (picture: can)
+- try: Which word is little? (picture: go and little)
+  - then: This word is little.
+- remember: Look at the whole word. (picture: can and little)
+
+## E-K-C2 C.2 Sight words, set 2
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word three.
+- Options: not | yellow | **three**
+- Answer: three
+- Explanation, spoken: This word is three.
+- Explanation, shown: This word is three.
+- Explanation picture: three
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: said | **two** | look
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: where | make | **two**
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word three.
+- Options: **three** | yellow | make
+- Answer: three
+- Explanation, spoken: This word is three.
+- Explanation, shown: This word is three.
+- Explanation picture: three
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: see | **two** | not
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: run | **two** | one
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+### Level 3
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word three.
+- Options: think | **three** | then
+- Answer: three
+- Explanation, spoken: This word is three.
+- Explanation, shown: This word is three.
+- Explanation picture: three
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: this | take | **two**
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word two.
+- Options: then | this | **two**
+- Answer: two
+- Explanation, spoken: This word is two.
+- Explanation, shown: This word is two.
+- Explanation picture: two
+
+### Lesson
+
+- see: Some words are used all the time. Learn to know them when you see them. (picture: look and yellow)
+- watch: This word is look. (picture: look)
+- try: Which word is yellow? (picture: me and yellow)
+  - then: This word is yellow.
+- remember: Look at the whole word. (picture: look and yellow)
+
+## E-K-C3 C.3 Sight words, set 3
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word say.
+- Options: good | like | **say**
+- Answer: say
+- Explanation, spoken: This word is say.
+- Explanation, shown: This word is say.
+- Explanation picture: say
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word they.
+- Options: no | under | **they**
+- Answer: they
+- Explanation, spoken: This word is they.
+- Explanation, shown: This word is they.
+- Explanation picture: they
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word there.
+- Options: **there** | ran | pretty
+- Answer: there
+- Explanation, spoken: This word is there.
+- Explanation, shown: This word is there.
+- Explanation picture: there
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word say.
+- Options: eat | **say** | out
+- Answer: say
+- Explanation, spoken: This word is say.
+- Explanation, shown: This word is say.
+- Explanation picture: say
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word they.
+- Options: soon | ride | **they**
+- Answer: they
+- Explanation, spoken: This word is they.
+- Explanation, shown: This word is they.
+- Explanation picture: they
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word there.
+- Options: under | **there** | white
+- Answer: there
+- Explanation, spoken: This word is there.
+- Explanation, shown: This word is there.
+- Explanation picture: there
+
+### Level 3
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word say.
+- Options: **say** | saw | stop
+- Answer: say
+- Explanation, spoken: This word is say.
+- Explanation, shown: This word is say.
+- Explanation picture: say
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word they.
+- Options: **they** | three | this
+- Answer: they
+- Explanation, spoken: This word is they.
+- Explanation, shown: This word is they.
+- Explanation picture: they
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word there.
+- Options: **there** | then | take
+- Answer: there
+- Explanation, spoken: This word is there.
+- Explanation, shown: This word is there.
+- Explanation picture: there
+
+### Level 4
+
+**Seed 1** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word say.
+- Tiles: a s l u y
+- Answer: say
+- Explanation, spoken: say is spelled s a y.
+- Explanation, shown: say is spelled s, a, y.
+- Explanation picture: say
+
+**Seed 2** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word they.
+- Tiles: h y e z d t
+- Answer: they
+- Explanation, spoken: they is spelled t h e y.
+- Explanation, shown: they is spelled t, h, e, y.
+- Explanation picture: they
+
+**Seed 3** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word there.
+- Tiles: e h e v t r n
+- Answer: there
+- Explanation, spoken: there is spelled t h e r e.
+- Explanation, shown: there is spelled t, h, e, r, e.
+- Explanation picture: there
+
+### Lesson
+
+- see: Some words are used all the time. Learn to know them when you see them. (picture: have and please)
+- watch: This word is have. (picture: have)
+- try: Which word is please? (picture: no and please)
+  - then: This word is please.
+- remember: Look at the whole word. (picture: have and please)
+
+## E-K-D1 D.1 Capitals and periods
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: he can hop. | **He can hop.**
+- Answer: He can hop.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: He can hop.
+
+**Seed 2** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: the pig is big. | **The pig is big.**
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+**Seed 3** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: the pig is big. | **The pig is big.**
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: He can hop | **He can hop.**
+- Answer: He can hop.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: He can hop.
+
+**Seed 2** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: The pig is big | **The pig is big.**
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+**Seed 3** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: The pig is big | **The pig is big.**
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: **He can hop.** | he can hop | He can hop
+- Answer: He can hop.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: He can hop.
+
+**Seed 2** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: **The pig is big.** | the pig is big | The pig is big
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+**Seed 3** (choice, look)
+
+- On screen: Which sentence is written correctly?
+- Options: the pig is big | The pig is big | **The pig is big.**
+- Answer: The pig is big.
+- Explanation, spoken: A sentence starts with a capital letter and ends with a period.
+- Explanation, shown: A sentence starts with a capital letter and ends with a period.
+- Explanation picture: The pig is big.
+
+### Lesson
+
+- see: A sentence tells a whole idea. It starts with a capital letter. (picture: The cat is big.)
+- watch: The sentence ends with a period. A period is a small dot. (picture: We can run.)
+- try: Which sentence is written correctly? (picture: the sun is hot. and The sun is hot.)
+  - then: A sentence starts with a capital letter and ends with a period.
+- remember: Capital at the start, period at the end. (picture: The cat is big.)
+
+## E-K-D2 D.2 Naming words
+
+### Level 1
+
+**Seed 1** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 🐷 and pig → Animals, 1 🔑 and key → Things, 1 🐸 and frog → Animals, 1 👩 and woman → People
+- Explanation, spoken: A woman is a person. A pig is an animal. A key is a thing.
+- Explanation, shown: A woman is a person. / A pig is an animal. / A key is a thing.
+- Explanation picture: 1 👩 and woman and 1 🐷 and pig and 1 🔑 and key
+
+**Seed 2** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 🐵 and monkey → Animals, 1 📦 and box → Things, 1 🐶 and dog → Animals, 1 👧 and girl → People
+- Explanation, spoken: A girl is a person. A monkey is an animal. A box is a thing.
+- Explanation, shown: A girl is a person. / A monkey is an animal. / A box is a thing.
+- Explanation picture: 1 👧 and girl and 1 🐵 and monkey and 1 📦 and box
+
+**Seed 3** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 ⚽ and ball → Things, 1 🦁 and lion → Animals, 1 👶 and baby → People, 1 🥤 and cup → Things
+- Explanation, spoken: A baby is a person. A lion is an animal. A ball is a thing.
+- Explanation, shown: A baby is a person. / A lion is an animal. / A ball is a thing.
+- Explanation picture: 1 👶 and baby and 1 🦁 and lion and 1 ⚽ and ball
+
+### Level 2
+
+**Seed 1** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 🔑 and key → Things, 1 🐸 and frog → Animals, 1 🦆 and duck → Animals, 1 ⚽ and ball → Things, 1 👩 and woman → People, 1 👦 and boy → People
+- Explanation, spoken: A woman is a person. A frog is an animal. A key is a thing.
+- Explanation, shown: A woman is a person. / A frog is an animal. / A key is a thing.
+- Explanation picture: 1 👩 and woman and 1 🐸 and frog and 1 🔑 and key
+
+**Seed 2** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 🐵 and monkey → Animals, 1 👶 and baby → People, 1 🐘 and elephant → Animals, 1 📦 and box → Things, 1 🕐 and clock → Things, 1 👧 and girl → People
+- Explanation, spoken: A baby is a person. A monkey is an animal. A box is a thing.
+- Explanation, shown: A baby is a person. / A monkey is an animal. / A box is a thing.
+- Explanation picture: 1 👶 and baby and 1 🐵 and monkey and 1 📦 and box
+
+**Seed 3** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: People | Animals | Things
+- Answer: 1 👨 and man → People, 1 🐷 and pig → Animals, 1 ⚽ and ball → Things, 1 👶 and baby → People, 1 🦁 and lion → Animals, 1 🥤 and cup → Things
+- Explanation, spoken: A man is a person. A pig is an animal. A ball is a thing.
+- Explanation, shown: A man is a person. / A pig is an animal. / A ball is a thing.
+- Explanation picture: 1 👨 and man and 1 🐷 and pig and 1 ⚽ and ball
+
+### Lesson
+
+- see: A naming word is the name of a person, an animal or a thing. (picture: 1 👧 and girl and 1 🐶 and dog and 1 🥤 and cup)
+- watch: A girl is a person. A dog is an animal. A cup is a thing. (picture: 1 👧 and girl and 1 🐶 and dog and 1 🥤 and cup)
+- try: Is a baby a person, an animal or a thing? (picture: 1 👶 and baby)
+  - then: A baby is a person.
+- remember: Naming words are people, animals and things. (picture: 1 👧 and girl and 1 🐶 and dog and 1 🥤 and cup)
+
+## E-K-D3 D.3 One and more than one
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: 3 🦆
+- Options: duck | **ducks**
+- Answer: ducks
+- Explanation, spoken: There is more than one. We say ducks.
+- Explanation, shown: There is more than one. / We say ducks.
+- Explanation picture: 3 🦆 and ducks
+
+**Seed 2** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: 2 🐝
+- Options: bee | **bees**
+- Answer: bees
+- Explanation, spoken: There is more than one. We say bees.
+- Explanation, shown: There is more than one. / We say bees.
+- Explanation picture: 2 🐝 and bees
+
+**Seed 3** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: 3 🐝
+- Options: **bees** | bee
+- Answer: bees
+- Explanation, spoken: There is more than one. We say bees.
+- Explanation, shown: There is more than one. / We say bees.
+- Explanation picture: 3 🐝 and bees
+
+### Level 2
+
+**Seed 1** (choice, read)
+
+- On screen: Which word means more than one?
+- Options: duck | **ducks**
+- Answer: ducks
+- Explanation, spoken: There is more than one. We say ducks.
+- Explanation, shown: There is more than one. / We say ducks.
+- Explanation picture: 3 🦆 and ducks
+
+**Seed 2** (choice, read)
+
+- On screen: Which word means more than one?
+- Options: bee | **bees**
+- Answer: bees
+- Explanation, spoken: There is more than one. We say bees.
+- Explanation, shown: There is more than one. / We say bees.
+- Explanation picture: 3 🐝 and bees
+
+**Seed 3** (choice, read)
+
+- On screen: Which word means more than one?
+- Options: **bees** | bee
+- Answer: bees
+- Explanation, spoken: There is more than one. We say bees.
+- Explanation, shown: There is more than one. / We say bees.
+- Explanation picture: 3 🐝 and bees
+
+### Lesson
+
+- see: One ball. Two balls. The word changes when there is more than one. (picture: 1 ⚽ and 2 ⚽)
+- watch: There is more than one. We say balls. (picture: 3 ⚽ and balls)
+- try: Which word matches the picture? (picture: 1 🐸 and frog and frogs)
+  - then: There is just one. We say frog.
+- remember: Add s for more than one. (picture: ball and balls)
+
+## E-K-E1 E.1 Read a sentence
+
+### Level 1
+
+**Seed 1** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: Look at my bed.
+- Options: dog | **bed**
+- Answer: bed
+- Explanation, spoken: The sentence says bed.
+- Explanation, shown: The sentence says bed.
+- Explanation picture: Look at my bed. and bed
+
+**Seed 2** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: It is a pan.
+- Options: bug | **pan**
+- Answer: pan
+- Explanation, spoken: The sentence says pan.
+- Explanation, shown: The sentence says pan.
+- Explanation picture: It is a pan. and pan
+
+**Seed 3** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: It is a pan.
+- Options: **pan** | bat
+- Answer: pan
+- Explanation, spoken: The sentence says pan.
+- Explanation, shown: The sentence says pan.
+- Explanation picture: It is a pan. and pan
+
+### Level 2
+
+**Seed 1** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: Look at my bed.
+- Options: dog | van | **bed**
+- Answer: bed
+- Explanation, spoken: The sentence says bed.
+- Explanation, shown: The sentence says bed.
+- Explanation picture: Look at my bed. and bed
+
+**Seed 2** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: It is a pan.
+- Options: fox | bug | **pan**
+- Answer: pan
+- Explanation, spoken: The sentence says pan.
+- Explanation, shown: The sentence says pan.
+- Explanation picture: It is a pan. and pan
+
+**Seed 3** (choice, read)
+
+- On screen: Which picture matches the sentence?
+- Picture: It is a pan.
+- Options: bat | **pan** | van
+- Answer: pan
+- Explanation, spoken: The sentence says pan.
+- Explanation, shown: The sentence says pan.
+- Explanation picture: It is a pan. and pan
+
+### Lesson
+
+- see: A sentence is made of words. Read each word from left to right. (picture: I see a cat.)
+- watch: I see a cat. The sentence says cat. (picture: I see a cat. and cat)
+- try: Which picture matches the sentence? (picture: Look at the dog. and cat and dog)
+  - then: The sentence says dog.
+- remember: Read every word. (picture: I see a cat.)
+
+## E-1-A1 A.1 Digraphs: sh, ch, th, wh
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in thumb?
+- Picture: 1 👍 and __umb
+- Options: sh | ch | **th** | wh
+- Answer: th
+- Explanation, spoken: thumb starts with t h.
+- Explanation, shown: Thumb starts with th.
+- Explanation picture: thumb and thumb
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in thumb?
+- Picture: 1 👍 and __umb
+- Options: sh | ch | **th** | wh
+- Answer: th
+- Explanation, spoken: thumb starts with t h.
+- Explanation, shown: Thumb starts with th.
+- Explanation picture: thumb and thumb
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in thumb?
+- Picture: 1 👍 and __umb
+- Options: sh | ch | **th** | wh
+- Answer: th
+- Explanation, spoken: thumb starts with t h.
+- Explanation, shown: Thumb starts with th.
+- Explanation picture: thumb and thumb
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in beach?
+- Picture: 1 🏖️ and bea__
+- Options: sh | **ch** | th
+- Answer: ch
+- Explanation, spoken: beach ends with c h.
+- Explanation, shown: Beach ends with ch.
+- Explanation picture: beach and beach
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in bath?
+- Picture: 1 🛁 and ba__
+- Options: sh | ch | **th**
+- Answer: th
+- Explanation, spoken: bath ends with t h.
+- Explanation, shown: Bath ends with th.
+- Explanation picture: bath and bath
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in bath?
+- Picture: 1 🛁 and ba__
+- Options: sh | ch | **th**
+- Answer: th
+- Explanation, spoken: bath ends with t h.
+- Explanation, shown: Bath ends with th.
+- Explanation picture: bath and bath
+
+### Lesson
+
+- see: Two letters can work together to make one sound. (picture: ship and ship)
+- watch: Ship starts with sh. (picture: ship and ship)
+- try: Which letters are missing in fish? (picture: fish and fi__)
+  - then: Fish ends with sh.
+- remember: Two letters can work together. (picture: ship and ship)
+
+## E-1-A2 A.2 Consonant blends
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in clock?
+- Picture: 1 🕐 and __ock
+- Options: tr | **cl** | gr
+- Answer: cl
+- Explanation, spoken: clock starts with c l.
+- Explanation, shown: Clock starts with cl.
+- Explanation picture: clock and clock
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in spoon?
+- Picture: 1 🥄 and __oon
+- Options: cr | **sp** | fr
+- Answer: sp
+- Explanation, spoken: spoon starts with s p.
+- Explanation, shown: Spoon starts with sp.
+- Explanation picture: spoon and spoon
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in plane?
+- Picture: 1 ✈️ and __ane
+- Options: tr | fl | **pl**
+- Answer: pl
+- Explanation, spoken: plane starts with p l.
+- Explanation, shown: Plane starts with pl.
+- Explanation picture: plane and plane
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in mask?
+- Picture: 1 😷 and ma__
+- Options: lk | nk | **sk**
+- Answer: sk
+- Explanation, spoken: mask ends with s k.
+- Explanation, shown: Mask ends with sk.
+- Explanation picture: mask and mask
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in mask?
+- Picture: 1 😷 and ma__
+- Options: nt | **sk** | nd
+- Answer: sk
+- Explanation, spoken: mask ends with s k.
+- Explanation, shown: Mask ends with sk.
+- Explanation picture: mask and mask
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in mask?
+- Picture: 1 😷 and ma__
+- Options: ft | **sk** | nt
+- Answer: sk
+- Explanation, spoken: mask ends with s k.
+- Explanation, shown: Mask ends with sk.
+- Explanation picture: mask and mask
+
+### Level 3
+
+**Seed 1** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word hand.
+- Picture: 1 ✋
+- Tiles: d j a w n h
+- Answer: hand
+- Explanation, spoken: hand is spelled h a n d.
+- Explanation, shown: Hand is spelled h, a, n, d.
+- Explanation picture: hand and hand
+
+**Seed 2** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word tent.
+- Picture: 1 ⛺
+- Tiles: n l t t e w
+- Answer: tent
+- Explanation, spoken: tent is spelled t e n t.
+- Explanation, shown: Tent is spelled t, e, n, t.
+- Explanation picture: tent and tent
+
+**Seed 3** (tiles, listen)
+
+- On screen: Spell the word.
+- Spoken: Spell the word tent.
+- Picture: 1 ⛺
+- Tiles: t p n k t e
+- Answer: tent
+- Explanation, spoken: tent is spelled t e n t.
+- Explanation, shown: Tent is spelled t, e, n, t.
+- Explanation picture: tent and tent
+
+### Lesson
+
+- see: In a blend, two letters sit side by side and you hear both. (picture: frog and frog)
+- watch: Frog starts with fr. (picture: frog and frog)
+- try: Which letters are missing in hand? (picture: hand and ha__)
+  - then: Hand ends with nd.
+- remember: Say both sounds, one after the other. (picture: frog and frog)
+
+## E-1-A3 A.3 Silent e
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word hope.
+- Options: hop | **hope**
+- Answer: hope
+- Explanation, spoken: The e at the end makes the o say its name. The word is hope.
+- Explanation, shown: The e at the end makes the o say its name. / The word is hope.
+- Explanation picture: hop and hope
+
+**Seed 2** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word cube.
+- Options: **cube** | cub
+- Answer: cube
+- Explanation, spoken: The e at the end makes the u say its name. The word is cube.
+- Explanation, shown: The e at the end makes the u say its name. / The word is cube.
+- Explanation picture: cub and cube
+
+**Seed 3** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word cub.
+- Options: cube | **cub**
+- Answer: cub
+- Explanation, spoken: There is no e at the end, so the u is short. The word is cub.
+- Explanation, shown: There is no e at the end, so the u is short. / The word is cub.
+- Explanation picture: cub and cube
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word hope.
+- Options: hop | cap | **hope**
+- Answer: hope
+- Explanation, spoken: The e at the end makes the o say its name. The word is hope.
+- Explanation, shown: The e at the end makes the o say its name. / The word is hope.
+- Explanation picture: hop and hope
+
+**Seed 2** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word cube.
+- Options: tube | **cube** | cub
+- Answer: cube
+- Explanation, spoken: The e at the end makes the u say its name. The word is cube.
+- Explanation, shown: The e at the end makes the u say its name. / The word is cube.
+- Explanation picture: cub and cube
+
+**Seed 3** (choice, listen)
+
+- On screen: Find the word.
+- Spoken: Find the word cub.
+- Options: cap | **cub** | cube
+- Answer: cub
+- Explanation, spoken: There is no e at the end, so the u is short. The word is cub.
+- Explanation, shown: There is no e at the end, so the u is short. / The word is cub.
+- Explanation picture: cub and cube
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: can
+- Options: **can** | cap | cane
+- Answer: can
+- Explanation, spoken: There is no e at the end, so the a is short. The word is can.
+- Explanation, shown: There is no e at the end, so the a is short. / The word is can.
+- Explanation picture: can and cane
+
+**Seed 2** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: man
+- Options: tube | mane | **man**
+- Answer: man
+- Explanation, spoken: There is no e at the end, so the a is short. The word is man.
+- Explanation, shown: There is no e at the end, so the a is short. / The word is man.
+- Explanation picture: man and mane
+
+**Seed 3** (choice, look)
+
+- On screen: Which word matches the picture?
+- Picture: man
+- Options: cap | **man** | mane
+- Answer: man
+- Explanation, spoken: There is no e at the end, so the a is short. The word is man.
+- Explanation, shown: There is no e at the end, so the a is short. / The word is man.
+- Explanation picture: man and mane
+
+### Lesson
+
+- see: An e at the end of a word is quiet. It changes the vowel before it. (picture: cap and cape)
+- watch: The e at the end makes the a say its name. The word is cape. (picture: cap and cape)
+- try: Find the word kite. (picture: kit and kite)
+  - then: The e at the end makes the i say its name. The word is kite.
+- remember: An e at the end can change the vowel. (picture: pin and pine)
+
+## E-1-A4 A.4 Vowel teams
+
+### Level 1
+
+**Seed 1** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: sheep
+- Options: **sheep** | snail | soap
+- Answer: sheep
+- Explanation, spoken: This word is sheep. sheep has e e in the middle.
+- Explanation, shown: This word is sheep. / Sheep has ee in the middle.
+- Explanation picture: sheep and sheep
+
+**Seed 2** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: boat
+- Options: sheep | **boat** | rain
+- Answer: boat
+- Explanation, spoken: This word is boat. boat has o a in the middle.
+- Explanation, shown: This word is boat. / Boat has oa in the middle.
+- Explanation picture: boat and boat
+
+**Seed 3** (choice, read)
+
+- On screen: Read the word. Which picture matches?
+- Picture: boat
+- Options: sheep | snail | **boat**
+- Answer: boat
+- Explanation, spoken: This word is boat. boat has o a in the middle.
+- Explanation, shown: This word is boat. / Boat has oa in the middle.
+- Explanation picture: boat and boat
+
+### Level 2
+
+**Seed 1** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in sheep?
+- Picture: 1 🐑 and sh__p
+- Options: ai | **ee** | oa
+- Answer: ee
+- Explanation, spoken: sheep has e e in the middle.
+- Explanation, shown: Sheep has ee in the middle.
+- Explanation picture: sheep and sheep
+
+**Seed 2** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in boat?
+- Picture: 1 ⛵ and b__t
+- Options: ai | ee | **oa**
+- Answer: oa
+- Explanation, spoken: boat has o a in the middle.
+- Explanation, shown: Boat has oa in the middle.
+- Explanation picture: boat and boat
+
+**Seed 3** (choice, listen)
+
+- On screen: Which letters are missing?
+- Spoken: Which letters are missing in boat?
+- Picture: 1 ⛵ and b__t
+- Options: ai | ee | **oa**
+- Answer: oa
+- Explanation, spoken: boat has o a in the middle.
+- Explanation, shown: Boat has oa in the middle.
+- Explanation picture: boat and boat
+
+### Lesson
+
+- see: Two vowels side by side can make one sound. (picture: rain and rain)
+- watch: Rain has ai in the middle. (picture: rain and rain)
+- try: Which letters are missing in boat? (picture: boat and b__t)
+  - then: Boat has oa in the middle.
+- remember: Two vowels can make one sound. (picture: rain and rain)
+
+## E-1-A5 A.5 Short or long vowel
+
+### Level 1
+
+**Seed 1** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: kite → Long vowel, man → Short vowel, cube → Long vowel, tub → Short vowel
+- Explanation, spoken: man has a short vowel. kite has a long vowel.
+- Explanation, shown: Man has a short vowel. / Kite has a long vowel.
+- Explanation picture: man and kite
+
+**Seed 2** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: note → Long vowel, cap → Short vowel, hop → Short vowel, mane → Long vowel
+- Explanation, spoken: cap has a short vowel. note has a long vowel.
+- Explanation, shown: Cap has a short vowel. / Note has a long vowel.
+- Explanation picture: cap and note
+
+**Seed 3** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: cane → Long vowel, tub → Short vowel, kite → Long vowel, hop → Short vowel
+- Explanation, spoken: tub has a short vowel. cane has a long vowel.
+- Explanation, shown: Tub has a short vowel. / Cane has a long vowel.
+- Explanation picture: tub and cane
+
+### Level 2
+
+**Seed 1** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: note → Long vowel, man → Short vowel, kite → Long vowel, tub → Short vowel, cane → Long vowel, cub → Short vowel
+- Explanation, spoken: man has a short vowel. note has a long vowel.
+- Explanation, shown: Man has a short vowel. / Note has a long vowel.
+- Explanation picture: man and note
+
+**Seed 2** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: cap → Short vowel, not → Short vowel, pine → Long vowel, mane → Long vowel, hop → Short vowel, cane → Long vowel
+- Explanation, spoken: cap has a short vowel. pine has a long vowel.
+- Explanation, shown: Cap has a short vowel. / Pine has a long vowel.
+- Explanation picture: cap and pine
+
+**Seed 3** (sort, read)
+
+- On screen: Put each word in its group.
+- Bins: Short vowel | Long vowel
+- Answer: note → Long vowel, mane → Long vowel, kite → Long vowel, tub → Short vowel, can → Short vowel, hop → Short vowel
+- Explanation, spoken: tub has a short vowel. note has a long vowel.
+- Explanation, shown: Tub has a short vowel. / Note has a long vowel.
+- Explanation picture: tub and note
+
+### Lesson
+
+- see: A long vowel says its own name. A short vowel does not. (picture: cap and cape)
+- watch: Cap has a short vowel. Cape has a long vowel. (picture: cap and cape)
+- try: Does kite have a short vowel or a long vowel? (picture: kite)
+  - then: Kite has a long vowel.
+- remember: A long vowel says its name. (picture: pin and pine)
+
+## E-1-B1 B.1 Sight words, set 4
+
+### Level 1
+
+**Seed 1** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word old.
+- Options: may | put | **old**
+- Answer: old
+- Explanation, spoken: This word is old.
+- Explanation, shown: This word is old.
+- Explanation picture: old
+
+**Seed 2** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word round.
+- Options: **round** | after | going
+- Answer: round
+- Explanation, spoken: This word is round.
+- Explanation, shown: This word is round.
+- Explanation picture: round
+
+**Seed 3** (choice, listen)
+
+- On screen: Listen. Tap the word.
+- Spoken: Tap the word put.
+- Options: has | **put** | how
+- Answer: put
+- Explanation, spoken: This word is put.
+- Explanation, shown: This word is put.
+- Explanation picture: put
+
+### Level 2
+
+**Seed 1** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word old.
+- Tiles: l o m v d
+- Answer: old
+- Explanation, spoken: old is spelled o l d.
+- Explanation, shown: old is spelled o, l, d.
+- Explanation picture: old
+
+**Seed 2** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word round.
+- Tiles: o n u d q s r
+- Answer: round
+- Explanation, spoken: round is spelled r o u n d.
+- Explanation, shown: round is spelled r, o, u, n, d.
+- Explanation picture: round
+
+**Seed 3** (tiles, listen)
+
+- On screen: Listen. Spell the word.
+- Spoken: Spell the word put.
+- Tiles: t u y z p
+- Answer: put
+- Explanation, spoken: put is spelled p u t.
+- Explanation, shown: put is spelled p, u, t.
+- Explanation picture: put
+
+### Lesson
+
+- see: Some words are used all the time. Learn to know them when you see them. (picture: could and walk)
+- watch: This word is could. (picture: could)
+- try: Which word is walk? (picture: when and walk)
+  - then: This word is walk.
+- remember: Look at the whole word. (picture: could and walk)
+
+## E-1-B2 B.2 Compound words
+
+### Level 1
+
+**Seed 1** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word ladybug.
+- Picture: 1 🐞
+- Tiles: pan ball lady bug
+- Answer: ladybug
+- Explanation, spoken: lady and bug make ladybug.
+- Explanation, shown: Lady and bug make ladybug.
+- Explanation picture: ladybug and ladybug
+
+**Seed 2** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word pancake.
+- Picture: 1 🥞
+- Tiles: cake pine pan lady
+- Answer: pancake
+- Explanation, spoken: pan and cake make pancake.
+- Explanation, shown: Pan and cake make pancake.
+- Explanation picture: pancake and pancake
+
+**Seed 3** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word pancake.
+- Picture: 1 🥞
+- Tiles: pan cake cup bug
+- Answer: pancake
+- Explanation, spoken: pan and cake make pancake.
+- Explanation, shown: Pan and cake make pancake.
+- Explanation picture: pancake and pancake
+
+### Level 2
+
+**Seed 1** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word ladybug.
+- Picture: 1 🐞
+- Tiles: pan ball corn foot lady bug
+- Answer: ladybug
+- Explanation, spoken: lady and bug make ladybug.
+- Explanation, shown: Lady and bug make ladybug.
+- Explanation picture: ladybug and ladybug
+
+**Seed 2** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word pancake.
+- Picture: 1 🥞
+- Tiles: cake pine lady apple pan pop
+- Answer: pancake
+- Explanation, spoken: pan and cake make pancake.
+- Explanation, shown: Pan and cake make pancake.
+- Explanation picture: pancake and pancake
+
+**Seed 3** (tiles, listen)
+
+- On screen: Build the word.
+- Spoken: Build the word pancake.
+- Picture: 1 🥞
+- Tiles: man cake pan bug snow cup
+- Answer: pancake
+- Explanation, spoken: pan and cake make pancake.
+- Explanation, shown: Pan and cake make pancake.
+- Explanation picture: pancake and pancake
+
+### Lesson
+
+- see: Two small words can join to make one big word. (picture: sun and flower)
+- watch: Sun and flower make sunflower. (picture: sunflower and sunflower)
+- try: Which two words make rainbow? (picture: rainbow)
+  - then: Rain and bow make rainbow.
+- remember: Two small words can make one big word. (picture: sunflower and sunflower)
+
+## E-1-B3 B.3 Opposites and same meanings
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which word is the opposite of shut?
+- Picture: shut
+- Options: sad | happy | **open**
+- Answer: open
+- Explanation, spoken: shut and open are opposites.
+- Explanation, shown: Shut and open are opposites.
+- Explanation picture: shut and open
+
+**Seed 2** (choice, look)
+
+- On screen: Which word is the opposite of shut?
+- Picture: shut
+- Options: slow | cold | **open**
+- Answer: open
+- Explanation, spoken: shut and open are opposites.
+- Explanation, shown: Shut and open are opposites.
+- Explanation picture: shut and open
+
+**Seed 3** (choice, look)
+
+- On screen: Which word is the opposite of shut?
+- Picture: shut
+- Options: close | **open** | big
+- Answer: open
+- Explanation, spoken: shut and open are opposites.
+- Explanation, shown: Shut and open are opposites.
+- Explanation picture: shut and open
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which word means the same as quick?
+- Picture: quick
+- Options: open | sad | **fast**
+- Answer: fast
+- Explanation, spoken: quick and fast mean the same.
+- Explanation, shown: Quick and fast mean the same.
+- Explanation picture: quick and fast
+
+**Seed 2** (choice, look)
+
+- On screen: Which word means the same as close?
+- Picture: close
+- Options: slow | cold | **shut**
+- Answer: shut
+- Explanation, spoken: close and shut mean the same.
+- Explanation, shown: Close and shut mean the same.
+- Explanation picture: close and shut
+
+**Seed 3** (choice, look)
+
+- On screen: Which word means the same as close?
+- Picture: close
+- Options: quick | **shut** | big
+- Answer: shut
+- Explanation, spoken: close and shut mean the same.
+- Explanation, shown: Close and shut mean the same.
+- Explanation picture: close and shut
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: Which word means the same as big?
+- Picture: big
+- Options: **large** | close | shut
+- Answer: large
+- Explanation, spoken: big and large mean the same.
+- Explanation, shown: Big and large mean the same.
+- Explanation picture: big and large
+
+**Seed 2** (choice, look)
+
+- On screen: Which word means the same as little?
+- Picture: little
+- Options: start | glad | **small**
+- Answer: small
+- Explanation, spoken: little and small mean the same.
+- Explanation, shown: Little and small mean the same.
+- Explanation picture: little and small
+
+**Seed 3** (choice, look)
+
+- On screen: Which word means the same as large?
+- Picture: large
+- Options: shut | small | **big**
+- Answer: big
+- Explanation, spoken: large and big mean the same.
+- Explanation, shown: Large and big mean the same.
+- Explanation picture: large and big
+
+### Lesson
+
+- see: Opposites are as different as can be. Hot and cold are opposites. (picture: hot and cold)
+- watch: Some words mean the same. Big and large mean the same. (picture: big and large)
+- try: Which word is the opposite of wet? (picture: wet and dry and glad)
+  - then: Wet and dry are opposites.
+- remember: Opposites are different. Some words mean the same. (picture: hot and cold)
+
+## E-1-C1 C.1 Naming and action words
+
+### Level 1
+
+**Seed 1** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: run → Action words, girl → Naming words, read → Action words, ball → Naming words
+- Explanation, spoken: girl names something. run is something you do.
+- Explanation, shown: Girl names something. / Run is something you do.
+- Explanation picture: girl and run
+
+**Seed 2** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: tree → Naming words, swim → Action words, dog → Naming words, run → Action words
+- Explanation, spoken: dog names something. swim is something you do.
+- Explanation, shown: Dog names something. / Swim is something you do.
+- Explanation picture: dog and swim
+
+**Seed 3** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: read → Action words, bed → Naming words, jump → Action words, tree → Naming words
+- Explanation, spoken: tree names something. read is something you do.
+- Explanation, shown: Tree names something. / Read is something you do.
+- Explanation picture: tree and read
+
+### Level 2
+
+**Seed 1** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: read → Action words, run → Action words, ball → Naming words, girl → Naming words, swim → Action words, car → Naming words
+- Explanation, spoken: girl names something. run is something you do.
+- Explanation, shown: Girl names something. / Run is something you do.
+- Explanation picture: girl and run
+
+**Seed 2** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: dog → Naming words, swim → Action words, bed → Naming words, read → Action words, tree → Naming words, run → Action words
+- Explanation, spoken: dog names something. swim is something you do.
+- Explanation, shown: Dog names something. / Swim is something you do.
+- Explanation picture: dog and swim
+
+**Seed 3** (sort, look)
+
+- On screen: Put each word in its group.
+- Bins: Naming words | Action words
+- Answer: jump → Action words, read → Action words, sing → Action words, car → Naming words, tree → Naming words, bed → Naming words
+- Explanation, spoken: tree names something. read is something you do.
+- Explanation, shown: Tree names something. / Read is something you do.
+- Explanation picture: tree and read
+
+### Lesson
+
+- see: A naming word names a person, an animal or a thing. An action word is something you do. (picture: dog and run)
+- watch: Dog names something. Run is something you do. (picture: dog and run)
+- try: Is jump a naming word or an action word? (picture: jump)
+  - then: Jump is something you do. It is an action word.
+- remember: Naming words are people, animals and things. (picture: girl and tree)
+
+## E-1-C2 C.2 Describing words
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which word tells what something is like?
+- Picture: The happy girl sang.
+- Options: sang | girl | **happy**
+- Answer: happy
+- Explanation, spoken: happy tells what the girl is like.
+- Explanation, shown: Happy tells what the girl is like.
+- Explanation picture: The happy girl sang.
+
+**Seed 2** (choice, look)
+
+- On screen: Which word tells what something is like?
+- Picture: The happy girl sang.
+- Options: girl | sang | **happy**
+- Answer: happy
+- Explanation, spoken: happy tells what the girl is like.
+- Explanation, shown: Happy tells what the girl is like.
+- Explanation picture: The happy girl sang.
+
+**Seed 3** (choice, look)
+
+- On screen: Which word tells what something is like?
+- Picture: The happy girl sang.
+- Options: girl | sang | **happy**
+- Answer: happy
+- Explanation, spoken: happy tells what the girl is like.
+- Explanation, shown: Happy tells what the girl is like.
+- Explanation picture: The happy girl sang.
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which word fits the picture?
+- Picture: 1 🐜
+- Options: **tiny** | loud | soft
+- Answer: tiny
+- Explanation, spoken: This picture shows something tiny.
+- Explanation, shown: This picture shows something tiny.
+- Explanation picture: 1 🐜 and tiny
+
+**Seed 2** (choice, look)
+
+- On screen: Which word fits the picture?
+- Picture: 1 🐜
+- Options: cold | **tiny** | tall
+- Answer: tiny
+- Explanation, spoken: This picture shows something tiny.
+- Explanation, shown: This picture shows something tiny.
+- Explanation picture: 1 🐜 and tiny
+
+**Seed 3** (choice, look)
+
+- On screen: Which word fits the picture?
+- Picture: 1 🐜
+- Options: big | loud | **tiny**
+- Answer: tiny
+- Explanation, spoken: This picture shows something tiny.
+- Explanation, shown: This picture shows something tiny.
+- Explanation picture: 1 🐜 and tiny
+
+### Lesson
+
+- see: A describing word tells what something is like: big, red, soft. (picture: big and red and soft)
+- watch: The big dog ran. Big tells what the dog is like. (picture: The big dog ran.)
+- try: Which word tells what something is like? (picture: The bed is soft.)
+  - then: Soft tells what the bed is like.
+- remember: Describing words tell what something is like. (picture: big and red and soft)
+
+## E-1-C3 C.3 End marks
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Can you see the cat
+- Options: . | **?**
+- Answer: ?
+- Explanation, spoken: An asking sentence ends with a question mark.
+- Explanation, shown: An asking sentence ends with a question mark.
+- Explanation picture: Can you see the cat?
+
+**Seed 2** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Is the sun hot
+- Options: . | **?**
+- Answer: ?
+- Explanation, spoken: An asking sentence ends with a question mark.
+- Explanation, shown: An asking sentence ends with a question mark.
+- Explanation picture: Is the sun hot?
+
+**Seed 3** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Can you see the cat
+- Options: . | **?**
+- Answer: ?
+- Explanation, spoken: An asking sentence ends with a question mark.
+- Explanation, shown: An asking sentence ends with a question mark.
+- Explanation picture: Can you see the cat?
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Can you see the cat
+- Options: . | **?** | !
+- Answer: ?
+- Explanation, spoken: An asking sentence ends with a question mark.
+- Explanation, shown: An asking sentence ends with a question mark.
+- Explanation picture: Can you see the cat?
+
+**Seed 2** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Stop
+- Options: . | ? | **!**
+- Answer: !
+- Explanation, spoken: A shout ends with an exclamation mark.
+- Explanation, shown: A shout ends with an exclamation mark.
+- Explanation picture: Stop!
+
+**Seed 3** (choice, look)
+
+- On screen: Which mark goes at the end?
+- Picture: Look out
+- Options: . | ? | **!**
+- Answer: !
+- Explanation, spoken: A shout ends with an exclamation mark.
+- Explanation, shown: A shout ends with an exclamation mark.
+- Explanation picture: Look out!
+
+### Lesson
+
+- see: Every sentence ends with a mark. A telling sentence ends with a period. (picture: The sun is hot.)
+- watch: An asking sentence ends with a question mark. (picture: Is the sun hot?)
+- try: Which mark goes at the end? (picture: Can we go)
+  - then: An asking sentence ends with a question mark.
+- remember: Asking sentences end with a question mark. (picture: Is it a bug?)
+
+## E-1-D1 D.1 Read a short story
+
+### Level 1
+
+**Seed 1** (choice, read)
+
+- On screen: Who makes the cupcake?
+- Picture: Mia makes a cupcake for Ava. Ava eats it all up. Ava thanks Mia with a hug.
+- Options: Ava | **Mia** | Zoe
+- Answer: Mia
+- Explanation, spoken: The story says: Mia makes a cupcake for Ava.
+- Explanation, shown: The story says: Mia makes a cupcake for Ava.
+- Explanation picture: Mia makes a cupcake for Ava.
+
+**Seed 2** (choice, read)
+
+- On screen: What came down in the night?
+- Picture: Ava put a tent by the tree. Rain came down in the night. Ava was dry in the tent.
+- Options: **rain** | snow | a bat
+- Answer: rain
+- Explanation, spoken: The story says: Rain came down in the night.
+- Explanation, shown: The story says: Rain came down in the night.
+- Explanation picture: Rain came down in the night.
+
+**Seed 3** (choice, read)
+
+- On screen: What came down in the night?
+- Picture: Ava put a tent by the tree. Rain came down in the night. Ava was dry in the tent.
+- Options: **rain** | snow | a bat
+- Answer: rain
+- Explanation, spoken: The story says: Rain came down in the night.
+- Explanation, shown: The story says: Rain came down in the night.
+- Explanation picture: Rain came down in the night.
+
+### Level 2
+
+**Seed 1** (choice, read)
+
+- On screen: How does Ava thank Mia?
+- Picture: Mia makes a cupcake for Ava. Ava eats it all up. Ava thanks Mia with a hug.
+- Options: With a gift | With a note | **With a hug**
+- Answer: With a hug
+- Explanation, spoken: The story says: Ava thanks Mia with a hug.
+- Explanation, shown: The story says: Ava thanks Mia with a hug.
+- Explanation picture: Ava thanks Mia with a hug.
+
+**Seed 2** (choice, read)
+
+- On screen: Why was Ava dry?
+- Picture: Ava put a tent by the tree. Rain came down in the night. Ava was dry in the tent.
+- Options: She had a hat | **She was in the tent** | The sun was out
+- Answer: She was in the tent
+- Explanation, spoken: The story says: Ava was dry in the tent.
+- Explanation, shown: The story says: Ava was dry in the tent.
+- Explanation picture: Ava was dry in the tent.
+
+**Seed 3** (choice, read)
+
+- On screen: Why was Ava dry?
+- Picture: Ava put a tent by the tree. Rain came down in the night. Ava was dry in the tent.
+- Options: She had a hat | **She was in the tent** | The sun was out
+- Answer: She was in the tent
+- Explanation, spoken: The story says: Ava was dry in the tent.
+- Explanation, shown: The story says: Ava was dry in the tent.
+- Explanation picture: Ava was dry in the tent.
+
+### Lesson
+
+- see: Read the story. Then read the question. Look back at the story to find the answer. (picture: Sam has a red hat. The hat is too big. Sam gives the hat to Max.)
+- watch: Who gets the hat? The story says: Sam gives the hat to Max. (picture: Sam has a red hat. The hat is too big. Sam gives the hat to Max.)
+- try: Why does Sam give the hat away? (picture: Sam has a red hat. The hat is too big. Sam gives the hat to Max.)
+  - then: The story says: The hat is too big.
+- remember: Look back at the story. (picture: Sam has a red hat. The hat is too big. Sam gives the hat to Max.)
 
 ## R-A1 A.1 Odd one out
 

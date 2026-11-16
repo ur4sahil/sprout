@@ -97,7 +97,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
-  font-size: var(--text-xxl);
+  /* Full size where it fits. A long line, such as 500 + 80 + 9 = □ on a phone, shrinks to the screen's width less its margins. */
+  font-size: min(var(--text-xxl), calc((100vw - 2 * var(--space-6)) / var(--ems, 1)));
   font-weight: 700;
   white-space: nowrap;
 }
