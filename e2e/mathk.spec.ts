@@ -2,7 +2,7 @@ import { expect, signUp, test } from './support/fixtures';
 import { addChild, answerRight, holdHome } from './support/kid';
 import { openFromMath, submit, sweepHardestLevels } from './support/sweep';
 
-// The kindergarten skills added in Phase 6b. (B.3 and C.4 are older and covered by practice.spec.ts.)
+// The kindergarten skills added in Phase 6b. (B.3 and C.4 are older and covered by practice.spec.ts; C and D are in mathk2.spec.ts.)
 const SKILLS: [string, string][] = [
   ['M-K-A1', 'Count to 20'],
   ['M-K-A2', 'Ten frames to 10'],
@@ -37,7 +37,7 @@ test.describe('Math kindergarten, part 1', () => {
     await submit(page);
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '10');
     await holdHome(page);
-    // Add to 10 is still reachable and still scores, with 15 more skills around it.
+    // Add to 10 is still reachable and still scores, with 26 more skills around it.
     await openFromMath(page, 'Add to 10');
     await answerRight(page);
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '10');

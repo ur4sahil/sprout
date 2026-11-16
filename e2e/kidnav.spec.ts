@@ -99,7 +99,7 @@ test.describe('kid navigation', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Kindergarten' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(17);
+    await expect(page.locator('[data-skill]')).toHaveCount(28);
     await checkScreen(page, 'subject page', 64);
     await shoot(page, 'subject');
     await page.getByRole('button', { name: 'Hear the name: Add to 10' }).click();

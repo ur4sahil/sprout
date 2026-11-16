@@ -20,7 +20,7 @@ function equation(a: number, b: number, level: Level): Visual {
     : { kind: 'equation', parts: [a, '+', b, '=', 'blank'] };
 }
 
-function explain(a: number, b: number): { speak: Say; steps: string[]; visual: Visual } {
+export function explain(a: number, b: number): { speak: Say; steps: string[]; visual: Visual } {
   const bigger = Math.max(a, b);
   const smaller = Math.min(a, b);
   const sum = a + b;

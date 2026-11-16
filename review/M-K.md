@@ -1,6 +1,6 @@
 # Content review: M-K
 
-17 skills, 3 samples for each level.
+28 skills, 3 samples for each level.
 
 ## M-K-A1 A.1 Count to 20
 
@@ -350,8 +350,8 @@
 - Picture: 5, 6, 7, blank
 - Options: 6 | 7 | **8**
 - Answer: 8
-- Explanation, spoken: Count along the row. 5 6 7 8 The missing number is 8.
-- Explanation, shown: Count along the row: 5, 6, 7, 8. / The missing number is 8.
+- Explanation, spoken: Count on. 5 6 7 8 Next is 8.
+- Explanation, shown: Count on: 5, 6, 7, 8. / Next is 8.
 - Explanation picture: 5, 6, 7, 8
 
 **Seed 2** (choice, look)
@@ -360,8 +360,8 @@
 - Picture: 6, 7, 8, blank
 - Options: 7 | 8 | **9**
 - Answer: 9
-- Explanation, spoken: Count along the row. 6 7 8 9 The missing number is 9.
-- Explanation, shown: Count along the row: 6, 7, 8, 9. / The missing number is 9.
+- Explanation, spoken: Count on. 6 7 8 9 Next is 9.
+- Explanation, shown: Count on: 6, 7, 8, 9. / Next is 9.
 - Explanation picture: 6, 7, 8, 9
 
 **Seed 3** (choice, look)
@@ -370,8 +370,8 @@
 - Picture: 6, 7, 8, blank
 - Options: 7 | 8 | **9**
 - Answer: 9
-- Explanation, spoken: Count along the row. 6 7 8 9 The missing number is 9.
-- Explanation, shown: Count along the row: 6, 7, 8, 9. / The missing number is 9.
+- Explanation, spoken: Count on. 6 7 8 9 Next is 9.
+- Explanation, shown: Count on: 6, 7, 8, 9. / Next is 9.
 - Explanation picture: 6, 7, 8, 9
 
 ### Level 2
@@ -382,8 +382,8 @@
 - Picture: 12, 13, 14, blank
 - Options: 13 | 14 | **15**
 - Answer: 15
-- Explanation, spoken: Count along the row. 12 13 14 15 The missing number is 15.
-- Explanation, shown: Count along the row: 12, 13, 14, 15. / The missing number is 15.
+- Explanation, spoken: Count on. 12 13 14 15 Next is 15.
+- Explanation, shown: Count on: 12, 13, 14, 15. / Next is 15.
 - Explanation picture: 12, 13, 14, 15
 
 **Seed 2** (choice, look)
@@ -392,8 +392,8 @@
 - Picture: 14, 15, 16, blank
 - Options: 15 | 16 | **17**
 - Answer: 17
-- Explanation, spoken: Count along the row. 14 15 16 17 The missing number is 17.
-- Explanation, shown: Count along the row: 14, 15, 16, 17. / The missing number is 17.
+- Explanation, spoken: Count on. 14 15 16 17 Next is 17.
+- Explanation, shown: Count on: 14, 15, 16, 17. / Next is 17.
 - Explanation picture: 14, 15, 16, 17
 
 **Seed 3** (choice, look)
@@ -402,8 +402,8 @@
 - Picture: 14, 15, 16, blank
 - Options: 15 | 16 | **17**
 - Answer: 17
-- Explanation, spoken: Count along the row. 14 15 16 17 The missing number is 17.
-- Explanation, shown: Count along the row: 14, 15, 16, 17. / The missing number is 17.
+- Explanation, spoken: Count on. 14 15 16 17 Next is 17.
+- Explanation, shown: Count on: 14, 15, 16, 17. / Next is 17.
 - Explanation picture: 14, 15, 16, 17
 
 ### Level 3
@@ -414,8 +414,8 @@
 - Picture: 35, 36, 37, blank
 - Options: 36 | 37 | **38**
 - Answer: 38
-- Explanation, spoken: Count along the row. 35 36 37 38 The missing number is 38.
-- Explanation, shown: Count along the row: 35, 36, 37, 38. / The missing number is 38.
+- Explanation, spoken: Count on. 35 36 37 38 Next is 38.
+- Explanation, shown: Count on: 35, 36, 37, 38. / Next is 38.
 - Explanation picture: 35, 36, 37, 38
 
 **Seed 2** (choice, look)
@@ -424,8 +424,8 @@
 - Picture: 38, 39, 40, blank
 - Options: 39 | 40 | **41**
 - Answer: 41
-- Explanation, spoken: Count along the row. 38 39 40 41 The missing number is 41.
-- Explanation, shown: Count along the row: 38, 39, 40, 41. / The missing number is 41.
+- Explanation, spoken: Count on. 38 39 40 41 Next is 41.
+- Explanation, shown: Count on: 38, 39, 40, 41. / Next is 41.
 - Explanation picture: 38, 39, 40, 41
 
 **Seed 3** (choice, look)
@@ -434,8 +434,8 @@
 - Picture: 38, 39, 40, blank
 - Options: 39 | 40 | **41**
 - Answer: 41
-- Explanation, spoken: Count along the row. 38 39 40 41 The missing number is 41.
-- Explanation, shown: Count along the row: 38, 39, 40, 41. / The missing number is 41.
+- Explanation, spoken: Count on. 38 39 40 41 Next is 41.
+- Explanation, shown: Count on: 38, 39, 40, 41. / Next is 41.
 - Explanation picture: 38, 39, 40, 41
 
 ### Level 4
@@ -445,8 +445,8 @@
 - On screen: What comes next?
 - Picture: 77, 78, 79, blank
 - Answer: type 80
-- Explanation, spoken: Count along the row. 77 78 79 80 The missing number is 80.
-- Explanation, shown: Count along the row: 77, 78, 79, 80. / The missing number is 80.
+- Explanation, spoken: Count on. 77 78 79 80 Next is 80.
+- Explanation, shown: Count on: 77, 78, 79, 80. / Next is 80.
 - Explanation picture: 77, 78, 79, 80
 
 **Seed 2** (numberPad, look)
@@ -454,8 +454,8 @@
 - On screen: What comes next?
 - Picture: 83, 84, 85, blank
 - Answer: type 86
-- Explanation, spoken: Count along the row. 83 84 85 86 The missing number is 86.
-- Explanation, shown: Count along the row: 83, 84, 85, 86. / The missing number is 86.
+- Explanation, spoken: Count on. 83 84 85 86 Next is 86.
+- Explanation, shown: Count on: 83, 84, 85, 86. / Next is 86.
 - Explanation picture: 83, 84, 85, 86
 
 **Seed 3** (numberPad, look)
@@ -463,16 +463,16 @@
 - On screen: What comes next?
 - Picture: 82, 83, 84, blank
 - Answer: type 85
-- Explanation, spoken: Count along the row. 82 83 84 85 The missing number is 85.
-- Explanation, shown: Count along the row: 82, 83, 84, 85. / The missing number is 85.
+- Explanation, spoken: Count on. 82 83 84 85 Next is 85.
+- Explanation, shown: Count on: 82, 83, 84, 85. / Next is 85.
 - Explanation picture: 82, 83, 84, 85
 
 ### Lesson
 
 - see: When we count, each number is one more. (picture: 1, 2, 3, 4, 5)
-- watch: Count along the row: 3, 4, 5, 6. The missing number is 6. (picture: 3, 4, 5, 6)
+- watch: Count on: 3, 4, 5, 6. Next is 6. (picture: 3, 4, 5, 6)
 - try: What comes next? (picture: 6, 7, 8, blank)
-  - then: Count along the row: 6, 7, 8, 9. The missing number is 9.
+  - then: Count on: 6, 7, 8, 9. Next is 9.
 - remember: Counting goes up by one. (picture: 1, 2, 3, 4, 5)
 
 ## M-K-A5 A.5 Before and after
@@ -1147,6 +1147,257 @@
   - then: 3 is the smallest. Then 4. Then 5.
 - remember: Smaller numbers come first when we count. (picture: number line from 1 to 10 by 1)
 
+## M-K-C1 C.1 Add with pictures to 5
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many in all?
+- Picture: 1 🐸 and 1 🐸
+- Options: 1 | **2** | 3
+- Answer: 2
+- Explanation, spoken: 1 and 1 more. Count them all. 2.
+- Explanation, shown: 1 and 1 more. / Count them all: 1, 2.
+- Explanation picture: 1 🐸 and 1 🐸
+
+**Seed 2** (choice, look)
+
+- On screen: How many in all?
+- Picture: 1 🍓 and 1 🍓
+- Options: 1 | **2** | 3
+- Answer: 2
+- Explanation, spoken: 1 and 1 more. Count them all. 2.
+- Explanation, shown: 1 and 1 more. / Count them all: 1, 2.
+- Explanation picture: 1 🍓 and 1 🍓
+
+**Seed 3** (choice, look)
+
+- On screen: How many in all?
+- Picture: 1 🍓 and 1 🍓
+- Options: **2** | 3 | 4
+- Answer: 2
+- Explanation, spoken: 1 and 1 more. Count them all. 2.
+- Explanation, shown: 1 and 1 more. / Count them all: 1, 2.
+- Explanation picture: 1 🍓 and 1 🍓
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🐸 and 2 🐸
+- Options: 2 | 3 | **4**
+- Answer: 4
+- Explanation, spoken: 2 and 2 more. Count them all. 4.
+- Explanation, shown: 2 and 2 more. / Count them all: 1, 2, 3, 4.
+- Explanation picture: 2 🐸 and 2 🐸
+
+**Seed 2** (choice, look)
+
+- On screen: How many in all?
+- Picture: 1 🍓 and 3 🍓
+- Options: 3 | **4** | 5
+- Answer: 4
+- Explanation, spoken: 1 and 3 more. Count them all. 4.
+- Explanation, shown: 1 and 3 more. / Count them all: 1, 2, 3, 4.
+- Explanation picture: 1 🍓 and 3 🍓
+
+**Seed 3** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🍓 and 2 🍓
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: 2 and 2 more. Count them all. 4.
+- Explanation, shown: 2 and 2 more. / Count them all: 1, 2, 3, 4.
+- Explanation picture: 2 🍓 and 2 🍓
+
+### Lesson
+
+- see: Adding puts groups together. Here are 2 apples and 1 more. (picture: 2 🍎 and 1 🍎)
+- watch: 1 and 2 more. Count them all: 1, 2, 3. (picture: 1 🍎 and 2 🍎)
+- try: How many in all? (picture: 3 ⭐ and 1 ⭐)
+  - then: 3 and 1 more. Count them all: 1, 2, 3, 4.
+- remember: Adding puts groups together. (picture: 2 🍎 and 1 🍎)
+
+## M-K-C2 C.2 Add to 5
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 1 plus 3 equals what?
+- Picture: 1 + 3 = □
+- Options: 3 | **4** | 6
+- Answer: 4
+- Explanation, spoken: Start at 3. Count on 1 more. 4.
+- Explanation, shown: Start at 3. / Count on 1 more: 4. / 1 + 3 = 4
+- Explanation picture: 1 + 3 = 4
+
+**Seed 2** (choice, look)
+
+- On screen: 1 plus 3 equals what?
+- Picture: 1 + 3 = □
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: Start at 3. Count on 1 more. 4.
+- Explanation, shown: Start at 3. / Count on 1 more: 4. / 1 + 3 = 4
+- Explanation picture: 1 + 3 = 4
+
+**Seed 3** (choice, look)
+
+- On screen: 1 plus 3 equals what?
+- Picture: 1 + 3 = □
+- Options: 2 | **4** | 6
+- Answer: 4
+- Explanation, spoken: Start at 3. Count on 1 more. 4.
+- Explanation, shown: Start at 3. / Count on 1 more: 4. / 1 + 3 = 4
+- Explanation picture: 1 + 3 = 4
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 4 plus 0 equals what?
+- Picture: 4 + 0 = □
+- Options: 3 | **4** | 5
+- Answer: 4
+- Explanation, spoken: Zero means none. 4 and none more is 4.
+- Explanation, shown: Zero means none. / 4 + 0 = 4
+- Explanation picture: 4 + 0 = 4
+
+**Seed 2** (choice, look)
+
+- On screen: 4 plus 0 equals what?
+- Picture: 4 + 0 = □
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: Zero means none. 4 and none more is 4.
+- Explanation, shown: Zero means none. / 4 + 0 = 4
+- Explanation picture: 4 + 0 = 4
+
+**Seed 3** (choice, look)
+
+- On screen: 4 plus 0 equals what?
+- Picture: 4 + 0 = □
+- Options: 0 | **4** | 5
+- Answer: 4
+- Explanation, spoken: Zero means none. 4 and none more is 4.
+- Explanation, shown: Zero means none. / 4 + 0 = 4
+- Explanation picture: 4 + 0 = 4
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 0 plus 4 equals what?
+- Picture: 0 + 4 = □
+- Answer: type 4
+- Explanation, spoken: Zero means none. 4 and none more is 4.
+- Explanation, shown: Zero means none. / 0 + 4 = 4
+- Explanation picture: 0 + 4 = 4
+
+**Seed 2** (numberPad, look)
+
+- On screen: 1 plus 3 equals what?
+- Picture: 1 + 3 = □
+- Answer: type 4
+- Explanation, spoken: Start at 3. Count on 1 more. 4.
+- Explanation, shown: Start at 3. / Count on 1 more: 4. / 1 + 3 = 4
+- Explanation picture: 1 + 3 = 4
+
+**Seed 3** (numberPad, look)
+
+- On screen: 0 plus 4 equals what?
+- Picture: 0 + 4 = □
+- Answer: type 4
+- Explanation, spoken: Zero means none. 4 and none more is 4.
+- Explanation, shown: Zero means none. / 0 + 4 = 4
+- Explanation picture: 0 + 4 = 4
+
+### Lesson
+
+- see: Adding puts groups together. 2 and 1 make 3. (picture: 2 🍎 and 1 🍌)
+- watch: 3 plus 1. Start at 3. Count on 1 more: 4. (picture: 3 + 1 = 4)
+- try: 2 plus 3 equals what? (picture: 2 + 3 = □)
+  - then: Start at 3. Count on 2 more: 4, 5.
+- remember: Start with the bigger number. (picture: number line from 0 to 5 by 1)
+
+## M-K-C3 C.3 Add with pictures to 10
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🐸 and 2 🐸
+- Options: 2 | 3 | **4**
+- Answer: 4
+- Explanation, spoken: 2 and 2 more. Count them all. 4.
+- Explanation, shown: 2 and 2 more. / Count them all: 1, 2, 3, 4.
+- Explanation picture: 2 🐸 and 2 🐸
+
+**Seed 2** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🍓 and 3 🍓
+- Options: 4 | **5** | 7
+- Answer: 5
+- Explanation, spoken: 2 and 3 more. Count them all. 5.
+- Explanation, shown: 2 and 3 more. / Count them all: 1, 2, 3, 4, 5.
+- Explanation picture: 2 🍓 and 3 🍓
+
+**Seed 3** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🍓 and 2 🍓
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: 2 and 2 more. Count them all. 4.
+- Explanation, shown: 2 and 2 more. / Count them all: 1, 2, 3, 4.
+- Explanation picture: 2 🍓 and 2 🍓
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: How many in all?
+- Picture: 3 🐸 and 3 🐸
+- Options: 3 | 5 | **6**
+- Answer: 6
+- Explanation, spoken: 3 and 3 more. Count them all. 6.
+- Explanation, shown: 3 and 3 more. / Count them all: 1, 2, 3, 4, 5, 6.
+- Explanation picture: 3 🐸 and 3 🐸, in rows of five
+
+**Seed 2** (choice, look)
+
+- On screen: How many in all?
+- Picture: 2 🍓 and 5 🍓
+- Options: 6 | **7** | 9
+- Answer: 7
+- Explanation, spoken: 2 and 5 more. Count them all. 7.
+- Explanation, shown: 2 and 5 more. / Count them all: 1, 2, 3, 4, 5, 6, 7.
+- Explanation picture: 2 🍓 and 5 🍓, in rows of five
+
+**Seed 3** (choice, look)
+
+- On screen: How many in all?
+- Picture: 3 🍓 and 3 🍓
+- Options: **6** | 7 | 8
+- Answer: 6
+- Explanation, spoken: 3 and 3 more. Count them all. 6.
+- Explanation, shown: 3 and 3 more. / Count them all: 1, 2, 3, 4, 5, 6.
+- Explanation picture: 3 🍓 and 3 🍓, in rows of five
+
+### Lesson
+
+- see: Adding puts groups together. Here are 4 apples and 2 more. (picture: 4 🍎 and 2 🍎)
+- watch: 3 and 4 more. Count them all: 1, 2, 3, 4, 5, 6, 7. (picture: 3 🍎 and 4 🍎, in rows of five)
+- try: How many in all? (picture: 5 ⭐ and 3 ⭐)
+  - then: 5 and 3 more. Count them all: 1, 2, 3, 4, 5, 6, 7, 8.
+- remember: Adding puts groups together. (picture: 4 🍎 and 2 🍎, in rows of five)
+
 ## M-K-C4 C.4 Add to 10
 
 ### Level 1
@@ -1278,6 +1529,801 @@
 - try: 3 plus 5 equals what? (picture: 3 + 5 = □)
   - then: Start at 5. Count on 3 more: 6, 7, 8.
 - remember: Start with the bigger number. (picture: number line from 0 to 10 by 1)
+
+## M-K-C5 C.5 Subtract with pictures to 5
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many are left?
+- Picture: 2 🐸, 1 crossed out
+- Options: 0 | **1** | 2
+- Answer: 1
+- Explanation, spoken: Start with 2. Take away 1. 1 is left.
+- Explanation, shown: Start with 2. / Take away 1. / 1 is left.
+- Explanation picture: 2 🐸, 1 crossed out
+
+**Seed 2** (choice, look)
+
+- On screen: How many are left?
+- Picture: 2 🍓, 1 crossed out
+- Options: **1** | 2 | 3
+- Answer: 1
+- Explanation, spoken: Start with 2. Take away 1. 1 is left.
+- Explanation, shown: Start with 2. / Take away 1. / 1 is left.
+- Explanation picture: 2 🍓, 1 crossed out
+
+**Seed 3** (choice, look)
+
+- On screen: How many are left?
+- Picture: 2 🍓, 1 crossed out
+- Options: **1** | 2 | 3
+- Answer: 1
+- Explanation, spoken: Start with 2. Take away 1. 1 is left.
+- Explanation, shown: Start with 2. / Take away 1. / 1 is left.
+- Explanation picture: 2 🍓, 1 crossed out
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: How many are left?
+- Picture: 4 🐸, 1 crossed out
+- Options: 1 | 2 | **3**
+- Answer: 3
+- Explanation, spoken: Start with 4. Take away 1. 3 are left.
+- Explanation, shown: Start with 4. / Take away 1. / 3 are left.
+- Explanation picture: 4 🐸, 1 crossed out
+
+**Seed 2** (choice, look)
+
+- On screen: How many are left?
+- Picture: 4 🍓, 3 crossed out
+- Options: **1** | 2 | 3
+- Answer: 1
+- Explanation, spoken: Start with 4. Take away 3. 1 is left.
+- Explanation, shown: Start with 4. / Take away 3. / 1 is left.
+- Explanation picture: 4 🍓, 3 crossed out
+
+**Seed 3** (choice, look)
+
+- On screen: How many are left?
+- Picture: 4 🍓, 1 crossed out
+- Options: 1 | **3** | 4
+- Answer: 3
+- Explanation, spoken: Start with 4. Take away 1. 3 are left.
+- Explanation, shown: Start with 4. / Take away 1. / 3 are left.
+- Explanation picture: 4 🍓, 1 crossed out
+
+### Lesson
+
+- see: Subtracting takes some away. A cross means one is gone. (picture: 3 🍎, 1 crossed out)
+- watch: Start with 4. Take away 1. 3 are left. (picture: 4 🍎, 1 crossed out)
+- try: How many are left? (picture: 5 ⭐, 2 crossed out)
+  - then: Start with 5. Take away 2. 3 are left.
+- remember: Subtracting takes some away. (picture: 4 🍎, 1 crossed out)
+
+## M-K-C6 C.6 Subtract to 5
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 5 take away 1 equals what?
+- Picture: 5 - 1 = □
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: Start with 5. Take away 1. 4 are left.
+- Explanation, shown: Start with 5. / Take away 1. / 4 are left.
+- Explanation picture: 5 ⚫, 1 crossed out
+
+**Seed 2** (choice, look)
+
+- On screen: 5 take away 2 equals what?
+- Picture: 5 - 2 = □
+- Options: 1 | **3** | 4
+- Answer: 3
+- Explanation, spoken: Start with 5. Take away 2. 3 are left.
+- Explanation, shown: Start with 5. / Take away 2. / 3 are left.
+- Explanation picture: 5 ⚫, 2 crossed out
+
+**Seed 3** (choice, look)
+
+- On screen: 5 take away 2 equals what?
+- Picture: 5 - 2 = □
+- Options: **3** | 5 | 7
+- Answer: 3
+- Explanation, spoken: Start with 5. Take away 2. 3 are left.
+- Explanation, shown: Start with 5. / Take away 2. / 3 are left.
+- Explanation picture: 5 ⚫, 2 crossed out
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 4 take away 4 equals what?
+- Picture: 4 - 4 = □
+- Options: **0** | 1 | 4
+- Answer: 0
+- Explanation, spoken: Start with 4. Take away 4. None are left.
+- Explanation, shown: Start with 4. / Take away 4. / None are left.
+- Explanation picture: 4 ⚫, 4 crossed out
+
+**Seed 2** (choice, look)
+
+- On screen: 4 take away 0 equals what?
+- Picture: 4 - 0 = □
+- Options: 3 | **4** | 5
+- Answer: 4
+- Explanation, spoken: Start with 4. Take away 0. 4 are left.
+- Explanation, shown: Start with 4. / Take away 0. / 4 are left.
+- Explanation picture: 4 ⚫
+
+**Seed 3** (choice, look)
+
+- On screen: 4 take away 4 equals what?
+- Picture: 4 - 4 = □
+- Options: **0** | 4 | 8
+- Answer: 0
+- Explanation, spoken: Start with 4. Take away 4. None are left.
+- Explanation, shown: Start with 4. / Take away 4. / None are left.
+- Explanation picture: 4 ⚫, 4 crossed out
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 4 take away 0 equals what?
+- Picture: 4 - 0 = □
+- Answer: type 4
+- Explanation, spoken: Start with 4. Take away 0. 4 are left.
+- Explanation, shown: Start with 4. / Take away 0. / 4 are left.
+- Explanation picture: 4 ⚫
+
+**Seed 2** (numberPad, look)
+
+- On screen: 4 take away 1 equals what?
+- Picture: 4 - 1 = □
+- Answer: type 3
+- Explanation, spoken: Start with 4. Take away 1. 3 are left.
+- Explanation, shown: Start with 4. / Take away 1. / 3 are left.
+- Explanation picture: 4 ⚫, 1 crossed out
+
+**Seed 3** (numberPad, look)
+
+- On screen: 4 take away 0 equals what?
+- Picture: 4 - 0 = □
+- Answer: type 4
+- Explanation, spoken: Start with 4. Take away 0. 4 are left.
+- Explanation, shown: Start with 4. / Take away 0. / 4 are left.
+- Explanation picture: 4 ⚫
+
+### Lesson
+
+- see: Subtracting takes some away. 3 take away 1 is 2. (picture: 3 🍎, 1 crossed out)
+- watch: 4 take away 1. Start with 4. Take away 1. 3 are left. (picture: 4 ⚫, 1 crossed out)
+- try: 5 take away 2 equals what? (picture: 5 - 2 = □)
+  - then: Start with 5. Take away 2. 3 are left.
+- remember: Subtracting takes some away. (picture: 4 - 1 = 3)
+
+## M-K-C7 C.7 Subtract to 10
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 6 take away 4 equals what?
+- Picture: 6 - 4 = □
+- Options: **2** | 3 | 6
+- Answer: 2
+- Explanation, spoken: Start with 6. Take away 4. 2 are left.
+- Explanation, shown: Start with 6. / Take away 4. / 2 are left.
+- Explanation picture: 6 ⚫, 4 crossed out, in rows of five
+
+**Seed 2** (choice, look)
+
+- On screen: 7 take away 1 equals what?
+- Picture: 7 - 1 = □
+- Options: 1 | **6** | 7
+- Answer: 6
+- Explanation, spoken: Start with 7. Take away 1. 6 are left.
+- Explanation, shown: Start with 7. / Take away 1. / 6 are left.
+- Explanation picture: 7 ⚫, 1 crossed out, in rows of five
+
+**Seed 3** (choice, look)
+
+- On screen: 7 take away 1 equals what?
+- Picture: 7 - 1 = □
+- Options: **6** | 7 | 8
+- Answer: 6
+- Explanation, spoken: Start with 7. Take away 1. 6 are left.
+- Explanation, shown: Start with 7. / Take away 1. / 6 are left.
+- Explanation picture: 7 ⚫, 1 crossed out, in rows of five
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 10 take away 1 equals what?
+- Picture: 10 - 1 = □
+- Options: **9** | 10 | 11
+- Answer: 9
+- Explanation, spoken: Start with 10. Take away 1. 9 are left.
+- Explanation, shown: Start with 10. / Take away 1. / 9 are left.
+- Explanation picture: 10 ⚫, 1 crossed out, in rows of five
+
+**Seed 2** (choice, look)
+
+- On screen: 10 take away 3 equals what?
+- Picture: 10 - 3 = □
+- Options: **7** | 8 | 10
+- Answer: 7
+- Explanation, spoken: Start with 10. Take away 3. 7 are left.
+- Explanation, shown: Start with 10. / Take away 3. / 7 are left.
+- Explanation picture: 10 ⚫, 3 crossed out, in rows of five
+
+**Seed 3** (choice, look)
+
+- On screen: 10 take away 3 equals what?
+- Picture: 10 - 3 = □
+- Options: **7** | 8 | 10
+- Answer: 7
+- Explanation, spoken: Start with 10. Take away 3. 7 are left.
+- Explanation, shown: Start with 10. / Take away 3. / 7 are left.
+- Explanation picture: 10 ⚫, 3 crossed out, in rows of five
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 9 take away 1 equals what?
+- Picture: 9 - 1 = □
+- Answer: type 8
+- Explanation, spoken: Start with 9. Take away 1. 8 are left.
+- Explanation, shown: Start with 9. / Take away 1. / 8 are left.
+- Explanation picture: 9 ⚫, 1 crossed out, in rows of five
+
+**Seed 2** (numberPad, look)
+
+- On screen: 9 take away 6 equals what?
+- Picture: 9 - 6 = □
+- Answer: type 3
+- Explanation, spoken: Start with 9. Take away 6. 3 are left.
+- Explanation, shown: Start with 9. / Take away 6. / 3 are left.
+- Explanation picture: 9 ⚫, 6 crossed out, in rows of five
+
+**Seed 3** (numberPad, look)
+
+- On screen: 9 take away 5 equals what?
+- Picture: 9 - 5 = □
+- Answer: type 4
+- Explanation, spoken: Start with 9. Take away 5. 4 are left.
+- Explanation, shown: Start with 9. / Take away 5. / 4 are left.
+- Explanation picture: 9 ⚫, 5 crossed out, in rows of five
+
+### Lesson
+
+- see: Subtracting takes some away. 5 take away 2 is 3. (picture: 5 🍎, 2 crossed out)
+- watch: 7 take away 3. Start with 7. Take away 3. 4 are left. (picture: 7 ⚫, 3 crossed out, in rows of five)
+- try: 9 take away 4 equals what? (picture: 9 - 4 = □)
+  - then: Start with 9. Take away 4. 5 are left.
+- remember: Subtracting takes some away. (picture: 7 - 3 = 4)
+
+## M-K-C8 C.8 Make 10
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 8 counters
+- Options: **2** | 3 | 8
+- Answer: 2
+- Explanation, spoken: 8 boxes are full. 2 are empty. 8 and 2 make 10.
+- Explanation, shown: 8 boxes are full. / 2 are empty. / 8 and 2 make 10.
+- Explanation picture: ten frame with 8 counters
+
+**Seed 2** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 8 counters
+- Options: 0 | **2** | 3
+- Answer: 2
+- Explanation, spoken: 8 boxes are full. 2 are empty. 8 and 2 make 10.
+- Explanation, shown: 8 boxes are full. / 2 are empty. / 8 and 2 make 10.
+- Explanation picture: ten frame with 8 counters
+
+**Seed 3** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 8 counters
+- Options: **2** | 3 | 8
+- Answer: 2
+- Explanation, spoken: 8 boxes are full. 2 are empty. 8 and 2 make 10.
+- Explanation, shown: 8 boxes are full. / 2 are empty. / 8 and 2 make 10.
+- Explanation picture: ten frame with 8 counters
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 6 counters
+- Options: **4** | 5 | 6
+- Answer: 4
+- Explanation, spoken: 6 boxes are full. 4 are empty. 6 and 4 make 10.
+- Explanation, shown: 6 boxes are full. / 4 are empty. / 6 and 4 make 10.
+- Explanation picture: ten frame with 6 counters
+
+**Seed 2** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 7 counters
+- Options: **3** | 4 | 7
+- Answer: 3
+- Explanation, spoken: 7 boxes are full. 3 are empty. 7 and 3 make 10.
+- Explanation, shown: 7 boxes are full. / 3 are empty. / 7 and 3 make 10.
+- Explanation picture: ten frame with 7 counters
+
+**Seed 3** (choice, look)
+
+- On screen: How many more to make 10?
+- Picture: ten frame with 7 counters
+- Options: **3** | 4 | 7
+- Answer: 3
+- Explanation, spoken: 7 boxes are full. 3 are empty. 7 and 3 make 10.
+- Explanation, shown: 7 boxes are full. / 3 are empty. / 7 and 3 make 10.
+- Explanation picture: ten frame with 7 counters
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 6 plus what equals 10?
+- Picture: 6 + □ = 10
+- Answer: type 4
+- Explanation, spoken: 6 boxes are full. 4 are empty. 6 and 4 make 10.
+- Explanation, shown: 6 boxes are full. / 4 are empty. / 6 and 4 make 10.
+- Explanation picture: ten frame with 6 counters
+
+**Seed 2** (numberPad, look)
+
+- On screen: 7 plus what equals 10?
+- Picture: 7 + □ = 10
+- Answer: type 3
+- Explanation, spoken: 7 boxes are full. 3 are empty. 7 and 3 make 10.
+- Explanation, shown: 7 boxes are full. / 3 are empty. / 7 and 3 make 10.
+- Explanation picture: ten frame with 7 counters
+
+**Seed 3** (numberPad, look)
+
+- On screen: 7 plus what equals 10?
+- Picture: 7 + □ = 10
+- Answer: type 3
+- Explanation, spoken: 7 boxes are full. 3 are empty. 7 and 3 make 10.
+- Explanation, shown: 7 boxes are full. / 3 are empty. / 7 and 3 make 10.
+- Explanation picture: ten frame with 7 counters
+
+### Lesson
+
+- see: A ten frame has 10 boxes. 5 and 5 make 10. (picture: ten frame with 5 counters)
+- watch: 8 boxes are full. 2 are empty. 8 and 2 make 10. (picture: ten frame with 8 counters)
+- try: How many more to make 10? (picture: ten frame with 6 counters)
+  - then: 6 boxes are full. 4 are empty. 6 and 4 make 10.
+- remember: Know your pairs that make 10. (picture: 7 + 3 = 10)
+
+## M-K-C9 C.9 Break apart numbers
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 4 is 1 and what?
+- Picture: 4 = 1 + □
+- Options: 1 | 2 | **3**
+- Answer: 3
+- Explanation, spoken: 1 and 3 make 4.
+- Explanation, shown: 1 and 3 make 4.
+- Explanation picture: 1 🔴 and 3 🔵
+
+**Seed 2** (choice, look)
+
+- On screen: 4 is 1 and what?
+- Picture: 4 = 1 + □
+- Options: 2 | **3** | 4
+- Answer: 3
+- Explanation, spoken: 1 and 3 make 4.
+- Explanation, shown: 1 and 3 make 4.
+- Explanation picture: 1 🔴 and 3 🔵
+
+**Seed 3** (choice, look)
+
+- On screen: 4 is 1 and what?
+- Picture: 4 = 1 + □
+- Options: 1 | **3** | 4
+- Answer: 3
+- Explanation, spoken: 1 and 3 make 4.
+- Explanation, shown: 1 and 3 make 4.
+- Explanation picture: 1 🔴 and 3 🔵
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 7 is 1 and what?
+- Picture: 7 = 1 + □
+- Options: 5 | **6** | 7
+- Answer: 6
+- Explanation, spoken: 1 and 6 make 7.
+- Explanation, shown: 1 and 6 make 7.
+- Explanation picture: 1 🔴 and 6 🔵, in rows of five
+
+**Seed 2** (choice, look)
+
+- On screen: 8 is 3 and what?
+- Picture: 8 = 3 + □
+- Options: **5** | 6 | 8
+- Answer: 5
+- Explanation, spoken: 3 and 5 make 8.
+- Explanation, shown: 3 and 5 make 8.
+- Explanation picture: 3 🔴 and 5 🔵, in rows of five
+
+**Seed 3** (choice, look)
+
+- On screen: 8 is 1 and what?
+- Picture: 8 = 1 + □
+- Options: 1 | **7** | 8
+- Answer: 7
+- Explanation, spoken: 1 and 7 make 8.
+- Explanation, shown: 1 and 7 make 8.
+- Explanation picture: 1 🔴 and 7 🔵, in rows of five
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: 10 is 1 and what?
+- Picture: 10 = 1 + □
+- Options: 1 | 8 | **9**
+- Answer: 9
+- Explanation, spoken: 1 and 9 make 10.
+- Explanation, shown: 1 and 9 make 10.
+- Explanation picture: 1 🔴 and 9 🔵, in rows of five
+
+**Seed 2** (choice, look)
+
+- On screen: 10 is 3 and what?
+- Picture: 10 = 3 + □
+- Options: **7** | 8 | 10
+- Answer: 7
+- Explanation, spoken: 3 and 7 make 10.
+- Explanation, shown: 3 and 7 make 10.
+- Explanation picture: 3 🔴 and 7 🔵, in rows of five
+
+**Seed 3** (choice, look)
+
+- On screen: 10 is 1 and what?
+- Picture: 10 = 1 + □
+- Options: 1 | **9** | 10
+- Answer: 9
+- Explanation, spoken: 1 and 9 make 10.
+- Explanation, shown: 1 and 9 make 10.
+- Explanation picture: 1 🔴 and 9 🔵, in rows of five
+
+### Lesson
+
+- see: A number can split into two parts. 5 is 2 and 3. (picture: 2 🔴 and 3 🔵)
+- watch: 4 is 1 and what? 1 and 3 make 4. (picture: 1 🔴 and 3 🔵)
+- try: 5 is 4 and what? (picture: 5 = 4 + □)
+  - then: 4 and 1 make 5.
+- remember: A number can split in many ways. (picture: 3 🔴 and 2 🔵)
+
+## M-K-C10 C.10 Addition stories
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 4 cookies are on the table. 1 more is in the box. How many cookies are there in all?
+- Picture: 4 🍪 and 1 🍪
+- Options: 4 | **5** | 7
+- Answer: 5
+- Explanation, spoken: 4 plus 1 is 5.
+- Explanation, shown: 4 plus 1 is 5.
+- Explanation picture: 4 + 1 = 5
+
+**Seed 2** (choice, look)
+
+- On screen: 3 balloons are on the table. 1 more is in the box. How many balloons are there in all?
+- Picture: 3 🎈 and 1 🎈
+- Options: 2 | 3 | **4**
+- Answer: 4
+- Explanation, spoken: 3 plus 1 is 4.
+- Explanation, shown: 3 plus 1 is 4.
+- Explanation picture: 3 + 1 = 4
+
+**Seed 3** (choice, look)
+
+- On screen: 1 flower is on the table. 1 more is in the box. How many flowers are there in all?
+- Picture: 1 🌸 and 1 🌸
+- Options: **2** | 3 | 4
+- Answer: 2
+- Explanation, spoken: 1 plus 1 is 2.
+- Explanation, shown: 1 plus 1 is 2.
+- Explanation picture: 1 + 1 = 2
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 9 cookies are on the table. 1 more is in the box. How many cookies are there in all?
+- Picture: 9 🍪, in rows of five and 1 🍪
+- Options: **10** | 11 | 12
+- Answer: 10
+- Explanation, spoken: 9 plus 1 is 10.
+- Explanation, shown: 9 plus 1 is 10.
+- Explanation picture: 9 + 1 = 10
+
+**Seed 2** (choice, look)
+
+- On screen: 7 balloons are on the table. 1 more is in the box. How many balloons are there in all?
+- Picture: 7 🎈, in rows of five and 1 🎈
+- Options: 6 | **8** | 9
+- Answer: 8
+- Explanation, spoken: 7 plus 1 is 8.
+- Explanation, shown: 7 plus 1 is 8.
+- Explanation picture: 7 + 1 = 8
+
+**Seed 3** (choice, look)
+
+- On screen: 4 flowers are on the table. 2 more are in the box. How many flowers are there in all?
+- Picture: 4 🌸 and 2 🌸
+- Options: 2 | **6** | 8
+- Answer: 6
+- Explanation, spoken: 4 plus 2 is 6.
+- Explanation, shown: 4 plus 2 is 6.
+- Explanation picture: 4 + 2 = 6
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: 9 cookies are on the table. 1 more is in the box. How many cookies are there in all?
+- Answer: type 10
+- Explanation, spoken: 9 plus 1 is 10.
+- Explanation, shown: 9 plus 1 is 10.
+- Explanation picture: 9 + 1 = 10
+
+**Seed 2** (numberPad, look)
+
+- On screen: 5 balloons are on the table. 1 more is in the box. How many balloons are there in all?
+- Answer: type 6
+- Explanation, spoken: 5 plus 1 is 6.
+- Explanation, shown: 5 plus 1 is 6.
+- Explanation picture: 5 + 1 = 6
+
+**Seed 3** (numberPad, look)
+
+- On screen: 1 flower is on the table. 1 more is in the box. How many flowers are there in all?
+- Answer: type 2
+- Explanation, spoken: 1 plus 1 is 2.
+- Explanation, shown: 1 plus 1 is 2.
+- Explanation picture: 1 + 1 = 2
+
+### Lesson
+
+- see: A story can tell us to add. Getting more means adding. (picture: 2 🍎 and 1 🍎)
+- watch: Sam has 2 apples. Sam gets 1 more. How many apples does Sam have now? 2 plus 1 is 3. (picture: 2 🍎 and 1 🍎)
+- try: 3 cookies are on the table. 2 more are in the box. How many cookies are there in all? (picture: 3 🍪 and 2 🍪)
+  - then: 3 plus 2 is 5.
+- remember: Listen for joining or taking away. (picture: 3 🍪 and 2 🍪)
+
+## M-K-C11 C.11 Subtraction stories
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: There are 5 cookies. Sam takes 4. How many are left?
+- Picture: 5 🍪, 4 crossed out
+- Options: **1** | 2 | 5
+- Answer: 1
+- Explanation, spoken: 5 take away 4 is 1.
+- Explanation, shown: 5 take away 4 is 1.
+- Explanation picture: 5 - 4 = 1
+
+**Seed 2** (choice, look)
+
+- On screen: There are 4 balloons. Mia takes 3. How many are left?
+- Picture: 4 🎈, 3 crossed out
+- Options: 0 | **1** | 2
+- Answer: 1
+- Explanation, spoken: 4 take away 3 is 1.
+- Explanation, shown: 4 take away 3 is 1.
+- Explanation picture: 4 - 3 = 1
+
+**Seed 3** (choice, look)
+
+- On screen: There are 2 flowers. Sam takes 1. How many are left?
+- Picture: 2 🌸, 1 crossed out
+- Options: **1** | 2 | 3
+- Answer: 1
+- Explanation, spoken: 2 take away 1 is 1.
+- Explanation, shown: 2 take away 1 is 1.
+- Explanation picture: 2 - 1 = 1
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: There are 10 cookies. Sam takes 9. How many are left?
+- Picture: 10 🍪, 9 crossed out, in rows of five
+- Options: **1** | 2 | 9
+- Answer: 1
+- Explanation, spoken: 10 take away 9 is 1.
+- Explanation, shown: 10 take away 9 is 1.
+- Explanation picture: 10 - 9 = 1
+
+**Seed 2** (choice, look)
+
+- On screen: There are 8 balloons. Mia takes 7. How many are left?
+- Picture: 8 🎈, 7 crossed out, in rows of five
+- Options: 0 | **1** | 7
+- Answer: 1
+- Explanation, spoken: 8 take away 7 is 1.
+- Explanation, shown: 8 take away 7 is 1.
+- Explanation picture: 8 - 7 = 1
+
+**Seed 3** (choice, look)
+
+- On screen: There are 6 flowers. Sam takes 4. How many are left?
+- Picture: 6 🌸, 4 crossed out, in rows of five
+- Options: 0 | **2** | 4
+- Answer: 2
+- Explanation, spoken: 6 take away 4 is 2.
+- Explanation, shown: 6 take away 4 is 2.
+- Explanation picture: 6 - 4 = 2
+
+### Level 3
+
+**Seed 1** (numberPad, look)
+
+- On screen: There are 10 cookies. Sam takes 9. How many are left?
+- Answer: type 1
+- Explanation, spoken: 10 take away 9 is 1.
+- Explanation, shown: 10 take away 9 is 1.
+- Explanation picture: 10 - 9 = 1
+
+**Seed 2** (numberPad, look)
+
+- On screen: There are 6 balloons. Mia takes 5. How many are left?
+- Answer: type 1
+- Explanation, spoken: 6 take away 5 is 1.
+- Explanation, shown: 6 take away 5 is 1.
+- Explanation picture: 6 - 5 = 1
+
+**Seed 3** (numberPad, look)
+
+- On screen: There are 2 flowers. Sam takes 1. How many are left?
+- Answer: type 1
+- Explanation, spoken: 2 take away 1 is 1.
+- Explanation, shown: 2 take away 1 is 1.
+- Explanation picture: 2 - 1 = 1
+
+### Lesson
+
+- see: A story can tell us to take away. Giving some away means taking away. (picture: 4 🍎, 1 crossed out)
+- watch: Leo has 4 apples. Leo gives away 1. How many apples are left? 4 take away 1 is 3. (picture: 4 🍎, 1 crossed out)
+- try: There are 5 cookies. Zoe takes 2. How many are left? (picture: 5 🍪, 2 crossed out)
+  - then: 5 take away 2 is 3.
+- remember: Listen for joining or taking away. (picture: 5 🍪, 2 crossed out)
+
+## M-K-D1 D.1 Teen numbers
+
+### Level 1
+
+**Seed 1** (choice, look)
+
+- On screen: 10 and 6 more is what number?
+- Picture: two ten frames with 16 counters
+- Options: 14 | 15 | **16**
+- Answer: 16
+- Explanation, spoken: A full ten and 6 more is 16.
+- Explanation, shown: A full ten and 6 more is 16.
+- Explanation picture: two ten frames with 16 counters
+
+**Seed 2** (choice, look)
+
+- On screen: 10 and 7 more is what number?
+- Picture: two ten frames with 17 counters
+- Options: 15 | 16 | **17**
+- Answer: 17
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+**Seed 3** (choice, look)
+
+- On screen: 10 and 7 more is what number?
+- Picture: two ten frames with 17 counters
+- Options: 15 | 16 | **17**
+- Answer: 17
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+### Level 2
+
+**Seed 1** (choice, look)
+
+- On screen: 10 plus 6 equals what?
+- Picture: 10 + 6 = □
+- Options: 14 | 15 | **16**
+- Answer: 16
+- Explanation, spoken: A full ten and 6 more is 16.
+- Explanation, shown: A full ten and 6 more is 16.
+- Explanation picture: two ten frames with 16 counters
+
+**Seed 2** (choice, look)
+
+- On screen: 10 plus 7 equals what?
+- Picture: 10 + 7 = □
+- Options: 15 | 16 | **17**
+- Answer: 17
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+**Seed 3** (choice, look)
+
+- On screen: 10 plus 7 equals what?
+- Picture: 10 + 7 = □
+- Options: 15 | 16 | **17**
+- Answer: 17
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+### Level 3
+
+**Seed 1** (choice, look)
+
+- On screen: 16 is 10 and what?
+- Picture: 16 = 10 + □
+- Options: **6** | 7 | 10
+- Answer: 6
+- Explanation, spoken: A full ten and 6 more is 16.
+- Explanation, shown: A full ten and 6 more is 16.
+- Explanation picture: two ten frames with 16 counters
+
+**Seed 2** (choice, look)
+
+- On screen: 17 is 10 and what?
+- Picture: 17 = 10 + □
+- Options: 1 | **7** | 8
+- Answer: 7
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+**Seed 3** (choice, look)
+
+- On screen: 17 is 10 and what?
+- Picture: 17 = 10 + □
+- Options: **7** | 8 | 10
+- Answer: 7
+- Explanation, spoken: A full ten and 7 more is 17.
+- Explanation, shown: A full ten and 7 more is 17.
+- Explanation picture: two ten frames with 17 counters
+
+### Lesson
+
+- see: Teen numbers are ten and some more. This is 13. (picture: two ten frames with 13 counters)
+- watch: A full ten and 5 more is 15. (picture: two ten frames with 15 counters)
+- try: 10 and 7 more is what number? (picture: two ten frames with 17 counters)
+  - then: A full ten and 7 more is 17.
+- remember: Teen numbers are ten and some more. (picture: 10 + 4 = 14)
 
 ## M-K-E1 E.1 Name flat shapes
 

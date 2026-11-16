@@ -8,6 +8,7 @@ import { missing } from './missing';
 import { oddOne } from './oddOne';
 import { order } from './order';
 import { pattern } from './pattern';
+import { place } from './place';
 import { sequence } from './sequence';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
@@ -29,4 +30,5 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   sortBy,
   matchEqual,
   shapeFacts,
+  place,
 };

@@ -110,10 +110,18 @@
 - `e2e/prek.spec.ts` saves a score straight into IndexedDB to reach each skill's hardest level, then checks the layout at every size. Copy it for each content step.
 - Not covered by a browser test: a correct answer at the hardest level of each skill. The 300-seed suite and the oracles cover correctness.
 - Step 13, Phase 6b (Math K, part 1), is built: categories A, B, E, F and G, 16 skills. Generators are grouped by family in `src/content/generators/math/k/`: `counting.ts` (A.1 to A.3), `numberRows.ts` (A.4 to A.7), `comparing.ts` (B.1, B.2), `shapes.ts` (E.1 to E.3), `measuring.ts` (F.1, F.2, G.1). `CATALOGUE_VERSION` is 3.
-- Kindergarten categories so far: A. Counting, B. Comparing, C. Addition, E. Shapes, F. Measuring and sorting, G. Patterns. Phase 6c fills C and adds D, and should rename C to cover subtraction too.
+- Kindergarten categories: A. Counting, B. Comparing, C. Adding and subtracting, D. Tens and ones, E. Shapes, F. Measuring and sorting, G. Patterns.
 - The `shapeFacts` oracle is written (`tests/oracles/shapeFacts.ts`). It refuses a star: points are not plain sides.
 - Turned shapes (E.1 level 3) leave out the diamond, because a turned diamond and a turned square are the same picture, and the circle, because a turn does not show.
 - B.1 level 3 mixes "Are the groups equal?" (Yes or No, fixed places) with more-or-fewer questions one apart. F.2 level 3 is a `choice` judged by the `compare` oracle, named in `facts.oracle`.
 - Tests that need a known set of today's picks call `masterAllBut([...])` (`tests/app/kidNav.test.tsx`), so they do not depend on how many skills exist.
 - `e2e/support/sweep.ts` holds the hardest-level layout sweep. Each content step adds one spec that calls `sweepHardestLevels` with its skills.
-- Next: step 14, Phase 6c, Math K part 2: categories C and D (12 skills), to the content gate.
+- Step 14, Phase 6c (Math K, part 2), is built: C.1 to C.3, C.5 to C.11 and D.1, so all 28 kindergarten Math skills exist. Files in `src/content/generators/math/k/`: `adding.ts` (C.1 to C.3), `subtracting.ts` (C.5 to C.7), `makeAndBreak.ts` (C.8, C.9), `stories.ts` (C.10, C.11), `teens.ts` (D.1). `CATALOGUE_VERSION` is 4.
+- `numerals.ts` has `numeralChoices`: three numerals in order with the child's likely slips as wrong answers. Use it for every number answer from now on. A small answer cannot sit last, so a level with small answers passes `weights` to keep the answer's place spread out. An answer of zero is always first, so keep zero answers to about a quarter of a level.
+- Story templates are in `src/content/data/storyProblems.ts`, all seven from the plan. `tellStory` in `stories.ts` fills them; it handles "1 apple is" against "2 apples are". A story with no name in it keeps no name in its facts.
+- The `place` oracle is written. Its asks: `number`, `hundredsDigit`, `tensDigit`, `onesDigit`, `hundredsValue`, `tensValue`, `onesValue`, `expanded`.
+- Wording the plan did not give: "How many are left?" for crossed-out pictures; "Zero means none." when a zero is added; "None are left." for an answer of zero; D.1 level 2 asks "10 plus 4 equals what?" and level 3 "16 is 10 and what?".
+- Speech longer than 12 words is said one sentence at a time (`saySegments`), so a story never runs past the 12-second limit.
+- Two groups of things side by side (`row` of `emojiGroup`) get a wide gap from one CSS rule in `visuals.module.css`.
+- `tests/content/mathKAddSubtract.test.ts` checks each level's rule from the plan table. Write one like it for every content step: the golden files catch any change, so they do not show a rule is right.
+- Next: step 15, Phase 6d, Language Arts pre-K.

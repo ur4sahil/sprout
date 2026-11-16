@@ -13,6 +13,7 @@ import { missing } from './missing';
 import { oddOne } from './oddOne';
 import { order } from './order';
 import { pattern } from './pattern';
+import { place } from './place';
 import { sequence } from './sequence';
 import { shapeFacts } from './shapeFacts';
 import { sortBy } from './sortBy';
@@ -200,7 +201,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'attribute', 'compare', 'count', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'sequence', 'shapeFacts', 'sortBy', 'subtract'],
+      ['add', 'attribute', 'compare', 'count', 'matchEqual', 'missing', 'oddOne', 'order', 'pattern', 'place', 'sequence', 'shapeFacts', 'sortBy', 'subtract'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
@@ -293,5 +294,38 @@ describe('shapeFacts', () => {
     expect(() => shapeFacts({ shape: 'star', ask: 'sides' })).toThrow(); // points, not plain sides: never asked
     expect(() => shapeFacts({ shape: 'square', ask: 'colour' })).toThrow();
     expect(() => shapeFacts({ shape: 'square' })).toThrow();
+  });
+});
+
+describe('place', () => {
+  it('puts the digits together into the number', () => {
+    expect(place({ hundreds: 0, tens: 1, ones: 4, ask: 'number' })).toEqual({ kind: 'value', value: 14 });
+    expect(place({ hundreds: 3, tens: 4, ones: 2, ask: 'number' })).toEqual({ kind: 'value', value: 342 });
+    expect(place({ hundreds: 0, tens: 0, ones: 0, ask: 'number' })).toEqual({ kind: 'value', value: 0 });
+    expect(place({ hundreds: 5, tens: 0, ones: 7, ask: 'number' })).toEqual({ kind: 'value', value: 507 });
+  });
+  it('gives one digit', () => {
+    expect(place({ hundreds: 0, tens: 1, ones: 6, ask: 'onesDigit' })).toEqual({ kind: 'value', value: 6 });
+    expect(place({ hundreds: 0, tens: 1, ones: 6, ask: 'tensDigit' })).toEqual({ kind: 'value', value: 1 });
+    expect(place({ hundreds: 9, tens: 1, ones: 6, ask: 'hundredsDigit' })).toEqual({ kind: 'value', value: 9 });
+  });
+  it('gives what a digit is worth', () => {
+    expect(place({ hundreds: 3, tens: 4, ones: 2, ask: 'hundredsValue' })).toEqual({ kind: 'value', value: 300 });
+    expect(place({ hundreds: 3, tens: 4, ones: 2, ask: 'tensValue' })).toEqual({ kind: 'value', value: 40 });
+    expect(place({ hundreds: 3, tens: 4, ones: 2, ask: 'onesValue' })).toEqual({ kind: 'value', value: 2 });
+  });
+  it('writes the expanded form, leaving out parts that are zero', () => {
+    expect(place({ hundreds: 3, tens: 4, ones: 2, ask: 'expanded' })).toEqual({ kind: 'value', value: '300 + 40 + 2' });
+    expect(place({ hundreds: 3, tens: 0, ones: 2, ask: 'expanded' })).toEqual({ kind: 'value', value: '300 + 2' });
+    expect(place({ hundreds: 0, tens: 1, ones: 0, ask: 'expanded' })).toEqual({ kind: 'value', value: '10' });
+    expect(place({ hundreds: 0, tens: 0, ones: 0, ask: 'expanded' })).toEqual({ kind: 'value', value: '0' });
+  });
+  it('refuses a digit that is missing, not whole or out of range, and an ask it does not know', () => {
+    expect(() => place({ tens: 1, ones: 4, ask: 'number' })).toThrow();
+    expect(() => place({ hundreds: 0, tens: 10, ones: 4, ask: 'number' })).toThrow();
+    expect(() => place({ hundreds: 0, tens: 1, ones: -1, ask: 'number' })).toThrow();
+    expect(() => place({ hundreds: 0, tens: 1.5, ones: 4, ask: 'number' })).toThrow();
+    expect(() => place({ hundreds: 0, tens: 1, ones: 4, ask: 'digits' })).toThrow();
+    expect(() => place({ hundreds: 0, tens: 1, ones: 4 })).toThrow();
   });
 });

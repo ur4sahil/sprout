@@ -1,0 +1,2981 @@
+{
+ "skillId": "M-K-C10",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "a": 2,
+   "b": 2,
+   "thing": "apple",
+   "story": "table",
+   "options": [
+    2,
+    3,
+    4
+   ]
+  },
+  "prompt": {
+   "text": "2 apples are on the table. 2 more are in the box. How many apples are there in all?",
+   "speak": [
+    {
+     "number": 2
+    },
+    "apples are on the table.",
+    {
+     "number": 2
+    },
+    "more are in the box.",
+    "How many apples are there in all?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 2,
+     "layout": "row"
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 2,
+     "layout": "row"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    {
+     "number": 2
+    },
+    "plus",
+    {
+     "number": 2
+    },
+    "is",
+    {
+     "number": 4
+    },
+    "."
+   ],
+   "steps": [
+    "2 plus 2 is 4."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     2,
+     "+",
+     2,
+     "=",
+     4
+    ]
+   }
+  },
+  "skillId": "M-K-C10",
+  "level": 1,
+  "seed": 40,
+  "key": "M-K-C10|1|{\"a\":2,\"b\":2,\"story\":\"table\",\"thing\":\"apple\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "thing": "cookie",
+     "story": "table",
+     "options": [
+      4,
+      5,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "4 cookies are on the table. 1 more is in the box. How many cookies are there in all?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "cookies are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many cookies are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 4,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "4 plus 1 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       1,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-K-C10|1|{\"a\":4,\"b\":1,\"story\":\"table\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "thing": "balloon",
+     "story": "table",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "3 balloons are on the table. 1 more is in the box. How many balloons are there in all?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "balloons are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many balloons are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "3 plus 1 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       1,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-K-C10|1|{\"a\":3,\"b\":1,\"story\":\"table\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 1,
+     "thing": "flower",
+     "story": "table",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "1 flower is on the table. 1 more is in the box. How many flowers are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "flower is on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many flowers are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 1 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-K-C10|1|{\"a\":1,\"b\":1,\"story\":\"table\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 1,
+     "thing": "car",
+     "story": "table",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "1 car is on the table. 1 more is in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "car is on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 1 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-K-C10|1|{\"a\":1,\"b\":1,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 3,
+     "thing": "car",
+     "story": "table",
+     "options": [
+      1,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "1 car is on the table. 3 more are in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "car is on the table.",
+      {
+       "number": 3
+      },
+      "more are in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 3 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       3,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-K-C10|1|{\"a\":1,\"b\":3,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 1,
+     "thing": "ball",
+     "story": "table",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "1 ball is on the table. 1 more is in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "ball is on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 1 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-K-C10|1|{\"a\":1,\"b\":1,\"story\":\"table\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 2,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "gets",
+     "options": [
+      2,
+      4,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 2 bananas. Sam gets 2 more. How many bananas does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 2
+      },
+      "bananas.",
+      "Sam gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "How many bananas does Sam have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 2,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "2 plus 2 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-K-C10|1|{\"a\":2,\"b\":2,\"name\":\"Sam\",\"story\":\"gets\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 2,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "gets",
+     "options": [
+      3,
+      4,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 2 balloons. Ava gets 2 more. How many balloons does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 2
+      },
+      "balloons.",
+      "Ava gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "How many balloons does Ava have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 2,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "2 plus 2 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-K-C10|1|{\"a\":2,\"b\":2,\"name\":\"Ava\",\"story\":\"gets\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 3,
+     "b": 2,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "gets",
+     "options": [
+      1,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 3 cars. Zoe gets 2 more. How many cars does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 3
+      },
+      "cars.",
+      "Zoe gets",
+      {
+       "number": 2
+      },
+      "more.",
+      "How many cars does Zoe have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "3 plus 2 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       2,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-K-C10|1|{\"a\":3,\"b\":2,\"name\":\"Zoe\",\"story\":\"gets\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 3,
+     "thing": "ball",
+     "story": "table",
+     "options": [
+      2,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "2 balls are on the table. 3 more are in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "balls are on the table.",
+      {
+       "number": 3
+      },
+      "more are in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 3,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "2 plus 3 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       3,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-K-C10|1|{\"a\":2,\"b\":3,\"story\":\"table\",\"thing\":\"ball\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "thing": "cookie",
+     "story": "table",
+     "options": [
+      10,
+      11,
+      12
+     ]
+    },
+    "prompt": {
+     "text": "9 cookies are on the table. 1 more is in the box. How many cookies are there in all?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "cookies are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many cookies are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 9,
+       "layout": "grid5"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "9 plus 1 is 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "+",
+       1,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-K-C10|2|{\"a\":9,\"b\":1,\"story\":\"table\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 1,
+     "thing": "balloon",
+     "story": "table",
+     "options": [
+      6,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "7 balloons are on the table. 1 more is in the box. How many balloons are there in all?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "balloons are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many balloons are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 7,
+       "layout": "grid5"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "7 plus 1 is 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-K-C10|2|{\"a\":7,\"b\":1,\"story\":\"table\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "thing": "flower",
+     "story": "table",
+     "options": [
+      2,
+      6,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "4 flowers are on the table. 2 more are in the box. How many flowers are there in all?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "flowers are on the table.",
+      {
+       "number": 2
+      },
+      "more are in the box.",
+      "How many flowers are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 4,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "4 plus 2 is 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-K-C10|2|{\"a\":4,\"b\":2,\"story\":\"table\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 4,
+     "thing": "car",
+     "story": "table",
+     "options": [
+      4,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "2 cars are on the table. 4 more are in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "cars are on the table.",
+      {
+       "number": 4
+      },
+      "more are in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 2,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "2 plus 4 is 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       4,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-K-C10|2|{\"a\":2,\"b\":4,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 8,
+     "thing": "car",
+     "story": "table",
+     "options": [
+      1,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "1 car is on the table. 8 more are in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "car is on the table.",
+      {
+       "number": 8
+      },
+      "more are in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 8,
+       "layout": "grid5"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 8 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       8,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-K-C10|2|{\"a\":1,\"b\":8,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 3,
+     "thing": "ball",
+     "story": "table",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "4 balls are on the table. 3 more are in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "balls are on the table.",
+      {
+       "number": 3
+      },
+      "more are in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 3,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "4 plus 3 is 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       3,
+       "=",
+       7
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-K-C10|2|{\"a\":4,\"b\":3,\"story\":\"table\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "gets",
+     "options": [
+      4,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 5 bananas. Sam gets 4 more. How many bananas does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 5
+      },
+      "bananas.",
+      "Sam gets",
+      {
+       "number": 4
+      },
+      "more.",
+      "How many bananas does Sam have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 5,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "5 plus 4 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       4,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-K-C10|2|{\"a\":5,\"b\":4,\"name\":\"Sam\",\"story\":\"gets\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "gets",
+     "options": [
+      4,
+      9,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 5 balloons. Ava gets 4 more. How many balloons does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 5
+      },
+      "balloons.",
+      "Ava gets",
+      {
+       "number": 4
+      },
+      "more.",
+      "How many balloons does Ava have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 5,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "5 plus 4 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       4,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-K-C10|2|{\"a\":5,\"b\":4,\"name\":\"Ava\",\"story\":\"gets\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 3,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "gets",
+     "options": [
+      4,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 7 cars. Zoe gets 3 more. How many cars does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 7
+      },
+      "cars.",
+      "Zoe gets",
+      {
+       "number": 3
+      },
+      "more.",
+      "How many cars does Zoe have now?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 7,
+       "layout": "grid5"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "7 plus 3 is 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       3,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-K-C10|2|{\"a\":7,\"b\":3,\"name\":\"Zoe\",\"story\":\"gets\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 5,
+     "thing": "ball",
+     "story": "table",
+     "options": [
+      5,
+      10,
+      12
+     ]
+    },
+    "prompt": {
+     "text": "5 balls are on the table. 5 more are in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "balls are on the table.",
+      {
+       "number": 5
+      },
+      "more are in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 5,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 5,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "5 plus 5 is 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       5,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-K-C10|2|{\"a\":5,\"b\":5,\"story\":\"table\",\"thing\":\"ball\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "thing": "cookie",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "9 cookies are on the table. 1 more is in the box. How many cookies are there in all?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "cookies are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many cookies are there in all?"
+     ]
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "9 plus 1 is 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "+",
+       1,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 1,
+    "key": "M-K-C10|3|{\"a\":9,\"b\":1,\"story\":\"table\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 1,
+     "thing": "balloon",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "5 balloons are on the table. 1 more is in the box. How many balloons are there in all?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "balloons are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many balloons are there in all?"
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "5 plus 1 is 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       1,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 2,
+    "key": "M-K-C10|3|{\"a\":5,\"b\":1,\"story\":\"table\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 1,
+     "thing": "flower",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "1 flower is on the table. 1 more is in the box. How many flowers are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "flower is on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many flowers are there in all?"
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 1 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 3,
+    "key": "M-K-C10|3|{\"a\":1,\"b\":1,\"story\":\"table\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 1,
+     "thing": "car",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "1 car is on the table. 1 more is in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "car is on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 1 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 4,
+    "key": "M-K-C10|3|{\"a\":1,\"b\":1,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 6,
+     "thing": "car",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "1 car is on the table. 6 more are in the box. How many cars are there in all?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "car is on the table.",
+      {
+       "number": 6
+      },
+      "more are in the box.",
+      "How many cars are there in all?"
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "1 plus 6 is 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       6,
+       "=",
+       7
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 5,
+    "key": "M-K-C10|3|{\"a\":1,\"b\":6,\"story\":\"table\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "ball",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "2 balls are on the table. 1 more is in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "balls are on the table.",
+      {
+       "number": 1
+      },
+      "more is in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "2 plus 1 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       1,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 6,
+    "key": "M-K-C10|3|{\"a\":2,\"b\":1,\"story\":\"table\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 4,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "gets"
+    },
+    "prompt": {
+     "text": "Sam has 4 bananas. Sam gets 4 more. How many bananas does Sam have now?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 4
+      },
+      "bananas.",
+      "Sam gets",
+      {
+       "number": 4
+      },
+      "more.",
+      "How many bananas does Sam have now?"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "4 plus 4 is 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       4,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 7,
+    "key": "M-K-C10|3|{\"a\":4,\"b\":4,\"name\":\"Sam\",\"story\":\"gets\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "gets"
+    },
+    "prompt": {
+     "text": "Ava has 5 balloons. Ava gets 3 more. How many balloons does Ava have now?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 5
+      },
+      "balloons.",
+      "Ava gets",
+      {
+       "number": 3
+      },
+      "more.",
+      "How many balloons does Ava have now?"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "5 plus 3 is 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       3,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 8,
+    "key": "M-K-C10|3|{\"a\":5,\"b\":3,\"name\":\"Ava\",\"story\":\"gets\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 3,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "gets"
+    },
+    "prompt": {
+     "text": "Zoe has 6 cars. Zoe gets 3 more. How many cars does Zoe have now?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 6
+      },
+      "cars.",
+      "Zoe gets",
+      {
+       "number": 3
+      },
+      "more.",
+      "How many cars does Zoe have now?"
+     ]
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "6 plus 3 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       3,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 9,
+    "key": "M-K-C10|3|{\"a\":6,\"b\":3,\"name\":\"Zoe\",\"story\":\"gets\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 5,
+     "thing": "ball",
+     "story": "table"
+    },
+    "prompt": {
+     "text": "4 balls are on the table. 5 more are in the box. How many balls are there in all?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "balls are on the table.",
+      {
+       "number": 5
+      },
+      "more are in the box.",
+      "How many balls are there in all?"
+     ]
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "4 plus 5 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       5,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C10",
+    "level": 3,
+    "seed": 10,
+    "key": "M-K-C10|3|{\"a\":4,\"b\":5,\"story\":\"table\",\"thing\":\"ball\"}"
+   }
+  ]
+ }
+}

@@ -18,8 +18,8 @@ test.describe('practice', () => {
     await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
     await checkScreen(page, 'home', 64);
     await shoot(page, 'home');
-    await page.getByRole('button', { name: /^Add to 10\./ }).click();
-    await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
+    // "Add to 10" is no longer one of the first picks, so it is opened from the Math page.
+    await openOnMath(page, 'Add to 10');
     await checkScreen(page, 'practice', 64);
     await shoot(page, 'practice');
 

@@ -2,12 +2,17 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { addPicturesTo10Generator, addPicturesTo5Generator, addTo5Generator } from './generators/math/k/adding';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
 import { generator as mkc4 } from './generators/math/k/M-K-C4';
+import { breakApartGenerator, makeTenGenerator } from './generators/math/k/makeAndBreak';
 import { compareLengthGenerator, patternsGenerator, sortAndCountGenerator } from './generators/math/k/measuring';
 import { beforeAndAfterGenerator, countByTensGenerator, missingNumberGenerator, whatComesNextGenerator } from './generators/math/k/numberRows';
+import { additionStoriesGenerator, subtractionStoriesGenerator } from './generators/math/k/stories';
+import { subtractPicturesTo5Generator, subtractTo10Generator, subtractTo5Generator } from './generators/math/k/subtracting';
+import { teenNumbersGenerator } from './generators/math/k/teens';
 import { nameFlatGenerator, nameSolidGenerator, sidesAndCornersGenerator } from './generators/math/k/shapes';
 import { generator as mpka1 } from './generators/math/pk/M-PK-A1';
 import { generator as mpka2 } from './generators/math/pk/M-PK-A2';
@@ -39,7 +44,18 @@ const ALL: readonly SkillGenerator[] = [
   moreFewerEqualGenerator,
   compareNumbersGenerator,
   mkb3,
+  addPicturesTo5Generator,
+  addTo5Generator,
+  addPicturesTo10Generator,
   mkc4,
+  subtractPicturesTo5Generator,
+  subtractTo5Generator,
+  subtractTo10Generator,
+  makeTenGenerator,
+  breakApartGenerator,
+  additionStoriesGenerator,
+  subtractionStoriesGenerator,
+  teenNumbersGenerator,
   nameFlatGenerator,
   nameSolidGenerator,
   sidesAndCornersGenerator,

@@ -72,7 +72,7 @@ describe('home', () => {
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     // One pick from each of the first three ladders that have a kindergarten skill to start on.
-    expect(await picksOnScreen()).toEqual(['M-K-A1', 'M-K-B1', ADD]);
+    expect(await picksOnScreen()).toEqual(['M-K-A1', 'M-K-B1', 'M-K-C1']);
     expect(screen.getByRole('button', { name: /Play/ })).toBeTruthy();
     expect(screen.getByRole('img', { name: '0 of 15 questions today' })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
@@ -90,9 +90,9 @@ describe('home', () => {
     await picksOnScreen();
     expect(screen.queryByText('Next up')).toBeNull();
     spoken.said.length = 0;
-    await user.click(screen.getByRole('button', { name: 'Hear the name: Add to 10' }));
+    await user.click(screen.getByRole('button', { name: 'Hear the name: Add with pictures to 5' }));
     expect(spoken.said).toHaveLength(1);
-    expect(JSON.stringify(spoken.said[0])).toContain('10');
+    expect(JSON.stringify(spoken.said[0])).toContain('5');
     // Hearing the name does not open the skill.
     expect(screen.queryByRole('region', { name: 'Question' })).toBeNull();
   });

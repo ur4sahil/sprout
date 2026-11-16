@@ -1,0 +1,2837 @@
+{
+ "skillId": "M-K-C11",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "a": 4,
+   "b": 1,
+   "thing": "strawberry",
+   "name": "Leo",
+   "story": "takes",
+   "options": [
+    1,
+    2,
+    3
+   ]
+  },
+  "prompt": {
+   "text": "There are 4 strawberries. Leo takes 1. How many are left?",
+   "speak": [
+    "There are",
+    {
+     "number": 4
+    },
+    "strawberries.",
+    "Leo takes",
+    {
+     "number": 1
+    },
+    ".",
+    "How many are left?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🍓",
+   "count": 4,
+   "layout": "row",
+   "crossed": 1
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "1",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 1
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    {
+     "number": 4
+    },
+    "take away",
+    {
+     "number": 1
+    },
+    "is",
+    {
+     "number": 3
+    },
+    "."
+   ],
+   "steps": [
+    "4 take away 1 is 3."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     4,
+     "-",
+     1,
+     "=",
+     3
+    ]
+   }
+  },
+  "skillId": "M-K-C11",
+  "level": 1,
+  "seed": 42,
+  "key": "M-K-C11|1|{\"a\":4,\"b\":1,\"name\":\"Leo\",\"story\":\"takes\",\"thing\":\"strawberry\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "thing": "cookie",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      1,
+      2,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "There are 5 cookies. Sam takes 4. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "cookies.",
+      "Sam takes",
+      {
+       "number": 4
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 5,
+     "layout": "row",
+     "crossed": 4
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "5 take away 4 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       4,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 1,
+    "key": "M-K-C11|1|{\"a\":5,\"b\":4,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 3,
+     "thing": "balloon",
+     "name": "Mia",
+     "story": "takes",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "There are 4 balloons. Mia takes 3. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "balloons.",
+      "Mia takes",
+      {
+       "number": 3
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 4,
+     "layout": "row",
+     "crossed": 3
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "4 take away 3 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       3,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 2,
+    "key": "M-K-C11|1|{\"a\":4,\"b\":3,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "flower",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "There are 2 flowers. Sam takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "flowers.",
+      "Sam takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌸",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "2 take away 1 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 3,
+    "key": "M-K-C11|1|{\"a\":2,\"b\":1,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "car",
+     "name": "Mia",
+     "story": "takes",
+     "options": [
+      0,
+      1,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "There are 2 cars. Mia takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "cars.",
+      "Mia takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "2 take away 1 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 4,
+    "key": "M-K-C11|1|{\"a\":2,\"b\":1,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "thing": "car",
+     "name": "Max",
+     "story": "takes",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "There are 4 cars. Max takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "cars.",
+      "Max takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 4,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "4 take away 1 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       1,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 5,
+    "key": "M-K-C11|1|{\"a\":4,\"b\":1,\"name\":\"Max\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "ball",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "There are 2 balls. Sam takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "balls.",
+      "Sam takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "2 take away 1 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 6,
+    "key": "M-K-C11|1|{\"a\":2,\"b\":1,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "givesAway",
+     "options": [
+      0,
+      2,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 4 bananas. Sam gives away 2. How many bananas are left?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 4
+      },
+      "bananas.",
+      "Sam gives away",
+      {
+       "number": 2
+      },
+      ".",
+      "How many bananas are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 4,
+     "layout": "row",
+     "crossed": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "4 take away 2 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       2,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 7,
+    "key": "M-K-C11|1|{\"a\":4,\"b\":2,\"name\":\"Sam\",\"story\":\"givesAway\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "givesAway",
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 4 balloons. Ava gives away 2. How many balloons are left?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 4
+      },
+      "balloons.",
+      "Ava gives away",
+      {
+       "number": 2
+      },
+      ".",
+      "How many balloons are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 4,
+     "layout": "row",
+     "crossed": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "4 take away 2 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       2,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 8,
+    "key": "M-K-C11|1|{\"a\":4,\"b\":2,\"name\":\"Ava\",\"story\":\"givesAway\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "givesAway",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 5 cars. Zoe gives away 3. How many cars are left?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 5
+      },
+      "cars.",
+      "Zoe gives away",
+      {
+       "number": 3
+      },
+      ".",
+      "How many cars are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 5,
+     "layout": "row",
+     "crossed": 3
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "5 take away 3 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 9,
+    "key": "M-K-C11|1|{\"a\":5,\"b\":3,\"name\":\"Zoe\",\"story\":\"givesAway\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 2,
+     "thing": "ball",
+     "name": "Zoe",
+     "story": "takes",
+     "options": [
+      1,
+      3,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "There are 5 balls. Zoe takes 2. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "balls.",
+      "Zoe takes",
+      {
+       "number": 2
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 5,
+     "layout": "row",
+     "crossed": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "5 take away 2 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       2,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 1,
+    "seed": 10,
+    "key": "M-K-C11|1|{\"a\":5,\"b\":2,\"name\":\"Zoe\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 9,
+     "thing": "cookie",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      1,
+      2,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "There are 10 cookies. Sam takes 9. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 10
+      },
+      "cookies.",
+      "Sam takes",
+      {
+       "number": 9
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 10,
+     "layout": "grid5",
+     "crossed": 9
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "take away",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "10 take away 9 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "-",
+       9,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 1,
+    "key": "M-K-C11|2|{\"a\":10,\"b\":9,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 7,
+     "thing": "balloon",
+     "name": "Mia",
+     "story": "takes",
+     "options": [
+      0,
+      1,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "There are 8 balloons. Mia takes 7. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 8
+      },
+      "balloons.",
+      "Mia takes",
+      {
+       "number": 7
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 8,
+     "layout": "grid5",
+     "crossed": 7
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "take away",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "8 take away 7 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       7,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 2,
+    "key": "M-K-C11|2|{\"a\":8,\"b\":7,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 4,
+     "thing": "flower",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      0,
+      2,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "There are 6 flowers. Sam takes 4. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "flowers.",
+      "Sam takes",
+      {
+       "number": 4
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌸",
+     "count": 6,
+     "layout": "grid5",
+     "crossed": 4
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "take away",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "6 take away 4 is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       4,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 3,
+    "key": "M-K-C11|2|{\"a\":6,\"b\":4,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "thing": "car",
+     "name": "Mia",
+     "story": "takes",
+     "options": [
+      2,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "There are 6 cars. Mia takes 2. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "cars.",
+      "Mia takes",
+      {
+       "number": 2
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 6,
+     "layout": "grid5",
+     "crossed": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "6 take away 2 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 4,
+    "key": "M-K-C11|2|{\"a\":6,\"b\":2,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "thing": "car",
+     "name": "Max",
+     "story": "takes",
+     "options": [
+      7,
+      8,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "There are 9 cars. Max takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 9
+      },
+      "cars.",
+      "Max takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 9,
+     "layout": "grid5",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "9 take away 1 is 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       1,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 5,
+    "key": "M-K-C11|2|{\"a\":9,\"b\":1,\"name\":\"Max\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 4,
+     "thing": "ball",
+     "name": "Sam",
+     "story": "takes",
+     "options": [
+      3,
+      4,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "There are 7 balls. Sam takes 4. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 7
+      },
+      "balls.",
+      "Sam takes",
+      {
+       "number": 4
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 7,
+     "layout": "grid5",
+     "crossed": 4
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "take away",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "7 take away 4 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "-",
+       4,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 6,
+    "key": "M-K-C11|2|{\"a\":7,\"b\":4,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 5,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "givesAway",
+     "options": [
+      2,
+      4,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 9 bananas. Sam gives away 5. How many bananas are left?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 9
+      },
+      "bananas.",
+      "Sam gives away",
+      {
+       "number": 5
+      },
+      ".",
+      "How many bananas are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 9,
+     "layout": "grid5",
+     "crossed": 5
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "take away",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "9 take away 5 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       5,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 7,
+    "key": "M-K-C11|2|{\"a\":9,\"b\":5,\"name\":\"Sam\",\"story\":\"givesAway\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 5,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "givesAway",
+     "options": [
+      3,
+      4,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 9 balloons. Ava gives away 5. How many balloons are left?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 9
+      },
+      "balloons.",
+      "Ava gives away",
+      {
+       "number": 5
+      },
+      ".",
+      "How many balloons are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 9,
+     "layout": "grid5",
+     "crossed": 5
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "take away",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "9 take away 5 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       5,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 8,
+    "key": "M-K-C11|2|{\"a\":9,\"b\":5,\"name\":\"Ava\",\"story\":\"givesAway\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 7,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "givesAway",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 10 cars. Zoe gives away 7. How many cars are left?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 10
+      },
+      "cars.",
+      "Zoe gives away",
+      {
+       "number": 7
+      },
+      ".",
+      "How many cars are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 10,
+     "layout": "grid5",
+     "crossed": 7
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "take away",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "10 take away 7 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "-",
+       7,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 9,
+    "key": "M-K-C11|2|{\"a\":10,\"b\":7,\"name\":\"Zoe\",\"story\":\"givesAway\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 5,
+     "thing": "ball",
+     "name": "Zoe",
+     "story": "takes",
+     "options": [
+      3,
+      5,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "There are 10 balls. Zoe takes 5. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 10
+      },
+      "balls.",
+      "Zoe takes",
+      {
+       "number": 5
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 10,
+     "layout": "grid5",
+     "crossed": 5
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "take away",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "10 take away 5 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "-",
+       5,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 2,
+    "seed": 10,
+    "key": "M-K-C11|2|{\"a\":10,\"b\":5,\"name\":\"Zoe\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 9,
+     "thing": "cookie",
+     "name": "Sam",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 10 cookies. Sam takes 9. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 10
+      },
+      "cookies.",
+      "Sam takes",
+      {
+       "number": 9
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "take away",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "10 take away 9 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "-",
+       9,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 1,
+    "key": "M-K-C11|3|{\"a\":10,\"b\":9,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 5,
+     "thing": "balloon",
+     "name": "Mia",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 6 balloons. Mia takes 5. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "balloons.",
+      "Mia takes",
+      {
+       "number": 5
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "take away",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "6 take away 5 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       5,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 2,
+    "key": "M-K-C11|3|{\"a\":6,\"b\":5,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "flower",
+     "name": "Sam",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 2 flowers. Sam takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "flowers.",
+      "Sam takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "2 take away 1 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 3,
+    "key": "M-K-C11|3|{\"a\":2,\"b\":1,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"flower\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "thing": "car",
+     "name": "Mia",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 2 cars. Mia takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "cars.",
+      "Mia takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "2 take away 1 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 4,
+    "key": "M-K-C11|3|{\"a\":2,\"b\":1,\"name\":\"Mia\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 1,
+     "thing": "car",
+     "name": "Max",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 7 cars. Max takes 1. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 7
+      },
+      "cars.",
+      "Max takes",
+      {
+       "number": 1
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "7 take away 1 is 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "-",
+       1,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 5,
+    "key": "M-K-C11|3|{\"a\":7,\"b\":1,\"name\":\"Max\",\"story\":\"takes\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 3,
+     "b": 2,
+     "thing": "ball",
+     "name": "Sam",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 3 balls. Sam takes 2. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 3
+      },
+      "balls.",
+      "Sam takes",
+      {
+       "number": 2
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "3 take away 2 is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "-",
+       2,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 6,
+    "key": "M-K-C11|3|{\"a\":3,\"b\":2,\"name\":\"Sam\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 4,
+     "thing": "banana",
+     "name": "Sam",
+     "story": "givesAway"
+    },
+    "prompt": {
+     "text": "Sam has 8 bananas. Sam gives away 4. How many bananas are left?",
+     "speak": [
+      "Sam has",
+      {
+       "number": 8
+      },
+      "bananas.",
+      "Sam gives away",
+      {
+       "number": 4
+      },
+      ".",
+      "How many bananas are left?"
+     ]
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "take away",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "8 take away 4 is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       4,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 7,
+    "key": "M-K-C11|3|{\"a\":8,\"b\":4,\"name\":\"Sam\",\"story\":\"givesAway\",\"thing\":\"banana\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 5,
+     "thing": "balloon",
+     "name": "Ava",
+     "story": "givesAway"
+    },
+    "prompt": {
+     "text": "Ava has 8 balloons. Ava gives away 5. How many balloons are left?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 8
+      },
+      "balloons.",
+      "Ava gives away",
+      {
+       "number": 5
+      },
+      ".",
+      "How many balloons are left?"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "take away",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "8 take away 5 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       5,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 8,
+    "key": "M-K-C11|3|{\"a\":8,\"b\":5,\"name\":\"Ava\",\"story\":\"givesAway\",\"thing\":\"balloon\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 6,
+     "thing": "car",
+     "name": "Zoe",
+     "story": "givesAway"
+    },
+    "prompt": {
+     "text": "Zoe has 9 cars. Zoe gives away 6. How many cars are left?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 9
+      },
+      "cars.",
+      "Zoe gives away",
+      {
+       "number": 6
+      },
+      ".",
+      "How many cars are left?"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "take away",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "9 take away 6 is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       6,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 9,
+    "key": "M-K-C11|3|{\"a\":9,\"b\":6,\"name\":\"Zoe\",\"story\":\"givesAway\",\"thing\":\"car\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 4,
+     "thing": "ball",
+     "name": "Zoe",
+     "story": "takes"
+    },
+    "prompt": {
+     "text": "There are 9 balls. Zoe takes 4. How many are left?",
+     "speak": [
+      "There are",
+      {
+       "number": 9
+      },
+      "balls.",
+      "Zoe takes",
+      {
+       "number": 4
+      },
+      ".",
+      "How many are left?"
+     ]
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "take away",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "9 take away 4 is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       4,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C11",
+    "level": 3,
+    "seed": 10,
+    "key": "M-K-C11|3|{\"a\":9,\"b\":4,\"name\":\"Zoe\",\"story\":\"takes\",\"thing\":\"ball\"}"
+   }
+  ]
+ }
+}

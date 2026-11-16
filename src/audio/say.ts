@@ -74,7 +74,17 @@ export function saySegments(say: Say, hasClip: (key: string) => boolean = () => 
       out.push(segment);
     }
   }
-  return out.filter((segment) => segment.kind === 'clip' || segment.text.trim().length > 0);
+  return out.filter((segment) => segment.kind === 'clip' || segment.text.trim().length > 0).flatMap((segment) => (segment.kind === 'voice' ? sentences(segment.text) : [segment]));
+}
+
+// Long speech, such as a story, is said one sentence at a time. Some phones cut off an utterance
+// that runs too long (plan section 9), and a pause between sentences helps a child follow.
+const LONG_WORDS = 12;
+
+function sentences(text: string): Segment[] {
+  if (text.trim().split(/\s+/).length <= LONG_WORDS) return [{ kind: 'voice', text }];
+  const parts = text.match(/[^.?!]+[.?!]+|[^.?!]+$/g) ?? [text];
+  return parts.map((part) => part.trim()).filter((part) => part.length > 0).map((part) => ({ kind: 'voice', text: part }));
 }
 
 // The whole thing as one string for the device voice, with no clips.

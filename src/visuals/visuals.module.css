@@ -88,6 +88,11 @@
   max-width: 100%;
 }
 
+/* Groups of things side by side stand clearly apart, so two groups read as two. */
+.line:has(> .group) {
+  column-gap: var(--space-7);
+}
+
 .equation {
   display: inline-flex;
   align-items: center;

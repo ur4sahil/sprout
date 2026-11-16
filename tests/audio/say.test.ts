@@ -58,6 +58,23 @@ describe('letter names', () => {
 });
 
 describe('saySegments', () => {
+  it('says long speech one sentence at a time, and leaves short speech as one piece', () => {
+    const story = saySegments(['Sam has', { number: 4 }, 'apples.', 'Sam gets', { number: 3 }, 'more.', 'How many apples does Sam have now?']);
+    expect(story).toEqual([
+      { kind: 'voice', text: 'Sam has four apples.' },
+      { kind: 'voice', text: 'Sam gets three more.' },
+      { kind: 'voice', text: 'How many apples does Sam have now?' },
+    ]);
+    // Twelve words or fewer stay together, even with two sentences.
+    expect(saySegments(['Start with', { number: 5 }, '. Take away', { number: 2 }, '.', { number: 3 }, 'are left.'])).toHaveLength(1);
+    // Long speech with no sentence end stays whole, and nothing is lost.
+    const long = 'one two three four five six seven eight nine ten eleven twelve thirteen';
+    expect(saySegments([long])).toEqual([{ kind: 'voice', text: long }]);
+    expect(sayWords(['Sam has', { number: 4 }, 'apples.', 'Sam gets', { number: 3 }, 'more.', 'How many apples does Sam have now?'])).toBe(
+      'Sam has four apples. Sam gets three more. How many apples does Sam have now?',
+    );
+  });
+
   it('the letter a, the word "a" and the "a" inside a sentence are three different things', () => {
     expect(saySegments([{ letter: 'a' }])).toEqual([{ kind: 'voice', text: 'ay' }]);
     expect(saySegments([{ word: 'a' }])).toEqual([{ kind: 'voice', text: 'a' }]);
