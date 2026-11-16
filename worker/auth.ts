@@ -42,7 +42,13 @@ const loginBody = z.object({
 export function json(status: number, body: unknown, headers: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', ...headers },
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
+      'Strict-Transport-Security': 'max-age=31536000',
+      'X-Content-Type-Options': 'nosniff',
+      ...headers,
+    },
   });
 }
 

@@ -48,4 +48,6 @@
 - `APP_ORIGIN` is a plain setting next to `ENVIRONMENT`. The Worker compares the `Origin` header of every write against it.
 - Local run: copy `.dev.vars.example` to `.dev.vars`, run `npx wrangler d1 execute sprout --local --file worker/schema.sql` once, then `npm run dev:worker` and `npm run dev`. The sign-in code is printed in the Worker's terminal.
 - The app is live at `https://sprout.logstocks.com`. Workers Builds is connected to this repo: a push to `main` runs `npm run verify`, then `npx wrangler deploy`.
+- Browser tests were brought forward from Phase 4a at the owner's request. `npm run e2e` builds the app, starts the real Worker locally over HTTPS with a throwaway database, and drives every account screen in WebKit (iPad landscape, iPad portrait, phone, 360 px) and Chromium. `npm run e2e:live` runs read-only checks on the live site and never asks for a code. Neither runs in `npm run verify` or in the cloud build. Every new screen and button gets a browser test in the same phase.
+- `public/_headers` sets the safety headers for pages and files. A Cloudflare redirect rule, for the Sprout address only, sends plain http to https.
 - Next: step 3, Phase 1, engine core.

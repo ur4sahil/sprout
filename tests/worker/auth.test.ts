@@ -356,6 +356,10 @@ describe('the guard over /api', () => {
     h.advance(61_000);
     const cases = [
       { origin: 'https://evil.example.com' },
+      { origin: ORIGIN.replace('https://', 'http://') },
+      { origin: `${ORIGIN}:8443` },
+      { origin: `${ORIGIN}.example.com` },
+      { origin: 'null' },
       { origin: null },
       { contentType: 'text/plain' },
       { contentType: 'application/x-www-form-urlencoded' },
@@ -371,9 +375,11 @@ describe('the guard over /api', () => {
     expect((await h.call('GET', '/api/auth/session', undefined, { cookie })).status).toBe(200);
   });
 
-  it('never caches a reply', async () => {
+  it('never caches a reply, and sends the safety headers', async () => {
     const reply = await h.call('POST', '/api/auth/start', { email: PARENT });
     expect(reply.headers.get('Cache-Control')).toBe('no-store');
+    expect(reply.headers.get('Strict-Transport-Security')).toBe('max-age=31536000');
+    expect(reply.headers.get('X-Content-Type-Options')).toBe('nosniff');
   });
 
   it('answers 500 without detail when the store fails, and logs nothing private', async () => {
