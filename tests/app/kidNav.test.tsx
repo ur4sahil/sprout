@@ -133,7 +133,12 @@ describe('the subject page', () => {
     expect([...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'))).toEqual([ORDER, ADD]);
     expect(document.querySelectorAll('section h2').length).toBe(2); // two categories, one band each
     await user.click(screen.getByRole('tab', { name: 'Pre-K' }));
-    expect([...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'))).toEqual(['M-PK-A2']);
+    // Pre-K: 16 skills in 4 lettered categories, in catalogue order.
+    const preK = [...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'));
+    expect(preK).toHaveLength(16);
+    expect(preK.slice(0, 3)).toEqual(['M-PK-A1', 'M-PK-A2', 'M-PK-A3']);
+    expect(preK.at(-1)).toBe('M-PK-D3');
+    expect([...document.querySelectorAll('section h2')].map((el) => el.textContent)).toEqual(['A. Counting', 'B. Comparing', 'C. Shapes and sizes', 'D. Patterns and sorting']);
     await user.click(screen.getByRole('button', { name: 'Back to home' }));
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
   });

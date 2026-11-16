@@ -77,7 +77,6 @@
 - `usePractice` (in `src/app/`) runs one child on one skill. Each answer is saved (attempt, skill state, session) before the next question shows. A failed save keeps the question and reuses the same attempt on retry, so nothing is saved twice.
 - Child setup opens from the profile picker for now. Phase 8a moves it behind the PIN gate.
 - Browser tests are silent: `e2e/support/fixtures.ts` swaps the page's voice for a silent stand-in and removes audio output. A test checks that it is in place.
-- Not covered by a test yet: a pre-K child answering a choice with one tap, because every option in the three skills so far says its number when tapped. Test it with the first skill whose options carry no spoken label.
 - Step 9, Phase 5b (kid navigation and lessons), is built: home with the daily goal ring, Play and today's picks, subject pages with grade tabs, the lesson player (four beats, and an example shown step by step), review sessions, the kid lock, the daily limit screen and the screen wake lock.
 - `childDay.ts` (in `src/app/`) works out a child's day in one place: picks, answers and minutes today, reviews due, and whether the daily limit is reached. Home, Play, Review and Practice all read it. Minutes are the sum of the day's answer times.
 - Kid lock: leaving practice or a review takes a 2-second hold (`HoldButton`). The step from the profile picker to home is the only history entry kid navigation adds. While a child is chosen, `App.tsx` never draws a step back in history: it keeps the screen as it was and steps forward again.
@@ -102,4 +101,12 @@
 - The device record is changed by several background jobs. App code changes it only with `repo.updateDeviceState({ field })`, which takes turns with every other write. Never read it, wait, and write the whole record back.
 - Every browser-test address belongs to one test family, so all tests would share one backup. By default `e2e/support/fixtures.ts` answers `/api/backup` with "no file". `test.use({ realBackup: true })` turns the real one on; such a test names its child with `freshName()`. The offline project needs it, because Playwright's request interception stops a new service worker taking over.
 - `BackupStatus` is built and tested but not on a screen yet. Phase 8b puts it on the parent data screen.
-- Next: step 12, Phase 6a, Math pre-K: the data files and 16 skills, to the content gate in plan section 12.
+- Step 12, Phase 6a (Math pre-K), is built: all 16 skills, in `src/content/generators/math/pk/`. `parts.ts` holds what they share; `findNumber.ts` and `moreFewer.ts` each make two skills. `CATALOGUE_VERSION` is 2.
+- Pre-K categories: A. Counting, B. Comparing, C. Shapes and sizes, D. Patterns and sorting. The plan gives the letters, not the names.
+- A question that turns on telling two colours apart (D.1, D.2, D.3 at level 1) takes its colours from `twoClearColors`, which leaves out pairs that are easy to mix up on a screen. The plan names two such pairs; the list in `parts.ts` adds six more.
+- Dot cards use ⚫, and 🔴 with 🔵 for two colours. A heart's fact line ("two round tops and a point at the bottom") is not in the plan's shape facts.
+- A counting skill whose answers sit near the top of its range passes `preferMiddle` to `nearbyNumbers`, or the answer lands on the last option too often.
+- Sorting: with an item in hand, a tap anywhere in a group drops it there, even on a picture already inside.
+- `e2e/prek.spec.ts` saves a score straight into IndexedDB to reach each skill's hardest level, then checks the layout at every size. Copy it for each content step.
+- Not covered by a browser test: a correct answer at the hardest level of each skill. The 300-seed suite and the oracles cover correctness.
+- Next: step 13, Phase 6b, Math K part 1: categories A, B, E, F, G (16 skills), to the content gate.

@@ -75,6 +75,9 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
                     disabled={disabled}
                     data-placed={index}
                     onClick={(event) => {
+                      // With an item in hand, a tap anywhere in the group drops it there, even on a picture
+                      // already inside. Only with empty hands does a tap take this one out.
+                      if (held !== null) return;
                       event.stopPropagation();
                       update(bins.map((value, i) => (i === index ? null : value)));
                     }}

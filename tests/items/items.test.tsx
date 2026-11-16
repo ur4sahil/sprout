@@ -249,6 +249,19 @@ describe('SortItem', () => {
     expect(last()).toEqual({ bins: [0, 1, 0] });
   });
 
+  it('with an item in hand, a tap on a picture already in a group drops the item there, and takes nothing out', async () => {
+    const { user, last } = setup(question);
+    await tap(user, '[data-item="0"]');
+    await tap(user, '[data-bin="0"]');
+    await tap(user, '[data-item="2"]');
+    // A small finger lands on the cat that is already in the group, not on the empty part of the box.
+    await tap(user, '[data-placed="0"]');
+    expect(document.querySelectorAll('[data-bin="0"] [data-placed]')).toHaveLength(2);
+    await tap(user, '[data-item="1"]');
+    await tap(user, '[data-bin="1"]');
+    expect(last()).toEqual({ bins: [0, 1, 0] });
+  });
+
   it('tapping the held item again puts it down', async () => {
     const { user, responses } = setup(question);
     await tap(user, '[data-item="0"]');

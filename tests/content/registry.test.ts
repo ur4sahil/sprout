@@ -158,3 +158,35 @@ describe('registry', () => {
     }
   });
 });
+
+describe('colours a child has to tell apart', () => {
+  it('never pairs two that are easy to mix up', async () => {
+    const { easyToTellApart, twoClearColors } = await import('../../src/content/generators/math/pk/parts');
+    const { makeRng } = await import('../../src/engine/rng');
+    expect(easyToTellApart('red', 'green')).toBe(false);
+    expect(easyToTellApart('green', 'red')).toBe(false);
+    expect(easyToTellApart('blue', 'purple')).toBe(false);
+    expect(easyToTellApart('brown', 'black')).toBe(false);
+    expect(easyToTellApart('red', 'red')).toBe(false);
+    expect(easyToTellApart('red', 'blue')).toBe(true);
+    const seen = new Set<string>();
+    for (let seed = 1; seed <= 500; seed += 1) {
+      const [one, two] = twoClearColors(makeRng(seed));
+      expect(easyToTellApart(one, two), `${one} with ${two}`).toBe(true);
+      seen.add([one, two].sort().join('+'));
+    }
+    expect(seen.size).toBeGreaterThan(20); // still plenty of variety
+  });
+
+  it('holds in every colour question of the three skills that turn on two colours', async () => {
+    const { easyToTellApart } = await import('../../src/content/generators/math/pk/parts');
+    for (const skillId of ['M-PK-D1', 'M-PK-D2', 'M-PK-D3']) {
+      for (let seed = 1; seed <= 300; seed += 1) {
+        const facts = generateQuestion(skillId, 1, seed).facts as { optionAttrs?: string[]; unit?: string[]; binAttrs?: string[] };
+        const colours = [...new Set(facts.optionAttrs ?? facts.unit ?? facts.binAttrs ?? [])];
+        expect(colours, `${skillId} seed ${seed}`).toHaveLength(2);
+        expect(easyToTellApart(colours[0] as never, colours[1] as never), `${skillId} seed ${seed}: ${colours.join(' with ')}`).toBe(true);
+      }
+    }
+  });
+});

@@ -1,0 +1,3139 @@
+{
+ "skillId": "M-PK-A7",
+ "version": 1,
+ "example": {
+  "type": "match",
+  "mode": "look",
+  "facts": {
+   "leftValues": [
+    2,
+    4,
+    5
+   ],
+   "rightValues": [
+    5,
+    2,
+    4
+   ],
+   "thing": "apple"
+  },
+  "prompt": {
+   "text": "Match each number to its group.",
+   "speak": [
+    "Match each number to its group."
+   ]
+  },
+  "left": [
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "5",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 5
+     }
+    ]
+   }
+  ],
+  "right": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍎",
+    "count": 5,
+    "layout": "row"
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍎",
+    "count": 2,
+    "layout": "row"
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍎",
+    "count": 4,
+    "layout": "row"
+   }
+  ],
+  "answerPairs": [
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  "explanation": {
+   "speak": [
+    "Count each group.",
+    {
+     "number": 2
+    },
+    "goes with",
+    {
+     "number": 2
+    },
+    "apples.",
+    {
+     "number": 4
+    },
+    "goes with",
+    {
+     "number": 4
+    },
+    "apples.",
+    {
+     "number": 5
+    },
+    "goes with",
+    {
+     "number": 5
+    },
+    "apples."
+   ],
+   "steps": [
+    "Count each group.",
+    "2 goes with 2 apples.",
+    "4 goes with 4 apples.",
+    "5 goes with 5 apples."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 2,
+      "layout": "row"
+     }
+    ]
+   }
+  },
+  "skillId": "M-PK-A7",
+  "level": 1,
+  "seed": 6,
+  "key": "M-PK-A7|1|{\"leftValues\":[2,4,5],\"rightValues\":[5,2,4],\"thing\":\"apple\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      3,
+      5
+     ],
+     "rightValues": [
+      3,
+      2,
+      5
+     ],
+     "thing": "duck"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 3,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 5,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "ducks.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "ducks.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "ducks."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 ducks.",
+      "3 goes with 3 ducks.",
+      "5 goes with 5 ducks."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 1,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,3,5],\"rightValues\":[3,2,5],\"thing\":\"duck\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      3,
+      5
+     ],
+     "rightValues": [
+      5,
+      1,
+      3
+     ],
+     "thing": "bee"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 3,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "bee.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "bees.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "bees."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 bee.",
+      "3 goes with 3 bees.",
+      "5 goes with 5 bees."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐝",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 2,
+    "key": "M-PK-A7|1|{\"leftValues\":[1,3,5],\"rightValues\":[5,1,3],\"thing\":\"bee\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      3,
+      5
+     ],
+     "rightValues": [
+      3,
+      2,
+      5
+     ],
+     "thing": "cookie"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 3,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 5,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "cookies.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "cookies.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "cookies."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 cookies.",
+      "3 goes with 3 cookies.",
+      "5 goes with 5 cookies."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 3,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,3,5],\"rightValues\":[3,2,5],\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      3,
+      4
+     ],
+     "rightValues": [
+      4,
+      3,
+      1
+     ],
+     "thing": "star"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 4,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 3,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "star.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "stars.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "stars."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 star.",
+      "3 goes with 3 stars.",
+      "4 goes with 4 stars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⭐",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 4,
+    "key": "M-PK-A7|1|{\"leftValues\":[1,3,4],\"rightValues\":[4,3,1],\"thing\":\"star\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      2,
+      3
+     ],
+     "rightValues": [
+      3,
+      2,
+      1
+     ],
+     "thing": "strawberry"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 3,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "strawberry.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "strawberries.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "strawberries."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 strawberry.",
+      "2 goes with 2 strawberries.",
+      "3 goes with 3 strawberries."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 5,
+    "key": "M-PK-A7|1|{\"leftValues\":[1,2,3],\"rightValues\":[3,2,1],\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      4,
+      5
+     ],
+     "rightValues": [
+      5,
+      2,
+      4
+     ],
+     "thing": "apple"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 4,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "apples.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "apples.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "apples."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 apples.",
+      "4 goes with 4 apples.",
+      "5 goes with 5 apples."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 6,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,4,5],\"rightValues\":[5,2,4],\"thing\":\"apple\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      3,
+      4
+     ],
+     "rightValues": [
+      4,
+      2,
+      3
+     ],
+     "thing": "cookie"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 4,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 3,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "cookies.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "cookies.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "cookies."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 cookies.",
+      "3 goes with 3 cookies.",
+      "4 goes with 4 cookies."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 7,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,3,4],\"rightValues\":[4,2,3],\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      4,
+      5
+     ],
+     "rightValues": [
+      5,
+      2,
+      4
+     ],
+     "thing": "rocket"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 2,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 4,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "rockets.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "rockets.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "rockets."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 rockets.",
+      "4 goes with 4 rockets.",
+      "5 goes with 5 rockets."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 8,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,4,5],\"rightValues\":[5,2,4],\"thing\":\"rocket\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      3,
+      5
+     ],
+     "rightValues": [
+      5,
+      3,
+      2
+     ],
+     "thing": "fish"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 3,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 2,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "fish.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "fish.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "fish."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 fish.",
+      "3 goes with 3 fish.",
+      "5 goes with 5 fish."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 9,
+    "key": "M-PK-A7|1|{\"leftValues\":[2,3,5],\"rightValues\":[5,3,2],\"thing\":\"fish\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      2,
+      5
+     ],
+     "rightValues": [
+      5,
+      1,
+      2
+     ],
+     "thing": "car"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 2,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "car.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "cars.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "cars."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 car.",
+      "2 goes with 2 cars.",
+      "5 goes with 5 cars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 1,
+    "seed": 10,
+    "key": "M-PK-A7|1|{\"leftValues\":[1,2,5],\"rightValues\":[5,1,2],\"thing\":\"car\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      4,
+      8,
+      9
+     ],
+     "rightValues": [
+      8,
+      4,
+      9
+     ],
+     "thing": "cookie"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 8,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 4,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 9,
+      "layout": "grid5"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "cookies.",
+      {
+       "number": 8
+      },
+      "goes with",
+      {
+       "number": 8
+      },
+      "cookies.",
+      {
+       "number": 9
+      },
+      "goes with",
+      {
+       "number": 9
+      },
+      "cookies."
+     ],
+     "steps": [
+      "Count each group.",
+      "4 goes with 4 cookies.",
+      "8 goes with 8 cookies.",
+      "9 goes with 9 cookies."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 1,
+    "key": "M-PK-A7|2|{\"leftValues\":[4,8,9],\"rightValues\":[8,4,9],\"thing\":\"cookie\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      5,
+      10
+     ],
+     "rightValues": [
+      10,
+      5,
+      1
+     ],
+     "thing": "car"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 10,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "car.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "cars.",
+      {
+       "number": 10
+      },
+      "goes with",
+      {
+       "number": 10
+      },
+      "cars."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 car.",
+      "5 goes with 5 cars.",
+      "10 goes with 10 cars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 2,
+    "key": "M-PK-A7|2|{\"leftValues\":[1,5,10],\"rightValues\":[10,5,1],\"thing\":\"car\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      6,
+      7,
+      10
+     ],
+     "rightValues": [
+      10,
+      6,
+      7
+     ],
+     "thing": "star"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 10,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 6,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 7,
+      "layout": "grid5"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 6
+      },
+      "goes with",
+      {
+       "number": 6
+      },
+      "stars.",
+      {
+       "number": 7
+      },
+      "goes with",
+      {
+       "number": 7
+      },
+      "stars.",
+      {
+       "number": 10
+      },
+      "goes with",
+      {
+       "number": 10
+      },
+      "stars."
+     ],
+     "steps": [
+      "Count each group.",
+      "6 goes with 6 stars.",
+      "7 goes with 7 stars.",
+      "10 goes with 10 stars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⭐",
+        "count": 6,
+        "layout": "grid5"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 3,
+    "key": "M-PK-A7|2|{\"leftValues\":[6,7,10],\"rightValues\":[10,6,7],\"thing\":\"star\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      4,
+      5,
+      6
+     ],
+     "rightValues": [
+      4,
+      6,
+      5
+     ],
+     "thing": "turtle"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐢",
+      "count": 4,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐢",
+      "count": 6,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐢",
+      "count": 5,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "turtles.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "turtles.",
+      {
+       "number": 6
+      },
+      "goes with",
+      {
+       "number": 6
+      },
+      "turtles."
+     ],
+     "steps": [
+      "Count each group.",
+      "4 goes with 4 turtles.",
+      "5 goes with 5 turtles.",
+      "6 goes with 6 turtles."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐢",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 4,
+    "key": "M-PK-A7|2|{\"leftValues\":[4,5,6],\"rightValues\":[4,6,5],\"thing\":\"turtle\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      4,
+      6,
+      8
+     ],
+     "rightValues": [
+      8,
+      6,
+      4
+     ],
+     "thing": "strawberry"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 8,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 6,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍓",
+      "count": 4,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "strawberries.",
+      {
+       "number": 6
+      },
+      "goes with",
+      {
+       "number": 6
+      },
+      "strawberries.",
+      {
+       "number": 8
+      },
+      "goes with",
+      {
+       "number": 8
+      },
+      "strawberries."
+     ],
+     "steps": [
+      "Count each group.",
+      "4 goes with 4 strawberries.",
+      "6 goes with 6 strawberries.",
+      "8 goes with 8 strawberries."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 5,
+    "key": "M-PK-A7|2|{\"leftValues\":[4,6,8],\"rightValues\":[8,6,4],\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      3,
+      7,
+      8
+     ],
+     "rightValues": [
+      8,
+      7,
+      3
+     ],
+     "thing": "ladybug"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 8,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 7,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 3,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "ladybugs.",
+      {
+       "number": 7
+      },
+      "goes with",
+      {
+       "number": 7
+      },
+      "ladybugs.",
+      {
+       "number": 8
+      },
+      "goes with",
+      {
+       "number": 8
+      },
+      "ladybugs."
+     ],
+     "steps": [
+      "Count each group.",
+      "3 goes with 3 ladybugs.",
+      "7 goes with 7 ladybugs.",
+      "8 goes with 8 ladybugs."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐞",
+        "count": 3,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 6,
+    "key": "M-PK-A7|2|{\"leftValues\":[3,7,8],\"rightValues\":[8,7,3],\"thing\":\"ladybug\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      6,
+      7,
+      9
+     ],
+     "rightValues": [
+      7,
+      6,
+      9
+     ],
+     "thing": "fish"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 7,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 6,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 9,
+      "layout": "grid5"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 6
+      },
+      "goes with",
+      {
+       "number": 6
+      },
+      "fish.",
+      {
+       "number": 7
+      },
+      "goes with",
+      {
+       "number": 7
+      },
+      "fish.",
+      {
+       "number": 9
+      },
+      "goes with",
+      {
+       "number": 9
+      },
+      "fish."
+     ],
+     "steps": [
+      "Count each group.",
+      "6 goes with 6 fish.",
+      "7 goes with 7 fish.",
+      "9 goes with 9 fish."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 6,
+        "layout": "grid5"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 7,
+    "key": "M-PK-A7|2|{\"leftValues\":[6,7,9],\"rightValues\":[7,6,9],\"thing\":\"fish\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      7,
+      10
+     ],
+     "rightValues": [
+      10,
+      7,
+      1
+     ],
+     "thing": "star"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 10,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 7,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "star.",
+      {
+       "number": 7
+      },
+      "goes with",
+      {
+       "number": 7
+      },
+      "stars.",
+      {
+       "number": 10
+      },
+      "goes with",
+      {
+       "number": 10
+      },
+      "stars."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 star.",
+      "7 goes with 7 stars.",
+      "10 goes with 10 stars."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⭐",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 8,
+    "key": "M-PK-A7|2|{\"leftValues\":[1,7,10],\"rightValues\":[10,7,1],\"thing\":\"star\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      1,
+      3,
+      7
+     ],
+     "rightValues": [
+      1,
+      7,
+      3
+     ],
+     "thing": "duck"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 7,
+      "layout": "grid5"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 3,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 1
+      },
+      "goes with",
+      {
+       "number": 1
+      },
+      "duck.",
+      {
+       "number": 3
+      },
+      "goes with",
+      {
+       "number": 3
+      },
+      "ducks.",
+      {
+       "number": 7
+      },
+      "goes with",
+      {
+       "number": 7
+      },
+      "ducks."
+     ],
+     "steps": [
+      "Count each group.",
+      "1 goes with 1 duck.",
+      "3 goes with 3 ducks.",
+      "7 goes with 7 ducks."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 9,
+    "key": "M-PK-A7|2|{\"leftValues\":[1,3,7],\"rightValues\":[1,7,3],\"thing\":\"duck\"}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      2,
+      4,
+      5
+     ],
+     "rightValues": [
+      4,
+      5,
+      2
+     ],
+     "thing": "ladybug"
+    },
+    "prompt": {
+     "text": "Match each number to its group.",
+     "speak": [
+      "Match each number to its group."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "right": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 4,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 5,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 2,
+      "layout": "row"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Count each group.",
+      {
+       "number": 2
+      },
+      "goes with",
+      {
+       "number": 2
+      },
+      "ladybugs.",
+      {
+       "number": 4
+      },
+      "goes with",
+      {
+       "number": 4
+      },
+      "ladybugs.",
+      {
+       "number": 5
+      },
+      "goes with",
+      {
+       "number": 5
+      },
+      "ladybugs."
+     ],
+     "steps": [
+      "Count each group.",
+      "2 goes with 2 ladybugs.",
+      "4 goes with 4 ladybugs.",
+      "5 goes with 5 ladybugs."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "xl",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐞",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A7",
+    "level": 2,
+    "seed": 10,
+    "key": "M-PK-A7|2|{\"leftValues\":[2,4,5],\"rightValues\":[4,5,2],\"thing\":\"ladybug\"}"
+   }
+  ]
+ }
+}

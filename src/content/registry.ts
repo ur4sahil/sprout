@@ -4,10 +4,29 @@ import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
 import { generator as mkb3 } from './generators/math/k/M-K-B3';
 import { generator as mkc4 } from './generators/math/k/M-K-C4';
+import { generator as mpka1 } from './generators/math/pk/M-PK-A1';
 import { generator as mpka2 } from './generators/math/pk/M-PK-A2';
+import { generator as mpka3 } from './generators/math/pk/M-PK-A3';
+import { generator as mpka4 } from './generators/math/pk/M-PK-A4';
+import { generator as mpka5 } from './generators/math/pk/M-PK-A5';
+import { generator as mpka6 } from './generators/math/pk/M-PK-A6';
+import { generator as mpka7 } from './generators/math/pk/M-PK-A7';
+import { generator as mpka8 } from './generators/math/pk/M-PK-A8';
+import { generator as mpkb1 } from './generators/math/pk/M-PK-B1';
+import { generator as mpkb2 } from './generators/math/pk/M-PK-B2';
+import { generator as mpkc1 } from './generators/math/pk/M-PK-C1';
+import { generator as mpkc2 } from './generators/math/pk/M-PK-C2';
+import { generator as mpkc3 } from './generators/math/pk/M-PK-C3';
+import { generator as mpkd1 } from './generators/math/pk/M-PK-D1';
+import { generator as mpkd2 } from './generators/math/pk/M-PK-D2';
+import { generator as mpkd3 } from './generators/math/pk/M-PK-D3';
 
 // skillId -> generator. Every generator in generators/ is listed here.
-const ALL: readonly SkillGenerator[] = [mpka2, mkb3, mkc4];
+const ALL: readonly SkillGenerator[] = [
+  mpka1, mpka2, mpka3, mpka4, mpka5, mpka6, mpka7, mpka8, mpkb1, mpkb2, mpkc1, mpkc2, mpkc3, mpkd1, mpkd2, mpkd3,
+  mkb3,
+  mkc4,
+];
 
 const BY_ID = new Map<string, SkillGenerator>(ALL.map((generator) => [generator.skillId, generator]));
 

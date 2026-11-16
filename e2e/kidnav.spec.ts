@@ -105,7 +105,10 @@ test.describe('kid navigation', () => {
     await page.getByRole('button', { name: 'Hear the name: Add to 10' }).click();
     await expect(page.getByRole('heading', { name: /Math/ })).toBeVisible();
     await page.getByRole('tab', { name: 'Pre-K' }).click();
-    await expect(page.locator('[data-skill]')).toHaveCount(1);
+    await expect(page.locator('[data-skill]')).toHaveCount(16);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Counting', 'B. Comparing', 'C. Shapes and sizes', 'D. Patterns and sorting']);
+    await checkScreen(page, 'subject page, pre-K', 64);
+    await shoot(page, 'subject-prek');
     await page.getByRole('button', { name: 'Back to home' }).click();
     await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
   });
