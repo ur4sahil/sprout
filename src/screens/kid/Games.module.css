@@ -1,0 +1,64 @@
+.title {
+  margin: 0;
+  font-size: var(--text-l);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.count {
+  font-size: var(--text-l);
+  font-weight: 700;
+  color: var(--color-ink-soft);
+}
+
+.pop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.ask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.prompt {
+  margin: 0;
+  font-size: var(--text-l);
+  font-weight: 700;
+  text-align: center;
+}
+
+.balloons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.explain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  width: min(100%, calc(8 * var(--tap-min) + 3 * var(--space-3)));
+}
+
+@media (orientation: portrait) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

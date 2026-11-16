@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { popSkills } from '../../app/games';
 import { usePractice } from '../../app/usePractice';
 import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
@@ -10,11 +11,14 @@ import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
 import QuestionStage from '../../components/QuestionStage';
+import Scratchpad from '../../components/Scratchpad';
 import SoftBreak from '../../components/SoftBreak';
 import StatusPanel from '../../components/StatusPanel';
 import type { Skill } from '../../content/catalogue';
 import type { Response, Say } from '../../engine/types';
 import { now } from '../../lib/clock';
+import { logError } from '../../lib/errorLog';
+import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
 import styles from './PracticeSession.module.css';
 
@@ -66,6 +70,27 @@ export default function PracticeSession({ child, skill, play }: Props) {
 
   const asking = phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong';
 
+  // From grade 1, a pencil opens a drawing layer over the question. It is closed again for each new question.
+  const canDraw = child.grade !== 'PK' && child.grade !== 'K';
+  const [drawing, setDrawing] = useState(false);
+  useEffect(() => setDrawing(false), [questionId]);
+
+  // The games are offered at the break. Pop needs a skill in progress whose next question is a choice.
+  const [popOffered, setPopOffered] = useState(false);
+  useEffect(() => {
+    if (phase !== 'break') return;
+    let alive = true;
+    void (async () => {
+      const { repo } = await openRepo();
+      const found = popSkills(child, await repo.getSkillStates(child.id)).length > 0;
+      if (alive) setPopOffered(found);
+    })().catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, [phase, child]);
+  const games = { onPop: popOffered ? () => void navigate('/games/pop', { replace: true }) : null, onPairs: () => void navigate('/games/pairs', { replace: true }) };
+
   return (
     <KidScreen
       bar={
@@ -75,6 +100,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
             <span className={styles.code}>{skill.code}</span> {skill.name}
           </h1>
           <span className={styles.spacer} />
+          {canDraw && question && phase === 'asking' && <IconButton icon="✏️" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
           <IconButton icon="💡" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
         </>
       }
@@ -105,7 +131,8 @@ export default function PracticeSession({ child, skill, play }: Props) {
       {phase === 'celebrating' && practice.milestone !== null && (
         <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} />
       )}
-      {phase === 'break' && <SoftBreak answered={practice.answered} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} />}
+      {phase === 'break' && <SoftBreak answered={practice.answered} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} />}
+      {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
     </KidScreen>
   );
 }

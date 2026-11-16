@@ -1,0 +1,84 @@
+/* A balloon: round at the top, a little narrower at the knot. It bobs in place and never floats away. */
+.balloon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(2 * var(--tap-min));
+  min-height: calc(2 * var(--tap-min));
+  padding: var(--space-4);
+  border: var(--border-thick) solid var(--color-brand);
+  border-radius: 50% 50% 50% 50% / 46% 46% 54% 54%;
+  background: var(--color-picked-bg);
+  color: var(--color-ink);
+  font: inherit;
+  cursor: pointer;
+  animation: bob 2.6s ease-in-out infinite;
+  --visual-emoji: var(--emoji-m);
+}
+
+.balloon:nth-child(2n) {
+  animation-delay: -0.9s;
+}
+
+.balloon:nth-child(3n) {
+  animation-delay: -1.7s;
+}
+
+.balloon[data-picked] {
+  border-color: var(--color-ink);
+}
+
+.balloon[data-right] {
+  border-color: var(--color-correct);
+  background: var(--color-correct-bg);
+}
+
+.balloon:disabled {
+  cursor: default;
+  animation-play-state: paused;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(calc(-1 * var(--space-2)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .balloon {
+    animation: none;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(1.5 * var(--tap-min));
+  padding: var(--space-2);
+  overflow: hidden;
+  border: var(--border-thick) solid var(--color-line);
+  border-radius: var(--radius-m);
+  background: var(--color-brand);
+  color: var(--color-on-accent);
+  font: inherit;
+  font-size: var(--text-xl);
+  cursor: pointer;
+  --visual-emoji: var(--text-l);
+}
+
+.card[data-up] {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.card[data-matched] {
+  border-color: var(--color-correct);
+  background: var(--color-correct-bg);
+  cursor: default;
+}

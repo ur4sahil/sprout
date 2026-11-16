@@ -1,0 +1,37 @@
+/* Over the question, which stays visible underneath. */
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: color-mix(in srgb, var(--color-surface) 55%, transparent);
+}
+
+.paper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* A finger draws here. It never scrolls or zooms the page. */
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.ink {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: var(--border-thick);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dot {
+  fill: var(--color-brand);
+}
+
+.tools {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: flex;
+  gap: var(--space-3);
+}

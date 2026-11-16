@@ -8,6 +8,8 @@ import Diagnostic from '../screens/kid/Diagnostic';
 import Home from '../screens/kid/Home';
 import Lesson from '../screens/kid/Lesson';
 import Play from '../screens/kid/Play';
+import Pairs from '../screens/kid/Pairs';
+import Pop from '../screens/kid/Pop';
 import Practice from '../screens/kid/Practice';
 import ProfilePicker from '../screens/kid/ProfilePicker';
 import Review from '../screens/kid/Review';
@@ -32,6 +34,8 @@ export const routes: RouteObject[] = [
   { path: '/review', element: <Review /> },
   { path: '/diagnostic', element: <Diagnostic /> },
   { path: '/awards', element: <Awards /> },
+  { path: '/games/pop', element: <Pop /> },
+  { path: '/games/pairs', element: <Pairs /> },
   { path: '/parent', element: <Navigate to="/parent/dashboard" replace /> },
   { path: '/parent/dashboard', element: <Dashboard /> },
   { path: '/parent/scores', element: <Scores /> },

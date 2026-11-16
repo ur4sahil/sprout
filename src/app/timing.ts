@@ -6,6 +6,7 @@ export const TIMING = {
   holdToExitMs: 2000, // leaving practice needs a press and hold this long. A plain tap does nothing
   tryPauseMs: 2000, // "Try it together" waits this long before showing the answer
   beatGapMs: 700, // the pause between two beats of a lesson
+  pairsLookMs: 1100, // two cards that do not match stay face up this long, then turn back
   maxAnswerMs: 120_000, // one abandoned question never counts as more than two minutes
 };
 

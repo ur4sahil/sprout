@@ -178,4 +178,9 @@
 - A lesson shows the Video tab only when the skill has a video, the device is online, videos are on for the child, and a parent has not removed it. Removed videos are skill ids in the device record (`removedVideos`), set from the Video column on the scores screen. They are kept on that device only.
 - A text picture of three or more words wraps (`TextVisual`): sentences and stories fit a phone. Numerals, words and sums stay on one line.
 - Still owed for step 21: the owner's hand check on the iPad (tapping the YouTube logo and the title must not leave the app). If it fails, set `"enabled": false` in `videos.json`.
-- Next: step 22 scratchpad and games (Pop, Pairs).
+- Step 22 (scratchpad and games) is built. All 22 steps of the plan are built.
+- Scratchpad: `components/Scratchpad.tsx`, an SVG layer over the question from grade 1 (the pencil in the practice bar). `touch-action: none`, undo, clear, never saved, closed for each new question.
+- Games rules are in `src/app/games.ts`. Pop (`/games/pop`): ten balloon questions from skills in progress whose next question is a choice. Each answer goes through `recordAnswer` like practice. Not offered when no skill fits. Pairs (`/games/pairs`): 6 pairs by grade (`PAIR_KINDS`), saves nothing.
+- Both games are offered on the break card after a session (`SoftBreak` `games`). `components/GameButton.tsx` is the one button they use: screens never hold a raw button.
+- Balloons bob forever, so a browser test must call `page.emulateMedia({ reducedMotion: 'reduce' })` before tapping one or checking the layout.
+- Not built: the printable certificate.
