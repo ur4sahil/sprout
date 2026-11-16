@@ -204,7 +204,8 @@ export interface AudioClip {
 }
 export const audioClipSchema = z.object({
   key: z.string().min(1),
-  bytes: z.instanceof(ArrayBuffer),
+  // Checked by what it is, not by `instanceof`: a buffer made in another frame or worker is still a buffer.
+  bytes: z.custom<ArrayBuffer>((value) => Object.prototype.toString.call(value) === '[object ArrayBuffer]', 'bytes must be an ArrayBuffer'),
   mimeType: z.string().min(1),
   packVersion: z.string().min(1),
 });

@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useNavigate, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import SignIn from '../screens/account/SignIn';
+import { loadClipKeys, syncVoicePack } from '../audio/clips';
+import { setMuted } from '../audio/mute';
 import { logError } from '../lib/errorLog';
 import { checkSession } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence } from '../storage/index';
@@ -23,6 +25,8 @@ export default function App() {
         const { repo, saved } = await openRepo();
         useAppStore.getState().setStorageSaved(saved);
         await keepErrorsInDeviceRecord(repo);
+        setMuted((await repo.getDeviceState()).muted);
+        await loadClipKeys();
         await checkSession();
         await requestPersistence(repo);
       } catch (error) {
@@ -31,6 +35,12 @@ export default function App() {
       }
     })();
   }, []);
+
+  // Once signed in, fetch the voice pack in the background if this device does not have the current one.
+  // The app never waits for it: until it arrives, the device voice says everything.
+  useEffect(() => {
+    if (status === 'signedIn') void syncVoicePack();
+  }, [status]);
 
   // The sign-in guard: without a session nothing else can be reached, on any path.
   let content = screen;

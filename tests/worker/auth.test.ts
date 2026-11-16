@@ -330,7 +330,7 @@ describe('the guard over /api', () => {
 
   it('answers 404 on an unknown path with a session', async () => {
     const cookie = await h.signUp();
-    for (const path of unknownPaths) {
+    for (const path of unknownPaths.filter((p) => p !== '/api/voice-pack')) {
       const reply = await h.call('GET', path, undefined, { cookie });
       expect(reply.status, path).toBe(404);
       expect(reply.headers.get('Content-Type')).toBe('application/json');

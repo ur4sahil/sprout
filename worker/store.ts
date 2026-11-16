@@ -1,4 +1,4 @@
-import type { D1Database } from '@cloudflare/workers-types';
+import type { D1Database, R2Bucket } from '@cloudflare/workers-types';
 
 // The only way the Worker reaches its database. Tests use memoryStore().
 
@@ -206,6 +206,54 @@ export function d1Store(db: D1Database): Store {
     },
     async clearAttempts(email) {
       await db.prepare('delete from login_attempts where email = ?').bind(email).run();
+    },
+  };
+}
+
+// ---- The voice pack: one file in R2, served only to a signed-in device ----
+
+export interface PackStore {
+  // The pack's version, or null when no pack has been uploaded.
+  version(): Promise<string | null>;
+  // The pack file and its version, or null when there is none.
+  read(): Promise<{ version: string; body: ArrayBuffer } | null>;
+}
+
+export const VOICE_PACK_KEY = 'voice-pack.json';
+
+export interface MemoryPackStore extends PackStore {
+  put(text: string, version: string): void;
+  clear(): void;
+}
+
+export function memoryPackStore(): MemoryPackStore {
+  let held: { version: string; body: ArrayBuffer } | null = null;
+  return {
+    put(text, version) {
+      held = { version, body: new TextEncoder().encode(text).buffer as ArrayBuffer };
+    },
+    clear() {
+      held = null;
+    },
+    async version() {
+      return held ? held.version : null;
+    },
+    async read() {
+      return held ? { version: held.version, body: held.body.slice(0) } : null;
+    },
+  };
+}
+
+// The version is the R2 object's etag: it changes whenever a new pack is uploaded.
+export function r2PackStore(bucket: R2Bucket): PackStore {
+  return {
+    async version() {
+      const head = await bucket.head(VOICE_PACK_KEY);
+      return head ? head.etag : null;
+    },
+    async read() {
+      const object = await bucket.get(VOICE_PACK_KEY);
+      return object ? { version: object.etag, body: await object.arrayBuffer() } : null;
     },
   };
 }

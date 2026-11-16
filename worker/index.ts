@@ -1,4 +1,4 @@
-import type { D1Database, SendEmail } from '@cloudflare/workers-types';
+import type { D1Database, R2Bucket, SendEmail } from '@cloudflare/workers-types';
 import type { AuthDeps } from './auth';
 import {
   findSession,
@@ -12,13 +12,16 @@ import {
   start,
 } from './auth';
 import { cloudflareMailer, consoleMailer } from './mailer';
-import { d1Store } from './store';
+import type { PackStore } from './store';
+import { d1Store, r2PackStore } from './store';
+import { voicePack } from './voicePack';
 
 // Routes /api. Everything else is the built app.
 
 export interface Env {
   DB: D1Database;
   MAIL: SendEmail;
+  BACKUPS: R2Bucket;
   ASSETS: { fetch(request: Request): Promise<Response> };
   ENVIRONMENT: string;
   APP_ORIGIN: string;
@@ -29,6 +32,7 @@ export interface Env {
 
 export interface ApiDeps extends AuthDeps {
   appOrigin: string;
+  pack: PackStore;
 }
 
 type Handler = (deps: ApiDeps, request: Request) => Promise<Response>;
@@ -72,6 +76,8 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return await logout(deps, session);
       case 'POST /api/auth/logout-all':
         return await logoutAll(deps, session);
+      case 'GET /api/voice-pack':
+        return await voicePack(deps.pack, request);
       default:
         return json(404, { error: 'not_found' });
     }
@@ -94,6 +100,7 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     now: () => new Date(),
     defer: (work) => ctx.waitUntil(work),
     appOrigin: env.APP_ORIGIN,
+    pack: r2PackStore(env.BACKUPS),
   };
 }
 

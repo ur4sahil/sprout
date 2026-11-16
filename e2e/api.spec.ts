@@ -66,7 +66,7 @@ test.describe('safety headers', () => {
 });
 
 test.describe('the guard over /api', () => {
-  const paths = ['/api', '/api/', '/api/nothing', '/api/auth', '/api/backup', '/api/voice-pack', '/api/auth/session/x'];
+  const paths = ['/api', '/api/', '/api/nothing', '/api/auth', '/api/backup', '/api/voice-pack/x', '/api/auth/session/x'];
 
   test('without a session every path answers 401 in JSON, never the app page', async ({ request }) => {
     for (const path of paths) {
@@ -120,6 +120,21 @@ test.describe('the guard over /api', () => {
     // The session survived every refused write.
     expect((await request.get('/api/auth/session')).status()).toBe(200);
     await request.dispose();
+  });
+});
+
+test.describe('the voice pack', () => {
+  test('is refused without a session, and answers in JSON with one', async ({ request, playwright }) => {
+    const refused = await request.get('/api/voice-pack');
+    expect(refused.status()).toBe(401);
+    expect(await refused.json()).toEqual({ error: 'signed_out' });
+    const signedIn = await playwright.request.newContext({ baseURL: BASE_URL, ignoreHTTPSErrors: true });
+    expect((await signUp(signedIn, listedEmail())).status()).toBe(200);
+    // The local bucket is empty, so there is no pack to serve.
+    const reply = await signedIn.get('/api/voice-pack');
+    expect(reply.status()).toBe(404);
+    expect(await reply.json()).toEqual({ error: 'no_pack' });
+    await signedIn.dispose();
   });
 });
 

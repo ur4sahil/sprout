@@ -45,7 +45,7 @@ test.describe('the live site', () => {
   });
 
   test('guards /api and refuses writes from other sites', async ({ request }) => {
-    for (const path of ['/api', '/api/nothing', '/api/backup', '/api/auth/session']) {
+    for (const path of ['/api', '/api/nothing', '/api/backup', '/api/voice-pack', '/api/auth/session']) {
       const reply = await request.get(path);
       expect(reply.status(), path).toBe(401);
       expect(reply.headers()['content-type'], path).toBe('application/json');

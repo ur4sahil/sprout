@@ -1,0 +1,230 @@
+/* Shared by the question components. Kid tap targets are at least 64px. */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 96px;
+  min-height: 96px;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 3px solid var(--color-line);
+  border-radius: var(--radius-m);
+  color: var(--color-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.small {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: var(--space-2);
+}
+
+.tile:disabled {
+  cursor: default;
+}
+
+.picked {
+  border-color: var(--color-focus);
+  background: #e8f1fd;
+}
+
+.used {
+  opacity: 0.35;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-focus);
+  color: #ffffff;
+  font-size: var(--text-s);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.objects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  max-width: 560px;
+}
+
+.object {
+  font-size: 2.6rem;
+  line-height: 1;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+}
+
+.display {
+  min-width: 140px;
+  min-height: 72px;
+  padding: 0 var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-ink-soft);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  font-size: var(--text-xxl);
+  font-weight: 700;
+}
+
+.pad {
+  display: grid;
+  grid-template-columns: repeat(3, var(--tap-min));
+  gap: var(--space-2);
+}
+
+.key {
+  font-size: var(--text-l);
+  font-weight: 700;
+}
+
+.bins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.bin {
+  flex: 1 1 200px;
+  max-width: 320px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 3px dashed var(--color-ink-soft);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.binLabel {
+  font-weight: 700;
+  font-size: var(--text-m);
+}
+
+.binItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.pairs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4) var(--space-6);
+  justify-items: center;
+}
+
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.slot {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-3);
+  border: 3px dashed var(--color-ink-soft);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.letter {
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+.prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.promptText {
+  margin: 0;
+  font-size: var(--text-l);
+  font-weight: 700;
+  text-align: center;
+}
+
+.speaker {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: #ffffff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.bigSpeaker {
+  min-width: 128px;
+  min-height: 128px;
+  font-size: 3.2rem;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 100%;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.stimulus {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}

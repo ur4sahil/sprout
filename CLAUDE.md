@@ -66,4 +66,8 @@
 - `npm run e2e:gallery` draws the gallery in WebKit, checks every picture fits its frame and has a label, and saves `review/gallery.png` (iPad width), and a phone-width copy plus one image for each section under `.e2e/gallery/`. Look at them after any change to a picture.
 - A diamond is drawn as a square standing on a corner, so `canonical.ts` treats it as a square turned 45 degrees.
 - Clock hands stop short of the numbers. A browser test fails if a hand reaches them.
-- Next: step 7, Phase 4b, question types and audio.
+- Step 7, Phase 4b (question types and audio), is built: the eight question components and `QuestionView` in `src/items/`, `say`, `speech`, `clips`, `sfx` and `mute` in `src/audio/`, `scripts/make-clips.sh`, and the `/api/voice-pack` route.
+- A question component reports the child's answer so far through `onChange`, or null while it is incomplete. The screen owns Submit. Give `ItemView` a `key` that changes with the question.
+- A picture's spoken label is said on tap, except in a `listen` question. `speakable()` in `itemProps.ts` is the one place that decides.
+- `npm run clips` makes the voice pack on the Mac and uploads it to R2. It was run on Nov 15, 2026 (132 clips). The pack's version is the R2 object's etag. A signed-in device downloads it in the background at launch.
+- Next: step 8, Phase 5a, practice flow.

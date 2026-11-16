@@ -29,6 +29,11 @@ describe('the public repo', () => {
     expect(found).toEqual([]);
   });
 
+  it('holds no audio file: the voice pack lives in private storage only', () => {
+    const audio = trackedFiles().filter((name) => /\.(m4a|mp3|aac|wav|aiff?|ogg|caf|opus)$/i.test(name) || /voice-pack\.json$/i.test(name));
+    expect(audio).toEqual([]);
+  });
+
   it('does not track local secrets', () => {
     const files = trackedFiles();
     expect(files).not.toContain('.dev.vars');
