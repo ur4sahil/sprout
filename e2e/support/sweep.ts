@@ -62,6 +62,10 @@ export async function sweepHardestLevels(page: Page, grade: string, skills: [str
   await addChild(page, 'Robin', grade);
   await saveScores(page, skills.map(([id]) => id), 85);
   await page.getByRole('button', { name: 'Robin', exact: true }).click();
+  // Scores that high earn stickers, and home shows them once. Tap past the card.
+  const stickers = page.locator('[data-card="new-stickers"]');
+  await stickers.waitFor({ state: 'visible', timeout: 4000 }).catch(() => undefined);
+  if (await stickers.isVisible()) await page.getByRole('button', { name: /Yay/ }).click();
   for (const [id, name] of skills) {
     await openFromSubject(page, subject, name);
     await checkScreen(page, `${id} at its hardest level`, 64);

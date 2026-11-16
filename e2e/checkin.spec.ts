@@ -109,7 +109,8 @@ test.describe('check-in and stickers', () => {
 
     await page.getByRole('button', { name: /Stickers/ }).click();
     await expect(page.getByRole('heading', { name: /Stickers/ })).toBeVisible();
-    await expect(page.locator('[data-board]')).toHaveCount(5);
+    // A board for each subject and grade with skills, one for Reasoning and one for Milestones.
+    for (const board of ['math-PK', 'math-K', 'ela-PK', 'reasoning', 'milestones']) await expect(page.locator(`[data-board="${board}"]`)).toBeVisible();
     await expect(page.locator('[data-award="mastered:math-K:1"]')).toHaveAttribute('data-earned', 'yes');
     await expect(page.locator('[data-award="mastered:math-K:3"]')).toHaveAttribute('data-earned', 'no');
     await expect(page.locator('[data-board="math-K"] h2')).toHaveText(/^Math, Kindergarten: 1 of \d+$/);

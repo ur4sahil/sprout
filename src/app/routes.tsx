@@ -2,6 +2,7 @@ import type { RouteObject } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import SignIn from '../screens/account/SignIn';
 import Gallery from '../screens/dev/Gallery';
+import DevReview from '../screens/dev/Review';
 import Awards from '../screens/kid/Awards';
 import Diagnostic from '../screens/kid/Diagnostic';
 import Home from '../screens/kid/Home';
@@ -13,9 +14,12 @@ import Review from '../screens/kid/Review';
 import SubjectPage from '../screens/kid/SubjectPage';
 import Dashboard from '../screens/parent/Dashboard';
 import Data from '../screens/parent/Data';
+import Log from '../screens/parent/Log';
+import Plans from '../screens/parent/Plans';
 import Scores from '../screens/parent/Scores';
 import Settings from '../screens/parent/Settings';
 import SoundCheck from '../screens/parent/SoundCheck';
+import Trouble from '../screens/parent/Trouble';
 
 // The only place routes are declared.
 export const routes: RouteObject[] = [
@@ -31,11 +35,19 @@ export const routes: RouteObject[] = [
   { path: '/parent', element: <Navigate to="/parent/dashboard" replace /> },
   { path: '/parent/dashboard', element: <Dashboard /> },
   { path: '/parent/scores', element: <Scores /> },
+  { path: '/parent/trouble', element: <Trouble /> },
+  { path: '/parent/log', element: <Log /> },
+  { path: '/parent/plans', element: <Plans /> },
   { path: '/parent/settings', element: <Settings /> },
   { path: '/parent/sound', element: <SoundCheck /> },
   { path: '/parent/data', element: <Data /> },
   { path: '/signin', element: <SignIn /> },
   // Dev routes exist only in development builds.
-  ...(import.meta.env.DEV ? [{ path: '/dev/gallery', element: <Gallery /> }] : []),
+  ...(import.meta.env.DEV
+    ? [
+        { path: '/dev/gallery', element: <Gallery /> },
+        { path: '/dev/review/:skillId', element: <DevReview /> },
+      ]
+    : []),
   { path: '*', element: <Navigate to="/" replace /> },
 ];

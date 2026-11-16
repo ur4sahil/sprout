@@ -1,4 +1,8 @@
 import type { Skill } from '../content/catalogue';
+import { generateQuestion } from '../content/registry';
+import { describeAnswer, describePrompt, describeResponse } from '../engine/describe';
+import { isTroubleSpot } from '../engine/recommend';
+import type { Question, Response } from '../engine/types';
 import type { DiagnosticLadder } from '../engine/diagnostic';
 import type { Stage } from '../engine/skillscore';
 import { stageOf } from '../engine/skillscore';
@@ -106,4 +110,63 @@ export function sortRows(rows: readonly ScoreRow[], by: ScoreSort): ScoreRow[] {
       return (x < y ? 1 : x > y ? -1 : 0) || a.index - b.index;
     })
     .map(({ row }) => row);
+}
+
+// ---- Trouble spots and the question log ----
+
+export interface TroubleSpot {
+  skill: Skill;
+  state: SkillState;
+  missed: Attempt[]; // the three most recent wrong answers, newest first
+}
+
+// Skills flagged as trouble spots (plan section 7): 5 or more answers in the last 14 days,
+// under 60% of recent answers right, and a score under 80. `recent` is the child's last 14 days of attempts.
+export function troubleSpots(skills: readonly Skill[], states: readonly SkillState[], recent: readonly Attempt[]): TroubleSpot[] {
+  const counts = new Map<string, number>();
+  for (const attempt of recent) counts.set(attempt.skillId, (counts.get(attempt.skillId) ?? 0) + 1);
+  const byId = new Map(states.map((state) => [state.skillId, state]));
+  return skills.flatMap((skill) => {
+    const state = byId.get(skill.id);
+    if (!state || state.masteredAt !== null || !isTroubleSpot(state, counts.get(skill.id) ?? 0)) return [];
+    const missed = recent
+      .filter((attempt) => attempt.skillId === skill.id && !attempt.correct)
+      .sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+      .slice(0, 3);
+    return [{ skill, state, missed }];
+  });
+}
+
+export interface Redrawn {
+  question: Question | null; // made again from the skill, level and seed. null when the skill has changed since
+  prompt: string;
+  given: string;
+  correct: string;
+}
+
+// A logged answer shown again. When the skill's version is the one the child answered, the question is
+// made again from its level and seed. When the skill has changed since, the saved snapshot is shown instead.
+export function redraw(attempt: Attempt, skill: Skill | undefined): Redrawn {
+  const snapshot = { question: null, prompt: attempt.snapshot.prompt, given: attempt.snapshot.given, correct: attempt.snapshot.correct };
+  if (!skill || skill.version !== attempt.contentVersion) return snapshot;
+  try {
+    const question = generateQuestion(attempt.skillId, attempt.level, attempt.seed);
+    if (question.type !== attempt.itemType) return snapshot;
+    // "I don't know yet" in a check-in has no response to describe.
+    const given = attempt.response === null || attempt.response === undefined ? attempt.snapshot.given : describeResponse(question, attempt.response as Response);
+    return { question, prompt: describePrompt(question), given, correct: describeAnswer(question) };
+  } catch {
+    return snapshot;
+  }
+}
+
+export type LogPeriod = 'all' | 'today' | 'week';
+
+// The question log: newest first, for one skill or all, and for today, the last 7 days or all time.
+export function filterLog(attempts: readonly Attempt[], skillId: string, period: LogPeriod, nowIso: string): Attempt[] {
+  const today = localDayOf(nowIso);
+  const weekAgo = localDayOf(addDays(nowIso, -6));
+  return attempts
+    .filter((attempt) => (skillId === 'all' || attempt.skillId === skillId) && (period === 'all' || (period === 'today' ? attempt.day === today : attempt.day >= weekAgo)))
+    .sort((a, b) => b.createdAt.localeCompare(a.createdAt) || b.id.localeCompare(a.id));
 }

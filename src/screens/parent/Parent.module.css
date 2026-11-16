@@ -104,3 +104,31 @@
   fill: var(--color-ink-soft);
   font-size: var(--text-s);
 }
+
+.logged {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.logged p {
+  margin: 0;
+}
+
+.prompt {
+  font-weight: 700;
+}
+
+.small {
+  zoom: var(--zoom-tile-icon);
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}

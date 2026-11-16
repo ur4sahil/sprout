@@ -43,7 +43,8 @@ test.describe('the sign-in guard', () => {
 
   test('with a session, unknown and unbuilt paths land on the start screen', async ({ page }) => {
     await signUp(page);
-    for (const path of ['/no/such/page', '/home', '/parent/dashboard', '/dev/gallery']) {
+    // (The grown-ups pages are built now. parent.spec.ts covers them and their PIN gate.)
+    for (const path of ['/no/such/page', '/home', '/parent/no-such-page', '/dev/gallery']) {
       await page.goto(path);
       await expect(page.getByRole('heading', { name: 'Sprout' }), path).toBeVisible();
       await expect(page.getByLabel('Email'), path).toHaveCount(0);
