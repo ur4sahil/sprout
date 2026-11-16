@@ -82,3 +82,34 @@ export function recentKeys(attempts: readonly Attempt[], skill: Skill): string[]
     .slice(-6)
     .map((attempt) => generateQuestion(skill.id, attempt.level, attempt.seed).key);
 }
+
+// One review answer. Review answers are logged with kind `review` and never change the score by themselves:
+// the result of the whole review is applied once, after its last question.
+export function recordReviewAnswer(input: { child: Child; skill: Skill; state: SkillState; session: Session; question: Question; response: Response; shownAt: Date; answeredAt: Date }): { correct: boolean; attempt: Attempt; session: Session } {
+  const { child, skill, state, session, question, response, shownAt, answeredAt } = input;
+  const correct = check(question, response);
+  const attempt: Attempt = {
+    id: newId(),
+    childId: child.id,
+    skillId: skill.id,
+    sessionId: session.id,
+    level: question.level,
+    seed: question.seed,
+    itemType: question.type,
+    response,
+    contentVersion: skill.version,
+    snapshot: { prompt: describePrompt(question), correct: describeAnswer(question), given: describeResponse(question, response) },
+    correct,
+    ms: Math.min(Math.max(answeredAt.getTime() - shownAt.getTime(), 0), TIMING.maxAnswerMs),
+    scoreBefore: state.score,
+    scoreAfter: state.score,
+    kind: 'review',
+    day: localDay(answeredAt),
+    createdAt: answeredAt.toISOString(),
+  };
+  return { correct, attempt, session: { ...session, questions: session.questions + 1, correct: session.correct + (correct ? 1 : 0) } };
+}
+
+export function newReviewSession(child: Child, startedAt: Date): Session {
+  return { ...newSession(child, '', startedAt), kind: 'review', skillId: null };
+}

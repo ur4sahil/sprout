@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../../src/app/App';
@@ -16,7 +16,7 @@ export type User = ReturnType<typeof userEvent.setup>;
 // A signed-in device with one child, at a fixed time, with the answer-flow waits switched off.
 export async function setUp(grade: Grade = '1', change: Partial<Child['settings']> = {}): Promise<Child> {
   freezeClock(NOW);
-  setTimingForTests({ tapGuardMs: 0, praiseMinMs: 0, praiseMaxMs: 0 });
+  setTimingForTests({ tapGuardMs: 0, praiseMinMs: 0, praiseMaxMs: 0, holdToExitMs: 30, tryPauseMs: 0, beatGapMs: 0 });
   useAppStore.getState().setAccount({ status: 'signedIn', email: 'parent.one@example.com', expiresAt: new Date(NOW.getTime() + 20 * 86_400_000).toISOString() });
   const child: Child = {
     id: 'kid-1',
@@ -42,10 +42,35 @@ export function openApp(path = '/'): User {
   return userEvent.setup();
 }
 
+// Presses and holds the home button until the kid lock lets go.
+export async function holdHome(): Promise<void> {
+  const button = screen.getByRole('button', { name: /^Back to home\. Press and hold/ });
+  fireEvent.pointerDown(button);
+  await act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 80));
+  });
+  fireEvent.pointerUp(button);
+}
+
+// From home to a skill's tile on the Math page.
+export async function findOnMath(user: User, skillName: string): Promise<HTMLElement> {
+  await user.click(await screen.findByRole('button', { name: /Math/ }));
+  await screen.findByRole('heading', { name: /Math/ });
+  // The skill may sit under another grade's tab.
+  const tile = (): HTMLElement | null => screen.queryByRole('button', { name: new RegExp(`^${skillName}\\.`) });
+  for (const tab of screen.queryAllByRole('tab')) {
+    if (tile()) break;
+    await user.click(tab);
+  }
+  const found = tile();
+  if (!found) throw new Error(`No tile for "${skillName}" on the Math page`);
+  return found;
+}
+
 // From the profile picker into a skill.
 export async function openSkill(user: User, skillName: string): Promise<void> {
   await user.click(await screen.findByRole('button', { name: 'Robin' }));
-  await user.click(await screen.findByRole('button', { name: new RegExp(`^${skillName}\\.`) }));
+  await user.click(await findOnMath(user, skillName));
   await screen.findByRole('region', { name: 'Question' });
 }
 

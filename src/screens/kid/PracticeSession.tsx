@@ -1,18 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { usePractice } from '../../app/usePractice';
+import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
 import Celebration from '../../components/Celebration';
-import ExplanationPanel from '../../components/ExplanationPanel';
+import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
+import QuestionStage from '../../components/QuestionStage';
 import SoftBreak from '../../components/SoftBreak';
 import StatusPanel from '../../components/StatusPanel';
 import type { Skill } from '../../content/catalogue';
 import type { Response, Say } from '../../engine/types';
-import QuestionView from '../../items/QuestionView';
 import { now } from '../../lib/clock';
 import type { Child } from '../../storage/schema';
 import styles from './PracticeSession.module.css';
@@ -20,10 +21,12 @@ import styles from './PracticeSession.module.css';
 interface Props {
   child: Child;
   skill: Skill;
+  // Set when this skill is one pick in a Play run: the break offers "Next one", and each pick lasts one session.
+  play?: { onNext: () => void };
 }
 
 // The practice screen: the question on the left, the status panel on the right.
-export default function PracticeSession({ child, skill }: Props) {
+export default function PracticeSession({ child, skill, play }: Props) {
   const navigate = useNavigate();
   const practice = usePractice(child, skill);
   const { phase, question, state } = practice;
@@ -33,6 +36,7 @@ export default function PracticeSession({ child, skill }: Props) {
     void navigate('/home', { replace: true });
   };
   const say = (text: Say): void => void speak(text, rate);
+  useWakeLock();
 
   // The prompt is read aloud when the question appears. Keyed on the question, and cancelled
   // in the cleanup, so it is never said twice.
@@ -60,14 +64,18 @@ export default function PracticeSession({ child, skill }: Props) {
     if (oneTap && response) practice.submit(response);
   }
 
+  const asking = phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong';
+
   return (
     <KidScreen
       bar={
         <>
-          <IconButton icon="🏠" label="Back to home" onClick={goHome} />
+          <HoldButton icon="🏠" label="Back to home" onHeld={goHome} />
           <h1 className={styles.skill}>
             <span className={styles.code}>{skill.code}</span> {skill.name}
           </h1>
+          <span className={styles.spacer} />
+          <IconButton icon="💡" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
         </>
       }
       side={state && <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} />}
@@ -81,26 +89,23 @@ export default function PracticeSession({ child, skill }: Props) {
           </BigButton>
         </>
       )}
-      {question && (phase === 'asking' || phase === 'saving' || phase === 'correct') && (
-        <div className={`${styles.question} ${phase === 'correct' ? styles.correct : ''}`} data-phase={phase}>
-          <QuestionView question={question} disabled={phase !== 'asking'} onChange={onChange} onSpeak={say} />
-          {practice.saveError && <Notice role="alert">{practice.saveError}</Notice>}
-          {phase === 'correct' ? (
-            <p className={styles.praise} role="status" data-correct="">
-              <span aria-hidden="true">✅ </span>Correct!
-            </p>
-          ) : (
-            <BigButton size="kid" disabled={phase !== 'asking' || practice.response === null} onClick={() => practice.submit()}>
-              <span aria-hidden="true">✔️ </span>Submit
-            </BigButton>
-          )}
-        </div>
+      {question && asking && (
+        <QuestionStage
+          question={question}
+          phase={phase}
+          response={practice.response}
+          lastResponse={practice.lastResponse}
+          saveError={practice.saveError}
+          onChange={onChange}
+          onSubmit={() => practice.submit()}
+          onGotIt={practice.gotIt}
+          onSpeak={say}
+        />
       )}
-      {question && phase === 'wrong' && practice.lastResponse && <ExplanationPanel question={question} response={practice.lastResponse} onDone={practice.gotIt} />}
       {phase === 'celebrating' && practice.milestone !== null && (
-        <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? goHome : practice.afterCelebration} />
+        <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} />
       )}
-      {phase === 'break' && <SoftBreak answered={practice.answered} onKeepGoing={practice.keepGoing} onAllDone={goHome} />}
+      {phase === 'break' && <SoftBreak answered={practice.answered} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} />}
     </KidScreen>
   );
 }

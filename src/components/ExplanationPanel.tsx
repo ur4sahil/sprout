@@ -3,6 +3,8 @@ import type { Question, Response } from '../engine/types';
 import VisualView from '../visuals/VisualView';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
+import Column from './Column';
+import StepList from './StepList';
 import styles from './ExplanationPanel.module.css';
 
 interface Props {
@@ -17,7 +19,7 @@ export default function ExplanationPanel({ question, response, onDone }: Props) 
   const picked = question.type === 'choice' && 'index' in response ? question.options[response.index] : undefined;
   const right = question.type === 'choice' ? question.options[question.answerIndex] : undefined;
   return (
-    <section className={styles.panel} aria-label="Explanation" data-explanation="">
+    <Column label="Explanation" data-explanation="">
       <CenterRow>
         <div className={styles.answer}>
           <span className={styles.label}>You answered</span>
@@ -37,14 +39,10 @@ export default function ExplanationPanel({ question, response, onDone }: Props) 
           <VisualView visual={question.explanation.visual} />
         </div>
       )}
-      <ol className={styles.steps}>
-        {question.explanation.steps.map((step, i) => (
-          <li key={i}>{step}</li>
-        ))}
-      </ol>
+      <StepList steps={question.explanation.steps} />
       <BigButton size="kid" onClick={onDone}>
         <span aria-hidden="true">👍 </span>Got it
       </BigButton>
-    </section>
+    </Column>
   );
 }

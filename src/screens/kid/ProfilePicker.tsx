@@ -48,7 +48,9 @@ export default function ProfilePicker() {
     void unlockAudio();
     void speak(['Hi', { word: child.name }], child.settings.speechRate);
     setChild(child);
-    void navigate('/home', { replace: true });
+    // The one entry kid navigation adds. Everything after it replaces, so a Back press
+    // or a swipe from the edge has nowhere to go but here, and the app puts the child back.
+    void navigate('/home');
   }
 
   if (adding) return <ChildSetup onDone={() => setAdding(false)} onCancel={() => setAdding(false)} />;

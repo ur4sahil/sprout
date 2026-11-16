@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useNavigate, useRoutes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useNavigationType, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Notice from '../components/Notice';
 import SignIn from '../screens/account/SignIn';
@@ -16,7 +16,15 @@ import { useAppStore } from './store';
 
 export default function App() {
   const navigate = useNavigate();
-  const screen = useRoutes(routes);
+  // The kid lock for the Back button and the swipe from the left edge. While a child is playing,
+  // a step back in history is never drawn: the screen stays as it was, and the app steps forward again.
+  const location = useLocation();
+  const how = useNavigationType();
+  const childActive = useAppStore((s) => s.child !== null);
+  const [held, setHeld] = useState(location);
+  const steppedBack = how === 'POP' && childActive && location.key !== held.key;
+  if (!steppedBack && held !== location) setHeld(location);
+  const screen = useRoutes(routes, steppedBack ? held : location);
   const status = useAppStore((s) => s.account.status);
 
   const storageSaved = useAppStore((s) => s.storageSaved);
@@ -48,6 +56,10 @@ export default function App() {
       }
     })();
   }, []);
+
+  useEffect(() => {
+    if (steppedBack) void navigate(1);
+  }, [steppedBack, location, navigate]);
 
   // Once signed in, fetch the voice pack in the background if this device does not have the current one.
   // The app never waits for it: until it arrives, the device voice says everything.

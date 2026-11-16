@@ -1,0 +1,25 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.tab {
+  min-height: var(--tap-min);
+  padding: 0 var(--space-5);
+  border: var(--border) solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-m);
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.current {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+}

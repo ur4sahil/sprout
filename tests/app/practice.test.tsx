@@ -5,7 +5,7 @@ import { setTimingForTests } from '../../src/app/timing';
 import { advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
-import { NOW, answer, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
+import { NOW, answer, findOnMath, holdHome, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
 const spoken = vi.hoisted(() => ({ said: [] as unknown[], phrases: [] as string[], sounds: [] as string[] }));
@@ -97,7 +97,8 @@ describe('a new child masters a skill', () => {
 
     // "All done" on the medal goes home, where the skill now shows as mastered.
     await user.click(screen.getByRole('button', { name: /All done/ }));
-    expect(await screen.findByRole('button', { name: 'Add to 10. Score 100' })).toBeTruthy();
+    await screen.findByRole('heading', { name: 'Robin' });
+    expect((await findOnMath(user, 'Add to 10')).getAttribute('aria-label')).toBe('Add to 10. Score 100');
     expect(document.querySelector('[data-stage="mastered"]')).not.toBeNull();
   }, 60_000);
 });
@@ -329,7 +330,8 @@ describe('the answer flow', () => {
     }
     expect(screen.getByRole('dialog', { name: 'Time for a break?' }).textContent).toContain('You answered 6 questions.');
     await user.click(screen.getByRole('button', { name: /All done/ }));
-    expect(await screen.findByRole('group', { name: 'Skills' })).toBeTruthy();
+    expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
+    expect(await screen.findByRole('button', { name: /Math/ })).toBeTruthy();
     // Leaving closed the session.
     await waitFor(async () => expect((await (await repo()).listSessions('kid-1'))[0]?.endedAt).not.toBeNull());
   });
@@ -357,8 +359,11 @@ describe('the answer flow', () => {
       await answer(user, sumOnScreen());
       await settled();
     }
-    await user.click(screen.getByRole('button', { name: 'Back to home' }));
-    await user.click(await screen.findByRole('button', { name: 'Add to 10. Score 31' }));
+    await holdHome();
+    await screen.findByRole('heading', { name: 'Robin' });
+    const tile = await findOnMath(user, 'Add to 10');
+    expect(tile.getAttribute('aria-label')).toBe('Add to 10. Score 31');
+    await user.click(tile);
     await screen.findByRole('region', { name: 'Question' });
     expect(document.querySelector('[data-score]')?.getAttribute('data-score')).toBe('31');
     await answer(user, sumOnScreen());
@@ -387,6 +392,7 @@ describe('getting to a skill', () => {
     const child = await setUp('1');
     useAppStore.getState().setChild(child);
     openApp('/skill/M-9-Z9');
-    expect(await screen.findByRole('group', { name: 'Skills' })).toBeTruthy();
+    expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
+    expect(await screen.findByRole('button', { name: /Math/ })).toBeTruthy();
   });
 });

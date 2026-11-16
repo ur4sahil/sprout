@@ -1,0 +1,175 @@
+import { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { TIMING } from '../../app/timing';
+import { useWakeLock } from '../../app/useWakeLock';
+import { speak, stop } from '../../audio/speech';
+import BigButton from '../../components/BigButton';
+import CenterRow from '../../components/CenterRow';
+import Column from '../../components/Column';
+import IconButton from '../../components/IconButton';
+import KidScreen from '../../components/KidScreen';
+import StepDots from '../../components/StepDots';
+import StepList from '../../components/StepList';
+import Tabs from '../../components/Tabs';
+import type { Skill } from '../../content/catalogue';
+import { exampleQuestion, generatorFor } from '../../content/registry';
+import { describeAnswer } from '../../engine/describe';
+import type { Child } from '../../storage/schema';
+import VisualView from '../../visuals/VisualView';
+import styles from './LessonPlayer.module.css';
+
+interface Props {
+  child: Child;
+  skill: Skill;
+}
+
+const BEAT_NAME = { see: 'See it', watch: 'Watch me', try: 'Try it together', remember: 'Remember' };
+const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Two kinds of help: a narrated mini-lesson in four beats, and one example solved step by step.
+// It uses the same pictures as the questions and works with no network.
+export default function LessonPlayer({ child, skill }: Props) {
+  const navigate = useNavigate();
+  const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
+  const example = useMemo(() => exampleQuestion(skill.id), [skill]);
+  const [mode, setMode] = useState<'lesson' | 'example'>('lesson');
+  const [index, setIndex] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [revealed, setRevealed] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const [stepsShown, setStepsShown] = useState(0);
+  const rate = child.settings.speechRate;
+  useWakeLock();
+
+  const beat = beats[index];
+
+  // Plays one beat: says it, waits and reveals the answer for "Try it together", then moves on.
+  useEffect(() => {
+    if (mode !== 'lesson' || !playing || !beat) return;
+    let cancelled = false;
+    void (async () => {
+      await speak(beat.speak, rate);
+      if (cancelled) return;
+      if (beat.reveal) {
+        await wait(TIMING.tryPauseMs);
+        if (cancelled) return;
+        setRevealed(true);
+        await speak(beat.reveal.speak, rate);
+        if (cancelled) return;
+      }
+      await wait(TIMING.beatGapMs);
+      if (cancelled) return;
+      if (index < beats.length - 1) {
+        setRevealed(false);
+        setIndex(index + 1);
+      } else {
+        setPlaying(false);
+        setFinished(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+      stop();
+    };
+  }, [mode, playing, index, beat, beats.length, rate]);
+
+  // The example: its question is read first, then each step as it is shown.
+  useEffect(() => {
+    if (mode !== 'example') return;
+    void speak(stepsShown === 0 ? example.prompt.speak : example.explanation.speak, rate);
+    return () => stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once when the example opens and once when its answer is shown
+  }, [mode, stepsShown === 0]);
+
+  function jump(to: number): void {
+    setRevealed(false);
+    setFinished(false);
+    setIndex(to);
+    setPlaying(true);
+  }
+
+  const practise = (): void => {
+    void navigate(`/skill/${skill.id}`, { replace: true });
+  };
+  const steps = example.explanation.steps;
+
+  return (
+    <KidScreen
+      bar={
+        <>
+          <IconButton icon="↩️" label="Back to practice" onClick={practise} />
+          <h1 className={styles.title}>
+            <span aria-hidden="true">💡 </span>
+            {skill.name}
+          </h1>
+        </>
+      }
+    >
+      <Tabs
+        label="Kind of help"
+        tabs={[
+          { id: 'lesson', label: '🎬 Lesson' },
+          { id: 'example', label: '✏️ Example' },
+        ]}
+        current={mode}
+        onPick={(id) => {
+          setMode(id as 'lesson' | 'example');
+          setPlaying(id === 'lesson');
+          setStepsShown(0);
+        }}
+      />
+
+      {mode === 'lesson' && beat && (
+        <Column label="Lesson" data-beat={beat.beat} data-playing={playing}>
+          <h2 className={styles.beatName}>{BEAT_NAME[beat.beat]}</h2>
+          <div className={styles.picture}>
+            <VisualView visual={revealed && beat.reveal?.visual ? beat.reveal.visual : beat.visual} />
+          </div>
+          <p className={styles.text} data-beat-text="">
+            {revealed && beat.reveal ? beat.reveal.text : beat.text}
+          </p>
+          <StepDots label="Steps of the lesson" names={beats.map((each) => BEAT_NAME[each.beat])} current={index} onPick={jump} />
+          <CenterRow>
+            <IconButton icon={playing ? '⏸️' : '▶️'} label={playing ? 'Pause' : 'Play'} onClick={() => (finished ? jump(0) : setPlaying(!playing))} />
+            <IconButton icon="🔄" label="Start again" onClick={() => jump(0)} />
+            {finished && (
+              <BigButton size="kid" onClick={practise}>
+                <span aria-hidden="true">✏️ </span>Practise
+              </BigButton>
+            )}
+          </CenterRow>
+        </Column>
+      )}
+
+      {mode === 'example' && (
+        <Column label="Example" data-steps-shown={stepsShown}>
+          <p className={styles.text}>{example.prompt.text}</p>
+          {example.stimulus && (
+            <div className={styles.picture}>
+              <VisualView visual={example.stimulus} />
+            </div>
+          )}
+          {stepsShown > 0 && <StepList steps={steps.slice(0, stepsShown)} />}
+          {stepsShown >= steps.length && (
+            <p className={styles.answer} data-example-answer="">
+              <span aria-hidden="true">✅ </span>
+              {describeAnswer(example)}
+            </p>
+          )}
+          <CenterRow>
+            {stepsShown < steps.length ? (
+              <BigButton size="kid" onClick={() => setStepsShown(stepsShown + 1)}>
+                <span aria-hidden="true">➡️ </span>
+                {stepsShown === 0 ? 'Show me how' : 'Next step'}
+              </BigButton>
+            ) : (
+              <BigButton size="kid" onClick={practise}>
+                <span aria-hidden="true">✏️ </span>Practise
+              </BigButton>
+            )}
+          </CenterRow>
+        </Column>
+      )}
+    </KidScreen>
+  );
+}

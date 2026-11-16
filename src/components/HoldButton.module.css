@@ -1,0 +1,35 @@
+.button {
+  position: relative;
+  overflow: hidden;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  border: var(--border) solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-l);
+  cursor: pointer;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+  flex: none;
+}
+
+/* Fills from the bottom while the button is held, so a child can see it working. */
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-picked-bg);
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+
+.holding .fill {
+  transform: scaleY(1);
+  transition: transform var(--hold-ms) linear;
+}
+
+.icon {
+  position: relative;
+}

@@ -1,0 +1,29 @@
+.dots {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* A small dot inside a full-size tap target. */
+.dot {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.dot::before {
+  content: '';
+  width: var(--size-dot);
+  height: var(--size-dot);
+  border-radius: var(--radius-pill);
+  background: var(--color-line);
+}
+
+.here::before {
+  background: var(--color-brand);
+}

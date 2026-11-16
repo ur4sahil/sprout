@@ -3,14 +3,22 @@ import { Navigate } from 'react-router-dom';
 import SignIn from '../screens/account/SignIn';
 import Gallery from '../screens/dev/Gallery';
 import Home from '../screens/kid/Home';
+import Lesson from '../screens/kid/Lesson';
+import Play from '../screens/kid/Play';
 import Practice from '../screens/kid/Practice';
 import ProfilePicker from '../screens/kid/ProfilePicker';
+import Review from '../screens/kid/Review';
+import SubjectPage from '../screens/kid/SubjectPage';
 
 // The only place routes are declared.
 export const routes: RouteObject[] = [
   { path: '/', element: <ProfilePicker /> },
   { path: '/home', element: <Home /> },
+  { path: '/play', element: <Play /> },
+  { path: '/subject/:subject', element: <SubjectPage /> },
   { path: '/skill/:skillId', element: <Practice /> },
+  { path: '/skill/:skillId/learn', element: <Lesson /> },
+  { path: '/review', element: <Review /> },
   { path: '/signin', element: <SignIn /> },
   // Dev routes exist only in development builds.
   ...(import.meta.env.DEV ? [{ path: '/dev/gallery', element: <Gallery /> }] : []),

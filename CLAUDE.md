@@ -31,7 +31,7 @@
 - New fields on a stored record always have a zod default, so old records still load.
 - Colours are named once: UI colours in `src/styles/tokens.css`, colours a child is asked about in `src/content/data/colors.ts`, picture colours in `src/visuals/palette.ts`. No colour is written anywhere else.
 - Component style files hold no pixel or rem sizes. Sizes, borders and icon sizes are tokens in `tokens.css`.
-- Screens use the shared components in `src/components/` (`BigButton`, `LinkButton`, `TextField`, `Notice`, `FormCard`, `FormLinks`). A screen never writes its own `<button>`, `<label>` or alert box. `tests/repo/style.test.ts` enforces these three rules.
+- Screens use the shared components in `src/components/` (`BigButton`, `LinkButton`, `TextField`, `Notice`, `FormCard`, `FormLinks`, `SkillTile`, `TileGrid`, `Tabs`, `Column`, `FullScreenCard`, `QuestionStage`, `HoldButton`). A screen never writes its own `<button>`, `<label>` or alert box. `tests/repo/style.test.ts` enforces these three rules.
 
 ## Working rules for every phase
 
@@ -76,7 +76,15 @@
 - Step 8, Phase 5a (practice flow), is built: the install guide, child setup, the profile picker, a first home with a tile for each ready skill, the practice screen with its status panel, the explanation panel, milestone celebrations, the soft break, and attempts saved with a snapshot and local day.
 - `usePractice` (in `src/app/`) runs one child on one skill. Each answer is saved (attempt, skill state, session) before the next question shows. A failed save keeps the question and reuses the same attempt on retry, so nothing is saved twice.
 - Child setup opens from the profile picker for now. Phase 8a moves it behind the PIN gate.
-- Home in this step lists every ready skill. Phase 5b replaces it with today's picks, the daily goal and subject pages.
 - Browser tests are silent: `e2e/support/fixtures.ts` swaps the page's voice for a silent stand-in and removes audio output. A test checks that it is in place.
 - Not covered by a test yet: a pre-K child answering a choice with one tap, because every option in the three skills so far says its number when tapped. Test it with the first skill whose options carry no spoken label.
-- Next: step 9, Phase 5b, kid navigation and lessons.
+- Step 9, Phase 5b (kid navigation and lessons), is built: home with the daily goal ring, Play and today's picks, subject pages with grade tabs, the lesson player (four beats, and an example shown step by step), review sessions, the kid lock, the daily limit screen and the screen wake lock.
+- `childDay.ts` (in `src/app/`) works out a child's day in one place: picks, answers and minutes today, reviews due, and whether the daily limit is reached. Home, Play, Review and Practice all read it. Minutes are the sum of the day's answer times.
+- Kid lock: leaving practice or a review takes a 2-second hold (`HoldButton`). The step from the profile picker to home is the only history entry kid navigation adds. While a child is chosen, `App.tsx` never draws a step back in history: it keeps the screen as it was and steps forward again.
+- The daily limit is checked on the way into home, a skill, Play and review, never in the middle of a question.
+- A review answer is saved with kind `review` and does not move the score. The result of all 3 is applied once, after the last one (`useReview`).
+- Play fixes its picks when it starts. A review pick runs as a review of that one skill.
+- A child sees picks only from skills that are ready. With three skills so far, a grade 1 child has no picks and reaches skills through the Math page.
+- Browser tests answer a question only after `[data-phase="asking"]` shows, because the last question stays on screen during the praise.
+- Not covered by a browser test: the daily limit screen, because no screen sets daily minutes until Phase 8b. Unit tests cover it.
+- Next: step 10, Phase 9, offline and updates (the service worker).

@@ -140,9 +140,8 @@ describe('the profile picker', () => {
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
     expect(await screen.findByRole('heading', { name: 'Ada' })).toBeTruthy();
     expect(useAppStore.getState().child?.id).toBe('kid-2');
-    // Home lists the three skills that are ready, each with a score of 0.
-    expect([...screen.getByRole('group', { name: 'Skills' }).querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual([
-      'Count to 5. Score 0',
+    // Home shows today's picks for a kindergarten child: the two kindergarten skills, not the pre-K one.
+    expect([...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill] > button:first-child')].map((b) => b.getAttribute('aria-label'))).toEqual([
       'Put numbers in order. Score 0',
       'Add to 10. Score 0',
     ]);
