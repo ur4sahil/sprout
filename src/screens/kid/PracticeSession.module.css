@@ -2,6 +2,8 @@
   margin: 0;
   font-size: var(--text-m);
   min-width: 0;
+  /* Beside three buttons on the narrowest phone, a long word such as "regrouping" breaks rather than run off. */
+  overflow-wrap: anywhere;
 }
 
 .code {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { awardSkills } from '../../app/awardsRun';
 import type { ScoreRow, ScoreSort } from '../../app/parentData';
-import { GRADE_NAME, STAGE_NAME, scoreRows, sortRows } from '../../app/parentData';
+import { categoryComplete, GRADE_NAME, STAGE_NAME, scoreRows, sortRows } from '../../app/parentData';
 import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import Tabs from '../../components/Tabs';
@@ -26,6 +27,7 @@ const COLUMNS: { id: ScoreSort; label: string }[] = [
 // Every skill with its score, stage, answers, accuracy, time spent and when it was last practised. Sortable.
 export default function Scores() {
   const { children, child, pick } = useChildren();
+  const navigate = useNavigate();
   const [rows, setRows] = useState<ScoreRow[] | null>(null);
   const [sort, setSort] = useState<ScoreSort>('skill');
   // Videos a parent has taken away on this device.
@@ -86,7 +88,7 @@ export default function Scores() {
               </thead>
               <tbody>
                 {shown.map((row, index) => (
-                  <ScoreLine key={row.skill.id} row={row} videos={VIDEOS_ENABLED} video={videoFor(row.skill.id, removed)?.title ?? null} onRemoveVideo={() => void removeVideo(row.skill.id).catch(logError)} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
+                  <ScoreLine key={row.skill.id} row={row} onCertificate={rows && categoryComplete(rows, row.skill) ? () => void navigate(`/parent/certificate/${child.id}/${row.skill.id}`, { replace: true }) : null} videos={VIDEOS_ENABLED} video={videoFor(row.skill.id, removed)?.title ?? null} onRemoveVideo={() => void removeVideo(row.skill.id).catch(logError)} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
                 ))}
               </tbody>
             </table>
@@ -97,13 +99,21 @@ export default function Scores() {
   );
 }
 
-function ScoreLine({ row, group, videos, video, onRemoveVideo }: { row: ScoreRow; group: string | null; videos: boolean; video: string | null; onRemoveVideo: () => void }) {
+function ScoreLine({ row, group, videos, video, onRemoveVideo, onCertificate }: { row: ScoreRow; group: string | null; videos: boolean; video: string | null; onRemoveVideo: () => void; onCertificate: (() => void) | null }) {
   return (
     <>
       {group && (
         <tr data-group={group}>
           <th colSpan={videos ? 8 : 7} scope="colgroup">
             {group}
+            {onCertificate && (
+              <>
+                {' '}
+                <LinkButton onClick={onCertificate} aria-label={`Certificate for ${group}`} data-certificate-link="">
+                  Certificate
+                </LinkButton>
+              </>
+            )}
           </th>
         </tr>
       )}

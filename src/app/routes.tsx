@@ -18,6 +18,7 @@ import Dashboard from '../screens/parent/Dashboard';
 import Data from '../screens/parent/Data';
 import Log from '../screens/parent/Log';
 import Plans from '../screens/parent/Plans';
+import Certificate from '../screens/parent/Certificate';
 import Scores from '../screens/parent/Scores';
 import Settings from '../screens/parent/Settings';
 import SoundCheck from '../screens/parent/SoundCheck';
@@ -39,6 +40,7 @@ export const routes: RouteObject[] = [
   { path: '/parent', element: <Navigate to="/parent/dashboard" replace /> },
   { path: '/parent/dashboard', element: <Dashboard /> },
   { path: '/parent/scores', element: <Scores /> },
+  { path: '/parent/certificate/:childId/:skillId', element: <Certificate /> },
   { path: '/parent/trouble', element: <Trouble /> },
   { path: '/parent/log', element: <Log /> },
   { path: '/parent/plans', element: <Plans /> },

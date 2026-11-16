@@ -183,4 +183,5 @@
 - Games rules are in `src/app/games.ts`. Pop (`/games/pop`): ten balloon questions from skills in progress whose next question is a choice. Each answer goes through `recordAnswer` like practice. Not offered when no skill fits. Pairs (`/games/pairs`): 6 pairs by grade (`PAIR_KINDS`), saves nothing.
 - Both games are offered on the break card after a session (`SoftBreak` `games`). `components/GameButton.tsx` is the one button they use: screens never hold a raw button.
 - Balloons bob forever, so a browser test must call `page.emulateMedia({ reducedMotion: 'reduce' })` before tapping one or checking the layout.
-- Not built: the printable certificate.
+- The printable certificate is built: `/parent/certificate/:childId/:skillId` (`screens/parent/Certificate.tsx`), linked from a finished group's heading on the scores screen. A group is finished when every skill in it is mastered (`categoryComplete` in `parentData.ts`). Print leaves the buttons off the page.
+- A long skill name breaks inside the practice bar on a 360-wide phone, where the pencil button takes room.

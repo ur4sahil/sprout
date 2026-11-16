@@ -100,6 +100,17 @@ export function scoreRows(skills: readonly Skill[], states: readonly SkillState[
 export type ScoreSort = 'skill' | 'score' | 'attempts' | 'accuracy' | 'minutes' | 'last';
 
 // Rows in the order asked for. "skill" is catalogue order. The others put the biggest or newest first.
+// The rows of one lettered group, such as Math, Kindergarten, "C. Adding and subtracting".
+export function categoryRows(rows: readonly ScoreRow[], skill: Pick<Skill, 'subject' | 'grade' | 'category'>): ScoreRow[] {
+  return rows.filter((row) => row.skill.subject === skill.subject && row.skill.grade === skill.grade && row.skill.category === skill.category);
+}
+
+// A group is complete when every skill in it is mastered. A parent can then print a certificate for it.
+export function categoryComplete(rows: readonly ScoreRow[], skill: Pick<Skill, 'subject' | 'grade' | 'category'>): boolean {
+  const group = categoryRows(rows, skill);
+  return group.length > 0 && group.every((row) => row.stage === 'mastered');
+}
+
 export function sortRows(rows: readonly ScoreRow[], by: ScoreSort): ScoreRow[] {
   if (by === 'skill') return rows.slice();
   const value = (row: ScoreRow): number | string => (by === 'score' ? row.score : by === 'attempts' ? row.attempts : by === 'accuracy' ? (row.accuracy ?? -1) : by === 'minutes' ? row.minutes : (row.lastPracticedAt ?? ''));
