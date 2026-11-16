@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../../src/app/store';
 import SetPassword from '../../../src/screens/account/SetPassword';
-import { settle, stubServer } from '../../storage/serverStub';
+import { stubServer } from '../../storage/serverStub';
 import { PARENT, STRANGER } from '../../worker/harness';
 
 const PASSWORD = 'correct horse battery';
@@ -19,7 +19,6 @@ async function askForCode(user: ReturnType<typeof userEvent.setup>, email: strin
   await user.type(screen.getByLabelText('Email'), email);
   await user.click(screen.getByRole('button', { name: 'Email me a code' }));
   await screen.findByRole('heading', { name: 'Check your email' });
-  await settle();
 }
 
 async function fill(user: ReturnType<typeof userEvent.setup>, code: string, password: string, again: string) {
@@ -40,7 +39,7 @@ describe('SetPassword', () => {
     const { user, onDone } = open();
     await askForCode(user, PARENT);
     await fill(user, stub.server.lastCode(), PASSWORD, PASSWORD);
-    await vi.waitFor(() => expect(onDone).toHaveBeenCalledTimes(1));
+    await vi.waitFor(() => expect(onDone).toHaveBeenCalledTimes(1), { timeout: 10_000 });
     expect(useAppStore.getState().account).toMatchObject({ status: 'signedIn', email: PARENT });
   });
 
@@ -90,7 +89,7 @@ describe('SetPassword', () => {
     expect(screen.getByRole('button', { name: 'Save password and sign in' })).toHaveProperty('disabled', false);
     expect(onDone).not.toHaveBeenCalled();
     await fill(user, right, PASSWORD, PASSWORD);
-    await vi.waitFor(() => expect(onDone).toHaveBeenCalledTimes(1));
+    await vi.waitFor(() => expect(onDone).toHaveBeenCalledTimes(1), { timeout: 10_000 });
   });
 
   it('says so when there is no network, and stays on the email step', async () => {

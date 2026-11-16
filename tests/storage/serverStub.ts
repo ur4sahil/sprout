@@ -29,6 +29,8 @@ export function stubServer(): ServerStub {
     if (method !== 'GET') headers.set('Origin', ORIGIN);
     if (cookie) headers.set('Cookie', `${COOKIE_NAME}=${cookie}`);
     const reply = await handleApi(new Request(`${ORIGIN}${path}`, { method, headers, body }), server.deps);
+    // Like the Worker runtime, finish the put-off work before the request is over.
+    await server.flush();
     const setCookie = reply.headers.get('Set-Cookie');
     if (setCookie) cookie = cookieFrom(reply) || null;
     return reply;
@@ -42,9 +44,4 @@ export function stubServer(): ServerStub {
       offline = true;
     },
   };
-}
-
-// Lets work the Worker put off until after its reply (sending the code) finish.
-export async function settle(): Promise<void> {
-  await new Promise((resolve) => setTimeout(resolve, 0));
 }

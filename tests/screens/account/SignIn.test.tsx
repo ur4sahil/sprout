@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import App from '../../../src/app/App';
 import { useAppStore } from '../../../src/app/store';
 import { requestCode, setPasswordWithCode, signOut } from '../../../src/storage/account';
-import { settle, stubServer } from '../../storage/serverStub';
+import { stubServer } from '../../storage/serverStub';
 import type { ServerStub } from '../../storage/serverStub';
 import { PARENT, STRANGER } from '../../worker/harness';
 
@@ -25,7 +25,6 @@ async function open(): Promise<ReturnType<typeof userEvent.setup>> {
 async function withAccount(): Promise<ServerStub> {
   const stub = stubServer();
   await requestCode(PARENT);
-  await settle();
   await setPasswordWithCode(PARENT, stub.server.lastCode(), PASSWORD);
   await signOut();
   useAppStore.getState().setAccount({ status: 'checking' });
@@ -57,8 +56,9 @@ describe('SignIn', () => {
     const user = await open();
     await trySignIn(user, PARENT, PASSWORD);
     await waitFor(() => expect(useAppStore.getState().account.status).toBe('signedIn'));
-    expect(screen.getByRole('heading', { name: 'Sprout' })).toBeTruthy();
-    expect(screen.queryByLabelText('Password')).toBeNull();
+    // The guard lets go, then the router sends /home to the start screen.
+    await waitFor(() => expect(screen.queryByLabelText('Password')).toBeNull());
+    expect(await screen.findByRole('heading', { name: 'Sprout' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /Sign/ })).toBeNull();
   });
 

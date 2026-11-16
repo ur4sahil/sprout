@@ -10,7 +10,7 @@ import {
   signOutEverywhere,
 } from '../../src/storage/account';
 import { PARENT, STRANGER } from '../worker/harness';
-import { settle, stubServer } from './serverStub';
+import { stubServer } from './serverStub';
 
 const PASSWORD = 'correct horse battery';
 
@@ -20,7 +20,6 @@ function account() {
 
 async function signUp(stub: ReturnType<typeof stubServer>, password = PASSWORD) {
   await requestCode(PARENT);
-  await settle();
   return setPasswordWithCode(PARENT, stub.server.lastCode(), password);
 }
 

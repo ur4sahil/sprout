@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import App from '../../src/app/App';
 import { requestCode, setPasswordWithCode } from '../../src/storage/account';
-import { settle, stubServer } from '../storage/serverStub';
+import { stubServer } from '../storage/serverStub';
 import { PARENT } from '../worker/harness';
 
 function renderAt(path: string) {
@@ -70,7 +70,6 @@ describe('App shell with a session', () => {
   async function signedIn() {
     const stub = stubServer();
     await requestCode(PARENT);
-    await settle();
     await setPasswordWithCode(PARENT, stub.server.lastCode(), 'a long password');
   }
 

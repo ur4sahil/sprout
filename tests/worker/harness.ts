@@ -26,6 +26,8 @@ export interface Harness {
   deps: ApiDeps;
   advance(ms: number): void;
   call(method: string, path: string, body?: unknown, options?: CallOptions): Promise<Response>;
+  // Waits for the work the Worker put off until after its reply (sending the code).
+  flush(): Promise<void>;
   lastCode(): string;
   // Asks for a code and sets a password. Returns the session cookie value.
   signUp(email?: string, passwordKey?: string): Promise<string>;
@@ -40,6 +42,13 @@ export function cookieFrom(reply: Response): string {
 export function makeHarness(): Harness {
   const store = memoryStore();
   const mailer = memoryMailer();
+  // A real email takes time. The delay makes sure no test passes only because
+  // the code happened to be sent before the test looked for it.
+  const instant = mailer.sendCode;
+  mailer.sendCode = async (to, code) => {
+    await new Promise((resolve) => setTimeout(resolve, 15));
+    await instant(to, code);
+  };
   let clock = new Date('2026-01-10T12:00:00.000Z').getTime();
   const pending: Promise<void>[] = [];
   const deps: ApiDeps = {
@@ -65,8 +74,12 @@ export function makeHarness(): Harness {
     const init: RequestInit = { method, headers };
     if (write) init.body = options.rawBody ?? JSON.stringify(body ?? {});
     const reply = await handleApi(new Request(`${ORIGIN}${path}`, init), deps);
-    await Promise.all(pending.splice(0));
+    await flush();
     return reply;
+  }
+
+  async function flush(): Promise<void> {
+    while (pending.length > 0) await Promise.all(pending.splice(0));
   }
 
   function lastCode(): string {
@@ -91,6 +104,7 @@ export function makeHarness(): Harness {
       clock += ms;
     },
     call,
+    flush,
     lastCode,
     signUp,
   };
