@@ -211,7 +211,7 @@
 - `BigButton` is flat. `tone="quiet"` is the outlined second choice: one filled button on a screen, the rest quiet.
 - Home has a menu (`KidScreen` `nav`, made of `NavButton`): a column on the left from tablet width, and after the main area on a phone, where the whole page scrolls as one.
 - The practice bar says the subject and grade above the skill's name. The question, and the explanation after a wrong answer, each sit on a card. The status facts are cards from tablet width and a plain strip on a phone.
-- Skill tiles are white in every group. `band` is kept only as `data-band`.
+- A skill is shown by `SkillTile` in one of two looks (the owner's choice, Nov 17, 2026): `row`, a slim row with a small picture, the code and name and a `ScoreBar`, for a child who reads; `tile`, a small picture tile with the speaker and score under the picture, when Pre-reader mode is on. Home and the subject pages pass `look` from `child.settings.preReader`, and `TileGrid` takes `rows` or `dense` to match. `band` is kept only as `data-band`.
 - `PALETTE.ink` must equal `--color-ink`. A chart's labels use `--text-chart`, because a chart is drawn small and scaled up.
 - A wrong answer (the owner's choice, Nov 17, 2026): `ExplanationPanel` says "Not quite" (shown and spoken, never a buzzer or a cross), keeps the question and its picture in view, shows the child's answer beside the right one, then shows the steps one at a time. The button is "Next step" until the last step, then "Got it". Tests step through with `gotIt(...)` (`tests/app/practiceHelpers.tsx`, `e2e/support/kid.ts`).
 - The steps are spoken one at a time. `src/audio/stepSay.ts` `stepSay` turns a written step into `Say` parts (numbers, "plus", "equals", a lone letter by its name) and gives null for anything it cannot read safely (times, money, numbers over 1,000); then the whole question falls back to `explanation.speak`. `components/StepWalk.tsx` is the one walk-through; practice, review and Pop all use it, with `components/NotQuite.tsx` above it. "Hear again" repeats the step on show.
@@ -220,4 +220,3 @@
 - Stickers: one card for each board with a progress line, and a dense grid (`TileGrid dense`). The lesson and the example each sit on a card.
 - The scratchpad is remembered by the question it was opened on (`drawingOn`), never closed by an effect: an effect that ran late could close a pad opened in the same instant, which failed a cloud build once.
 - A cloud build that fails leaves the old version live. After a push, check the commit's check run: `gh api repos/<owner>/sprout/commits/<sha>/check-runs`.
-

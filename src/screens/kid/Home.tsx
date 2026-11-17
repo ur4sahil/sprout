@@ -144,7 +144,7 @@ export default function Home() {
           {day.picks.length > 0 && (
             <>
               <h2 className={styles.heading}>Picked for today</h2>
-              <TileGrid label="Today's picks">
+              <TileGrid label="Today's picks" dense={child.settings.preReader} rows={!child.settings.preReader}>
                 {day.picks.map((pick) => {
                   const skill = skillById(pick.skillId);
                   if (!skill) return null;
@@ -152,6 +152,7 @@ export default function Home() {
                     <SkillTile
                       key={pick.skillId}
                       skill={skill}
+                      look={child.settings.preReader ? 'tile' : 'row'}
                       state={day.states.find((state) => state.skillId === pick.skillId)}
                       note={child.settings.preReader ? undefined : WHY[pick.reason]}
                       onOpen={() => go(pick.reason === 'review' ? '/review' : `/skill/${pick.skillId}`)}

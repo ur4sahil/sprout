@@ -1,27 +1,23 @@
 .tile {
   position: relative;
   display: flex;
+  min-width: 0;
   background: var(--color-surface);
   border: var(--border-thin) solid var(--color-line);
-  border-radius: var(--radius-l);
-  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-m);
 }
 
 .open {
   flex: 1;
   min-width: 0;
-  min-height: var(--size-avatar);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  /* The top is kept clear for the speaker corner. */
-  padding: var(--tap-min) var(--space-3) var(--space-3);
+  gap: var(--space-3);
   border: 0;
-  border-radius: var(--radius-l);
+  border-radius: var(--radius-m);
   background: none;
   color: var(--color-ink);
+  text-align: left;
   cursor: pointer;
   touch-action: manipulation;
   -webkit-touch-callout: none;
@@ -29,40 +25,111 @@
   -webkit-user-select: none;
 }
 
+.open:active {
+  background: var(--color-brand-soft);
+}
+
+/* A small copy of the kind of picture the skill uses, in its own box. */
 .icon {
   --visual-emoji: var(--emoji-graph);
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--tap-min);
-  max-width: 100%;
   overflow: hidden;
-  /* A tile's picture is a small copy of the kind of picture the skill uses. */
-  zoom: var(--zoom-tile-icon);
+  border-radius: var(--radius-s);
+  background: var(--color-bg);
+}
+
+.shrunk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.words {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
   font-size: var(--text-s);
-  font-weight: 700;
-  text-align: center;
+  font-weight: 600;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .note {
-  font-size: var(--text-s);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-1);
+  font-size: var(--text-xs);
   color: var(--color-ink-soft);
-  text-align: center;
+}
+
+.why::before {
+  content: '· ';
 }
 
 .speaker {
-  position: absolute;
-  top: 0;
-  right: 0;
+  flex: none;
   min-width: var(--tap-min);
   min-height: var(--tap-min);
   border: 0;
-  border-radius: var(--radius-l);
+  border-radius: var(--radius-m);
   background: none;
   font-size: var(--text-m);
   cursor: pointer;
   touch-action: manipulation;
+}
+
+/* A slim row, for a child who reads. */
+.row .open {
+  min-height: var(--tap-min);
+  padding: var(--space-2) 0 var(--space-2) var(--space-2);
+}
+
+.row .icon {
+  width: var(--tap-min);
+  height: var(--size-link);
+}
+
+.row .shrunk {
+  zoom: var(--zoom-row-icon);
+}
+
+/* A small picture tile, for a child who does not read yet: the picture and name to open it,
+   then the speaker and the score side by side. */
+.picture {
+  display: grid;
+  grid-template-columns: var(--tap-min) minmax(0, 1fr);
+}
+
+.picture .open {
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) 0;
+  text-align: center;
+}
+
+.picture .icon {
+  height: var(--size-display-height);
+}
+
+.picture .shrunk {
+  zoom: var(--zoom-tile-icon);
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  padding-right: var(--space-2);
+}
+
+.foot > * {
+  flex: 1;
 }

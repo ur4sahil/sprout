@@ -58,13 +58,14 @@ export default function SubjectPage() {
       {categories.map((category, index) => (
         <section key={category} className={styles.category} aria-label={category}>
           <h2 className={styles.heading}>{category}</h2>
-          <TileGrid label={category}>
+          <TileGrid label={category} dense={child.settings.preReader} rows={!child.settings.preReader}>
             {shown
               .filter((skill) => skill.category === category)
               .map((skill) => (
                 <SkillTile
                   key={skill.id}
                   skill={skill}
+                  look={child.settings.preReader ? 'tile' : 'row'}
                   state={day?.states.find((state) => state.skillId === skill.id)}
                   band={index + 1}
                   onOpen={() => void navigate(`/skill/${skill.id}`, { replace: true })}

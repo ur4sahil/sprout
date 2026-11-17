@@ -1,0 +1,41 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+}
+
+.track {
+  flex: 1;
+  min-width: var(--space-5);
+  height: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-line);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+}
+
+.number {
+  min-width: var(--space-6);
+  text-align: right;
+  font-family: var(--font-display);
+  font-size: var(--text-m);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mastered {
+  color: var(--stage-mastered);
+}
+
+.fresh {
+  font-family: var(--font-family);
+  font-size: var(--text-s);
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
