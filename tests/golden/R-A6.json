@@ -1,6 +1,6 @@
 {
  "skillId": "R-A6",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -2752,6 +2752,1678 @@
     "level": 3,
     "seed": 10,
     "key": "R-A6|3|{\"color\":\"black\",\"flip\":true,\"shape\":\"lShape\",\"startTurn\":2,\"turns\":0}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "flag",
+       "color": "brown",
+       "turn": 3
+      },
+      {
+       "shape": "flag",
+       "color": "yellow",
+       "turn": 1
+      }
+     ],
+     "options": [
+      "flag:brown:1f flag:yellow:3f",
+      "flag:yellow:3 flag:brown:1",
+      "flag:yellow:1 flag:brown:3",
+      "flag:yellow:3f flag:brown:1f"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "brown",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"brown\",\"shape\":\"flag\",\"turn\":3},{\"color\":\"yellow\",\"shape\":\"flag\",\"turn\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "purple",
+       "turn": 0
+      },
+      {
+       "shape": "lShape",
+       "color": "red",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "lShape:red:0f lShape:purple:0f",
+      "lShape:red:2 lShape:purple:2",
+      "lShape:purple:0f lShape:red:0f",
+      "lShape:red:0 lShape:purple:0"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"purple\",\"shape\":\"lShape\",\"turn\":0},{\"color\":\"red\",\"shape\":\"lShape\",\"turn\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "flag",
+       "color": "yellow",
+       "turn": 2
+      },
+      {
+       "shape": "flag",
+       "color": "purple",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "flag:purple:0f flag:yellow:2f",
+      "flag:purple:2 flag:yellow:0",
+      "flag:purple:0 flag:yellow:2",
+      "flag:yellow:2f flag:purple:0f"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"yellow\",\"shape\":\"flag\",\"turn\":2},{\"color\":\"purple\",\"shape\":\"flag\",\"turn\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "green",
+       "turn": 2
+      },
+      {
+       "shape": "lShape",
+       "color": "orange",
+       "turn": 1
+      }
+     ],
+     "options": [
+      "lShape:orange:3f lShape:green:2f",
+      "lShape:orange:1 lShape:green:2",
+      "lShape:orange:3 lShape:green:0",
+      "lShape:green:2f lShape:orange:3f"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "green",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "orange",
+       "size": "m",
+       "rotation": 90
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"green\",\"shape\":\"lShape\",\"turn\":2},{\"color\":\"orange\",\"shape\":\"lShape\",\"turn\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "brown",
+       "turn": 0
+      },
+      {
+       "shape": "lShape",
+       "color": "orange",
+       "turn": 2
+      }
+     ],
+     "options": [
+      "lShape:orange:2 lShape:brown:0",
+      "lShape:orange:0 lShape:brown:2",
+      "lShape:orange:2f lShape:brown:0f",
+      "lShape:brown:0f lShape:orange:2f"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "orange",
+       "size": "m",
+       "rotation": 180
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"brown\",\"shape\":\"lShape\",\"turn\":0},{\"color\":\"orange\",\"shape\":\"lShape\",\"turn\":2}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "green",
+       "turn": 1
+      },
+      {
+       "shape": "flag",
+       "color": "purple",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "flag:purple:0 lShape:green:1",
+      "flag:purple:0f lShape:green:3f",
+      "lShape:green:3f flag:purple:0f",
+      "flag:purple:2 lShape:green:3"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "green",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 270,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"green\",\"shape\":\"lShape\",\"turn\":1},{\"color\":\"purple\",\"shape\":\"flag\",\"turn\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "purple",
+       "turn": 2
+      },
+      {
+       "shape": "flag",
+       "color": "brown",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "lShape:purple:2f flag:brown:0f",
+      "flag:brown:0f lShape:purple:2f",
+      "flag:brown:0 lShape:purple:2",
+      "flag:brown:2 lShape:purple:0"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"purple\",\"shape\":\"lShape\",\"turn\":2},{\"color\":\"brown\",\"shape\":\"flag\",\"turn\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "lShape",
+       "color": "black",
+       "turn": 0
+      },
+      {
+       "shape": "flag",
+       "color": "blue",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "flag:blue:0f lShape:black:0f",
+      "flag:blue:2 lShape:black:2",
+      "flag:blue:0 lShape:black:0",
+      "lShape:black:0f flag:blue:0f"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "blue",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"black\",\"shape\":\"lShape\",\"turn\":0},{\"color\":\"blue\",\"shape\":\"flag\",\"turn\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "flag",
+       "color": "purple",
+       "turn": 2
+      },
+      {
+       "shape": "lShape",
+       "color": "black",
+       "turn": 2
+      }
+     ],
+     "options": [
+      "lShape:black:0 flag:purple:0",
+      "lShape:black:2f flag:purple:2f",
+      "flag:purple:2f lShape:black:2f",
+      "lShape:black:2 flag:purple:2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "black",
+       "size": "m",
+       "rotation": 180
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "black",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"purple\",\"shape\":\"flag\",\"turn\":2},{\"color\":\"black\",\"shape\":\"lShape\",\"turn\":2}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "mirrorRow",
+     "pieces": [
+      {
+       "shape": "flag",
+       "color": "green",
+       "turn": 3
+      },
+      {
+       "shape": "lShape",
+       "color": "purple",
+       "turn": 0
+      }
+     ],
+     "options": [
+      "flag:green:1f lShape:purple:0f",
+      "lShape:purple:0f flag:green:1f",
+      "lShape:purple:2 flag:green:1",
+      "lShape:purple:0 flag:green:3"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is the mirror picture?",
+     "speak": [
+      "Which one is the mirror picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "shape",
+       "shape": "flag",
+       "color": "green",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "green",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "green",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "green",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     },
+     {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "green",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A mirror flips left and right. The two pieces swap places, and each one flips."
+     ],
+     "steps": [
+      "A mirror flips left and right.",
+      "The two pieces swap places, and each one flips."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0,
+        "flip": true
+       },
+       {
+        "kind": "shape",
+        "shape": "flag",
+        "color": "green",
+        "size": "m",
+        "rotation": 90,
+        "flip": true
+       }
+      ]
+     }
+    },
+    "skillId": "R-A6",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A6|4|{\"oracle\":\"mirrorRow\",\"pieces\":[{\"color\":\"green\",\"shape\":\"flag\",\"turn\":3},{\"color\":\"purple\",\"shape\":\"lShape\",\"turn\":0}]}"
    }
   ]
  }

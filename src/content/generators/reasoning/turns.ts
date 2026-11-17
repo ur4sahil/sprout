@@ -6,6 +6,7 @@ import { COLOR_NAMES } from '../../data/colors';
 import type { SkillGenerator } from '../../generator';
 import type { Explanation } from '../ela/pk/parts';
 import { row } from '../ela/pk/parts';
+import { twoClearColors } from '../math/pk/parts';
 
 // Reasoning A.5, A.6 and A.12: turning shapes, mirror images and paper folding.
 
@@ -23,7 +24,8 @@ function posed(form: ShapeName, color: ColorName, pose: Pose): Visual {
 }
 
 // ---- A.5 Turning shapes ----
-// Levels: next quarter turn of an arrow / of an L shape / skipping a turn. Colour and starting turn vary.
+// Levels: next quarter turn of an arrow / of an L shape / skipping a turn /
+// a quarter turn and a change of colour at every step. Colour and starting turn vary.
 
 const NEXT = 'What comes next?';
 const SHOWN = 3;
@@ -55,6 +57,41 @@ function turning(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+// Level 4: two things to follow. The oracle reads the colours and how many steps are shown.
+function turningColours(rng: Rng): QuestionDraft {
+  const form = rng.pick<ShapeName>(['arrow', 'lShape']);
+  const colors = twoClearColors(rng);
+  const startTurn = rng.int(0, 3);
+  const at = (i: number): Pose => ({ turn: (startTurn + i) % 4, flip: false });
+  const colourAt = (i: number): ColorName => colors[i % 2] as ColorName;
+  const answer = at(SHOWN);
+  const [wrongTurn, otherTurn] = rng.sample([0, 1, 2, 3].filter((turn) => turn !== answer.turn), 2) as [number, number];
+  // Right turn and wrong colour, wrong turn and right colour, and both wrong.
+  const right = colourAt(SHOWN);
+  const wrong = colourAt(SHOWN + 1);
+  const offered: [Pose, ColorName][] = [
+    [answer, right],
+    [answer, wrong],
+    [{ turn: wrongTurn, flip: false }, right],
+    [{ turn: otherTurn, flip: false }, wrong],
+  ];
+  const options = rng.shuffle(offered);
+  const shown = Array.from({ length: SHOWN }, (_, i) => posed(form, colourAt(i), at(i)));
+  const lines = [turnLine(1), `The colour goes ${colors[0]}, ${colors[1]}, ${colors[0]}, ${colors[1]}.`];
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { shape: form, startTurn, turns: SHOWN, flip: false, step: 1, colors, shown: SHOWN, options: options.map(([pose, color]) => `${code(pose)}|${color}`) },
+    prompt: { text: NEXT, speak: [NEXT] },
+    stimulus: { kind: 'sequence', items: [...shown, 'blank'] },
+    options: options.map(([pose, color]) => posed(form, color, pose)),
+    answerIndex: options.indexOf(offered[0] as [Pose, ColorName]),
+    explanation: { speak: [lines.join(' ')], steps: lines, visual: { kind: 'sequence', items: [...shown, posed(form, right, answer)] } },
+  };
+}
+
+const turningOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? turningColours(rng) : turning(level, rng));
+
 function turningLesson(): LessonStep[] {
   const arrow = (turn: number): Visual => posed('arrow', 'blue', { turn, flip: false });
   return [
@@ -73,18 +110,19 @@ function turningLesson(): LessonStep[] {
 
 export const turningShapesGenerator: SkillGenerator = {
   skillId: 'R-A5',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: turning,
+  generate: turningOf,
   exampleSeed: 85,
-  example: () => turning(1, makeRng(85)),
+  example: () => turningOf(1, makeRng(85)),
   lesson: turningLesson,
   oracle: 'transform',
 };
 
 // ---- A.6 Mirror images ----
-// Levels: pick the mirror of a flag / of an L shape / the wrong options are turned copies.
+// Levels: pick the mirror of a flag / of an L shape / the wrong options are turned copies /
+// a picture of two pieces in two colours: the mirror swaps the pieces and flips each one.
 // Only the flag and the L shape are used: every other shape is its own mirror image, or looks like a turn of itself.
 
 const MIRROR = 'Which one is the mirror picture?';
@@ -115,6 +153,42 @@ function mirror(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+// Level 4. Wrong options: the pieces swapped but not flipped, flipped but not swapped, and the whole
+// picture turned upside down, which also swaps them. The oracle (mirrorRow) reads the pieces.
+interface Piece {
+  shape: ShapeName;
+  color: ColorName;
+  pose: Pose;
+}
+const pieceCode = (piece: Piece): string => `${piece.shape}:${piece.color}:${code(piece.pose)}`;
+const pieces = (list: Piece[]): Visual => row(...list.map((piece) => posed(piece.shape, piece.color, piece.pose)));
+
+function mirrorPair(rng: Rng): QuestionDraft {
+  const colors = twoClearColors(rng);
+  const start: Piece[] = colors.map((color) => ({ shape: rng.pick<ShapeName>(['flag', 'lShape']), color, pose: { turn: rng.int(0, 3), flip: false } }));
+  const swapped = [...start].reverse();
+  const sets: Piece[][] = [
+    swapped.map((piece) => ({ ...piece, pose: mirrored(piece.pose) })),
+    swapped,
+    start.map((piece) => ({ ...piece, pose: mirrored(piece.pose) })),
+    swapped.map((piece) => ({ ...piece, pose: turned(piece.pose, 2) })),
+  ];
+  const options = rng.shuffle(sets);
+  const lines = [MIRROR_LINE, 'The two pieces swap places, and each one flips.'];
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { oracle: 'mirrorRow', pieces: start.map((piece) => ({ shape: piece.shape, color: piece.color, turn: piece.pose.turn })), options: options.map((set) => set.map(pieceCode).join(' ')) },
+    prompt: { text: MIRROR, speak: [MIRROR] },
+    stimulus: pieces(start),
+    options: options.map(pieces),
+    answerIndex: options.indexOf(sets[0] as Piece[]),
+    explanation: { speak: [lines.join(' ')], steps: lines, visual: pieces(sets[0] as Piece[]) },
+  };
+}
+
+const mirrorOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? mirrorPair(rng) : mirror(level, rng));
+
 function mirrorLesson(): LessonStep[] {
   const flag = (pose: Pose): Visual => posed('flag', 'red', pose);
   const up: Pose = { turn: 0, flip: false };
@@ -134,18 +208,18 @@ function mirrorLesson(): LessonStep[] {
 
 export const mirrorImagesGenerator: SkillGenerator = {
   skillId: 'R-A6',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: mirror,
+  generate: mirrorOf,
   exampleSeed: 86,
-  example: () => mirror(1, makeRng(86)),
+  example: () => mirrorOf(1, makeRng(86)),
   lesson: mirrorLesson,
   oracle: 'transform',
 };
 
 // ---- A.12 Paper folding ----
-// Levels: one fold, one hole at an outer corner / one hole next to the fold / two holes.
+// Levels: one fold, one hole at an outer corner / one hole next to the fold / two holes / three holes.
 // The paper is a 4 by 4 grid. A vertical fold shows columns 0 and 1; a horizontal fold shows rows 0 and 1.
 
 type Fold = 'vertical' | 'horizontal';
@@ -178,7 +252,7 @@ function folding(level: Level, rng: Rng): QuestionDraft {
     if (level === 1) holes = [holeAt(fold, 0, rng.pick([0, 3]))];
     else if (level === 2) holes = [holeAt(fold, 1, rng.int(0, 3))];
     else {
-      const places = rng.sample([0, 1, 2, 3, 4, 5, 6, 7], 2).sort((x, y) => x - y);
+      const places = rng.sample([0, 1, 2, 3, 4, 5, 6, 7], level === 3 ? 2 : 3).sort((x, y) => x - y);
       holes = places.map((place) => holeAt(fold, place % 2, Math.floor(place / 2)));
     }
     const sets: Hole[][] = [
@@ -186,7 +260,7 @@ function folding(level: Level, rng: Rng): QuestionDraft {
       holes, // the punch went through one layer only
       [...holes, ...holes.map((hole) => wrongWay(fold, hole))],
     ];
-    if (level === 3) sets.push([...holes, ...holes.map((hole) => slid(fold, hole))]);
+    if (level >= 3) sets.push([...holes, ...holes.map((hole) => slid(fold, hole))]);
     // Two holes side by side slide and flip to the same places. Such a set is thrown away.
     if (new Set(sets.map(holesCode)).size !== sets.length) continue;
     const options = rng.shuffle(sets);
@@ -222,7 +296,7 @@ function foldingLesson(): LessonStep[] {
 
 export const paperFoldingGenerator: SkillGenerator = {
   skillId: 'R-A12',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: [],
   pool: { 1: 4 }, // two folds, two outer corners each

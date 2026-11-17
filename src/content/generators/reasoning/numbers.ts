@@ -10,7 +10,8 @@ import { numeralChoices } from '../math/k/numerals';
 // Reasoning A.8, A.10 and A.11: number analogies, number series and number puzzles.
 
 // ---- A.8 Number analogies ----
-// Levels: two example pairs, then a third to finish: plus n / double / typed.
+// Levels: two example pairs, then a third to finish: plus n / double / typed /
+// typed, with times 3, 4 or 5, or two steps: double, then add or take away a little.
 // One pair is never enough: "2 and 4" fits both plus 2 and double.
 
 type Rule = { kind: 'plus' | 'minus'; n: number } | { kind: 'double' };
@@ -46,6 +47,50 @@ function numberAnalogy(level: Level, rng: Rng): QuestionDraft {
   return { ...common, type: 'choice', facts: { examples, base, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer) };
 }
 
+type HardRule = { kind: 'times'; n: number } | { kind: 'twoStep'; m: number };
+
+const hardApplied = (rule: HardRule, value: number): number => (rule.kind === 'times' ? value * rule.n : value * 2 + rule.m);
+
+function hardExplanation(rule: HardRule, base: number): Explanation {
+  const answer = hardApplied(rule, base);
+  if (rule.kind === 'times') {
+    return {
+      speak: ['Each number becomes', { number: rule.n }, 'times as big.', { number: base }, 'becomes', { number: answer }, '.'],
+      steps: [`Each number becomes ${rule.n} times as big.`, `${base} becomes ${answer}.`],
+      visual: pairPicture(base, answer),
+    };
+  }
+  const way = rule.m > 0 ? 'add' : 'take away';
+  const sign = rule.m > 0 ? 'plus' : 'minus';
+  const m = Math.abs(rule.m);
+  return {
+    speak: ['Each number is doubled, then you', way, { number: m }, '.', { number: base }, 'doubled is', { number: base * 2 }, ', and', { number: base * 2 }, sign, { number: m }, 'is', { number: answer }, '.'],
+    steps: [`Each number is doubled, then you ${way} ${m}.`, `${base} doubled is ${base * 2}.`, `${base * 2} ${sign} ${m} is ${answer}.`],
+    visual: pairPicture(base, answer),
+  };
+}
+
+function hardAnalogy(rng: Rng): QuestionDraft {
+  const rule: HardRule = rng.bool() ? { kind: 'times', n: rng.int(3, 5) } : { kind: 'twoStep', m: rng.pick([-3, -2, -1, 1, 2, 3]) };
+  // Three different starting numbers. With "take away", each is bigger than what is taken away, so every
+  // number grows and none stays the same (3 doubled, take away 3, is 3 again).
+  const lowest = rule.kind === 'twoStep' && rule.m < 0 ? 1 - rule.m : 1;
+  const [first, second, base] = rng.sample(Array.from({ length: 9 }, (_, i) => lowest + i), 3) as [number, number, number];
+  const examples = [first, second].map((from) => [from, hardApplied(rule, from)]);
+  return {
+    type: 'numberPad',
+    mode: 'look',
+    facts: { examples, base },
+    prompt: { text: PAIRS, speak: [PAIRS] },
+    stimulus: row(pairPicture(first, hardApplied(rule, first)), pairPicture(second, hardApplied(rule, second)), pairPicture(base, 'blank')),
+    answer: hardApplied(rule, base),
+    maxDigits: 2,
+    explanation: hardExplanation(rule, base),
+  };
+}
+
+const analogyOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? hardAnalogy(rng) : numberAnalogy(level, rng));
+
 function analogyLesson(): LessonStep[] {
   const plus: Rule = { kind: 'plus', n: 3 };
   const double: Rule = { kind: 'double' };
@@ -65,18 +110,19 @@ function analogyLesson(): LessonStep[] {
 
 export const numberAnalogiesGenerator: SkillGenerator = {
   skillId: 'R-A8',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice', 'numberPad'],
   lists: [],
-  generate: numberAnalogy,
+  generate: analogyOf,
   exampleSeed: 88,
-  example: () => numberAnalogy(1, makeRng(88)),
+  example: () => analogyOf(1, makeRng(88)),
   lesson: analogyLesson,
   oracle: 'numberRule',
 };
 
 // ---- A.10 Number series ----
-// Levels: plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed.
+// Levels: plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed /
+// typed, with jumps that grow by the same amount each time, or each number 2 or 3 times the one before.
 
 const NEXT = 'What comes next?';
 
@@ -126,6 +172,52 @@ function numberSeries(level: Level, rng: Rng): QuestionDraft {
   return { ...common, type: 'choice', facts: { start, steps, blankIndex: shown, options }, options: options.map((value) => numeral(value)), answerIndex: options.indexOf(answer) };
 }
 
+function growingSeries(rng: Rng): QuestionDraft {
+  if (rng.bool()) {
+    // The jumps grow: up by 2, then 3, then 4.
+    const start = rng.int(1, 9);
+    const first = rng.int(1, 3);
+    const grow = rng.int(1, 2);
+    const shown = 5;
+    const jumps = Array.from({ length: shown }, (_, i) => first + grow * i);
+    const values = jumps.reduce((out, jump) => [...out, (out.at(-1) as number) + jump], [start]);
+    const answer = values[shown] as number;
+    const seen = jumps.slice(0, shown - 1);
+    const next = jumps[shown - 1] as number;
+    const speak: Say = ['The jumps go', ...seen.flatMap((jump, i): Say => (i === 0 ? [{ number: jump }] : [',', { number: jump }])), '.', 'The next jump is', { number: next }, ', so next is', { number: answer }, '.'];
+    return {
+      type: 'numberPad',
+      mode: 'look',
+      facts: { start, steps: [first], grow, rule: 'grow', blankIndex: shown },
+      prompt: { text: NEXT, speak: [NEXT] },
+      stimulus: seriesRow(values.slice(0, shown), 'blank'),
+      answer,
+      maxDigits: 3,
+      explanation: { speak, steps: [`The jumps go ${seen.join(', ')}.`, `The next jump is ${next}, so next is ${answer}.`], visual: seriesRow(values.slice(0, shown), answer) },
+    };
+  }
+  // Each number is 2 or 3 times the one before.
+  const factor = rng.pick([2, 3]);
+  const start = factor === 2 ? rng.int(1, 6) : rng.int(1, 3);
+  const shown = 4;
+  const values = Array.from({ length: shown + 1 }, (_, i) => start * factor ** i);
+  const answer = values[shown] as number;
+  const rule = factor === 2 ? 'Each number is double the one before.' : 'Each number is 3 times the one before.';
+  const ruleSay: Say = factor === 2 ? [rule] : ['Each number is', { number: 3 }, 'times the one before.'];
+  return {
+    type: 'numberPad',
+    mode: 'look',
+    facts: { start, steps: [factor], rule: 'times', blankIndex: shown },
+    prompt: { text: NEXT, speak: [NEXT] },
+    stimulus: seriesRow(values.slice(0, shown), 'blank'),
+    answer,
+    maxDigits: 3,
+    explanation: { speak: [...ruleSay, 'Next is', { number: answer }, '.'], steps: [rule, `Next is ${answer}.`], visual: seriesRow(values.slice(0, shown), answer) },
+  };
+}
+
+const seriesOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? growingSeries(rng) : numberSeries(level, rng));
+
 function seriesLesson(): LessonStep[] {
   return [
     { beat: 'see', text: 'Numbers in a row can jump by the same amount each time.', speak: ['Numbers in a row can jump by the same amount each time.'], visual: seriesRow([2, 4, 6], 8) },
@@ -143,18 +235,19 @@ function seriesLesson(): LessonStep[] {
 
 export const numberSeriesGenerator: SkillGenerator = {
   skillId: 'R-A10',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice', 'numberPad'],
   lists: [],
-  generate: numberSeries,
+  generate: seriesOf,
   exampleSeed: 90,
-  example: () => numberSeries(1, makeRng(90)),
+  example: () => seriesOf(1, makeRng(90)),
   lesson: seriesLesson,
   oracle: 'series',
 };
 
 // ---- A.11 Number puzzles ----
-// Levels: balance scale, 3 and blank balance 5 / both pans hold sums / typed.
+// Levels: balance scale, 3 and blank balance 5 / both pans hold sums / typed /
+// typed, with two or three empty boxes that hold the same number (oracle: balance).
 
 const BALANCE = 'What number makes the scale balance?';
 
@@ -188,6 +281,43 @@ function numberPuzzle(level: Level, rng: Rng): QuestionDraft {
   return { ...common, type: 'choice', facts: { ...facts, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(b) };
 }
 
+const SAME_BOXES = 'Each empty box holds the same number. What number is it?';
+
+function sameBoxes(rng: Rng): QuestionDraft {
+  const copies = rng.int(2, 3);
+  const x = rng.int(2, 9);
+  const known = rng.bool() ? rng.int(1, 9) : 0;
+  const total = known + copies * x;
+  let right = [total];
+  if (rng.bool()) {
+    // Two blocks on the right, neither of them the answer.
+    const first = rng.pick(Array.from({ length: total - 1 }, (_, i) => i + 1).filter((value) => value !== x && total - value !== x));
+    right = [first, total - first];
+  }
+  const left: (number | 'blank')[] = [...(known > 0 ? [known] : []), ...Array.from({ length: copies }, () => 'blank' as const)];
+  const rest = total - known;
+  const speak: Say = ['The other side is', { number: total }, '.'];
+  const steps = [`The other side is ${total}.`];
+  if (known > 0) {
+    speak.push('Take away', { number: known }, '. That leaves', { number: rest }, '.');
+    steps.push(`Take away ${known}. That leaves ${rest}.`);
+  }
+  speak.push({ number: copies }, 'boxes make', { number: rest }, ', so each box is', { number: x }, '.');
+  steps.push(`${copies} boxes make ${rest}, so each box is ${x}.`);
+  return {
+    type: 'numberPad',
+    mode: 'look',
+    facts: { oracle: 'balance', left, right },
+    prompt: { text: SAME_BOXES, speak: [SAME_BOXES] },
+    stimulus: { kind: 'scale', left, right },
+    answer: x,
+    maxDigits: 1,
+    explanation: { speak, steps, visual: { kind: 'scale', left: left.map((value) => (value === 'blank' ? x : value)), right } },
+  };
+}
+
+const puzzleOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? sameBoxes(rng) : numberPuzzle(level, rng));
+
 function puzzleLesson(): LessonStep[] {
   return [
     { beat: 'see', text: 'A scale balances when both sides are the same amount.', speak: ['A scale balances when both sides are the same amount.'], visual: { kind: 'scale', left: [2, 3], right: [5] } },
@@ -205,12 +335,12 @@ function puzzleLesson(): LessonStep[] {
 
 export const numberPuzzlesGenerator: SkillGenerator = {
   skillId: 'R-A11',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice', 'numberPad'],
   lists: [],
-  generate: numberPuzzle,
+  generate: puzzleOf,
   exampleSeed: 91,
-  example: () => numberPuzzle(1, makeRng(91)),
+  example: () => puzzleOf(1, makeRng(91)),
   lesson: puzzleLesson,
   oracle: 'missing',
 };

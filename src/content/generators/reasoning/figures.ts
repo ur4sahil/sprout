@@ -25,7 +25,8 @@ function clearFrom(others: ColorName[], rng: Rng): ColorName {
 }
 
 // ---- A.3 Figure analogies ----
-// Levels: one attribute changes / two change.
+// Levels: one attribute changes / two change / three of four change (shape, colour, size and how many),
+// and every wrong option misses one of the three changes.
 
 const ATTRIBUTE = ['shape', 'colour', 'size'] as const;
 const ANALOGY = 'Look at the first pair. Which one finishes the second pair the same way?';
@@ -79,6 +80,58 @@ function figureAnalogy(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+// Level 3: a figure is [shape, colour, size, how many]. Sizes are small and middle, so two fit in a box.
+type Figure4 = [ShapeName, ColorName, 's' | 'm', '1' | '2'];
+const ATTRIBUTE4 = ['shape', 'colour', 'size', 'number of shapes'] as const;
+
+function draw4([form, color, size, count]: Figure4): Visual {
+  return count === '1' ? shape(form, color, size) : row(shape(form, color, size), shape(form, color, size));
+}
+
+function changed4(figure: Figure4, i: number, rng: Rng): Figure4 {
+  const out: Figure4 = [...figure];
+  if (i === 0) out[0] = rng.pick(FORMS.filter((form) => form !== figure[0]));
+  else if (i === 1) out[1] = clearFrom([figure[1]], rng);
+  else if (i === 2) out[2] = figure[2] === 's' ? 'm' : 's';
+  else out[3] = figure[3] === '1' ? '2' : '1';
+  return out;
+}
+
+const worded4 = (i: number, value: string): string => (i === 2 ? (SIZE_WORD[value] as string) : i === 3 ? (value === '1' ? 'one' : 'two') : value);
+
+function threeChanges(rng: Rng): QuestionDraft {
+  const from: Figure4 = [rng.pick(FORMS), rng.pick(COLOR_NAMES), rng.pick<'s' | 'm'>(['s', 'm']), rng.pick<'1' | '2'>(['1', '2'])];
+  const still = rng.int(0, 3);
+  const moving = [0, 1, 2, 3].filter((i) => i !== still);
+  let to = from;
+  for (const i of moving) to = changed4(to, i, rng);
+  // The second pair differs from the first in the one thing that does not change.
+  const base = changed4(from, still, rng);
+  const answer: Figure4 = [...base];
+  for (const i of moving) (answer as string[])[i] = to[i] as string;
+  // Each wrong option leaves out one of the three changes.
+  const missed = (i: number): Figure4 => {
+    const out: Figure4 = [...answer];
+    (out as string[])[i] = base[i] as string;
+    return out;
+  };
+  const options = rng.shuffle([answer, ...moving.map(missed)]);
+  const changes = moving.map((i) => `${ATTRIBUTE4[i] as string} from ${worded4(i, from[i] as string)} to ${worded4(i, to[i] as string)}`);
+  const line = `The first pair changes ${changes.slice(0, -1).join(', ')}, and ${changes.at(-1) as string}.`;
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { from, to, base, options: options.map(code) },
+    prompt: { text: ANALOGY, speak: [ANALOGY] },
+    stimulus: { kind: 'matrix', cells: [draw4(from), draw4(to), draw4(base), 'blank'] },
+    options: options.map(draw4),
+    answerIndex: options.indexOf(answer),
+    explanation: { speak: [`${line} Do all three here.`], steps: [line, 'Do all three here.'], visual: draw4(answer) },
+  };
+}
+
+const analogy = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? threeChanges(rng) : figureAnalogy(level, rng));
+
 function analogyLesson(): LessonStep[] {
   const [from, to, base, answer]: Figure[] = [['circle', 'red', 'l'], ['circle', 'red', 's'], ['square', 'blue', 'l'], ['square', 'blue', 's']];
   const [from2, to2, base2, answer2]: Figure[] = [['star', 'green', 'l'], ['star', 'orange', 'l'], ['heart', 'green', 'l'], ['heart', 'orange', 'l']];
@@ -100,18 +153,19 @@ function analogyLesson(): LessonStep[] {
 
 export const figureAnalogiesGenerator: SkillGenerator = {
   skillId: 'R-A3',
-  maxLevel: 2,
+  maxLevel: 3,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: figureAnalogy,
+  generate: analogy,
   exampleSeed: 83,
-  example: () => figureAnalogy(1, makeRng(83)),
+  example: () => analogy(1, makeRng(83)),
   lesson: analogyLesson,
   oracle: 'analogy',
 };
 
 // ---- A.4 Figure matrices ----
-// Levels: 2 by 2 grid, rows share shape and columns share colour / size and count / rotation.
+// Levels: 2 by 2 grid, rows share shape and columns share colour / size and count / rotation /
+// 3 by 3 grid: each row shares a colour, and each row and column holds each of three shapes once.
 
 const MATRIX = 'Which one goes in the empty box?';
 
@@ -200,6 +254,49 @@ function figureMatrix(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+// A 3 by 3 grid of figures, written for the figureGrid oracle: "shape|colour" in each cell.
+interface Piece {
+  code: string;
+  picture: Visual;
+}
+const piece = (form: ShapeName, color: ColorName): Piece => ({ code: `${form}|${color}`, picture: shape(form, color) });
+
+function gridQuestion(grid: Piece[], blank: number, offered: Piece[], prompt: string, lines: string[], rng: Rng): QuestionDraft {
+  const answer = offered[0] as Piece;
+  const options = rng.shuffle(offered);
+  const cells = grid.map((cell, i) => (i === blank ? ('blank' as const) : cell.picture));
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { oracle: 'figureGrid', cells: grid.map((cell, i) => (i === blank ? 'blank' : cell.code)), blank, options: options.map((option) => option.code) },
+    prompt: { text: prompt, speak: [prompt] },
+    stimulus: { kind: 'matrix', cells },
+    options: options.map((option) => option.picture),
+    answerIndex: options.indexOf(answer),
+    explanation: { speak: [lines.join(' ')], steps: lines, visual: { kind: 'matrix', cells: grid.map((cell) => cell.picture) } },
+  };
+}
+
+function latinMatrix(rng: Rng): QuestionDraft {
+  const forms = rng.sample(FORMS, 3) as [ShapeName, ShapeName, ShapeName];
+  const colors = threeColors(rng);
+  // The shapes run on a slant: one step along each row, one or two steps down each column.
+  const slant = rng.pick([1, 2]);
+  const formAt = (r: number, c: number): ShapeName => forms[(c + slant * r) % 3] as ShapeName;
+  const at = (r: number, c: number): Piece => piece(formAt(r, c), colors[r] as ColorName);
+  const grid = Array.from({ length: 9 }, (_, i) => at(Math.floor(i / 3), i % 3));
+  const blank = rng.int(0, 8);
+  const [r, c] = [Math.floor(blank / 3), blank % 3];
+  const otherRow = rng.pick([0, 1, 2].filter((i) => i !== r));
+  const otherCol = rng.pick([0, 1, 2].filter((i) => i !== c));
+  // Right shape and another row's colour, a shape already in the row, and both wrong.
+  const offered = [at(r, c), piece(formAt(r, c), colors[otherRow] as ColorName), at(r, otherCol), piece(formAt(r, otherCol), colors[otherRow] as ColorName)];
+  const lines = ['Each row has the same colour.', 'Each row and each column has every shape once.', `The box needs ${a(colors[r] as string)} ${formAt(r, c)}.`];
+  return gridQuestion(grid, blank, offered, MATRIX, lines, rng);
+}
+
+const matrixOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? latinMatrix(rng) : figureMatrix(level, rng));
+
 function matrixLesson(): LessonStep[] {
   const cell = (form: ShapeName, color: ColorName): Visual => shape(form, color);
   const full: Visual = { kind: 'matrix', cells: [cell('circle', 'red'), cell('circle', 'blue'), cell('square', 'red'), cell('square', 'blue')] };
@@ -221,19 +318,20 @@ function matrixLesson(): LessonStep[] {
 
 export const figureMatricesGenerator: SkillGenerator = {
   skillId: 'R-A4',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: figureMatrix,
+  generate: matrixOf,
   exampleSeed: 84,
-  example: () => figureMatrix(1, makeRng(84)),
+  example: () => matrixOf(1, makeRng(84)),
   lesson: matrixLesson,
   oracle: 'matrix',
 };
 
 // ---- A.7 Two-rule patterns ----
-// Levels: colour and size alternate on different beats / colour and shape.
+// Levels: colour and size alternate on different beats / colour and shape / colour, size and shape at once.
 // One rule changes every step and the other every second step, so the pattern repeats after four.
+// At level 3 the shape also goes round three shapes, one a step, so the whole pattern repeats after twelve.
 
 const NEXT = 'What comes next?';
 
@@ -308,6 +406,43 @@ function twoRulePattern(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+function threeRulePattern(rng: Rng): QuestionDraft {
+  const colors = twoClearColors(rng);
+  const sizes = rng.shuffle<Size>(['l', 's']);
+  const forms = rng.sample(FORMS, 3) as [ShapeName, ShapeName, ShapeName];
+  const colourIsSlow = rng.bool();
+  const beat = (color: ColorName, size: Size, form: ShapeName): Beat => ({ code: `${color}|${size}|${form}`, picture: shape(form, color, size), name: `${SIZE_WORD[size] as string} ${color} ${form}` });
+  const fast = (i: number): number => i % 2;
+  const slow = (i: number): number => Math.floor(i / 2) % 2;
+  const parts = (i: number): [ColorName, Size, ShapeName] => [colors[colourIsSlow ? slow(i) : fast(i)] as ColorName, sizes[colourIsSlow ? fast(i) : slow(i)] as Size, forms[i % 3] as ShapeName];
+  const unit = Array.from({ length: 12 }, (_, i) => beat(...parts(i)));
+  const shown = rng.int(6, 7);
+  const [color, size, form] = parts(shown);
+  const answer = unit[shown] as Beat;
+  // Each wrong option breaks one rule: the other colour, the other size, or the last shape again.
+  const wrong = [
+    beat(colors[colors[0] === color ? 1 : 0] as ColorName, size, form),
+    beat(color, sizes[sizes[0] === size ? 1 : 0] as Size, form),
+    beat(color, size, forms[(shown - 1) % 3] as ShapeName),
+  ];
+  const options = rng.shuffle([answer, ...wrong]);
+  const goes = (values: readonly string[], isSlow: boolean): string => (isSlow ? [values[0], values[0], values[1], values[1]] : values).join(', ');
+  const sizeWords = sizes.map((each) => SIZE_WORD[each] as string);
+  const lines = [`The colour goes ${goes(colors, colourIsSlow)}.`, `The size goes ${goes(sizeWords, !colourIsSlow)}.`, `The shape goes ${forms.join(', ')}.`, `Next is ${a(answer.name)}.`];
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { unit: unit.map((each) => each.code), shown, options: options.map((each) => each.code) },
+    prompt: { text: NEXT, speak: [NEXT] },
+    stimulus: { kind: 'sequence', items: [...unit.slice(0, shown).map((each) => each.picture), 'blank'] },
+    options: options.map((each) => each.picture),
+    answerIndex: options.indexOf(answer),
+    explanation: { speak: [lines.join(' ')], steps: lines, visual: answer.picture },
+  };
+}
+
+const patternOf = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? threeRulePattern(rng) : twoRulePattern(level, rng));
+
 function patternLesson(): LessonStep[] {
   const beat = (color: ColorName, size: Size): Beat => ({ code: `${color}|${size}`, picture: shape('circle', color, size), name: `${SIZE_WORD[size]} ${color} circle` });
   const unit = [beat('red', 'l'), beat('red', 's'), beat('blue', 'l'), beat('blue', 's')];
@@ -325,18 +460,20 @@ function patternLesson(): LessonStep[] {
 
 export const twoRulePatternsGenerator: SkillGenerator = {
   skillId: 'R-A7',
-  maxLevel: 2,
+  maxLevel: 3,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: twoRulePattern,
+  generate: patternOf,
   exampleSeed: 87,
-  example: () => twoRulePattern(1, makeRng(87)),
+  example: () => patternOf(1, makeRng(87)),
   lesson: patternLesson,
   oracle: 'pattern',
 };
 
 // ---- A.13 Pattern completion ----
-// Levels: 3 by 3 striped tile with a missing corner / checkerboard with a missing middle / two attributes.
+// Levels: 3 by 3 striped tile with a missing corner / checkerboard with a missing middle / two attributes /
+// two attributes that both run on a slant, so each row and column holds every shape and every colour once,
+// with the middle missing.
 
 const PIECE = 'Which piece finishes the picture?';
 const tile = (color: string): Visual => shape('square', color as ColorName);
@@ -403,6 +540,27 @@ function completion(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+function slantedTile(rng: Rng): QuestionDraft {
+  const forms = rng.sample(FORMS, 3) as [ShapeName, ShapeName, ShapeName];
+  const colors = threeColors(rng);
+  // Shape and colour run on different slants, so all nine pieces differ.
+  const shapeSlant = rng.pick([1, 2]);
+  const at = (r: number, c: number): Piece => piece(forms[(r + shapeSlant * c) % 3] as ShapeName, colors[(r + (3 - shapeSlant) * c) % 3] as ColorName);
+  const grid = Array.from({ length: 9 }, (_, i) => at(Math.floor(i / 3), i % 3));
+  const blank = 4;
+  const parts = (i: number): [ShapeName, ColorName] => (grid[i] as Piece).code.split('|') as [ShapeName, ColorName];
+  const [form, color] = parts(blank);
+  // The wrong shapes and colours are ones already in the middle row.
+  const side = rng.pick([3, 5]);
+  const [sideForm, sideColor] = parts(side);
+  const [farForm, farColor] = parts(8 - side);
+  const offered = [piece(form, color), piece(form, sideColor), piece(farForm, color), piece(sideForm, farColor)];
+  const lines = ['Each row and each column has every shape once.', 'Each row and each column has every colour once.', `The gap needs ${a(color)} ${form}.`];
+  return gridQuestion(grid, blank, offered, PIECE, lines, rng);
+}
+
+const completionOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? slantedTile(rng) : completion(level, rng));
+
 function completionLesson(): LessonStep[] {
   const stripes = (missing: number | null): Visual => ({ kind: 'matrix', cells: Array.from({ length: 9 }, (_, i) => (i === missing ? 'blank' : tile(Math.floor(i / 3) === 1 ? 'blue' : 'yellow'))) });
   const checks = (missing: number | null): Visual => ({ kind: 'matrix', cells: Array.from({ length: 9 }, (_, i) => (i === missing ? 'blank' : tile((Math.floor(i / 3) + (i % 3)) % 2 === 0 ? 'green' : 'orange'))) });
@@ -416,12 +574,12 @@ function completionLesson(): LessonStep[] {
 
 export const patternCompletionGenerator: SkillGenerator = {
   skillId: 'R-A13',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: ['colors'],
-  generate: completion,
+  generate: completionOf,
   exampleSeed: 93,
-  example: () => completion(1, makeRng(93)),
+  example: () => completionOf(1, makeRng(93)),
   lesson: completionLesson,
   oracle: 'matrix',
 };

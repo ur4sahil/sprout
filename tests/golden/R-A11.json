@@ -1,6 +1,6 @@
 {
  "skillId": "R-A11",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -2723,6 +2723,826 @@
     "level": 3,
     "seed": 10,
     "key": "R-A11|3|{\"a\":7,\"b\":3,\"blank\":\"b\",\"right\":[10],\"total\":10}"
+   }
+  ],
+  "4": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      6
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 6
+      },
+      ", so each box is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 6.",
+      "3 boxes make 6, so each box is 2."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       2,
+       2,
+       2
+      ],
+      "right": [
+       6
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A11|4|{\"left\":[\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[6]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      5,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      17
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      5,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      17
+     ]
+    },
+    "answer": 4,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 17
+      },
+      ".",
+      "Take away",
+      {
+       "number": 5
+      },
+      ". That leaves",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 12
+      },
+      ", so each box is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 17.",
+      "Take away 5. That leaves 12.",
+      "3 boxes make 12, so each box is 4."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       5,
+       4,
+       4,
+       4
+      ],
+      "right": [
+       17
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A11|4|{\"left\":[5,\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[17]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      1,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      1,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      7
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 7
+      },
+      ".",
+      "Take away",
+      {
+       "number": 1
+      },
+      ". That leaves",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 6
+      },
+      ", so each box is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 7.",
+      "Take away 1. That leaves 6.",
+      "3 boxes make 6, so each box is 2."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       1,
+       2,
+       2,
+       2
+      ],
+      "right": [
+       7
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A11|4|{\"left\":[1,\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[7]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      1,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      7,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      1,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      7,
+      6
+     ]
+    },
+    "answer": 4,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 13
+      },
+      ".",
+      "Take away",
+      {
+       "number": 1
+      },
+      ". That leaves",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 12
+      },
+      ", so each box is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 13.",
+      "Take away 1. That leaves 12.",
+      "3 boxes make 12, so each box is 4."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       1,
+       4,
+       4,
+       4
+      ],
+      "right": [
+       7,
+       6
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A11|4|{\"left\":[1,\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[7,6]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      6,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      17,
+      13
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      6,
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      17,
+      13
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 30
+      },
+      ".",
+      "Take away",
+      {
+       "number": 6
+      },
+      ". That leaves",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 24
+      },
+      ", so each box is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 30.",
+      "Take away 6. That leaves 24.",
+      "3 boxes make 24, so each box is 8."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       6,
+       8,
+       8,
+       8
+      ],
+      "right": [
+       17,
+       13
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A11|4|{\"left\":[6,\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[17,13]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      3,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      3,
+      3
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 6
+      },
+      ", so each box is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 6.",
+      "3 boxes make 6, so each box is 2."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       2,
+       2,
+       2
+      ],
+      "right": [
+       3,
+       3
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A11|4|{\"left\":[\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[3,3]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      "blank",
+      "blank"
+     ],
+     "right": [
+      4
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      "blank",
+      "blank"
+     ],
+     "right": [
+      4
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "boxes make",
+      {
+       "number": 4
+      },
+      ", so each box is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 4.",
+      "2 boxes make 4, so each box is 2."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       2,
+       2
+      ],
+      "right": [
+       4
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A11|4|{\"left\":[\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[4]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      7,
+      "blank",
+      "blank"
+     ],
+     "right": [
+      21
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      7,
+      "blank",
+      "blank"
+     ],
+     "right": [
+      21
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 21
+      },
+      ".",
+      "Take away",
+      {
+       "number": 7
+      },
+      ". That leaves",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "boxes make",
+      {
+       "number": 14
+      },
+      ", so each box is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 21.",
+      "Take away 7. That leaves 14.",
+      "2 boxes make 14, so each box is 7."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       7,
+       7,
+       7
+      ],
+      "right": [
+       21
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A11|4|{\"left\":[7,\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[21]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      8,
+      "blank",
+      "blank"
+     ],
+     "right": [
+      24
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      8,
+      "blank",
+      "blank"
+     ],
+     "right": [
+      24
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 24
+      },
+      ".",
+      "Take away",
+      {
+       "number": 8
+      },
+      ". That leaves",
+      {
+       "number": 16
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "boxes make",
+      {
+       "number": 16
+      },
+      ", so each box is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 24.",
+      "Take away 8. That leaves 16.",
+      "2 boxes make 16, so each box is 8."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       8,
+       8,
+       8
+      ],
+      "right": [
+       24
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A11|4|{\"left\":[8,\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[24]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "oracle": "balance",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      27
+     ]
+    },
+    "prompt": {
+     "text": "Each empty box holds the same number. What number is it?",
+     "speak": [
+      "Each empty box holds the same number. What number is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "scale",
+     "left": [
+      "blank",
+      "blank",
+      "blank"
+     ],
+     "right": [
+      27
+     ]
+    },
+    "answer": 9,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      "The other side is",
+      {
+       "number": 27
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "boxes make",
+      {
+       "number": 27
+      },
+      ", so each box is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "The other side is 27.",
+      "3 boxes make 27, so each box is 9."
+     ],
+     "visual": {
+      "kind": "scale",
+      "left": [
+       9,
+       9,
+       9
+      ],
+      "right": [
+       27
+      ]
+     }
+    },
+    "skillId": "R-A11",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A11|4|{\"left\":[\"blank\",\"blank\",\"blank\"],\"oracle\":\"balance\",\"right\":[27]}"
    }
   ]
  }

@@ -1,6 +1,6 @@
 {
  "skillId": "R-A9",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3154,6 +3154,1628 @@
     "level": 2,
     "seed": 10,
     "key": "R-A9|2|{\"example\":[\"spoon\",\"soup\"],\"relation\":\"analogyPair\",\"target\":\"pencil\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "water",
+     "relation": "analogyBack",
+     "example": [
+      "tree",
+      "bird"
+     ],
+     "options": [
+      "bird",
+      "fish",
+      "spider",
+      "hen"
+     ]
+    },
+    "prompt": {
+     "text": "Tree is to bird as water is to what?",
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "is to",
+      {
+       "word": "bird"
+      },
+      "as",
+      {
+       "word": "water"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bird"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spider"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hen"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "steps": [
+      "A bird lives in a tree.",
+      "A fish lives in water."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌊",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "water"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A9|3|{\"example\":[\"tree\",\"bird\"],\"relation\":\"analogyBack\",\"target\":\"water\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "web",
+     "relation": "analogyBack",
+     "example": [
+      "water",
+      "fish"
+     ],
+     "options": [
+      "spider",
+      "fish",
+      "bee",
+      "bird"
+     ]
+    },
+    "prompt": {
+     "text": "Water is to fish as web is to what?",
+     "speak": [
+      {
+       "word": "water"
+      },
+      "is to",
+      {
+       "word": "fish"
+      },
+      "as",
+      {
+       "word": "web"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spider"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bee"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bird"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A spider lives in a web."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕸️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕷️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "spider"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A9|3|{\"example\":[\"water\",\"fish\"],\"relation\":\"analogyBack\",\"target\":\"web\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "tree",
+     "relation": "analogyBack",
+     "example": [
+      "water",
+      "fish"
+     ],
+     "options": [
+      "fish",
+      "key",
+      "spider",
+      "bird"
+     ]
+    },
+    "prompt": {
+     "text": "Water is to fish as tree is to what?",
+     "speak": [
+      {
+       "word": "water"
+      },
+      "is to",
+      {
+       "word": "fish"
+      },
+      "as",
+      {
+       "word": "tree"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌊",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "water"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spider"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bird"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A fish lives in water.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A9|3|{\"example\":[\"water\",\"fish\"],\"relation\":\"analogyBack\",\"target\":\"tree\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sunglasses",
+     "relation": "analogyBack",
+     "example": [
+      "umbrella",
+      "rain"
+     ],
+     "options": [
+      "snow",
+      "rain",
+      "glasses",
+      "sun"
+     ]
+    },
+    "prompt": {
+     "text": "Umbrella is to rain as sunglasses is to what?",
+     "speak": [
+      {
+       "word": "umbrella"
+      },
+      "is to",
+      {
+       "word": "rain"
+      },
+      "as",
+      {
+       "word": "sunglasses"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "☂️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "umbrella"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌧️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "rain"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕶️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sunglasses"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "❄️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "steps": [
+      "In the rain we use an umbrella.",
+      "In the sun we wear sunglasses."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕶️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sunglasses"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A9|3|{\"example\":[\"umbrella\",\"rain\"],\"relation\":\"analogyBack\",\"target\":\"sunglasses\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "tree",
+     "relation": "analogyBack",
+     "example": [
+      "web",
+      "spider"
+     ],
+     "options": [
+      "glove",
+      "fish",
+      "bird",
+      "spider"
+     ]
+    },
+    "prompt": {
+     "text": "Web is to spider as tree is to what?",
+     "speak": [
+      {
+       "word": "web"
+      },
+      "is to",
+      {
+       "word": "spider"
+      },
+      "as",
+      {
+       "word": "tree"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕷️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glove"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bird"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spider"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "steps": [
+      "A spider lives in a web.",
+      "A bird lives in a tree."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A9|3|{\"example\":[\"web\",\"spider\"],\"relation\":\"analogyBack\",\"target\":\"tree\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "paper",
+     "relation": "analogyBack",
+     "example": [
+      "lock",
+      "key"
+     ],
+     "options": [
+      "spoon",
+      "bird",
+      "key",
+      "pencil"
+     ]
+    },
+    "prompt": {
+     "text": "Lock is to key as paper is to what?",
+     "speak": [
+      {
+       "word": "lock"
+      },
+      "is to",
+      {
+       "word": "key"
+      },
+      "as",
+      {
+       "word": "paper"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lock"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🔑",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "key"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "paper"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spoon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bird"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pencil"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A key is used with a lock.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A9|3|{\"example\":[\"lock\",\"key\"],\"relation\":\"analogyBack\",\"target\":\"paper\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "foot",
+     "relation": "analogyBack",
+     "example": [
+      "hand",
+      "glove"
+     ],
+     "options": [
+      "snow",
+      "sock",
+      "glove",
+      "glasses"
+     ]
+    },
+    "prompt": {
+     "text": "Hand is to glove as foot is to what?",
+     "speak": [
+      {
+       "word": "hand"
+      },
+      "is to",
+      {
+       "word": "glove"
+      },
+      "as",
+      {
+       "word": "foot"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "foot"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "❄️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glove"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glasses"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "A sock goes on a foot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "foot"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A9|3|{\"example\":[\"hand\",\"glove\"],\"relation\":\"analogyBack\",\"target\":\"foot\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "eyes",
+     "relation": "analogyBack",
+     "example": [
+      "hand",
+      "glove"
+     ],
+     "options": [
+      "key",
+      "glasses",
+      "sock",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Hand is to glove as eyes is to what?",
+     "speak": [
+      {
+       "word": "hand"
+      },
+      "is to",
+      {
+       "word": "glove"
+      },
+      "as",
+      {
+       "word": "eyes"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "eyes"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glove"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A9|3|{\"example\":[\"hand\",\"glove\"],\"relation\":\"analogyBack\",\"target\":\"eyes\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "eyes",
+     "relation": "analogyBack",
+     "example": [
+      "hand",
+      "glove"
+     ],
+     "options": [
+      "glasses",
+      "sock",
+      "glove",
+      "cow"
+     ]
+    },
+    "prompt": {
+     "text": "Hand is to glove as eyes is to what?",
+     "speak": [
+      {
+       "word": "hand"
+      },
+      "is to",
+      {
+       "word": "glove"
+      },
+      "as",
+      {
+       "word": "eyes"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✋",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "eyes"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glasses"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "glove"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "steps": [
+      "A glove goes on a hand.",
+      "Glasses go on eyes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "eyes"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glasses"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A9|3|{\"example\":[\"hand\",\"glove\"],\"relation\":\"analogyBack\",\"target\":\"eyes\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "paper",
+     "relation": "analogyBack",
+     "example": [
+      "soup",
+      "spoon"
+     ],
+     "options": [
+      "spoon",
+      "pencil",
+      "key",
+      "spider"
+     ]
+    },
+    "prompt": {
+     "text": "Soup is to spoon as paper is to what?",
+     "speak": [
+      {
+       "word": "soup"
+      },
+      "is to",
+      {
+       "word": "spoon"
+      },
+      "as",
+      {
+       "word": "paper"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍲",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "soup"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "spoon"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "paper"
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spoon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pencil"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🕷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "spider"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "steps": [
+      "A spoon is used with soup.",
+      "A pencil is used with paper."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "paper"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pencil"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A9",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A9|3|{\"example\":[\"soup\",\"spoon\"],\"relation\":\"analogyBack\",\"target\":\"paper\"}"
    }
   ]
  }

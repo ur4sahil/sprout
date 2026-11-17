@@ -1,6 +1,6 @@
 {
  "skillId": "R-A12",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3923,6 +3923,2118 @@
     "level": 3,
     "seed": 10,
     "key": "R-A12|3|{\"fold\":\"vertical\",\"holes\":[{\"col\":0,\"row\":1},{\"col\":1,\"row\":2}]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 3,
+       "row": 0
+      },
+      {
+       "col": 3,
+       "row": 1
+      }
+     ],
+     "options": [
+      "1,0 1,2 3,0 3,1 3,2 3,3",
+      "1,0 1,3 3,0 3,1 3,2 3,3",
+      "0,0 0,1 1,0 2,0 3,0 3,1",
+      "1,0 3,0 3,1"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 3,
+       "row": 0
+      },
+      {
+       "col": 3,
+       "row": 1
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 0,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":1,\"row\":0},{\"col\":3,\"row\":0},{\"col\":3,\"row\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 0
+      }
+     ],
+     "options": [
+      "0,0 1,1 2,1 3,0",
+      "0,0 2,1 3,0",
+      "0,0 0,3 2,1 2,2 3,0 3,3",
+      "0,0 0,2 2,1 2,3 3,0 3,2"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 0
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 0,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 0,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 0,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":0,\"row\":0},{\"col\":2,\"row\":1},{\"col\":3,\"row\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ],
+     "options": [
+      "1,0 1,1 2,0 2,1",
+      "1,0 1,3 2,0 2,1 2,2 2,3",
+      "1,0 1,2 2,0 2,1 2,2 2,3",
+      "1,0 2,0 2,1"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":1,\"row\":0},{\"col\":2,\"row\":0},{\"col\":2,\"row\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ],
+     "options": [
+      "1,1 1,2 2,0 2,1 2,2 2,3",
+      "1,1 2,0 2,1",
+      "1,1 1,3 2,0 2,1 2,2 2,3",
+      "1,0 1,1 2,0 2,1"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":1,\"row\":1},{\"col\":2,\"row\":0},{\"col\":2,\"row\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 1
+      }
+     ],
+     "options": [
+      "0,1 1,0 1,1 2,0 2,1 3,1",
+      "2,0 2,1 3,1",
+      "2,0 2,1 2,2 2,3 3,1 3,2",
+      "2,0 2,1 2,2 2,3 3,1 3,3"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 2,
+       "row": 0
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 1
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":2,\"row\":0},{\"col\":2,\"row\":1},{\"col\":3,\"row\":1}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 0
+      }
+     ],
+     "options": [
+      "0,0 1,1 2,1 3,0",
+      "1,1 2,1 3,0",
+      "1,1 1,2 2,1 2,2 3,0 3,3",
+      "1,1 1,3 2,1 2,3 3,0 3,2"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 1
+      },
+      {
+       "col": 3,
+       "row": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 0
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":1,\"row\":1},{\"col\":2,\"row\":1},{\"col\":3,\"row\":0}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "vertical",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 1,
+       "row": 2
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ],
+     "options": [
+      "1,1 1,2 1,3",
+      "1,1 1,2 1,3 2,1 2,2 2,3",
+      "1,1 1,2 1,3 3,1 3,2 3,3",
+      "1,0 1,1 1,2 1,3"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "vertical",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 1,
+       "row": 2
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A12|4|{\"fold\":\"vertical\",\"holes\":[{\"col\":1,\"row\":1},{\"col\":1,\"row\":2},{\"col\":1,\"row\":3}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "vertical",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ],
+     "options": [
+      "0,0 1,1 1,3 2,0 3,1 3,3",
+      "0,0 1,1 1,3",
+      "0,0 1,1 1,3 2,1 2,3 3,0",
+      "0,0 0,3 1,0 1,1 1,2 1,3"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "vertical",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 0,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 0
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A12|4|{\"fold\":\"vertical\",\"holes\":[{\"col\":0,\"row\":0},{\"col\":1,\"row\":1},{\"col\":1,\"row\":3}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "vertical",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 2
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ],
+     "options": [
+      "1,0 1,2 1,3 3,0 3,2 3,3",
+      "1,0 1,1 1,2 1,3",
+      "1,0 1,2 1,3",
+      "1,0 1,2 1,3 2,0 2,2 2,3"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "vertical",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 1,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 2
+      },
+      {
+       "col": 1,
+       "row": 3
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 3,
+        "row": 2
+       },
+       {
+        "col": 3,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 0
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "vertical",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 1,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A12|4|{\"fold\":\"vertical\",\"holes\":[{\"col\":1,\"row\":0},{\"col\":1,\"row\":2},{\"col\":1,\"row\":3}]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "fold": "horizontal",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ],
+     "options": [
+      "0,0 0,2 1,1 1,3 2,1 2,3",
+      "0,0 1,1 2,1",
+      "0,0 1,1 2,1 3,0",
+      "0,0 0,3 1,1 1,2 2,1 2,2"
+     ]
+    },
+    "prompt": {
+     "text": "The paper is folded and punched. How does it look unfolded?",
+     "speak": [
+      "The paper is folded and punched. How does it look unfolded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "foldPunch",
+     "fold": "horizontal",
+     "state": "folded",
+     "holes": [
+      {
+       "col": 0,
+       "row": 0
+      },
+      {
+       "col": 1,
+       "row": 1
+      },
+      {
+       "col": 2,
+       "row": 1
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 2
+       },
+       {
+        "col": 1,
+        "row": 3
+       },
+       {
+        "col": 2,
+        "row": 3
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 3,
+        "row": 0
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 1,
+        "row": 1
+       }
+      ]
+     },
+     {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "One punch goes through both layers. The holes sit the same distance from the fold."
+     ],
+     "steps": [
+      "One punch goes through both layers.",
+      "The holes sit the same distance from the fold."
+     ],
+     "visual": {
+      "kind": "foldPunch",
+      "fold": "horizontal",
+      "state": "unfolded",
+      "holes": [
+       {
+        "col": 0,
+        "row": 0
+       },
+       {
+        "col": 1,
+        "row": 1
+       },
+       {
+        "col": 2,
+        "row": 1
+       },
+       {
+        "col": 0,
+        "row": 3
+       },
+       {
+        "col": 1,
+        "row": 2
+       },
+       {
+        "col": 2,
+        "row": 2
+       }
+      ]
+     }
+    },
+    "skillId": "R-A12",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A12|4|{\"fold\":\"horizontal\",\"holes\":[{\"col\":0,\"row\":0},{\"col\":1,\"row\":1},{\"col\":2,\"row\":1}]}"
    }
   ]
  }

@@ -1,6 +1,6 @@
 {
  "skillId": "R-A8",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -3403,6 +3403,976 @@
     "level": 3,
     "seed": 10,
     "key": "R-A8|3|{\"base\":13,\"examples\":[[11,6],[10,5]]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       4,
+       5
+      ],
+      [
+       12,
+       21
+      ]
+     ],
+     "base": 9
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        4,
+        "→",
+        5
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        12,
+        "→",
+        21
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        9,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "take away",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "doubled is",
+      {
+       "number": 18
+      },
+      ", and",
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you take away 3.",
+      "9 doubled is 18.",
+      "18 minus 3 is 15."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "→",
+       15
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A8|4|{\"base\":9,\"examples\":[[4,5],[12,21]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       8,
+       14
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "base": 10
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        14
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        3,
+        "→",
+        4
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        10,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 18,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "take away",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 10
+      },
+      "doubled is",
+      {
+       "number": 20
+      },
+      ", and",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you take away 2.",
+      "10 doubled is 20.",
+      "20 minus 2 is 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "→",
+       18
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A8|4|{\"base\":10,\"examples\":[[8,14],[3,4]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       12,
+       21
+      ],
+      [
+       5,
+       7
+      ]
+     ],
+     "base": 7
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        12,
+        "→",
+        21
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        5,
+        "→",
+        7
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        7,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 11,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "take away",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "doubled is",
+      {
+       "number": 14
+      },
+      ", and",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you take away 3.",
+      "7 doubled is 14.",
+      "14 minus 3 is 11."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "→",
+       11
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A8|4|{\"base\":7,\"examples\":[[12,21],[5,7]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       7,
+       12
+      ],
+      [
+       5,
+       8
+      ]
+     ],
+     "base": 9
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        7,
+        "→",
+        12
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        5,
+        "→",
+        8
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        9,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 16,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "take away",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "doubled is",
+      {
+       "number": 18
+      },
+      ", and",
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you take away 2.",
+      "9 doubled is 18.",
+      "18 minus 2 is 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "→",
+       16
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A8|4|{\"base\":9,\"examples\":[[7,12],[5,8]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       8,
+       18
+      ],
+      [
+       7,
+       16
+      ]
+     ],
+     "base": 3
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        18
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        7,
+        "→",
+        16
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        3,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "add",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "doubled is",
+      {
+       "number": 6
+      },
+      ", and",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you add 2.",
+      "3 doubled is 6.",
+      "6 plus 2 is 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "→",
+       8
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A8|4|{\"base\":3,\"examples\":[[8,18],[7,16]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       11,
+       19
+      ],
+      [
+       8,
+       13
+      ]
+     ],
+     "base": 6
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        11,
+        "→",
+        19
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        13
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        6,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "take away",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "doubled is",
+      {
+       "number": 12
+      },
+      ", and",
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you take away 3.",
+      "6 doubled is 12.",
+      "12 minus 3 is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "→",
+       9
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A8|4|{\"base\":6,\"examples\":[[11,19],[8,13]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       7,
+       21
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "base": 2
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        7,
+        "→",
+        21
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        5,
+        "→",
+        15
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        2,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number becomes",
+      {
+       "number": 3
+      },
+      "times as big.",
+      {
+       "number": 2
+      },
+      "becomes",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Each number becomes 3 times as big.",
+      "2 becomes 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "→",
+       6
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A8|4|{\"base\":2,\"examples\":[[7,21],[5,15]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       8,
+       32
+      ],
+      [
+       4,
+       16
+      ]
+     ],
+     "base": 2
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        32
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        4,
+        "→",
+        16
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        2,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number becomes",
+      {
+       "number": 4
+      },
+      "times as big.",
+      {
+       "number": 2
+      },
+      "becomes",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Each number becomes 4 times as big.",
+      "2 becomes 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "→",
+       8
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A8|4|{\"base\":2,\"examples\":[[8,32],[4,16]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       3,
+       15
+      ],
+      [
+       8,
+       40
+      ]
+     ],
+     "base": 1
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        3,
+        "→",
+        15
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        40
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        1,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number becomes",
+      {
+       "number": 5
+      },
+      "times as big.",
+      {
+       "number": 1
+      },
+      "becomes",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Each number becomes 5 times as big.",
+      "1 becomes 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "→",
+       5
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A8|4|{\"base\":1,\"examples\":[[3,15],[8,40]]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "examples": [
+      [
+       6,
+       15
+      ],
+      [
+       5,
+       13
+      ]
+     ],
+     "base": 8
+    },
+    "prompt": {
+     "text": "Look at the pairs. What number finishes the last pair?",
+     "speak": [
+      "Look at the pairs. What number finishes the last pair?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "equation",
+       "parts": [
+        6,
+        "→",
+        15
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        5,
+        "→",
+        13
+       ]
+      },
+      {
+       "kind": "equation",
+       "parts": [
+        8,
+        "→",
+        "blank"
+       ]
+      }
+     ]
+    },
+    "answer": 19,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Each number is doubled, then you",
+      "add",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "doubled is",
+      {
+       "number": 16
+      },
+      ", and",
+      {
+       "number": 16
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 19
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is doubled, then you add 3.",
+      "8 doubled is 16.",
+      "16 plus 3 is 19."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "→",
+       19
+      ]
+     }
+    },
+    "skillId": "R-A8",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A8|4|{\"base\":8,\"examples\":[[6,15],[5,13]]}"
    }
   ]
  }

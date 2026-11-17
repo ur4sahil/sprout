@@ -1,6 +1,6 @@
 {
  "skillId": "R-A10",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
@@ -5424,6 +5424,1529 @@
     "level": 3,
     "seed": 10,
     "key": "R-A10|3|{\"blankIndex\":5,\"start\":9,\"steps\":[1,3]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 4,
+     "steps": [
+      2
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "32",
+       "size": "l",
+       "speak": [
+        {
+         "number": 32
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 64,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is double the one before.",
+      "Next is",
+      {
+       "number": 64
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is double the one before.",
+      "Next is 64."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "32",
+        "size": "l",
+        "speak": [
+         {
+          "number": 32
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "64",
+        "size": "l",
+        "speak": [
+         {
+          "number": 64
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":4,\"steps\":[2]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 2,
+     "steps": [
+      2
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 32,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is double the one before.",
+      "Next is",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is double the one before.",
+      "Next is 32."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "32",
+        "size": "l",
+        "speak": [
+         {
+          "number": 32
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":2,\"steps\":[2]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 3,
+     "steps": [
+      2
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "12",
+       "size": "l",
+       "speak": [
+        {
+         "number": 12
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 48,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is double the one before.",
+      "Next is",
+      {
+       "number": 48
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is double the one before.",
+      "Next is 48."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "48",
+        "size": "l",
+        "speak": [
+         {
+          "number": 48
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":3,\"steps\":[2]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 2,
+     "steps": [
+      2
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 32,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is double the one before.",
+      "Next is",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is double the one before.",
+      "Next is 32."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "32",
+        "size": "l",
+        "speak": [
+         {
+          "number": 32
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":2,\"steps\":[2]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 1,
+     "steps": [
+      3
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "27",
+       "size": "l",
+       "speak": [
+        {
+         "number": 27
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 81,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is",
+      {
+       "number": 3
+      },
+      "times the one before.",
+      "Next is",
+      {
+       "number": 81
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is 3 times the one before.",
+      "Next is 81."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "27",
+        "size": "l",
+        "speak": [
+         {
+          "number": 27
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "81",
+        "size": "l",
+        "speak": [
+         {
+          "number": 81
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":1,\"steps\":[3]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 4,
+     "steps": [
+      2
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "32",
+       "size": "l",
+       "speak": [
+        {
+         "number": 32
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 64,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is double the one before.",
+      "Next is",
+      {
+       "number": 64
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is double the one before.",
+      "Next is 64."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "32",
+        "size": "l",
+        "speak": [
+         {
+          "number": 32
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "64",
+        "size": "l",
+        "speak": [
+         {
+          "number": 64
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":4,\"steps\":[2]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 1,
+     "steps": [
+      3
+     ],
+     "grow": 2,
+     "rule": "grow",
+     "blankIndex": 5
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25",
+       "size": "l",
+       "speak": [
+        {
+         "number": 25
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 36,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "The jumps go",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 9
+      },
+      ".",
+      "The next jump is",
+      {
+       "number": 11
+      },
+      ", so next is",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "The jumps go 3, 5, 7, 9.",
+      "The next jump is 11, so next is 36."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "25",
+        "size": "l",
+        "speak": [
+         {
+          "number": 25
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "36",
+        "size": "l",
+        "speak": [
+         {
+          "number": 36
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A10|4|{\"blankIndex\":5,\"grow\":2,\"rule\":\"grow\",\"start\":1,\"steps\":[3]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 6,
+     "steps": [
+      1
+     ],
+     "grow": 2,
+     "rule": "grow",
+     "blankIndex": 5
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "22",
+       "size": "l",
+       "speak": [
+        {
+         "number": 22
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 31,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "The jumps go",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ".",
+      "The next jump is",
+      {
+       "number": 9
+      },
+      ", so next is",
+      {
+       "number": 31
+      },
+      "."
+     ],
+     "steps": [
+      "The jumps go 1, 3, 5, 7.",
+      "The next jump is 9, so next is 31."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "22",
+        "size": "l",
+        "speak": [
+         {
+          "number": 22
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "31",
+        "size": "l",
+        "speak": [
+         {
+          "number": 31
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A10|4|{\"blankIndex\":5,\"grow\":2,\"rule\":\"grow\",\"start\":6,\"steps\":[1]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 8,
+     "steps": [
+      1
+     ],
+     "grow": 2,
+     "rule": "grow",
+     "blankIndex": 5
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "12",
+       "size": "l",
+       "speak": [
+        {
+         "number": 12
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 33,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "The jumps go",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ".",
+      "The next jump is",
+      {
+       "number": 9
+      },
+      ", so next is",
+      {
+       "number": 33
+      },
+      "."
+     ],
+     "steps": [
+      "The jumps go 1, 3, 5, 7.",
+      "The next jump is 9, so next is 33."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "33",
+        "size": "l",
+        "speak": [
+         {
+          "number": 33
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A10|4|{\"blankIndex\":5,\"grow\":2,\"rule\":\"grow\",\"start\":8,\"steps\":[1]}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "start": 3,
+     "steps": [
+      3
+     ],
+     "rule": "times",
+     "blankIndex": 4
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "27",
+       "size": "l",
+       "speak": [
+        {
+         "number": 27
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "81",
+       "size": "l",
+       "speak": [
+        {
+         "number": 81
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "answer": 243,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Each number is",
+      {
+       "number": 3
+      },
+      "times the one before.",
+      "Next is",
+      {
+       "number": 243
+      },
+      "."
+     ],
+     "steps": [
+      "Each number is 3 times the one before.",
+      "Next is 243."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "27",
+        "size": "l",
+        "speak": [
+         {
+          "number": 27
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "81",
+        "size": "l",
+        "speak": [
+         {
+          "number": 81
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "243",
+        "size": "l",
+        "speak": [
+         {
+          "number": 243
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A10",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A10|4|{\"blankIndex\":4,\"rule\":\"times\",\"start\":3,\"steps\":[3]}"
    }
   ]
  }
