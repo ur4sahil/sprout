@@ -1,0 +1,3641 @@
+{
+ "skillId": "M-3-E6",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "Ava has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?",
+   "speak": [
+    "Ava has",
+    {
+     "number": 8
+    },
+    "flowers and gives",
+    {
+     "number": 1
+    },
+    "fourth of them to a friend. How many flowers does the friend get?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🌸",
+   "count": 8,
+   "layout": "grid5"
+  },
+  "explanation": {
+   "speak": [
+    "Split",
+    {
+     "number": 8
+    },
+    "into",
+    {
+     "number": 4
+    },
+    "equal groups of",
+    {
+     "number": 2
+    },
+    ".",
+    {
+     "number": 1
+    },
+    "fourth",
+    "is",
+    {
+     "number": 1
+    },
+    "group:",
+    {
+     "number": 2
+    },
+    "."
+   ],
+   "steps": [
+    "Split 8 into 4 equal groups: 8 ÷ 4 = 2.",
+    "1/4 is one group: 2."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 2,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 2,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 2,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 2,
+      "layout": "dice"
+     }
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "expr": "1/4 × 8",
+   "ask": "value",
+   "template": 0,
+   "story": "Ava has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?",
+   "options": [
+    2,
+    3,
+    4
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "l",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "l",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-3-E6",
+  "level": 1,
+  "seed": 3126,
+  "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/4 × 8\",\"story\":\"Ava has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?\",\"template\":0}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 6 cookies on a table. 1/3 of them are put in a bag. How many cookies go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "cookies on a table.",
+      {
+       "number": 1
+      },
+      "third of them are put in a bag. How many cookies go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 6,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "third",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 3 equal groups: 6 ÷ 3 = 2.",
+      "1/3 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/3 × 6",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 6 cookies on a table. 1/3 of them are put in a bag. How many cookies go in the bag?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/3 × 6\",\"story\":\"There are 6 cookies on a table. 1/3 of them are put in a bag. How many cookies go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 8 balloons on a table. 1/4 of them are put in a bag. How many balloons go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 8
+      },
+      "balloons on a table.",
+      {
+       "number": 1
+      },
+      "fourth of them are put in a bag. How many balloons go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fourth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 into 4 equal groups: 8 ÷ 4 = 2.",
+      "1/4 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/4 × 8",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 8 balloons on a table. 1/4 of them are put in a bag. How many balloons go in the bag?",
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/4 × 8\",\"story\":\"There are 8 balloons on a table. 1/4 of them are put in a bag. How many balloons go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?",
+     "speak": [
+      "Max has",
+      {
+       "number": 8
+      },
+      "flowers and gives",
+      {
+       "number": 1
+      },
+      "fourth of them to a friend. How many flowers does the friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌸",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fourth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 into 4 equal groups: 8 ÷ 4 = 2.",
+      "1/4 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/4 × 8",
+     "ask": "value",
+     "template": 0,
+     "story": "Max has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?",
+     "options": [
+      2,
+      3,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/4 × 8\",\"story\":\"Max has 8 flowers and gives 1/4 of them to a friend. How many flowers does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia has 8 cars and gives 1/4 of them to a friend. How many cars does the friend get?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 8
+      },
+      "cars and gives",
+      {
+       "number": 1
+      },
+      "fourth of them to a friend. How many cars does the friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fourth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 into 4 equal groups: 8 ÷ 4 = 2.",
+      "1/4 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/4 × 8",
+     "ask": "value",
+     "template": 0,
+     "story": "Mia has 8 cars and gives 1/4 of them to a friend. How many cars does the friend get?",
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/4 × 8\",\"story\":\"Mia has 8 cars and gives 1/4 of them to a friend. How many cars does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 cars on a table. 1/4 of them are put in a bag. How many cars go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "cars on a table.",
+      {
+       "number": 1
+      },
+      "fourth of them are put in a bag. How many cars go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 12,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups of",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fourth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 4 equal groups: 12 ÷ 4 = 3.",
+      "1/4 is one group: 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/4 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 cars on a table. 1/4 of them are put in a bag. How many cars go in the bag?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/4 × 12\",\"story\":\"There are 12 cars on a table. 1/4 of them are put in a bag. How many cars go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 6 balls and gives 1/3 of them to a friend. How many balls does the friend get?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 6
+      },
+      "balls and gives",
+      {
+       "number": 1
+      },
+      "third of them to a friend. How many balls does the friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 6,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "third",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 3 equal groups: 6 ÷ 3 = 2.",
+      "1/3 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/3 × 6",
+     "ask": "value",
+     "template": 0,
+     "story": "Ava has 6 balls and gives 1/3 of them to a friend. How many balls does the friend get?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/3 × 6\",\"story\":\"Ava has 6 balls and gives 1/3 of them to a friend. How many balls does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "bananas on a table.",
+      {
+       "number": 1
+      },
+      "half of them are put in a bag. How many bananas go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 4,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 4
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "half",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 4 into 2 equal groups: 4 ÷ 2 = 2.",
+      "1/2 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/2 × 4",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/2 × 4\",\"story\":\"There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 10 balloons on a table. 1/2 of them are put in a bag. How many balloons go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 10
+      },
+      "balloons on a table.",
+      {
+       "number": 1
+      },
+      "half of them are put in a bag. How many balloons go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 10,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 10
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups of",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "half",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Split 10 into 2 equal groups: 10 ÷ 2 = 5.",
+      "1/2 is one group: 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/2 × 10",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 10 balloons on a table. 1/2 of them are put in a bag. How many balloons go in the bag?",
+     "options": [
+      4,
+      5,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/2 × 10\",\"story\":\"There are 10 balloons on a table. 1/2 of them are put in a bag. How many balloons go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 cars on a table. 1/2 of them are put in a bag. How many cars go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "cars on a table.",
+      {
+       "number": 1
+      },
+      "half of them are put in a bag. How many cars go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 12,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups of",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "half",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 2 equal groups: 12 ÷ 2 = 6.",
+      "1/2 is one group: 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/2 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 cars on a table. 1/2 of them are put in a bag. How many cars go in the bag?",
+     "options": [
+      2,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/2 × 12\",\"story\":\"There are 12 cars on a table. 1/2 of them are put in a bag. How many cars go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 balls on a table. 1/3 of them are put in a bag. How many balls go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "balls on a table.",
+      {
+       "number": 1
+      },
+      "third of them are put in a bag. How many balls go in the bag?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 12,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "third",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 3 equal groups: 12 ÷ 3 = 4.",
+      "1/3 is one group: 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/3 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 balls on a table. 1/3 of them are put in a bag. How many balls go in the bag?",
+     "options": [
+      2,
+      4,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-E6|1|{\"ask\":\"value\",\"expr\":\"1/3 × 12\",\"story\":\"There are 12 balls on a table. 1/3 of them are put in a bag. How many balls go in the bag?\",\"template\":1}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 cookies on a table. 1/6 of them are put in a bag. How many cookies go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "cookies on a table.",
+      {
+       "number": 1
+      },
+      "sixth of them are put in a bag. How many cookies go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "sixth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 6 equal groups: 12 ÷ 6 = 2.",
+      "1/6 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/6 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 cookies on a table. 1/6 of them are put in a bag. How many cookies go in the bag?",
+     "options": [
+      2,
+      3,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/6 × 12\",\"story\":\"There are 12 cookies on a table. 1/6 of them are put in a bag. How many cookies go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 24 balloons on a table. 1/8 of them are put in a bag. How many balloons go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 24
+      },
+      "balloons on a table.",
+      {
+       "number": 1
+      },
+      "eighth of them are put in a bag. How many balloons go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 24
+      },
+      "into",
+      {
+       "number": 8
+      },
+      "equal groups of",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "eighth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Split 24 into 8 equal groups: 24 ÷ 8 = 3.",
+      "1/8 is one group: 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       8,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/8 × 24",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 24 balloons on a table. 1/8 of them are put in a bag. How many balloons go in the bag?",
+     "options": [
+      1,
+      3,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/8 × 24\",\"story\":\"There are 24 balloons on a table. 1/8 of them are put in a bag. How many balloons go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 16 flowers and gives 1/8 of them to a friend. How many flowers does the friend get?",
+     "speak": [
+      "Max has",
+      {
+       "number": 16
+      },
+      "flowers and gives",
+      {
+       "number": 1
+      },
+      "eighth of them to a friend. How many flowers does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 16
+      },
+      "into",
+      {
+       "number": 8
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "eighth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 16 into 8 equal groups: 16 ÷ 8 = 2.",
+      "1/8 is one group: 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       16,
+       "÷",
+       8,
+       "=",
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/8 × 16",
+     "ask": "value",
+     "template": 0,
+     "story": "Max has 16 flowers and gives 1/8 of them to a friend. How many flowers does the friend get?",
+     "options": [
+      2,
+      4,
+      14
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/8 × 16\",\"story\":\"Max has 16 flowers and gives 1/8 of them to a friend. How many flowers does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia has 30 cars and gives 1/10 of them to a friend. How many cars does the friend get?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 30
+      },
+      "cars and gives",
+      {
+       "number": 1
+      },
+      "tenth of them to a friend. How many cars does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 30
+      },
+      "into",
+      {
+       "number": 10
+      },
+      "equal groups of",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "tenth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Split 30 into 10 equal groups: 30 ÷ 10 = 3.",
+      "1/10 is one group: 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       30,
+       "÷",
+       10,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/10 × 30",
+     "ask": "value",
+     "template": 0,
+     "story": "Mia has 30 cars and gives 1/10 of them to a friend. How many cars does the friend get?",
+     "options": [
+      1,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/10 × 30\",\"story\":\"Mia has 30 cars and gives 1/10 of them to a friend. How many cars does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 30 cars on a table. 1/6 of them are put in a bag. How many cars go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 30
+      },
+      "cars on a table.",
+      {
+       "number": 1
+      },
+      "sixth of them are put in a bag. How many cars go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 30
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "sixth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Split 30 into 6 equal groups: 30 ÷ 6 = 5.",
+      "1/6 is one group: 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/6 × 30",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 30 cars on a table. 1/6 of them are put in a bag. How many cars go in the bag?",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/6 × 30\",\"story\":\"There are 30 cars on a table. 1/6 of them are put in a bag. How many cars go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 10 balls and gives 1/5 of them to a friend. How many balls does the friend get?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 10
+      },
+      "balls and gives",
+      {
+       "number": 1
+      },
+      "fifth of them to a friend. How many balls does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 10
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fifth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 10 into 5 equal groups: 10 ÷ 5 = 2.",
+      "1/5 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/5 × 10",
+     "ask": "value",
+     "template": 0,
+     "story": "Ava has 10 balls and gives 1/5 of them to a friend. How many balls does the friend get?",
+     "options": [
+      2,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/5 × 10\",\"story\":\"Ava has 10 balls and gives 1/5 of them to a friend. How many balls does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "bananas on a table.",
+      {
+       "number": 1
+      },
+      "half of them are put in a bag. How many bananas go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 4
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "half",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Split 4 into 2 equal groups: 4 ÷ 2 = 2.",
+      "1/2 is one group: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/2 × 4",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/2 × 4\",\"story\":\"There are 4 bananas on a table. 1/2 of them are put in a bag. How many bananas go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 15 balloons on a table. 1/3 of them are put in a bag. How many balloons go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 15
+      },
+      "balloons on a table.",
+      {
+       "number": 1
+      },
+      "third of them are put in a bag. How many balloons go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 15
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "third",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Split 15 into 3 equal groups: 15 ÷ 3 = 5.",
+      "1/3 is one group: 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/3 × 15",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 15 balloons on a table. 1/3 of them are put in a bag. How many balloons go in the bag?",
+     "options": [
+      4,
+      5,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/3 × 15\",\"story\":\"There are 15 balloons on a table. 1/3 of them are put in a bag. How many balloons go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 18 cars on a table. 1/3 of them are put in a bag. How many cars go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 18
+      },
+      "cars on a table.",
+      {
+       "number": 1
+      },
+      "third of them are put in a bag. How many cars go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 18
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "third",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Split 18 into 3 equal groups: 18 ÷ 3 = 6.",
+      "1/3 is one group: 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/3 × 18",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 18 cars on a table. 1/3 of them are put in a bag. How many cars go in the bag?",
+     "options": [
+      3,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/3 × 18\",\"story\":\"There are 18 cars on a table. 1/3 of them are put in a bag. How many cars go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 30 balls on a table. 1/5 of them are put in a bag. How many balls go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 30
+      },
+      "balls on a table.",
+      {
+       "number": 1
+      },
+      "fifth of them are put in a bag. How many balls go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 30
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "equal groups of",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "fifth",
+      "is",
+      {
+       "number": 1
+      },
+      "group:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Split 30 into 5 equal groups: 30 ÷ 5 = 6.",
+      "1/5 is one group: 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "1/5 × 30",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 30 balls on a table. 1/5 of them are put in a bag. How many balls go in the bag?",
+     "options": [
+      4,
+      6,
+      24
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "24",
+      "size": "l",
+      "speak": [
+       {
+        "number": 24
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E6",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-E6|2|{\"ask\":\"value\",\"expr\":\"1/5 × 30\",\"story\":\"There are 30 balls on a table. 1/5 of them are put in a bag. How many balls go in the bag?\",\"template\":1}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 bananas on a table. 4/6 of them are put in a bag. How many bananas go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "bananas on a table.",
+      {
+       "number": 4
+      },
+      "sixths of them are put in a bag. How many bananas go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "sixths",
+      "is",
+      {
+       "number": 4
+      },
+      "groups:",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 6 equal groups: 12 ÷ 6 = 2.",
+      "4/6 is 4 groups: 4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "4/6 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 bananas on a table. 4/6 of them are put in a bag. How many bananas go in the bag?"
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"4/6 × 12\",\"story\":\"There are 12 bananas on a table. 4/6 of them are put in a bag. How many bananas go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 18 cookies on a table. 3/6 of them are put in a bag. How many cookies go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 18
+      },
+      "cookies on a table.",
+      {
+       "number": 3
+      },
+      "sixths of them are put in a bag. How many cookies go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 18
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "sixths",
+      "is",
+      {
+       "number": 3
+      },
+      "groups:",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Split 18 into 6 equal groups: 18 ÷ 6 = 3.",
+      "3/6 is 3 groups: 3 × 3 = 9."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3/6 × 18",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 18 cookies on a table. 3/6 of them are put in a bag. How many cookies go in the bag?"
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"3/6 × 18\",\"story\":\"There are 18 cookies on a table. 3/6 of them are put in a bag. How many cookies go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 12 apples on a table. 3/6 of them are put in a bag. How many apples go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 12
+      },
+      "apples on a table.",
+      {
+       "number": 3
+      },
+      "sixths of them are put in a bag. How many apples go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "sixths",
+      "is",
+      {
+       "number": 3
+      },
+      "groups:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Split 12 into 6 equal groups: 12 ÷ 6 = 2.",
+      "3/6 is 3 groups: 3 × 2 = 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3/6 × 12",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 12 apples on a table. 3/6 of them are put in a bag. How many apples go in the bag?"
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"3/6 × 12\",\"story\":\"There are 12 apples on a table. 3/6 of them are put in a bag. How many apples go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 24 apples and gives 3/8 of them to a friend. How many apples does the friend get?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 24
+      },
+      "apples and gives",
+      {
+       "number": 3
+      },
+      "eighths of them to a friend. How many apples does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 24
+      },
+      "into",
+      {
+       "number": 8
+      },
+      "equal groups of",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "eighths",
+      "is",
+      {
+       "number": 3
+      },
+      "groups:",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Split 24 into 8 equal groups: 24 ÷ 8 = 3.",
+      "3/8 is 3 groups: 3 × 3 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       8,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3/8 × 24",
+     "ask": "value",
+     "template": 0,
+     "story": "Ava has 24 apples and gives 3/8 of them to a friend. How many apples does the friend get?"
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"3/8 × 24\",\"story\":\"Ava has 24 apples and gives 3/8 of them to a friend. How many apples does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava has 30 cookies and gives 2/6 of them to a friend. How many cookies does the friend get?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 30
+      },
+      "cookies and gives",
+      {
+       "number": 2
+      },
+      "sixths of them to a friend. How many cookies does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 30
+      },
+      "into",
+      {
+       "number": 6
+      },
+      "equal groups of",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "sixths",
+      "is",
+      {
+       "number": 2
+      },
+      "groups:",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Split 30 into 6 equal groups: 30 ÷ 6 = 5.",
+      "2/6 is 2 groups: 2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "2/6 × 30",
+     "ask": "value",
+     "template": 0,
+     "story": "Ava has 30 cookies and gives 2/6 of them to a friend. How many cookies does the friend get?"
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"2/6 × 30\",\"story\":\"Ava has 30 cookies and gives 2/6 of them to a friend. How many cookies does the friend get?\",\"template\":0}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 10 cars on a table. 3/5 of them are put in a bag. How many cars go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 10
+      },
+      "cars on a table.",
+      {
+       "number": 3
+      },
+      "fifths of them are put in a bag. How many cars go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 10
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "fifths",
+      "is",
+      {
+       "number": 3
+      },
+      "groups:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Split 10 into 5 equal groups: 10 ÷ 5 = 2.",
+      "3/5 is 3 groups: 3 × 2 = 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3/5 × 10",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 10 cars on a table. 3/5 of them are put in a bag. How many cars go in the bag?"
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"3/5 × 10\",\"story\":\"There are 10 cars on a table. 3/5 of them are put in a bag. How many cars go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 6 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "balls on a table.",
+      {
+       "number": 2
+      },
+      "thirds of them are put in a bag. How many balls go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "thirds",
+      "is",
+      {
+       "number": 2
+      },
+      "groups:",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 3 equal groups: 6 ÷ 3 = 2.",
+      "2/3 is 2 groups: 2 × 2 = 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "2/3 × 6",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 6 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?"
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"2/3 × 6\",\"story\":\"There are 6 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 15 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 15
+      },
+      "balls on a table.",
+      {
+       "number": 2
+      },
+      "thirds of them are put in a bag. How many balls go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 15
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "thirds",
+      "is",
+      {
+       "number": 2
+      },
+      "groups:",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Split 15 into 3 equal groups: 15 ÷ 3 = 5.",
+      "2/3 is 2 groups: 2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "2/3 × 15",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 15 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?"
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"2/3 × 15\",\"story\":\"There are 15 balls on a table. 2/3 of them are put in a bag. How many balls go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "There are 18 strawberries on a table. 2/3 of them are put in a bag. How many strawberries go in the bag?",
+     "speak": [
+      "There are",
+      {
+       "number": 18
+      },
+      "strawberries on a table.",
+      {
+       "number": 2
+      },
+      "thirds of them are put in a bag. How many strawberries go in the bag?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 18
+      },
+      "into",
+      {
+       "number": 3
+      },
+      "equal groups of",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "thirds",
+      "is",
+      {
+       "number": 2
+      },
+      "groups:",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Split 18 into 3 equal groups: 18 ÷ 3 = 6.",
+      "2/3 is 2 groups: 2 × 6 = 12."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "2/3 × 18",
+     "ask": "value",
+     "template": 1,
+     "story": "There are 18 strawberries on a table. 2/3 of them are put in a bag. How many strawberries go in the bag?"
+    },
+    "answer": 12,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"2/3 × 18\",\"story\":\"There are 18 strawberries on a table. 2/3 of them are put in a bag. How many strawberries go in the bag?\",\"template\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo has 30 strawberries and gives 4/5 of them to a friend. How many strawberries does the friend get?",
+     "speak": [
+      "Leo has",
+      {
+       "number": 30
+      },
+      "strawberries and gives",
+      {
+       "number": 4
+      },
+      "fifths of them to a friend. How many strawberries does the friend get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 30
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "equal groups of",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "fifths",
+      "is",
+      {
+       "number": 4
+      },
+      "groups:",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Split 30 into 5 equal groups: 30 ÷ 5 = 6.",
+      "4/5 is 4 groups: 4 × 6 = 24."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "4/5 × 30",
+     "ask": "value",
+     "template": 0,
+     "story": "Leo has 30 strawberries and gives 4/5 of them to a friend. How many strawberries does the friend get?"
+    },
+    "answer": 24,
+    "maxDigits": 2,
+    "skillId": "M-3-E6",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-E6|3|{\"ask\":\"value\",\"expr\":\"4/5 × 30\",\"story\":\"Leo has 30 strawberries and gives 4/5 of them to a friend. How many strawberries does the friend get?\",\"template\":0}"
+   }
+  ]
+ }
+}

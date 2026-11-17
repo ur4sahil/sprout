@@ -1,0 +1,3074 @@
+{
+ "skillId": "M-3-E5",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "expr": "1",
+   "ask": "equal",
+   "d": 6,
+   "shape": "rectangle",
+   "options": [
+    "6/1",
+    "1/6",
+    "6/6"
+   ]
+  },
+  "prompt": {
+   "text": "The whole shape is shaded. Which fraction names it?",
+   "speak": [
+    "The whole shape is shaded. Which fraction names it?"
+   ]
+  },
+  "stimulus": {
+   "kind": "fraction",
+   "shape": "rectangle",
+   "parts": 6,
+   "shaded": 6,
+   "equal": true
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "6/1",
+    "size": "l",
+    "speak": [
+     {
+      "number": 6
+     },
+     "wholes"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "1/6",
+    "size": "l",
+    "speak": [
+     {
+      "number": 1
+     },
+     "sixth"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "6/6",
+    "size": "l",
+    "speak": [
+     {
+      "number": 6
+     },
+     "sixths"
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The whole is cut into",
+    {
+     "number": 6
+    },
+    "equal parts, and all",
+    {
+     "number": 6
+    },
+    "are shaded.",
+    {
+     "number": 6
+    },
+    "sixths",
+    "is one whole."
+   ],
+   "steps": [
+    "The whole is cut into 6 equal parts.",
+    "All 6 parts are shaded: 6/6.",
+    "6/6 = 1 whole."
+   ],
+   "visual": {
+    "kind": "fraction",
+    "shape": "rectangle",
+    "parts": 6,
+    "shaded": 6,
+    "equal": true
+   }
+  },
+  "skillId": "M-3-E5",
+  "level": 1,
+  "seed": 3125,
+  "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":6,\"expr\":\"1\",\"shape\":\"rectangle\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 6,
+     "shape": "circle",
+     "options": [
+      "5/6",
+      "6/6",
+      "6/1"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 6,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "wholes"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts, and all",
+      {
+       "number": 6
+      },
+      "are shaded.",
+      {
+       "number": 6
+      },
+      "sixths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 6 equal parts.",
+      "All 6 parts are shaded: 6/6.",
+      "6/6 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 6,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":6,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 6,
+     "shape": "circle",
+     "options": [
+      "6/6",
+      "6/1",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 6,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts, and all",
+      {
+       "number": 6
+      },
+      "are shaded.",
+      {
+       "number": 6
+      },
+      "sixths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 6 equal parts.",
+      "All 6 parts are shaded: 6/6.",
+      "6/6 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 6,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":6,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 6,
+     "shape": "circle",
+     "options": [
+      "6/1",
+      "6/6",
+      "5/6"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 6,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts, and all",
+      {
+       "number": 6
+      },
+      "are shaded.",
+      {
+       "number": 6
+      },
+      "sixths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 6 equal parts.",
+      "All 6 parts are shaded: 6/6.",
+      "6/6 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 6,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":6,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 8,
+     "shape": "circle",
+     "options": [
+      "8/1",
+      "1/8",
+      "8/8"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 8,
+     "shaded": 8,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 8
+      },
+      "equal parts, and all",
+      {
+       "number": 8
+      },
+      "are shaded.",
+      {
+       "number": 8
+      },
+      "eighths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 8 equal parts.",
+      "All 8 parts are shaded: 8/8.",
+      "8/8 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 8,
+      "shaded": 8,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":8,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 6,
+     "shape": "rectangle",
+     "options": [
+      "1/6",
+      "6/1",
+      "6/6"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 6,
+     "shaded": 6,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "sixths"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts, and all",
+      {
+       "number": 6
+      },
+      "are shaded.",
+      {
+       "number": 6
+      },
+      "sixths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 6 equal parts.",
+      "All 6 parts are shaded: 6/6.",
+      "6/6 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 6,
+      "shaded": 6,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":6,\"expr\":\"1\",\"shape\":\"rectangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 4,
+     "shape": "circle",
+     "options": [
+      "3/4",
+      "4/4",
+      "4/1"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 4,
+     "shaded": 4,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "wholes"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts, and all",
+      {
+       "number": 4
+      },
+      "are shaded.",
+      {
+       "number": 4
+      },
+      "fourths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 4 equal parts.",
+      "All 4 parts are shaded: 4/4.",
+      "4/4 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 4,
+      "shaded": 4,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":4,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 2,
+     "shape": "circle",
+     "options": [
+      "2/2",
+      "1/2",
+      "2/1"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 2,
+     "shaded": 2,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "wholes"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts, and all",
+      {
+       "number": 2
+      },
+      "are shaded.",
+      {
+       "number": 2
+      },
+      "halves",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 2 equal parts.",
+      "All 2 parts are shaded: 2/2.",
+      "2/2 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 2,
+      "shaded": 2,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":2,\"expr\":\"1\",\"shape\":\"circle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 2,
+     "shape": "rectangle",
+     "options": [
+      "2/2",
+      "2/1",
+      "1/2"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 2,
+     "shaded": 2,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts, and all",
+      {
+       "number": 2
+      },
+      "are shaded.",
+      {
+       "number": 2
+      },
+      "halves",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 2 equal parts.",
+      "All 2 parts are shaded: 2/2.",
+      "2/2 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 2,
+      "shaded": 2,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":2,\"expr\":\"1\",\"shape\":\"rectangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 2,
+     "shape": "rectangle",
+     "options": [
+      "2/2",
+      "2/1",
+      "1/2"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 2,
+     "shaded": 2,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "wholes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts, and all",
+      {
+       "number": 2
+      },
+      "are shaded.",
+      {
+       "number": 2
+      },
+      "halves",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 2 equal parts.",
+      "All 2 parts are shaded: 2/2.",
+      "2/2 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 2,
+      "shaded": 2,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":2,\"expr\":\"1\",\"shape\":\"rectangle\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "1",
+     "ask": "equal",
+     "d": 4,
+     "shape": "rectangle",
+     "options": [
+      "1/4",
+      "4/4",
+      "3/4"
+     ]
+    },
+    "prompt": {
+     "text": "The whole shape is shaded. Which fraction names it?",
+     "speak": [
+      "The whole shape is shaded. Which fraction names it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 4,
+     "shaded": 4,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts, and all",
+      {
+       "number": 4
+      },
+      "are shaded.",
+      {
+       "number": 4
+      },
+      "fourths",
+      "is one whole."
+     ],
+     "steps": [
+      "The whole is cut into 4 equal parts.",
+      "All 4 parts are shaded: 4/4.",
+      "4/4 = 1 whole."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 4,
+      "shaded": 4,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-E5|1|{\"ask\":\"equal\",\"d\":4,\"expr\":\"1\",\"shape\":\"rectangle\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2/2 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "2/2",
+     "size": "l",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 2
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "2 parts make 2 ÷ 2 = 1 whole.",
+      "2/2 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "2/2",
+     "ask": "value",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "l",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"2/2\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4/4 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "fourths",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4/4",
+     "size": "l",
+     "speak": [
+      {
+       "number": 4
+      },
+      "fourths"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 4
+      },
+      "parts of each whole.",
+      {
+       "number": 4
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 4 parts of 4 to make 1 whole.",
+      "4 parts make 4 ÷ 4 = 1 whole.",
+      "4/4 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "denominator": 4,
+      "marked": [
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4/4",
+     "ask": "value",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"4/4\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2/2 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "2/2",
+     "size": "l",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 2
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "2 parts make 2 ÷ 2 = 1 whole.",
+      "2/2 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "2/2",
+     "ask": "value",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"2/2\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4/4 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "fourths",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4/4",
+     "size": "l",
+     "speak": [
+      {
+       "number": 4
+      },
+      "fourths"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 4
+      },
+      "parts of each whole.",
+      {
+       "number": 4
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 4 parts of 4 to make 1 whole.",
+      "4 parts make 4 ÷ 4 = 1 whole.",
+      "4/4 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "denominator": 4,
+      "marked": [
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4/4",
+     "ask": "value",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"4/4\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7/7 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "sevenths",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "7/7",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      },
+      "sevenths"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 7
+      },
+      "parts of each whole.",
+      {
+       "number": 7
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 7 parts of 7 to make 1 whole.",
+      "7 parts make 7 ÷ 7 = 1 whole.",
+      "7/7 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 7,
+      "step": 1,
+      "denominator": 7,
+      "marked": [
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7/7",
+     "ask": "value",
+     "options": [
+      1,
+      2,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"7/7\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2/2 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "2/2",
+     "size": "l",
+     "speak": [
+      {
+       "number": 2
+      },
+      "halves"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 2
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "2 parts make 2 ÷ 2 = 1 whole.",
+      "2/2 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "2/2",
+     "ask": "value",
+     "options": [
+      0,
+      1,
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "l",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"2/2\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2/1 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "wholes",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "2/1",
+     "size": "l",
+     "speak": [
+      {
+       "number": 2
+      },
+      "wholes"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "wholes",
+      "means",
+      {
+       "number": 2
+      },
+      "wholes, each cut into one part. That is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "2/1 means 2 wholes, each in 1 part.",
+      "2/1 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 2,
+      "step": 1,
+      "marked": [
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "2/1",
+     "ask": "value",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "l",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"2/1\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7/1 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "wholes",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "7/1",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      },
+      "wholes"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "wholes",
+      "means",
+      {
+       "number": 7
+      },
+      "wholes, each cut into one part. That is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "7/1 means 7 wholes, each in 1 part.",
+      "7/1 = 7."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 7,
+      "step": 1,
+      "marked": [
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7/1",
+     "ask": "value",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"7/1\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "9/1 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "wholes",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "9/1",
+     "size": "l",
+     "speak": [
+      {
+       "number": 9
+      },
+      "wholes"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "wholes",
+      "means",
+      {
+       "number": 9
+      },
+      "wholes, each cut into one part. That is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "9/1 means 9 wholes, each in 1 part.",
+      "9/1 = 9."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "9/1",
+     "ask": "value",
+     "options": [
+      9,
+      10,
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"9/1\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "8/8 is the same as which whole number?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "eighths",
+      "is the same as which whole number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "8/8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 8
+      },
+      "eighths"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 8
+      },
+      "parts of each whole.",
+      {
+       "number": 8
+      },
+      "parts make",
+      {
+       "number": 1
+      },
+      "whole."
+     ],
+     "steps": [
+      "It takes 8 parts of 8 to make 1 whole.",
+      "8 parts make 8 ÷ 8 = 1 whole.",
+      "8/8 = 1."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "denominator": 8,
+      "marked": [
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "8/8",
+     "ask": "value",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "l",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-E5",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-E5|2|{\"ask\":\"value\",\"expr\":\"8/8\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "3",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "2/6",
+      "3/2",
+      "6/2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 3?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "halves"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 6
+      },
+      "parts make",
+      {
+       "number": 3
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "6 parts make 6 ÷ 2 = 3 wholes.",
+      "6/2 = 3."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       6
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"3\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "4",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "8/8",
+      "8/2",
+      "4/2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 4?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "eighths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "halves"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 8
+      },
+      "parts make",
+      {
+       "number": 4
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "8 parts make 8 ÷ 2 = 4 wholes.",
+      "8/2 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       8
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"4\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "4",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "6/2",
+      "8/2",
+      "8/8"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 4?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 8
+      },
+      "parts make",
+      {
+       "number": 4
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "8 parts make 8 ÷ 2 = 4 wholes.",
+      "8/2 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       8
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"4\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "4",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "8/8",
+      "8/2",
+      "2/8"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 4?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "eighths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 8
+      },
+      "parts make",
+      {
+       "number": 4
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "8 parts make 8 ÷ 2 = 4 wholes.",
+      "8/2 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       8
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"4\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "4",
+     "ask": "equal",
+     "d": 4,
+     "options": [
+      "16/4",
+      "8/4",
+      "16/16"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 4?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "16/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16/16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       },
+       "sixteenths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 4
+      },
+      "parts of each whole.",
+      {
+       "number": 16
+      },
+      "parts make",
+      {
+       "number": 4
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 4 parts of 4 to make 1 whole.",
+      "16 parts make 16 ÷ 4 = 4 wholes.",
+      "16/4 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 16,
+      "step": 1,
+      "denominator": 4,
+      "marked": [
+       16
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":4,\"expr\":\"4\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "3",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "5/2",
+      "2/6",
+      "6/2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 3?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "halves"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 6
+      },
+      "parts make",
+      {
+       "number": 3
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "6 parts make 6 ÷ 2 = 3 wholes.",
+      "6/2 = 3."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       6
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"3\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "2",
+     "ask": "equal",
+     "d": 2,
+     "options": [
+      "2/4",
+      "4/2",
+      "2/2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 2?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 2
+      },
+      "parts of each whole.",
+      {
+       "number": 4
+      },
+      "parts make",
+      {
+       "number": 2
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 2 parts of 2 to make 1 whole.",
+      "4 parts make 4 ÷ 2 = 2 wholes.",
+      "4/2 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "denominator": 2,
+      "marked": [
+       4
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":2,\"expr\":\"2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "2",
+     "ask": "equal",
+     "d": 3,
+     "options": [
+      "6/3",
+      "5/3",
+      "2/3"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 2?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "thirds"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "thirds"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "thirds"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 3
+      },
+      "parts of each whole.",
+      {
+       "number": 6
+      },
+      "parts make",
+      {
+       "number": 2
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 3 parts of 3 to make 1 whole.",
+      "6 parts make 6 ÷ 3 = 2 wholes.",
+      "6/3 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "denominator": 3,
+      "marked": [
+       6
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":3,\"expr\":\"2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "2",
+     "ask": "equal",
+     "d": 4,
+     "options": [
+      "6/4",
+      "8/4",
+      "4/8"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 2?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 4
+      },
+      "parts of each whole.",
+      {
+       "number": 8
+      },
+      "parts make",
+      {
+       "number": 2
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 4 parts of 4 to make 1 whole.",
+      "8 parts make 8 ÷ 4 = 2 wholes.",
+      "8/4 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "denominator": 4,
+      "marked": [
+       8
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":4,\"expr\":\"2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "3",
+     "ask": "equal",
+     "d": 4,
+     "options": [
+      "3/4",
+      "12/4",
+      "4/12"
+     ]
+    },
+    "prompt": {
+     "text": "Which fraction is equal to 3?",
+     "speak": [
+      "Which fraction is equal to",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "twelfths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the",
+      {
+       "number": 4
+      },
+      "parts of each whole.",
+      {
+       "number": 12
+      },
+      "parts make",
+      {
+       "number": 3
+      },
+      "wholes."
+     ],
+     "steps": [
+      "It takes 4 parts of 4 to make 1 whole.",
+      "12 parts make 12 ÷ 4 = 3 wholes.",
+      "12/4 = 3."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "denominator": 4,
+      "marked": [
+       12
+      ]
+     }
+    },
+    "skillId": "M-3-E5",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-E5|3|{\"ask\":\"equal\",\"d\":4,\"expr\":\"3\"}"
+   }
+  ]
+ }
+}

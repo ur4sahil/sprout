@@ -1,0 +1,3868 @@
+{
+ "skillId": "M-3-F8",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+   "speak": [
+    "This shape is made of two rectangles. What is its area? Each square is one square unit."
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "array",
+     "rows": 2,
+     "cols": 6,
+     "emoji": "🟩"
+    },
+    {
+     "kind": "array",
+     "rows": 3,
+     "cols": 4,
+     "emoji": "🟩"
+    }
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Find the area of each rectangle, then add.",
+    {
+     "number": 6
+    },
+    "times",
+    {
+     "number": 2
+    },
+    "is",
+    {
+     "number": 12
+    },
+    ".",
+    {
+     "number": 4
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 12
+    },
+    ".",
+    {
+     "number": 12
+    },
+    "plus",
+    {
+     "number": 12
+    },
+    "is",
+    {
+     "number": 24
+    },
+    "square units."
+   ],
+   "steps": [
+    "Find the area of each rectangle, then add.",
+    "6 × 2 = 12. 4 × 3 = 12.",
+    "12 + 12 = 24 square units."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 6,
+      "emoji": "🟩"
+     },
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 4,
+      "emoji": "🟩"
+     }
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "expr": "(6 × 2) + (4 × 3)",
+   "ask": "value",
+   "options": [
+    15,
+    23,
+    24
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "15",
+    "size": "l",
+    "speak": [
+     {
+      "number": 15
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "23",
+    "size": "l",
+    "speak": [
+     {
+      "number": 23
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "24",
+    "size": "l",
+    "speak": [
+     {
+      "number": 24
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "skillId": "M-3-F8",
+  "level": 1,
+  "seed": 3138,
+  "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(6 × 2) + (4 × 3)\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 4,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 3,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "4 × 2 = 8. 3 × 4 = 12.",
+      "8 + 12 = 20 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 4,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(4 × 2) + (3 × 4)",
+     "ask": "value",
+     "options": [
+      20,
+      21,
+      28
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(4 × 2) + (3 × 4)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 6,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 5,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 22
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "6 × 2 = 12. 5 × 2 = 10.",
+      "12 + 10 = 22 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(6 × 2) + (5 × 2)",
+     "ask": "value",
+     "options": [
+      10,
+      22,
+      23
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "23",
+      "size": "l",
+      "speak": [
+       {
+        "number": 23
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(6 × 2) + (5 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 5,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 3,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "5 × 2 = 10. 3 × 2 = 6.",
+      "10 + 6 = 16 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(5 × 2) + (3 × 2)",
+     "ask": "value",
+     "options": [
+      6,
+      15,
+      16
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(5 × 2) + (3 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 5,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 3,
+       "cols": 5,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 35
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "5 × 4 = 20. 5 × 3 = 15.",
+      "20 + 15 = 35 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(5 × 4) + (5 × 3)",
+     "ask": "value",
+     "options": [
+      20,
+      34,
+      35
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "34",
+      "size": "l",
+      "speak": [
+       {
+        "number": 34
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(5 × 4) + (5 × 3)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 5,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 3,
+       "cols": 2,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 26
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "5 × 4 = 20. 2 × 3 = 6.",
+      "20 + 6 = 26 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 2,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(5 × 4) + (2 × 3)",
+     "ask": "value",
+     "options": [
+      26,
+      28,
+      36
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(5 × 4) + (2 × 3)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 5,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 4,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 18
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "5 × 2 = 10. 4 × 2 = 8.",
+      "10 + 8 = 18 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 4,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(5 × 2) + (4 × 2)",
+     "ask": "value",
+     "options": [
+      8,
+      18,
+      19
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(5 × 2) + (4 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 3,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 5,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 26
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 2 = 6. 5 × 4 = 20.",
+      "6 + 20 = 26 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(3 × 2) + (5 × 4)",
+     "ask": "value",
+     "options": [
+      16,
+      26,
+      32
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "32",
+      "size": "l",
+      "speak": [
+       {
+        "number": 32
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(3 × 2) + (5 × 4)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 3,
+       "cols": 5,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 5,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 25
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "5 × 3 = 15. 5 × 2 = 10.",
+      "15 + 10 = 25 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(5 × 3) + (5 × 2)",
+     "ask": "value",
+     "options": [
+      10,
+      25,
+      35
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(5 × 3) + (5 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 3,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 2,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 4 = 12. 2 × 4 = 8.",
+      "12 + 8 = 20 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 2,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(3 × 4) + (2 × 4)",
+     "ask": "value",
+     "options": [
+      10,
+      19,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(3 × 4) + (2 × 4)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "This shape is made of two rectangles. What is its area? Each square is one square unit.",
+     "speak": [
+      "This shape is made of two rectangles. What is its area? Each square is one square unit."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "array",
+       "rows": 4,
+       "cols": 3,
+       "emoji": "🟩"
+      },
+      {
+       "kind": "array",
+       "rows": 2,
+       "cols": 5,
+       "emoji": "🟩"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 22
+      },
+      "square units."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 4 = 12. 5 × 2 = 10.",
+      "12 + 10 = 22 square units."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(3 × 4) + (5 × 2)",
+     "ask": "value",
+     "options": [
+      21,
+      22,
+      32
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "32",
+      "size": "l",
+      "speak": [
+       {
+        "number": 32
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-F8|1|{\"ask\":\"value\",\"expr\":\"(3 × 4) + (5 × 2)\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 7 meters by 2 meters. The other is 6 meters by 8 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 7
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. The other is",
+      {
+       "number": 6
+      },
+      "meters by",
+      {
+       "number": 8
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 48
+      },
+      ".",
+      {
+       "number": 14
+      },
+      "plus",
+      {
+       "number": 48
+      },
+      "is",
+      {
+       "number": 62
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "7 × 2 = 14. 6 × 8 = 48.",
+      "14 + 48 = 62 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 7,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 8,
+        "cols": 6,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(7 × 2) + (6 × 8)",
+     "ask": "value",
+     "place": "play area",
+     "options": [
+      62,
+      63,
+      72
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "62",
+      "size": "l",
+      "speak": [
+       {
+        "number": 62
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "72",
+      "size": "l",
+      "speak": [
+       {
+        "number": 72
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(7 × 2) + (6 × 8)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 8 meters by 4 meters. The other is 4 meters by 5 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 8
+      },
+      "meters by",
+      {
+       "number": 4
+      },
+      "meters. The other is",
+      {
+       "number": 4
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 32
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 32
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 52
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "8 × 4 = 32. 4 × 5 = 20.",
+      "32 + 20 = 52 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 8,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 4,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(8 × 4) + (4 × 5)",
+     "ask": "value",
+     "place": "play area",
+     "options": [
+      21,
+      52,
+      60
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "52",
+      "size": "l",
+      "speak": [
+       {
+        "number": 52
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(8 × 4) + (4 × 5)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 8 meters by 2 meters. The other is 5 meters by 2 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 8
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. The other is",
+      {
+       "number": 5
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 16
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 26
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "8 × 2 = 16. 5 × 2 = 10.",
+      "16 + 10 = 26 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 8,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(8 × 2) + (5 × 2)",
+     "ask": "value",
+     "place": "play area",
+     "options": [
+      17,
+      26,
+      27
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "27",
+      "size": "l",
+      "speak": [
+       {
+        "number": 27
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(8 × 2) + (5 × 2)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A garden is made of two rectangles. One is 9 meters by 4 meters. The other is 3 meters by 2 meters. What is the area of the garden, in square meters?",
+     "speak": [
+      "A garden is made of two rectangles. One is",
+      {
+       "number": 9
+      },
+      "meters by",
+      {
+       "number": 4
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the garden, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 36
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 36
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 42
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "9 × 4 = 36. 3 × 2 = 6.",
+      "36 + 6 = 42 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 9,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(9 × 4) + (3 × 2)",
+     "ask": "value",
+     "place": "garden",
+     "options": [
+      32,
+      42,
+      48
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "32",
+      "size": "l",
+      "speak": [
+       {
+        "number": 32
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "42",
+      "size": "l",
+      "speak": [
+       {
+        "number": 42
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "48",
+      "size": "l",
+      "speak": [
+       {
+        "number": 48
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(9 × 4) + (3 × 2)\",\"place\":\"garden\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 3 meters by 6 meters. The other is 7 meters by 5 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 6
+      },
+      "meters. The other is",
+      {
+       "number": 7
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 35
+      },
+      "is",
+      {
+       "number": 53
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 6 = 18. 7 × 5 = 35.",
+      "18 + 35 = 53 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 6,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(3 × 6) + (7 × 5)",
+     "ask": "value",
+     "place": "play area",
+     "options": [
+      53,
+      54,
+      63
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "53",
+      "size": "l",
+      "speak": [
+       {
+        "number": 53
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "54",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(3 × 6) + (7 × 5)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 6 feet by 2 feet. The other is 7 feet by 3 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 6
+      },
+      "feet by",
+      {
+       "number": 2
+      },
+      "feet. The other is",
+      {
+       "number": 7
+      },
+      "feet by",
+      {
+       "number": 3
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 33
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "6 × 2 = 12. 7 × 3 = 21.",
+      "12 + 21 = 33 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(6 × 2) + (7 × 3)",
+     "ask": "value",
+     "place": "rug",
+     "options": [
+      33,
+      34,
+      39
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "33",
+      "size": "l",
+      "speak": [
+       {
+        "number": 33
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "34",
+      "size": "l",
+      "speak": [
+       {
+        "number": 34
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "39",
+      "size": "l",
+      "speak": [
+       {
+        "number": 39
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(6 × 2) + (7 × 3)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 3 feet by 2 feet. The other is 9 feet by 6 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 3
+      },
+      "feet by",
+      {
+       "number": 2
+      },
+      "feet. The other is",
+      {
+       "number": 9
+      },
+      "feet by",
+      {
+       "number": 6
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 54
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 54
+      },
+      "is",
+      {
+       "number": 60
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 2 = 6. 9 × 6 = 54.",
+      "6 + 54 = 60 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 6,
+        "cols": 9,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(3 × 2) + (9 × 6)",
+     "ask": "value",
+     "place": "rug",
+     "options": [
+      20,
+      60,
+      72
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "72",
+      "size": "l",
+      "speak": [
+       {
+        "number": 72
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(3 × 2) + (9 × 6)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 7 feet by 5 feet. The other is 8 feet by 3 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 7
+      },
+      "feet by",
+      {
+       "number": 5
+      },
+      "feet. The other is",
+      {
+       "number": 8
+      },
+      "feet by",
+      {
+       "number": 3
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 35
+      },
+      "plus",
+      {
+       "number": 24
+      },
+      "is",
+      {
+       "number": 59
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "7 × 5 = 35. 8 × 3 = 24.",
+      "35 + 24 = 59 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 7,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 8,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(7 × 5) + (8 × 3)",
+     "ask": "value",
+     "place": "rug",
+     "options": [
+      59,
+      69,
+      75
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "59",
+      "size": "l",
+      "speak": [
+       {
+        "number": 59
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "69",
+      "size": "l",
+      "speak": [
+       {
+        "number": 69
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "75",
+      "size": "l",
+      "speak": [
+       {
+        "number": 75
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(7 × 5) + (8 × 3)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 4 meters by 7 meters. The other is 3 meters by 7 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 4
+      },
+      "meters by",
+      {
+       "number": 7
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 7
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 28
+      },
+      "plus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 49
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "4 × 7 = 28. 3 × 7 = 21.",
+      "28 + 21 = 49 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 7,
+        "cols": 4,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 7,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(4 × 7) + (3 × 7)",
+     "ask": "value",
+     "place": "play area",
+     "options": [
+      39,
+      48,
+      49
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "39",
+      "size": "l",
+      "speak": [
+       {
+        "number": 39
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "48",
+      "size": "l",
+      "speak": [
+       {
+        "number": 48
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "49",
+      "size": "l",
+      "speak": [
+       {
+        "number": 49
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(4 × 7) + (3 × 7)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A garden is made of two rectangles. One is 6 meters by 5 meters. The other is 3 meters by 2 meters. What is the area of the garden, in square meters?",
+     "speak": [
+      "A garden is made of two rectangles. One is",
+      {
+       "number": 6
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the garden, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 36
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "6 × 5 = 30. 3 × 2 = 6.",
+      "30 + 6 = 36 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "(6 × 5) + (3 × 2)",
+     "ask": "value",
+     "place": "garden",
+     "options": [
+      6,
+      16,
+      36
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F8",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-F8|2|{\"ask\":\"value\",\"expr\":\"(6 × 5) + (3 × 2)\",\"place\":\"garden\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 7 meters by 2 meters. The other is 6 meters by 8 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 7
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. The other is",
+      {
+       "number": 6
+      },
+      "meters by",
+      {
+       "number": 8
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 48
+      },
+      ".",
+      {
+       "number": 14
+      },
+      "plus",
+      {
+       "number": 48
+      },
+      "is",
+      {
+       "number": 62
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "7 × 2 = 14. 6 × 8 = 48.",
+      "14 + 48 = 62 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 7,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 8,
+        "cols": 6,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(7 × 2) + (6 × 8)",
+     "ask": "value",
+     "place": "play area"
+    },
+    "answer": 62,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(7 × 2) + (6 × 8)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 8 meters by 4 meters. The other is 4 meters by 5 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 8
+      },
+      "meters by",
+      {
+       "number": 4
+      },
+      "meters. The other is",
+      {
+       "number": 4
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 32
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 32
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 52
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "8 × 4 = 32. 4 × 5 = 20.",
+      "32 + 20 = 52 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 8,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 4,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(8 × 4) + (4 × 5)",
+     "ask": "value",
+     "place": "play area"
+    },
+    "answer": 52,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(8 × 4) + (4 × 5)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 8 meters by 2 meters. The other is 5 meters by 2 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 8
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. The other is",
+      {
+       "number": 5
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 16
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 26
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "8 × 2 = 16. 5 × 2 = 10.",
+      "16 + 10 = 26 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 8,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(8 × 2) + (5 × 2)",
+     "ask": "value",
+     "place": "play area"
+    },
+    "answer": 26,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(8 × 2) + (5 × 2)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A garden is made of two rectangles. One is 9 meters by 4 meters. The other is 3 meters by 2 meters. What is the area of the garden, in square meters?",
+     "speak": [
+      "A garden is made of two rectangles. One is",
+      {
+       "number": 9
+      },
+      "meters by",
+      {
+       "number": 4
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the garden, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 36
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 36
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 42
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "9 × 4 = 36. 3 × 2 = 6.",
+      "36 + 6 = 42 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 9,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(9 × 4) + (3 × 2)",
+     "ask": "value",
+     "place": "garden"
+    },
+    "answer": 42,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(9 × 4) + (3 × 2)\",\"place\":\"garden\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 3 meters by 6 meters. The other is 7 meters by 5 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 6
+      },
+      "meters. The other is",
+      {
+       "number": 7
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 35
+      },
+      "is",
+      {
+       "number": 53
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 6 = 18. 7 × 5 = 35.",
+      "18 + 35 = 53 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 6,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(3 × 6) + (7 × 5)",
+     "ask": "value",
+     "place": "play area"
+    },
+    "answer": 53,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(3 × 6) + (7 × 5)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 6 feet by 2 feet. The other is 7 feet by 3 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 6
+      },
+      "feet by",
+      {
+       "number": 2
+      },
+      "feet. The other is",
+      {
+       "number": 7
+      },
+      "feet by",
+      {
+       "number": 3
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 33
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "6 × 2 = 12. 7 × 3 = 21.",
+      "12 + 21 = 33 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(6 × 2) + (7 × 3)",
+     "ask": "value",
+     "place": "rug"
+    },
+    "answer": 33,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(6 × 2) + (7 × 3)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 3 feet by 2 feet. The other is 9 feet by 6 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 3
+      },
+      "feet by",
+      {
+       "number": 2
+      },
+      "feet. The other is",
+      {
+       "number": 9
+      },
+      "feet by",
+      {
+       "number": 6
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 54
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 54
+      },
+      "is",
+      {
+       "number": 60
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "3 × 2 = 6. 9 × 6 = 54.",
+      "6 + 54 = 60 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 6,
+        "cols": 9,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(3 × 2) + (9 × 6)",
+     "ask": "value",
+     "place": "rug"
+    },
+    "answer": 60,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(3 × 2) + (9 × 6)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rug is made of two rectangles. One is 7 feet by 5 feet. The other is 8 feet by 3 feet. What is the area of the rug, in square feet?",
+     "speak": [
+      "A rug is made of two rectangles. One is",
+      {
+       "number": 7
+      },
+      "feet by",
+      {
+       "number": 5
+      },
+      "feet. The other is",
+      {
+       "number": 8
+      },
+      "feet by",
+      {
+       "number": 3
+      },
+      "feet. What is the area of the rug, in square feet?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 35
+      },
+      "plus",
+      {
+       "number": 24
+      },
+      "is",
+      {
+       "number": 59
+      },
+      "square feet."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "7 × 5 = 35. 8 × 3 = 24.",
+      "35 + 24 = 59 square feet."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 7,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 8,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(7 × 5) + (8 × 3)",
+     "ask": "value",
+     "place": "rug"
+    },
+    "answer": 59,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(7 × 5) + (8 × 3)\",\"place\":\"rug\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A play area is made of two rectangles. One is 4 meters by 7 meters. The other is 3 meters by 7 meters. What is the area of the play area, in square meters?",
+     "speak": [
+      "A play area is made of two rectangles. One is",
+      {
+       "number": 4
+      },
+      "meters by",
+      {
+       "number": 7
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 7
+      },
+      "meters. What is the area of the play area, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 28
+      },
+      "plus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 49
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "4 × 7 = 28. 3 × 7 = 21.",
+      "28 + 21 = 49 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 7,
+        "cols": 4,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 7,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(4 × 7) + (3 × 7)",
+     "ask": "value",
+     "place": "play area"
+    },
+    "answer": 49,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(4 × 7) + (3 × 7)\",\"place\":\"play area\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A garden is made of two rectangles. One is 6 meters by 5 meters. The other is 3 meters by 2 meters. What is the area of the garden, in square meters?",
+     "speak": [
+      "A garden is made of two rectangles. One is",
+      {
+       "number": 6
+      },
+      "meters by",
+      {
+       "number": 5
+      },
+      "meters. The other is",
+      {
+       "number": 3
+      },
+      "meters by",
+      {
+       "number": 2
+      },
+      "meters. What is the area of the garden, in square meters?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Find the area of each rectangle, then add.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 36
+      },
+      "square meters."
+     ],
+     "steps": [
+      "Find the area of each rectangle, then add.",
+      "6 × 5 = 30. 3 × 2 = 6.",
+      "30 + 6 = 36 square meters."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 3,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "(6 × 5) + (3 × 2)",
+     "ask": "value",
+     "place": "garden"
+    },
+    "answer": 36,
+    "maxDigits": 3,
+    "skillId": "M-3-F8",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-F8|3|{\"ask\":\"value\",\"expr\":\"(6 × 5) + (3 × 2)\",\"place\":\"garden\"}"
+   }
+  ]
+ }
+}

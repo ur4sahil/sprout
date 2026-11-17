@@ -1,0 +1,3781 @@
+{
+ "skillId": "M-3-D4",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "Leo puts 12 balloons into 4 bags, the same number in each. How many balloons go in each bag?",
+   "speak": [
+    "Leo puts",
+    {
+     "number": 12
+    },
+    "balloons into",
+    {
+     "number": 4
+    },
+    "bags, the same number in each. How many balloons go in each bag?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🎈",
+   "count": 12,
+   "layout": "grid5"
+  },
+  "explanation": {
+   "speak": [
+    "Share",
+    {
+     "number": 12
+    },
+    "into",
+    {
+     "number": 4
+    },
+    "equal groups.",
+    {
+     "number": 4
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 12
+    },
+    ", so",
+    {
+     "number": 12
+    },
+    "divided by",
+    {
+     "number": 4
+    },
+    "is",
+    {
+     "number": 3
+    },
+    "."
+   ],
+   "steps": [
+    "Share 12 into 4 equal groups.",
+    "4 × 3 = 12.",
+    "So 12 ÷ 4 = 3."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 3,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 3,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 3,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 3,
+      "layout": "dice"
+     }
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "rows": 4,
+   "cols": 3,
+   "total": 12,
+   "by": 4,
+   "ask": "quotient",
+   "kind": "share",
+   "template": 1,
+   "story": "Leo puts 12 balloons into 4 bags, the same number in each. How many balloons go in each bag?",
+   "options": [
+    3,
+    4,
+    8
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "l",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "8",
+    "size": "l",
+    "speak": [
+     {
+      "number": 8
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-3-D4",
+  "level": 1,
+  "seed": 3114,
+  "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":3,\"kind\":\"share\",\"rows\":4,\"story\":\"Leo puts 12 balloons into 4 bags, the same number in each. How many balloons go in each bag?\",\"template\":1,\"total\":12}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Sam puts 8 bananas into 4 baskets, the same number in each. How many bananas go in each basket?",
+     "speak": [
+      "Sam puts",
+      {
+       "number": 8
+      },
+      "bananas into",
+      {
+       "number": 4
+      },
+      "baskets, the same number in each. How many bananas go in each basket?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so",
+      {
+       "number": 8
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Share 8 into 4 equal groups.",
+      "4 × 2 = 8.",
+      "So 8 ÷ 4 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "total": 8,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Sam puts 8 bananas into 4 baskets, the same number in each. How many bananas go in each basket?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":2,\"kind\":\"share\",\"rows\":4,\"story\":\"Sam puts 8 bananas into 4 baskets, the same number in each. How many bananas go in each basket?\",\"template\":1,\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe shares 12 cookies equally among 4 friends. How many cookies does each friend get?",
+     "speak": [
+      "Zoe shares",
+      {
+       "number": 12
+      },
+      "cookies equally among",
+      {
+       "number": 4
+      },
+      "friends. How many cookies does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 12,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 12
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so",
+      {
+       "number": 12
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Share 12 into 4 equal groups.",
+      "4 × 3 = 12.",
+      "So 12 ÷ 4 = 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "total": 12,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Zoe shares 12 cookies equally among 4 friends. How many cookies does each friend get?",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":3,\"kind\":\"share\",\"rows\":4,\"story\":\"Zoe shares 12 cookies equally among 4 friends. How many cookies does each friend get?\",\"template\":0,\"total\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max shares 8 apples equally among 4 friends. How many apples does each friend get?",
+     "speak": [
+      "Max shares",
+      {
+       "number": 8
+      },
+      "apples equally among",
+      {
+       "number": 4
+      },
+      "friends. How many apples does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so",
+      {
+       "number": 8
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Share 8 into 4 equal groups.",
+      "4 × 2 = 8.",
+      "So 8 ÷ 4 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "total": 8,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Max shares 8 apples equally among 4 friends. How many apples does each friend get?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":2,\"kind\":\"share\",\"rows\":4,\"story\":\"Max shares 8 apples equally among 4 friends. How many apples does each friend get?\",\"template\":0,\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max shares 15 apples equally among 5 friends. How many apples does each friend get?",
+     "speak": [
+      "Max shares",
+      {
+       "number": 15
+      },
+      "apples equally among",
+      {
+       "number": 5
+      },
+      "friends. How many apples does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 15,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 15
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "equal groups.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ", so",
+      {
+       "number": 15
+      },
+      "divided by",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Share 15 into 5 equal groups.",
+      "5 × 3 = 15.",
+      "So 15 ÷ 5 = 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "total": 15,
+     "by": 5,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Max shares 15 apples equally among 5 friends. How many apples does each friend get?",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":5,\"cols\":3,\"kind\":\"share\",\"rows\":5,\"story\":\"Max shares 15 apples equally among 5 friends. How many apples does each friend get?\",\"template\":0,\"total\":15}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max shares 20 cookies equally among 4 friends. How many cookies does each friend get?",
+     "speak": [
+      "Max shares",
+      {
+       "number": 20
+      },
+      "cookies equally among",
+      {
+       "number": 4
+      },
+      "friends. How many cookies does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 20,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 20
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ", so",
+      {
+       "number": 20
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Share 20 into 4 equal groups.",
+      "4 × 5 = 20.",
+      "So 20 ÷ 4 = 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "total": 20,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Max shares 20 cookies equally among 4 friends. How many cookies does each friend get?",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":5,\"kind\":\"share\",\"rows\":4,\"story\":\"Max shares 20 cookies equally among 4 friends. How many cookies does each friend get?\",\"template\":0,\"total\":20}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia puts 8 cars into 4 boxes, the same number in each. How many cars go in each box?",
+     "speak": [
+      "Mia puts",
+      {
+       "number": 8
+      },
+      "cars into",
+      {
+       "number": 4
+      },
+      "boxes, the same number in each. How many cars go in each box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so",
+      {
+       "number": 8
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Share 8 into 4 equal groups.",
+      "4 × 2 = 8.",
+      "So 8 ÷ 4 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "total": 8,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Mia puts 8 cars into 4 boxes, the same number in each. How many cars go in each box?",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":2,\"kind\":\"share\",\"rows\":4,\"story\":\"Mia puts 8 cars into 4 boxes, the same number in each. How many cars go in each box?\",\"template\":1,\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava puts 4 balls into 2 boxes, the same number in each. How many balls go in each box?",
+     "speak": [
+      "Ava puts",
+      {
+       "number": 4
+      },
+      "balls into",
+      {
+       "number": 2
+      },
+      "boxes, the same number in each. How many balls go in each box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 4,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 4
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so",
+      {
+       "number": 4
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Share 4 into 2 equal groups.",
+      "2 × 2 = 4.",
+      "So 4 ÷ 2 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 2,
+     "total": 4,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Ava puts 4 balls into 2 boxes, the same number in each. How many balls go in each box?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":2,\"cols\":2,\"kind\":\"share\",\"rows\":2,\"story\":\"Ava puts 4 balls into 2 boxes, the same number in each. How many balls go in each box?\",\"template\":1,\"total\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe shares 8 balls equally among 2 friends. How many balls does each friend get?",
+     "speak": [
+      "Zoe shares",
+      {
+       "number": 8
+      },
+      "balls equally among",
+      {
+       "number": 2
+      },
+      "friends. How many balls does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 8,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so",
+      {
+       "number": 8
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Share 8 into 2 equal groups.",
+      "2 × 4 = 8.",
+      "So 8 ÷ 2 = 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 4,
+     "total": 8,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Zoe shares 8 balls equally among 2 friends. How many balls does each friend get?",
+     "options": [
+      2,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":2,\"cols\":4,\"kind\":\"share\",\"rows\":2,\"story\":\"Zoe shares 8 balls equally among 2 friends. How many balls does each friend get?\",\"template\":0,\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo shares 10 strawberries equally among 2 friends. How many strawberries does each friend get?",
+     "speak": [
+      "Leo shares",
+      {
+       "number": 10
+      },
+      "strawberries equally among",
+      {
+       "number": 2
+      },
+      "friends. How many strawberries does each friend get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍓",
+     "count": 10,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 10
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ", so",
+      {
+       "number": 10
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Share 10 into 2 equal groups.",
+      "2 × 5 = 10.",
+      "So 10 ÷ 2 = 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "total": 10,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 0,
+     "story": "Leo shares 10 strawberries equally among 2 friends. How many strawberries does each friend get?",
+     "options": [
+      2,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":2,\"cols\":5,\"kind\":\"share\",\"rows\":2,\"story\":\"Leo shares 10 strawberries equally among 2 friends. How many strawberries does each friend get?\",\"template\":0,\"total\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe puts 20 strawberries into 4 boxes, the same number in each. How many strawberries go in each box?",
+     "speak": [
+      "Zoe puts",
+      {
+       "number": 20
+      },
+      "strawberries into",
+      {
+       "number": 4
+      },
+      "boxes, the same number in each. How many strawberries go in each box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍓",
+     "count": 20,
+     "layout": "grid5"
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 20
+      },
+      "into",
+      {
+       "number": 4
+      },
+      "equal groups.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ", so",
+      {
+       "number": 20
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Share 20 into 4 equal groups.",
+      "4 × 5 = 20.",
+      "So 20 ÷ 4 = 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "total": 20,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Zoe puts 20 strawberries into 4 boxes, the same number in each. How many strawberries go in each box?",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-D4|1|{\"ask\":\"quotient\",\"by\":4,\"cols\":5,\"kind\":\"share\",\"rows\":4,\"story\":\"Zoe puts 20 strawberries into 4 boxes, the same number in each. How many strawberries go in each box?\",\"template\":1,\"total\":20}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Sam lines up 14 bananas in rows of 7. How many rows are there?",
+     "speak": [
+      "Sam lines up",
+      {
+       "number": 14
+      },
+      "bananas in rows of",
+      {
+       "number": 7
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 7
+      },
+      "from",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so",
+      {
+       "number": 14
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 7 from 14.",
+      "7 × 2 = 14.",
+      "So 14 ÷ 7 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       14,
+       "÷",
+       7,
+       "=",
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "total": 14,
+     "by": 7,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Sam lines up 14 bananas in rows of 7. How many rows are there?",
+     "options": [
+      2,
+      3,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":2,\"kind\":\"groupsOf\",\"rows\":7,\"story\":\"Sam lines up 14 bananas in rows of 7. How many rows are there?\",\"template\":1,\"total\":14}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 28 cookies and puts 7 in each basket. How many baskets does Zoe fill?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 28
+      },
+      "cookies and puts",
+      {
+       "number": 7
+      },
+      "in each basket. How many baskets does Zoe fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 7
+      },
+      "from",
+      {
+       "number": 28
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ", so",
+      {
+       "number": 28
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 7 from 28.",
+      "7 × 4 = 28.",
+      "So 28 ÷ 7 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "÷",
+       7,
+       "=",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 4,
+     "total": 28,
+     "by": 7,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Zoe has 28 cookies and puts 7 in each basket. How many baskets does Zoe fill?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":4,\"kind\":\"groupsOf\",\"rows\":7,\"story\":\"Zoe has 28 cookies and puts 7 in each basket. How many baskets does Zoe fill?\",\"template\":0,\"total\":28}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 14 apples and puts 7 in each basket. How many baskets does Max fill?",
+     "speak": [
+      "Max has",
+      {
+       "number": 14
+      },
+      "apples and puts",
+      {
+       "number": 7
+      },
+      "in each basket. How many baskets does Max fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 7
+      },
+      "from",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so",
+      {
+       "number": 14
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 7 from 14.",
+      "7 × 2 = 14.",
+      "So 14 ÷ 7 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       14,
+       "÷",
+       7,
+       "=",
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "total": 14,
+     "by": 7,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Max has 14 apples and puts 7 in each basket. How many baskets does Max fill?",
+     "options": [
+      2,
+      3,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":2,\"kind\":\"groupsOf\",\"rows\":7,\"story\":\"Max has 14 apples and puts 7 in each basket. How many baskets does Max fill?\",\"template\":0,\"total\":14}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 36 apples and puts 9 in each bag. How many bags does Max fill?",
+     "speak": [
+      "Max has",
+      {
+       "number": 36
+      },
+      "apples and puts",
+      {
+       "number": 9
+      },
+      "in each bag. How many bags does Max fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 9
+      },
+      "from",
+      {
+       "number": 36
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 36
+      },
+      ", so",
+      {
+       "number": 36
+      },
+      "divided by",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 9 from 36.",
+      "9 × 4 = 36.",
+      "So 36 ÷ 9 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       36,
+       "÷",
+       9,
+       "=",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 9,
+     "cols": 4,
+     "total": 36,
+     "by": 9,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Max has 36 apples and puts 9 in each bag. How many bags does Max fill?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":9,\"cols\":4,\"kind\":\"groupsOf\",\"rows\":9,\"story\":\"Max has 36 apples and puts 9 in each bag. How many bags does Max fill?\",\"template\":0,\"total\":36}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max has 56 cookies and puts 7 in each bag. How many bags does Max fill?",
+     "speak": [
+      "Max has",
+      {
+       "number": 56
+      },
+      "cookies and puts",
+      {
+       "number": 7
+      },
+      "in each bag. How many bags does Max fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 7
+      },
+      "from",
+      {
+       "number": 56
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 56
+      },
+      ", so",
+      {
+       "number": 56
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 7 from 56.",
+      "7 × 8 = 56.",
+      "So 56 ÷ 7 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       56,
+       "÷",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 8,
+     "total": 56,
+     "by": 7,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Max has 56 cookies and puts 7 in each bag. How many bags does Max fill?",
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":8,\"kind\":\"groupsOf\",\"rows\":7,\"story\":\"Max has 56 cookies and puts 7 in each bag. How many bags does Max fill?\",\"template\":0,\"total\":56}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia lines up 12 cars in rows of 6. How many rows are there?",
+     "speak": [
+      "Mia lines up",
+      {
+       "number": 12
+      },
+      "cars in rows of",
+      {
+       "number": 6
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 6
+      },
+      "from",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so",
+      {
+       "number": 12
+      },
+      "divided by",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 6 from 12.",
+      "6 × 2 = 12.",
+      "So 12 ÷ 6 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 6,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 6,
+     "cols": 2,
+     "total": 12,
+     "by": 6,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Mia lines up 12 cars in rows of 6. How many rows are there?",
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":6,\"cols\":2,\"kind\":\"groupsOf\",\"rows\":6,\"story\":\"Mia lines up 12 cars in rows of 6. How many rows are there?\",\"template\":1,\"total\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava lines up 4 balls in rows of 2. How many rows are there?",
+     "speak": [
+      "Ava lines up",
+      {
+       "number": 4
+      },
+      "balls in rows of",
+      {
+       "number": 2
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 2
+      },
+      "from",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so",
+      {
+       "number": 4
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 2 from 4.",
+      "2 × 2 = 4.",
+      "So 4 ÷ 2 = 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 2,
+     "total": 4,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Ava lines up 4 balls in rows of 2. How many rows are there?",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":2,\"cols\":2,\"kind\":\"groupsOf\",\"rows\":2,\"story\":\"Ava lines up 4 balls in rows of 2. How many rows are there?\",\"template\":1,\"total\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 21 balls and puts 3 in each box. How many boxes does Zoe fill?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 21
+      },
+      "balls and puts",
+      {
+       "number": 3
+      },
+      "in each box. How many boxes does Zoe fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 3
+      },
+      "from",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ", so",
+      {
+       "number": 21
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 3 from 21.",
+      "3 × 7 = 21.",
+      "So 21 ÷ 3 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       21,
+       "÷",
+       3,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 3,
+     "cols": 7,
+     "total": 21,
+     "by": 3,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Zoe has 21 balls and puts 3 in each box. How many boxes does Zoe fill?",
+     "options": [
+      3,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":3,\"cols\":7,\"kind\":\"groupsOf\",\"rows\":3,\"story\":\"Zoe has 21 balls and puts 3 in each box. How many boxes does Zoe fill?\",\"template\":0,\"total\":21}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo has 24 strawberries and puts 3 in each basket. How many baskets does Leo fill?",
+     "speak": [
+      "Leo has",
+      {
+       "number": 24
+      },
+      "strawberries and puts",
+      {
+       "number": 3
+      },
+      "in each basket. How many baskets does Leo fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 3
+      },
+      "from",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so",
+      {
+       "number": 24
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 3 from 24.",
+      "3 × 8 = 24.",
+      "So 24 ÷ 3 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       3,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 3,
+     "cols": 8,
+     "total": 24,
+     "by": 3,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Leo has 24 strawberries and puts 3 in each basket. How many baskets does Leo fill?",
+     "options": [
+      3,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":3,\"cols\":8,\"kind\":\"groupsOf\",\"rows\":3,\"story\":\"Leo has 24 strawberries and puts 3 in each basket. How many baskets does Leo fill?\",\"template\":0,\"total\":24}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe lines up 54 strawberries in rows of 6. How many rows are there?",
+     "speak": [
+      "Zoe lines up",
+      {
+       "number": 54
+      },
+      "strawberries in rows of",
+      {
+       "number": 6
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 6
+      },
+      "from",
+      {
+       "number": 54
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 54
+      },
+      ", so",
+      {
+       "number": 54
+      },
+      "divided by",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 6 from 54.",
+      "6 × 9 = 54.",
+      "So 54 ÷ 6 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       54,
+       "÷",
+       6,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 6,
+     "cols": 9,
+     "total": 54,
+     "by": 6,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Zoe lines up 54 strawberries in rows of 6. How many rows are there?",
+     "options": [
+      6,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-D4",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-D4|2|{\"ask\":\"quotient\",\"by\":6,\"cols\":9,\"kind\":\"groupsOf\",\"rows\":6,\"story\":\"Zoe lines up 54 strawberries in rows of 6. How many rows are there?\",\"template\":1,\"total\":54}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max lines up 12 bananas in rows of 2. How many rows are there?",
+     "speak": [
+      "Max lines up",
+      {
+       "number": 12
+      },
+      "bananas in rows of",
+      {
+       "number": 2
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 2
+      },
+      "from",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so",
+      {
+       "number": 12
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 2 from 12.",
+      "2 × 6 = 12.",
+      "So 12 ÷ 2 = 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 2,
+     "cols": 6,
+     "total": 12,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Max lines up 12 bananas in rows of 2. How many rows are there?"
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":2,\"cols\":6,\"kind\":\"groupsOf\",\"rows\":2,\"story\":\"Max lines up 12 bananas in rows of 2. How many rows are there?\",\"template\":1,\"total\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe lines up 16 bananas in rows of 4. How many rows are there?",
+     "speak": [
+      "Zoe lines up",
+      {
+       "number": 16
+      },
+      "bananas in rows of",
+      {
+       "number": 4
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 4
+      },
+      "from",
+      {
+       "number": 16
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ", so",
+      {
+       "number": 16
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 4 from 16.",
+      "4 × 4 = 16.",
+      "So 16 ÷ 4 = 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 4,
+     "cols": 4,
+     "total": 16,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Zoe lines up 16 bananas in rows of 4. How many rows are there?"
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":4,\"cols\":4,\"kind\":\"groupsOf\",\"rows\":4,\"story\":\"Zoe lines up 16 bananas in rows of 4. How many rows are there?\",\"template\":1,\"total\":16}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 10 strawberries and puts 2 in each box. How many boxes does Zoe fill?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 10
+      },
+      "strawberries and puts",
+      {
+       "number": 2
+      },
+      "in each box. How many boxes does Zoe fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 2
+      },
+      "from",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ", so",
+      {
+       "number": 10
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 2 from 10.",
+      "2 × 5 = 10.",
+      "So 10 ÷ 2 = 5."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "total": 10,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Zoe has 10 strawberries and puts 2 in each box. How many boxes does Zoe fill?"
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":2,\"cols\":5,\"kind\":\"groupsOf\",\"rows\":2,\"story\":\"Zoe has 10 strawberries and puts 2 in each box. How many boxes does Zoe fill?\",\"template\":0,\"total\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe has 12 cars and puts 4 in each box. How many boxes does Zoe fill?",
+     "speak": [
+      "Zoe has",
+      {
+       "number": 12
+      },
+      "cars and puts",
+      {
+       "number": 4
+      },
+      "in each box. How many boxes does Zoe fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 4
+      },
+      "from",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so",
+      {
+       "number": 12
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 4 from 12.",
+      "4 × 3 = 12.",
+      "So 12 ÷ 4 = 3."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "total": 12,
+     "by": 4,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Zoe has 12 cars and puts 4 in each box. How many boxes does Zoe fill?"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":4,\"cols\":3,\"kind\":\"groupsOf\",\"rows\":4,\"story\":\"Zoe has 12 cars and puts 4 in each box. How many boxes does Zoe fill?\",\"template\":0,\"total\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe lines up 24 apples in rows of 8. How many rows are there?",
+     "speak": [
+      "Zoe lines up",
+      {
+       "number": 24
+      },
+      "apples in rows of",
+      {
+       "number": 8
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 8
+      },
+      "from",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so",
+      {
+       "number": 24
+      },
+      "divided by",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 8 from 24.",
+      "8 × 3 = 24.",
+      "So 24 ÷ 8 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       8,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 8,
+     "cols": 3,
+     "total": 24,
+     "by": 8,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Zoe lines up 24 apples in rows of 8. How many rows are there?"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":8,\"cols\":3,\"kind\":\"groupsOf\",\"rows\":8,\"story\":\"Zoe lines up 24 apples in rows of 8. How many rows are there?\",\"template\":1,\"total\":24}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo has 14 cookies and puts 2 in each bag. How many bags does Leo fill?",
+     "speak": [
+      "Leo has",
+      {
+       "number": 14
+      },
+      "cookies and puts",
+      {
+       "number": 2
+      },
+      "in each bag. How many bags does Leo fill?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 2
+      },
+      "from",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so",
+      {
+       "number": 14
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 2 from 14.",
+      "2 × 7 = 14.",
+      "So 14 ÷ 2 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       14,
+       "÷",
+       2,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 2,
+     "cols": 7,
+     "total": 14,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 0,
+     "story": "Leo has 14 cookies and puts 2 in each bag. How many bags does Leo fill?"
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":2,\"cols\":7,\"kind\":\"groupsOf\",\"rows\":2,\"story\":\"Leo has 14 cookies and puts 2 in each bag. How many bags does Leo fill?\",\"template\":0,\"total\":14}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max puts 18 cookies into 2 boxes, the same number in each. How many cookies go in each box?",
+     "speak": [
+      "Max puts",
+      {
+       "number": 18
+      },
+      "cookies into",
+      {
+       "number": 2
+      },
+      "boxes, the same number in each. How many cookies go in each box?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 18
+      },
+      "into",
+      {
+       "number": 2
+      },
+      "equal groups.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ", so",
+      {
+       "number": 18
+      },
+      "divided by",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Share 18 into 2 equal groups.",
+      "2 × 9 = 18.",
+      "So 18 ÷ 2 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       18,
+       "÷",
+       2,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 2,
+     "cols": 9,
+     "total": 18,
+     "by": 2,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Max puts 18 cookies into 2 boxes, the same number in each. How many cookies go in each box?"
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":2,\"cols\":9,\"kind\":\"share\",\"rows\":2,\"story\":\"Max puts 18 cookies into 2 boxes, the same number in each. How many cookies go in each box?\",\"template\":1,\"total\":18}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava puts 28 cookies into 7 boxes, the same number in each. How many cookies go in each box?",
+     "speak": [
+      "Ava puts",
+      {
+       "number": 28
+      },
+      "cookies into",
+      {
+       "number": 7
+      },
+      "boxes, the same number in each. How many cookies go in each box?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 28
+      },
+      "into",
+      {
+       "number": 7
+      },
+      "equal groups.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ", so",
+      {
+       "number": 28
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Share 28 into 7 equal groups.",
+      "7 × 4 = 28.",
+      "So 28 ÷ 7 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "÷",
+       7,
+       "=",
+       4
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 7,
+     "cols": 4,
+     "total": 28,
+     "by": 7,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Ava puts 28 cookies into 7 boxes, the same number in each. How many cookies go in each box?"
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":7,\"cols\":4,\"kind\":\"share\",\"rows\":7,\"story\":\"Ava puts 28 cookies into 7 boxes, the same number in each. How many cookies go in each box?\",\"template\":1,\"total\":28}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava puts 24 balls into 8 baskets, the same number in each. How many balls go in each basket?",
+     "speak": [
+      "Ava puts",
+      {
+       "number": 24
+      },
+      "balls into",
+      {
+       "number": 8
+      },
+      "baskets, the same number in each. How many balls go in each basket?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Share",
+      {
+       "number": 24
+      },
+      "into",
+      {
+       "number": 8
+      },
+      "equal groups.",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so",
+      {
+       "number": 24
+      },
+      "divided by",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Share 24 into 8 equal groups.",
+      "8 × 3 = 24.",
+      "So 24 ÷ 8 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       8,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 8,
+     "cols": 3,
+     "total": 24,
+     "by": 8,
+     "ask": "quotient",
+     "kind": "share",
+     "template": 1,
+     "story": "Ava puts 24 balls into 8 baskets, the same number in each. How many balls go in each basket?"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":8,\"cols\":3,\"kind\":\"share\",\"rows\":8,\"story\":\"Ava puts 24 balls into 8 baskets, the same number in each. How many balls go in each basket?\",\"template\":1,\"total\":24}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava lines up 63 flowers in rows of 9. How many rows are there?",
+     "speak": [
+      "Ava lines up",
+      {
+       "number": 63
+      },
+      "flowers in rows of",
+      {
+       "number": 9
+      },
+      ". How many rows are there?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Make groups of",
+      {
+       "number": 9
+      },
+      "from",
+      {
+       "number": 63
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 63
+      },
+      ", so",
+      {
+       "number": 63
+      },
+      "divided by",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Make groups of 9 from 63.",
+      "9 × 7 = 63.",
+      "So 63 ÷ 9 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       63,
+       "÷",
+       9,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 9,
+     "cols": 7,
+     "total": 63,
+     "by": 9,
+     "ask": "quotient",
+     "kind": "groupsOf",
+     "template": 1,
+     "story": "Ava lines up 63 flowers in rows of 9. How many rows are there?"
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-3-D4",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-D4|3|{\"ask\":\"quotient\",\"by\":9,\"cols\":7,\"kind\":\"groupsOf\",\"rows\":9,\"story\":\"Ava lines up 63 flowers in rows of 9. How many rows are there?\",\"template\":1,\"total\":63}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,2901 @@
+{
+ "skillId": "M-3-F9",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "exprs": [
+    "5 × 2",
+    "6 × 1"
+   ],
+   "ask": "least",
+   "options": [
+    "5 by 2",
+    "6 by 1"
+   ]
+  },
+  "prompt": {
+   "text": "Both rectangles have a perimeter of 14 units. Which one has less area?",
+   "speak": [
+    "Both rectangles have a perimeter of",
+    {
+     "number": 14
+    },
+    "units. Which one has less area?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "array",
+    "rows": 2,
+    "cols": 5,
+    "emoji": "🟩",
+    "speak": [
+     {
+      "number": 5
+     },
+     "by",
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "array",
+    "rows": 1,
+    "cols": 6,
+    "emoji": "🟩",
+    "speak": [
+     {
+      "number": 6
+     },
+     "by",
+     {
+      "number": 1
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Both have a perimeter of",
+    {
+     "number": 14
+    },
+    "units. Their areas are",
+    {
+     "number": 10
+    },
+    "and",
+    {
+     "number": 6
+    },
+    "square units. The",
+    {
+     "number": 6
+    },
+    "by",
+    {
+     "number": 1
+    },
+    "rectangle has",
+    "less."
+   ],
+   "steps": [
+    "Both perimeters are 14 units.",
+    "5 × 2 = 10. 6 × 1 = 6.",
+    "The 6 by 1 rectangle has less area."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 5,
+      "emoji": "🟩"
+     },
+     {
+      "kind": "array",
+      "rows": 1,
+      "cols": 6,
+      "emoji": "🟩"
+     }
+    ]
+   }
+  },
+  "skillId": "M-3-F9",
+  "level": 1,
+  "seed": 3139,
+  "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"5 × 2\",\"6 × 1\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "5 × 4",
+      "6 × 3"
+     ],
+     "ask": "least",
+     "options": [
+      "5 by 4",
+      "6 by 3"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 18 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 6,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 6
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Their areas are",
+      {
+       "number": 20
+      },
+      "and",
+      {
+       "number": 18
+      },
+      "square units. The",
+      {
+       "number": 6
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 18 units.",
+      "5 × 4 = 20. 6 × 3 = 18.",
+      "The 6 by 3 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 6,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"5 × 4\",\"6 × 3\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "6 × 3",
+      "5 × 4"
+     ],
+     "ask": "least",
+     "options": [
+      "6 by 3",
+      "5 by 4"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 18 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 6,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 6
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Their areas are",
+      {
+       "number": 18
+      },
+      "and",
+      {
+       "number": 20
+      },
+      "square units. The",
+      {
+       "number": 6
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 18 units.",
+      "6 × 3 = 18. 5 × 4 = 20.",
+      "The 6 by 3 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"6 × 3\",\"5 × 4\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "6 × 3",
+      "5 × 4"
+     ],
+     "ask": "least",
+     "options": [
+      "6 by 3",
+      "5 by 4"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 18 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 6,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 6
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Their areas are",
+      {
+       "number": 18
+      },
+      "and",
+      {
+       "number": 20
+      },
+      "square units. The",
+      {
+       "number": 6
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 18 units.",
+      "6 × 3 = 18. 5 × 4 = 20.",
+      "The 6 by 3 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"6 × 3\",\"5 × 4\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "5 × 5",
+      "7 × 3"
+     ],
+     "ask": "least",
+     "options": [
+      "5 by 5",
+      "7 by 3"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 20 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 20
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 5,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 7,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 7
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 20
+      },
+      "units. Their areas are",
+      {
+       "number": 25
+      },
+      "and",
+      {
+       "number": 21
+      },
+      "square units. The",
+      {
+       "number": 7
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 20 units.",
+      "5 × 5 = 25. 7 × 3 = 21.",
+      "The 7 by 3 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"5 × 5\",\"7 × 3\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "6 × 3",
+      "7 × 2"
+     ],
+     "ask": "most",
+     "options": [
+      "6 by 3",
+      "7 by 2"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 18 units. Which one has more area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Which one has more area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 6,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 6
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 7,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 7
+       },
+       "by",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 18
+      },
+      "units. Their areas are",
+      {
+       "number": 18
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "square units. The",
+      {
+       "number": 6
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "more."
+     ],
+     "steps": [
+      "Both perimeters are 18 units.",
+      "6 × 3 = 18. 7 × 2 = 14.",
+      "The 6 by 3 rectangle has more area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 6,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 7,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F9|1|{\"ask\":\"most\",\"exprs\":[\"6 × 3\",\"7 × 2\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "5 × 3",
+      "4 × 4"
+     ],
+     "ask": "least",
+     "options": [
+      "5 by 3",
+      "4 by 4"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 16 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 16
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 4,
+      "cols": 4,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 4
+       },
+       "by",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 16
+      },
+      "units. Their areas are",
+      {
+       "number": 15
+      },
+      "and",
+      {
+       "number": 16
+      },
+      "square units. The",
+      {
+       "number": 5
+      },
+      "by",
+      {
+       "number": 3
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 16 units.",
+      "5 × 3 = 15. 4 × 4 = 16.",
+      "The 5 by 3 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 5,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 4,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"5 × 3\",\"4 × 4\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3 × 3",
+      "4 × 2"
+     ],
+     "ask": "least",
+     "options": [
+      "3 by 3",
+      "4 by 2"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 12 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 3,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 3
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 4,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 4
+       },
+       "by",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Their areas are",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 8
+      },
+      "square units. The",
+      {
+       "number": 4
+      },
+      "by",
+      {
+       "number": 2
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 12 units.",
+      "3 × 3 = 9. 4 × 2 = 8.",
+      "The 4 by 2 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 4,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"3 × 3\",\"4 × 2\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3 × 3",
+      "5 × 1"
+     ],
+     "ask": "least",
+     "options": [
+      "3 by 3",
+      "5 by 1"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 12 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 3,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 3
+       },
+       "by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 1,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Their areas are",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 5
+      },
+      "square units. The",
+      {
+       "number": 5
+      },
+      "by",
+      {
+       "number": 1
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 12 units.",
+      "3 × 3 = 9. 5 × 1 = 5.",
+      "The 5 by 1 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 3,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"3 × 3\",\"5 × 1\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "4 × 2",
+      "5 × 1"
+     ],
+     "ask": "least",
+     "options": [
+      "4 by 2",
+      "5 by 1"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 12 units. Which one has less area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Which one has less area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 4,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 4
+       },
+       "by",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 1,
+      "cols": 5,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 5
+       },
+       "by",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 12
+      },
+      "units. Their areas are",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 5
+      },
+      "square units. The",
+      {
+       "number": 5
+      },
+      "by",
+      {
+       "number": 1
+      },
+      "rectangle has",
+      "less."
+     ],
+     "steps": [
+      "Both perimeters are 12 units.",
+      "4 × 2 = 8. 5 × 1 = 5.",
+      "The 5 by 1 rectangle has less area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 4,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 5,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-F9|1|{\"ask\":\"least\",\"exprs\":[\"4 × 2\",\"5 × 1\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "7 × 1",
+      "6 × 2"
+     ],
+     "ask": "most",
+     "options": [
+      "7 by 1",
+      "6 by 2"
+     ]
+    },
+    "prompt": {
+     "text": "Both rectangles have a perimeter of 16 units. Which one has more area?",
+     "speak": [
+      "Both rectangles have a perimeter of",
+      {
+       "number": 16
+      },
+      "units. Which one has more area?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "array",
+      "rows": 1,
+      "cols": 7,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 7
+       },
+       "by",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "array",
+      "rows": 2,
+      "cols": 6,
+      "emoji": "🟩",
+      "speak": [
+       {
+        "number": 6
+       },
+       "by",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Both have a perimeter of",
+      {
+       "number": 16
+      },
+      "units. Their areas are",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 12
+      },
+      "square units. The",
+      {
+       "number": 6
+      },
+      "by",
+      {
+       "number": 2
+      },
+      "rectangle has",
+      "more."
+     ],
+     "steps": [
+      "Both perimeters are 16 units.",
+      "7 × 1 = 7. 6 × 2 = 12.",
+      "The 6 by 2 rectangle has more area."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 7,
+        "emoji": "🟩"
+       },
+       {
+        "kind": "array",
+        "rows": 2,
+        "cols": 6,
+        "emoji": "🟩"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F9",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-F9|1|{\"ask\":\"most\",\"exprs\":[\"7 × 1\",\"6 × 2\"]}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 18 centimeters. One side is 7 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 18
+      },
+      "centimeters. One side is",
+      {
+       "number": 7
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 7
+      },
+      "long, which makes",
+      {
+       "number": 14
+      },
+      ". That leaves",
+      {
+       "number": 4
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The two 7 centimeter sides make 14.",
+      "18 − 14 = 4 for the other two sides.",
+      "4 ÷ 2 = 2 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 7,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7 + □ + 7 + □ = 18",
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"7 + □ + 7 + □ = 18\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 24 centimeters. One side is 8 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 24
+      },
+      "centimeters. One side is",
+      {
+       "number": 8
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 8
+      },
+      "long, which makes",
+      {
+       "number": 16
+      },
+      ". That leaves",
+      {
+       "number": 8
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "The two 8 centimeter sides make 16.",
+      "24 − 16 = 8 for the other two sides.",
+      "8 ÷ 2 = 4 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 8,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "8 + □ + 8 + □ = 24",
+     "ask": "missing",
+     "options": [
+      4,
+      5,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"8 + □ + 8 + □ = 24\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 20 centimeters. One side is 8 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 20
+      },
+      "centimeters. One side is",
+      {
+       "number": 8
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 8
+      },
+      "long, which makes",
+      {
+       "number": 16
+      },
+      ". That leaves",
+      {
+       "number": 4
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The two 8 centimeter sides make 16.",
+      "20 − 16 = 4 for the other two sides.",
+      "4 ÷ 2 = 2 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 8,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "8 + □ + 8 + □ = 20",
+     "ask": "missing",
+     "options": [
+      2,
+      8,
+      12
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"8 + □ + 8 + □ = 20\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 26 centimeters. One side is 9 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 26
+      },
+      "centimeters. One side is",
+      {
+       "number": 9
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 9
+      },
+      "long, which makes",
+      {
+       "number": 18
+      },
+      ". That leaves",
+      {
+       "number": 8
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "The two 9 centimeter sides make 18.",
+      "26 − 18 = 8 for the other two sides.",
+      "8 ÷ 2 = 4 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 9,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "9 + □ + 9 + □ = 26",
+     "ask": "missing",
+     "options": [
+      4,
+      6,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"9 + □ + 9 + □ = 26\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 30 centimeters. One side is 7 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 30
+      },
+      "centimeters. One side is",
+      {
+       "number": 7
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 7
+      },
+      "long, which makes",
+      {
+       "number": 14
+      },
+      ". That leaves",
+      {
+       "number": 16
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The two 7 centimeter sides make 14.",
+      "30 − 14 = 16 for the other two sides.",
+      "16 ÷ 2 = 8 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 8,
+      "cols": 7,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7 + □ + 7 + □ = 30",
+     "ask": "missing",
+     "options": [
+      8,
+      10,
+      16
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"7 + □ + 7 + □ = 30\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 16 centimeters. One side is 6 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 16
+      },
+      "centimeters. One side is",
+      {
+       "number": 6
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 6
+      },
+      "long, which makes",
+      {
+       "number": 12
+      },
+      ". That leaves",
+      {
+       "number": 4
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The two 6 centimeter sides make 12.",
+      "16 − 12 = 4 for the other two sides.",
+      "4 ÷ 2 = 2 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 6,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "6 + □ + 6 + □ = 16",
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"6 + □ + 6 + □ = 16\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 10 centimeters. One side is 3 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 10
+      },
+      "centimeters. One side is",
+      {
+       "number": 3
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 3
+      },
+      "long, which makes",
+      {
+       "number": 6
+      },
+      ". That leaves",
+      {
+       "number": 4
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "The two 3 centimeter sides make 6.",
+      "10 − 6 = 4 for the other two sides.",
+      "4 ÷ 2 = 2 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 3,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "3 + □ + 3 + □ = 10",
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"3 + □ + 3 + □ = 10\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 22 centimeters. One side is 4 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 22
+      },
+      "centimeters. One side is",
+      {
+       "number": 4
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 4
+      },
+      "long, which makes",
+      {
+       "number": 8
+      },
+      ". That leaves",
+      {
+       "number": 14
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "The two 4 centimeter sides make 8.",
+      "22 − 8 = 14 for the other two sides.",
+      "14 ÷ 2 = 7 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 7,
+      "cols": 4,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4 + □ + 4 + □ = 22",
+     "ask": "missing",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"4 + □ + 4 + □ = 22\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 24 centimeters. One side is 4 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 24
+      },
+      "centimeters. One side is",
+      {
+       "number": 4
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 4
+      },
+      "long, which makes",
+      {
+       "number": 8
+      },
+      ". That leaves",
+      {
+       "number": 16
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The two 4 centimeter sides make 8.",
+      "24 − 8 = 16 for the other two sides.",
+      "16 ÷ 2 = 8 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 8,
+      "cols": 4,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4 + □ + 4 + □ = 24",
+     "ask": "missing",
+     "options": [
+      8,
+      9,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"4 + □ + 4 + □ = 24\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 30 centimeters. One side is 6 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 30
+      },
+      "centimeters. One side is",
+      {
+       "number": 6
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 6
+      },
+      "long, which makes",
+      {
+       "number": 12
+      },
+      ". That leaves",
+      {
+       "number": 18
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "The two 6 centimeter sides make 12.",
+      "30 − 12 = 18 for the other two sides.",
+      "18 ÷ 2 = 9 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 9,
+      "cols": 6,
+      "emoji": "🟩"
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "6 + □ + 6 + □ = 30",
+     "ask": "missing",
+     "options": [
+      6,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F9",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-F9|2|{\"ask\":\"missing\",\"expr\":\"6 + □ + 6 + □ = 30\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 18 square centimeters. One side is 3 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 18
+      },
+      "square centimeters. One side is",
+      {
+       "number": 3
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 18
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ", so the other side is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "3 × 6 = 18.",
+      "The other side is 6 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 6,
+      "cols": 3,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3 × □ = 18",
+     "ask": "missing"
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"3 × □ = 18\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 20 square centimeters. One side is 5 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 20
+      },
+      "square centimeters. One side is",
+      {
+       "number": 5
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ", so the other side is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "5 × 4 = 20.",
+      "The other side is 4 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "5 × □ = 20",
+     "ask": "missing"
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"5 × □ = 20\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 15 square centimeters. One side is 3 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 15
+      },
+      "square centimeters. One side is",
+      {
+       "number": 3
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ", so the other side is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "3 × 5 = 15.",
+      "The other side is 5 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 3,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3 × □ = 15",
+     "ask": "missing"
+    },
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"3 × □ = 15\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 15 square centimeters. One side is 5 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 15
+      },
+      "square centimeters. One side is",
+      {
+       "number": 5
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ", so the other side is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "5 × 3 = 15.",
+      "The other side is 3 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 5,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "5 × □ = 15",
+     "ask": "missing"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"5 × □ = 15\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 24 square centimeters. One side is 8 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 24
+      },
+      "square centimeters. One side is",
+      {
+       "number": 8
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 24
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so the other side is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "8 × 3 = 24.",
+      "The other side is 3 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 8,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "8 × □ = 24",
+     "ask": "missing"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"8 × □ = 24\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 21 square centimeters. One side is 3 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 21
+      },
+      "square centimeters. One side is",
+      {
+       "number": 3
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ", so the other side is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "3 × 7 = 21.",
+      "The other side is 7 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 7,
+      "cols": 3,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3 × □ = 21",
+     "ask": "missing"
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"3 × □ = 21\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 24 centimeters. One side is 3 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 24
+      },
+      "centimeters. One side is",
+      {
+       "number": 3
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 3
+      },
+      "long, which makes",
+      {
+       "number": 6
+      },
+      ". That leaves",
+      {
+       "number": 18
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "The two 3 centimeter sides make 6.",
+      "24 − 6 = 18 for the other two sides.",
+      "18 ÷ 2 = 9 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 9,
+      "cols": 3,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "3 + □ + 3 + □ = 24",
+     "ask": "missing"
+    },
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"3 + □ + 3 + □ = 24\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 22 centimeters. One side is 7 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 22
+      },
+      "centimeters. One side is",
+      {
+       "number": 7
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 7
+      },
+      "long, which makes",
+      {
+       "number": 14
+      },
+      ". That leaves",
+      {
+       "number": 8
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "The two 7 centimeter sides make 14.",
+      "22 − 14 = 8 for the other two sides.",
+      "8 ÷ 2 = 4 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 7,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "7 + □ + 7 + □ = 22",
+     "ask": "missing"
+    },
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"7 + □ + 7 + □ = 22\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has a perimeter of 22 centimeters. One side is 8 centimeters long. How long is the side next to it?",
+     "speak": [
+      "A rectangle has a perimeter of",
+      {
+       "number": 22
+      },
+      "centimeters. One side is",
+      {
+       "number": 8
+      },
+      "centimeters long. How long is the side next to it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "shape",
+     "shape": "rectangle",
+     "color": "blue",
+     "size": "l",
+     "rotation": 0
+    },
+    "explanation": {
+     "speak": [
+      "Two sides are",
+      {
+       "number": 8
+      },
+      "long, which makes",
+      {
+       "number": 16
+      },
+      ". That leaves",
+      {
+       "number": 6
+      },
+      "for the other two sides, so each is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "The two 8 centimeter sides make 16.",
+      "22 − 16 = 6 for the other two sides.",
+      "6 ÷ 2 = 3 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 8,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "8 + □ + 8 + □ = 22",
+     "ask": "missing"
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"8 + □ + 8 + □ = 22\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "A rectangle has an area of 63 square centimeters. One side is 9 centimeters long. How long is the other side?",
+     "speak": [
+      "A rectangle has an area of",
+      {
+       "number": 63
+      },
+      "square centimeters. One side is",
+      {
+       "number": 9
+      },
+      "centimeters long. How long is the other side?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "The area is",
+      {
+       "number": 63
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 63
+      },
+      ", so the other side is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Area = side × side.",
+      "9 × 7 = 63.",
+      "The other side is 7 centimeters."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 7,
+      "cols": 9,
+      "emoji": "🟩"
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "expr": "9 × □ = 63",
+     "ask": "missing"
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-3-F9",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-F9|3|{\"ask\":\"missing\",\"expr\":\"9 × □ = 63\"}"
+   }
+  ]
+ }
+}
