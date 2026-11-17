@@ -7,6 +7,7 @@ import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, holdHome, shoot } from './support/kid';
 import { checkScreen } from './support/layout';
 import { openFromSubject, submit, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Language Arts pre-K, added in Phase 6d.
 const SKILLS: [string, string][] = [
@@ -48,8 +49,8 @@ test.describe('Language Arts pre-K', () => {
     await start(page);
     await page.getByRole('button', { name: /Language Arts/ }).click();
     await expect(page.getByRole('heading', { name: /Language Arts/ })).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Letters', 'B. Sounds', 'C. Words']);
-    await expect(page.locator('[data-skill]')).toHaveCount(10);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', 'PK'));
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', 'PK'));
     await checkScreen(page, 'Language Arts page', 64);
     await shoot(page, 'elaprek-subject');
   });

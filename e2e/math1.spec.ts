@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer } from './support/kid';
 import { openFromMath, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Math grade 1 (Phases 11a and 11b): all 22 skills.
 const SKILLS: [string, string][] = [
@@ -40,8 +41,8 @@ test.describe('Math grade 1', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 1' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Numbers to 120', 'B. Adding and subtracting', 'C. Time, measuring and money', 'D. Shapes and parts', 'E. Patterns']);
-    await expect(page.locator('[data-skill]')).toHaveCount(22);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', '1'));
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', '1'));
   });
 
   test('blocks are read as tens and ones, and a clock is read by touch', async ({ page }) => {

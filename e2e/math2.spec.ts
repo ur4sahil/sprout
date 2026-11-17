@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer } from './support/kid';
 import { openFromMath, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Math grade 2 (Phases 11c and 11d): all 22 skills.
 const SKILLS: [string, string][] = [
@@ -56,8 +57,8 @@ test.describe('Math grade 2', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 2' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(22);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Numbers to 1,000', 'B. Adding and subtracting', 'C. Time, money and measuring', 'D. Shapes and parts']);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', '2'));
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', '2'));
   });
 
   test('a ruler is read from zero by touch, and the dot on a number line does not give its number away', async ({ page }) => {

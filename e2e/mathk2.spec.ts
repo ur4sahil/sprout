@@ -3,6 +3,7 @@ import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, holdHome, shoot } from './support/kid';
 import { checkScreen } from './support/layout';
 import { openFromMath, saveScores, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // The kindergarten skills added in Phase 6c: adding, subtracting, stories and teen numbers.
 const SKILLS: [string, string][] = [
@@ -42,8 +43,8 @@ test.describe('Math kindergarten, part 2', () => {
   test('the Math page lists adding and subtracting together, then tens and ones', async ({ page }) => {
     await start(page);
     await page.getByRole('button', { name: /Math/ }).click();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Counting', 'B. Comparing', 'C. Adding and subtracting', 'D. Tens and ones', 'E. Shapes', 'F. Measuring and sorting', 'G. Patterns']);
-    await expect(page.locator('[data-skill]')).toHaveCount(28);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', 'K'));
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', 'K'));
     await checkScreen(page, 'Math page with all 28 kindergarten skills', 64);
     await shoot(page, 'mathk2-subject');
   });

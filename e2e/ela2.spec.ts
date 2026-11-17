@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild } from './support/kid';
 import { sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Language Arts grade 2 (plan section 15, phase F).
 const SKILLS: [string, string][] = [
@@ -33,7 +34,7 @@ test.describe('Language Arts grade 2', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Language Arts/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 2' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(15);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Phonics', 'B. Words', 'C. Grammar', 'D. Reading']);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', '2'));
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', '2'));
   });
 });

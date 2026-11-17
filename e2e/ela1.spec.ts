@@ -3,6 +3,7 @@ import { COMPOUNDS } from '../src/content/data/phonics1';
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, holdHome } from './support/kid';
 import { openFromSubject, submit, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Language Arts grade 1, added in Phase 11f.
 const SKILLS: [string, string][] = [
@@ -53,8 +54,8 @@ test.describe('Language Arts grade 1', () => {
     await start(page);
     await page.getByRole('button', { name: /Language Arts/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 1' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Phonics', 'B. Words', 'C. Grammar', 'D. Reading']);
-    await expect(page.locator('[data-skill]')).toHaveCount(12);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', '1'));
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', '1'));
   });
 
   test('a story is shown to read, with a question and three written answers', async ({ page }) => {

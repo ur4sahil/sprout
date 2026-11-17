@@ -5,6 +5,7 @@ import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, holdHome, shoot } from './support/kid';
 import { checkScreen } from './support/layout';
 import { openFromSubject, sweepHardestLevels } from './support/sweep';
+import { skillCount } from './support/catalogue';
 
 // The 14 Reasoning skills, added in Phase 6e. They belong to every grade.
 const SKILLS: [string, string][] = [
@@ -58,7 +59,7 @@ test.describe('Reasoning', () => {
     await expect(page.getByRole('heading', { name: /Reasoning/ })).toBeVisible();
     await expect(page.getByRole('tab')).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Thinking puzzles']);
-    await expect(page.locator('[data-skill]')).toHaveCount(14);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('reasoning', 'all'));
     await checkScreen(page, 'Reasoning page', 64);
     await shoot(page, 'reasoning-subject');
   });

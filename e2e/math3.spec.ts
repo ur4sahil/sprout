@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild } from './support/kid';
 import { openFromMath, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Math grade 3: numbers to 10,000, adding and subtracting, multiplication, division, fractions, measurement and shapes.
 const SKILLS: [string, string][] = [
@@ -66,7 +67,7 @@ test.describe('Math grade 3', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 3' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(32);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Numbers to 10,000', 'B. Adding and subtracting', 'C. Multiplication', 'D. Division', 'E. Fractions', 'F. Measurement and data', 'G. Shapes']);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', '3'));
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', '3'));
   });
 });

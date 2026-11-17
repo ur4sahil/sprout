@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answerAnything, answerRight, holdHome, openSkill, shoot, sum } from './support/kid';
 import { checkScreen } from './support/layout';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Every control a child who cannot read meets must carry a picture, not only words.
 async function expectNoTextOnlyControls(page: import('@playwright/test').Page, where: string): Promise<void> {
@@ -99,14 +100,14 @@ test.describe('kid navigation', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await page.getByRole('button', { name: /Math/ }).click();
     await expect(page.getByRole('tab', { name: 'Kindergarten' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('[data-skill]')).toHaveCount(28);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', 'K'));
     await checkScreen(page, 'subject page', 64);
     await shoot(page, 'subject');
     await page.getByRole('button', { name: 'Hear the name: Add to 10' }).click();
     await expect(page.getByRole('heading', { name: /Math/ })).toBeVisible();
     await page.getByRole('tab', { name: 'Pre-K' }).click();
-    await expect(page.locator('[data-skill]')).toHaveCount(16);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Counting', 'B. Comparing', 'C. Shapes and sizes', 'D. Patterns and sorting']);
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', 'PK'));
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', 'PK'));
     await checkScreen(page, 'subject page, pre-K', 64);
     await shoot(page, 'subject-prek');
     await page.getByRole('button', { name: 'Back to home' }).click();

@@ -4,6 +4,7 @@ import { SENTENCE_PICTURES } from '../src/content/data/sentencePictures';
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, holdHome } from './support/kid';
 import { openFromSubject, submit, sweepHardestLevels } from './support/sweep';
+import { groupNames, skillCount } from './support/catalogue';
 
 // Language Arts kindergarten, added in Phase 11e.
 const SKILLS: [string, string][] = [
@@ -59,8 +60,8 @@ test.describe('Language Arts kindergarten', () => {
     await start(page);
     await page.getByRole('button', { name: /Language Arts/ }).click();
     await expect(page.getByRole('tab', { name: 'Kindergarten' })).toHaveAttribute('aria-selected', 'true');
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Letters', 'B. Sounds and spelling', 'C. Sight words', 'D. Words and sentences', 'E. Reading']);
-    await expect(page.locator('[data-skill]')).toHaveCount(16);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', 'K'));
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', 'K'));
   });
 
   test('a written word is read and matched to its picture, and a sentence too', async ({ page }) => {
