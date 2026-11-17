@@ -1,0 +1,2848 @@
+{
+ "skillId": "E-PK-B4",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍋",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "lemon"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🎩",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "hat"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐴",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "horse"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "facts": {
+   "relation": "notLike",
+   "target": "house",
+   "answer": "lemon",
+   "options": [
+    "lemon",
+    "hat",
+    "horse"
+   ]
+  },
+  "prompt": {
+   "text": "Which one does not start like house?",
+   "speak": [
+    "Which one does not start like",
+    {
+     "word": "house"
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🏠",
+   "count": 1,
+   "layout": "row",
+   "speak": [
+    {
+     "word": "house"
+    }
+   ]
+  },
+  "explanation": {
+   "speak": [
+    {
+     "word": "house"
+    },
+    ",",
+    {
+     "word": "hat"
+    },
+    "and",
+    {
+     "word": "horse"
+    },
+    "start with the same sound.",
+    {
+     "word": "lemon"
+    },
+    "does not."
+   ],
+   "steps": [
+    "House, hat and horse start with the same sound.",
+    "Lemon does not."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-PK-B4",
+  "level": 1,
+  "seed": 3141,
+  "key": "E-PK-B4|1|{\"answer\":\"lemon\",\"relation\":\"notLike\",\"target\":\"house\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "zebra"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "notLike",
+     "target": "key",
+     "answer": "zebra",
+     "options": [
+      "car",
+      "cow",
+      "zebra"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like key?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "key"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔑",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "key"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      ",",
+      {
+       "word": "cow"
+      },
+      "and",
+      {
+       "word": "car"
+      },
+      "start with the same sound.",
+      {
+       "word": "zebra"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Key, cow and car start with the same sound.",
+      "Zebra does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "zebra"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 1,
+    "key": "E-PK-B4|1|{\"answer\":\"zebra\",\"relation\":\"notLike\",\"target\":\"key\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "facts": {
+     "relation": "notLike",
+     "target": "milk",
+     "answer": "fish",
+     "options": [
+      "mouse",
+      "fish",
+      "moon"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like milk?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "milk"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥛",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "milk"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "milk"
+      },
+      ",",
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with the same sound.",
+      {
+       "word": "fish"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Milk, mouse and moon start with the same sound.",
+      "Fish does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 2,
+    "key": "E-PK-B4|1|{\"answer\":\"fish\",\"relation\":\"notLike\",\"target\":\"milk\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "notLike",
+     "target": "milk",
+     "answer": "house",
+     "options": [
+      "house",
+      "moon",
+      "mouse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like milk?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "milk"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥛",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "milk"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "milk"
+      },
+      ",",
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with the same sound.",
+      {
+       "word": "house"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Milk, mouse and moon start with the same sound.",
+      "House does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏠",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "house"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-B4|1|{\"answer\":\"house\",\"relation\":\"notLike\",\"target\":\"milk\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "facts": {
+     "relation": "notLike",
+     "target": "rainbow",
+     "answer": "duck",
+     "options": [
+      "rabbit",
+      "duck",
+      "ring"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like rainbow?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "rainbow"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌈",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "rainbow"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "rainbow"
+      },
+      ",",
+      {
+       "word": "ring"
+      },
+      "and",
+      {
+       "word": "rabbit"
+      },
+      "start with the same sound.",
+      {
+       "word": "duck"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Rainbow, ring and rabbit start with the same sound.",
+      "Duck does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌈",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rainbow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "💍",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ring"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 4,
+    "key": "E-PK-B4|1|{\"answer\":\"duck\",\"relation\":\"notLike\",\"target\":\"rainbow\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "notLike",
+     "target": "mouse",
+     "answer": "duck",
+     "options": [
+      "duck",
+      "moon",
+      "milk"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like mouse?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "mouse"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "mouse"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      ",",
+      {
+       "word": "moon"
+      },
+      "and",
+      {
+       "word": "milk"
+      },
+      "start with the same sound.",
+      {
+       "word": "duck"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Mouse, moon and milk start with the same sound.",
+      "Duck does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 5,
+    "key": "E-PK-B4|1|{\"answer\":\"duck\",\"relation\":\"notLike\",\"target\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "notLike",
+     "target": "horse",
+     "answer": "pizza",
+     "options": [
+      "pizza",
+      "hat",
+      "house"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like horse?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "horse"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐴",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "horse"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "horse"
+      },
+      ",",
+      {
+       "word": "house"
+      },
+      "and",
+      {
+       "word": "hat"
+      },
+      "start with the same sound.",
+      {
+       "word": "pizza"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Horse, house and hat start with the same sound.",
+      "Pizza does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏠",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "house"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 6,
+    "key": "E-PK-B4|1|{\"answer\":\"pizza\",\"relation\":\"notLike\",\"target\":\"horse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦓",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "zebra"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "notLike",
+     "target": "ball",
+     "answer": "zebra",
+     "options": [
+      "bus",
+      "bear",
+      "zebra"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like ball?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "ball"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "ball"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "ball"
+      },
+      ",",
+      {
+       "word": "bus"
+      },
+      "and",
+      {
+       "word": "bear"
+      },
+      "start with the same sound.",
+      {
+       "word": "zebra"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Ball, bus and bear start with the same sound.",
+      "Zebra does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦓",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "zebra"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 7,
+    "key": "E-PK-B4|1|{\"answer\":\"zebra\",\"relation\":\"notLike\",\"target\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "notLike",
+     "target": "cat",
+     "answer": "rabbit",
+     "options": [
+      "rabbit",
+      "key",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like cat?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "cat"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "cat"
+      },
+      ",",
+      {
+       "word": "key"
+      },
+      "and",
+      {
+       "word": "car"
+      },
+      "start with the same sound.",
+      {
+       "word": "rabbit"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Cat, key and car start with the same sound.",
+      "Rabbit does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 8,
+    "key": "E-PK-B4|1|{\"answer\":\"rabbit\",\"relation\":\"notLike\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "notLike",
+     "target": "car",
+     "answer": "tiger",
+     "options": [
+      "cow",
+      "cat",
+      "tiger"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like car?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "car"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "car"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "car"
+      },
+      ",",
+      {
+       "word": "cow"
+      },
+      "and",
+      {
+       "word": "cat"
+      },
+      "start with the same sound.",
+      {
+       "word": "tiger"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Car, cow and cat start with the same sound.",
+      "Tiger does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐯",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tiger"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-B4|1|{\"answer\":\"tiger\",\"relation\":\"notLike\",\"target\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "notLike",
+     "target": "hat",
+     "answer": "pear",
+     "options": [
+      "house",
+      "horse",
+      "pear"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not start like hat?",
+     "speak": [
+      "Which one does not start like",
+      {
+       "word": "hat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎩",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "hat"
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "hat"
+      },
+      ",",
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "house"
+      },
+      "start with the same sound.",
+      {
+       "word": "pear"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Hat, horse and house start with the same sound.",
+      "Pear does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏠",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "house"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-B4|1|{\"answer\":\"pear\",\"relation\":\"notLike\",\"target\":\"hat\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "yarn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "yarn",
+     "same": [
+      "cow",
+      "key"
+     ],
+     "options": [
+      "yarn",
+      "cow",
+      "key"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with the same sound.",
+      {
+       "word": "yarn"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Key and cow start with the same sound.",
+      "Yarn does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "yarn"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 1,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"cow\",\"key\"],\"target\":\"yarn\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "oddSound",
+     "target": "lion",
+     "same": [
+      "milk",
+      "mouse"
+     ],
+     "options": [
+      "mouse",
+      "milk",
+      "lion"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "milk"
+      },
+      "start with the same sound.",
+      {
+       "word": "lion"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Mouse and milk start with the same sound.",
+      "Lion does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 2,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"milk\",\"mouse\"],\"target\":\"lion\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "oddSound",
+     "target": "bear",
+     "same": [
+      "milk",
+      "mouse"
+     ],
+     "options": [
+      "milk",
+      "mouse",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "milk"
+      },
+      "start with the same sound.",
+      {
+       "word": "bear"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Mouse and milk start with the same sound.",
+      "Bear does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"milk\",\"mouse\"],\"target\":\"bear\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌈",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rainbow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "bus",
+     "same": [
+      "rainbow",
+      "ring"
+     ],
+     "options": [
+      "bus",
+      "ring",
+      "rainbow"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "rainbow"
+      },
+      "and",
+      {
+       "word": "ring"
+      },
+      "start with the same sound.",
+      {
+       "word": "bus"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Rainbow and ring start with the same sound.",
+      "Bus does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌈",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rainbow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "💍",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ring"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 4,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"rainbow\",\"ring\"],\"target\":\"bus\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "pig",
+     "same": [
+      "moon",
+      "mouse"
+     ],
+     "options": [
+      "pig",
+      "moon",
+      "mouse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with the same sound.",
+      {
+       "word": "pig"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Mouse and moon start with the same sound.",
+      "Pig does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 5,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"moon\",\"mouse\"],\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "dog",
+     "same": [
+      "horse",
+      "house"
+     ],
+     "options": [
+      "dog",
+      "house",
+      "horse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "house"
+      },
+      "and",
+      {
+       "word": "horse"
+      },
+      "start with the same sound.",
+      {
+       "word": "dog"
+      },
+      "does not."
+     ],
+     "steps": [
+      "House and horse start with the same sound.",
+      "Dog does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏠",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "house"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 6,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"horse\",\"house\"],\"target\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "rabbit",
+     "same": [
+      "bear",
+      "bus"
+     ],
+     "options": [
+      "rabbit",
+      "bus",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "bus"
+      },
+      "and",
+      {
+       "word": "bear"
+      },
+      "start with the same sound.",
+      {
+       "word": "rabbit"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Bus and bear start with the same sound.",
+      "Rabbit does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 7,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"bear\",\"bus\"],\"target\":\"rabbit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔑",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "key"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "octopus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "facts": {
+     "relation": "oddSound",
+     "target": "octopus",
+     "same": [
+      "car",
+      "key"
+     ],
+     "options": [
+      "key",
+      "octopus",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      "and",
+      {
+       "word": "car"
+      },
+      "start with the same sound.",
+      {
+       "word": "octopus"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Key and car start with the same sound.",
+      "Octopus does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔑",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "octopus"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 8,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"car\",\"key\"],\"target\":\"octopus\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌈",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rainbow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "facts": {
+     "relation": "oddSound",
+     "target": "rainbow",
+     "same": [
+      "car",
+      "cow"
+     ],
+     "options": [
+      "car",
+      "cow",
+      "rainbow"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "cow"
+      },
+      "and",
+      {
+       "word": "car"
+      },
+      "start with the same sound.",
+      {
+       "word": "rainbow"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Cow and car start with the same sound.",
+      "Rainbow does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌈",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rainbow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"car\",\"cow\"],\"target\":\"rainbow\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "facts": {
+     "relation": "oddSound",
+     "target": "sock",
+     "same": [
+      "hat",
+      "horse"
+     ],
+     "options": [
+      "sock",
+      "hat",
+      "horse"
+     ]
+    },
+    "prompt": {
+     "text": "Which one starts with a different sound?",
+     "speak": [
+      "Which one starts with a different sound?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "word": "hat"
+      },
+      "and",
+      {
+       "word": "horse"
+      },
+      "start with the same sound.",
+      {
+       "word": "sock"
+      },
+      "does not."
+     ],
+     "steps": [
+      "Hat and horse start with the same sound.",
+      "Sock does not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B4",
+    "level": 2,
+    "seed": 10,
+    "key": "E-PK-B4|2|{\"relation\":\"oddSound\",\"same\":[\"hat\",\"horse\"],\"target\":\"sock\"}"
+   }
+  ]
+ }
+}

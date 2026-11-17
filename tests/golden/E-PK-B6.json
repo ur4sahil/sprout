@@ -1,0 +1,4417 @@
+{
+ "skillId": "E-PK-B6",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "relation": "letterBins",
+   "target": "t|c",
+   "items": [
+    "tiger",
+    "tent",
+    "cat",
+    "cow"
+   ],
+   "bins": [
+    "t",
+    "c"
+   ]
+  },
+  "prompt": {
+   "text": "Put each picture with the letter it starts with.",
+   "speak": [
+    "Put each picture with the letter it starts with."
+   ]
+  },
+  "items": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐯",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "tiger"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "⛺",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "tent"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐱",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "cat"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐄",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "cow"
+     }
+    ]
+   }
+  ],
+  "bins": [
+   {
+    "label": "T",
+    "speak": [
+     {
+      "letter": "T"
+     }
+    ],
+    "icon": {
+     "kind": "text",
+     "value": "T",
+     "size": "xl",
+     "speak": [
+      {
+       "letter": "T"
+      }
+     ]
+    }
+   },
+   {
+    "label": "C",
+    "speak": [
+     {
+      "letter": "C"
+     }
+    ],
+    "icon": {
+     "kind": "text",
+     "value": "C",
+     "size": "xl",
+     "speak": [
+      {
+       "letter": "C"
+      }
+     ]
+    }
+   }
+  ],
+  "answerBin": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "explanation": {
+   "speak": [
+    {
+     "word": "tiger"
+    },
+    "and",
+    {
+     "word": "tent"
+    },
+    "start with",
+    {
+     "letter": "T"
+    },
+    ".",
+    {
+     "word": "cat"
+    },
+    "and",
+    {
+     "word": "cow"
+    },
+    "start with",
+    {
+     "letter": "C"
+    },
+    "."
+   ],
+   "steps": [
+    "Tiger and tent start with T.",
+    "Cat and cow start with C."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-PK-B6",
+  "level": 1,
+  "seed": 3161,
+  "key": "E-PK-B6|1|{\"bins\":[\"t\",\"c\"],\"items\":[\"tiger\",\"tent\",\"cat\",\"cow\"],\"relation\":\"letterBins\",\"target\":\"t|c\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "s|r",
+     "items": [
+      "rabbit",
+      "ring",
+      "sock",
+      "sun"
+     ],
+     "bins": [
+      "s",
+      "r"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "S",
+      "speak": [
+       {
+        "letter": "S"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "S",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "S"
+        }
+       ]
+      }
+     },
+     {
+      "label": "R",
+      "speak": [
+       {
+        "letter": "R"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "R",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "R"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "sock"
+      },
+      "and",
+      {
+       "word": "sun"
+      },
+      "start with",
+      {
+       "letter": "S"
+      },
+      ".",
+      {
+       "word": "rabbit"
+      },
+      "and",
+      {
+       "word": "ring"
+      },
+      "start with",
+      {
+       "letter": "R"
+      },
+      "."
+     ],
+     "steps": [
+      "Sock and sun start with S.",
+      "Rabbit and ring start with R."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 1,
+    "key": "E-PK-B6|1|{\"bins\":[\"s\",\"r\"],\"items\":[\"rabbit\",\"ring\",\"sock\",\"sun\"],\"relation\":\"letterBins\",\"target\":\"s|r\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "l|b",
+     "items": [
+      "bear",
+      "lion",
+      "lemon",
+      "bus"
+     ],
+     "bins": [
+      "l",
+      "b"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bus"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "L",
+      "speak": [
+       {
+        "letter": "L"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "L",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "L"
+        }
+       ]
+      }
+     },
+     {
+      "label": "B",
+      "speak": [
+       {
+        "letter": "B"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "B",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "B"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "lion"
+      },
+      "and",
+      {
+       "word": "lemon"
+      },
+      "start with",
+      {
+       "letter": "L"
+      },
+      ".",
+      {
+       "word": "bear"
+      },
+      "and",
+      {
+       "word": "bus"
+      },
+      "start with",
+      {
+       "letter": "B"
+      },
+      "."
+     ],
+     "steps": [
+      "Lion and lemon start with L.",
+      "Bear and bus start with B."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 2,
+    "key": "E-PK-B6|1|{\"bins\":[\"l\",\"b\"],\"items\":[\"bear\",\"lion\",\"lemon\",\"bus\"],\"relation\":\"letterBins\",\"target\":\"l|b\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "r|c",
+     "items": [
+      "ring",
+      "rainbow",
+      "car",
+      "cat"
+     ],
+     "bins": [
+      "r",
+      "c"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌈",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rainbow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "R",
+      "speak": [
+       {
+        "letter": "R"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "R",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "R"
+        }
+       ]
+      }
+     },
+     {
+      "label": "C",
+      "speak": [
+       {
+        "letter": "C"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "C",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "C"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "ring"
+      },
+      "and",
+      {
+       "word": "rainbow"
+      },
+      "start with",
+      {
+       "letter": "R"
+      },
+      ".",
+      {
+       "word": "car"
+      },
+      "and",
+      {
+       "word": "cat"
+      },
+      "start with",
+      {
+       "letter": "C"
+      },
+      "."
+     ],
+     "steps": [
+      "Ring and rainbow start with R.",
+      "Car and cat start with C."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "💍",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ring"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-B6|1|{\"bins\":[\"r\",\"c\"],\"items\":[\"ring\",\"rainbow\",\"car\",\"cat\"],\"relation\":\"letterBins\",\"target\":\"r|c\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "h|d",
+     "items": [
+      "hat",
+      "horse",
+      "duck",
+      "dog"
+     ],
+     "bins": [
+      "h",
+      "d"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     },
+     {
+      "label": "D",
+      "speak": [
+       {
+        "letter": "D"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "D",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "D"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "hat"
+      },
+      "and",
+      {
+       "word": "horse"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      ".",
+      {
+       "word": "duck"
+      },
+      "and",
+      {
+       "word": "dog"
+      },
+      "start with",
+      {
+       "letter": "D"
+      },
+      "."
+     ],
+     "steps": [
+      "Hat and horse start with H.",
+      "Duck and dog start with D."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 4,
+    "key": "E-PK-B6|1|{\"bins\":[\"h\",\"d\"],\"items\":[\"hat\",\"horse\",\"duck\",\"dog\"],\"relation\":\"letterBins\",\"target\":\"h|d\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "s|m",
+     "items": [
+      "moon",
+      "mouse",
+      "sock",
+      "sun"
+     ],
+     "bins": [
+      "s",
+      "m"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "S",
+      "speak": [
+       {
+        "letter": "S"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "S",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "S"
+        }
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "speak": [
+       {
+        "letter": "M"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "M",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "M"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "sock"
+      },
+      "and",
+      {
+       "word": "sun"
+      },
+      "start with",
+      {
+       "letter": "S"
+      },
+      ".",
+      {
+       "word": "moon"
+      },
+      "and",
+      {
+       "word": "mouse"
+      },
+      "start with",
+      {
+       "letter": "M"
+      },
+      "."
+     ],
+     "steps": [
+      "Sock and sun start with S.",
+      "Moon and mouse start with M."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 5,
+    "key": "E-PK-B6|1|{\"bins\":[\"s\",\"m\"],\"items\":[\"moon\",\"mouse\",\"sock\",\"sun\"],\"relation\":\"letterBins\",\"target\":\"s|m\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "p|h",
+     "items": [
+      "pizza",
+      "house",
+      "horse",
+      "pig"
+     ],
+     "bins": [
+      "p",
+      "h"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      ".",
+      {
+       "word": "house"
+      },
+      "and",
+      {
+       "word": "horse"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      "."
+     ],
+     "steps": [
+      "Pizza and pig start with P.",
+      "House and horse start with H."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏠",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "house"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 6,
+    "key": "E-PK-B6|1|{\"bins\":[\"p\",\"h\"],\"items\":[\"pizza\",\"house\",\"horse\",\"pig\"],\"relation\":\"letterBins\",\"target\":\"p|h\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "m|h",
+     "items": [
+      "hat",
+      "horse",
+      "milk",
+      "mouse"
+     ],
+     "bins": [
+      "m",
+      "h"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "M",
+      "speak": [
+       {
+        "letter": "M"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "M",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "M"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "milk"
+      },
+      "and",
+      {
+       "word": "mouse"
+      },
+      "start with",
+      {
+       "letter": "M"
+      },
+      ".",
+      {
+       "word": "hat"
+      },
+      "and",
+      {
+       "word": "horse"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      "."
+     ],
+     "steps": [
+      "Milk and mouse start with M.",
+      "Hat and horse start with H."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 7,
+    "key": "E-PK-B6|1|{\"bins\":[\"m\",\"h\"],\"items\":[\"hat\",\"horse\",\"milk\",\"mouse\"],\"relation\":\"letterBins\",\"target\":\"m|h\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "p|f",
+     "items": [
+      "fish",
+      "pig",
+      "fire",
+      "pear"
+     ],
+     "bins": [
+      "p",
+      "f"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔥",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fire"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     },
+     {
+      "label": "F",
+      "speak": [
+       {
+        "letter": "F"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "F",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "F"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "pear"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      ".",
+      {
+       "word": "fish"
+      },
+      "and",
+      {
+       "word": "fire"
+      },
+      "start with",
+      {
+       "letter": "F"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig and pear start with P.",
+      "Fish and fire start with F."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 8,
+    "key": "E-PK-B6|1|{\"bins\":[\"p\",\"f\"],\"items\":[\"fish\",\"pig\",\"fire\",\"pear\"],\"relation\":\"letterBins\",\"target\":\"p|f\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "t|p",
+     "items": [
+      "pear",
+      "tent",
+      "tiger",
+      "pig"
+     ],
+     "bins": [
+      "t",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛺",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tent"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "T",
+      "speak": [
+       {
+        "letter": "T"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "T",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "T"
+        }
+       ]
+      }
+     },
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tent"
+      },
+      "and",
+      {
+       "word": "tiger"
+      },
+      "start with",
+      {
+       "letter": "T"
+      },
+      ".",
+      {
+       "word": "pear"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      "."
+     ],
+     "steps": [
+      "Tent and tiger start with T.",
+      "Pear and pig start with P."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛺",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tent"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-B6|1|{\"bins\":[\"t\",\"p\"],\"items\":[\"pear\",\"tent\",\"tiger\",\"pig\"],\"relation\":\"letterBins\",\"target\":\"t|p\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "t|h",
+     "items": [
+      "tiger",
+      "horse",
+      "house",
+      "tent"
+     ],
+     "bins": [
+      "t",
+      "h"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛺",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tent"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "T",
+      "speak": [
+       {
+        "letter": "T"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "T",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "T"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tiger"
+      },
+      "and",
+      {
+       "word": "tent"
+      },
+      "start with",
+      {
+       "letter": "T"
+      },
+      ".",
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "house"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      "."
+     ],
+     "steps": [
+      "Tiger and tent start with T.",
+      "Horse and house start with H."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐯",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tiger"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-B6|1|{\"bins\":[\"t\",\"h\"],\"items\":[\"tiger\",\"horse\",\"house\",\"tent\"],\"relation\":\"letterBins\",\"target\":\"t|h\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "s|r|l",
+     "items": [
+      "rabbit",
+      "ring",
+      "lemon",
+      "lion",
+      "sock",
+      "sun"
+     ],
+     "bins": [
+      "s",
+      "r",
+      "l"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "S",
+      "speak": [
+       {
+        "letter": "S"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "S",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "S"
+        }
+       ]
+      }
+     },
+     {
+      "label": "R",
+      "speak": [
+       {
+        "letter": "R"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "R",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "R"
+        }
+       ]
+      }
+     },
+     {
+      "label": "L",
+      "speak": [
+       {
+        "letter": "L"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "L",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "L"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     2,
+     2,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "sock"
+      },
+      "and",
+      {
+       "word": "sun"
+      },
+      "start with",
+      {
+       "letter": "S"
+      },
+      ".",
+      {
+       "word": "rabbit"
+      },
+      "and",
+      {
+       "word": "ring"
+      },
+      "start with",
+      {
+       "letter": "R"
+      },
+      ".",
+      {
+       "word": "lemon"
+      },
+      "and",
+      {
+       "word": "lion"
+      },
+      "start with",
+      {
+       "letter": "L"
+      },
+      "."
+     ],
+     "steps": [
+      "Sock and sun start with S.",
+      "Rabbit and ring start with R.",
+      "Lemon and lion start with L."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍋",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lemon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 1,
+    "key": "E-PK-B6|2|{\"bins\":[\"s\",\"r\",\"l\"],\"items\":[\"rabbit\",\"ring\",\"lemon\",\"lion\",\"sock\",\"sun\"],\"relation\":\"letterBins\",\"target\":\"s|r|l\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "l|b|p",
+     "items": [
+      "pig",
+      "pizza",
+      "bear",
+      "lemon",
+      "bus",
+      "lion"
+     ],
+     "bins": [
+      "l",
+      "b",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍋",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lemon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "L",
+      "speak": [
+       {
+        "letter": "L"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "L",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "L"
+        }
+       ]
+      }
+     },
+     {
+      "label": "B",
+      "speak": [
+       {
+        "letter": "B"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "B",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "B"
+        }
+       ]
+      }
+     },
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "lemon"
+      },
+      "and",
+      {
+       "word": "lion"
+      },
+      "start with",
+      {
+       "letter": "L"
+      },
+      ".",
+      {
+       "word": "bear"
+      },
+      "and",
+      {
+       "word": "bus"
+      },
+      "start with",
+      {
+       "letter": "B"
+      },
+      ".",
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "pizza"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      "."
+     ],
+     "steps": [
+      "Lemon and lion start with L.",
+      "Bear and bus start with B.",
+      "Pig and pizza start with P."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍋",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lemon"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bear"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 2,
+    "key": "E-PK-B6|2|{\"bins\":[\"l\",\"b\",\"p\"],\"items\":[\"pig\",\"pizza\",\"bear\",\"lemon\",\"bus\",\"lion\"],\"relation\":\"letterBins\",\"target\":\"l|b|p\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "r|c|f",
+     "items": [
+      "rainbow",
+      "fish",
+      "car",
+      "fox",
+      "cat",
+      "ring"
+     ],
+     "bins": [
+      "r",
+      "c",
+      "f"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌈",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rainbow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fox"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💍",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ring"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "R",
+      "speak": [
+       {
+        "letter": "R"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "R",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "R"
+        }
+       ]
+      }
+     },
+     {
+      "label": "C",
+      "speak": [
+       {
+        "letter": "C"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "C",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "C"
+        }
+       ]
+      }
+     },
+     {
+      "label": "F",
+      "speak": [
+       {
+        "letter": "F"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "F",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "F"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     1,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "rainbow"
+      },
+      "and",
+      {
+       "word": "ring"
+      },
+      "start with",
+      {
+       "letter": "R"
+      },
+      ".",
+      {
+       "word": "car"
+      },
+      "and",
+      {
+       "word": "cat"
+      },
+      "start with",
+      {
+       "letter": "C"
+      },
+      ".",
+      {
+       "word": "fish"
+      },
+      "and",
+      {
+       "word": "fox"
+      },
+      "start with",
+      {
+       "letter": "F"
+      },
+      "."
+     ],
+     "steps": [
+      "Rainbow and ring start with R.",
+      "Car and cat start with C.",
+      "Fish and fox start with F."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌈",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rainbow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-B6|2|{\"bins\":[\"r\",\"c\",\"f\"],\"items\":[\"rainbow\",\"fish\",\"car\",\"fox\",\"cat\",\"ring\"],\"relation\":\"letterBins\",\"target\":\"r|c|f\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "h|d|m",
+     "items": [
+      "horse",
+      "hat",
+      "duck",
+      "moon",
+      "milk",
+      "dog"
+     ],
+     "bins": [
+      "h",
+      "d",
+      "m"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     },
+     {
+      "label": "D",
+      "speak": [
+       {
+        "letter": "D"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "D",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "D"
+        }
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "speak": [
+       {
+        "letter": "M"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "M",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "M"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     2,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "hat"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      ".",
+      {
+       "word": "duck"
+      },
+      "and",
+      {
+       "word": "dog"
+      },
+      "start with",
+      {
+       "letter": "D"
+      },
+      ".",
+      {
+       "word": "moon"
+      },
+      "and",
+      {
+       "word": "milk"
+      },
+      "start with",
+      {
+       "letter": "M"
+      },
+      "."
+     ],
+     "steps": [
+      "Horse and hat start with H.",
+      "Duck and dog start with D.",
+      "Moon and milk start with M."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌙",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "moon"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 4,
+    "key": "E-PK-B6|2|{\"bins\":[\"h\",\"d\",\"m\"],\"items\":[\"horse\",\"hat\",\"duck\",\"moon\",\"milk\",\"dog\"],\"relation\":\"letterBins\",\"target\":\"h|d|m\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "s|m|d",
+     "items": [
+      "sun",
+      "mouse",
+      "moon",
+      "door",
+      "duck",
+      "sock"
+     ],
+     "bins": [
+      "s",
+      "m",
+      "d"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☀️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "moon"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "S",
+      "speak": [
+       {
+        "letter": "S"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "S",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "S"
+        }
+       ]
+      }
+     },
+     {
+      "label": "M",
+      "speak": [
+       {
+        "letter": "M"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "M",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "M"
+        }
+       ]
+      }
+     },
+     {
+      "label": "D",
+      "speak": [
+       {
+        "letter": "D"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "D",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "D"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     2,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "sun"
+      },
+      "and",
+      {
+       "word": "sock"
+      },
+      "start with",
+      {
+       "letter": "S"
+      },
+      ".",
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "moon"
+      },
+      "start with",
+      {
+       "letter": "M"
+      },
+      ".",
+      {
+       "word": "door"
+      },
+      "and",
+      {
+       "word": "duck"
+      },
+      "start with",
+      {
+       "letter": "D"
+      },
+      "."
+     ],
+     "steps": [
+      "Sun and sock start with S.",
+      "Mouse and moon start with M.",
+      "Door and duck start with D."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "☀️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sun"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "door"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 5,
+    "key": "E-PK-B6|2|{\"bins\":[\"s\",\"m\",\"d\"],\"items\":[\"sun\",\"mouse\",\"moon\",\"door\",\"duck\",\"sock\"],\"relation\":\"letterBins\",\"target\":\"s|m|d\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "p|h|d",
+     "items": [
+      "dog",
+      "door",
+      "pizza",
+      "pig",
+      "horse",
+      "house"
+     ],
+     "bins": [
+      "p",
+      "h",
+      "d"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dog"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     },
+     {
+      "label": "D",
+      "speak": [
+       {
+        "letter": "D"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "D",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "D"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     0,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pizza"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      ".",
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "house"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      ".",
+      {
+       "word": "dog"
+      },
+      "and",
+      {
+       "word": "door"
+      },
+      "start with",
+      {
+       "letter": "D"
+      },
+      "."
+     ],
+     "steps": [
+      "Pizza and pig start with P.",
+      "Horse and house start with H.",
+      "Dog and door start with D."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pizza"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 6,
+    "key": "E-PK-B6|2|{\"bins\":[\"p\",\"h\",\"d\"],\"items\":[\"dog\",\"door\",\"pizza\",\"pig\",\"horse\",\"house\"],\"relation\":\"letterBins\",\"target\":\"p|h|d\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "m|h|c",
+     "items": [
+      "horse",
+      "mouse",
+      "car",
+      "cow",
+      "hat",
+      "milk"
+     ],
+     "bins": [
+      "m",
+      "h",
+      "c"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mouse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cow"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥛",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "M",
+      "speak": [
+       {
+        "letter": "M"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "M",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "M"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     },
+     {
+      "label": "C",
+      "speak": [
+       {
+        "letter": "C"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "C",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "C"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     2,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "mouse"
+      },
+      "and",
+      {
+       "word": "milk"
+      },
+      "start with",
+      {
+       "letter": "M"
+      },
+      ".",
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "hat"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      ".",
+      {
+       "word": "car"
+      },
+      "and",
+      {
+       "word": "cow"
+      },
+      "start with",
+      {
+       "letter": "C"
+      },
+      "."
+     ],
+     "steps": [
+      "Mouse and milk start with M.",
+      "Horse and hat start with H.",
+      "Car and cow start with C."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐭",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mouse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 7,
+    "key": "E-PK-B6|2|{\"bins\":[\"m\",\"h\",\"c\"],\"items\":[\"horse\",\"mouse\",\"car\",\"cow\",\"hat\",\"milk\"],\"relation\":\"letterBins\",\"target\":\"m|h|c\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "p|f|t",
+     "items": [
+      "pig",
+      "fire",
+      "tent",
+      "pear",
+      "fish",
+      "tiger"
+     ],
+     "bins": [
+      "p",
+      "f",
+      "t"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🔥",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fire"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛺",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tent"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     },
+     {
+      "label": "F",
+      "speak": [
+       {
+        "letter": "F"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "F",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "F"
+        }
+       ]
+      }
+     },
+     {
+      "label": "T",
+      "speak": [
+       {
+        "letter": "T"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "T",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "T"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "and",
+      {
+       "word": "pear"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      ".",
+      {
+       "word": "fire"
+      },
+      "and",
+      {
+       "word": "fish"
+      },
+      "start with",
+      {
+       "letter": "F"
+      },
+      ".",
+      {
+       "word": "tent"
+      },
+      "and",
+      {
+       "word": "tiger"
+      },
+      "start with",
+      {
+       "letter": "T"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig and pear start with P.",
+      "Fire and fish start with F.",
+      "Tent and tiger start with T."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🔥",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fire"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛺",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tent"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 8,
+    "key": "E-PK-B6|2|{\"bins\":[\"p\",\"f\",\"t\"],\"items\":[\"pig\",\"fire\",\"tent\",\"pear\",\"fish\",\"tiger\"],\"relation\":\"letterBins\",\"target\":\"p|f|t\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "t|p|b",
+     "items": [
+      "tiger",
+      "pear",
+      "ball",
+      "tent",
+      "pig",
+      "bear"
+     ],
+     "bins": [
+      "t",
+      "p",
+      "b"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛺",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tent"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bear"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "T",
+      "speak": [
+       {
+        "letter": "T"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "T",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "T"
+        }
+       ]
+      }
+     },
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     },
+     {
+      "label": "B",
+      "speak": [
+       {
+        "letter": "B"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "B",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "B"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tiger"
+      },
+      "and",
+      {
+       "word": "tent"
+      },
+      "start with",
+      {
+       "letter": "T"
+      },
+      ".",
+      {
+       "word": "pear"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      ".",
+      {
+       "word": "ball"
+      },
+      "and",
+      {
+       "word": "bear"
+      },
+      "start with",
+      {
+       "letter": "B"
+      },
+      "."
+     ],
+     "steps": [
+      "Tiger and tent start with T.",
+      "Pear and pig start with P.",
+      "Ball and bear start with B."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐯",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tiger"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "ball"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-B6|2|{\"bins\":[\"t\",\"p\",\"b\"],\"items\":[\"tiger\",\"pear\",\"ball\",\"tent\",\"pig\",\"bear\"],\"relation\":\"letterBins\",\"target\":\"t|p|b\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "letterBins",
+     "target": "t|h|p",
+     "items": [
+      "pear",
+      "tiger",
+      "horse",
+      "house",
+      "tent",
+      "pig"
+     ],
+     "bins": [
+      "t",
+      "h",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Put each picture with the letter it starts with.",
+     "speak": [
+      "Put each picture with the letter it starts with."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍐",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pear"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐯",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tiger"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "horse"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏠",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "house"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛺",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tent"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "T",
+      "speak": [
+       {
+        "letter": "T"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "T",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "T"
+        }
+       ]
+      }
+     },
+     {
+      "label": "H",
+      "speak": [
+       {
+        "letter": "H"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "H",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "H"
+        }
+       ]
+      }
+     },
+     {
+      "label": "P",
+      "speak": [
+       {
+        "letter": "P"
+       }
+      ],
+      "icon": {
+       "kind": "text",
+       "value": "P",
+       "size": "xl",
+       "speak": [
+        {
+         "letter": "P"
+        }
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     1,
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "word": "tiger"
+      },
+      "and",
+      {
+       "word": "tent"
+      },
+      "start with",
+      {
+       "letter": "T"
+      },
+      ".",
+      {
+       "word": "horse"
+      },
+      "and",
+      {
+       "word": "house"
+      },
+      "start with",
+      {
+       "letter": "H"
+      },
+      ".",
+      {
+       "word": "pear"
+      },
+      "and",
+      {
+       "word": "pig"
+      },
+      "start with",
+      {
+       "letter": "P"
+      },
+      "."
+     ],
+     "steps": [
+      "Tiger and tent start with T.",
+      "Horse and house start with H.",
+      "Pear and pig start with P."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐯",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tiger"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐴",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pear"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-B6",
+    "level": 2,
+    "seed": 10,
+    "key": "E-PK-B6|2|{\"bins\":[\"t\",\"h\",\"p\"],\"items\":[\"pear\",\"tiger\",\"horse\",\"house\",\"tent\",\"pig\"],\"relation\":\"letterBins\",\"target\":\"t|h|p\"}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,2389 @@
+{
+ "skillId": "E-K-B13",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "relation": "letterPlace",
+   "target": "box",
+   "letter": "b",
+   "options": [
+    "first",
+    "last"
+   ]
+  },
+  "prompt": {
+   "text": "Where is the letter b in box?",
+   "speak": [
+    "Where is the letter",
+    {
+     "letter": "b"
+    },
+    "in",
+    {
+     "word": "box"
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "📦",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "box"
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "box",
+     "size": "xl"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "b _ _",
+    "size": "l",
+    "speak": [
+     "first"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "_ _ b",
+    "size": "l",
+    "speak": [
+     "last"
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    {
+     "letter": "b"
+    },
+    "is the first letter in",
+    {
+     "word": "box"
+    },
+    "."
+   ],
+   "steps": [
+    "b o x",
+    "b is the first letter."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "box",
+      "size": "xl"
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-B13",
+  "level": 1,
+  "seed": 4131,
+  "key": "E-K-B13|1|{\"letter\":\"b\",\"relation\":\"letterPlace\",\"target\":\"box\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "t",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter t in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "t"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ t",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "t"
+      },
+      "is the last letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "t is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-B13|1|{\"letter\":\"t\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bed",
+     "letter": "d",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter d in bed?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "d"
+      },
+      "in",
+      {
+       "word": "bed"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bed"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bed",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "d _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ d",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "d"
+      },
+      "is the last letter in",
+      {
+       "word": "bed"
+      },
+      "."
+     ],
+     "steps": [
+      "b e d",
+      "d is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🛏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-B13|1|{\"letter\":\"d\",\"relation\":\"letterPlace\",\"target\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "t",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter t in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "t"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ t",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "t"
+      },
+      "is the last letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "t is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-B13|1|{\"letter\":\"t\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bed",
+     "letter": "d",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter d in bed?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "d"
+      },
+      "in",
+      {
+       "word": "bed"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bed"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bed",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "d _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ d",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "d"
+      },
+      "is the last letter in",
+      {
+       "word": "bed"
+      },
+      "."
+     ],
+     "steps": [
+      "b e d",
+      "d is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🛏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-B13|1|{\"letter\":\"d\",\"relation\":\"letterPlace\",\"target\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "box",
+     "letter": "x",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter x in box?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "x"
+      },
+      "in",
+      {
+       "word": "box"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "📦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "box"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "box",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "x _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ x",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "x"
+      },
+      "is the last letter in",
+      {
+       "word": "box"
+      },
+      "."
+     ],
+     "steps": [
+      "b o x",
+      "x is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-B13|1|{\"letter\":\"x\",\"relation\":\"letterPlace\",\"target\":\"box\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "t",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter t in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "t"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ t",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "t"
+      },
+      "is the last letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "t is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-B13|1|{\"letter\":\"t\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "hat",
+     "letter": "h",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter h in hat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "h"
+      },
+      "in",
+      {
+       "word": "hat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "hat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "h _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ h",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "h"
+      },
+      "is the first letter in",
+      {
+       "word": "hat"
+      },
+      "."
+     ],
+     "steps": [
+      "h a t",
+      "h is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-B13|1|{\"letter\":\"h\",\"relation\":\"letterPlace\",\"target\":\"hat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "lip",
+     "letter": "l",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter l in lip?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "l"
+      },
+      "in",
+      {
+       "word": "lip"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lip"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "lip",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "l _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ l",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "l"
+      },
+      "is the first letter in",
+      {
+       "word": "lip"
+      },
+      "."
+     ],
+     "steps": [
+      "l i p",
+      "l is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lip"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "lip",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-B13|1|{\"letter\":\"l\",\"relation\":\"letterPlace\",\"target\":\"lip\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bus",
+     "letter": "b",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter b in bus?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "b"
+      },
+      "in",
+      {
+       "word": "bus"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bus"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bus",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ b",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "b"
+      },
+      "is the first letter in",
+      {
+       "word": "bus"
+      },
+      "."
+     ],
+     "steps": [
+      "b u s",
+      "b is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bus",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-B13|1|{\"letter\":\"b\",\"relation\":\"letterPlace\",\"target\":\"bus\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cup",
+     "letter": "p",
+     "options": [
+      "first",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter p in cup?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "p"
+      },
+      "in",
+      {
+       "word": "cup"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cup"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cup",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "p _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ p",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "p"
+      },
+      "is the last letter in",
+      {
+       "word": "cup"
+      },
+      "."
+     ],
+     "steps": [
+      "c u p",
+      "p is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cup"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-B13|1|{\"letter\":\"p\",\"relation\":\"letterPlace\",\"target\":\"cup\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "a",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter a in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "a"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ a _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ a",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "a"
+      },
+      "is the middle letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "a is the middle letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-B13|2|{\"letter\":\"a\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bed",
+     "letter": "d",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter d in bed?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "d"
+      },
+      "in",
+      {
+       "word": "bed"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bed"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bed",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "d _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ d _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ d",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "d"
+      },
+      "is the last letter in",
+      {
+       "word": "bed"
+      },
+      "."
+     ],
+     "steps": [
+      "b e d",
+      "d is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🛏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-B13|2|{\"letter\":\"d\",\"relation\":\"letterPlace\",\"target\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "t",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter t in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "t"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ t _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ t",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "t"
+      },
+      "is the last letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "t is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-B13|2|{\"letter\":\"t\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bed",
+     "letter": "d",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter d in bed?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "d"
+      },
+      "in",
+      {
+       "word": "bed"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bed"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bed",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "d _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ d _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ d",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "d"
+      },
+      "is the last letter in",
+      {
+       "word": "bed"
+      },
+      "."
+     ],
+     "steps": [
+      "b e d",
+      "d is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🛏️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-B13|2|{\"letter\":\"d\",\"relation\":\"letterPlace\",\"target\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "box",
+     "letter": "x",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter x in box?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "x"
+      },
+      "in",
+      {
+       "word": "box"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "📦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "box"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "box",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "x _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ x _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ x",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "x"
+      },
+      "is the last letter in",
+      {
+       "word": "box"
+      },
+      "."
+     ],
+     "steps": [
+      "b o x",
+      "x is the last letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "📦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "box"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "box",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-B13|2|{\"letter\":\"x\",\"relation\":\"letterPlace\",\"target\":\"box\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cat",
+     "letter": "a",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter a in cat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "a"
+      },
+      "in",
+      {
+       "word": "cat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ a _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ a",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "a"
+      },
+      "is the middle letter in",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "c a t",
+      "a is the middle letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-B13|2|{\"letter\":\"a\",\"relation\":\"letterPlace\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "hat",
+     "letter": "h",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter h in hat?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "h"
+      },
+      "in",
+      {
+       "word": "hat"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "hat",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "h _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ h _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ h",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "h"
+      },
+      "is the first letter in",
+      {
+       "word": "hat"
+      },
+      "."
+     ],
+     "steps": [
+      "h a t",
+      "h is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-B13|2|{\"letter\":\"h\",\"relation\":\"letterPlace\",\"target\":\"hat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "lip",
+     "letter": "l",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter l in lip?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "l"
+      },
+      "in",
+      {
+       "word": "lip"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👄",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lip"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "lip",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "l _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ l _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ l",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "l"
+      },
+      "is the first letter in",
+      {
+       "word": "lip"
+      },
+      "."
+     ],
+     "steps": [
+      "l i p",
+      "l is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lip"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "lip",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-B13|2|{\"letter\":\"l\",\"relation\":\"letterPlace\",\"target\":\"lip\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "bus",
+     "letter": "b",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter b in bus?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "b"
+      },
+      "in",
+      {
+       "word": "bus"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bus"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "bus",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ b _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ b",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "b"
+      },
+      "is the first letter in",
+      {
+       "word": "bus"
+      },
+      "."
+     ],
+     "steps": [
+      "b u s",
+      "b is the first letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bus",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-B13|2|{\"letter\":\"b\",\"relation\":\"letterPlace\",\"target\":\"bus\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "relation": "letterPlace",
+     "target": "cup",
+     "letter": "u",
+     "options": [
+      "first",
+      "middle",
+      "last"
+     ]
+    },
+    "prompt": {
+     "text": "Where is the letter u in cup?",
+     "speak": [
+      "Where is the letter",
+      {
+       "letter": "u"
+      },
+      "in",
+      {
+       "word": "cup"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cup"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "cup",
+       "size": "xl"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "u _ _",
+      "size": "l",
+      "speak": [
+       "first"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ u _",
+      "size": "l",
+      "speak": [
+       "middle"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "_ _ u",
+      "size": "l",
+      "speak": [
+       "last"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "letter": "u"
+      },
+      "is the middle letter in",
+      {
+       "word": "cup"
+      },
+      "."
+     ],
+     "steps": [
+      "c u p",
+      "u is the middle letter."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cup"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cup",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B13",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-B13|2|{\"letter\":\"u\",\"relation\":\"letterPlace\",\"target\":\"cup\"}"
+   }
+  ]
+ }
+}

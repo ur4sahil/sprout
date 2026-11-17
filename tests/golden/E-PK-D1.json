@@ -1,0 +1,2230 @@
+{
+ "skillId": "E-PK-D1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "relation": "next",
+   "target": "toothbrush",
+   "sequence": "morning",
+   "options": [
+    "school",
+    "baby"
+   ]
+  },
+  "prompt": {
+   "text": "What comes after the toothbrush?",
+   "speak": [
+    "What comes after the",
+    {
+     "word": "toothbrush"
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🪥",
+   "count": 1,
+   "layout": "row",
+   "speak": [
+    {
+     "word": "toothbrush"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🏫",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "school"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "👶",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "baby"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "We brush our teeth.",
+    "We go to school."
+   ],
+   "steps": [
+    "We brush our teeth.",
+    "We go to school."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🪥",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "toothbrush"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "school"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-PK-D1",
+  "level": 1,
+  "seed": 3311,
+  "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"morning\",\"target\":\"toothbrush\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "bread",
+     "sequence": "bread",
+     "options": [
+      "sandwich",
+      "pencil"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the bread?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "bread"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "bread"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sandwich"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pencil"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The wheat is baked into bread.",
+      "The bread makes a sandwich."
+     ],
+     "steps": [
+      "The wheat is baked into bread.",
+      "The bread makes a sandwich."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bread"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sandwich"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 1,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"bread\",\"target\":\"bread\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "alarm clock",
+     "sequence": "morning",
+     "options": [
+      "hen",
+      "toothbrush"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the alarm clock?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "alarm clock"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⏰",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "alarm clock"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hen"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🪥",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "toothbrush"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The alarm clock rings.",
+      "We brush our teeth."
+     ],
+     "steps": [
+      "The alarm clock rings.",
+      "We brush our teeth."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⏰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "alarm clock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🪥",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "toothbrush"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 2,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"morning\",\"target\":\"alarm clock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "corn",
+     "sequence": "popcorn",
+     "options": [
+      "popcorn",
+      "water"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the corn?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "corn"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "corn"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "steps": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍿",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "popcorn"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"popcorn\",\"target\":\"corn\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "envelope",
+     "sequence": "mail",
+     "options": [
+      "cloud",
+      "mailbox"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the envelope?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "envelope"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "✉️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "envelope"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "☁️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cloud"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mailbox"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "We put the note in an envelope.",
+      "The envelope goes in the mailbox."
+     ],
+     "steps": [
+      "We put the note in an envelope.",
+      "The envelope goes in the mailbox."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✉️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "envelope"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📫",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mailbox"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 4,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"mail\",\"target\":\"envelope\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "corn",
+     "sequence": "popcorn",
+     "options": [
+      "ice",
+      "popcorn"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the corn?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "corn"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "corn"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ice"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "steps": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍿",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "popcorn"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 5,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"popcorn\",\"target\":\"corn\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "plant",
+     "sequence": "plant",
+     "options": [
+      "mailbox",
+      "flower"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the plant?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "plant"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "plant"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mailbox"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "steps": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "plant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "flower"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 6,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"plant\",\"target\":\"plant\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "cloud",
+     "sequence": "rain",
+     "options": [
+      "rain",
+      "sandwich"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the cloud?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "cloud"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "☁️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "cloud"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sandwich"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Clouds fill the sky.",
+      "Rain falls."
+     ],
+     "steps": [
+      "Clouds fill the sky.",
+      "Rain falls."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "☁️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cloud"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌧️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"rain\",\"target\":\"cloud\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "snow",
+     "sequence": "snowman",
+     "options": [
+      "envelope",
+      "snowman"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the snow?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "snow"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌨️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "snow"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✉️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "envelope"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snowman"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Snow falls.",
+      "We build a snowman."
+     ],
+     "steps": [
+      "Snow falls.",
+      "We build a snowman."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌨️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snowman"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 8,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"snowman\",\"target\":\"snow\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "snowman",
+     "sequence": "snowman",
+     "options": [
+      "water",
+      "popcorn"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the snowman?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "snowman"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⛄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "snowman"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "💧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "We build a snowman.",
+      "The sun melts it into water."
+     ],
+     "steps": [
+      "We build a snowman.",
+      "The sun melts it into water."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snowman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "💧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "water"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"snowman\",\"target\":\"snowman\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "plant",
+     "sequence": "plant",
+     "options": [
+      "school",
+      "flower"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the plant?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "plant"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "plant"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "school"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "steps": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "plant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "flower"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-D1|1|{\"relation\":\"next\",\"sequence\":\"plant\",\"target\":\"plant\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "bread",
+     "sequence": "bread",
+     "options": [
+      "sandwich",
+      "hen",
+      "pencil"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the bread?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "bread"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "bread"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sandwich"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hen"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pencil"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The wheat is baked into bread.",
+      "The bread makes a sandwich."
+     ],
+     "steps": [
+      "The wheat is baked into bread.",
+      "The bread makes a sandwich."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bread"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sandwich"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 1,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"bread\",\"target\":\"bread\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "alarm clock",
+     "sequence": "morning",
+     "options": [
+      "hen",
+      "plant",
+      "toothbrush"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the alarm clock?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "alarm clock"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⏰",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "alarm clock"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hen"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "plant"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🪥",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "toothbrush"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The alarm clock rings.",
+      "We brush our teeth."
+     ],
+     "steps": [
+      "The alarm clock rings.",
+      "We brush our teeth."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⏰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "alarm clock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🪥",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "toothbrush"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 2,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"morning\",\"target\":\"alarm clock\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "corn",
+     "sequence": "popcorn",
+     "options": [
+      "water",
+      "popcorn",
+      "shoe"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the corn?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "corn"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "corn"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "💧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "shoe"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "steps": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍿",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "popcorn"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"popcorn\",\"target\":\"corn\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "envelope",
+     "sequence": "mail",
+     "options": [
+      "flower",
+      "mailbox",
+      "cloud"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the envelope?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "envelope"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "✉️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "envelope"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mailbox"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "☁️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cloud"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "We put the note in an envelope.",
+      "The envelope goes in the mailbox."
+     ],
+     "steps": [
+      "We put the note in an envelope.",
+      "The envelope goes in the mailbox."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✉️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "envelope"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📫",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "mailbox"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 4,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"mail\",\"target\":\"envelope\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "corn",
+     "sequence": "popcorn",
+     "options": [
+      "ice",
+      "boy",
+      "popcorn"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the corn?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "corn"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌽",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "corn"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧊",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ice"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "steps": [
+      "Here is some corn.",
+      "It pops into popcorn."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌽",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍿",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "popcorn"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 5,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"popcorn\",\"target\":\"corn\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "plant",
+     "sequence": "plant",
+     "options": [
+      "mailbox",
+      "sock",
+      "flower"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the plant?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "plant"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "plant"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mailbox"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sock"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "steps": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "plant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "flower"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 6,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"plant\",\"target\":\"plant\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "cloud",
+     "sequence": "rain",
+     "options": [
+      "popcorn",
+      "rain",
+      "sandwich"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the cloud?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "cloud"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "☁️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "cloud"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌧️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rain"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sandwich"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Clouds fill the sky.",
+      "Rain falls."
+     ],
+     "steps": [
+      "Clouds fill the sky.",
+      "Rain falls."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "☁️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cloud"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌧️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rain"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 7,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"rain\",\"target\":\"cloud\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "snow",
+     "sequence": "snowman",
+     "options": [
+      "envelope",
+      "mailbox",
+      "snowman"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the snow?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "snow"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌨️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "snow"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✉️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "envelope"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "mailbox"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "snowman"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Snow falls.",
+      "We build a snowman."
+     ],
+     "steps": [
+      "Snow falls.",
+      "We build a snowman."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌨️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snow"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snowman"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 8,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"snowman\",\"target\":\"snow\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "snowman",
+     "sequence": "snowman",
+     "options": [
+      "popcorn",
+      "water",
+      "alarm clock"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the snowman?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "snowman"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⛄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "snowman"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍿",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "popcorn"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "💧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "water"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⏰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "alarm clock"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "We build a snowman.",
+      "The sun melts it into water."
+     ],
+     "steps": [
+      "We build a snowman.",
+      "The sun melts it into water."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛄",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "snowman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "💧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "water"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"snowman\",\"target\":\"snowman\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "next",
+     "target": "plant",
+     "sequence": "plant",
+     "options": [
+      "sandwich",
+      "flower",
+      "school"
+     ]
+    },
+    "prompt": {
+     "text": "What comes after the plant?",
+     "speak": [
+      "What comes after the",
+      {
+       "word": "plant"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "plant"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sandwich"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "school"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "steps": [
+      "A little plant comes up.",
+      "It grows a flower."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "plant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "flower"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-D1",
+    "level": 2,
+    "seed": 10,
+    "key": "E-PK-D1|2|{\"relation\":\"next\",\"sequence\":\"plant\",\"target\":\"plant\"}"
+   }
+  ]
+ }
+}
