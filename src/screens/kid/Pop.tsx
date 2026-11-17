@@ -8,14 +8,16 @@ import { TIMING } from '../../app/timing';
 import { useWakeLock } from '../../app/useWakeLock';
 import { playSfx } from '../../audio/sfx';
 import { speak, stop } from '../../audio/speech';
+import { openingWords } from '../../audio/stepSay';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import GameButton from '../../components/GameButton';
 import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
+import NotQuite from '../../components/NotQuite';
 import Notice from '../../components/Notice';
-import StepList from '../../components/StepList';
+import StepWalk from '../../components/StepWalk';
 import { describeVisual } from '../../engine/describe';
 import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -119,7 +121,7 @@ function PopRound({ child }: { child: Child }) {
       setAsked((count) => count + 1);
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(turn.question.explanation.speak, rate);
+        void speak(openingWords(turn.question), rate);
         return;
       }
       setRight((count) => count + 1);
@@ -190,10 +192,8 @@ function PopRound({ child }: { child: Child }) {
           </div>
           {phase === 'wrong' && (
             <div className={styles.explain} data-pop-explanation="">
-              <StepList steps={question.explanation.steps} />
-              <BigButton size="kid" onClick={() => advance(asked)}>
-                <span aria-hidden="true">👍 </span>Got it
-              </BigButton>
+              <NotQuite />
+              <StepWalk key={`${question.key}|${question.seed}`} question={question} onDone={() => advance(asked)} onSpeak={(say) => void speak(say, rate)} />
             </div>
           )}
         </section>

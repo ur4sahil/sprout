@@ -78,6 +78,8 @@ test.describe('the games', () => {
     // Taps in the first moments are ignored, so keep tapping until one lands.
     await expect(async () => {
       if (await page.locator('[data-phase="asking"]').isVisible()) await balloons.first().click({ timeout: 500 });
+      const nextStep = page.getByRole('button', { name: /Next step/ });
+      while (await nextStep.isVisible()) await nextStep.click();
       const gotIt = page.getByRole('button', { name: /Got it/ });
       if (await gotIt.isVisible()) await gotIt.click();
       await expect(page.locator('[data-pop-count="1"]')).toBeVisible({ timeout: 500 });

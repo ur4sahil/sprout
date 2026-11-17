@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
 import { speak, speakPhrase, stop } from '../audio/speech';
+import { openingWords } from '../audio/stepSay';
 import { MILESTONE_WORDS } from '../components/Celebration';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
@@ -192,7 +193,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         if (!outcome.correct) {
           // No buzzer. It says "Not quite", then the explanation is read aloud, and it waits for "Got it".
           setPhase('wrong');
-          void speak(['Not quite.', ...q.explanation.speak], child.settings.speechRate);
+          void speak(openingWords(q), child.settings.speechRate);
           return;
         }
         setPhase('correct');

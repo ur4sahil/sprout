@@ -69,11 +69,14 @@ export default function Awards() {
           const squares = awards.filter((award) => award.board === board);
           const have = squares.filter((award) => earned.has(award.id)).length;
           return (
-            <section key={board} className={page.category} aria-label={boardName(board)} data-board={board}>
-              <h2 className={page.heading}>
-                {boardName(board)}: {have} of {squares.length}
-              </h2>
-              <TileGrid label={`${boardName(board)} stickers`}>
+            <section key={board} className={styles.board} aria-label={boardName(board)} data-board={board}>
+              <div className={styles.boardHead}>
+                <h2 className={page.heading}>
+                  {boardName(board)}: {have} of {squares.length}
+                </h2>
+                <progress className={styles.meter} value={have} max={squares.length} aria-hidden="true" />
+              </div>
+              <TileGrid dense label={`${boardName(board)} stickers`}>
                 {squares.map((award) => (
                   <Square key={award.id} award={award} earned={earned.has(award.id)} />
                 ))}

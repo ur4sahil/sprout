@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
 import { speak, speakPhrase, stop } from '../audio/speech';
+import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
 import { REVIEW_QUESTIONS, applyReview, reviewLevel } from '../engine/review';
@@ -197,7 +198,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       }
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(['Not quite.', ...q.explanation.speak], child.settings.speechRate);
+        void speak(openingWords(q), child.settings.speechRate);
         return;
       }
       setPhase('correct');

@@ -9,9 +9,42 @@
   padding: var(--space-4);
 }
 
+/* The head of every grown-up page: its name, Done, and the page menu, on one card. */
+.head {
+  composes: card from '../../components/shared.module.css';
+  padding-bottom: 0;
+  /* In a column that scrolls, it keeps its own height however long the page below it is. */
+  flex: none;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.eyebrow {
+  composes: eyebrow from '../../components/shared.module.css';
+}
+
+/* Two charts side by side when there is room. */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--size-bin-basis), 1fr));
+  gap: var(--space-4);
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-m);
+  background: var(--color-bg);
+}
+
 .bar {
   width: 100%;
-  max-width: var(--width-question);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -25,15 +58,7 @@
 }
 
 .panel {
-  width: 100%;
-  max-width: var(--width-question);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  background: var(--color-surface);
-  border: var(--border-thin) solid var(--color-line);
-  border-radius: var(--radius-m);
-  padding: var(--space-4);
+  composes: card from '../../components/shared.module.css';
 }
 
 .panel h2,
@@ -126,9 +151,5 @@
 }
 
 .line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-2) var(--space-4);
+  composes: spread from '../../components/shared.module.css';
 }

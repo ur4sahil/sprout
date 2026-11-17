@@ -131,6 +131,14 @@ describe('Pop', () => {
     expect(balloons().every((balloon) => balloon.disabled)).toBe(true);
     const { repo } = await openRepo();
     expect((await repo.listAttempts(child.id, {})).map((attempt) => attempt.correct)).toEqual([false]);
+    // It says so, and the steps come one at a time, as in practice.
+    expect(document.querySelector('[data-pop-explanation] [data-verdict]')?.textContent).toContain('Not quite');
+    expect(document.querySelectorAll('[data-pop-explanation] ol li')).toHaveLength(1);
+    for (;;) {
+      const next = screen.queryByRole('button', { name: /Next step/ });
+      if (!next) break;
+      fireEvent.click(next);
+    }
     fireEvent.click(screen.getByRole('button', { name: /Got it/ }));
     await waitFor(() => expect(document.querySelector('[data-pop-count="1"]') && document.querySelector('[data-phase="asking"]')).toBeTruthy());
   });

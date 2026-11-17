@@ -73,8 +73,11 @@ export default function PracticeSession({ child, skill, play }: Props) {
 
   // From grade 1, a pencil opens a drawing layer over the question. It is closed again for each new question.
   const canDraw = child.grade !== 'PK' && child.grade !== 'K';
-  const [drawing, setDrawing] = useState(false);
-  useEffect(() => setDrawing(false), [questionId]);
+  // It is remembered by the question it was opened on, so nothing has to run to close it: a tap on the
+  // pencil in the instant a question appears can never be undone by a late reset.
+  const [drawingOn, setDrawingOn] = useState<string | null>(null);
+  const drawing = questionId !== null && drawingOn === questionId;
+  const setDrawing = (open: boolean): void => setDrawingOn(open ? questionId : null);
 
   // The games are offered when a skill is mastered, and between the picks of a Play run.
   // Pop needs a skill in progress whose next question is a choice.

@@ -130,13 +130,14 @@ describe('a wrong answer', () => {
     expect(await stateOf()).toMatchObject({ score: 8, streak: 0, attempts: 2, correct: 1, recent: [true, false] });
     // The explanation is read aloud. No sound plays for a wrong answer.
     expect(spoken.sounds).toEqual(['unlock', 'chime']);
-    expect(JSON.stringify(spoken.said.at(-1))).toContain('Count on');
+    // "Not quite", then the first step, is said. "Hear again" says that step once more.
     expect(JSON.stringify(spoken.said.at(-1))).toContain('Not quite.');
-    // "Hear again" says the explanation once more.
+    expect(JSON.stringify(spoken.said.at(-1))).toContain('Start at');
     const before = spoken.said.length;
     await user.click(screen.getByRole('button', { name: /Hear again/ }));
     expect(spoken.said).toHaveLength(before + 1);
-    expect(JSON.stringify(spoken.said.at(-1))).toContain('Count on');
+    expect(JSON.stringify(spoken.said.at(-1))).toContain('Start at');
+    expect(JSON.stringify(spoken.said.at(-1))).not.toContain('Not quite.');
 
     const log = await attempts();
     expect(log[1]).toMatchObject({ correct: false, scoreBefore: 10, scoreAfter: 8 });
@@ -145,8 +146,11 @@ describe('a wrong answer', () => {
     // Each "Next step" shows one more step. The last one ends on the sum, and its button is "Got it".
     while (screen.queryByRole('button', { name: /Next step/ })) {
       const shown = panel.querySelectorAll('ol li').length;
+      const saidBefore = spoken.said.length;
       await user.click(screen.getByRole('button', { name: /Next step/ }));
       expect(panel.querySelectorAll('ol li')).toHaveLength(shown + 1);
+      // Each new step is said as it appears.
+      expect(spoken.said).toHaveLength(saidBefore + 1);
     }
     expect(panel.querySelector('ol')?.textContent).toContain(`= ${right}`);
     // "Got it" loads the next question.

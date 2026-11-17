@@ -104,10 +104,16 @@ export default function Dashboard() {
             <h2>
               {child.avatar} {child.name}: the last 14 days
             </h2>
-            <h3>Questions a day</h3>
-            <Bars bars={summary.bars} value={(bar) => bar.questions} unit="Questions" />
-            <h3>Minutes a day</h3>
-            <Bars bars={summary.bars} value={(bar) => bar.minutes} unit="Minutes" />
+            <div className={styles.charts}>
+              <div className={styles.chart}>
+                <h3>Questions a day</h3>
+                <Bars bars={summary.bars} value={(bar) => bar.questions} unit="Questions" />
+              </div>
+              <div className={styles.chart}>
+                <h3>Minutes a day</h3>
+                <Bars bars={summary.bars} value={(bar) => bar.minutes} unit="Minutes" />
+              </div>
+            </div>
             <ul className={styles.facts}>
               <li data-fact="goal">
                 Today: {today?.questions ?? 0} of {child.settings.dailyGoalQuestions} questions

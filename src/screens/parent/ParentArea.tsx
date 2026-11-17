@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { hasPass } from '../../app/pin';
-import LinkButton from '../../components/LinkButton';
+import BigButton from '../../components/BigButton';
 import Tabs from '../../components/Tabs';
 import Gate from './Gate';
 import styles from './Parent.module.css';
@@ -24,11 +24,18 @@ export default function ParentArea({ page, title, children }: { page: string; ti
   if (!hasPass()) return <Gate onPass={() => setPassed((n) => n + 1)} onCancel={() => void navigate('/', { replace: true })} />;
   return (
     <main className={styles.area} data-parent-page={page}>
-      <div className={styles.bar}>
-        <h1 className={styles.heading}>{title}</h1>
-        <LinkButton onClick={() => void navigate('/', { replace: true })}>Done</LinkButton>
-      </div>
-      <Tabs label="Grown-ups pages" tabs={PAGES} current={page} onPick={(id) => void navigate(`/parent/${id}`, { replace: true })} />
+      <header className={styles.head}>
+        <div className={styles.bar}>
+          <div className={styles.titles}>
+            <span className={styles.eyebrow}>Grown-ups</span>
+            <h1 className={styles.heading}>{title}</h1>
+          </div>
+          <BigButton tone="quiet" onClick={() => void navigate('/', { replace: true })}>
+            Done
+          </BigButton>
+        </div>
+        <Tabs look="strip" label="Grown-ups pages" tabs={PAGES} current={page} onPick={(id) => void navigate(`/parent/${id}`, { replace: true })} />
+      </header>
       {children}
     </main>
   );

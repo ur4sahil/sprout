@@ -1,0 +1,33 @@
+/* Looks that more than one screen uses. A screen's own style file takes one with `composes`. */
+
+/* A white card at question width, its contents in a column. */
+.card {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
+}
+
+/* A small label in capitals above a heading. */
+.eyebrow {
+  font-size: var(--text-s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brand-deep);
+}
+
+/* A line with one thing at each end, which wraps when it is narrow. */
+.spread {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}

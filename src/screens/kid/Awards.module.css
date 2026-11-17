@@ -1,7 +1,22 @@
+/* One board of stickers: its name and how far along it is, then the stickers, all on one card. */
+.board {
+  composes: card from '../../components/shared.module.css';
+}
+
+.boardHead {
+  composes: spread from '../../components/shared.module.css';
+}
+
+.meter {
+  flex: 0 1 var(--size-bin-basis);
+  height: var(--space-2);
+  accent-color: var(--color-brand);
+}
+
 .square {
   margin: 0;
-  padding: var(--space-3);
-  min-height: var(--size-bin-height);
+  padding: var(--space-3) var(--space-2);
+  min-height: var(--size-avatar);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,20 +25,22 @@
   text-align: center;
   font-size: var(--text-s);
   color: var(--color-ink-soft);
-  background: var(--color-surface);
-  border: var(--border) dashed var(--color-line);
+  background: none;
+  border: var(--border-thin) dashed var(--color-line);
   border-radius: var(--radius-m);
 }
 
 .earned {
   color: var(--color-ink);
   font-weight: 700;
+  background: var(--color-surface);
   border-style: solid;
   border-color: var(--color-star);
+  box-shadow: var(--shadow-card);
 }
 
 .sticker {
-  font-size: var(--emoji-avatar);
+  font-size: var(--emoji-l);
   line-height: 1;
 }
 

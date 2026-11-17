@@ -13,7 +13,7 @@ export interface ValidateOptions {
 
 const BANNED_IN_SPEECH = /[0-9+=□<>_]/;
 
-function isSay(value: unknown): value is Say {
+export function isSay(value: unknown): value is Say {
   return Array.isArray(value);
 }
 
