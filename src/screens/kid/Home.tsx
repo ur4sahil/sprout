@@ -10,7 +10,6 @@ import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import GoalRing from '../../components/GoalRing';
 import Icon, { type IconName } from '../../components/Icon';
-import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import NavButton from '../../components/NavButton';
 import Notice from '../../components/Notice';
@@ -106,6 +105,11 @@ export default function Home() {
               <h1 className={styles.name}>{child.name}</h1>
               <span className={styles.grade}>{GRADE_NAME[child.grade] ?? child.grade}</span>
             </div>
+            {/* Back to the profile page, where another child can be picked. At the top, where it is easy to find. */}
+            <BigButton tone="quiet" className={styles.switch} onClick={() => go('/')}>
+              <Icon name="person" />
+              Switch child
+            </BigButton>
           </div>
           <div className={styles.places} role="group" aria-label="Places to go">
             {day?.checkIn && <NavButton icon="compass" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
@@ -116,9 +120,6 @@ export default function Home() {
             <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
             {popOffered && <NavButton icon="balloon" label="Pop" onClick={() => go('/games/pop')} />}
             <NavButton icon="cards" label="Pairs" onClick={() => go('/games/pairs')} />
-          </div>
-          <div className={styles.leave}>
-            <IconButton icon="person" label="Change who is playing" onClick={() => go('/')} />
           </div>
         </>
       }

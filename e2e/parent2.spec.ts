@@ -17,7 +17,7 @@ test.describe('grown-ups area, part 2', () => {
     await answer(page, labels.find((value) => value !== right) ?? right);
     await gotIt(page);
     await holdHome(page);
-    await page.getByRole('button', { name: 'Change who is playing' }).click();
+    await page.getByRole('button', { name: /Switch child/ }).click();
     await page.getByRole('button', { name: 'Grown-ups' }).click();
     await page.getByRole('tab', { name: 'Question log' }).click();
 

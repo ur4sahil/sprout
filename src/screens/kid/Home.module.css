@@ -1,6 +1,7 @@
 /* Who is playing, at the head of the menu. */
 .who {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
   padding: 0 var(--space-2) var(--space-3);
@@ -12,9 +13,14 @@
 }
 
 .names {
+  flex: 1;
   display: flex;
   flex-direction: column;
   min-width: 0;
+}
+
+.switch {
+  flex: none;
 }
 
 .name {
@@ -36,11 +42,6 @@
   gap: var(--space-1);
 }
 
-.leave {
-  display: flex;
-  margin-top: auto;
-  padding-top: var(--space-3);
-}
 
 .page {
   width: 100%;
@@ -105,16 +106,17 @@
 }
 
 .places,
-.leave {
-  padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-}
 
 .places {
   border-top: var(--border-thin) solid var(--color-line);
 }
 
 @media (min-width: 48em) {
+  /* In the narrow menu column the button goes under the name, the full width of the column. */
+  .switch {
+    width: 100%;
+  }
+
   .who {
     order: 0;
     padding: 0 var(--space-2) var(--space-3);
@@ -122,16 +124,12 @@
     border-bottom: 0;
   }
 
-  .places,
-  .leave {
+  .places {
     padding: 0;
     background: none;
     border-top: 0;
   }
 
-  .leave {
-    padding-top: var(--space-3);
-  }
 
   .places {
     grid-template-columns: minmax(0, 1fr);

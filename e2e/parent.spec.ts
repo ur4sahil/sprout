@@ -72,7 +72,7 @@ test.describe('the grown-ups area', () => {
     await openSkill(page, 'Robin', 'Add to 10');
     for (let i = 0; i < 3; i += 1) await answerRight(page);
     await holdHome(page);
-    await page.getByRole('button', { name: 'Change who is playing' }).click();
+    await page.getByRole('button', { name: /Switch child/ }).click();
     await openGrownUps(page);
 
     const practice = page.getByRole('region', { name: 'Practice' });
@@ -125,7 +125,7 @@ test.describe('the grown-ups area', () => {
     await openSkill(page, 'Robin', 'Add to 10');
     for (let i = 0; i < 2; i += 1) await answerRight(page);
     await holdHome(page);
-    await page.getByRole('button', { name: 'Change who is playing' }).click();
+    await page.getByRole('button', { name: /Switch child/ }).click();
     await openGrownUps(page);
     await page.getByRole('tab', { name: 'Data' }).click();
 

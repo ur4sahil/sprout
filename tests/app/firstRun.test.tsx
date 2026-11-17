@@ -157,11 +157,11 @@ describe('the profile picker', () => {
     expect(picks.every((tile) => tile.querySelector('button')?.getAttribute('aria-label')?.endsWith('. Score 0'))).toBe(true);
   });
 
-  it('"Change who is playing" goes back to the picker and forgets the child', async () => {
+  it('"Switch child" goes back to the picker and forgets the child', async () => {
     await setUp('K');
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await user.click(await screen.findByRole('button', { name: 'Change who is playing' }));
+    await user.click(await screen.findByRole('button', { name: /Switch child/ }));
     expect(await screen.findByRole('group', { name: 'Who is playing?' })).toBeTruthy();
     expect(useAppStore.getState().child).toBeNull();
   });
