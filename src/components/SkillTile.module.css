@@ -100,36 +100,37 @@
   zoom: var(--zoom-row-icon);
 }
 
-/* A small picture tile, for a child who does not read yet: the picture and name to open it,
-   then the speaker and the score side by side. */
+/* A small picture tile, for a child who does not read yet: the picture, the name and the score to open it,
+   and under them a wide speaker that says the name. Every tile in a row is the same height. */
 .picture {
-  display: grid;
-  grid-template-columns: var(--tap-min) minmax(0, 1fr);
+  flex-direction: column;
 }
 
 .picture .open {
-  grid-column: 1 / -1;
   flex-direction: column;
   align-items: stretch;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-2) 0;
+  padding: var(--space-2) var(--space-2) var(--space-3);
   text-align: center;
 }
 
 .picture .icon {
-  height: var(--size-display-height);
+  --visual-emoji: var(--emoji-m);
+  height: var(--size-tile);
 }
 
 .picture .shrunk {
   zoom: var(--zoom-tile-icon);
 }
 
-.foot {
-  display: flex;
-  align-items: center;
-  padding-right: var(--space-2);
+/* Room for two lines, so a short name and a long one end at the same place. */
+.picture .name {
+  min-height: 2.5em;
 }
 
-.foot > * {
-  flex: 1;
+.picture .speaker {
+  width: 100%;
+  border-top: var(--border-thin) solid var(--color-line);
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+  color: var(--color-ink-soft);
 }

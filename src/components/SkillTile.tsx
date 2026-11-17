@@ -38,13 +38,11 @@ export default function SkillTile({ skill, state, note, band, look = 'row', onOp
             </span>
           )}
         </span>
-        {look === 'row' && bar}
+        {bar}
       </button>
       <button type="button" className={styles.speaker} aria-label={`Hear the name: ${skill.name}`} onClick={() => onSpeak(skill.speakName)}>
         <Icon name="speaker" />
       </button>
-      {/* On a picture tile the score sits beside the speaker, under the picture. */}
-      {look === 'tile' && <span className={styles.foot}>{bar}</span>}
     </div>
   );
 }
