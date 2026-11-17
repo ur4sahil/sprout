@@ -40,7 +40,8 @@ export async function saveScores(page: Page, ids: string[], score: number): Prom
 export async function openFromSubject(page: Page, subject: string, name: string, tab?: string): Promise<void> {
   await page.getByRole('button', { name: new RegExp(subject) }).click();
   if (tab) await page.getByRole('tab', { name: tab }).click();
-  await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();
+  // Every character with a meaning in a pattern is escaped, so a name such as "Which operation?" matches itself.
+  await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[.*+?^${}()|[\]\\/:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();
   await expect(page.locator('[data-phase="asking"]')).toBeVisible();
 }
 
