@@ -129,7 +129,9 @@ test.describe('kid navigation', () => {
     await page.waitForTimeout(1500);
     await expect(lesson).toHaveAttribute('data-beat', held ?? '');
     await page.getByRole('button', { name: 'Play', exact: true }).click();
-    for (const beat of ['watch', 'try', 'remember']) await expect(lesson).toHaveAttribute('data-beat', beat, { timeout: 20_000 });
+    // Each beat after the one it was paused on comes in turn. (On a slow machine the pause may land past "see".)
+    const beats = ['see', 'watch', 'try', 'remember'];
+    for (const beat of beats.slice(beats.indexOf(held ?? 'see') + 1)) await expect(lesson).toHaveAttribute('data-beat', beat, { timeout: 20_000 });
     await expect(page.getByRole('button', { name: /Practise/ })).toBeVisible({ timeout: 20_000 });
 
     await page.getByRole('tab', { name: /Example/ }).click();

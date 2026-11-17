@@ -31,6 +31,7 @@ describe('A.1 Thousands, hundreds, tens, ones', () => {
     expect(range(all('M-3-A1', 1), value)[0]).toBeGreaterThanOrEqual(1101);
     expect(range(all('M-3-A1', 1), value)[1]).toBeLessThanOrEqual(1599);
     for (const question of all('M-3-A1', 1)) expect(question.stimulus?.kind).toBe('baseTen');
+    for (const question of all("M-3-A1", 2)) expect(question.stimulus).toBeUndefined();
     expect(range(all('M-3-A1', 2), value)[0]).toBeGreaterThanOrEqual(2001);
     for (const question of all('M-3-A1', 2)) expect(question.prompt.text).toMatch(/^\d thousands?, \d hundreds?, \d tens?, \d ones?\. What number is this\?$/);
     expect(types(all('M-3-A1', 3))).toEqual(['numberPad']);

@@ -83,9 +83,9 @@ function placeValue(level: Level, rng: Rng): QuestionDraft {
     };
   }
   const words = placeWords(n);
-  const stimulus: Visual = level === 1 ? blocks(n) : { kind: 'text', value: words.text, size: 'm' };
+  // Above level 1 the places are written out in the question itself, which wraps on a narrow phone.
   const prompt = level === 1 ? { text: WHAT_NUMBER, speak: [WHAT_NUMBER] as Say } : { text: `${words.text}. What number is this?`, speak: [...words.speak, '. What number is this?'] as Say };
-  const base = { mode: 'look' as const, prompt, stimulus, explanation: placeExplanation(n, stimulus) };
+  const base = level === 1 ? { mode: 'look' as const, prompt, stimulus: blocks(n), explanation: placeExplanation(n, blocks(n)) } : { mode: 'look' as const, prompt, explanation: placeExplanation(n, bigNumeral(n, 'xl')) };
   if (level === 3) return { ...base, type: 'numberPad', facts: { ...d, ask: 'number' }, answer: n, maxDigits: 4 };
   // The slips: two digits the wrong way round, or one ten, hundred or thousand out.
   const swapped = d.thousands * 1000 + d.tens * 100 + d.hundreds * 10 + d.ones;
