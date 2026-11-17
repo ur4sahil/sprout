@@ -73,8 +73,16 @@ export async function typePin(page: Page, pin = PIN): Promise<void> {
 export async function choosePinIfAsked(page: Page): Promise<void> {
   const start = page.getByRole('heading', { name: 'Sprout' });
   const choose = page.getByRole('heading', { name: 'Choose a grown-ups PIN' });
-  await expect(start.or(choose)).toBeVisible();
-  if (!(await choose.isVisible())) return;
+  // The start screen can show for a moment before the family record arrives and the app asks for a PIN,
+  // so the start screen counts only once it has stayed for a second and a half.
+  let steady = 0;
+  for (;;) {
+    await expect(start.or(choose)).toBeVisible();
+    if (await choose.isVisible()) break;
+    steady += 250;
+    if (steady >= 1500) return;
+    await page.waitForTimeout(250);
+  }
   await typePin(page);
   await expect(page.getByText('Type it once more.')).toBeVisible();
   await typePin(page);
