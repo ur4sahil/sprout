@@ -1,4 +1,36 @@
 import type { LadderStep } from '../../ladders';
 
 // Where wave H3's skills go on the ladders: each one right after the skill named in `after`.
-export const LADDER_STEPS: readonly LadderStep[] = [];
+// Pre-K skills sit before every kindergarten skill of their ladder, so no ladder goes down a grade.
+export const LADDER_STEPS: readonly LadderStep[] = [
+  { ladder: 'letters', skillId: 'E-PK-A6', after: 'E-PK-A5' },
+  { ladder: 'letters', skillId: 'E-PK-A7', after: 'E-PK-A6' },
+  { ladder: 'letters', skillId: 'E-K-A3', after: 'E-K-A2' },
+  { ladder: 'letters', skillId: 'E-K-A4', after: 'E-K-A3' },
+  { ladder: 'letters', skillId: 'E-K-A5', after: 'E-K-A4' },
+  { ladder: 'sounds', skillId: 'E-PK-B4', after: 'E-PK-B1' },
+  { ladder: 'sounds', skillId: 'E-PK-B6', after: 'E-PK-B4' },
+  { ladder: 'sounds', skillId: 'E-PK-B5', after: 'E-PK-B2' },
+  { ladder: 'sounds', skillId: 'E-K-B13', after: 'E-K-B2' },
+  { ladder: 'sounds', skillId: 'E-K-B8', after: 'E-K-B3' },
+  { ladder: 'sounds', skillId: 'E-K-B9', after: 'E-K-B8' },
+  { ladder: 'sounds', skillId: 'E-K-B10', after: 'E-K-B9' },
+  { ladder: 'sounds', skillId: 'E-K-B12', after: 'E-K-B6' },
+  { ladder: 'phonics', skillId: 'E-K-B11', after: 'E-K-B5' },
+  { ladder: 'sight-words', skillId: 'E-K-C4', after: 'E-K-C3' },
+  { ladder: 'grammar', skillId: 'E-K-D4', after: 'E-K-D1' },
+  { ladder: 'grammar', skillId: 'E-K-D6', after: 'E-K-D4' },
+  { ladder: 'grammar', skillId: 'E-K-D5', after: 'E-K-D3' },
+  { ladder: 'vocabulary', skillId: 'E-PK-C3', after: 'E-PK-C2' },
+  { ladder: 'vocabulary', skillId: 'E-PK-C4', after: 'E-PK-C3' },
+  { ladder: 'vocabulary', skillId: 'E-PK-C5', after: 'E-PK-C4' },
+  { ladder: 'vocabulary', skillId: 'E-PK-C6', after: 'E-PK-C5' },
+  { ladder: 'vocabulary', skillId: 'E-PK-C7', after: 'E-PK-C6' },
+  { ladder: 'vocabulary', skillId: 'E-PK-D1', after: 'E-PK-C7' },
+  { ladder: 'vocabulary', skillId: 'E-PK-D2', after: 'E-PK-D1' },
+  { ladder: 'vocabulary', skillId: 'E-K-D7', after: 'E-PK-D2' },
+  { ladder: 'reading', skillId: 'E-K-E6', after: 'E-K-E1' },
+  { ladder: 'reading', skillId: 'E-K-E7', after: 'E-K-E6' },
+  { ladder: 'reading', skillId: 'E-K-E4', after: 'E-K-E3' },
+  { ladder: 'reading', skillId: 'E-K-E5', after: 'E-K-E4' },
+];

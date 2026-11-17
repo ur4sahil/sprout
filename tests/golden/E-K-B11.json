@@ -1,0 +1,4693 @@
+{
+ "skillId": "E-K-B11",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "relation": "swapLetter",
+   "target": "cat",
+   "from": "hat",
+   "options": [
+    "h",
+    "z",
+    "c"
+   ]
+  },
+  "prompt": {
+   "text": "Change hat to cat. Which new letter do you need?",
+   "speak": [
+    "Change",
+    {
+     "word": "hat"
+    },
+    "to",
+    {
+     "word": "cat"
+    },
+    ". Which new letter do you need?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "text",
+     "value": "hat",
+     "size": "xl",
+     "speak": [
+      {
+       "word": "hat"
+      }
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "cat"
+      }
+     ]
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "h",
+    "size": "xl",
+    "speak": [
+     {
+      "letter": "h"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "z",
+    "size": "xl",
+    "speak": [
+     {
+      "letter": "z"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "c",
+    "size": "xl",
+    "speak": [
+     {
+      "letter": "c"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    {
+     "word": "hat"
+    },
+    "becomes",
+    {
+     "word": "cat"
+    },
+    ". Change the first letter,",
+    {
+     "letter": "h"
+    },
+    ", to",
+    {
+     "letter": "c"
+    },
+    "."
+   ],
+   "steps": [
+    "Hat becomes cat.",
+    "Change the first letter, h, to c."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "hat",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cat",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "E-K-B11",
+  "level": 1,
+  "seed": 4111,
+  "key": "E-K-B11|1|{\"from\":\"hat\",\"relation\":\"swapLetter\",\"target\":\"cat\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pan",
+     "from": "ran",
+     "options": [
+      "p",
+      "b",
+      "r"
+     ]
+    },
+    "prompt": {
+     "text": "Change ran to pan. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "ran"
+      },
+      "to",
+      {
+       "word": "pan"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "ran",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "ran"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pan"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "r",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "r"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "ran"
+      },
+      "becomes",
+      {
+       "word": "pan"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "r"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Ran becomes pan.",
+      "Change the first letter, r, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "ran",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ran"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pan",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-B11|1|{\"from\":\"ran\",\"relation\":\"swapLetter\",\"target\":\"pan\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pig",
+     "from": "dig",
+     "options": [
+      "j",
+      "d",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Change dig to pig. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "dig"
+      },
+      "to",
+      {
+       "word": "pig"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "dig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "dig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "j",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "j"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "d",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "d"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dig"
+      },
+      "becomes",
+      {
+       "word": "pig"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "d"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Dig becomes pig.",
+      "Change the first letter, d, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-B11|1|{\"from\":\"dig\",\"relation\":\"swapLetter\",\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pig",
+     "from": "dig",
+     "options": [
+      "b",
+      "p",
+      "d"
+     ]
+    },
+    "prompt": {
+     "text": "Change dig to pig. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "dig"
+      },
+      "to",
+      {
+       "word": "pig"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "dig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "dig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "d",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "d"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dig"
+      },
+      "becomes",
+      {
+       "word": "pig"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "d"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Dig becomes pig.",
+      "Change the first letter, d, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-B11|1|{\"from\":\"dig\",\"relation\":\"swapLetter\",\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "bug",
+     "from": "hug",
+     "options": [
+      "h",
+      "k",
+      "b"
+     ]
+    },
+    "prompt": {
+     "text": "Change hug to bug. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "hug"
+      },
+      "to",
+      {
+       "word": "bug"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "hug",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "hug"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐛",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bug"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "k",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "k"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "hug"
+      },
+      "becomes",
+      {
+       "word": "bug"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "h"
+      },
+      ", to",
+      {
+       "letter": "b"
+      },
+      "."
+     ],
+     "steps": [
+      "Hug becomes bug.",
+      "Change the first letter, h, to b."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hug"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-B11|1|{\"from\":\"hug\",\"relation\":\"swapLetter\",\"target\":\"bug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pen",
+     "from": "hen",
+     "options": [
+      "t",
+      "h",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Change hen to pen. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "hen"
+      },
+      "to",
+      {
+       "word": "pen"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "hen",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "hen"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖊️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pen"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "hen"
+      },
+      "becomes",
+      {
+       "word": "pen"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "h"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Hen becomes pen.",
+      "Change the first letter, h, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hen"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖊️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-B11|1|{\"from\":\"hen\",\"relation\":\"swapLetter\",\"target\":\"pen\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pan",
+     "from": "van",
+     "options": [
+      "b",
+      "p",
+      "v"
+     ]
+    },
+    "prompt": {
+     "text": "Change van to pan. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "van"
+      },
+      "to",
+      {
+       "word": "pan"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "van",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "van"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pan"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "v",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "v"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "van"
+      },
+      "becomes",
+      {
+       "word": "pan"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "v"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Van becomes pan.",
+      "Change the first letter, v, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "van",
+        "size": "l",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pan",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-B11|1|{\"from\":\"van\",\"relation\":\"swapLetter\",\"target\":\"pan\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "cat",
+     "from": "hat",
+     "options": [
+      "c",
+      "h",
+      "b"
+     ]
+    },
+    "prompt": {
+     "text": "Change hat to cat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "hat"
+      },
+      "to",
+      {
+       "word": "cat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "hat",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "c",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "c"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "hat"
+      },
+      "becomes",
+      {
+       "word": "cat"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "h"
+      },
+      ", to",
+      {
+       "letter": "c"
+      },
+      "."
+     ],
+     "steps": [
+      "Hat becomes cat.",
+      "Change the first letter, h, to c."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 7,
+    "key": "E-K-B11|1|{\"from\":\"hat\",\"relation\":\"swapLetter\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "hat",
+     "from": "bat",
+     "options": [
+      "r",
+      "b",
+      "h"
+     ]
+    },
+    "prompt": {
+     "text": "Change bat to hat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "bat"
+      },
+      "to",
+      {
+       "word": "hat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bat",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "bat"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "r",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "r"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bat"
+      },
+      "becomes",
+      {
+       "word": "hat"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "b"
+      },
+      ", to",
+      {
+       "letter": "h"
+      },
+      "."
+     ],
+     "steps": [
+      "Bat becomes hat.",
+      "Change the first letter, b, to h."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 8,
+    "key": "E-K-B11|1|{\"from\":\"bat\",\"relation\":\"swapLetter\",\"target\":\"hat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "hat",
+     "from": "mat",
+     "options": [
+      "v",
+      "m",
+      "h"
+     ]
+    },
+    "prompt": {
+     "text": "Change mat to hat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "mat"
+      },
+      "to",
+      {
+       "word": "hat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "mat",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "mat"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "v",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "v"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "m",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "mat"
+      },
+      "becomes",
+      {
+       "word": "hat"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "m"
+      },
+      ", to",
+      {
+       "letter": "h"
+      },
+      "."
+     ],
+     "steps": [
+      "Mat becomes hat.",
+      "Change the first letter, m, to h."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 9,
+    "key": "E-K-B11|1|{\"from\":\"mat\",\"relation\":\"swapLetter\",\"target\":\"hat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "van",
+     "from": "ran",
+     "options": [
+      "v",
+      "r",
+      "w"
+     ]
+    },
+    "prompt": {
+     "text": "Change ran to van. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "ran"
+      },
+      "to",
+      {
+       "word": "van"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "ran",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "ran"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚐",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "van"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "v",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "v"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "r",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "r"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "w",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "w"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "ran"
+      },
+      "becomes",
+      {
+       "word": "van"
+      },
+      ". Change the first letter,",
+      {
+       "letter": "r"
+      },
+      ", to",
+      {
+       "letter": "v"
+      },
+      "."
+     ],
+     "steps": [
+      "Ran becomes van.",
+      "Change the first letter, r, to v."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "ran",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ran"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "van",
+        "size": "l",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚐",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 1,
+    "seed": 10,
+    "key": "E-K-B11|1|{\"from\":\"ran\",\"relation\":\"swapLetter\",\"target\":\"van\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pig",
+     "from": "pin",
+     "options": [
+      "g",
+      "b",
+      "n"
+     ]
+    },
+    "prompt": {
+     "text": "Change pin to pig. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pin"
+      },
+      "to",
+      {
+       "word": "pig"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pin",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "n"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "becomes",
+      {
+       "word": "pig"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "n"
+      },
+      ", to",
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Pin becomes pig.",
+      "Change the last letter, n, to g."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 1,
+    "key": "E-K-B11|2|{\"from\":\"pin\",\"relation\":\"swapLetter\",\"target\":\"pig\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pin",
+     "from": "pig",
+     "options": [
+      "h",
+      "g",
+      "n"
+     ]
+    },
+    "prompt": {
+     "text": "Change pig to pin. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pig"
+      },
+      "to",
+      {
+       "word": "pin"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "h",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "h"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "n"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "becomes",
+      {
+       "word": "pin"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "g"
+      },
+      ", to",
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig becomes pin.",
+      "Change the last letter, g, to n."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-B11|2|{\"from\":\"pig\",\"relation\":\"swapLetter\",\"target\":\"pin\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pin",
+     "from": "pig",
+     "options": [
+      "b",
+      "n",
+      "g"
+     ]
+    },
+    "prompt": {
+     "text": "Change pig to pin. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pig"
+      },
+      "to",
+      {
+       "word": "pin"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "n"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "becomes",
+      {
+       "word": "pin"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "g"
+      },
+      ", to",
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig becomes pin.",
+      "Change the last letter, g, to n."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-B11|2|{\"from\":\"pig\",\"relation\":\"swapLetter\",\"target\":\"pin\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "bug",
+     "from": "bus",
+     "options": [
+      "s",
+      "l",
+      "g"
+     ]
+    },
+    "prompt": {
+     "text": "Change bus to bug. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "bus"
+      },
+      "to",
+      {
+       "word": "bug"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bus",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "bus"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐛",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bug"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "s",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "s"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "l",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "l"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bus"
+      },
+      "becomes",
+      {
+       "word": "bug"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "s"
+      },
+      ", to",
+      {
+       "letter": "g"
+      },
+      "."
+     ],
+     "steps": [
+      "Bus becomes bug.",
+      "Change the last letter, s, to g."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bus",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bus"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-B11|2|{\"from\":\"bus\",\"relation\":\"swapLetter\",\"target\":\"bug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pin",
+     "from": "pig",
+     "options": [
+      "t",
+      "g",
+      "n"
+     ]
+    },
+    "prompt": {
+     "text": "Change pig to pin. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pig"
+      },
+      "to",
+      {
+       "word": "pin"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "n"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pig"
+      },
+      "becomes",
+      {
+       "word": "pin"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "g"
+      },
+      ", to",
+      {
+       "letter": "n"
+      },
+      "."
+     ],
+     "steps": [
+      "Pig becomes pin.",
+      "Change the last letter, g, to n."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-B11|2|{\"from\":\"pig\",\"relation\":\"swapLetter\",\"target\":\"pin\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "web",
+     "from": "wet",
+     "options": [
+      "c",
+      "b",
+      "t"
+     ]
+    },
+    "prompt": {
+     "text": "Change wet to web. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "wet"
+      },
+      "to",
+      {
+       "word": "web"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "wet",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "wet"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "c",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "c"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "wet"
+      },
+      "becomes",
+      {
+       "word": "web"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "t"
+      },
+      ", to",
+      {
+       "letter": "b"
+      },
+      "."
+     ],
+     "steps": [
+      "Wet becomes web.",
+      "Change the last letter, t, to b."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "wet",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wet"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "web",
+        "size": "l",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕸️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 6,
+    "key": "E-K-B11|2|{\"from\":\"wet\",\"relation\":\"swapLetter\",\"target\":\"web\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "cat",
+     "from": "can",
+     "options": [
+      "t",
+      "n",
+      "b"
+     ]
+    },
+    "prompt": {
+     "text": "Change can to cat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "can"
+      },
+      "to",
+      {
+       "word": "cat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "can",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "can"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "n"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "can"
+      },
+      "becomes",
+      {
+       "word": "cat"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "n"
+      },
+      ", to",
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Can becomes cat.",
+      "Change the last letter, n, to t."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "can",
+        "size": "l",
+        "speak": [
+         {
+          "word": "can"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "cat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 7,
+    "key": "E-K-B11|2|{\"from\":\"can\",\"relation\":\"swapLetter\",\"target\":\"cat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "bat",
+     "from": "bag",
+     "options": [
+      "p",
+      "g",
+      "t"
+     ]
+    },
+    "prompt": {
+     "text": "Change bag to bat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "bag"
+      },
+      "to",
+      {
+       "word": "bat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bag",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "bag"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦇",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "g",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "g"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bag"
+      },
+      "becomes",
+      {
+       "word": "bat"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "g"
+      },
+      ", to",
+      {
+       "letter": "t"
+      },
+      "."
+     ],
+     "steps": [
+      "Bag becomes bat.",
+      "Change the last letter, g, to t."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bag",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bag"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦇",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 8,
+    "key": "E-K-B11|2|{\"from\":\"bag\",\"relation\":\"swapLetter\",\"target\":\"bat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "map",
+     "from": "mat",
+     "options": [
+      "v",
+      "t",
+      "p"
+     ]
+    },
+    "prompt": {
+     "text": "Change mat to map. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "mat"
+      },
+      "to",
+      {
+       "word": "map"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "mat",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "mat"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🗺️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "map"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "v",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "v"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "p"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "mat"
+      },
+      "becomes",
+      {
+       "word": "map"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "t"
+      },
+      ", to",
+      {
+       "letter": "p"
+      },
+      "."
+     ],
+     "steps": [
+      "Mat becomes map.",
+      "Change the last letter, t, to p."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "mat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "mat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "map",
+        "size": "l",
+        "speak": [
+         {
+          "word": "map"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🗺️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "map"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 9,
+    "key": "E-K-B11|2|{\"from\":\"mat\",\"relation\":\"swapLetter\",\"target\":\"map\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "web",
+     "from": "wet",
+     "options": [
+      "b",
+      "t",
+      "w"
+     ]
+    },
+    "prompt": {
+     "text": "Change wet to web. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "wet"
+      },
+      "to",
+      {
+       "word": "web"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "wet",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "wet"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🕸️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "b"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "t"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "w",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "w"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "wet"
+      },
+      "becomes",
+      {
+       "word": "web"
+      },
+      ". Change the last letter,",
+      {
+       "letter": "t"
+      },
+      ", to",
+      {
+       "letter": "b"
+      },
+      "."
+     ],
+     "steps": [
+      "Wet becomes web.",
+      "Change the last letter, t, to b."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "wet",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wet"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "web",
+        "size": "l",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🕸️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "web"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 2,
+    "seed": 10,
+    "key": "E-K-B11|2|{\"from\":\"wet\",\"relation\":\"swapLetter\",\"target\":\"web\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pin",
+     "from": "pen",
+     "options": [
+      "i",
+      "a",
+      "e"
+     ]
+    },
+    "prompt": {
+     "text": "Change pen to pin. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pen"
+      },
+      "to",
+      {
+       "word": "pin"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pen",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pen"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pen"
+      },
+      "becomes",
+      {
+       "word": "pin"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "e"
+      },
+      ", to",
+      {
+       "letter": "i"
+      },
+      "."
+     ],
+     "steps": [
+      "Pen becomes pin.",
+      "Change the middle letter, e, to i."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 1,
+    "key": "E-K-B11|3|{\"from\":\"pen\",\"relation\":\"swapLetter\",\"target\":\"pin\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "bug",
+     "from": "bag",
+     "options": [
+      "e",
+      "a",
+      "u"
+     ]
+    },
+    "prompt": {
+     "text": "Change bag to bug. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "bag"
+      },
+      "to",
+      {
+       "word": "bug"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bag",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "bag"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐛",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "bug"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "u"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bag"
+      },
+      "becomes",
+      {
+       "word": "bug"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "a"
+      },
+      ", to",
+      {
+       "letter": "u"
+      },
+      "."
+     ],
+     "steps": [
+      "Bag becomes bug.",
+      "Change the middle letter, a, to u."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bag",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bag"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bug",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐛",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "bug"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 2,
+    "key": "E-K-B11|3|{\"from\":\"bag\",\"relation\":\"swapLetter\",\"target\":\"bug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "dog",
+     "from": "dig",
+     "options": [
+      "a",
+      "o",
+      "i"
+     ]
+    },
+    "prompt": {
+     "text": "Change dig to dog. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "dig"
+      },
+      "to",
+      {
+       "word": "dog"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "dig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "dig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "dog"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "o",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "o"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dig"
+      },
+      "becomes",
+      {
+       "word": "dog"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "o"
+      },
+      "."
+     ],
+     "steps": [
+      "Dig becomes dog.",
+      "Change the middle letter, i, to o."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dog",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 3,
+    "key": "E-K-B11|3|{\"from\":\"dig\",\"relation\":\"swapLetter\",\"target\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "nut",
+     "from": "net",
+     "options": [
+      "e",
+      "a",
+      "u"
+     ]
+    },
+    "prompt": {
+     "text": "Change net to nut. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "net"
+      },
+      "to",
+      {
+       "word": "nut"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "net",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "net"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥜",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "nut"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "u"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "net"
+      },
+      "becomes",
+      {
+       "word": "nut"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "e"
+      },
+      ", to",
+      {
+       "letter": "u"
+      },
+      "."
+     ],
+     "steps": [
+      "Net becomes nut.",
+      "Change the middle letter, e, to u."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "net",
+        "size": "l",
+        "speak": [
+         {
+          "word": "net"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "nut",
+        "size": "l",
+        "speak": [
+         {
+          "word": "nut"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥜",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "nut"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 4,
+    "key": "E-K-B11|3|{\"from\":\"net\",\"relation\":\"swapLetter\",\"target\":\"nut\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "dog",
+     "from": "dig",
+     "options": [
+      "u",
+      "i",
+      "o"
+     ]
+    },
+    "prompt": {
+     "text": "Change dig to dog. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "dig"
+      },
+      "to",
+      {
+       "word": "dog"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "dig",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "dig"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "dog"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "u"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "o",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "o"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dig"
+      },
+      "becomes",
+      {
+       "word": "dog"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "o"
+      },
+      "."
+     ],
+     "steps": [
+      "Dig becomes dog.",
+      "Change the middle letter, i, to o."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "dig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dog",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 5,
+    "key": "E-K-B11|3|{\"from\":\"dig\",\"relation\":\"swapLetter\",\"target\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pen",
+     "from": "pin",
+     "options": [
+      "a",
+      "e",
+      "i"
+     ]
+    },
+    "prompt": {
+     "text": "Change pin to pen. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pin"
+      },
+      "to",
+      {
+       "word": "pen"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pin",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖊️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pen"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "becomes",
+      {
+       "word": "pen"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "Pin becomes pen.",
+      "Change the middle letter, i, to e."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖊️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 6,
+    "key": "E-K-B11|3|{\"from\":\"pin\",\"relation\":\"swapLetter\",\"target\":\"pen\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "hat",
+     "from": "hot",
+     "options": [
+      "a",
+      "o",
+      "e"
+     ]
+    },
+    "prompt": {
+     "text": "Change hot to hat. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "hot"
+      },
+      "to",
+      {
+       "word": "hat"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "hot",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "hot"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "hat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "o",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "o"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "hot"
+      },
+      "becomes",
+      {
+       "word": "hat"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "o"
+      },
+      ", to",
+      {
+       "letter": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "Hot becomes hat.",
+      "Change the middle letter, o, to a."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 7,
+    "key": "E-K-B11|3|{\"from\":\"hot\",\"relation\":\"swapLetter\",\"target\":\"hat\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pan",
+     "from": "pin",
+     "options": [
+      "o",
+      "i",
+      "a"
+     ]
+    },
+    "prompt": {
+     "text": "Change pin to pan. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pin"
+      },
+      "to",
+      {
+       "word": "pan"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pin",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pan"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "o",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "o"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "becomes",
+      {
+       "word": "pan"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "Pin becomes pan.",
+      "Change the middle letter, i, to a."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pan",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 8,
+    "key": "E-K-B11|3|{\"from\":\"pin\",\"relation\":\"swapLetter\",\"target\":\"pan\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pan",
+     "from": "pin",
+     "options": [
+      "u",
+      "i",
+      "a"
+     ]
+    },
+    "prompt": {
+     "text": "Change pin to pan. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pin"
+      },
+      "to",
+      {
+       "word": "pan"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pin",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pan"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "u"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "a",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "a"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "becomes",
+      {
+       "word": "pan"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "a"
+      },
+      "."
+     ],
+     "steps": [
+      "Pin becomes pan.",
+      "Change the middle letter, i, to a."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pan",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pan"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 9,
+    "key": "E-K-B11|3|{\"from\":\"pin\",\"relation\":\"swapLetter\",\"target\":\"pan\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "swapLetter",
+     "target": "pen",
+     "from": "pin",
+     "options": [
+      "e",
+      "i",
+      "u"
+     ]
+    },
+    "prompt": {
+     "text": "Change pin to pen. Which new letter do you need?",
+     "speak": [
+      "Change",
+      {
+       "word": "pin"
+      },
+      "to",
+      {
+       "word": "pen"
+      },
+      ". Which new letter do you need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "pin",
+       "size": "xl",
+       "speak": [
+        {
+         "word": "pin"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖊️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "pen"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "e",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "e"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "i",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "i"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "xl",
+      "speak": [
+       {
+        "letter": "u"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "pin"
+      },
+      "becomes",
+      {
+       "word": "pen"
+      },
+      ". Change the middle letter,",
+      {
+       "letter": "i"
+      },
+      ", to",
+      {
+       "letter": "e"
+      },
+      "."
+     ],
+     "steps": [
+      "Pin becomes pen.",
+      "Change the middle letter, i, to e."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pin",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pin"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖊️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pen"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-B11",
+    "level": 3,
+    "seed": 10,
+    "key": "E-K-B11|3|{\"from\":\"pin\",\"relation\":\"swapLetter\",\"target\":\"pen\"}"
+   }
+  ]
+ }
+}
