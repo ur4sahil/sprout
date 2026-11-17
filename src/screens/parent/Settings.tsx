@@ -27,6 +27,7 @@ const GRADES = [
   { value: 'K', label: 'Kindergarten' },
   { value: '1', label: 'Grade 1' },
   { value: '2', label: 'Grade 2' },
+  { value: '3', label: 'Grade 3' },
 ];
 const numbers = (values: number[], unit: (n: number) => string): { value: string; label: string }[] => values.map((n) => ({ value: String(n), label: unit(n) }));
 const SESSION = numbers([5, 6, 8, 10, 12, 15, 20], (n) => `${n} questions`);

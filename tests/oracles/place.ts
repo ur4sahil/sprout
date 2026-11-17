@@ -7,18 +7,23 @@ function digit(facts: Parameters<Oracle>[0], name: string): number {
   return value;
 }
 
-// A number given as its hundreds, tens and ones digits.
+// A number given as its thousands (when there are any), hundreds, tens and ones digits.
 // ask: number (the whole number), hundredsDigit, tensDigit, onesDigit (one digit),
 // hundredsValue, tensValue, onesValue (what that digit is worth: the 4 in 47 is worth 40),
 // expanded (the parts that are not zero, written "300 + 40 + 2").
 export const place: Oracle = (facts) => {
+  const thousands = 'thousands' in facts ? digit(facts, 'thousands') : 0;
   const hundreds = digit(facts, 'hundreds');
   const tens = digit(facts, 'tens');
   const ones = digit(facts, 'ones');
   const ask = text(facts, 'ask');
   switch (ask) {
     case 'number':
-      return { kind: 'value', value: hundreds * 100 + tens * 10 + ones };
+      return { kind: 'value', value: thousands * 1000 + hundreds * 100 + tens * 10 + ones };
+    case 'thousandsDigit':
+      return { kind: 'value', value: thousands };
+    case 'thousandsValue':
+      return { kind: 'value', value: thousands * 1000 };
     case 'hundredsDigit':
       return { kind: 'value', value: hundreds };
     case 'tensDigit':

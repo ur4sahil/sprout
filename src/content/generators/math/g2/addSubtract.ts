@@ -9,8 +9,8 @@ import { numeralChoices } from '../k/numerals';
 
 export type Explanation = { speak: Say; steps: string[]; visual: Visual };
 export const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
-const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] });
-const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] });
+export const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] });
+export const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] });
 
 // One sentence, written and spoken. Numbers are said as numbers. A piece that starts with a full stop joins the word before it.
 interface Line {
@@ -105,7 +105,7 @@ export function subtractExplanation(a: number, b: number): Explanation {
   return together([...lines, ...stay(same), line('The answer is', a - b, '.')], equation(a, '-', b, '=', a - b));
 }
 
-function addQuestion(a: number, b: number, typed: boolean, rng: Rng, named = false): QuestionDraft {
+export function addQuestion(a: number, b: number, typed: boolean, rng: Rng, named = false): QuestionDraft {
   const sum = a + b;
   const hi = sum > 100 ? 999 : 120;
   // The oracle is named on the question when the skill uses two.
@@ -117,7 +117,7 @@ function addQuestion(a: number, b: number, typed: boolean, rng: Rng, named = fal
   return { ...base, type: 'choice', facts: { ...facts, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(sum) };
 }
 
-function subtractQuestion(a: number, b: number, typed: boolean, rng: Rng, named = false): QuestionDraft {
+export function subtractQuestion(a: number, b: number, typed: boolean, rng: Rng, named = false): QuestionDraft {
   const answer = a - b;
   // The oracle is named on the question when the skill uses two.
   const facts: QuestionDraft['facts'] = named ? { a, b, oracle: 'subtract' } : { a, b };

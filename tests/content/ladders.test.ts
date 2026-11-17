@@ -7,11 +7,11 @@ import { gradeRank } from '../../src/engine/grades';
 describe('ladders', () => {
   const all = LADDERS.flatMap((ladder) => ladder.skillIds);
 
-  it('hold all 140 launch skills, each on exactly one ladder', () => {
-    expect(all).toHaveLength(140);
-    expect(new Set(all).size).toBe(140);
+  it('hold every skill built so far, each on exactly one ladder', () => {
+    expect(all).toHaveLength(148);
+    expect(new Set(all).size).toBe(148);
     const count = (prefix: string): number => all.filter((id) => id.startsWith(prefix)).length;
-    expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-')]).toEqual([16, 28, 22, 22]);
+    expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-'), count('M-3-')]).toEqual([16, 28, 22, 22, 8]);
     expect([count('E-PK-'), count('E-K-'), count('E-1-')]).toEqual([10, 16, 12]);
     expect(count('R-')).toBe(14);
   });
@@ -22,7 +22,7 @@ describe('ladders', () => {
       'letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading',
       'figures', 'words-numbers',
     ]);
-    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 7, 31, 6, 7, 4, 6, 3, 2, 2, 2, 7, 7, 8, 4, 6, 4, 2, 9, 5]);
+    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 8, 35, 9, 7, 4, 6, 3, 2, 2, 2, 7, 7, 8, 4, 6, 4, 2, 9, 5]);
   });
 
   it('never go down a grade', () => {
@@ -35,7 +35,7 @@ describe('ladders', () => {
 
   it('match the plan at the places that are easy to get wrong', () => {
     expect(ladderById('counting')?.skillIds.slice(-4)).toEqual(['M-K-A7', 'M-1-A1', 'M-1-A2', 'M-2-A4']);
-    expect(ladderById('place-value')?.skillIds).toEqual(['M-K-D1', 'M-1-A3', 'M-1-A5', 'M-2-A1', 'M-2-A2', 'M-2-A6']);
+    expect(ladderById('place-value')?.skillIds).toEqual(['M-K-D1', 'M-1-A3', 'M-1-A5', 'M-2-A1', 'M-2-A2', 'M-2-A6', 'M-3-A1', 'M-3-A2', 'M-3-A4']);
     expect(ladderById('sounds')?.skillIds).toEqual(['E-PK-B1', 'E-PK-B2', 'E-PK-B3', 'E-K-B1', 'E-K-B2', 'E-K-B3', 'E-K-B6']);
     expect(ladderById('phonics')?.skillIds.slice(0, 3)).toEqual(['E-K-B4', 'E-K-B5', 'E-K-B7']);
     expect(ladderById('figures')?.skillIds).toEqual(['R-A1', 'R-A2', 'R-A3', 'R-A4', 'R-A5', 'R-A6', 'R-A7', 'R-A12', 'R-A13']);

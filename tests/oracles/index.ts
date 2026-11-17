@@ -4,6 +4,7 @@ import { analogy } from './analogy';
 import { attribute } from './attribute';
 import { compare } from './compare';
 import { count } from './count';
+import { estimate } from './estimate';
 import { fold } from './fold';
 import { fraction } from './fraction';
 import { graph } from './graph';
@@ -16,12 +17,14 @@ import { measure } from './measure';
 import { missing } from './missing';
 import { money } from './money';
 import { multiply } from './multiply';
+import { numberName } from './numberName';
 import { numberRule } from './numberRule';
 import { oddOne } from './oddOne';
 import { order } from './order';
 import { parity } from './parity';
 import { pattern } from './pattern';
 import { place } from './place';
+import { round } from './round';
 import { sentence } from './sentence';
 import { sequence } from './sequence';
 import { series } from './series';
@@ -38,6 +41,9 @@ import { wordSet } from './wordSet';
 
 // The oracles written so far. A content phase adds the ones it needs before its first generator.
 export const ORACLES: Partial<Record<OracleId, Oracle>> = {
+  numberName,
+  round,
+  estimate,
   count,
   add,
   subtract,

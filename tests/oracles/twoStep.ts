@@ -4,6 +4,11 @@ import { num, text } from './types';
 function step(value: number, op: string, by: number): number {
   if (op === '+') return value + by;
   if (op === '-') return value - by;
+  if (op === '×') return value * by;
+  if (op === '÷') {
+    if (by === 0 || value % by !== 0) throw new Error(`oracle twoStep: ${value} does not share equally by ${by}`);
+    return value / by;
+  }
   throw new Error(`oracle twoStep: unknown sign ${op}`);
 }
 

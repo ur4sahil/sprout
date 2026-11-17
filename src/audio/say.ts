@@ -17,15 +17,19 @@ const LETTER_NAMES: Record<string, string> = {
 const ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
-// Whole numbers 0 to 1,000 as words: 47 is 'forty-seven'.
+// Whole numbers 0 to 10,000 as words: 47 is 'forty-seven', 2406 is 'two thousand four hundred six'.
 export function numberWords(n: number): string {
-  if (!Number.isInteger(n) || n < 0 || n > 1000) return String(n);
+  if (!Number.isInteger(n) || n < 0 || n > 10000) return String(n);
+  if (n >= 1000) {
+    const rest = n % 1000;
+    const thousands = `${numberWords(Math.floor(n / 1000))} thousand`;
+    return rest === 0 ? thousands : `${thousands} ${numberWords(rest)}`;
+  }
   if (n < 20) return ONES[n] as string;
   if (n < 100) {
     const ones = n % 10;
     return ones === 0 ? (TENS[Math.floor(n / 10)] as string) : `${TENS[Math.floor(n / 10)]}-${ONES[ones]}`;
   }
-  if (n === 1000) return 'one thousand';
   const rest = n % 100;
   const hundreds = `${ONES[Math.floor(n / 100)]} hundred`;
   return rest === 0 ? hundreds : `${hundreds} ${numberWords(rest)}`;

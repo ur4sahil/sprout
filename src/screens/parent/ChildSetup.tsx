@@ -26,6 +26,7 @@ const GRADES: { grade: Grade; label: string }[] = [
   { grade: 'K', label: 'Kindergarten' },
   { grade: '1', label: 'Grade 1' },
   { grade: '2', label: 'Grade 2' },
+  { grade: '3', label: 'Grade 3' },
 ];
 
 // A grown-up adds a child in two steps: name and picture, then grade.

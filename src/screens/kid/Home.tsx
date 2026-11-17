@@ -41,7 +41,7 @@ export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: 
   { id: 'reasoning', label: 'Reasoning', icon: 'shapes' },
 ];
 
-export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', all: 'All' };
+export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', '3': 'Grade 3', all: 'All' };
 
 // The child's home: the daily goal, today's picks, Play, reviews that are due, and the subjects.
 export default function Home() {

@@ -49,6 +49,7 @@ export function describeVisual(visual: Visual | 'blank'): string {
       return `${visual.frames === 2 ? 'two ten frames' : 'ten frame'} with ${plural(visual.filled, 'counter', 'counters')}`;
     case 'baseTen':
       return [
+        (visual.thousands ?? 0) > 0 ? plural(visual.thousands ?? 0, 'thousand', 'thousands') : '',
         visual.hundreds > 0 ? plural(visual.hundreds, 'hundred', 'hundreds') : '',
         visual.tens > 0 ? plural(visual.tens, 'ten', 'tens') : '',
         plural(visual.ones, 'one', 'ones'),

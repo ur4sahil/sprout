@@ -29,9 +29,9 @@ export function stepSay(step: string): Say | null {
     else if (core === '') {
       // A dot between the parts of a word is a short stop.
       if (token === '·') words.push(',');
-    } else if (/^\d+$/.test(core) || /^\d+s$/.test(core)) {
-      const n = Number.parseInt(core, 10);
-      if (n > 1000) return null;
+    } else if (/^\d+$/.test(core) || /^\d+s$/.test(core) || /^\d{1,2},\d{3}$/.test(core)) {
+      const n = Number.parseInt(core.replace(',', ''), 10);
+      if (n > 10000) return null;
       flush();
       parts.push(...(core.endsWith('s') ? plural(n) : [{ number: n }]));
       if (pause) words.push(pause);

@@ -25,6 +25,8 @@ import { addNoRegroupGenerator, addRegroupGenerator, addWithin1000Generator, sub
 import { barGraphsGenerator, countCoinsGenerator, rulerGenerator, timeToFiveGenerator } from './generators/math/g2/measure';
 import { compareThreeDigitGenerator, evenOddGenerator, expandedFormGenerator, hundredsTensOnesGenerator, numberLinesGenerator, skipCountBigGenerator } from './generators/math/g2/numbers';
 import { halvesThirdsFourthsGenerator, nameBySidesGenerator } from './generators/math/g2/shapes';
+import { addRegroup1000Generator, estimateGenerator, subtractRegroup1000Generator, twoStep3Generator } from './generators/math/g3/addSubtract';
+import { compareFourDigitGenerator, numberNamesGenerator, placeValue4Generator, roundingGenerator } from './generators/math/g3/numbers';
 import { arraysGenerator, twoStepGenerator, wordProblems100Generator } from './generators/math/g2/stories';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
 import { countTo20Generator, framesTo10Generator, framesTo20Generator } from './generators/math/k/counting';
@@ -127,6 +129,14 @@ const ALL: readonly SkillGenerator[] = [
   arraysGenerator,
   wordProblems100Generator,
   twoStepGenerator,
+  placeValue4Generator,
+  numberNamesGenerator,
+  compareFourDigitGenerator,
+  roundingGenerator,
+  addRegroup1000Generator,
+  subtractRegroup1000Generator,
+  estimateGenerator,
+  twoStep3Generator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,

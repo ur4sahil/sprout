@@ -1,0 +1,3606 @@
+{
+ "skillId": "M-3-B3",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "a": 14,
+   "b": 87,
+   "to": 10,
+   "op": "+",
+   "ask": "estimate",
+   "options": [
+    100,
+    101,
+    110
+   ]
+  },
+  "prompt": {
+   "text": "Round each number to the nearest ten, then add. What is the estimate?",
+   "speak": [
+    "Round each number to the nearest ten, then add. What is the estimate?"
+   ]
+  },
+  "stimulus": {
+   "kind": "equation",
+   "parts": [
+    14,
+    "+",
+    87
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "100",
+    "size": "l",
+    "speak": [
+     {
+      "number": 100
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "101",
+    "size": "l",
+    "speak": [
+     {
+      "number": 101
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "110",
+    "size": "l",
+    "speak": [
+     {
+      "number": 110
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    {
+     "number": 14
+    },
+    "rounds to",
+    {
+     "number": 10
+    },
+    ".",
+    {
+     "number": 87
+    },
+    "rounds to",
+    {
+     "number": 90
+    },
+    ".",
+    {
+     "number": 10
+    },
+    "plus",
+    {
+     "number": 90
+    },
+    "is",
+    {
+     "number": 100
+    },
+    "."
+   ],
+   "steps": [
+    "Round each number to the nearest ten.",
+    "14 rounds to 10. 87 rounds to 90.",
+    "10 plus 90 is 100."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     10,
+     "+",
+     90,
+     "=",
+     100
+    ]
+   }
+  },
+  "skillId": "M-3-B3",
+  "level": 1,
+  "seed": 313,
+  "key": "M-3-B3|1|{\"a\":14,\"ask\":\"estimate\",\"b\":87,\"op\":\"+\",\"to\":10}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 52,
+     "b": 88,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      120,
+      130,
+      140
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      52,
+      "+",
+      88
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "130",
+      "size": "l",
+      "speak": [
+       {
+        "number": 130
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 52
+      },
+      "rounds to",
+      {
+       "number": 50
+      },
+      ".",
+      {
+       "number": 88
+      },
+      "rounds to",
+      {
+       "number": 90
+      },
+      ".",
+      {
+       "number": 50
+      },
+      "plus",
+      {
+       "number": 90
+      },
+      "is",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "52 rounds to 50. 88 rounds to 90.",
+      "50 plus 90 is 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       50,
+       "+",
+       90,
+       "=",
+       140
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-B3|1|{\"a\":52,\"ask\":\"estimate\",\"b\":88,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 69,
+     "b": 36,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      110,
+      120,
+      130
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      69,
+      "+",
+      36
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "110",
+      "size": "l",
+      "speak": [
+       {
+        "number": 110
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "130",
+      "size": "l",
+      "speak": [
+       {
+        "number": 130
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 69
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 36
+      },
+      "rounds to",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 110
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "69 rounds to 70. 36 rounds to 40.",
+      "70 plus 40 is 110."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       70,
+       "+",
+       40,
+       "=",
+       110
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-B3|1|{\"a\":69,\"ask\":\"estimate\",\"b\":36,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 67,
+     "b": 14,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      60,
+      80,
+      81
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      67,
+      "+",
+      14
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "81",
+      "size": "l",
+      "speak": [
+       {
+        "number": 81
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 67
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 14
+      },
+      "rounds to",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 80
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "67 rounds to 70. 14 rounds to 10.",
+      "70 plus 10 is 80."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       70,
+       "+",
+       10,
+       "=",
+       80
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-B3|1|{\"a\":67,\"ask\":\"estimate\",\"b\":14,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 83,
+     "b": 37,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      120,
+      130,
+      140
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      83,
+      "+",
+      37
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "130",
+      "size": "l",
+      "speak": [
+       {
+        "number": 130
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 83
+      },
+      "rounds to",
+      {
+       "number": 80
+      },
+      ".",
+      {
+       "number": 37
+      },
+      "rounds to",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 80
+      },
+      "plus",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 120
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "83 rounds to 80. 37 rounds to 40.",
+      "80 plus 40 is 120."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       80,
+       "+",
+       40,
+       "=",
+       120
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-B3|1|{\"a\":83,\"ask\":\"estimate\",\"b\":37,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 65,
+     "b": 72,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      140,
+      150,
+      160
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      65,
+      "+",
+      72
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "150",
+      "size": "l",
+      "speak": [
+       {
+        "number": 150
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "160",
+      "size": "l",
+      "speak": [
+       {
+        "number": 160
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 65
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 72
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 70
+      },
+      "is",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "65 rounds to 70. 72 rounds to 70.",
+      "70 plus 70 is 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       70,
+       "+",
+       70,
+       "=",
+       140
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-B3|1|{\"a\":65,\"ask\":\"estimate\",\"b\":72,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 52,
+     "b": 11,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      40,
+      60,
+      63
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      52,
+      "+",
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 52
+      },
+      "rounds to",
+      {
+       "number": 50
+      },
+      ".",
+      {
+       "number": 11
+      },
+      "rounds to",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 50
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 60
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "52 rounds to 50. 11 rounds to 10.",
+      "50 plus 10 is 60."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       50,
+       "+",
+       10,
+       "=",
+       60
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-B3|1|{\"a\":52,\"ask\":\"estimate\",\"b\":11,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 11,
+     "b": 15,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      20,
+      26,
+      30
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      11,
+      "+",
+      15
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 11
+      },
+      "rounds to",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 15
+      },
+      "rounds to",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "11 rounds to 10. 15 rounds to 20.",
+      "10 plus 20 is 30."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       20,
+       "=",
+       30
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-B3|1|{\"a\":11,\"ask\":\"estimate\",\"b\":15,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 34,
+     "b": 65,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      99,
+      100,
+      110
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      34,
+      "+",
+      65
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "99",
+      "size": "l",
+      "speak": [
+       {
+        "number": 99
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "110",
+      "size": "l",
+      "speak": [
+       {
+        "number": 110
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 34
+      },
+      "rounds to",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 65
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "plus",
+      {
+       "number": 70
+      },
+      "is",
+      {
+       "number": 100
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "34 rounds to 30. 65 rounds to 70.",
+      "30 plus 70 is 100."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       30,
+       "+",
+       70,
+       "=",
+       100
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-B3|1|{\"a\":34,\"ask\":\"estimate\",\"b\":65,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 26,
+     "b": 78,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      110,
+      120,
+      130
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      26,
+      "+",
+      78
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "110",
+      "size": "l",
+      "speak": [
+       {
+        "number": 110
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "130",
+      "size": "l",
+      "speak": [
+       {
+        "number": 130
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 26
+      },
+      "rounds to",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 78
+      },
+      "rounds to",
+      {
+       "number": 80
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "plus",
+      {
+       "number": 80
+      },
+      "is",
+      {
+       "number": 110
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "26 rounds to 30. 78 rounds to 80.",
+      "30 plus 80 is 110."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       30,
+       "+",
+       80,
+       "=",
+       110
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-B3|1|{\"a\":26,\"ask\":\"estimate\",\"b\":78,\"op\":\"+\",\"to\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 65,
+     "b": 74,
+     "to": 10,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      139,
+      140,
+      160
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest ten, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest ten, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      65,
+      "+",
+      74
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "139",
+      "size": "l",
+      "speak": [
+       {
+        "number": 139
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "160",
+      "size": "l",
+      "speak": [
+       {
+        "number": 160
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 65
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 74
+      },
+      "rounds to",
+      {
+       "number": 70
+      },
+      ".",
+      {
+       "number": 70
+      },
+      "plus",
+      {
+       "number": 70
+      },
+      "is",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest ten.",
+      "65 rounds to 70. 74 rounds to 70.",
+      "70 plus 70 is 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       70,
+       "+",
+       70,
+       "=",
+       140
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-B3|1|{\"a\":65,\"ask\":\"estimate\",\"b\":74,\"op\":\"+\",\"to\":10}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 676,
+     "b": 441,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      100,
+      235,
+      300
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      676,
+      "-",
+      441
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "235",
+      "size": "l",
+      "speak": [
+       {
+        "number": 235
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "300",
+      "size": "l",
+      "speak": [
+       {
+        "number": 300
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 676
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 441
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 300
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "676 rounds to 700. 441 rounds to 400.",
+      "700 minus 400 is 300."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       400,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-B3|2|{\"a\":676,\"ask\":\"estimate\",\"b\":441,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 768,
+     "b": 565,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      200,
+      203,
+      400
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      768,
+      "-",
+      565
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "203",
+      "size": "l",
+      "speak": [
+       {
+        "number": 203
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 768
+      },
+      "rounds to",
+      {
+       "number": 800
+      },
+      ".",
+      {
+       "number": 565
+      },
+      "rounds to",
+      {
+       "number": 600
+      },
+      ".",
+      {
+       "number": 800
+      },
+      "minus",
+      {
+       "number": 600
+      },
+      "is",
+      {
+       "number": 200
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "768 rounds to 800. 565 rounds to 600.",
+      "800 minus 600 is 200."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       800,
+       "-",
+       600,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-B3|2|{\"a\":768,\"ask\":\"estimate\",\"b\":565,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 542,
+     "b": 256,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      200,
+      286,
+      400
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      542,
+      "-",
+      256
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "286",
+      "size": "l",
+      "speak": [
+       {
+        "number": 286
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 542
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 256
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 500
+      },
+      "minus",
+      {
+       "number": 300
+      },
+      "is",
+      {
+       "number": 200
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "542 rounds to 500. 256 rounds to 300.",
+      "500 minus 300 is 200."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       500,
+       "-",
+       300,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-B3|2|{\"a\":542,\"ask\":\"estimate\",\"b\":256,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 507,
+     "b": 162,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      100,
+      200,
+      300
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      507,
+      "-",
+      162
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "300",
+      "size": "l",
+      "speak": [
+       {
+        "number": 300
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 507
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 162
+      },
+      "rounds to",
+      {
+       "number": 200
+      },
+      ".",
+      {
+       "number": 500
+      },
+      "minus",
+      {
+       "number": 200
+      },
+      "is",
+      {
+       "number": 300
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "507 rounds to 500. 162 rounds to 200.",
+      "500 minus 200 is 300."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       500,
+       "-",
+       200,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-B3|2|{\"a\":507,\"ask\":\"estimate\",\"b\":162,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 718,
+     "b": 276,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      200,
+      400,
+      442
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      718,
+      "-",
+      276
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "442",
+      "size": "l",
+      "speak": [
+       {
+        "number": 442
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 718
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 276
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 300
+      },
+      "is",
+      {
+       "number": 400
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "718 rounds to 700. 276 rounds to 300.",
+      "700 minus 300 is 400."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       300,
+       "=",
+       400
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-B3|2|{\"a\":718,\"ask\":\"estimate\",\"b\":276,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 406,
+     "b": 118,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      300,
+      400,
+      500
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      406,
+      "-",
+      118
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "300",
+      "size": "l",
+      "speak": [
+       {
+        "number": 300
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "500",
+      "size": "l",
+      "speak": [
+       {
+        "number": 500
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 406
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 118
+      },
+      "rounds to",
+      {
+       "number": 100
+      },
+      ".",
+      {
+       "number": 400
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "is",
+      {
+       "number": 300
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "406 rounds to 400. 118 rounds to 100.",
+      "400 minus 100 is 300."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       400,
+       "-",
+       100,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-B3|2|{\"a\":406,\"ask\":\"estimate\",\"b\":118,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 122,
+     "b": 441,
+     "to": 100,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      300,
+      400,
+      500
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      122,
+      "+",
+      441
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "300",
+      "size": "l",
+      "speak": [
+       {
+        "number": 300
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "500",
+      "size": "l",
+      "speak": [
+       {
+        "number": 500
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 122
+      },
+      "rounds to",
+      {
+       "number": 100
+      },
+      ".",
+      {
+       "number": 441
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 100
+      },
+      "plus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 500
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "122 rounds to 100. 441 rounds to 400.",
+      "100 plus 400 is 500."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       100,
+       "+",
+       400,
+       "=",
+       500
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-B3|2|{\"a\":122,\"ask\":\"estimate\",\"b\":441,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 319,
+     "b": 205,
+     "to": 100,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      300,
+      400,
+      500
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      319,
+      "+",
+      205
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "300",
+      "size": "l",
+      "speak": [
+       {
+        "number": 300
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "400",
+      "size": "l",
+      "speak": [
+       {
+        "number": 400
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "500",
+      "size": "l",
+      "speak": [
+       {
+        "number": 500
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 319
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 205
+      },
+      "rounds to",
+      {
+       "number": 200
+      },
+      ".",
+      {
+       "number": 300
+      },
+      "plus",
+      {
+       "number": 200
+      },
+      "is",
+      {
+       "number": 500
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "319 rounds to 300. 205 rounds to 200.",
+      "300 plus 200 is 500."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "+",
+       200,
+       "=",
+       500
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-B3|2|{\"a\":319,\"ask\":\"estimate\",\"b\":205,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 387,
+     "b": 353,
+     "to": 100,
+     "op": "+",
+     "ask": "estimate",
+     "options": [
+      600,
+      740,
+      800
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then add. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then add. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      387,
+      "+",
+      353
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "600",
+      "size": "l",
+      "speak": [
+       {
+        "number": 600
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "740",
+      "size": "l",
+      "speak": [
+       {
+        "number": 740
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "800",
+      "size": "l",
+      "speak": [
+       {
+        "number": 800
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 387
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 353
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 400
+      },
+      "plus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 800
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "387 rounds to 400. 353 rounds to 400.",
+      "400 plus 400 is 800."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       400,
+       "+",
+       400,
+       "=",
+       800
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-B3|2|{\"a\":387,\"ask\":\"estimate\",\"b\":353,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 741,
+     "b": 466,
+     "to": 100,
+     "op": "-",
+     "ask": "estimate",
+     "options": [
+      0,
+      200,
+      275
+     ]
+    },
+    "prompt": {
+     "text": "Round each number to the nearest hundred, then subtract. What is the estimate?",
+     "speak": [
+      "Round each number to the nearest hundred, then subtract. What is the estimate?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      741,
+      "-",
+      466
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "l",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "275",
+      "size": "l",
+      "speak": [
+       {
+        "number": 275
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 741
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 466
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 500
+      },
+      "is",
+      {
+       "number": 200
+      },
+      "."
+     ],
+     "steps": [
+      "Round each number to the nearest hundred.",
+      "741 rounds to 700. 466 rounds to 500.",
+      "700 minus 500 is 200."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       500,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-B3|2|{\"a\":741,\"ask\":\"estimate\",\"b\":466,\"op\":\"-\",\"to\":100}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 676,
+     "b": 441,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 485,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 676 minus 441 is 485. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 676
+      },
+      "minus",
+      {
+       "number": 441
+      },
+      "is",
+      {
+       "number": 485
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      676,
+      "-",
+      441,
+      "=",
+      485
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 676
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 441
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 300
+      },
+      ".",
+      "No.",
+      {
+       "number": 485
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "676 rounds to 700. 441 rounds to 400.",
+      "700 minus 400 is 300.",
+      "485 is far from 300, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       400,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-B3|3|{\"a\":676,\"ask\":\"reasonable\",\"b\":441,\"claim\":485,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 768,
+     "b": 565,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 203,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 768 minus 565 is 203. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 768
+      },
+      "minus",
+      {
+       "number": 565
+      },
+      "is",
+      {
+       "number": 203
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      768,
+      "-",
+      565,
+      "=",
+      203
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 768
+      },
+      "rounds to",
+      {
+       "number": 800
+      },
+      ".",
+      {
+       "number": 565
+      },
+      "rounds to",
+      {
+       "number": 600
+      },
+      ".",
+      {
+       "number": 800
+      },
+      "minus",
+      {
+       "number": 600
+      },
+      "is",
+      {
+       "number": 200
+      },
+      ".",
+      "Yes.",
+      {
+       "number": 203
+      },
+      "is close to that."
+     ],
+     "steps": [
+      "768 rounds to 800. 565 rounds to 600.",
+      "800 minus 600 is 200.",
+      "203 is close to 200, so yes."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       800,
+       "-",
+       600,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-B3|3|{\"a\":768,\"ask\":\"reasonable\",\"b\":565,\"claim\":203,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 542,
+     "b": 256,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 286,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 542 minus 256 is 286. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 542
+      },
+      "minus",
+      {
+       "number": 256
+      },
+      "is",
+      {
+       "number": 286
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      542,
+      "-",
+      256,
+      "=",
+      286
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 542
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 256
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 500
+      },
+      "minus",
+      {
+       "number": 300
+      },
+      "is",
+      {
+       "number": 200
+      },
+      ".",
+      "Yes.",
+      {
+       "number": 286
+      },
+      "is close to that."
+     ],
+     "steps": [
+      "542 rounds to 500. 256 rounds to 300.",
+      "500 minus 300 is 200.",
+      "286 is close to 200, so yes."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       500,
+       "-",
+       300,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-B3|3|{\"a\":542,\"ask\":\"reasonable\",\"b\":256,\"claim\":286,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 507,
+     "b": 162,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 635,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 507 minus 162 is 635. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 507
+      },
+      "minus",
+      {
+       "number": 162
+      },
+      "is",
+      {
+       "number": 635
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      507,
+      "-",
+      162,
+      "=",
+      635
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 507
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 162
+      },
+      "rounds to",
+      {
+       "number": 200
+      },
+      ".",
+      {
+       "number": 500
+      },
+      "minus",
+      {
+       "number": 200
+      },
+      "is",
+      {
+       "number": 300
+      },
+      ".",
+      "No.",
+      {
+       "number": 635
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "507 rounds to 500. 162 rounds to 200.",
+      "500 minus 200 is 300.",
+      "635 is far from 300, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       500,
+       "-",
+       200,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-B3|3|{\"a\":507,\"ask\":\"reasonable\",\"b\":162,\"claim\":635,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 718,
+     "b": 276,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 162,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 718 minus 276 is 162. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 718
+      },
+      "minus",
+      {
+       "number": 276
+      },
+      "is",
+      {
+       "number": 162
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      718,
+      "-",
+      276,
+      "=",
+      162
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 718
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 276
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 300
+      },
+      "is",
+      {
+       "number": 400
+      },
+      ".",
+      "No.",
+      {
+       "number": 162
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "718 rounds to 700. 276 rounds to 300.",
+      "700 minus 300 is 400.",
+      "162 is far from 400, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       300,
+       "=",
+       400
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-B3|3|{\"a\":718,\"ask\":\"reasonable\",\"b\":276,\"claim\":162,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 406,
+     "b": 118,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 288,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 406 minus 118 is 288. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 406
+      },
+      "minus",
+      {
+       "number": 118
+      },
+      "is",
+      {
+       "number": 288
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      406,
+      "-",
+      118,
+      "=",
+      288
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 406
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 118
+      },
+      "rounds to",
+      {
+       "number": 100
+      },
+      ".",
+      {
+       "number": 400
+      },
+      "minus",
+      {
+       "number": 100
+      },
+      "is",
+      {
+       "number": 300
+      },
+      ".",
+      "Yes.",
+      {
+       "number": 288
+      },
+      "is close to that."
+     ],
+     "steps": [
+      "406 rounds to 400. 118 rounds to 100.",
+      "400 minus 100 is 300.",
+      "288 is close to 300, so yes."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       400,
+       "-",
+       100,
+       "=",
+       300
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-B3|3|{\"a\":406,\"ask\":\"reasonable\",\"b\":118,\"claim\":288,\"op\":\"-\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 122,
+     "b": 441,
+     "to": 100,
+     "op": "+",
+     "ask": "reasonable",
+     "claim": 833,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 122 plus 441 is 833. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 122
+      },
+      "plus",
+      {
+       "number": 441
+      },
+      "is",
+      {
+       "number": 833
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      122,
+      "+",
+      441,
+      "=",
+      833
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 122
+      },
+      "rounds to",
+      {
+       "number": 100
+      },
+      ".",
+      {
+       "number": 441
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 100
+      },
+      "plus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 500
+      },
+      ".",
+      "No.",
+      {
+       "number": 833
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "122 rounds to 100. 441 rounds to 400.",
+      "100 plus 400 is 500.",
+      "833 is far from 500, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       100,
+       "+",
+       400,
+       "=",
+       500
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-B3|3|{\"a\":122,\"ask\":\"reasonable\",\"b\":441,\"claim\":833,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 319,
+     "b": 205,
+     "to": 100,
+     "op": "+",
+     "ask": "reasonable",
+     "claim": 794,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 319 plus 205 is 794. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 319
+      },
+      "plus",
+      {
+       "number": 205
+      },
+      "is",
+      {
+       "number": 794
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      319,
+      "+",
+      205,
+      "=",
+      794
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 319
+      },
+      "rounds to",
+      {
+       "number": 300
+      },
+      ".",
+      {
+       "number": 205
+      },
+      "rounds to",
+      {
+       "number": 200
+      },
+      ".",
+      {
+       "number": 300
+      },
+      "plus",
+      {
+       "number": 200
+      },
+      "is",
+      {
+       "number": 500
+      },
+      ".",
+      "No.",
+      {
+       "number": 794
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "319 rounds to 300. 205 rounds to 200.",
+      "300 plus 200 is 500.",
+      "794 is far from 500, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "+",
+       200,
+       "=",
+       500
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-B3|3|{\"a\":319,\"ask\":\"reasonable\",\"b\":205,\"claim\":794,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 387,
+     "b": 353,
+     "to": 100,
+     "op": "+",
+     "ask": "reasonable",
+     "claim": 440,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 387 plus 353 is 440. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 387
+      },
+      "plus",
+      {
+       "number": 353
+      },
+      "is",
+      {
+       "number": 440
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      387,
+      "+",
+      353,
+      "=",
+      440
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 387
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 353
+      },
+      "rounds to",
+      {
+       "number": 400
+      },
+      ".",
+      {
+       "number": 400
+      },
+      "plus",
+      {
+       "number": 400
+      },
+      "is",
+      {
+       "number": 800
+      },
+      ".",
+      "No.",
+      {
+       "number": 440
+      },
+      "is too far from that."
+     ],
+     "steps": [
+      "387 rounds to 400. 353 rounds to 400.",
+      "400 plus 400 is 800.",
+      "440 is far from 800, so no."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       400,
+       "+",
+       400,
+       "=",
+       800
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-B3|3|{\"a\":387,\"ask\":\"reasonable\",\"b\":353,\"claim\":440,\"op\":\"+\",\"to\":100}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 741,
+     "b": 466,
+     "to": 100,
+     "op": "-",
+     "ask": "reasonable",
+     "claim": 275,
+     "options": [
+      true,
+      false
+     ]
+    },
+    "prompt": {
+     "text": "Sam says 741 minus 466 is 275. Is that reasonable?",
+     "speak": [
+      "Sam says",
+      {
+       "number": 741
+      },
+      "minus",
+      {
+       "number": 466
+      },
+      "is",
+      {
+       "number": 275
+      },
+      ". Is that reasonable?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      741,
+      "-",
+      466,
+      "=",
+      275
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 741
+      },
+      "rounds to",
+      {
+       "number": 700
+      },
+      ".",
+      {
+       "number": 466
+      },
+      "rounds to",
+      {
+       "number": 500
+      },
+      ".",
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 500
+      },
+      "is",
+      {
+       "number": 200
+      },
+      ".",
+      "Yes.",
+      {
+       "number": 275
+      },
+      "is close to that."
+     ],
+     "steps": [
+      "741 rounds to 700. 466 rounds to 500.",
+      "700 minus 500 is 200.",
+      "275 is close to 200, so yes."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       500,
+       "=",
+       200
+      ]
+     }
+    },
+    "skillId": "M-3-B3",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-B3|3|{\"a\":741,\"ask\":\"reasonable\",\"b\":466,\"claim\":275,\"op\":\"-\",\"to\":100}"
+   }
+  ]
+ }
+}

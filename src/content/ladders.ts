@@ -13,14 +13,14 @@ function run(prefix: string, category: string, from: number, to: number): string
   return Array.from({ length: to - from + 1 }, (_, i) => `${prefix}-${category}${from + i}`);
 }
 
-const M = { PK: 'M-PK', K: 'M-K', G1: 'M-1', G2: 'M-2' };
+const M = { PK: 'M-PK', K: 'M-K', G1: 'M-1', G2: 'M-2', G3: 'M-3' };
 const E = { PK: 'E-PK', K: 'E-K', G1: 'E-1' };
 
 export const LADDERS: readonly Ladder[] = [
   { id: 'counting', subject: 'math', skillIds: [...run(M.PK, 'A', 1, 8), ...run(M.K, 'A', 1, 7), ...run(M.G1, 'A', 1, 2), 'M-2-A4'] },
-  { id: 'comparing', subject: 'math', skillIds: [...run(M.PK, 'B', 1, 2), ...run(M.K, 'B', 1, 3), 'M-1-A4', 'M-2-A3'] },
-  { id: 'add-subtract', subject: 'math', skillIds: [...run(M.K, 'C', 1, 11), ...run(M.G1, 'B', 1, 10), ...run(M.G2, 'B', 1, 10)] },
-  { id: 'place-value', subject: 'math', skillIds: ['M-K-D1', 'M-1-A3', 'M-1-A5', 'M-2-A1', 'M-2-A2', 'M-2-A6'] },
+  { id: 'comparing', subject: 'math', skillIds: [...run(M.PK, 'B', 1, 2), ...run(M.K, 'B', 1, 3), 'M-1-A4', 'M-2-A3', 'M-3-A3'] },
+  { id: 'add-subtract', subject: 'math', skillIds: [...run(M.K, 'C', 1, 11), ...run(M.G1, 'B', 1, 10), ...run(M.G2, 'B', 1, 10), ...run(M.G3, 'B', 1, 4)] },
+  { id: 'place-value', subject: 'math', skillIds: ['M-K-D1', 'M-1-A3', 'M-1-A5', 'M-2-A1', 'M-2-A2', 'M-2-A6', 'M-3-A1', 'M-3-A2', 'M-3-A4'] },
   { id: 'shapes', subject: 'math', skillIds: [...run(M.PK, 'C', 1, 2), ...run(M.K, 'E', 1, 3), 'M-1-D2', 'M-2-D1'] },
   { id: 'length', subject: 'math', skillIds: ['M-PK-C3', 'M-K-F1', 'M-1-C2', 'M-2-C3'] },
   { id: 'patterns', subject: 'math', skillIds: [...run(M.PK, 'D', 1, 3), 'M-K-G1', 'M-1-E1', 'M-2-A5'] },
@@ -44,7 +44,7 @@ export function gradeOfSkillId(skillId: string): SkillGrade {
   const parts = skillId.split('-');
   if (parts[0] === 'R') return 'all';
   const grade = parts[1];
-  if (grade === 'PK' || grade === 'K' || grade === '1' || grade === '2') return grade;
+  if (grade === 'PK' || grade === 'K' || grade === '1' || grade === '2' || grade === '3') return grade;
   throw new Error(`Skill id ${skillId} has no grade part`);
 }
 

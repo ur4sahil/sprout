@@ -74,6 +74,7 @@ export const GALLERY: GallerySection[] = [
       { label: '34', visual: { kind: 'baseTen', hundreds: 0, tens: 3, ones: 4 } },
       { label: '9 ones', visual: { kind: 'baseTen', hundreds: 0, tens: 0, ones: 9 } },
       { label: '243', visual: { kind: 'baseTen', hundreds: 2, tens: 4, ones: 3 } },
+      { label: '2,135', visual: { kind: 'baseTen', thousands: 2, hundreds: 1, tens: 3, ones: 5 } },
     ],
   },
   {

@@ -62,7 +62,7 @@ export type Visual = VisualBase &
       }
     | { kind: 'solid'; solid: SolidName }
     | { kind: 'tenFrame'; filled: number; frames: 1 | 2 }
-    | { kind: 'baseTen'; hundreds: number; tens: number; ones: number }
+    | { kind: 'baseTen'; thousands?: number; hundreds: number; tens: number; ones: number }
     | { kind: 'numberLine'; min: number; max: number; step: number; marked?: number[]; hidden?: number[] }
     | { kind: 'equation'; parts: (number | string)[] } // numbers, operators and 'blank'
     | { kind: 'sequence'; items: (Visual | Blank)[] }
@@ -172,6 +172,9 @@ export type OracleId =
   | 'transform'
   | 'fold'
   | 'truth'
+  | 'numberName'
+  | 'round'
+  | 'estimate'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -211,6 +214,9 @@ export const ORACLE_FACTS: Record<OracleId, string[]> = {
   transform: ['shape', 'startTurn', 'turns', 'flip'],
   fold: ['fold', 'holes'],
   truth: ['left', 'right'],
+  numberName: ['n', 'ask'],
+  round: ['n', 'to'],
+  estimate: ['a', 'b', 'to', 'op', 'ask'],
   authored: ['id'],
 };
 
@@ -226,4 +232,4 @@ export interface LessonStep {
   reveal?: { text: string; speak: Say; visual?: Visual };
 }
 
-export type SkillGrade = 'PK' | 'K' | '1' | '2' | 'all';
+export type SkillGrade = 'PK' | 'K' | '1' | '2' | '3' | 'all';

@@ -11,7 +11,7 @@ import type { Attempt, DiagnosticResult, SkillState } from '../storage/schema';
 
 // What the parent screens show, worked out from saved records. Pure functions.
 
-export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', all: 'All grades' };
+export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', '3': 'Grade 3', all: 'All grades' };
 
 export const LADDER_NAME: Record<string, string> = {
   counting: 'Counting',

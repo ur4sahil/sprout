@@ -20,8 +20,9 @@ describe('stepSay: a written step, said aloud', () => {
   it('gives up on what it cannot read safely', () => {
     expect(stepSay('The clock says 3:30.')).toBeNull();
     expect(stepSay('It costs $5.')).toBeNull();
-    expect(stepSay('2,000 is big.')).toBeNull();
-    expect(stepSay('5000 is big.')).toBeNull();
+    expect(stepSay('12,000 is big.')).toBeNull();
+    expect(stepSay('50000 is big.')).toBeNull();
+    expect(stepSay('2,406 is big.')).toEqual([{ number: 2406 }, 'is big.']);
   });
 
   it('every step of every skill is either read as valid speech, or the whole question falls back', () => {

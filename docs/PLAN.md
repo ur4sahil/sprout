@@ -1090,23 +1090,25 @@ A ladder holds only skills that truly build on each other. Telling time and coun
 | Subject | Ladder | Skills, in order |
 | --- | --- | --- |
 | Math | counting | Pre-K A.1 to A.8, K A.1 to A.7, grade 1 A.1 to A.2, grade 2 A.4 |
-| Math | comparing | Pre-K B.1 to B.2, K B.1 to B.3, grade 1 A.4, grade 2 A.3 |
-| Math | add-subtract | K C.1 to C.11, grade 1 B.1 to B.10, grade 2 B.1 to B.10 |
-| Math | place-value | K D.1, grade 1 A.3 and A.5, grade 2 A.1, A.2, A.6 |
+| Math | comparing | Pre-K B.1 to B.2, K B.1 to B.3, grade 1 A.4, grade 2 A.3, grade 3 A.3 |
+| Math | add-subtract | K C.1 to C.11, grade 1 B.1 to B.10, grade 2 B.1 to B.10, grade 3 B.1 to B.4 |
+| Math | place-value | K D.1, grade 1 A.3 and A.5, grade 2 A.1, A.2, A.6, grade 3 A.1, A.2, A.4 |
 | Math | shapes | Pre-K C.1 to C.2, K E.1 to E.3, grade 1 D.2, grade 2 D.1 |
-| Math | length | Pre-K C.3, K F.1, grade 1 C.2, grade 2 C.3 |
+| Math | length | Pre-K C.3, K F.1, grade 1 C.2, grade 2 C.3, grade 3 F.4, F.3 |
 | Math | patterns | Pre-K D.1 to D.3, K G.1, grade 1 E.1, grade 2 A.5 |
-| Math | data | K F.2, grade 1 C.3, grade 2 C.4 |
-| Math | time | Grade 1 C.1, grade 2 C.1 |
+| Math | data | K F.2, grade 1 C.3, grade 2 C.4, grade 3 F.6 |
+| Math | time | Grade 1 C.1, grade 2 C.1, grade 3 F.1, F.2 |
 | Math | money | Grade 1 C.4, grade 2 C.2 |
-| Math | fractions | Grade 1 D.1, grade 2 D.2 |
+| Math | fractions | Grade 1 D.1, grade 2 D.2, grade 3 E.1 to E.4 |
+| Math | multiply-divide | Grade 3 C.1 to C.6, D.1 to D.3 (grade 2 B.8 stays on add-subtract, where saved placements already point) |
+| Math | measures | Grade 3 F.5 |
 | Language Arts | letters | Pre-K A.1 to A.5, K A.1 to A.2 |
 | Language Arts | sounds | Pre-K B.1 to B.3, K B.1 to B.3, K B.6 |
-| Language Arts | phonics | K B.4, B.5, B.7, grade 1 A.1 to A.5 |
+| Language Arts | phonics | K B.4, B.5, B.7, grade 1 A.1 to A.5, grade 2 A.1 to A.3 |
 | Language Arts | sight-words | K C.1 to C.3, grade 1 B.1 |
-| Language Arts | grammar | K D.1 to D.3, grade 1 C.1 to C.3 |
-| Language Arts | vocabulary | Pre-K C.1 to C.2, grade 1 B.2 to B.3 |
-| Language Arts | reading | K E.1, grade 1 D.1 |
+| Language Arts | grammar | K D.1 to D.3, grade 1 C.1 to C.3, grade 2 C.1 to C.4 |
+| Language Arts | vocabulary | Pre-K C.1 to C.2, grade 1 B.2 to B.3, grade 2 B.1 to B.5 |
+| Language Arts | reading | K E.1, grade 1 D.1, grade 2 D.1 to D.3 |
 | Reasoning | figures | A.1 to A.7, A.12, A.13 |
 | Reasoning | words-numbers | A.9, A.14, A.8, A.10, A.11 |
 
@@ -1334,6 +1336,62 @@ Strands: LT letters, PH sounds and phonics, WD words, GR grammar, RD reading.
 | C.2 | Describing words | GR | choice | Pick the describing word in a sentence from section 9 / pick the describing word that fits a picture |
 | C.3 | End marks | GR | choice | Period or question mark / adds exclamation mark |
 | D.1 | Read a short story | RD | choice | Authored bank: 3-sentence story, who or what question / why question |
+
+### Math, grade 3 (27 skills)
+
+Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child ahead of grade 2. Spoken numbers go up to 10,000 from here (`numberWords`).
+
+| Code | Skill | Strand | Type | Rule by level |
+| --- | --- | --- | --- | --- |
+| A.1 | Thousands, hundreds, tens, ones | NBT | choice, numberPad | Blocks to numeral to 1,999 / to 9,999 / typed / choice: value of a digit |
+| A.2 | Number names to 10,000 | NBT | choice | Words to numeral, no zeros / with a zero / numeral to words |
+| A.3 | Compare four-digit numbers | NBT | choice, order | Different thousands / same thousands / pick the sign / order: 3 numbers, smallest first |
+| A.4 | Round to 10 and 100 | NBT | choice, numberPad | Nearest ten, on a number line / nearest ten / nearest hundred / typed, either |
+| B.1 | Add within 1,000, regrouping | NBT | choice, numberPad | One regroup / two regroups / typed |
+| B.2 | Subtract within 1,000, regrouping | NBT | choice, numberPad | One regroup / two regroups / two regroups, typed (never across a zero, whose explanation needs a step of its own) |
+| B.3 | Estimate sums and differences | NBT | choice | Round both to tens, then add / to hundreds, then add or subtract / is the answer reasonable |
+| B.4 | Two-step word problems | OA | numberPad | Add and subtract / with one multiplication / with one division |
+| C.1 | Equal groups | OA | choice, numberPad | Groups picture to "3 groups of 4" / to 3 × 4 / how many in all, typed |
+| C.2 | Arrays | OA | choice, numberPad | Array to rows times columns / product, typed / 3 × 4 is the same as 4 × 3 |
+| C.3 | Multiply by 2, 5 and 10 | OA | choice, numberPad | By 2 and 10 / by 5 / mixed, typed |
+| C.4 | Multiply by 3 and 4 | OA | choice, numberPad | By 3 / by 4 / mixed, typed |
+| C.5 | Multiply by 6, 7, 8 and 9 | OA | choice, numberPad | By 6 and 7 / by 8 and 9 / mixed, typed |
+| C.6 | Missing factor | OA | choice, numberPad | ? × 4 = 12 with a picture / no picture / typed |
+| D.1 | Share equally | OA | choice, numberPad | Share a picture group into 2 or 3 / into up to 5 / typed |
+| D.2 | Division facts | OA | choice, numberPad | Divide by 2, 5, 10 / by 3, 4 / by 6 to 9, typed |
+| D.3 | Fact families | OA | choice | Pick the division that goes with 3 × 4 = 12 / the missing member / which does not belong |
+| E.1 | Name fractions | NF | choice | Unit fractions of a shape / any fraction of a shape / of a set of objects |
+| E.2 | Fractions on a number line | NF | choice | Halves and fourths / thirds and sixths / eighths |
+| E.3 | Compare fractions | NF | choice | Same bottom number / same top number / pick the sign |
+| E.4 | Equal fractions | NF | choice | Pictures side by side / on number lines / pick the equal one |
+| F.1 | Time to the minute | MD | choice | Read the clock / match time to clock / quarter past and quarter to |
+| F.2 | Elapsed time | MD | choice, numberPad | Whole hours later / half hours / minutes later, typed |
+| F.3 | Area | MD | choice, numberPad | Count square units / rows times columns / typed |
+| F.4 | Perimeter | MD | choice, numberPad | Add the sides on a grid / rectangle with two sides given / typed |
+| F.5 | Mass and volume | MD | choice | Pick the sensible unit (grams, kilograms, litres) / read a scale / compare two |
+| F.6 | Scaled graphs | MD | choice, numberPad | Picture graph, one picture is 2 / bar graph with steps of 5 / how many more, typed |
+
+### Language Arts, grade 2 (15 skills)
+
+Added on Nov 17, 2026, with Math grade 3. Compound words are already Grade 1 B.2, so grade 2 has homophones in their place.
+
+| Code | Skill | Strand | Type | Rule by level |
+| --- | --- | --- | --- | --- |
+| A.1 | More vowel teams | PH | choice | ai, ay, ee, ea, oa, ow words to pictures / pick the missing team / igh and ie |
+| A.2 | Bossy r: ar, or, er, ir, ur | PH | choice | ar or or / er, ir, ur sound the same: pick the spelling / mixed |
+| A.3 | Two-syllable words | PH | choice | How many parts / pick where it splits / pick the word made of two parts |
+| B.1 | Prefixes un and re | WD | choice | Pick the meaning of unhappy / pick the word that means "do again" / mixed |
+| B.2 | Suffixes ful, less, er, est | WD | choice | Pick the meaning / pick the word that fits a sentence / mixed |
+| B.3 | Contractions | WD | choice | Pick the contraction for two words / pick the two words / in a sentence |
+| B.4 | Synonyms and antonyms | WD | choice | Same meaning / opposite / mixed, harder words |
+| B.5 | Homophones | WD | choice | Pick the right word for a sentence: to, two, too; there, their; for, four / mixed |
+| C.1 | Nouns, verbs, adjectives | GR | sort | Sort 3 words into 3 groups / 6 words |
+| C.2 | Plurals | GR | choice | Add s or es / change y to ies / irregular: mice, feet, children |
+| C.3 | Past tense | GR | choice | Add ed / irregular: ran, saw, went / in a sentence |
+| C.4 | Punctuation | GR | choice | Capitals for names / commas in a list / apostrophe for owning |
+| D.1 | Read a story | RD | choice | Authored bank: 5-sentence story, who or what / why |
+| D.2 | Main idea | RD | choice | Authored bank: pick the best title / pick what it is mostly about |
+| D.3 | Order of events | RD | order | Authored bank: put 3 events in order / 4 events |
 
 ### Reasoning (14 skills, all grades)
 

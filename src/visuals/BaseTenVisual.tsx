@@ -9,10 +9,16 @@ type Props = { visual: Extract<Visual, { kind: 'baseTen' }> };
 const U = 7; // one unit cube
 const GAP = 8;
 
-// Place-value blocks: hundred flats, ten rods and unit cubes.
+const DEPTH = 18; // how far a thousand cube reaches back
+
+// Place-value blocks: thousand cubes, hundred flats, ten rods and unit cubes.
 export default function BaseTenVisual({ visual }: Props) {
-  const parts: { x: number; kind: 'hundred' | 'ten' | 'one'; row?: number }[] = [];
+  const parts: { x: number; kind: 'thousand' | 'hundred' | 'ten' | 'one'; row?: number }[] = [];
   let x = 2;
+  for (let i = 0; i < (visual.thousands ?? 0); i += 1) {
+    parts.push({ x, kind: 'thousand' });
+    x += U * 10 + DEPTH + GAP;
+  }
   for (let i = 0; i < visual.hundreds; i += 1) {
     parts.push({ x, kind: 'hundred' });
     x += U * 10 + GAP;
@@ -29,6 +35,24 @@ export default function BaseTenVisual({ visual }: Props) {
   return (
     <svg className={styles.svg} viewBox={`0 0 ${width} ${height}`} width={width * 2.2} role="img" aria-label={describeVisual(visual)} data-visual="baseTen">
       {parts.map((part, index) => {
+        if (part.kind === 'thousand') {
+          // A cube drawn in depth: a front face of ten by ten, with its top and side going back.
+          const front = { x: part.x, y: 2 + DEPTH, size: U * 10 - DEPTH };
+          const f = front.size;
+          return (
+            <g key={index} data-block="thousand">
+              <polygon points={`${front.x},${front.y} ${front.x + DEPTH},${front.y - DEPTH} ${front.x + DEPTH + f},${front.y - DEPTH} ${front.x + f},${front.y}`} fill={PALETTE.hundred} stroke={INK} strokeWidth="1.2" />
+              <polygon points={`${front.x + f},${front.y} ${front.x + f + DEPTH},${front.y - DEPTH} ${front.x + f + DEPTH},${front.y - DEPTH + f} ${front.x + f},${front.y + f}`} fill={PALETTE.ten} stroke={INK} strokeWidth="1.2" />
+              <rect x={front.x} y={front.y} width={f} height={f} fill={PALETTE.hundred} stroke={INK} strokeWidth="1.2" />
+              {Array.from({ length: 9 }, (_, i) => (
+                <g key={i}>
+                  <line x1={front.x + ((i + 1) * f) / 10} y1={front.y} x2={front.x + ((i + 1) * f) / 10} y2={front.y + f} stroke={INK} strokeWidth="0.4" />
+                  <line x1={front.x} y1={front.y + ((i + 1) * f) / 10} x2={front.x + f} y2={front.y + ((i + 1) * f) / 10} stroke={INK} strokeWidth="0.4" />
+                </g>
+              ))}
+            </g>
+          );
+        }
         if (part.kind === 'hundred') {
           return (
             <g key={index} data-block="hundred">

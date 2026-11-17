@@ -30,8 +30,8 @@ function checkSay(say: Say, where: string, problems: string[]): void {
     } else if ('word' in part) {
       if (!/^[A-Za-z][A-Za-z' -]*$/.test(part.word)) problems.push(`1: ${where} has a word part that is not a word`);
     } else if ('number' in part) {
-      if (!Number.isInteger(part.number) || part.number < 0 || part.number > 1000) {
-        problems.push(`1: ${where} has a number part outside 0 to 1,000`);
+      if (!Number.isInteger(part.number) || part.number < 0 || part.number > 10000) {
+        problems.push(`1: ${where} has a number part outside 0 to 10,000`);
       }
     } else if ('time' in part) {
       const { hour, minute } = part.time;

@@ -4,12 +4,12 @@ import { PRAISE, centsWords, letterName, numberWords, saySegments, sayWords, tim
 import { validateQuestion } from '../../src/engine/validate';
 
 describe('numberWords', () => {
-  it('writes 0 to 1,000 as words', () => {
+  it('writes 0 to 10,000 as words', () => {
     const cases: [number, string][] = [
       [0, 'zero'], [1, 'one'], [9, 'nine'], [10, 'ten'], [11, 'eleven'], [12, 'twelve'], [13, 'thirteen'], [15, 'fifteen'], [19, 'nineteen'],
       [20, 'twenty'], [21, 'twenty-one'], [30, 'thirty'], [40, 'forty'], [47, 'forty-seven'], [50, 'fifty'], [80, 'eighty'], [99, 'ninety-nine'],
       [100, 'one hundred'], [101, 'one hundred one'], [110, 'one hundred ten'], [115, 'one hundred fifteen'], [342, 'three hundred forty-two'],
-      [500, 'five hundred'], [999, 'nine hundred ninety-nine'], [1000, 'one thousand'],
+      [500, 'five hundred'], [999, 'nine hundred ninety-nine'], [1000, 'one thousand'], [2406, 'two thousand four hundred six'], [9999, 'nine thousand nine hundred ninety-nine'], [10000, 'ten thousand'],
     ];
     for (const [n, words] of cases) expect(numberWords(n), String(n)).toBe(words);
   });
@@ -21,7 +21,7 @@ describe('numberWords', () => {
   });
 
   it('passes anything else through as digits rather than guessing', () => {
-    expect(numberWords(1001)).toBe('1001');
+    expect(numberWords(10001)).toBe('10001');
     expect(numberWords(-3)).toBe('-3');
     expect(numberWords(2.5)).toBe('2.5');
   });

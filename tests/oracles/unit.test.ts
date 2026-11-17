@@ -222,7 +222,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'multiply', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'count', 'estimate', 'fold', 'fraction', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
