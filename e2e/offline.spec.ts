@@ -68,7 +68,7 @@ test.describe('offline and updates', () => {
     await expect(page.getByRole('button', { name, exact: true })).toBeVisible();
   });
 
-  test('a newer build is fetched when the app comes back to the front, and applied on home, never mid-question', async ({ page }) => {
+  test('a newer build is fetched when the app comes back to the front, and applied on home when Update is pressed, never mid-question', async ({ page }) => {
     const original = fs.readFileSync(SW_FILE, 'utf8');
     try {
       await page.clock.install();
@@ -103,8 +103,13 @@ test.describe('offline and updates', () => {
       expect(await page.evaluate(() => (window as unknown as { samePage?: boolean }).samePage)).toBe(true);
       expect(await waiting()).toBe(true);
 
-      // Back on home, the new build takes over and the page loads again, with the score kept.
+      // Back on home the app says a new version is ready, and nothing reloads until the button is pressed.
       await holdHome(page);
+      await expect(page.locator('[data-update-ready]')).toContainText('A new version of Sprout is ready.');
+      await page.waitForTimeout(1500);
+      expect(await page.evaluate(() => (window as unknown as { samePage?: boolean }).samePage)).toBe(true);
+      // Pressed: the new build takes over and the page loads again, with the score kept.
+      await page.getByRole('button', { name: /Update now/ }).click();
       await expect(page.getByRole('button', { name, exact: true })).toBeVisible();
       expect(await page.evaluate(() => (window as unknown as { samePage?: boolean }).samePage)).toBeUndefined();
       await expect.poll(waiting).toBe(false);

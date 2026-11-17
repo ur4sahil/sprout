@@ -2,11 +2,12 @@ import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { useAppStore } from './store';
 
-// Keeps the installed app up to date without ever interrupting a child.
+// Keeps the installed app up to date without ever interrupting anyone.
 // A Home Screen app can stay open for days, so it looks for a new version at launch and each time
 // it comes back to the front, at most once an hour. A new version is fetched in the background and
-// waits. It is applied only on the profile picker or home, never in the middle of a question:
-// both telling it to take over, and loading the page again once it has, wait for one of those screens.
+// waits. It is never applied by itself: the app shows "A new version of Sprout is ready" with an
+// "Update now" button on the profile picker, home and sign-in screens, and applies it when that is pressed.
+// Loading the page again, once the new version has taken over, also waits for one of those screens.
 
 export const CHECK_EVERY_MS = 3_600_000;
 const SAFE_SCREENS = new Set(['/', '/home']);

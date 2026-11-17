@@ -19,6 +19,7 @@ import styles from './App.module.css';
 import { runCatalogueGrowth } from './checkIn';
 import { hasPin } from './pin';
 import { routes } from './routes';
+import UpdateNotice from '../components/UpdateNotice';
 import { applyUpdate, checkForUpdate, finishUpdate, isSafeToUpdate, startUpdates } from './updates';
 import { useAppStore } from './store';
 
@@ -83,13 +84,18 @@ export default function App() {
     document.addEventListener('visibilitychange', onShow);
     return () => document.removeEventListener('visibilitychange', onShow);
   }, []);
-  // A waiting version is applied on the profile picker or home, never in the middle of a question.
+  // A waiting version is never applied by itself (the owner's choice): the app says one is ready and waits
+  // for "Update now". The notice shows only on the profile picker, home and the sign-in screens, never
+  // in the middle of a question, and the page is loaded again only there.
   const updateTookOver = useAppStore((s) => s.updateTookOver);
+  const [updating, setUpdating] = useState(false);
   useEffect(() => {
     if (steppedBack || !isSafeToUpdate(location.pathname)) return;
     if (updateTookOver) finishUpdate();
-    else if (updateReady) applyUpdate();
-  }, [updateReady, updateTookOver, steppedBack, location.pathname]);
+  }, [updateTookOver, steppedBack, location.pathname]);
+  const update = (): void => {
+    if (applyUpdate()) setUpdating(true);
+  };
 
   useEffect(() => {
     if (steppedBack) void navigate(1);
@@ -164,7 +170,8 @@ export default function App() {
   // whenever the child is back on the picker or home, never in the middle of a question.
   const quietScreen = !steppedBack && isSafeToUpdate(location.pathname);
   useEffect(() => {
-    if (status !== 'signedIn' || link === 'waiting' || !quietScreen || updateReady || updateTookOver) return;
+    // While a new version is taking over, no run starts: a request on its way delays the hand-over.
+    if (status !== 'signedIn' || link === 'waiting' || !quietScreen || updating || updateTookOver) return;
     const again = (): void => {
       if (now().getTime() - lastRun.at < RUN_GAP_MS) return;
       lastRun.at = now().getTime();
@@ -176,7 +183,7 @@ export default function App() {
     };
     document.addEventListener('visibilitychange', onShow);
     return () => document.removeEventListener('visibilitychange', onShow);
-  }, [status, link, quietScreen, updateReady, updateTookOver, location.pathname]);
+  }, [status, link, quietScreen, updating, updateTookOver, location.pathname]);
 
   useEffect(() => {
     if (status !== 'signedIn' || link === 'waiting') return;
@@ -220,6 +227,7 @@ export default function App() {
 
   return (
     <div className={styles.shell}>
+      {updateReady && quietScreen && <UpdateNotice updating={updating} onUpdate={update} />}
       {!storageSaved && (
         <Notice role="status" banner>
           Progress will not be kept on this device. It is still saved online while the internet is on.

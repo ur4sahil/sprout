@@ -180,8 +180,9 @@ describe('applying a new version', () => {
     await setUp('K');
     const user = openApp();
     await screen.findByRole('button', { name: 'Robin' });
-    // The new version arrives while the picker is showing, and is told to take over at once.
+    // The new version arrives while the picker is showing. It waits for the button.
     const incoming = browser.newVersion();
+    await user.click(await screen.findByRole('button', { name: /Update now/ }));
     await waitFor(() => expect(incoming.postMessage).toHaveBeenCalledWith({ type: 'SKIP_WAITING' }));
     // The browser is slow to hand over. Meanwhile the child opens a skill.
     await openSkill(user, 'Add to 10');
@@ -215,19 +216,35 @@ describe('applying a new version', () => {
     expect(ready()).toBe(true);
     expect(incoming.postMessage).not.toHaveBeenCalled();
     expect(screen.getByRole('region', { name: 'Question' })).toBeTruthy();
+    // Nothing says so in the middle of a question.
+    expect(screen.queryByRole('button', { name: /Update now/ })).toBeNull();
     await holdHome();
+    // Back on home it is offered, and still nothing happens until the button is pressed.
+    const button = await screen.findByRole('button', { name: /Update now/ });
+    expect(incoming.postMessage).not.toHaveBeenCalled();
+    await user.click(button);
     await waitFor(() => expect(incoming.postMessage).toHaveBeenCalledWith({ type: 'SKIP_WAITING' }));
     expect(browser.reload).not.toHaveBeenCalled();
     act(() => browser.takeOver());
     await waitFor(() => expect(browser.reload).toHaveBeenCalledTimes(1));
   });
 
-  it('a version waiting at launch is applied straight away on the profile picker', async () => {
+  it('a version waiting at launch is offered on the profile picker, and applied only when the button is pressed', async () => {
     const browser = fakeBrowser({ controlled: true, waiting: true });
     await startUpdates(browser.deps);
     await setUp('K');
-    openApp();
+    const user = openApp();
     await screen.findByRole('button', { name: 'Robin' });
-    await waitFor(() => expect(browser.registration.waiting?.postMessage).toHaveBeenCalledTimes(1));
+    const notice = await screen.findByRole('status');
+    expect(notice.textContent).toContain('A new version of Sprout is ready.');
+    // Left alone, it never applies itself.
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(browser.registration.waiting?.postMessage).not.toHaveBeenCalled();
+    expect(browser.reload).not.toHaveBeenCalled();
+    await user.click(screen.getByRole('button', { name: /Update now/ }));
+    expect(browser.registration.waiting?.postMessage).toHaveBeenCalledTimes(1);
+    expect(screen.getByRole('button', { name: /Updating/ })).toHaveProperty('disabled', true);
+    act(() => browser.takeOver());
+    await waitFor(() => expect(browser.reload).toHaveBeenCalledTimes(1));
   });
 });

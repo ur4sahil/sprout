@@ -1,6 +1,7 @@
 import path from 'node:path';
 
-export const PORT = 8799;
+// A second run on the same machine takes another port, so the two do not collide.
+export const PORT = Number(process.env.SPROUT_E2E_PORT ?? 8799);
 // The local test server, unless a run is pointed at a deployed copy (the staging check sets this).
 export const BASE_URL = process.env.SPROUT_BASE_URL ?? `https://localhost:${PORT}`;
 export const DIR = path.resolve('.e2e');
