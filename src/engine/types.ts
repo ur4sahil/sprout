@@ -73,7 +73,7 @@ export type Visual = VisualBase &
     // `scale`: each picture, or each step on a bar graph's scale, stands for this many (1 when left out).
     | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number }
     // X marks above a number line counted in halves or fourths: counts[i] marks above min + i / denominator.
-    | { kind: 'linePlot'; min: number; max: number; denominator: 2 | 4; counts: number[]; unit: string }
+    | { kind: 'linePlot'; min: number; max: number; denominator: 1 | 2 | 4; counts: number[]; unit: string }
     | { kind: 'ruler'; lengthUnits: number; startUnit: number; object: 'pencil' | 'crayon' | 'ribbon' }
     | { kind: 'fraction'; shape: 'circle' | 'rectangle'; parts: number; shaded: number; equal: boolean }
     | { kind: 'row'; children: Visual[] }
@@ -198,6 +198,13 @@ export type OracleId =
   | 'measureUnit'
   | 'quadrilateral'
   | 'ela2'
+  | 'position'
+  | 'composeShape'
+  | 'measureTool'
+  | 'lineUp'
+  | 'turnaround'
+  | 'sumList'
+  | 'unitChoice'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -246,6 +253,13 @@ export const ORACLE_FACTS: Record<OracleId, string[]> = {
   measureUnit: ['kind', 'grams'],
   quadrilateral: ['ask'],
   ela2: ['relation', 'target'],
+  position: ['ask', 'slots'],
+  composeShape: ['ask'],
+  measureTool: ['ask'],
+  lineUp: ['ask', 'rows'],
+  turnaround: ['a', 'b', 'ask'],
+  sumList: ['numbers'],
+  unitChoice: ['ask'],
   authored: ['id'],
 };
 

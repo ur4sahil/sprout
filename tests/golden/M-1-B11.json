@@ -1,0 +1,3373 @@
+{
+ "skillId": "M-1-B11",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "facts": {
+   "a": 3,
+   "b": 5,
+   "ask": "missing",
+   "options": [
+    2,
+    3,
+    4
+   ]
+  },
+  "prompt": {
+   "text": "3 + 5 = 5 + ?",
+   "speak": [
+    {
+     "number": 3
+    },
+    "plus",
+    {
+     "number": 5
+    },
+    "equals",
+    {
+     "number": 5
+    },
+    "plus what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "equation",
+   "parts": [
+    3,
+    "+",
+    5,
+    "=",
+    5,
+    "+",
+    "blank"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Adding in any order gives the same total.",
+    {
+     "number": 3
+    },
+    "plus",
+    {
+     "number": 5
+    },
+    "and",
+    {
+     "number": 5
+    },
+    "plus",
+    {
+     "number": 3
+    },
+    "both make",
+    {
+     "number": 8
+    },
+    "."
+   ],
+   "steps": [
+    "Adding in any order gives the same total.",
+    "3 + 5 = 5 + 3 = 8."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     3,
+     "+",
+     5,
+     "=",
+     5,
+     "+",
+     3
+    ]
+   }
+  },
+  "type": "choice",
+  "options": [
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "skillId": "M-1-B11",
+  "level": 1,
+  "seed": 651,
+  "key": "M-1-B11|1|{\"a\":3,\"ask\":\"missing\",\"b\":5}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "ask": "missing",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "4 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "both make",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "4 + 1 = 1 + 4 = 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-B11|1|{\"a\":4,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 2,
+     "ask": "missing",
+     "options": [
+      5,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "5 + 2 = 2 + ?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      5,
+      "+",
+      2,
+      "=",
+      2,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "both make",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "5 + 2 = 2 + 5 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       2,
+       "=",
+       2,
+       "+",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-B11|1|{\"a\":5,\"ask\":\"missing\",\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 1,
+     "ask": "missing",
+     "options": [
+      1,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "5 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      5,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "both make",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "5 + 1 = 1 + 5 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-B11|1|{\"a\":5,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "ask": "missing",
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "6 + 2 = 2 + ?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      2,
+      "=",
+      2,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "both make",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "6 + 2 = 2 + 6 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       2,
+       "=",
+       2,
+       "+",
+       6
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-B11|1|{\"a\":6,\"ask\":\"missing\",\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "ask": "missing",
+     "options": [
+      5,
+      6,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "5 + 4 = 4 + ?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      5,
+      "+",
+      4,
+      "=",
+      4,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "both make",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "5 + 4 = 4 + 5 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-B11|1|{\"a\":5,\"ask\":\"missing\",\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "ask": "missing",
+     "options": [
+      1,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "4 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "both make",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "4 + 1 = 1 + 4 = 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-B11|1|{\"a\":4,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 2,
+     "ask": "missing",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "1 + 2 = 2 + ?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      2,
+      "=",
+      2,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "both make",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "1 + 2 = 2 + 1 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       2,
+       "=",
+       2,
+       "+",
+       1
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-B11|1|{\"a\":1,\"ask\":\"missing\",\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 4,
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "1 + 4 = 4 + ?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      4,
+      "=",
+      4,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "both make",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "1 + 4 = 4 + 1 = 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       1
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-B11|1|{\"a\":1,\"ask\":\"missing\",\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 6,
+     "ask": "missing",
+     "options": [
+      2,
+      3,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "2 + 6 = 6 + ?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "+",
+      6,
+      "=",
+      6,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "and",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "both make",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "2 + 6 = 6 + 2 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       6,
+       "=",
+       6,
+       "+",
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-B11|1|{\"a\":2,\"ask\":\"missing\",\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 6,
+     "ask": "missing",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "4 + 6 = 6 + ?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "+",
+      6,
+      "=",
+      6,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "and",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "both make",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "4 + 6 = 6 + 4 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       6,
+       "=",
+       6,
+       "+",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B11",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-B11|1|{\"a\":4,\"ask\":\"missing\",\"b\":6}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 1,
+     "ask": "same",
+     "options": [
+      "1 + 7",
+      "7 + 7",
+      "7 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 7 + 1?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "both make",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "7 + 1 = 1 + 7 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       7
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-B11|2|{\"a\":7,\"ask\":\"same\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 4,
+     "ask": "same",
+     "options": [
+      "8 + 8",
+      "8 + 5",
+      "4 + 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 8 + 4?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "both make",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "8 + 4 = 4 + 8 = 12."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       8
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-B11|2|{\"a\":8,\"ask\":\"same\",\"b\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "ask": "same",
+     "options": [
+      "8 + 8",
+      "1 + 8",
+      "8 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 8 + 1?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "both make",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "8 + 1 = 1 + 8 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       8
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-B11|2|{\"a\":8,\"ask\":\"same\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 4,
+     "ask": "same",
+     "options": [
+      "10 + 5",
+      "10 + 10",
+      "4 + 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 10 + 4?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "both make",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "10 + 4 = 4 + 10 = 14."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       10
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-B11|2|{\"a\":10,\"ask\":\"same\",\"b\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 8,
+     "ask": "same",
+     "options": [
+      "7 + 7",
+      "7 + 9",
+      "8 + 7"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 7 + 8?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "both make",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "7 + 8 = 8 + 7 = 15."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       8,
+       "=",
+       8,
+       "+",
+       7
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-B11|2|{\"a\":7,\"ask\":\"same\",\"b\":8}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 1,
+     "ask": "same",
+     "options": [
+      "6 + 6",
+      "1 + 6",
+      "6 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 6 + 1?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "both make",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "6 + 1 = 1 + 6 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       6
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-B11|2|{\"a\":6,\"ask\":\"same\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 2,
+     "ask": "same",
+     "options": [
+      "2 + 1",
+      "1 + 3",
+      "1 + 1"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 1 + 2?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 + 1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "both make",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "1 + 2 = 2 + 1 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       2,
+       "=",
+       2,
+       "+",
+       1
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-B11|2|{\"a\":1,\"ask\":\"same\",\"b\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 7,
+     "ask": "same",
+     "options": [
+      "2 + 2",
+      "2 + 8",
+      "7 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 2 + 7?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "both make",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "2 + 7 = 7 + 2 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       7,
+       "=",
+       7,
+       "+",
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-B11|2|{\"a\":2,\"ask\":\"same\",\"b\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 9,
+     "ask": "same",
+     "options": [
+      "2 + 2",
+      "2 + 10",
+      "9 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 2 + 9?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "both make",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "2 + 9 = 9 + 2 = 11."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       9,
+       "=",
+       9,
+       "+",
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-B11|2|{\"a\":2,\"ask\":\"same\",\"b\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 10,
+     "ask": "same",
+     "options": [
+      "10 + 6",
+      "6 + 11",
+      "6 + 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the same as 6 + 10?",
+     "speak": [
+      "Which is the same as",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "both make",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "6 + 10 = 10 + 6 = 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       10,
+       "+",
+       6
+      ]
+     }
+    },
+    "skillId": "M-1-B11",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-B11|2|{\"a\":6,\"ask\":\"same\",\"b\":10}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 1,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "7 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "both make",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "7 + 1 = 1 + 7 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-B11|3|{\"a\":7,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 4,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "8 + 4 = 4 + ?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      4,
+      "=",
+      4,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "both make",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "8 + 4 = 4 + 8 = 12."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       8
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 8,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-B11|3|{\"a\":8,\"ask\":\"missing\",\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "8 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "both make",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "8 + 1 = 1 + 8 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       8
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 8,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-B11|3|{\"a\":8,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 4,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "10 + 4 = 4 + ?",
+     "speak": [
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "+",
+      4,
+      "=",
+      4,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "both make",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "10 + 4 = 4 + 10 = 14."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       4,
+       "=",
+       4,
+       "+",
+       10
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-B11|3|{\"a\":10,\"ask\":\"missing\",\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 8,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "7 + 8 = 8 + ?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      8,
+      "=",
+      8,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "both make",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "7 + 8 = 8 + 7 = 15."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       8,
+       "=",
+       8,
+       "+",
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-B11|3|{\"a\":7,\"ask\":\"missing\",\"b\":8}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 1,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "6 + 1 = 1 + ?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      1,
+      "=",
+      1,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "and",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "both make",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "6 + 1 = 1 + 6 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       1,
+       "=",
+       1,
+       "+",
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-B11|3|{\"a\":6,\"ask\":\"missing\",\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 2,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "1 + 2 = 2 + ?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      2,
+      "=",
+      2,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "both make",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "1 + 2 = 2 + 1 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       2,
+       "=",
+       2,
+       "+",
+       1
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-B11|3|{\"a\":1,\"ask\":\"missing\",\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 7,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "2 + 7 = 7 + ?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "+",
+      7,
+      "=",
+      7,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "both make",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "2 + 7 = 7 + 2 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       7,
+       "=",
+       7,
+       "+",
+       2
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-B11|3|{\"a\":2,\"ask\":\"missing\",\"b\":7}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 9,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "2 + 9 = 9 + ?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 9
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "+",
+      9,
+      "=",
+      9,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 9
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "both make",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "2 + 9 = 9 + 2 = 11."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       9,
+       "=",
+       9,
+       "+",
+       2
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-B11|3|{\"a\":2,\"ask\":\"missing\",\"b\":9}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 10,
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "6 + 10 = 10 + ?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      "plus what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      10,
+      "=",
+      10,
+      "+",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Adding in any order gives the same total.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "both make",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Adding in any order gives the same total.",
+      "6 + 10 = 10 + 6 = 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       10,
+       "+",
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-1-B11",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-B11|3|{\"a\":6,\"ask\":\"missing\",\"b\":10}"
+   }
+  ]
+ }
+}

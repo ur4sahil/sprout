@@ -1,0 +1,3629 @@
+{
+ "skillId": "M-1-B12",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "facts": {
+   "a": 8,
+   "b": 5,
+   "options": [
+    1,
+    3,
+    8
+   ]
+  },
+  "prompt": {
+   "text": "8 − 5 = ?  Think: 5 + ? = 8.",
+   "speak": [
+    {
+     "number": 8
+    },
+    "minus",
+    {
+     "number": 5
+    },
+    "equals what? Think:",
+    {
+     "number": 5
+    },
+    "plus what equals",
+    {
+     "number": 8
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🔴",
+   "count": 5,
+   "emoji2": "⚪",
+   "count2": 3,
+   "layout": "row"
+  },
+  "explanation": {
+   "speak": [
+    "To find",
+    {
+     "number": 8
+    },
+    "minus",
+    {
+     "number": 5
+    },
+    ", think:",
+    {
+     "number": 5
+    },
+    "plus what makes",
+    {
+     "number": 8
+    },
+    "?",
+    {
+     "number": 5
+    },
+    "plus",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 8
+    },
+    "."
+   ],
+   "steps": [
+    "Think: 5 + ? = 8.",
+    "5 + 3 = 8.",
+    "So 8 − 5 = 3."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     5,
+     "+",
+     3,
+     "=",
+     8
+    ]
+   }
+  },
+  "type": "choice",
+  "options": [
+   {
+    "kind": "text",
+    "value": "1",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 1
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "8",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 8
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "skillId": "M-1-B12",
+  "level": 1,
+  "seed": 652,
+  "key": "M-1-B12|1|{\"a\":8,\"b\":5}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 1,
+     "emoji2": "⚪",
+     "count2": 7,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 8.",
+      "1 + 7 = 8.",
+      "So 8 − 1 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-B12|1|{\"a\":8,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 3,
+     "options": [
+      6,
+      7,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "9 − 3 = ?  Think: 3 + ? = 9.",
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals what? Think:",
+      {
+       "number": 3
+      },
+      "plus what equals",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 3,
+     "emoji2": "⚪",
+     "count2": 6,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ", think:",
+      {
+       "number": 3
+      },
+      "plus what makes",
+      {
+       "number": 9
+      },
+      "?",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 3 + ? = 9.",
+      "3 + 6 = 9.",
+      "So 9 − 3 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       6,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-B12|1|{\"a\":9,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "options": [
+      1,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "9 − 1 = ?  Think: 1 + ? = 9.",
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 1,
+     "emoji2": "⚪",
+     "count2": 8,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 9
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 9.",
+      "1 + 8 = 9.",
+      "So 9 − 1 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       8,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-B12|1|{\"a\":9,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 3,
+     "options": [
+      7,
+      8,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "10 − 3 = ?  Think: 3 + ? = 10.",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals what? Think:",
+      {
+       "number": 3
+      },
+      "plus what equals",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 3,
+     "emoji2": "⚪",
+     "count2": 7,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ", think:",
+      {
+       "number": 3
+      },
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 3 + ? = 10.",
+      "3 + 7 = 10.",
+      "So 10 − 3 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       7,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-B12|1|{\"a\":10,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 7,
+     "options": [
+      2,
+      7,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "9 − 7 = ?  Think: 7 + ? = 9.",
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals what? Think:",
+      {
+       "number": 7
+      },
+      "plus what equals",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 7,
+     "emoji2": "⚪",
+     "count2": 2,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      ", think:",
+      {
+       "number": 7
+      },
+      "plus what makes",
+      {
+       "number": 9
+      },
+      "?",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 7 + ? = 9.",
+      "7 + 2 = 9.",
+      "So 9 − 7 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       2,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-B12|1|{\"a\":9,\"b\":7}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "options": [
+      1,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 1,
+     "emoji2": "⚪",
+     "count2": 7,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 8.",
+      "1 + 7 = 8.",
+      "So 8 − 1 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-B12|1|{\"a\":8,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 1,
+     "options": [
+      1,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "5 − 1 = ?  Think: 1 + ? = 5.",
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 5
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 1,
+     "emoji2": "⚪",
+     "count2": 4,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 5
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 5.",
+      "1 + 4 = 5.",
+      "So 5 − 1 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       4,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-B12|1|{\"a\":5,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "options": [
+      2,
+      3,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "5 − 3 = ?  Think: 3 + ? = 5.",
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals what? Think:",
+      {
+       "number": 3
+      },
+      "plus what equals",
+      {
+       "number": 5
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 3,
+     "emoji2": "⚪",
+     "count2": 2,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ", think:",
+      {
+       "number": 3
+      },
+      "plus what makes",
+      {
+       "number": 5
+      },
+      "?",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 3 + ? = 5.",
+      "3 + 2 = 5.",
+      "So 5 − 3 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       2,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-B12|1|{\"a\":5,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 5,
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "6 − 5 = ?  Think: 5 + ? = 6.",
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals what? Think:",
+      {
+       "number": 5
+      },
+      "plus what equals",
+      {
+       "number": 6
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 5,
+     "emoji2": "⚪",
+     "count2": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      ", think:",
+      {
+       "number": 5
+      },
+      "plus what makes",
+      {
+       "number": 6
+      },
+      "?",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 5 + ? = 6.",
+      "5 + 1 = 6.",
+      "So 6 − 5 = 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       1,
+       "=",
+       6
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-B12|1|{\"a\":6,\"b\":5}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 7,
+     "options": [
+      0,
+      1,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "8 − 7 = ?  Think: 7 + ? = 8.",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals what? Think:",
+      {
+       "number": 7
+      },
+      "plus what equals",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🔴",
+     "count": 7,
+     "emoji2": "⚪",
+     "count2": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      ", think:",
+      {
+       "number": 7
+      },
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 7 + ? = 8.",
+      "7 + 1 = 8.",
+      "So 8 − 7 = 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-B12|1|{\"a\":8,\"b\":7}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 6,
+     "options": [
+      9,
+      10,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "16 − 6 = ?  Think: 6 + ? = 16.",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals what? Think:",
+      {
+       "number": 6
+      },
+      "plus what equals",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      "blank",
+      "=",
+      16
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      ", think:",
+      {
+       "number": 6
+      },
+      "plus what makes",
+      {
+       "number": 16
+      },
+      "?",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 6 + ? = 16.",
+      "6 + 10 = 16.",
+      "So 16 − 6 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-B12|2|{\"a\":16,\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 10,
+     "options": [
+      7,
+      8,
+      17
+     ]
+    },
+    "prompt": {
+     "text": "17 − 10 = ?  Think: 10 + ? = 17.",
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what? Think:",
+      {
+       "number": 10
+      },
+      "plus what equals",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "+",
+      "blank",
+      "=",
+      17
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      ", think:",
+      {
+       "number": 10
+      },
+      "plus what makes",
+      {
+       "number": 17
+      },
+      "?",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 10 + ? = 17.",
+      "10 + 7 = 17.",
+      "So 17 − 10 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       7,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-B12|2|{\"a\":17,\"b\":10}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 7,
+     "options": [
+      7,
+      10,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "17 − 7 = ?  Think: 7 + ? = 17.",
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals what? Think:",
+      {
+       "number": 7
+      },
+      "plus what equals",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      "blank",
+      "=",
+      17
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      ", think:",
+      {
+       "number": 7
+      },
+      "plus what makes",
+      {
+       "number": 17
+      },
+      "?",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 7 + ? = 17.",
+      "7 + 10 = 17.",
+      "So 17 − 7 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       10,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-B12|2|{\"a\":17,\"b\":7}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 20,
+     "b": 13,
+     "options": [
+      7,
+      13,
+      20
+     ]
+    },
+    "prompt": {
+     "text": "20 − 13 = ?  Think: 13 + ? = 20.",
+     "speak": [
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 20
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      20
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 20
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 20.",
+      "13 + 7 = 20.",
+      "So 20 − 13 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       7,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-B12|2|{\"a\":20,\"b\":13}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 13,
+     "options": [
+      3,
+      13,
+      16
+     ]
+    },
+    "prompt": {
+     "text": "16 − 13 = ?  Think: 13 + ? = 16.",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      16
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 16
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 16.",
+      "13 + 3 = 16.",
+      "So 16 − 13 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       3,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-B12|2|{\"a\":16,\"b\":13}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 4,
+     "options": [
+      4,
+      10,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "14 − 4 = ?  Think: 4 + ? = 14.",
+     "speak": [
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals what? Think:",
+      {
+       "number": 4
+      },
+      "plus what equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "+",
+      "blank",
+      "=",
+      14
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      ", think:",
+      {
+       "number": 4
+      },
+      "plus what makes",
+      {
+       "number": 14
+      },
+      "?",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 4 + ? = 14.",
+      "4 + 10 = 14.",
+      "So 14 − 4 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       10,
+       "=",
+       14
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-B12|2|{\"a\":14,\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "options": [
+      1,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      "blank",
+      "=",
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 8.",
+      "1 + 7 = 8.",
+      "So 8 − 1 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-B12|2|{\"a\":8,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 6,
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "10 − 6 = ?  Think: 6 + ? = 10.",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals what? Think:",
+      {
+       "number": 6
+      },
+      "plus what equals",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      "blank",
+      "=",
+      10
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      ", think:",
+      {
+       "number": 6
+      },
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 6 + ? = 10.",
+      "6 + 4 = 10.",
+      "So 10 − 6 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       4,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-B12|2|{\"a\":10,\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 8,
+     "options": [
+      2,
+      3,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "10 − 8 = ?  Think: 8 + ? = 10.",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals what? Think:",
+      {
+       "number": 8
+      },
+      "plus what equals",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      "blank",
+      "=",
+      10
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      ", think:",
+      {
+       "number": 8
+      },
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 8 + ? = 10.",
+      "8 + 2 = 10.",
+      "So 10 − 8 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       2,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-B12|2|{\"a\":10,\"b\":8}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 13,
+     "options": [
+      0,
+      1,
+      14
+     ]
+    },
+    "prompt": {
+     "text": "14 − 13 = ?  Think: 13 + ? = 14.",
+     "speak": [
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      14
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 14
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 14.",
+      "13 + 1 = 14.",
+      "So 14 − 13 = 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       1,
+       "=",
+       14
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B12",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-B12|2|{\"a\":14,\"b\":13}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 6
+    },
+    "prompt": {
+     "text": "16 − 6 = ?  Think: 6 + ? = 16.",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals what? Think:",
+      {
+       "number": 6
+      },
+      "plus what equals",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      "blank",
+      "=",
+      16
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      ", think:",
+      {
+       "number": 6
+      },
+      "plus what makes",
+      {
+       "number": 16
+      },
+      "?",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 6 + ? = 16.",
+      "6 + 10 = 16.",
+      "So 16 − 6 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-B12|3|{\"a\":16,\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 10
+    },
+    "prompt": {
+     "text": "17 − 10 = ?  Think: 10 + ? = 17.",
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals what? Think:",
+      {
+       "number": 10
+      },
+      "plus what equals",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "+",
+      "blank",
+      "=",
+      17
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      ", think:",
+      {
+       "number": 10
+      },
+      "plus what makes",
+      {
+       "number": 17
+      },
+      "?",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 10 + ? = 17.",
+      "10 + 7 = 17.",
+      "So 17 − 10 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       7,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-B12|3|{\"a\":17,\"b\":10}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 7
+    },
+    "prompt": {
+     "text": "17 − 7 = ?  Think: 7 + ? = 17.",
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals what? Think:",
+      {
+       "number": 7
+      },
+      "plus what equals",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      "blank",
+      "=",
+      17
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      ", think:",
+      {
+       "number": 7
+      },
+      "plus what makes",
+      {
+       "number": 17
+      },
+      "?",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 7 + ? = 17.",
+      "7 + 10 = 17.",
+      "So 17 − 7 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       10,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-B12|3|{\"a\":17,\"b\":7}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 20,
+     "b": 13
+    },
+    "prompt": {
+     "text": "20 − 13 = ?  Think: 13 + ? = 20.",
+     "speak": [
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 20
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      20
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 20
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 20.",
+      "13 + 7 = 20.",
+      "So 20 − 13 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       7,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-B12|3|{\"a\":20,\"b\":13}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 13
+    },
+    "prompt": {
+     "text": "16 − 13 = ?  Think: 13 + ? = 16.",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      16
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 16
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 16.",
+      "13 + 3 = 16.",
+      "So 16 − 13 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       3,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-B12|3|{\"a\":16,\"b\":13}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 4
+    },
+    "prompt": {
+     "text": "14 − 4 = ?  Think: 4 + ? = 14.",
+     "speak": [
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals what? Think:",
+      {
+       "number": 4
+      },
+      "plus what equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "+",
+      "blank",
+      "=",
+      14
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      ", think:",
+      {
+       "number": 4
+      },
+      "plus what makes",
+      {
+       "number": 14
+      },
+      "?",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 4 + ? = 14.",
+      "4 + 10 = 14.",
+      "So 14 − 4 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       10,
+       "=",
+       14
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 10,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-B12|3|{\"a\":14,\"b\":4}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1
+    },
+    "prompt": {
+     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what? Think:",
+      {
+       "number": 1
+      },
+      "plus what equals",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      "blank",
+      "=",
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ", think:",
+      {
+       "number": 1
+      },
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 1 + ? = 8.",
+      "1 + 7 = 8.",
+      "So 8 − 1 = 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-B12|3|{\"a\":8,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 6
+    },
+    "prompt": {
+     "text": "10 − 6 = ?  Think: 6 + ? = 10.",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals what? Think:",
+      {
+       "number": 6
+      },
+      "plus what equals",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      "blank",
+      "=",
+      10
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      ", think:",
+      {
+       "number": 6
+      },
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 6 + ? = 10.",
+      "6 + 4 = 10.",
+      "So 10 − 6 = 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       4,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-B12|3|{\"a\":10,\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 8
+    },
+    "prompt": {
+     "text": "10 − 8 = ?  Think: 8 + ? = 10.",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals what? Think:",
+      {
+       "number": 8
+      },
+      "plus what equals",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      "blank",
+      "=",
+      10
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      ", think:",
+      {
+       "number": 8
+      },
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 8 + ? = 10.",
+      "8 + 2 = 10.",
+      "So 10 − 8 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       2,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-B12|3|{\"a\":10,\"b\":8}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 13
+    },
+    "prompt": {
+     "text": "14 − 13 = ?  Think: 13 + ? = 14.",
+     "speak": [
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what? Think:",
+      {
+       "number": 13
+      },
+      "plus what equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      13,
+      "+",
+      "blank",
+      "=",
+      14
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "To find",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      ", think:",
+      {
+       "number": 13
+      },
+      "plus what makes",
+      {
+       "number": 14
+      },
+      "?",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Think: 13 + ? = 14.",
+      "13 + 1 = 14.",
+      "So 14 − 13 = 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       1,
+       "=",
+       14
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 2,
+    "skillId": "M-1-B12",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-B12|3|{\"a\":14,\"b\":13}"
+   }
+  ]
+ }
+}

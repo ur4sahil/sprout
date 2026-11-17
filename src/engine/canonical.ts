@@ -80,7 +80,12 @@ export function canonicalVisual(visual: Visual | 'blank'): Plain {
         count: visual.count,
         layout: visual.layout,
       };
-      if (visual.slots) out.slots = visual.slots.slice().sort((a, b) => a - b);
+      // Within one kind of picture the order of its places does not matter; which kind sits where does.
+      if (visual.slots) {
+        const first = visual.slots.slice(0, visual.count).sort((a, b) => a - b);
+        const second = visual.slots.slice(visual.count).sort((a, b) => a - b);
+        out.slots = [...first, ...second];
+      }
       if (visual.crossed) out.crossed = visual.crossed;
       if (visual.numbered) out.numbered = true;
       if (visual.emoji2 !== undefined && visual.count2) {

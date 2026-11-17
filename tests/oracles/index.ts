@@ -8,6 +8,7 @@ import { estimate } from './estimate';
 import { fold } from './fold';
 import { fraction } from './fraction';
 import { ela2 } from './ela2';
+import { composeShape, lineUp, measureTool, position, sumList, turnaround, unitChoice } from './kGaps';
 import { elapsed } from './elapsed';
 import { fractionValue } from './fractionValue';
 import { measureUnit } from './measureUnit';
@@ -54,6 +55,13 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   measureUnit,
   quadrilateral,
   ela2,
+  position,
+  composeShape,
+  measureTool,
+  lineUp,
+  turnaround,
+  sumList,
+  unitChoice,
   round,
   estimate,
   count,

@@ -222,7 +222,7 @@ describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
     expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'time', 'transform', 'truth', 'twoStep', 'wordSet'],
+      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'wordSet'],
     );
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });

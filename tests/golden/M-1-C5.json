@@ -1,0 +1,2972 @@
+{
+ "skillId": "M-1-C5",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "n": 3,
+   "oracle": "count",
+   "options": [
+    1,
+    2,
+    3
+   ]
+  },
+  "prompt": {
+   "text": "How many paper clips long is the pencil?",
+   "speak": [
+    "How many paper clips long is the pencil?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "✏️",
+     "count": 1,
+     "layout": "row"
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "📎",
+     "count": 3,
+     "layout": "row"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "1",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 1
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "2",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 2
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 3
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "Count the clips from end to end:",
+    {
+     "number": 3
+    },
+    "."
+   ],
+   "steps": [
+    "Count the clips from end to end: 3."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "row"
+     }
+    ]
+   }
+  },
+  "skillId": "M-1-C5",
+  "level": 1,
+  "seed": 654,
+  "key": "M-1-C5|1|{\"n\":3,\"oracle\":\"count\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "oracle": "count",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the crayon?",
+     "speak": [
+      "How many paper clips long is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖍️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖍️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-C5|1|{\"n\":2,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 4,
+     "oracle": "count",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the spoon?",
+     "speak": [
+      "How many paper clips long is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥄",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-C5|1|{\"n\":4,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "oracle": "count",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the spoon?",
+     "speak": [
+      "How many paper clips long is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥄",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-C5|1|{\"n\":2,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 4,
+     "oracle": "count",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the spoon?",
+     "speak": [
+      "How many paper clips long is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 4."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥄",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-C5|1|{\"n\":4,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 7,
+     "oracle": "count",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the spoon?",
+     "speak": [
+      "How many paper clips long is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥄",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 7,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 7."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥄",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 7,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-C5|1|{\"n\":7,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "oracle": "count",
+     "options": [
+      1,
+      2,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the crayon?",
+     "speak": [
+      "How many paper clips long is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖍️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖍️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-C5|1|{\"n\":2,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "oracle": "count",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the pencil?",
+     "speak": [
+      "How many paper clips long is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 2,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 2."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 2,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-C5|1|{\"n\":2,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 6,
+     "oracle": "count",
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the pencil?",
+     "speak": [
+      "How many paper clips long is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 6,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 6."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 6,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-C5|1|{\"n\":6,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 7,
+     "oracle": "count",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the pencil?",
+     "speak": [
+      "How many paper clips long is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 7,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 7."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✏️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 7,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-C5|1|{\"n\":7,\"oracle\":\"count\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 8,
+     "oracle": "count",
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "How many paper clips long is the crayon?",
+     "speak": [
+      "How many paper clips long is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🖍️",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "📎",
+       "count": 8,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count the clips from end to end:",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Count the clips from end to end: 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🖍️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "📎",
+        "count": 8,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-C5|1|{\"n\":8,\"oracle\":\"count\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "start,nogap",
+      "late,nogap",
+      "start,gap"
+     ],
+     "options": [
+      "lined",
+      "start",
+      "gap"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3,
+       4
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"start,nogap\",\"late,nogap\",\"start,gap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,gap",
+      "start,nogap"
+     ],
+     "options": [
+      "start",
+      "gap",
+      "lined"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,gap\",\"start,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,nogap",
+      "start,gap"
+     ],
+     "options": [
+      "start",
+      "lined",
+      "gap"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3,
+       4
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,nogap\",\"start,gap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "start,gap",
+      "late,nogap",
+      "start,nogap"
+     ],
+     "options": [
+      "gap",
+      "start",
+      "lined"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"start,gap\",\"late,nogap\",\"start,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,gap",
+      "start,nogap"
+     ],
+     "options": [
+      "start",
+      "gap",
+      "lined"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,gap\",\"start,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,nogap",
+      "start,gap"
+     ],
+     "options": [
+      "start",
+      "lined",
+      "gap"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3,
+       4
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,nogap\",\"start,gap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "start,nogap",
+      "start,gap",
+      "late,nogap"
+     ],
+     "options": [
+      "lined",
+      "gap",
+      "start"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"start,nogap\",\"start,gap\",\"late,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,gap",
+      "start,nogap"
+     ],
+     "options": [
+      "start",
+      "gap",
+      "lined"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,gap\",\"start,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "late,nogap",
+      "start,gap",
+      "start,nogap"
+     ],
+     "options": [
+      "start",
+      "gap",
+      "lined"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"late,nogap\",\"start,gap\",\"start,nogap\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "lined",
+     "rows": [
+      "start,nogap",
+      "start,gap",
+      "late,nogap"
+     ],
+     "options": [
+      "lined",
+      "gap",
+      "start"
+     ]
+    },
+    "prompt": {
+     "text": "Which row of paper clips is lined up the right way, from the start with no gaps?",
+     "speak": [
+      "Which row of paper clips is lined up the right way, from the start with no gaps?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       4
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       1,
+       2,
+       3,
+       4
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at the very end and leave no gaps between the clips."
+     ],
+     "steps": [
+      "Start at the very end.",
+      "Leave no gaps."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📎",
+      "count": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-C5|2|{\"ask\":\"lined\",\"rows\":[\"start,nogap\",\"start,gap\",\"late,nogap\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The crayon is 5 paper clips long. A key is 3 paper clips long. How many clips longer is the crayon?",
+     "speak": [
+      "The crayon is",
+      {
+       "number": 5
+      },
+      "paper clips long. A key is",
+      {
+       "number": 3
+      },
+      "paper clips long. How many clips longer is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🖍️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 5,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 3,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "5 − 3 = 2.",
+      "The crayon is 2 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-C5|3|{\"a\":5,\"b\":3,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The spoon is 6 paper clips long. A key is 2 paper clips long. How many clips longer is the spoon?",
+     "speak": [
+      "The spoon is",
+      {
+       "number": 6
+      },
+      "paper clips long. A key is",
+      {
+       "number": 2
+      },
+      "paper clips long. How many clips longer is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🥄",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 6,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 2,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 4,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 2 = 4.",
+      "The spoon is 4 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-C5|3|{\"a\":6,\"b\":2,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The spoon is 5 paper clips long. A key is 3 paper clips long. How many clips longer is the spoon?",
+     "speak": [
+      "The spoon is",
+      {
+       "number": 5
+      },
+      "paper clips long. A key is",
+      {
+       "number": 3
+      },
+      "paper clips long. How many clips longer is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🥄",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 5,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 3,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "5 − 3 = 2.",
+      "The spoon is 2 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-C5|3|{\"a\":5,\"b\":3,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The spoon is 6 paper clips long. A key is 2 paper clips long. How many clips longer is the spoon?",
+     "speak": [
+      "The spoon is",
+      {
+       "number": 6
+      },
+      "paper clips long. A key is",
+      {
+       "number": 2
+      },
+      "paper clips long. How many clips longer is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🥄",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 6,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 2,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 4,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 2 = 4.",
+      "The spoon is 4 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-C5|3|{\"a\":6,\"b\":2,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 2,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The spoon is 8 paper clips long. A key is 2 paper clips long. How many clips longer is the spoon?",
+     "speak": [
+      "The spoon is",
+      {
+       "number": 8
+      },
+      "paper clips long. A key is",
+      {
+       "number": 2
+      },
+      "paper clips long. How many clips longer is the spoon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🥄",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 8,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 2,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "8 − 2 = 6.",
+      "The spoon is 6 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-C5|3|{\"a\":8,\"b\":2,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The crayon is 5 paper clips long. A key is 3 paper clips long. How many clips longer is the crayon?",
+     "speak": [
+      "The crayon is",
+      {
+       "number": 5
+      },
+      "paper clips long. A key is",
+      {
+       "number": 3
+      },
+      "paper clips long. How many clips longer is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🖍️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 5,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 3,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "5 − 3 = 2.",
+      "The crayon is 2 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-C5|3|{\"a\":5,\"b\":3,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The pencil is 5 paper clips long. A key is 4 paper clips long. How many clips longer is the pencil?",
+     "speak": [
+      "The pencil is",
+      {
+       "number": 5
+      },
+      "paper clips long. A key is",
+      {
+       "number": 4
+      },
+      "paper clips long. How many clips longer is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "✏️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 5,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 4,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "5 − 4 = 1.",
+      "The pencil is 1 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       4,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-C5|3|{\"a\":5,\"b\":4,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 2,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The pencil is 8 paper clips long. A key is 2 paper clips long. How many clips longer is the pencil?",
+     "speak": [
+      "The pencil is",
+      {
+       "number": 8
+      },
+      "paper clips long. A key is",
+      {
+       "number": 2
+      },
+      "paper clips long. How many clips longer is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "✏️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 8,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 2,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "8 − 2 = 6.",
+      "The pencil is 6 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-C5|3|{\"a\":8,\"b\":2,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 2,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The pencil is 9 paper clips long. A key is 2 paper clips long. How many clips longer is the pencil?",
+     "speak": [
+      "The pencil is",
+      {
+       "number": 9
+      },
+      "paper clips long. A key is",
+      {
+       "number": 2
+      },
+      "paper clips long. How many clips longer is the pencil?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "✏️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 9,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 2,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "9 − 2 = 7.",
+      "The pencil is 7 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       2,
+       "=",
+       7
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-C5|3|{\"a\":9,\"b\":2,\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 4,
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "The crayon is 9 paper clips long. A key is 4 paper clips long. How many clips longer is the crayon?",
+     "speak": [
+      "The crayon is",
+      {
+       "number": 9
+      },
+      "paper clips long. A key is",
+      {
+       "number": 4
+      },
+      "paper clips long. How many clips longer is the crayon?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🖍️",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 9,
+         "layout": "row"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🔑",
+         "count": 1,
+         "layout": "row"
+        },
+        {
+         "kind": "emojiGroup",
+         "emoji": "📎",
+         "count": 4,
+         "layout": "row"
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 5,
+    "maxDigits": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "9 − 4 = 5.",
+      "The crayon is 5 clips longer."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "-",
+       4,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-1-C5",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-C5|3|{\"a\":9,\"b\":4,\"oracle\":\"subtract\"}"
+   }
+  ]
+ }
+}

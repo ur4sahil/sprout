@@ -6,6 +6,7 @@ import { kindsOfWordsGenerator, pastTenseGenerator, plurals2Generator, punctuati
 import { bossyRGenerator, twoPartsGenerator, vowelTeams2Generator } from './generators/ela/g2/phonics';
 import { mainIdeaGenerator, orderOfEventsGenerator, readStory2Generator } from './generators/ela/g2/reading';
 import { contractionsGenerator, homophonesGenerator, prefixesGenerator, suffixesGenerator, synonymsGenerator } from './generators/ela/g2/words';
+import { contextWordsGenerator, g1CharactersGenerator, g1FactsGenerator, g2FactsGenerator, kCharactersGenerator, kFactsGenerator, retell1Generator, retell2Generator, trueFalseGenerator } from './generators/ela/comprehension';
 import { describingGenerator, endMarksGenerator, nounsAndVerbsGenerator, readStoryGenerator } from './generators/ela/g1/grammar';
 import { blendsGenerator, digraphsGenerator, shortOrLongGenerator, silentEGenerator, vowelTeamsGenerator } from './generators/ela/g1/phonics';
 import { compoundsGenerator, meaningsGenerator, sightWordsFourGenerator } from './generators/ela/g1/words';
@@ -31,6 +32,9 @@ import { compareThreeDigitGenerator, evenOddGenerator, expandedFormGenerator, hu
 import { halvesThirdsFourthsGenerator, nameBySidesGenerator } from './generators/math/g2/shapes';
 import { addRegroup1000Generator, estimateGenerator, subtractRegroup1000Generator, twoStep3Generator } from './generators/math/g3/addSubtract';
 import { arrays3Generator, divisionFactsGenerator, equalGroupsGenerator, factFamiliesGenerator, missingFactorGenerator, shareEquallyGenerator, times2510Generator, times34Generator, times6789Generator } from './generators/math/g3/multiply';
+import { composeShapesGenerator, measurableGenerator, positionWordsGenerator } from './generators/math/k/gaps';
+import { countOnGenerator, howManyPiecesGenerator, paperClipsGenerator, subtractByAddingGenerator, turnaroundGenerator } from './generators/math/g1/gaps';
+import { addManyGenerator, compareLengthsGenerator, linePlots2Generator, rowsColumnsGenerator, unitsGenerator } from './generators/math/g2/gaps';
 import { compareFractionsGenerator, equalFractionsGenerator, fractionLineGenerator, nameFractionsGenerator } from './generators/math/g3/fractions';
 import { areaGenerator, elapsedTimeGenerator, linePlotsGenerator, massVolumeGenerator, perimeterGenerator, scaledGraphsGenerator, timeToMinuteGenerator } from './generators/math/g3/measure';
 import { equalAreaGenerator, patterns3Generator, quadrilateralsGenerator, timesTensGenerator } from './generators/math/g3/patternsShapes';
@@ -169,6 +173,19 @@ const ALL: readonly SkillGenerator[] = [
   linePlotsGenerator,
   quadrilateralsGenerator,
   equalAreaGenerator,
+  positionWordsGenerator,
+  composeShapesGenerator,
+  measurableGenerator,
+  turnaroundGenerator,
+  subtractByAddingGenerator,
+  countOnGenerator,
+  paperClipsGenerator,
+  howManyPiecesGenerator,
+  addManyGenerator,
+  unitsGenerator,
+  compareLengthsGenerator,
+  linePlots2Generator,
+  rowsColumnsGenerator,
   vowelTeams2Generator,
   bossyRGenerator,
   twoPartsGenerator,
@@ -184,6 +201,15 @@ const ALL: readonly SkillGenerator[] = [
   readStory2Generator,
   mainIdeaGenerator,
   orderOfEventsGenerator,
+  kCharactersGenerator,
+  kFactsGenerator,
+  g1CharactersGenerator,
+  retell1Generator,
+  trueFalseGenerator,
+  g1FactsGenerator,
+  retell2Generator,
+  g2FactsGenerator,
+  contextWordsGenerator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,
