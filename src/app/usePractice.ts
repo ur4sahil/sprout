@@ -5,9 +5,11 @@ import { speak, speakPhrase, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import { MILESTONE_WORDS } from '../components/Celebration';
 import type { Skill } from '../content/catalogue';
+import { ladderPrerequisite } from '../content/ladders';
 import { nextQuestion } from '../content/registry';
 import { makeRng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
+import { SKIP_TEST_QUESTIONS, earnsSkipTest, passedByTest } from '../engine/fastTrack';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
 import type { Question, Response } from '../engine/types';
 import { now } from '../lib/clock';
@@ -21,7 +23,8 @@ import { TIMING } from './timing';
 
 // One child practising one skill: which question is showing, and what happens after each answer.
 
-export type PracticePhase = 'loading' | 'asking' | 'saving' | 'correct' | 'wrong' | 'celebrating' | 'break' | 'failed';
+// `skipped`: the child passed the short test on a new skill and need not practise it.
+export type PracticePhase = 'loading' | 'asking' | 'saving' | 'correct' | 'wrong' | 'celebrating' | 'break' | 'skipped' | 'failed';
 
 export interface Practice {
   phase: PracticePhase;
@@ -42,8 +45,9 @@ export interface Practice {
 
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
-function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: readonly string[]): Question {
-  const level = levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
+// `testing`: the short test on a new skill asks at the skill's hardest level.
+function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: readonly string[], testing = false): Question {
+  const level = testing ? skill.maxLevel : levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
   // n is how many answers the child has already given on this skill.
   return nextQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state.attempts), keys);
 }
@@ -72,12 +76,13 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     answered: number;
     pending: AnswerOutcome | null; // an answer worked out but not yet saved, kept for a retry
     crossed: number[];
+    testLeft: number; // questions still to come in the short test on a new skill. 0 when there is no test
     alive: boolean;
-  }>({ state: null, session: null, keys: [], question: null, shownAt: now(), answered: 0, pending: null, crossed: [], alive: true });
+  }>({ state: null, session: null, keys: [], question: null, shownAt: now(), answered: 0, pending: null, crossed: [], testLeft: 0, alive: true });
 
   const show = useCallback(
     (next: SkillState, keys: string[]): void => {
-      const q = pickQuestion(child, skill, next, keys);
+      const q = pickQuestion(child, skill, next, keys, live.current.testLeft > 0);
       live.current.question = q;
       live.current.shownAt = now();
       live.current.pending = null;
@@ -97,8 +102,12 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     void (async () => {
       try {
         const { repo } = await openRepo();
-        const saved = (await repo.getSkillStates(child.id)).find((s) => s.skillId === skill.id);
+        const all = await repo.getSkillStates(child.id);
+        const saved = all.find((s) => s.skillId === skill.id);
         const start = saved ?? newSkillState(child.id, skill.id, now().toISOString());
+        // The skill before this one, mastered without a miss, earns a two-question test on this one.
+        const before = ladderPrerequisite(skill.id);
+        self.testLeft = earnsSkipTest(saved, all.find((s) => s.skillId === before)) ? SKIP_TEST_QUESTIONS : 0;
         const attempts = await repo.listAttempts(child.id, { skillId: skill.id, limit: 12 });
         if (!self.alive) return;
         self.state = start;
@@ -191,10 +200,33 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         setAnswered(self.answered);
 
         if (!outcome.correct) {
+          self.testLeft = 0; // a miss ends the short test, and ordinary practice carries on
           // No buzzer. It says "Not quite", then the explanation is read aloud, and it waits for "Got it".
           setPhase('wrong');
           void speak(openingWords(q), child.settings.speechRate);
           return;
+        }
+        // The short test: every answer right and the skill is passed without practising it.
+        if (self.testLeft > 0) {
+          self.testLeft -= 1;
+          if (self.testLeft === 0) {
+            const passed = passedByTest(outcome.state, now().toISOString());
+            try {
+              const { repo } = await openRepo();
+              await repo.saveSkillState(passed);
+              if (!self.alive) return;
+              self.state = passed;
+              self.crossed = [];
+              setState(passed);
+              playSfx('fanfare');
+              setPhase('skipped');
+              void speak(['You know this one already. On to the next.'], child.settings.speechRate);
+              return;
+            } catch (error) {
+              // It could not be saved: the child simply carries on practising, with the two answers counted.
+              logError(error);
+            }
+          }
         }
         setPhase('correct');
         playSfx('chime');

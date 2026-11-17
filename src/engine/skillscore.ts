@@ -1,4 +1,5 @@
 import type { SkillState } from '../storage/schema';
+import { FAST_RUN } from './fastTrack';
 import { scheduleFirstReview } from './review';
 import type { Level } from './types';
 
@@ -99,6 +100,8 @@ export interface PracticeResult {
 // The whole skill state after one practice answer.
 export function applyPractice(state: SkillState, correct: boolean, gentle: boolean, nowIso: string): PracticeResult {
   const result = applyAnswer(state, correct, gentle);
+  // The fast track: the first five answers on a skill, all right, take the score straight to the challenge zone.
+  if (correct && state.attempts === FAST_RUN - 1 && state.correct === FAST_RUN - 1 && result.score < CHALLENGE) result.score = CHALLENGE;
   const milestones = MILESTONES.filter((mark) => result.score >= mark && state.bestScore < mark);
   const next: SkillState = {
     ...state,

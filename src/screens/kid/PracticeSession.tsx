@@ -8,6 +8,7 @@ import { speak, stop } from '../../audio/speech';
 import { warmQuestion } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import Celebration from '../../components/Celebration';
+import FullScreenCard from '../../components/FullScreenCard';
 import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
@@ -146,6 +147,14 @@ export default function PracticeSession({ child, skill, play }: Props) {
       )}
       {phase === 'celebrating' && practice.milestone !== null && (
         <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} />
+      )}
+      {phase === 'skipped' && (
+        <FullScreenCard emoji="🚀" title="You know this one!" line={`${skill.name}: no need to practise it.`} name="skipped">
+          <BigButton size="kid" onClick={play ? play.onNext : goHome}>
+            <Icon name="next" />
+            {play ? "Next one" : "Home"}
+          </BigButton>
+        </FullScreenCard>
       )}
       {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}

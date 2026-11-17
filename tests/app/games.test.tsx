@@ -19,7 +19,8 @@ vi.mock('../../src/audio/speech', async (original) => ({
 
 // The scratchpad and the two games (plan section 10, step 22).
 
-const started = (child: Child, skillId: string, score: number, change: Partial<SkillState> = {}): SkillState => ({ ...newSkillState(child.id, skillId, NOW.toISOString()), score, bestScore: score, attempts: 3, correct: 3, recent: [true, true, true], lastPracticedAt: NOW.toISOString(), ...change });
+// A skill in progress, with one miss behind it, so the fast track (five right from the start) does not apply.
+const started = (child: Child, skillId: string, score: number, change: Partial<SkillState> = {}): SkillState => ({ ...newSkillState(child.id, skillId, NOW.toISOString()), score, bestScore: score, attempts: 3, correct: 2, recent: [true, false, true], lastPracticedAt: NOW.toISOString(), ...change });
 
 beforeEach(() => setTimingForTests({ pairsLookMs: 0 }));
 

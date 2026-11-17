@@ -43,12 +43,12 @@ const stateOf = async () => (await (await repo()).getSkillStates('kid-1')).find(
 const attempts = async () => (await repo()).listAttempts('kid-1', {});
 
 describe('a new child masters a skill', () => {
-  it('15 correct answers: score 100, medal shown, 15 attempts stored with snapshots and days, review scheduled', async () => {
+  it('10 correct answers from the start (the fast track): score 100, medal shown, 10 attempts stored with snapshots and days, review scheduled', async () => {
     await setUp('1');
     const user = openApp();
     await openSkill(user, 'Add to 10');
     const between: string[] = [];
-    for (let i = 0; i < 15; i += 1) {
+    for (let i = 0; i < 10; i += 1) {
       await answer(user, sumOnScreen());
       await settled();
       // Each answer is saved before the next question renders.
@@ -61,21 +61,22 @@ describe('a new child masters a skill', () => {
     expect(screen.getByRole('heading', { name: 'Mastered!' })).toBeTruthy();
     expect(screen.getByText('You earned a medal.')).toBeTruthy();
     // Nothing but the milestones interrupts: practice carries on to 100, however long a session is.
-    expect(between).toEqual(['celebration:50', 'celebration:80', 'celebration:90', 'celebration:100']);
+    // Five right from the start go straight to 90, so the first celebration is the challenge zone.
+    expect(between).toEqual(['celebration:90', 'celebration:100']);
     expect(spoken.sounds.filter((s) => s === 'fanfare')).toHaveLength(1);
 
     const state = await stateOf();
-    expect(state).toMatchObject({ score: 100, bestScore: 100, streak: 15, attempts: 15, correct: 15, reviewBox: 0, placedOut: false });
-    expect(state?.masteredAt).toBe(new Date(NOW.getTime() + 15_000).toISOString()); // each test answer is a second apart
+    expect(state).toMatchObject({ score: 100, bestScore: 100, streak: 10, attempts: 10, correct: 10, reviewBox: 0, placedOut: false });
+    expect(state?.masteredAt).toBe(new Date(NOW.getTime() + 10_000).toISOString()); // each test answer is a second apart
     // The first review is due in 2 days.
     expect(localDay(new Date(state?.reviewDueAt ?? ''))).toBe('2026-03-11');
 
     const log = await attempts();
-    expect(log).toHaveLength(15);
-    expect(log.map((a) => a.scoreAfter)).toEqual([10, 20, 31, 41, 52, 61, 70, 78, 86, 90, 92, 94, 96, 98, 100]);
-    expect(log.map((a) => a.scoreBefore)).toEqual([0, 10, 20, 31, 41, 52, 61, 70, 78, 86, 90, 92, 94, 96, 98]);
-    // The level asked follows the score: 1, then 2 from 40, 3 from 70, 4 from 90.
-    expect(log.map((a) => a.level)).toEqual([1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4]);
+    expect(log).toHaveLength(10);
+    expect(log.map((a) => a.scoreAfter)).toEqual([10, 20, 31, 41, 90, 92, 94, 96, 98, 100]);
+    expect(log.map((a) => a.scoreBefore)).toEqual([0, 10, 20, 31, 41, 90, 92, 94, 96, 98]);
+    // The level asked follows the score: 1, then 2 from 40, and 4 from 90.
+    expect(log.map((a) => a.level)).toEqual([1, 1, 1, 1, 2, 4, 4, 4, 4, 4]);
     for (const a of log) {
       expect(a.day).toBe('2026-03-09');
       expect(a.kind).toBe('practice');
@@ -92,7 +93,7 @@ describe('a new child masters a skill', () => {
     // One session holds them all.
     const sessions = await (await repo()).listSessions('kid-1');
     expect(sessions).toHaveLength(1);
-    expect(sessions[0]).toMatchObject({ questions: 15, correct: 15, kind: 'practice', skillId: 'M-K-C4', day: '2026-03-09' });
+    expect(sessions[0]).toMatchObject({ questions: 10, correct: 10, kind: 'practice', skillId: 'M-K-C4', day: '2026-03-09' });
     expect(new Set(log.map((a) => a.sessionId))).toEqual(new Set([sessions[0]?.id]));
     expect(recentErrors()).toEqual([]);
 
@@ -174,6 +175,10 @@ describe('a wrong answer', () => {
     await setUp('1');
     const user = openApp();
     await openSkill(user, 'Add to 10');
+    // One miss first, so the fast track (five right from the start) does not apply.
+    await answer(user, wrongValue());
+    await gotIt(user);
+    await screen.findByRole('region', { name: 'Question' });
     // Up to 52, where level 2 is asked.
     for (let i = 0; i < 5; i += 1) {
       await answer(user, sumOnScreen());
@@ -187,7 +192,7 @@ describe('a wrong answer', () => {
     await answer(user, sumOnScreen());
     await settled();
     const log = await attempts();
-    expect(log.map((a) => a.level)).toEqual([1, 1, 1, 1, 2, 2, 1]);
+    expect(log.map((a) => a.level)).toEqual([1, 1, 1, 1, 1, 2, 2, 1]);
     // After that one easier question, the level goes back to what the score calls for.
     await passInterruptions(user);
     await answer(user, sumOnScreen());
@@ -196,11 +201,68 @@ describe('a wrong answer', () => {
   });
 });
 
+describe('the short test on a new skill', () => {
+  // The skill before "Add to 10" on its ladder, mastered without one miss.
+  const masterTheOneBefore = async (correct = 10): Promise<void> => {
+    await (await repo()).saveSkillState({ ...newSkillState('kid-1', 'M-K-C3', NOW.toISOString()), score: 100, bestScore: 100, attempts: 10, correct, masteredAt: NOW.toISOString(), lastPracticedAt: NOW.toISOString() });
+  };
+
+  it('two right answers at the hardest level pass the skill, with a card that says so', async () => {
+    await setUp('1');
+    await masterTheOneBefore();
+    const user = openApp();
+    await openSkill(user, 'Add to 10');
+    await answer(user, sumOnScreen());
+    await settled();
+    await screen.findByRole('region', { name: 'Question' });
+    await answer(user, sumOnScreen());
+    const card = await screen.findByRole('dialog', { name: 'You know this one!' });
+    expect(card.textContent).toContain('Add to 10');
+    // Both questions were the skill's hardest.
+    expect((await attempts()).map((a) => a.level)).toEqual([4, 4]);
+    // The child is placed past the skill, as the check-in would have done, with nothing to pick up again.
+    expect(await stateOf()).toMatchObject({ score: 80, placedOut: true, masteredAt: null, lastPracticedAt: null, attempts: 2, correct: 2 });
+    await user.click(screen.getByRole('button', { name: /Home/ }));
+    await screen.findByRole('heading', { name: 'Robin' });
+  });
+
+  it('a miss ends the test, and ordinary practice carries on', async () => {
+    await setUp('1');
+    await masterTheOneBefore();
+    const user = openApp();
+    await openSkill(user, 'Add to 10');
+    await answer(user, wrongValue());
+    await gotIt(user);
+    await screen.findByRole('region', { name: 'Question' });
+    await answer(user, sumOnScreen());
+    await settled();
+    expect(screen.queryByRole('dialog', { name: 'You know this one!' })).toBeNull();
+    const log = await attempts();
+    // The first was the test, at the hardest level. After the miss the level follows the score again.
+    expect(log.map((a) => a.level)).toEqual([4, 1]);
+    expect(await stateOf()).toMatchObject({ placedOut: false, attempts: 2, correct: 1 });
+  });
+
+  it('there is no test when the skill before was mastered with a miss on the way', async () => {
+    await setUp('1');
+    await masterTheOneBefore(9);
+    const user = openApp();
+    await openSkill(user, 'Add to 10');
+    await answer(user, sumOnScreen());
+    await settled();
+    expect((await attempts()).map((a) => a.level)).toEqual([1]);
+  });
+});
+
 describe('milestones', () => {
   it('a milestone is not shown twice when the child drops below it and climbs back', async () => {
     await setUp('1');
     const user = openApp();
     await openSkill(user, 'Add to 10');
+    // One miss first, so the fast track (five right from the start) does not apply.
+    await answer(user, wrongValue());
+    await gotIt(user);
+    await screen.findByRole('region', { name: 'Question' });
     const seen: string[] = [];
     for (let i = 0; i < 5; i += 1) {
       await answer(user, sumOnScreen());
@@ -233,6 +295,10 @@ describe('milestones', () => {
     await setUp('1');
     const user = openApp();
     await openSkill(user, 'Add to 10');
+    // One miss first, so the fast track (five right from the start) does not apply.
+    await answer(user, wrongValue());
+    await gotIt(user);
+    await screen.findByRole('region', { name: 'Question' });
     for (let i = 0; i < 5; i += 1) {
       await answer(user, sumOnScreen());
       await settled();

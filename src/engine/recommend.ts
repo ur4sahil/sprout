@@ -3,6 +3,7 @@ import type { Ladder } from '../content/ladders';
 import { ladderPrerequisite } from '../content/ladders';
 import { daysBetween } from '../lib/clock';
 import type { Grade, Plan, SkillState } from '../storage/schema';
+import { isPlacedPast } from './fastTrack';
 import { gradeRank } from './grades';
 import { isReviewDue } from './review';
 
@@ -117,7 +118,8 @@ export function recommend(input: RecommendInput): TodayPick[] {
       if (atGrade === -1) continue; // nothing on this ladder at or above the child's grade
       from = atGrade;
     }
-    const next = ladder.skillIds.slice(from).find((skillId) => usable(skillId) && !mastered(skillId));
+    // A skill the child was placed past by a test is not offered again: the next one is.
+    const next = ladder.skillIds.slice(from).find((skillId) => usable(skillId) && !mastered(skillId) && !isPlacedPast(stateById.get(skillId)));
     if (next) add(next, 'next');
   }
 
