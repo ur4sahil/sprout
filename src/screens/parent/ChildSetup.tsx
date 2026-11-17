@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import BigButton from '../../components/BigButton';
@@ -76,7 +77,7 @@ export default function ChildSetup({ onDone, onCancel }: Props) {
           {AVATARS.map((option) => (
             <TileButton key={option.emoji} label={option.name} selected={avatar === option.emoji} onClick={() => setAvatar(option.emoji)}>
               <span className={styles.emoji} aria-hidden="true">
-                {option.emoji}
+                <Art emoji={option.emoji} />
               </span>
             </TileButton>
           ))}

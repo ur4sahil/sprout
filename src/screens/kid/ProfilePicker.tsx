@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -98,7 +99,7 @@ export default function ProfilePicker() {
     <KidScreen>
       <div className={styles.page}>
         <h1 className={styles.brand}>
-          <Icon name="sprout" />
+          <Art emoji="🌱" />
           Sprout
         </h1>
         {failed && <Notice role="alert">The saved profiles could not be read. Close the app and open it again.</Notice>}

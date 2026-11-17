@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import Icon from './Icon';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
@@ -19,7 +20,7 @@ export default function SoftBreak({ answered, score, keepGoingLabel = 'Keep goin
   return (
     <div className={styles.cover} role="dialog" aria-modal="true" aria-label="Nice work!" data-break="">
       <div className={styles.emoji} aria-hidden="true">
-        🌱
+        <Art emoji="🌱" />
       </div>
       <h2 className={styles.title}>Nice work!</h2>
       <p className={styles.line}>

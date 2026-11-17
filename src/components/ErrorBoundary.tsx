@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import { Component, type ReactNode } from 'react';
 import { logError } from '../lib/errorLog';
 import BigButton from './BigButton';
@@ -33,7 +34,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     return (
       <main className={styles.wrap} role="alert">
         <div className={styles.face} aria-hidden="true">
-          🌱
+          <Art emoji="🌱" />
         </div>
         <h1 className={styles.title}>Something went wrong</h1>
         <BigButton size="kid" onClick={this.handleHome}>

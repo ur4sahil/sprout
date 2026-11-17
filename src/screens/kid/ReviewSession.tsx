@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import Icon from '../../components/Icon';
 import { useEffect } from 'react';
 import { useReview } from '../../app/useReview';
@@ -88,7 +89,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           <ul className={styles.results}>
             {review.results.map((result) => (
               <li key={result.skill.id} data-result={result.passed ? 'kept' : 'practise'}>
-                <span aria-hidden="true">{result.passed ? '🏅' : '🌱'} </span>
+                <Art emoji={result.passed ? "🏅" : "🌱"} />{" "}
                 {result.skill.name}: {result.passed ? 'medal kept' : 'back to practice'}
               </li>
             ))}

@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import Icon from './Icon';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
@@ -24,7 +25,7 @@ export default function Celebration({ milestone, skillName, onDone, games }: Pro
   return (
     <div className={styles.cover} role="dialog" aria-modal="true" aria-label={words.title} data-celebration={milestone}>
       <div className={styles.emoji} aria-hidden="true">
-        {words.emoji}
+        <Art emoji={words.emoji} />
       </div>
       <h2 className={styles.title}>{words.title}</h2>
       <p className={styles.line}>{words.line}</p>

@@ -1,4 +1,4 @@
-import Icon from '../../components/Icon';
+import Art from '../../visuals/Art';
 import { useState } from 'react';
 import BigButton from '../../components/BigButton';
 import KidScreen from '../../components/KidScreen';
@@ -27,7 +27,7 @@ export default function InstallGuide({ onUseBrowser }: Props) {
   return (
     <KidScreen>
       <div className={styles.mark} aria-hidden="true">
-        🌱
+        <Art emoji="🌱" />
       </div>
       <h1 className={styles.title}>Add Sprout to the Home Screen</h1>
       <p className={styles.lead}>Sprout works as an app. It takes three taps, and then it opens from its own icon.</p>
@@ -51,7 +51,7 @@ export default function InstallGuide({ onUseBrowser }: Props) {
           </span>
         </li>
         <li className={styles.step}>
-          <Icon name="sprout" />
+          <Art emoji="🌱" />
           <span>
             Tap <strong>Add</strong>, then open Sprout from its new icon.
           </span>

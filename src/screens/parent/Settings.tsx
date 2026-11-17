@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CHECK_IN_SUBJECTS, SUBJECT_NAME } from '../../app/checkIn';
@@ -101,7 +102,7 @@ export default function Settings() {
       {child && (
         <section className={styles.panel} aria-label={`Settings for ${child.name}`}>
           <h2>
-            {child.avatar} {child.name}
+            <Art emoji={child.avatar} /> {child.name}
           </h2>
           <SelectField label="Grade" value={child.grade} options={GRADES} onValue={(grade) => void save({ ...child, grade: grade as Grade })} />
           <SelectField label="Questions in a session" value={String(child.settings.sessionLength)} options={withValue(SESSION, child.settings.sessionLength, 'questions')} onValue={(value) => set({ sessionLength: Number(value) })} />

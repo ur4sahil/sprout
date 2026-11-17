@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { stickerFor, syncAwards } from '../../app/awardsRun';
@@ -99,7 +100,7 @@ export default function Home() {
         <>
           <div className={styles.who}>
             <span className={styles.avatar} aria-hidden="true">
-              {child.avatar}
+              <Art emoji={child.avatar} />
             </span>
             <div className={styles.names}>
               <h1 className={styles.name}>{child.name}</h1>
@@ -169,7 +170,7 @@ export default function Home() {
           <ul className={awardStyles.fresh}>
             {fresh.map((award) => (
               <li key={award.id} data-new-award={award.id}>
-                <span aria-hidden="true">{stickerFor(award.id)} </span>
+                <Art emoji={stickerFor(award.id)} />{" "}
                 {award.label}
               </li>
             ))}

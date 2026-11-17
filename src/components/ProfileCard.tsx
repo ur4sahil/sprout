@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import { useId } from 'react';
 import styles from './ProfileCard.module.css';
 
@@ -19,7 +20,7 @@ export default function ProfileCard({ name, avatar, grade, done, goal, onClick }
   return (
     <button type="button" className={styles.card} aria-label={name} aria-describedby={about} data-profile={name} onClick={onClick}>
       <span className={styles.avatar} aria-hidden="true">
-        {avatar}
+        <Art emoji={avatar} />
       </span>
       <span className={styles.name} aria-hidden="true">
         {name}

@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -59,7 +60,7 @@ export default function Certificate() {
       {ready && skill ? (
         <article className={styles.certificate} aria-label="Certificate" data-certificate={`${skill.subject}|${skill.grade}|${skill.category}`}>
           <p className={styles.mark} aria-hidden="true">
-            🌱
+            <Art emoji="🌱" />
           </p>
           <h1 className={styles.heading}>Certificate</h1>
           <p className={styles.line}>This is to say that</p>

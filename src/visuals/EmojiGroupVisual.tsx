@@ -1,3 +1,4 @@
+import Art from './Art';
 import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { DICE_CELLS } from './geometry';
@@ -30,7 +31,7 @@ export default function EmojiGroupVisual({ visual }: Props) {
         const crossed = i < visual.count && i >= crossedFrom;
         return (
           <span key={i} className={`${styles.item} ${crossed ? styles.crossed : ''}`} style={place} data-item={crossed ? 'crossed' : 'object'} aria-hidden="true">
-            {emoji}
+            <Art emoji={emoji} />
             {visual.numbered && <span className={styles.number}>{i + 1}</span>}
           </span>
         );

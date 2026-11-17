@@ -1,4 +1,4 @@
-import Icon from '../components/Icon';
+import Art from '../visuals/Art';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useNavigationType, useRoutes } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -200,7 +200,7 @@ export default function App() {
   if (status === 'checking') {
     content = (
       <main className={styles.splash} aria-busy="true" aria-label="Starting Sprout">
-        <Icon name="sprout" />
+        <Art emoji="🌱" />
       </main>
     );
   } else if (installGuide) {
@@ -211,7 +211,7 @@ export default function App() {
   } else if (link === 'waiting') {
     content = (
       <main className={styles.splash} aria-busy="true" aria-label="Getting your family's progress">
-        <Icon name="sprout" />
+        <Art emoji="🌱" />
       </main>
     );
   } else if (pinNeeded === true) {

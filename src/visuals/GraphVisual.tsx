@@ -1,3 +1,4 @@
+import Art from './Art';
 import { describeVisual } from '../engine/describe';
 import type { Visual } from '../engine/types';
 import { INK } from './geometry';
@@ -16,13 +17,13 @@ export default function GraphVisual({ visual }: Props) {
       {visual.categories.map((category, row) => (
         <div key={category.label} style={{ display: 'contents' }}>
           <span className={styles.graphLabel} aria-hidden="true">
-            {category.emoji} {category.label}
+            <Art emoji={category.emoji} /> {category.label}
           </span>
           {visual.type === 'picture' ? (
             <span className={styles.graphRow} aria-hidden="true" data-row={category.label}>
               {Array.from({ length: category.value }, (_, i) => (
                 <span key={i} data-mark="">
-                  {category.emoji}
+                  <Art emoji={category.emoji} />
                 </span>
               ))}
             </span>

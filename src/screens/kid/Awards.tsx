@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { awardSkills, stickerFor, syncAwards } from '../../app/awardsRun';
@@ -93,7 +94,7 @@ function Square({ award, earned }: { award: AwardDef; earned: boolean }) {
   return (
     <p className={`${styles.square} ${earned ? styles.earned : ''}`} data-award={award.id} data-earned={earned ? 'yes' : 'no'} aria-label={`${award.label}. ${earned ? 'Earned' : 'Not yet'}`}>
       <span className={`${styles.sticker} ${earned ? '' : styles.covered}`} aria-hidden="true">
-        {earned ? stickerFor(award.id) : <Icon name="lock" />}
+        {earned ? <Art emoji={stickerFor(award.id)} /> : <Icon name="lock" />}
       </span>
       <span aria-hidden="true">{award.label}</span>
     </p>

@@ -119,9 +119,12 @@ describe('emojiGroup', () => {
 
   it('numbers each object when asked, and draws a second kind after the first', () => {
     const numbered = draw({ kind: 'emojiGroup', emoji: '🐸', count: 4, layout: 'row', numbered: true });
-    expect([...numbered.querySelectorAll('[data-item]')].map((item) => item.textContent)).toEqual(['🐸1', '🐸2', '🐸3', '🐸4']);
+    // Each object is the app's drawn picture for its emoji, then its number.
+    const shown = (item: Element): string => `${item.querySelector('img')?.getAttribute('data-emoji') ?? ''}${item.textContent ?? ''}`;
+    expect([...numbered.querySelectorAll('[data-item]')].map(shown)).toEqual(['🐸1', '🐸2', '🐸3', '🐸4']);
+    expect(numbered.querySelector('img')?.getAttribute('src')).toBe('/art/1f438.svg');
     const two = draw({ kind: 'emojiGroup', emoji: '🔴', count: 3, layout: 'row', emoji2: '🔵', count2: 2 });
-    expect([...two.querySelectorAll('[data-item]')].map((item) => item.textContent)).toEqual(['🔴', '🔴', '🔴', '🔵', '🔵']);
+    expect([...two.querySelectorAll('[data-item]')].map(shown)).toEqual(['🔴', '🔴', '🔴', '🔵', '🔵']);
   });
 });
 

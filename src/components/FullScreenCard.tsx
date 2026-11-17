@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import type { ReactNode } from 'react';
 import styles from './Celebration.module.css';
 
@@ -14,7 +15,7 @@ export default function FullScreenCard({ emoji, title, line, name, children }: P
   return (
     <div className={styles.cover} role="dialog" aria-modal="true" aria-label={title} data-card={name}>
       <div className={styles.emoji} aria-hidden="true">
-        {emoji}
+        <Art emoji={emoji} />
       </div>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.line}>{line}</p>

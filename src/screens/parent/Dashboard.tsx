@@ -1,3 +1,4 @@
+import Art from '../../visuals/Art';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loadChildDay } from '../../app/childDay';
@@ -102,7 +103,7 @@ export default function Dashboard() {
         <>
           <section className={styles.panel} aria-label="Practice">
             <h2>
-              {child.avatar} {child.name}: the last 14 days
+              <Art emoji={child.avatar} /> {child.name}: the last 14 days
             </h2>
             <div className={styles.charts}>
               <div className={styles.chart}>

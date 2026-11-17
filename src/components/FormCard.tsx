@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import type { FormEvent, ReactNode } from 'react';
 import styles from './FormCard.module.css';
 
@@ -16,7 +17,7 @@ export default function FormCard({ title, lead, mark, onSubmit, children }: Prop
       <form className={styles.card} onSubmit={onSubmit}>
         {mark && (
           <div className={styles.mark} aria-hidden="true">
-            {mark}
+            <Art emoji={mark} />
           </div>
         )}
         <h1 className={styles.title}>{title}</h1>

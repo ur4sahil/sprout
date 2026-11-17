@@ -1,3 +1,4 @@
+import Art from '../visuals/Art';
 import { useState } from 'react';
 import type { ItemProps } from './itemProps';
 import styles from './items.module.css';
@@ -24,7 +25,9 @@ export default function TapCountItem({ question, disabled, onChange }: ItemProps
               onChange(next.length > 0 ? { count: next.length } : null);
             }}
           >
-            <span aria-hidden="true">{question.emoji}</span>
+            <span aria-hidden="true">
+              <Art emoji={question.emoji} />
+            </span>
           </button>
         );
       })}
