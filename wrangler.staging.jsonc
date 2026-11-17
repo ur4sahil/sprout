@@ -1,0 +1,32 @@
+{
+  // The test copy of the app: the same code as the family's app, with its own empty database.
+  // Deployed by hand (`npm run deploy:staging`), never by a push. ENVIRONMENT is dev, so each account
+  // is its own family and the sign-in code is printed in the Worker's log, not emailed.
+  // Only the made-up addresses in its PARENT_EMAILS setting can sign in.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sprout-staging",
+  "main": "./worker/index.ts",
+  "compatibility_date": "2026-11-15",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "sprout-staging.logstocks.com", "custom_domain": true }],
+  "assets": {
+    "directory": "./dist/",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api", "/api/*"]
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "sprout-staging", "database_id": "bfbfd9c7-7b3e-4494-99f1-434ad6782cba" }
+  ],
+  "r2_buckets": [
+    { "binding": "BACKUPS", "bucket_name": "sprout-staging-backups" },
+    { "binding": "VOICE", "bucket_name": "sprout-voice" }
+  ],
+  "vars": {
+    "ENVIRONMENT": "dev",
+    "APP_ORIGIN": "https://sprout-staging.logstocks.com",
+    "VOICE_URL": "https://sprout-voice.logstocks.com"
+  },
+  "observability": { "enabled": true }
+}

@@ -15,6 +15,7 @@
     "e2e:gallery": "playwright test -c playwright.gallery.config.ts",
     "dev:worker": "wrangler dev",
     "deploy": "npm run verify && wrangler deploy",
+    "deploy:staging": "npm run build && wrangler deploy -c wrangler.staging.jsonc",
     "golden": "UPDATE_GOLDEN=1 vitest run tests/golden.test.ts",
     "clips": "bash scripts/make-clips.sh",
     "content:dump": "tsx scripts/content-dump.ts",

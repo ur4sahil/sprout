@@ -1,7 +1,8 @@
 import path from 'node:path';
 
 export const PORT = 8799;
-export const BASE_URL = `https://localhost:${PORT}`;
+// The local test server, unless a run is pointed at a deployed copy (the staging check sets this).
+export const BASE_URL = process.env.SPROUT_BASE_URL ?? `https://localhost:${PORT}`;
 export const DIR = path.resolve('.e2e');
 export const WORKER_LOG = path.join(DIR, 'worker.log');
 export const COUNTER = path.join(DIR, 'counter');
