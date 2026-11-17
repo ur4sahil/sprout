@@ -398,6 +398,6 @@ describe('catalogue growth', () => {
     expect(growthStates(child, [], [], NOW.toISOString())).toEqual([]);
     await store.saveDiagnostic({ id: 'd-2', childId: 'kid-1', subject: 'math', ladderId: 'comparing', placementSkillId: null, estimateGrade: null, estimateFraction: null, takenAt: NOW.toISOString() });
     const grown = growthStates(child, await store.listDiagnostics('kid-1'), [], NOW.toISOString());
-    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-PK-B3', 'M-PK-B4', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-1-A4', 'M-2-A3', 'M-2-A8', 'M-2-A13', 'M-3-A3']);
+    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-PK-B3', 'M-PK-B4', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-K-B4', 'M-K-B5', 'M-1-A4', 'M-1-A8', 'M-2-A3', 'M-2-A8', 'M-2-A13', 'M-3-A3']);
   });
 });

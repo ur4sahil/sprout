@@ -1,0 +1,5954 @@
+{
+ "skillId": "M-1-B14",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "numbers": [
+    1,
+    3,
+    4
+   ],
+   "ask": "in",
+   "options": [
+    "4 + 3 = 1",
+    "4 - 3 = 1",
+    "5 - 3 = 2"
+   ]
+  },
+  "prompt": {
+   "text": "Which fact is in the family of 1, 3 and 4?",
+   "speak": [
+    "Which fact is in the family of ",
+    {
+     "number": 1
+    },
+    ", ",
+    {
+     "number": 3
+    },
+    " and ",
+    {
+     "number": 4
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "text",
+   "value": "1, 3, 4",
+   "size": "l",
+   "speak": [
+    {
+     "number": 1
+    },
+    ", ",
+    {
+     "number": 3
+    },
+    ", ",
+    {
+     "number": 4
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "4 + 3 = 1",
+    "size": "m",
+    "speak": [
+     {
+      "number": 4
+     },
+     "plus",
+     {
+      "number": 3
+     },
+     "equals",
+     {
+      "number": 1
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4 − 3 = 1",
+    "size": "m",
+    "speak": [
+     {
+      "number": 4
+     },
+     "minus",
+     {
+      "number": 3
+     },
+     "equals",
+     {
+      "number": 1
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "5 − 3 = 2",
+    "size": "m",
+    "speak": [
+     {
+      "number": 5
+     },
+     "minus",
+     {
+      "number": 3
+     },
+     "equals",
+     {
+      "number": 2
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "The family of ",
+    {
+     "number": 1
+    },
+    ", ",
+    {
+     "number": 3
+    },
+    " and ",
+    {
+     "number": 4
+    },
+    " has four facts:",
+    {
+     "number": 1
+    },
+    "plus",
+    {
+     "number": 3
+    },
+    "equals",
+    {
+     "number": 4
+    },
+    ",",
+    {
+     "number": 3
+    },
+    "plus",
+    {
+     "number": 1
+    },
+    "equals",
+    {
+     "number": 4
+    },
+    ",",
+    {
+     "number": 4
+    },
+    "minus",
+    {
+     "number": 1
+    },
+    "equals",
+    {
+     "number": 3
+    },
+    ",",
+    {
+     "number": 4
+    },
+    "minus",
+    {
+     "number": 3
+    },
+    "equals",
+    {
+     "number": 1
+    },
+    "."
+   ],
+   "steps": [
+    "The family of 1, 3 and 4:",
+    "1 + 3 = 4 and 3 + 1 = 4.",
+    "4 − 1 = 3 and 4 − 3 = 1."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "1, 3, 4",
+    "size": "l",
+    "speak": [
+     {
+      "number": 1
+     },
+     ", ",
+     {
+      "number": 3
+     },
+     ", ",
+     {
+      "number": 4
+     }
+    ]
+   }
+  },
+  "skillId": "M-1-B14",
+  "level": 1,
+  "seed": 911,
+  "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,3,4]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      7,
+      8
+     ],
+     "ask": "in",
+     "options": [
+      "1 + 8 = 9",
+      "8 - 1 = 7",
+      "8 - 1 = 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 1, 7 and 8?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 7, 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 8 = 9",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 − 1 = 7",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 − 1 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 7 and 8:",
+      "1 + 7 = 8 and 7 + 1 = 8.",
+      "8 − 1 = 7 and 8 − 7 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 7, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,7,8]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      3,
+      5,
+      8
+     ],
+     "ask": "in",
+     "options": [
+      "5 + 3 = 8",
+      "3 + 5 = 9",
+      "8 + 5 = 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 3, 5 and 8?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 5
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "3, 5, 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 5
+      },
+      ", ",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 + 3 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 5 = 9",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 5
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 5 = 3",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 5
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 5
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 5
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 3, 5 and 8:",
+      "3 + 5 = 8 and 5 + 3 = 8.",
+      "8 − 3 = 5 and 8 − 5 = 3."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3, 5, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       ", ",
+       {
+        "number": 5
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[3,5,8]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      7,
+      8
+     ],
+     "ask": "in",
+     "options": [
+      "1 + 8 = 9",
+      "8 + 7 = 1",
+      "7 + 1 = 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 1, 7 and 8?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 7, 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 8 = 9",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 7 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 1 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 7 and 8:",
+      "1 + 7 = 8 and 7 + 1 = 8.",
+      "8 − 1 = 7 and 8 − 7 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 7, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,7,8]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      3,
+      7,
+      10
+     ],
+     "ask": "in",
+     "options": [
+      "3 + 7 = 10",
+      "3 + 8 = 11",
+      "11 - 7 = 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 3, 7 and 10?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "3, 7, 10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 10
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 + 7 = 10",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 8 = 11",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11 − 7 = 4",
+      "size": "m",
+      "speak": [
+       {
+        "number": 11
+       },
+       "minus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      " has four facts:",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 3, 7 and 10:",
+      "3 + 7 = 10 and 7 + 3 = 10.",
+      "10 − 3 = 7 and 10 − 7 = 3."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3, 7, 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       ", ",
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[3,7,10]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      6,
+      2,
+      8
+     ],
+     "ask": "in",
+     "options": [
+      "6 + 2 = 8",
+      "6 + 3 = 9",
+      "8 + 2 = 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 6, 2 and 8?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6, 2, 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      ", ",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 2 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 3 = 9",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 2 = 6",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 2 and 8:",
+      "6 + 2 = 8 and 2 + 6 = 8.",
+      "8 − 6 = 2 and 8 − 2 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 2, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[6,2,8]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      6,
+      7
+     ],
+     "ask": "in",
+     "options": [
+      "7 - 1 = 6",
+      "7 + 6 = 1",
+      "8 - 6 = 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 1, 6 and 7?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 6
+      },
+      " and ",
+      {
+       "number": 7
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 6, 7",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 7
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 − 1 = 6",
+      "size": "m",
+      "speak": [
+       {
+        "number": 7
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 6 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 − 6 = 2",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "minus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 6
+      },
+      " and ",
+      {
+       "number": 7
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 6 and 7:",
+      "1 + 6 = 7 and 6 + 1 = 7.",
+      "7 − 1 = 6 and 7 − 6 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 6, 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 7
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,6,7]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      2,
+      3
+     ],
+     "ask": "in",
+     "options": [
+      "1 + 2 = 4",
+      "3 + 2 = 1",
+      "3 - 2 = 1"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 1, 2 and 3?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 2, 3",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      ", ",
+      {
+       "number": 3
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 2 = 4",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 2 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 − 2 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "minus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 3
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 3
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 2 and 3:",
+      "1 + 2 = 3 and 2 + 1 = 3.",
+      "3 − 1 = 2 and 3 − 2 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 2, 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 3
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,2,3]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      3,
+      4
+     ],
+     "ask": "in",
+     "options": [
+      "4 + 3 = 1",
+      "1 + 3 = 5",
+      "3 + 1 = 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 1, 3 and 4?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 3
+      },
+      " and ",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 3, 4",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 4
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 3 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 3 = 5",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 1 = 4",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 3
+      },
+      " and ",
+      {
+       "number": 4
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 3 and 4:",
+      "1 + 3 = 4 and 3 + 1 = 4.",
+      "4 − 1 = 3 and 4 − 3 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 3, 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 3
+       },
+       ", ",
+       {
+        "number": 4
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[1,3,4]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      3,
+      1,
+      4
+     ],
+     "ask": "in",
+     "options": [
+      "4 - 3 = 2",
+      "3 + 1 = 4",
+      "3 + 1 = 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 3, 1 and 4?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      " and ",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "3, 1, 4",
+     "size": "l",
+     "speak": [
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 4
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 − 3 = 2",
+      "size": "m",
+      "speak": [
+       {
+        "number": 4
+       },
+       "minus",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 1 = 4",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 1 = 5",
+      "size": "m",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 3
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      " and ",
+      {
+       "number": 4
+      },
+      " has four facts:",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 3, 1 and 4:",
+      "3 + 1 = 4 and 1 + 3 = 4.",
+      "4 − 3 = 1 and 4 − 1 = 3."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3, 1, 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       ", ",
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 4
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[3,1,4]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      6,
+      1,
+      7
+     ],
+     "ask": "in",
+     "options": [
+      "6 + 2 = 8",
+      "6 + 1 = 8",
+      "7 - 6 = 1"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is in the family of 6, 1 and 7?",
+     "speak": [
+      "Which fact is in the family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      " and ",
+      {
+       "number": 7
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6, 1, 7",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 2 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 1 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 − 6 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 7
+       },
+       "minus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 1
+      },
+      " and ",
+      {
+       "number": 7
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 1 and 7:",
+      "6 + 1 = 7 and 1 + 6 = 7.",
+      "7 − 6 = 1 and 7 − 1 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 1, 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 7
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-B14|1|{\"ask\":\"in\",\"numbers\":[6,1,7]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      15,
+      16
+     ],
+     "ask": "notIn",
+     "options": [
+      "15 + 1 = 16",
+      "1 + 16 = 17",
+      "16 - 1 = 15",
+      "1 + 15 = 16"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 1, 15 and 16?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 15
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 15, 16",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 15
+      },
+      ", ",
+      {
+       "number": 16
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "15 + 1 = 16",
+      "size": "m",
+      "speak": [
+       {
+        "number": 15
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 16 = 17",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 16
+       },
+       "equals",
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16 − 1 = 15",
+      "size": "m",
+      "speak": [
+       {
+        "number": 16
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 15 = 16",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 15
+       },
+       "equals",
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 15
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 15
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 15
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 15 and 16:",
+      "1 + 15 = 16 and 15 + 1 = 16.",
+      "16 − 1 = 15 and 16 − 15 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 15, 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 15
+       },
+       ", ",
+       {
+        "number": 16
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[1,15,16]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      6,
+      11,
+      17
+     ],
+     "ask": "notIn",
+     "options": [
+      "17 - 6 = 12",
+      "11 + 6 = 17",
+      "17 - 11 = 6",
+      "6 + 11 = 17"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 6, 11 and 17?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 11
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6, 11, 17",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 11
+      },
+      ", ",
+      {
+       "number": 17
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "17 − 6 = 12",
+      "size": "m",
+      "speak": [
+       {
+        "number": 17
+       },
+       "minus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11 + 6 = 17",
+      "size": "m",
+      "speak": [
+       {
+        "number": 11
+       },
+       "plus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17 − 11 = 6",
+      "size": "m",
+      "speak": [
+       {
+        "number": 17
+       },
+       "minus",
+       {
+        "number": 11
+       },
+       "equals",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 11 = 17",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 11
+       },
+       "equals",
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 11
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 11
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 11 and 17:",
+      "6 + 11 = 17 and 11 + 6 = 17.",
+      "17 − 6 = 11 and 17 − 11 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 11, 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 11
+       },
+       ", ",
+       {
+        "number": 17
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[6,11,17]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      16,
+      17
+     ],
+     "ask": "notIn",
+     "options": [
+      "17 - 1 = 16",
+      "17 - 16 = 1",
+      "1 + 17 = 18",
+      "16 + 1 = 17"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 1, 16 and 17?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 16
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 16, 17",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 16
+      },
+      ", ",
+      {
+       "number": 17
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "17 − 1 = 16",
+      "size": "m",
+      "speak": [
+       {
+        "number": 17
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17 − 16 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 17
+       },
+       "minus",
+       {
+        "number": 16
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1 + 17 = 18",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 17
+       },
+       "equals",
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16 + 1 = 17",
+      "size": "m",
+      "speak": [
+       {
+        "number": 16
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 16
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 16 and 17:",
+      "1 + 16 = 17 and 16 + 1 = 17.",
+      "17 − 1 = 16 and 17 − 16 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 16, 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 16
+       },
+       ", ",
+       {
+        "number": 17
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[1,16,17]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      7,
+      13,
+      20
+     ],
+     "ask": "notIn",
+     "options": [
+      "20 - 13 = 7",
+      "20 - 7 = 13",
+      "13 + 7 = 20",
+      "20 - 7 = 14"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 7, 13 and 20?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 20
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "7, 13, 20",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      ", ",
+      {
+       "number": 20
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20 − 13 = 7",
+      "size": "m",
+      "speak": [
+       {
+        "number": 20
+       },
+       "minus",
+       {
+        "number": 13
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20 − 7 = 13",
+      "size": "m",
+      "speak": [
+       {
+        "number": 20
+       },
+       "minus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13 + 7 = 20",
+      "size": "m",
+      "speak": [
+       {
+        "number": 13
+       },
+       "plus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20 − 7 = 14",
+      "size": "m",
+      "speak": [
+       {
+        "number": 20
+       },
+       "minus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 20
+      },
+      " has four facts:",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 13
+      },
+      ",",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 7, 13 and 20:",
+      "7 + 13 = 20 and 13 + 7 = 20.",
+      "20 − 7 = 13 and 20 − 13 = 7."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7, 13, 20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 13
+       },
+       ", ",
+       {
+        "number": 20
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[7,13,20]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      12,
+      4,
+      16
+     ],
+     "ask": "notIn",
+     "options": [
+      "16 - 12 = 5",
+      "12 + 4 = 16",
+      "16 - 4 = 12",
+      "4 + 12 = 16"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 12, 4 and 16?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "12, 4, 16",
+     "size": "l",
+     "speak": [
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      ", ",
+      {
+       "number": 16
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "16 − 12 = 5",
+      "size": "m",
+      "speak": [
+       {
+        "number": 16
+       },
+       "minus",
+       {
+        "number": 12
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 + 4 = 16",
+      "size": "m",
+      "speak": [
+       {
+        "number": 12
+       },
+       "plus",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16 − 4 = 12",
+      "size": "m",
+      "speak": [
+       {
+        "number": 16
+       },
+       "minus",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 12 = 16",
+      "size": "m",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 12
+       },
+       "equals",
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      " has four facts:",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 12, 4 and 16:",
+      "12 + 4 = 16 and 4 + 12 = 16.",
+      "16 − 12 = 4 and 16 − 4 = 12."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "12, 4, 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       ", ",
+       {
+        "number": 4
+       },
+       ", ",
+       {
+        "number": 16
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[12,4,16]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      13,
+      14
+     ],
+     "ask": "notIn",
+     "options": [
+      "13 + 1 = 14",
+      "14 - 1 = 13",
+      "14 - 13 = 1",
+      "15 - 13 = 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 1, 13 and 14?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 13, 14",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      ", ",
+      {
+       "number": 14
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "13 + 1 = 14",
+      "size": "m",
+      "speak": [
+       {
+        "number": 13
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 − 1 = 13",
+      "size": "m",
+      "speak": [
+       {
+        "number": 14
+       },
+       "minus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 − 13 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 14
+       },
+       "minus",
+       {
+        "number": 13
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15 − 13 = 2",
+      "size": "m",
+      "speak": [
+       {
+        "number": 15
+       },
+       "minus",
+       {
+        "number": 13
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 13
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 13 and 14:",
+      "1 + 13 = 14 and 13 + 1 = 14.",
+      "14 − 1 = 13 and 14 − 13 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 13, 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 13
+       },
+       ", ",
+       {
+        "number": 14
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[1,13,14]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      1,
+      7,
+      8
+     ],
+     "ask": "notIn",
+     "options": [
+      "1 + 7 = 8",
+      "7 + 1 = 8",
+      "8 + 7 = 1",
+      "8 - 7 = 1"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 1, 7 and 8?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1, 7, 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 7 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 1 = 8",
+      "size": "m",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 7 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 − 7 = 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "minus",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 7 and 8:",
+      "1 + 7 = 8 and 7 + 1 = 8.",
+      "8 − 1 = 7 and 8 − 7 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 7, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[1,7,8]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      6,
+      4,
+      10
+     ],
+     "ask": "notIn",
+     "options": [
+      "6 + 4 = 10",
+      "10 - 4 = 6",
+      "10 - 6 = 5",
+      "4 + 6 = 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 6, 4 and 10?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6, 4, 10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      ", ",
+      {
+       "number": 10
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 4 = 10",
+      "size": "m",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10 − 4 = 6",
+      "size": "m",
+      "speak": [
+       {
+        "number": 10
+       },
+       "minus",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10 − 6 = 5",
+      "size": "m",
+      "speak": [
+       {
+        "number": 10
+       },
+       "minus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 6 = 10",
+      "size": "m",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 4 and 10:",
+      "6 + 4 = 10 and 4 + 6 = 10.",
+      "10 − 6 = 4 and 10 − 4 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 4, 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 4
+       },
+       ", ",
+       {
+        "number": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[6,4,10]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      8,
+      2,
+      10
+     ],
+     "ask": "notIn",
+     "options": [
+      "10 - 8 = 2",
+      "8 + 2 = 11",
+      "2 + 8 = 10",
+      "8 + 2 = 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 8, 2 and 10?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 8
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "8, 2, 10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 8
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      ", ",
+      {
+       "number": 10
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10 − 8 = 2",
+      "size": "m",
+      "speak": [
+       {
+        "number": 10
+       },
+       "minus",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 2 = 11",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 8 = 10",
+      "size": "m",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 2 = 10",
+      "size": "m",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 8
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      " has four facts:",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 8, 2 and 10:",
+      "8 + 2 = 10 and 2 + 8 = 10.",
+      "10 − 8 = 2 and 10 − 2 = 8."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "8, 2, 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[8,2,10]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "numbers": [
+      12,
+      2,
+      14
+     ],
+     "ask": "notIn",
+     "options": [
+      "14 - 12 = 2",
+      "12 + 2 = 14",
+      "2 + 12 = 14",
+      "15 - 2 = 13"
+     ]
+    },
+    "prompt": {
+     "text": "Which fact is not in the family of 12, 2 and 14?",
+     "speak": [
+      "Which fact is not in the family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "12, 2, 14",
+     "size": "l",
+     "speak": [
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      ", ",
+      {
+       "number": 14
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "14 − 12 = 2",
+      "size": "m",
+      "speak": [
+       {
+        "number": 14
+       },
+       "minus",
+       {
+        "number": 12
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 + 2 = 14",
+      "size": "m",
+      "speak": [
+       {
+        "number": 12
+       },
+       "plus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 12 = 14",
+      "size": "m",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 12
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15 − 2 = 13",
+      "size": "m",
+      "speak": [
+       {
+        "number": 15
+       },
+       "minus",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 13
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      " has four facts:",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 12, 2 and 14:",
+      "12 + 2 = 14 and 2 + 12 = 14.",
+      "14 − 12 = 2 and 14 − 2 = 12."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "12, 2, 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 14
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-B14|2|{\"ask\":\"notIn\",\"numbers\":[12,2,14]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 1,
+     "numbers": [
+      1,
+      15,
+      16
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "15 + 1 = 16. So 16 − 1 = ?",
+     "speak": [
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ". So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "15 + 1 = 16",
+     "size": "l",
+     "speak": [
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      }
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 15
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 15
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 15
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 15 and 16:",
+      "1 + 15 = 16 and 15 + 1 = 16.",
+      "16 − 1 = 15 and 16 − 15 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 15, 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 15
+       },
+       ", ",
+       {
+        "number": 16
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-B14|3|{\"a\":16,\"b\":1,\"numbers\":[1,15,16],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 11,
+     "numbers": [
+      6,
+      11,
+      17
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "6 + 11 = 17. So 17 − 11 = ?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ". So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6 + 11 = 17",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 17
+      }
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 11
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 11
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 11 and 17:",
+      "6 + 11 = 17 and 11 + 6 = 17.",
+      "17 − 6 = 11 and 17 − 11 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 11, 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 11
+       },
+       ", ",
+       {
+        "number": 17
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-B14|3|{\"a\":17,\"b\":11,\"numbers\":[6,11,17],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 16,
+     "numbers": [
+      1,
+      16,
+      17
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "1 + 16 = 17. So 17 − 16 = ?",
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ". So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 16
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1 + 16 = 17",
+     "size": "l",
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 17
+      }
+     ]
+    },
+    "answer": 1,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 16
+      },
+      " and ",
+      {
+       "number": 17
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 16 and 17:",
+      "1 + 16 = 17 and 16 + 1 = 17.",
+      "17 − 1 = 16 and 17 − 16 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 16, 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 16
+       },
+       ", ",
+       {
+        "number": 17
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-B14|3|{\"a\":17,\"b\":16,\"numbers\":[1,16,17],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 20,
+     "b": 13,
+     "numbers": [
+      7,
+      13,
+      20
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "7 + 13 = 20. So 20 − 13 = ?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 20
+      },
+      ". So",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "7 + 13 = 20",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 20
+      }
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 7
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 20
+      },
+      " has four facts:",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 13
+      },
+      ",",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 7, 13 and 20:",
+      "7 + 13 = 20 and 13 + 7 = 20.",
+      "20 − 7 = 13 and 20 − 13 = 7."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7, 13, 20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 13
+       },
+       ", ",
+       {
+        "number": 20
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-B14|3|{\"a\":20,\"b\":13,\"numbers\":[7,13,20],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 4,
+     "numbers": [
+      12,
+      4,
+      16
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "12 + 4 = 16. So 16 − 4 = ?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ". So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "12 + 4 = 16",
+     "size": "l",
+     "speak": [
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 16
+      }
+     ]
+    },
+    "answer": 12,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 16
+      },
+      " has four facts:",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 12, 4 and 16:",
+      "12 + 4 = 16 and 4 + 12 = 16.",
+      "16 − 12 = 4 and 16 − 4 = 12."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "12, 4, 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       ", ",
+       {
+        "number": 4
+       },
+       ", ",
+       {
+        "number": 16
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-B14|3|{\"a\":16,\"b\":4,\"numbers\":[12,4,16],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 1,
+     "numbers": [
+      1,
+      13,
+      14
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "13 + 1 = 14. So 14 − 1 = ?",
+     "speak": [
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ". So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "13 + 1 = 14",
+     "size": "l",
+     "speak": [
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 14
+      }
+     ]
+    },
+    "answer": 13,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 13
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 13
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 13 and 14:",
+      "1 + 13 = 14 and 13 + 1 = 14.",
+      "14 − 1 = 13 and 14 − 13 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 13, 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 13
+       },
+       ", ",
+       {
+        "number": 14
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-B14|3|{\"a\":14,\"b\":1,\"numbers\":[1,13,14],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "numbers": [
+      1,
+      7,
+      8
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "7 + 1 = 8. So 8 − 1 = ?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ". So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "7 + 1 = 8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      }
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 1
+      },
+      ", ",
+      {
+       "number": 7
+      },
+      " and ",
+      {
+       "number": 8
+      },
+      " has four facts:",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 1, 7 and 8:",
+      "1 + 7 = 8 and 7 + 1 = 8.",
+      "8 − 1 = 7 and 8 − 7 = 1."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "1, 7, 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       ", ",
+       {
+        "number": 7
+       },
+       ", ",
+       {
+        "number": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-B14|3|{\"a\":8,\"b\":1,\"numbers\":[1,7,8],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 4,
+     "numbers": [
+      6,
+      4,
+      10
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "6 + 4 = 10. So 10 − 4 = ?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ". So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "6 + 4 = 10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
+      }
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 6
+      },
+      ", ",
+      {
+       "number": 4
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      " has four facts:",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 6, 4 and 10:",
+      "6 + 4 = 10 and 4 + 6 = 10.",
+      "10 − 6 = 4 and 10 − 4 = 6."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6, 4, 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       ", ",
+       {
+        "number": 4
+       },
+       ", ",
+       {
+        "number": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-B14|3|{\"a\":10,\"b\":4,\"numbers\":[6,4,10],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 2,
+     "numbers": [
+      8,
+      2,
+      10
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "8 + 2 = 10. So 10 − 2 = ?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ". So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "8 + 2 = 10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 8
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 10
+      },
+      " has four facts:",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 8, 2 and 10:",
+      "8 + 2 = 10 and 2 + 8 = 10.",
+      "10 − 8 = 2 and 10 − 2 = 8."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "8, 2, 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-B14|3|{\"a\":10,\"b\":2,\"numbers\":[8,2,10],\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 12,
+     "numbers": [
+      12,
+      2,
+      14
+     ],
+     "oracle": "subtract"
+    },
+    "prompt": {
+     "text": "2 + 12 = 14. So 14 − 12 = ?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ". So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "2 + 12 = 14",
+     "size": "l",
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 14
+      }
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "The family of ",
+      {
+       "number": 12
+      },
+      ", ",
+      {
+       "number": 2
+      },
+      " and ",
+      {
+       "number": 14
+      },
+      " has four facts:",
+      {
+       "number": 12
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "The family of 12, 2 and 14:",
+      "12 + 2 = 14 and 2 + 12 = 14.",
+      "14 − 12 = 2 and 14 − 2 = 12."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "12, 2, 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       ", ",
+       {
+        "number": 2
+       },
+       ", ",
+       {
+        "number": 14
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-B14",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-B14|3|{\"a\":14,\"b\":12,\"numbers\":[12,2,14],\"oracle\":\"subtract\"}"
+   }
+  ]
+ }
+}

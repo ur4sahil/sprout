@@ -1,4 +1,48 @@
 import type { LadderStep } from '../../ladders';
 
 // Where wave H1's skills go on the ladders: each one right after the skill named in `after`.
-export const LADDER_STEPS: readonly LadderStep[] = [];
+// Kindergarten skills go after the last kindergarten skill of their ladder, grade 1 skills after the grade 1
+// skill they build on, so no ladder goes down a grade.
+export const LADDER_STEPS: readonly LadderStep[] = [
+  { ladder: 'counting', skillId: 'M-K-A8', after: 'M-K-A7' },
+  { ladder: 'counting', skillId: 'M-K-A9', after: 'M-K-A8' },
+  { ladder: 'counting', skillId: 'M-K-A10', after: 'M-K-A9' },
+  { ladder: 'counting', skillId: 'M-K-A11', after: 'M-K-A10' },
+  { ladder: 'counting', skillId: 'M-K-A12', after: 'M-K-A11' },
+  { ladder: 'counting', skillId: 'M-K-A13', after: 'M-K-A12' },
+  { ladder: 'comparing', skillId: 'M-K-B4', after: 'M-K-B3' },
+  { ladder: 'comparing', skillId: 'M-K-B5', after: 'M-K-B4' },
+  { ladder: 'add-subtract', skillId: 'M-K-C12', after: 'M-K-C11' },
+  { ladder: 'add-subtract', skillId: 'M-K-C13', after: 'M-K-C12' },
+  { ladder: 'add-subtract', skillId: 'M-K-C14', after: 'M-K-C13' },
+  { ladder: 'add-subtract', skillId: 'M-K-C15', after: 'M-K-C14' },
+  { ladder: 'add-subtract', skillId: 'M-K-C16', after: 'M-K-C15' },
+  { ladder: 'add-subtract', skillId: 'M-K-C17', after: 'M-K-C16' },
+  { ladder: 'shapes', skillId: 'M-K-E6', after: 'M-K-E5' },
+  { ladder: 'shapes', skillId: 'M-K-E7', after: 'M-K-E6' },
+  { ladder: 'length', skillId: 'M-K-F4', after: 'M-K-F3' },
+  { ladder: 'length', skillId: 'M-K-F5', after: 'M-K-F4' },
+  { ladder: 'data', skillId: 'M-K-F6', after: 'M-K-F2' },
+  { ladder: 'patterns', skillId: 'M-K-G2', after: 'M-K-G1' },
+
+  { ladder: 'counting', skillId: 'M-1-A6', after: 'M-1-A2' },
+  { ladder: 'counting', skillId: 'M-1-A10', after: 'M-1-A6' },
+  { ladder: 'place-value', skillId: 'M-1-A7', after: 'M-1-A3' },
+  { ladder: 'place-value', skillId: 'M-1-A9', after: 'M-1-A5' },
+  { ladder: 'comparing', skillId: 'M-1-A8', after: 'M-1-A4' },
+  { ladder: 'add-subtract', skillId: 'M-1-B14', after: 'M-1-B13' },
+  { ladder: 'add-subtract', skillId: 'M-1-B15', after: 'M-1-B14' },
+  { ladder: 'add-subtract', skillId: 'M-1-B16', after: 'M-1-B15' },
+  { ladder: 'add-subtract', skillId: 'M-1-B17', after: 'M-1-B16' },
+  { ladder: 'add-subtract', skillId: 'M-1-B18', after: 'M-1-B17' },
+  { ladder: 'add-subtract', skillId: 'M-1-B19', after: 'M-1-B18' },
+  { ladder: 'time', skillId: 'M-1-C6', after: 'M-1-C1' },
+  { ladder: 'time', skillId: 'M-1-C7', after: 'M-1-C6' },
+  { ladder: 'time', skillId: 'M-1-C8', after: 'M-1-C7' },
+  { ladder: 'data', skillId: 'M-1-C9', after: 'M-1-C3' },
+  { ladder: 'data', skillId: 'M-1-C10', after: 'M-1-C9' },
+  { ladder: 'money', skillId: 'M-1-C11', after: 'M-1-C4' },
+  { ladder: 'length', skillId: 'M-1-C12', after: 'M-1-C5' },
+  { ladder: 'shapes', skillId: 'M-1-D4', after: 'M-1-D3' },
+  { ladder: 'fractions', skillId: 'M-1-D5', after: 'M-1-D1' },
+];

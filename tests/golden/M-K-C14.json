@@ -1,0 +1,2641 @@
+{
+ "skillId": "M-K-C14",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "a": 1,
+   "b": 4,
+   "result": 5,
+   "options": [
+    "+",
+    "-"
+   ],
+   "thing": "frog"
+  },
+  "prompt": {
+   "text": "Does the picture show plus or take away?",
+   "speak": [
+    "Does the picture show plus or take away?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐸",
+     "count": 1,
+     "layout": "row"
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐸",
+     "count": 4,
+     "layout": "row"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "+",
+    "size": "xl",
+    "speak": [
+     "plus"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "−",
+    "size": "xl",
+    "speak": [
+     "take away"
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    {
+     "number": 1
+    },
+    "plus",
+    {
+     "number": 4
+    },
+    " is ",
+    {
+     "number": 5
+    },
+    ". The sign is",
+    "plus."
+   ],
+   "steps": [
+    "1 + 4 = 5.",
+    "The sign is +."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 4,
+      "layout": "row"
+     }
+    ]
+   }
+  },
+  "skillId": "M-K-C14",
+  "level": 1,
+  "seed": 835,
+  "key": "M-K-C14|1|{\"a\":1,\"b\":4,\"result\":5,\"thing\":\"frog\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "banana"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 2,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 1,
+    "key": "M-K-C14|1|{\"a\":2,\"b\":1,\"result\":1,\"thing\":\"banana\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "ball"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚽",
+     "count": 3,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "3 − 1 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 3,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 2,
+    "key": "M-K-C14|1|{\"a\":3,\"b\":1,\"result\":2,\"thing\":\"ball\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "star"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 2,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 3,
+    "key": "M-K-C14|1|{\"a\":2,\"b\":1,\"result\":1,\"thing\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "star"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 3,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "3 − 1 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "⭐",
+      "count": 3,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 4,
+    "key": "M-K-C14|1|{\"a\":3,\"b\":1,\"result\":2,\"thing\":\"star\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 5,
+     "b": 1,
+     "result": 4,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "duck"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🦆",
+     "count": 5,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 4
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "5 − 1 = 4.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 5,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 5,
+    "key": "M-K-C14|1|{\"a\":5,\"b\":1,\"result\":4,\"thing\":\"duck\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "car"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 2,
+     "layout": "row",
+     "crossed": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 2,
+      "layout": "row",
+      "crossed": 1
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 6,
+    "key": "M-K-C14|1|{\"a\":2,\"b\":1,\"result\":1,\"thing\":\"car\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 1,
+     "b": 4,
+     "result": 5,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "strawberry"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 4,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      " is ",
+      {
+       "number": 5
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "1 + 4 = 5.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 4,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 7,
+    "key": "M-K-C14|1|{\"a\":1,\"b\":4,\"result\":5,\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 4,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "strawberry"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 3,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 4
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "3 + 1 = 4.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 3,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 8,
+    "key": "M-K-C14|1|{\"a\":3,\"b\":1,\"result\":4,\"thing\":\"strawberry\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "result": 5,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "rocket"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚀",
+       "count": 4,
+       "layout": "row"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚀",
+       "count": 1,
+       "layout": "row"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 5
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "4 + 1 = 5.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 4,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 9,
+    "key": "M-K-C14|1|{\"a\":4,\"b\":1,\"result\":5,\"thing\":\"rocket\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ],
+     "thing": "bee"
+    },
+    "prompt": {
+     "text": "Does the picture show plus or take away?",
+     "speak": [
+      "Does the picture show plus or take away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 5,
+     "layout": "row",
+     "crossed": 3
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 3
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "5 − 3 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 5,
+      "layout": "row",
+      "crossed": 3
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 1,
+    "seed": 10,
+    "key": "M-K-C14|1|{\"a\":5,\"b\":3,\"result\":2,\"thing\":\"bee\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 1,
+    "key": "M-K-C14|2|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "blank",
+      1,
+      "=",
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "3 − 1 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "-",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 2,
+    "key": "M-K-C14|2|{\"a\":3,\"b\":1,\"result\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 3,
+    "key": "M-K-C14|2|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "blank",
+      1,
+      "=",
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "3 − 1 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "-",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 4,
+    "key": "M-K-C14|2|{\"a\":3,\"b\":1,\"result\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 5,
+     "b": 1,
+     "result": 4,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      5,
+      "blank",
+      1,
+      "=",
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 4
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "5 − 1 = 4.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       1,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 5,
+    "key": "M-K-C14|2|{\"a\":5,\"b\":1,\"result\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 6,
+    "key": "M-K-C14|2|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 1,
+     "b": 4,
+     "result": 5,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "blank",
+      4,
+      "=",
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      " is ",
+      {
+       "number": 5
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "1 + 4 = 5.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       4,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 7,
+    "key": "M-K-C14|2|{\"a\":1,\"b\":4,\"result\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 3,
+     "b": 1,
+     "result": 4,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "blank",
+      1,
+      "=",
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 4
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "3 + 1 = 4.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       1,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 8,
+    "key": "M-K-C14|2|{\"a\":3,\"b\":1,\"result\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "result": 5,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "blank",
+      1,
+      "=",
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 5
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "4 + 1 = 5.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       1,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 9,
+    "key": "M-K-C14|2|{\"a\":4,\"b\":1,\"result\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 5,
+     "b": 3,
+     "result": 2,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      5,
+      "blank",
+      3,
+      "=",
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "take away",
+      {
+       "number": 3
+      },
+      " is ",
+      {
+       "number": 2
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "5 − 3 = 2.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "-",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 2,
+    "seed": 10,
+    "key": "M-K-C14|2|{\"a\":5,\"b\":3,\"result\":2}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 1,
+    "key": "M-K-C14|3|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "result": 3,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "blank",
+      1,
+      "=",
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 3
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "4 − 1 = 3.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       1,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 2,
+    "key": "M-K-C14|3|{\"a\":4,\"b\":1,\"result\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 3,
+    "key": "M-K-C14|3|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "result": 3,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "blank",
+      1,
+      "=",
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 3
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "4 − 1 = 3.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "-",
+       1,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 4,
+    "key": "M-K-C14|3|{\"a\":4,\"b\":1,\"result\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 8,
+     "b": 2,
+     "result": 6,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "blank",
+      2,
+      "=",
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "take away",
+      {
+       "number": 2
+      },
+      " is ",
+      {
+       "number": 6
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "8 − 2 = 6.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 5,
+    "key": "M-K-C14|3|{\"a\":8,\"b\":2,\"result\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 2,
+     "b": 1,
+     "result": 1,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "blank",
+      1,
+      "=",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "take away",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 1
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "2 − 1 = 1.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "-",
+       1,
+       "=",
+       1
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 6,
+    "key": "M-K-C14|3|{\"a\":2,\"b\":1,\"result\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 1,
+     "b": 9,
+     "result": 10,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "blank",
+      9,
+      "=",
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      " is ",
+      {
+       "number": 10
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "1 + 9 = 10.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       9,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 7,
+    "key": "M-K-C14|3|{\"a\":1,\"b\":9,\"result\":10}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "result": 8,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "blank",
+      2,
+      "=",
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      " is ",
+      {
+       "number": 8
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "6 + 2 = 8.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       2,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 8,
+    "key": "M-K-C14|3|{\"a\":6,\"b\":2,\"result\":8}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "result": 9,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "blank",
+      1,
+      "=",
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      " is ",
+      {
+       "number": 9
+      },
+      ". The sign is",
+      "plus."
+     ],
+     "steps": [
+      "8 + 1 = 9.",
+      "The sign is +."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       1,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 9,
+    "key": "M-K-C14|3|{\"a\":8,\"b\":1,\"result\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "a": 10,
+     "b": 7,
+     "result": 3,
+     "options": [
+      "+",
+      "-"
+     ]
+    },
+    "prompt": {
+     "text": "Which sign makes it true?",
+     "speak": [
+      "Which sign makes it true?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "blank",
+      7,
+      "=",
+      3
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "take away"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "take away",
+      {
+       "number": 7
+      },
+      " is ",
+      {
+       "number": 3
+      },
+      ". The sign is",
+      "take away."
+     ],
+     "steps": [
+      "10 − 7 = 3.",
+      "The sign is −."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "-",
+       7,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-K-C14",
+    "level": 3,
+    "seed": 10,
+    "key": "M-K-C14|3|{\"a\":10,\"b\":7,\"result\":3}"
+   }
+  ]
+ }
+}

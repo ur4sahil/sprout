@@ -1,0 +1,2430 @@
+{
+ "skillId": "M-1-C7",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "kind": "day",
+   "start": "Monday",
+   "shift": 1,
+   "options": [
+    "Sunday",
+    "Tuesday",
+    "Wednesday"
+   ]
+  },
+  "prompt": {
+   "text": "What day comes after Monday?",
+   "speak": [
+    "What day comes after Monday?"
+   ]
+  },
+  "stimulus": {
+   "kind": "text",
+   "value": "Monday",
+   "size": "l",
+   "speak": [
+    "Monday"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "Sunday",
+    "size": "l",
+    "speak": [
+     "Sunday"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "Tuesday",
+    "size": "l",
+    "speak": [
+     "Tuesday"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "Wednesday",
+    "size": "l",
+    "speak": [
+     "Wednesday"
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Count on: Monday, Tuesday.",
+    "The answer is Tuesday."
+   ],
+   "steps": [
+    "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+    "Count on: Monday, Tuesday.",
+    "The answer is Tuesday."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "Tuesday",
+    "size": "l",
+    "speak": [
+     "Tuesday"
+    ]
+   }
+  },
+  "skillId": "M-1-C7",
+  "level": 1,
+  "seed": 933,
+  "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Monday\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": 1,
+     "options": [
+      "Friday",
+      "Saturday",
+      "Wednesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Thursday?",
+     "speak": [
+      "What day comes after Thursday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on: Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": 1,
+     "options": [
+      "Sunday",
+      "Thursday",
+      "Saturday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Friday?",
+     "speak": [
+      "What day comes after Friday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on: Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": 1,
+     "options": [
+      "Sunday",
+      "Saturday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Friday?",
+     "speak": [
+      "What day comes after Friday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Saturday",
+     "shift": 1,
+     "options": [
+      "Friday",
+      "Monday",
+      "Sunday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Saturday?",
+     "speak": [
+      "What day comes after Saturday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Saturday",
+     "size": "l",
+     "speak": [
+      "Saturday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on: Saturday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Saturday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Saturday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": 1,
+     "options": [
+      "Wednesday",
+      "Saturday",
+      "Friday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Thursday?",
+     "speak": [
+      "What day comes after Thursday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on: Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": 1,
+     "options": [
+      "Friday",
+      "Thursday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Wednesday?",
+     "speak": [
+      "What day comes after Wednesday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Wednesday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Wednesday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Wednesday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Sunday",
+     "shift": 1,
+     "options": [
+      "Monday",
+      "Saturday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Sunday?",
+     "speak": [
+      "What day comes after Sunday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Sunday",
+     "size": "l",
+     "speak": [
+      "Sunday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on: Sunday, Monday.",
+      "The answer is Monday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Sunday, Monday.",
+      "The answer is Monday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Sunday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": 1,
+     "options": [
+      "Sunday",
+      "Wednesday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Monday?",
+     "speak": [
+      "What day comes after Monday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": 1,
+     "options": [
+      "Sunday",
+      "Wednesday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Monday?",
+     "speak": [
+      "What day comes after Monday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": 1,
+     "options": [
+      "Thursday",
+      "Friday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes after Wednesday?",
+     "speak": [
+      "What day comes after Wednesday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on: Wednesday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Wednesday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-C7|1|{\"kind\":\"day\",\"shift\":1,\"start\":\"Wednesday\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": -1,
+     "options": [
+      "Wednesday",
+      "Tuesday",
+      "Friday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Thursday?",
+     "speak": [
+      "What day comes before Thursday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": -1,
+     "options": [
+      "Wednesday",
+      "Saturday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Friday?",
+     "speak": [
+      "What day comes before Friday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": -1,
+     "options": [
+      "Wednesday",
+      "Thursday",
+      "Saturday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Friday?",
+     "speak": [
+      "What day comes before Friday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count back: Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Saturday",
+     "shift": -1,
+     "options": [
+      "Sunday",
+      "Thursday",
+      "Friday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Saturday?",
+     "speak": [
+      "What day comes before Saturday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Saturday",
+     "size": "l",
+     "speak": [
+      "Saturday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Saturday, Friday.",
+      "The answer is Friday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Saturday, Friday.",
+      "The answer is Friday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Saturday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": -1,
+     "options": [
+      "Friday",
+      "Tuesday",
+      "Wednesday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Thursday?",
+     "speak": [
+      "What day comes before Thursday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": -1,
+     "options": [
+      "Monday",
+      "Tuesday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Wednesday?",
+     "speak": [
+      "What day comes before Wednesday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Wednesday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Sunday",
+     "shift": -1,
+     "options": [
+      "Saturday",
+      "Monday",
+      "Friday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Sunday?",
+     "speak": [
+      "What day comes before Sunday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Sunday",
+     "size": "l",
+     "speak": [
+      "Sunday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count back: Sunday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Sunday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Sunday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": -1,
+     "options": [
+      "Tuesday",
+      "Saturday",
+      "Sunday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Monday?",
+     "speak": [
+      "What day comes before Monday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": -1,
+     "options": [
+      "Tuesday",
+      "Saturday",
+      "Sunday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Monday?",
+     "speak": [
+      "What day comes before Monday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": -1,
+     "options": [
+      "Tuesday",
+      "Monday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "What day comes before Wednesday?",
+     "speak": [
+      "What day comes before Wednesday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-C7|2|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Wednesday\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": 2,
+     "options": [
+      "Sunday",
+      "Saturday",
+      "Tuesday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Thursday. What day will it be in 2 days?",
+     "speak": [
+      "Today is Thursday. What day will it be in two days?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Thursday, Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Thursday, Friday, Saturday.",
+      "The answer is Saturday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":2,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": -2,
+     "options": [
+      "Wednesday",
+      "Sunday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Friday. What day was it 2 days ago?",
+     "speak": [
+      "Today is Friday. What day was it two days ago?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count back: Friday, Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Friday, Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":-2,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Friday",
+     "shift": 2,
+     "options": [
+      "Wednesday",
+      "Sunday",
+      "Monday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Friday. What day will it be in 2 days?",
+     "speak": [
+      "Today is Friday. What day will it be in two days?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Friday",
+     "size": "l",
+     "speak": [
+      "Friday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Friday, Saturday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Friday, Saturday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":2,\"start\":\"Friday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Saturday",
+     "shift": -2,
+     "options": [
+      "Monday",
+      "Friday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Saturday. What day was it 2 days ago?",
+     "speak": [
+      "Today is Saturday. What day was it two days ago?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Saturday",
+     "size": "l",
+     "speak": [
+      "Saturday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count back: Saturday, Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Saturday, Friday, Thursday.",
+      "The answer is Thursday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":-2,\"start\":\"Saturday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Thursday",
+     "shift": -1,
+     "options": [
+      "Tuesday",
+      "Wednesday",
+      "Friday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Thursday. What day was yesterday?",
+     "speak": [
+      "Today is Thursday. What day was yesterday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Thursday",
+     "size": "l",
+     "speak": [
+      "Thursday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Thursday, Wednesday.",
+      "The answer is Wednesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Thursday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": 2,
+     "options": [
+      "Saturday",
+      "Friday",
+      "Monday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Wednesday. What day will it be in 2 days?",
+     "speak": [
+      "Today is Wednesday. What day will it be in two days?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Wednesday, Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Wednesday, Thursday, Friday.",
+      "The answer is Friday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Friday",
+      "size": "l",
+      "speak": [
+       "Friday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":2,\"start\":\"Wednesday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Sunday",
+     "shift": 2,
+     "options": [
+      "Monday",
+      "Tuesday",
+      "Wednesday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Sunday. What day will it be in 2 days?",
+     "speak": [
+      "Today is Sunday. What day will it be in two days?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Sunday",
+     "size": "l",
+     "speak": [
+      "Sunday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on: Sunday, Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Sunday, Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":2,\"start\":\"Sunday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": 1,
+     "options": [
+      "Tuesday",
+      "Sunday",
+      "Wednesday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Monday. What day is tomorrow?",
+     "speak": [
+      "Today is Monday. What day is tomorrow?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Wednesday",
+      "size": "l",
+      "speak": [
+       "Wednesday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count on: Monday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Monday",
+     "shift": -1,
+     "options": [
+      "Sunday",
+      "Tuesday",
+      "Saturday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Monday. What day was yesterday?",
+     "speak": [
+      "Today is Monday. What day was yesterday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Monday",
+     "size": "l",
+     "speak": [
+      "Monday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Saturday",
+      "size": "l",
+      "speak": [
+       "Saturday"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Monday, Sunday.",
+      "The answer is Sunday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sunday",
+      "size": "l",
+      "speak": [
+       "Sunday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Monday\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "day",
+     "start": "Wednesday",
+     "shift": -1,
+     "options": [
+      "Monday",
+      "Tuesday",
+      "Thursday"
+     ]
+    },
+    "prompt": {
+     "text": "Today is Wednesday. What day was yesterday?",
+     "speak": [
+      "Today is Wednesday. What day was yesterday?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Wednesday",
+     "size": "l",
+     "speak": [
+      "Wednesday"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Monday",
+      "size": "l",
+      "speak": [
+       "Monday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Thursday",
+      "size": "l",
+      "speak": [
+       "Thursday"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "steps": [
+      "The days go Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, then start again.",
+      "Count back: Wednesday, Tuesday.",
+      "The answer is Tuesday."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Tuesday",
+      "size": "l",
+      "speak": [
+       "Tuesday"
+      ]
+     }
+    },
+    "skillId": "M-1-C7",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-C7|3|{\"kind\":\"day\",\"shift\":-1,\"start\":\"Wednesday\"}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,3652 @@
+{
+ "skillId": "M-1-C12",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "pairs": [
+    [
+     "blue",
+     "pink"
+    ],
+    [
+     "pink",
+     "green"
+    ]
+   ],
+   "ask": "most",
+   "options": [
+    "green",
+    "pink",
+    "blue"
+   ]
+  },
+  "prompt": {
+   "text": "The blue tower is taller than the pink tower. The pink tower is taller than the green tower. Which tower is the tallest?",
+   "speak": [
+    "The blue tower is taller than the pink tower. The pink tower is taller than the green tower. Which tower is the tallest?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "green",
+    "size": "l",
+    "speak": [
+     "green"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "pink",
+    "size": "l",
+    "speak": [
+     "pink"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "blue",
+    "size": "l",
+    "speak": [
+     "blue"
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The blue tower is taller than the pink tower, and the pink tower is taller than the green tower. So the blue tower is the tallest."
+   ],
+   "steps": [
+    "The blue tower is taller than the pink tower, and the pink tower is taller than the green tower.",
+    "So the blue tower is the tallest."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "bar",
+      "length": 7,
+      "color": "blue",
+      "orientation": "vertical"
+     },
+     {
+      "kind": "bar",
+      "length": 5,
+      "color": "pink",
+      "orientation": "vertical"
+     },
+     {
+      "kind": "bar",
+      "length": 3,
+      "color": "green",
+      "orientation": "vertical"
+     }
+    ]
+   }
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
+      }
+     ]
+    },
+    {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "green",
+       "orientation": "vertical"
+      }
+     ]
+    }
+   ]
+  },
+  "skillId": "M-1-C12",
+  "level": 1,
+  "seed": 947,
+  "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"blue\",\"pink\"],[\"pink\",\"green\"]]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "purple",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "purple",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the orange tower. The purple tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The green tower is taller than the orange tower. The purple tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "purple",
+      "size": "l",
+      "speak": [
+       "purple"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the purple tower is the tallest."
+     ],
+     "steps": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the purple tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "purple",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "purple",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"green\",\"orange\"],[\"purple\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "green"
+      ],
+      [
+       "green",
+       "orange"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "orange",
+      "green",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is taller than the green tower. The green tower is taller than the orange tower. Which tower is the tallest?",
+     "speak": [
+      "The blue tower is taller than the green tower. The green tower is taller than the orange tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"blue\",\"green\"],[\"green\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "orange",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the orange tower. The blue tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The green tower is taller than the orange tower. The blue tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"green\",\"orange\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "pink"
+      ],
+      [
+       "pink",
+       "orange"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "blue",
+      "pink",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the tallest?",
+     "speak": [
+      "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"blue\",\"pink\"],[\"pink\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "blue"
+      ],
+      [
+       "blue",
+       "pink"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "blue",
+      "pink",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the blue tower. The blue tower is taller than the pink tower. Which tower is the tallest?",
+     "speak": [
+      "The green tower is taller than the blue tower. The blue tower is taller than the pink tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the green tower is the tallest."
+     ],
+     "steps": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
+      "So the green tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"green\",\"blue\"],[\"blue\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "yellow"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "yellow",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the yellow tower. The blue tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The green tower is taller than the yellow tower. The blue tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "yellow",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "yellow",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"green\",\"yellow\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "red",
+       "yellow"
+      ],
+      [
+       "yellow",
+       "blue"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "yellow",
+      "blue",
+      "red"
+     ]
+    },
+    "prompt": {
+     "text": "The red tower is taller than the yellow tower. The yellow tower is taller than the blue tower. Which tower is the tallest?",
+     "speak": [
+      "The red tower is taller than the yellow tower. The yellow tower is taller than the blue tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the red tower is the tallest."
+     ],
+     "steps": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
+      "So the red tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "red",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "yellow",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "yellow",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"red\",\"yellow\"],[\"yellow\",\"blue\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "orange",
+       "green"
+      ],
+      [
+       "green",
+       "pink"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "pink",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The orange tower is taller than the green tower. The green tower is taller than the pink tower. Which tower is the tallest?",
+     "speak": [
+      "The orange tower is taller than the green tower. The green tower is taller than the pink tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the orange tower is the tallest."
+     ],
+     "steps": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
+      "So the orange tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "orange",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"orange\",\"green\"],[\"green\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "pink",
+       "green"
+      ],
+      [
+       "orange",
+       "pink"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "pink",
+      "orange",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "The pink tower is taller than the green tower. The orange tower is taller than the pink tower. Which tower is the tallest?",
+     "speak": [
+      "The pink tower is taller than the green tower. The orange tower is taller than the pink tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the orange tower is the tallest."
+     ],
+     "steps": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
+      "So the orange tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "green",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "orange",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"pink\",\"green\"],[\"orange\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "red",
+       "blue"
+      ],
+      [
+       "yellow",
+       "red"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "red",
+      "blue",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "The red tower is taller than the blue tower. The yellow tower is taller than the red tower. Which tower is the tallest?",
+     "speak": [
+      "The red tower is taller than the blue tower. The yellow tower is taller than the red tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the yellow tower is the tallest."
+     ],
+     "steps": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "red",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "yellow",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "red",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-C12|1|{\"ask\":\"most\",\"pairs\":[[\"red\",\"blue\"],[\"yellow\",\"red\"]]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "purple",
+       "green"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "purple",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the orange tower. The purple tower is taller than the green tower. Which tower is the shortest?",
+     "speak": [
+      "The green tower is taller than the orange tower. The purple tower is taller than the green tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "purple",
+      "size": "l",
+      "speak": [
+       "purple"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "purple",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "purple",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"green\",\"orange\"],[\"purple\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "green"
+      ],
+      [
+       "green",
+       "orange"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "orange",
+      "green",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is taller than the green tower. The green tower is taller than the orange tower. Which tower is the shortest?",
+     "speak": [
+      "The blue tower is taller than the green tower. The green tower is taller than the orange tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"blue\",\"green\"],[\"green\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "orange",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the orange tower. The blue tower is taller than the green tower. Which tower is the shortest?",
+     "speak": [
+      "The green tower is taller than the orange tower. The blue tower is taller than the green tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"green\",\"orange\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "pink"
+      ],
+      [
+       "pink",
+       "orange"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "blue",
+      "pink",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the shortest?",
+     "speak": [
+      "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "orange",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"blue\",\"pink\"],[\"pink\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "blue"
+      ],
+      [
+       "blue",
+       "pink"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "blue",
+      "pink",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the blue tower. The blue tower is taller than the pink tower. Which tower is the shortest?",
+     "speak": [
+      "The green tower is taller than the blue tower. The blue tower is taller than the pink tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the pink tower is the shortest."
+     ],
+     "steps": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"green\",\"blue\"],[\"blue\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "yellow"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "yellow",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the yellow tower. The blue tower is taller than the green tower. Which tower is the shortest?",
+     "speak": [
+      "The green tower is taller than the yellow tower. The blue tower is taller than the green tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the yellow tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
+      "So the yellow tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "yellow",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "yellow",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "blue",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"green\",\"yellow\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "red",
+       "yellow"
+      ],
+      [
+       "yellow",
+       "blue"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "yellow",
+      "blue",
+      "red"
+     ]
+    },
+    "prompt": {
+     "text": "The red tower is taller than the yellow tower. The yellow tower is taller than the blue tower. Which tower is the shortest?",
+     "speak": [
+      "The red tower is taller than the yellow tower. The yellow tower is taller than the blue tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the blue tower is the shortest."
+     ],
+     "steps": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "red",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "yellow",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "yellow",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"red\",\"yellow\"],[\"yellow\",\"blue\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "orange",
+       "green"
+      ],
+      [
+       "green",
+       "pink"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "pink",
+      "orange"
+     ]
+    },
+    "prompt": {
+     "text": "The orange tower is taller than the green tower. The green tower is taller than the pink tower. Which tower is the shortest?",
+     "speak": [
+      "The orange tower is taller than the green tower. The green tower is taller than the pink tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the pink tower is the shortest."
+     ],
+     "steps": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
+      "So the pink tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "orange",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "green",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"orange\",\"green\"],[\"green\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "pink",
+       "green"
+      ],
+      [
+       "orange",
+       "pink"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "pink",
+      "orange",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "The pink tower is taller than the green tower. The orange tower is taller than the pink tower. Which tower is the shortest?",
+     "speak": [
+      "The pink tower is taller than the green tower. The orange tower is taller than the pink tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the green tower is the shortest."
+     ],
+     "steps": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
+      "So the green tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "green",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "green",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "orange",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "pink",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"pink\",\"green\"],[\"orange\",\"pink\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "red",
+       "blue"
+      ],
+      [
+       "yellow",
+       "red"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "red",
+      "blue",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "The red tower is taller than the blue tower. The yellow tower is taller than the red tower. Which tower is the shortest?",
+     "speak": [
+      "The red tower is taller than the blue tower. The yellow tower is taller than the red tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the blue tower is the shortest."
+     ],
+     "steps": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
+      "So the blue tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "red",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 3,
+         "color": "blue",
+         "orientation": "vertical"
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "bar",
+         "length": 7,
+         "color": "yellow",
+         "orientation": "vertical"
+        },
+        {
+         "kind": "bar",
+         "length": 5,
+         "color": "red",
+         "orientation": "vertical"
+        }
+       ]
+      }
+     ]
+    },
+    "skillId": "M-1-C12",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-C12|2|{\"ask\":\"least\",\"pairs\":[[\"red\",\"blue\"],[\"yellow\",\"red\"]]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "purple",
+       "green"
+      ],
+      [
+       "green",
+       "orange"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "orange",
+      "purple"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is shorter than the purple tower. The orange tower is shorter than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The green tower is shorter than the purple tower. The orange tower is shorter than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "purple",
+      "size": "l",
+      "speak": [
+       "purple"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the purple tower is the tallest."
+     ],
+     "steps": [
+      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the purple tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "purple",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-C12|3|{\"ask\":\"most\",\"pairs\":[[\"purple\",\"green\"],[\"green\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "orange",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The green tower is taller than the orange tower. The green tower is shorter than the blue tower. Which tower is the shortest?",
+     "speak": [
+      "The green tower is taller than the orange tower. The green tower is shorter than the blue tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-C12|3|{\"ask\":\"least\",\"pairs\":[[\"green\",\"orange\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "orange"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "orange",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The orange tower is shorter than the green tower. The blue tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The orange tower is shorter than the green tower. The blue tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-C12|3|{\"ask\":\"most\",\"pairs\":[[\"green\",\"orange\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "pink"
+      ],
+      [
+       "pink",
+       "orange"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "orange",
+      "blue",
+      "pink"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the shortest?",
+     "speak": [
+      "The blue tower is taller than the pink tower. The pink tower is taller than the orange tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the orange tower is the shortest."
+     ],
+     "steps": [
+      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "orange",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-C12|3|{\"ask\":\"least\",\"pairs\":[[\"blue\",\"pink\"],[\"pink\",\"orange\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "blue",
+       "pink"
+      ],
+      [
+       "green",
+       "blue"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "blue",
+      "green",
+      "pink"
+     ]
+    },
+    "prompt": {
+     "text": "The pink tower is shorter than the blue tower. The blue tower is shorter than the green tower. Which tower is the shortest?",
+     "speak": [
+      "The pink tower is shorter than the blue tower. The blue tower is shorter than the green tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the pink tower is the shortest."
+     ],
+     "steps": [
+      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-C12|3|{\"ask\":\"least\",\"pairs\":[[\"blue\",\"pink\"],[\"green\",\"blue\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "yellow"
+      ],
+      [
+       "blue",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "yellow",
+      "blue",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "The yellow tower is shorter than the green tower. The blue tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The yellow tower is shorter than the green tower. The blue tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the blue tower is the tallest."
+     ],
+     "steps": [
+      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "blue",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "yellow",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-C12|3|{\"ask\":\"most\",\"pairs\":[[\"green\",\"yellow\"],[\"blue\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "yellow",
+       "blue"
+      ],
+      [
+       "red",
+       "yellow"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "blue",
+      "red",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is shorter than the yellow tower. The yellow tower is shorter than the red tower. Which tower is the shortest?",
+     "speak": [
+      "The blue tower is shorter than the yellow tower. The yellow tower is shorter than the red tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the blue tower is the shortest."
+     ],
+     "steps": [
+      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-C12|3|{\"ask\":\"least\",\"pairs\":[[\"yellow\",\"blue\"],[\"red\",\"yellow\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "green",
+       "pink"
+      ],
+      [
+       "orange",
+       "green"
+      ]
+     ],
+     "ask": "least",
+     "options": [
+      "green",
+      "orange",
+      "pink"
+     ]
+    },
+    "prompt": {
+     "text": "The pink tower is shorter than the green tower. The orange tower is taller than the green tower. Which tower is the shortest?",
+     "speak": [
+      "The pink tower is shorter than the green tower. The orange tower is taller than the green tower. Which tower is the shortest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the pink tower is the shortest."
+     ],
+     "steps": [
+      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
+      "So the pink tower is the shortest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "green",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "pink",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-C12|3|{\"ask\":\"least\",\"pairs\":[[\"green\",\"pink\"],[\"orange\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "orange",
+       "pink"
+      ],
+      [
+       "pink",
+       "green"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "green",
+      "orange",
+      "pink"
+     ]
+    },
+    "prompt": {
+     "text": "The pink tower is shorter than the orange tower. The pink tower is taller than the green tower. Which tower is the tallest?",
+     "speak": [
+      "The pink tower is shorter than the orange tower. The pink tower is taller than the green tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       "green"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "orange",
+      "size": "l",
+      "speak": [
+       "orange"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pink",
+      "size": "l",
+      "speak": [
+       "pink"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the orange tower is the tallest."
+     ],
+     "steps": [
+      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
+      "So the orange tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "orange",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "pink",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "green",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-C12|3|{\"ask\":\"most\",\"pairs\":[[\"orange\",\"pink\"],[\"pink\",\"green\"]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "pairs": [
+      [
+       "red",
+       "blue"
+      ],
+      [
+       "yellow",
+       "red"
+      ]
+     ],
+     "ask": "most",
+     "options": [
+      "red",
+      "yellow",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "The blue tower is shorter than the red tower. The yellow tower is taller than the red tower. Which tower is the tallest?",
+     "speak": [
+      "The blue tower is shorter than the red tower. The yellow tower is taller than the red tower. Which tower is the tallest?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       "yellow"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       "blue"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the yellow tower is the tallest."
+     ],
+     "steps": [
+      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "bar",
+        "length": 7,
+        "color": "yellow",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 5,
+        "color": "red",
+        "orientation": "vertical"
+       },
+       {
+        "kind": "bar",
+        "length": 3,
+        "color": "blue",
+        "orientation": "vertical"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C12",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-C12|3|{\"ask\":\"most\",\"pairs\":[[\"red\",\"blue\"],[\"yellow\",\"red\"]]}"
+   }
+  ]
+ }
+}

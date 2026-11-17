@@ -209,12 +209,12 @@ describe('what the dashboard and scores are made from', () => {
 
   it('says a check-in level as a share of the grade, a skill to work on, or a finished ladder', () => {
     const counting = diagnosticLadders('math').find((ladder) => ladder.id === 'counting');
-    const length = diagnosticLadders('math').find((ladder) => ladder.id === 'length');
+    const patterns = diagnosticLadders('math').find((ladder) => ladder.id === 'patterns');
     const name = (id: string): string => skillById(id)?.name ?? id;
     const result = { id: 'd', childId: 'kid-1', subject: 'math' as const, takenAt: NOW.toISOString() };
     expect(ladderLevel({ ...result, ladderId: 'counting', placementSkillId: 'M-K-A3', estimateGrade: 'K', estimateFraction: 2 / 7 }, counting, name)).toBe('Kindergarten, 29% through');
     // Fewer than three skills of that grade on the ladder: name the skill instead.
-    expect(ladderLevel({ ...result, ladderId: 'length', placementSkillId: 'M-K-F1', estimateGrade: 'K', estimateFraction: 0 }, length, name)).toBe('Working on Compare length and height');
+    expect(ladderLevel({ ...result, ladderId: 'patterns', placementSkillId: 'M-K-G1', estimateGrade: 'K', estimateFraction: 0 }, patterns, name)).toBe('Working on Patterns: AAB, ABB, ABC');
     expect(ladderLevel({ ...result, ladderId: 'counting', placementSkillId: null, estimateGrade: null, estimateFraction: null }, counting, name)).toBe('Finished this ladder');
   });
 
@@ -265,21 +265,21 @@ describe('the grown-up pages', () => {
     const child = await setUp('K');
     await practised(child);
     const lastWeek = localWeek(new Date(NOW.getTime() - 7 * 86_400_000));
-    await (await repo()).saveChild({ ...child, levelWeeks: [{ week: lastWeek, at: NOW.toISOString(), levels: { 'add-subtract': 0.2 } }] });
+    await (await repo()).saveChild({ ...child, levelWeeks: [{ week: lastWeek, at: NOW.toISOString(), levels: { 'add-subtract': 0.1 } }] });
     openApp('/parent/dashboard');
     const topics = await screen.findByRole('region', { name: 'Levels by topic' });
-    // Adding and subtracting: 4 of the 11 kindergarten skills known, so about 0.4 of the year.
+    // Adding and subtracting: 4 of the 17 kindergarten skills known, so about 0.2 of the year.
     const adding = topics.querySelector('[data-topic="add-subtract"]');
     expect(adding?.textContent).toContain('Math: Adding and subtracting');
-    expect(adding?.textContent).toContain('about mid kindergarten');
-    expect(adding?.textContent).toContain('up 0.2 since last week');
+    expect(adding?.textContent).toContain('about early kindergarten');
+    expect(adding?.textContent).toContain('up 0.1 since last week');
     expect(adding?.querySelector('[data-spark="add-subtract"]')).not.toBeNull();
     expect(topics.querySelector('[data-topic="phonics"]')?.textContent).toContain('not tried yet');
     expect(topics.querySelector('[data-topic="counting"]')?.getAttribute('data-kind')).toBe('level');
     await waitFor(async () => {
       const saved = (await (await repo()).listChildren()).find((each) => each.id === child.id);
       expect(saved?.levelWeeks.map((snapshot) => snapshot.week)).toEqual([lastWeek, localWeek(NOW)]);
-      expect(saved?.levelWeeks.at(-1)?.levels['add-subtract']).toBe(0.4);
+      expect(saved?.levelWeeks.at(-1)?.levels['add-subtract']).toBe(0.2);
     });
     expect(recentErrors()).toEqual([]);
   });

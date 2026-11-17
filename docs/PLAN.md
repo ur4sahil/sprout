@@ -1441,6 +1441,8 @@ Built on Nov 17, 2026 (phase G):
 
 Phase I, part 1 (built Nov 17, 2026): Reasoning A.15 Word analogies (opposites and homes / babies, what animals give, colours / parts and tools with a near miss), A.16 Which word does not belong (a far group / a close group / five words), A.17 Number grids (rows count up by 1 / by a step / the first two add to the third). Part 2 adds a harder top level to each of A.1 to A.14.
 
+Phase H (built Nov 17, 2026): the skill tables of its five waves are in `docs/waves/h1.md` to `docs/waves/h5.md` (170 skills in all).
+
 Not covered, and not planned: writing and speaking, which a tapping app cannot mark; Virginia's own standards, not yet mapped (the `vaSol` field is empty).
 
 ### Reasoning (14 skills, all grades)

@@ -1,0 +1,3381 @@
+{
+ "skillId": "M-1-B18",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "facts": {
+   "a": 9,
+   "b": 1,
+   "options": [
+    8,
+    9,
+    10
+   ]
+  },
+  "prompt": {
+   "text": "9 − 1. Start at 9. Count back 1. Where do you land?",
+   "speak": [
+    {
+     "number": 9
+    },
+    "minus",
+    {
+     "number": 1
+    },
+    ". Start at",
+    {
+     "number": 9
+    },
+    ". Count back",
+    {
+     "number": 1
+    },
+    ". Where do you land?"
+   ]
+  },
+  "stimulus": {
+   "kind": "numberLine",
+   "min": 3,
+   "max": 11,
+   "step": 1,
+   "marked": [
+    9
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Start at",
+    {
+     "number": 9
+    },
+    ". Count back",
+    {
+     "number": 1
+    },
+    ":",
+    {
+     "number": 8
+    },
+    ". You land on",
+    {
+     "number": 8
+    },
+    "."
+   ],
+   "steps": [
+    "Start at 9.",
+    "Count back 1: 8.",
+    "9 − 1 = 8."
+   ],
+   "visual": {
+    "kind": "numberLine",
+    "min": 7,
+    "max": 10,
+    "step": 1,
+    "marked": [
+     9,
+     8
+    ]
+   }
+  },
+  "type": "choice",
+  "options": [
+   {
+    "kind": "text",
+    "value": "8",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 8
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "9",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 9
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "10",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 10
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-1-B18",
+  "level": 1,
+  "seed": 919,
+  "key": "M-1-B18|1|{\"a\":9,\"b\":1}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "4 − 2. Start at 4. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 6,
+     "step": 1,
+     "marked": [
+      4
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 3
+      },
+      {
+       "number": 2
+      },
+      ". You land on",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4.",
+      "Count back 2: 3, 2.",
+      "4 − 2 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "marked": [
+       4,
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-B18|1|{\"a\":4,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "options": [
+      4,
+      5,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "6 − 2. Start at 6. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 6
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 8,
+     "step": 1,
+     "marked": [
+      6
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 6
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 5
+      },
+      {
+       "number": 4
+      },
+      ". You land on",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 6.",
+      "Count back 2: 5, 4.",
+      "6 − 2 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 3,
+      "max": 7,
+      "step": 1,
+      "marked": [
+       6,
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-B18|1|{\"a\":6,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "options": [
+      0,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "4 − 2. Start at 4. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 6,
+     "step": 1,
+     "marked": [
+      4
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 3
+      },
+      {
+       "number": 2
+      },
+      ". You land on",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4.",
+      "Count back 2: 3, 2.",
+      "4 − 2 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "marked": [
+       4,
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-B18|1|{\"a\":4,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "options": [
+      4,
+      5,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "6 − 2. Start at 6. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 6
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 8,
+     "step": 1,
+     "marked": [
+      6
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 6
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 5
+      },
+      {
+       "number": 4
+      },
+      ". You land on",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 6.",
+      "Count back 2: 5, 4.",
+      "6 − 2 = 4."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 3,
+      "max": 7,
+      "step": 1,
+      "marked": [
+       6,
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-B18|1|{\"a\":6,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 2,
+     "options": [
+      7,
+      8,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "9 − 2. Start at 9. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 9
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 3,
+     "max": 11,
+     "step": 1,
+     "marked": [
+      9
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 9
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 8
+      },
+      {
+       "number": 7
+      },
+      ". You land on",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 9.",
+      "Count back 2: 8, 7.",
+      "9 − 2 = 7."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 6,
+      "max": 10,
+      "step": 1,
+      "marked": [
+       9,
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-B18|1|{\"a\":9,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "options": [
+      0,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "4 − 2. Start at 4. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 6,
+     "step": 1,
+     "marked": [
+      4
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 3
+      },
+      {
+       "number": 2
+      },
+      ". You land on",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4.",
+      "Count back 2: 3, 2.",
+      "4 − 2 = 2."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "marked": [
+       4,
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-B18|1|{\"a\":4,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "4 − 1. Start at 4. Count back 1. Where do you land?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ". Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 0,
+     "max": 6,
+     "step": 1,
+     "marked": [
+      4
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 4
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ":",
+      {
+       "number": 3
+      },
+      ". You land on",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4.",
+      "Count back 1: 3.",
+      "4 − 1 = 3."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "marked": [
+       4,
+       3
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-B18|1|{\"a\":4,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 1,
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "8 − 1. Start at 8. Count back 1. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 2,
+     "max": 10,
+     "step": 1,
+     "marked": [
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ":",
+      {
+       "number": 7
+      },
+      ". You land on",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 1: 7.",
+      "8 − 1 = 7."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 6,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-B18|1|{\"a\":8,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "9 − 1. Start at 9. Count back 1. Where do you land?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      ". Start at",
+      {
+       "number": 9
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 3,
+     "max": 11,
+     "step": 1,
+     "marked": [
+      9
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 9
+      },
+      ". Count back",
+      {
+       "number": 1
+      },
+      ":",
+      {
+       "number": 8
+      },
+      ". You land on",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 9.",
+      "Count back 1: 8.",
+      "9 − 1 = 8."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 7,
+      "max": 10,
+      "step": 1,
+      "marked": [
+       9,
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-B18|1|{\"a\":9,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 2,
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "10 − 2. Start at 10. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 10
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 4,
+     "max": 12,
+     "step": 1,
+     "marked": [
+      10
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 10
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 9
+      },
+      {
+       "number": 8
+      },
+      ". You land on",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 10.",
+      "Count back 2: 9, 8.",
+      "10 − 2 = 8."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 7,
+      "max": 11,
+      "step": 1,
+      "marked": [
+       10,
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B18",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-B18|1|{\"a\":10,\"b\":2}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3,
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 2,
+     "max": 10,
+     "step": 1,
+     "marked": [
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-B18|2|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 12,
+     "b": 3,
+     "options": [
+      9,
+      10,
+      15
+     ]
+    },
+    "prompt": {
+     "text": "12 − 3. Start at 12. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 6,
+     "max": 14,
+     "step": 1,
+     "marked": [
+      12
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 11
+      },
+      {
+       "number": 10
+      },
+      {
+       "number": 9
+      },
+      ". You land on",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 12.",
+      "Count back 3: 11, 10, 9.",
+      "12 − 3 = 9."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 8,
+      "max": 13,
+      "step": 1,
+      "marked": [
+       12,
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-B18|2|{\"a\":12,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3,
+     "options": [
+      3,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 2,
+     "max": 10,
+     "step": 1,
+     "marked": [
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-B18|2|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 12,
+     "b": 3,
+     "options": [
+      9,
+      10,
+      15
+     ]
+    },
+    "prompt": {
+     "text": "12 − 3. Start at 12. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 6,
+     "max": 14,
+     "step": 1,
+     "marked": [
+      12
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 11
+      },
+      {
+       "number": 10
+      },
+      {
+       "number": 9
+      },
+      ". You land on",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 12.",
+      "Count back 3: 11, 10, 9.",
+      "12 − 3 = 9."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 8,
+      "max": 13,
+      "step": 1,
+      "marked": [
+       12,
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-B18|2|{\"a\":12,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "b": 3,
+     "options": [
+      15,
+      16,
+      21
+     ]
+    },
+    "prompt": {
+     "text": "18 − 3. Start at 18. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 18
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 12,
+     "max": 20,
+     "step": 1,
+     "marked": [
+      18
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 18
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 17
+      },
+      {
+       "number": 16
+      },
+      {
+       "number": 15
+      },
+      ". You land on",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 18.",
+      "Count back 3: 17, 16, 15.",
+      "18 − 3 = 15."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 14,
+      "max": 19,
+      "step": 1,
+      "marked": [
+       18,
+       15
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-B18|2|{\"a\":18,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3,
+     "options": [
+      3,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 2,
+     "max": 10,
+     "step": 1,
+     "marked": [
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-B18|2|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 2,
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "8 − 2. Start at 8. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 2,
+     "max": 10,
+     "step": 1,
+     "marked": [
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      ". You land on",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 2: 7, 6.",
+      "8 − 2 = 6."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 5,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       6
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-B18|2|{\"a\":8,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 2,
+     "options": [
+      14,
+      15,
+      18
+     ]
+    },
+    "prompt": {
+     "text": "16 − 2. Start at 16. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 16
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 10,
+     "max": 18,
+     "step": 1,
+     "marked": [
+      16
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 16
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 15
+      },
+      {
+       "number": 14
+      },
+      ". You land on",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 16.",
+      "Count back 2: 15, 14.",
+      "16 − 2 = 14."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 13,
+      "max": 17,
+      "step": 1,
+      "marked": [
+       16,
+       14
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-B18|2|{\"a\":16,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 19,
+     "b": 2,
+     "options": [
+      17,
+      18,
+      21
+     ]
+    },
+    "prompt": {
+     "text": "19 − 2. Start at 19. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 19
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 13,
+     "max": 21,
+     "step": 1,
+     "marked": [
+      19
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 18
+      },
+      {
+       "number": 17
+      },
+      ". You land on",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 19.",
+      "Count back 2: 18, 17.",
+      "19 − 2 = 17."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 16,
+      "max": 20,
+      "step": 1,
+      "marked": [
+       19,
+       17
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-B18|2|{\"a\":19,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 19,
+     "b": 3,
+     "options": [
+      14,
+      15,
+      16
+     ]
+    },
+    "prompt": {
+     "text": "19 − 3. Start at 19. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 19
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "numberLine",
+     "min": 13,
+     "max": 21,
+     "step": 1,
+     "marked": [
+      19
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 18
+      },
+      {
+       "number": 17
+      },
+      {
+       "number": 16
+      },
+      ". You land on",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 19.",
+      "Count back 3: 18, 17, 16.",
+      "19 − 3 = 16."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 15,
+      "max": 20,
+      "step": 1,
+      "marked": [
+       19,
+       16
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B18",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-B18|2|{\"a\":19,\"b\":3}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-B18|3|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 12,
+     "b": 3
+    },
+    "prompt": {
+     "text": "12 − 3. Start at 12. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      12,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 11
+      },
+      {
+       "number": 10
+      },
+      {
+       "number": 9
+      },
+      ". You land on",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 12.",
+      "Count back 3: 11, 10, 9.",
+      "12 − 3 = 9."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 8,
+      "max": 13,
+      "step": 1,
+      "marked": [
+       12,
+       9
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-B18|3|{\"a\":12,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-B18|3|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 12,
+     "b": 3
+    },
+    "prompt": {
+     "text": "12 − 3. Start at 12. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      12,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 12
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 11
+      },
+      {
+       "number": 10
+      },
+      {
+       "number": 9
+      },
+      ". You land on",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 12.",
+      "Count back 3: 11, 10, 9.",
+      "12 − 3 = 9."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 8,
+      "max": 13,
+      "step": 1,
+      "marked": [
+       12,
+       9
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-B18|3|{\"a\":12,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "b": 3
+    },
+    "prompt": {
+     "text": "18 − 3. Start at 18. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 18
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      18,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 18
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 17
+      },
+      {
+       "number": 16
+      },
+      {
+       "number": 15
+      },
+      ". You land on",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 18.",
+      "Count back 3: 17, 16, 15.",
+      "18 − 3 = 15."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 14,
+      "max": 19,
+      "step": 1,
+      "marked": [
+       18,
+       15
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 15,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-B18|3|{\"a\":18,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 3
+    },
+    "prompt": {
+     "text": "8 − 3. Start at 8. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      {
+       "number": 5
+      },
+      ". You land on",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 3: 7, 6, 5.",
+      "8 − 3 = 5."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 4,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-B18|3|{\"a\":8,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 2
+    },
+    "prompt": {
+     "text": "8 − 2. Start at 8. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "-",
+      2,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 8
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 7
+      },
+      {
+       "number": 6
+      },
+      ". You land on",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 8.",
+      "Count back 2: 7, 6.",
+      "8 − 2 = 6."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 5,
+      "max": 9,
+      "step": 1,
+      "marked": [
+       8,
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-B18|3|{\"a\":8,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 2
+    },
+    "prompt": {
+     "text": "16 − 2. Start at 16. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 16
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      16,
+      "-",
+      2,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 16
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 15
+      },
+      {
+       "number": 14
+      },
+      ". You land on",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 16.",
+      "Count back 2: 15, 14.",
+      "16 − 2 = 14."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 13,
+      "max": 17,
+      "step": 1,
+      "marked": [
+       16,
+       14
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 14,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-B18|3|{\"a\":16,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 19,
+     "b": 2
+    },
+    "prompt": {
+     "text": "19 − 2. Start at 19. Count back 2. Where do you land?",
+     "speak": [
+      {
+       "number": 19
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      ". Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      19,
+      "-",
+      2,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 2
+      },
+      ":",
+      {
+       "number": 18
+      },
+      {
+       "number": 17
+      },
+      ". You land on",
+      {
+       "number": 17
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 19.",
+      "Count back 2: 18, 17.",
+      "19 − 2 = 17."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 16,
+      "max": 20,
+      "step": 1,
+      "marked": [
+       19,
+       17
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 17,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-B18|3|{\"a\":19,\"b\":2}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 19,
+     "b": 3
+    },
+    "prompt": {
+     "text": "19 − 3. Start at 19. Count back 3. Where do you land?",
+     "speak": [
+      {
+       "number": 19
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      ". Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ". Where do you land?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      19,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 19
+      },
+      ". Count back",
+      {
+       "number": 3
+      },
+      ":",
+      {
+       "number": 18
+      },
+      {
+       "number": 17
+      },
+      {
+       "number": 16
+      },
+      ". You land on",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 19.",
+      "Count back 3: 18, 17, 16.",
+      "19 − 3 = 16."
+     ],
+     "visual": {
+      "kind": "numberLine",
+      "min": 15,
+      "max": 20,
+      "step": 1,
+      "marked": [
+       19,
+       16
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 16,
+    "maxDigits": 2,
+    "skillId": "M-1-B18",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-B18|3|{\"a\":19,\"b\":3}"
+   }
+  ]
+ }
+}

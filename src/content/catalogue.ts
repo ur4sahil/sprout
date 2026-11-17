@@ -30,7 +30,7 @@ export interface Skill {
 }
 
 // Raised by one in every content phase (plan section 7, Catalogue growth).
-export const CATALOGUE_VERSION = 24;
+export const CATALOGUE_VERSION = 25;
 
 const BASE: readonly Skill[] = [
   {

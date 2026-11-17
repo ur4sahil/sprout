@@ -8,10 +8,10 @@ describe('ladders', () => {
   const all = LADDERS.flatMap((ladder) => ladder.skillIds);
 
   it('hold every skill built so far, each on exactly one ladder', () => {
-    expect(all).toHaveLength(322);
-    expect(new Set(all).size).toBe(322);
+    expect(all).toHaveLength(362);
+    expect(new Set(all).size).toBe(362);
     const count = (prefix: string): number => all.filter((id) => id.startsWith(prefix)).length;
-    expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-'), count('M-3-')]).toEqual([32, 31, 27, 46, 47]);
+    expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-'), count('M-3-')]).toEqual([32, 51, 47, 46, 47]);
     expect([count('E-PK-'), count('E-K-'), count('E-1-'), count('E-2-')]).toEqual([22, 36, 31, 33]);
     expect(count('R-')).toBe(17);
   });
@@ -22,7 +22,7 @@ describe('ladders', () => {
       'letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading',
       'figures', 'words-numbers',
     ]);
-    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([25, 12, 45, 12, 17, 15, 12, 7, 6, 4, 10, 17, 1, 12, 15, 18, 6, 23, 23, 25, 9, 8]);
+    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([33, 15, 57, 14, 20, 18, 13, 10, 9, 5, 11, 17, 1, 12, 15, 18, 6, 23, 23, 25, 9, 8]);
   });
 
   it('never go down a grade', () => {
@@ -34,8 +34,8 @@ describe('ladders', () => {
   });
 
   it('match the plan at the places that are easy to get wrong', () => {
-    expect(ladderById('counting')?.skillIds.slice(-6)).toEqual(['M-K-A7', 'M-1-A1', 'M-1-A2', 'M-2-A4', 'M-2-A11', 'M-2-A14']);
-    expect(ladderById('place-value')?.skillIds).toEqual(['M-K-D1', 'M-1-A3', 'M-1-A5', 'M-2-A1', 'M-2-A12', 'M-2-A9', 'M-2-A2', 'M-2-A7', 'M-2-A6', 'M-3-A1', 'M-3-A2', 'M-3-A4']);
+    expect(ladderById('counting')?.skillIds.slice(-8)).toEqual(['M-K-A13', 'M-1-A1', 'M-1-A2', 'M-1-A6', 'M-1-A10', 'M-2-A4', 'M-2-A11', 'M-2-A14']);
+    expect(ladderById('place-value')?.skillIds).toEqual(['M-K-D1', 'M-1-A3', 'M-1-A7', 'M-1-A5', 'M-1-A9', 'M-2-A1', 'M-2-A12', 'M-2-A9', 'M-2-A2', 'M-2-A7', 'M-2-A6', 'M-3-A1', 'M-3-A2', 'M-3-A4']);
     expect(ladderById('sounds')?.skillIds).toEqual(['E-PK-B1', 'E-PK-B4', 'E-PK-B6', 'E-PK-B2', 'E-PK-B5', 'E-PK-B3', 'E-K-B1', 'E-K-B2', 'E-K-B13', 'E-K-B3', 'E-K-B8', 'E-K-B9', 'E-K-B10', 'E-K-B6', 'E-K-B12']);
     expect(ladderById('phonics')?.skillIds.slice(0, 3)).toEqual(['E-K-B4', 'E-K-B5', 'E-K-B11']);
     expect(ladderById('figures')?.skillIds).toEqual(['R-A1', 'R-A2', 'R-A3', 'R-A4', 'R-A5', 'R-A6', 'R-A7', 'R-A12', 'R-A13']);
@@ -46,10 +46,10 @@ describe('ladders', () => {
     expect(ladderPrerequisite('M-PK-A1')).toBeNull();
     expect(ladderPrerequisite('M-PK-A2')).toBe('M-PK-A1');
     expect(ladderPrerequisite('M-K-A1')).toBe('M-PK-A13');
-    expect(ladderPrerequisite('M-2-A4')).toBe('M-1-A2');
+    expect(ladderPrerequisite('M-2-A4')).toBe('M-1-A10');
     expect(ladderPrerequisite('M-K-C1')).toBeNull();
     // Not the one before it in its lettered category.
-    expect(ladderPrerequisite('M-1-A4')).toBe('M-K-B3');
+    expect(ladderPrerequisite('M-1-A4')).toBe('M-K-B5');
     expect(ladderPrerequisite('not-a-skill')).toBeNull();
   });
 
