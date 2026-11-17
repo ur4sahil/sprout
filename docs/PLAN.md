@@ -1093,14 +1093,14 @@ A ladder holds only skills that truly build on each other. Telling time and coun
 | Math | comparing | Pre-K B.1 to B.2, K B.1 to B.3, grade 1 A.4, grade 2 A.3, grade 3 A.3 |
 | Math | add-subtract | K C.1 to C.11, grade 1 B.1 to B.10, grade 2 B.1 to B.10, grade 3 B.1 to B.4 |
 | Math | place-value | K D.1, grade 1 A.3 and A.5, grade 2 A.1, A.2, A.6, grade 3 A.1, A.2, A.4 |
-| Math | shapes | Pre-K C.1 to C.2, K E.1 to E.3, grade 1 D.2, grade 2 D.1 |
+| Math | shapes | Pre-K C.1 to C.2, K E.1 to E.3, grade 1 D.2, grade 2 D.1, grade 3 G.1 |
 | Math | length | Pre-K C.3, K F.1, grade 1 C.2, grade 2 C.3, grade 3 F.4, F.3 |
-| Math | patterns | Pre-K D.1 to D.3, K G.1, grade 1 E.1, grade 2 A.5 |
-| Math | data | K F.2, grade 1 C.3, grade 2 C.4, grade 3 F.6 |
+| Math | patterns | Pre-K D.1 to D.3, K G.1, grade 1 E.1, grade 2 A.5, grade 3 A.5 |
+| Math | data | K F.2, grade 1 C.3, grade 2 C.4, grade 3 F.6, F.7 |
 | Math | time | Grade 1 C.1, grade 2 C.1, grade 3 F.1, F.2 |
 | Math | money | Grade 1 C.4, grade 2 C.2 |
-| Math | fractions | Grade 1 D.1, grade 2 D.2, grade 3 E.1 to E.4 |
-| Math | multiply-divide | Grade 3 C.1 to C.6, D.1 to D.3 (grade 2 B.8 stays on add-subtract, where saved placements already point) |
+| Math | fractions | Grade 1 D.1, grade 2 D.2, grade 3 G.2, E.1 to E.4 |
+| Math | multiply-divide | Grade 3 C.1 to C.6, D.1 to D.3, C.7 (grade 2 B.8 stays on add-subtract, where saved placements already point) |
 | Math | measures | Grade 3 F.5 |
 | Language Arts | letters | Pre-K A.1 to A.5, K A.1 to A.2 |
 | Language Arts | sounds | Pre-K B.1 to B.3, K B.1 to B.3, K B.6 |
@@ -1337,7 +1337,7 @@ Strands: LT letters, PH sounds and phonics, WD words, GR grammar, RD reading.
 | C.3 | End marks | GR | choice | Period or question mark / adds exclamation mark |
 | D.1 | Read a short story | RD | choice | Authored bank: 3-sentence story, who or what question / why question |
 
-### Math, grade 3 (27 skills)
+### Math, grade 3 (32 skills)
 
 Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child ahead of grade 2. Spoken numbers go up to 10,000 from here (`numberWords`).
 
@@ -1347,6 +1347,7 @@ Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child 
 | A.2 | Number names to 10,000 | NBT | choice | Words to numeral, no zeros / with a zero / numeral to words |
 | A.3 | Compare four-digit numbers | NBT | choice, order | Different thousands / same thousands / pick the sign / order: 3 numbers, smallest first |
 | A.4 | Round to 10 and 100 | NBT | choice, numberPad | Nearest ten, on a number line / nearest ten / nearest hundred / typed, either |
+| A.5 | Number patterns | OA | choice, numberPad | Count by 2, 5, 10 / by 3, 4, 6, 25, up or down / by 50 or 100 to 1,000, typed |
 | B.1 | Add within 1,000, regrouping | NBT | choice, numberPad | One regroup / two regroups / typed |
 | B.2 | Subtract within 1,000, regrouping | NBT | choice, numberPad | One regroup / two regroups / two regroups, typed (never across a zero, whose explanation needs a step of its own) |
 | B.3 | Estimate sums and differences | NBT | choice | Round both to tens, then add / to hundreds, then add or subtract / is the answer reasonable |
@@ -1357,6 +1358,7 @@ Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child 
 | C.4 | Multiply by 3 and 4 | OA | choice, numberPad | By 3 / by 4 / mixed, typed |
 | C.5 | Multiply by 6, 7, 8 and 9 | OA | choice, numberPad | By 6 and 7 / by 8 and 9 / mixed, typed |
 | C.6 | Missing factor | OA | choice, numberPad | ? × 4 = 12 with a picture / no picture / typed |
+| C.7 | Times multiples of 10 | NBT | choice, numberPad | 3 × 20 with tens rods / 3 × 40 / typed, to 9 × 90 |
 | D.1 | Share equally | OA | choice, numberPad | Share a picture group into 2 or 3 / into up to 5 / typed |
 | D.2 | Division facts | OA | choice, numberPad | Divide by 2, 5, 10 / by 3, 4 / by 6 to 9, typed |
 | D.3 | Fact families | OA | choice | Pick the division that goes with 3 × 4 = 12 / the missing member / which does not belong |
@@ -1368,8 +1370,13 @@ Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child 
 | F.2 | Elapsed time | MD | choice, numberPad | Whole hours later / half hours / minutes later, typed |
 | F.3 | Area | MD | choice, numberPad | Count square units / rows times columns / typed |
 | F.4 | Perimeter | MD | choice, numberPad | Add the sides on a grid / rectangle with two sides given / typed |
-| F.5 | Mass and volume | MD | choice | Pick the sensible unit (grams, kilograms, litres) / read a scale / compare two |
+| F.5 | Mass and volume | MD | choice | Pick the sensible unit (grams, kilograms, liters) / read a balance / how much more, of two |
 | F.6 | Scaled graphs | MD | choice, numberPad | Picture graph, one picture is 2 / bar graph with steps of 5 / how many more, typed |
+| F.7 | Line plots | MD | choice, numberPad | How many at one length, in halves / which length has the most / how many in all, in fourths, typed |
+| G.1 | Quadrilaterals | G | choice | Which is a quadrilateral / which is not / square, rectangle or trapezoid from a clue (read) |
+| G.2 | Equal-area parts | G | choice, numberPad | What fraction is one equal part / which shape is cut into equal parts / how many parts make the whole, typed |
+
+A.5, C.7, F.7, G.1 and G.2 are the five Common Core standards the Nov 17 audit found missing (3.OA.D.9, 3.NBT.A.3, 3.MD.B.4, 3.G.A.1, 3.G.A.2).
 
 ### Language Arts, grade 2 (15 skills)
 

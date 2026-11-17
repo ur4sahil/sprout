@@ -1,0 +1,5170 @@
+{
+ "skillId": "M-3-A5",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "What number is missing?",
+   "speak": [
+    "What number is missing?"
+   ]
+  },
+  "stimulus": {
+   "kind": "sequence",
+   "items": [
+    {
+     "kind": "text",
+     "value": "50",
+     "size": "l",
+     "speak": [
+      {
+       "number": 50
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "55",
+     "size": "l",
+     "speak": [
+      {
+       "number": 55
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "60",
+     "size": "l",
+     "speak": [
+      {
+       "number": 60
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "65",
+     "size": "l",
+     "speak": [
+      {
+       "number": 65
+      }
+     ]
+    },
+    "blank"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "Each number",
+    "goes up",
+    "by",
+    {
+     "number": 5
+    },
+    ". The missing number is",
+    {
+     "number": 70
+    },
+    "."
+   ],
+   "steps": [
+    "Each number goes up by 5.",
+    "The missing number is 70."
+   ],
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     {
+      "kind": "text",
+      "value": "50",
+      "size": "l",
+      "speak": [
+       {
+        "number": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55",
+      "size": "l",
+      "speak": [
+       {
+        "number": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "65",
+      "size": "l",
+      "speak": [
+       {
+        "number": 65
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "70",
+      "size": "l",
+      "speak": [
+       {
+        "number": 70
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "start": 50,
+   "step": 5,
+   "length": 5,
+   "blankIndex": 4,
+   "options": [
+    65,
+    69,
+    70
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "65",
+    "size": "l",
+    "speak": [
+     {
+      "number": 65
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "69",
+    "size": "l",
+    "speak": [
+     {
+      "number": 69
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "70",
+    "size": "l",
+    "speak": [
+     {
+      "number": 70
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "skillId": "M-3-A5",
+  "level": 1,
+  "seed": 361,
+  "key": "M-3-A5|1|{\"blankIndex\":4,\"length\":5,\"start\":50,\"step\":5}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "0",
+       "size": "l",
+       "speak": [
+        {
+         "number": 0
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 5
+      },
+      ". The missing number is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 5.",
+      "The missing number is 15."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "0",
+        "size": "l",
+        "speak": [
+         {
+          "number": 0
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 0,
+     "step": 5,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      10,
+      14,
+      15
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-A5|1|{\"blankIndex\":3,\"length\":5,\"start\":0,\"step\":5}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "30",
+       "size": "l",
+       "speak": [
+        {
+         "number": 30
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "50",
+       "size": "l",
+       "speak": [
+        {
+         "number": 50
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "60",
+       "size": "l",
+       "speak": [
+        {
+         "number": 60
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 10
+      },
+      ". The missing number is",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 10.",
+      "The missing number is 40."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "30",
+        "size": "l",
+        "speak": [
+         {
+          "number": 30
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "40",
+        "size": "l",
+        "speak": [
+         {
+          "number": 40
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "50",
+        "size": "l",
+        "speak": [
+         {
+          "number": 50
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "60",
+        "size": "l",
+        "speak": [
+         {
+          "number": 60
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 20,
+     "step": 10,
+     "length": 5,
+     "blankIndex": 2,
+     "options": [
+      39,
+      40,
+      41
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "39",
+      "size": "l",
+      "speak": [
+       {
+        "number": 39
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "41",
+      "size": "l",
+      "speak": [
+       {
+        "number": 41
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-A5|1|{\"blankIndex\":2,\"length\":5,\"start\":20,\"step\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "0",
+       "size": "l",
+       "speak": [
+        {
+         "number": 0
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "30",
+       "size": "l",
+       "speak": [
+        {
+         "number": 30
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "40",
+       "size": "l",
+       "speak": [
+        {
+         "number": 40
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 10
+      },
+      ". The missing number is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 10.",
+      "The missing number is 20."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "0",
+        "size": "l",
+        "speak": [
+         {
+          "number": 0
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "30",
+        "size": "l",
+        "speak": [
+         {
+          "number": 30
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "40",
+        "size": "l",
+        "speak": [
+         {
+          "number": 40
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 0,
+     "step": 10,
+     "length": 5,
+     "blankIndex": 2,
+     "options": [
+      20,
+      21,
+      30
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-A5|1|{\"blankIndex\":2,\"length\":5,\"start\":0,\"step\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "40",
+       "size": "l",
+       "speak": [
+        {
+         "number": 40
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "50",
+       "size": "l",
+       "speak": [
+        {
+         "number": 50
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "60",
+       "size": "l",
+       "speak": [
+        {
+         "number": 60
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 10
+      },
+      ". The missing number is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 10.",
+      "The missing number is 30."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "30",
+        "size": "l",
+        "speak": [
+         {
+          "number": 30
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "40",
+        "size": "l",
+        "speak": [
+         {
+          "number": 40
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "50",
+        "size": "l",
+        "speak": [
+         {
+          "number": 50
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "60",
+        "size": "l",
+        "speak": [
+         {
+          "number": 60
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 20,
+     "step": 10,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      30,
+      31,
+      40
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "31",
+      "size": "l",
+      "speak": [
+       {
+        "number": 31
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-A5|1|{\"blankIndex\":1,\"length\":5,\"start\":20,\"step\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "50",
+       "size": "l",
+       "speak": [
+        {
+         "number": 50
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "70",
+       "size": "l",
+       "speak": [
+        {
+         "number": 70
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "80",
+       "size": "l",
+       "speak": [
+        {
+         "number": 80
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "90",
+       "size": "l",
+       "speak": [
+        {
+         "number": 90
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 10
+      },
+      ". The missing number is",
+      {
+       "number": 60
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 10.",
+      "The missing number is 60."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "50",
+        "size": "l",
+        "speak": [
+         {
+          "number": 50
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "60",
+        "size": "l",
+        "speak": [
+         {
+          "number": 60
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "70",
+        "size": "l",
+        "speak": [
+         {
+          "number": 70
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "80",
+        "size": "l",
+        "speak": [
+         {
+          "number": 80
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "90",
+        "size": "l",
+        "speak": [
+         {
+          "number": 90
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 50,
+     "step": 10,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      50,
+      60,
+      61
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "50",
+      "size": "l",
+      "speak": [
+       {
+        "number": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "61",
+      "size": "l",
+      "speak": [
+       {
+        "number": 61
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-A5|1|{\"blankIndex\":1,\"length\":5,\"start\":50,\"step\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "0",
+       "size": "l",
+       "speak": [
+        {
+         "number": 0
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 5
+      },
+      ". The missing number is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 5.",
+      "The missing number is 15."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "0",
+        "size": "l",
+        "speak": [
+         {
+          "number": 0
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 0,
+     "step": 5,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      15,
+      16,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-A5|1|{\"blankIndex\":3,\"length\":5,\"start\":0,\"step\":5}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 2
+      },
+      ". The missing number is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "The missing number is 12."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 4,
+     "step": 2,
+     "length": 5,
+     "blankIndex": 4,
+     "options": [
+      10,
+      11,
+      12
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-A5|1|{\"blankIndex\":4,\"length\":5,\"start\":4,\"step\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "58",
+       "size": "l",
+       "speak": [
+        {
+         "number": 58
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "60",
+       "size": "l",
+       "speak": [
+        {
+         "number": 60
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "64",
+       "size": "l",
+       "speak": [
+        {
+         "number": 64
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "66",
+       "size": "l",
+       "speak": [
+        {
+         "number": 66
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 2
+      },
+      ". The missing number is",
+      {
+       "number": 62
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "The missing number is 62."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "58",
+        "size": "l",
+        "speak": [
+         {
+          "number": 58
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "60",
+        "size": "l",
+        "speak": [
+         {
+          "number": 60
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "62",
+        "size": "l",
+        "speak": [
+         {
+          "number": 62
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "64",
+        "size": "l",
+        "speak": [
+         {
+          "number": 64
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "66",
+        "size": "l",
+        "speak": [
+         {
+          "number": 66
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 58,
+     "step": 2,
+     "length": 5,
+     "blankIndex": 2,
+     "options": [
+      60,
+      61,
+      62
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "61",
+      "size": "l",
+      "speak": [
+       {
+        "number": 61
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "62",
+      "size": "l",
+      "speak": [
+       {
+        "number": 62
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-A5|1|{\"blankIndex\":2,\"length\":5,\"start\":58,\"step\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "80",
+       "size": "l",
+       "speak": [
+        {
+         "number": 80
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "84",
+       "size": "l",
+       "speak": [
+        {
+         "number": 84
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "86",
+       "size": "l",
+       "speak": [
+        {
+         "number": 86
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "88",
+       "size": "l",
+       "speak": [
+        {
+         "number": 88
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 2
+      },
+      ". The missing number is",
+      {
+       "number": 82
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "The missing number is 82."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "80",
+        "size": "l",
+        "speak": [
+         {
+          "number": 80
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "82",
+        "size": "l",
+        "speak": [
+         {
+          "number": 82
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "84",
+        "size": "l",
+        "speak": [
+         {
+          "number": 84
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "86",
+        "size": "l",
+        "speak": [
+         {
+          "number": 86
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "88",
+        "size": "l",
+        "speak": [
+         {
+          "number": 88
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 80,
+     "step": 2,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      80,
+      81,
+      82
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "81",
+      "size": "l",
+      "speak": [
+       {
+        "number": 81
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "82",
+      "size": "l",
+      "speak": [
+       {
+        "number": 82
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-A5|1|{\"blankIndex\":1,\"length\":5,\"start\":80,\"step\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "75",
+       "size": "l",
+       "speak": [
+        {
+         "number": 75
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "80",
+       "size": "l",
+       "speak": [
+        {
+         "number": 80
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "85",
+       "size": "l",
+       "speak": [
+        {
+         "number": 85
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "95",
+       "size": "l",
+       "speak": [
+        {
+         "number": 95
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 5
+      },
+      ". The missing number is",
+      {
+       "number": 90
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 5.",
+      "The missing number is 90."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "75",
+        "size": "l",
+        "speak": [
+         {
+          "number": 75
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "80",
+        "size": "l",
+        "speak": [
+         {
+          "number": 80
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "85",
+        "size": "l",
+        "speak": [
+         {
+          "number": 85
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "90",
+        "size": "l",
+        "speak": [
+         {
+          "number": 90
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "95",
+        "size": "l",
+        "speak": [
+         {
+          "number": 95
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 75,
+     "step": 5,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      85,
+      89,
+      90
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "85",
+      "size": "l",
+      "speak": [
+       {
+        "number": 85
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "89",
+      "size": "l",
+      "speak": [
+       {
+        "number": 89
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90",
+      "size": "l",
+      "speak": [
+       {
+        "number": 90
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-A5|1|{\"blankIndex\":3,\"length\":5,\"start\":75,\"step\":5}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "168",
+       "size": "l",
+       "speak": [
+        {
+         "number": 168
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "162",
+       "size": "l",
+       "speak": [
+        {
+         "number": 162
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "156",
+       "size": "l",
+       "speak": [
+        {
+         "number": 156
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "150",
+       "size": "l",
+       "speak": [
+        {
+         "number": 150
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 144
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 6.",
+      "The missing number is 144."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "168",
+        "size": "l",
+        "speak": [
+         {
+          "number": 168
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "162",
+        "size": "l",
+        "speak": [
+         {
+          "number": 162
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "156",
+        "size": "l",
+        "speak": [
+         {
+          "number": 156
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "150",
+        "size": "l",
+        "speak": [
+         {
+          "number": 150
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "144",
+        "size": "l",
+        "speak": [
+         {
+          "number": 144
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 168,
+     "step": -6,
+     "length": 5,
+     "blankIndex": 4,
+     "options": [
+      138,
+      143,
+      144
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "138",
+      "size": "l",
+      "speak": [
+       {
+        "number": 138
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "143",
+      "size": "l",
+      "speak": [
+       {
+        "number": 143
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "144",
+      "size": "l",
+      "speak": [
+       {
+        "number": 144
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-A5|2|{\"blankIndex\":4,\"length\":5,\"start\":168,\"step\":-6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "102",
+       "size": "l",
+       "speak": [
+        {
+         "number": 102
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "96",
+       "size": "l",
+       "speak": [
+        {
+         "number": 96
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "90",
+       "size": "l",
+       "speak": [
+        {
+         "number": 90
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "78",
+       "size": "l",
+       "speak": [
+        {
+         "number": 78
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 84
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 6.",
+      "The missing number is 84."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "102",
+        "size": "l",
+        "speak": [
+         {
+          "number": 102
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "96",
+        "size": "l",
+        "speak": [
+         {
+          "number": 96
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "90",
+        "size": "l",
+        "speak": [
+         {
+          "number": 90
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "84",
+        "size": "l",
+        "speak": [
+         {
+          "number": 84
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "78",
+        "size": "l",
+        "speak": [
+         {
+          "number": 78
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 102,
+     "step": -6,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      78,
+      83,
+      84
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "78",
+      "size": "l",
+      "speak": [
+       {
+        "number": 78
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "83",
+      "size": "l",
+      "speak": [
+       {
+        "number": 83
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "84",
+      "size": "l",
+      "speak": [
+       {
+        "number": 84
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-A5|2|{\"blankIndex\":3,\"length\":5,\"start\":102,\"step\":-6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "150",
+       "size": "l",
+       "speak": [
+        {
+         "number": 150
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "138",
+       "size": "l",
+       "speak": [
+        {
+         "number": 138
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "132",
+       "size": "l",
+       "speak": [
+        {
+         "number": 132
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "126",
+       "size": "l",
+       "speak": [
+        {
+         "number": 126
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 144
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 6.",
+      "The missing number is 144."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "150",
+        "size": "l",
+        "speak": [
+         {
+          "number": 150
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "144",
+        "size": "l",
+        "speak": [
+         {
+          "number": 144
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "138",
+        "size": "l",
+        "speak": [
+         {
+          "number": 138
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "132",
+        "size": "l",
+        "speak": [
+         {
+          "number": 132
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "126",
+        "size": "l",
+        "speak": [
+         {
+          "number": 126
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 150,
+     "step": -6,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      138,
+      143,
+      144
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "138",
+      "size": "l",
+      "speak": [
+       {
+        "number": 138
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "143",
+      "size": "l",
+      "speak": [
+       {
+        "number": 143
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "144",
+      "size": "l",
+      "speak": [
+       {
+        "number": 144
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-A5|2|{\"blankIndex\":1,\"length\":5,\"start\":150,\"step\":-6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "125",
+       "size": "l",
+       "speak": [
+        {
+         "number": 125
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "75",
+       "size": "l",
+       "speak": [
+        {
+         "number": 75
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "50",
+       "size": "l",
+       "speak": [
+        {
+         "number": 50
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25",
+       "size": "l",
+       "speak": [
+        {
+         "number": 25
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 25
+      },
+      ". The missing number is",
+      {
+       "number": 100
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 25.",
+      "The missing number is 100."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "125",
+        "size": "l",
+        "speak": [
+         {
+          "number": 125
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "100",
+        "size": "l",
+        "speak": [
+         {
+          "number": 100
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "75",
+        "size": "l",
+        "speak": [
+         {
+          "number": 75
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "50",
+        "size": "l",
+        "speak": [
+         {
+          "number": 50
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "25",
+        "size": "l",
+        "speak": [
+         {
+          "number": 25
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 125,
+     "step": -25,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      100,
+      101,
+      125
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "101",
+      "size": "l",
+      "speak": [
+       {
+        "number": 101
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "125",
+      "size": "l",
+      "speak": [
+       {
+        "number": 125
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-A5|2|{\"blankIndex\":1,\"length\":5,\"start\":125,\"step\":-25}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "60",
+       "size": "l",
+       "speak": [
+        {
+         "number": 60
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "66",
+       "size": "l",
+       "speak": [
+        {
+         "number": 66
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "72",
+       "size": "l",
+       "speak": [
+        {
+         "number": 72
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "84",
+       "size": "l",
+       "speak": [
+        {
+         "number": 84
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 78
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 6.",
+      "The missing number is 78."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "60",
+        "size": "l",
+        "speak": [
+         {
+          "number": 60
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "66",
+        "size": "l",
+        "speak": [
+         {
+          "number": 66
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "72",
+        "size": "l",
+        "speak": [
+         {
+          "number": 72
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "78",
+        "size": "l",
+        "speak": [
+         {
+          "number": 78
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "84",
+        "size": "l",
+        "speak": [
+         {
+          "number": 84
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 60,
+     "step": 6,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      78,
+      79,
+      84
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "78",
+      "size": "l",
+      "speak": [
+       {
+        "number": 78
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "79",
+      "size": "l",
+      "speak": [
+       {
+        "number": 79
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "84",
+      "size": "l",
+      "speak": [
+       {
+        "number": 84
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-A5|2|{\"blankIndex\":3,\"length\":5,\"start\":60,\"step\":6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "210",
+       "size": "l",
+       "speak": [
+        {
+         "number": 210
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "198",
+       "size": "l",
+       "speak": [
+        {
+         "number": 198
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "192",
+       "size": "l",
+       "speak": [
+        {
+         "number": 192
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "186",
+       "size": "l",
+       "speak": [
+        {
+         "number": 186
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 204
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 6.",
+      "The missing number is 204."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "210",
+        "size": "l",
+        "speak": [
+         {
+          "number": 210
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "204",
+        "size": "l",
+        "speak": [
+         {
+          "number": 204
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "198",
+        "size": "l",
+        "speak": [
+         {
+          "number": 198
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "192",
+        "size": "l",
+        "speak": [
+         {
+          "number": 192
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "186",
+        "size": "l",
+        "speak": [
+         {
+          "number": 186
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 210,
+     "step": -6,
+     "length": 5,
+     "blankIndex": 1,
+     "options": [
+      198,
+      204,
+      210
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "198",
+      "size": "l",
+      "speak": [
+       {
+        "number": 198
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "204",
+      "size": "l",
+      "speak": [
+       {
+        "number": 204
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "210",
+      "size": "l",
+      "speak": [
+       {
+        "number": 210
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-A5|2|{\"blankIndex\":1,\"length\":5,\"start\":210,\"step\":-6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "294",
+       "size": "l",
+       "speak": [
+        {
+         "number": 294
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "291",
+       "size": "l",
+       "speak": [
+        {
+         "number": 291
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "288",
+       "size": "l",
+       "speak": [
+        {
+         "number": 288
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "282",
+       "size": "l",
+       "speak": [
+        {
+         "number": 282
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 3
+      },
+      ". The missing number is",
+      {
+       "number": 285
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 3.",
+      "The missing number is 285."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "294",
+        "size": "l",
+        "speak": [
+         {
+          "number": 294
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "291",
+        "size": "l",
+        "speak": [
+         {
+          "number": 291
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "288",
+        "size": "l",
+        "speak": [
+         {
+          "number": 288
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "285",
+        "size": "l",
+        "speak": [
+         {
+          "number": 285
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "282",
+        "size": "l",
+        "speak": [
+         {
+          "number": 282
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 294,
+     "step": -3,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      282,
+      285,
+      288
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "282",
+      "size": "l",
+      "speak": [
+       {
+        "number": 282
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "285",
+      "size": "l",
+      "speak": [
+       {
+        "number": 285
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "288",
+      "size": "l",
+      "speak": [
+       {
+        "number": 288
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-A5|2|{\"blankIndex\":3,\"length\":5,\"start\":294,\"step\":-3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "87",
+       "size": "l",
+       "speak": [
+        {
+         "number": 87
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "90",
+       "size": "l",
+       "speak": [
+        {
+         "number": 90
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "93",
+       "size": "l",
+       "speak": [
+        {
+         "number": 93
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "99",
+       "size": "l",
+       "speak": [
+        {
+         "number": 99
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 3
+      },
+      ". The missing number is",
+      {
+       "number": 96
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 3.",
+      "The missing number is 96."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "87",
+        "size": "l",
+        "speak": [
+         {
+          "number": 87
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "90",
+        "size": "l",
+        "speak": [
+         {
+          "number": 90
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "93",
+        "size": "l",
+        "speak": [
+         {
+          "number": 93
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "96",
+        "size": "l",
+        "speak": [
+         {
+          "number": 96
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "99",
+        "size": "l",
+        "speak": [
+         {
+          "number": 99
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 87,
+     "step": 3,
+     "length": 5,
+     "blankIndex": 3,
+     "options": [
+      93,
+      96,
+      97
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "93",
+      "size": "l",
+      "speak": [
+       {
+        "number": 93
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "96",
+      "size": "l",
+      "speak": [
+       {
+        "number": 96
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "97",
+      "size": "l",
+      "speak": [
+       {
+        "number": 97
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-A5|2|{\"blankIndex\":3,\"length\":5,\"start\":87,\"step\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "39",
+       "size": "l",
+       "speak": [
+        {
+         "number": 39
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "42",
+       "size": "l",
+       "speak": [
+        {
+         "number": 42
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45",
+       "size": "l",
+       "speak": [
+        {
+         "number": 45
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "48",
+       "size": "l",
+       "speak": [
+        {
+         "number": 48
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 3
+      },
+      ". The missing number is",
+      {
+       "number": 51
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 3.",
+      "The missing number is 51."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "39",
+        "size": "l",
+        "speak": [
+         {
+          "number": 39
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "42",
+        "size": "l",
+        "speak": [
+         {
+          "number": 42
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "45",
+        "size": "l",
+        "speak": [
+         {
+          "number": 45
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "48",
+        "size": "l",
+        "speak": [
+         {
+          "number": 48
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "51",
+        "size": "l",
+        "speak": [
+         {
+          "number": 51
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 39,
+     "step": 3,
+     "length": 5,
+     "blankIndex": 4,
+     "options": [
+      48,
+      50,
+      51
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "48",
+      "size": "l",
+      "speak": [
+       {
+        "number": 48
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "50",
+      "size": "l",
+      "speak": [
+       {
+        "number": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "51",
+      "size": "l",
+      "speak": [
+       {
+        "number": 51
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-A5|2|{\"blankIndex\":4,\"length\":5,\"start\":39,\"step\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "192",
+       "size": "l",
+       "speak": [
+        {
+         "number": 192
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "198",
+       "size": "l",
+       "speak": [
+        {
+         "number": 198
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "204",
+       "size": "l",
+       "speak": [
+        {
+         "number": 204
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "210",
+       "size": "l",
+       "speak": [
+        {
+         "number": 210
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 6
+      },
+      ". The missing number is",
+      {
+       "number": 216
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 6.",
+      "The missing number is 216."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "192",
+        "size": "l",
+        "speak": [
+         {
+          "number": 192
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "198",
+        "size": "l",
+        "speak": [
+         {
+          "number": 198
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "204",
+        "size": "l",
+        "speak": [
+         {
+          "number": 204
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "210",
+        "size": "l",
+        "speak": [
+         {
+          "number": 210
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "216",
+        "size": "l",
+        "speak": [
+         {
+          "number": 216
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "start": 192,
+     "step": 6,
+     "length": 5,
+     "blankIndex": 4,
+     "options": [
+      210,
+      216,
+      222
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "210",
+      "size": "l",
+      "speak": [
+       {
+        "number": 210
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "216",
+      "size": "l",
+      "speak": [
+       {
+        "number": 216
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "222",
+      "size": "l",
+      "speak": [
+       {
+        "number": 222
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-A5",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-A5|2|{\"blankIndex\":4,\"length\":5,\"start\":192,\"step\":6}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "700",
+       "size": "l",
+       "speak": [
+        {
+         "number": 700
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "600",
+       "size": "l",
+       "speak": [
+        {
+         "number": 600
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "400",
+       "size": "l",
+       "speak": [
+        {
+         "number": 400
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 300
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 100.",
+      "The missing number is 300."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "700",
+        "size": "l",
+        "speak": [
+         {
+          "number": 700
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "600",
+        "size": "l",
+        "speak": [
+         {
+          "number": 600
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 700,
+     "step": -100,
+     "length": 5,
+     "blankIndex": 4
+    },
+    "answer": 300,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-A5|3|{\"blankIndex\":4,\"length\":5,\"start\":700,\"step\":-100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "400",
+       "size": "l",
+       "speak": [
+        {
+         "number": 400
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "300",
+       "size": "l",
+       "speak": [
+        {
+         "number": 300
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "100",
+       "size": "l",
+       "speak": [
+        {
+         "number": 100
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 200
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 100.",
+      "The missing number is 200."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "200",
+        "size": "l",
+        "speak": [
+         {
+          "number": 200
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "100",
+        "size": "l",
+        "speak": [
+         {
+          "number": 100
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 500,
+     "step": -100,
+     "length": 5,
+     "blankIndex": 3
+    },
+    "answer": 200,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-A5|3|{\"blankIndex\":3,\"length\":5,\"start\":500,\"step\":-100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "700",
+       "size": "l",
+       "speak": [
+        {
+         "number": 700
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "400",
+       "size": "l",
+       "speak": [
+        {
+         "number": 400
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "300",
+       "size": "l",
+       "speak": [
+        {
+         "number": 300
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 600
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 100.",
+      "The missing number is 600."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "700",
+        "size": "l",
+        "speak": [
+         {
+          "number": 700
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "600",
+        "size": "l",
+        "speak": [
+         {
+          "number": 600
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 700,
+     "step": -100,
+     "length": 5,
+     "blankIndex": 1
+    },
+    "answer": 600,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-A5|3|{\"blankIndex\":1,\"length\":5,\"start\":700,\"step\":-100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "300",
+       "size": "l",
+       "speak": [
+        {
+         "number": 300
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "200",
+       "size": "l",
+       "speak": [
+        {
+         "number": 200
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "100",
+       "size": "l",
+       "speak": [
+        {
+         "number": 100
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 400
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 100.",
+      "The missing number is 400."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "200",
+        "size": "l",
+        "speak": [
+         {
+          "number": 200
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "100",
+        "size": "l",
+        "speak": [
+         {
+          "number": 100
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 500,
+     "step": -100,
+     "length": 5,
+     "blankIndex": 1
+    },
+    "answer": 400,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-A5|3|{\"blankIndex\":1,\"length\":5,\"start\":500,\"step\":-100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "100",
+       "size": "l",
+       "speak": [
+        {
+         "number": 100
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "200",
+       "size": "l",
+       "speak": [
+        {
+         "number": 200
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "300",
+       "size": "l",
+       "speak": [
+        {
+         "number": 300
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 400
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 100.",
+      "The missing number is 400."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "100",
+        "size": "l",
+        "speak": [
+         {
+          "number": 100
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "200",
+        "size": "l",
+        "speak": [
+         {
+          "number": 200
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 100,
+     "step": 100,
+     "length": 5,
+     "blankIndex": 3
+    },
+    "answer": 400,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-A5|3|{\"blankIndex\":3,\"length\":5,\"start\":100,\"step\":100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "800",
+       "size": "l",
+       "speak": [
+        {
+         "number": 800
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "600",
+       "size": "l",
+       "speak": [
+        {
+         "number": 600
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "400",
+       "size": "l",
+       "speak": [
+        {
+         "number": 400
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 700
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 100.",
+      "The missing number is 700."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "800",
+        "size": "l",
+        "speak": [
+         {
+          "number": 800
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "700",
+        "size": "l",
+        "speak": [
+         {
+          "number": 700
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "600",
+        "size": "l",
+        "speak": [
+         {
+          "number": 600
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 800,
+     "step": -100,
+     "length": 5,
+     "blankIndex": 1
+    },
+    "answer": 700,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-A5|3|{\"blankIndex\":1,\"length\":5,\"start\":800,\"step\":-100}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "1,000",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1000
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "950",
+       "size": "l",
+       "speak": [
+        {
+         "number": 950
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "900",
+       "size": "l",
+       "speak": [
+        {
+         "number": 900
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "800",
+       "size": "l",
+       "speak": [
+        {
+         "number": 800
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes down",
+      "by",
+      {
+       "number": 50
+      },
+      ". The missing number is",
+      {
+       "number": 850
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 50.",
+      "The missing number is 850."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "1,000",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1000
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "950",
+        "size": "l",
+        "speak": [
+         {
+          "number": 950
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "900",
+        "size": "l",
+        "speak": [
+         {
+          "number": 900
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "850",
+        "size": "l",
+        "speak": [
+         {
+          "number": 850
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "800",
+        "size": "l",
+        "speak": [
+         {
+          "number": 800
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 1000,
+     "step": -50,
+     "length": 5,
+     "blankIndex": 3
+    },
+    "answer": 850,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-A5|3|{\"blankIndex\":3,\"length\":5,\"start\":1000,\"step\":-50}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "250",
+       "size": "l",
+       "speak": [
+        {
+         "number": 250
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "300",
+       "size": "l",
+       "speak": [
+        {
+         "number": 300
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "350",
+       "size": "l",
+       "speak": [
+        {
+         "number": 350
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "450",
+       "size": "l",
+       "speak": [
+        {
+         "number": 450
+        }
+       ]
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 50
+      },
+      ". The missing number is",
+      {
+       "number": 400
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 50.",
+      "The missing number is 400."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "250",
+        "size": "l",
+        "speak": [
+         {
+          "number": 250
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "350",
+        "size": "l",
+        "speak": [
+         {
+          "number": 350
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "450",
+        "size": "l",
+        "speak": [
+         {
+          "number": 450
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 250,
+     "step": 50,
+     "length": 5,
+     "blankIndex": 3
+    },
+    "answer": 400,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-A5|3|{\"blankIndex\":3,\"length\":5,\"start\":250,\"step\":50}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "100",
+       "size": "l",
+       "speak": [
+        {
+         "number": 100
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "150",
+       "size": "l",
+       "speak": [
+        {
+         "number": 150
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "200",
+       "size": "l",
+       "speak": [
+        {
+         "number": 200
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "250",
+       "size": "l",
+       "speak": [
+        {
+         "number": 250
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 50
+      },
+      ". The missing number is",
+      {
+       "number": 300
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 50.",
+      "The missing number is 300."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "100",
+        "size": "l",
+        "speak": [
+         {
+          "number": 100
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "150",
+        "size": "l",
+        "speak": [
+         {
+          "number": 150
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "200",
+        "size": "l",
+        "speak": [
+         {
+          "number": 200
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "250",
+        "size": "l",
+        "speak": [
+         {
+          "number": 250
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "300",
+        "size": "l",
+        "speak": [
+         {
+          "number": 300
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 100,
+     "step": 50,
+     "length": 5,
+     "blankIndex": 4
+    },
+    "answer": 300,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-A5|3|{\"blankIndex\":4,\"length\":5,\"start\":100,\"step\":50}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is missing?",
+     "speak": [
+      "What number is missing?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "text",
+       "value": "400",
+       "size": "l",
+       "speak": [
+        {
+         "number": 400
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "500",
+       "size": "l",
+       "speak": [
+        {
+         "number": 500
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "600",
+       "size": "l",
+       "speak": [
+        {
+         "number": 600
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "700",
+       "size": "l",
+       "speak": [
+        {
+         "number": 700
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Each number",
+      "goes up",
+      "by",
+      {
+       "number": 100
+      },
+      ". The missing number is",
+      {
+       "number": 800
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 100.",
+      "The missing number is 800."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "text",
+        "value": "400",
+        "size": "l",
+        "speak": [
+         {
+          "number": 400
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "500",
+        "size": "l",
+        "speak": [
+         {
+          "number": 500
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "600",
+        "size": "l",
+        "speak": [
+         {
+          "number": 600
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "700",
+        "size": "l",
+        "speak": [
+         {
+          "number": 700
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "800",
+        "size": "l",
+        "speak": [
+         {
+          "number": 800
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "start": 400,
+     "step": 100,
+     "length": 5,
+     "blankIndex": 4
+    },
+    "answer": 800,
+    "maxDigits": 4,
+    "skillId": "M-3-A5",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-A5|3|{\"blankIndex\":4,\"length\":5,\"start\":400,\"step\":100}"
+   }
+  ]
+ }
+}

@@ -32,7 +32,7 @@ vi.mock('../../src/audio/speech', async (original) => ({
 // The server and the device in the running app: it opens from the device's copy, with or without
 // the internet, sends each change as it happens, and picks up what other devices saved.
 
-const kid = (id: string, name: string, grade: Child['grade'] = 'K'): Child => ({ id, name, avatar: '🐢', grade, settings: defaultSettings(grade), resetAt: null, createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null });
+const kid = (id: string, name: string, grade: Child['grade'] = 'K'): Child => ({ id, name, avatar: '🐢', grade, settings: defaultSettings(grade), resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null });
 const finished = async (repo: Repo, childId: string): Promise<void> => {
   for (const subject of ['math', 'ela'] as const) {
     await repo.saveDiagnosticProgress({ childId, subject, ladders: {}, sittings: 1, done: true, lastSittingDay: '', updatedAt: NOW.toISOString() });

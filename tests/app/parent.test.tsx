@@ -9,7 +9,7 @@ import { LOCK_MS, MAX_WRONG, PASS_MS, grantPass, hasPass, hashPin, lockedFor, re
 import { useAppStore } from '../../src/app/store';
 import { diagnosticLadders } from '../../src/app/checkIn';
 import { CATALOGUE, skillById } from '../../src/content/catalogue';
-import { advanceClock, freezeClock, localDay } from '../../src/lib/clock';
+import { advanceClock, freezeClock, localDay, localWeek } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { requestCode, setPasswordWithCode, signOut } from '../../src/storage/account';
 import { ImportError } from '../../src/storage/exportFile';
@@ -258,6 +258,29 @@ describe('the grown-up pages', () => {
     expect(screen.getByRole('region', { name: 'Check-in levels' }).textContent).toContain('Math: Counting: Kindergarten, 29% through');
     // No sign-in reminder with 20 days left.
     expect(document.querySelector('[data-signin-banner]')).toBeNull();
+    expect(recentErrors()).toEqual([]);
+  });
+
+  it('the dashboard shows a level for each topic, its change since last week and a line, and saves this week', async () => {
+    const child = await setUp('K');
+    await practised(child);
+    const lastWeek = localWeek(new Date(NOW.getTime() - 7 * 86_400_000));
+    await (await repo()).saveChild({ ...child, levelWeeks: [{ week: lastWeek, at: NOW.toISOString(), levels: { 'add-subtract': 0.2 } }] });
+    openApp('/parent/dashboard');
+    const topics = await screen.findByRole('region', { name: 'Levels by topic' });
+    // Adding and subtracting: 4 of the 11 kindergarten skills known, so about 0.4 of the year.
+    const adding = topics.querySelector('[data-topic="add-subtract"]');
+    expect(adding?.textContent).toContain('Math: Adding and subtracting');
+    expect(adding?.textContent).toContain('about mid kindergarten');
+    expect(adding?.textContent).toContain('up 0.2 since last week');
+    expect(adding?.querySelector('[data-spark="add-subtract"]')).not.toBeNull();
+    expect(topics.querySelector('[data-topic="phonics"]')?.textContent).toContain('not tried yet');
+    expect(topics.querySelector('[data-topic="counting"]')?.getAttribute('data-kind')).toBe('level');
+    await waitFor(async () => {
+      const saved = (await (await repo()).listChildren()).find((each) => each.id === child.id);
+      expect(saved?.levelWeeks.map((snapshot) => snapshot.week)).toEqual([lastWeek, localWeek(NOW)]);
+      expect(saved?.levelWeeks.at(-1)?.levels['add-subtract']).toBe(0.4);
+    });
     expect(recentErrors()).toEqual([]);
   });
 

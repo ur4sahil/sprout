@@ -1,0 +1,3070 @@
+{
+ "skillId": "M-3-E1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "n": 1,
+   "d": 2,
+   "ask": "name",
+   "options": [
+    "2/2",
+    "1/8",
+    "1/2"
+   ]
+  },
+  "prompt": {
+   "text": "What fraction is shaded?",
+   "speak": [
+    "What fraction is shaded?"
+   ]
+  },
+  "stimulus": {
+   "kind": "fraction",
+   "shape": "rectangle",
+   "parts": 2,
+   "shaded": 1,
+   "equal": true
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "2/2",
+    "size": "l",
+    "speak": [
+     {
+      "number": 2
+     },
+     "halves"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "1/8",
+    "size": "l",
+    "speak": [
+     {
+      "number": 1
+     },
+     "eighth"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "1/2",
+    "size": "l",
+    "speak": [
+     {
+      "number": 1
+     },
+     "half"
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The whole is cut into",
+    {
+     "number": 2
+    },
+    "equal parts.",
+    {
+     "number": 1
+    },
+    "is shaded.",
+    "That is",
+    {
+     "number": 1
+    },
+    "half",
+    "."
+   ],
+   "steps": [
+    "The whole has 2 equal parts. That is the bottom number.",
+    "1 is shaded. That is the top number.",
+    "So it is 1/2."
+   ],
+   "visual": {
+    "kind": "fraction",
+    "shape": "rectangle",
+    "parts": 2,
+    "shaded": 1,
+    "equal": true
+   }
+  },
+  "skillId": "M-3-E1",
+  "level": 1,
+  "seed": 341,
+  "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/4",
+      "1/6",
+      "1/5"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fifth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "5/6",
+      "1/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/3",
+      "1/8",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "third"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 8,
+     "ask": "name",
+     "options": [
+      "1/8",
+      "1/2",
+      "2/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 8,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 8
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "eighth",
+      "."
+     ],
+     "steps": [
+      "The whole has 8 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/8."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 8,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":8,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "1/2",
+      "1/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "2/4",
+      "1/6",
+      "1/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 4,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "fourth",
+      "."
+     ],
+     "steps": [
+      "The whole has 4 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/4."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 4,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":4,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "2/2",
+      "1/2",
+      "1/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "2/2",
+      "1/2",
+      "1/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "1/3",
+      "1/2",
+      "2/2"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "third"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "3/4",
+      "1/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 4,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "fourth",
+      "."
+     ],
+     "steps": [
+      "The whole has 4 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/4."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 4,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-E1|1|{\"ask\":\"name\",\"d\":4,\"n\":1}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/8",
+      "1/6",
+      "1/5"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fifth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "3/6",
+      "2/6",
+      "4/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 2,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "sixths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 2
+      },
+      "are shaded.",
+      "That is",
+      {
+       "number": 2
+      },
+      "sixths",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "2 are shaded. That is the top number.",
+      "So it is 2/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 2,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":6,\"n\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "5/6",
+      "1/2",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "sixth",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 3,
+     "d": 8,
+     "ask": "name",
+     "options": [
+      "3/8",
+      "3/10",
+      "4/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 8,
+     "shaded": 3,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "eighths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "tenths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 8
+      },
+      "equal parts.",
+      {
+       "number": 3
+      },
+      "are shaded.",
+      "That is",
+      {
+       "number": 3
+      },
+      "eighths",
+      "."
+     ],
+     "steps": [
+      "The whole has 8 equal parts. That is the bottom number.",
+      "3 are shaded. That is the top number.",
+      "So it is 3/8."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 8,
+      "shaded": 3,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":8,\"n\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 4,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "4/6",
+      "5/6",
+      "4/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 6,
+     "shaded": 4,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 6
+      },
+      "equal parts.",
+      {
+       "number": 4
+      },
+      "are shaded.",
+      "That is",
+      {
+       "number": 4
+      },
+      "sixths",
+      "."
+     ],
+     "steps": [
+      "The whole has 6 equal parts. That is the bottom number.",
+      "4 are shaded. That is the top number.",
+      "So it is 4/6."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 6,
+      "shaded": 4,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":6,\"n\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "1/4",
+      "1/3"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 4,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "third"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "fourth",
+      "."
+     ],
+     "steps": [
+      "The whole has 4 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/4."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 4,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":4,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "1/2",
+      "1/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "1/4",
+      "1/2",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "2/2",
+      "1/8",
+      "1/2"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "circle",
+     "parts": 2,
+     "shaded": 1,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 2
+      },
+      "equal parts.",
+      {
+       "number": 1
+      },
+      "is shaded.",
+      "That is",
+      {
+       "number": 1
+      },
+      "half",
+      "."
+     ],
+     "steps": [
+      "The whole has 2 equal parts. That is the bottom number.",
+      "1 is shaded. That is the top number.",
+      "So it is 1/2."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "circle",
+      "parts": 2,
+      "shaded": 1,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 3,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "4/4",
+      "1/4",
+      "3/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction is shaded?",
+     "speak": [
+      "What fraction is shaded?"
+     ]
+    },
+    "stimulus": {
+     "kind": "fraction",
+     "shape": "rectangle",
+     "parts": 4,
+     "shaded": 3,
+     "equal": true
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The whole is cut into",
+      {
+       "number": 4
+      },
+      "equal parts.",
+      {
+       "number": 3
+      },
+      "are shaded.",
+      "That is",
+      {
+       "number": 3
+      },
+      "fourths",
+      "."
+     ],
+     "steps": [
+      "The whole has 4 equal parts. That is the bottom number.",
+      "3 are shaded. That is the top number.",
+      "So it is 3/4."
+     ],
+     "visual": {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 4,
+      "shaded": 3,
+      "equal": true
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-E1|2|{\"ask\":\"name\",\"d\":4,\"n\":3}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "1/8",
+      "1/6",
+      "1/5"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are flowers?",
+     "speak": [
+      "What fraction of the group are flowers?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌸",
+     "count": 1,
+     "emoji2": "🚀",
+     "count2": 5,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fifth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a flower.",
+      "So",
+      {
+       "number": 1
+      },
+      "sixth",
+      "are flowers."
+     ],
+     "steps": [
+      "There are 6 things in all. That is the bottom number.",
+      "1 is flower. That is the top number.",
+      "So 1/6 are flowers."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "emoji2": "🚀",
+      "count2": 5,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 2,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "3/6",
+      "2/6",
+      "4/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are bananas?",
+     "speak": [
+      "What fraction of the group are bananas?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 2,
+     "emoji2": "🐟",
+     "count2": 4,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "sixths"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "things in all.",
+      {
+       "number": 2
+      },
+      "are bananas.",
+      "So",
+      {
+       "number": 2
+      },
+      "sixths",
+      "are bananas."
+     ],
+     "steps": [
+      "There are 6 things in all. That is the bottom number.",
+      "2 are bananas. That is the top number.",
+      "So 2/6 are bananas."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 2,
+      "emoji2": "🐟",
+      "count2": 4,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":6,\"n\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "5/6",
+      "1/2",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are flowers?",
+     "speak": [
+      "What fraction of the group are flowers?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌸",
+     "count": 1,
+     "emoji2": "🐢",
+     "count2": 5,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a flower.",
+      "So",
+      {
+       "number": 1
+      },
+      "sixth",
+      "are flowers."
+     ],
+     "steps": [
+      "There are 6 things in all. That is the bottom number.",
+      "1 is flower. That is the top number.",
+      "So 1/6 are flowers."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "emoji2": "🐢",
+      "count2": 5,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":6,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 3,
+     "d": 8,
+     "ask": "name",
+     "options": [
+      "3/8",
+      "3/10",
+      "4/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are cars?",
+     "speak": [
+      "What fraction of the group are cars?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 3,
+     "emoji2": "🍎",
+     "count2": 5,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "eighths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "tenths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 8
+      },
+      "things in all.",
+      {
+       "number": 3
+      },
+      "are cars.",
+      "So",
+      {
+       "number": 3
+      },
+      "eighths",
+      "are cars."
+     ],
+     "steps": [
+      "There are 8 things in all. That is the bottom number.",
+      "3 are cars. That is the top number.",
+      "So 3/8 are cars."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 3,
+      "emoji2": "🍎",
+      "count2": 5,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":8,\"n\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 4,
+     "d": 6,
+     "ask": "name",
+     "options": [
+      "4/6",
+      "5/6",
+      "4/8"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are ladybugs?",
+     "speak": [
+      "What fraction of the group are ladybugs?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐞",
+     "count": 4,
+     "emoji2": "🦆",
+     "count2": 2,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "sixths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "eighths"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "things in all.",
+      {
+       "number": 4
+      },
+      "are ladybugs.",
+      "So",
+      {
+       "number": 4
+      },
+      "sixths",
+      "are ladybugs."
+     ],
+     "steps": [
+      "There are 6 things in all. That is the bottom number.",
+      "4 are ladybugs. That is the top number.",
+      "So 4/6 are ladybugs."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐞",
+      "count": 4,
+      "emoji2": "🦆",
+      "count2": 2,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":6,\"n\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "1/4",
+      "1/3"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are bees?",
+     "speak": [
+      "What fraction of the group are bees?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 1,
+     "emoji2": "🍪",
+     "count2": 3,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "third"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a bee.",
+      "So",
+      {
+       "number": 1
+      },
+      "fourth",
+      "are bees."
+     ],
+     "steps": [
+      "There are 4 things in all. That is the bottom number.",
+      "1 is bee. That is the top number.",
+      "So 1/4 are bees."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 1,
+      "emoji2": "🍪",
+      "count2": 3,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":4,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "1/6",
+      "1/2",
+      "1/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are turtles?",
+     "speak": [
+      "What fraction of the group are turtles?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐢",
+     "count": 1,
+     "emoji2": "🐞",
+     "count2": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a turtle.",
+      "So",
+      {
+       "number": 1
+      },
+      "half",
+      "are turtles."
+     ],
+     "steps": [
+      "There are 2 things in all. That is the bottom number.",
+      "1 is turtle. That is the top number.",
+      "So 1/2 are turtles."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐢",
+      "count": 1,
+      "emoji2": "🐞",
+      "count2": 1,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "1/4",
+      "1/2",
+      "1/6"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are balloons?",
+     "speak": [
+      "What fraction of the group are balloons?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 1,
+     "emoji2": "🚗",
+     "count2": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "sixth"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a balloon.",
+      "So",
+      {
+       "number": 1
+      },
+      "half",
+      "are balloons."
+     ],
+     "steps": [
+      "There are 2 things in all. That is the bottom number.",
+      "1 is balloon. That is the top number.",
+      "So 1/2 are balloons."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 1,
+      "emoji2": "🚗",
+      "count2": 1,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 1,
+     "d": 2,
+     "ask": "name",
+     "options": [
+      "2/2",
+      "1/8",
+      "1/2"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are apples?",
+     "speak": [
+      "What fraction of the group are apples?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 1,
+     "emoji2": "⚽",
+     "count2": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "halves"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "eighth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "half"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "things in all.",
+      {
+       "number": 1
+      },
+      "is a apple.",
+      "So",
+      {
+       "number": 1
+      },
+      "half",
+      "are apples."
+     ],
+     "steps": [
+      "There are 2 things in all. That is the bottom number.",
+      "1 is apple. That is the top number.",
+      "So 1/2 are apples."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "emoji2": "⚽",
+      "count2": 1,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":2,\"n\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "n": 3,
+     "d": 4,
+     "ask": "name",
+     "options": [
+      "4/4",
+      "1/4",
+      "3/4"
+     ]
+    },
+    "prompt": {
+     "text": "What fraction of the group are cars?",
+     "speak": [
+      "What fraction of the group are cars?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🚗",
+     "count": 3,
+     "emoji2": "🐝",
+     "count2": 1,
+     "layout": "row"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "fourths"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "fourth"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3/4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "fourths"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "things in all.",
+      {
+       "number": 3
+      },
+      "are cars.",
+      "So",
+      {
+       "number": 3
+      },
+      "fourths",
+      "are cars."
+     ],
+     "steps": [
+      "There are 4 things in all. That is the bottom number.",
+      "3 are cars. That is the top number.",
+      "So 3/4 are cars."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 3,
+      "emoji2": "🐝",
+      "count2": 1,
+      "layout": "row"
+     }
+    },
+    "skillId": "M-3-E1",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-E1|3|{\"ask\":\"name\",\"d\":4,\"n\":3}"
+   }
+  ]
+ }
+}

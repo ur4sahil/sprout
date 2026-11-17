@@ -1,0 +1,3836 @@
+{
+ "skillId": "M-3-C7",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "5 × 30 equals what?",
+   "speak": [
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 30
+    },
+    "equals what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "baseTen",
+     "hundreds": 0,
+     "tens": 3,
+     "ones": 0
+    },
+    {
+     "kind": "baseTen",
+     "hundreds": 0,
+     "tens": 3,
+     "ones": 0
+    },
+    {
+     "kind": "baseTen",
+     "hundreds": 0,
+     "tens": 3,
+     "ones": 0
+    },
+    {
+     "kind": "baseTen",
+     "hundreds": 0,
+     "tens": 3,
+     "ones": 0
+    },
+    {
+     "kind": "baseTen",
+     "hundreds": 0,
+     "tens": 3,
+     "ones": 0
+    }
+   ]
+  },
+  "explanation": {
+   "speak": [
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 30
+    },
+    "is",
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "tens.",
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 15
+    },
+    ", so it is",
+    {
+     "number": 15
+    },
+    "tens, or",
+    {
+     "number": 150
+    },
+    "."
+   ],
+   "steps": [
+    "30 is 3 tens.",
+    "5 × 3 = 15, so 5 × 30 is 15 tens.",
+    "5 × 30 = 150."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     5,
+     "×",
+     30,
+     "=",
+     150
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "rows": 5,
+   "cols": 30,
+   "ask": "total",
+   "options": [
+    140,
+    150,
+    160
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "140",
+    "size": "l",
+    "speak": [
+     {
+      "number": 140
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "150",
+    "size": "l",
+    "speak": [
+     {
+      "number": 150
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "160",
+    "size": "l",
+    "speak": [
+     {
+      "number": 160
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "skillId": "M-3-C7",
+  "level": 1,
+  "seed": 362,
+  "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":30,\"rows\":5}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 10 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so it is",
+      {
+       "number": 4
+      },
+      "tens, or",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "10 is 1 tens.",
+      "4 × 1 = 4, so 4 × 10 is 4 tens.",
+      "4 × 10 = 40."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       10,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 10,
+     "ask": "total",
+     "options": [
+      4,
+      40,
+      41
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "41",
+      "size": "l",
+      "speak": [
+       {
+        "number": 41
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":10,\"rows\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 20 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so it is",
+      {
+       "number": 8
+      },
+      "tens, or",
+      {
+       "number": 80
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "4 × 2 = 8, so 4 × 20 is 8 tens.",
+      "4 × 20 = 80."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       20,
+       "=",
+       80
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      80,
+      81,
+      120
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "81",
+      "size": "l",
+      "speak": [
+       {
+        "number": 81
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":20,\"rows\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 10 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so it is",
+      {
+       "number": 4
+      },
+      "tens, or",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "10 is 1 tens.",
+      "4 × 1 = 4, so 4 × 10 is 4 tens.",
+      "4 × 10 = 40."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       10,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 10,
+     "ask": "total",
+     "options": [
+      4,
+      40,
+      80
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":10,\"rows\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "5 × 20 equals what?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 2,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ", so it is",
+      {
+       "number": 10
+      },
+      "tens, or",
+      {
+       "number": 100
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "5 × 2 = 10, so 5 × 20 is 10 tens.",
+      "5 × 20 = 100."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "×",
+       20,
+       "=",
+       100
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 5,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      100,
+      110,
+      150
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "110",
+      "size": "l",
+      "speak": [
+       {
+        "number": 110
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "150",
+      "size": "l",
+      "speak": [
+       {
+        "number": 150
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":20,\"rows\":5}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 40 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ", so it is",
+      {
+       "number": 16
+      },
+      "tens, or",
+      {
+       "number": 160
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "4 × 4 = 16, so 4 × 40 is 16 tens.",
+      "4 × 40 = 160."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       40,
+       "=",
+       160
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 40,
+     "ask": "total",
+     "options": [
+      160,
+      161,
+      170
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "160",
+      "size": "l",
+      "speak": [
+       {
+        "number": 160
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "161",
+      "size": "l",
+      "speak": [
+       {
+        "number": 161
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "170",
+      "size": "l",
+      "speak": [
+       {
+        "number": 170
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":40,\"rows\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 10 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so it is",
+      {
+       "number": 4
+      },
+      "tens, or",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "10 is 1 tens.",
+      "4 × 1 = 4, so 4 × 10 is 4 tens.",
+      "4 × 10 = 40."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       10,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 10,
+     "ask": "total",
+     "options": [
+      30,
+      40,
+      80
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":10,\"rows\":4}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2 × 10 equals what?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 1,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "tens.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ", so it is",
+      {
+       "number": 2
+      },
+      "tens, or",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "10 is 1 tens.",
+      "2 × 1 = 2, so 2 × 10 is 2 tens.",
+      "2 × 10 = 20."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "×",
+       10,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 10,
+     "ask": "total",
+     "options": [
+      12,
+      19,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":10,\"rows\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2 × 30 equals what?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 30
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 3,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 3,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 30
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "tens.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ", so it is",
+      {
+       "number": 6
+      },
+      "tens, or",
+      {
+       "number": 60
+      },
+      "."
+     ],
+     "steps": [
+      "30 is 3 tens.",
+      "2 × 3 = 6, so 2 × 30 is 6 tens.",
+      "2 × 30 = 60."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "×",
+       30,
+       "=",
+       60
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 30,
+     "ask": "total",
+     "options": [
+      60,
+      61,
+      70
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "61",
+      "size": "l",
+      "speak": [
+       {
+        "number": 61
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "70",
+      "size": "l",
+      "speak": [
+       {
+        "number": 70
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":30,\"rows\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2 × 40 equals what?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ", so it is",
+      {
+       "number": 8
+      },
+      "tens, or",
+      {
+       "number": 80
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "2 × 4 = 8, so 2 × 40 is 8 tens.",
+      "2 × 40 = 80."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "×",
+       40,
+       "=",
+       80
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 40,
+     "ask": "total",
+     "options": [
+      80,
+      90,
+      100
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "l",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90",
+      "size": "l",
+      "speak": [
+       {
+        "number": 90
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":40,\"rows\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 40 equals what?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      },
+      {
+       "kind": "baseTen",
+       "hundreds": 0,
+       "tens": 4,
+       "ones": 0
+      }
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ", so it is",
+      {
+       "number": 16
+      },
+      "tens, or",
+      {
+       "number": 160
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "4 × 4 = 16, so 4 × 40 is 16 tens.",
+      "4 × 40 = 160."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       40,
+       "=",
+       160
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 4,
+     "cols": 40,
+     "ask": "total",
+     "options": [
+      150,
+      159,
+      160
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "150",
+      "size": "l",
+      "speak": [
+       {
+        "number": 150
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "159",
+      "size": "l",
+      "speak": [
+       {
+        "number": 159
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "160",
+      "size": "l",
+      "speak": [
+       {
+        "number": 160
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C7",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-C7|1|{\"ask\":\"total\",\"cols\":40,\"rows\":4}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 20 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so it is",
+      {
+       "number": 14
+      },
+      "tens, or",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "7 × 2 = 14, so 7 × 20 is 14 tens.",
+      "7 × 20 = 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       20,
+       "=",
+       140
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      14,
+      140,
+      141
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "141",
+      "size": "l",
+      "speak": [
+       {
+        "number": 141
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":20,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 40 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      40,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ", so it is",
+      {
+       "number": 28
+      },
+      "tens, or",
+      {
+       "number": 280
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "7 × 4 = 28, so 7 × 40 is 28 tens.",
+      "7 × 40 = 280."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       40,
+       "=",
+       280
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 40,
+     "ask": "total",
+     "options": [
+      280,
+      281,
+      350
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "280",
+      "size": "l",
+      "speak": [
+       {
+        "number": 280
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "281",
+      "size": "l",
+      "speak": [
+       {
+        "number": 281
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "350",
+      "size": "l",
+      "speak": [
+       {
+        "number": 350
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":40,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 20 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so it is",
+      {
+       "number": 14
+      },
+      "tens, or",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "7 × 2 = 14, so 7 × 20 is 14 tens.",
+      "7 × 20 = 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       20,
+       "=",
+       140
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      14,
+      140,
+      210
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "140",
+      "size": "l",
+      "speak": [
+       {
+        "number": 140
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "210",
+      "size": "l",
+      "speak": [
+       {
+        "number": 210
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":20,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "9 × 40 equals what?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      9,
+      "×",
+      40,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 36
+      },
+      ", so it is",
+      {
+       "number": 36
+      },
+      "tens, or",
+      {
+       "number": 360
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "9 × 4 = 36, so 9 × 40 is 36 tens.",
+      "9 × 40 = 360."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "×",
+       40,
+       "=",
+       360
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 9,
+     "cols": 40,
+     "ask": "total",
+     "options": [
+      360,
+      370,
+      450
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "360",
+      "size": "l",
+      "speak": [
+       {
+        "number": 360
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "370",
+      "size": "l",
+      "speak": [
+       {
+        "number": 370
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "450",
+      "size": "l",
+      "speak": [
+       {
+        "number": 450
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":40,\"rows\":9}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 80 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      80,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 56
+      },
+      ", so it is",
+      {
+       "number": 56
+      },
+      "tens, or",
+      {
+       "number": 560
+      },
+      "."
+     ],
+     "steps": [
+      "80 is 8 tens.",
+      "7 × 8 = 56, so 7 × 80 is 56 tens.",
+      "7 × 80 = 560."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       80,
+       "=",
+       560
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 7,
+     "cols": 80,
+     "ask": "total",
+     "options": [
+      560,
+      561,
+      570
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "560",
+      "size": "l",
+      "speak": [
+       {
+        "number": 560
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "561",
+      "size": "l",
+      "speak": [
+       {
+        "number": 561
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "570",
+      "size": "l",
+      "speak": [
+       {
+        "number": 570
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":80,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 20 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so it is",
+      {
+       "number": 12
+      },
+      "tens, or",
+      {
+       "number": 120
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "6 × 2 = 12, so 6 × 20 is 12 tens.",
+      "6 × 20 = 120."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       20,
+       "=",
+       120
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 6,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      110,
+      120,
+      180
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "110",
+      "size": "l",
+      "speak": [
+       {
+        "number": 110
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "120",
+      "size": "l",
+      "speak": [
+       {
+        "number": 120
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "180",
+      "size": "l",
+      "speak": [
+       {
+        "number": 180
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":20,\"rows\":6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2 × 20 equals what?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so it is",
+      {
+       "number": 4
+      },
+      "tens, or",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "2 × 2 = 4, so 2 × 20 is 4 tens.",
+      "2 × 20 = 40."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "×",
+       20,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 2,
+     "cols": 20,
+     "ask": "total",
+     "options": [
+      22,
+      39,
+      40
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "39",
+      "size": "l",
+      "speak": [
+       {
+        "number": 39
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":20,\"rows\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "3 × 70 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 70
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      70,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 70
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "tens.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ", so it is",
+      {
+       "number": 21
+      },
+      "tens, or",
+      {
+       "number": 210
+      },
+      "."
+     ],
+     "steps": [
+      "70 is 7 tens.",
+      "3 × 7 = 21, so 3 × 70 is 21 tens.",
+      "3 × 70 = 210."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       70,
+       "=",
+       210
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 3,
+     "cols": 70,
+     "ask": "total",
+     "options": [
+      210,
+      211,
+      220
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "210",
+      "size": "l",
+      "speak": [
+       {
+        "number": 210
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "211",
+      "size": "l",
+      "speak": [
+       {
+        "number": 211
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "220",
+      "size": "l",
+      "speak": [
+       {
+        "number": 220
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":70,\"rows\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "3 × 80 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      80,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "tens.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so it is",
+      {
+       "number": 24
+      },
+      "tens, or",
+      {
+       "number": 240
+      },
+      "."
+     ],
+     "steps": [
+      "80 is 8 tens.",
+      "3 × 8 = 24, so 3 × 80 is 24 tens.",
+      "3 × 80 = 240."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       80,
+       "=",
+       240
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 3,
+     "cols": 80,
+     "ask": "total",
+     "options": [
+      240,
+      250,
+      270
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "240",
+      "size": "l",
+      "speak": [
+       {
+        "number": 240
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "250",
+      "size": "l",
+      "speak": [
+       {
+        "number": 250
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "270",
+      "size": "l",
+      "speak": [
+       {
+        "number": 270
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":80,\"rows\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 90 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 90
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      90,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 90
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "tens.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 54
+      },
+      ", so it is",
+      {
+       "number": 54
+      },
+      "tens, or",
+      {
+       "number": 540
+      },
+      "."
+     ],
+     "steps": [
+      "90 is 9 tens.",
+      "6 × 9 = 54, so 6 × 90 is 54 tens.",
+      "6 × 90 = 540."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       90,
+       "=",
+       540
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "rows": 6,
+     "cols": 90,
+     "ask": "total",
+     "options": [
+      530,
+      539,
+      540
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "530",
+      "size": "l",
+      "speak": [
+       {
+        "number": 530
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "539",
+      "size": "l",
+      "speak": [
+       {
+        "number": 539
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "540",
+      "size": "l",
+      "speak": [
+       {
+        "number": 540
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C7",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-C7|2|{\"ask\":\"total\",\"cols\":90,\"rows\":6}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 20 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so it is",
+      {
+       "number": 14
+      },
+      "tens, or",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "7 × 2 = 14, so 7 × 20 is 14 tens.",
+      "7 × 20 = 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       20,
+       "=",
+       140
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 7,
+     "cols": 20,
+     "ask": "total"
+    },
+    "answer": 140,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":20,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 40 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      40,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ", so it is",
+      {
+       "number": 28
+      },
+      "tens, or",
+      {
+       "number": 280
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "7 × 4 = 28, so 7 × 40 is 28 tens.",
+      "7 × 40 = 280."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       40,
+       "=",
+       280
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 7,
+     "cols": 40,
+     "ask": "total"
+    },
+    "answer": 280,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":40,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 20 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ", so it is",
+      {
+       "number": 14
+      },
+      "tens, or",
+      {
+       "number": 140
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "7 × 2 = 14, so 7 × 20 is 14 tens.",
+      "7 × 20 = 140."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       20,
+       "=",
+       140
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 7,
+     "cols": 20,
+     "ask": "total"
+    },
+    "answer": 140,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":20,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "9 × 40 equals what?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      9,
+      "×",
+      40,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 40
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "tens.",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 36
+      },
+      ", so it is",
+      {
+       "number": 36
+      },
+      "tens, or",
+      {
+       "number": 360
+      },
+      "."
+     ],
+     "steps": [
+      "40 is 4 tens.",
+      "9 × 4 = 36, so 9 × 40 is 36 tens.",
+      "9 × 40 = 360."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "×",
+       40,
+       "=",
+       360
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 9,
+     "cols": 40,
+     "ask": "total"
+    },
+    "answer": 360,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":40,\"rows\":9}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 80 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      80,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "tens.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 56
+      },
+      ", so it is",
+      {
+       "number": 56
+      },
+      "tens, or",
+      {
+       "number": 560
+      },
+      "."
+     ],
+     "steps": [
+      "80 is 8 tens.",
+      "7 × 8 = 56, so 7 × 80 is 56 tens.",
+      "7 × 80 = 560."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       80,
+       "=",
+       560
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 7,
+     "cols": 80,
+     "ask": "total"
+    },
+    "answer": 560,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":80,\"rows\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 20 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ", so it is",
+      {
+       "number": 12
+      },
+      "tens, or",
+      {
+       "number": 120
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "6 × 2 = 12, so 6 × 20 is 12 tens.",
+      "6 × 20 = 120."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       20,
+       "=",
+       120
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 6,
+     "cols": 20,
+     "ask": "total"
+    },
+    "answer": 120,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":20,\"rows\":6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "2 × 20 equals what?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "×",
+      20,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 20
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "tens.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ", so it is",
+      {
+       "number": 4
+      },
+      "tens, or",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "20 is 2 tens.",
+      "2 × 2 = 4, so 2 × 20 is 4 tens.",
+      "2 × 20 = 40."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "×",
+       20,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 2,
+     "cols": 20,
+     "ask": "total"
+    },
+    "answer": 40,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":20,\"rows\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "3 × 70 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 70
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      70,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 70
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "tens.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ", so it is",
+      {
+       "number": 21
+      },
+      "tens, or",
+      {
+       "number": 210
+      },
+      "."
+     ],
+     "steps": [
+      "70 is 7 tens.",
+      "3 × 7 = 21, so 3 × 70 is 21 tens.",
+      "3 × 70 = 210."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       70,
+       "=",
+       210
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 3,
+     "cols": 70,
+     "ask": "total"
+    },
+    "answer": 210,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":70,\"rows\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "3 × 80 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      80,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 80
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "tens.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ", so it is",
+      {
+       "number": 24
+      },
+      "tens, or",
+      {
+       "number": 240
+      },
+      "."
+     ],
+     "steps": [
+      "80 is 8 tens.",
+      "3 × 8 = 24, so 3 × 80 is 24 tens.",
+      "3 × 80 = 240."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       80,
+       "=",
+       240
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 3,
+     "cols": 80,
+     "ask": "total"
+    },
+    "answer": 240,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":80,\"rows\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 90 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 90
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      90,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 90
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "tens.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 54
+      },
+      ", so it is",
+      {
+       "number": 54
+      },
+      "tens, or",
+      {
+       "number": 540
+      },
+      "."
+     ],
+     "steps": [
+      "90 is 9 tens.",
+      "6 × 9 = 54, so 6 × 90 is 54 tens.",
+      "6 × 90 = 540."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       90,
+       "=",
+       540
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "rows": 6,
+     "cols": 90,
+     "ask": "total"
+    },
+    "answer": 540,
+    "maxDigits": 3,
+    "skillId": "M-3-C7",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-C7|3|{\"ask\":\"total\",\"cols\":90,\"rows\":6}"
+   }
+  ]
+ }
+}

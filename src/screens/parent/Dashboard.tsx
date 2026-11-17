@@ -10,7 +10,10 @@ import BigButton from '../../components/BigButton';
 import Notice from '../../components/Notice';
 import Tabs from '../../components/Tabs';
 import { skillById } from '../../content/catalogue';
-import { addDays, daysBetween, localDayOf, now } from '../../lib/clock';
+import { addDays, daysBetween, localDayOf, localWeek, now } from '../../lib/clock';
+import type { TopicRow } from '../../app/topicLevels';
+import { topicLevels, topicRows, withWeek } from '../../app/topicLevels';
+import { levelNumber, levelWords } from '../../engine/topicLevel';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child, DiagnosticResult } from '../../storage/schema';
@@ -25,6 +28,8 @@ interface Summary {
   mastered: number;
   picks: string[];
   levels: { ladder: string; text: string }[];
+  topics: TopicRow[];
+  saveFailed: boolean;
 }
 
 async function summarise(child: Child): Promise<Summary> {
@@ -34,7 +39,22 @@ async function summarise(child: Child): Promise<Summary> {
   const latest = new Map<string, DiagnosticResult>();
   for (const result of results) latest.set(result.ladderId, result);
   const ladders = CHECK_IN_SUBJECTS.flatMap((subject) => diagnosticLadders(subject).map((ladder) => ({ subject, ladder })));
+  // Each topic's level now, and this week's snapshot saved for the line over time.
+  const week = localWeek();
+  const levels = topicLevels(states);
+  const updated = withWeek(child, levels, week, nowIso);
+  let saveFailed = false;
+  if (updated) {
+    try {
+      await repo.saveChild(updated);
+    } catch (error) {
+      logError(error);
+      saveFailed = true;
+    }
+  }
   return {
+    topics: topicRows(updated ?? child, levels, week),
+    saveFailed,
     bars: dayBars(attempts, nowIso),
     mastered: states.filter((state) => state.masteredAt !== null).length,
     picks: day.picks.map((pick) => skillById(pick.skillId)?.name ?? pick.skillId),
@@ -66,7 +86,36 @@ function Bars({ bars, value, unit }: { bars: DayBar[]; value: (bar: DayBar) => n
   );
 }
 
-// Per child: practice over the last 14 days, the daily goal, skills mastered, today's picks and check-in levels.
+function levelText(row: TopicRow): string {
+  if (row.level.kind === 'notTried') return 'not tried yet';
+  if (row.level.kind === 'above') return "above Sprout's top level";
+  const number = levelNumber(row.level.value);
+  return number ? `${levelWords(row.level.value)} (${number})` : levelWords(row.level.value);
+}
+
+function changeText(change: number | null): string | null {
+  if (change === null) return null;
+  if (change === 0) return 'same as last week';
+  return change > 0 ? `up ${change.toFixed(1)} since last week` : `down ${(-change).toFixed(1)} since last week`;
+}
+
+// The level week by week, as a small line. Drawn only once there are two weeks to join.
+function Spark({ row }: { row: TopicRow }) {
+  if (row.history.length < 2) return null;
+  const values = row.history.map((point) => point.value);
+  const low = Math.min(...values);
+  const high = Math.max(low + 0.5, ...values);
+  const x = (i: number): number => (i / (row.history.length - 1)) * 270 + 5;
+  const y = (value: number): number => 26 - ((value - low) / (high - low)) * 22;
+  const points = row.history.map((point, i) => `${x(i)},${y(point.value)}`).join(' ');
+  return (
+    <svg className={styles.spark} viewBox="0 0 280 30" role="img" aria-label={`${row.name}, week by week: ${values.map((value) => value.toFixed(1)).join(', ')}`} data-spark={row.ladderId}>
+      <polyline points={points} className={styles.sparkLine} />
+    </svg>
+  );
+}
+
+// Per child: practice over the last 14 days, the daily goal, skills mastered, today's picks, levels by topic and check-in levels.
 export default function Dashboard() {
   const navigate = useNavigate();
   const account = useAppStore((s) => s.account);
@@ -121,6 +170,21 @@ export default function Dashboard() {
               </li>
               <li data-fact="mastered">Skills mastered: {summary.mastered}</li>
               <li data-fact="picks">Today's picks: {summary.picks.length > 0 ? summary.picks.join(', ') : 'none'}</li>
+            </ul>
+          </section>
+          <section className={styles.panel} aria-label="Levels by topic">
+            <h2>Levels by topic</h2>
+            <p className={styles.soft}>From the skills {child.name} has shown they know. Worked out again each time this page opens.</p>
+            {summary.saveFailed && <Notice role="alert">This week's levels could not be saved, so the lines over time may miss this week. Close the app and open it again.</Notice>}
+            <ul className={styles.topics}>
+              {summary.topics.map((row) => (
+                <li key={row.ladderId} data-topic={row.ladderId} data-kind={row.level.kind}>
+                  <span className={styles.topicName}>{row.name}</span>
+                  <span>{levelText(row)}</span>
+                  {changeText(row.change) && <span className={styles.soft}>{changeText(row.change)}</span>}
+                  <Spark row={row} />
+                </li>
+              ))}
             </ul>
           </section>
           <section className={styles.panel} aria-label="Check-in levels">

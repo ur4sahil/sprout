@@ -274,7 +274,7 @@ describe('the install guide', () => {
 
 describe('the saved record of an answer', () => {
   const skill = skillById('M-K-C4')!;
-  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 } }, resetAt: null, createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
+  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 } }, resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
 
   it('keeps the level and seed asked, exactly what was submitted, and a plain-text snapshot', () => {
     const question = generateQuestion('M-K-C4', 1, 77);

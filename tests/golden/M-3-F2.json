@@ -1,0 +1,3443 @@
+{
+ "skillId": "M-3-F2",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "hour": 10,
+   "minute": 0,
+   "plus": 120,
+   "ask": "end",
+   "options": [
+    "11:00",
+    "12:00",
+    "1:00"
+   ]
+  },
+  "prompt": {
+   "text": "It is 10:00. What time will it be in 2 hours?",
+   "speak": [
+    "It is",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 0
+     }
+    },
+    ". What time will it be in",
+    {
+     "number": 2
+    },
+    "hours",
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "clock",
+   "hour": 10,
+   "minute": 0
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "11:00",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 11,
+       "minute": 0
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "12:00",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 12,
+       "minute": 0
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "1:00",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 1,
+       "minute": 0
+      }
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Start at",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 0
+     }
+    },
+    ".",
+    {
+     "number": 2
+    },
+    "hours later is",
+    {
+     "time": {
+      "hour": 12,
+      "minute": 0
+     }
+    },
+    "."
+   ],
+   "steps": [
+    "2 hours after 10:00 is 12:00.",
+    "It will be 12:00."
+   ],
+   "visual": {
+    "kind": "clock",
+    "hour": 12,
+    "minute": 0
+   }
+  },
+  "skillId": "M-3-F2",
+  "level": 1,
+  "seed": 352,
+  "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":10,\"minute\":0,\"plus\":120}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 0,
+     "plus": 180,
+     "ask": "end",
+     "options": [
+      "11:00",
+      "12:00",
+      "10:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 8:00. What time will it be in 3 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 3
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 8,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "3 hours after 8:00 is 11:00.",
+      "It will be 11:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":8,\"minute\":0,\"plus\":180}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 0,
+     "plus": 120,
+     "ask": "end",
+     "options": [
+      "10:00",
+      "11:00",
+      "12:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:00. What time will it be in 2 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 2
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "2 hours after 9:00 is 11:00.",
+      "It will be 11:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":9,\"minute\":0,\"plus\":120}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 0,
+     "plus": 120,
+     "ask": "end",
+     "options": [
+      "10:30",
+      "11:00",
+      "10:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:00. What time will it be in 2 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 2
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "2 hours after 9:00 is 11:00.",
+      "It will be 11:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":9,\"minute\":0,\"plus\":120}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 0,
+     "plus": 60,
+     "ask": "end",
+     "options": [
+      "12:00",
+      "1:30",
+      "1:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 12:00. What time will it be in 1 hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 12,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 12:00 is 1:00.",
+      "It will be 1:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":12,\"minute\":0,\"plus\":60}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 30,
+     "plus": 60,
+     "ask": "end",
+     "options": [
+      "10:00",
+      "10:30",
+      "9:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:30. What time will it be in 1 hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 9:30 is 10:30.",
+      "It will be 10:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":9,\"minute\":30,\"plus\":60}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 0,
+     "plus": 180,
+     "ask": "end",
+     "options": [
+      "9:30",
+      "10:30",
+      "10:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 7:00. What time will it be in 3 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 3
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "3 hours after 7:00 is 10:00.",
+      "It will be 10:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":7,\"minute\":0,\"plus\":180}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 0,
+     "plus": 240,
+     "ask": "end",
+     "options": [
+      "6:00",
+      "5:00",
+      "4:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 1:00. What time will it be in 4 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 4
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 5,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "4 hours after 1:00 is 5:00.",
+      "It will be 5:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 5,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":1,\"minute\":0,\"plus\":240}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 30,
+     "plus": 120,
+     "ask": "end",
+     "options": [
+      "4:00",
+      "4:30",
+      "5:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 2:30. What time will it be in 2 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 2
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 2,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "2 hours after 2:30 is 4:30.",
+      "It will be 4:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":2,\"minute\":30,\"plus\":120}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 30,
+     "plus": 60,
+     "ask": "end",
+     "options": [
+      "3:30",
+      "5:30",
+      "4:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 3:30. What time will it be in 1 hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 3,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 3:30 is 4:30.",
+      "It will be 4:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":3,\"minute\":30,\"plus\":60}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 30,
+     "plus": 180,
+     "ask": "end",
+     "options": [
+      "11:00",
+      "11:30",
+      "10:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 7:30. What time will it be in 3 hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 30
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 3
+      },
+      "hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 30
+       }
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "3 hours after 7:30 is 10:30.",
+      "It will be 10:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-F2|1|{\"ask\":\"end\",\"hour\":7,\"minute\":30,\"plus\":180}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 0,
+     "plus": 90,
+     "ask": "end",
+     "options": [
+      "9:30",
+      "10:30",
+      "8:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 8:00. What time will it be in 1 and a half hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "and a half hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 8,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 8:00 is 9:00.",
+      "30 more minutes after 9:00 is 9:30.",
+      "It will be 9:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":8,\"minute\":0,\"plus\":90}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "plus": 30,
+     "ask": "end",
+     "options": [
+      "8:45",
+      "9:45",
+      "10:45"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:15. What time will it be in half an hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      ". What time will it be in",
+      "half an hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "30 more minutes after 9:15 is 9:45.",
+      "It will be 9:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 45
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":9,\"minute\":15,\"plus\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 0,
+     "plus": 90,
+     "ask": "end",
+     "options": [
+      "10:00",
+      "10:30",
+      "9:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:00. What time will it be in 1 and a half hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "and a half hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 9:00 is 10:00.",
+      "30 more minutes after 10:00 is 10:30.",
+      "It will be 10:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":9,\"minute\":0,\"plus\":90}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 15,
+     "plus": 30,
+     "ask": "end",
+     "options": [
+      "11:45",
+      "1:15",
+      "12:45"
+     ]
+    },
+    "prompt": {
+     "text": "It is 12:15. What time will it be in half an hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      ". What time will it be in",
+      "half an hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 12,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "30 more minutes after 12:15 is 12:45.",
+      "It will be 12:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 45
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":12,\"minute\":15,\"plus\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 45,
+     "plus": 30,
+     "ask": "end",
+     "options": [
+      "9:45",
+      "10:15",
+      "9:15"
+     ]
+    },
+    "prompt": {
+     "text": "It is 9:45. What time will it be in half an hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      ". What time will it be in",
+      "half an hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "30 more minutes after 9:45 is 10:15.",
+      "It will be 10:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":9,\"minute\":45,\"plus\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 0,
+     "plus": 90,
+     "ask": "end",
+     "options": [
+      "8:00",
+      "9:00",
+      "8:30"
+     ]
+    },
+    "prompt": {
+     "text": "It is 7:00. What time will it be in 1 and a half hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 1
+      },
+      "and a half hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "hour later is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "1 hour after 7:00 is 8:00.",
+      "30 more minutes after 8:00 is 8:30.",
+      "It will be 8:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":7,\"minute\":0,\"plus\":90}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 0,
+     "plus": 150,
+     "ask": "end",
+     "options": [
+      "4:30",
+      "3:30",
+      "3:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 1:00. What time will it be in 2 and a half hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 2
+      },
+      "and a half hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "2 hours after 1:00 is 3:00.",
+      "30 more minutes after 3:00 is 3:30.",
+      "It will be 3:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":1,\"minute\":0,\"plus\":150}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 30,
+     "plus": 30,
+     "ask": "end",
+     "options": [
+      "2:30",
+      "3:00",
+      "4:00"
+     ]
+    },
+    "prompt": {
+     "text": "It is 2:30. What time will it be in half an hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      ". What time will it be in",
+      "half an hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 2,
+     "minute": 30
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "30 more minutes after 2:30 is 3:00.",
+      "It will be 3:00."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 0
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":2,\"minute\":30,\"plus\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 45,
+     "plus": 30,
+     "ask": "end",
+     "options": [
+      "3:15",
+      "5:15",
+      "4:15"
+     ]
+    },
+    "prompt": {
+     "text": "It is 3:45. What time will it be in half an hour?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 45
+       }
+      },
+      ". What time will it be in",
+      "half an hour",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 3,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 45
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "30 more minutes after 3:45 is 4:15.",
+      "It will be 4:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":3,\"minute\":45,\"plus\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 45,
+     "plus": 150,
+     "ask": "end",
+     "options": [
+      "10:45",
+      "11:15",
+      "10:15"
+     ]
+    },
+    "prompt": {
+     "text": "It is 7:45. What time will it be in 2 and a half hours?",
+     "speak": [
+      "It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 45
+       }
+      },
+      ". What time will it be in",
+      {
+       "number": 2
+      },
+      "and a half hours",
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 45
+       }
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "hours later is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      ".",
+      {
+       "number": 30
+      },
+      "more minutes is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "2 hours after 7:45 is 9:45.",
+      "30 more minutes after 9:45 is 10:15.",
+      "It will be 10:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-F2|2|{\"ask\":\"end\",\"hour\":7,\"minute\":45,\"plus\":150}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 0,
+     "endHour": 8,
+     "endMinute": 35,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 8:00 and ends at 8:35. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 35
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 8,
+       "minute": 0
+      },
+      {
+       "kind": "clock",
+       "hour": 8,
+       "minute": 35
+      }
+     ]
+    },
+    "answer": 35,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 35
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 35
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 8:00.",
+      "Count on in fives to 8:35.",
+      "That is 35 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":8,\"endMinute\":35,\"hour\":8,\"minute\":0}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "endHour": 9,
+     "endMinute": 35,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 9:15 and ends at 9:35. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 15
+      },
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 35
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 9:15.",
+      "Count on in fives to 9:35.",
+      "That is 20 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":35,\"hour\":9,\"minute\":15}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 0,
+     "endHour": 9,
+     "endMinute": 30,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 9:00 and ends at 9:30. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 0
+      },
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 30
+      }
+     ]
+    },
+    "answer": 30,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 30
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 9:00.",
+      "Count on in fives to 9:30.",
+      "That is 30 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 30
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":30,\"hour\":9,\"minute\":0}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 15,
+     "endHour": 12,
+     "endMinute": 35,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 12:15 and ends at 12:35. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 12,
+       "minute": 15
+      },
+      {
+       "kind": "clock",
+       "hour": 12,
+       "minute": 35
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 12:15.",
+      "Count on in fives to 12:35.",
+      "That is 20 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":35,\"hour\":12,\"minute\":15}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 45,
+     "endHour": 10,
+     "endMinute": 5,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 9:45 and ends at 10:05. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 5
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 45
+      },
+      {
+       "kind": "clock",
+       "hour": 10,
+       "minute": 5
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 5
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 9:45.",
+      "Count on in fives to 10:05.",
+      "That is 20 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 45
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 5
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":5,\"hour\":9,\"minute\":45}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 0,
+     "endHour": 7,
+     "endMinute": 40,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 7:00 and ends at 7:40. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 40
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 40
+      }
+     ]
+    },
+    "answer": 40,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 40
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 40
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 7:00.",
+      "Count on in fives to 7:40.",
+      "That is 40 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":7,\"endMinute\":40,\"hour\":7,\"minute\":0}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 0,
+     "endHour": 1,
+     "endMinute": 55,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 1:00 and ends at 1:55. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 55
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 1,
+       "minute": 0
+      },
+      {
+       "kind": "clock",
+       "hour": 1,
+       "minute": 55
+      }
+     ]
+    },
+    "answer": 55,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 55
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 1:00.",
+      "Count on in fives to 1:55.",
+      "That is 55 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 55
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":1,\"endMinute\":55,\"hour\":1,\"minute\":0}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 35,
+     "endHour": 3,
+     "endMinute": 0,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 2:35 and ends at 3:00. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 2,
+       "minute": 35
+      },
+      {
+       "kind": "clock",
+       "hour": 3,
+       "minute": 0
+      }
+     ]
+    },
+    "answer": 25,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 2:35.",
+      "Count on in fives to 3:00.",
+      "That is 25 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 2,
+        "minute": 35
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":3,\"endMinute\":0,\"hour\":2,\"minute\":35}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 50,
+     "endHour": 4,
+     "endMinute": 5,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 3:50 and ends at 4:05. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 5
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 3,
+       "minute": 50
+      },
+      {
+       "kind": "clock",
+       "hour": 4,
+       "minute": 5
+      }
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 5
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 15
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 3:50.",
+      "Count on in fives to 4:05.",
+      "That is 15 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 50
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 5
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":4,\"endMinute\":5,\"hour\":3,\"minute\":50}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 55,
+     "endHour": 8,
+     "endMinute": 35,
+     "ask": "minutes"
+    },
+    "prompt": {
+     "text": "A show starts at 7:55 and ends at 8:35. How many minutes long is it?",
+     "speak": [
+      "A show starts at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 55
+       }
+      },
+      "and ends at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 35
+       }
+      },
+      ". How many minutes long is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 55
+      },
+      {
+       "kind": "clock",
+       "hour": 8,
+       "minute": 35
+      }
+     ]
+    },
+    "answer": 40,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 35
+       }
+      },
+      "in fives. That is",
+      {
+       "number": 40
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Start at 7:55.",
+      "Count on in fives to 8:35.",
+      "That is 40 minutes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 55
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F2",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-F2|3|{\"ask\":\"minutes\",\"endHour\":8,\"endMinute\":35,\"hour\":7,\"minute\":55}"
+   }
+  ]
+ }
+}

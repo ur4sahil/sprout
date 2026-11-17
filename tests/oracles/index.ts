@@ -7,6 +7,11 @@ import { count } from './count';
 import { estimate } from './estimate';
 import { fold } from './fold';
 import { fraction } from './fraction';
+import { elapsed } from './elapsed';
+import { fractionValue } from './fractionValue';
+import { measureUnit } from './measureUnit';
+import { quadrilateral } from './quadrilateral';
+import { rect } from './rect';
 import { graph } from './graph';
 import { letter } from './letter';
 import { line } from './line';
@@ -42,6 +47,11 @@ import { wordSet } from './wordSet';
 // The oracles written so far. A content phase adds the ones it needs before its first generator.
 export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   numberName,
+  fractionValue,
+  elapsed,
+  rect,
+  measureUnit,
+  quadrilateral,
   round,
   estimate,
   count,

@@ -153,3 +153,36 @@
 .line {
   composes: spread from '../../components/shared.module.css';
 }
+
+.topics {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.topics li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.topicName {
+  font-weight: var(--weight-display);
+}
+
+.spark {
+  width: 100%;
+  height: auto;
+}
+
+.sparkLine {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

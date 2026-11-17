@@ -15,7 +15,17 @@ export function laterWins<T extends { updatedAt: string }>(local: T, incoming: T
 
 // Children: the later copy wins, and resetAt is the later of the two.
 export function mergeChild(local: Child, incoming: Child): Child {
-  return { ...laterWins(local, incoming), resetAt: later(local.resetAt, incoming.resetAt) };
+  return { ...laterWins(local, incoming), resetAt: later(local.resetAt, incoming.resetAt), levelWeeks: mergeWeeks(local.levelWeeks, incoming.levelWeeks) };
+}
+
+// Weekly level snapshots from two devices: every week either has, the later snapshot of a week both have.
+export function mergeWeeks(a: Child['levelWeeks'], b: Child['levelWeeks']): Child['levelWeeks'] {
+  const byWeek = new Map<string, Child['levelWeeks'][number]>();
+  for (const snapshot of [...a, ...b]) {
+    const held = byWeek.get(snapshot.week);
+    if (!held || snapshot.at > held.at) byWeek.set(snapshot.week, snapshot);
+  }
+  return [...byWeek.values()].sort((x, y) => (x.week < y.week ? -1 : 1)).slice(-26);
 }
 
 // Rows that are only ever added: one already on the device is skipped.

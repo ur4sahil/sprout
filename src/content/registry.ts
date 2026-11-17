@@ -27,6 +27,9 @@ import { compareThreeDigitGenerator, evenOddGenerator, expandedFormGenerator, hu
 import { halvesThirdsFourthsGenerator, nameBySidesGenerator } from './generators/math/g2/shapes';
 import { addRegroup1000Generator, estimateGenerator, subtractRegroup1000Generator, twoStep3Generator } from './generators/math/g3/addSubtract';
 import { arrays3Generator, divisionFactsGenerator, equalGroupsGenerator, factFamiliesGenerator, missingFactorGenerator, shareEquallyGenerator, times2510Generator, times34Generator, times6789Generator } from './generators/math/g3/multiply';
+import { compareFractionsGenerator, equalFractionsGenerator, fractionLineGenerator, nameFractionsGenerator } from './generators/math/g3/fractions';
+import { areaGenerator, elapsedTimeGenerator, linePlotsGenerator, massVolumeGenerator, perimeterGenerator, scaledGraphsGenerator, timeToMinuteGenerator } from './generators/math/g3/measure';
+import { equalAreaGenerator, patterns3Generator, quadrilateralsGenerator, timesTensGenerator } from './generators/math/g3/patternsShapes';
 import { compareFourDigitGenerator, numberNamesGenerator, placeValue4Generator, roundingGenerator } from './generators/math/g3/numbers';
 import { arraysGenerator, twoStepGenerator, wordProblems100Generator } from './generators/math/g2/stories';
 import { compareNumbersGenerator, moreFewerEqualGenerator } from './generators/math/k/comparing';
@@ -147,6 +150,21 @@ const ALL: readonly SkillGenerator[] = [
   shareEquallyGenerator,
   divisionFactsGenerator,
   factFamiliesGenerator,
+  patterns3Generator,
+  timesTensGenerator,
+  nameFractionsGenerator,
+  fractionLineGenerator,
+  compareFractionsGenerator,
+  equalFractionsGenerator,
+  timeToMinuteGenerator,
+  elapsedTimeGenerator,
+  areaGenerator,
+  perimeterGenerator,
+  massVolumeGenerator,
+  scaledGraphsGenerator,
+  linePlotsGenerator,
+  quadrilateralsGenerator,
+  equalAreaGenerator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,

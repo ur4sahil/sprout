@@ -179,3 +179,22 @@
   font-size: var(--visual-emoji, var(--emoji-m));
   line-height: 1.15;
 }
+
+/* "Each apple stands for 2", under a picture graph with a scale. */
+.graphKey {
+  grid-column: 1 / -1;
+  font-size: var(--text-s);
+  font-weight: 700;
+}
+
+.linePlot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.linePlotUnit {
+  font-size: var(--text-s);
+  font-weight: 700;
+}

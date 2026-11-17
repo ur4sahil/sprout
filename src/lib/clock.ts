@@ -29,6 +29,13 @@ export function addDays(iso: string, days: number): string {
   return at.toISOString();
 }
 
+// The local date of the Monday that starts this week, YYYY-MM-DD: the key of a weekly snapshot.
+export function localWeek(at: Date = now()): string {
+  const monday = new Date(at.getTime());
+  monday.setDate(monday.getDate() - ((monday.getDay() + 6) % 7));
+  return localDay(monday);
+}
+
 // How many local calendar days lie between two saved times. Later minus earlier.
 export function daysBetween(earlierIso: string, laterIso: string): number {
   const a = new Date(earlierIso);

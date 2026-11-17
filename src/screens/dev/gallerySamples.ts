@@ -80,6 +80,7 @@ export const GALLERY: GallerySection[] = [
   {
     title: 'numberLine',
     samples: [
+      { label: 'in fourths', visual: { kind: 'numberLine', min: 0, max: 4, step: 1, denominator: 4, marked: [3] } },
       { label: '0 to 10, dot at 4', visual: { kind: 'numberLine', min: 0, max: 10, step: 1, marked: [4] } },
       { label: 'by 5s, one hidden', visual: { kind: 'numberLine', min: 0, max: 50, step: 5, hidden: [25] } },
       { label: 'by 100s', visual: { kind: 'numberLine', min: 100, max: 900, step: 100, marked: [600], hidden: [600] } },
@@ -151,6 +152,14 @@ export const GALLERY: GallerySection[] = [
         label: 'bar',
         visual: { kind: 'graph', type: 'bar', categories: [{ label: 'ducks', emoji: '🦆', value: 3 }, { label: 'frogs', emoji: '🐸', value: 6 }, { label: 'bees', emoji: '🐝', value: 1 }] },
       },
+      {
+        label: 'picture graph, each is 2',
+        visual: { kind: 'graph', type: 'picture', scale: 2, categories: [{ label: 'apples', emoji: '🍎', value: 8 }, { label: 'bananas', emoji: '🍌', value: 4 }, { label: 'cookies', emoji: '🍪', value: 10 }] },
+      },
+      {
+        label: 'bar graph in fives',
+        visual: { kind: 'graph', type: 'bar', scale: 5, categories: [{ label: 'ducks', emoji: '🦆', value: 15 }, { label: 'frogs', emoji: '🐸', value: 30 }, { label: 'bees', emoji: '🐝', value: 10 }] },
+      },
     ],
   },
   {
@@ -206,6 +215,12 @@ export const GALLERY: GallerySection[] = [
       { label: 'unfolded, vertical', visual: { kind: 'foldPunch', fold: 'vertical', state: 'unfolded', holes: unfoldHoles('vertical', [{ col: 0, row: 0 }]) } },
       { label: 'folded, horizontal', visual: { kind: 'foldPunch', fold: 'horizontal', state: 'folded', holes: [{ col: 1, row: 1 }, { col: 3, row: 0 }] } },
       { label: 'unfolded, horizontal', visual: { kind: 'foldPunch', fold: 'horizontal', state: 'unfolded', holes: unfoldHoles('horizontal', [{ col: 1, row: 1 }, { col: 3, row: 0 }]) } },
+    ],
+  },
+  {
+    title: 'linePlot',
+    samples: [
+      { label: 'pencils in inches, halves', visual: { kind: 'linePlot', min: 6, max: 10, denominator: 2, counts: [1, 3, 0, 2, 1], unit: 'Length of pencils (inches)' } },
     ],
   },
 ];

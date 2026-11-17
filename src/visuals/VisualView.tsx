@@ -9,6 +9,7 @@ import EquationVisual from './EquationVisual';
 import FoldPunchVisual from './FoldPunchVisual';
 import FractionVisual from './FractionVisual';
 import GraphVisual from './GraphVisual';
+import LinePlotVisual from './LinePlotVisual';
 import MatrixVisual from './MatrixVisual';
 import NumberLineVisual from './NumberLineVisual';
 import RowVisual from './RowVisual';
@@ -66,5 +67,7 @@ export default function VisualView({ visual }: { visual: Visual }) {
       return <ScaleVisual visual={visual} />;
     case 'foldPunch':
       return <FoldPunchVisual visual={visual} />;
+    case 'linePlot':
+      return <LinePlotVisual visual={visual} />;
   }
 }

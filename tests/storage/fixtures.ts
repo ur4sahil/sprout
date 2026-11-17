@@ -4,7 +4,7 @@ import { defaultSettings, newSkillState } from '../../src/storage/schema';
 export const T = (day: number, minute = 0): string => `2026-03-${String(day).padStart(2, '0')}T12:${String(minute).padStart(2, '0')}:00.000Z`;
 
 export function child(id: string, change: Partial<Child> = {}): Child {
-  return { id, name: `Child ${id}`, avatar: '🐢', grade: 'K', settings: defaultSettings('K'), resetAt: null, createdAt: T(1), updatedAt: T(1), deletedAt: null, ...change };
+  return { id, name: `Child ${id}`, avatar: '🐢', grade: 'K', settings: defaultSettings('K'), resetAt: null, levelWeeks: [], createdAt: T(1), updatedAt: T(1), deletedAt: null, ...change };
 }
 
 export function state(childId: string, skillId: string, change: Partial<SkillState> = {}): SkillState {

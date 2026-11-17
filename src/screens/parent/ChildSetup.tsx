@@ -59,7 +59,7 @@ export default function ChildSetup({ onDone, onCancel }: Props) {
     setMessage(null);
     try {
       const at = nowIso();
-      const child: Child = { id: newId(), name: name.trim(), avatar, grade, settings: defaultSettings(grade), resetAt: null, createdAt: at, updatedAt: at, deletedAt: null };
+      const child: Child = { id: newId(), name: name.trim(), avatar, grade, settings: defaultSettings(grade), resetAt: null, levelWeeks: [], createdAt: at, updatedAt: at, deletedAt: null };
       await (await openRepo()).repo.saveChild(child);
       onDone(child);
     } catch (error) {

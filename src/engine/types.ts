@@ -63,13 +63,17 @@ export type Visual = VisualBase &
     | { kind: 'solid'; solid: SolidName }
     | { kind: 'tenFrame'; filled: number; frames: 1 | 2 }
     | { kind: 'baseTen'; thousands?: number; hundreds: number; tens: number; ones: number }
-    | { kind: 'numberLine'; min: number; max: number; step: number; marked?: number[]; hidden?: number[] }
+    // With `denominator`, the numbers are counted in parts of one: min 0, max 4, denominator 4 is 0, 1/4, 2/4, 3/4, 1.
+    | { kind: 'numberLine'; min: number; max: number; step: number; marked?: number[]; hidden?: number[]; denominator?: number }
     | { kind: 'equation'; parts: (number | string)[] } // numbers, operators and 'blank'
     | { kind: 'sequence'; items: (Visual | Blank)[] }
     | { kind: 'matrix'; cells: (Visual | Blank)[] } // 4 or 9 cells
     | { kind: 'clock'; hour: number; minute: number }
     | { kind: 'coins'; coins: CoinName[] }
-    | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[] }
+    // `scale`: each picture, or each step on a bar graph's scale, stands for this many (1 when left out).
+    | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number }
+    // X marks above a number line counted in halves or fourths: counts[i] marks above min + i / denominator.
+    | { kind: 'linePlot'; min: number; max: number; denominator: 2 | 4; counts: number[]; unit: string }
     | { kind: 'ruler'; lengthUnits: number; startUnit: number; object: 'pencil' | 'crayon' | 'ribbon' }
     | { kind: 'fraction'; shape: 'circle' | 'rectangle'; parts: number; shaded: number; equal: boolean }
     | { kind: 'row'; children: Visual[] }
@@ -175,6 +179,11 @@ export type OracleId =
   | 'numberName'
   | 'round'
   | 'estimate'
+  | 'fractionValue'
+  | 'elapsed'
+  | 'rect'
+  | 'measureUnit'
+  | 'quadrilateral'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -217,6 +226,11 @@ export const ORACLE_FACTS: Record<OracleId, string[]> = {
   numberName: ['n', 'ask'],
   round: ['n', 'to'],
   estimate: ['a', 'b', 'to', 'op', 'ask'],
+  fractionValue: ['n', 'd', 'ask'],
+  elapsed: ['hour', 'minute', 'ask'],
+  rect: ['length', 'width', 'ask'],
+  measureUnit: ['kind', 'grams'],
+  quadrilateral: ['ask'],
   authored: ['id'],
 };
 

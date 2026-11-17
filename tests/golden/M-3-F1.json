@@ -1,0 +1,3156 @@
+{
+ "skillId": "M-3-F1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "hour": 7,
+   "minute": 31,
+   "options": [
+    "7:21",
+    "6:31",
+    "7:31"
+   ]
+  },
+  "prompt": {
+   "text": "What time does the clock show?",
+   "speak": [
+    "What time does the clock show?"
+   ]
+  },
+  "stimulus": {
+   "kind": "clock",
+   "hour": 7,
+   "minute": 31
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "7:21",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 7,
+       "minute": 21
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "6:31",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 6,
+       "minute": 31
+      }
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "7:31",
+    "size": "l",
+    "speak": [
+     {
+      "time": {
+       "hour": 7,
+       "minute": 31
+      }
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The short hand has passed the",
+    {
+     "number": 7
+    },
+    ", so the hour is",
+    {
+     "number": 7
+    },
+    ". The long hand shows",
+    {
+     "number": 31
+    },
+    "minutes. It is",
+    {
+     "time": {
+      "hour": 7,
+      "minute": 31
+     }
+    },
+    "."
+   ],
+   "steps": [
+    "The short hand has passed the 7. The hour is 7.",
+    "Count by fives to 30, then 1 more: 31.",
+    "It is 7:31."
+   ],
+   "visual": {
+    "kind": "clock",
+    "hour": 7,
+    "minute": 31
+   }
+  },
+  "skillId": "M-3-F1",
+  "level": 1,
+  "seed": 351,
+  "key": "M-3-F1|1|{\"hour\":7,\"minute\":31}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 37,
+     "options": [
+      "12:37",
+      "2:37",
+      "1:37"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 37
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:37",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 37
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2:37",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 37
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:37",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 37
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 37
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 37
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 35, then 2 more: 37.",
+      "It is 1:37."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 37
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-F1|1|{\"hour\":1,\"minute\":37}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 44,
+     "options": [
+      "4:54",
+      "4:44",
+      "5:44"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 44
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:54",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 54
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:44",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 44
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:44",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 44
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 4
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ". The long hand shows",
+      {
+       "number": 44
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 44
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 4. The hour is 4.",
+      "Count by fives to 40, then 4 more: 44.",
+      "It is 4:44."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 44
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F1|1|{\"hour\":4,\"minute\":44}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 43,
+     "options": [
+      "1:33",
+      "1:43",
+      "1:53"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 43
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:33",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 33
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:43",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 43
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:53",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 53
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 43
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 43
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 40, then 3 more: 43.",
+      "It is 1:43."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 43
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-F1|1|{\"hour\":1,\"minute\":43}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 14,
+     "options": [
+      "1:14",
+      "1:24",
+      "1:04"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 14
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:14",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 14
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:24",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 24
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:04",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 4
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 14
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 14
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 10, then 4 more: 14.",
+      "It is 1:14."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 14
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F1|1|{\"hour\":1,\"minute\":14}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 41,
+     "options": [
+      "10:41",
+      "10:31",
+      "10:51"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 10,
+     "minute": 41
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:41",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 41
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:31",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 31
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:51",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 51
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 10
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ". The long hand shows",
+      {
+       "number": 41
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 10. The hour is 10.",
+      "Count by fives to 40, then 1 more: 41.",
+      "It is 10:41."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F1|1|{\"hour\":10,\"minute\":41}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 32,
+     "options": [
+      "1:22",
+      "12:32",
+      "1:32"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 32
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:22",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 22
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:32",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 32
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:32",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 32
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 32
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 32
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 30, then 2 more: 32.",
+      "It is 1:32."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 32
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F1|1|{\"hour\":1,\"minute\":32}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 1,
+     "options": [
+      "12:01",
+      "1:01",
+      "2:01"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 1
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:01",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 1
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:01",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 1
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2:01",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 1
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 1
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 1
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "The long hand is 1 minutes past the 12.",
+      "It is 1:01."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 1
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F1|1|{\"hour\":1,\"minute\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 37,
+     "options": [
+      "4:27",
+      "4:37",
+      "5:37"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 4,
+     "minute": 37
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:27",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 27
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:37",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 37
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5:37",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 5,
+         "minute": 37
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 4
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ". The long hand shows",
+      {
+       "number": 37
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 37
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 4. The hour is 4.",
+      "Count by fives to 35, then 2 more: 37.",
+      "It is 4:37."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 37
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-F1|1|{\"hour\":4,\"minute\":37}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 12,
+     "options": [
+      "11:02",
+      "11:12",
+      "10:12"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 11,
+     "minute": 12
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:02",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 2
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:12",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 12
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:12",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 12
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 11
+      },
+      ". The long hand shows",
+      {
+       "number": 12
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 12
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 11. The hour is 11.",
+      "Count by fives to 10, then 2 more: 12.",
+      "It is 11:12."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 12
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-F1|1|{\"hour\":11,\"minute\":12}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 41,
+     "options": [
+      "10:51",
+      "11:41",
+      "10:41"
+     ]
+    },
+    "prompt": {
+     "text": "What time does the clock show?",
+     "speak": [
+      "What time does the clock show?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 10,
+     "minute": 41
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:51",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 51
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:41",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 41
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:41",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 41
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 10
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ". The long hand shows",
+      {
+       "number": 41
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 10. The hour is 10.",
+      "Count by fives to 40, then 1 more: 41.",
+      "It is 10:41."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-F1|1|{\"hour\":10,\"minute\":41}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 37,
+     "options": [
+      "12:37",
+      "2:37",
+      "1:37"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:37?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 37
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:37",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 37
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 37
+     },
+     {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 37
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 37
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 37
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 37
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 35, then 2 more: 37.",
+      "It is 1:37."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 37
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-F1|2|{\"hour\":1,\"minute\":37,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 44,
+     "options": [
+      "4:54",
+      "4:44",
+      "5:44"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 4:44?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 44
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4:44",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 4,
+        "minute": 44
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 54
+     },
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 44
+     },
+     {
+      "kind": "clock",
+      "hour": 5,
+      "minute": 44
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 4
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ". The long hand shows",
+      {
+       "number": 44
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 44
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 4. The hour is 4.",
+      "Count by fives to 40, then 4 more: 44.",
+      "It is 4:44."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 44
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-F1|2|{\"hour\":4,\"minute\":44,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 43,
+     "options": [
+      "1:33",
+      "1:43",
+      "1:53"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:43?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 43
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:43",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 43
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 33
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 43
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 53
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 43
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 43
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 40, then 3 more: 43.",
+      "It is 1:43."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 43
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-F1|2|{\"hour\":1,\"minute\":43,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 14,
+     "options": [
+      "1:14",
+      "1:24",
+      "1:04"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:14?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 14
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:14",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 14
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 14
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 24
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 4
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 14
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 14
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 10, then 4 more: 14.",
+      "It is 1:14."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 14
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-F1|2|{\"hour\":1,\"minute\":14,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 41,
+     "options": [
+      "10:41",
+      "10:31",
+      "10:51"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 10:41?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "10:41",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 31
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 51
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 10
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ". The long hand shows",
+      {
+       "number": 41
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 10. The hour is 10.",
+      "Count by fives to 40, then 1 more: 41.",
+      "It is 10:41."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-F1|2|{\"hour\":10,\"minute\":41,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 32,
+     "options": [
+      "1:22",
+      "12:32",
+      "1:32"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:32?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 32
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:32",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 32
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 22
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 32
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 32
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 32
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 32
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "Count by fives to 30, then 2 more: 32.",
+      "It is 1:32."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 32
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-F1|2|{\"hour\":1,\"minute\":32,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 1,
+     "options": [
+      "12:01",
+      "1:01",
+      "2:01"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 1:01?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 1
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "1:01",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 1,
+        "minute": 1
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 1
+     },
+     {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 1
+     },
+     {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 1
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 1
+      },
+      ", so the hour is",
+      {
+       "number": 1
+      },
+      ". The long hand shows",
+      {
+       "number": 1
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 1
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 1. The hour is 1.",
+      "The long hand is 1 minutes past the 12.",
+      "It is 1:01."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 1
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-F1|2|{\"hour\":1,\"minute\":1,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 4,
+     "minute": 37,
+     "options": [
+      "4:27",
+      "4:37",
+      "5:37"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 4:37?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 37
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "4:37",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 4,
+        "minute": 37
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 27
+     },
+     {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 37
+     },
+     {
+      "kind": "clock",
+      "hour": 5,
+      "minute": 37
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 4
+      },
+      ", so the hour is",
+      {
+       "number": 4
+      },
+      ". The long hand shows",
+      {
+       "number": 37
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 37
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 4. The hour is 4.",
+      "Count by fives to 35, then 2 more: 37.",
+      "It is 4:37."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 37
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-F1|2|{\"hour\":4,\"minute\":37,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 12,
+     "options": [
+      "11:02",
+      "11:12",
+      "10:12"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 11:12?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 12
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "11:12",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 11,
+        "minute": 12
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 2
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 12
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 12
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 11
+      },
+      ", so the hour is",
+      {
+       "number": 11
+      },
+      ". The long hand shows",
+      {
+       "number": 12
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 12
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 11. The hour is 11.",
+      "Count by fives to 10, then 2 more: 12.",
+      "It is 11:12."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 12
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-F1|2|{\"hour\":11,\"minute\":12,\"show\":\"clocks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 41,
+     "options": [
+      "10:51",
+      "11:41",
+      "10:41"
+     ],
+     "show": "clocks"
+    },
+    "prompt": {
+     "text": "Which clock shows 10:41?",
+     "speak": [
+      "Which clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "10:41",
+     "size": "l",
+     "speak": [
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 51
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 41
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The short hand has passed the",
+      {
+       "number": 10
+      },
+      ", so the hour is",
+      {
+       "number": 10
+      },
+      ". The long hand shows",
+      {
+       "number": 41
+      },
+      "minutes. It is",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 41
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand has passed the 10. The hour is 10.",
+      "Count by fives to 40, then 1 more: 41.",
+      "It is 10:41."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 41
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-F1|2|{\"hour\":10,\"minute\":41,\"show\":\"clocks\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 15,
+     "options": [
+      "8:15",
+      "8:45",
+      "7:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 8?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 8
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 8 is 15 minutes past 8.",
+      "It is 8:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-F1|3|{\"hour\":8,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "options": [
+      "9:15",
+      "9:45",
+      "8:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 9?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 9
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 9 is 15 minutes past 9.",
+      "It is 9:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-F1|3|{\"hour\":9,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "options": [
+      "9:45",
+      "8:45",
+      "9:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 9?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 9
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 9
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 9 is 15 minutes past 9.",
+      "It is 9:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-F1|3|{\"hour\":9,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 15,
+     "options": [
+      "11:45",
+      "12:45",
+      "12:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 12?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 12
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 12
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 12 is 15 minutes past 12.",
+      "It is 12:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-F1|3|{\"hour\":12,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 45,
+     "options": [
+      "9:15",
+      "10:45",
+      "9:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter to 10?",
+     "speak": [
+      "What time is",
+      "quarter to",
+      {
+       "number": 10
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "quarter to",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 45
+      },
+      "minutes past",
+      {
+       "number": 9
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter to 10 is 45 minutes past 9.",
+      "It is 9:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 45
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-F1|3|{\"hour\":9,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 15,
+     "options": [
+      "6:45",
+      "7:45",
+      "7:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 7?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 7
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 7
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 7 is 15 minutes past 7.",
+      "It is 7:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-F1|3|{\"hour\":7,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 15,
+     "options": [
+      "1:15",
+      "1:45",
+      "12:45"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter past 1?",
+     "speak": [
+      "What time is",
+      "quarter past",
+      {
+       "number": 1
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 45
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "quarter past",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes past",
+      {
+       "number": 1
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 15
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter past 1 is 15 minutes past 1.",
+      "It is 1:15."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 15
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-F1|3|{\"hour\":1,\"minute\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 30,
+     "options": [
+      "2:30",
+      "2:15",
+      "3:00"
+     ]
+    },
+    "prompt": {
+     "text": "What time is half past 2?",
+     "speak": [
+      "What time is",
+      "half past",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "half past",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 30
+      },
+      "minutes past",
+      {
+       "number": 2
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Half past 2 is 30 minutes past 2.",
+      "It is 2:30."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 30
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-F1|3|{\"hour\":2,\"minute\":30}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 45,
+     "options": [
+      "3:45",
+      "4:45",
+      "3:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter to 4?",
+     "speak": [
+      "What time is",
+      "quarter to",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "quarter to",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 45
+      },
+      "minutes past",
+      {
+       "number": 3
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter to 4 is 45 minutes past 3.",
+      "It is 3:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 45
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-F1|3|{\"hour\":3,\"minute\":45}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 45,
+     "options": [
+      "7:15",
+      "7:45",
+      "8:15"
+     ]
+    },
+    "prompt": {
+     "text": "What time is quarter to 8?",
+     "speak": [
+      "What time is",
+      "quarter to",
+      {
+       "number": 8
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 15
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:15",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 15
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "quarter to",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 45
+      },
+      "minutes past",
+      {
+       "number": 7
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "A quarter of an hour is 15 minutes. Half an hour is 30.",
+      "Quarter to 8 is 45 minutes past 7.",
+      "It is 7:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 45
+     }
+    },
+    "skillId": "M-3-F1",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-F1|3|{\"hour\":7,\"minute\":45}"
+   }
+  ]
+ }
+}

@@ -50,6 +50,9 @@ export const childSchema = z.object({
   grade: gradeSchema,
   settings: childSettingsSchema,
   resetAt: iso.nullable(), // rows for this child made before this time are dead
+  // One snapshot of the topic levels a week (plan section 15.3), keyed by the week's Monday. A topic
+  // the child has not tried is left out. The newest 26 weeks are kept.
+  levelWeeks: z.array(z.object({ week: z.string(), at: iso, levels: z.record(z.string(), z.number()) })).default([]),
   createdAt: iso,
   updatedAt: iso,
   deletedAt: iso.nullable(),

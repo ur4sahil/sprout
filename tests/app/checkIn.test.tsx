@@ -59,7 +59,7 @@ describe('which check-in home offers', () => {
   it('the ladders hold only skills that are built, in ladder order', () => {
     const ready = new Set(allGenerators().map((generator) => generator.skillId));
     const math = diagnosticLadders('math');
-    expect(math.map((ladder) => ladder.id)).toEqual(['counting', 'comparing', 'add-subtract', 'place-value', 'shapes', 'length', 'patterns', 'data', 'time', 'money', 'fractions', 'multiply-divide']);
+    expect(math.map((ladder) => ladder.id)).toEqual(['counting', 'comparing', 'add-subtract', 'place-value', 'shapes', 'length', 'patterns', 'data', 'time', 'money', 'fractions', 'multiply-divide', 'measures']);
     // A ladder with no skill built yet is not a ladder yet. Every Language Arts ladder now has at least one.
     expect(diagnosticLadders('ela').map((ladder) => ladder.id)).toEqual(['letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading']);
     for (const ladder of [...math, ...diagnosticLadders('ela')]) for (const skill of ladder.skills) expect(ready.has(skill.id)).toBe(true);
@@ -111,7 +111,7 @@ async function sitting(child: Child, subject: 'math' | 'ela', knows: (skillId: s
   return { asked, end };
 }
 
-describe('a check-in over two sittings', () => {
+describe('a check-in over more than one sitting', () => {
   it('saves placements by skill id, places out what the child knows, and never moves a score', async () => {
     const child = await setUp('K', {}, { checkIn: 'new' });
     // This child knows every pre-K skill and nothing above.
@@ -123,11 +123,23 @@ describe('a check-in over two sittings', () => {
     let progress = await (await repo()).getDiagnosticProgress('kid-1', 'math');
     expect(progress).toMatchObject({ sittings: 1, done: false, lastSittingDay: localDay(NOW) });
 
-    advanceClock(DAY);
-    const second = await sitting(child, 'math', knows);
-    expect(second.end).toBe('done');
+    // A kindergarten child walks every ladder that starts at or below K and has four or more skills:
+    // with grade 3 built, that takes three sittings.
+    let sittings = 1;
+    let end: string = first.end;
+    const later: string[] = [];
+    const sizes = [first.asked.length];
+    while (end !== 'done' && sittings < 5) {
+      advanceClock(DAY);
+      const next = await sitting(child, 'math', knows);
+      later.push(...next.asked);
+      sizes.push(next.asked.length);
+      end = next.end;
+      sittings += 1;
+    }
+    expect(end).toBe('done');
     progress = await (await repo()).getDiagnosticProgress('kid-1', 'math');
-    expect(progress).toMatchObject({ sittings: 2, done: true });
+    expect(progress).toMatchObject({ sittings: 3, done: true });
 
     // Every math ladder with a built skill has one placement, and each is a skill id on that ladder or null.
     const results = await (await repo()).listDiagnostics('kid-1');
@@ -148,7 +160,7 @@ describe('a check-in over two sittings', () => {
 
     // Every answer is logged as a check-in answer with the score unchanged, in a check-in session.
     const attempts = await (await repo()).listAttempts('kid-1', {});
-    expect(attempts).toHaveLength(first.asked.length + second.asked.length);
+    expect(attempts).toHaveLength(first.asked.length + later.length);
     for (const attempt of attempts) {
       expect(attempt.kind).toBe('diagnostic');
       expect(attempt.scoreAfter).toBe(attempt.scoreBefore);
@@ -156,14 +168,11 @@ describe('a check-in over two sittings', () => {
     }
     expect(attempts.filter((attempt) => !attempt.correct).every((attempt) => attempt.snapshot.given === "I don't know yet" && attempt.response === null)).toBe(true);
     const sessions = await (await repo()).listSessions('kid-1');
-    expect(sessions.map((session) => [session.kind, session.questions, session.endedAt !== null])).toEqual([
-      ['diagnostic', first.asked.length, true],
-      ['diagnostic', second.asked.length, true],
-    ]);
+    expect(sessions.map((session) => [session.kind, session.questions, session.endedAt !== null])).toEqual(sizes.map((size) => ['diagnostic', size, true]));
 
     // No skill is tested twice: at most three questions on any one skill, and only on walked ladders.
     const counts = new Map<string, number>();
-    for (const id of [...first.asked, ...second.asked]) counts.set(id, (counts.get(id) ?? 0) + 1);
+    for (const id of [...first.asked, ...later]) counts.set(id, (counts.get(id) ?? 0) + 1);
     expect(Math.max(...counts.values())).toBeLessThanOrEqual(3);
     const walked = new Set(diagnosticLadders('math').filter((ladder) => shouldWalk(ladder, 'K')).flatMap((ladder) => ladder.skills.map((skill) => skill.id)));
     for (const id of counts.keys()) expect(walked.has(id)).toBe(true);

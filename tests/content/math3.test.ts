@@ -5,7 +5,7 @@ import { nameOf, written } from '../../src/content/generators/math/g3/numbers';
 import { generateQuestion } from '../../src/content/registry';
 import type { Level, Question } from '../../src/engine/types';
 
-// The level rules of Math grade 3, categories A and B (plan section 8).
+// The level rules of Math grade 3 (plan section 8).
 
 const SEEDS = 300;
 const all = (skillId: string, level: Level): Question[] => Array.from({ length: SEEDS }, (_, i) => generateQuestion(skillId, level, i + 1));
@@ -204,5 +204,119 @@ describe('D. Division', () => {
     expect(new Set(all('M-3-D3', 1).map((question) => question.facts.ask))).toEqual(new Set(['inFamily']));
     expect(new Set(all('M-3-D3', 2).map((question) => question.facts.ask))).toEqual(new Set(['quotient']));
     for (const question of all('M-3-D3', 3)) expect((question.facts.options as string[]).length).toBe(4);
+  });
+});
+
+const facts = (question: Question): Record<string, unknown> => question.facts as Record<string, unknown>;
+const set = (questions: Question[], of: (question: Question) => unknown): unknown[] => [...new Set(questions.map(of))].sort();
+
+describe('A.5 and C.7', () => {
+  it('A.5 counts by 2, 5, 10, then 3, 4, 6, 25 up or down, then 50 or 100 to 1,000, typed', () => {
+    expect(set(all('M-3-A5', 1), (q) => facts(q).step)).toEqual([10, 2, 5]);
+    expect(set(all('M-3-A5', 2), (q) => Math.abs(facts(q).step as number))).toEqual([25, 3, 4, 6]);
+    expect(all('M-3-A5', 2).some((q) => (facts(q).step as number) < 0)).toBe(true);
+    for (const q of all('M-3-A5', 3)) {
+      expect(q.type).toBe('numberPad');
+      const { start, step } = facts(q) as { start: number; step: number };
+      expect([start, start + step * 4].every((x) => x >= 0 && x <= 1000)).toBe(true);
+    }
+  });
+
+  it('C.7 multiplies by a multiple of ten: tens rods first, to 9 × 90 typed', () => {
+    for (const level of [1, 2, 3] as Level[]) for (const q of all('M-3-C7', level)) expect((facts(q).cols as number) % 10).toBe(0);
+    for (const q of all('M-3-C7', 1)) expect(q.stimulus?.kind).toBe('row');
+    expect(range(all('M-3-C7', 3), (q) => n(q, 'rows') * n(q, 'cols'))[1]).toBeLessThanOrEqual(810);
+    expect(types(all('M-3-C7', 3))).toEqual(['numberPad']);
+  });
+});
+
+describe('E. Fractions', () => {
+  it('E.1 names unit fractions, then any fraction of a shape, then of a set', () => {
+    for (const q of all('M-3-E1', 1)) expect(n(q, 'n')).toBe(1);
+    for (const q of all('M-3-E1', 2)) expect(q.stimulus?.kind).toBe('fraction');
+    for (const q of all('M-3-E1', 3)) expect(q.stimulus?.kind).toBe('emojiGroup');
+  });
+
+  it('E.2 uses halves and fourths, then thirds and sixths, then eighths, the dot on a hidden mark', () => {
+    expect(set(all('M-3-E2', 1), (q) => n(q, 'd'))).toEqual([2, 4]);
+    expect(set(all('M-3-E2', 2), (q) => n(q, 'd'))).toEqual([3, 6]);
+    expect(set(all('M-3-E2', 3), (q) => n(q, 'd'))).toEqual([8]);
+    for (const q of all('M-3-E2', 1)) {
+      const line = q.stimulus;
+      if (line?.kind !== 'numberLine') throw new Error('not a number line');
+      expect(line.hidden).toEqual(line.marked);
+    }
+  });
+
+  it('E.3 compares same bottom numbers, then same top numbers, then picks a sign, sometimes =', () => {
+    for (const q of all('M-3-E3', 1)) expect(new Set(facts(q).values as number[]).size).toBe(2);
+    for (const q of all('M-3-E3', 2)) expect(new Set(facts(q).values as number[]).size).toBe(2);
+    expect(set(all('M-3-E3', 3), (q) => facts(q).ask)).toEqual(['sign']);
+    expect(all('M-3-E3', 3).some((q) => (facts(q).values as number[])[0] === (facts(q).values as number[])[1])).toBe(true);
+  });
+
+  it('E.4 offers exactly one equal fraction, as pictures, on number lines, then in numerals', () => {
+    for (const level of [1, 2, 3] as Level[]) {
+      for (const q of all('M-3-E4', level)) {
+        const equal = (facts(q).options as string[]).filter((o) => {
+          const [a, b] = o.split('/').map(Number) as [number, number];
+          return a * n(q, 'd') === n(q, 'n') * b;
+        });
+        expect(equal).toHaveLength(1);
+      }
+    }
+    for (const q of all('M-3-E4', 1)) if (q.type === 'choice') expect(q.options[0]?.kind).toBe('fraction');
+  });
+});
+
+describe('F. Measurement and data', () => {
+  it('F.1 reads minutes that are not fives, then matches clocks, then quarter past and quarter to', () => {
+    for (const q of all('M-3-F1', 1)) expect(n(q, 'minute') % 5).not.toBe(0);
+    for (const q of all('M-3-F1', 2)) if (q.type === 'choice') expect(q.options[0]?.kind).toBe('clock');
+    expect(set(all('M-3-F1', 3), (q) => n(q, 'minute'))).toEqual([15, 30, 45]);
+  });
+
+  it('F.2 adds whole hours, then half hours, then counts minutes, typed', () => {
+    for (const q of all('M-3-F2', 1)) expect(n(q, 'plus') % 60).toBe(0);
+    for (const q of all('M-3-F2', 2)) expect(n(q, 'plus') % 60).toBe(30);
+    for (const q of all('M-3-F2', 3)) expect(q.type).toBe('numberPad');
+  });
+
+  it('F.3 and F.4 use a rectangle that is never a square, typed at level 3', () => {
+    for (const id of ['M-3-F3', 'M-3-F4']) {
+      for (const level of [1, 2, 3] as Level[]) for (const q of all(id, level)) expect(n(q, 'length')).not.toBe(n(q, 'width'));
+      expect(types(all(id, 3))).toEqual(['numberPad']);
+    }
+  });
+
+  it('F.5 picks a unit, then reads a balance, then compares two', () => {
+    expect(set(all('M-3-F5', 1), (q) => facts(q).kind)).toEqual(['mass', 'volume']);
+    for (const q of all('M-3-F5', 2)) expect(q.stimulus?.kind).toBe('scale');
+    expect(set(all('M-3-F5', 3), (q) => facts(q).oracle)).toEqual(['subtract']);
+  });
+
+  it('F.6 counts by 2 on picture graphs, by 5 on bar graphs, then asks how many more, typed', () => {
+    for (const q of all('M-3-F6', 1)) expect(q.stimulus).toMatchObject({ kind: 'graph', type: 'picture', scale: 2 });
+    for (const q of all('M-3-F6', 2)) expect(q.stimulus).toMatchObject({ kind: 'graph', type: 'bar', scale: 5 });
+    expect(types(all('M-3-F6', 3))).toEqual(['numberPad']);
+  });
+
+  it('F.7 plots halves, then fourths for the total, with one length always the most', () => {
+    for (const q of all('M-3-F7', 1)) expect(q.stimulus).toMatchObject({ kind: 'linePlot', denominator: 2 });
+    for (const q of all('M-3-F7', 3)) expect(q.stimulus).toMatchObject({ kind: 'linePlot', denominator: 4 });
+  });
+});
+
+describe('G. Shapes', () => {
+  it('G.1 finds a quadrilateral, then the shape that is not, then names one from a clue', () => {
+    expect(set(all('M-3-G1', 1), (q) => facts(q).ask)).toEqual(['four']);
+    expect(set(all('M-3-G1', 2), (q) => facts(q).ask)).toEqual(['notFour']);
+    for (const q of all('M-3-G1', 3)) expect(q.mode).toBe('read');
+  });
+
+  it('G.2 names one equal part, then finds equal parts, then counts the parts in the whole', () => {
+    for (const q of all('M-3-G2', 1)) expect(n(q, 'n')).toBe(1);
+    expect(set(all('M-3-G2', 2), (q) => facts(q).oracle)).toEqual(['fraction']);
+    expect(types(all('M-3-G2', 3))).toEqual(['numberPad']);
   });
 });

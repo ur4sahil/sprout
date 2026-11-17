@@ -25,6 +25,14 @@ export function sayText(say: Say): string {
     .trim();
 }
 
+// A number counted in parts of one, as a child writes it: 0, 1/4, 2/4, 1, 1 1/4.
+export function partLabel(value: number, denominator: number): string {
+  const whole = Math.floor(value / denominator);
+  const part = value % denominator;
+  if (part === 0) return String(whole);
+  return whole === 0 ? `${part}/${denominator}` : `${whole} ${part}/${denominator}`;
+}
+
 export function describeVisual(visual: Visual | 'blank'): string {
   if (visual === 'blank') return 'blank';
   switch (visual.kind) {
@@ -60,9 +68,11 @@ export function describeVisual(visual: Visual | 'blank'): string {
       // A dot on a number that is hidden does not name it: the description must not give the answer away.
       const secret = (visual.marked ?? []).filter((value) => (visual.hidden ?? []).includes(value));
       const open = (visual.marked ?? []).filter((value) => !secret.includes(value));
-      const marked = `${open.length > 0 ? `, dot at ${open.join(' and ')}` : ''}${secret.length > 0 ? ', dot on a hidden number' : ''}`;
+      const name = (value: number): string => (visual.denominator ? partLabel(value, visual.denominator) : String(value));
+      const marked = `${open.length > 0 ? `, dot at ${open.map(name).join(' and ')}` : ''}${secret.length > 0 ? ', dot on a hidden number' : ''}`;
       const others = (visual.hidden ?? []).filter((value) => !secret.includes(value));
       const hidden = others.length > 0 ? `, ${plural(others.length, 'number', 'numbers')} hidden` : '';
+      if (visual.denominator) return `number line from ${name(visual.min)} to ${name(visual.max)} in parts of ${visual.denominator}${marked}${hidden}`;
       return `number line from ${visual.min} to ${visual.max} by ${visual.step}${marked}${hidden}`;
     }
     case 'equation':
@@ -76,7 +86,9 @@ export function describeVisual(visual: Visual | 'blank'): string {
     case 'coins':
       return visual.coins.join(', ');
     case 'graph':
-      return `${visual.type} graph: ${visual.categories.map((c) => `${c.label} ${c.value}`).join(', ')}`;
+      return `${visual.type} graph${visual.scale && visual.scale > 1 ? `, each ${visual.type === 'picture' ? 'picture' : 'step'} is ${visual.scale}` : ''}: ${visual.categories.map((c) => `${c.label} ${c.value}`).join(', ')}`;
+    case 'linePlot':
+      return `line plot of ${visual.unit}: ${visual.counts.map((count, i) => `${partLabel(visual.min + i, visual.denominator)}, ${count}`).join('; ')}`;
     case 'ruler':
       return `${visual.object} on a ruler from ${visual.startUnit} to ${visual.startUnit + visual.lengthUnits}`;
     case 'fraction':

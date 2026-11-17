@@ -3,7 +3,7 @@ import { num, numbers, text } from './types';
 
 // A graph's values, one for each category in order.
 // ask: value (the value of the category at facts.index), most, least (which category, by its place),
-// difference (how many more the category at facts.index has than the one at facts.other).
+// total (all the values added), difference (how many more the category at facts.index has than the one at facts.other).
 export const graph: Oracle = (facts) => {
   const values = numbers(facts, 'values');
   const ask = text(facts, 'ask');
@@ -17,6 +17,7 @@ export const graph: Oracle = (facts) => {
     if (found.length !== 1) throw new Error(`oracle graph: ${found.length} categories tie for ${what}`);
     return found[0] as number;
   };
+  if (ask === 'total') return { kind: 'value', value: values.reduce((sum, value) => sum + value, 0) };
   if (ask === 'value') return { kind: 'value', value: at('index') };
   if (ask === 'most') return { kind: 'index', index: only(Math.max(...values), 'the most') };
   if (ask === 'least') return { kind: 'index', index: only(Math.min(...values), 'the least') };
