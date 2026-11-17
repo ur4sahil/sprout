@@ -7,7 +7,7 @@ import type { DataStore, RecordRow } from './store';
 // every record against its schema when it reads it.
 
 // The kinds of record kept here. Anything that belongs to one device stays on that device.
-export const DATA_STORES: readonly string[] = ['children', 'skillStates', 'attempts', 'sessions', 'awards', 'plans', 'diagnostics', 'flags', 'diagnosticProgress', 'family'];
+export const DATA_STORES: readonly string[] = ['children', 'skillStates', 'attempts', 'sessions', 'awards', 'plans', 'diagnostics', 'flags', 'diagnosticProgress', 'factStates', 'family'];
 
 // Every listed parent shares this one family.
 export const FAMILY = 'family';

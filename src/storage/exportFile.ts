@@ -5,6 +5,7 @@ import {
   awardEarnedSchema,
   childSchema,
   diagnosticProgressSchema,
+  factStateSchema,
   diagnosticResultSchema,
   familySchema,
   flagSchema,
@@ -33,6 +34,7 @@ export const exportFileSchema = z.object({
   diagnostics: z.array(diagnosticResultSchema),
   flags: z.array(flagSchema),
   diagnosticProgress: z.array(diagnosticProgressSchema),
+  factStates: z.array(factStateSchema).default([]), // added Nov 17, 2026: older files have none
   family: familySchema,
   quarantined: z.array(quarantinedSchema).default([]),
 });

@@ -5,6 +5,7 @@ import type {
   Child,
   DeviceState,
   DiagnosticProgress,
+  FactState,
   DiagnosticResult,
   DiagnosticSubject,
   Family,
@@ -38,6 +39,7 @@ export interface ExportFile {
   diagnostics: DiagnosticResult[];
   flags: Flag[];
   diagnosticProgress: DiagnosticProgress[];
+  factStates: FactState[];
   family: Family;
   quarantined: QuarantinedItem[];
 }
@@ -72,6 +74,8 @@ export interface Repo {
   saveFlag(f: Flag): Promise<void>;
   getDiagnosticProgress(childId: string, subject: DiagnosticSubject): Promise<DiagnosticProgress | null>;
   saveDiagnosticProgress(p: DiagnosticProgress): Promise<void>;
+  listFactStates(childId: string): Promise<FactState[]>;
+  saveFactStates(states: FactState[]): Promise<void>; // all in one write
   getClip(key: string): Promise<AudioClip | null>;
   saveClip(c: AudioClip): Promise<void>;
   deleteClip(key: string): Promise<void>;

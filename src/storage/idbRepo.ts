@@ -18,7 +18,7 @@ const UPGRADES: ((db: IDBPDatabase, tx: UpgradeTx) => void)[] = [
   // Version 1
   (db) => {
     // The stores as they were in version 1. Later steps add the rest.
-    for (const name of STORES.filter((each) => each !== 'outbox')) {
+    for (const name of STORES.filter((each) => each !== 'outbox' && each !== 'factStates')) {
       const store = db.createObjectStore(name);
       if (CHILD_STORES.includes(name)) store.createIndex('childId', 'childId');
       if (name === 'attempts') {
@@ -31,6 +31,10 @@ const UPGRADES: ((db: IDBPDatabase, tx: UpgradeTx) => void)[] = [
   // Version 2: the list of records waiting to be sent to the server.
   (db) => {
     db.createObjectStore('outbox');
+  },
+  // Version 3: one row for each number fact a child has answered.
+  (db) => {
+    db.createObjectStore('factStates').createIndex('childId', 'childId');
   },
 ];
 

@@ -102,6 +102,8 @@ const DRAWINGS = {
   ),
   sprout: <path d="M12 21v-8M12 13c0-4-3-6-7-6 0 4 3 6 7 6zM12 11c0-3 2.500-5 6.500-5 0 3.500-2.500 5-6.500 5z" />,
   plus: <path d="M12 5v14M5 12h14" />,
+  bolt: <path d="M13 2L4 14h7l-1 8 9-12h-7z" />,
+  flag: <path d="M5 21V4M5 4h11l-2 4 2 4H5" />,
 } satisfies Record<string, ReactNode>;
 
 export type IconName = keyof typeof DRAWINGS;

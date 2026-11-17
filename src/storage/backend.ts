@@ -13,6 +13,7 @@ export const STORES = [
   'diagnostics',
   'flags',
   'diagnosticProgress',
+  'factStates',
   'clips',
   'family',
   'device',
@@ -21,7 +22,7 @@ export const STORES = [
 export type StoreName = (typeof STORES)[number];
 
 // Stores whose rows belong to one child, and carry a childId.
-export const CHILD_STORES: readonly StoreName[] = ['skillStates', 'attempts', 'sessions', 'awards', 'diagnostics', 'flags', 'diagnosticProgress'];
+export const CHILD_STORES: readonly StoreName[] = ['skillStates', 'attempts', 'sessions', 'awards', 'diagnostics', 'flags', 'diagnosticProgress', 'factStates'];
 
 export interface Row {
   key: string;

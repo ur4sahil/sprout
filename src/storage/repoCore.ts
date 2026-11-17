@@ -7,7 +7,7 @@ import type { Backend, StoreName } from './backend';
 import { CHILD_STORES } from './backend';
 import { EXPORT_FORMAT, EXPORT_VERSION, parseExportFile } from './exportFile';
 import type { ExportFile, ImportReport, Repo } from './repo';
-import type { Attempt, AwardEarned, Child, DeviceState, DiagnosticProgress, DiagnosticResult, Family, Flag, Plan, Session, SkillState } from './schema';
+import type { Attempt, AwardEarned, Child, DeviceState, DiagnosticProgress, DiagnosticResult, FactState, Family, Flag, Plan, Session, SkillState } from './schema';
 import {
   attemptSchema,
   audioClipSchema,
@@ -15,6 +15,7 @@ import {
   childSchema,
   deviceStateSchema,
   diagnosticProgressSchema,
+  factStateSchema,
   diagnosticResultSchema,
   familySchema,
   flagSchema,
@@ -36,6 +37,7 @@ const keys = {
   skillState: (s: Pick<SkillState, 'childId' | 'skillId'>) => `${s.childId}|${s.skillId}`,
   award: (a: Pick<AwardEarned, 'childId' | 'awardId'>) => `${a.childId}|${a.awardId}`,
   progress: (p: Pick<DiagnosticProgress, 'childId' | 'subject'>) => `${p.childId}|${p.subject}`,
+  fact: (f: Pick<FactState, 'childId' | 'factId'>) => `${f.childId}|${f.factId}`,
 };
 
 // When each child-owned row was made, for the reset rule.
@@ -47,6 +49,7 @@ const madeAt: Record<string, (row: never) => string> = {
   diagnostics: (row: DiagnosticResult) => row.takenAt,
   flags: (row: Flag) => row.createdAt,
   diagnosticProgress: (row: DiagnosticProgress) => row.updatedAt,
+  factStates: (row: FactState) => row.updatedAt,
 };
 
 function timeOf(store: StoreName, row: unknown): string {
@@ -202,6 +205,13 @@ export function makeRepo(backend: Backend): Repo {
     async saveDiagnosticProgress(p) {
       await save([{ store: 'diagnosticProgress', key: keys.progress(p), value: diagnosticProgressSchema.parse(p) }]);
     },
+    async listFactStates(childId) {
+      return (await alive('factStates', factStateSchema, childId)).sort((a, b) => a.factId.localeCompare(b.factId));
+    },
+    async saveFactStates(states) {
+      if (states.length === 0) return;
+      await save(states.map((state) => ({ store: 'factStates' as const, key: keys.fact(state), value: factStateSchema.parse(state) })));
+    },
     // Voice clips and the device record stay on the device.
     async getClip(key) {
       const raw = await backend.get('clips', key);
@@ -254,6 +264,7 @@ export function makeRepo(backend: Backend): Repo {
         diagnostics: await alive('diagnostics', diagnosticResultSchema),
         flags: await alive('flags', flagSchema),
         diagnosticProgress: await alive('diagnosticProgress', diagnosticProgressSchema),
+        factStates: await alive('factStates', factStateSchema),
         family: await repo.getFamily(),
         quarantined: await backend.quarantined(),
       };
@@ -370,6 +381,21 @@ export function makeRepo(backend: Backend): Repo {
           report.updated += 1;
         } else report.skipped += 1;
       }
+      // Fact states: the later copy wins, fact by fact.
+      const localFacts = new Map((await readAll('factStates', factStateSchema)).filter((f) => !dead('factStates', f)).map((f) => [keys.fact(f), f]));
+      for (const incoming of file.factStates) {
+        const key = keys.fact(incoming);
+        const local = localFacts.get(key);
+        if (dead('factStates', incoming)) report.skipped += 1;
+        else if (!local) {
+          puts.push({ store: 'factStates', key, value: incoming });
+          report.added += 1;
+        } else if (laterWins(local, incoming) === incoming && !same(local, incoming)) {
+          puts.push({ store: 'factStates', key, value: incoming });
+          report.updated += 1;
+        } else report.skipped += 1;
+      }
+
       const family: Family = await repo.getFamily();
       if (laterWins(family, file.family) === file.family) {
         puts.push({ store: 'family', key: 'family', value: file.family });

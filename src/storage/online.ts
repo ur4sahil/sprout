@@ -162,7 +162,7 @@ export function trackedBackend(device: Backend): TrackedBackend {
     noteEverything() {
       return inTurn(async () => {
         const notes = [];
-        for (const store of ['children', 'skillStates', 'attempts', 'sessions', 'awards', 'plans', 'diagnostics', 'flags', 'diagnosticProgress', 'family'] as StoreName[]) {
+        for (const store of ['children', 'skillStates', 'attempts', 'sessions', 'awards', 'plans', 'diagnostics', 'flags', 'diagnosticProgress', 'factStates', 'family'] as StoreName[]) {
           for (const key of await device.keys(store)) notes.push(note(store, key, false));
         }
         if (notes.length > 0) await device.write({ puts: notes });

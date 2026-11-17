@@ -213,6 +213,21 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
         expect(await repo.getDiagnosticProgress('b', 'math')).toBeNull();
         expect(await repo.getFamily()).toEqual({ id: 'family', pinSalt: 'salt', pinHash: 'hash', removedVideos: [], updatedAt: T(5) });
       });
+
+      it('fact states save together, list by child, and the later copy wins on import', async () => {
+        const fact = (childId: string, factId: string, at: string, answers: number) => ({ childId, factId, answers, right: answers, recent: [{ right: true, ms: 1800 }], updatedAt: at });
+        await repo.saveFactStates([fact('a', '7+8', T(5), 1), fact('a', '6×7', T(5), 2), fact('b', '7+8', T(5), 3)]);
+        expect((await repo.listFactStates('a')).map((f) => f.factId)).toEqual(['6×7', '7+8']);
+        expect((await repo.listFactStates('b')).map((f) => f.answers)).toEqual([3]);
+        const file = await repo.exportAll();
+        const newer = { ...file, factStates: [fact('a', '7+8', T(6), 9), fact('a', '6×7', T(4), 0)] };
+        await repo.importAll(newer);
+        expect((await repo.listFactStates('a')).map((f) => [f.factId, f.answers])).toEqual([['6×7', 2], ['7+8', 9]]);
+        // A file from before fast facts has no fact states and still imports.
+        const { factStates: _left, ...old } = file;
+        expect(_left.length).toBe(3);
+        await expect(repo.importAll(old as unknown as ExportFile)).resolves.toBeDefined();
+      });
     });
 
     describe('voice clips', () => {
@@ -322,7 +337,7 @@ export function repoContract(name: string, open: () => Promise<Backend>): void {
         expect(text).not.toContain('signedInEmail');
         expect(text).not.toContain('sessionExpiresAt');
         expect(Object.keys(file).sort()).toEqual(
-          ['attempts', 'awards', 'children', 'diagnosticProgress', 'diagnostics', 'exportedAt', 'family', 'flags', 'format', 'plans', 'quarantined', 'sessions', 'skillStates', 'version'],
+          ['attempts', 'awards', 'children', 'diagnosticProgress', 'diagnostics', 'exportedAt', 'factStates', 'family', 'flags', 'format', 'plans', 'quarantined', 'sessions', 'skillStates', 'version'],
         );
       });
 

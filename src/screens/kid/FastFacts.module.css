@@ -1,0 +1,92 @@
+/* One fact set: its name and how many facts are fast, a grid that fills with stars, and the Race button. */
+.set {
+  composes: card from '../../components/shared.module.css';
+}
+
+.head {
+  composes: spread from '../../components/shared.module.css';
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-weight: 700;
+  color: var(--color-ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: var(--space-1);
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-s);
+  background: var(--color-bg);
+}
+
+.fast {
+  background: var(--color-star);
+  border-color: var(--color-star);
+}
+
+/* The race: the track with the car, the time, the fact and the pad. */
+.race {
+  composes: card from '../../components/shared.module.css';
+  align-items: center;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: var(--tap-min);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  border: var(--border-thin) solid var(--color-line);
+}
+
+.car {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) scaleX(-1);
+  font-size: var(--emoji-m);
+  line-height: 1;
+  transition: left 0.4s ease-out;
+}
+
+.finish {
+  position: absolute;
+  right: var(--space-2);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-ink-soft);
+}
+
+.clock {
+  font-size: var(--text-l);
+  font-weight: var(--weight-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.fact {
+  margin: 0;
+  font-size: var(--text-xl);
+  font-weight: var(--weight-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.miss {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .car {
+    transition: none;
+  }
+}

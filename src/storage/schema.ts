@@ -24,6 +24,8 @@ export const childSettingsSchema = z.object({
   preReader: z.boolean(), // default true for PK and K
   // Minutes a parent added through the gate on one local day, on top of dailyMinutes.
   extraMinutes: z.object({ day: z.string(), minutes: z.number().int().min(0).max(600) }).default({ day: '', minutes: 0 }),
+  // Fast-facts sets a parent opened before the child's grade reaches them (plan section 15.5).
+  factSets: z.array(z.string()).default([]),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -40,6 +42,7 @@ export function defaultSettings(grade: Grade): ChildSettings {
     dailyMinutes: 0,
     preReader: young,
     extraMinutes: { day: '', minutes: 0 },
+    factSets: [],
   };
 }
 
@@ -76,6 +79,17 @@ export const skillStateSchema = z.object({
   updatedAt: iso,
 });
 export type SkillState = z.infer<typeof skillStateSchema>;
+
+// One number fact for one child (plan section 15.5): 7 + 8 and 8 + 7 are two rows.
+export const factStateSchema = z.object({
+  childId: z.string().min(1),
+  factId: z.string().min(1), // "7+8", "15-7", "6×7", "42÷6"
+  answers: z.number().int().min(0),
+  right: z.number().int().min(0),
+  recent: z.array(z.object({ right: z.boolean(), ms: z.number().int().min(0) })).max(4), // newest last
+  updatedAt: iso,
+});
+export type FactState = z.infer<typeof factStateSchema>;
 
 export const attemptSchema = z.object({
   id: z.string().min(1),

@@ -9,6 +9,7 @@ import {
   awardEarnedSchema,
   childSchema,
   diagnosticProgressSchema,
+  factStateSchema,
   diagnosticResultSchema,
   familySchema,
   flagSchema,
@@ -46,6 +47,7 @@ const SCHEMAS = {
   diagnostics: diagnosticResultSchema,
   flags: flagSchema,
   diagnosticProgress: diagnosticProgressSchema,
+  factStates: factStateSchema,
 } as const;
 
 // The server's rows as an import file. A row that does not pass its schema is left out and logged.
@@ -75,6 +77,7 @@ export async function fileFrom(rows: readonly ServerRow[], repo: Repo): Promise<
     diagnostics: read('diagnostics'),
     flags: read('flags'),
     diagnosticProgress: read('diagnosticProgress'),
+    factStates: read('factStates'),
     // With no family record on the server yet, the device's own stands.
     family: parsedFamily?.success ? parsedFamily.data : await repo.getFamily(),
     quarantined: [],

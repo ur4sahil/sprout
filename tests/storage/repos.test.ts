@@ -48,7 +48,7 @@ describe('idbRepo', () => {
   it('has one object store for each record type plus quarantine, and the three attempt indexes', async () => {
     const db = await openSproutDb(freshName());
     expect([...db.objectStoreNames].sort()).toEqual(
-      ['attempts', 'awards', 'children', 'clips', 'device', 'diagnosticProgress', 'diagnostics', 'family', 'flags', 'outbox', 'plans', 'quarantine', 'sessions', 'skillStates'],
+      ['attempts', 'awards', 'children', 'clips', 'device', 'diagnosticProgress', 'diagnostics', 'factStates', 'family', 'flags', 'outbox', 'plans', 'quarantine', 'sessions', 'skillStates'],
     );
     const tx = db.transaction('attempts');
     expect([...tx.store.indexNames].sort()).toEqual(['childCreated', 'childId', 'childSkill']);

@@ -11,6 +11,7 @@ import FullScreenCard from '../../components/FullScreenCard';
 import GoalRing from '../../components/GoalRing';
 import Icon, { type IconName } from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
+import { openSets } from '../../engine/facts';
 import NavButton from '../../components/NavButton';
 import Notice from '../../components/Notice';
 import SkillTile from '../../components/SkillTile';
@@ -117,6 +118,7 @@ export default function Home() {
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}
+            {openSets(child.grade, child.settings.factSets).length > 0 && <NavButton icon="bolt" label="Fast facts" onClick={() => go('/facts')} />}
             <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
             {popOffered && <NavButton icon="balloon" label="Pop" onClick={() => go('/games/pop')} />}
             <NavButton icon="cards" label="Pairs" onClick={() => go('/games/pairs')} />

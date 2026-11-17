@@ -11,6 +11,7 @@ const PAGES = [
   { id: 'dashboard', label: 'Dashboard' },
   { id: 'scores', label: 'Scores' },
   { id: 'trouble', label: 'Trouble spots' },
+  { id: 'facts', label: 'Fast facts' },
   { id: 'log', label: 'Question log' },
   { id: 'plans', label: 'Plans' },
   { id: 'settings', label: 'Settings' },
