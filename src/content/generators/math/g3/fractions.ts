@@ -51,7 +51,7 @@ function nameFractions(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
     // A set: n of the d things are one kind.
     const [thing, other] = rng.sample(COUNTABLES, 2) as [(typeof COUNTABLES)[number], (typeof COUNTABLES)[number]];
-    const stimulus: Visual = { kind: 'emojiGroup', emoji: thing.emoji, count: n, emoji2: other.emoji, count2: d - n, layout: 'row' };
+    const stimulus: Visual = { kind: 'emojiGroup', emoji: thing.emoji, count: n, emoji2: other.emoji, count2: d - n, layout: 'grid5' };
     const prompt = { text: `What fraction of the group are ${thing.many}?`, speak: [`What fraction of the group are ${thing.many}?`] as Say };
     return {
       type: 'choice',
