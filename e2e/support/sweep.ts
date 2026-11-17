@@ -57,10 +57,10 @@ export const submit = async (page: Page): Promise<void> => {
 
 
 // The layout check every content step runs: each skill, at its hardest level, at this screen size.
-export async function sweepHardestLevels(page: Page, grade: string, skills: [string, string][], shotPrefix: string, subject = 'Math'): Promise<void> {
+export async function sweepHardestLevels(page: Page, grade: string, skills: [string, string][], shotPrefix: string, subject = 'Math', score = 85): Promise<void> {
   await signUp(page);
   await addChild(page, 'Robin', grade);
-  await saveScores(page, skills.map(([id]) => id), 85);
+  await saveScores(page, skills.map(([id]) => id), score);
   await page.getByRole('button', { name: 'Robin', exact: true }).click();
   // Scores that high earn stickers, and home shows them once. Tap past the card.
   const stickers = page.locator('[data-card="new-stickers"]');
