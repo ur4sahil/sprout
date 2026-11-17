@@ -1,0 +1,59 @@
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: 0 var(--space-4);
+  border: var(--border-thin) solid transparent;
+  border-radius: var(--radius-m);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: var(--text-m);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.item:active {
+  background: var(--color-brand-soft);
+  border-color: var(--color-brand);
+  color: var(--color-brand-deep);
+}
+
+.icon {
+  flex: none;
+  width: var(--space-6);
+  font-size: var(--text-l);
+  line-height: 1;
+  text-align: center;
+}
+
+.label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* A subject's own colour, as a thin bar at the start of its row. */
+.item[data-marker]::before {
+  content: '';
+  position: absolute;
+  left: var(--space-1);
+  top: 25%;
+  bottom: 25%;
+  width: var(--space-1);
+  border-radius: var(--radius-pill);
+}
+
+.item[data-marker='math']::before {
+  background: var(--subject-math);
+}
+
+.item[data-marker='ela']::before {
+  background: var(--subject-ela);
+}
+
+.item[data-marker='reasoning']::before {
+  background: var(--subject-reasoning);
+}

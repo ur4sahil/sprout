@@ -1,3 +1,4 @@
+/* Each fact: plain in the strip on a phone, a small card beside the question from tablet width up. */
 .block {
   display: flex;
   flex-direction: column;
@@ -7,10 +8,27 @@
 
 .label {
   font-size: var(--text-s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--color-ink-soft);
 }
 
 .value {
+  font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: 700;
+  line-height: 1;
+}
+
+@media (min-width: 48em) {
+  .block {
+    width: 100%;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border: var(--border-thin) solid var(--color-line);
+    border-radius: var(--radius-l);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+  }
 }

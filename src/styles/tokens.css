@@ -1,21 +1,31 @@
 :root {
   /* colour */
-  --color-bg: #f6f8f4;
+  --color-bg: #f4f6fa;
   --color-surface: #ffffff;
-  --color-ink: #1f2a30;
-  --color-ink-soft: #55646d;
-  --color-line: #dbe3dc;
-  --color-brand: #2e9e6b;
+  --color-ink: #16213a;
+  --color-ink-soft: #55617a;
+  --color-line: #dfe4ee;
+  --color-brand: #0d7d6c;
   --color-brand-ink: #ffffff;
-  --color-correct: #2e9e6b;
+  --color-correct: #0d7d6c;
   --color-warn: #b45309;
   --color-focus: #1e6fd9;
+  --color-brand-deep: #0b5d51; /* brand-coloured text on a pale ground */
+  --color-brand-soft: #e6f4f1; /* a pale wash of the brand, behind the thing that is selected */
+
+  /* one colour for each subject, for a small marker beside a skill */
+  --subject-math: #3b6fd4;
+  --subject-ela: #7a4fc4;
+  --subject-reasoning: #c9731a;
+
+  /* a card sits a little above the page */
+  --shadow-card: 0 2px 8px rgb(22 33 58 / 0.06);
 
   --color-notice-bg: #fff4e5;
-  --color-picked-bg: #e8f1fd;
+  --color-picked-bg: #e6f4f1;
   --color-on-accent: #ffffff;
   --color-cross: #c62828;
-  --color-correct-bg: #e6f4ea;
+  --color-correct-bg: #e6f4f1;
 
   /* the six score stages (plan section 6) */
   --stage-not-started: #9aa5ab;
@@ -45,18 +55,20 @@
 
   /* radius */
   --radius-s: 8px;
-  --radius-m: 16px;
-  --radius-l: 28px;
+  --radius-m: 14px;
+  --radius-l: 18px;
   --radius-pill: 999px;
 
   /* type scale */
-  --font-family: ui-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', 'Arial Rounded MT Bold',
-    system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* headings, numerals and the words a child reads in a question */
+  --font-display: 'Space Grotesk', 'Inter Variable', system-ui, -apple-system, sans-serif;
   --text-s: 0.9rem;
   --text-m: 1.125rem;
   --text-l: 1.5rem;
   --text-xl: 2.25rem;
   --text-xxl: 3.5rem;
+  --text-chart: 7px; /* inside a chart, which is drawn small and scaled up to the card */
 
   /* kid tap target */
   --tap-min: 64px;
@@ -126,6 +138,14 @@ body {
   overscroll-behavior: none;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
 }
 
 button {

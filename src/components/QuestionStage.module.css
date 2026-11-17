@@ -5,8 +5,12 @@
   flex-direction: column;
   align-items: center;
   gap: var(--space-5);
-  padding: var(--space-4);
+  padding: var(--space-5) var(--space-4);
+  /* The question sits on its own card. */
+  border: var(--border-thin) solid var(--color-line);
   border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .correct {

@@ -174,7 +174,7 @@ describe('shape', () => {
   it('fills with the named colour and always has a dark outline', () => {
     const polygon = draw({ kind: 'shape', shape: 'square', color: 'green', size: 'm', rotation: 0 }).querySelector('polygon');
     expect(polygon?.getAttribute('fill')).toBe(COLORS.green);
-    expect(polygon?.getAttribute('stroke')).toBe('#1f2a30');
+    expect(polygon?.getAttribute('stroke')).toBe('#16213a');
     expect(colorHex('purple')).toBe('#8E24AA');
     expect(colorHex('#123456')).toBe('#123456');
   });

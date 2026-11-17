@@ -1,8 +1,13 @@
+/* The main action: filled, flat, with squared-off corners. */
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
   min-height: var(--size-button);
   padding: 0 var(--space-5);
-  border: 0;
-  border-radius: var(--radius-pill);
+  border: var(--border) solid var(--color-brand);
+  border-radius: var(--radius-m);
   background: var(--color-brand);
   color: var(--color-brand-ink);
   font-size: var(--text-m);
@@ -10,9 +15,26 @@
   cursor: pointer;
 }
 
+.button:active {
+  background: var(--color-brand-deep);
+  border-color: var(--color-brand-deep);
+}
+
 .button:disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: default;
+}
+
+/* A second choice beside the main one: outlined, on the card's own ground. */
+.quiet {
+  background: var(--color-surface);
+  border-color: var(--color-line);
+  color: var(--color-ink);
+}
+
+.quiet:active {
+  background: var(--color-brand-soft);
+  border-color: var(--color-brand);
 }
 
 .kid {

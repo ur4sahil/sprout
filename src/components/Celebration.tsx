@@ -35,11 +35,11 @@ export default function Celebration({ milestone, skillName, onDone, games }: Pro
       {milestone === 100 && games && (
         <CenterRow>
           {games.onPop && (
-            <BigButton size="kid" onClick={games.onPop}>
+            <BigButton size="kid" tone="quiet" onClick={games.onPop}>
               <span aria-hidden="true">🎈 </span>Play Pop
             </BigButton>
           )}
-          <BigButton size="kid" onClick={games.onPairs}>
+          <BigButton size="kid" tone="quiet" onClick={games.onPairs}>
             <span aria-hidden="true">🃏 </span>Play Pairs
           </BigButton>
         </CenterRow>

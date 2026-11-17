@@ -8,8 +8,9 @@
   min-height: var(--size-avatar);
   padding: var(--space-3);
   background: var(--color-surface);
-  border: var(--border-thick) solid var(--color-line);
+  border: var(--border-thin) solid var(--color-line);
   border-radius: var(--radius-l);
+  box-shadow: var(--shadow-card);
   color: var(--color-ink);
   font-size: var(--text-m);
   font-weight: 700;
@@ -21,6 +22,6 @@
 }
 
 .selected {
-  border-color: var(--color-focus);
-  background: var(--color-picked-bg);
+  border-color: var(--color-brand);
+  background: var(--color-brand-soft);
 }

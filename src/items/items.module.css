@@ -15,7 +15,7 @@
   min-height: var(--size-tile);
   padding: var(--space-3);
   background: var(--color-surface);
-  border: var(--border-thick) solid var(--color-line);
+  border: var(--border) solid var(--color-line);
   border-radius: var(--radius-m);
   color: var(--color-ink);
   cursor: pointer;
@@ -36,8 +36,9 @@
 }
 
 .picked {
-  border-color: var(--color-focus);
-  background: var(--color-picked-bg);
+  border-color: var(--color-brand);
+  background: var(--color-brand-soft);
+  color: var(--color-brand-deep);
 }
 
 .used {
@@ -191,8 +192,8 @@
   min-height: var(--tap-min);
   border: 0;
   border-radius: var(--radius-pill);
-  background: var(--color-brand);
-  color: var(--color-on-accent);
+  background: var(--color-brand-soft);
+  color: var(--color-brand-deep);
   font-size: var(--icon-speaker);
   cursor: pointer;
   touch-action: manipulation;

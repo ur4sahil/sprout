@@ -3,7 +3,7 @@ import { COLORS } from '../content/data/colors';
 // Every colour the pictures are drawn with, in one place.
 // Colours a child is asked about by name come from the colour list. The rest are named here.
 export const PALETTE = {
-  ink: '#1f2a30', // outlines and text. Matches --color-ink in tokens.css
+  ink: '#16213a', // outlines and text. Matches --color-ink in tokens.css
   paper: '#ffffff',
   counter: COLORS.red, // ten-frame counters and number-line dots
   minuteHand: COLORS.blue,

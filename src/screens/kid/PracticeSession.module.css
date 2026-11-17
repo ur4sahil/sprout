@@ -1,5 +1,17 @@
+.title {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.where {
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
 .skill {
   margin: 0;
+  line-height: 1.2;
   font-size: var(--text-m);
   min-width: 0;
   /* Beside three buttons on the narrowest phone, a long word such as "regrouping" breaks rather than run off. */

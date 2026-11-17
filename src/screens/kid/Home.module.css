@@ -1,13 +1,101 @@
+/* Who is playing, at the head of the menu. */
+.who {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-2) var(--space-3);
+}
+
 .avatar {
   font-size: var(--emoji-l);
   line-height: 1;
 }
 
+.names {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .name {
   margin: 0;
   font-size: var(--text-l);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.grade {
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
+/* On a phone the places sit side by side and wrap. In the column they are a list. */
+.places {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-button-min-width), 1fr));
+  gap: var(--space-1);
+}
+
+.leave {
+  display: flex;
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.page {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Today's goal and the one big next step. */
+.today {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.todayText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.eyebrow {
+  font-size: var(--text-s);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brand-deep);
+}
+
+.todayLine {
+  font-family: var(--font-display);
+  font-size: var(--text-l);
+  font-weight: 700;
+}
+
+.heading {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-m);
 }
 
 .play {
-  font-size: var(--text-xl);
+  font-size: var(--text-l);
+}
+
+@media (min-width: 48em) {
+  .places {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

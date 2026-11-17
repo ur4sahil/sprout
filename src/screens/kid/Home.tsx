@@ -6,11 +6,11 @@ import { popSkills } from '../../app/games';
 import { useAppStore } from '../../app/store';
 import { speak } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
-import CenterRow from '../../components/CenterRow';
 import FullScreenCard from '../../components/FullScreenCard';
 import GoalRing from '../../components/GoalRing';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
+import NavButton from '../../components/NavButton';
 import Notice from '../../components/Notice';
 import SkillTile from '../../components/SkillTile';
 import TileGrid from '../../components/TileGrid';
@@ -94,21 +94,44 @@ export default function Home() {
 
   return (
     <KidScreen
-      bar={
+      nav={
         <>
-          <IconButton icon="👤" label="Change who is playing" onClick={() => go('/')} />
-          <span className={styles.avatar} aria-hidden="true">
-            {child.avatar}
-          </span>
-          <h1 className={styles.name}>{child.name}</h1>
+          <div className={styles.who}>
+            <span className={styles.avatar} aria-hidden="true">
+              {child.avatar}
+            </span>
+            <div className={styles.names}>
+              <h1 className={styles.name}>{child.name}</h1>
+              <span className={styles.grade}>{GRADE_NAME[child.grade] ?? child.grade}</span>
+            </div>
+          </div>
+          <div className={styles.places} role="group" aria-label="Places to go">
+            {day?.checkIn && <NavButton icon="🧭" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
+            {day && day.reviewsDue.length > 0 && <NavButton icon="🔁" label={`Review (${day.reviewsDue.length})`} onClick={() => go('/review')} />}
+            {subjects.map((subject) => (
+              <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
+            ))}
+            <NavButton icon="⭐" label="Stickers" onClick={() => go('/awards')} />
+            {popOffered && <NavButton icon="🎈" label="Pop" onClick={() => go('/games/pop')} />}
+            <NavButton icon="🃏" label="Pairs" onClick={() => go('/games/pairs')} />
+          </div>
+          <div className={styles.leave}>
+            <IconButton icon="👤" label="Change who is playing" onClick={() => go('/')} />
+          </div>
         </>
       }
     >
       {failed && <Notice role="alert">Your scores could not be read. Close the app and open it again.</Notice>}
       {day && (
-        <>
-          <CenterRow>
+        <div className={styles.page}>
+          <section className={styles.today} aria-label="Today">
             <GoalRing done={day.answeredToday} goal={child.settings.dailyGoalQuestions} />
+            <div className={styles.todayText}>
+              <span className={styles.eyebrow}>Today</span>
+              <span className={styles.todayLine} data-today-line="">
+                {day.answeredToday >= child.settings.dailyGoalQuestions ? 'Goal reached!' : `${day.answeredToday} of ${child.settings.dailyGoalQuestions} questions`}
+              </span>
+            </div>
             {day.picks.length > 0 && (
               <BigButton size="kid" onClick={() => go('/play')}>
                 <span className={styles.play} aria-hidden="true">
@@ -117,55 +140,29 @@ export default function Home() {
                 Play
               </BigButton>
             )}
-          </CenterRow>
+          </section>
           {day.picks.length > 0 && (
-            <TileGrid label="Today's picks">
-              {day.picks.map((pick) => {
-                const skill = skillById(pick.skillId);
-                if (!skill) return null;
-                return (
-                  <SkillTile
-                    key={pick.skillId}
-                    skill={skill}
-                    state={day.states.find((state) => state.skillId === pick.skillId)}
-                    note={child.settings.preReader ? undefined : WHY[pick.reason]}
-                    onOpen={() => go(pick.reason === 'review' ? '/review' : `/skill/${pick.skillId}`)}
-                    onSpeak={say}
-                  />
-                );
-              })}
-            </TileGrid>
+            <>
+              <h2 className={styles.heading}>Picked for today</h2>
+              <TileGrid label="Today's picks">
+                {day.picks.map((pick) => {
+                  const skill = skillById(pick.skillId);
+                  if (!skill) return null;
+                  return (
+                    <SkillTile
+                      key={pick.skillId}
+                      skill={skill}
+                      state={day.states.find((state) => state.skillId === pick.skillId)}
+                      note={child.settings.preReader ? undefined : WHY[pick.reason]}
+                      onOpen={() => go(pick.reason === 'review' ? '/review' : `/skill/${pick.skillId}`)}
+                      onSpeak={say}
+                    />
+                  );
+                })}
+              </TileGrid>
+            </>
           )}
-          <CenterRow>
-            {day.checkIn && (
-              <BigButton size="kid" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)}>
-                <span aria-hidden="true">🧭 </span>Check-in
-              </BigButton>
-            )}
-            {day.reviewsDue.length > 0 && (
-              <BigButton size="kid" onClick={() => go('/review')}>
-                <span aria-hidden="true">🔁 </span>Review ({day.reviewsDue.length})
-              </BigButton>
-            )}
-            {subjects.map((subject) => (
-              <BigButton key={subject.id} size="kid" onClick={() => go(`/subject/${subject.id}`)}>
-                <span aria-hidden="true">{subject.icon} </span>
-                {subject.label}
-              </BigButton>
-            ))}
-            <BigButton size="kid" onClick={() => go('/awards')}>
-              <span aria-hidden="true">⭐ </span>Stickers
-            </BigButton>
-            {popOffered && (
-              <BigButton size="kid" onClick={() => go('/games/pop')}>
-                <span aria-hidden="true">🎈 </span>Pop
-              </BigButton>
-            )}
-            <BigButton size="kid" onClick={() => go('/games/pairs')}>
-              <span aria-hidden="true">🃏 </span>Pairs
-            </BigButton>
-          </CenterRow>
-        </>
+        </div>
       )}
       {fresh.length > 0 && (
         <FullScreenCard emoji={stickerFor(fresh[0]?.id ?? '')} title={fresh.length === 1 ? 'New sticker!' : 'New stickers!'} line="You earned:" name="new-stickers">

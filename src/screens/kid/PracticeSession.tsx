@@ -20,6 +20,7 @@ import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
+import { GRADE_NAME, SUBJECTS } from './Home';
 import styles from './PracticeSession.module.css';
 
 interface Props {
@@ -97,9 +98,15 @@ export default function PracticeSession({ child, skill, play }: Props) {
       bar={
         <>
           <HoldButton icon="🏠" label="Back to home" onHeld={goHome} />
-          <h1 className={styles.skill}>
-            <span className={styles.code}>{skill.code}</span> {skill.name}
-          </h1>
+          <div className={styles.title}>
+            <span className={styles.where}>
+              {SUBJECTS.find((subject) => subject.id === skill.subject)?.label}
+              {skill.grade in GRADE_NAME && skill.subject !== 'reasoning' ? ` · ${GRADE_NAME[skill.grade]}` : ''}
+            </span>
+            <h1 className={styles.skill}>
+              <span className={styles.code}>{skill.code}</span> {skill.name}
+            </h1>
+          </div>
           <span className={styles.spacer} />
           {canDraw && question && phase === 'asking' && <IconButton icon="✏️" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
           <IconButton icon="💡" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />

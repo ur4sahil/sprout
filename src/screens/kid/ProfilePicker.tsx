@@ -117,7 +117,7 @@ export default function ProfilePicker() {
           <BigButton onClick={() => void navigate('/parent/dashboard')}>
             <span aria-hidden="true">🔒 </span>Grown-ups
           </BigButton>
-          <BigButton disabled={signingOut} onClick={() => setAsking('signOut')}>
+          <BigButton tone="quiet" disabled={signingOut} onClick={() => setAsking('signOut')}>
             Sign out
           </BigButton>
           {account.status === 'signedIn' && daysLeft !== null && daysLeft <= REMIND_DAYS && (

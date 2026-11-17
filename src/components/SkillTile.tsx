@@ -9,7 +9,7 @@ interface Props {
   skill: Skill;
   state: SkillState | undefined;
   note?: string; // a short line under the name, such as why it was picked
-  band?: number; // a colour band, 1 to 6, for grouping tiles
+  band?: number; // which group of tiles it is in, 1 to 6
   onOpen: () => void;
   onSpeak: (say: Say) => void;
 }
@@ -19,7 +19,7 @@ interface Props {
 export default function SkillTile({ skill, state, note, band, onOpen, onSpeak }: Props) {
   const score = state?.score ?? 0;
   return (
-    <div className={styles.tile} style={band ? { background: `var(--band-${((band - 1) % 6) + 1})` } : undefined} data-skill={skill.id}>
+    <div className={styles.tile} data-band={band ? ((band - 1) % 6) + 1 : undefined} data-skill={skill.id}>
       <button type="button" className={styles.open} aria-label={`${skill.name}. Score ${score}`} onClick={onOpen}>
         <span className={styles.icon}>
           <VisualView visual={skill.icon} />

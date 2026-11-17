@@ -28,17 +28,17 @@ export default function SoftBreak({ answered, score, keepGoingLabel = 'Keep goin
         <span aria-hidden="true">➡️ </span>
         {keepGoingLabel}
       </BigButton>
-      <BigButton size="kid" onClick={onAllDone}>
+      <BigButton size="kid" tone="quiet" onClick={onAllDone}>
         <span aria-hidden="true">🏠 </span>Stop for now
       </BigButton>
       {games && (
         <CenterRow>
           {games.onPop && (
-            <BigButton size="kid" onClick={games.onPop}>
+            <BigButton size="kid" tone="quiet" onClick={games.onPop}>
               <span aria-hidden="true">🎈 </span>Play Pop
             </BigButton>
           )}
-          <BigButton size="kid" onClick={games.onPairs}>
+          <BigButton size="kid" tone="quiet" onClick={games.onPairs}>
             <span aria-hidden="true">🃏 </span>Play Pairs
           </BigButton>
         </CenterRow>

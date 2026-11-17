@@ -207,4 +207,9 @@
 - Practice opened by itself never stops for a break: it runs until the score reaches 100 or the child leaves. Only a pick in a Play run has sessions (`usePractice(child, skill, { sessions: true })`), and its card says the score with "Next one" and "Stop for now", never "All done".
 - The games are offered on the medal at 100, on home (Pop only when a skill fits), and between Play picks.
 - The profile page: `components/ProfileCard.tsx` cards (avatar, name, grade, today's progress), an "Add a child" card in the grid, and a grown-ups bar with Grown-ups and Sign out. Adding a child and signing out ask for the PIN.
-- The owner finds the look plain and wants it reworked. Two directions are mocked up for him to choose from; do not restyle screens until he picks.
+- The look (the owner chose "calm and clean" on Nov 16, 2026): a pale page, white cards with a thin line and a soft shadow, one teal brand colour, Inter for text and Space Grotesk for headings and numerals (both bundled by `@fontsource`, so they work offline). All of it is tokens in `tokens.css`.
+- `BigButton` is flat. `tone="quiet"` is the outlined second choice: one filled button on a screen, the rest quiet.
+- Home has a menu (`KidScreen` `nav`, made of `NavButton`): a column on the left from tablet width, and after the main area on a phone, where the whole page scrolls as one.
+- The practice bar says the subject and grade above the skill's name. The question, and the explanation after a wrong answer, each sit on a card. The status facts are cards from tablet width and a plain strip on a phone.
+- Skill tiles are white in every group. `band` is kept only as `data-band`.
+- `PALETTE.ink` must equal `--color-ink`. A chart's labels use `--text-chart`, because a chart is drawn small and scaled up.
