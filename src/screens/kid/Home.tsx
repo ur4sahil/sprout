@@ -135,7 +135,7 @@ export default function Home() {
               </span>
             </div>
             {day.picks.length > 0 && (
-              <BigButton size="kid" onClick={() => go('/play')}>
+              <BigButton size="kid" className={styles.playButton} onClick={() => go('/play')}>
                 <Icon name="play" />
                 Play
               </BigButton>

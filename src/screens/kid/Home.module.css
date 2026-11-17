@@ -64,7 +64,8 @@
 }
 
 .todayText {
-  flex: 1;
+  /* The words keep a readable width. On a narrow phone, Play moves to a line of its own under them. */
+  flex: 1 1 var(--size-bin-basis);
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -90,8 +91,53 @@
   font-size: var(--text-l);
 }
 
+.playButton {
+  flex: 1 1 auto;
+}
+
+/* On a phone the menu's parts are laid out with the page: who is playing at the very top,
+   then today's card and picks, then the places to go. */
+.who {
+  order: -1;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: var(--border-thin) solid var(--color-line);
+}
+
+.places,
+.leave {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+}
+
+.places {
+  border-top: var(--border-thin) solid var(--color-line);
+}
+
 @media (min-width: 48em) {
+  .who {
+    order: 0;
+    padding: 0 var(--space-2) var(--space-3);
+    background: none;
+    border-bottom: 0;
+  }
+
+  .places,
+  .leave {
+    padding: 0;
+    background: none;
+    border-top: 0;
+  }
+
+  .leave {
+    padding-top: var(--space-3);
+  }
+
   .places {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .playButton {
+    flex: none;
   }
 }

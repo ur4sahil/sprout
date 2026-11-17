@@ -47,23 +47,20 @@
   background: var(--color-surface);
 }
 
-/* The menu: on a phone it follows the main area and the two scroll as one page.
-   From tablet width up it is a column before the main area. */
+/* The menu. From tablet width up it is a column before the main area. On a phone it is not a box at all:
+   its parts are laid out with the page, which scrolls as one, so a screen can put who is playing at the
+   top and the places to go after the main area. */
 .nav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  padding: var(--space-3) var(--space-4);
-  border-top: var(--border-thin) solid var(--color-line);
-  background: var(--color-surface);
+  display: contents;
 }
 
 .body[data-menu] {
-  display: block;
+  flex-direction: column;
   overflow-y: auto;
 }
 
 .body[data-menu] > .main {
+  flex: none;
   overflow-y: visible;
 }
 
@@ -71,17 +68,21 @@
 @media (min-width: 48em) {
   .body,
   .body[data-menu] {
-    display: flex;
     flex-direction: row;
     overflow-y: visible;
   }
 
   .body[data-menu] > .main {
+    flex: 1;
     overflow-y: auto;
   }
 
   .nav {
     order: -1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    background: var(--color-surface);
     flex: none;
     width: var(--width-panel);
     overflow-y: auto;
