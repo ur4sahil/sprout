@@ -1,4 +1,10 @@
 import type { OracleId } from '../../src/engine/types';
+import { WAVE as H1 } from './waves/h1';
+import { WAVE as H2 } from './waves/h2';
+import { WAVE as H3 } from './waves/h3';
+import { WAVE as H4 } from './waves/h4';
+import { WAVE as H5 } from './waves/h5';
+
 import { add } from './add';
 import { analogy } from './analogy';
 import { attribute } from './attribute';
@@ -48,6 +54,7 @@ import { wordSet } from './wordSet';
 
 // The oracles written so far. A content phase adds the ones it needs before its first generator.
 export const ORACLES: Partial<Record<OracleId, Oracle>> = {
+  ...H1, ...H2, ...H3, ...H4, ...H5,
   numberName,
   fractionValue,
   elapsed,

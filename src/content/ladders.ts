@@ -1,7 +1,20 @@
 import type { SkillGrade } from '../engine/types';
+import { LADDER_STEPS as H1_STEPS } from './waves/h1/ladders';
+import { LADDER_STEPS as H2_STEPS } from './waves/h2/ladders';
+import { LADDER_STEPS as H3_STEPS } from './waves/h3/ladders';
+import { LADDER_STEPS as H4_STEPS } from './waves/h4/ladders';
+import { LADDER_STEPS as H5_STEPS } from './waves/h5/ladders';
+
 
 // Every ladder as a list of skill ids, in order (plan section 7).
 // A ladder holds only skills that truly build on each other, across grades.
+
+// A wave's skill placed on a ladder right after another skill (plan section 15, waves H1 to H5).
+export interface LadderStep {
+  ladder: string;
+  skillId: string;
+  after: string;
+}
 
 export interface Ladder {
   id: string;
@@ -16,7 +29,7 @@ function run(prefix: string, category: string, from: number, to: number): string
 const M = { PK: 'M-PK', K: 'M-K', G1: 'M-1', G2: 'M-2', G3: 'M-3' };
 const E = { PK: 'E-PK', K: 'E-K', G1: 'E-1', G2: 'E-2' };
 
-export const LADDERS: readonly Ladder[] = [
+const BASE_LADDERS: Ladder[] = [
   { id: 'counting', subject: 'math', skillIds: [...run(M.PK, 'A', 1, 8), ...run(M.K, 'A', 1, 7), ...run(M.G1, 'A', 1, 2), 'M-2-A4'] },
   { id: 'comparing', subject: 'math', skillIds: [...run(M.PK, 'B', 1, 2), ...run(M.K, 'B', 1, 3), 'M-1-A4', 'M-2-A3', 'M-3-A3'] },
   { id: 'add-subtract', subject: 'math', skillIds: [...run(M.K, 'C', 1, 11), ...run(M.G1, 'B', 1, 13), ...run(M.G2, 'B', 1, 11), ...run(M.G3, 'B', 1, 4)] },
@@ -40,6 +53,20 @@ export const LADDERS: readonly Ladder[] = [
   { id: 'figures', subject: 'reasoning', skillIds: [...run('R', 'A', 1, 7), 'R-A12', 'R-A13'] },
   { id: 'words-numbers', subject: 'reasoning', skillIds: ['R-A9', 'R-A14', 'R-A8', 'R-A10', 'R-A11'] },
 ];
+
+// Each wave's steps, in wave order. A step whose ladder or anchor is missing stops the app at once in tests.
+function withSteps(ladders: Ladder[], steps: readonly LadderStep[]): Ladder[] {
+  const out = ladders.map((ladder) => ({ ...ladder, skillIds: [...ladder.skillIds] }));
+  for (const step of steps) {
+    const ladder = out.find((each) => each.id === step.ladder);
+    const at = ladder ? ladder.skillIds.indexOf(step.after) : -1;
+    if (!ladder || at === -1) throw new Error(`Ladder step for ${step.skillId}: no ${step.after} on ${step.ladder}`);
+    ladder.skillIds.splice(at + 1, 0, step.skillId);
+  }
+  return out;
+}
+
+export const LADDERS: readonly Ladder[] = withSteps(BASE_LADDERS, [...H1_STEPS, ...H2_STEPS, ...H3_STEPS, ...H4_STEPS, ...H5_STEPS]);
 
 // The grade written into a skill id: 'M-K-C4' is K, 'R-A4' is all.
 export function gradeOfSkillId(skillId: string): SkillGrade {

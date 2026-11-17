@@ -221,12 +221,16 @@ describe('matchEqual', () => {
 describe('the oracle list', () => {
   it('has all twelve Phase 1 oracles and the ones content phases added, each naming facts the engine knows about', () => {
     const written = Object.keys(ORACLES).sort();
-    expect(written).toEqual(
-      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'wordSet'],
-    );
+    // The waves of plan section 15 name their own oracles in src/engine/oracleFacts/; each must be written.
+    const waves = Object.keys(ORACLE_FACTS).filter((name) => name !== 'authored' && !BASE_NAMES.includes(name));
+    expect(written).toEqual([...BASE_NAMES, ...waves].sort());
     for (const name of written) expect(ORACLE_FACTS).toHaveProperty(name);
   });
 });
+
+const BASE_NAMES: string[] = (
+      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'wordSet']
+);
 
 describe('judge', () => {
   const base: QuestionBase = {

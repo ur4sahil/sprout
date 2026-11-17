@@ -1,3 +1,9 @@
+import { FACTS as H1_FACTS } from './oracleFacts/h1';
+import { FACTS as H2_FACTS } from './oracleFacts/h2';
+import { FACTS as H3_FACTS } from './oracleFacts/h3';
+import { FACTS as H4_FACTS } from './oracleFacts/h4';
+import { FACTS as H5_FACTS } from './oracleFacts/h5';
+
 // Every question is plain data. Screens only draw it and report what the child tapped.
 
 export type FactValue = number | string | boolean | FactValue[] | { [key: string]: FactValue };
@@ -153,7 +159,10 @@ export type Response =
   | { time: ClockTime } // setClock
   | { values: number[] }; // buildBar. numberLineTap and columnSum answer { value }, dragWord { index }
 
-export type OracleId =
+export type OracleId = WaveOracleId | BaseOracleId;
+// Oracles added by the waves of plan section 15, named in src/engine/oracleFacts/.
+export type WaveOracleId = keyof typeof H1_FACTS | keyof typeof H2_FACTS | keyof typeof H3_FACTS | keyof typeof H4_FACTS | keyof typeof H5_FACTS;
+export type BaseOracleId =
   | 'count'
   | 'add'
   | 'subtract'
@@ -208,7 +217,7 @@ export type OracleId =
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
-export const ORACLE_FACTS: Record<OracleId, string[]> = {
+const BASE_ORACLE_FACTS: Record<BaseOracleId, string[]> = {
   count: ['n'],
   add: ['a', 'b'],
   subtract: ['a', 'b'],
@@ -262,6 +271,7 @@ export const ORACLE_FACTS: Record<OracleId, string[]> = {
   unitChoice: ['ask'],
   authored: ['id'],
 };
+export const ORACLE_FACTS: Record<OracleId, readonly string[]> = { ...BASE_ORACLE_FACTS, ...H1_FACTS, ...H2_FACTS, ...H3_FACTS, ...H4_FACTS, ...H5_FACTS };
 
 export type LessonBeat = 'see' | 'watch' | 'try' | 'remember';
 

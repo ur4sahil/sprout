@@ -2,6 +2,12 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { GENERATORS as H1_GENERATORS } from './waves/h1/generators';
+import { GENERATORS as H2_GENERATORS } from './waves/h2/generators';
+import { GENERATORS as H3_GENERATORS } from './waves/h3/generators';
+import { GENERATORS as H4_GENERATORS } from './waves/h4/generators';
+import { GENERATORS as H5_GENERATORS } from './waves/h5/generators';
+
 import { kindsOfWordsGenerator, pastTenseGenerator, plurals2Generator, punctuationGenerator } from './generators/ela/g2/grammar';
 import { bossyRGenerator, twoPartsGenerator, vowelTeams2Generator } from './generators/ela/g2/phonics';
 import { mainIdeaGenerator, orderOfEventsGenerator, readStory2Generator } from './generators/ela/g2/reading';
@@ -268,6 +274,11 @@ const ALL: readonly SkillGenerator[] = [
   paperFoldingGenerator,
   patternCompletionGenerator,
   pictureRiddlesGenerator,
+  ...H1_GENERATORS,
+  ...H2_GENERATORS,
+  ...H3_GENERATORS,
+  ...H4_GENERATORS,
+  ...H5_GENERATORS,
 ];
 
 const BY_ID = new Map<string, SkillGenerator>(ALL.map((generator) => [generator.skillId, generator]));

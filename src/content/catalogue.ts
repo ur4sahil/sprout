@@ -1,4 +1,10 @@
 import type { ItemType, Level, Say, SkillGrade, Visual } from '../engine/types';
+import { ROWS as H1_ROWS } from './waves/h1/catalogue';
+import { ROWS as H2_ROWS } from './waves/h2/catalogue';
+import { ROWS as H3_ROWS } from './waves/h3/catalogue';
+import { ROWS as H4_ROWS } from './waves/h4/catalogue';
+import { ROWS as H5_ROWS } from './waves/h5/catalogue';
+
 
 // Every skill row (plan section 8). Screens read skills from here.
 
@@ -26,7 +32,7 @@ export interface Skill {
 // Raised by one in every content phase (plan section 7, Catalogue growth).
 export const CATALOGUE_VERSION = 19;
 
-export const CATALOGUE: readonly Skill[] = [
+const BASE: readonly Skill[] = [
   {
     id: 'M-PK-A1',
     subject: 'math',
@@ -3539,6 +3545,9 @@ export const CATALOGUE: readonly Skill[] = [
     prereqs: [],
   },
 ];
+
+// The rows of plan section 15's waves come after every earlier row, so their categories keep their order.
+export const CATALOGUE: readonly Skill[] = [...BASE, ...H1_ROWS, ...H2_ROWS, ...H3_ROWS, ...H4_ROWS, ...H5_ROWS];
 
 export function skillById(id: string): Skill | undefined {
   return CATALOGUE.find((skill) => skill.id === id);
