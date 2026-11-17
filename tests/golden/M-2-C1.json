@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-C1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3300,6 +3300,724 @@
     "level": 3,
     "seed": 10,
     "key": "M-2-C1|3|{\"hour\":12,\"minute\":30,\"show\":\"clocks\"}"
+   }
+  ],
+  "4": [
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 5
+    },
+    "prompt": {
+     "text": "Set the clock to 7:05.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 5
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 7,
+     "minute": 5
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 7
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 7.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 7:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 1,
+    "key": "M-2-C1|4|{\"hour\":7,\"minute\":5}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 20
+    },
+    "prompt": {
+     "text": "Set the clock to 9:20.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 20
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 9,
+     "minute": 20
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 9
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 4
+      },
+      ". Count by fives to",
+      {
+       "number": 20
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 20
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 9.",
+      "The long hand points to 4.",
+      "Count by fives to 20.",
+      "It is 9:20."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 20
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 2,
+    "key": "M-2-C1|4|{\"hour\":9,\"minute\":20}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 5
+    },
+    "prompt": {
+     "text": "Set the clock to 8:05.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 5
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 8,
+     "minute": 5
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 8
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 8.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 8:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 3,
+    "key": "M-2-C1|4|{\"hour\":8,\"minute\":5}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 20
+    },
+    "prompt": {
+     "text": "Set the clock to 11:20.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 20
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 11,
+     "minute": 20
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 11
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 4
+      },
+      ". Count by fives to",
+      {
+       "number": 20
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 20
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 11.",
+      "The long hand points to 4.",
+      "Count by fives to 20.",
+      "It is 11:20."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 20
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 4,
+    "key": "M-2-C1|4|{\"hour\":11,\"minute\":20}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 45
+    },
+    "prompt": {
+     "text": "Set the clock to 8:45.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 8,
+     "minute": 45
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 8
+      },
+      "and getting close to",
+      {
+       "number": 9
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 9
+      },
+      ". Count by fives to",
+      {
+       "number": 45
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 8 and getting close to 9.",
+      "The long hand points to 9.",
+      "Count by fives to 45.",
+      "It is 8:45."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 45
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 5,
+    "key": "M-2-C1|4|{\"hour\":8,\"minute\":45}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 6,
+     "minute": 5
+    },
+    "prompt": {
+     "text": "Set the clock to 6:05.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 5
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 6,
+     "minute": 5
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 6
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 6.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 6:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 6,
+    "key": "M-2-C1|4|{\"hour\":6,\"minute\":5}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 5
+    },
+    "prompt": {
+     "text": "Set the clock to 1:05.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 1,
+     "minute": 5
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is just past",
+      {
+       "number": 1
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 1
+      },
+      ". Count by fives to",
+      {
+       "number": 5
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 5
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is just past 1.",
+      "The long hand points to 1.",
+      "Count by fives to 5.",
+      "It is 1:05."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 5
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 7,
+    "key": "M-2-C1|4|{\"hour\":1,\"minute\":5}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 35
+    },
+    "prompt": {
+     "text": "Set the clock to 2:35.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 2,
+     "minute": 35
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 2
+      },
+      "and getting close to",
+      {
+       "number": 3
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 7
+      },
+      ". Count by fives to",
+      {
+       "number": 35
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 2 and getting close to 3.",
+      "The long hand points to 7.",
+      "Count by fives to 35.",
+      "It is 2:35."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 35
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 8,
+    "key": "M-2-C1|4|{\"hour\":2,\"minute\":35}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 50
+    },
+    "prompt": {
+     "text": "Set the clock to 3:50.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 3,
+     "minute": 50
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 3
+      },
+      "and getting close to",
+      {
+       "number": 4
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 10
+      },
+      ". Count by fives to",
+      {
+       "number": 50
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 3 and getting close to 4.",
+      "The long hand points to 10.",
+      "Count by fives to 50.",
+      "It is 3:50."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 50
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 9,
+    "key": "M-2-C1|4|{\"hour\":3,\"minute\":50}"
+   },
+   {
+    "type": "setClock",
+    "mode": "look",
+    "facts": {
+     "hour": 6,
+     "minute": 55
+    },
+    "prompt": {
+     "text": "Set the clock to 6:55.",
+     "speak": [
+      "Set the clock to",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 55
+       }
+      },
+      "."
+     ]
+    },
+    "start": {
+     "hour": 12,
+     "minute": 0
+    },
+    "minuteStep": 5,
+    "answer": {
+     "hour": 6,
+     "minute": 55
+    },
+    "explanation": {
+     "speak": [
+      "The short hand is past",
+      {
+       "number": 6
+      },
+      "and getting close to",
+      {
+       "number": 7
+      },
+      ".",
+      "The long hand points to",
+      {
+       "number": 11
+      },
+      ". Count by fives to",
+      {
+       "number": 55
+      },
+      ". It is",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 55
+       }
+      },
+      "."
+     ],
+     "steps": [
+      "The short hand is past 6 and getting close to 7.",
+      "The long hand points to 11.",
+      "Count by fives to 55.",
+      "It is 6:55."
+     ],
+     "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 55
+     }
+    },
+    "skillId": "M-2-C1",
+    "level": 4,
+    "seed": 10,
+    "key": "M-2-C1|4|{\"hour\":6,\"minute\":55}"
    }
   ]
  }

@@ -367,7 +367,8 @@ export const evenOddGenerator: SkillGenerator = {
 };
 
 // ---- A.6 Number lines to 100 ----
-// Levels: marked point, steps of 10 / steps of 5 / steps of 1, typed. Family: Number line. Oracle: line.
+// Levels: marked point, steps of 10 / steps of 5 / steps of 1, typed / put the dot on a number, steps of 5 or 10
+// (numberLineTap, added Nov 17, 2026). Family: Number line. Oracle: line.
 
 const AT_THE_DOT = 'Which number is at the dot?';
 const TICKS = 10;
@@ -388,6 +389,22 @@ function lineExplanation(min: number, step: number, index: number): Explanation 
 }
 
 function numberLine(level: Level, rng: Rng): QuestionDraft {
+  if (level === 4) {
+    // Only the ends and the middle carry numbers, so the child counts the jumps to find the place.
+    const step = rng.pick([5, 10]);
+    const min = step === 10 ? 0 : 5 * rng.int(0, 10);
+    const index = rng.pick([1, 2, 3, 4, 6, 7, 8, 9]);
+    const answer = min + step * index;
+    return {
+      type: 'numberLineTap',
+      mode: 'look',
+      facts: { min, step, index },
+      prompt: { text: `Put the dot on ${answer}.`, speak: ['Put the dot on', { number: answer }, '.'] },
+      line: { min, max: min + step * TICKS, step },
+      answer,
+      explanation: lineExplanation(min, step, index),
+    };
+  }
   const step = level === 1 ? 10 : level === 2 ? 5 : 1;
   const min = level === 1 ? 0 : level === 2 ? 5 * rng.int(0, 10) : rng.int(0, 90);
   // Never an end of the line: the dot has a number on each side to count from.
@@ -402,8 +419,8 @@ function numberLine(level: Level, rng: Rng): QuestionDraft {
 
 export const numberLinesGenerator: SkillGenerator = {
   skillId: 'M-2-A6',
-  maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberPad', 'numberLineTap'],
   lists: [],
   generate: numberLine,
   exampleSeed: 206,

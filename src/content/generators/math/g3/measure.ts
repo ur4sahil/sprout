@@ -352,10 +352,12 @@ export const massVolumeGenerator: SkillGenerator = {
 function scaledGraph(level: Level, rng: Rng): QuestionDraft {
   const things = rng.sample(COUNTABLES, 3);
   const scale = level === 1 ? 2 : 5;
-  const steps = rng.sample([1, 2, 3, 4, 5, 6, 7, 8], 3);
+  // A picture graph keeps to 6 pictures in a row, so it fits a phone.
+  const steps = rng.sample(level === 1 ? [1, 2, 3, 4, 5, 6] : [1, 2, 3, 4, 5, 6, 7, 8], 3);
   const values = steps.map((step) => step * scale);
   const categories = things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: values[i] as number }));
-  const visual: Visual = { kind: 'graph', type: level === 1 ? 'picture' : rng.pick(['picture', 'bar'] as const), categories, scale };
+  const pictureFits = Math.max(...steps) <= 6;
+  const visual: Visual = { kind: 'graph', type: level === 1 ? 'picture' : rng.pick(pictureFits ? (['picture', 'bar'] as const) : (['bar'] as const)), categories, scale };
   const shown: Visual = level === 1 ? { ...visual, type: 'picture' } : level === 2 ? { ...visual, type: 'bar' } : visual;
   if (level === 3) {
     const order = [0, 1, 2].sort((x, y) => (values[y] as number) - (values[x] as number));

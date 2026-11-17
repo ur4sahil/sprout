@@ -34,6 +34,15 @@ export function check(question: Question, response: Response): boolean {
       const given = asText(response.pairs);
       return new Set(given).size === given.length && sameList(given, asText(question.answerPairs));
     }
+    case 'numberLineTap':
+    case 'columnSum':
+      return 'value' in response && response.value === question.answer;
+    case 'dragWord':
+      return 'index' in response && response.index === question.answerIndex;
+    case 'setClock':
+      return 'time' in response && typeof response.time === 'object' && response.time !== null && response.time.hour === question.answer.hour && response.time.minute === question.answer.minute;
+    case 'buildBar':
+      return 'values' in response && wholeNumbers(response.values) && sameList(response.values, question.answer);
     case 'tiles':
       return (
         'tiles' in response &&

@@ -21,22 +21,39 @@ function find(pick: () => [number, number], fits: (a: number, b: number) => bool
 }
 
 // ---- B.1 Add within 1,000, regrouping ----
-// Levels: one regroup / two regroups / typed. Oracle: add.
+// Levels: one regroup / two regroups / typed / written in columns, with carry boxes (columnSum, added
+// Nov 17, 2026). Oracle: add.
+
+// The sum written in columns, the way it is done on paper.
+function inColumns(a: number, b: number, op: '+' | '-'): QuestionDraft {
+  const asked = op === '+' ? plusPrompt(a, b) : { text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] as Say };
+  return {
+    type: 'columnSum',
+    mode: 'look',
+    facts: { a, b },
+    prompt: { text: `Work it out in columns. ${asked.text}`, speak: ['Work it out in columns.', ...asked.speak] },
+    top: a,
+    bottom: b,
+    op,
+    answer: op === '+' ? a + b : a - b,
+    explanation: op === '+' ? addExplanation(a, b) : subtractExplanation(a, b),
+  };
+}
 
 function addRegroup(level: Level, rng: Rng): QuestionDraft {
-  const regroups = level === 1 ? 1 : level === 2 ? 2 : rng.pick([1, 2]);
+  const regroups = level === 1 ? 1 : level === 2 || level === 4 ? 2 : rng.pick([1, 2]);
   // Two three-digit numbers. The sum stays below 1,000, so there is never a new thousand.
   const [a, b] = find(
     () => [rng.int(101, 799), rng.int(101, 799)],
     (x, y) => x + y <= 999 && carries(x, y).length === regroups && x % 10 !== 0 && y % 10 !== 0,
   );
-  return addQuestion(a, b, level === 3, rng);
+  return level === 4 ? inColumns(a, b, '+') : addQuestion(a, b, level === 3, rng);
 }
 
 export const addRegroup1000Generator: SkillGenerator = {
   skillId: 'M-3-B1',
-  maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberPad', 'columnSum'],
   lists: [],
   generate: addRegroup,
   exampleSeed: 311,
@@ -51,7 +68,8 @@ export const addRegroup1000Generator: SkillGenerator = {
 };
 
 // ---- B.2 Subtract within 1,000, regrouping ----
-// Levels: one regroup / two regroups / two regroups, typed. Never across a zero. Oracle: subtract.
+// Levels: one regroup / two regroups / two regroups, typed / in columns, with borrow boxes (columnSum).
+// Never across a zero. Oracle: subtract.
 
 function subtractRegroup(level: Level, rng: Rng): QuestionDraft {
   const regroups = level === 1 ? 1 : 2;
@@ -60,13 +78,13 @@ function subtractRegroup(level: Level, rng: Rng): QuestionDraft {
     // Breaking a ten when there are no tens would need breaking a hundred first: never asked here.
     (x, y) => x > y && borrows(x, y).length === regroups && !(borrows(x, y).includes(0) && digit(x, 1) === 0) && y % 10 !== 0,
   );
-  return subtractQuestion(a, b, level === 3, rng);
+  return level === 4 ? inColumns(a, b, '-') : subtractQuestion(a, b, level === 3, rng);
 }
 
 export const subtractRegroup1000Generator: SkillGenerator = {
   skillId: 'M-3-B2',
-  maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberPad', 'columnSum'],
   lists: [],
   generate: subtractRegroup,
   exampleSeed: 312,

@@ -58,6 +58,20 @@ function nearTimes(time: Time, step: number, clocks: boolean, rng: Rng): Time[] 
 const WHAT_TIME = 'What time is it?';
 
 function timeToFive(level: Level, rng: Rng): QuestionDraft {
+  if (level === 4) {
+    // Set the clock (added Nov 17, 2026): from 12 o'clock, the minute hand moves by fives.
+    const time: Time = { hour: rng.int(1, 11), minute: 5 * rng.int(1, 11) };
+    return {
+      type: 'setClock',
+      mode: 'look',
+      facts: { hour: time.hour, minute: time.minute },
+      prompt: { text: `Set the clock to ${written(time)}.`, speak: ['Set the clock to', { time }, '.'] },
+      start: { hour: 12, minute: 0 },
+      minuteStep: 5,
+      answer: time,
+      explanation: timeExplanation(time),
+    };
+  }
   // Never on the hour: that is grade 1.
   const minute = level === 1 ? rng.pick([15, 30, 45]) : 5 * rng.int(1, 11);
   const time: Time = { hour: rng.int(1, 12), minute };
@@ -71,8 +85,8 @@ function timeToFive(level: Level, rng: Rng): QuestionDraft {
 
 export const timeToFiveGenerator: SkillGenerator = {
   skillId: 'M-2-C1',
-  maxLevel: 3,
-  itemTypes: ['choice'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'setClock'],
   lists: [],
   generate: timeToFive,
   exampleSeed: 231,
@@ -187,14 +201,15 @@ export const rulerGenerator: SkillGenerator = {
 };
 
 // ---- C.4 Bar graphs ----
-// Levels: read a bar / most and least / how many more, typed. Family: Graphs. Oracle: graph.
+// Levels: read a bar / most and least / how many more, typed / make the graph from tally marks (buildBar).
+// Family: Graphs. Oracle: graph.
 
 const barGraph = (level: Level, rng: Rng): QuestionDraft => graphQuestion(level, rng, 'bar', 10);
 
 export const barGraphsGenerator: SkillGenerator = {
   skillId: 'M-2-C4',
-  maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberPad', 'buildBar'],
   lists: ['countables'],
   generate: barGraph,
   exampleSeed: 234,

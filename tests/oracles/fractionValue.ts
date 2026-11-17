@@ -14,6 +14,8 @@ export const fractionValue: Oracle = (facts) => {
   if (!Number.isInteger(n) || !Number.isInteger(d) || n < 0 || d < 1) throw new Error('oracle fractionValue: n and d must be whole numbers, d at least 1');
   const ask = text(facts, 'ask');
   if (ask === 'name') return { kind: 'value', value: `${n}/${d}` };
+  // value: the fraction's place on a line counted in parts of d, from 0: n.
+  if (ask === 'value') return { kind: 'value', value: n };
   // parts: how many parts of size n/d make one whole.
   if (ask === 'parts') {
     if (d % n !== 0) throw new Error('oracle fractionValue: those parts do not make a whole');

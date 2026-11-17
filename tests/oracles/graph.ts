@@ -17,6 +17,8 @@ export const graph: Oracle = (facts) => {
     if (found.length !== 1) throw new Error(`oracle graph: ${found.length} categories tie for ${what}`);
     return found[0] as number;
   };
+  // all: every value, for a bar graph the child builds.
+  if (ask === 'all') return { kind: 'value', value: values };
   if (ask === 'total') return { kind: 'value', value: values.reduce((sum, value) => sum + value, 0) };
   if (ask === 'value') return { kind: 'value', value: at('index') };
   if (ask === 'most') return { kind: 'index', index: only(Math.max(...values), 'the most') };

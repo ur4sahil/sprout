@@ -87,7 +87,7 @@ function visualsIn(visual: Visual | 'blank', out: Visual[]): void {
 function answerVisuals(question: Question): Visual[] {
   const tops: Visual[] = [];
   if (question.stimulus) tops.push(question.stimulus);
-  if (question.type === 'choice' || question.type === 'multiSelect') tops.push(...question.options);
+  if (question.type === 'choice' || question.type === 'multiSelect' || question.type === 'dragWord') tops.push(...question.options);
   if (question.type === 'order' || question.type === 'sort') tops.push(...question.items);
   if (question.type === 'match') tops.push(...question.left, ...question.right);
   const all: Visual[] = [];
@@ -239,6 +239,44 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
       }
       break;
     }
+    // Rule 17: the five types from plan section 15.4.
+    case 'numberLineTap': {
+      const { min, max, step } = q.line;
+      const marks = (max - min) / step;
+      if (!(step > 0 && max > min && Number.isInteger(marks))) problems.push('17: the line must run from min to max in whole steps');
+      else if (marks > 20) problems.push('17: a line has at most 21 marks, or they are too close to tell apart');
+      if (!(q.answer >= min && q.answer <= max && Number.isInteger((q.answer - min) / step))) problems.push('17: the answer must be a mark on the line');
+      break;
+    }
+    case 'setClock': {
+      const valid = (t: { hour: number; minute: number }): boolean => Number.isInteger(t.hour) && t.hour >= 1 && t.hour <= 12 && Number.isInteger(t.minute) && t.minute >= 0 && t.minute <= 59 && t.minute % q.minuteStep === 0;
+      if (!valid(q.answer) || !valid(q.start)) problems.push('17: the times must be clock times on the minute step');
+      if (q.answer.hour === q.start.hour && q.answer.minute === q.start.minute) problems.push('17: the hands must not start at the answer');
+      break;
+    }
+    case 'buildBar': {
+      const scale = q.scale ?? 1;
+      if (q.categories.length < 2 || q.categories.length > 5) problems.push('17: a bar graph has 2 to 5 bars');
+      if (q.answer.length !== q.categories.length) problems.push('17: one answer value for each bar');
+      if (!q.answer.every((value) => Number.isInteger(value) && value >= 0 && value <= q.max && value % scale === 0)) problems.push('17: each value must be a step of the scale, from 0 to max');
+      if (q.max / scale > 10) problems.push('17: a bar has at most 10 steps');
+      if (q.answer.every((value) => value === 0)) problems.push('17: at least one bar must go up');
+      break;
+    }
+    case 'columnSum': {
+      const right = q.op === '+' ? q.top + q.bottom : q.top - q.bottom;
+      if (q.answer !== right || right < 0) problems.push('17: the answer must be the sum or difference, zero or more');
+      if (!(Number.isInteger(q.top) && Number.isInteger(q.bottom) && q.top <= 9999 && q.bottom >= 0)) problems.push('17: column sums use whole numbers to 9,999');
+      break;
+    }
+    case 'dragWord': {
+      const n = q.options.length;
+      if (n < 2 || n > 4) problems.push(`17: a gap has ${n} words to choose from, not 2 to 4`);
+      if (!Number.isInteger(q.answerIndex) || q.answerIndex < 0 || q.answerIndex >= n) problems.push('17: answerIndex is out of range');
+      if (q.before.trim().length === 0 && q.after.trim().length === 0) problems.push('17: the gap needs words around it');
+      for (let i = 0; i < n; i += 1) for (let j = i + 1; j < n; j += 1) if (sameForm(q.options[i] as Visual, q.options[j] as Visual)) problems.push(`17: words ${i} and ${j} are the same`);
+      break;
+    }
     case 'tiles': {
       const buildable = canBuild(q.answer, q.bank, q.slots);
       if (!buildable) problems.push('8: the answer cannot be built from the bank in the given slots');
@@ -268,7 +306,7 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
         if (!(name in facts)) problems.push(`13: facts is missing "${name}", which the ${named} oracle needs`);
       }
     }
-    if ((q.type === 'choice' || q.type === 'multiSelect') && named !== 'authored') {
+    if ((q.type === 'choice' || q.type === 'multiSelect' || q.type === 'dragWord') && named !== 'authored') {
       if (!Array.isArray(facts.options) || facts.options.length !== q.options.length) {
         problems.push('13: facts.options must list the plain value of every option, in order');
       }
@@ -341,9 +379,9 @@ export function validateSeries(questions: Question[], pool?: number): string[] {
 
   const groups = new Map<string, number[]>();
   for (const question of questions) {
-    if (question.type !== 'choice') continue;
+    if (question.type !== 'choice' && question.type !== 'dragWord') continue;
     const n = question.options.length;
-    const name = `${question.fixedOrder ? 'fixed' : 'free'}:${n}`;
+    const name = `${question.type === 'choice' && question.fixedOrder ? 'fixed' : 'free'}:${n}`;
     const counts = groups.get(name) ?? new Array<number>(n).fill(0);
     counts[question.answerIndex] = (counts[question.answerIndex] ?? 0) + 1;
     groups.set(name, counts);

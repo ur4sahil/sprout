@@ -2,7 +2,7 @@ import type { Facts } from '../../src/engine/types';
 
 // What an oracle works out from the facts alone, in the shape of the question type.
 export type OracleAnswer =
-  | { kind: 'value'; value: number | string | boolean } // one value
+  | { kind: 'value'; value: number | string | boolean | number[] } // one value, or a list of values for a bar graph
   | { kind: 'index'; index: number } // which option
   | { kind: 'indexes'; indexes: number[] } // a set of options
   | { kind: 'order'; order: number[] } // items in order

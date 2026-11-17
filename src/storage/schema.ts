@@ -6,7 +6,7 @@ import { z } from 'zod';
 export const gradeSchema = z.enum(['PK', 'K', '1', '2', '3', '4', '5']);
 export type Grade = z.infer<typeof gradeSchema>;
 
-export const itemTypeSchema = z.enum(['choice', 'multiSelect', 'tapCount', 'numberPad', 'order', 'sort', 'match', 'tiles']);
+export const itemTypeSchema = z.enum(['choice', 'multiSelect', 'tapCount', 'numberPad', 'order', 'sort', 'match', 'tiles', 'numberLineTap', 'setClock', 'buildBar', 'columnSum', 'dragWord']);
 export const kindSchema = z.enum(['practice', 'review', 'diagnostic']);
 const levelSchema = z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]);
 const iso = z.string().min(1);

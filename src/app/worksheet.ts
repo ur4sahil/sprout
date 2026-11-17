@@ -1,5 +1,6 @@
 import type { Skill } from '../content/catalogue';
 import { generateQuestion } from '../content/registry';
+import { describeAnswer, describeVisual } from '../engine/describe';
 import { levelToAsk } from '../engine/skillscore';
 import type { Level, Question } from '../engine/types';
 import type { SkillState } from '../storage/schema';
@@ -47,6 +48,14 @@ export function paperAnswer(question: Question): string {
       return question.answerPairs.map(([left, right]) => `${left + 1}–${LETTERS[right]}`).join(', ');
     case 'tiles':
       return question.answer;
+    case 'numberLineTap':
+    case 'setClock':
+    case 'buildBar':
+      return describeAnswer(question);
+    case 'columnSum':
+      return String(question.answer);
+    case 'dragWord':
+      return `${LETTERS[question.answerIndex] ?? ''} (${describeVisual(question.options[question.answerIndex] ?? 'blank')})`;
   }
 }
 

@@ -1,9 +1,14 @@
 import type { Question, Response, Say } from '../engine/types';
+import BuildBarItem from './BuildBarItem';
 import ChoiceItem from './ChoiceItem';
+import ColumnSumItem from './ColumnSumItem';
+import DragWordItem from './DragWordItem';
 import MatchItem from './MatchItem';
 import MultiSelectItem from './MultiSelectItem';
+import NumberLineTapItem from './NumberLineTapItem';
 import NumberPadItem from './NumberPadItem';
 import OrderItem from './OrderItem';
+import SetClockItem from './SetClockItem';
 import SortItem from './SortItem';
 import TapCountItem from './TapCountItem';
 import TilesItem from './TilesItem';
@@ -34,5 +39,15 @@ export default function ItemView({ question, ...rest }: Props) {
       return <MatchItem question={question} {...rest} />;
     case 'tiles':
       return <TilesItem question={question} {...rest} />;
+    case 'numberLineTap':
+      return <NumberLineTapItem question={question} {...rest} />;
+    case 'setClock':
+      return <SetClockItem question={question} {...rest} />;
+    case 'buildBar':
+      return <BuildBarItem question={question} {...rest} />;
+    case 'columnSum':
+      return <ColumnSumItem question={question} {...rest} />;
+    case 'dragWord':
+      return <DragWordItem question={question} {...rest} />;
   }
 }

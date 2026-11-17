@@ -28,8 +28,8 @@ export default function ClockVisual({ visual }: Props) {
           </text>
         );
       })}
-      <line x1="50" y1="50" x2={minuteTip.x} y2={minuteTip.y} stroke={PALETTE.minuteHand} strokeWidth="2.6" strokeLinecap="round" data-hand="minute" data-angle={angles.minute} />
-      <line x1="50" y1="50" x2={hourTip.x} y2={hourTip.y} stroke={INK} strokeWidth="4.2" strokeLinecap="round" data-hand="hour" data-angle={angles.hour} />
+      {!visual.noHands && <line x1="50" y1="50" x2={minuteTip.x} y2={minuteTip.y} stroke={PALETTE.minuteHand} strokeWidth="2.6" strokeLinecap="round" data-hand="minute" data-angle={angles.minute} />}
+      {!visual.noHands && <line x1="50" y1="50" x2={hourTip.x} y2={hourTip.y} stroke={INK} strokeWidth="4.2" strokeLinecap="round" data-hand="hour" data-angle={angles.hour} />}
       <circle cx="50" cy="50" r="3" fill={INK} />
     </svg>
   );

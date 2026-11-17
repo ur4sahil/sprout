@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-C4",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3617,6 +3617,1478 @@
     "level": 3,
     "seed": 10,
     "key": "M-2-C4|3|{\"ask\":\"difference\",\"index\":2,\"other\":1,\"things\":[\"balloon\",\"apple\",\"flower\"],\"values\":[6,3,4]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      7,
+      6,
+      5
+     ],
+     "things": [
+      "balloon",
+      "car",
+      "strawberry"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🎈",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balloons"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🚗",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cars"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 6
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 5
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "balloons",
+      "emoji": "🎈"
+     },
+     {
+      "label": "cars",
+      "emoji": "🚗"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     7,
+     6,
+     5
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Balloons: 7, cars: 6, strawberries: 5.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "balloons",
+        "emoji": "🎈",
+        "value": 7
+       },
+       {
+        "label": "cars",
+        "emoji": "🚗",
+        "value": 6
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 5
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 1,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"balloon\",\"car\",\"strawberry\"],\"values\":[7,6,5]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      5,
+      9,
+      7
+     ],
+     "things": [
+      "cookie",
+      "apple",
+      "banana"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍪",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cookies"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 5
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍎",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "apples"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 9
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍌",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "bananas"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "cookies",
+      "emoji": "🍪"
+     },
+     {
+      "label": "apples",
+      "emoji": "🍎"
+     },
+     {
+      "label": "bananas",
+      "emoji": "🍌"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     5,
+     9,
+     7
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Cookies: 5, apples: 9, bananas: 7.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "cookies",
+        "emoji": "🍪",
+        "value": 5
+       },
+       {
+        "label": "apples",
+        "emoji": "🍎",
+        "value": 9
+       },
+       {
+        "label": "bananas",
+        "emoji": "🍌",
+        "value": 7
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 2,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"cookie\",\"apple\",\"banana\"],\"values\":[5,9,7]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      6,
+      8,
+      9
+     ],
+     "things": [
+      "banana",
+      "cookie",
+      "car"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍌",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "bananas"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 6
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍪",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cookies"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 8
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🚗",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cars"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 9
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "bananas",
+      "emoji": "🍌"
+     },
+     {
+      "label": "cookies",
+      "emoji": "🍪"
+     },
+     {
+      "label": "cars",
+      "emoji": "🚗"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     6,
+     8,
+     9
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Bananas: 6, cookies: 8, cars: 9.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "bananas",
+        "emoji": "🍌",
+        "value": 6
+       },
+       {
+        "label": "cookies",
+        "emoji": "🍪",
+        "value": 8
+       },
+       {
+        "label": "cars",
+        "emoji": "🚗",
+        "value": 9
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 3,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"banana\",\"cookie\",\"car\"],\"values\":[6,8,9]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      1,
+      7,
+      2
+     ],
+     "things": [
+      "strawberry",
+      "flower",
+      "ball"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 1
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🌸",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "flowers"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "⚽",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balls"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 2
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     },
+     {
+      "label": "flowers",
+      "emoji": "🌸"
+     },
+     {
+      "label": "balls",
+      "emoji": "⚽"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     1,
+     7,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Strawberries: 1, flowers: 7, balls: 2.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 1
+       },
+       {
+        "label": "flowers",
+        "emoji": "🌸",
+        "value": 7
+       },
+       {
+        "label": "balls",
+        "emoji": "⚽",
+        "value": 2
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 4,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"strawberry\",\"flower\",\"ball\"],\"values\":[1,7,2]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      3,
+      7,
+      8
+     ],
+     "things": [
+      "cookie",
+      "balloon",
+      "strawberry"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍪",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cookies"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 3
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🎈",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balloons"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 8
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "cookies",
+      "emoji": "🍪"
+     },
+     {
+      "label": "balloons",
+      "emoji": "🎈"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     3,
+     7,
+     8
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Cookies: 3, balloons: 7, strawberries: 8.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "cookies",
+        "emoji": "🍪",
+        "value": 3
+       },
+       {
+        "label": "balloons",
+        "emoji": "🎈",
+        "value": 7
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 5,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"cookie\",\"balloon\",\"strawberry\"],\"values\":[3,7,8]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      4,
+      6,
+      8
+     ],
+     "things": [
+      "banana",
+      "ball",
+      "strawberry"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍌",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "bananas"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 4
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "⚽",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balls"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 6
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 8
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "bananas",
+      "emoji": "🍌"
+     },
+     {
+      "label": "balls",
+      "emoji": "⚽"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     4,
+     6,
+     8
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Bananas: 4, balls: 6, strawberries: 8.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "bananas",
+        "emoji": "🍌",
+        "value": 4
+       },
+       {
+        "label": "balls",
+        "emoji": "⚽",
+        "value": 6
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 6,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"banana\",\"ball\",\"strawberry\"],\"values\":[4,6,8]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      7,
+      9,
+      8
+     ],
+     "things": [
+      "cookie",
+      "strawberry",
+      "car"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍪",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cookies"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 9
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🚗",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "cars"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 8
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "cookies",
+      "emoji": "🍪"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     },
+     {
+      "label": "cars",
+      "emoji": "🚗"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     7,
+     9,
+     8
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Cookies: 7, strawberries: 9, cars: 8.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "cookies",
+        "emoji": "🍪",
+        "value": 7
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 9
+       },
+       {
+        "label": "cars",
+        "emoji": "🚗",
+        "value": 8
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 7,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"cookie\",\"strawberry\",\"car\"],\"values\":[7,9,8]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      9,
+      2,
+      7
+     ],
+     "things": [
+      "apple",
+      "strawberry",
+      "ball"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍎",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "apples"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 9
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 2
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "⚽",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balls"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "apples",
+      "emoji": "🍎"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     },
+     {
+      "label": "balls",
+      "emoji": "⚽"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     9,
+     2,
+     7
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Apples: 9, strawberries: 2, balls: 7.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "apples",
+        "emoji": "🍎",
+        "value": 9
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 2
+       },
+       {
+        "label": "balls",
+        "emoji": "⚽",
+        "value": 7
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 8,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"apple\",\"strawberry\",\"ball\"],\"values\":[9,2,7]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      3,
+      7,
+      1
+     ],
+     "things": [
+      "banana",
+      "strawberry",
+      "flower"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍌",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "bananas"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 3
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍓",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "strawberries"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 7
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🌸",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "flowers"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 1
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "bananas",
+      "emoji": "🍌"
+     },
+     {
+      "label": "strawberries",
+      "emoji": "🍓"
+     },
+     {
+      "label": "flowers",
+      "emoji": "🌸"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     3,
+     7,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Bananas: 3, strawberries: 7, flowers: 1.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "bananas",
+        "emoji": "🍌",
+        "value": 3
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 7
+       },
+       {
+        "label": "flowers",
+        "emoji": "🌸",
+        "value": 1
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 9,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"banana\",\"strawberry\",\"flower\"],\"values\":[3,7,1]}"
+   },
+   {
+    "type": "buildBar",
+    "mode": "look",
+    "facts": {
+     "values": [
+      6,
+      3,
+      4
+     ],
+     "things": [
+      "balloon",
+      "apple",
+      "flower"
+     ],
+     "ask": "all"
+    },
+    "prompt": {
+     "text": "Make a bar graph from the tally marks.",
+     "speak": [
+      "Make a bar graph from the tally marks."
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🎈",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "balloons"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 6
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🍎",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "apples"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 3
+        }
+       ]
+      },
+      {
+       "kind": "row",
+       "children": [
+        {
+         "kind": "emojiGroup",
+         "emoji": "🌸",
+         "count": 1,
+         "layout": "row",
+         "speak": [
+          {
+           "word": "flowers"
+          }
+         ]
+        },
+        {
+         "kind": "tally",
+         "count": 4
+        }
+       ]
+      }
+     ]
+    },
+    "categories": [
+     {
+      "label": "balloons",
+      "emoji": "🎈"
+     },
+     {
+      "label": "apples",
+      "emoji": "🍎"
+     },
+     {
+      "label": "flowers",
+      "emoji": "🌸"
+     }
+    ],
+    "max": 10,
+    "answer": [
+     6,
+     3,
+     4
+    ],
+    "explanation": {
+     "speak": [
+      "Count each set of tally marks. A bundle with a line across is",
+      {
+       "number": 5
+      },
+      ". Make each bar that long."
+     ],
+     "steps": [
+      "Count each set of tally marks. A bundle is 5.",
+      "Balloons: 6, apples: 3, flowers: 4.",
+      "Make each bar that long."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "bar",
+      "categories": [
+       {
+        "label": "balloons",
+        "emoji": "🎈",
+        "value": 6
+       },
+       {
+        "label": "apples",
+        "emoji": "🍎",
+        "value": 3
+       },
+       {
+        "label": "flowers",
+        "emoji": "🌸",
+        "value": 4
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C4",
+    "level": 4,
+    "seed": 10,
+    "key": "M-2-C4|4|{\"ask\":\"all\",\"things\":[\"balloon\",\"apple\",\"flower\"],\"values\":[6,3,4]}"
    }
   ]
  }

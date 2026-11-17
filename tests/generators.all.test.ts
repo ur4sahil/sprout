@@ -19,6 +19,15 @@ function rightResponse(question: Question): Response {
       return { count: question.answer };
     case 'numberPad':
       return { value: question.answer };
+    case 'numberLineTap':
+    case 'columnSum':
+      return { value: question.answer };
+    case 'dragWord':
+      return { index: question.answerIndex };
+    case 'setClock':
+      return { time: question.answer };
+    case 'buildBar':
+      return { values: question.answer };
     case 'order':
       return { order: question.answerOrder };
     case 'sort':

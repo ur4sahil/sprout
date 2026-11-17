@@ -68,7 +68,7 @@ export type Visual = VisualBase &
     | { kind: 'equation'; parts: (number | string)[] } // numbers, operators and 'blank'
     | { kind: 'sequence'; items: (Visual | Blank)[] }
     | { kind: 'matrix'; cells: (Visual | Blank)[] } // 4 or 9 cells
-    | { kind: 'clock'; hour: number; minute: number }
+    | { kind: 'clock'; hour: number; minute: number; noHands?: true } // noHands: a face to draw on, for paper
     | { kind: 'coins'; coins: CoinName[] }
     // `scale`: each picture, or each step on a bar graph's scale, stands for this many (1 when left out).
     | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number }
@@ -91,7 +91,8 @@ export type Visual = VisualBase &
 
 export type Level = 1 | 2 | 3 | 4;
 export type Mode = 'look' | 'listen' | 'read';
-export type ItemType = 'choice' | 'multiSelect' | 'tapCount' | 'numberPad' | 'order' | 'sort' | 'match' | 'tiles';
+export type ItemType = 'choice' | 'multiSelect' | 'tapCount' | 'numberPad' | 'order' | 'sort' | 'match' | 'tiles' | 'numberLineTap' | 'setClock' | 'buildBar' | 'columnSum' | 'dragWord';
+export type ClockTime = { hour: number; minute: number };
 
 export interface QuestionBase {
   skillId: string;
@@ -123,7 +124,17 @@ export type Question =
   | (QuestionBase & { type: 'order'; items: Visual[]; answerOrder: number[] })
   | (QuestionBase & { type: 'sort'; items: Visual[]; bins: SortBin[]; answerBin: number[] })
   | (QuestionBase & { type: 'match'; left: Visual[]; right: Visual[]; answerPairs: [number, number][] })
-  | (QuestionBase & { type: 'tiles'; slots: number; bank: string[]; answer: string });
+  | (QuestionBase & { type: 'tiles'; slots: number; bank: string[]; answer: string })
+  // Plan section 15.4. Tap or slide a marker to a mark on a number line (counted in parts of one with `denominator`).
+  | (QuestionBase & { type: 'numberLineTap'; line: { min: number; max: number; step: number; denominator?: number }; answer: number })
+  // Turn the hands to a time. The hands start at `start` and move by `minuteStep` minutes.
+  | (QuestionBase & { type: 'setClock'; start: ClockTime; minuteStep: 1 | 5 | 15 | 30; answer: ClockTime })
+  // Raise each bar to its value, in steps of `scale` (1 when left out), up to `max`.
+  | (QuestionBase & { type: 'buildBar'; categories: { label: string; emoji: string }[]; max: number; scale?: number; answer: number[] })
+  // A sum written in columns: the child fills the answer digit by digit, with boxes for carried and borrowed ones.
+  | (QuestionBase & { type: 'columnSum'; top: number; bottom: number; op: '+' | '-'; answer: number })
+  // Move a word or number into the gap: before + [gap] + after. Each option is a text picture.
+  | (QuestionBase & { type: 'dragWord'; before: string; after: string; options: Visual[]; answerIndex: number });
 
 // What a generator hands back. The registry adds the id, level, seed and key.
 type WithoutStamp<T> = T extends unknown ? Omit<T, 'skillId' | 'level' | 'seed' | 'key'> : never;
@@ -138,7 +149,9 @@ export type Response =
   | { order: number[] } // order
   | { bins: number[] } // sort
   | { pairs: [number, number][] } // match
-  | { tiles: string[] }; // tiles
+  | { tiles: string[] } // tiles
+  | { time: ClockTime } // setClock
+  | { values: number[] }; // buildBar. numberLineTap and columnSum answer { value }, dragWord { index }
 
 export type OracleId =
   | 'count'
@@ -184,6 +197,7 @@ export type OracleId =
   | 'rect'
   | 'measureUnit'
   | 'quadrilateral'
+  | 'ela2'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -231,6 +245,7 @@ export const ORACLE_FACTS: Record<OracleId, string[]> = {
   rect: ['length', 'width', 'ask'],
   measureUnit: ['kind', 'grams'],
   quadrilateral: ['ask'],
+  ela2: ['relation', 'target'],
   authored: ['id'],
 };
 

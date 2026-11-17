@@ -220,5 +220,61 @@ function Answer({ question }: { question: SheetItem['question'] }) {
           Use these: <strong>{question.bank.join('  ')}</strong>. Write it here: <span className={styles.line} />
         </p>
       );
+    case 'numberLineTap':
+      return (
+        <>
+          <p className={styles.how}>Draw a dot on the line at the right place.</p>
+          <VisualView visual={{ kind: 'numberLine', min: question.line.min, max: question.line.max, step: question.line.step, ...(question.line.denominator ? { denominator: question.line.denominator } : {}) }} />
+        </>
+      );
+    case 'setClock':
+      return (
+        <>
+          <p className={styles.how}>Draw the hands.</p>
+          <VisualView visual={{ kind: 'clock', hour: 12, minute: 0, noHands: true }} />
+        </>
+      );
+    case 'buildBar':
+      return (
+        <>
+          <p className={styles.how}>Colour the boxes to make each bar{question.scale && question.scale > 1 ? `. Each box is ${question.scale}` : ''}.</p>
+          <div className={styles.bars}>
+            {question.categories.map((category) => (
+              <div key={category.label} className={styles.option}>
+                <span className={styles.letter}>{category.label}</span>
+                {Array.from({ length: question.max / (question.scale ?? 1) }, (_, i) => (
+                  <span key={i} className={styles.cell} />
+                ))}
+              </div>
+            ))}
+          </div>
+        </>
+      );
+    case 'columnSum':
+      return (
+        <>
+          <VisualView visual={{ kind: 'text', value: `${question.top} ${question.op === '+' ? '+' : '−'} ${question.bottom}`, size: 'l' }} />
+          <p className={styles.how}>
+            Work it out in columns. Answer: <span className={styles.box} />
+          </p>
+        </>
+      );
+    case 'dragWord':
+      return (
+        <>
+          <p className={styles.how}>
+            {question.before} <span className={styles.line} /> {question.after}
+          </p>
+          <p className={styles.how}>Circle the word that goes in the gap.</p>
+          <div className={styles.options}>
+            {question.options.map((option, i) => (
+              <div key={i} className={styles.option}>
+                <span className={styles.letter}>{LETTERS[i]}</span>
+                <VisualView visual={option} />
+              </div>
+            ))}
+          </div>
+        </>
+      );
   }
 }

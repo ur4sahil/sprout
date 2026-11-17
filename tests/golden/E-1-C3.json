@@ -1,6 +1,6 @@
 {
  "skillId": "E-1-C3",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -1417,6 +1417,668 @@
     "level": 2,
     "seed": 10,
     "key": "E-1-C3|2|{\"ask\":\"endMark\",\"base\":\"is it a bug\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "can you see the cat",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Can you see the cat?"
+     ]
+    },
+    "before": "Can you see the cat",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "An asking sentence ends with a question mark."
+     ],
+     "steps": [
+      "An asking sentence ends with a question mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Can you see the cat?",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 1,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"can you see the cat\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "stop",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Stop!"
+     ]
+    },
+    "before": "Stop",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A shout ends with an exclamation mark."
+     ],
+     "steps": [
+      "A shout ends with an exclamation mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Stop!",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 2,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"stop\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "look out",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Look out!"
+     ]
+    },
+    "before": "Look out",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A shout ends with an exclamation mark."
+     ],
+     "steps": [
+      "A shout ends with an exclamation mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Look out!",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 3,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"look out\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "stop",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Stop!"
+     ]
+    },
+    "before": "Stop",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A shout ends with an exclamation mark."
+     ],
+     "steps": [
+      "A shout ends with an exclamation mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Stop!",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 4,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"stop\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "wow",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Wow!"
+     ]
+    },
+    "before": "Wow",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A shout ends with an exclamation mark."
+     ],
+     "steps": [
+      "A shout ends with an exclamation mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Wow!",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 5,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"wow\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "can you see the cat",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Can you see the cat?"
+     ]
+    },
+    "before": "Can you see the cat",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "An asking sentence ends with a question mark."
+     ],
+     "steps": [
+      "An asking sentence ends with a question mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Can you see the cat?",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 6,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"can you see the cat\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "the cat is big",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "The cat is big."
+     ]
+    },
+    "before": "The cat is big",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A telling sentence ends with a period."
+     ],
+     "steps": [
+      "A telling sentence ends with a period."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The cat is big.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 7,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"the cat is big\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "he can hop",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "He can hop."
+     ]
+    },
+    "before": "He can hop",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A telling sentence ends with a period."
+     ],
+     "steps": [
+      "A telling sentence ends with a period."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "He can hop.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 8,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"he can hop\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "the fox ran",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "The fox ran."
+     ]
+    },
+    "before": "The fox ran",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A telling sentence ends with a period."
+     ],
+     "steps": [
+      "A telling sentence ends with a period."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The fox ran.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 9,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"the fox ran\"}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "base": "is it a bug",
+     "ask": "endMark",
+     "options": [
+      ".",
+      "?",
+      "!"
+     ]
+    },
+    "prompt": {
+     "text": "Move the right mark to the end of the sentence.",
+     "speak": [
+      "Move the right mark to the end of the sentence.",
+      "Is it a bug?"
+     ]
+    },
+    "before": "Is it a bug",
+    "after": "",
+    "options": [
+     {
+      "kind": "text",
+      "value": ".",
+      "size": "xl",
+      "speak": [
+       "period"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "?",
+      "size": "xl",
+      "speak": [
+       "question mark"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "!",
+      "size": "xl",
+      "speak": [
+       "exclamation mark"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "An asking sentence ends with a question mark."
+     ],
+     "steps": [
+      "An asking sentence ends with a question mark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Is it a bug?",
+      "size": "l"
+     }
+    },
+    "skillId": "E-1-C3",
+    "level": 3,
+    "seed": 10,
+    "key": "E-1-C3|3|{\"ask\":\"endMark\",\"base\":\"is it a bug\"}"
    }
   ]
  }

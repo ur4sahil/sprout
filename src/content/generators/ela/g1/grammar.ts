@@ -130,7 +130,8 @@ export const describingGenerator: SkillGenerator = {
 
 // ---- C.3 End marks ----
 // Family: End marks. Oracle: sentence.
-// Levels: period or question mark / adds exclamation mark. The sentence is shown with its mark taken off.
+// Levels: period or question mark / adds exclamation mark / move the mark onto the end (dragWord, added
+// Nov 17, 2026). The sentence is shown with its mark taken off.
 
 const MARKS = ['.', '?', '!'] as const;
 const MARK_NAME: Record<string, string> = { '.': 'period', '?': 'question mark', '!': 'exclamation mark' };
@@ -146,6 +147,20 @@ function endMarks(level: Level, rng: Rng): QuestionDraft {
   const sentence = rng.pick(list);
   const values = level === 1 ? MARKS.slice(0, 2) : [...MARKS];
   const answer = sentence.slice(-1);
+  if (level === 3) {
+    const prompt = 'Move the right mark to the end of the sentence.';
+    return {
+      type: 'dragWord',
+      mode: 'look',
+      facts: { base: sentence.slice(0, -1).toLowerCase(), ask: 'endMark', options: [...values] },
+      prompt: { text: prompt, speak: [prompt, sentence] },
+      before: sentence.slice(0, -1),
+      after: '',
+      options: values.map(mark),
+      answerIndex: values.indexOf(answer as (typeof MARKS)[number]),
+      explanation: { speak: [MARK_RULE[answer] as string], steps: [MARK_RULE[answer] as string], visual: text(sentence, 'l') },
+    };
+  }
   return {
     type: 'choice',
     mode: 'look',
@@ -161,8 +176,8 @@ function endMarks(level: Level, rng: Rng): QuestionDraft {
 
 export const endMarksGenerator: SkillGenerator = {
   skillId: 'E-1-C3',
-  maxLevel: 2,
-  itemTypes: ['choice'],
+  maxLevel: 3,
+  itemTypes: ['choice', 'dragWord'],
   lists: ['sentences'],
   generate: endMarks,
   exampleSeed: 423,

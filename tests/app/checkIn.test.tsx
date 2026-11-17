@@ -40,6 +40,15 @@ function rightResponse(question: Question): Response {
       return { count: question.answer };
     case 'numberPad':
       return { value: question.answer };
+    case 'numberLineTap':
+    case 'columnSum':
+      return { value: question.answer };
+    case 'dragWord':
+      return { index: question.answerIndex };
+    case 'setClock':
+      return { time: question.answer };
+    case 'buildBar':
+      return { values: question.answer };
     case 'order':
       return { order: question.answerOrder };
     case 'sort':
@@ -309,7 +318,7 @@ describe('stickers', () => {
     expect(board.querySelector('[data-award="mastered:math-K:3"]')?.getAttribute('data-earned')).toBe('no');
     expect(board.querySelector('h2')?.textContent).toMatch(/^Math, Kindergarten: 1 of \d+$/);
     // One board for each subject and grade with skills, one for Reasoning, one for Milestones.
-    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'math-2', 'math-3', 'ela-PK', 'ela-K', 'ela-1', 'reasoning', 'milestones']);
+    expect([...document.querySelectorAll('[data-board]')].map((el) => el.getAttribute('data-board'))).toEqual(['math-PK', 'math-K', 'math-1', 'math-2', 'math-3', 'ela-PK', 'ela-K', 'ela-1', 'ela-2', 'reasoning', 'milestones']);
     // The check-in stickers the child already had are on the Milestones board.
     expect(document.querySelector('[data-award="diagnostic:math"]')?.getAttribute('data-earned')).toBe('yes');
 

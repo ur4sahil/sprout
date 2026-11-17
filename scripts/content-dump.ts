@@ -4,7 +4,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { CATALOGUE } from '../src/content/catalogue';
 import { allGenerators, generateFrom } from '../src/content/registry';
-import { describeVisual, sayText } from '../src/engine/describe';
+import { describeAnswer, describeVisual, sayText } from '../src/engine/describe';
 import type { Level, Question } from '../src/engine/types';
 
 const SAMPLES = 3;
@@ -25,6 +25,16 @@ function answerLines(question: Question): string[] {
       return [`- Shown: ${question.shown} ${question.emoji}`, `- Answer: tap ${question.answer}`];
     case 'numberPad':
       return [`- Answer: type ${question.answer}`];
+    case 'numberLineTap':
+      return [`- Line: ${question.line.min} to ${question.line.max}${question.line.denominator ? ` in parts of ${question.line.denominator}` : ` by ${question.line.step}`}`, `- Answer: ${describeAnswer(question)}`];
+    case 'columnSum':
+      return [`- Sum: ${question.top} ${question.op} ${question.bottom}`, `- Answer: ${question.answer}`];
+    case 'setClock':
+      return [`- Starts at ${question.start.hour}:${String(question.start.minute).padStart(2, '0')}, steps of ${question.minuteStep}`, `- Answer: ${describeAnswer(question)}`];
+    case 'buildBar':
+      return [`- Bars: ${question.categories.map((c) => c.label).join(' | ')}, up to ${question.max}`, `- Answer: ${describeAnswer(question)}`];
+    case 'dragWord':
+      return [`- Gap: ${question.before} ___ ${question.after}`, `- Options: ${question.options.map((option, i) => `${i === question.answerIndex ? '**' : ''}${describeVisual(option)}${i === question.answerIndex ? '**' : ''}`).join(' | ')}`];
     case 'order':
       return [
         `- Items: ${question.items.map((item) => describeVisual(item)).join(' | ')}`,

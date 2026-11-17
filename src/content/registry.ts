@@ -2,6 +2,10 @@ import { questionKey } from '../engine/canonical';
 import { makeRng } from '../engine/rng';
 import type { Level, Question, QuestionDraft } from '../engine/types';
 import type { SkillGenerator } from './generator';
+import { kindsOfWordsGenerator, pastTenseGenerator, plurals2Generator, punctuationGenerator } from './generators/ela/g2/grammar';
+import { bossyRGenerator, twoPartsGenerator, vowelTeams2Generator } from './generators/ela/g2/phonics';
+import { mainIdeaGenerator, orderOfEventsGenerator, readStory2Generator } from './generators/ela/g2/reading';
+import { contractionsGenerator, homophonesGenerator, prefixesGenerator, suffixesGenerator, synonymsGenerator } from './generators/ela/g2/words';
 import { describingGenerator, endMarksGenerator, nounsAndVerbsGenerator, readStoryGenerator } from './generators/ela/g1/grammar';
 import { blendsGenerator, digraphsGenerator, shortOrLongGenerator, silentEGenerator, vowelTeamsGenerator } from './generators/ela/g1/phonics';
 import { compoundsGenerator, meaningsGenerator, sightWordsFourGenerator } from './generators/ela/g1/words';
@@ -165,6 +169,21 @@ const ALL: readonly SkillGenerator[] = [
   linePlotsGenerator,
   quadrilateralsGenerator,
   equalAreaGenerator,
+  vowelTeams2Generator,
+  bossyRGenerator,
+  twoPartsGenerator,
+  prefixesGenerator,
+  suffixesGenerator,
+  contractionsGenerator,
+  synonymsGenerator,
+  homophonesGenerator,
+  kindsOfWordsGenerator,
+  plurals2Generator,
+  pastTenseGenerator,
+  punctuationGenerator,
+  readStory2Generator,
+  mainIdeaGenerator,
+  orderOfEventsGenerator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,

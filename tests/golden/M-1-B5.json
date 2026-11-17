@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-B5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -2973,6 +2973,928 @@
     "level": 3,
     "seed": 10,
     "key": "M-1-B5|3|{\"a\":11,\"b\":2,\"blank\":\"b\",\"minus\":true,\"total\":13}"
+   }
+  ],
+  "4": [
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 10,
+     "total": 17,
+     "blank": "b",
+     "options": [
+      7,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "7 +",
+    "after": "= 17",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 7
+      },
+      ". Count up to",
+      {
+       "number": 17
+      },
+      ". That is",
+      {
+       "number": 10
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 7.",
+      "Count up to 17.",
+      "That is 10 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       10,
+       "=",
+       17
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 1,
+    "key": "M-1-B5|4|{\"a\":7,\"b\":10,\"blank\":\"b\",\"total\":17}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 10,
+     "total": 18,
+     "blank": "a",
+     "options": [
+      7,
+      8,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 10 = 18",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 10
+      },
+      ". Count up to",
+      {
+       "number": 18
+      },
+      ". That is",
+      {
+       "number": 8
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 10.",
+      "Count up to 18.",
+      "That is 8 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       10,
+       "=",
+       18
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 2,
+    "key": "M-1-B5|4|{\"a\":8,\"b\":10,\"blank\":\"a\",\"total\":18}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 10,
+     "total": 18,
+     "blank": "a",
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 10 = 18",
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 10
+      },
+      ". Count up to",
+      {
+       "number": 18
+      },
+      ". That is",
+      {
+       "number": 8
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 10.",
+      "Count up to 18.",
+      "That is 8 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       10,
+       "=",
+       18
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 3,
+    "key": "M-1-B5|4|{\"a\":8,\"b\":10,\"blank\":\"a\",\"total\":18}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 10,
+     "total": 20,
+     "blank": "a",
+     "options": [
+      10,
+      11,
+      20
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 10 = 20",
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 10
+      },
+      ". Count up to",
+      {
+       "number": 20
+      },
+      ". That is",
+      {
+       "number": 10
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 10.",
+      "Count up to 20.",
+      "That is 10 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       10,
+       "=",
+       20
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 4,
+    "key": "M-1-B5|4|{\"a\":10,\"b\":10,\"blank\":\"a\",\"total\":20}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 7,
+     "total": 17,
+     "blank": "a",
+     "options": [
+      7,
+      10,
+      11
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 7 = 17",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 7
+      },
+      ". Count up to",
+      {
+       "number": 17
+      },
+      ". That is",
+      {
+       "number": 10
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 7.",
+      "Count up to 17.",
+      "That is 10 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       7,
+       "=",
+       17
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 5,
+    "key": "M-1-B5|4|{\"a\":10,\"b\":7,\"blank\":\"a\",\"total\":17}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 10,
+     "total": 16,
+     "blank": "b",
+     "options": [
+      10,
+      11,
+      16
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "6 +",
+    "after": "= 16",
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 6
+      },
+      ". Count up to",
+      {
+       "number": 16
+      },
+      ". That is",
+      {
+       "number": 10
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 6.",
+      "Count up to 16.",
+      "That is 10 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 6,
+    "key": "M-1-B5|4|{\"a\":6,\"b\":10,\"blank\":\"b\",\"total\":16}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 10,
+     "total": 11,
+     "blank": "b",
+     "options": [
+      1,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "1 +",
+    "after": "= 11",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 1
+      },
+      ". Count up to",
+      {
+       "number": 11
+      },
+      ". That is",
+      {
+       "number": 10
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 1.",
+      "Count up to 11.",
+      "That is 10 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       10,
+       "=",
+       11
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 7,
+    "key": "M-1-B5|4|{\"a\":1,\"b\":10,\"blank\":\"b\",\"total\":11}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 5,
+     "total": 12,
+     "blank": "a",
+     "options": [
+      5,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 5 = 12",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 5
+      },
+      ". Count up to",
+      {
+       "number": 12
+      },
+      ". That is",
+      {
+       "number": 7
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 5.",
+      "Count up to 12.",
+      "That is 7 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       5,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 8,
+    "key": "M-1-B5|4|{\"a\":7,\"b\":5,\"blank\":\"a\",\"total\":12}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 3,
+     "total": 12,
+     "blank": "a",
+     "options": [
+      3,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "",
+    "after": "+ 3 = 12",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 3
+      },
+      ". Count up to",
+      {
+       "number": 12
+      },
+      ". That is",
+      {
+       "number": 9
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 3.",
+      "Count up to 12.",
+      "That is 9 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "+",
+       3,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 9,
+    "key": "M-1-B5|4|{\"a\":9,\"b\":3,\"blank\":\"a\",\"total\":12}"
+   },
+   {
+    "type": "dragWord",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 6,
+     "total": 16,
+     "blank": "b",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Move the number that makes it true into the gap.",
+     "speak": [
+      "Move the number that makes it true into the gap."
+     ]
+    },
+    "before": "10 +",
+    "after": "= 16",
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Start at",
+      {
+       "number": 10
+      },
+      ". Count up to",
+      {
+       "number": 16
+      },
+      ". That is",
+      {
+       "number": 6
+      },
+      "more."
+     ],
+     "steps": [
+      "Start at 10.",
+      "Count up to 16.",
+      "That is 6 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       6,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-1-B5",
+    "level": 4,
+    "seed": 10,
+    "key": "M-1-B5|4|{\"a\":10,\"b\":6,\"blank\":\"b\",\"total\":16}"
    }
   ]
  }

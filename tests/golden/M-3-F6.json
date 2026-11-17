@@ -7,21 +7,21 @@
   "facts": {
    "values": [
     8,
-    12,
-    10
+    6,
+    2
    ],
    "ask": "value",
-   "index": 2,
+   "index": 1,
    "options": [
-    10,
-    11,
-    12
+    3,
+    5,
+    6
    ]
   },
   "prompt": {
-   "text": "How many stars are there?",
+   "text": "How many balls are there?",
    "speak": [
-    "How many stars are there?"
+    "How many balls are there?"
    ]
   },
   "stimulus": {
@@ -36,12 +36,12 @@
     {
      "label": "balls",
      "emoji": "⚽",
-     "value": 12
+     "value": 6
     },
     {
      "label": "stars",
      "emoji": "⭐",
-     "value": 10
+     "value": 2
     }
    ],
    "scale": 2
@@ -49,36 +49,36 @@
   "options": [
    {
     "kind": "text",
-    "value": "10",
+    "value": "3",
     "size": "l",
     "speak": [
      {
-      "number": 10
+      "number": 3
      }
     ]
    },
    {
     "kind": "text",
-    "value": "11",
+    "value": "5",
     "size": "l",
     "speak": [
      {
-      "number": 11
+      "number": 5
      }
     ]
    },
    {
     "kind": "text",
-    "value": "12",
+    "value": "6",
     "size": "l",
     "speak": [
      {
-      "number": 12
+      "number": 6
      }
     ]
    }
   ],
-  "answerIndex": 0,
+  "answerIndex": 2,
   "explanation": {
    "speak": [
     "Each picture stands for",
@@ -88,14 +88,14 @@
     ".",
     "So there are",
     {
-     "number": 10
+     "number": 6
     },
-    "stars."
+    "balls."
    ],
    "steps": [
     "Each picture stands for 2.",
-    "There are 5 pictures: 2, 4, 6, 8, 10.",
-    "So there are 10 stars."
+    "There are 3 pictures: 2, 4, 6.",
+    "So there are 6 balls."
    ],
    "visual": {
     "kind": "graph",
@@ -109,12 +109,12 @@
      {
       "label": "balls",
       "emoji": "⚽",
-      "value": 12
+      "value": 6
      },
      {
       "label": "stars",
       "emoji": "⭐",
-      "value": 10
+      "value": 2
      }
     ],
     "scale": 2
@@ -123,7 +123,7 @@
   "skillId": "M-3-F6",
   "level": 1,
   "seed": 356,
-  "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[8,12,10]}"
+  "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[8,6,2]}"
  },
  "levels": {
   "1": [
@@ -132,260 +132,12 @@
     "mode": "look",
     "facts": {
      "values": [
+      8,
       10,
-      6,
-      12
+      4
      ],
      "ask": "value",
      "index": 0,
-     "options": [
-      9,
-      10,
-      12
-     ]
-    },
-    "prompt": {
-     "text": "How many balloons are there?",
-     "speak": [
-      "How many balloons are there?"
-     ]
-    },
-    "stimulus": {
-     "kind": "graph",
-     "type": "picture",
-     "categories": [
-      {
-       "label": "balloons",
-       "emoji": "🎈",
-       "value": 10
-      },
-      {
-       "label": "rockets",
-       "emoji": "🚀",
-       "value": 6
-      },
-      {
-       "label": "stars",
-       "emoji": "⭐",
-       "value": 12
-      }
-     ],
-     "scale": 2
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "9",
-      "size": "l",
-      "speak": [
-       {
-        "number": 9
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "l",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "l",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "Each picture stands for",
-      {
-       "number": 2
-      },
-      ".",
-      "So there are",
-      {
-       "number": 10
-      },
-      "balloons."
-     ],
-     "steps": [
-      "Each picture stands for 2.",
-      "There are 5 pictures: 2, 4, 6, 8, 10.",
-      "So there are 10 balloons."
-     ],
-     "visual": {
-      "kind": "graph",
-      "type": "picture",
-      "categories": [
-       {
-        "label": "balloons",
-        "emoji": "🎈",
-        "value": 10
-       },
-       {
-        "label": "rockets",
-        "emoji": "🚀",
-        "value": 6
-       },
-       {
-        "label": "stars",
-        "emoji": "⭐",
-        "value": 12
-       }
-      ],
-      "scale": 2
-     }
-    },
-    "skillId": "M-3-F6",
-    "level": 1,
-    "seed": 1,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[10,6,12]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "values": [
-      16,
-      8,
-      12
-     ],
-     "ask": "value",
-     "index": 0,
-     "options": [
-      16,
-      17,
-      18
-     ]
-    },
-    "prompt": {
-     "text": "How many cookies are there?",
-     "speak": [
-      "How many cookies are there?"
-     ]
-    },
-    "stimulus": {
-     "kind": "graph",
-     "type": "picture",
-     "categories": [
-      {
-       "label": "cookies",
-       "emoji": "🍪",
-       "value": 16
-      },
-      {
-       "label": "balls",
-       "emoji": "⚽",
-       "value": 8
-      },
-      {
-       "label": "fish",
-       "emoji": "🐟",
-       "value": 12
-      }
-     ],
-     "scale": 2
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "16",
-      "size": "l",
-      "speak": [
-       {
-        "number": 16
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "17",
-      "size": "l",
-      "speak": [
-       {
-        "number": 17
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "18",
-      "size": "l",
-      "speak": [
-       {
-        "number": 18
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "Each picture stands for",
-      {
-       "number": 2
-      },
-      ".",
-      "So there are",
-      {
-       "number": 16
-      },
-      "cookies."
-     ],
-     "steps": [
-      "Each picture stands for 2.",
-      "There are 8 pictures: 2, 4, 6, 8, 10, 12, 14, 16.",
-      "So there are 16 cookies."
-     ],
-     "visual": {
-      "kind": "graph",
-      "type": "picture",
-      "categories": [
-       {
-        "label": "cookies",
-        "emoji": "🍪",
-        "value": 16
-       },
-       {
-        "label": "balls",
-        "emoji": "⚽",
-        "value": 8
-       },
-       {
-        "label": "fish",
-        "emoji": "🐟",
-        "value": 12
-       }
-      ],
-      "scale": 2
-     }
-    },
-    "skillId": "M-3-F6",
-    "level": 1,
-    "seed": 2,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[16,8,12]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "values": [
-      2,
-      8,
-      12
-     ],
-     "ask": "value",
-     "index": 1,
      "options": [
       8,
       9,
@@ -393,9 +145,9 @@
      ]
     },
     "prompt": {
-     "text": "How many rockets are there?",
+     "text": "How many balloons are there?",
      "speak": [
-      "How many rockets are there?"
+      "How many balloons are there?"
      ]
     },
     "stimulus": {
@@ -403,19 +155,19 @@
      "type": "picture",
      "categories": [
       {
-       "label": "bananas",
-       "emoji": "🍌",
-       "value": 2
+       "label": "balloons",
+       "emoji": "🎈",
+       "value": 8
       },
       {
        "label": "rockets",
        "emoji": "🚀",
-       "value": 8
+       "value": 10
       },
       {
-       "label": "frogs",
-       "emoji": "🐸",
-       "value": 12
+       "label": "stars",
+       "emoji": "⭐",
+       "value": 4
       }
      ],
      "scale": 2
@@ -453,378 +205,6 @@
      }
     ],
     "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "Each picture stands for",
-      {
-       "number": 2
-      },
-      ".",
-      "So there are",
-      {
-       "number": 8
-      },
-      "rockets."
-     ],
-     "steps": [
-      "Each picture stands for 2.",
-      "There are 4 pictures: 2, 4, 6, 8.",
-      "So there are 8 rockets."
-     ],
-     "visual": {
-      "kind": "graph",
-      "type": "picture",
-      "categories": [
-       {
-        "label": "bananas",
-        "emoji": "🍌",
-        "value": 2
-       },
-       {
-        "label": "rockets",
-        "emoji": "🚀",
-        "value": 8
-       },
-       {
-        "label": "frogs",
-        "emoji": "🐸",
-        "value": 12
-       }
-      ],
-      "scale": 2
-     }
-    },
-    "skillId": "M-3-F6",
-    "level": 1,
-    "seed": 3,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[2,8,12]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "values": [
-      4,
-      2,
-      16
-     ],
-     "ask": "value",
-     "index": 1,
-     "options": [
-      1,
-      2,
-      4
-     ]
-    },
-    "prompt": {
-     "text": "How many frogs are there?",
-     "speak": [
-      "How many frogs are there?"
-     ]
-    },
-    "stimulus": {
-     "kind": "graph",
-     "type": "picture",
-     "categories": [
-      {
-       "label": "ducks",
-       "emoji": "🦆",
-       "value": 4
-      },
-      {
-       "label": "frogs",
-       "emoji": "🐸",
-       "value": 2
-      },
-      {
-       "label": "rockets",
-       "emoji": "🚀",
-       "value": 16
-      }
-     ],
-     "scale": 2
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "l",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "l",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "l",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "Each picture stands for",
-      {
-       "number": 2
-      },
-      ".",
-      "So there are",
-      {
-       "number": 2
-      },
-      "frogs."
-     ],
-     "steps": [
-      "Each picture stands for 2.",
-      "There are 1 pictures: 2.",
-      "So there are 2 frogs."
-     ],
-     "visual": {
-      "kind": "graph",
-      "type": "picture",
-      "categories": [
-       {
-        "label": "ducks",
-        "emoji": "🦆",
-        "value": 4
-       },
-       {
-        "label": "frogs",
-        "emoji": "🐸",
-        "value": 2
-       },
-       {
-        "label": "rockets",
-        "emoji": "🚀",
-        "value": 16
-       }
-      ],
-      "scale": 2
-     }
-    },
-    "skillId": "M-3-F6",
-    "level": 1,
-    "seed": 4,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[4,2,16]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "values": [
-      12,
-      10,
-      2
-     ],
-     "ask": "value",
-     "index": 2,
-     "options": [
-      2,
-      3,
-      4
-     ]
-    },
-    "prompt": {
-     "text": "How many apples are there?",
-     "speak": [
-      "How many apples are there?"
-     ]
-    },
-    "stimulus": {
-     "kind": "graph",
-     "type": "picture",
-     "categories": [
-      {
-       "label": "frogs",
-       "emoji": "🐸",
-       "value": 12
-      },
-      {
-       "label": "flowers",
-       "emoji": "🌸",
-       "value": 10
-      },
-      {
-       "label": "apples",
-       "emoji": "🍎",
-       "value": 2
-      }
-     ],
-     "scale": 2
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "l",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "l",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "l",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "Each picture stands for",
-      {
-       "number": 2
-      },
-      ".",
-      "So there are",
-      {
-       "number": 2
-      },
-      "apples."
-     ],
-     "steps": [
-      "Each picture stands for 2.",
-      "There are 1 pictures: 2.",
-      "So there are 2 apples."
-     ],
-     "visual": {
-      "kind": "graph",
-      "type": "picture",
-      "categories": [
-       {
-        "label": "frogs",
-        "emoji": "🐸",
-        "value": 12
-       },
-       {
-        "label": "flowers",
-        "emoji": "🌸",
-        "value": 10
-       },
-       {
-        "label": "apples",
-        "emoji": "🍎",
-        "value": 2
-       }
-      ],
-      "scale": 2
-     }
-    },
-    "skillId": "M-3-F6",
-    "level": 1,
-    "seed": 5,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[12,10,2]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "values": [
-      8,
-      4,
-      16
-     ],
-     "ask": "value",
-     "index": 0,
-     "options": [
-      4,
-      7,
-      8
-     ]
-    },
-    "prompt": {
-     "text": "How many balloons are there?",
-     "speak": [
-      "How many balloons are there?"
-     ]
-    },
-    "stimulus": {
-     "kind": "graph",
-     "type": "picture",
-     "categories": [
-      {
-       "label": "balloons",
-       "emoji": "🎈",
-       "value": 8
-      },
-      {
-       "label": "bees",
-       "emoji": "🐝",
-       "value": 4
-      },
-      {
-       "label": "cars",
-       "emoji": "🚗",
-       "value": 16
-      }
-     ],
-     "scale": 2
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "l",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "l",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "l",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each picture stands for",
@@ -853,14 +233,14 @@
         "value": 8
        },
        {
-        "label": "bees",
-        "emoji": "🐝",
-        "value": 4
+        "label": "rockets",
+        "emoji": "🚀",
+        "value": 10
        },
        {
-        "label": "cars",
-        "emoji": "🚗",
-        "value": 16
+        "label": "stars",
+        "emoji": "⭐",
+        "value": 4
        }
       ],
       "scale": 2
@@ -868,30 +248,30 @@
     },
     "skillId": "M-3-F6",
     "level": 1,
-    "seed": 6,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[8,4,16]}"
+    "seed": 1,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[8,10,4]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "values": [
-      14,
       10,
-      2
+      12,
+      6
      ],
      "ask": "value",
-     "index": 0,
+     "index": 2,
      "options": [
-      14,
-      15,
-      16
+      6,
+      7,
+      8
      ]
     },
     "prompt": {
-     "text": "How many balls are there?",
+     "text": "How many fish are there?",
      "speak": [
-      "How many balls are there?"
+      "How many fish are there?"
      ]
     },
     "stimulus": {
@@ -899,19 +279,19 @@
      "type": "picture",
      "categories": [
       {
-       "label": "balls",
-       "emoji": "⚽",
-       "value": 14
-      },
-      {
        "label": "cookies",
        "emoji": "🍪",
        "value": 10
       },
       {
-       "label": "strawberries",
-       "emoji": "🍓",
-       "value": 2
+       "label": "balls",
+       "emoji": "⚽",
+       "value": 12
+      },
+      {
+       "label": "fish",
+       "emoji": "🐟",
+       "value": 6
       }
      ],
      "scale": 2
@@ -919,31 +299,31 @@
     "options": [
      {
       "kind": "text",
-      "value": "14",
+      "value": "6",
       "size": "l",
       "speak": [
        {
-        "number": 14
+        "number": 6
        }
       ]
      },
      {
       "kind": "text",
-      "value": "15",
+      "value": "7",
       "size": "l",
       "speak": [
        {
-        "number": 15
+        "number": 7
        }
       ]
      },
      {
       "kind": "text",
-      "value": "16",
+      "value": "8",
       "size": "l",
       "speak": [
        {
-        "number": 16
+        "number": 8
        }
       ]
      }
@@ -958,32 +338,156 @@
       ".",
       "So there are",
       {
-       "number": 14
+       "number": 6
       },
-      "balls."
+      "fish."
      ],
      "steps": [
       "Each picture stands for 2.",
-      "There are 7 pictures: 2, 4, 6, 8, 10, 12, 14.",
-      "So there are 14 balls."
+      "There are 3 pictures: 2, 4, 6.",
+      "So there are 6 fish."
      ],
      "visual": {
       "kind": "graph",
       "type": "picture",
       "categories": [
        {
-        "label": "balls",
-        "emoji": "⚽",
-        "value": 14
-       },
-       {
         "label": "cookies",
         "emoji": "🍪",
         "value": 10
        },
        {
-        "label": "strawberries",
-        "emoji": "🍓",
+        "label": "balls",
+        "emoji": "⚽",
+        "value": 12
+       },
+       {
+        "label": "fish",
+        "emoji": "🐟",
+        "value": 6
+       }
+      ],
+      "scale": 2
+     }
+    },
+    "skillId": "M-3-F6",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[10,12,6]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "values": [
+      8,
+      10,
+      2
+     ],
+     "ask": "value",
+     "index": 1,
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "How many rockets are there?",
+     "speak": [
+      "How many rockets are there?"
+     ]
+    },
+    "stimulus": {
+     "kind": "graph",
+     "type": "picture",
+     "categories": [
+      {
+       "label": "bananas",
+       "emoji": "🍌",
+       "value": 8
+      },
+      {
+       "label": "rockets",
+       "emoji": "🚀",
+       "value": 10
+      },
+      {
+       "label": "frogs",
+       "emoji": "🐸",
+       "value": 2
+      }
+     ],
+     "scale": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each picture stands for",
+      {
+       "number": 2
+      },
+      ".",
+      "So there are",
+      {
+       "number": 10
+      },
+      "rockets."
+     ],
+     "steps": [
+      "Each picture stands for 2.",
+      "There are 5 pictures: 2, 4, 6, 8, 10.",
+      "So there are 10 rockets."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "picture",
+      "categories": [
+       {
+        "label": "bananas",
+        "emoji": "🍌",
+        "value": 8
+       },
+       {
+        "label": "rockets",
+        "emoji": "🚀",
+        "value": 10
+       },
+       {
+        "label": "frogs",
+        "emoji": "🐸",
         "value": 2
        }
       ],
@@ -992,30 +496,30 @@
     },
     "skillId": "M-3-F6",
     "level": 1,
-    "seed": 7,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[14,10,2]}"
+    "seed": 3,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[8,10,2]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "values": [
-      6,
+      2,
       8,
-      4
+      12
      ],
      "ask": "value",
      "index": 2,
      "options": [
-      2,
-      3,
-      4
+      11,
+      12,
+      14
      ]
     },
     "prompt": {
-     "text": "How many strawberries are there?",
+     "text": "How many rockets are there?",
      "speak": [
-      "How many strawberries are there?"
+      "How many rockets are there?"
      ]
     },
     "stimulus": {
@@ -1023,9 +527,133 @@
      "type": "picture",
      "categories": [
       {
-       "label": "stars",
-       "emoji": "⭐",
-       "value": 6
+       "label": "ducks",
+       "emoji": "🦆",
+       "value": 2
+      },
+      {
+       "label": "frogs",
+       "emoji": "🐸",
+       "value": 8
+      },
+      {
+       "label": "rockets",
+       "emoji": "🚀",
+       "value": 12
+      }
+     ],
+     "scale": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each picture stands for",
+      {
+       "number": 2
+      },
+      ".",
+      "So there are",
+      {
+       "number": 12
+      },
+      "rockets."
+     ],
+     "steps": [
+      "Each picture stands for 2.",
+      "There are 6 pictures: 2, 4, 6, 8, 10, 12.",
+      "So there are 12 rockets."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "picture",
+      "categories": [
+       {
+        "label": "ducks",
+        "emoji": "🦆",
+        "value": 2
+       },
+       {
+        "label": "frogs",
+        "emoji": "🐸",
+        "value": 8
+       },
+       {
+        "label": "rockets",
+        "emoji": "🚀",
+        "value": 12
+       }
+      ],
+      "scale": 2
+     }
+    },
+    "skillId": "M-3-F6",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[2,8,12]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "values": [
+      2,
+      8,
+      6
+     ],
+     "ask": "value",
+     "index": 0,
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "How many frogs are there?",
+     "speak": [
+      "How many frogs are there?"
+     ]
+    },
+    "stimulus": {
+     "kind": "graph",
+     "type": "picture",
+     "categories": [
+      {
+       "label": "frogs",
+       "emoji": "🐸",
+       "value": 2
       },
       {
        "label": "flowers",
@@ -1033,9 +661,9 @@
        "value": 8
       },
       {
-       "label": "strawberries",
-       "emoji": "🍓",
-       "value": 4
+       "label": "apples",
+       "emoji": "🍎",
+       "value": 6
       }
      ],
      "scale": 2
@@ -1072,6 +700,130 @@
       ]
      }
     ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each picture stands for",
+      {
+       "number": 2
+      },
+      ".",
+      "So there are",
+      {
+       "number": 2
+      },
+      "frogs."
+     ],
+     "steps": [
+      "Each picture stands for 2.",
+      "There are 1 pictures: 2.",
+      "So there are 2 frogs."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "picture",
+      "categories": [
+       {
+        "label": "frogs",
+        "emoji": "🐸",
+        "value": 2
+       },
+       {
+        "label": "flowers",
+        "emoji": "🌸",
+        "value": 8
+       },
+       {
+        "label": "apples",
+        "emoji": "🍎",
+        "value": 6
+       }
+      ],
+      "scale": 2
+     }
+    },
+    "skillId": "M-3-F6",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[2,8,6]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "values": [
+      6,
+      2,
+      12
+     ],
+     "ask": "value",
+     "index": 2,
+     "options": [
+      6,
+      10,
+      12
+     ]
+    },
+    "prompt": {
+     "text": "How many cars are there?",
+     "speak": [
+      "How many cars are there?"
+     ]
+    },
+    "stimulus": {
+     "kind": "graph",
+     "type": "picture",
+     "categories": [
+      {
+       "label": "balloons",
+       "emoji": "🎈",
+       "value": 6
+      },
+      {
+       "label": "bees",
+       "emoji": "🐝",
+       "value": 2
+      },
+      {
+       "label": "cars",
+       "emoji": "🚗",
+       "value": 12
+      }
+     ],
+     "scale": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
@@ -1082,14 +834,262 @@
       ".",
       "So there are",
       {
-       "number": 4
+       "number": 12
       },
-      "strawberries."
+      "cars."
      ],
      "steps": [
       "Each picture stands for 2.",
-      "There are 2 pictures: 2, 4.",
-      "So there are 4 strawberries."
+      "There are 6 pictures: 2, 4, 6, 8, 10, 12.",
+      "So there are 12 cars."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "picture",
+      "categories": [
+       {
+        "label": "balloons",
+        "emoji": "🎈",
+        "value": 6
+       },
+       {
+        "label": "bees",
+        "emoji": "🐝",
+        "value": 2
+       },
+       {
+        "label": "cars",
+        "emoji": "🚗",
+        "value": 12
+       }
+      ],
+      "scale": 2
+     }
+    },
+    "skillId": "M-3-F6",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[6,2,12]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "values": [
+      8,
+      10,
+      2
+     ],
+     "ask": "value",
+     "index": 0,
+     "options": [
+      4,
+      6,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "How many balls are there?",
+     "speak": [
+      "How many balls are there?"
+     ]
+    },
+    "stimulus": {
+     "kind": "graph",
+     "type": "picture",
+     "categories": [
+      {
+       "label": "balls",
+       "emoji": "⚽",
+       "value": 8
+      },
+      {
+       "label": "cookies",
+       "emoji": "🍪",
+       "value": 10
+      },
+      {
+       "label": "strawberries",
+       "emoji": "🍓",
+       "value": 2
+      }
+     ],
+     "scale": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each picture stands for",
+      {
+       "number": 2
+      },
+      ".",
+      "So there are",
+      {
+       "number": 8
+      },
+      "balls."
+     ],
+     "steps": [
+      "Each picture stands for 2.",
+      "There are 4 pictures: 2, 4, 6, 8.",
+      "So there are 8 balls."
+     ],
+     "visual": {
+      "kind": "graph",
+      "type": "picture",
+      "categories": [
+       {
+        "label": "balls",
+        "emoji": "⚽",
+        "value": 8
+       },
+       {
+        "label": "cookies",
+        "emoji": "🍪",
+        "value": 10
+       },
+       {
+        "label": "strawberries",
+        "emoji": "🍓",
+        "value": 2
+       }
+      ],
+      "scale": 2
+     }
+    },
+    "skillId": "M-3-F6",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":0,\"values\":[8,10,2]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "values": [
+      4,
+      6,
+      10
+     ],
+     "ask": "value",
+     "index": 1,
+     "options": [
+      5,
+      6,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "How many flowers are there?",
+     "speak": [
+      "How many flowers are there?"
+     ]
+    },
+    "stimulus": {
+     "kind": "graph",
+     "type": "picture",
+     "categories": [
+      {
+       "label": "stars",
+       "emoji": "⭐",
+       "value": 4
+      },
+      {
+       "label": "flowers",
+       "emoji": "🌸",
+       "value": 6
+      },
+      {
+       "label": "strawberries",
+       "emoji": "🍓",
+       "value": 10
+      }
+     ],
+     "scale": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each picture stands for",
+      {
+       "number": 2
+      },
+      ".",
+      "So there are",
+      {
+       "number": 6
+      },
+      "flowers."
+     ],
+     "steps": [
+      "Each picture stands for 2.",
+      "There are 3 pictures: 2, 4, 6.",
+      "So there are 6 flowers."
      ],
      "visual": {
       "kind": "graph",
@@ -1098,17 +1098,17 @@
        {
         "label": "stars",
         "emoji": "⭐",
-        "value": 6
+        "value": 4
        },
        {
         "label": "flowers",
         "emoji": "🌸",
-        "value": 8
+        "value": 6
        },
        {
         "label": "strawberries",
         "emoji": "🍓",
-        "value": 4
+        "value": 10
        }
       ],
       "scale": 2
@@ -1117,23 +1117,23 @@
     "skillId": "M-3-F6",
     "level": 1,
     "seed": 8,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[6,8,4]}"
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[4,6,10]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "values": [
-      4,
       2,
-      14
+      6,
+      12
      ],
      "ask": "value",
      "index": 2,
      "options": [
-      14,
-      15,
-      16
+      6,
+      12,
+      13
      ]
     },
     "prompt": {
@@ -1149,17 +1149,17 @@
       {
        "label": "bananas",
        "emoji": "🍌",
-       "value": 4
+       "value": 2
       },
       {
        "label": "apples",
        "emoji": "🍎",
-       "value": 2
+       "value": 6
       },
       {
        "label": "flowers",
        "emoji": "🌸",
-       "value": 14
+       "value": 12
       }
      ],
      "scale": 2
@@ -1167,36 +1167,36 @@
     "options": [
      {
       "kind": "text",
-      "value": "14",
+      "value": "6",
       "size": "l",
       "speak": [
        {
-        "number": 14
+        "number": 6
        }
       ]
      },
      {
       "kind": "text",
-      "value": "15",
+      "value": "12",
       "size": "l",
       "speak": [
        {
-        "number": 15
+        "number": 12
        }
       ]
      },
      {
       "kind": "text",
-      "value": "16",
+      "value": "13",
       "size": "l",
       "speak": [
        {
-        "number": 16
+        "number": 13
        }
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "Each picture stands for",
@@ -1206,14 +1206,14 @@
       ".",
       "So there are",
       {
-       "number": 14
+       "number": 12
       },
       "flowers."
      ],
      "steps": [
       "Each picture stands for 2.",
-      "There are 7 pictures: 2, 4, 6, 8, 10, 12, 14.",
-      "So there are 14 flowers."
+      "There are 6 pictures: 2, 4, 6, 8, 10, 12.",
+      "So there are 12 flowers."
      ],
      "visual": {
       "kind": "graph",
@@ -1222,17 +1222,17 @@
        {
         "label": "bananas",
         "emoji": "🍌",
-        "value": 4
+        "value": 2
        },
        {
         "label": "apples",
         "emoji": "🍎",
-        "value": 2
+        "value": 6
        },
        {
         "label": "flowers",
         "emoji": "🌸",
-        "value": 14
+        "value": 12
        }
       ],
       "scale": 2
@@ -1241,23 +1241,23 @@
     "skillId": "M-3-F6",
     "level": 1,
     "seed": 9,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[4,2,14]}"
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":2,\"values\":[2,6,12]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "values": [
-      8,
-      14,
-      4
+      10,
+      2,
+      6
      ],
      "ask": "value",
      "index": 1,
      "options": [
-      7,
-      14,
-      16
+      1,
+      2,
+      3
      ]
     },
     "prompt": {
@@ -1273,17 +1273,17 @@
       {
        "label": "turtles",
        "emoji": "🐢",
-       "value": 8
+       "value": 10
       },
       {
        "label": "bees",
        "emoji": "🐝",
-       "value": 14
+       "value": 2
       },
       {
        "label": "cars",
        "emoji": "🚗",
-       "value": 4
+       "value": 6
       }
      ],
      "scale": 2
@@ -1291,31 +1291,31 @@
     "options": [
      {
       "kind": "text",
-      "value": "7",
+      "value": "1",
       "size": "l",
       "speak": [
        {
-        "number": 7
+        "number": 1
        }
       ]
      },
      {
       "kind": "text",
-      "value": "14",
+      "value": "2",
       "size": "l",
       "speak": [
        {
-        "number": 14
+        "number": 2
        }
       ]
      },
      {
       "kind": "text",
-      "value": "16",
+      "value": "3",
       "size": "l",
       "speak": [
        {
-        "number": 16
+        "number": 3
        }
       ]
      }
@@ -1330,14 +1330,14 @@
       ".",
       "So there are",
       {
-       "number": 14
+       "number": 2
       },
       "bees."
      ],
      "steps": [
       "Each picture stands for 2.",
-      "There are 7 pictures: 2, 4, 6, 8, 10, 12, 14.",
-      "So there are 14 bees."
+      "There are 1 pictures: 2.",
+      "So there are 2 bees."
      ],
      "visual": {
       "kind": "graph",
@@ -1346,17 +1346,17 @@
        {
         "label": "turtles",
         "emoji": "🐢",
-        "value": 8
+        "value": 10
        },
        {
         "label": "bees",
         "emoji": "🐝",
-        "value": 14
+        "value": 2
        },
        {
         "label": "cars",
         "emoji": "🚗",
-        "value": 4
+        "value": 6
        }
       ],
       "scale": 2
@@ -1365,7 +1365,7 @@
     "skillId": "M-3-F6",
     "level": 1,
     "seed": 10,
-    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[8,14,4]}"
+    "key": "M-3-F6|1|{\"ask\":\"value\",\"index\":1,\"values\":[10,2,6]}"
    }
   ],
   "2": [
@@ -2733,7 +2733,7 @@
     },
     "stimulus": {
      "kind": "graph",
-     "type": "picture",
+     "type": "bar",
      "categories": [
       {
        "label": "cookies",
@@ -2787,7 +2787,7 @@
      ],
      "visual": {
       "kind": "graph",
-      "type": "picture",
+      "type": "bar",
       "categories": [
        {
         "label": "cookies",
@@ -2935,7 +2935,7 @@
     },
     "stimulus": {
      "kind": "graph",
-     "type": "picture",
+     "type": "bar",
      "categories": [
       {
        "label": "ducks",
@@ -2989,7 +2989,7 @@
      ],
      "visual": {
       "kind": "graph",
-      "type": "picture",
+      "type": "bar",
       "categories": [
        {
         "label": "ducks",
@@ -3137,7 +3137,7 @@
     },
     "stimulus": {
      "kind": "graph",
-     "type": "picture",
+     "type": "bar",
      "categories": [
       {
        "label": "balloons",
@@ -3191,7 +3191,7 @@
      ],
      "visual": {
       "kind": "graph",
-      "type": "picture",
+      "type": "bar",
       "categories": [
        {
         "label": "balloons",
@@ -3238,7 +3238,7 @@
     },
     "stimulus": {
      "kind": "graph",
-     "type": "picture",
+     "type": "bar",
      "categories": [
       {
        "label": "balls",
@@ -3292,7 +3292,7 @@
      ],
      "visual": {
       "kind": "graph",
-      "type": "picture",
+      "type": "bar",
       "categories": [
        {
         "label": "balls",

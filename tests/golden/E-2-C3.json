@@ -1,0 +1,2001 @@
+{
+ "skillId": "E-2-C3",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "target": "walk",
+   "relation": "past",
+   "options": [
+    "walking",
+    "walks",
+    "walked"
+   ]
+  },
+  "prompt": {
+   "text": "Today I walk. Yesterday I ___.",
+   "speak": [
+    "Today I",
+    {
+     "word": "walk"
+    },
+    ". Yesterday I blank."
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "walking",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "walks",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "walked",
+    "size": "l"
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "Add ed to tell about the past."
+   ],
+   "steps": [
+    "Add ed to tell about the past.",
+    "Yesterday I walked."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "walk → walked",
+    "size": "l"
+   }
+  },
+  "skillId": "E-2-C3",
+  "level": 1,
+  "seed": 523,
+  "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"walk\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "call",
+     "relation": "past",
+     "options": [
+      "called",
+      "calleded",
+      "calling"
+     ]
+    },
+    "prompt": {
+     "text": "Today I call. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "call"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "called",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calleded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calling",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I called."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "call → called",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 1,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"call\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "call",
+     "relation": "past",
+     "options": [
+      "called",
+      "calleded",
+      "calling"
+     ]
+    },
+    "prompt": {
+     "text": "Today I call. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "call"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "called",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calleded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calling",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I called."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "call → called",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 2,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"call\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "call",
+     "relation": "past",
+     "options": [
+      "calleded",
+      "calling",
+      "called"
+     ]
+    },
+    "prompt": {
+     "text": "Today I call. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "call"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "calleded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calling",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "called",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I called."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "call → called",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 3,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"call\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "kick",
+     "relation": "past",
+     "options": [
+      "kicking",
+      "kickeded",
+      "kicked"
+     ]
+    },
+    "prompt": {
+     "text": "Today I kick. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "kick"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "kicking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kickeded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicked",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I kicked."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "kick → kicked",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 4,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"kick\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "call",
+     "relation": "past",
+     "options": [
+      "calls",
+      "called",
+      "calling"
+     ]
+    },
+    "prompt": {
+     "text": "Today I call. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "call"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "calls",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "called",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "calling",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I called."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "call → called",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 5,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"call\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "look",
+     "relation": "past",
+     "options": [
+      "looking",
+      "lookeded",
+      "looked"
+     ]
+    },
+    "prompt": {
+     "text": "Today I look. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "look"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "looking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "lookeded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "looked",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I looked."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "look → looked",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 6,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"look\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "jump",
+     "relation": "past",
+     "options": [
+      "jumped",
+      "jumpeded",
+      "jumping"
+     ]
+    },
+    "prompt": {
+     "text": "Today I jump. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "jump"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jumped",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumpeded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumping",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I jumped."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "jump → jumped",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 7,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"jump\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "play",
+     "relation": "past",
+     "options": [
+      "played",
+      "playeded",
+      "plays"
+     ]
+    },
+    "prompt": {
+     "text": "Today I play. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "play"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "playeded",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I played."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "play → played",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 8,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"play\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "play",
+     "relation": "past",
+     "options": [
+      "played",
+      "playing",
+      "plays"
+     ]
+    },
+    "prompt": {
+     "text": "Today I play. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "play"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I played."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "play → played",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 9,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"play\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "look",
+     "relation": "past",
+     "options": [
+      "looks",
+      "looked",
+      "looking"
+     ]
+    },
+    "prompt": {
+     "text": "Today I look. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "look"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "looks",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "looked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "looking",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Add ed to tell about the past."
+     ],
+     "steps": [
+      "Add ed to tell about the past.",
+      "Yesterday I looked."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "look → looked",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 1,
+    "seed": 10,
+    "key": "E-2-C3|1|{\"relation\":\"past\",\"target\":\"look\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "swim",
+     "relation": "past",
+     "options": [
+      "swamed",
+      "swam",
+      "swiming"
+     ]
+    },
+    "prompt": {
+     "text": "Today I swim. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "swim"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "swamed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swam",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swiming",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Swim has its own past word: swam."
+     ],
+     "steps": [
+      "Swim has its own past word: swam.",
+      "Yesterday I swam."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "swim → swam",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 1,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"swim\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "swim",
+     "relation": "past",
+     "options": [
+      "swam",
+      "swiming",
+      "swamed"
+     ]
+    },
+    "prompt": {
+     "text": "Today I swim. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "swim"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "swam",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swiming",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swamed",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Swim has its own past word: swam."
+     ],
+     "steps": [
+      "Swim has its own past word: swam.",
+      "Yesterday I swam."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "swim → swam",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 2,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"swim\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "swim",
+     "relation": "past",
+     "options": [
+      "swiming",
+      "swam",
+      "swamed"
+     ]
+    },
+    "prompt": {
+     "text": "Today I swim. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "swim"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "swiming",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swam",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swamed",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Swim has its own past word: swam."
+     ],
+     "steps": [
+      "Swim has its own past word: swam.",
+      "Yesterday I swam."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "swim → swam",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 3,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"swim\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "come",
+     "relation": "past",
+     "options": [
+      "comeing",
+      "cameed",
+      "came"
+     ]
+    },
+    "prompt": {
+     "text": "Today I come. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "come"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "comeing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cameed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "came",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Come has its own past word: came."
+     ],
+     "steps": [
+      "Come has its own past word: came.",
+      "Yesterday I came."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "come → came",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 4,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"come\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "swim",
+     "relation": "past",
+     "options": [
+      "swimed",
+      "swiming",
+      "swam"
+     ]
+    },
+    "prompt": {
+     "text": "Today I swim. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "swim"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "swimed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swiming",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "swam",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Swim has its own past word: swam."
+     ],
+     "steps": [
+      "Swim has its own past word: swam.",
+      "Yesterday I swam."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "swim → swam",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 5,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"swim\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sit",
+     "relation": "past",
+     "options": [
+      "sated",
+      "sat",
+      "siting"
+     ]
+    },
+    "prompt": {
+     "text": "Today I sit. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "sit"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "sated",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "siting",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Sit has its own past word: sat."
+     ],
+     "steps": [
+      "Sit has its own past word: sat.",
+      "Yesterday I sat."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "sit → sat",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 6,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"sit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "run",
+     "relation": "past",
+     "options": [
+      "runed",
+      "ran",
+      "raned"
+     ]
+    },
+    "prompt": {
+     "text": "Today I run. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "run"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "runed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "raned",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Run has its own past word: ran."
+     ],
+     "steps": [
+      "Run has its own past word: ran.",
+      "Yesterday I ran."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "run → ran",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 7,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"run\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "see",
+     "relation": "past",
+     "options": [
+      "seeed",
+      "saw",
+      "sawed"
+     ]
+    },
+    "prompt": {
+     "text": "Today I see. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "see"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "seeed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "saw",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sawed",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "See has its own past word: saw."
+     ],
+     "steps": [
+      "See has its own past word: saw.",
+      "Yesterday I saw."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "see → saw",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 8,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"see\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "see",
+     "relation": "past",
+     "options": [
+      "saw",
+      "seeing",
+      "seeed"
+     ]
+    },
+    "prompt": {
+     "text": "Today I see. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "see"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "saw",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "seeing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "seeed",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "See has its own past word: saw."
+     ],
+     "steps": [
+      "See has its own past word: saw.",
+      "Yesterday I saw."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "see → saw",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 9,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"see\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "sit",
+     "relation": "past",
+     "options": [
+      "sited",
+      "sat",
+      "sits"
+     ]
+    },
+    "prompt": {
+     "text": "Today I sit. Yesterday I ___.",
+     "speak": [
+      "Today I",
+      {
+       "word": "sit"
+      },
+      ". Yesterday I blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "sited",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "sits",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Sit has its own past word: sat."
+     ],
+     "steps": [
+      "Sit has its own past word: sat.",
+      "Yesterday I sat."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "sit → sat",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 2,
+    "seed": 10,
+    "key": "E-2-C3|2|{\"relation\":\"past\",\"target\":\"sit\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "This morning Sam ___ to the bus.",
+     "relation": "pastSentence",
+     "options": [
+      "runing",
+      "ran",
+      "runed"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "This morning Sam ___ to the bus.",
+     "size": "l",
+     "speak": [
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "runing",
+      "size": "l",
+      "speak": [
+       "runing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l",
+      "speak": [
+       "ran"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "runed",
+      "size": "l",
+      "speak": [
+       "runed"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ran",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "This morning Sam ran to the bus."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "This morning Sam ran to the bus.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 1,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"This morning Sam ___ to the bus.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "This morning Sam ___ to the bus.",
+     "relation": "pastSentence",
+     "options": [
+      "ran",
+      "runed",
+      "runing"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "This morning Sam ___ to the bus.",
+     "size": "l",
+     "speak": [
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l",
+      "speak": [
+       "ran"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "runed",
+      "size": "l",
+      "speak": [
+       "runed"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "runing",
+      "size": "l",
+      "speak": [
+       "runing"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ran",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "This morning Sam ran to the bus."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "This morning Sam ran to the bus.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 2,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"This morning Sam ___ to the bus.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "This morning Sam ___ to the bus.",
+     "relation": "pastSentence",
+     "options": [
+      "runed",
+      "ran",
+      "runing"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "This morning Sam ___ to the bus.",
+     "size": "l",
+     "speak": [
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "runed",
+      "size": "l",
+      "speak": [
+       "runed"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l",
+      "speak": [
+       "ran"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "runing",
+      "size": "l",
+      "speak": [
+       "runing"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ran",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "This morning Sam ran to the bus."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "This morning Sam ran to the bus.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 3,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"This morning Sam ___ to the bus.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Yesterday I ___ Mom bake a cake.",
+     "relation": "pastSentence",
+     "options": [
+      "helps",
+      "helping",
+      "helped"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Yesterday I blank Mom bake a cake."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Yesterday I ___ Mom bake a cake.",
+     "size": "l",
+     "speak": [
+      "Yesterday I blank Mom bake a cake."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "helps",
+      "size": "l",
+      "speak": [
+       "helps"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "helping",
+      "size": "l",
+      "speak": [
+       "helping"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "helped",
+      "size": "l",
+      "speak": [
+       "helped"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "helped",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Yesterday I helped Mom bake a cake."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Yesterday I helped Mom bake a cake.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 4,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Yesterday I ___ Mom bake a cake.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "This morning Sam ___ to the bus.",
+     "relation": "pastSentence",
+     "options": [
+      "runs",
+      "runed",
+      "ran"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "This morning Sam ___ to the bus.",
+     "size": "l",
+     "speak": [
+      "This morning Sam blank to the bus."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "runs",
+      "size": "l",
+      "speak": [
+       "runs"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "runed",
+      "size": "l",
+      "speak": [
+       "runed"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ran",
+      "size": "l",
+      "speak": [
+       "ran"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ran",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "This morning Sam ran to the bus."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "This morning Sam ran to the bus.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 5,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"This morning Sam ___ to the bus.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Yesterday we ___ tag at recess.",
+     "relation": "pastSentence",
+     "options": [
+      "plays",
+      "playing",
+      "played"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Yesterday we blank tag at recess."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Yesterday we ___ tag at recess.",
+     "size": "l",
+     "speak": [
+      "Yesterday we blank tag at recess."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l",
+      "speak": [
+       "plays"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l",
+      "speak": [
+       "playing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l",
+      "speak": [
+       "played"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "played",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Yesterday we played tag at recess."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Yesterday we played tag at recess.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 6,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Yesterday we ___ tag at recess.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Yesterday we ___ to the park.",
+     "relation": "pastSentence",
+     "options": [
+      "gos",
+      "went",
+      "going"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Yesterday we blank to the park."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Yesterday we ___ to the park.",
+     "size": "l",
+     "speak": [
+      "Yesterday we blank to the park."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "gos",
+      "size": "l",
+      "speak": [
+       "gos"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "went",
+      "size": "l",
+      "speak": [
+       "went"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "going",
+      "size": "l",
+      "speak": [
+       "going"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "went",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Yesterday we went to the park."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Yesterday we went to the park.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 7,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Yesterday we ___ to the park.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Last night I ___ a big dinner.",
+     "relation": "pastSentence",
+     "options": [
+      "eats",
+      "ate",
+      "eating"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Last night I blank a big dinner."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Last night I ___ a big dinner.",
+     "size": "l",
+     "speak": [
+      "Last night I blank a big dinner."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "eats",
+      "size": "l",
+      "speak": [
+       "eats"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ate",
+      "size": "l",
+      "speak": [
+       "ate"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "eating",
+      "size": "l",
+      "speak": [
+       "eating"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ate",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Last night I ate a big dinner."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Last night I ate a big dinner.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 8,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Last night I ___ a big dinner.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Last night I ___ a big dinner.",
+     "relation": "pastSentence",
+     "options": [
+      "ate",
+      "eated",
+      "eats"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Last night I blank a big dinner."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Last night I ___ a big dinner.",
+     "size": "l",
+     "speak": [
+      "Last night I blank a big dinner."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "ate",
+      "size": "l",
+      "speak": [
+       "ate"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "eated",
+      "size": "l",
+      "speak": [
+       "eated"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "eats",
+      "size": "l",
+      "speak": [
+       "eats"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "ate",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Last night I ate a big dinner."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Last night I ate a big dinner.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 9,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Last night I ___ a big dinner.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "Yesterday we ___ tag at recess.",
+     "relation": "pastSentence",
+     "options": [
+      "play",
+      "played",
+      "plays"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Yesterday we blank tag at recess."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Yesterday we ___ tag at recess.",
+     "size": "l",
+     "speak": [
+      "Yesterday we blank tag at recess."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "play",
+      "size": "l",
+      "speak": [
+       "play"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l",
+      "speak": [
+       "played"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l",
+      "speak": [
+       "plays"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It already happened, so the verb is in the past:",
+      "played",
+      "."
+     ],
+     "steps": [
+      "Yesterday and last tell us it already happened.",
+      "Yesterday we played tag at recess."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Yesterday we played tag at recess.",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C3",
+    "level": 3,
+    "seed": 10,
+    "key": "E-2-C3|3|{\"relation\":\"pastSentence\",\"target\":\"Yesterday we ___ tag at recess.\"}"
+   }
+  ]
+ }
+}

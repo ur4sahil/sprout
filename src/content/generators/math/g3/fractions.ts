@@ -102,7 +102,7 @@ export const nameFractionsGenerator: SkillGenerator = {
 };
 
 // ---- E.2 Fractions on a number line ----
-// Levels: halves and fourths / thirds and sixths / eighths. Oracle: fractionValue.
+// Levels: halves and fourths / thirds and sixths / eighths / put the dot on a fraction (numberLineTap). Oracle: fractionValue.
 
 function lineExplanation(n: number, d: number): Explanation {
   return {
@@ -113,6 +113,19 @@ function lineExplanation(n: number, d: number): Explanation {
 }
 
 function onALine(level: Level, rng: Rng): QuestionDraft {
+  if (level === 4) {
+    const d = rng.pick([3, 4, 6, 8]);
+    const n = rng.int(1, d - 1);
+    return {
+      type: 'numberLineTap',
+      mode: 'look',
+      facts: { n, d, ask: 'value', oracle: 'fractionValue' },
+      prompt: { text: `Put the dot on ${fractionText(n, d)}.`, speak: ['Put the dot on', ...fractionSay(n, d), '.'] },
+      line: { min: 0, max: d, step: 1, denominator: d },
+      answer: n,
+      explanation: lineExplanation(n, d),
+    };
+  }
   const d = rng.pick(level === 1 ? [2, 4] : level === 2 ? [3, 6] : [8]);
   const n = rng.int(1, d - 1);
   const choices = threeFractions([n, d], [[n + 1, d], [n - 1, d], [n, d * 2], [d - n, d], [n, d + 1]], rng);
@@ -133,8 +146,8 @@ export const fractionLineGenerator: SkillGenerator = {
   skillId: 'M-3-E2',
   // Levels with fewer than eight different questions: there are only so many fractions with these parts.
   pool: { 1: 4, 2: 7, 3: 7 },
-  maxLevel: 3,
-  itemTypes: ['choice'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberLineTap'],
   lists: [],
   generate: onALine,
   exampleSeed: 342,

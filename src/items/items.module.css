@@ -222,3 +222,121 @@
   justify-content: center;
   max-width: 100%;
 }
+
+/* The number line a child taps: wide, with room under the line for a finger. */
+.lineTap {
+  width: 100%;
+  max-width: var(--width-question);
+  height: auto;
+  touch-action: none;
+  cursor: pointer;
+}
+
+/* Set the clock: the face takes a finger to drag the minute hand; the buttons sit under it. */
+.clockFace {
+  touch-action: none;
+  cursor: pointer;
+}
+
+.clockButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.clockWord {
+  align-self: center;
+  font-weight: 700;
+}
+
+/* Build a bar graph: a row for each thing, its blocks between a lower and a raise button. */
+.barRows {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 2fr) auto;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.barName {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.barTrack {
+  width: 100%;
+  height: var(--space-6);
+}
+
+.barKey {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* A sum in columns, with small boxes above for carried or borrowed ones. */
+.sum {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+}
+
+.sumDigit {
+  min-width: var(--tap-min);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-display);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.sumBottom {
+  border-bottom: var(--border-thick) solid var(--color-ink);
+}
+
+.sumBox {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-display);
+}
+
+.carry {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  background: none;
+  border: var(--border-thin) dashed var(--color-line);
+  border-radius: var(--radius-s);
+  color: var(--color-ink-soft);
+  font-weight: 700;
+  touch-action: manipulation;
+}
+
+/* A sentence with a gap that takes a word. */
+.gapLine {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-size: var(--text-l);
+  font-weight: 700;
+  text-align: center;
+}
+
+.gap {
+  min-width: var(--size-tile);
+  min-height: var(--tap-min);
+  padding: var(--space-2);
+  border: var(--border) dashed var(--color-brand);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  touch-action: manipulation;
+}

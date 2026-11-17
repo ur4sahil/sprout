@@ -87,6 +87,27 @@ function countUpExplanation(from: number, to: number, visual: Visual): Explanati
 }
 
 function missingNumber(level: Level, rng: Rng): QuestionDraft {
+  if (level === 4) {
+    // Move the number into the gap (dragWord, added Nov 17, 2026): within 20, either part missing.
+    const total = rng.int(11, 20);
+    const a = rng.int(total - 10, 10);
+    const b = total - a;
+    const first = rng.bool();
+    const shownPart = first ? b : a;
+    const missing = first ? a : b;
+    const values = numeralChoices(missing, [missing + 1, missing - 1, total, shownPart], 0, 30, rng);
+    return {
+      type: 'dragWord',
+      mode: 'look',
+      facts: { a, b, total, blank: first ? 'a' : 'b', options: values },
+      prompt: { text: 'Move the number that makes it true into the gap.', speak: ['Move the number that makes it true into the gap.'] },
+      before: first ? '' : `${a} +`,
+      after: first ? `+ ${b} = ${total}` : `= ${total}`,
+      options: values.map((value) => numeral(value)),
+      answerIndex: values.indexOf(missing),
+      explanation: countUpExplanation(shownPart, total, equation(a, '+', b, '=', total)),
+    };
+  }
   if (level === 3) {
     // "9 minus what equals 4?" The part taken away is what is counted up from 4 to 9.
     const whole = rng.int(6, 20);
@@ -122,8 +143,8 @@ function missingNumber(level: Level, rng: Rng): QuestionDraft {
 
 export const missingInEquationGenerator: SkillGenerator = {
   skillId: 'M-1-B5',
-  maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'numberPad', 'dragWord'],
   lists: [],
   generate: missingNumber,
   exampleSeed: 115,

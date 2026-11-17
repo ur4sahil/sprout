@@ -1,0 +1,2347 @@
+{
+ "skillId": "E-2-C1",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "items": [
+    "happy",
+    "jump",
+    "river"
+   ],
+   "relation": "wordKind",
+   "target": "kinds",
+   "bins": [
+    "noun",
+    "verb",
+    "adjective"
+   ]
+  },
+  "prompt": {
+   "text": "Sort the words: noun, verb or adjective.",
+   "speak": [
+    "Sort the words: noun, verb or adjective."
+   ]
+  },
+  "items": [
+   {
+    "kind": "text",
+    "value": "happy",
+    "size": "l",
+    "speak": [
+     "happy"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "jump",
+    "size": "l",
+    "speak": [
+     "jump"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "river",
+    "size": "l",
+    "speak": [
+     "river"
+    ]
+   }
+  ],
+  "bins": [
+   {
+    "label": "Noun",
+    "speak": [
+     "Noun: a person, place or thing"
+    ]
+   },
+   {
+    "label": "Verb",
+    "speak": [
+     "Verb: an action"
+    ]
+   },
+   {
+    "label": "Adjective",
+    "speak": [
+     "Adjective: a describing word"
+    ]
+   }
+  ],
+  "answerBin": [
+   2,
+   1,
+   0
+  ],
+  "explanation": {
+   "speak": [
+    "A noun names a person, place or thing.",
+    "A verb is an action, something you do.",
+    "An adjective describes, it tells what something is like."
+   ],
+   "steps": [
+    "A noun names a person, place or thing.",
+    "A verb is an action, something you do.",
+    "An adjective describes, it tells what something is like.",
+    "happy: adjective, jump: verb, river: noun."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "happy  jump  river",
+    "size": "l"
+   }
+  },
+  "skillId": "E-2-C1",
+  "level": 1,
+  "seed": 521,
+  "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"happy\",\"jump\",\"river\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "write",
+      "happy",
+      "tree"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "write",
+      "size": "l",
+      "speak": [
+       "write"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "happy",
+      "size": "l",
+      "speak": [
+       "happy"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       "tree"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "write: verb, happy: adjective, tree: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "write  happy  tree",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 1,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"write\",\"happy\",\"tree\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "sing",
+      "soft",
+      "teacher"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "soft",
+      "size": "l",
+      "speak": [
+       "soft"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "sing: verb, soft: adjective, teacher: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "sing  soft  teacher",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 2,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"sing\",\"soft\",\"teacher\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "book",
+      "throw",
+      "big"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "throw",
+      "size": "l",
+      "speak": [
+       "throw"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "book: noun, throw: verb, big: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "book  throw  big",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 3,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"book\",\"throw\",\"big\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "big",
+      "river",
+      "run"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "river",
+      "size": "l",
+      "speak": [
+       "river"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       "run"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "big: adjective, river: noun, run: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "big  river  run",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 4,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"big\",\"river\",\"run\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "cold",
+      "sing",
+      "teacher"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "cold: adjective, sing: verb, teacher: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "cold  sing  teacher",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 5,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"cold\",\"sing\",\"teacher\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "write",
+      "book",
+      "cold"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "write",
+      "size": "l",
+      "speak": [
+       "write"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "write: verb, book: noun, cold: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "write  book  cold",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 6,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"write\",\"book\",\"cold\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "throw",
+      "teacher",
+      "happy"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "throw",
+      "size": "l",
+      "speak": [
+       "throw"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "happy",
+      "size": "l",
+      "speak": [
+       "happy"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "throw: verb, teacher: noun, happy: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "throw  teacher  happy",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"throw\",\"teacher\",\"happy\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "dog",
+      "soft",
+      "sing"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "soft",
+      "size": "l",
+      "speak": [
+       "soft"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "dog: noun, soft: adjective, sing: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "dog  soft  sing",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 8,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"dog\",\"soft\",\"sing\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "book",
+      "big",
+      "sing"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "book: noun, big: adjective, sing: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "book  big  sing",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 9,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"book\",\"big\",\"sing\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "tree",
+      "swim",
+      "tall"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       "tree"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       "swim"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tall",
+      "size": "l",
+      "speak": [
+       "tall"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "tree: noun, swim: verb, tall: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "tree  swim  tall",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 1,
+    "seed": 10,
+    "key": "E-2-C1|1|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"tree\",\"swim\",\"tall\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "happy",
+      "write",
+      "sing",
+      "cold",
+      "tree",
+      "ball"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "happy",
+      "size": "l",
+      "speak": [
+       "happy"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "write",
+      "size": "l",
+      "speak": [
+       "write"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       "tree"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       "ball"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     1,
+     2,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "happy: adjective, write: verb, sing: verb, cold: adjective, tree: noun, ball: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "happy  write  sing  cold  tree  ball",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 1,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"happy\",\"write\",\"sing\",\"cold\",\"tree\",\"ball\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "sing",
+      "dog",
+      "sleep",
+      "soft",
+      "tall",
+      "teacher"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sleep",
+      "size": "l",
+      "speak": [
+       "sleep"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "soft",
+      "size": "l",
+      "speak": [
+       "soft"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tall",
+      "size": "l",
+      "speak": [
+       "tall"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     2,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "sing: verb, dog: noun, sleep: verb, soft: adjective, tall: adjective, teacher: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "sing  dog  sleep  soft  tall  teacher",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 2,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"sing\",\"dog\",\"sleep\",\"soft\",\"tall\",\"teacher\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "teacher",
+      "climb",
+      "cold",
+      "book",
+      "throw",
+      "big"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "climb",
+      "size": "l",
+      "speak": [
+       "climb"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "throw",
+      "size": "l",
+      "speak": [
+       "throw"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "teacher: noun, climb: verb, cold: adjective, book: noun, throw: verb, big: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "teacher  climb  cold  book  throw  big",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 3,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"teacher\",\"climb\",\"cold\",\"book\",\"throw\",\"big\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "red",
+      "big",
+      "river",
+      "climb",
+      "house",
+      "run"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       "red"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "river",
+      "size": "l",
+      "speak": [
+       "river"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "climb",
+      "size": "l",
+      "speak": [
+       "climb"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "house",
+      "size": "l",
+      "speak": [
+       "house"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       "run"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "red: adjective, big: adjective, river: noun, climb: verb, house: noun, run: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "red  big  river  climb  house  run",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 4,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"red\",\"big\",\"river\",\"climb\",\"house\",\"run\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "tree",
+      "sing",
+      "cold",
+      "big",
+      "run",
+      "teacher"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       "tree"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "run",
+      "size": "l",
+      "speak": [
+       "run"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "tree: noun, sing: verb, cold: adjective, big: adjective, run: verb, teacher: noun."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "tree  sing  cold  big  run  teacher",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 5,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"tree\",\"sing\",\"cold\",\"big\",\"run\",\"teacher\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "book",
+      "cold",
+      "write",
+      "swim",
+      "apple",
+      "noisy"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "write",
+      "size": "l",
+      "speak": [
+       "write"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       "swim"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "apple",
+      "size": "l",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "noisy",
+      "size": "l",
+      "speak": [
+       "noisy"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     1,
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "book: noun, cold: adjective, write: verb, swim: verb, apple: noun, noisy: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "book  cold  write  swim  apple  noisy",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 6,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"book\",\"cold\",\"write\",\"swim\",\"apple\",\"noisy\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "river",
+      "throw",
+      "climb",
+      "happy",
+      "teacher",
+      "big"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "river",
+      "size": "l",
+      "speak": [
+       "river"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "throw",
+      "size": "l",
+      "speak": [
+       "throw"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "climb",
+      "size": "l",
+      "speak": [
+       "climb"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "happy",
+      "size": "l",
+      "speak": [
+       "happy"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "teacher",
+      "size": "l",
+      "speak": [
+       "teacher"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     2,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "river: noun, throw: verb, climb: verb, happy: adjective, teacher: noun, big: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "river  throw  climb  happy  teacher  big",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 7,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"river\",\"throw\",\"climb\",\"happy\",\"teacher\",\"big\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "river",
+      "shiny",
+      "dog",
+      "soft",
+      "throw",
+      "sing"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "river",
+      "size": "l",
+      "speak": [
+       "river"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "shiny",
+      "size": "l",
+      "speak": [
+       "shiny"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "soft",
+      "size": "l",
+      "speak": [
+       "soft"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "throw",
+      "size": "l",
+      "speak": [
+       "throw"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     0,
+     2,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "river: noun, shiny: adjective, dog: noun, soft: adjective, throw: verb, sing: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "river  shiny  dog  soft  throw  sing",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 8,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"river\",\"shiny\",\"dog\",\"soft\",\"throw\",\"sing\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "river",
+      "jump",
+      "cold",
+      "book",
+      "big",
+      "sing"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "river",
+      "size": "l",
+      "speak": [
+       "river"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l",
+      "speak": [
+       "jump"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       "cold"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       "book"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       "big"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sing",
+      "size": "l",
+      "speak": [
+       "sing"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     0,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "river: noun, jump: verb, cold: adjective, book: noun, big: adjective, sing: verb."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "river  jump  cold  book  big  sing",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 9,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"river\",\"jump\",\"cold\",\"book\",\"big\",\"sing\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "items": [
+      "write",
+      "soft",
+      "tree",
+      "dog",
+      "swim",
+      "tall"
+     ],
+     "relation": "wordKind",
+     "target": "kinds",
+     "bins": [
+      "noun",
+      "verb",
+      "adjective"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the words: noun, verb or adjective.",
+     "speak": [
+      "Sort the words: noun, verb or adjective."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "write",
+      "size": "l",
+      "speak": [
+       "write"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "soft",
+      "size": "l",
+      "speak": [
+       "soft"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tree",
+      "size": "l",
+      "speak": [
+       "tree"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "swim",
+      "size": "l",
+      "speak": [
+       "swim"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "tall",
+      "size": "l",
+      "speak": [
+       "tall"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Noun",
+      "speak": [
+       "Noun: a person, place or thing"
+      ]
+     },
+     {
+      "label": "Verb",
+      "speak": [
+       "Verb: an action"
+      ]
+     },
+     {
+      "label": "Adjective",
+      "speak": [
+       "Adjective: a describing word"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like."
+     ],
+     "steps": [
+      "A noun names a person, place or thing.",
+      "A verb is an action, something you do.",
+      "An adjective describes, it tells what something is like.",
+      "write: verb, soft: adjective, tree: noun, dog: noun, swim: verb, tall: adjective."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "write  soft  tree  dog  swim  tall",
+      "size": "l"
+     }
+    },
+    "skillId": "E-2-C1",
+    "level": 2,
+    "seed": 10,
+    "key": "E-2-C1|2|{\"bins\":[\"noun\",\"verb\",\"adjective\"],\"items\":[\"write\",\"soft\",\"tree\",\"dog\",\"swim\",\"tall\"],\"relation\":\"wordKind\",\"target\":\"kinds\"}"
+   }
+  ]
+ }
+}

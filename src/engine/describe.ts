@@ -82,7 +82,7 @@ export function describeVisual(visual: Visual | 'blank'): string {
     case 'matrix':
       return `grid: ${visual.cells.map((cell) => describeVisual(cell)).join(' | ')}`;
     case 'clock':
-      return `clock showing ${visual.hour}:${String(visual.minute).padStart(2, '0')}`;
+      return visual.noHands ? 'clock face with no hands' : `clock showing ${visual.hour}:${String(visual.minute).padStart(2, '0')}`;
     case 'coins':
       return visual.coins.join(', ');
     case 'graph':
@@ -108,6 +108,7 @@ export function describeVisual(visual: Visual | 'blank'): string {
   }
 }
 
+const clockText = (time: { hour: number; minute: number }): string => `${time.hour}:${String(time.minute).padStart(2, '0')}`;
 const list = (visuals: readonly (Visual | undefined)[]): string => visuals.map((visual) => describeVisual(visual ?? 'blank')).join(', ');
 
 // The right answer to a question, in plain words. Kept in the attempt snapshot, which never changes.
@@ -120,7 +121,16 @@ export function describeAnswer(question: Question): string {
     case 'tapCount':
     case 'numberPad':
     case 'tiles':
+    case 'columnSum':
       return String(question.answer);
+    case 'numberLineTap':
+      return question.line.denominator ? partLabel(question.answer, question.line.denominator) : String(question.answer);
+    case 'setClock':
+      return clockText(question.answer);
+    case 'buildBar':
+      return question.categories.map((category, i) => `${category.label} ${question.answer[i] ?? 0}`).join(', ');
+    case 'dragWord':
+      return describeVisual(question.options[question.answerIndex] ?? 'blank');
     case 'order':
       return list(question.answerOrder.map((index) => question.items[index]));
     case 'sort':
@@ -137,6 +147,12 @@ export function describeResponse(question: Question, response: Response): string
   if (question.type === 'tapCount' && 'count' in response) return String(response.count);
   if (question.type === 'numberPad' && 'value' in response) return String(response.value);
   if (question.type === 'tiles' && 'tiles' in response) return response.tiles.join('');
+  if ((question.type === 'numberLineTap' || question.type === 'columnSum') && 'value' in response) {
+    return question.type === 'numberLineTap' && question.line.denominator ? partLabel(response.value, question.line.denominator) : String(response.value);
+  }
+  if (question.type === 'dragWord' && 'index' in response) return describeVisual(question.options[response.index] ?? 'blank');
+  if (question.type === 'setClock' && 'time' in response) return clockText(response.time);
+  if (question.type === 'buildBar' && 'values' in response) return question.categories.map((category, i) => `${category.label} ${response.values[i] ?? 0}`).join(', ');
   if (question.type === 'order' && 'order' in response) return list(response.order.map((index) => question.items[index]));
   if (question.type === 'sort' && 'bins' in response) {
     return question.items.map((item, index) => `${describeVisual(item)}: ${question.bins[response.bins[index] ?? -1]?.label ?? '?'}`).join(', ');

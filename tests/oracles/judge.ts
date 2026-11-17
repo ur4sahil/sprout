@@ -16,20 +16,25 @@ export function judge(question: Question, answer: OracleAnswer): string[] {
   const q = question;
   switch (answer.kind) {
     case 'value': {
-      if (q.type === 'choice' || q.type === 'multiSelect') {
+      if (q.type === 'choice' || q.type === 'multiSelect' || q.type === 'dragWord') {
         const plain = q.facts.options;
         if (!Array.isArray(plain) || plain.length !== q.options.length) return ['facts.options does not list every option'];
         const right = plain.flatMap((value, index) => (same(value, answer.value) ? [index] : []));
-        if (q.type === 'choice') {
+        if (q.type === 'choice' || q.type === 'dragWord') {
           if (right.length === 0) return [`no option is the right answer ${String(answer.value)}`];
           if (right.length > 1) return [`options ${right.join(' and ')} are both right`];
           return right[0] === q.answerIndex ? [] : [`marked option ${q.answerIndex}, but option ${right[0]} is right`];
         }
         return sameSet(right, q.answerIndexes) ? [] : [`marked ${q.answerIndexes.join(',')}, but the right set is ${right.join(',')}`];
       }
-      if (q.type === 'numberPad' || q.type === 'tapCount' || q.type === 'tiles') {
+      if (q.type === 'numberPad' || q.type === 'tapCount' || q.type === 'tiles' || q.type === 'numberLineTap' || q.type === 'columnSum') {
         return q.answer === answer.value ? [] : [`marked ${String(q.answer)}, but the answer is ${String(answer.value)}`];
       }
+      if (q.type === 'setClock') {
+        const marked = `${q.answer.hour}:${String(q.answer.minute).padStart(2, '0')}`;
+        return marked === answer.value ? [] : [`marked ${marked}, but the answer is ${String(answer.value)}`];
+      }
+      if (q.type === 'buildBar') return same(q.answer, answer.value) ? [] : [`marked bars ${q.answer.join(',')}, but they are ${String(answer.value)}`];
       break;
     }
     case 'index':

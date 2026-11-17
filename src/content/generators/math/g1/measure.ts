@@ -54,6 +54,21 @@ function nearTimes(time: Time, rng: Rng): Time[] {
 const WHAT_TIME = 'What time is it?';
 
 function tellTime(level: Level, rng: Rng): QuestionDraft {
+  if (level === 4) {
+    // Set the clock (added Nov 17, 2026): the hands start at 12 o'clock and move by half hours.
+    let time: Time = { hour: rng.int(1, 12), minute: rng.pick([0, 30]) };
+    if (time.hour === 12 && time.minute === 0) time = { hour: 12, minute: 30 };
+    return {
+      type: 'setClock',
+      mode: 'look',
+      facts: { hour: time.hour, minute: time.minute },
+      prompt: { text: `Set the clock to ${written(time)}.`, speak: ['Set the clock to', { time }, '.'] },
+      start: { hour: 12, minute: 0 },
+      minuteStep: 30,
+      answer: time,
+      explanation: timeExplanation(time),
+    };
+  }
   const time: Time = { hour: rng.int(1, 12), minute: level === 1 ? 0 : level === 2 ? 30 : rng.pick([0, 30]) };
   const options = rng.shuffle([time, ...nearTimes(time, rng)]);
   const facts = { hour: time.hour, minute: time.minute, options: options.map(written) };
@@ -83,8 +98,8 @@ function tellTime(level: Level, rng: Rng): QuestionDraft {
 
 export const tellTimeGenerator: SkillGenerator = {
   skillId: 'M-1-C1',
-  maxLevel: 3,
-  itemTypes: ['choice'],
+  maxLevel: 4,
+  itemTypes: ['choice', 'setClock'],
   lists: [],
   generate: tellTime,
   exampleSeed: 131,
@@ -173,6 +188,26 @@ export function graphQuestion(level: Level, rng: Rng, type: 'picture' | 'bar', m
   const chart = newChart(rng, most);
   const names = chart.things.map((thing) => thing.many);
   const stimulus = chartVisual(chart, type);
+  if (level === 4) {
+    // Make the bar graph from a tally chart (buildBar, added Nov 17, 2026).
+    const tallies: Visual = { kind: 'row', children: chart.things.map((thing, i): Visual => ({ kind: 'row', children: [{ kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row', speak: [{ word: thing.many }] }, { kind: 'tally', count: chart.values[i] as number }] })) };
+    const prompt = 'Make a bar graph from the tally marks.';
+    return {
+      type: 'buildBar',
+      mode: 'look',
+      facts: { values: chart.values, things: chart.things.map((thing) => thing.one), ask: 'all' },
+      prompt: { text: prompt, speak: [prompt] },
+      stimulus: tallies,
+      categories: chart.things.map((thing) => ({ label: thing.many, emoji: thing.emoji })),
+      max: most,
+      answer: chart.values,
+      explanation: {
+        speak: ['Count each set of tally marks. A bundle with a line across is', { number: 5 }, '. Make each bar that long.'],
+        steps: ['Count each set of tally marks. A bundle is 5.', (([first = '', ...rest]) => `${first[0]?.toUpperCase() ?? ''}${first.slice(1)}${rest.length ? `, ${rest.join(', ')}` : ''}.`)(chart.things.map((thing, i) => `${thing.many}: ${chart.values[i]}`)), 'Make each bar that long.'],
+        visual: chartVisual(chart, 'bar'),
+      },
+    };
+  }
   const row = type === 'picture' ? 'row' : 'bar';
   const base = { values: chart.values, things: chart.things.map((thing) => thing.one) };
   if (level === 1) {

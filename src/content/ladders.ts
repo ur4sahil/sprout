@@ -14,7 +14,7 @@ function run(prefix: string, category: string, from: number, to: number): string
 }
 
 const M = { PK: 'M-PK', K: 'M-K', G1: 'M-1', G2: 'M-2', G3: 'M-3' };
-const E = { PK: 'E-PK', K: 'E-K', G1: 'E-1' };
+const E = { PK: 'E-PK', K: 'E-K', G1: 'E-1', G2: 'E-2' };
 
 export const LADDERS: readonly Ladder[] = [
   { id: 'counting', subject: 'math', skillIds: [...run(M.PK, 'A', 1, 8), ...run(M.K, 'A', 1, 7), ...run(M.G1, 'A', 1, 2), 'M-2-A4'] },
@@ -32,11 +32,11 @@ export const LADDERS: readonly Ladder[] = [
   { id: 'measures', subject: 'math', skillIds: ['M-3-F5'] },
   { id: 'letters', subject: 'ela', skillIds: [...run(E.PK, 'A', 1, 5), ...run(E.K, 'A', 1, 2)] },
   { id: 'sounds', subject: 'ela', skillIds: [...run(E.PK, 'B', 1, 3), ...run(E.K, 'B', 1, 3), 'E-K-B6'] },
-  { id: 'phonics', subject: 'ela', skillIds: ['E-K-B4', 'E-K-B5', 'E-K-B7', ...run(E.G1, 'A', 1, 5)] },
+  { id: 'phonics', subject: 'ela', skillIds: ['E-K-B4', 'E-K-B5', 'E-K-B7', ...run(E.G1, 'A', 1, 5), ...run(E.G2, 'A', 1, 3)] },
   { id: 'sight-words', subject: 'ela', skillIds: [...run(E.K, 'C', 1, 3), 'E-1-B1'] },
-  { id: 'grammar', subject: 'ela', skillIds: [...run(E.K, 'D', 1, 3), ...run(E.G1, 'C', 1, 3)] },
-  { id: 'vocabulary', subject: 'ela', skillIds: [...run(E.PK, 'C', 1, 2), 'E-1-B2', 'E-1-B3'] },
-  { id: 'reading', subject: 'ela', skillIds: ['E-K-E1', 'E-1-D1'] },
+  { id: 'grammar', subject: 'ela', skillIds: [...run(E.K, 'D', 1, 3), ...run(E.G1, 'C', 1, 3), ...run(E.G2, 'C', 1, 4)] },
+  { id: 'vocabulary', subject: 'ela', skillIds: [...run(E.PK, 'C', 1, 2), 'E-1-B2', 'E-1-B3', ...run(E.G2, 'B', 1, 5)] },
+  { id: 'reading', subject: 'ela', skillIds: ['E-K-E1', 'E-1-D1', ...run(E.G2, 'D', 1, 3)] },
   { id: 'figures', subject: 'reasoning', skillIds: [...run('R', 'A', 1, 7), 'R-A12', 'R-A13'] },
   { id: 'words-numbers', subject: 'reasoning', skillIds: ['R-A9', 'R-A14', 'R-A8', 'R-A10', 'R-A11'] },
 ];

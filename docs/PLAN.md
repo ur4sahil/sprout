@@ -2504,7 +2504,7 @@ IXL lists 369 kindergarten Math skills. Many are one idea shown different ways: 
 
 - **Sibling skills.** One generator family can produce several catalogue skills that differ only in what is counted or shown (a `look` setting: pictures, ten frames, cubes, dot cards, tally marks, number lines). Each sibling is its own catalogue row with its own id, Skill Score and golden file. This is the cheap way to add variety without new maths.
 - **New ideas** where a grade is thin: ordinal numbers (first, second), calendar and days of the week, more and less by 1 and 10, comparing with pictures and numerals mixed, even and odd with pictures, money in the earlier grades, word families and rhyming in more forms, beginning, middle and end sounds, and more sentence skills.
-- **Waves.** H1: Math K and Grade 1 (about 40). H2: Math Pre-K and Grade 2 (about 35). H3: Language Arts Pre-K and K (about 30). H4: Language Arts Grade 1 and 2 (about 30). H5: Grade 3 Math (about 15). Each wave starts with its skill list written into section 8 and shown to the owner before building.
+- **Waves.** H1: Math K and Grade 1 (about 40). H2: Math Pre-K and Grade 2 (about 35). H3: Language Arts Pre-K and K (about 30). H4: Language Arts Grade 1 and 2 (about 30). H5: Grade 3 Math (about 15). Each wave starts with its skill list written into section 8. On Nov 17, 2026 the owner said not to wait for his approval of the lists: build and test all five waves and phase I, then report.
 - **Targets after all waves:** Math Pre-K 16 to about 35, K 28 to about 60, Grade 1 22 to about 50, Grade 2 22 to about 50, Grade 3 32 to about 47. Language Arts roughly doubles in each grade too.
 
 ### 15.3 A running level for each topic

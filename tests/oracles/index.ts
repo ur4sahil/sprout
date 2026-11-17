@@ -7,6 +7,7 @@ import { count } from './count';
 import { estimate } from './estimate';
 import { fold } from './fold';
 import { fraction } from './fraction';
+import { ela2 } from './ela2';
 import { elapsed } from './elapsed';
 import { fractionValue } from './fractionValue';
 import { measureUnit } from './measureUnit';
@@ -52,6 +53,7 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   rect,
   measureUnit,
   quadrilateral,
+  ela2,
   round,
   estimate,
   count,
