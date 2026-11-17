@@ -1,0 +1,8373 @@
+{
+ "skillId": "R-A17",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "rows": [
+    [
+     9,
+     10,
+     11
+    ],
+    [
+     5,
+     6,
+     7
+    ],
+    [
+     7,
+     8,
+     -1
+    ]
+   ],
+   "rule": "step",
+   "options": [
+    10,
+    9,
+    8
+   ]
+  },
+  "prompt": {
+   "text": "Which number goes in the empty box?",
+   "speak": [
+    "Which number goes in the empty box?"
+   ]
+  },
+  "stimulus": {
+   "kind": "matrix",
+   "cells": [
+    {
+     "kind": "text",
+     "value": "9",
+     "size": "l",
+     "speak": [
+      {
+       "number": 9
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "10",
+     "size": "l",
+     "speak": [
+      {
+       "number": 10
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "11",
+     "size": "l",
+     "speak": [
+      {
+       "number": 11
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "5",
+     "size": "l",
+     "speak": [
+      {
+       "number": 5
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "6",
+     "size": "l",
+     "speak": [
+      {
+       "number": 6
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "7",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "7",
+     "size": "l",
+     "speak": [
+      {
+       "number": 7
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "8",
+     "size": "l",
+     "speak": [
+      {
+       "number": 8
+      }
+     ]
+    },
+    "blank"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "10",
+    "size": "l",
+    "speak": [
+     {
+      "number": 10
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "9",
+    "size": "l",
+    "speak": [
+     {
+      "number": 9
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "8",
+    "size": "l",
+    "speak": [
+     {
+      "number": 8
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Each row goes up by",
+    {
+     "number": 1
+    },
+    ".",
+    "The missing number is",
+    {
+     "number": 9
+    },
+    "."
+   ],
+   "steps": [
+    "Each row goes up by 1.",
+    "The missing number is 9."
+   ],
+   "visual": {
+    "kind": "matrix",
+    "cells": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "R-A17",
+  "level": 1,
+  "seed": 717,
+  "key": "R-A17|1|{\"rows\":[[9,10,11],[5,6,7],[7,8,-1]],\"rule\":\"step\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       6,
+       7,
+       8
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       5,
+       6,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      6,
+      8,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 7."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A17|1|{\"rows\":[[6,7,8],[1,2,3],[5,6,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       8,
+       9
+      ],
+      [
+       3,
+       4,
+       5
+      ],
+      [
+       3,
+       4,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 5."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A17|1|{\"rows\":[[7,8,9],[3,4,5],[3,4,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       8,
+       9
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       5,
+       -1,
+       7
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      5,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 6."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A17|1|{\"rows\":[[7,8,9],[1,2,3],[5,-1,7]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       9,
+       10,
+       11
+      ],
+      [
+       3,
+       4,
+       5
+      ],
+      [
+       2,
+       -1,
+       4
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      4,
+      3,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 3."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A17|1|{\"rows\":[[9,10,11],[3,4,5],[2,-1,4]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       8,
+       9
+      ],
+      [
+       7,
+       8,
+       9
+      ],
+      [
+       2,
+       3,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      4,
+      5,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 4."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A17|1|{\"rows\":[[7,8,9],[7,8,9],[2,3,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       5,
+       6,
+       7
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       6,
+       -1,
+       8
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      8,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 7."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A17|1|{\"rows\":[[5,6,7],[1,2,3],[6,-1,8]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       1,
+       2,
+       3
+      ],
+      [
+       9,
+       10,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      10,
+      11,
+      12
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 11."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A17|1|{\"rows\":[[1,2,3],[1,2,3],[9,10,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       2,
+       3,
+       4
+      ],
+      [
+       6,
+       7,
+       8
+      ],
+      [
+       3,
+       4,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      5,
+      4,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 5."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A17|1|{\"rows\":[[2,3,4],[6,7,8],[3,4,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       2,
+       3,
+       4
+      ],
+      [
+       8,
+       9,
+       10
+      ],
+      [
+       2,
+       3,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      5,
+      4,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 4."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A17|1|{\"rows\":[[2,3,4],[8,9,10],[2,3,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       5,
+       6,
+       7
+      ],
+      [
+       9,
+       10,
+       11
+      ],
+      [
+       7,
+       8,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      10,
+      9,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 1.",
+      "The missing number is 9."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A17|1|{\"rows\":[[5,6,7],[9,10,11],[7,8,-1]],\"rule\":\"step\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       6,
+       11
+      ],
+      [
+       11,
+       16,
+       21
+      ],
+      [
+       20,
+       25,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      30,
+      35,
+      31
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "21",
+       "size": "l",
+       "speak": [
+        {
+         "number": 21
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25",
+       "size": "l",
+       "speak": [
+        {
+         "number": 25
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "31",
+      "size": "l",
+      "speak": [
+       {
+        "number": 31
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 30."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "21",
+        "size": "l",
+        "speak": [
+         {
+          "number": 21
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "25",
+        "size": "l",
+        "speak": [
+         {
+          "number": 25
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "30",
+        "size": "l",
+        "speak": [
+         {
+          "number": 30
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A17|2|{\"rows\":[[1,6,11],[11,16,21],[20,25,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       12,
+       17
+      ],
+      [
+       6,
+       11,
+       16
+      ],
+      [
+       11,
+       16,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      16,
+      21,
+      22
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "12",
+       "size": "l",
+       "speak": [
+        {
+         "number": 12
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 21."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "21",
+        "size": "l",
+        "speak": [
+         {
+          "number": 21
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A17|2|{\"rows\":[[7,12,17],[6,11,16],[11,16,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       6,
+       11
+      ],
+      [
+       10,
+       15,
+       20
+      ],
+      [
+       2,
+       7,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      13,
+      17,
+      12
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "13",
+      "size": "l",
+      "speak": [
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 12."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A17|2|{\"rows\":[[1,6,11],[10,15,20],[2,7,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       17,
+       27
+      ],
+      [
+       5,
+       15,
+       25
+      ],
+      [
+       2,
+       -1,
+       22
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      12,
+      11,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "27",
+       "size": "l",
+       "speak": [
+        {
+         "number": 27
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25",
+       "size": "l",
+       "speak": [
+        {
+         "number": 25
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "22",
+       "size": "l",
+       "speak": [
+        {
+         "number": 22
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 10
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 10.",
+      "The missing number is 12."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "27",
+        "size": "l",
+        "speak": [
+         {
+          "number": 27
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "25",
+        "size": "l",
+        "speak": [
+         {
+          "number": 25
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "22",
+        "size": "l",
+        "speak": [
+         {
+          "number": 22
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A17|2|{\"rows\":[[7,17,27],[5,15,25],[2,-1,22]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       16,
+       21,
+       26
+      ],
+      [
+       5,
+       10,
+       15
+      ],
+      [
+       13,
+       -1,
+       23
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      17,
+      18,
+      19
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "21",
+       "size": "l",
+       "speak": [
+        {
+         "number": 21
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "26",
+       "size": "l",
+       "speak": [
+        {
+         "number": 26
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "23",
+       "size": "l",
+       "speak": [
+        {
+         "number": 23
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 18."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "21",
+        "size": "l",
+        "speak": [
+         {
+          "number": 21
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "26",
+        "size": "l",
+        "speak": [
+         {
+          "number": 26
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "18",
+        "size": "l",
+        "speak": [
+         {
+          "number": 18
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "23",
+        "size": "l",
+        "speak": [
+         {
+          "number": 23
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A17|2|{\"rows\":[[16,21,26],[5,10,15],[13,-1,23]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       6,
+       11
+      ],
+      [
+       14,
+       19,
+       24
+      ],
+      [
+       5,
+       10,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      20,
+      15,
+      14
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "14",
+       "size": "l",
+       "speak": [
+        {
+         "number": 14
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "19",
+       "size": "l",
+       "speak": [
+        {
+         "number": 19
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 15."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "14",
+        "size": "l",
+        "speak": [
+         {
+          "number": 14
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "19",
+        "size": "l",
+        "speak": [
+         {
+          "number": 19
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A17|2|{\"rows\":[[1,6,11],[14,19,24],[5,10,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       2,
+       4,
+       6
+      ],
+      [
+       20,
+       22,
+       24
+      ],
+      [
+       14,
+       16,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      18,
+      19,
+      20
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "22",
+       "size": "l",
+       "speak": [
+        {
+         "number": 22
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "14",
+       "size": "l",
+       "speak": [
+        {
+         "number": 14
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 2.",
+      "The missing number is 18."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "22",
+        "size": "l",
+        "speak": [
+         {
+          "number": 22
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "14",
+        "size": "l",
+        "speak": [
+         {
+          "number": 14
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "18",
+        "size": "l",
+        "speak": [
+         {
+          "number": 18
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A17|2|{\"rows\":[[2,4,6],[20,22,24],[14,16,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       13,
+       15,
+       17
+      ],
+      [
+       7,
+       9,
+       11
+      ],
+      [
+       14,
+       16,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      19,
+      18,
+      16
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "14",
+       "size": "l",
+       "speak": [
+        {
+         "number": 14
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 2.",
+      "The missing number is 18."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "14",
+        "size": "l",
+        "speak": [
+         {
+          "number": 14
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "18",
+        "size": "l",
+        "speak": [
+         {
+          "number": 18
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A17|2|{\"rows\":[[13,15,17],[7,9,11],[14,16,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       18,
+       20,
+       22
+      ],
+      [
+       3,
+       5,
+       7
+      ],
+      [
+       17,
+       19,
+       -1
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      20,
+      19,
+      21
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "18",
+       "size": "l",
+       "speak": [
+        {
+         "number": 18
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "20",
+       "size": "l",
+       "speak": [
+        {
+         "number": 20
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "22",
+       "size": "l",
+       "speak": [
+        {
+         "number": 22
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "19",
+       "size": "l",
+       "speak": [
+        {
+         "number": 19
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 2.",
+      "The missing number is 21."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "18",
+        "size": "l",
+        "speak": [
+         {
+          "number": 18
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "20",
+        "size": "l",
+        "speak": [
+         {
+          "number": 20
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "22",
+        "size": "l",
+        "speak": [
+         {
+          "number": 22
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "19",
+        "size": "l",
+        "speak": [
+         {
+          "number": 19
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "21",
+        "size": "l",
+        "speak": [
+         {
+          "number": 21
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A17|2|{\"rows\":[[18,20,22],[3,5,7],[17,19,-1]],\"rule\":\"step\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       19,
+       24,
+       29
+      ],
+      [
+       14,
+       19,
+       24
+      ],
+      [
+       17,
+       -1,
+       27
+      ]
+     ],
+     "rule": "step",
+     "options": [
+      27,
+      17,
+      22
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "19",
+       "size": "l",
+       "speak": [
+        {
+         "number": 19
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "29",
+       "size": "l",
+       "speak": [
+        {
+         "number": 29
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "14",
+       "size": "l",
+       "speak": [
+        {
+         "number": 14
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "19",
+       "size": "l",
+       "speak": [
+        {
+         "number": 19
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "24",
+       "size": "l",
+       "speak": [
+        {
+         "number": 24
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "17",
+       "size": "l",
+       "speak": [
+        {
+         "number": 17
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "27",
+       "size": "l",
+       "speak": [
+        {
+         "number": 27
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "27",
+      "size": "l",
+      "speak": [
+       {
+        "number": 27
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row goes up by",
+      {
+       "number": 5
+      },
+      ".",
+      "The missing number is",
+      {
+       "number": 22
+      },
+      "."
+     ],
+     "steps": [
+      "Each row goes up by 5.",
+      "The missing number is 22."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "19",
+        "size": "l",
+        "speak": [
+         {
+          "number": 19
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "29",
+        "size": "l",
+        "speak": [
+         {
+          "number": 29
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "14",
+        "size": "l",
+        "speak": [
+         {
+          "number": 14
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "19",
+        "size": "l",
+        "speak": [
+         {
+          "number": 19
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "24",
+        "size": "l",
+        "speak": [
+         {
+          "number": 24
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "17",
+        "size": "l",
+        "speak": [
+         {
+          "number": 17
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "22",
+        "size": "l",
+        "speak": [
+         {
+          "number": 22
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "27",
+        "size": "l",
+        "speak": [
+         {
+          "number": 27
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A17|2|{\"rows\":[[19,24,29],[14,19,24],[17,-1,27]],\"rule\":\"step\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       5,
+       6
+      ],
+      [
+       9,
+       9,
+       18
+      ],
+      [
+       3,
+       6,
+       -1
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      10,
+      9,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "18",
+       "size": "l",
+       "speak": [
+        {
+         "number": 18
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 9."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "18",
+        "size": "l",
+        "speak": [
+         {
+          "number": 18
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A17|3|{\"rows\":[[1,5,6],[9,9,18],[3,6,-1]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       3,
+       3,
+       6
+      ],
+      [
+       5,
+       8,
+       13
+      ],
+      [
+       6,
+       -1,
+       11
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      4,
+      5,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "11",
+       "size": "l",
+       "speak": [
+        {
+         "number": 11
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 5."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "11",
+        "size": "l",
+        "speak": [
+         {
+          "number": 11
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A17|3|{\"rows\":[[3,3,6],[5,8,13],[6,-1,11]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       5,
+       6
+      ],
+      [
+       1,
+       7,
+       8
+      ],
+      [
+       5,
+       -1,
+       10
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      10,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 5."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A17|3|{\"rows\":[[1,5,6],[1,7,8],[5,-1,10]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       3,
+       2,
+       5
+      ],
+      [
+       1,
+       3,
+       4
+      ],
+      [
+       5,
+       1,
+       -1
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      7,
+      6,
+      16
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 6."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A17|3|{\"rows\":[[3,2,5],[1,3,4],[5,1,-1]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       7,
+       2,
+       9
+      ],
+      [
+       6,
+       1,
+       7
+      ],
+      [
+       6,
+       -1,
+       13
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      7,
+      12,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 7."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A17|3|{\"rows\":[[7,2,9],[6,1,7],[6,-1,13]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       6,
+       7
+      ],
+      [
+       2,
+       5,
+       7
+      ],
+      [
+       1,
+       1,
+       -1
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 2."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A17|3|{\"rows\":[[1,6,7],[2,5,7],[1,1,-1]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       1,
+       9,
+       10
+      ],
+      [
+       7,
+       5,
+       12
+      ],
+      [
+       4,
+       -1,
+       9
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      6,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "1",
+       "size": "l",
+       "speak": [
+        {
+         "number": 1
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "12",
+       "size": "l",
+       "speak": [
+        {
+         "number": 12
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "4",
+       "size": "l",
+       "speak": [
+        {
+         "number": 4
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 5."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "1",
+        "size": "l",
+        "speak": [
+         {
+          "number": 1
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "12",
+        "size": "l",
+        "speak": [
+         {
+          "number": 12
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "4",
+        "size": "l",
+        "speak": [
+         {
+          "number": 4
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A17|3|{\"rows\":[[1,9,10],[7,5,12],[4,-1,9]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       6,
+       3,
+       9
+      ],
+      [
+       7,
+       6,
+       13
+      ],
+      [
+       5,
+       -1,
+       13
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      7,
+      6,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "6",
+       "size": "l",
+       "speak": [
+        {
+         "number": 6
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 8."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "6",
+        "size": "l",
+        "speak": [
+         {
+          "number": 6
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A17|3|{\"rows\":[[6,3,9],[7,6,13],[5,-1,13]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       8,
+       2,
+       10
+      ],
+      [
+       8,
+       7,
+       15
+      ],
+      [
+       7,
+       3,
+       -1
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      12,
+      10,
+      8
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "2",
+       "size": "l",
+       "speak": [
+        {
+         "number": 2
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10",
+       "size": "l",
+       "speak": [
+        {
+         "number": 10
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15",
+       "size": "l",
+       "speak": [
+        {
+         "number": 15
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "3",
+       "size": "l",
+       "speak": [
+        {
+         "number": 3
+        }
+       ]
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 10."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "15",
+        "size": "l",
+        "speak": [
+         {
+          "number": 15
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "3",
+        "size": "l",
+        "speak": [
+         {
+          "number": 3
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "10",
+        "size": "l",
+        "speak": [
+         {
+          "number": 10
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A17|3|{\"rows\":[[8,2,10],[8,7,15],[7,3,-1]],\"rule\":\"sum\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": [
+      [
+       9,
+       7,
+       16
+      ],
+      [
+       8,
+       5,
+       13
+      ],
+      [
+       5,
+       -1,
+       7
+      ]
+     ],
+     "rule": "sum",
+     "options": [
+      7,
+      2,
+      1
+     ]
+    },
+    "prompt": {
+     "text": "Which number goes in the empty box?",
+     "speak": [
+      "Which number goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "text",
+       "value": "9",
+       "size": "l",
+       "speak": [
+        {
+         "number": 9
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "16",
+       "size": "l",
+       "speak": [
+        {
+         "number": 16
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "8",
+       "size": "l",
+       "speak": [
+        {
+         "number": 8
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "13",
+       "size": "l",
+       "speak": [
+        {
+         "number": 13
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "5",
+       "size": "l",
+       "speak": [
+        {
+         "number": 5
+        }
+       ]
+      },
+      "blank",
+      {
+       "kind": "text",
+       "value": "7",
+       "size": "l",
+       "speak": [
+        {
+         "number": 7
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "In each row, the first two numbers add up to the third.",
+      "The missing number is 2."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "text",
+        "value": "9",
+        "size": "l",
+        "speak": [
+         {
+          "number": 9
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "16",
+        "size": "l",
+        "speak": [
+         {
+          "number": 16
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "8",
+        "size": "l",
+        "speak": [
+         {
+          "number": 8
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "13",
+        "size": "l",
+        "speak": [
+         {
+          "number": 13
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "5",
+        "size": "l",
+        "speak": [
+         {
+          "number": 5
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "2",
+        "size": "l",
+        "speak": [
+         {
+          "number": 2
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "7",
+        "size": "l",
+        "speak": [
+         {
+          "number": 7
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A17",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A17|3|{\"rows\":[[9,7,16],[8,5,13],[5,-1,7]],\"rule\":\"sum\"}"
+   }
+  ]
+ }
+}

@@ -14,6 +14,7 @@ import { estimate } from './estimate';
 import { fold } from './fold';
 import { fraction } from './fraction';
 import { ela2 } from './ela2';
+import { numberGrid, verbalAnalogy, verbalClass } from './reasoning2';
 import { composeShape, lineUp, measureTool, position, sumList, turnaround, unitChoice } from './kGaps';
 import { elapsed } from './elapsed';
 import { fractionValue } from './fractionValue';
@@ -67,6 +68,9 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   measureTool,
   lineUp,
   turnaround,
+  verbalAnalogy,
+  verbalClass,
+  numberGrid,
   sumList,
   unitChoice,
   round,

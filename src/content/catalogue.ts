@@ -30,7 +30,7 @@ export interface Skill {
 }
 
 // Raised by one in every content phase (plan section 7, Catalogue growth).
-export const CATALOGUE_VERSION = 19;
+export const CATALOGUE_VERSION = 20;
 
 const BASE: readonly Skill[] = [
   {
@@ -3542,6 +3542,54 @@ const BASE: readonly Skill[] = [
     version: 1,
     itemTypes: ['choice'],
     maxLevel: 2,
+    prereqs: [],
+  },
+  {
+    id: 'R-A15',
+    subject: 'reasoning',
+    grade: 'all',
+    category: 'A. Thinking puzzles',
+    code: 'A.15',
+    name: 'Word analogies',
+    strand: 'RS',
+    ladder: 'words-numbers',
+    icon: { kind: 'text', value: 'hot → cold', size: 'm' },
+    speakName: ['Word analogies'],
+    version: 1,
+    itemTypes: ['choice'],
+    maxLevel: 3,
+    prereqs: [],
+  },
+  {
+    id: 'R-A16',
+    subject: 'reasoning',
+    grade: 'all',
+    category: 'A. Thinking puzzles',
+    code: 'A.16',
+    name: 'Which word does not belong',
+    strand: 'RS',
+    ladder: 'words-numbers',
+    icon: { kind: 'text', value: 'pear plum car', size: 'm' },
+    speakName: ['Which word does not belong'],
+    version: 1,
+    itemTypes: ['choice'],
+    maxLevel: 3,
+    prereqs: [],
+  },
+  {
+    id: 'R-A17',
+    subject: 'reasoning',
+    grade: 'all',
+    category: 'A. Thinking puzzles',
+    code: 'A.17',
+    name: 'Number grids',
+    strand: 'RS',
+    ladder: 'words-numbers',
+    icon: { kind: 'text', value: '2 4 6', size: 'm' },
+    speakName: ['Number grids'],
+    version: 1,
+    itemTypes: ['choice'],
+    maxLevel: 3,
     prereqs: [],
   },
 ];

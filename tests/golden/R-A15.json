@@ -1,0 +1,4817 @@
+{
+ "skillId": "R-A15",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "from": [
+    "open",
+    "shut"
+   ],
+   "base": "big",
+   "options": [
+    "kitten",
+    "milk",
+    "small"
+   ]
+  },
+  "prompt": {
+   "text": "Open is to shut as big is to ___?",
+   "speak": [
+    {
+     "word": "open"
+    },
+    "is to",
+    {
+     "word": "shut"
+    },
+    "as",
+    {
+     "word": "big"
+    },
+    "is to what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "text",
+     "value": "open",
+     "size": "l",
+     "speak": [
+      {
+       "word": "open"
+      }
+     ]
+    },
+    {
+     "kind": "text",
+     "value": "→",
+     "size": "l"
+    },
+    {
+     "kind": "text",
+     "value": "shut",
+     "size": "l",
+     "speak": [
+      {
+       "word": "shut"
+      }
+     ]
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "kitten",
+    "size": "l",
+    "speak": [
+     {
+      "word": "kitten"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "milk",
+    "size": "l",
+    "speak": [
+     {
+      "word": "milk"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "small",
+    "size": "l",
+    "speak": [
+     {
+      "word": "small"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    {
+     "word": "open"
+    },
+    "is the opposite of",
+    {
+     "word": "shut"
+    },
+    ".",
+    "So",
+    {
+     "word": "big"
+    },
+    "is the opposite of",
+    {
+     "word": "small"
+    },
+    "."
+   ],
+   "steps": [
+    "Open is the opposite of shut.",
+    "Big is the opposite of small."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "text",
+      "value": "big",
+      "size": "l",
+      "speak": [
+       {
+        "word": "big"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "→",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "small",
+      "size": "l",
+      "speak": [
+       {
+        "word": "small"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "R-A15",
+  "level": 1,
+  "seed": 715,
+  "key": "R-A15|1|{\"base\":\"big\",\"from\":[\"open\",\"shut\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bee",
+      "hive"
+     ],
+     "base": "pig",
+     "options": [
+      "sty",
+      "book",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "Bee is to hive as pig is to ___?",
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "is to",
+      {
+       "word": "hive"
+      },
+      "as",
+      {
+       "word": "pig"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bee",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bee"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "hive",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hive"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "sty",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sty"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "yellow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "lives in",
+      {
+       "word": "hive"
+      },
+      ".",
+      "So",
+      {
+       "word": "pig"
+      },
+      "lives in",
+      {
+       "word": "sty"
+      },
+      "."
+     ],
+     "steps": [
+      "Bee lives in hive.",
+      "Pig lives in sty."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "sty",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sty"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A15|1|{\"base\":\"pig\",\"from\":[\"bee\",\"hive\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bird",
+      "nest"
+     ],
+     "base": "fish",
+     "options": [
+      "wool",
+      "pond",
+      "cub"
+     ]
+    },
+    "prompt": {
+     "text": "Bird is to nest as fish is to ___?",
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "is to",
+      {
+       "word": "nest"
+      },
+      "as",
+      {
+       "word": "fish"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bird",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "nest",
+       "size": "l",
+       "speak": [
+        {
+         "word": "nest"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "wool",
+      "size": "l",
+      "speak": [
+       {
+        "word": "wool"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cub",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cub"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "lives in",
+      {
+       "word": "nest"
+      },
+      ".",
+      "So",
+      {
+       "word": "fish"
+      },
+      "lives in",
+      {
+       "word": "pond"
+      },
+      "."
+     ],
+     "steps": [
+      "Bird lives in nest.",
+      "Fish lives in pond."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "pond",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pond"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A15|1|{\"base\":\"fish\",\"from\":[\"bird\",\"nest\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bee",
+      "hive"
+     ],
+     "base": "horse",
+     "options": [
+      "slow",
+      "wool",
+      "stable"
+     ]
+    },
+    "prompt": {
+     "text": "Bee is to hive as horse is to ___?",
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "is to",
+      {
+       "word": "hive"
+      },
+      "as",
+      {
+       "word": "horse"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bee",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bee"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "hive",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hive"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "slow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "slow"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "wool",
+      "size": "l",
+      "speak": [
+       {
+        "word": "wool"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "stable",
+      "size": "l",
+      "speak": [
+       {
+        "word": "stable"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "lives in",
+      {
+       "word": "hive"
+      },
+      ".",
+      "So",
+      {
+       "word": "horse"
+      },
+      "lives in",
+      {
+       "word": "stable"
+      },
+      "."
+     ],
+     "steps": [
+      "Bee lives in hive.",
+      "Horse lives in stable."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "horse",
+        "size": "l",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "stable",
+        "size": "l",
+        "speak": [
+         {
+          "word": "stable"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A15|1|{\"base\":\"horse\",\"from\":[\"bee\",\"hive\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "spider",
+      "web"
+     ],
+     "base": "fish",
+     "options": [
+      "pond",
+      "ball",
+      "small"
+     ]
+    },
+    "prompt": {
+     "text": "Spider is to web as fish is to ___?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "is to",
+      {
+       "word": "web"
+      },
+      "as",
+      {
+       "word": "fish"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "spider",
+       "size": "l",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "web",
+       "size": "l",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "small",
+      "size": "l",
+      "speak": [
+       {
+        "word": "small"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "lives in",
+      {
+       "word": "web"
+      },
+      ".",
+      "So",
+      {
+       "word": "fish"
+      },
+      "lives in",
+      {
+       "word": "pond"
+      },
+      "."
+     ],
+     "steps": [
+      "Spider lives in web.",
+      "Fish lives in pond."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "pond",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pond"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A15|1|{\"base\":\"fish\",\"from\":[\"spider\",\"web\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "horse",
+      "stable"
+     ],
+     "base": "pig",
+     "options": [
+      "book",
+      "sty",
+      "milk"
+     ]
+    },
+    "prompt": {
+     "text": "Horse is to stable as pig is to ___?",
+     "speak": [
+      {
+       "word": "horse"
+      },
+      "is to",
+      {
+       "word": "stable"
+      },
+      "as",
+      {
+       "word": "pig"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "horse",
+       "size": "l",
+       "speak": [
+        {
+         "word": "horse"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "stable",
+       "size": "l",
+       "speak": [
+        {
+         "word": "stable"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sty",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sty"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "milk",
+      "size": "l",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "horse"
+      },
+      "lives in",
+      {
+       "word": "stable"
+      },
+      ".",
+      "So",
+      {
+       "word": "pig"
+      },
+      "lives in",
+      {
+       "word": "sty"
+      },
+      "."
+     ],
+     "steps": [
+      "Horse lives in stable.",
+      "Pig lives in sty."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "sty",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sty"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A15|1|{\"base\":\"pig\",\"from\":[\"horse\",\"stable\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "spider",
+      "web"
+     ],
+     "base": "fish",
+     "options": [
+      "cold",
+      "pond",
+      "hair"
+     ]
+    },
+    "prompt": {
+     "text": "Spider is to web as fish is to ___?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "is to",
+      {
+       "word": "web"
+      },
+      "as",
+      {
+       "word": "fish"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "spider",
+       "size": "l",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "web",
+       "size": "l",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cold"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "hair",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hair"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "lives in",
+      {
+       "word": "web"
+      },
+      ".",
+      "So",
+      {
+       "word": "fish"
+      },
+      "lives in",
+      {
+       "word": "pond"
+      },
+      "."
+     ],
+     "steps": [
+      "Spider lives in web.",
+      "Fish lives in pond."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "pond",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pond"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A15|1|{\"base\":\"fish\",\"from\":[\"spider\",\"web\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "fast",
+      "slow"
+     ],
+     "base": "open",
+     "options": [
+      "blue",
+      "flower",
+      "shut"
+     ]
+    },
+    "prompt": {
+     "text": "Fast is to slow as open is to ___?",
+     "speak": [
+      {
+       "word": "fast"
+      },
+      "is to",
+      {
+       "word": "slow"
+      },
+      "as",
+      {
+       "word": "open"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "fast",
+       "size": "l",
+       "speak": [
+        {
+         "word": "fast"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "slow",
+       "size": "l",
+       "speak": [
+        {
+         "word": "slow"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       {
+        "word": "blue"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "flower",
+      "size": "l",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "shut",
+      "size": "l",
+      "speak": [
+       {
+        "word": "shut"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "fast"
+      },
+      "is the opposite of",
+      {
+       "word": "slow"
+      },
+      ".",
+      "So",
+      {
+       "word": "open"
+      },
+      "is the opposite of",
+      {
+       "word": "shut"
+      },
+      "."
+     ],
+     "steps": [
+      "Fast is the opposite of slow.",
+      "Open is the opposite of shut."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "open",
+        "size": "l",
+        "speak": [
+         {
+          "word": "open"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "shut",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shut"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A15|1|{\"base\":\"open\",\"from\":[\"fast\",\"slow\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "day",
+      "night"
+     ],
+     "base": "hot",
+     "options": [
+      "web",
+      "cold",
+      "green"
+     ]
+    },
+    "prompt": {
+     "text": "Day is to night as hot is to ___?",
+     "speak": [
+      {
+       "word": "day"
+      },
+      "is to",
+      {
+       "word": "night"
+      },
+      "as",
+      {
+       "word": "hot"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "day",
+       "size": "l",
+       "speak": [
+        {
+         "word": "day"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "night",
+       "size": "l",
+       "speak": [
+        {
+         "word": "night"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "web",
+      "size": "l",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cold"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       {
+        "word": "green"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "day"
+      },
+      "is the opposite of",
+      {
+       "word": "night"
+      },
+      ".",
+      "So",
+      {
+       "word": "hot"
+      },
+      "is the opposite of",
+      {
+       "word": "cold"
+      },
+      "."
+     ],
+     "steps": [
+      "Day is the opposite of night.",
+      "Hot is the opposite of cold."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "cold",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cold"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A15|1|{\"base\":\"hot\",\"from\":[\"day\",\"night\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "fast",
+      "slow"
+     ],
+     "base": "up",
+     "options": [
+      "down",
+      "pond",
+      "black"
+     ]
+    },
+    "prompt": {
+     "text": "Fast is to slow as up is to ___?",
+     "speak": [
+      {
+       "word": "fast"
+      },
+      "is to",
+      {
+       "word": "slow"
+      },
+      "as",
+      {
+       "word": "up"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "fast",
+       "size": "l",
+       "speak": [
+        {
+         "word": "fast"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "slow",
+       "size": "l",
+       "speak": [
+        {
+         "word": "slow"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "down",
+      "size": "l",
+      "speak": [
+       {
+        "word": "down"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "black",
+      "size": "l",
+      "speak": [
+       {
+        "word": "black"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "fast"
+      },
+      "is the opposite of",
+      {
+       "word": "slow"
+      },
+      ".",
+      "So",
+      {
+       "word": "up"
+      },
+      "is the opposite of",
+      {
+       "word": "down"
+      },
+      "."
+     ],
+     "steps": [
+      "Fast is the opposite of slow.",
+      "Up is the opposite of down."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "up",
+        "size": "l",
+        "speak": [
+         {
+          "word": "up"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "down",
+        "size": "l",
+        "speak": [
+         {
+          "word": "down"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A15|1|{\"base\":\"up\",\"from\":[\"fast\",\"slow\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "spider",
+      "web"
+     ],
+     "base": "bird",
+     "options": [
+      "night",
+      "shut",
+      "nest"
+     ]
+    },
+    "prompt": {
+     "text": "Spider is to web as bird is to ___?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "is to",
+      {
+       "word": "web"
+      },
+      "as",
+      {
+       "word": "bird"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "spider",
+       "size": "l",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "web",
+       "size": "l",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "night",
+      "size": "l",
+      "speak": [
+       {
+        "word": "night"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "shut",
+      "size": "l",
+      "speak": [
+       {
+        "word": "shut"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "lives in",
+      {
+       "word": "web"
+      },
+      ".",
+      "So",
+      {
+       "word": "bird"
+      },
+      "lives in",
+      {
+       "word": "nest"
+      },
+      "."
+     ],
+     "steps": [
+      "Spider lives in web.",
+      "Bird lives in nest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bird",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "nest",
+        "size": "l",
+        "speak": [
+         {
+          "word": "nest"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A15|1|{\"base\":\"bird\",\"from\":[\"spider\",\"web\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "tree",
+      "wood"
+     ],
+     "base": "cow",
+     "options": [
+      "web",
+      "milk",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "Tree is to wood as cow is to ___?",
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "is to",
+      {
+       "word": "wood"
+      },
+      "as",
+      {
+       "word": "cow"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "tree",
+       "size": "l",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "wood",
+       "size": "l",
+       "speak": [
+        {
+         "word": "wood"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "web",
+      "size": "l",
+      "speak": [
+       {
+        "word": "web"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "milk",
+      "size": "l",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "yellow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "gives us",
+      {
+       "word": "wood"
+      },
+      ".",
+      "So",
+      {
+       "word": "cow"
+      },
+      "gives us",
+      {
+       "word": "milk"
+      },
+      "."
+     ],
+     "steps": [
+      "Tree gives us wood.",
+      "Cow gives us milk."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "milk",
+        "size": "l",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A15|2|{\"base\":\"cow\",\"from\":[\"tree\",\"wood\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "grass",
+      "green"
+     ],
+     "base": "cherry",
+     "options": [
+      "chick",
+      "red",
+      "sty"
+     ]
+    },
+    "prompt": {
+     "text": "Grass is to green as cherry is to ___?",
+     "speak": [
+      {
+       "word": "grass"
+      },
+      "is to",
+      {
+       "word": "green"
+      },
+      "as",
+      {
+       "word": "cherry"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "grass",
+       "size": "l",
+       "speak": [
+        {
+         "word": "grass"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "green",
+       "size": "l",
+       "speak": [
+        {
+         "word": "green"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "chick",
+      "size": "l",
+      "speak": [
+       {
+        "word": "chick"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       {
+        "word": "red"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sty",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sty"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "grass"
+      },
+      "is the colour",
+      {
+       "word": "green"
+      },
+      ".",
+      "So",
+      {
+       "word": "cherry"
+      },
+      "is the colour",
+      {
+       "word": "red"
+      },
+      "."
+     ],
+     "steps": [
+      "Grass is the colour green.",
+      "Cherry is the colour red."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cherry",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cherry"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "red",
+        "size": "l",
+        "speak": [
+         {
+          "word": "red"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A15|2|{\"base\":\"cherry\",\"from\":[\"grass\",\"green\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "sky",
+      "blue"
+     ],
+     "base": "banana",
+     "options": [
+      "slow",
+      "chick",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "Sky is to blue as banana is to ___?",
+     "speak": [
+      {
+       "word": "sky"
+      },
+      "is to",
+      {
+       "word": "blue"
+      },
+      "as",
+      {
+       "word": "banana"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "sky",
+       "size": "l",
+       "speak": [
+        {
+         "word": "sky"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "blue",
+       "size": "l",
+       "speak": [
+        {
+         "word": "blue"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "slow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "slow"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "chick",
+      "size": "l",
+      "speak": [
+       {
+        "word": "chick"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "yellow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "sky"
+      },
+      "is the colour",
+      {
+       "word": "blue"
+      },
+      ".",
+      "So",
+      {
+       "word": "banana"
+      },
+      "is the colour",
+      {
+       "word": "yellow"
+      },
+      "."
+     ],
+     "steps": [
+      "Sky is the colour blue.",
+      "Banana is the colour yellow."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "banana",
+        "size": "l",
+        "speak": [
+         {
+          "word": "banana"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "yellow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "yellow"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A15|2|{\"base\":\"banana\",\"from\":[\"sky\",\"blue\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "snow",
+      "white"
+     ],
+     "base": "cherry",
+     "options": [
+      "red",
+      "ball",
+      "small"
+     ]
+    },
+    "prompt": {
+     "text": "Snow is to white as cherry is to ___?",
+     "speak": [
+      {
+       "word": "snow"
+      },
+      "is to",
+      {
+       "word": "white"
+      },
+      "as",
+      {
+       "word": "cherry"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "snow",
+       "size": "l",
+       "speak": [
+        {
+         "word": "snow"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "white",
+       "size": "l",
+       "speak": [
+        {
+         "word": "white"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "red",
+      "size": "l",
+      "speak": [
+       {
+        "word": "red"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "ball",
+      "size": "l",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "small",
+      "size": "l",
+      "speak": [
+       {
+        "word": "small"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "snow"
+      },
+      "is the colour",
+      {
+       "word": "white"
+      },
+      ".",
+      "So",
+      {
+       "word": "cherry"
+      },
+      "is the colour",
+      {
+       "word": "red"
+      },
+      "."
+     ],
+     "steps": [
+      "Snow is the colour white.",
+      "Cherry is the colour red."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cherry",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cherry"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "red",
+        "size": "l",
+        "speak": [
+         {
+          "word": "red"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A15|2|{\"base\":\"cherry\",\"from\":[\"snow\",\"white\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "banana",
+      "yellow"
+     ],
+     "base": "coal",
+     "options": [
+      "book",
+      "black",
+      "calf"
+     ]
+    },
+    "prompt": {
+     "text": "Banana is to yellow as coal is to ___?",
+     "speak": [
+      {
+       "word": "banana"
+      },
+      "is to",
+      {
+       "word": "yellow"
+      },
+      "as",
+      {
+       "word": "coal"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "banana",
+       "size": "l",
+       "speak": [
+        {
+         "word": "banana"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "yellow",
+       "size": "l",
+       "speak": [
+        {
+         "word": "yellow"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "black",
+      "size": "l",
+      "speak": [
+       {
+        "word": "black"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "calf",
+      "size": "l",
+      "speak": [
+       {
+        "word": "calf"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "banana"
+      },
+      "is the colour",
+      {
+       "word": "yellow"
+      },
+      ".",
+      "So",
+      {
+       "word": "coal"
+      },
+      "is the colour",
+      {
+       "word": "black"
+      },
+      "."
+     ],
+     "steps": [
+      "Banana is the colour yellow.",
+      "Coal is the colour black."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "coal",
+        "size": "l",
+        "speak": [
+         {
+          "word": "coal"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "black",
+        "size": "l",
+        "speak": [
+         {
+          "word": "black"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 5,
+    "key": "R-A15|2|{\"base\":\"coal\",\"from\":[\"banana\",\"yellow\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "sheep",
+      "wool"
+     ],
+     "base": "cow",
+     "options": [
+      "milk",
+      "small",
+      "cold"
+     ]
+    },
+    "prompt": {
+     "text": "Sheep is to wool as cow is to ___?",
+     "speak": [
+      {
+       "word": "sheep"
+      },
+      "is to",
+      {
+       "word": "wool"
+      },
+      "as",
+      {
+       "word": "cow"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "sheep",
+       "size": "l",
+       "speak": [
+        {
+         "word": "sheep"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "wool",
+       "size": "l",
+       "speak": [
+        {
+         "word": "wool"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "milk",
+      "size": "l",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "small",
+      "size": "l",
+      "speak": [
+       {
+        "word": "small"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cold"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "sheep"
+      },
+      "gives us",
+      {
+       "word": "wool"
+      },
+      ".",
+      "So",
+      {
+       "word": "cow"
+      },
+      "gives us",
+      {
+       "word": "milk"
+      },
+      "."
+     ],
+     "steps": [
+      "Sheep gives us wool.",
+      "Cow gives us milk."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "cow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "cow"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "milk",
+        "size": "l",
+        "speak": [
+         {
+          "word": "milk"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A15|2|{\"base\":\"cow\",\"from\":[\"sheep\",\"wool\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "hen",
+      "chick"
+     ],
+     "base": "horse",
+     "options": [
+      "nest",
+      "foal",
+      "blue"
+     ]
+    },
+    "prompt": {
+     "text": "Hen is to chick as horse is to ___?",
+     "speak": [
+      {
+       "word": "hen"
+      },
+      "is to",
+      {
+       "word": "chick"
+      },
+      "as",
+      {
+       "word": "horse"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "hen",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hen"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "chick",
+       "size": "l",
+       "speak": [
+        {
+         "word": "chick"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "foal",
+      "size": "l",
+      "speak": [
+       {
+        "word": "foal"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       {
+        "word": "blue"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "hen"
+      },
+      "has a baby called",
+      {
+       "word": "chick"
+      },
+      ".",
+      "So",
+      {
+       "word": "horse"
+      },
+      "has a baby called",
+      {
+       "word": "foal"
+      },
+      "."
+     ],
+     "steps": [
+      "Hen has a baby called chick.",
+      "Horse has a baby called foal."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "horse",
+        "size": "l",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "foal",
+        "size": "l",
+        "speak": [
+         {
+          "word": "foal"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 7,
+    "key": "R-A15|2|{\"base\":\"horse\",\"from\":[\"hen\",\"chick\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "cat",
+      "kitten"
+     ],
+     "base": "horse",
+     "options": [
+      "green",
+      "nest",
+      "foal"
+     ]
+    },
+    "prompt": {
+     "text": "Cat is to kitten as horse is to ___?",
+     "speak": [
+      {
+       "word": "cat"
+      },
+      "is to",
+      {
+       "word": "kitten"
+      },
+      "as",
+      {
+       "word": "horse"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "cat",
+       "size": "l",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "kitten",
+       "size": "l",
+       "speak": [
+        {
+         "word": "kitten"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "green",
+      "size": "l",
+      "speak": [
+       {
+        "word": "green"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "foal",
+      "size": "l",
+      "speak": [
+       {
+        "word": "foal"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "cat"
+      },
+      "has a baby called",
+      {
+       "word": "kitten"
+      },
+      ".",
+      "So",
+      {
+       "word": "horse"
+      },
+      "has a baby called",
+      {
+       "word": "foal"
+      },
+      "."
+     ],
+     "steps": [
+      "Cat has a baby called kitten.",
+      "Horse has a baby called foal."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "horse",
+        "size": "l",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "foal",
+        "size": "l",
+        "speak": [
+         {
+          "word": "foal"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 8,
+    "key": "R-A15|2|{\"base\":\"horse\",\"from\":[\"cat\",\"kitten\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "dog",
+      "puppy"
+     ],
+     "base": "horse",
+     "options": [
+      "foal",
+      "dry",
+      "hair"
+     ]
+    },
+    "prompt": {
+     "text": "Dog is to puppy as horse is to ___?",
+     "speak": [
+      {
+       "word": "dog"
+      },
+      "is to",
+      {
+       "word": "puppy"
+      },
+      "as",
+      {
+       "word": "horse"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "dog",
+       "size": "l",
+       "speak": [
+        {
+         "word": "dog"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "puppy",
+       "size": "l",
+       "speak": [
+        {
+         "word": "puppy"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "foal",
+      "size": "l",
+      "speak": [
+       {
+        "word": "foal"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "dry",
+      "size": "l",
+      "speak": [
+       {
+        "word": "dry"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "hair",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hair"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "dog"
+      },
+      "has a baby called",
+      {
+       "word": "puppy"
+      },
+      ".",
+      "So",
+      {
+       "word": "horse"
+      },
+      "has a baby called",
+      {
+       "word": "foal"
+      },
+      "."
+     ],
+     "steps": [
+      "Dog has a baby called puppy.",
+      "Horse has a baby called foal."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "horse",
+        "size": "l",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "foal",
+        "size": "l",
+        "speak": [
+         {
+          "word": "foal"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 9,
+    "key": "R-A15|2|{\"base\":\"horse\",\"from\":[\"dog\",\"puppy\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "cow",
+      "milk"
+     ],
+     "base": "bee",
+     "options": [
+      "lamb",
+      "shut",
+      "honey"
+     ]
+    },
+    "prompt": {
+     "text": "Cow is to milk as bee is to ___?",
+     "speak": [
+      {
+       "word": "cow"
+      },
+      "is to",
+      {
+       "word": "milk"
+      },
+      "as",
+      {
+       "word": "bee"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "cow",
+       "size": "l",
+       "speak": [
+        {
+         "word": "cow"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "milk",
+       "size": "l",
+       "speak": [
+        {
+         "word": "milk"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "lamb",
+      "size": "l",
+      "speak": [
+       {
+        "word": "lamb"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "shut",
+      "size": "l",
+      "speak": [
+       {
+        "word": "shut"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "honey",
+      "size": "l",
+      "speak": [
+       {
+        "word": "honey"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "cow"
+      },
+      "gives us",
+      {
+       "word": "milk"
+      },
+      ".",
+      "So",
+      {
+       "word": "bee"
+      },
+      "gives us",
+      {
+       "word": "honey"
+      },
+      "."
+     ],
+     "steps": [
+      "Cow gives us milk.",
+      "Bee gives us honey."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bee",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bee"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "honey",
+        "size": "l",
+        "speak": [
+         {
+          "word": "honey"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A15|2|{\"base\":\"bee\",\"from\":[\"cow\",\"milk\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bee",
+      "hive"
+     ],
+     "base": "pig",
+     "options": [
+      "sty",
+      "book",
+      "yellow"
+     ]
+    },
+    "prompt": {
+     "text": "Bee is to hive as pig is to ___?",
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "is to",
+      {
+       "word": "hive"
+      },
+      "as",
+      {
+       "word": "pig"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bee",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bee"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "hive",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hive"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "sty",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sty"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "yellow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "yellow"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "lives in",
+      {
+       "word": "hive"
+      },
+      ".",
+      "So",
+      {
+       "word": "pig"
+      },
+      "lives in",
+      {
+       "word": "sty"
+      },
+      "."
+     ],
+     "steps": [
+      "Bee lives in hive.",
+      "Pig lives in sty."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "sty",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sty"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A15|3|{\"base\":\"pig\",\"from\":[\"bee\",\"hive\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bird",
+      "nest"
+     ],
+     "base": "fish",
+     "options": [
+      "wool",
+      "pond",
+      "cub"
+     ]
+    },
+    "prompt": {
+     "text": "Bird is to nest as fish is to ___?",
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "is to",
+      {
+       "word": "nest"
+      },
+      "as",
+      {
+       "word": "fish"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bird",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bird"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "nest",
+       "size": "l",
+       "speak": [
+        {
+         "word": "nest"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "wool",
+      "size": "l",
+      "speak": [
+       {
+        "word": "wool"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "cub",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cub"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bird"
+      },
+      "lives in",
+      {
+       "word": "nest"
+      },
+      ".",
+      "So",
+      {
+       "word": "fish"
+      },
+      "lives in",
+      {
+       "word": "pond"
+      },
+      "."
+     ],
+     "steps": [
+      "Bird lives in nest.",
+      "Fish lives in pond."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "pond",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pond"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A15|3|{\"base\":\"fish\",\"from\":[\"bird\",\"nest\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "bee",
+      "hive"
+     ],
+     "base": "horse",
+     "options": [
+      "slow",
+      "foal",
+      "stable"
+     ]
+    },
+    "prompt": {
+     "text": "Bee is to hive as horse is to ___?",
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "is to",
+      {
+       "word": "hive"
+      },
+      "as",
+      {
+       "word": "horse"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "bee",
+       "size": "l",
+       "speak": [
+        {
+         "word": "bee"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "hive",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hive"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "slow",
+      "size": "l",
+      "speak": [
+       {
+        "word": "slow"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "foal",
+      "size": "l",
+      "speak": [
+       {
+        "word": "foal"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "stable",
+      "size": "l",
+      "speak": [
+       {
+        "word": "stable"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "bee"
+      },
+      "lives in",
+      {
+       "word": "hive"
+      },
+      ".",
+      "So",
+      {
+       "word": "horse"
+      },
+      "lives in",
+      {
+       "word": "stable"
+      },
+      "."
+     ],
+     "steps": [
+      "Bee lives in hive.",
+      "Horse lives in stable."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "horse",
+        "size": "l",
+        "speak": [
+         {
+          "word": "horse"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "stable",
+        "size": "l",
+        "speak": [
+         {
+          "word": "stable"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A15|3|{\"base\":\"horse\",\"from\":[\"bee\",\"hive\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "tree",
+      "wood"
+     ],
+     "base": "hen",
+     "options": [
+      "egg",
+      "chick",
+      "small"
+     ]
+    },
+    "prompt": {
+     "text": "Tree is to wood as hen is to ___?",
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "is to",
+      {
+       "word": "wood"
+      },
+      "as",
+      {
+       "word": "hen"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "tree",
+       "size": "l",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "wood",
+       "size": "l",
+       "speak": [
+        {
+         "word": "wood"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "egg",
+      "size": "l",
+      "speak": [
+       {
+        "word": "egg"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "chick",
+      "size": "l",
+      "speak": [
+       {
+        "word": "chick"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "small",
+      "size": "l",
+      "speak": [
+       {
+        "word": "small"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "tree"
+      },
+      "gives us",
+      {
+       "word": "wood"
+      },
+      ".",
+      "So",
+      {
+       "word": "hen"
+      },
+      "gives us",
+      {
+       "word": "egg"
+      },
+      "."
+     ],
+     "steps": [
+      "Tree gives us wood.",
+      "Hen gives us egg."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hen",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hen"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "egg",
+        "size": "l",
+        "speak": [
+         {
+          "word": "egg"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A15|3|{\"base\":\"hen\",\"from\":[\"tree\",\"wood\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "horse",
+      "stable"
+     ],
+     "base": "pig",
+     "options": [
+      "book",
+      "sty",
+      "milk"
+     ]
+    },
+    "prompt": {
+     "text": "Horse is to stable as pig is to ___?",
+     "speak": [
+      {
+       "word": "horse"
+      },
+      "is to",
+      {
+       "word": "stable"
+      },
+      "as",
+      {
+       "word": "pig"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "horse",
+       "size": "l",
+       "speak": [
+        {
+         "word": "horse"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "stable",
+       "size": "l",
+       "speak": [
+        {
+         "word": "stable"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "sty",
+      "size": "l",
+      "speak": [
+       {
+        "word": "sty"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "milk",
+      "size": "l",
+      "speak": [
+       {
+        "word": "milk"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "horse"
+      },
+      "lives in",
+      {
+       "word": "stable"
+      },
+      ".",
+      "So",
+      {
+       "word": "pig"
+      },
+      "lives in",
+      {
+       "word": "sty"
+      },
+      "."
+     ],
+     "steps": [
+      "Horse lives in stable.",
+      "Pig lives in sty."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "pig",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pig"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "sty",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sty"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A15|3|{\"base\":\"pig\",\"from\":[\"horse\",\"stable\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "spider",
+      "web"
+     ],
+     "base": "fish",
+     "options": [
+      "cold",
+      "pond",
+      "hair"
+     ]
+    },
+    "prompt": {
+     "text": "Spider is to web as fish is to ___?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "is to",
+      {
+       "word": "web"
+      },
+      "as",
+      {
+       "word": "fish"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "spider",
+       "size": "l",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "web",
+       "size": "l",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cold",
+      "size": "l",
+      "speak": [
+       {
+        "word": "cold"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "pond",
+      "size": "l",
+      "speak": [
+       {
+        "word": "pond"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "hair",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hair"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "lives in",
+      {
+       "word": "web"
+      },
+      ".",
+      "So",
+      {
+       "word": "fish"
+      },
+      "lives in",
+      {
+       "word": "pond"
+      },
+      "."
+     ],
+     "steps": [
+      "Spider lives in web.",
+      "Fish lives in pond."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "fish",
+        "size": "l",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "pond",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pond"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A15|3|{\"base\":\"fish\",\"from\":[\"spider\",\"web\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "finger",
+      "hand"
+     ],
+     "base": "key",
+     "options": [
+      "piano",
+      "nest",
+      "lock"
+     ]
+    },
+    "prompt": {
+     "text": "Finger is to hand as key is to ___?",
+     "speak": [
+      {
+       "word": "finger"
+      },
+      "is to",
+      {
+       "word": "hand"
+      },
+      "as",
+      {
+       "word": "key"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "finger",
+       "size": "l",
+       "speak": [
+        {
+         "word": "finger"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "hand",
+       "size": "l",
+       "speak": [
+        {
+         "word": "hand"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "piano",
+      "size": "l",
+      "speak": [
+       {
+        "word": "piano"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "lock",
+      "size": "l",
+      "speak": [
+       {
+        "word": "lock"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "finger"
+      },
+      "is part of",
+      {
+       "word": "hand"
+      },
+      ".",
+      "So",
+      {
+       "word": "key"
+      },
+      "is part of",
+      {
+       "word": "piano"
+      },
+      "."
+     ],
+     "steps": [
+      "Finger is part of hand.",
+      "Key is part of piano."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "key",
+        "size": "l",
+        "speak": [
+         {
+          "word": "key"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "piano",
+        "size": "l",
+        "speak": [
+         {
+          "word": "piano"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A15|3|{\"base\":\"key\",\"from\":[\"finger\",\"hand\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "key",
+      "piano"
+     ],
+     "base": "wheel",
+     "options": [
+      "nest",
+      "car",
+      "black"
+     ]
+    },
+    "prompt": {
+     "text": "Key is to piano as wheel is to ___?",
+     "speak": [
+      {
+       "word": "key"
+      },
+      "is to",
+      {
+       "word": "piano"
+      },
+      "as",
+      {
+       "word": "wheel"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "key",
+       "size": "l",
+       "speak": [
+        {
+         "word": "key"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "piano",
+       "size": "l",
+       "speak": [
+        {
+         "word": "piano"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "car",
+      "size": "l",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "black",
+      "size": "l",
+      "speak": [
+       {
+        "word": "black"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "key"
+      },
+      "is part of",
+      {
+       "word": "piano"
+      },
+      ".",
+      "So",
+      {
+       "word": "wheel"
+      },
+      "is part of",
+      {
+       "word": "car"
+      },
+      "."
+     ],
+     "steps": [
+      "Key is part of piano.",
+      "Wheel is part of car."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "wheel",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wheel"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A15|3|{\"base\":\"wheel\",\"from\":[\"key\",\"piano\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "leaf",
+      "tree"
+     ],
+     "base": "page",
+     "options": [
+      "hair",
+      "hive",
+      "book"
+     ]
+    },
+    "prompt": {
+     "text": "Leaf is to tree as page is to ___?",
+     "speak": [
+      {
+       "word": "leaf"
+      },
+      "is to",
+      {
+       "word": "tree"
+      },
+      "as",
+      {
+       "word": "page"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "leaf",
+       "size": "l",
+       "speak": [
+        {
+         "word": "leaf"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "tree",
+       "size": "l",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "hair",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hair"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "hive",
+      "size": "l",
+      "speak": [
+       {
+        "word": "hive"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "book",
+      "size": "l",
+      "speak": [
+       {
+        "word": "book"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "leaf"
+      },
+      "is part of",
+      {
+       "word": "tree"
+      },
+      ".",
+      "So",
+      {
+       "word": "page"
+      },
+      "is part of",
+      {
+       "word": "book"
+      },
+      "."
+     ],
+     "steps": [
+      "Leaf is part of tree.",
+      "Page is part of book."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "page",
+        "size": "l",
+        "speak": [
+         {
+          "word": "page"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "book",
+        "size": "l",
+        "speak": [
+         {
+          "word": "book"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A15|3|{\"base\":\"page\",\"from\":[\"leaf\",\"tree\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "from": [
+      "spider",
+      "web"
+     ],
+     "base": "bird",
+     "options": [
+      "night",
+      "shut",
+      "nest"
+     ]
+    },
+    "prompt": {
+     "text": "Spider is to web as bird is to ___?",
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "is to",
+      {
+       "word": "web"
+      },
+      "as",
+      {
+       "word": "bird"
+      },
+      "is to what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "text",
+       "value": "spider",
+       "size": "l",
+       "speak": [
+        {
+         "word": "spider"
+        }
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "→",
+       "size": "l"
+      },
+      {
+       "kind": "text",
+       "value": "web",
+       "size": "l",
+       "speak": [
+        {
+         "word": "web"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "night",
+      "size": "l",
+      "speak": [
+       {
+        "word": "night"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "shut",
+      "size": "l",
+      "speak": [
+       {
+        "word": "shut"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "nest",
+      "size": "l",
+      "speak": [
+       {
+        "word": "nest"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "spider"
+      },
+      "lives in",
+      {
+       "word": "web"
+      },
+      ".",
+      "So",
+      {
+       "word": "bird"
+      },
+      "lives in",
+      {
+       "word": "nest"
+      },
+      "."
+     ],
+     "steps": [
+      "Spider lives in web.",
+      "Bird lives in nest."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "bird",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bird"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "→",
+        "size": "l"
+       },
+       {
+        "kind": "text",
+        "value": "nest",
+        "size": "l",
+        "speak": [
+         {
+          "word": "nest"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "R-A15",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A15|3|{\"base\":\"bird\",\"from\":[\"spider\",\"web\"]}"
+   }
+  ]
+ }
+}

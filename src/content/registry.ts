@@ -13,6 +13,7 @@ import { bossyRGenerator, twoPartsGenerator, vowelTeams2Generator } from './gene
 import { mainIdeaGenerator, orderOfEventsGenerator, readStory2Generator } from './generators/ela/g2/reading';
 import { contractionsGenerator, homophonesGenerator, prefixesGenerator, suffixesGenerator, synonymsGenerator } from './generators/ela/g2/words';
 import { contextWordsGenerator, g1CharactersGenerator, g1FactsGenerator, g2FactsGenerator, kCharactersGenerator, kFactsGenerator, retell1Generator, retell2Generator, trueFalseGenerator } from './generators/ela/comprehension';
+import { numberGridsGenerator, oddWordGenerator, wordAnalogiesGenerator } from './generators/reasoning/verbal';
 import { describingGenerator, endMarksGenerator, nounsAndVerbsGenerator, readStoryGenerator } from './generators/ela/g1/grammar';
 import { blendsGenerator, digraphsGenerator, shortOrLongGenerator, silentEGenerator, vowelTeamsGenerator } from './generators/ela/g1/phonics';
 import { compoundsGenerator, meaningsGenerator, sightWordsFourGenerator } from './generators/ela/g1/words';
@@ -216,6 +217,9 @@ const ALL: readonly SkillGenerator[] = [
   retell2Generator,
   g2FactsGenerator,
   contextWordsGenerator,
+  wordAnalogiesGenerator,
+  oddWordGenerator,
+  numberGridsGenerator,
   timeToFiveGenerator,
   countCoinsGenerator,
   rulerGenerator,

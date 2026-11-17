@@ -229,7 +229,7 @@ describe('the oracle list', () => {
 });
 
 const BASE_NAMES: string[] = (
-      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'wordSet']
+      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'verbalAnalogy', 'verbalClass', 'numberGrid', 'wordSet']
 );
 
 describe('judge', () => {

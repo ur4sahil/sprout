@@ -109,10 +109,10 @@ describe('trouble spots', () => {
 });
 
 describe('plans', () => {
-  it('the ready-made plan holds all 14 reasoning skills in ladder order', () => {
+  it('the ready-made plan holds all 17 reasoning skills in ladder order', () => {
     const template = reasoningTemplate();
     expect(template.name).toBe('Reasoning practice');
-    expect(template.skillIds).toHaveLength(14);
+    expect(template.skillIds).toHaveLength(17);
     expect(template.skillIds).toEqual(LADDERS.filter((ladder) => ladder.subject === 'reasoning').flatMap((ladder) => ladder.skillIds));
     expect(template.skillIds.slice(0, 3)).toEqual(['R-A1', 'R-A2', 'R-A3']);
   });
@@ -147,7 +147,7 @@ describe('the plans page', () => {
     expect((await screen.findByRole('status')).textContent).toContain('No plans yet');
     await user.click(screen.getByRole('button', { name: 'Use this plan' }));
     const section = await screen.findByRole('region', { name: 'Reasoning practice' });
-    expect(section.textContent).toContain('14 skills. For: Robin.');
+    expect(section.textContent).toContain('17 skills. For: Robin.');
     const plans = await (await repo()).listPlans();
     expect(plans).toHaveLength(1);
     expect(plans[0]).toMatchObject({ name: 'Reasoning practice', childIds: ['kid-1'] });

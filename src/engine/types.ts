@@ -214,6 +214,9 @@ export type BaseOracleId =
   | 'turnaround'
   | 'sumList'
   | 'unitChoice'
+  | 'verbalAnalogy'
+  | 'verbalClass'
+  | 'numberGrid'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -269,6 +272,9 @@ const BASE_ORACLE_FACTS: Record<BaseOracleId, string[]> = {
   turnaround: ['a', 'b', 'ask'],
   sumList: ['numbers'],
   unitChoice: ['ask'],
+  verbalAnalogy: ['from', 'base', 'options'],
+  verbalClass: ['words'],
+  numberGrid: ['rows', 'rule'],
   authored: ['id'],
 };
 export const ORACLE_FACTS: Record<OracleId, readonly string[]> = { ...BASE_ORACLE_FACTS, ...H1_FACTS, ...H2_FACTS, ...H3_FACTS, ...H4_FACTS, ...H5_FACTS };

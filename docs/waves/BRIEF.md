@@ -61,8 +61,7 @@ they are updated once after the merge. Do not push. Do not run browser tests. Do
 - `npx vitest run tests/generators.all.test.ts tests/oracles.test.ts tests/golden.test.ts tests/content tests/oracles tests/visuals`
   passes, except `tests/content/ladders.test.ts`.
 - Read `npm run content:dump -- <id prefix>` output for your skills and fix wording a child or parent would trip on.
-- One commit on your branch: "Plan 15 wave <H1..H5>: <subject and grades>, <n> skills", stamped
-  `ur4sahil <264262893+ur4sahil@users.noreply.github.com>` (`git -c user.name=... -c user.email=... commit`), ending with
-  the two lines `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` and
-  `Claude-Session: https://claude.ai/code/session_01SgAtviVTR6d5FNyMvDw7Yj`.
+- One commit on your branch: "Plan 15 wave <H1..H5>: <subject and grades>, <n> skills", stamped with the same author
+  name and address as the latest commit (`git log -1 --format='%an %ae'`, then `git -c user.name=... -c user.email=... commit`), ending with
+  the same two trailer lines (Co-Authored-By and Claude-Session) as the latest commit (`git log -1`).
 - No real people's names, no email addresses anywhere (made-up first names in stories are fine).

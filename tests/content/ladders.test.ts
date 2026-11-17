@@ -8,12 +8,12 @@ describe('ladders', () => {
   const all = LADDERS.flatMap((ladder) => ladder.skillIds);
 
   it('hold every skill built so far, each on exactly one ladder', () => {
-    expect(all).toHaveLength(209);
-    expect(new Set(all).size).toBe(209);
+    expect(all).toHaveLength(212);
+    expect(new Set(all).size).toBe(212);
     const count = (prefix: string): number => all.filter((id) => id.startsWith(prefix)).length;
     expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-'), count('M-3-')]).toEqual([16, 31, 27, 27, 32]);
     expect([count('E-PK-'), count('E-K-'), count('E-1-'), count('E-2-')]).toEqual([10, 18, 16, 18]);
-    expect(count('R-')).toBe(14);
+    expect(count('R-')).toBe(17);
   });
 
   it('are the ladders in the plan, in its order', () => {
@@ -22,7 +22,7 @@ describe('ladders', () => {
       'letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading',
       'figures', 'words-numbers',
     ]);
-    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 8, 39, 9, 12, 10, 7, 6, 4, 2, 7, 10, 1, 7, 7, 11, 4, 10, 9, 14, 9, 5]);
+    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 8, 39, 9, 12, 10, 7, 6, 4, 2, 7, 10, 1, 7, 7, 11, 4, 10, 9, 14, 9, 8]);
   });
 
   it('never go down a grade', () => {
@@ -39,7 +39,7 @@ describe('ladders', () => {
     expect(ladderById('sounds')?.skillIds).toEqual(['E-PK-B1', 'E-PK-B2', 'E-PK-B3', 'E-K-B1', 'E-K-B2', 'E-K-B3', 'E-K-B6']);
     expect(ladderById('phonics')?.skillIds.slice(0, 3)).toEqual(['E-K-B4', 'E-K-B5', 'E-K-B7']);
     expect(ladderById('figures')?.skillIds).toEqual(['R-A1', 'R-A2', 'R-A3', 'R-A4', 'R-A5', 'R-A6', 'R-A7', 'R-A12', 'R-A13']);
-    expect(ladderById('words-numbers')?.skillIds).toEqual(['R-A9', 'R-A14', 'R-A8', 'R-A10', 'R-A11']);
+    expect(ladderById('words-numbers')?.skillIds).toEqual(['R-A9', 'R-A14', 'R-A15', 'R-A16', 'R-A8', 'R-A10', 'R-A11', 'R-A17']);
   });
 
   it('give each skill the one before it on its ladder as its prerequisite, across grades', () => {

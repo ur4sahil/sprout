@@ -51,7 +51,7 @@ const BASE_LADDERS: Ladder[] = [
   { id: 'vocabulary', subject: 'ela', skillIds: [...run(E.PK, 'C', 1, 2), 'E-1-B2', 'E-1-B3', ...run(E.G2, 'B', 1, 5)] },
   { id: 'reading', subject: 'ela', skillIds: [...run(E.K, 'E', 1, 3), ...run(E.G1, 'D', 1, 5), ...run(E.G2, 'D', 1, 6)] },
   { id: 'figures', subject: 'reasoning', skillIds: [...run('R', 'A', 1, 7), 'R-A12', 'R-A13'] },
-  { id: 'words-numbers', subject: 'reasoning', skillIds: ['R-A9', 'R-A14', 'R-A8', 'R-A10', 'R-A11'] },
+  { id: 'words-numbers', subject: 'reasoning', skillIds: ['R-A9', 'R-A14', 'R-A15', 'R-A16', 'R-A8', 'R-A10', 'R-A11', 'R-A17'] },
 ];
 
 // Each wave's steps, in wave order. A step whose ladder or anchor is missing stops the app at once in tests.
