@@ -18,6 +18,8 @@ import Review from '../screens/kid/Review';
 import SubjectPage from '../screens/kid/SubjectPage';
 import Dashboard from '../screens/parent/Dashboard';
 import ParentFacts from '../screens/parent/Facts';
+import Worksheet from '../screens/parent/Worksheet';
+import Worksheets from '../screens/parent/Worksheets';
 import Data from '../screens/parent/Data';
 import Log from '../screens/parent/Log';
 import Plans from '../screens/parent/Plans';
@@ -48,6 +50,8 @@ export const routes: RouteObject[] = [
   { path: '/parent/certificate/:childId/:skillId', element: <Certificate /> },
   { path: '/parent/trouble', element: <Trouble /> },
   { path: '/parent/facts', element: <ParentFacts /> },
+  { path: '/parent/worksheets', element: <Worksheets /> },
+  { path: '/parent/worksheet', element: <Worksheet /> },
   { path: '/parent/log', element: <Log /> },
   { path: '/parent/plans', element: <Plans /> },
   { path: '/parent/settings', element: <Settings /> },

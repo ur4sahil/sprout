@@ -1,0 +1,157 @@
+/* The same printable page as the certificate. */
+.page {
+  composes: page from './Certificate.module.css';
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--width-question);
+  padding: var(--space-5);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border: var(--border-thin) solid var(--color-line);
+}
+
+.head {
+  composes: spread from '../../components/shared.module.css';
+  border-bottom: var(--border-thick) solid var(--color-ink);
+  padding-bottom: var(--space-2);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-l);
+}
+
+.meta,
+.note,
+.how {
+  margin: 0;
+  font-size: var(--text-s);
+}
+
+.note {
+  color: var(--color-ink-soft);
+}
+
+.items,
+.answers {
+  margin: 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.answers {
+  gap: var(--space-2);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  break-inside: avoid;
+}
+
+.prompt {
+  margin: 0;
+  font-weight: 700;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.letter {
+  font-weight: var(--weight-display);
+}
+
+.box {
+  display: inline-block;
+  min-width: var(--tap-min);
+  min-height: var(--space-6);
+  border: var(--border-thin) solid var(--color-ink);
+  vertical-align: middle;
+}
+
+.line {
+  display: inline-block;
+  min-width: var(--size-bin-basis);
+  border-bottom: var(--border-thin) solid var(--color-ink);
+}
+
+.bins,
+.match {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.bin {
+  flex: 1 1 var(--size-bin-basis);
+  min-height: var(--size-bin-height);
+  padding: var(--space-2);
+  border: var(--border-thin) solid var(--color-ink);
+  font-weight: 700;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1 1 0;
+}
+
+.from {
+  color: var(--color-ink-soft);
+  font-size: var(--text-s);
+}
+
+.seed {
+  margin: 0;
+  align-self: flex-end;
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
+/* On paper: the sheet, then the key on a page of its own, with no buttons. */
+@page {
+  size: letter;
+}
+
+@media print {
+  .page {
+    padding: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  .sheet {
+    max-width: none;
+    border: none;
+    padding: 0;
+  }
+
+  .key {
+    break-before: page;
+  }
+
+  .screenOnly {
+    display: none;
+  }
+}

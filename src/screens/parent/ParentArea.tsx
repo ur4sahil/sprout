@@ -12,6 +12,7 @@ const PAGES = [
   { id: 'scores', label: 'Scores' },
   { id: 'trouble', label: 'Trouble spots' },
   { id: 'facts', label: 'Fast facts' },
+  { id: 'worksheets', label: 'Worksheets' },
   { id: 'log', label: 'Question log' },
   { id: 'plans', label: 'Plans' },
   { id: 'settings', label: 'Settings' },
