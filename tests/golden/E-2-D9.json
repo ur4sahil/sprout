@@ -1,0 +1,1396 @@
+{
+ "skillId": "E-2-D9",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "read",
+  "facts": {
+   "relation": "sameInBoth",
+   "target": "sp4",
+   "read": [
+    "Story 1: It rained, so Max played a game inside. Story 2: It snowed, so Lin built a snowman outside.",
+    "Both children are sick.",
+    "Both children go to the beach.",
+    "The weather changes what a child does."
+   ],
+   "options": [
+    "Both children are sick.",
+    "Both children go to the beach.",
+    "The weather changes what a child does."
+   ]
+  },
+  "prompt": {
+   "text": "What is the same in both stories?",
+   "speak": [
+    "What is the same in both stories?"
+   ]
+  },
+  "stimulus": {
+   "kind": "text",
+   "value": "Story 1: It rained, so Max played a game inside. Story 2: It snowed, so Lin built a snowman outside.",
+   "size": "m"
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "Both children are sick.",
+    "size": "m"
+   },
+   {
+    "kind": "text",
+    "value": "Both children go to the beach.",
+    "size": "m"
+   },
+   {
+    "kind": "text",
+    "value": "The weather changes what a child does.",
+    "size": "m"
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "Read both stories, then check each answer against both."
+   ],
+   "steps": [
+    "Read both stories, then check each answer against both.",
+    "The weather changes what a child does."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "The weather changes what a child does.",
+    "size": "m"
+   }
+  },
+  "skillId": "E-2-D9",
+  "level": 1,
+  "seed": 1533,
+  "key": "E-2-D9|1|{\"read\":[\"Story 1: It rained, so Max played a game inside. Story 2: It snowed, so Lin built a snowman outside.\",\"Both children are sick.\",\"Both children go to the beach.\",\"The weather changes what a child does.\"],\"relation\":\"sameInBoth\",\"target\":\"sp4\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "A girl goes camping.",
+      "A girl is scared of dogs.",
+      "A girl is scared of the dark."
+     ],
+     "options": [
+      "A girl goes camping.",
+      "A girl is scared of dogs.",
+      "A girl is scared of the dark."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A girl goes camping.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl is scared of dogs.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A girl is scared of the dark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 1,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"A girl goes camping.\",\"A girl is scared of dogs.\",\"A girl is scared of the dark.\"],\"relation\":\"sameInBoth\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "A girl is scared of dogs.",
+      "A girl goes camping.",
+      "A girl is scared of the dark."
+     ],
+     "options": [
+      "A girl is scared of dogs.",
+      "A girl goes camping.",
+      "A girl is scared of the dark."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A girl is scared of dogs.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl goes camping.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A girl is scared of the dark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 2,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"A girl is scared of dogs.\",\"A girl goes camping.\",\"A girl is scared of the dark.\"],\"relation\":\"sameInBoth\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "A girl is scared of dogs.",
+      "A girl goes camping.",
+      "A girl is scared of the dark."
+     ],
+     "options": [
+      "A girl is scared of dogs.",
+      "A girl goes camping.",
+      "A girl is scared of the dark."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A girl is scared of dogs.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl goes camping.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A girl is scared of the dark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 3,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"A girl is scared of dogs.\",\"A girl goes camping.\",\"A girl is scared of the dark.\"],\"relation\":\"sameInBoth\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp8",
+     "read": [
+      "Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.",
+      "A child keeps what they find.",
+      "A child loses a toy.",
+      "A child finds something and gives it away."
+     ],
+     "options": [
+      "A child keeps what they find.",
+      "A child loses a toy.",
+      "A child finds something and gives it away."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A child keeps what they find.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A child loses a toy.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A child finds something and gives it away.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A child finds something and gives it away."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A child finds something and gives it away.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 4,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.\",\"A child keeps what they find.\",\"A child loses a toy.\",\"A child finds something and gives it away.\"],\"relation\":\"sameInBoth\",\"target\":\"sp8\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "A girl is scared of dogs.",
+      "A girl is scared of the dark.",
+      "A girl goes camping."
+     ],
+     "options": [
+      "A girl is scared of dogs.",
+      "A girl is scared of the dark.",
+      "A girl goes camping."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A girl is scared of dogs.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A girl goes camping.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A girl is scared of the dark."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A girl is scared of the dark.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 5,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"A girl is scared of dogs.\",\"A girl is scared of the dark.\",\"A girl goes camping.\"],\"relation\":\"sameInBoth\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp5",
+     "read": [
+      "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+      "A bird is lost.",
+      "A bird flies away.",
+      "A bird plants a crop to eat."
+     ],
+     "options": [
+      "A bird is lost.",
+      "A bird flies away.",
+      "A bird plants a crop to eat."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A bird is lost.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A bird flies away.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A bird plants a crop to eat.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A bird plants a crop to eat."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A bird plants a crop to eat.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 6,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.\",\"A bird is lost.\",\"A bird flies away.\",\"A bird plants a crop to eat.\"],\"relation\":\"sameInBoth\",\"target\":\"sp5\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp1",
+     "read": [
+      "Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.",
+      "A child goes to school.",
+      "A pet climbs a tree.",
+      "A pet is lost and found."
+     ],
+     "options": [
+      "A child goes to school.",
+      "A pet climbs a tree.",
+      "A pet is lost and found."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A child goes to school.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A pet climbs a tree.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A pet is lost and found.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A pet is lost and found."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A pet is lost and found.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 7,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.\",\"A child goes to school.\",\"A pet climbs a tree.\",\"A pet is lost and found.\"],\"relation\":\"sameInBoth\",\"target\":\"sp1\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp2",
+     "read": [
+      "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+      "Two animals are friends.",
+      "An animal wants food that is up high.",
+      "An animal goes to sleep."
+     ],
+     "options": [
+      "Two animals are friends.",
+      "An animal wants food that is up high.",
+      "An animal goes to sleep."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Two animals are friends.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "An animal wants food that is up high.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "An animal goes to sleep.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "An animal wants food that is up high."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "An animal wants food that is up high.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 8,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.\",\"Two animals are friends.\",\"An animal wants food that is up high.\",\"An animal goes to sleep.\"],\"relation\":\"sameInBoth\",\"target\":\"sp2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp2",
+     "read": [
+      "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+      "An animal goes to sleep.",
+      "An animal wants food that is up high.",
+      "Two animals are friends."
+     ],
+     "options": [
+      "An animal goes to sleep.",
+      "An animal wants food that is up high.",
+      "Two animals are friends."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "An animal goes to sleep.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "An animal wants food that is up high.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Two animals are friends.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "An animal wants food that is up high."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "An animal wants food that is up high.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 9,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.\",\"An animal goes to sleep.\",\"An animal wants food that is up high.\",\"Two animals are friends.\"],\"relation\":\"sameInBoth\",\"target\":\"sp2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "sameInBoth",
+     "target": "sp5",
+     "read": [
+      "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+      "A bird plants a crop to eat.",
+      "A bird flies away.",
+      "A bird is lost."
+     ],
+     "options": [
+      "A bird plants a crop to eat.",
+      "A bird flies away.",
+      "A bird is lost."
+     ]
+    },
+    "prompt": {
+     "text": "What is the same in both stories?",
+     "speak": [
+      "What is the same in both stories?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "A bird plants a crop to eat.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A bird flies away.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "A bird is lost.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "A bird plants a crop to eat."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "A bird plants a crop to eat.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 1,
+    "seed": 10,
+    "key": "E-2-D9|1|{\"read\":[\"Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.\",\"A bird plants a crop to eat.\",\"A bird flies away.\",\"A bird is lost.\"],\"relation\":\"sameInBoth\",\"target\":\"sp5\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "Both get a night light.",
+      "Jo hears a song, but Tess gets a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "options": [
+      "Both get a night light.",
+      "Jo hears a song, but Tess gets a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Both get a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Jo hears a song, but Tess gets a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 1,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"Both get a night light.\",\"Jo hears a song, but Tess gets a night light.\",\"Jo gets a night light, but Tess hears a song.\"],\"relation\":\"differ\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "Jo hears a song, but Tess gets a night light.",
+      "Both get a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "options": [
+      "Jo hears a song, but Tess gets a night light.",
+      "Both get a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Jo hears a song, but Tess gets a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Both get a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 2,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"Jo hears a song, but Tess gets a night light.\",\"Both get a night light.\",\"Jo gets a night light, but Tess hears a song.\"],\"relation\":\"differ\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "Jo hears a song, but Tess gets a night light.",
+      "Both get a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "options": [
+      "Jo hears a song, but Tess gets a night light.",
+      "Both get a night light.",
+      "Jo gets a night light, but Tess hears a song."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Jo hears a song, but Tess gets a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Both get a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 3,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"Jo hears a song, but Tess gets a night light.\",\"Both get a night light.\",\"Jo gets a night light, but Tess hears a song.\"],\"relation\":\"differ\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp8",
+     "read": [
+      "Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.",
+      "Lin is in the woods, but Max is at the beach.",
+      "Both are at the beach.",
+      "Lin is at the beach, but Max is in the woods."
+     ],
+     "options": [
+      "Lin is in the woods, but Max is at the beach.",
+      "Both are at the beach.",
+      "Lin is at the beach, but Max is in the woods."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Lin is in the woods, but Max is at the beach.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Both are at the beach.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Lin is at the beach, but Max is in the woods.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "Lin is at the beach, but Max is in the woods."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Lin is at the beach, but Max is in the woods.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 4,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Lin found a shell on the beach. She gave it to her friend. Story 2: Max found a feather in the woods. He gave it to his friend.\",\"Lin is in the woods, but Max is at the beach.\",\"Both are at the beach.\",\"Lin is at the beach, but Max is in the woods.\"],\"relation\":\"differ\",\"target\":\"sp8\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp6",
+     "read": [
+      "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+      "Jo hears a song, but Tess gets a night light.",
+      "Jo gets a night light, but Tess hears a song.",
+      "Both get a night light."
+     ],
+     "options": [
+      "Jo hears a song, but Tess gets a night light.",
+      "Jo gets a night light, but Tess hears a song.",
+      "Both get a night light."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Jo hears a song, but Tess gets a night light.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Both get a night light.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "Jo gets a night light, but Tess hears a song."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Jo gets a night light, but Tess hears a song.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 5,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Jo was scared of the dark. Her dad gave her a night light. Story 2: Tess was scared of the dark. Her sister sang her a song.\",\"Jo hears a song, but Tess gets a night light.\",\"Jo gets a night light, but Tess hears a song.\",\"Both get a night light.\"],\"relation\":\"differ\",\"target\":\"sp6\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp5",
+     "read": [
+      "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+      "Neither bird eats.",
+      "The hen eats with friends, but the duck eats alone.",
+      "The hen eats alone, but the duck eats with friends."
+     ],
+     "options": [
+      "Neither bird eats.",
+      "The hen eats with friends, but the duck eats alone.",
+      "The hen eats alone, but the duck eats with friends."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Neither bird eats.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The hen eats with friends, but the duck eats alone.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The hen eats alone, but the duck eats with friends.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "The hen eats alone, but the duck eats with friends."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The hen eats alone, but the duck eats with friends.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 6,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.\",\"Neither bird eats.\",\"The hen eats with friends, but the duck eats alone.\",\"The hen eats alone, but the duck eats with friends.\"],\"relation\":\"differ\",\"target\":\"sp5\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp1",
+     "read": [
+      "Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.",
+      "One story is at school.",
+      "One child is happy, the other is sad.",
+      "One pet is a cat, the other is a dog."
+     ],
+     "options": [
+      "One story is at school.",
+      "One child is happy, the other is sad.",
+      "One pet is a cat, the other is a dog."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "One story is at school.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "One child is happy, the other is sad.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "One pet is a cat, the other is a dog.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "One pet is a cat, the other is a dog."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "One pet is a cat, the other is a dog.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 7,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: Ana lost her cat. She looked in the yard and found it in a tree. Story 2: Ben lost his dog. He looked in the park and found it by the pond.\",\"One story is at school.\",\"One child is happy, the other is sad.\",\"One pet is a cat, the other is a dog.\"],\"relation\":\"differ\",\"target\":\"sp1\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp2",
+     "read": [
+      "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+      "Both animals give up.",
+      "The fox gives up, but the bear gets the food.",
+      "The fox gets the food, but the bear gives up."
+     ],
+     "options": [
+      "Both animals give up.",
+      "The fox gives up, but the bear gets the food.",
+      "The fox gets the food, but the bear gives up."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Both animals give up.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The fox gives up, but the bear gets the food.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The fox gets the food, but the bear gives up.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "The fox gives up, but the bear gets the food."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The fox gives up, but the bear gets the food.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 8,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.\",\"Both animals give up.\",\"The fox gives up, but the bear gets the food.\",\"The fox gets the food, but the bear gives up.\"],\"relation\":\"differ\",\"target\":\"sp2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp2",
+     "read": [
+      "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+      "The fox gets the food, but the bear gives up.",
+      "The fox gives up, but the bear gets the food.",
+      "Both animals give up."
+     ],
+     "options": [
+      "The fox gets the food, but the bear gives up.",
+      "The fox gives up, but the bear gets the food.",
+      "Both animals give up."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "The fox gets the food, but the bear gives up.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The fox gives up, but the bear gets the food.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Both animals give up.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "The fox gives up, but the bear gets the food."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The fox gives up, but the bear gets the food.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 9,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: A fox wanted grapes. They were too high, so the fox gave up. Story 2: A bear wanted honey. It was too high, so the bear climbed up and got it.\",\"The fox gets the food, but the bear gives up.\",\"The fox gives up, but the bear gets the food.\",\"Both animals give up.\"],\"relation\":\"differ\",\"target\":\"sp2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "differ",
+     "target": "sp5",
+     "read": [
+      "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+      "The hen eats alone, but the duck eats with friends.",
+      "The hen eats with friends, but the duck eats alone.",
+      "Neither bird eats."
+     ],
+     "options": [
+      "The hen eats alone, but the duck eats with friends.",
+      "The hen eats with friends, but the duck eats alone.",
+      "Neither bird eats."
+     ]
+    },
+    "prompt": {
+     "text": "How are the two stories different?",
+     "speak": [
+      "How are the two stories different?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.",
+     "size": "m"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "The hen eats alone, but the duck eats with friends.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The hen eats with friends, but the duck eats alone.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "Neither bird eats.",
+      "size": "m"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Read both stories, then check each answer against both."
+     ],
+     "steps": [
+      "Read both stories, then check each answer against both.",
+      "The hen eats alone, but the duck eats with friends."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "The hen eats alone, but the duck eats with friends.",
+      "size": "m"
+     }
+    },
+    "skillId": "E-2-D9",
+    "level": 2,
+    "seed": 10,
+    "key": "E-2-D9|2|{\"read\":[\"Story 1: A little hen planted wheat. No one helped, so she ate the bread alone. Story 2: A little duck planted corn. Her friends helped, so they all ate together.\",\"The hen eats alone, but the duck eats with friends.\",\"The hen eats with friends, but the duck eats alone.\",\"Neither bird eats.\"],\"relation\":\"differ\",\"target\":\"sp5\"}"
+   }
+  ]
+ }
+}
