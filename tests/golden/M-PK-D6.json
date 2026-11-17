@@ -1,0 +1,4956 @@
+{
+ "skillId": "M-PK-D6",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "ask": "kind",
+   "items": [
+    "cheese",
+    "banana",
+    "pig",
+    "apple"
+   ],
+   "binAttrs": [
+    "food",
+    "animals"
+   ]
+  },
+  "prompt": {
+   "text": "Put each one in its group.",
+   "speak": [
+    "Put each one in its group."
+   ]
+  },
+  "items": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🧀",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "cheese"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍌",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "banana"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐷",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "pig"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🍎",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "apple"
+    ]
+   }
+  ],
+  "bins": [
+   {
+    "label": "Food",
+    "speak": [
+     "food"
+    ],
+    "icon": {
+     "kind": "emojiGroup",
+     "emoji": "🥕",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "carrot"
+     ]
+    }
+   },
+   {
+    "label": "Animals",
+    "speak": [
+     "animals"
+    ],
+    "icon": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "rabbit"
+     ]
+    }
+   }
+  ],
+  "answerBin": [
+   0,
+   0,
+   1,
+   0
+  ],
+  "explanation": {
+   "speak": [
+    "Food: cheese, banana, apple.",
+    "Animals: pig."
+   ],
+   "steps": [
+    "Food: cheese, banana, apple.",
+    "Animals: pig."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "M-PK-D6",
+  "level": 1,
+  "seed": 933,
+  "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\"],\"items\":[\"cheese\",\"banana\",\"pig\",\"apple\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "dog",
+      "cheese",
+      "pizza",
+      "banana"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: dog.",
+      "Food: cheese, pizza, banana."
+     ],
+     "steps": [
+      "Animals: dog.",
+      "Food: cheese, pizza, banana."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 1,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"dog\",\"cheese\",\"pizza\",\"banana\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "giraffe",
+      "apple",
+      "pizza",
+      "cookie"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: giraffe.",
+      "Food: apple, pizza, cookie."
+     ],
+     "steps": [
+      "Animals: giraffe.",
+      "Food: apple, pizza, cookie."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦒",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "giraffe"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 2,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"giraffe\",\"apple\",\"pizza\",\"cookie\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cheese",
+      "pizza",
+      "bear",
+      "carrot"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: bear.",
+      "Food: cheese, pizza, carrot."
+     ],
+     "steps": [
+      "Animals: bear.",
+      "Food: cheese, pizza, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 3,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"cheese\",\"pizza\",\"bear\",\"carrot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "apple",
+      "carrot",
+      "pizza",
+      "bear"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: bear.",
+      "Food: apple, carrot, pizza."
+     ],
+     "steps": [
+      "Animals: bear.",
+      "Food: apple, carrot, pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 4,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"apple\",\"carrot\",\"pizza\",\"bear\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "bear",
+      "banana",
+      "dog",
+      "pig"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: bear, dog, pig.",
+      "Food: banana."
+     ],
+     "steps": [
+      "Animals: bear, dog, pig.",
+      "Food: banana."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 5,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"bear\",\"banana\",\"dog\",\"pig\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cheese",
+      "cookie",
+      "cat",
+      "pizza"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: cat.",
+      "Food: cheese, cookie, pizza."
+     ],
+     "steps": [
+      "Animals: cat.",
+      "Food: cheese, cookie, pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 6,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"cheese\",\"cookie\",\"cat\",\"pizza\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "pizza",
+      "pig",
+      "bear",
+      "giraffe"
+     ],
+     "binAttrs": [
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cheese"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: pizza.",
+      "Animals: pig, bear, giraffe."
+     ],
+     "steps": [
+      "Food: pizza.",
+      "Animals: pig, bear, giraffe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pizza"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 7,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\"],\"items\":[\"pizza\",\"pig\",\"bear\",\"giraffe\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "carrot",
+      "cat",
+      "giraffe",
+      "pizza"
+     ],
+     "binAttrs": [
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: carrot, pizza.",
+      "Animals: cat, giraffe."
+     ],
+     "steps": [
+      "Food: carrot, pizza.",
+      "Animals: cat, giraffe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pizza"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 8,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\"],\"items\":[\"carrot\",\"cat\",\"giraffe\",\"pizza\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "rabbit",
+      "cookie",
+      "carrot",
+      "apple"
+     ],
+     "binAttrs": [
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cookie, carrot, apple.",
+      "Animals: rabbit."
+     ],
+     "steps": [
+      "Food: cookie, carrot, apple.",
+      "Animals: rabbit."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 9,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\"],\"items\":[\"rabbit\",\"cookie\",\"carrot\",\"apple\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "giraffe",
+      "bear",
+      "cookie",
+      "rabbit"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cheese"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: giraffe, bear, rabbit.",
+      "Food: cookie."
+     ],
+     "steps": [
+      "Animals: giraffe, bear, rabbit.",
+      "Food: cookie."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦒",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "giraffe"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 1,
+    "seed": 10,
+    "key": "M-PK-D6|1|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"giraffe\",\"bear\",\"cookie\",\"rabbit\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cap",
+      "gloves",
+      "shirt",
+      "jeans",
+      "socks",
+      "pizza"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "gloves"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "socks"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "👟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "shoe"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: cap, gloves, shirt, jeans, socks.",
+      "Food: pizza."
+     ],
+     "steps": [
+      "Clothes: cap, gloves, shirt, jeans, socks.",
+      "Food: pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧢",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cap"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "gloves"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "shirt"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "jeans"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "socks"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 1,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"clothes\",\"food\"],\"items\":[\"cap\",\"gloves\",\"shirt\",\"jeans\",\"socks\",\"pizza\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cheese",
+      "cookie",
+      "gloves",
+      "banana",
+      "shoe",
+      "jeans"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "gloves"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "socks"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cheese, cookie, banana.",
+      "Clothes: gloves, shoe, jeans."
+     ],
+     "steps": [
+      "Food: cheese, cookie, banana.",
+      "Clothes: gloves, shoe, jeans."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "banana"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 2,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\"],\"items\":[\"cheese\",\"cookie\",\"gloves\",\"banana\",\"shoe\",\"jeans\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cap",
+      "shirt",
+      "banana",
+      "socks",
+      "jeans",
+      "shoe"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "socks"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "gloves"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: banana.",
+      "Clothes: cap, shirt, socks, jeans, shoe."
+     ],
+     "steps": [
+      "Food: banana.",
+      "Clothes: cap, shirt, socks, jeans, shoe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "banana"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 3,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\"],\"items\":[\"cap\",\"shirt\",\"banana\",\"socks\",\"jeans\",\"shoe\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "car",
+      "train",
+      "bike",
+      "apple",
+      "bus",
+      "tractor"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     },
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "✈️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "airplane"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     1,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: apple.",
+      "Things that go: car, train, bike, bus, tractor."
+     ],
+     "steps": [
+      "Food: apple.",
+      "Things that go: car, train, bike, bus, tractor."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 4,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"vehicles\"],\"items\":[\"car\",\"train\",\"bike\",\"apple\",\"bus\",\"tractor\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "giraffe",
+      "cheese",
+      "apple",
+      "bear",
+      "carrot",
+      "cookie"
+     ],
+     "binAttrs": [
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cheese, apple, carrot, cookie.",
+      "Animals: giraffe, bear."
+     ],
+     "steps": [
+      "Food: cheese, apple, carrot, cookie.",
+      "Animals: giraffe, bear."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 5,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\"],\"items\":[\"giraffe\",\"cheese\",\"apple\",\"bear\",\"carrot\",\"cookie\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cheese",
+      "cap",
+      "apple",
+      "banana",
+      "socks",
+      "carrot"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "socks"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "👕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "shirt"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: cap, socks.",
+      "Food: cheese, apple, banana, carrot."
+     ],
+     "steps": [
+      "Clothes: cap, socks.",
+      "Food: cheese, apple, banana, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧢",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cap"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "socks"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 6,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"clothes\",\"food\"],\"items\":[\"cheese\",\"cap\",\"apple\",\"banana\",\"socks\",\"carrot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cookie",
+      "apple",
+      "airplane",
+      "tractor",
+      "train",
+      "car"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "airplane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bus"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Things that go: airplane, tractor, train, car.",
+      "Food: cookie, apple."
+     ],
+     "steps": [
+      "Things that go: airplane, tractor, train, car.",
+      "Food: cookie, apple."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "airplane"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "tractor"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "train"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "car"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 7,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"vehicles\",\"food\"],\"items\":[\"cookie\",\"apple\",\"airplane\",\"tractor\",\"train\",\"car\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "jeans",
+      "bike",
+      "airplane",
+      "cap",
+      "bus",
+      "tractor"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "airplane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚂",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "train"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "👟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "shoe"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Things that go: bike, airplane, bus, tractor.",
+      "Clothes: jeans, cap."
+     ],
+     "steps": [
+      "Things that go: bike, airplane, bus, tractor.",
+      "Clothes: jeans, cap."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bike"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "airplane"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bus"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "tractor"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 8,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"vehicles\",\"clothes\"],\"items\":[\"jeans\",\"bike\",\"airplane\",\"cap\",\"bus\",\"tractor\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "shirt",
+      "cheese",
+      "banana",
+      "apple",
+      "cookie",
+      "carrot"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "gloves"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cheese, banana, apple, cookie, carrot.",
+      "Clothes: shirt."
+     ],
+     "steps": [
+      "Food: cheese, banana, apple, cookie, carrot.",
+      "Clothes: shirt."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "banana"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 9,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\"],\"items\":[\"shirt\",\"cheese\",\"banana\",\"apple\",\"cookie\",\"carrot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "pig",
+      "rabbit",
+      "cat",
+      "dog",
+      "apple",
+      "bear"
+     ],
+     "binAttrs": [
+      "animals",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🦒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "giraffe"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     0,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: pig, rabbit, cat, dog, bear.",
+      "Food: apple."
+     ],
+     "steps": [
+      "Animals: pig, rabbit, cat, dog, bear.",
+      "Food: apple."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 2,
+    "seed": 10,
+    "key": "M-PK-D6|2|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\"],\"items\":[\"pig\",\"rabbit\",\"cat\",\"dog\",\"apple\",\"bear\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "shoe",
+      "carrot",
+      "pizza",
+      "shirt",
+      "bear",
+      "giraffe"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧢",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cap"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cheese"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     1,
+     0,
+     2,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: shoe, shirt.",
+      "Food: carrot, pizza.",
+      "Animals: bear, giraffe."
+     ],
+     "steps": [
+      "Clothes: shoe, shirt.",
+      "Food: carrot, pizza.",
+      "Animals: bear, giraffe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "shoe"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "shirt"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 1,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"clothes\",\"food\",\"animals\"],\"items\":[\"shoe\",\"carrot\",\"pizza\",\"shirt\",\"bear\",\"giraffe\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cat",
+      "banana",
+      "cookie",
+      "jeans",
+      "pig",
+      "cap"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🥕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "carrot"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "gloves"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     0,
+     1,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: banana, cookie.",
+      "Clothes: jeans, cap.",
+      "Animals: cat, pig."
+     ],
+     "steps": [
+      "Food: banana, cookie.",
+      "Clothes: jeans, cap.",
+      "Animals: cat, pig."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "banana"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 2,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\",\"animals\"],\"items\":[\"cat\",\"banana\",\"cookie\",\"jeans\",\"pig\",\"cap\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "shoe",
+      "dog",
+      "giraffe",
+      "cheese",
+      "jeans",
+      "carrot"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "jeans"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pizza"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "👕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "shirt"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cheese, carrot.",
+      "Clothes: shoe, jeans.",
+      "Animals: dog, giraffe."
+     ],
+     "steps": [
+      "Food: cheese, carrot.",
+      "Clothes: shoe, jeans.",
+      "Animals: dog, giraffe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 3,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\",\"animals\"],\"items\":[\"shoe\",\"dog\",\"giraffe\",\"cheese\",\"jeans\",\"carrot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "airplane",
+      "pig",
+      "dog",
+      "car",
+      "apple",
+      "cookie"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "airplane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      }
+     },
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bus"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: apple, cookie.",
+      "Things that go: airplane, car.",
+      "Animals: pig, dog."
+     ],
+     "steps": [
+      "Food: apple, cookie.",
+      "Things that go: airplane, car.",
+      "Animals: pig, dog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cookie"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 4,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"items\":[\"airplane\",\"pig\",\"dog\",\"car\",\"apple\",\"cookie\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "apple",
+      "socks",
+      "shoe",
+      "rabbit",
+      "cheese",
+      "giraffe"
+     ],
+     "binAttrs": [
+      "food",
+      "animals",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "socks"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦒",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "giraffe"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "👕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "shirt"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     2,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Food: apple, cheese.",
+      "Animals: rabbit, giraffe.",
+      "Clothes: socks, shoe."
+     ],
+     "steps": [
+      "Food: apple, cheese.",
+      "Animals: rabbit, giraffe.",
+      "Clothes: socks, shoe."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "apple"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 5,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"animals\",\"clothes\"],\"items\":[\"apple\",\"socks\",\"shoe\",\"rabbit\",\"cheese\",\"giraffe\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cat",
+      "bear",
+      "cheese",
+      "socks",
+      "carrot",
+      "shirt"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food",
+      "animals"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "socks"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "gloves"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      }
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🦒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "giraffe"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: socks, shirt.",
+      "Food: cheese, carrot.",
+      "Animals: cat, bear."
+     ],
+     "steps": [
+      "Clothes: socks, shirt.",
+      "Food: cheese, carrot.",
+      "Animals: cat, bear."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "socks"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "shirt"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 6,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"clothes\",\"food\",\"animals\"],\"items\":[\"cat\",\"bear\",\"cheese\",\"socks\",\"carrot\",\"shirt\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "shoe",
+      "train",
+      "cookie",
+      "bike",
+      "carrot",
+      "cap"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "car"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cheese"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "socks"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     1,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Things that go: train, bike.",
+      "Food: cookie, carrot.",
+      "Clothes: shoe, cap."
+     ],
+     "steps": [
+      "Things that go: train, bike.",
+      "Food: cookie, carrot.",
+      "Clothes: shoe, cap."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "train"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bike"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 7,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"vehicles\",\"food\",\"clothes\"],\"items\":[\"shoe\",\"train\",\"cookie\",\"bike\",\"carrot\",\"cap\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "shoe",
+      "tractor",
+      "cheese",
+      "bus",
+      "gloves",
+      "pizza"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "clothes",
+      "food"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "gloves"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚲",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bike"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "socks"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Things that go: tractor, bus.",
+      "Clothes: shoe, gloves.",
+      "Food: cheese, pizza."
+     ],
+     "steps": [
+      "Things that go: tractor, bus.",
+      "Clothes: shoe, gloves.",
+      "Food: cheese, pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "tractor"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bus"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 8,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"vehicles\",\"clothes\",\"food\"],\"items\":[\"shoe\",\"tractor\",\"cheese\",\"bus\",\"gloves\",\"pizza\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "car",
+      "cheese",
+      "carrot",
+      "cap",
+      "shirt",
+      "train"
+     ],
+     "binAttrs": [
+      "food",
+      "clothes",
+      "vehicles"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "gloves"
+       ]
+      }
+     },
+     {
+      "label": "Things that go",
+      "speak": [
+       "things that go"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🚌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bus"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     0,
+     1,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: cheese, carrot.",
+      "Clothes: cap, shirt.",
+      "Things that go: car, train."
+     ],
+     "steps": [
+      "Food: cheese, carrot.",
+      "Clothes: cap, shirt.",
+      "Things that go: car, train."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cheese"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "carrot"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 9,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"food\",\"clothes\",\"vehicles\"],\"items\":[\"car\",\"cheese\",\"carrot\",\"cap\",\"shirt\",\"train\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "ask": "kind",
+     "items": [
+      "cheese",
+      "gloves",
+      "cat",
+      "pig",
+      "banana",
+      "cap"
+     ],
+     "binAttrs": [
+      "animals",
+      "food",
+      "clothes"
+     ]
+    },
+    "prompt": {
+     "text": "Put each one in its group.",
+     "speak": [
+      "Put each one in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "gloves"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧢",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cap"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🦒",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "giraffe"
+       ]
+      }
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      }
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ],
+      "icon": {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "socks"
+       ]
+      }
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: cat, pig.",
+      "Food: cheese, banana.",
+      "Clothes: gloves, cap."
+     ],
+     "steps": [
+      "Animals: cat, pig.",
+      "Food: cheese, banana.",
+      "Clothes: gloves, cap."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-D6",
+    "level": 3,
+    "seed": 10,
+    "key": "M-PK-D6|3|{\"ask\":\"kind\",\"binAttrs\":[\"animals\",\"food\",\"clothes\"],\"items\":[\"cheese\",\"gloves\",\"cat\",\"pig\",\"banana\",\"cap\"]}"
+   }
+  ]
+ }
+}

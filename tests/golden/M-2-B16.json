@@ -1,0 +1,3190 @@
+{
+ "skillId": "M-2-B16",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "ask": "sumParity",
+   "a": 2,
+   "b": 9,
+   "options": [
+    "even",
+    "odd"
+   ]
+  },
+  "prompt": {
+   "text": "Is 2 + 9 even or odd?",
+   "speak": [
+    "Is",
+    {
+     "number": 2
+    },
+    "plus",
+    {
+     "number": 9
+    },
+    "even or odd?"
+   ]
+  },
+  "stimulus": {
+   "kind": "equation",
+   "parts": [
+    2,
+    "+",
+    9
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "even",
+    "size": "l",
+    "speak": [
+     "even"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "odd",
+    "size": "l",
+    "speak": [
+     "odd"
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    {
+     "number": 2
+    },
+    "is even and",
+    {
+     "number": 9
+    },
+    "is odd. Even plus odd is odd.",
+    {
+     "number": 2
+    },
+    "plus",
+    {
+     "number": 9
+    },
+    "is",
+    {
+     "number": 11
+    },
+    "."
+   ],
+   "steps": [
+    "2 is even. 9 is odd.",
+    "Even plus odd is odd.",
+    "2 + 9 = 11, which is odd."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     2,
+     "+",
+     9,
+     "=",
+     11
+    ]
+   }
+  },
+  "skillId": "M-2-B16",
+  "level": 1,
+  "seed": 965,
+  "key": "M-2-B16|1|{\"a\":2,\"ask\":\"sumParity\",\"b\":9}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 7,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 7 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "is odd and",
+      {
+       "number": 1
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "7 is odd. 1 is odd.",
+      "Odd plus odd is even.",
+      "7 + 1 = 8, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B16|1|{\"a\":7,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 8,
+     "b": 4,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 8 + 4 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "is even and",
+      {
+       "number": 4
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "8 is even. 4 is even.",
+      "Even plus even is even.",
+      "8 + 4 = 12, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       4,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B16|1|{\"a\":8,\"ask\":\"sumParity\",\"b\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 8,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 8 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "is even and",
+      {
+       "number": 1
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "8 is even. 1 is odd.",
+      "Even plus odd is odd.",
+      "8 + 1 = 9, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       1,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B16|1|{\"a\":8,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 10,
+     "b": 4,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 10 + 4 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "+",
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "is even and",
+      {
+       "number": 4
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "10 is even. 4 is even.",
+      "Even plus even is even.",
+      "10 + 4 = 14, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       4,
+       "=",
+       14
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B16|1|{\"a\":10,\"ask\":\"sumParity\",\"b\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 7,
+     "b": 8,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 7 + 8 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "+",
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "is odd and",
+      {
+       "number": 8
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "7 is odd. 8 is even.",
+      "Even plus odd is odd.",
+      "7 + 8 = 15, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       8,
+       "=",
+       15
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B16|1|{\"a\":7,\"ask\":\"sumParity\",\"b\":8}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 6,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 6 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "is even and",
+      {
+       "number": 1
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "6 is even. 1 is odd.",
+      "Even plus odd is odd.",
+      "6 + 1 = 7, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       1,
+       "=",
+       7
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B16|1|{\"a\":6,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 1,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 1 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "is odd and",
+      {
+       "number": 1
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "1 is odd. 1 is odd.",
+      "Odd plus odd is even.",
+      "1 + 1 = 2, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B16|1|{\"a\":1,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 2,
+     "b": 7,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 2 + 7 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "+",
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "is even and",
+      {
+       "number": 7
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "2 is even. 7 is odd.",
+      "Even plus odd is odd.",
+      "2 + 7 = 9, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       7,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B16|1|{\"a\":2,\"ask\":\"sumParity\",\"b\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 2,
+     "b": 9,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 2 + 9 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      2,
+      "+",
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "is even and",
+      {
+       "number": 9
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "2 is even. 9 is odd.",
+      "Even plus odd is odd.",
+      "2 + 9 = 11, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       9,
+       "=",
+       11
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B16|1|{\"a\":2,\"ask\":\"sumParity\",\"b\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 6,
+     "b": 10,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 6 + 10 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "+",
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "is even and",
+      {
+       "number": 10
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "6 is even. 10 is even.",
+      "Even plus even is even.",
+      "6 + 10 = 16, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       10,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B16|1|{\"a\":6,\"ask\":\"sumParity\",\"b\":10}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 32,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 32 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 32
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      32,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 32
+      },
+      "is even and",
+      {
+       "number": 1
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 32
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 33
+      },
+      "."
+     ],
+     "steps": [
+      "32 is even. 1 is odd.",
+      "Even plus odd is odd.",
+      "32 + 1 = 33, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       32,
+       "+",
+       1,
+       "=",
+       33
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B16|2|{\"a\":32,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 37,
+     "b": 17,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 37 + 17 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      37,
+      "+",
+      17
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 37
+      },
+      "is odd and",
+      {
+       "number": 17
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "is",
+      {
+       "number": 54
+      },
+      "."
+     ],
+     "steps": [
+      "37 is odd. 17 is odd.",
+      "Odd plus odd is even.",
+      "37 + 17 = 54, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       37,
+       "+",
+       17,
+       "=",
+       54
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B16|2|{\"a\":37,\"ask\":\"sumParity\",\"b\":17}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 37,
+     "b": 2,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 37 + 2 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      37,
+      "+",
+      2
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 37
+      },
+      "is odd and",
+      {
+       "number": 2
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 37
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 39
+      },
+      "."
+     ],
+     "steps": [
+      "37 is odd. 2 is even.",
+      "Even plus odd is odd.",
+      "37 + 2 = 39, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       37,
+       "+",
+       2,
+       "=",
+       39
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B16|2|{\"a\":37,\"ask\":\"sumParity\",\"b\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 47,
+     "b": 17,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 47 + 17 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 47
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      47,
+      "+",
+      17
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 47
+      },
+      "is odd and",
+      {
+       "number": 17
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 47
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "is",
+      {
+       "number": 64
+      },
+      "."
+     ],
+     "steps": [
+      "47 is odd. 17 is odd.",
+      "Odd plus odd is even.",
+      "47 + 17 = 64, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       47,
+       "+",
+       17,
+       "=",
+       64
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B16|2|{\"a\":47,\"ask\":\"sumParity\",\"b\":17}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 35,
+     "b": 39,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 35 + 39 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 35
+      },
+      "plus",
+      {
+       "number": 39
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      35,
+      "+",
+      39
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 35
+      },
+      "is odd and",
+      {
+       "number": 39
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 35
+      },
+      "plus",
+      {
+       "number": 39
+      },
+      "is",
+      {
+       "number": 74
+      },
+      "."
+     ],
+     "steps": [
+      "35 is odd. 39 is odd.",
+      "Odd plus odd is even.",
+      "35 + 39 = 74, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       35,
+       "+",
+       39,
+       "=",
+       74
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B16|2|{\"a\":35,\"ask\":\"sumParity\",\"b\":39}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 27,
+     "b": 1,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 27 + 1 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 27
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      27,
+      "+",
+      1
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 27
+      },
+      "is odd and",
+      {
+       "number": 1
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 27
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 28
+      },
+      "."
+     ],
+     "steps": [
+      "27 is odd. 1 is odd.",
+      "Odd plus odd is even.",
+      "27 + 1 = 28, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       27,
+       "+",
+       1,
+       "=",
+       28
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B16|2|{\"a\":27,\"ask\":\"sumParity\",\"b\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 1,
+     "b": 4,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 1 + 4 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      1,
+      "+",
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 1
+      },
+      "is odd and",
+      {
+       "number": 4
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "1 is odd. 4 is even.",
+      "Even plus odd is odd.",
+      "1 + 4 = 5, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       4,
+       "=",
+       5
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B16|2|{\"a\":1,\"ask\":\"sumParity\",\"b\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 8,
+     "b": 32,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 8 + 32 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 32
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "+",
+      32
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "is even and",
+      {
+       "number": 32
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 32
+      },
+      "is",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "8 is even. 32 is even.",
+      "Even plus even is even.",
+      "8 + 32 = 40, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       32,
+       "=",
+       40
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B16|2|{\"a\":8,\"ask\":\"sumParity\",\"b\":32}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 10,
+     "b": 43,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 10 + 43 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 43
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      10,
+      "+",
+      43
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "is even and",
+      {
+       "number": 43
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 43
+      },
+      "is",
+      {
+       "number": 53
+      },
+      "."
+     ],
+     "steps": [
+      "10 is even. 43 is odd.",
+      "Even plus odd is odd.",
+      "10 + 43 = 53, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       43,
+       "=",
+       53
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B16|2|{\"a\":10,\"ask\":\"sumParity\",\"b\":43}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "sumParity",
+     "a": 26,
+     "b": 46,
+     "options": [
+      "even",
+      "odd"
+     ]
+    },
+    "prompt": {
+     "text": "Is 26 + 46 even or odd?",
+     "speak": [
+      "Is",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 46
+      },
+      "even or odd?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      26,
+      "+",
+      46
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "even",
+      "size": "l",
+      "speak": [
+       "even"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "odd",
+      "size": "l",
+      "speak": [
+       "odd"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 26
+      },
+      "is even and",
+      {
+       "number": 46
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 46
+      },
+      "is",
+      {
+       "number": 72
+      },
+      "."
+     ],
+     "steps": [
+      "26 is even. 46 is even.",
+      "Even plus even is even.",
+      "26 + 46 = 72, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       26,
+       "+",
+       46,
+       "=",
+       72
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B16|2|{\"a\":26,\"ask\":\"sumParity\",\"b\":46}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "2 + 17",
+      "22 + 14",
+      "30 + 30"
+     ],
+     "options": [
+      "30 + 30",
+      "2 + 17",
+      "22 + 14"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "30 + 30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       },
+       "plus",
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "22 + 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 22
+       },
+       "plus",
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "is even and",
+      {
+       "number": 17
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 17
+      },
+      "is",
+      {
+       "number": 19
+      },
+      "."
+     ],
+     "steps": [
+      "2 is even. 17 is odd.",
+      "Even plus odd is odd.",
+      "2 + 17 = 19, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       17,
+       "=",
+       19
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"2 + 17\",\"22 + 14\",\"30 + 30\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "11 + 10",
+      "17 + 27",
+      "20 + 16"
+     ],
+     "options": [
+      "11 + 10",
+      "20 + 16",
+      "17 + 27"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20 + 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       },
+       "plus",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17 + 27",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       },
+       "plus",
+       {
+        "number": 27
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 11
+      },
+      "is odd and",
+      {
+       "number": 10
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "11 is odd. 10 is even.",
+      "Even plus odd is odd.",
+      "11 + 10 = 21, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       11,
+       "+",
+       10,
+       "=",
+       21
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"11 + 10\",\"17 + 27\",\"20 + 16\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "15 + 16",
+      "15 + 25",
+      "4 + 22"
+     ],
+     "options": [
+      "4 + 22",
+      "15 + 16",
+      "15 + 25"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15 + 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       },
+       "plus",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15 + 25",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       },
+       "plus",
+       {
+        "number": 25
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 15
+      },
+      "is odd and",
+      {
+       "number": 16
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 15
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "is",
+      {
+       "number": 31
+      },
+      "."
+     ],
+     "steps": [
+      "15 is odd. 16 is even.",
+      "Even plus odd is odd.",
+      "15 + 16 = 31, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       15,
+       "+",
+       16,
+       "=",
+       31
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"15 + 16\",\"15 + 25\",\"4 + 22\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "11 + 8",
+      "16 + 4",
+      "4 + 8"
+     ],
+     "options": [
+      "11 + 8",
+      "4 + 8",
+      "16 + 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 16
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 11
+      },
+      "is odd and",
+      {
+       "number": 8
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 19
+      },
+      "."
+     ],
+     "steps": [
+      "11 is odd. 8 is even.",
+      "Even plus odd is odd.",
+      "11 + 8 = 19, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       11,
+       "+",
+       8,
+       "=",
+       19
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"11 + 8\",\"16 + 4\",\"4 + 8\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "19 + 22",
+      "23 + 21",
+      "8 + 24"
+     ],
+     "options": [
+      "8 + 24",
+      "23 + 21",
+      "19 + 22"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8 + 24",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 24
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "23 + 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 23
+       },
+       "plus",
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19 + 22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       },
+       "plus",
+       {
+        "number": 22
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 19
+      },
+      "is odd and",
+      {
+       "number": 22
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 19
+      },
+      "plus",
+      {
+       "number": 22
+      },
+      "is",
+      {
+       "number": 41
+      },
+      "."
+     ],
+     "steps": [
+      "19 is odd. 22 is even.",
+      "Even plus odd is odd.",
+      "19 + 22 = 41, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       19,
+       "+",
+       22,
+       "=",
+       41
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"19 + 22\",\"23 + 21\",\"8 + 24\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "2 + 21",
+      "4 + 2",
+      "7 + 17"
+     ],
+     "options": [
+      "2 + 21",
+      "7 + 17",
+      "4 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 + 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 17",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 17
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "is even and",
+      {
+       "number": 21
+      },
+      "is odd. Even plus odd is odd.",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 21
+      },
+      "is",
+      {
+       "number": 23
+      },
+      "."
+     ],
+     "steps": [
+      "2 is even. 21 is odd.",
+      "Even plus odd is odd.",
+      "2 + 21 = 23, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       21,
+       "=",
+       23
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"2 + 21\",\"4 + 2\",\"7 + 17\"],\"want\":\"odd\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "even",
+     "set": [
+      "13 + 15",
+      "17 + 10",
+      "30 + 9"
+     ],
+     "options": [
+      "17 + 10",
+      "13 + 15",
+      "30 + 9"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is even?",
+     "speak": [
+      "Which sum is even?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "17 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 17
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13 + 15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 13
+       },
+       "plus",
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30 + 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       },
+       "plus",
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      "is odd and",
+      {
+       "number": 15
+      },
+      "is odd. Odd plus odd is even.",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 28
+      },
+      "."
+     ],
+     "steps": [
+      "13 is odd. 15 is odd.",
+      "Odd plus odd is even.",
+      "13 + 15 = 28, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       15,
+       "=",
+       28
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"13 + 15\",\"17 + 10\",\"30 + 9\"],\"want\":\"even\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "even",
+     "set": [
+      "20 + 10",
+      "29 + 22",
+      "3 + 16"
+     ],
+     "options": [
+      "3 + 16",
+      "29 + 22",
+      "20 + 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is even?",
+     "speak": [
+      "Which sum is even?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 + 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "29 + 22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 29
+       },
+       "plus",
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 20
+      },
+      "is even and",
+      {
+       "number": 10
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 20
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "20 is even. 10 is even.",
+      "Even plus even is even.",
+      "20 + 10 = 30, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       20,
+       "+",
+       10,
+       "=",
+       30
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"20 + 10\",\"29 + 22\",\"3 + 16\"],\"want\":\"even\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "even",
+     "set": [
+      "25 + 22",
+      "26 + 6",
+      "28 + 5"
+     ],
+     "options": [
+      "26 + 6",
+      "28 + 5",
+      "25 + 22"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is even?",
+     "speak": [
+      "Which sum is even?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "26 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25 + 22",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       },
+       "plus",
+       {
+        "number": 22
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 26
+      },
+      "is even and",
+      {
+       "number": 6
+      },
+      "is even. Even plus even is even.",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "26 is even. 6 is even.",
+      "Even plus even is even.",
+      "26 + 6 = 32, which is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       26,
+       "+",
+       6,
+       "=",
+       32
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"25 + 22\",\"26 + 6\",\"28 + 5\"],\"want\":\"even\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "pickSum",
+     "want": "odd",
+     "set": [
+      "13 + 14",
+      "25 + 29",
+      "28 + 10"
+     ],
+     "options": [
+      "28 + 10",
+      "25 + 29",
+      "13 + 14"
+     ]
+    },
+    "prompt": {
+     "text": "Which sum is odd?",
+     "speak": [
+      "Which sum is odd?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "28 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25 + 29",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       },
+       "plus",
+       {
+        "number": 29
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13 + 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 13
+       },
+       "plus",
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      "is odd and",
+      {
+       "number": 14
+      },
+      "is even. Even plus odd is odd.",
+      {
+       "number": 13
+      },
+      "plus",
+      {
+       "number": 14
+      },
+      "is",
+      {
+       "number": 27
+      },
+      "."
+     ],
+     "steps": [
+      "13 is odd. 14 is even.",
+      "Even plus odd is odd.",
+      "13 + 14 = 27, which is odd."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       14,
+       "=",
+       27
+      ]
+     }
+    },
+    "skillId": "M-2-B16",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-B16|3|{\"ask\":\"pickSum\",\"set\":[\"13 + 14\",\"25 + 29\",\"28 + 10\"],\"want\":\"odd\"}"
+   }
+  ]
+ }
+}

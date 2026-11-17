@@ -1,0 +1,3338 @@
+{
+ "skillId": "M-2-C9",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "a": 25,
+   "b": 70,
+   "oracle": "add",
+   "name": "Max",
+   "options": [
+    90,
+    95,
+    105
+   ]
+  },
+  "prompt": {
+   "text": "Max has 25¢. Max finds 70¢ more. How much money does Max have now?",
+   "speak": [
+    "Max has",
+    {
+     "cents": 25
+    },
+    ". Max finds",
+    {
+     "cents": 70
+    },
+    "more. How much money does Max have now?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "90¢",
+    "size": "l",
+    "speak": [
+     {
+      "cents": 90
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "95¢",
+    "size": "l",
+    "speak": [
+     {
+      "cents": 95
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "105¢",
+    "size": "l",
+    "speak": [
+     {
+      "cents": 105
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    {
+     "cents": 25
+    },
+    "plus",
+    {
+     "cents": 70
+    },
+    "is",
+    {
+     "cents": 95
+    },
+    "."
+   ],
+   "steps": [
+    "25¢ + 70¢ = 95¢.",
+    "Max has 95¢ now."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "95¢",
+    "size": "l",
+    "speak": [
+     {
+      "cents": 95
+     }
+    ]
+   }
+  },
+  "skillId": "M-2-C9",
+  "level": 1,
+  "seed": 972,
+  "key": "M-2-C9|1|{\"a\":25,\"b\":70,\"name\":\"Max\",\"oracle\":\"add\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 45,
+     "oracle": "add",
+     "name": "Lily",
+     "options": [
+      45,
+      54,
+      55
+     ]
+    },
+    "prompt": {
+     "text": "Lily has 10¢. Lily finds 45¢ more. How much money does Lily have now?",
+     "speak": [
+      "Lily has",
+      {
+       "cents": 10
+      },
+      ". Lily finds",
+      {
+       "cents": 45
+      },
+      "more. How much money does Lily have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "54¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 45
+      },
+      "is",
+      {
+       "cents": 55
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 45¢ = 55¢.",
+      "Lily has 55¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-C9|1|{\"a\":10,\"b\":45,\"name\":\"Lily\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 25,
+     "b": 20,
+     "oracle": "add",
+     "name": "Ben",
+     "options": [
+      40,
+      45,
+      55
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 25¢. Ben finds 20¢ more. How much money does Ben have now?",
+     "speak": [
+      "Ben has",
+      {
+       "cents": 25
+      },
+      ". Ben finds",
+      {
+       "cents": 20
+      },
+      "more. How much money does Ben have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "40¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 25
+      },
+      "plus",
+      {
+       "cents": 20
+      },
+      "is",
+      {
+       "cents": 45
+      },
+      "."
+     ],
+     "steps": [
+      "25¢ + 20¢ = 45¢.",
+      "Ben has 45¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-C9|1|{\"a\":25,\"b\":20,\"name\":\"Ben\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 40,
+     "oracle": "add",
+     "name": "Ben",
+     "options": [
+      50,
+      51,
+      60
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 10¢. Ben finds 40¢ more. How much money does Ben have now?",
+     "speak": [
+      "Ben has",
+      {
+       "cents": 10
+      },
+      ". Ben finds",
+      {
+       "cents": 40
+      },
+      "more. How much money does Ben have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "50¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "51¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 51
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 40
+      },
+      "is",
+      {
+       "cents": 50
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 40¢ = 50¢.",
+      "Ben has 50¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "50¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-C9|1|{\"a\":10,\"b\":40,\"name\":\"Ben\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 25,
+     "b": 20,
+     "oracle": "add",
+     "name": "Eli",
+     "options": [
+      45,
+      46,
+      55
+     ]
+    },
+    "prompt": {
+     "text": "Eli has 25¢. Eli finds 20¢ more. How much money does Eli have now?",
+     "speak": [
+      "Eli has",
+      {
+       "cents": 25
+      },
+      ". Eli finds",
+      {
+       "cents": 20
+      },
+      "more. How much money does Eli have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "46¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 46
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 25
+      },
+      "plus",
+      {
+       "cents": 20
+      },
+      "is",
+      {
+       "cents": 45
+      },
+      "."
+     ],
+     "steps": [
+      "25¢ + 20¢ = 45¢.",
+      "Eli has 45¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-C9|1|{\"a\":25,\"b\":20,\"name\":\"Eli\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 50,
+     "b": 10,
+     "oracle": "add",
+     "name": "Lily",
+     "options": [
+      10,
+      60,
+      70
+     ]
+    },
+    "prompt": {
+     "text": "Lily has 50¢. Lily finds 10¢ more. How much money does Lily have now?",
+     "speak": [
+      "Lily has",
+      {
+       "cents": 50
+      },
+      ". Lily finds",
+      {
+       "cents": 10
+      },
+      "more. How much money does Lily have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 50
+      },
+      "plus",
+      {
+       "cents": 10
+      },
+      "is",
+      {
+       "cents": 60
+      },
+      "."
+     ],
+     "steps": [
+      "50¢ + 10¢ = 60¢.",
+      "Lily has 60¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-C9|1|{\"a\":50,\"b\":10,\"name\":\"Lily\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 60,
+     "oracle": "add",
+     "name": "Max",
+     "options": [
+      70,
+      71,
+      80
+     ]
+    },
+    "prompt": {
+     "text": "Max has 10¢. Max finds 60¢ more. How much money does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "cents": 10
+      },
+      ". Max finds",
+      {
+       "cents": 60
+      },
+      "more. How much money does Max have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "71¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 71
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "80¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 80
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 60
+      },
+      "is",
+      {
+       "cents": 70
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 60¢ = 70¢.",
+      "Max has 70¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-C9|1|{\"a\":10,\"b\":60,\"name\":\"Max\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 85,
+     "oracle": "add",
+     "name": "Mia",
+     "options": [
+      90,
+      94,
+      95
+     ]
+    },
+    "prompt": {
+     "text": "Mia has 10¢. Mia finds 85¢ more. How much money does Mia have now?",
+     "speak": [
+      "Mia has",
+      {
+       "cents": 10
+      },
+      ". Mia finds",
+      {
+       "cents": 85
+      },
+      "more. How much money does Mia have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "90¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 90
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "94¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 94
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "95¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 95
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 85
+      },
+      "is",
+      {
+       "cents": 95
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 85¢ = 95¢.",
+      "Mia has 95¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "95¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 95
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-C9|1|{\"a\":10,\"b\":85,\"name\":\"Mia\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 40,
+     "b": 20,
+     "oracle": "add",
+     "name": "Leo",
+     "options": [
+      20,
+      59,
+      60
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 40¢. Leo finds 20¢ more. How much money does Leo have now?",
+     "speak": [
+      "Leo has",
+      {
+       "cents": 40
+      },
+      ". Leo finds",
+      {
+       "cents": 20
+      },
+      "more. How much money does Leo have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "59¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 59
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 40
+      },
+      "plus",
+      {
+       "cents": 20
+      },
+      "is",
+      {
+       "cents": 60
+      },
+      "."
+     ],
+     "steps": [
+      "40¢ + 20¢ = 60¢.",
+      "Leo has 60¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-C9|1|{\"a\":40,\"b\":20,\"name\":\"Leo\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 55,
+     "b": 10,
+     "oracle": "add",
+     "name": "Leo",
+     "options": [
+      55,
+      64,
+      65
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 55¢. Leo finds 10¢ more. How much money does Leo have now?",
+     "speak": [
+      "Leo has",
+      {
+       "cents": 55
+      },
+      ". Leo finds",
+      {
+       "cents": 10
+      },
+      "more. How much money does Leo have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "64¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 64
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "65¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 65
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 55
+      },
+      "plus",
+      {
+       "cents": 10
+      },
+      "is",
+      {
+       "cents": 65
+      },
+      "."
+     ],
+     "steps": [
+      "55¢ + 10¢ = 65¢.",
+      "Leo has 65¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "65¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 65
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-C9|1|{\"a\":55,\"b\":10,\"name\":\"Leo\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 60,
+     "b": 25,
+     "oracle": "add",
+     "name": "Max",
+     "options": [
+      80,
+      84,
+      85
+     ]
+    },
+    "prompt": {
+     "text": "Max has 60¢. Max finds 25¢ more. How much money does Max have now?",
+     "speak": [
+      "Max has",
+      {
+       "cents": 60
+      },
+      ". Max finds",
+      {
+       "cents": 25
+      },
+      "more. How much money does Max have now?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "80¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "84¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 84
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "85¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 85
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 60
+      },
+      "plus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 85
+      },
+      "."
+     ],
+     "steps": [
+      "60¢ + 25¢ = 85¢.",
+      "Max has 85¢ now."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "85¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 85
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-C9|1|{\"a\":60,\"b\":25,\"name\":\"Max\",\"oracle\":\"add\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 65,
+     "b": 25,
+     "oracle": "subtract",
+     "name": "Lily",
+     "item": "an apple",
+     "options": [
+      30,
+      39,
+      40
+     ]
+    },
+    "prompt": {
+     "text": "Lily has 65¢ and buys an apple for 25¢. How much money is left?",
+     "speak": [
+      "Lily has",
+      {
+       "cents": 65
+      },
+      "and buys an apple for",
+      {
+       "cents": 25
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "30¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "39¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 39
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 40
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 65
+      },
+      "minus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 40
+      },
+      "."
+     ],
+     "steps": [
+      "65¢ − 25¢ = 40¢.",
+      "Lily has 40¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "40¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-C9|2|{\"a\":65,\"b\":25,\"item\":\"an apple\",\"name\":\"Lily\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 60,
+     "b": 35,
+     "oracle": "subtract",
+     "name": "Ben",
+     "item": "a cookie",
+     "options": [
+      24,
+      25,
+      30
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 60¢ and buys a cookie for 35¢. How much money is left?",
+     "speak": [
+      "Ben has",
+      {
+       "cents": 60
+      },
+      "and buys a cookie for",
+      {
+       "cents": 35
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "35¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 35
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "24¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 24
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 25
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 60
+      },
+      "minus",
+      {
+       "cents": 35
+      },
+      "is",
+      {
+       "cents": 25
+      },
+      "."
+     ],
+     "steps": [
+      "60¢ − 35¢ = 25¢.",
+      "Ben has 25¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "25¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 25
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-C9|2|{\"a\":60,\"b\":35,\"item\":\"a cookie\",\"name\":\"Ben\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 60,
+     "b": 25,
+     "oracle": "subtract",
+     "name": "Ben",
+     "item": "an apple",
+     "options": [
+      35,
+      36,
+      45
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 60¢ and buys an apple for 25¢. How much money is left?",
+     "speak": [
+      "Ben has",
+      {
+       "cents": 60
+      },
+      "and buys an apple for",
+      {
+       "cents": 25
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "35¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 36
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 60
+      },
+      "minus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 35
+      },
+      "."
+     ],
+     "steps": [
+      "60¢ − 25¢ = 35¢.",
+      "Ben has 35¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "35¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-C9|2|{\"a\":60,\"b\":25,\"item\":\"an apple\",\"name\":\"Ben\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 55,
+     "b": 35,
+     "oracle": "subtract",
+     "name": "Eli",
+     "item": "a cookie",
+     "options": [
+      20,
+      25,
+      90
+     ]
+    },
+    "prompt": {
+     "text": "Eli has 55¢ and buys a cookie for 35¢. How much money is left?",
+     "speak": [
+      "Eli has",
+      {
+       "cents": 55
+      },
+      "and buys a cookie for",
+      {
+       "cents": 35
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "35¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 35
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 25
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 90
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 55
+      },
+      "minus",
+      {
+       "cents": 35
+      },
+      "is",
+      {
+       "cents": 20
+      },
+      "."
+     ],
+     "steps": [
+      "55¢ − 35¢ = 20¢.",
+      "Eli has 20¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-C9|2|{\"a\":55,\"b\":35,\"item\":\"a cookie\",\"name\":\"Eli\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 60,
+     "b": 40,
+     "oracle": "subtract",
+     "name": "Lily",
+     "item": "a drink",
+     "options": [
+      10,
+      20,
+      100
+     ]
+    },
+    "prompt": {
+     "text": "Lily has 60¢ and buys a drink for 40¢. How much money is left?",
+     "speak": [
+      "Lily has",
+      {
+       "cents": 60
+      },
+      "and buys a drink for",
+      {
+       "cents": 40
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "drink"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "40¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 40
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 100
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 60
+      },
+      "minus",
+      {
+       "cents": 40
+      },
+      "is",
+      {
+       "cents": 20
+      },
+      "."
+     ],
+     "steps": [
+      "60¢ − 40¢ = 20¢.",
+      "Lily has 20¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-C9|2|{\"a\":60,\"b\":40,\"item\":\"a drink\",\"name\":\"Lily\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 75,
+     "b": 25,
+     "oracle": "subtract",
+     "name": "Max",
+     "item": "an apple",
+     "options": [
+      50,
+      60,
+      100
+     ]
+    },
+    "prompt": {
+     "text": "Max has 75¢ and buys an apple for 25¢. How much money is left?",
+     "speak": [
+      "Max has",
+      {
+       "cents": 75
+      },
+      "and buys an apple for",
+      {
+       "cents": 25
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "50¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 100
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 75
+      },
+      "minus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 50
+      },
+      "."
+     ],
+     "steps": [
+      "75¢ − 25¢ = 50¢.",
+      "Max has 50¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "50¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-C9|2|{\"a\":75,\"b\":25,\"item\":\"an apple\",\"name\":\"Max\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 95,
+     "b": 25,
+     "oracle": "subtract",
+     "name": "Mia",
+     "item": "an apple",
+     "options": [
+      60,
+      69,
+      70
+     ]
+    },
+    "prompt": {
+     "text": "Mia has 95¢ and buys an apple for 25¢. How much money is left?",
+     "speak": [
+      "Mia has",
+      {
+       "cents": 95
+      },
+      "and buys an apple for",
+      {
+       "cents": 25
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "69¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 69
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 95
+      },
+      "minus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 70
+      },
+      "."
+     ],
+     "steps": [
+      "95¢ − 25¢ = 70¢.",
+      "Mia has 70¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-C9|2|{\"a\":95,\"b\":25,\"item\":\"an apple\",\"name\":\"Mia\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 65,
+     "b": 45,
+     "oracle": "subtract",
+     "name": "Leo",
+     "item": "a cupcake",
+     "options": [
+      10,
+      19,
+      20
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 65¢ and buys a cupcake for 45¢. How much money is left?",
+     "speak": [
+      "Leo has",
+      {
+       "cents": 65
+      },
+      "and buys a cupcake for",
+      {
+       "cents": 45
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 65
+      },
+      "minus",
+      {
+       "cents": 45
+      },
+      "is",
+      {
+       "cents": 20
+      },
+      "."
+     ],
+     "steps": [
+      "65¢ − 45¢ = 20¢.",
+      "Leo has 20¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "20¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 20
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-C9|2|{\"a\":65,\"b\":45,\"item\":\"a cupcake\",\"name\":\"Leo\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 55,
+     "b": 40,
+     "oracle": "subtract",
+     "name": "Leo",
+     "item": "a drink",
+     "options": [
+      5,
+      14,
+      15
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 55¢ and buys a drink for 40¢. How much money is left?",
+     "speak": [
+      "Leo has",
+      {
+       "cents": 55
+      },
+      "and buys a drink for",
+      {
+       "cents": 40
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "drink"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "40¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 40
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 15
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 55
+      },
+      "minus",
+      {
+       "cents": 40
+      },
+      "is",
+      {
+       "cents": 15
+      },
+      "."
+     ],
+     "steps": [
+      "55¢ − 40¢ = 15¢.",
+      "Leo has 15¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "15¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 15
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-C9|2|{\"a\":55,\"b\":40,\"item\":\"a drink\",\"name\":\"Leo\",\"oracle\":\"subtract\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "a": 75,
+     "b": 10,
+     "oracle": "subtract",
+     "name": "Max",
+     "item": "a strawberry",
+     "options": [
+      55,
+      64,
+      65
+     ]
+    },
+    "prompt": {
+     "text": "Max has 75¢ and buys a strawberry for 10¢. How much money is left?",
+     "speak": [
+      "Max has",
+      {
+       "cents": 75
+      },
+      "and buys a strawberry for",
+      {
+       "cents": 10
+      },
+      ". How much money is left?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "strawberry"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 10
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "64¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 64
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "65¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 65
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 75
+      },
+      "minus",
+      {
+       "cents": 10
+      },
+      "is",
+      {
+       "cents": 65
+      },
+      "."
+     ],
+     "steps": [
+      "75¢ − 10¢ = 65¢.",
+      "Max has 65¢ left."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "65¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 65
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-C9|2|{\"a\":75,\"b\":10,\"item\":\"a strawberry\",\"name\":\"Max\",\"oracle\":\"subtract\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 35,
+     "oracle": "add",
+     "name": "Lily",
+     "items": [
+      "a strawberry",
+      "a cookie"
+     ]
+    },
+    "prompt": {
+     "text": "Lily buys a strawberry for 10¢ and a cookie for 35¢. How many cents is that in all?",
+     "speak": [
+      "Lily buys a strawberry for",
+      {
+       "cents": 10
+      },
+      "and a cookie for",
+      {
+       "cents": 35
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "strawberry"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 10
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "35¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 35
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 45,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 35
+      },
+      "is",
+      {
+       "cents": 45
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 35¢ = 45¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-C9|3|{\"a\":10,\"b\":35,\"items\":[\"a strawberry\",\"a cookie\"],\"name\":\"Lily\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 45,
+     "b": 25,
+     "oracle": "add",
+     "name": "Ben",
+     "items": [
+      "a cupcake",
+      "an apple"
+     ]
+    },
+    "prompt": {
+     "text": "Ben buys a cupcake for 45¢ and an apple for 25¢. How many cents is that in all?",
+     "speak": [
+      "Ben buys a cupcake for",
+      {
+       "cents": 45
+      },
+      "and an apple for",
+      {
+       "cents": 25
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 70,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 45
+      },
+      "plus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 70
+      },
+      "."
+     ],
+     "steps": [
+      "45¢ + 25¢ = 70¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "70¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 70
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-C9|3|{\"a\":45,\"b\":25,\"items\":[\"a cupcake\",\"an apple\"],\"name\":\"Ben\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 35,
+     "b": 45,
+     "oracle": "add",
+     "name": "Ben",
+     "items": [
+      "a cookie",
+      "a cupcake"
+     ]
+    },
+    "prompt": {
+     "text": "Ben buys a cookie for 35¢ and a cupcake for 45¢. How many cents is that in all?",
+     "speak": [
+      "Ben buys a cookie for",
+      {
+       "cents": 35
+      },
+      "and a cupcake for",
+      {
+       "cents": 45
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cookie"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "35¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 35
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 80,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 35
+      },
+      "plus",
+      {
+       "cents": 45
+      },
+      "is",
+      {
+       "cents": 80
+      },
+      "."
+     ],
+     "steps": [
+      "35¢ + 45¢ = 80¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "80¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 80
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-C9|3|{\"a\":35,\"b\":45,\"items\":[\"a cookie\",\"a cupcake\"],\"name\":\"Ben\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 15,
+     "b": 30,
+     "oracle": "add",
+     "name": "Eli",
+     "items": [
+      "a pencil",
+      "a balloon"
+     ]
+    },
+    "prompt": {
+     "text": "Eli buys a pencil for 15¢ and a balloon for 30¢. How many cents is that in all?",
+     "speak": [
+      "Eli buys a pencil for",
+      {
+       "cents": 15
+      },
+      "and a balloon for",
+      {
+       "cents": 30
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pencil"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 15
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "balloon"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "30¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 30
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 45,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 15
+      },
+      "plus",
+      {
+       "cents": 30
+      },
+      "is",
+      {
+       "cents": 45
+      },
+      "."
+     ],
+     "steps": [
+      "15¢ + 30¢ = 45¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "45¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 45
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-C9|3|{\"a\":15,\"b\":30,\"items\":[\"a pencil\",\"a balloon\"],\"name\":\"Eli\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 30,
+     "oracle": "add",
+     "name": "Lily",
+     "items": [
+      "a strawberry",
+      "a balloon"
+     ]
+    },
+    "prompt": {
+     "text": "Lily buys a strawberry for 10¢ and a balloon for 30¢. How many cents is that in all?",
+     "speak": [
+      "Lily buys a strawberry for",
+      {
+       "cents": 10
+      },
+      "and a balloon for",
+      {
+       "cents": 30
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "strawberry"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 10
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "balloon"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "30¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 30
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 40,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 10
+      },
+      "plus",
+      {
+       "cents": 30
+      },
+      "is",
+      {
+       "cents": 40
+      },
+      "."
+     ],
+     "steps": [
+      "10¢ + 30¢ = 40¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "40¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-C9|3|{\"a\":10,\"b\":30,\"items\":[\"a strawberry\",\"a balloon\"],\"name\":\"Lily\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 40,
+     "b": 45,
+     "oracle": "add",
+     "name": "Max",
+     "items": [
+      "a drink",
+      "a cupcake"
+     ]
+    },
+    "prompt": {
+     "text": "Max buys a drink for 40¢ and a cupcake for 45¢. How many cents is that in all?",
+     "speak": [
+      "Max buys a drink for",
+      {
+       "cents": 40
+      },
+      "and a cupcake for",
+      {
+       "cents": 45
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "drink"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "40¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 40
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 85,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 40
+      },
+      "plus",
+      {
+       "cents": 45
+      },
+      "is",
+      {
+       "cents": 85
+      },
+      "."
+     ],
+     "steps": [
+      "40¢ + 45¢ = 85¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "85¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 85
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-C9|3|{\"a\":40,\"b\":45,\"items\":[\"a drink\",\"a cupcake\"],\"name\":\"Max\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 45,
+     "b": 10,
+     "oracle": "add",
+     "name": "Mia",
+     "items": [
+      "a cupcake",
+      "a strawberry"
+     ]
+    },
+    "prompt": {
+     "text": "Mia buys a cupcake for 45¢ and a strawberry for 10¢. How many cents is that in all?",
+     "speak": [
+      "Mia buys a cupcake for",
+      {
+       "cents": 45
+      },
+      "and a strawberry for",
+      {
+       "cents": 10
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "strawberry"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "10¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 10
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 55,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 45
+      },
+      "plus",
+      {
+       "cents": 10
+      },
+      "is",
+      {
+       "cents": 55
+      },
+      "."
+     ],
+     "steps": [
+      "45¢ + 10¢ = 55¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "55¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 55
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-C9|3|{\"a\":45,\"b\":10,\"items\":[\"a cupcake\",\"a strawberry\"],\"name\":\"Mia\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 15,
+     "b": 25,
+     "oracle": "add",
+     "name": "Leo",
+     "items": [
+      "a pencil",
+      "an apple"
+     ]
+    },
+    "prompt": {
+     "text": "Leo buys a pencil for 15¢ and an apple for 25¢. How many cents is that in all?",
+     "speak": [
+      "Leo buys a pencil for",
+      {
+       "cents": 15
+      },
+      "and an apple for",
+      {
+       "cents": 25
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pencil"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 15
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍎",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "apple"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "25¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 25
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 40,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 15
+      },
+      "plus",
+      {
+       "cents": 25
+      },
+      "is",
+      {
+       "cents": 40
+      },
+      "."
+     ],
+     "steps": [
+      "15¢ + 25¢ = 40¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "40¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-C9|3|{\"a\":15,\"b\":25,\"items\":[\"a pencil\",\"an apple\"],\"name\":\"Leo\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 45,
+     "b": 20,
+     "oracle": "add",
+     "name": "Leo",
+     "items": [
+      "a cupcake",
+      "a banana"
+     ]
+    },
+    "prompt": {
+     "text": "Leo buys a cupcake for 45¢ and a banana for 20¢. How many cents is that in all?",
+     "speak": [
+      "Leo buys a cupcake for",
+      {
+       "cents": 45
+      },
+      "and a banana for",
+      {
+       "cents": 20
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "banana"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "20¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 20
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 65,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 45
+      },
+      "plus",
+      {
+       "cents": 20
+      },
+      "is",
+      {
+       "cents": 65
+      },
+      "."
+     ],
+     "steps": [
+      "45¢ + 20¢ = 65¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "65¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 65
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-C9|3|{\"a\":45,\"b\":20,\"items\":[\"a cupcake\",\"a banana\"],\"name\":\"Leo\",\"oracle\":\"add\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "a": 15,
+     "b": 45,
+     "oracle": "add",
+     "name": "Max",
+     "items": [
+      "a pencil",
+      "a cupcake"
+     ]
+    },
+    "prompt": {
+     "text": "Max buys a pencil for 15¢ and a cupcake for 45¢. How many cents is that in all?",
+     "speak": [
+      "Max buys a pencil for",
+      {
+       "cents": 15
+      },
+      "and a cupcake for",
+      {
+       "cents": 45
+      },
+      ". How many cents is that in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "✏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pencil"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "15¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 15
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cupcake"
+       ]
+      },
+      {
+       "kind": "text",
+       "value": "45¢",
+       "size": "l",
+       "speak": [
+        {
+         "cents": 45
+        }
+       ]
+      }
+     ]
+    },
+    "answer": 60,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "cents": 15
+      },
+      "plus",
+      {
+       "cents": 45
+      },
+      "is",
+      {
+       "cents": 60
+      },
+      "."
+     ],
+     "steps": [
+      "15¢ + 45¢ = 60¢."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "60¢",
+      "size": "l",
+      "speak": [
+       {
+        "cents": 60
+       }
+      ]
+     }
+    },
+    "skillId": "M-2-C9",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-C9|3|{\"a\":15,\"b\":45,\"items\":[\"a pencil\",\"a cupcake\"],\"name\":\"Max\",\"oracle\":\"add\"}"
+   }
+  ]
+ }
+}
