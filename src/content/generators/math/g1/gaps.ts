@@ -187,7 +187,6 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
       mode: 'look',
       facts: { a: long, b: short, oracle: 'subtract' },
       prompt,
-      stimulus: { kind: 'row', children: [measured(thing.emoji, long), measured('🔑', short)] },
       answer: long - short,
       maxDigits: 1,
       explanation: { speak: [{ number: long }, 'minus', { number: short }, 'is', { number: long - short }, '.'], steps: [`${long} − ${short} = ${long - short}.`, `The ${thing.name} is ${long - short} clips longer.`], visual: equation(long, '-', short, '=', long - short) },
