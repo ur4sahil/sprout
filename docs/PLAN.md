@@ -1412,6 +1412,35 @@ The owner asked whether the app covers what curriculums teach. A check of each s
 
 **Harder Reasoning:** each of the 14 puzzles gets difficulty steps by age, and the missing puzzle types of gifted-screening tests are added (verbal analogies, number puzzles, figure matrices), so an able child keeps being stretched.
 
+Built on Nov 17, 2026 (phase G):
+
+| Skill | Code | Rule by level |
+| --- | --- | --- |
+| M-K-E4 | Position words (K.G.A.1) | Above or below / above, below or next to / which picture shows it |
+| M-K-E5 | Shapes made from shapes (K.G.B.6) | Two pieces make which shape / up to six pieces / which pieces make it |
+| M-K-F3 | What can be measured (K.MD.A.1) | What a ruler or scale tells / and a measuring cup / which tool to use |
+| M-1-B11 | Order does not matter (1.OA.B.3) | 3 + 5 = 5 + ? / which is the same as 4 + 7 / typed, to 20 |
+| M-1-B12 | Subtract by thinking of adding (1.OA.B.4) | With a picture, to 10 / without, to 20 / typed |
+| M-1-B13 | Count on to add (1.OA.C.5) | Count on 1 or 2 on a number line / count on 3 / typed |
+| M-1-C5 | Measure with paper clips (1.MD.A.2) | Count the clips / which row is lined up right / how many clips longer, typed |
+| M-1-D3 | How many pieces make a shape (1.G.A.2) | Two-piece shapes and 4 triangles / up to 6 pieces / typed |
+| M-2-B11 | Add up to four numbers (2.NBT.B.6) | Three numbers to 30 / four two-digit numbers to 100 / typed |
+| M-2-C5 | Inches, feet and centimeters (2.MD.A.1 to A.3) | Inches or feet / which number is bigger or smaller / about how long |
+| M-2-C6 | Compare lengths (2.MD.A.4) | Which is longer / how much longer / typed |
+| M-2-C7 | Line plots (2.MD.D.9) | How many at one length / which length has the most / how many in all, typed |
+| M-2-D3 | Rows and columns of squares (2.G.A.2) | How many squares / how many rows or columns / typed |
+| E-K-E2 | Characters and setting, heard (RL.K.3) | Who / where |
+| E-K-E3 | Facts from a text, heard (RI.K.1) | A fact from the first sentence / from a later one |
+| E-1-D2 | Characters and setting (RL.1.3) | Who / where |
+| E-1-D3 | Retell in order (RL.1.2) | Put 3 events in order / what happened last |
+| E-1-D4 | True or false (RL.1.1) | Is this true / which sentence is true |
+| E-1-D5 | Fact texts (RI.1.2) | Main topic / a fact from it |
+| E-2-D4 | Retell a story (RL.2.2) | The best retelling / what happened in the middle |
+| E-2-D5 | Fact texts (RI.2.2) | Main topic / a fact from it |
+| E-2-D6 | Words in context (L.2.4.a) | What the word means / which word means it |
+
+Phase I, part 1 (built Nov 17, 2026): Reasoning A.15 Word analogies (opposites and homes / babies, what animals give, colours / parts and tools with a near miss), A.16 Which word does not belong (a far group / a close group / five words), A.17 Number grids (rows count up by 1 / by a step / the first two add to the third). Part 2 adds a harder top level to each of A.1 to A.14.
+
 Not covered, and not planned: writing and speaking, which a tapping app cannot mark; Virginia's own standards, not yet mapped (the `vaSol` field is empty).
 
 ### Reasoning (14 skills, all grades)
