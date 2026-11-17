@@ -1,0 +1,2436 @@
+{
+ "skillId": "M-2-A10",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "ask": "double",
+   "total": 20,
+   "options": [
+    "9 + 9",
+    "10 + 10",
+    "12 + 12"
+   ]
+  },
+  "prompt": {
+   "text": "Which double makes 20?",
+   "speak": [
+    "Which double makes",
+    {
+     "number": 20
+    },
+    "?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "9 + 9",
+    "size": "l",
+    "speak": [
+     {
+      "number": 9
+     },
+     "plus",
+     {
+      "number": 9
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "10 + 10",
+    "size": "l",
+    "speak": [
+     {
+      "number": 10
+     },
+     "plus",
+     {
+      "number": 10
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "12 + 12",
+    "size": "l",
+    "speak": [
+     {
+      "number": 12
+     },
+     "plus",
+     {
+      "number": 12
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    {
+     "number": 10
+    },
+    "plus",
+    {
+     "number": 10
+    },
+    "is",
+    {
+     "number": 20
+    },
+    ". An even number splits into two equal numbers."
+   ],
+   "steps": [
+    "10 + 10 = 20.",
+    "An even number splits into two equal numbers."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     10,
+     "+",
+     10,
+     "=",
+     20
+    ]
+   }
+  },
+  "skillId": "M-2-A10",
+  "level": 1,
+  "seed": 954,
+  "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":20}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 14,
+     "options": [
+      "7 + 7",
+      "8 + 8",
+      "9 + 9"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 14?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 + 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "plus",
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "7 + 7 = 14.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       7,
+       "=",
+       14
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":14}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 16,
+     "options": [
+      "8 + 8",
+      "9 + 9",
+      "10 + 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 16?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 + 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "plus",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":16}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 16,
+     "options": [
+      "8 + 8",
+      "9 + 9",
+      "10 + 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 16?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 + 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "plus",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":16}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 20,
+     "options": [
+      "10 + 10",
+      "11 + 11",
+      "12 + 12"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 20?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 20
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10 + 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       },
+       "plus",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11 + 11",
+      "size": "l",
+      "speak": [
+       {
+        "number": 11
+       },
+       "plus",
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 + 12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       "plus",
+       {
+        "number": 12
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "10 + 10 = 20.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       10,
+       "=",
+       20
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":20}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 16,
+     "options": [
+      "6 + 6",
+      "7 + 7",
+      "8 + 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 16?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 16
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":16}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 12,
+     "options": [
+      "6 + 6",
+      "7 + 7",
+      "8 + 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 12?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 12
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "6 + 6 = 12.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       6,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":12}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 4,
+     "options": [
+      "2 + 2",
+      "3 + 3",
+      "4 + 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 4?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "2 + 2 = 4.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 6,
+     "options": [
+      "1 + 1",
+      "3 + 3",
+      "4 + 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 6?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 6
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "3 + 3 = 6.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       3,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 6,
+     "options": [
+      "1 + 1",
+      "2 + 2",
+      "3 + 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 6?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 6
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1 + 1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       },
+       "plus",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "3 + 3 = 6.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       3,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "double",
+     "total": 12,
+     "options": [
+      "4 + 4",
+      "5 + 5",
+      "6 + 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which double makes 12?",
+     "speak": [
+      "Which double makes",
+      {
+       "number": 12
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "6 + 6 = 12.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       6,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-A10|1|{\"ask\":\"double\",\"total\":12}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 13,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 13 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 13
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 13
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 13 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 13,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":13}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 15,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 15 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 15
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 15
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 15 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 15,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 15,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 15 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 15
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 15
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 15 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 15,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 19,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 19 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 19
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 19
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 19 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 19,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":19}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 15,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 15 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 15
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 15
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 15 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 15,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 11,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 11 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 11
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 11
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 11 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 11,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":11}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 2,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 2 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 2
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      ". It is even."
+     ],
+     "steps": [
+      "2 = 1 + 1.",
+      "2 is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       1,
+       "+",
+       1,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 4,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 4 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 4
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      ". It is even."
+     ],
+     "steps": [
+      "4 = 2 + 2.",
+      "4 is even."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 5,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 5 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 5
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 5
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 5 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 5,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "isDouble",
+     "n": 11,
+     "options": [
+      "yes",
+      "no"
+     ]
+    },
+    "prompt": {
+     "text": "Can 11 be made by adding two equal numbers?",
+     "speak": [
+      "Can",
+      {
+       "number": 11
+      },
+      "be made by adding two equal numbers?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "no"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Make pairs: one is left over. Two equal numbers always make an even number, and",
+      {
+       "number": 11
+      },
+      "is odd."
+     ],
+     "steps": [
+      "Make pairs: one is left over.",
+      "Two equal numbers always make an even number. 11 is odd."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🔵",
+      "count": 11,
+      "layout": "grid5"
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-A10|2|{\"ask\":\"isDouble\",\"n\":11}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 14
+    },
+    "prompt": {
+     "text": "14 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 14
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      14,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 7
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "7 + 7 = 14.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       7,
+       "=",
+       14
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":14}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 16
+    },
+    "prompt": {
+     "text": "16 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 16
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      16,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":16}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 16
+    },
+    "prompt": {
+     "text": "16 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 16
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      16,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":16}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 20
+    },
+    "prompt": {
+     "text": "20 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 20
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      20,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "10 + 10 = 20.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       10,
+       "=",
+       20
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":20}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 16
+    },
+    "prompt": {
+     "text": "16 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 16
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      16,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "8 + 8 = 16.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "+",
+       8,
+       "=",
+       16
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":16}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 12
+    },
+    "prompt": {
+     "text": "12 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      12,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "6 + 6 = 12.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       6,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":12}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 4
+    },
+    "prompt": {
+     "text": "4 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 2,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "2 + 2 = 4.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 6
+    },
+    "prompt": {
+     "text": "6 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "3 + 3 = 6.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       3,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":6}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 6
+    },
+    "prompt": {
+     "text": "6 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "3 + 3 = 6.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "+",
+       3,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":6}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "ask": "half",
+     "total": 12
+    },
+    "prompt": {
+     "text": "12 is a number plus the same number. What is that number?",
+     "speak": [
+      {
+       "number": 12
+      },
+      "is a number plus the same number. What is that number?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      12,
+      "=",
+      "blank",
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". An even number splits into two equal numbers."
+     ],
+     "steps": [
+      "6 + 6 = 12.",
+      "An even number splits into two equal numbers."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       6,
+       "=",
+       12
+      ]
+     }
+    },
+    "skillId": "M-2-A10",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-A10|3|{\"ask\":\"half\",\"total\":12}"
+   }
+  ]
+ }
+}

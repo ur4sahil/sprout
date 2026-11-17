@@ -1,0 +1,5277 @@
+{
+ "skillId": "M-PK-A13",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "line": [
+    "rabbit",
+    "monkey",
+    "dog"
+   ],
+   "ask": "first",
+   "options": [
+    "monkey",
+    "dog",
+    "rabbit"
+   ]
+  },
+  "prompt": {
+   "text": "Which animal is first in line?",
+   "speak": [
+    "Which animal is first in line?"
+   ]
+  },
+  "stimulus": {
+   "kind": "sequence",
+   "items": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🏁",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "the front of the line"
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "rabbit"
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐵",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "monkey"
+     ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "dog"
+     ]
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐵",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "monkey"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐶",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "dog"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐰",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "rabbit"
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The line starts at the flag.",
+    "The rabbit is next to the flag. It is first."
+   ],
+   "steps": [
+    "The line starts at the flag.",
+    "The rabbit is next to the flag. It is first."
+   ],
+   "visual": {
+    "kind": "sequence",
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "the front of the line"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ]
+   }
+  },
+  "skillId": "M-PK-A13",
+  "level": 1,
+  "seed": 905,
+  "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"rabbit\",\"monkey\",\"dog\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "pig",
+      "cat",
+      "bear"
+     ],
+     "ask": "last",
+     "options": [
+      "cat",
+      "bear",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 1,
+    "key": "M-PK-A13|1|{\"ask\":\"last\",\"line\":[\"pig\",\"cat\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "duck",
+      "dog",
+      "monkey"
+     ],
+     "ask": "first",
+     "options": [
+      "monkey",
+      "dog",
+      "duck"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 2,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"duck\",\"dog\",\"monkey\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "duck",
+      "cat"
+     ],
+     "ask": "first",
+     "options": [
+      "duck",
+      "monkey",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The monkey is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The monkey is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 3,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"monkey\",\"duck\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "bear",
+      "frog",
+      "rabbit"
+     ],
+     "ask": "last",
+     "options": [
+      "rabbit",
+      "bear",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The rabbit is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The rabbit is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 4,
+    "key": "M-PK-A13|1|{\"ask\":\"last\",\"line\":[\"bear\",\"frog\",\"rabbit\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "duck",
+      "pig",
+      "bear"
+     ],
+     "ask": "first",
+     "options": [
+      "bear",
+      "pig",
+      "duck"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 5,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"duck\",\"pig\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "rabbit",
+      "bear"
+     ],
+     "ask": "last",
+     "options": [
+      "rabbit",
+      "monkey",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 6,
+    "key": "M-PK-A13|1|{\"ask\":\"last\",\"line\":[\"monkey\",\"rabbit\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "duck",
+      "bear",
+      "cat"
+     ],
+     "ask": "first",
+     "options": [
+      "bear",
+      "duck",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The duck is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 7,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"duck\",\"bear\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "dog",
+      "bear",
+      "rabbit"
+     ],
+     "ask": "first",
+     "options": [
+      "rabbit",
+      "bear",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The dog is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The dog is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 8,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"dog\",\"bear\",\"rabbit\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "bear",
+      "frog"
+     ],
+     "ask": "last",
+     "options": [
+      "frog",
+      "monkey",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The frog is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The frog is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 9,
+    "key": "M-PK-A13|1|{\"ask\":\"last\",\"line\":[\"monkey\",\"bear\",\"frog\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "pig",
+      "dog",
+      "frog"
+     ],
+     "ask": "first",
+     "options": [
+      "pig",
+      "frog",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The pig is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The pig is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 1,
+    "seed": 10,
+    "key": "M-PK-A13|1|{\"ask\":\"first\",\"line\":[\"pig\",\"dog\",\"frog\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "pig",
+      "bear",
+      "cat",
+      "duck"
+     ],
+     "ask": "first",
+     "options": [
+      "cat",
+      "pig",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The monkey is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The monkey is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 1,
+    "key": "M-PK-A13|2|{\"ask\":\"first\",\"line\":[\"monkey\",\"pig\",\"bear\",\"cat\",\"duck\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "dog",
+      "bear",
+      "monkey",
+      "duck"
+     ],
+     "ask": "last",
+     "options": [
+      "duck",
+      "monkey",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The duck is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The duck is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 2,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"rabbit\",\"dog\",\"bear\",\"monkey\",\"duck\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "pig",
+      "rabbit",
+      "duck",
+      "cat",
+      "bear"
+     ],
+     "ask": "first",
+     "options": [
+      "duck",
+      "pig",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The pig is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The pig is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 3,
+    "key": "M-PK-A13|2|{\"ask\":\"first\",\"line\":[\"pig\",\"rabbit\",\"duck\",\"cat\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "duck",
+      "rabbit",
+      "monkey",
+      "bear"
+     ],
+     "ask": "last",
+     "options": [
+      "bear",
+      "duck",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The bear is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 4,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"frog\",\"duck\",\"rabbit\",\"monkey\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "duck",
+      "rabbit",
+      "pig",
+      "dog"
+     ],
+     "ask": "last",
+     "options": [
+      "duck",
+      "dog",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The dog is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The dog is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 5,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"monkey\",\"duck\",\"rabbit\",\"pig\",\"dog\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "bear",
+      "rabbit",
+      "frog",
+      "monkey",
+      "pig"
+     ],
+     "ask": "last",
+     "options": [
+      "rabbit",
+      "monkey",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The pig is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The pig is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 6,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"bear\",\"rabbit\",\"frog\",\"monkey\",\"pig\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "monkey",
+      "frog",
+      "cat"
+     ],
+     "ask": "last",
+     "options": [
+      "rabbit",
+      "monkey",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The cat is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The cat is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 7,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"rabbit\",\"monkey\",\"frog\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "dog",
+      "monkey",
+      "cat"
+     ],
+     "ask": "last",
+     "options": [
+      "dog",
+      "monkey",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is last in line?",
+     "speak": [
+      "Which animal is last in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The cat is at the very end. It is last."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The cat is at the very end. It is last."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 8,
+    "key": "M-PK-A13|2|{\"ask\":\"last\",\"line\":[\"frog\",\"dog\",\"monkey\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "cat",
+      "monkey",
+      "pig"
+     ],
+     "ask": "first",
+     "options": [
+      "pig",
+      "rabbit",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The rabbit is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The rabbit is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 9,
+    "key": "M-PK-A13|2|{\"ask\":\"first\",\"line\":[\"rabbit\",\"cat\",\"monkey\",\"pig\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "rabbit",
+      "dog",
+      "cat",
+      "pig"
+     ],
+     "ask": "first",
+     "options": [
+      "rabbit",
+      "frog",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is first in line?",
+     "speak": [
+      "Which animal is first in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "The frog is next to the flag. It is first."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "The frog is next to the flag. It is first."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 2,
+    "seed": 10,
+    "key": "M-PK-A13|2|{\"ask\":\"first\",\"line\":[\"frog\",\"rabbit\",\"dog\",\"cat\",\"pig\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "pig",
+      "bear",
+      "cat",
+      "duck"
+     ],
+     "ask": "second",
+     "options": [
+      "cat",
+      "monkey",
+      "pig"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is second in line?",
+     "speak": [
+      "Which animal is second in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The pig is second."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The pig is second."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 1,
+    "key": "M-PK-A13|3|{\"ask\":\"second\",\"line\":[\"monkey\",\"pig\",\"bear\",\"cat\",\"duck\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "dog",
+      "bear",
+      "monkey",
+      "duck"
+     ],
+     "ask": "third",
+     "options": [
+      "bear",
+      "duck",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The bear is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The bear is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 2,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"rabbit\",\"dog\",\"bear\",\"monkey\",\"duck\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "pig",
+      "rabbit",
+      "duck",
+      "cat",
+      "bear"
+     ],
+     "ask": "second",
+     "options": [
+      "duck",
+      "rabbit",
+      "bear"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is second in line?",
+     "speak": [
+      "Which animal is second in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐻",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bear"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The rabbit is second."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The rabbit is second."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 3,
+    "key": "M-PK-A13|3|{\"ask\":\"second\",\"line\":[\"pig\",\"rabbit\",\"duck\",\"cat\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "duck",
+      "rabbit",
+      "monkey",
+      "bear"
+     ],
+     "ask": "third",
+     "options": [
+      "rabbit",
+      "duck",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The rabbit is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The rabbit is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 4,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"frog\",\"duck\",\"rabbit\",\"monkey\",\"bear\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "monkey",
+      "duck",
+      "rabbit",
+      "pig",
+      "dog"
+     ],
+     "ask": "third",
+     "options": [
+      "duck",
+      "rabbit",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "duck"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The rabbit is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The rabbit is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "duck"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 5,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"monkey\",\"duck\",\"rabbit\",\"pig\",\"dog\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "bear",
+      "rabbit",
+      "frog",
+      "monkey",
+      "pig"
+     ],
+     "ask": "third",
+     "options": [
+      "rabbit",
+      "pig",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐻",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bear"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The frog is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The frog is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐻",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "bear"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 6,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"bear\",\"rabbit\",\"frog\",\"monkey\",\"pig\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "monkey",
+      "frog",
+      "cat"
+     ],
+     "ask": "third",
+     "options": [
+      "rabbit",
+      "monkey",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The frog is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The frog is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 7,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"rabbit\",\"monkey\",\"frog\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "dog",
+      "monkey",
+      "cat"
+     ],
+     "ask": "third",
+     "options": [
+      "dog",
+      "cat",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is third in line?",
+     "speak": [
+      "Which animal is third in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The monkey is third."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second, third. The monkey is third."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 8,
+    "key": "M-PK-A13|3|{\"ask\":\"third\",\"line\":[\"frog\",\"dog\",\"monkey\",\"cat\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "rabbit",
+      "cat",
+      "monkey",
+      "pig"
+     ],
+     "ask": "second",
+     "options": [
+      "pig",
+      "cat",
+      "rabbit"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is second in line?",
+     "speak": [
+      "Which animal is second in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "monkey"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The cat is second."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The cat is second."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "monkey"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 9,
+    "key": "M-PK-A13|3|{\"ask\":\"second\",\"line\":[\"rabbit\",\"cat\",\"monkey\",\"pig\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "line": [
+      "frog",
+      "rabbit",
+      "dog",
+      "cat",
+      "pig"
+     ],
+     "ask": "second",
+     "options": [
+      "frog",
+      "rabbit",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Which animal is second in line?",
+     "speak": [
+      "Which animal is second in line?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🏁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "the front of the line"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "frog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐰",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rabbit"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "dog"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "cat"
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐷",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "pig"
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The rabbit is second."
+     ],
+     "steps": [
+      "The line starts at the flag.",
+      "Count from the flag: first, second. The rabbit is second."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🏁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "the front of the line"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "frog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "rabbit"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "dog"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "cat"
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         "pig"
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "M-PK-A13",
+    "level": 3,
+    "seed": 10,
+    "key": "M-PK-A13|3|{\"ask\":\"second\",\"line\":[\"frog\",\"rabbit\",\"dog\",\"cat\",\"pig\"]}"
+   }
+  ]
+ }
+}

@@ -30,7 +30,7 @@ export interface Skill {
 }
 
 // Raised by one in every content phase (plan section 7, Catalogue growth).
-export const CATALOGUE_VERSION = 22;
+export const CATALOGUE_VERSION = 23;
 
 const BASE: readonly Skill[] = [
   {
@@ -3595,7 +3595,20 @@ const BASE: readonly Skill[] = [
 ];
 
 // The rows of plan section 15's waves come after every earlier row, so their categories keep their order.
-export const CATALOGUE: readonly Skill[] = [...BASE, ...H1_ROWS, ...H2_ROWS, ...H3_ROWS, ...H4_ROWS, ...H5_ROWS];
+// A wave's row goes right after the last earlier row of its subject, grade and category, or, for a new
+// category, after the last row of its subject and grade, so every page shows each category once, in order.
+function slotted(base: readonly Skill[], extra: readonly Skill[]): Skill[] {
+  const out = [...base];
+  for (const row of extra) {
+    const same = (each: Skill): boolean => each.subject === row.subject && each.grade === row.grade;
+    let at = out.findLastIndex((each) => same(each) && each.category === row.category);
+    if (at === -1) at = out.findLastIndex(same);
+    out.splice(at === -1 ? out.length : at + 1, 0, row);
+  }
+  return out;
+}
+
+export const CATALOGUE: readonly Skill[] = slotted(BASE, [...H1_ROWS, ...H2_ROWS, ...H3_ROWS, ...H4_ROWS, ...H5_ROWS]);
 
 export function skillById(id: string): Skill | undefined {
   return CATALOGUE.find((skill) => skill.id === id);

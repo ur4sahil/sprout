@@ -1,0 +1,3588 @@
+{
+ "skillId": "M-2-C8",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "ask": "half",
+   "thing": "bed",
+   "name": "Sam",
+   "options": [
+    "a.m.",
+    "p.m."
+   ]
+  },
+  "prompt": {
+   "text": "Sam goes to bed. Is that in the a.m. or the p.m.?",
+   "speak": [
+    "Sam goes to bed. Is that in the",
+    {
+     "letter": "a"
+    },
+    {
+     "letter": "m"
+    },
+    "or the",
+    {
+     "letter": "p"
+    },
+    {
+     "letter": "m"
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🛏️",
+   "count": 1,
+   "layout": "row",
+   "speak": [
+    "bed"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "a.m.",
+    "size": "l",
+    "speak": [
+     {
+      "letter": "a"
+     },
+     {
+      "letter": "m"
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "p.m.",
+    "size": "l",
+    "speak": [
+     {
+      "letter": "p"
+     },
+     {
+      "letter": "m"
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Sam goes to bed in the evening. That is",
+    {
+     "letter": "p"
+    },
+    {
+     "letter": "m"
+    },
+    ".",
+    "From midnight to noon is",
+    {
+     "letter": "a"
+    },
+    {
+     "letter": "m"
+    },
+    ". From noon to midnight is",
+    {
+     "letter": "p"
+    },
+    {
+     "letter": "m"
+    },
+    "."
+   ],
+   "steps": [
+    "Sam goes to bed in the evening: p.m.",
+    "Midnight to noon is a.m. Noon to midnight is p.m."
+   ],
+   "visual": {
+    "kind": "emojiGroup",
+    "emoji": "🛏️",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "bed"
+    ]
+   }
+  },
+  "skillId": "M-2-C8",
+  "level": 1,
+  "seed": 971,
+  "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Sam\",\"thing\":\"bed\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "breakfast",
+     "name": "Lily",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Lily eats breakfast. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Lily eats breakfast. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "breakfast"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Lily eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Lily eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Lily\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "rooster",
+     "name": "Ben",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Ben hears the rooster wake everyone up. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Ben hears the rooster wake everyone up. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐔",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "rooster"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Ben hears the rooster wake everyone up in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Ben hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Ben\",\"thing\":\"rooster\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "breakfast",
+     "name": "Ben",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Ben eats breakfast. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Ben eats breakfast. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "breakfast"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Ben eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Ben eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Ben\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "rooster",
+     "name": "Eli",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Eli hears the rooster wake everyone up. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Eli hears the rooster wake everyone up. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐔",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "rooster"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Eli hears the rooster wake everyone up in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Eli hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Eli\",\"thing\":\"rooster\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "moon",
+     "name": "Lily",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Lily looks at the moon. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Lily looks at the moon. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌙",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "moon"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Lily looks at the moon in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Lily looks at the moon in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Lily\",\"thing\":\"moon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "breakfast",
+     "name": "Max",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Max eats breakfast. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Max eats breakfast. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "breakfast"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Max eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Max eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Max\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "breakfast",
+     "name": "Mia",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Mia eats breakfast. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Mia eats breakfast. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🥞",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "breakfast"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Mia eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Mia eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Mia\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "bed",
+     "name": "Leo",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Leo goes to bed. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Leo goes to bed. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🛏️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "bed"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Leo goes to bed in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Leo goes to bed in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Leo\",\"thing\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "moon",
+     "name": "Leo",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Leo looks at the moon. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Leo looks at the moon. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🌙",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "moon"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Leo looks at the moon in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Leo looks at the moon in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Leo\",\"thing\":\"moon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "half",
+     "thing": "bath",
+     "name": "Max",
+     "options": [
+      "a.m.",
+      "p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Max takes a bath before bed. Is that in the a.m. or the p.m.?",
+     "speak": [
+      "Max takes a bath before bed. Is that in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "or the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🛁",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "bath"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Max takes a bath before bed in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Max takes a bath before bed in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🛁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bath"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-C8|1|{\"ask\":\"half\",\"name\":\"Max\",\"thing\":\"bath\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "breakfast",
+     "hour": 7,
+     "name": "Lily",
+     "options": [
+      "7:00 a.m.",
+      "7:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Lily eats breakfast at this time. Which time is it?",
+     "speak": [
+      "Lily eats breakfast at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥞",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "breakfast"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Lily eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Lily eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":7,\"name\":\"Lily\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "rooster",
+     "hour": 6,
+     "name": "Ben",
+     "options": [
+      "6:00 a.m.",
+      "6:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Ben hears the rooster wake everyone up at this time. Which time is it?",
+     "speak": [
+      "Ben hears the rooster wake everyone up at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐔",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rooster"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 6,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Ben hears the rooster wake everyone up in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Ben hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":6,\"name\":\"Ben\",\"thing\":\"rooster\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "breakfast",
+     "hour": 7,
+     "name": "Ben",
+     "options": [
+      "7:00 a.m.",
+      "7:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Ben eats breakfast at this time. Which time is it?",
+     "speak": [
+      "Ben eats breakfast at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥞",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "breakfast"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Ben eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Ben eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":7,\"name\":\"Ben\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "rooster",
+     "hour": 6,
+     "name": "Eli",
+     "options": [
+      "6:00 a.m.",
+      "6:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Eli hears the rooster wake everyone up at this time. Which time is it?",
+     "speak": [
+      "Eli hears the rooster wake everyone up at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐔",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "rooster"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 6,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Eli hears the rooster wake everyone up in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Eli hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":6,\"name\":\"Eli\",\"thing\":\"rooster\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "moon",
+     "hour": 9,
+     "name": "Lily",
+     "options": [
+      "9:00 a.m.",
+      "9:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Lily looks at the moon at this time. Which time is it?",
+     "speak": [
+      "Lily looks at the moon at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌙",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "moon"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Lily looks at the moon in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Lily looks at the moon in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":9,\"name\":\"Lily\",\"thing\":\"moon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "breakfast",
+     "hour": 7,
+     "name": "Max",
+     "options": [
+      "7:00 a.m.",
+      "7:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Max eats breakfast at this time. Which time is it?",
+     "speak": [
+      "Max eats breakfast at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥞",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "breakfast"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Max eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Max eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":7,\"name\":\"Max\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "breakfast",
+     "hour": 7,
+     "name": "Mia",
+     "options": [
+      "7:00 a.m.",
+      "7:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Mia eats breakfast at this time. Which time is it?",
+     "speak": [
+      "Mia eats breakfast at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🥞",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "breakfast"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Mia eats breakfast in the morning. That is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Mia eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":7,\"name\":\"Mia\",\"thing\":\"breakfast\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "bed",
+     "hour": 8,
+     "name": "Leo",
+     "options": [
+      "8:00 a.m.",
+      "8:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Leo goes to bed at this time. Which time is it?",
+     "speak": [
+      "Leo goes to bed at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛏️",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bed"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 8,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Leo goes to bed in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Leo goes to bed in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":8,\"name\":\"Leo\",\"thing\":\"bed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "moon",
+     "hour": 9,
+     "name": "Leo",
+     "options": [
+      "9:00 a.m.",
+      "9:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Leo looks at the moon at this time. Which time is it?",
+     "speak": [
+      "Leo looks at the moon at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌙",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "moon"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 9,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Leo looks at the moon in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Leo looks at the moon in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":9,\"name\":\"Leo\",\"thing\":\"moon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "time",
+     "thing": "bath",
+     "hour": 7,
+     "name": "Max",
+     "options": [
+      "7:00 a.m.",
+      "7:00 p.m."
+     ]
+    },
+    "prompt": {
+     "text": "Max takes a bath before bed at this time. Which time is it?",
+     "speak": [
+      "Max takes a bath before bed at this time. Which time is it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🛁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        "bath"
+       ]
+      },
+      {
+       "kind": "clock",
+       "hour": 7,
+       "minute": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:00 a.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "a"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:00 p.m.",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       {
+        "letter": "p"
+       },
+       {
+        "letter": "m"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Max takes a bath before bed in the evening. That is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "Max takes a bath before bed in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🛁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bath"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-C8|2|{\"ask\":\"time\",\"hour\":7,\"name\":\"Max\",\"thing\":\"bath\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bed",
+      "dinner",
+      "rooster"
+     ],
+     "options": [
+      "rooster",
+      "dinner",
+      "bed"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "A child hears the rooster wake everyone up in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bed\",\"dinner\",\"rooster\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bed",
+      "dinner",
+      "school"
+     ],
+     "options": [
+      "bed",
+      "school",
+      "dinner"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A child gets to school in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child gets to school in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bed\",\"dinner\",\"school\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bath",
+      "bed",
+      "school"
+     ],
+     "options": [
+      "bath",
+      "school",
+      "bed"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bath"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A child gets to school in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child gets to school in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bath\",\"bed\",\"school\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bed",
+      "breakfast",
+      "moon"
+     ],
+     "options": [
+      "bed",
+      "moon",
+      "breakfast"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A child eats breakfast in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child eats breakfast in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bed\",\"breakfast\",\"moon\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "p.m.",
+     "set": [
+      "cereal",
+      "dinner",
+      "school"
+     ],
+     "options": [
+      "cereal",
+      "dinner",
+      "school"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the p.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cereal"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A child eats dinner in the evening, so it is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child eats dinner in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"cereal\",\"dinner\",\"school\"],\"want\":\"p.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bath",
+      "moon",
+      "rooster"
+     ],
+     "options": [
+      "bath",
+      "moon",
+      "rooster"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bath"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A child hears the rooster wake everyone up in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child hears the rooster wake everyone up in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bath\",\"moon\",\"rooster\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "a.m.",
+     "set": [
+      "bath",
+      "cereal",
+      "dinner"
+     ],
+     "options": [
+      "dinner",
+      "cereal",
+      "bath"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the a.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cereal"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bath"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A child eats a bowl of cereal in the morning, so it is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child eats a bowl of cereal in the morning: a.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🥣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cereal"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bath\",\"cereal\",\"dinner\"],\"want\":\"a.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "p.m.",
+     "set": [
+      "bed",
+      "breakfast",
+      "cereal"
+     ],
+     "options": [
+      "cereal",
+      "bed",
+      "breakfast"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the p.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cereal"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "A child goes to bed in the evening, so it is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child goes to bed in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bed"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"bed\",\"breakfast\",\"cereal\"],\"want\":\"p.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "p.m.",
+     "set": [
+      "breakfast",
+      "dinner",
+      "school"
+     ],
+     "options": [
+      "school",
+      "breakfast",
+      "dinner"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the p.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏫",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "school"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A child eats dinner in the evening, so it is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child eats dinner in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🍲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dinner"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"breakfast\",\"dinner\",\"school\"],\"want\":\"p.m.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "ask": "which",
+     "want": "p.m.",
+     "set": [
+      "breakfast",
+      "moon",
+      "rooster"
+     ],
+     "options": [
+      "rooster",
+      "breakfast",
+      "moon"
+     ]
+    },
+    "prompt": {
+     "text": "Which one happens in the p.m.?",
+     "speak": [
+      "Which one happens in the",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐔",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rooster"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "breakfast"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "A child looks at the moon in the evening, so it is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      ".",
+      "From midnight to noon is",
+      {
+       "letter": "a"
+      },
+      {
+       "letter": "m"
+      },
+      ". From noon to midnight is",
+      {
+       "letter": "p"
+      },
+      {
+       "letter": "m"
+      },
+      "."
+     ],
+     "steps": [
+      "A child looks at the moon in the evening: p.m.",
+      "Midnight to noon is a.m. Noon to midnight is p.m."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌙",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "moon"
+      ]
+     }
+    },
+    "skillId": "M-2-C8",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-C8|3|{\"ask\":\"which\",\"set\":[\"breakfast\",\"moon\",\"rooster\"],\"want\":\"p.m.\"}"
+   }
+  ]
+ }
+}

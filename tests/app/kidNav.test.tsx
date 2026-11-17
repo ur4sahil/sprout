@@ -6,6 +6,7 @@ import App from '../../src/app/App';
 import { summariseDay } from '../../src/app/childDay';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
+import { CATALOGUE } from '../../src/content/catalogue';
 import { allGenerators, generatorFor } from '../../src/content/registry';
 import { addDays, advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
@@ -154,11 +155,11 @@ describe('the subject page', () => {
     expect(letters).toEqual([...letters].sort());
     expect(new Set(letters).size).toBe(letters.length);
     await user.click(screen.getByRole('tab', { name: 'Pre-K' }));
-    // Pre-K: 16 skills in 4 lettered categories, in catalogue order.
+    // Pre-K: every Pre-K skill in 4 lettered categories, in catalogue order.
     const preK = [...document.querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill'));
-    expect(preK).toHaveLength(16);
+    expect(preK).toHaveLength(CATALOGUE.filter((skill) => skill.subject === 'math' && skill.grade === 'PK').length);
     expect(preK.slice(0, 3)).toEqual(['M-PK-A1', 'M-PK-A2', 'M-PK-A3']);
-    expect(preK.at(-1)).toBe('M-PK-D3');
+    expect(preK.at(-1)).toBe('M-PK-D6');
     expect([...document.querySelectorAll('section h2')].map((el) => el.textContent)).toEqual(['A. Counting', 'B. Comparing', 'C. Shapes and sizes', 'D. Patterns and sorting']);
     await user.click(screen.getByRole('button', { name: 'Back to home' }));
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();

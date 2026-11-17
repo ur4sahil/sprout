@@ -1,0 +1,3808 @@
+{
+ "skillId": "M-2-C10",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "target": 43,
+   "sets": [
+    [
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny",
+     "penny",
+     "penny"
+    ],
+    [
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny",
+     "penny"
+    ],
+    [
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny"
+    ]
+   ],
+   "options": [
+    "dime,dime,dime,penny,penny,penny,penny",
+    "dime,dime,dime,dime,penny,penny,penny",
+    "dime,dime,dime,dime,dime,penny,penny"
+   ]
+  },
+  "prompt": {
+   "text": "Which coins make 43¢?",
+   "speak": [
+    "Which coins make",
+    {
+     "cents": 43
+    },
+    "?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "coins",
+    "coins": [
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny",
+     "penny",
+     "penny"
+    ]
+   },
+   {
+    "kind": "coins",
+    "coins": [
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny",
+     "penny"
+    ]
+   },
+   {
+    "kind": "coins",
+    "coins": [
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny"
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "Count on from the coin worth the most:",
+    {
+     "number": 10
+    },
+    ",",
+    {
+     "number": 20
+    },
+    ",",
+    {
+     "number": 30
+    },
+    ",",
+    {
+     "number": 40
+    },
+    ",",
+    {
+     "number": 41
+    },
+    ",",
+    {
+     "number": 42
+    },
+    ",",
+    {
+     "number": 43
+    },
+    ". That is",
+    {
+     "cents": 43
+    },
+    "."
+   ],
+   "steps": [
+    "Count on from the coin worth the most.",
+    "10, 20, 30, 40, 41, 42, 43.",
+    "That is 43¢."
+   ],
+   "visual": {
+    "kind": "coins",
+    "coins": [
+     "dime",
+     "dime",
+     "dime",
+     "dime",
+     "penny",
+     "penny",
+     "penny"
+    ]
+   }
+  },
+  "skillId": "M-2-C10",
+  "level": 1,
+  "seed": 973,
+  "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\"]],\"target\":43}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 31,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,dime,penny",
+      "dime,dime,dime,penny",
+      "dime,dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 31¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 31
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ". That is",
+      {
+       "cents": 31
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31.",
+      "That is 31¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"penny\"]],\"target\":31}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 32,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,penny,penny",
+      "dime,dime,dime,penny,penny,penny",
+      "dime,dime,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 32¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 32
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ",",
+      {
+       "number": 32
+      },
+      ". That is",
+      {
+       "cents": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31, 32.",
+      "That is 32¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"penny\",\"penny\"]],\"target\":32}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 31,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,dime",
+      "dime,dime,penny,penny",
+      "dime,dime,dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 31¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 31
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ". That is",
+      {
+       "cents": 31
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31.",
+      "That is 31¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"dime\"],[\"dime\",\"dime\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"penny\"]],\"target\":31}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 42,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,penny,penny,penny",
+      "dime,dime,dime,dime,penny,penny",
+      "dime,dime,dime,dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 42¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 42
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 40
+      },
+      ",",
+      {
+       "number": 41
+      },
+      ",",
+      {
+       "number": 42
+      },
+      ". That is",
+      {
+       "cents": 42
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 40, 41, 42.",
+      "That is 42¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\"]],\"target\":42}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 34,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,penny,penny,penny",
+      "dime,dime,dime,dime,penny,penny,penny",
+      "dime,dime,dime,penny,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 34¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 34
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ",",
+      {
+       "number": 32
+      },
+      ",",
+      {
+       "number": 33
+      },
+      ",",
+      {
+       "number": 34
+      },
+      ". That is",
+      {
+       "cents": 34
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31, 32, 33, 34.",
+      "That is 34¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\",\"penny\"]],\"target\":34}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 31,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime",
+      "dime,dime,dime,penny",
+      "dime,dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 31¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 31
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ". That is",
+      {
+       "cents": 31
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31.",
+      "That is 31¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\"],[\"dime\",\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"penny\"]],\"target\":31}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 11,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime"
+      ],
+      [
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,penny",
+      "dime",
+      "dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 11¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 11
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 11
+      },
+      ". That is",
+      {
+       "cents": 11
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 11.",
+      "That is 11¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"penny\"],[\"dime\"],[\"dime\",\"penny\"]],\"target\":11}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 13,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,penny,penny",
+      "dime,penny,penny",
+      "dime,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 13¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 13
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 11
+      },
+      ",",
+      {
+       "number": 12
+      },
+      ",",
+      {
+       "number": 13
+      },
+      ". That is",
+      {
+       "cents": 13
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 11, 12, 13.",
+      "That is 13¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"penny\",\"penny\"],[\"dime\",\"penny\",\"penny\"],[\"dime\",\"penny\",\"penny\",\"penny\"]],\"target\":13}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 14,
+     "sets": [
+      [
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,penny,penny,penny",
+      "dime,penny,penny,penny,penny",
+      "dime,dime,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 14¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 11
+      },
+      ",",
+      {
+       "number": 12
+      },
+      ",",
+      {
+       "number": 13
+      },
+      ",",
+      {
+       "number": 14
+      },
+      ". That is",
+      {
+       "cents": 14
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 11, 12, 13, 14.",
+      "That is 14¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"]],\"target\":14}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 34,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,penny,penny,penny,penny",
+      "dime,dime,penny,penny,penny,penny,penny",
+      "dime,dime,dime,dime,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 34¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 34
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ",",
+      {
+       "number": 32
+      },
+      ",",
+      {
+       "number": 33
+      },
+      ",",
+      {
+       "number": 34
+      },
+      ". That is",
+      {
+       "cents": 34
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 31, 32, 33, 34.",
+      "That is 34¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-C10|1|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"penny\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"]],\"target\":34}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 25,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,nickel",
+      "dime,dime,nickel",
+      "dime,dime,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 25¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 25
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 25
+      },
+      ". That is",
+      {
+       "cents": 25
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 25.",
+      "That is 25¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"nickel\"],[\"dime\",\"dime\",\"nickel\"],[\"dime\",\"dime\",\"penny\"]],\"target\":25}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 36,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,dime,penny",
+      "dime,dime,dime,penny",
+      "dime,dime,dime,nickel,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 36¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 36
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ",",
+      {
+       "number": 36
+      },
+      ". That is",
+      {
+       "cents": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 35, 36.",
+      "That is 36¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\"]],\"target\":36}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 35,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "dime,dime,nickel,penny",
+      "dime,dime,nickel,nickel",
+      "dime,dime,dime,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 35¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 35
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ". That is",
+      {
+       "cents": 35
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 35.",
+      "That is 35¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"nickel\",\"penny\"],[\"dime\",\"dime\",\"nickel\",\"nickel\"],[\"dime\",\"dime\",\"dime\",\"nickel\"]],\"target\":35}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 36,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime,nickel,penny",
+      "dime,dime,dime,dime,nickel,penny",
+      "dime,dime,dime,nickel,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 36¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 36
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ",",
+      {
+       "number": 36
+      },
+      ". That is",
+      {
+       "cents": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 35, 36.",
+      "That is 36¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\"]],\"target\":36}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 38,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,nickel,nickel,penny,penny,penny",
+      "dime,dime,dime,dime,penny,penny,penny",
+      "dime,dime,dime,nickel,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 38¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 38
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ",",
+      {
+       "number": 36
+      },
+      ",",
+      {
+       "number": 37
+      },
+      ",",
+      {
+       "number": 38
+      },
+      ". That is",
+      {
+       "cents": 38
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 30, 35, 36, 37, 38.",
+      "That is 38¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"nickel\",\"nickel\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\"]],\"target\":38}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 25,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "dime"
+      ],
+      [
+       "dime",
+       "dime",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "dime,dime,dime",
+      "dime,dime,penny",
+      "dime,dime,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 25¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 25
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 25
+      },
+      ". That is",
+      {
+       "cents": 25
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 25.",
+      "That is 25¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"dime\"],[\"dime\",\"dime\",\"penny\"],[\"dime\",\"dime\",\"nickel\"]],\"target\":25}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 15,
+     "sets": [
+      [
+       "dime"
+      ],
+      [
+       "dime",
+       "nickel",
+       "nickel"
+      ],
+      [
+       "dime",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "dime",
+      "dime,nickel,nickel",
+      "dime,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 15¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 15
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 15
+      },
+      ". That is",
+      {
+       "cents": 15
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 15.",
+      "That is 15¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\"],[\"dime\",\"nickel\",\"nickel\"],[\"dime\",\"nickel\"]],\"target\":15}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 18,
+     "sets": [
+      [
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,nickel,penny,penny",
+      "dime,dime,nickel,penny,penny",
+      "dime,nickel,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 18¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 18
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 15
+      },
+      ",",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 18
+      },
+      ". That is",
+      {
+       "cents": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 15, 16, 17, 18.",
+      "That is 18¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"nickel\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\"],[\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\"]],\"target\":18}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 19,
+     "sets": [
+      [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,nickel,penny,penny,penny",
+      "dime,nickel,penny,penny,penny,penny",
+      "dime,dime,nickel,penny,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 19¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 19
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 15
+      },
+      ",",
+      {
+       "number": 16
+      },
+      ",",
+      {
+       "number": 17
+      },
+      ",",
+      {
+       "number": 18
+      },
+      ",",
+      {
+       "number": 19
+      },
+      ". That is",
+      {
+       "cents": 19
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 15, 16, 17, 18, 19.",
+      "That is 19¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\",\"penny\"]],\"target\":19}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 29,
+     "sets": [
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "dime,dime,nickel,nickel,penny,penny,penny",
+      "dime,dime,nickel,penny,penny,penny,penny",
+      "dime,dime,dime,nickel,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 29¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 29
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 10
+      },
+      ",",
+      {
+       "number": 20
+      },
+      ",",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 26
+      },
+      ",",
+      {
+       "number": 27
+      },
+      ",",
+      {
+       "number": 28
+      },
+      ",",
+      {
+       "number": 29
+      },
+      ". That is",
+      {
+       "cents": 29
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "10, 20, 25, 26, 27, 28, 29.",
+      "That is 29¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-C10|2|{\"sets\":[[\"dime\",\"dime\",\"nickel\",\"nickel\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\",\"penny\"],[\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\"]],\"target\":29}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 58,
+     "sets": [
+      [
+       "quarter",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,nickel,penny,penny,penny",
+      "quarter,quarter,penny,penny,penny",
+      "quarter,quarter,nickel,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 58¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 58
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ",",
+      {
+       "number": 55
+      },
+      ",",
+      {
+       "number": 56
+      },
+      ",",
+      {
+       "number": 57
+      },
+      ",",
+      {
+       "number": 58
+      },
+      ". That is",
+      {
+       "cents": 58
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50, 55, 56, 57, 58.",
+      "That is 58¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"nickel\",\"penny\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"penny\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"nickel\",\"penny\",\"penny\",\"penny\"]],\"target\":58}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 52,
+     "sets": [
+      [
+       "quarter",
+       "quarter",
+       "nickel",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,quarter,nickel,penny",
+      "quarter,quarter,penny",
+      "quarter,quarter,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 52¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 52
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ",",
+      {
+       "number": 51
+      },
+      ",",
+      {
+       "number": 52
+      },
+      ". That is",
+      {
+       "cents": 52
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50, 51, 52.",
+      "That is 52¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"quarter\",\"nickel\",\"penny\"],[\"quarter\",\"quarter\",\"penny\"],[\"quarter\",\"quarter\",\"penny\",\"penny\"]],\"target\":52}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 50,
+     "sets": [
+      [
+       "quarter",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter"
+      ],
+      [
+       "quarter",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "quarter,penny",
+      "quarter,quarter",
+      "quarter,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 50¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 50
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ". That is",
+      {
+       "cents": 50
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50.",
+      "That is 50¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"penny\"],[\"quarter\",\"quarter\"],[\"quarter\",\"nickel\"]],\"target\":50}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 50,
+     "sets": [
+      [
+       "quarter",
+       "dime"
+      ],
+      [
+       "quarter",
+       "quarter"
+      ],
+      [
+       "quarter",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "quarter,dime",
+      "quarter,quarter",
+      "quarter,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 50¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 50
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ". That is",
+      {
+       "cents": 50
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50.",
+      "That is 50¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"dime\"],[\"quarter\",\"quarter\"],[\"quarter\",\"nickel\"]],\"target\":50}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 72,
+     "sets": [
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,quarter,dime,penny,penny",
+      "quarter,quarter,dime,dime,nickel,penny",
+      "quarter,quarter,dime,dime,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 72¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 72
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ",",
+      {
+       "number": 60
+      },
+      ",",
+      {
+       "number": 70
+      },
+      ",",
+      {
+       "number": 71
+      },
+      ",",
+      {
+       "number": 72
+      },
+      ". That is",
+      {
+       "cents": 72
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50, 60, 70, 71, 72.",
+      "That is 72¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"quarter\",\"dime\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"dime\",\"dime\",\"nickel\",\"penny\"],[\"quarter\",\"quarter\",\"dime\",\"dime\",\"penny\",\"penny\"]],\"target\":72}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 55,
+     "sets": [
+      [
+       "quarter",
+       "nickel",
+       "nickel"
+      ],
+      [
+       "quarter",
+       "nickel"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "nickel"
+      ]
+     ],
+     "options": [
+      "quarter,nickel,nickel",
+      "quarter,nickel",
+      "quarter,quarter,nickel"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 55¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 55
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "nickel"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ",",
+      {
+       "number": 55
+      },
+      ". That is",
+      {
+       "cents": 55
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50, 55.",
+      "That is 55¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "nickel"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"nickel\",\"nickel\"],[\"quarter\",\"nickel\"],[\"quarter\",\"quarter\",\"nickel\"]],\"target\":55}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 32,
+     "sets": [
+      [
+       "quarter",
+       "dime",
+       "nickel",
+       "penny"
+      ],
+      [
+       "nickel",
+       "nickel",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,dime,nickel,penny",
+      "nickel,nickel,penny,penny",
+      "quarter,nickel,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 32¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 32
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "nickel",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "nickel",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 30
+      },
+      ",",
+      {
+       "number": 31
+      },
+      ",",
+      {
+       "number": 32
+      },
+      ". That is",
+      {
+       "cents": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 30, 31, 32.",
+      "That is 32¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"dime\",\"nickel\",\"penny\"],[\"nickel\",\"nickel\",\"penny\",\"penny\"],[\"quarter\",\"nickel\",\"penny\",\"penny\"]],\"target\":32}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 37,
+     "sets": [
+      [
+       "quarter",
+       "dime",
+       "penny"
+      ],
+      [
+       "quarter",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,dime,penny",
+      "quarter,dime,penny,penny",
+      "quarter,dime,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 37¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 37
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ",",
+      {
+       "number": 36
+      },
+      ",",
+      {
+       "number": 37
+      },
+      ". That is",
+      {
+       "cents": 37
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 35, 36, 37.",
+      "That is 37¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"dime\",\"penny\"],[\"quarter\",\"dime\",\"penny\",\"penny\"],[\"quarter\",\"dime\",\"penny\",\"penny\",\"penny\"]],\"target\":37}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 48,
+     "sets": [
+      [
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,dime,dime,nickel,penny,penny",
+      "quarter,quarter,dime,dime,penny,penny",
+      "quarter,dime,dime,penny,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 48¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 48
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 35
+      },
+      ",",
+      {
+       "number": 45
+      },
+      ",",
+      {
+       "number": 46
+      },
+      ",",
+      {
+       "number": 47
+      },
+      ",",
+      {
+       "number": 48
+      },
+      ". That is",
+      {
+       "cents": 48
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 35, 45, 46, 47, 48.",
+      "That is 48¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "dime",
+       "dime",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"dime\",\"dime\",\"penny\",\"penny\"],[\"quarter\",\"dime\",\"dime\",\"penny\",\"penny\",\"penny\"]],\"target\":48}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": 78,
+     "sets": [
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ],
+      [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     ],
+     "options": [
+      "quarter,quarter,dime,dime,nickel,penny,penny,penny",
+      "quarter,quarter,dime,dime,dime,nickel,penny,penny",
+      "quarter,quarter,dime,dime,nickel,penny,penny"
+     ]
+    },
+    "prompt": {
+     "text": "Which coins make 78¢?",
+     "speak": [
+      "Which coins make",
+      {
+       "cents": 78
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     },
+     {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from the coin worth the most:",
+      {
+       "number": 25
+      },
+      ",",
+      {
+       "number": 50
+      },
+      ",",
+      {
+       "number": 60
+      },
+      ",",
+      {
+       "number": 70
+      },
+      ",",
+      {
+       "number": 75
+      },
+      ",",
+      {
+       "number": 76
+      },
+      ",",
+      {
+       "number": 77
+      },
+      ",",
+      {
+       "number": 78
+      },
+      ". That is",
+      {
+       "cents": 78
+      },
+      "."
+     ],
+     "steps": [
+      "Count on from the coin worth the most.",
+      "25, 50, 60, 70, 75, 76, 77, 78.",
+      "That is 78¢."
+     ],
+     "visual": {
+      "kind": "coins",
+      "coins": [
+       "quarter",
+       "quarter",
+       "dime",
+       "dime",
+       "nickel",
+       "penny",
+       "penny",
+       "penny"
+      ]
+     }
+    },
+    "skillId": "M-2-C10",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-C10|3|{\"sets\":[[\"quarter\",\"quarter\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"dime\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\"],[\"quarter\",\"quarter\",\"dime\",\"dime\",\"nickel\",\"penny\",\"penny\"]],\"target\":78}"
+   }
+  ]
+ }
+}

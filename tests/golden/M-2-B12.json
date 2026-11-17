@@ -1,0 +1,4395 @@
+{
+ "skillId": "M-2-B12",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "300 minus 2 equals what?",
+   "speak": [
+    {
+     "number": 300
+    },
+    "minus",
+    {
+     "number": 2
+    },
+    "equals what?"
+   ]
+  },
+  "stimulus": {
+   "kind": "equation",
+   "parts": [
+    300,
+    "-",
+    2,
+    "=",
+    "blank"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "There are not enough ones, and there are no tens to break.",
+    "Break",
+    {
+     "number": 1
+    },
+    "hundred into",
+    {
+     "number": 10
+    },
+    "tens. Then break",
+    {
+     "number": 1
+    },
+    "ten into",
+    {
+     "number": 10
+    },
+    "ones.",
+    "Ones:",
+    {
+     "number": 10
+    },
+    "minus",
+    {
+     "number": 2
+    },
+    "is",
+    {
+     "number": 8
+    },
+    ". Tens:",
+    {
+     "number": 9
+    },
+    "minus",
+    {
+     "number": 0
+    },
+    "is",
+    {
+     "number": 9
+    },
+    ". Hundreds:",
+    {
+     "number": 2
+    },
+    "minus",
+    {
+     "number": 0
+    },
+    "is",
+    {
+     "number": 2
+    },
+    ".",
+    "The answer is",
+    {
+     "number": 298
+    },
+    "."
+   ],
+   "steps": [
+    "There are not enough ones, and there are no tens to break.",
+    "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+    "Ones: 10 − 2 = 8. Tens: 9 − 0 = 9. Hundreds: 2 − 0 = 2.",
+    "The answer is 298."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     300,
+     "-",
+     2,
+     "=",
+     298
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "a": 300,
+   "b": 2,
+   "options": [
+    288,
+    297,
+    298
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "288",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 288
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "297",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 297
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "298",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 298
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "skillId": "M-2-B12",
+  "level": 1,
+  "seed": 961,
+  "key": "M-2-B12|1|{\"a\":300,\"b\":2}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 1 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      1,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 699
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 1 = 9. Tens: 9 − 0 = 9. Hundreds: 6 − 0 = 6.",
+      "The answer is 699."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       1,
+       "=",
+       699
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 1,
+     "options": [
+      698,
+      699,
+      799
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "698",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 698
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "699",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 699
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "799",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 799
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B12|1|{\"a\":700,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 3 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 697
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 3 = 7. Tens: 9 − 0 = 9. Hundreds: 6 − 0 = 6.",
+      "The answer is 697."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       3,
+       "=",
+       697
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 3,
+     "options": [
+      697,
+      698,
+      797
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "697",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 697
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "698",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 698
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "797",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 797
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B12|1|{\"a\":700,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 1 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      1,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 699
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 1 = 9. Tens: 9 − 0 = 9. Hundreds: 6 − 0 = 6.",
+      "The answer is 699."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       1,
+       "=",
+       699
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 1,
+     "options": [
+      689,
+      699,
+      799
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "689",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 689
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "699",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 699
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "799",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 799
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B12|1|{\"a\":700,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "900 minus 3 equals what?",
+     "speak": [
+      {
+       "number": 900
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      900,
+      "-",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 897
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 3 = 7. Tens: 9 − 0 = 9. Hundreds: 8 − 0 = 8.",
+      "The answer is 897."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       900,
+       "-",
+       3,
+       "=",
+       897
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 900,
+     "b": 3,
+     "options": [
+      897,
+      907,
+      997
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "897",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 897
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "907",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 907
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "997",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 997
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B12|1|{\"a\":900,\"b\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 7 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      7,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 693
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 7 = 3. Tens: 9 − 0 = 9. Hundreds: 6 − 0 = 6.",
+      "The answer is 693."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       7,
+       "=",
+       693
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 7,
+     "options": [
+      693,
+      703,
+      793
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "693",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 693
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "703",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 703
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "793",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 793
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B12|1|{\"a\":700,\"b\":7}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 minus 1 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "-",
+      1,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 599
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 1 = 9. Tens: 9 − 0 = 9. Hundreds: 5 − 0 = 5.",
+      "The answer is 599."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "-",
+       1,
+       "=",
+       599
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 600,
+     "b": 1,
+     "options": [
+      589,
+      599,
+      609
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "589",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 589
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "599",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 599
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "609",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 609
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B12|1|{\"a\":600,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "200 minus 1 equals what?",
+     "speak": [
+      {
+       "number": 200
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      200,
+      "-",
+      1,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 1
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 199
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 1 = 9. Tens: 9 − 0 = 9. Hundreds: 1 − 0 = 1.",
+      "The answer is 199."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       200,
+       "-",
+       1,
+       "=",
+       199
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 200,
+     "b": 1,
+     "options": [
+      189,
+      198,
+      199
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "189",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 189
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "198",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 198
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "199",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 199
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B12|1|{\"a\":200,\"b\":1}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "300 minus 6 equals what?",
+     "speak": [
+      {
+       "number": 300
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      300,
+      "-",
+      6,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 294
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 6 = 4. Tens: 9 − 0 = 9. Hundreds: 2 − 0 = 2.",
+      "The answer is 294."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "-",
+       6,
+       "=",
+       294
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 300,
+     "b": 6,
+     "options": [
+      294,
+      295,
+      304
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "294",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 294
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "295",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 295
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "304",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 304
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B12|1|{\"a\":300,\"b\":6}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "300 minus 8 equals what?",
+     "speak": [
+      {
+       "number": 300
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      300,
+      "-",
+      8,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 292
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 8 = 2. Tens: 9 − 0 = 9. Hundreds: 2 − 0 = 2.",
+      "The answer is 292."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "-",
+       8,
+       "=",
+       292
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 300,
+     "b": 8,
+     "options": [
+      292,
+      293,
+      392
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "292",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 292
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "293",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 293
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "392",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 392
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B12|1|{\"a\":300,\"b\":8}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 minus 9 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "-",
+      9,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 591
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 9 = 1. Tens: 9 − 0 = 9. Hundreds: 5 − 0 = 5.",
+      "The answer is 591."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "-",
+       9,
+       "=",
+       591
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 600,
+     "b": 9,
+     "options": [
+      581,
+      590,
+      591
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "581",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 581
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "590",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 590
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "591",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 591
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B12|1|{\"a\":600,\"b\":9}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 15 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      15,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 685
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 5 = 5. Tens: 9 − 1 = 8. Hundreds: 6 − 0 = 6.",
+      "The answer is 685."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       15,
+       "=",
+       685
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 15,
+     "options": [
+      675,
+      684,
+      685
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "675",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 675
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "684",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 684
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "685",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 685
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B12|2|{\"a\":700,\"b\":15}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 33 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 33
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      33,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 667
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 3 = 7. Tens: 9 − 3 = 6. Hundreds: 6 − 0 = 6.",
+      "The answer is 667."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       33,
+       "=",
+       667
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 33,
+     "options": [
+      666,
+      667,
+      677
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "666",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 666
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "667",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 667
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "677",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 677
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B12|2|{\"a\":700,\"b\":33}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 15 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      15,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 685
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 5 = 5. Tens: 9 − 1 = 8. Hundreds: 6 − 0 = 6.",
+      "The answer is 685."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       15,
+       "=",
+       685
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 15,
+     "options": [
+      685,
+      686,
+      695
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "685",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 685
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "686",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 686
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "695",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 695
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B12|2|{\"a\":700,\"b\":15}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "900 minus 32 equals what?",
+     "speak": [
+      {
+       "number": 900
+      },
+      "minus",
+      {
+       "number": 32
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      900,
+      "-",
+      32,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Hundreds:",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 868
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 2 = 8. Tens: 9 − 3 = 6. Hundreds: 8 − 0 = 8.",
+      "The answer is 868."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       900,
+       "-",
+       32,
+       "=",
+       868
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 900,
+     "b": 32,
+     "options": [
+      868,
+      869,
+      878
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "868",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 868
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "869",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 869
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "878",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 878
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B12|2|{\"a\":900,\"b\":32}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 72 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 72
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      72,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 628
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 2 = 8. Tens: 9 − 7 = 2. Hundreds: 6 − 0 = 6.",
+      "The answer is 628."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       72,
+       "=",
+       628
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 700,
+     "b": 72,
+     "options": [
+      618,
+      628,
+      629
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "618",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 618
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "628",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 628
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "629",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 629
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B12|2|{\"a\":700,\"b\":72}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 minus 16 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "minus",
+      {
+       "number": 16
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "-",
+      16,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 584
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 6 = 4. Tens: 9 − 1 = 8. Hundreds: 5 − 0 = 5.",
+      "The answer is 584."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "-",
+       16,
+       "=",
+       584
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 600,
+     "b": 16,
+     "options": [
+      584,
+      594,
+      684
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "584",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 584
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "594",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 594
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "684",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 684
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B12|2|{\"a\":600,\"b\":16}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "200 minus 19 equals what?",
+     "speak": [
+      {
+       "number": 200
+      },
+      "minus",
+      {
+       "number": 19
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      200,
+      "-",
+      19,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 1
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 181
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 9 = 1. Tens: 9 − 1 = 8. Hundreds: 1 − 0 = 1.",
+      "The answer is 181."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       200,
+       "-",
+       19,
+       "=",
+       181
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 200,
+     "b": 19,
+     "options": [
+      171,
+      180,
+      181
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "171",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 171
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "180",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 180
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "181",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 181
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B12|2|{\"a\":200,\"b\":19}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "300 minus 63 equals what?",
+     "speak": [
+      {
+       "number": 300
+      },
+      "minus",
+      {
+       "number": 63
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      300,
+      "-",
+      63,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 237
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 3 = 7. Tens: 9 − 6 = 3. Hundreds: 2 − 0 = 2.",
+      "The answer is 237."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "-",
+       63,
+       "=",
+       237
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 300,
+     "b": 63,
+     "options": [
+      227,
+      236,
+      237
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "227",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 227
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "236",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 236
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "237",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 237
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B12|2|{\"a\":300,\"b\":63}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "300 minus 82 equals what?",
+     "speak": [
+      {
+       "number": 300
+      },
+      "minus",
+      {
+       "number": 82
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      300,
+      "-",
+      82,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 218
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 2 = 8. Tens: 9 − 8 = 1. Hundreds: 2 − 0 = 2.",
+      "The answer is 218."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "-",
+       82,
+       "=",
+       218
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 300,
+     "b": 82,
+     "options": [
+      208,
+      217,
+      218
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "208",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 208
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "217",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 217
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "218",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 218
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B12|2|{\"a\":300,\"b\":82}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 minus 97 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "minus",
+      {
+       "number": 97
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "-",
+      97,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 0
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 0
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 503
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 7 = 3. Tens: 9 − 9 = 0. Hundreds: 5 − 0 = 5.",
+      "The answer is 503."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "-",
+       97,
+       "=",
+       503
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 600,
+     "b": 97,
+     "options": [
+      493,
+      502,
+      503
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "493",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 493
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "502",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 502
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "503",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 503
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B12",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B12|2|{\"a\":600,\"b\":97}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "700 minus 499 equals what?",
+     "speak": [
+      {
+       "number": 700
+      },
+      "minus",
+      {
+       "number": 499
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      700,
+      "-",
+      499,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 0
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 201
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 9 = 1. Tens: 9 − 9 = 0. Hundreds: 6 − 4 = 2.",
+      "The answer is 201."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       700,
+       "-",
+       499,
+       "=",
+       201
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 700,
+     "b": 499
+    },
+    "answer": 201,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-B12|3|{\"a\":700,\"b\":499}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "802 minus 259 equals what?",
+     "speak": [
+      {
+       "number": 802
+      },
+      "minus",
+      {
+       "number": 259
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      802,
+      "-",
+      259,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". Hundreds:",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 543
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 12 − 9 = 3. Tens: 9 − 5 = 4. Hundreds: 7 − 2 = 5.",
+      "The answer is 543."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       802,
+       "-",
+       259,
+       "=",
+       543
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 802,
+     "b": 259
+    },
+    "answer": 543,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-B12|3|{\"a\":802,\"b\":259}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "800 minus 417 equals what?",
+     "speak": [
+      {
+       "number": 800
+      },
+      "minus",
+      {
+       "number": 417
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      800,
+      "-",
+      417,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 383
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 7 = 3. Tens: 9 − 1 = 8. Hundreds: 7 − 4 = 3.",
+      "The answer is 383."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       800,
+       "-",
+       417,
+       "=",
+       383
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 800,
+     "b": 417
+    },
+    "answer": 383,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-B12|3|{\"a\":800,\"b\":417}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "902 minus 214 equals what?",
+     "speak": [
+      {
+       "number": 902
+      },
+      "minus",
+      {
+       "number": 214
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      902,
+      "-",
+      214,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Hundreds:",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 688
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 12 − 4 = 8. Tens: 9 − 1 = 8. Hundreds: 8 − 2 = 6.",
+      "The answer is 688."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       902,
+       "-",
+       214,
+       "=",
+       688
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 902,
+     "b": 214
+    },
+    "answer": 688,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-B12|3|{\"a\":902,\"b\":214}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "706 minus 267 equals what?",
+     "speak": [
+      {
+       "number": 706
+      },
+      "minus",
+      {
+       "number": 267
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      706,
+      "-",
+      267,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Hundreds:",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 439
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 16 − 7 = 9. Tens: 9 − 6 = 3. Hundreds: 6 − 2 = 4.",
+      "The answer is 439."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       706,
+       "-",
+       267,
+       "=",
+       439
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 706,
+     "b": 267
+    },
+    "answer": 439,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-B12|3|{\"a\":706,\"b\":267}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "600 minus 425 equals what?",
+     "speak": [
+      {
+       "number": 600
+      },
+      "minus",
+      {
+       "number": 425
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      600,
+      "-",
+      425,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 175
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 5 = 5. Tens: 9 − 2 = 7. Hundreds: 5 − 4 = 1.",
+      "The answer is 175."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       600,
+       "-",
+       425,
+       "=",
+       175
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 600,
+     "b": 425
+    },
+    "answer": 175,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-B12|3|{\"a\":600,\"b\":425}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "300 minus 275 equals what?",
+     "speak": [
+      {
+       "number": 300
+      },
+      "minus",
+      {
+       "number": 275
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      300,
+      "-",
+      275,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ". Hundreds:",
+      {
+       "number": 2
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 0
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 25
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 10 − 5 = 5. Tens: 9 − 7 = 2. Hundreds: 2 − 2 = 0.",
+      "The answer is 25."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       300,
+       "-",
+       275,
+       "=",
+       25
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 300,
+     "b": 275
+    },
+    "answer": 25,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-B12|3|{\"a\":300,\"b\":275}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "405 minus 178 equals what?",
+     "speak": [
+      {
+       "number": 405
+      },
+      "minus",
+      {
+       "number": 178
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      405,
+      "-",
+      178,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 15
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ". Hundreds:",
+      {
+       "number": 3
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 227
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 15 − 8 = 7. Tens: 9 − 7 = 2. Hundreds: 3 − 1 = 2.",
+      "The answer is 227."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       405,
+       "-",
+       178,
+       "=",
+       227
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 405,
+     "b": 178
+    },
+    "answer": 227,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-B12|3|{\"a\":405,\"b\":178}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "406 minus 189 equals what?",
+     "speak": [
+      {
+       "number": 406
+      },
+      "minus",
+      {
+       "number": 189
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      406,
+      "-",
+      189,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Hundreds:",
+      {
+       "number": 3
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 217
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 16 − 9 = 7. Tens: 9 − 8 = 1. Hundreds: 3 − 1 = 2.",
+      "The answer is 217."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       406,
+       "-",
+       189,
+       "=",
+       217
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 406,
+     "b": 189
+    },
+    "answer": 217,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-B12|3|{\"a\":406,\"b\":189}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "607 minus 488 equals what?",
+     "speak": [
+      {
+       "number": 607
+      },
+      "minus",
+      {
+       "number": 488
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      607,
+      "-",
+      488,
+      "=",
+      "blank"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break",
+      {
+       "number": 1
+      },
+      "hundred into",
+      {
+       "number": 10
+      },
+      "tens. Then break",
+      {
+       "number": 1
+      },
+      "ten into",
+      {
+       "number": 10
+      },
+      "ones.",
+      "Ones:",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Tens:",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ". Hundreds:",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 1
+      },
+      ".",
+      "The answer is",
+      {
+       "number": 119
+      },
+      "."
+     ],
+     "steps": [
+      "There are not enough ones, and there are no tens to break.",
+      "Break 1 hundred into 10 tens. Then break 1 ten into 10 ones.",
+      "Ones: 17 − 8 = 9. Tens: 9 − 8 = 1. Hundreds: 5 − 4 = 1.",
+      "The answer is 119."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       607,
+       "-",
+       488,
+       "=",
+       119
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 607,
+     "b": 488
+    },
+    "answer": 119,
+    "maxDigits": 3,
+    "skillId": "M-2-B12",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-B12|3|{\"a\":607,\"b\":488}"
+   }
+  ]
+ }
+}

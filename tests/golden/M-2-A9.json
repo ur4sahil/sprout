@@ -1,0 +1,3000 @@
+{
+ "skillId": "M-2-A9",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "What number is 8 hundreds and 11 tens?",
+   "speak": [
+    "What number is",
+    {
+     "number": 8
+    },
+    "hundreds and",
+    {
+     "number": 11
+    },
+    "tens",
+    "?"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    {
+     "number": 11
+    },
+    "tens is one hundred and",
+    {
+     "number": 1
+    },
+    "tens.",
+    "That makes",
+    {
+     "number": 9
+    },
+    "hundreds,",
+    {
+     "number": 1
+    },
+    "ten and",
+    {
+     "number": 0
+    },
+    "ones.",
+    "The number is",
+    {
+     "number": 910
+    },
+    "."
+   ],
+   "steps": [
+    "11 tens is 1 hundred and 1 tens.",
+    "That makes 9 hundreds, 1 ten and 0 ones.",
+    "The number is 910."
+   ],
+   "visual": {
+    "kind": "baseTen",
+    "hundreds": 9,
+    "tens": 1,
+    "ones": 0
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "hundreds": 8,
+   "tens": 11,
+   "ones": 0,
+   "ask": "number",
+   "options": [
+    810,
+    900,
+    910
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "810",
+    "size": "l",
+    "speak": [
+     {
+      "number": 810
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "900",
+    "size": "l",
+    "speak": [
+     {
+      "number": 900
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "910",
+    "size": "l",
+    "speak": [
+     {
+      "number": 910
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "skillId": "M-2-A9",
+  "level": 1,
+  "seed": 953,
+  "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":8,\"ones\":0,\"tens\":11}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds and 10 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds and",
+      {
+       "number": 10
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "tens is one hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 0
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 700
+      },
+      "."
+     ],
+     "steps": [
+      "10 tens is 1 hundred and 0 tens.",
+      "That makes 7 hundreds, 0 tens and 0 ones.",
+      "The number is 700."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 0,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 10,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      699,
+      700,
+      710
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "699",
+      "size": "l",
+      "speak": [
+       {
+        "number": 699
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "700",
+      "size": "l",
+      "speak": [
+       {
+        "number": 700
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "710",
+      "size": "l",
+      "speak": [
+       {
+        "number": 710
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":6,\"ones\":0,\"tens\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds and 13 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds and",
+      {
+       "number": 13
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      "tens is one hundred and",
+      {
+       "number": 3
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 3
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 730
+      },
+      "."
+     ],
+     "steps": [
+      "13 tens is 1 hundred and 3 tens.",
+      "That makes 7 hundreds, 3 tens and 0 ones.",
+      "The number is 730."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 3,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 13,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      730,
+      731,
+      740
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "730",
+      "size": "l",
+      "speak": [
+       {
+        "number": 730
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "731",
+      "size": "l",
+      "speak": [
+       {
+        "number": 731
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "740",
+      "size": "l",
+      "speak": [
+       {
+        "number": 740
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":6,\"ones\":0,\"tens\":13}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds and 10 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds and",
+      {
+       "number": 10
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "tens is one hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 0
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 700
+      },
+      "."
+     ],
+     "steps": [
+      "10 tens is 1 hundred and 0 tens.",
+      "That makes 7 hundreds, 0 tens and 0 ones.",
+      "The number is 700."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 0,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 10,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      690,
+      700,
+      710
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "690",
+      "size": "l",
+      "speak": [
+       {
+        "number": 690
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "700",
+      "size": "l",
+      "speak": [
+       {
+        "number": 700
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "710",
+      "size": "l",
+      "speak": [
+       {
+        "number": 710
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":6,\"ones\":0,\"tens\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 8 hundreds and 13 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 8
+      },
+      "hundreds and",
+      {
+       "number": 13
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      "tens is one hundred and",
+      {
+       "number": 3
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 9
+      },
+      "hundreds,",
+      {
+       "number": 3
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 930
+      },
+      "."
+     ],
+     "steps": [
+      "13 tens is 1 hundred and 3 tens.",
+      "That makes 9 hundreds, 3 tens and 0 ones.",
+      "The number is 930."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 9,
+      "tens": 3,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 8,
+     "tens": 13,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      930,
+      931,
+      940
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "930",
+      "size": "l",
+      "speak": [
+       {
+        "number": 930
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "931",
+      "size": "l",
+      "speak": [
+       {
+        "number": 931
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "940",
+      "size": "l",
+      "speak": [
+       {
+        "number": 940
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":8,\"ones\":0,\"tens\":13}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds and 17 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds and",
+      {
+       "number": 17
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 17
+      },
+      "tens is one hundred and",
+      {
+       "number": 7
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 7
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 770
+      },
+      "."
+     ],
+     "steps": [
+      "17 tens is 1 hundred and 7 tens.",
+      "That makes 7 hundreds, 7 tens and 0 ones.",
+      "The number is 770."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 7,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 17,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      770,
+      771,
+      780
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "770",
+      "size": "l",
+      "speak": [
+       {
+        "number": 770
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "771",
+      "size": "l",
+      "speak": [
+       {
+        "number": 771
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "780",
+      "size": "l",
+      "speak": [
+       {
+        "number": 780
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":6,\"ones\":0,\"tens\":17}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 5 hundreds and 10 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 5
+      },
+      "hundreds and",
+      {
+       "number": 10
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "tens is one hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 0
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 600
+      },
+      "."
+     ],
+     "steps": [
+      "10 tens is 1 hundred and 0 tens.",
+      "That makes 6 hundreds, 0 tens and 0 ones.",
+      "The number is 600."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 6,
+      "tens": 0,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 5,
+     "tens": 10,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      590,
+      600,
+      610
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "590",
+      "size": "l",
+      "speak": [
+       {
+        "number": 590
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "600",
+      "size": "l",
+      "speak": [
+       {
+        "number": 600
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "610",
+      "size": "l",
+      "speak": [
+       {
+        "number": 610
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":5,\"ones\":0,\"tens\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 1 hundred and 10 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 1
+      },
+      "hundred and",
+      {
+       "number": 10
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 10
+      },
+      "tens is one hundred and",
+      {
+       "number": 0
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 0
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 200
+      },
+      "."
+     ],
+     "steps": [
+      "10 tens is 1 hundred and 0 tens.",
+      "That makes 2 hundreds, 0 tens and 0 ones.",
+      "The number is 200."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 0,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 1,
+     "tens": 10,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      100,
+      199,
+      200
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "l",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "199",
+      "size": "l",
+      "speak": [
+       {
+        "number": 199
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "200",
+      "size": "l",
+      "speak": [
+       {
+        "number": 200
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":1,\"ones\":0,\"tens\":10}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 2 hundreds and 16 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 2
+      },
+      "hundreds and",
+      {
+       "number": 16
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "tens is one hundred and",
+      {
+       "number": 6
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 3
+      },
+      "hundreds,",
+      {
+       "number": 6
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 360
+      },
+      "."
+     ],
+     "steps": [
+      "16 tens is 1 hundred and 6 tens.",
+      "That makes 3 hundreds, 6 tens and 0 ones.",
+      "The number is 360."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 3,
+      "tens": 6,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 2,
+     "tens": 16,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      360,
+      361,
+      370
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "360",
+      "size": "l",
+      "speak": [
+       {
+        "number": 360
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "361",
+      "size": "l",
+      "speak": [
+       {
+        "number": 361
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "370",
+      "size": "l",
+      "speak": [
+       {
+        "number": 370
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":2,\"ones\":0,\"tens\":16}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 2 hundreds and 18 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 2
+      },
+      "hundreds and",
+      {
+       "number": 18
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 18
+      },
+      "tens is one hundred and",
+      {
+       "number": 8
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 3
+      },
+      "hundreds,",
+      {
+       "number": 8
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 380
+      },
+      "."
+     ],
+     "steps": [
+      "18 tens is 1 hundred and 8 tens.",
+      "That makes 3 hundreds, 8 tens and 0 ones.",
+      "The number is 380."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 3,
+      "tens": 8,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 2,
+     "tens": 18,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      380,
+      381,
+      390
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "380",
+      "size": "l",
+      "speak": [
+       {
+        "number": 380
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "381",
+      "size": "l",
+      "speak": [
+       {
+        "number": 381
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "390",
+      "size": "l",
+      "speak": [
+       {
+        "number": 390
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":2,\"ones\":0,\"tens\":18}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 5 hundreds and 19 tens?",
+     "speak": [
+      "What number is",
+      {
+       "number": 5
+      },
+      "hundreds and",
+      {
+       "number": 19
+      },
+      "tens",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 19
+      },
+      "tens is one hundred and",
+      {
+       "number": 9
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 9
+      },
+      "tens and",
+      {
+       "number": 0
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 690
+      },
+      "."
+     ],
+     "steps": [
+      "19 tens is 1 hundred and 9 tens.",
+      "That makes 6 hundreds, 9 tens and 0 ones.",
+      "The number is 690."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 6,
+      "tens": 9,
+      "ones": 0
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 5,
+     "tens": 19,
+     "ones": 0,
+     "ask": "number",
+     "options": [
+      590,
+      689,
+      690
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "590",
+      "size": "l",
+      "speak": [
+       {
+        "number": 590
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "689",
+      "size": "l",
+      "speak": [
+       {
+        "number": 689
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "690",
+      "size": "l",
+      "speak": [
+       {
+        "number": 690
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-A9|1|{\"ask\":\"number\",\"hundreds\":5,\"ones\":0,\"tens\":19}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds, 15 tens and 9 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 15
+      },
+      "tens and",
+      {
+       "number": 9
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 15
+      },
+      "tens is one hundred and",
+      {
+       "number": 5
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 5
+      },
+      "tens and",
+      {
+       "number": 9
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 759
+      },
+      "."
+     ],
+     "steps": [
+      "15 tens is 1 hundred and 5 tens.",
+      "That makes 7 hundreds, 5 tens and 9 ones.",
+      "The number is 759."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 5,
+      "ones": 9
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 15,
+     "ones": 9,
+     "ask": "number",
+     "options": [
+      659,
+      749,
+      759
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "659",
+      "size": "l",
+      "speak": [
+       {
+        "number": 659
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "749",
+      "size": "l",
+      "speak": [
+       {
+        "number": 749
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "759",
+      "size": "l",
+      "speak": [
+       {
+        "number": 759
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":6,\"ones\":9,\"tens\":15}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds, 12 tens and 5 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 12
+      },
+      "tens and",
+      {
+       "number": 5
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 12
+      },
+      "tens is one hundred and",
+      {
+       "number": 2
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 2
+      },
+      "tens and",
+      {
+       "number": 5
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 725
+      },
+      "."
+     ],
+     "steps": [
+      "12 tens is 1 hundred and 2 tens.",
+      "That makes 7 hundreds, 2 tens and 5 ones.",
+      "The number is 725."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 2,
+      "ones": 5
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 12,
+     "ones": 5,
+     "ask": "number",
+     "options": [
+      715,
+      724,
+      725
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "715",
+      "size": "l",
+      "speak": [
+       {
+        "number": 715
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "724",
+      "size": "l",
+      "speak": [
+       {
+        "number": 724
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "725",
+      "size": "l",
+      "speak": [
+       {
+        "number": 725
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":6,\"ones\":5,\"tens\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds, 14 tens and 1 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 14
+      },
+      "tens and",
+      {
+       "number": 1
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 14
+      },
+      "tens is one hundred and",
+      {
+       "number": 4
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 7
+      },
+      "hundreds,",
+      {
+       "number": 4
+      },
+      "tens and",
+      {
+       "number": 1
+      },
+      "one.",
+      "The number is",
+      {
+       "number": 741
+      },
+      "."
+     ],
+     "steps": [
+      "14 tens is 1 hundred and 4 tens.",
+      "That makes 7 hundreds, 4 tens and 1 one.",
+      "The number is 741."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 4,
+      "ones": 1
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 14,
+     "ones": 1,
+     "ask": "number",
+     "options": [
+      731,
+      740,
+      741
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "731",
+      "size": "l",
+      "speak": [
+       {
+        "number": 731
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "740",
+      "size": "l",
+      "speak": [
+       {
+        "number": 740
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "741",
+      "size": "l",
+      "speak": [
+       {
+        "number": 741
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":6,\"ones\":1,\"tens\":14}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 8 hundreds, 12 tens and 1 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 8
+      },
+      "hundreds,",
+      {
+       "number": 12
+      },
+      "tens and",
+      {
+       "number": 1
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 12
+      },
+      "tens is one hundred and",
+      {
+       "number": 2
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 9
+      },
+      "hundreds,",
+      {
+       "number": 2
+      },
+      "tens and",
+      {
+       "number": 1
+      },
+      "one.",
+      "The number is",
+      {
+       "number": 921
+      },
+      "."
+     ],
+     "steps": [
+      "12 tens is 1 hundred and 2 tens.",
+      "That makes 9 hundreds, 2 tens and 1 one.",
+      "The number is 921."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 9,
+      "tens": 2,
+      "ones": 1
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 8,
+     "tens": 12,
+     "ones": 1,
+     "ask": "number",
+     "options": [
+      921,
+      922,
+      931
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "921",
+      "size": "l",
+      "speak": [
+       {
+        "number": 921
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "922",
+      "size": "l",
+      "speak": [
+       {
+        "number": 922
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "931",
+      "size": "l",
+      "speak": [
+       {
+        "number": 931
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":8,\"ones\":1,\"tens\":12}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 6 hundreds, 2 tens and 16 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 2
+      },
+      "tens and",
+      {
+       "number": 16
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "ones is one ten and",
+      {
+       "number": 6
+      },
+      "ones.",
+      "That makes",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 3
+      },
+      "tens and",
+      {
+       "number": 6
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 636
+      },
+      "."
+     ],
+     "steps": [
+      "16 ones is 1 ten and 6 ones.",
+      "That makes 6 hundreds, 3 tens and 6 ones.",
+      "The number is 636."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 6,
+      "tens": 3,
+      "ones": 6
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 6,
+     "tens": 2,
+     "ones": 16,
+     "ask": "number",
+     "options": [
+      636,
+      637,
+      646
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "636",
+      "size": "l",
+      "speak": [
+       {
+        "number": 636
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "637",
+      "size": "l",
+      "speak": [
+       {
+        "number": 637
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "646",
+      "size": "l",
+      "speak": [
+       {
+        "number": 646
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":6,\"ones\":16,\"tens\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 5 hundreds, 16 tens and 2 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 5
+      },
+      "hundreds,",
+      {
+       "number": 16
+      },
+      "tens and",
+      {
+       "number": 2
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "tens is one hundred and",
+      {
+       "number": 6
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 6
+      },
+      "hundreds,",
+      {
+       "number": 6
+      },
+      "tens and",
+      {
+       "number": 2
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 662
+      },
+      "."
+     ],
+     "steps": [
+      "16 tens is 1 hundred and 6 tens.",
+      "That makes 6 hundreds, 6 tens and 2 ones.",
+      "The number is 662."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 6,
+      "tens": 6,
+      "ones": 2
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 5,
+     "tens": 16,
+     "ones": 2,
+     "ask": "number",
+     "options": [
+      562,
+      662,
+      663
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "562",
+      "size": "l",
+      "speak": [
+       {
+        "number": 562
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "662",
+      "size": "l",
+      "speak": [
+       {
+        "number": 662
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "663",
+      "size": "l",
+      "speak": [
+       {
+        "number": 663
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":5,\"ones\":2,\"tens\":16}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 1 hundred, 19 tens and 7 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 1
+      },
+      "hundred,",
+      {
+       "number": 19
+      },
+      "tens and",
+      {
+       "number": 7
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 19
+      },
+      "tens is one hundred and",
+      {
+       "number": 9
+      },
+      "tens.",
+      "That makes",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 9
+      },
+      "tens and",
+      {
+       "number": 7
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 297
+      },
+      "."
+     ],
+     "steps": [
+      "19 tens is 1 hundred and 9 tens.",
+      "That makes 2 hundreds, 9 tens and 7 ones.",
+      "The number is 297."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 9,
+      "ones": 7
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 1,
+     "tens": 19,
+     "ones": 7,
+     "ask": "number",
+     "options": [
+      287,
+      297,
+      307
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "287",
+      "size": "l",
+      "speak": [
+       {
+        "number": 287
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "297",
+      "size": "l",
+      "speak": [
+       {
+        "number": 297
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "307",
+      "size": "l",
+      "speak": [
+       {
+        "number": 307
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":1,\"ones\":7,\"tens\":19}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 2 hundreds, 3 tens and 16 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 3
+      },
+      "tens and",
+      {
+       "number": 16
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "ones is one ten and",
+      {
+       "number": 6
+      },
+      "ones.",
+      "That makes",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 4
+      },
+      "tens and",
+      {
+       "number": 6
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 246
+      },
+      "."
+     ],
+     "steps": [
+      "16 ones is 1 ten and 6 ones.",
+      "That makes 2 hundreds, 4 tens and 6 ones.",
+      "The number is 246."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 4,
+      "ones": 6
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 2,
+     "tens": 3,
+     "ones": 16,
+     "ask": "number",
+     "options": [
+      245,
+      246,
+      256
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "245",
+      "size": "l",
+      "speak": [
+       {
+        "number": 245
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "246",
+      "size": "l",
+      "speak": [
+       {
+        "number": 246
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "256",
+      "size": "l",
+      "speak": [
+       {
+        "number": 256
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":2,\"ones\":16,\"tens\":3}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 2 hundreds, 2 tens and 18 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 2
+      },
+      "tens and",
+      {
+       "number": 18
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 18
+      },
+      "ones is one ten and",
+      {
+       "number": 8
+      },
+      "ones.",
+      "That makes",
+      {
+       "number": 2
+      },
+      "hundreds,",
+      {
+       "number": 3
+      },
+      "tens and",
+      {
+       "number": 8
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 238
+      },
+      "."
+     ],
+     "steps": [
+      "18 ones is 1 ten and 8 ones.",
+      "That makes 2 hundreds, 3 tens and 8 ones.",
+      "The number is 238."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 3,
+      "ones": 8
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 2,
+     "tens": 2,
+     "ones": 18,
+     "ask": "number",
+     "options": [
+      228,
+      237,
+      238
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "228",
+      "size": "l",
+      "speak": [
+       {
+        "number": 228
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "237",
+      "size": "l",
+      "speak": [
+       {
+        "number": 237
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "238",
+      "size": "l",
+      "speak": [
+       {
+        "number": 238
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":2,\"ones\":18,\"tens\":2}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "What number is 5 hundreds, 7 tens and 18 ones?",
+     "speak": [
+      "What number is",
+      {
+       "number": 5
+      },
+      "hundreds,",
+      {
+       "number": 7
+      },
+      "tens and",
+      {
+       "number": 18
+      },
+      "ones",
+      "?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 18
+      },
+      "ones is one ten and",
+      {
+       "number": 8
+      },
+      "ones.",
+      "That makes",
+      {
+       "number": 5
+      },
+      "hundreds,",
+      {
+       "number": 8
+      },
+      "tens and",
+      {
+       "number": 8
+      },
+      "ones.",
+      "The number is",
+      {
+       "number": 588
+      },
+      "."
+     ],
+     "steps": [
+      "18 ones is 1 ten and 8 ones.",
+      "That makes 5 hundreds, 8 tens and 8 ones.",
+      "The number is 588."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 5,
+      "tens": 8,
+      "ones": 8
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hundreds": 5,
+     "tens": 7,
+     "ones": 18,
+     "ask": "number",
+     "options": [
+      488,
+      588,
+      598
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "488",
+      "size": "l",
+      "speak": [
+       {
+        "number": 488
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "588",
+      "size": "l",
+      "speak": [
+       {
+        "number": 588
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "598",
+      "size": "l",
+      "speak": [
+       {
+        "number": 598
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-A9",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-A9|2|{\"ask\":\"number\",\"hundreds\":5,\"ones\":18,\"tens\":7}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 6,
+     "tens": 1,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 610?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 610
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 6,
+     "tens": 1,
+     "ones": 0
+    },
+    "answer": 61,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 6
+      },
+      "hundreds is",
+      {
+       "number": 60
+      },
+      "tens. Add",
+      {
+       "number": 1
+      },
+      "more tens:",
+      {
+       "number": 61
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "6 hundreds is 60 tens.",
+      "60 + 1 = 61 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 6,
+      "tens": 1,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":6,\"ones\":0,\"tens\":1}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 7,
+     "tens": 3,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 730?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 730
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 7,
+     "tens": 3,
+     "ones": 0
+    },
+    "answer": 73,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 7
+      },
+      "hundreds is",
+      {
+       "number": 70
+      },
+      "tens. Add",
+      {
+       "number": 3
+      },
+      "more tens:",
+      {
+       "number": 73
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "7 hundreds is 70 tens.",
+      "70 + 3 = 73 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 3,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":7,\"ones\":0,\"tens\":3}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 7,
+     "tens": 1,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 710?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 710
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 7,
+     "tens": 1,
+     "ones": 0
+    },
+    "answer": 71,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 7
+      },
+      "hundreds is",
+      {
+       "number": 70
+      },
+      "tens. Add",
+      {
+       "number": 1
+      },
+      "more tens:",
+      {
+       "number": 71
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "7 hundreds is 70 tens.",
+      "70 + 1 = 71 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 1,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":7,\"ones\":0,\"tens\":1}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 9,
+     "tens": 3,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 930?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 930
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 9,
+     "tens": 3,
+     "ones": 0
+    },
+    "answer": 93,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 9
+      },
+      "hundreds is",
+      {
+       "number": 90
+      },
+      "tens. Add",
+      {
+       "number": 3
+      },
+      "more tens:",
+      {
+       "number": 93
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "9 hundreds is 90 tens.",
+      "90 + 3 = 93 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 9,
+      "tens": 3,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":9,\"ones\":0,\"tens\":3}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 7,
+     "tens": 7,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 770?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 770
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 7,
+     "tens": 7,
+     "ones": 0
+    },
+    "answer": 77,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 7
+      },
+      "hundreds is",
+      {
+       "number": 70
+      },
+      "tens. Add",
+      {
+       "number": 7
+      },
+      "more tens:",
+      {
+       "number": 77
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "7 hundreds is 70 tens.",
+      "70 + 7 = 77 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 7,
+      "tens": 7,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":7,\"ones\":0,\"tens\":7}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 5,
+     "tens": 1,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 510?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 510
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 5,
+     "tens": 1,
+     "ones": 0
+    },
+    "answer": 51,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 5
+      },
+      "hundreds is",
+      {
+       "number": 50
+      },
+      "tens. Add",
+      {
+       "number": 1
+      },
+      "more tens:",
+      {
+       "number": 51
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "5 hundreds is 50 tens.",
+      "50 + 1 = 51 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 5,
+      "tens": 1,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":5,\"ones\":0,\"tens\":1}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 1,
+     "tens": 1,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 110?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 110
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 1,
+     "tens": 1,
+     "ones": 0
+    },
+    "answer": 11,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 1
+      },
+      "hundreds is",
+      {
+       "number": 10
+      },
+      "tens. Add",
+      {
+       "number": 1
+      },
+      "more tens:",
+      {
+       "number": 11
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "1 hundred is 10 tens.",
+      "10 + 1 = 11 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 1,
+      "tens": 1,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":1,\"ones\":0,\"tens\":1}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 2,
+     "tens": 6,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 260?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 260
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 2,
+     "tens": 6,
+     "ones": 0
+    },
+    "answer": 26,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 2
+      },
+      "hundreds is",
+      {
+       "number": 20
+      },
+      "tens. Add",
+      {
+       "number": 6
+      },
+      "more tens:",
+      {
+       "number": 26
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "2 hundreds is 20 tens.",
+      "20 + 6 = 26 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 6,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":2,\"ones\":0,\"tens\":6}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 2,
+     "tens": 8,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 280?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 280
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 2,
+     "tens": 8,
+     "ones": 0
+    },
+    "answer": 28,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 2
+      },
+      "hundreds is",
+      {
+       "number": 20
+      },
+      "tens. Add",
+      {
+       "number": 8
+      },
+      "more tens:",
+      {
+       "number": 28
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "2 hundreds is 20 tens.",
+      "20 + 8 = 28 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 2,
+      "tens": 8,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":2,\"ones\":0,\"tens\":8}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hundreds": 5,
+     "tens": 9,
+     "ones": 0,
+     "ask": "tensIn"
+    },
+    "prompt": {
+     "text": "How many tens are in 590?",
+     "speak": [
+      "How many tens are in",
+      {
+       "number": 590
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "baseTen",
+     "hundreds": 5,
+     "tens": 9,
+     "ones": 0
+    },
+    "answer": 59,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "One hundred is",
+      {
+       "number": 10
+      },
+      "tens. So",
+      {
+       "number": 5
+      },
+      "hundreds is",
+      {
+       "number": 50
+      },
+      "tens. Add",
+      {
+       "number": 9
+      },
+      "more tens:",
+      {
+       "number": 59
+      },
+      "tens."
+     ],
+     "steps": [
+      "1 hundred is 10 tens.",
+      "5 hundreds is 50 tens.",
+      "50 + 9 = 59 tens."
+     ],
+     "visual": {
+      "kind": "baseTen",
+      "hundreds": 5,
+      "tens": 9,
+      "ones": 0
+     }
+    },
+    "skillId": "M-2-A9",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-A9|3|{\"ask\":\"tensIn\",\"hundreds\":5,\"ones\":0,\"tens\":9}"
+   }
+  ]
+ }
+}

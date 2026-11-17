@@ -72,7 +72,7 @@ describe('which check-in home offers', () => {
     // A ladder with no skill built yet is not a ladder yet. Every Language Arts ladder now has at least one.
     expect(diagnosticLadders('ela').map((ladder) => ladder.id)).toEqual(['letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading']);
     for (const ladder of [...math, ...diagnosticLadders('ela')]) for (const skill of ladder.skills) expect(ready.has(skill.id)).toBe(true);
-    expect(math[0]?.skills.map((skill) => skill.id).slice(0, 9)).toEqual(['M-PK-A1', 'M-PK-A2', 'M-PK-A3', 'M-PK-A4', 'M-PK-A5', 'M-PK-A6', 'M-PK-A7', 'M-PK-A8', 'M-K-A1']);
+    expect(math[0]?.skills.map((skill) => skill.id).slice(0, 9)).toEqual(['M-PK-A1', 'M-PK-A2', 'M-PK-A3', 'M-PK-A12', 'M-PK-A4', 'M-PK-A5', 'M-PK-A6', 'M-PK-A7', 'M-PK-A11']);
     // Reasoning is never checked.
     expect([...math, ...diagnosticLadders('ela')].some((ladder) => ladder.skills.some((skill) => skill.id.startsWith('R-')))).toBe(false);
   });
@@ -333,7 +333,7 @@ describe('stickers', () => {
   it('a category the child placed out of shows its sticker with no celebration', async () => {
     const child = await setUp('K');
     const store = await repo();
-    for (const id of ['M-PK-B1', 'M-PK-B2']) await store.saveSkillState(placedOut(id));
+    for (const id of ['M-PK-B1', 'M-PK-B2', 'M-PK-B3', 'M-PK-B4']) await store.saveSkillState(placedOut(id));
     const awards = await syncAwards(store, child, NOW.toISOString());
     expect(awards.earned.map((award) => award.awardId)).toContain('category:math-PK:B');
     expect(awards.fresh).toEqual([]);
@@ -350,7 +350,7 @@ describe('stickers', () => {
   it('a category with one skill earned by practice is celebrated, and an award is never taken back', async () => {
     const child = await setUp('K');
     const store = await repo();
-    await store.saveSkillState(placedOut('M-PK-B1'));
+    for (const id of ['M-PK-B1', 'M-PK-B3', 'M-PK-B4']) await store.saveSkillState(placedOut(id));
     await store.saveSkillState({ ...placedOut('M-PK-B2'), placedOut: false, attempts: 12, score: 84 });
     expect((await syncAwards(store, child, NOW.toISOString())).fresh.map((award) => award.id)).toEqual(['category:math-PK:B']);
     // The score later drops below 80: the sticker stays.
@@ -371,11 +371,11 @@ describe('catalogue growth', () => {
     // The child has practised one skill below the placement, badly. Everything else below it has no state: as if just added.
     await store.saveSkillState({ ...newSkillState('kid-1', 'M-PK-A2', NOW.toISOString()), score: 20, attempts: 4 });
     const grown = growthStates(child, await store.listDiagnostics('kid-1'), await store.getSkillStates('kid-1'), NOW.toISOString());
-    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-A1', 'M-PK-A3', 'M-PK-A4', 'M-PK-A5', 'M-PK-A6', 'M-PK-A7', 'M-PK-A8', 'M-K-A1', 'M-K-A2']);
+    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-A1', 'M-PK-A3', 'M-PK-A12', 'M-PK-A4', 'M-PK-A5', 'M-PK-A6', 'M-PK-A7', 'M-PK-A11', 'M-PK-A8', 'M-PK-A9', 'M-PK-A10', 'M-PK-A13', 'M-K-A1', 'M-K-A2']);
     for (const state of grown) expect(state).toMatchObject({ score: 80, bestScore: 80, placedOut: true });
 
     expect((await store.getDeviceState()).catalogueVersion).toBe(0);
-    expect(await runCatalogueGrowth(store, 7, NOW.toISOString())).toBe(9);
+    expect(await runCatalogueGrowth(store, 7, NOW.toISOString())).toBe(14);
     expect((await store.getDeviceState()).catalogueVersion).toBe(7);
     const states = await store.getSkillStates('kid-1');
     expect(states.find((state) => state.skillId === 'M-PK-A2')).toMatchObject({ score: 20, placedOut: false });
@@ -388,7 +388,7 @@ describe('catalogue growth', () => {
     await store.saveDiagnostic({ id: 'd-9', childId: 'kid-1', subject: 'math', ladderId: 'shapes', placementSkillId: 'M-K-E1', estimateGrade: 'K', estimateFraction: 0, takenAt: NOW.toISOString() });
     expect(await runCatalogueGrowth(store, 7, NOW.toISOString())).toBe(0);
     expect((await store.getSkillStates('kid-1')).some((state) => state.skillId.startsWith('M-PK-C'))).toBe(false);
-    expect(await runCatalogueGrowth(store, 8, NOW.toISOString())).toBe(2);
+    expect(await runCatalogueGrowth(store, 8, NOW.toISOString())).toBe(6);
     expect((await store.getDeviceState()).catalogueVersion).toBe(8);
   });
 
@@ -398,6 +398,6 @@ describe('catalogue growth', () => {
     expect(growthStates(child, [], [], NOW.toISOString())).toEqual([]);
     await store.saveDiagnostic({ id: 'd-2', childId: 'kid-1', subject: 'math', ladderId: 'comparing', placementSkillId: null, estimateGrade: null, estimateFraction: null, takenAt: NOW.toISOString() });
     const grown = growthStates(child, await store.listDiagnostics('kid-1'), [], NOW.toISOString());
-    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-1-A4', 'M-2-A3', 'M-3-A3']);
+    expect(grown.map((state) => state.skillId)).toEqual(['M-PK-B1', 'M-PK-B2', 'M-PK-B3', 'M-PK-B4', 'M-K-B1', 'M-K-B2', 'M-K-B3', 'M-1-A4', 'M-2-A3', 'M-2-A8', 'M-2-A13', 'M-3-A3']);
   });
 });

@@ -1,0 +1,2845 @@
+{
+ "skillId": "M-2-B14",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "Nora had 13 stickers. Nora got some more. Now Nora has 47. How many more did Nora get?",
+   "speak": [
+    "Nora had",
+    {
+     "number": 13
+    },
+    "stickers. Nora got some more. Now Nora has",
+    {
+     "number": 47
+    },
+    ".",
+    "How many more did Nora get?"
+   ]
+  },
+  "explanation": {
+   "speak": [
+    {
+     "number": 47
+    },
+    "minus",
+    {
+     "number": 13
+    },
+    "is",
+    {
+     "number": 34
+    },
+    ". Nora got",
+    {
+     "number": 34
+    },
+    "more."
+   ],
+   "steps": [
+    "47 − 13 = 34. Nora got 34 more."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     13,
+     "+",
+     34,
+     "=",
+     47
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "a": 13,
+   "b": 34,
+   "total": 47,
+   "blank": "b",
+   "form": "gotSome",
+   "name": "Nora",
+   "thing": "stickers",
+   "options": [
+    34,
+    35,
+    44
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "34",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 34
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "35",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 35
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "44",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 44
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-2-B14",
+  "level": 1,
+  "seed": 963,
+  "key": "M-2-B14|1|{\"a\":13,\"b\":34,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Nora\",\"thing\":\"stickers\",\"total\":47}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max had 32 rocks. Max got some more. Now Max has 37. How many more did Max get?",
+     "speak": [
+      "Max had",
+      {
+       "number": 32
+      },
+      "rocks. Max got some more. Now Max has",
+      {
+       "number": 37
+      },
+      ".",
+      "How many more did Max get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 37
+      },
+      "minus",
+      {
+       "number": 32
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Max got",
+      {
+       "number": 5
+      },
+      "more."
+     ],
+     "steps": [
+      "37 − 32 = 5. Max got 5 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       32,
+       "+",
+       5,
+       "=",
+       37
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 32,
+     "b": 5,
+     "total": 37,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Max",
+     "thing": "rocks",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 1,
+    "key": "M-2-B14|1|{\"a\":32,\"b\":5,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Max\",\"thing\":\"rocks\",\"total\":37}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had 36 crayons. Ava got some more. Now Ava has 47. How many more did Ava get?",
+     "speak": [
+      "Ava had",
+      {
+       "number": 36
+      },
+      "crayons. Ava got some more. Now Ava has",
+      {
+       "number": 47
+      },
+      ".",
+      "How many more did Ava get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 47
+      },
+      "minus",
+      {
+       "number": 36
+      },
+      "is",
+      {
+       "number": 11
+      },
+      ". Ava got",
+      {
+       "number": 11
+      },
+      "more."
+     ],
+     "steps": [
+      "47 − 36 = 11. Ava got 11 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       36,
+       "+",
+       11,
+       "=",
+       47
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 36,
+     "b": 11,
+     "total": 47,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Ava",
+     "thing": "crayons",
+     "options": [
+      1,
+      10,
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 2,
+    "key": "M-2-B14|1|{\"a\":36,\"b\":11,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Ava\",\"thing\":\"crayons\",\"total\":47}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe had 35 stickers. Zoe got some more. Now Zoe has 40. How many more did Zoe get?",
+     "speak": [
+      "Zoe had",
+      {
+       "number": 35
+      },
+      "stickers. Zoe got some more. Now Zoe has",
+      {
+       "number": 40
+      },
+      ".",
+      "How many more did Zoe get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 40
+      },
+      "minus",
+      {
+       "number": 35
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Zoe got",
+      {
+       "number": 5
+      },
+      "more."
+     ],
+     "steps": [
+      "40 − 35 = 5. Zoe got 5 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       35,
+       "+",
+       5,
+       "=",
+       40
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 35,
+     "b": 5,
+     "total": 40,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Zoe",
+     "thing": "stickers",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 3,
+    "key": "M-2-B14|1|{\"a\":35,\"b\":5,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Zoe\",\"thing\":\"stickers\",\"total\":40}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had 43 stickers. Ava got some more. Now Ava has 52. How many more did Ava get?",
+     "speak": [
+      "Ava had",
+      {
+       "number": 43
+      },
+      "stickers. Ava got some more. Now Ava has",
+      {
+       "number": 52
+      },
+      ".",
+      "How many more did Ava get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 52
+      },
+      "minus",
+      {
+       "number": 43
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Ava got",
+      {
+       "number": 9
+      },
+      "more."
+     ],
+     "steps": [
+      "52 − 43 = 9. Ava got 9 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       43,
+       "+",
+       9,
+       "=",
+       52
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 43,
+     "b": 9,
+     "total": 52,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Ava",
+     "thing": "stickers",
+     "options": [
+      9,
+      19,
+      95
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "95",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 95
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 4,
+    "key": "M-2-B14|1|{\"a\":43,\"b\":9,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Ava\",\"thing\":\"stickers\",\"total\":52}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had 34 crayons. Ava got some more. Now Ava has 56. How many more did Ava get?",
+     "speak": [
+      "Ava had",
+      {
+       "number": 34
+      },
+      "crayons. Ava got some more. Now Ava has",
+      {
+       "number": 56
+      },
+      ".",
+      "How many more did Ava get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 56
+      },
+      "minus",
+      {
+       "number": 34
+      },
+      "is",
+      {
+       "number": 22
+      },
+      ". Ava got",
+      {
+       "number": 22
+      },
+      "more."
+     ],
+     "steps": [
+      "56 − 34 = 22. Ava got 22 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       34,
+       "+",
+       22,
+       "=",
+       56
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 34,
+     "b": 22,
+     "total": 56,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Ava",
+     "thing": "crayons",
+     "options": [
+      22,
+      23,
+      90
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "22",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 22
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "23",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 23
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 90
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 5,
+    "key": "M-2-B14|1|{\"a\":34,\"b\":22,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Ava\",\"thing\":\"crayons\",\"total\":56}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had 28 marbles. Lily got some more. Now Lily has 33. How many more did Lily get?",
+     "speak": [
+      "Lily had",
+      {
+       "number": 28
+      },
+      "marbles. Lily got some more. Now Lily has",
+      {
+       "number": 33
+      },
+      ".",
+      "How many more did Lily get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 33
+      },
+      "minus",
+      {
+       "number": 28
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Lily got",
+      {
+       "number": 5
+      },
+      "more."
+     ],
+     "steps": [
+      "33 − 28 = 5. Lily got 5 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "+",
+       5,
+       "=",
+       33
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 28,
+     "b": 5,
+     "total": 33,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Lily",
+     "thing": "marbles",
+     "options": [
+      3,
+      5,
+      15
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 6,
+    "key": "M-2-B14|1|{\"a\":28,\"b\":5,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Lily\",\"thing\":\"marbles\",\"total\":33}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Eli had 10 blocks. Eli got some more. Now Eli has 17. How many more did Eli get?",
+     "speak": [
+      "Eli had",
+      {
+       "number": 10
+      },
+      "blocks. Eli got some more. Now Eli has",
+      {
+       "number": 17
+      },
+      ".",
+      "How many more did Eli get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Eli got",
+      {
+       "number": 7
+      },
+      "more."
+     ],
+     "steps": [
+      "17 − 10 = 7. Eli got 7 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       7,
+       "=",
+       17
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 10,
+     "b": 7,
+     "total": 17,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Eli",
+     "thing": "blocks",
+     "options": [
+      5,
+      7,
+      17
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 7,
+    "key": "M-2-B14|1|{\"a\":10,\"b\":7,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Eli\",\"thing\":\"blocks\",\"total\":17}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Sam had 15 blocks. Sam got some more. Now Sam has 45. How many more did Sam get?",
+     "speak": [
+      "Sam had",
+      {
+       "number": 15
+      },
+      "blocks. Sam got some more. Now Sam has",
+      {
+       "number": 45
+      },
+      ".",
+      "How many more did Sam get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 45
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ". Sam got",
+      {
+       "number": 30
+      },
+      "more."
+     ],
+     "steps": [
+      "45 − 15 = 30. Sam got 30 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       15,
+       "+",
+       30,
+       "=",
+       45
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 15,
+     "b": 30,
+     "total": 45,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Sam",
+     "thing": "blocks",
+     "options": [
+      20,
+      30,
+      60
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 8,
+    "key": "M-2-B14|1|{\"a\":15,\"b\":30,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Sam\",\"thing\":\"blocks\",\"total\":45}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo had 17 beads. Leo got some more. Now Leo has 55. How many more did Leo get?",
+     "speak": [
+      "Leo had",
+      {
+       "number": 17
+      },
+      "beads. Leo got some more. Now Leo has",
+      {
+       "number": 55
+      },
+      ".",
+      "How many more did Leo get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 55
+      },
+      "minus",
+      {
+       "number": 17
+      },
+      "is",
+      {
+       "number": 38
+      },
+      ". Leo got",
+      {
+       "number": 38
+      },
+      "more."
+     ],
+     "steps": [
+      "55 − 17 = 38. Leo got 38 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       17,
+       "+",
+       38,
+       "=",
+       55
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 17,
+     "b": 38,
+     "total": 55,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Leo",
+     "thing": "beads",
+     "options": [
+      28,
+      37,
+      38
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "28",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 28
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "37",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 37
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "38",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 38
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 9,
+    "key": "M-2-B14|1|{\"a\":17,\"b\":38,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Leo\",\"thing\":\"beads\",\"total\":55}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had 28 beads. Lily got some more. Now Lily has 58. How many more did Lily get?",
+     "speak": [
+      "Lily had",
+      {
+       "number": 28
+      },
+      "beads. Lily got some more. Now Lily has",
+      {
+       "number": 58
+      },
+      ".",
+      "How many more did Lily get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 58
+      },
+      "minus",
+      {
+       "number": 28
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ". Lily got",
+      {
+       "number": 30
+      },
+      "more."
+     ],
+     "steps": [
+      "58 − 28 = 30. Lily got 30 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       28,
+       "+",
+       30,
+       "=",
+       58
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 28,
+     "b": 30,
+     "total": 58,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Lily",
+     "thing": "beads",
+     "options": [
+      20,
+      30,
+      86
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "86",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 86
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 1,
+    "seed": 10,
+    "key": "M-2-B14|1|{\"a\":28,\"b\":30,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Lily\",\"thing\":\"beads\",\"total\":58}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max had some rocks. Max got 5 more. Now Max has 62. How many did Max have at first?",
+     "speak": [
+      "Max had some rocks. Max got",
+      {
+       "number": 5
+      },
+      "more. Now Max has",
+      {
+       "number": 62
+      },
+      ".",
+      "How many did Max have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 62
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 57
+      },
+      ". Max had",
+      {
+       "number": 57
+      },
+      "at first."
+     ],
+     "steps": [
+      "62 − 5 = 57. Max had 57 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       57,
+       "+",
+       5,
+       "=",
+       62
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 57,
+     "b": 5,
+     "total": 62,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Max",
+     "thing": "rocks",
+     "options": [
+      47,
+      56,
+      57
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "47",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 47
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "56",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 56
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "57",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 57
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 1,
+    "key": "M-2-B14|2|{\"a\":57,\"b\":5,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Max\",\"thing\":\"rocks\",\"total\":62}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had some crayons. Ava got 15 more. Now Ava has 80. How many did Ava have at first?",
+     "speak": [
+      "Ava had some crayons. Ava got",
+      {
+       "number": 15
+      },
+      "more. Now Ava has",
+      {
+       "number": 80
+      },
+      ".",
+      "How many did Ava have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 80
+      },
+      "minus",
+      {
+       "number": 15
+      },
+      "is",
+      {
+       "number": 65
+      },
+      ". Ava had",
+      {
+       "number": 65
+      },
+      "at first."
+     ],
+     "steps": [
+      "80 − 15 = 65. Ava had 65 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       65,
+       "+",
+       15,
+       "=",
+       80
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 65,
+     "b": 15,
+     "total": 80,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Ava",
+     "thing": "crayons",
+     "options": [
+      55,
+      64,
+      65
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "55",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "64",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 64
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "65",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 65
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 2,
+    "key": "M-2-B14|2|{\"a\":65,\"b\":15,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Ava\",\"thing\":\"crayons\",\"total\":80}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Zoe had some stickers. Zoe got 6 more. Now Zoe has 70. How many did Zoe have at first?",
+     "speak": [
+      "Zoe had some stickers. Zoe got",
+      {
+       "number": 6
+      },
+      "more. Now Zoe has",
+      {
+       "number": 70
+      },
+      ".",
+      "How many did Zoe have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 70
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 64
+      },
+      ". Zoe had",
+      {
+       "number": 64
+      },
+      "at first."
+     ],
+     "steps": [
+      "70 − 6 = 64. Zoe had 64 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       64,
+       "+",
+       6,
+       "=",
+       70
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 64,
+     "b": 6,
+     "total": 70,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Zoe",
+     "thing": "stickers",
+     "options": [
+      54,
+      63,
+      64
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "54",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "64",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 64
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 3,
+    "key": "M-2-B14|2|{\"a\":64,\"b\":6,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Zoe\",\"thing\":\"stickers\",\"total\":70}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had some stickers. Ava got 10 more. Now Ava has 90. How many did Ava have at first?",
+     "speak": [
+      "Ava had some stickers. Ava got",
+      {
+       "number": 10
+      },
+      "more. Now Ava has",
+      {
+       "number": 90
+      },
+      ".",
+      "How many did Ava have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 90
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 80
+      },
+      ". Ava had",
+      {
+       "number": 80
+      },
+      "at first."
+     ],
+     "steps": [
+      "90 − 10 = 80. Ava had 80 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       80,
+       "+",
+       10,
+       "=",
+       90
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 80,
+     "b": 10,
+     "total": 90,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Ava",
+     "thing": "stickers",
+     "options": [
+      80,
+      90,
+      100
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "80",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 80
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "90",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 90
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "100",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 100
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 4,
+    "key": "M-2-B14|2|{\"a\":80,\"b\":10,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Ava\",\"thing\":\"stickers\",\"total\":90}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had some crayons. Ava got 31 more. Now Ava has 93. How many did Ava have at first?",
+     "speak": [
+      "Ava had some crayons. Ava got",
+      {
+       "number": 31
+      },
+      "more. Now Ava has",
+      {
+       "number": 93
+      },
+      ".",
+      "How many did Ava have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 93
+      },
+      "minus",
+      {
+       "number": 31
+      },
+      "is",
+      {
+       "number": 62
+      },
+      ". Ava had",
+      {
+       "number": 62
+      },
+      "at first."
+     ],
+     "steps": [
+      "93 − 31 = 62. Ava had 62 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       62,
+       "+",
+       31,
+       "=",
+       93
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 62,
+     "b": 31,
+     "total": 93,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Ava",
+     "thing": "crayons",
+     "options": [
+      62,
+      63,
+      124
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "62",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 62
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "124",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 124
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 5,
+    "key": "M-2-B14|2|{\"a\":62,\"b\":31,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Ava\",\"thing\":\"crayons\",\"total\":93}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had some marbles. Lily got 5 more. Now Lily has 54. How many did Lily have at first?",
+     "speak": [
+      "Lily had some marbles. Lily got",
+      {
+       "number": 5
+      },
+      "more. Now Lily has",
+      {
+       "number": 54
+      },
+      ".",
+      "How many did Lily have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 54
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 49
+      },
+      ". Lily had",
+      {
+       "number": 49
+      },
+      "at first."
+     ],
+     "steps": [
+      "54 − 5 = 49. Lily had 49 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       49,
+       "+",
+       5,
+       "=",
+       54
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 49,
+     "b": 5,
+     "total": 54,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Lily",
+     "thing": "marbles",
+     "options": [
+      39,
+      49,
+      59
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "39",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 39
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "49",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 49
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "59",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 59
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 6,
+    "key": "M-2-B14|2|{\"a\":49,\"b\":5,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Lily\",\"thing\":\"marbles\",\"total\":54}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Eli had some blocks. Eli got 10 more. Now Eli has 20. How many did Eli have at first?",
+     "speak": [
+      "Eli had some blocks. Eli got",
+      {
+       "number": 10
+      },
+      "more. Now Eli has",
+      {
+       "number": 20
+      },
+      ".",
+      "How many did Eli have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ". Eli had",
+      {
+       "number": 10
+      },
+      "at first."
+     ],
+     "steps": [
+      "20 − 10 = 10. Eli had 10 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       10,
+       "=",
+       20
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 10,
+     "b": 10,
+     "total": 20,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Eli",
+     "thing": "blocks",
+     "options": [
+      0,
+      10,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-B14|2|{\"a\":10,\"b\":10,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Eli\",\"thing\":\"blocks\",\"total\":20}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Sam had some blocks. Sam got 51 more. Now Sam has 72. How many did Sam have at first?",
+     "speak": [
+      "Sam had some blocks. Sam got",
+      {
+       "number": 51
+      },
+      "more. Now Sam has",
+      {
+       "number": 72
+      },
+      ".",
+      "How many did Sam have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 72
+      },
+      "minus",
+      {
+       "number": 51
+      },
+      "is",
+      {
+       "number": 21
+      },
+      ". Sam had",
+      {
+       "number": 21
+      },
+      "at first."
+     ],
+     "steps": [
+      "72 − 51 = 21. Sam had 21 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       21,
+       "+",
+       51,
+       "=",
+       72
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 21,
+     "b": 51,
+     "total": 72,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Sam",
+     "thing": "blocks",
+     "options": [
+      11,
+      21,
+      123
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "123",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 123
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-B14|2|{\"a\":21,\"b\":51,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Sam\",\"thing\":\"blocks\",\"total\":72}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Leo had some beads. Leo got 65 more. Now Leo has 90. How many did Leo have at first?",
+     "speak": [
+      "Leo had some beads. Leo got",
+      {
+       "number": 65
+      },
+      "more. Now Leo has",
+      {
+       "number": 90
+      },
+      ".",
+      "How many did Leo have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 90
+      },
+      "minus",
+      {
+       "number": 65
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ". Leo had",
+      {
+       "number": 25
+      },
+      "at first."
+     ],
+     "steps": [
+      "90 − 65 = 25. Leo had 25 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       25,
+       "+",
+       65,
+       "=",
+       90
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 25,
+     "b": 65,
+     "total": 90,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Leo",
+     "thing": "beads",
+     "options": [
+      15,
+      24,
+      25
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "24",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 24
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-B14|2|{\"a\":25,\"b\":65,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Leo\",\"thing\":\"beads\",\"total\":90}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had some beads. Lily got 49 more. Now Lily has 97. How many did Lily have at first?",
+     "speak": [
+      "Lily had some beads. Lily got",
+      {
+       "number": 49
+      },
+      "more. Now Lily has",
+      {
+       "number": 97
+      },
+      ".",
+      "How many did Lily have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 97
+      },
+      "minus",
+      {
+       "number": 49
+      },
+      "is",
+      {
+       "number": 48
+      },
+      ". Lily had",
+      {
+       "number": 48
+      },
+      "at first."
+     ],
+     "steps": [
+      "97 − 49 = 48. Lily had 48 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       48,
+       "+",
+       49,
+       "=",
+       97
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "a": 48,
+     "b": 49,
+     "total": 97,
+     "blank": "a",
+     "form": "hadSome",
+     "name": "Lily",
+     "thing": "beads",
+     "options": [
+      38,
+      48,
+      146
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "38",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 38
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "48",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 48
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "146",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 146
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-2-B14",
+    "level": 2,
+    "seed": 10,
+    "key": "M-2-B14|2|{\"a\":48,\"b\":49,\"blank\":\"a\",\"form\":\"hadSome\",\"name\":\"Lily\",\"thing\":\"beads\",\"total\":97}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Eli had 60 rocks. Eli gave some away. Now Eli has 10. How many did Eli give away?",
+     "speak": [
+      "Eli had",
+      {
+       "number": 60
+      },
+      "rocks. Eli gave some away. Now Eli has",
+      {
+       "number": 10
+      },
+      ".",
+      "How many did Eli give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 60
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 50
+      },
+      ". Eli gave away",
+      {
+       "number": 50
+      },
+      "."
+     ],
+     "steps": [
+      "60 − 10 = 50. Eli gave away 50."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       60,
+       "-",
+       50,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 10,
+     "b": 50,
+     "total": 60,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Eli",
+     "thing": "rocks"
+    },
+    "answer": 50,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 1,
+    "key": "M-2-B14|3|{\"a\":10,\"b\":50,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Eli\",\"thing\":\"rocks\",\"total\":60}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Max had 56 rocks. Max gave some away. Now Max has 34. How many did Max give away?",
+     "speak": [
+      "Max had",
+      {
+       "number": 56
+      },
+      "rocks. Max gave some away. Now Max has",
+      {
+       "number": 34
+      },
+      ".",
+      "How many did Max give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 56
+      },
+      "minus",
+      {
+       "number": 34
+      },
+      "is",
+      {
+       "number": 22
+      },
+      ". Max gave away",
+      {
+       "number": 22
+      },
+      "."
+     ],
+     "steps": [
+      "56 − 34 = 22. Max gave away 22."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       56,
+       "-",
+       22,
+       "=",
+       34
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 34,
+     "b": 22,
+     "total": 56,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Max",
+     "thing": "rocks"
+    },
+    "answer": 22,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 2,
+    "key": "M-2-B14|3|{\"a\":34,\"b\":22,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Max\",\"thing\":\"rocks\",\"total\":56}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia had 55 beads. Mia gave some away. Now Mia has 12. How many did Mia give away?",
+     "speak": [
+      "Mia had",
+      {
+       "number": 55
+      },
+      "beads. Mia gave some away. Now Mia has",
+      {
+       "number": 12
+      },
+      ".",
+      "How many did Mia give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 55
+      },
+      "minus",
+      {
+       "number": 12
+      },
+      "is",
+      {
+       "number": 43
+      },
+      ". Mia gave away",
+      {
+       "number": 43
+      },
+      "."
+     ],
+     "steps": [
+      "55 − 12 = 43. Mia gave away 43."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       55,
+       "-",
+       43,
+       "=",
+       12
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 12,
+     "b": 43,
+     "total": 55,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Mia",
+     "thing": "beads"
+    },
+    "answer": 43,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 3,
+    "key": "M-2-B14|3|{\"a\":12,\"b\":43,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Mia\",\"thing\":\"beads\",\"total\":55}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Mia had some marbles. Mia gave 18 away. Now Mia has 35. How many did Mia have at first?",
+     "speak": [
+      "Mia had some marbles. Mia gave",
+      {
+       "number": 18
+      },
+      "away. Now Mia has",
+      {
+       "number": 35
+      },
+      ".",
+      "How many did Mia have at first?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 35
+      },
+      "plus",
+      {
+       "number": 18
+      },
+      "is",
+      {
+       "number": 53
+      },
+      ". Mia had",
+      {
+       "number": 53
+      },
+      "at first."
+     ],
+     "steps": [
+      "35 + 18 = 53. Mia had 53 at first."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       53,
+       "-",
+       18,
+       "=",
+       35
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 35,
+     "b": 18,
+     "total": 53,
+     "blank": "total",
+     "form": "hadSomeGave",
+     "name": "Mia",
+     "thing": "marbles"
+    },
+    "answer": 53,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 4,
+    "key": "M-2-B14|3|{\"a\":35,\"b\":18,\"blank\":\"total\",\"form\":\"hadSomeGave\",\"name\":\"Mia\",\"thing\":\"marbles\",\"total\":53}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had 79 stickers. Lily gave some away. Now Lily has 68. How many did Lily give away?",
+     "speak": [
+      "Lily had",
+      {
+       "number": 79
+      },
+      "stickers. Lily gave some away. Now Lily has",
+      {
+       "number": 68
+      },
+      ".",
+      "How many did Lily give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 79
+      },
+      "minus",
+      {
+       "number": 68
+      },
+      "is",
+      {
+       "number": 11
+      },
+      ". Lily gave away",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "79 − 68 = 11. Lily gave away 11."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       79,
+       "-",
+       11,
+       "=",
+       68
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 68,
+     "b": 11,
+     "total": 79,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Lily",
+     "thing": "stickers"
+    },
+    "answer": 11,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 5,
+    "key": "M-2-B14|3|{\"a\":68,\"b\":11,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Lily\",\"thing\":\"stickers\",\"total\":79}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Ava had 72 crayons. Ava gave some away. Now Ava has 10. How many did Ava give away?",
+     "speak": [
+      "Ava had",
+      {
+       "number": 72
+      },
+      "crayons. Ava gave some away. Now Ava has",
+      {
+       "number": 10
+      },
+      ".",
+      "How many did Ava give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 72
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 62
+      },
+      ". Ava gave away",
+      {
+       "number": 62
+      },
+      "."
+     ],
+     "steps": [
+      "72 − 10 = 62. Ava gave away 62."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       72,
+       "-",
+       62,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 10,
+     "b": 62,
+     "total": 72,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Ava",
+     "thing": "crayons"
+    },
+    "answer": 62,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 6,
+    "key": "M-2-B14|3|{\"a\":10,\"b\":62,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Ava\",\"thing\":\"crayons\",\"total\":72}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had 14 crayons. Lily got some more. Now Lily has 99. How many more did Lily get?",
+     "speak": [
+      "Lily had",
+      {
+       "number": 14
+      },
+      "crayons. Lily got some more. Now Lily has",
+      {
+       "number": 99
+      },
+      ".",
+      "How many more did Lily get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 99
+      },
+      "minus",
+      {
+       "number": 14
+      },
+      "is",
+      {
+       "number": 85
+      },
+      ". Lily got",
+      {
+       "number": 85
+      },
+      "more."
+     ],
+     "steps": [
+      "99 − 14 = 85. Lily got 85 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       14,
+       "+",
+       85,
+       "=",
+       99
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 14,
+     "b": 85,
+     "total": 99,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Lily",
+     "thing": "crayons"
+    },
+    "answer": 85,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 7,
+    "key": "M-2-B14|3|{\"a\":14,\"b\":85,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Lily\",\"thing\":\"crayons\",\"total\":99}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Lily had 57 crayons. Lily got some more. Now Lily has 73. How many more did Lily get?",
+     "speak": [
+      "Lily had",
+      {
+       "number": 57
+      },
+      "crayons. Lily got some more. Now Lily has",
+      {
+       "number": 73
+      },
+      ".",
+      "How many more did Lily get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 73
+      },
+      "minus",
+      {
+       "number": 57
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Lily got",
+      {
+       "number": 16
+      },
+      "more."
+     ],
+     "steps": [
+      "73 − 57 = 16. Lily got 16 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       57,
+       "+",
+       16,
+       "=",
+       73
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 57,
+     "b": 16,
+     "total": 73,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Lily",
+     "thing": "crayons"
+    },
+    "answer": 16,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 8,
+    "key": "M-2-B14|3|{\"a\":57,\"b\":16,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Lily\",\"thing\":\"crayons\",\"total\":73}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Nora had 74 blocks. Nora got some more. Now Nora has 82. How many more did Nora get?",
+     "speak": [
+      "Nora had",
+      {
+       "number": 74
+      },
+      "blocks. Nora got some more. Now Nora has",
+      {
+       "number": 82
+      },
+      ".",
+      "How many more did Nora get?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 82
+      },
+      "minus",
+      {
+       "number": 74
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Nora got",
+      {
+       "number": 8
+      },
+      "more."
+     ],
+     "steps": [
+      "82 − 74 = 8. Nora got 8 more."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       74,
+       "+",
+       8,
+       "=",
+       82
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 74,
+     "b": 8,
+     "total": 82,
+     "blank": "b",
+     "form": "gotSome",
+     "name": "Nora",
+     "thing": "blocks"
+    },
+    "answer": 8,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 9,
+    "key": "M-2-B14|3|{\"a\":74,\"b\":8,\"blank\":\"b\",\"form\":\"gotSome\",\"name\":\"Nora\",\"thing\":\"blocks\",\"total\":82}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "Nora had 95 cards. Nora gave some away. Now Nora has 79. How many did Nora give away?",
+     "speak": [
+      "Nora had",
+      {
+       "number": 95
+      },
+      "cards. Nora gave some away. Now Nora has",
+      {
+       "number": 79
+      },
+      ".",
+      "How many did Nora give away?"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 95
+      },
+      "minus",
+      {
+       "number": 79
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Nora gave away",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "95 − 79 = 16. Nora gave away 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       95,
+       "-",
+       16,
+       "=",
+       79
+      ]
+     }
+    },
+    "type": "numberPad",
+    "facts": {
+     "a": 79,
+     "b": 16,
+     "total": 95,
+     "blank": "b",
+     "form": "gaveSome",
+     "name": "Nora",
+     "thing": "cards"
+    },
+    "answer": 16,
+    "maxDigits": 3,
+    "skillId": "M-2-B14",
+    "level": 3,
+    "seed": 10,
+    "key": "M-2-B14|3|{\"a\":79,\"b\":16,\"blank\":\"b\",\"form\":\"gaveSome\",\"name\":\"Nora\",\"thing\":\"cards\",\"total\":95}"
+   }
+  ]
+ }
+}
