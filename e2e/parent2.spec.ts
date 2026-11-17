@@ -1,5 +1,5 @@
 import { expect, signUp, test } from './support/fixtures';
-import { addChild, answer, answerRight, holdHome, openSkill, shoot, sum } from './support/kid';
+import { addChild, answer, answerRight, gotIt, holdHome, openSkill, shoot, sum } from './support/kid';
 import { checkScreen } from './support/layout';
 
 // The grown-ups area, part 2 (Phase 8b): trouble spots, the question log with flags, and plans.
@@ -15,7 +15,7 @@ test.describe('grown-ups area, part 2', () => {
     const right = await sum(page);
     const labels = await page.locator('[data-option]').evaluateAll((els) => els.map((el) => Number(el.getAttribute('aria-label'))));
     await answer(page, labels.find((value) => value !== right) ?? right);
-    await page.getByRole('button', { name: /Got it/ }).click();
+    await gotIt(page);
     await holdHome(page);
     await page.getByRole('button', { name: 'Change who is playing' }).click();
     await page.getByRole('button', { name: 'Grown-ups' }).click();

@@ -190,9 +190,9 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         setAnswered(self.answered);
 
         if (!outcome.correct) {
-          // No buzzer. The explanation is shown and read aloud, and waits for "Got it".
+          // No buzzer. It says "Not quite", then the explanation is read aloud, and it waits for "Got it".
           setPhase('wrong');
-          void speak(q.explanation.speak, child.settings.speechRate);
+          void speak(['Not quite.', ...q.explanation.speak], child.settings.speechRate);
           return;
         }
         setPhase('correct');

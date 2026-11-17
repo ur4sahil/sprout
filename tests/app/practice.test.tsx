@@ -6,7 +6,7 @@ import { advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
 import { newSkillState } from '../../src/storage/schema';
-import { NOW, answer, findOnMath, holdHome, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
+import { NOW, answer, findOnMath, gotIt, holdHome, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
 const spoken = vi.hoisted(() => ({ said: [] as unknown[], phrases: [] as string[], sounds: [] as string[] }));
@@ -121,18 +121,34 @@ describe('a wrong answer', () => {
     expect(panel.querySelector('[data-correct]')?.textContent).toBe(String(right));
     expect(screen.getByText('You answered')).toBeTruthy();
     expect(screen.getByText('Correct answer')).toBeTruthy();
-    expect(panel.querySelectorAll('ol li').length).toBeGreaterThanOrEqual(1);
-    expect(panel.querySelector('ol')?.textContent).toContain(`= ${right}`);
+    // It says so, keeps the question in view, and shows one step to begin with.
+    expect(panel.querySelector('[data-verdict]')?.textContent).toContain('Not quite');
+    expect(panel.querySelector('[data-asked]')?.textContent).toContain('equals what?');
+    expect(panel.querySelectorAll('ol li')).toHaveLength(1);
+    expect(screen.queryByRole('button', { name: /Got it/ })).toBeNull();
     // 10 with a loss of 2 is 8, and the streak is gone.
     expect(await stateOf()).toMatchObject({ score: 8, streak: 0, attempts: 2, correct: 1, recent: [true, false] });
     // The explanation is read aloud. No sound plays for a wrong answer.
     expect(spoken.sounds).toEqual(['unlock', 'chime']);
+    expect(JSON.stringify(spoken.said.at(-1))).toContain('Count on');
+    expect(JSON.stringify(spoken.said.at(-1))).toContain('Not quite.');
+    // "Hear again" says the explanation once more.
+    const before = spoken.said.length;
+    await user.click(screen.getByRole('button', { name: /Hear again/ }));
+    expect(spoken.said).toHaveLength(before + 1);
     expect(JSON.stringify(spoken.said.at(-1))).toContain('Count on');
 
     const log = await attempts();
     expect(log[1]).toMatchObject({ correct: false, scoreBefore: 10, scoreAfter: 8 });
     expect(log[1]?.snapshot).toMatchObject({ correct: String(right), given: String(wrong) });
 
+    // Each "Next step" shows one more step. The last one ends on the sum, and its button is "Got it".
+    while (screen.queryByRole('button', { name: /Next step/ })) {
+      const shown = panel.querySelectorAll('ol li').length;
+      await user.click(screen.getByRole('button', { name: /Next step/ }));
+      expect(panel.querySelectorAll('ol li')).toHaveLength(shown + 1);
+    }
+    expect(panel.querySelector('ol')?.textContent).toContain(`= ${right}`);
     // "Got it" loads the next question.
     await user.click(screen.getByRole('button', { name: /Got it/ }));
     await screen.findByRole('region', { name: 'Question' });
@@ -162,7 +178,7 @@ describe('a wrong answer', () => {
     }
     expect((await stateOf())?.score).toBe(52);
     await answer(user, wrongValue());
-    await user.click(await screen.findByRole('button', { name: /Got it/ }));
+    await gotIt(user);
     await screen.findByRole('region', { name: 'Question' });
     await answer(user, sumOnScreen());
     await settled();
@@ -193,7 +209,7 @@ describe('milestones', () => {
     // Two misses: 52 to 46 to 42.
     for (let i = 0; i < 2; i += 1) {
       await answer(user, wrongValue());
-      await user.click(await screen.findByRole('button', { name: /Got it/ }));
+      await gotIt(user);
       await screen.findByRole('region', { name: 'Question' });
     }
     expect((await stateOf())?.score).toBe(42);

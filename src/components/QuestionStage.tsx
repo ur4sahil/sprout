@@ -23,7 +23,7 @@ export default function QuestionStage({ question, phase, response, lastResponse,
   if (phase === 'wrong' && lastResponse) {
     return (
       <div className={styles.question}>
-        <ExplanationPanel question={question} response={lastResponse} onDone={onGotIt} />
+        <ExplanationPanel question={question} response={lastResponse} onDone={onGotIt} onSpeak={onSpeak} />
       </div>
     );
   }

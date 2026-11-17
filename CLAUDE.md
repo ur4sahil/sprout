@@ -213,3 +213,4 @@
 - The practice bar says the subject and grade above the skill's name. The question, and the explanation after a wrong answer, each sit on a card. The status facts are cards from tablet width and a plain strip on a phone.
 - Skill tiles are white in every group. `band` is kept only as `data-band`.
 - `PALETTE.ink` must equal `--color-ink`. A chart's labels use `--text-chart`, because a chart is drawn small and scaled up.
+- A wrong answer (the owner's choice, Nov 17, 2026): `ExplanationPanel` says "Not quite" (shown and spoken, never a buzzer or a cross), keeps the question and its picture in view, shows the child's answer beside the right one, then shows the steps one at a time. The button is "Next step" until the last step, then "Got it". "Hear again" repeats the spoken explanation. Tests step through with `gotIt(...)` (`tests/app/practiceHelpers.tsx`, `e2e/support/kid.ts`). Pop keeps its own short explanation.

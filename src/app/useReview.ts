@@ -197,7 +197,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       }
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(q.explanation.speak, child.settings.speechRate);
+        void speak(['Not quite.', ...q.explanation.speak], child.settings.speechRate);
         return;
       }
       setPhase('correct');

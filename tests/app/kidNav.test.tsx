@@ -11,7 +11,7 @@ import { addDays, advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
 import type { Attempt, Child, SkillState } from '../../src/storage/schema';
-import { NOW, answer, findOnMath, holdHome, openApp, openSkill, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
+import { NOW, answer, findOnMath, gotIt, holdHome, openApp, openSkill, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
 const spoken = vi.hoisted(() => ({ said: [] as unknown[], phrases: [] as string[], sounds: [] as string[] }));
@@ -432,7 +432,7 @@ describe('review', () => {
     await (await repo()).saveSkillState({ ...mastered(ADD, -1), reviewBox: 2 });
     const user = await openReview();
     await answer(user, wrongValue());
-    await user.click(await screen.findByRole('button', { name: /Got it/ }));
+    await gotIt(user);
     for (let i = 0; i < 2; i += 1) {
       await screen.findByRole('region', { name: 'Question' });
       await answer(user, sumOnScreen());
@@ -450,7 +450,7 @@ describe('review', () => {
     const user = await openReview();
     for (let i = 0; i < 2; i += 1) {
       await answer(user, wrongValue());
-      await user.click(await screen.findByRole('button', { name: /Got it/ }));
+      await gotIt(user);
       await screen.findByRole('region', { name: 'Question' });
     }
     // The score does not move until the review is over.

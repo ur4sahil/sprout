@@ -1,6 +1,6 @@
 import { expect, signUp, test } from './support/fixtures';
 import { checkScreen } from './support/layout';
-import { addChild, answer, answerRight, holdHome, openOnMath, openSkill, shoot, sum, tapInOrder } from './support/kid';
+import { addChild, answer, answerRight, gotIt, holdHome, openOnMath, openSkill, shoot, sum, tapInOrder } from './support/kid';
 import { BASE_URL } from './support/paths';
 
 test.describe('practice', () => {
@@ -43,10 +43,16 @@ test.describe('practice', () => {
     await expect(panel).toBeVisible();
     await expect(panel.locator('[data-given]')).toHaveText(String(wrong));
     await expect(panel.locator('[data-correct]')).toHaveText(String(right));
-    await expect(panel.locator('ol li').first()).toBeVisible();
+    // It says so, the question stays in view, and the steps come one at a time.
+    await expect(panel.locator('[data-verdict]')).toHaveText(/Not quite/);
+    await expect(panel.locator('[data-asked]')).toContainText('equals what?');
+    await expect(panel.locator('ol li')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: /Hear again/ })).toBeVisible();
     await checkScreen(page, 'explanation', 64);
     await shoot(page, 'explanation');
-    await page.getByRole('button', { name: /Got it/ }).click();
+    await page.getByRole('button', { name: /Next step/ }).click();
+    await expect(panel.locator('ol li')).toHaveCount(2);
+    await gotIt(page);
     await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
     await expect(page.locator('[data-answered]')).toHaveText('1');
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '0');

@@ -127,6 +127,17 @@ export function wrongValue(): number {
 }
 
 // Waits until the screen has moved on from the question that was just answered.
+// On the explanation after a wrong answer: taps "Next step" until the last step, then "Got it".
+export async function gotIt(user: User): Promise<void> {
+  await screen.findByRole('region', { name: 'Explanation' });
+  for (;;) {
+    const next = screen.queryByRole('button', { name: /Next step/ });
+    if (!next) break;
+    await user.click(next);
+  }
+  await user.click(screen.getByRole('button', { name: /Got it/ }));
+}
+
 export async function settled(): Promise<void> {
   await waitFor(() => {
     const phase = document.querySelector('[data-phase]')?.getAttribute('data-phase');

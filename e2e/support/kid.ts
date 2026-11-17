@@ -130,6 +130,15 @@ export async function tapInOrder(page: Page): Promise<void> {
   for (const tile of tiles.slice().sort((a, b) => a.value - b.value)) await page.locator(`[data-item="${tile.index}"]`).click();
 }
 
+// On the explanation after a wrong answer: taps "Next step" until the last step, then "Got it".
+export async function gotIt(page: Page): Promise<void> {
+  const next = page.getByRole('button', { name: /Next step/ });
+  const done = page.getByRole('button', { name: /Got it/ });
+  await expect(next.or(done).first()).toBeVisible();
+  while (await next.isVisible()) await next.click();
+  await done.click();
+}
+
 // Answers whatever question is on screen, right or wrong, and taps through the explanation if there is one.
 // Ends on the next question, a celebration, a break or the end of a review.
 export async function answerAnything(page: Page): Promise<void> {
@@ -145,11 +154,11 @@ export async function answerAnything(page: Page): Promise<void> {
     if (await submit.isVisible()) await submit.click();
     await expect(submit).toBeHidden({ timeout: 300 });
   }).toPass();
-  const gotIt = page.getByRole('button', { name: /Got it/ });
+  const explained = page.locator('[data-explanation]');
   const settled = page.locator('[data-phase="asking"], [data-celebration], [data-break], [data-card]');
-  await expect(gotIt.or(settled).first()).toBeVisible();
-  if (await gotIt.isVisible()) {
-    await gotIt.click();
+  await expect(explained.or(settled).first()).toBeVisible();
+  if (await explained.isVisible()) {
+    await gotIt(page);
     await expect(settled.first()).toBeVisible();
   }
 }
