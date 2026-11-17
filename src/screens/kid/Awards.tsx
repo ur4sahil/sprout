@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { awardSkills, stickerFor, syncAwards } from '../../app/awardsRun';
 import { useAppStore } from '../../app/store';
+import Icon from '../../components/Icon';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
@@ -56,9 +57,9 @@ export default function Awards() {
     <KidScreen
       bar={
         <>
-          <IconButton icon="🏠" label="Back to home" onClick={() => void navigate('/home', { replace: true })} />
+          <IconButton icon="home" label="Back to home" onClick={() => void navigate('/home', { replace: true })} />
           <h1 className={page.title}>
-            <span aria-hidden="true">⭐ </span>Stickers
+            <Icon name="star" />Stickers
           </h1>
         </>
       }
@@ -92,7 +93,7 @@ function Square({ award, earned }: { award: AwardDef; earned: boolean }) {
   return (
     <p className={`${styles.square} ${earned ? styles.earned : ''}`} data-award={award.id} data-earned={earned ? 'yes' : 'no'} aria-label={`${award.label}. ${earned ? 'Earned' : 'Not yet'}`}>
       <span className={`${styles.sticker} ${earned ? '' : styles.covered}`} aria-hidden="true">
-        {earned ? stickerFor(award.id) : '🔒'}
+        {earned ? stickerFor(award.id) : <Icon name="lock" />}
       </span>
       <span aria-hidden="true">{award.label}</span>
     </p>

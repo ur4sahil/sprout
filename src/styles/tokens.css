@@ -60,9 +60,10 @@
   --radius-pill: 999px;
 
   /* type scale */
-  --font-family: 'Inter Variable', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Nunito Variable', Nunito, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   /* headings, numerals and the words a child reads in a question */
-  --font-display: 'Space Grotesk', 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-display: 'Nunito Variable', Nunito, system-ui, -apple-system, sans-serif;
+  --weight-display: 800;
   --text-xs: 0.78rem;
   --text-s: 0.9rem;
   --text-m: 1.125rem;
@@ -147,7 +148,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  font-weight: var(--weight-display);
 }
 
 button {

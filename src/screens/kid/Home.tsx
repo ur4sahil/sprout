@@ -8,6 +8,7 @@ import { speak } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import GoalRing from '../../components/GoalRing';
+import Icon, { type IconName } from '../../components/Icon';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import NavButton from '../../components/NavButton';
@@ -34,10 +35,10 @@ const WHY: Record<PickReason, string> = {
   next: 'Next up',
 };
 
-export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: string }[] = [
-  { id: 'math', label: 'Math', icon: '🔢' },
-  { id: 'ela', label: 'Language Arts', icon: '🔤' },
-  { id: 'reasoning', label: 'Reasoning', icon: '🧩' },
+export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: IconName }[] = [
+  { id: 'math', label: 'Math', icon: 'math' },
+  { id: 'ela', label: 'Language Arts', icon: 'book' },
+  { id: 'reasoning', label: 'Reasoning', icon: 'shapes' },
 ];
 
 export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', all: 'All' };
@@ -106,17 +107,17 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.places} role="group" aria-label="Places to go">
-            {day?.checkIn && <NavButton icon="🧭" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
-            {day && day.reviewsDue.length > 0 && <NavButton icon="🔁" label={`Review (${day.reviewsDue.length})`} onClick={() => go('/review')} />}
+            {day?.checkIn && <NavButton icon="compass" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
+            {day && day.reviewsDue.length > 0 && <NavButton icon="repeat" label={`Review (${day.reviewsDue.length})`} onClick={() => go('/review')} />}
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}
-            <NavButton icon="⭐" label="Stickers" onClick={() => go('/awards')} />
-            {popOffered && <NavButton icon="🎈" label="Pop" onClick={() => go('/games/pop')} />}
-            <NavButton icon="🃏" label="Pairs" onClick={() => go('/games/pairs')} />
+            <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
+            {popOffered && <NavButton icon="balloon" label="Pop" onClick={() => go('/games/pop')} />}
+            <NavButton icon="cards" label="Pairs" onClick={() => go('/games/pairs')} />
           </div>
           <div className={styles.leave}>
-            <IconButton icon="👤" label="Change who is playing" onClick={() => go('/')} />
+            <IconButton icon="person" label="Change who is playing" onClick={() => go('/')} />
           </div>
         </>
       }
@@ -134,9 +135,7 @@ export default function Home() {
             </div>
             {day.picks.length > 0 && (
               <BigButton size="kid" onClick={() => go('/play')}>
-                <span className={styles.play} aria-hidden="true">
-                  ▶️
-                </span>{' '}
+                <Icon name="play" />
                 Play
               </BigButton>
             )}
@@ -176,7 +175,7 @@ export default function Home() {
             ))}
           </ul>
           <BigButton size="kid" onClick={() => setFresh([])}>
-            <span aria-hidden="true">🎉 </span>Yay
+            <Icon name="star" />Yay
           </BigButton>
         </FullScreenCard>
       )}

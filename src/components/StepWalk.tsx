@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useState } from 'react';
 import { spokenSteps } from '../audio/stepSay';
 import type { Question, Say } from '../engine/types';
@@ -36,15 +37,15 @@ export default function StepWalk({ question, onDone, onSpeak }: Props) {
       </div>
       <CenterRow>
         <BigButton size="kid" tone="quiet" onClick={() => onSpeak(spoken?.[Math.min(shown, steps.length) - 1] ?? question.explanation.speak)}>
-          <span aria-hidden="true">🔊 </span>Hear again
+          <Icon name="speaker" />Hear again
         </BigButton>
         {last ? (
           <BigButton size="kid" onClick={onDone}>
-            <span aria-hidden="true">👍 </span>Got it
+            <Icon name="thumb" />Got it
           </BigButton>
         ) : (
           <BigButton size="kid" onClick={next}>
-            <span aria-hidden="true">➡️ </span>Next step
+            <Icon name="next" />Next step
           </BigButton>
         )}
       </CenterRow>

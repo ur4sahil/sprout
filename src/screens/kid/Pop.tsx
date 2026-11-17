@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import type { PopTurn } from '../../app/games';
@@ -145,7 +146,7 @@ function PopRound({ child }: { child: Child }) {
     return (
       <FullScreenCard emoji="🎈" title="Round over!" line={`You popped ${right} of ${asked}.`} name="pop-done">
         <BigButton size="kid" onClick={goHome}>
-          <span aria-hidden="true">🏠 </span>Home
+          <Icon name="home" />Home
         </BigButton>
       </FullScreenCard>
     );
@@ -155,9 +156,9 @@ function PopRound({ child }: { child: Child }) {
     <KidScreen
       bar={
         <>
-          <HoldButton icon="🏠" label="Back to home" onHeld={goHome} />
+          <HoldButton icon="home" label="Back to home" onHeld={goHome} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">🎈 </span>Pop
+            <Icon name="balloon" />Pop
           </h1>
           <span className={styles.spacer} />
           <span className={styles.count} data-pop-count={asked} aria-label={`Question ${Math.min(asked + 1, POP_ROUND)} of ${POP_ROUND}`}>
@@ -171,7 +172,7 @@ function PopRound({ child }: { child: Child }) {
         <section className={styles.pop} aria-label="Question" data-phase={phase} data-skill={turn.skill.id}>
           <div className={styles.ask}>
             <p className={styles.prompt}>{question.prompt.text}</p>
-            <IconButton icon="🔊" label="Hear the question" onClick={() => void speak(question.prompt.speak, rate)} />
+            <IconButton icon="speaker" label="Hear the question" onClick={() => void speak(question.prompt.speak, rate)} />
           </div>
           {question.stimulus && <VisualView visual={question.stimulus} />}
           <div className={styles.balloons} role="group" aria-label="Balloons">

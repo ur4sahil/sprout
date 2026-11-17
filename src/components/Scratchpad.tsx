@@ -47,9 +47,9 @@ export default function Scratchpad({ onClose }: Props) {
         )}
       </svg>
       <div className={styles.tools}>
-        <IconButton icon="↩️" label="Undo" disabled={lines.length === 0} onClick={() => setLines((all) => all.slice(0, -1))} />
-        <IconButton icon="🧽" label="Clear" disabled={lines.length === 0} onClick={() => setLines([])} />
-        <IconButton icon="✖️" label="Close the scratchpad" onClick={onClose} />
+        <IconButton icon="back" label="Undo" disabled={lines.length === 0} onClick={() => setLines((all) => all.slice(0, -1))} />
+        <IconButton icon="eraser" label="Clear" disabled={lines.length === 0} onClick={() => setLines([])} />
+        <IconButton icon="close" label="Close the scratchpad" onClick={onClose} />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import Icon from '../components/Icon';
 import type { Question, Response, Say } from '../engine/types';
 import VisualView from '../visuals/VisualView';
 import ItemView from './ItemView';
@@ -20,13 +21,13 @@ export default function QuestionView({ question, disabled, onChange, onSpeak }: 
         <p className={styles.promptText}>{question.prompt.text}</p>
         {!listen && (
           <button type="button" className={styles.speaker} aria-label="Hear the question" onClick={() => onSpeak(question.prompt.speak)}>
-            <span aria-hidden="true">🔊</span>
+            <Icon name="speaker" />
           </button>
         )}
       </div>
       {listen && (
         <button type="button" className={`${styles.speaker} ${styles.bigSpeaker}`} aria-label="Hear it again" onClick={() => onSpeak(question.prompt.speak)}>
-          <span aria-hidden="true">🔊</span>
+          <Icon name="speaker" />
         </button>
       )}
       {question.stimulus && (

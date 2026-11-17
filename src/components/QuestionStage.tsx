@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import type { Question, Response, Say } from '../engine/types';
 import QuestionView from '../items/QuestionView';
 import BigButton from './BigButton';
@@ -33,11 +34,11 @@ export default function QuestionStage({ question, phase, response, lastResponse,
       {saveError && <Notice role="alert">{saveError}</Notice>}
       {phase === 'correct' ? (
         <p className={styles.praise} role="status" data-correct="">
-          <span aria-hidden="true">✅ </span>Correct!
+          <Icon name="check" />Correct!
         </p>
       ) : (
         <BigButton size="kid" disabled={phase !== 'asking' || response === null} onClick={onSubmit}>
-          <span aria-hidden="true">✔️ </span>Submit
+          <Icon name="check" />Submit
         </BigButton>
       )}
     </div>

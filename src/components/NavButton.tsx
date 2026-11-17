@@ -1,8 +1,9 @@
 import type { ButtonHTMLAttributes } from 'react';
+import Icon, { type IconName } from './Icon';
 import styles from './NavButton.module.css';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: string; // a picture, so a child who cannot read knows where it goes
+  icon: IconName; // a drawing from the app's own set
   label: string;
   marker?: 'math' | 'ela' | 'reasoning'; // a subject's own colour, as a thin bar at the start
 };
@@ -12,7 +13,7 @@ export default function NavButton({ icon, label, marker, className, ...rest }: P
   return (
     <button type="button" className={`${styles.item} ${className ?? ''}`} data-marker={marker} {...rest}>
       <span className={styles.icon} aria-hidden="true">
-        {icon}
+        <Icon name={icon} />
       </span>
       <span className={styles.label}>{label}</span>
     </button>

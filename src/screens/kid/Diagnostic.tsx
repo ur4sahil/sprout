@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect } from 'react';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
 import { stickerFor } from '../../app/awardsRun';
@@ -52,9 +53,9 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
     <KidScreen
       bar={
         <>
-          <HoldButton icon="🏠" label="Back to home" onHeld={home} />
+          <HoldButton icon="home" label="Back to home" onHeld={home} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">🧭 </span>Check-in: {SUBJECT_NAME[subject]}
+            <Icon name="compass" />Check-in: {SUBJECT_NAME[subject]}
           </h1>
         </>
       }
@@ -80,13 +81,13 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
             onSpeak={say}
           />
           <BigButton size="kid" disabled={phase !== 'asking'} onClick={diagnostic.dontKnow}>
-            <span aria-hidden="true">🤷 </span>
+            <Icon name="question" />
             {DONT_KNOW}
           </BigButton>
           {/* Before the first answer, a child or a grown-up can put the check-in off. Home offers it again. */}
           {diagnostic.asked === 0 && (
             <BigButton size="kid" disabled={phase !== 'asking'} onClick={home}>
-              <span aria-hidden="true">⏭️ </span>Skip for now
+              <Icon name="skip" />Skip for now
             </BigButton>
           )}
         </>
@@ -99,7 +100,7 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
           name={phase === 'done' ? 'check-in-done' : 'sitting-over'}
         >
           <BigButton size="kid" onClick={home}>
-            <span aria-hidden="true">🏠 </span>Home
+            <Icon name="home" />Home
           </BigButton>
         </FullScreenCard>
       )}

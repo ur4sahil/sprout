@@ -1,7 +1,8 @@
+import Icon, { type IconName } from './Icon';
 import styles from './IconButton.module.css';
 
 interface Props {
-  icon: string; // one emoji or symbol
+  icon: IconName; // a drawing from the app's own set
   label: string; // what a screen reader says
   onClick: () => void;
   disabled?: boolean;
@@ -11,7 +12,7 @@ interface Props {
 export default function IconButton({ icon, label, onClick, disabled = false }: Props) {
   return (
     <button type="button" className={styles.button} aria-label={label} disabled={disabled} onClick={onClick}>
-      <span aria-hidden="true">{icon}</span>
+      <span aria-hidden="true"><Icon name={icon} /></span>
     </button>
   );
 }

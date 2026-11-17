@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import { useEffect, useRef } from 'react';
 import type { Video } from '../content/videos';
 import { embedAddress, FRAME_SANDBOX, PLAYER_ORIGIN, playTime, shouldClose } from '../content/videos';
@@ -45,7 +46,7 @@ export default function VideoPlayer({ video, onClose }: Props) {
         onLoad={listen}
       />
       <BigButton size="kid" onClick={onClose}>
-        <span aria-hidden="true">✖️ </span>Close
+        <Icon name="close" />Close
       </BigButton>
     </div>
   );

@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
 import styles from './Celebration.module.css';
@@ -25,21 +26,21 @@ export default function SoftBreak({ answered, score, keepGoingLabel = 'Keep goin
         You answered {answered} questions. Score {score} of 100.
       </p>
       <BigButton size="kid" onClick={onKeepGoing}>
-        <span aria-hidden="true">➡️ </span>
+        <Icon name="next" />
         {keepGoingLabel}
       </BigButton>
       <BigButton size="kid" tone="quiet" onClick={onAllDone}>
-        <span aria-hidden="true">🏠 </span>Stop for now
+        <Icon name="home" />Stop for now
       </BigButton>
       {games && (
         <CenterRow>
           {games.onPop && (
             <BigButton size="kid" tone="quiet" onClick={games.onPop}>
-              <span aria-hidden="true">🎈 </span>Play Pop
+              <Icon name="balloon" />Play Pop
             </BigButton>
           )}
           <BigButton size="kid" tone="quiet" onClick={games.onPairs}>
-            <span aria-hidden="true">🃏 </span>Play Pairs
+            <Icon name="cards" />Play Pairs
           </BigButton>
         </CenterRow>
       )}

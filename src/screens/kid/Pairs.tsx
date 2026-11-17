@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { PAIR_COUNT, pairsDeck } from '../../app/games';
@@ -63,10 +64,10 @@ function PairsGame({ child }: { child: Child }) {
     return (
       <FullScreenCard emoji="🃏" title="You found them all!" line="Every pair is matched." name="pairs-done">
         <BigButton size="kid" onClick={again}>
-          <span aria-hidden="true">🔁 </span>Play again
+          <Icon name="repeat" />Play again
         </BigButton>
         <BigButton size="kid" onClick={goHome}>
-          <span aria-hidden="true">🏠 </span>Home
+          <Icon name="home" />Home
         </BigButton>
       </FullScreenCard>
     );
@@ -75,9 +76,9 @@ function PairsGame({ child }: { child: Child }) {
     <KidScreen
       bar={
         <>
-          <HoldButton icon="🏠" label="Back to home" onHeld={goHome} />
+          <HoldButton icon="home" label="Back to home" onHeld={goHome} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">🃏 </span>Pairs
+            <Icon name="cards" />Pairs
           </h1>
           <span className={styles.spacer} />
           <span className={styles.count} data-pairs-found={found.length} aria-label={`${found.length} of ${PAIR_COUNT} pairs found`}>
@@ -92,7 +93,7 @@ function PairsGame({ child }: { child: Child }) {
           const shown = matched || up.includes(card.id);
           return (
             <GameButton key={`${game}-${card.id}`} look="card" data-card={card.id} data-pair={card.pair} data-up={shown ? '' : undefined} data-matched={matched ? '' : undefined} aria-label={shown ? card.name : `Card ${card.id + 1}, face down`} disabled={matched} onClick={() => flip(card.id)}>
-              {shown ? <VisualView visual={card.visual} /> : <span aria-hidden="true">❓</span>}
+              {shown ? <VisualView visual={card.visual} /> : <Icon name="question" />}
             </GameButton>
           );
         })}

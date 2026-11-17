@@ -1,3 +1,4 @@
+import Icon from "../../components/Icon";
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TIMING } from "../../app/timing";
@@ -130,9 +131,9 @@ export default function LessonPlayer({ child, skill }: Props) {
     <KidScreen
       bar={
         <>
-          <IconButton icon="↩️" label="Back to practice" onClick={practise} />
+          <IconButton icon="back" label="Back to practice" onClick={practise} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">💡 </span>
+            <Icon name="bulb" />
             {skill.name}
           </h1>
         </>
@@ -141,9 +142,9 @@ export default function LessonPlayer({ child, skill }: Props) {
       <Tabs
         label="Kind of help"
         tabs={[
-          { id: "lesson", label: "🎬 Lesson" },
-          { id: "example", label: "✏️ Example" },
-          ...(video ? [{ id: "video", label: "📺 Video" }] : []),
+          { id: "lesson", label: "Lesson", icon: "film" as const },
+          { id: "example", label: "Example", icon: "pencil" as const },
+          ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
         ]}
         current={mode}
         onPick={(id) => {
@@ -184,18 +185,18 @@ export default function LessonPlayer({ child, skill }: Props) {
             />
             <CenterRow>
               <IconButton
-                icon={playing ? "⏸️" : "▶️"}
+                icon={playing ? "pause" : "play"}
                 label={playing ? "Pause" : "Play"}
                 onClick={() => (finished ? jump(0) : setPlaying(!playing))}
               />
               <IconButton
-                icon="🔄"
+                icon="repeat"
                 label="Start again"
                 onClick={() => jump(0)}
               />
               {finished && (
                 <BigButton size="kid" onClick={practise}>
-                  <span aria-hidden="true">✏️ </span>Practise
+                  <Icon name="pencil" />Practise
                 </BigButton>
               )}
             </CenterRow>
@@ -215,7 +216,7 @@ export default function LessonPlayer({ child, skill }: Props) {
             {stepsShown > 0 && <StepList steps={steps.slice(0, stepsShown)} />}
             {stepsShown >= steps.length && (
               <p className={styles.answer} data-example-answer="">
-                <span aria-hidden="true">✅ </span>
+                <Icon name="check" />
                 {describeAnswer(example)}
               </p>
             )}
@@ -225,12 +226,12 @@ export default function LessonPlayer({ child, skill }: Props) {
                   size="kid"
                   onClick={() => setStepsShown(stepsShown + 1)}
                 >
-                  <span aria-hidden="true">➡️ </span>
+                  <Icon name="next" />
                   {stepsShown === 0 ? "Show me how" : "Next step"}
                 </BigButton>
               ) : (
                 <BigButton size="kid" onClick={practise}>
-                  <span aria-hidden="true">✏️ </span>Practise
+                  <Icon name="pencil" />Practise
                 </BigButton>
               )}
             </CenterRow>

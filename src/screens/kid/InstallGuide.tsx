@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useState } from 'react';
 import BigButton from '../../components/BigButton';
 import KidScreen from '../../components/KidScreen';
@@ -50,9 +51,7 @@ export default function InstallGuide({ onUseBrowser }: Props) {
           </span>
         </li>
         <li className={styles.step}>
-          <span className={styles.icon} aria-hidden="true">
-            🌱
-          </span>
+          <Icon name="sprout" />
           <span>
             Tap <strong>Add</strong>, then open Sprout from its new icon.
           </span>

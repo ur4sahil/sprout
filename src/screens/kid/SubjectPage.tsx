@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useChildDay } from '../../app/childDay';
 import { useAppStore } from '../../app/store';
 import { speak } from '../../audio/speech';
+import Icon from '../../components/Icon';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
@@ -42,9 +43,9 @@ export default function SubjectPage() {
     <KidScreen
       bar={
         <>
-          <IconButton icon="🏠" label="Back to home" onClick={() => void navigate('/home', { replace: true })} />
+          <IconButton icon="home" label="Back to home" onClick={() => void navigate('/home', { replace: true })} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">{subject.icon} </span>
+            <Icon name={subject.icon} />{' '}
             {subject.label}
           </h1>
         </>

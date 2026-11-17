@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useMemo, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useChildDay } from '../../app/childDay';
@@ -36,7 +37,7 @@ export default function Play() {
     return (
       <FullScreenCard emoji="🎉" title="All done!" line="You finished today's picks." name="play-done">
         <BigButton size="kid" onClick={goHome}>
-          <span aria-hidden="true">🏠 </span>Home
+          <Icon name="home" />Home
         </BigButton>
       </FullScreenCard>
     );

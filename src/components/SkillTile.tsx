@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import type { Skill } from '../content/catalogue';
 import type { Say } from '../engine/types';
 import type { SkillState } from '../storage/schema';
@@ -40,7 +41,7 @@ export default function SkillTile({ skill, state, note, band, look = 'row', onOp
         {look === 'row' && bar}
       </button>
       <button type="button" className={styles.speaker} aria-label={`Hear the name: ${skill.name}`} onClick={() => onSpeak(skill.speakName)}>
-        <span aria-hidden="true">🔊</span>
+        <Icon name="speaker" />
       </button>
       {/* On a picture tile the score sits beside the speaker, under the picture. */}
       {look === 'tile' && <span className={styles.foot}>{bar}</span>}

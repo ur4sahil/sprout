@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { hasPass } from '../../app/pin';
@@ -97,9 +98,7 @@ export default function ProfilePicker() {
     <KidScreen>
       <div className={styles.page}>
         <h1 className={styles.brand}>
-          <span className={styles.mark} aria-hidden="true">
-            🌱
-          </span>
+          <Icon name="sprout" />
           Sprout
         </h1>
         {failed && <Notice role="alert">The saved profiles could not be read. Close the app and open it again.</Notice>}
@@ -115,7 +114,7 @@ export default function ProfilePicker() {
         )}
         <div className={styles.bar} role="group" aria-label="For grown-ups">
           <BigButton onClick={() => void navigate('/parent/dashboard')}>
-            <span aria-hidden="true">🔒 </span>Grown-ups
+            <Icon name="lock" />Grown-ups
           </BigButton>
           <BigButton tone="quiet" disabled={signingOut} onClick={() => setAsking('signOut')}>
             Sign out

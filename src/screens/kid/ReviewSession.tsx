@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect } from 'react';
 import { useReview } from '../../app/useReview';
 import { useWakeLock } from '../../app/useWakeLock';
@@ -46,9 +47,9 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
     <KidScreen
       bar={
         <>
-          <HoldButton icon="🏠" label="Back to home" onHeld={onLeave} />
+          <HoldButton icon="home" label="Back to home" onHeld={onLeave} />
           <h1 className={styles.title}>
-            <span aria-hidden="true">🔁 </span>Review{review.skill ? `: ${review.skill.name}` : ''}
+            <Icon name="repeat" />Review{review.skill ? `: ${review.skill.name}` : ''}
           </h1>
         </>
       }
@@ -89,7 +90,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
             ))}
           </ul>
           <BigButton size="kid" onClick={onDone}>
-            <span aria-hidden="true">➡️ </span>
+            <Icon name="next" />
             {doneLabel}
           </BigButton>
         </FullScreenCard>

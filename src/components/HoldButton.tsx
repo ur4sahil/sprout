@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { TIMING } from '../app/timing';
+import Icon, { type IconName } from './Icon';
 import styles from './HoldButton.module.css';
 
 interface Props {
-  icon: string;
+  icon: IconName; // a drawing from the app's own set
   label: string; // what a screen reader says
   onHeld: () => void;
 }
@@ -51,7 +52,7 @@ export default function HoldButton({ icon, label, onHeld }: Props) {
     >
       <span className={styles.fill} aria-hidden="true" />
       <span className={styles.icon} aria-hidden="true">
-        {icon}
+        <Icon name={icon} />
       </span>
     </button>
   );

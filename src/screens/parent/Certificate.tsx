@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { awardSkills } from '../../app/awardsRun';
@@ -77,7 +78,7 @@ export default function Certificate() {
         <CenterRow>
           {ready && (
             <BigButton onClick={() => window.print()}>
-              <span aria-hidden="true">🖨️ </span>Print
+              <Icon name="printer" />Print
             </BigButton>
           )}
           <LinkButton onClick={back}>Back to scores</LinkButton>

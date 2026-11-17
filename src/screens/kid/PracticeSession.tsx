@@ -1,3 +1,4 @@
+import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { popSkills } from '../../app/games';
@@ -100,7 +101,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
     <KidScreen
       bar={
         <>
-          <HoldButton icon="🏠" label="Back to home" onHeld={goHome} />
+          <HoldButton icon="home" label="Back to home" onHeld={goHome} />
           <div className={styles.title}>
             <span className={styles.where}>
               {SUBJECTS.find((subject) => subject.id === skill.subject)?.label}
@@ -111,8 +112,8 @@ export default function PracticeSession({ child, skill, play }: Props) {
             </h1>
           </div>
           <span className={styles.spacer} />
-          {canDraw && question && phase === 'asking' && <IconButton icon="✏️" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
-          <IconButton icon="💡" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
+          {canDraw && question && phase === 'asking' && <IconButton icon="pencil" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
+          <IconButton icon="bulb" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
         </>
       }
       side={state && <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} />}
@@ -122,7 +123,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
         <>
           <Notice role="alert">This skill could not be opened. Go back and try again.</Notice>
           <BigButton size="kid" onClick={goHome}>
-            <span aria-hidden="true">🏠 </span>Back
+            <Icon name="home" />Back
           </BigButton>
         </>
       )}

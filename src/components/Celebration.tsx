@@ -1,3 +1,4 @@
+import Icon from './Icon';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
 import styles from './Celebration.module.css';
@@ -29,18 +30,18 @@ export default function Celebration({ milestone, skillName, onDone, games }: Pro
       <p className={styles.line}>{words.line}</p>
       <p className={styles.skill}>{skillName}</p>
       <BigButton size="kid" onClick={onDone}>
-        <span aria-hidden="true">➡️ </span>
+        <Icon name="next" />
         {milestone === 100 ? 'All done' : 'Keep going'}
       </BigButton>
       {milestone === 100 && games && (
         <CenterRow>
           {games.onPop && (
             <BigButton size="kid" tone="quiet" onClick={games.onPop}>
-              <span aria-hidden="true">🎈 </span>Play Pop
+              <Icon name="balloon" />Play Pop
             </BigButton>
           )}
           <BigButton size="kid" tone="quiet" onClick={games.onPairs}>
-            <span aria-hidden="true">🃏 </span>Play Pairs
+            <Icon name="cards" />Play Pairs
           </BigButton>
         </CenterRow>
       )}
