@@ -155,3 +155,54 @@ describe('B.4 Two-step word problems', () => {
     for (const level of [1, 2, 3] as Level[]) for (const question of all('M-3-B4', level)) expect(question.explanation.steps.length).toBeLessThanOrEqual(4);
   });
 });
+
+describe('C. Multiplication', () => {
+  it('C.1 equal groups: words, then the times sign, then how many in all; never a square, so the swap is wrong', () => {
+    for (const level of [1, 2, 3] as Level[]) for (const question of all('M-3-C1', level)) expect(n(question, 'rows')).not.toBe(n(question, 'cols'));
+    expect(new Set(all('M-3-C1', 1).map((question) => question.facts.ask))).toEqual(new Set(['groupsOf']));
+    expect(new Set(all('M-3-C1', 2).map((question) => question.facts.ask))).toEqual(new Set(['sentence']));
+    expect(types(all('M-3-C1', 3))).toEqual(['numberPad']);
+  });
+
+  it('C.3 to C.5 use only their own tables, the table number on either side, and level 3 mixes them, typed', () => {
+    const tableOf = (question: Question): number[] => [n(question, 'rows'), n(question, 'cols')];
+    const uses = (skillId: string, level: Level, tables: number[]): void => {
+      for (const question of all(skillId, level)) expect(tableOf(question).some((value) => tables.includes(value)), JSON.stringify(question.facts)).toBe(true);
+    };
+    uses('M-3-C3', 1, [2, 10]);
+    uses('M-3-C3', 2, [5]);
+    uses('M-3-C4', 1, [3]);
+    uses('M-3-C4', 2, [4]);
+    uses('M-3-C5', 1, [6, 7]);
+    uses('M-3-C5', 2, [8, 9]);
+    for (const skillId of ['M-3-C3', 'M-3-C4', 'M-3-C5']) expect(types(all(skillId, 3))).toEqual(['numberPad']);
+    // Both orders appear.
+    expect(new Set(all('M-3-C5', 1).map((question) => [6, 7].includes(n(question, 'rows'))))).toEqual(new Set([true, false]));
+  });
+
+  it('C.6 asks for either factor, with an array picture only at level 1', () => {
+    expect(new Set(all('M-3-C6', 2).map((question) => question.facts.blank))).toEqual(new Set(['rows', 'cols']));
+    for (const question of all('M-3-C6', 1)) expect(question.stimulus?.kind).toBe('row');
+    for (const question of all('M-3-C6', 2)) expect(question.stimulus?.kind).toBe('equation');
+  });
+});
+
+describe('D. Division', () => {
+  it('D.1 shares into 2 or 3, then up to 5, always exactly', () => {
+    for (const question of all('M-3-D1', 1)) expect([2, 3]).toContain(n(question, 'by'));
+    for (const level of [1, 2, 3] as Level[]) for (const question of all('M-3-D1', level)) expect(n(question, 'total') % n(question, 'by')).toBe(0);
+  });
+
+  it('D.2 divides by 2, 5, 10, then 3 and 4, then 6 to 9, typed', () => {
+    for (const question of all('M-3-D2', 1)) expect([2, 5, 10]).toContain(n(question, 'by'));
+    for (const question of all('M-3-D2', 2)) expect([3, 4]).toContain(n(question, 'by'));
+    for (const question of all('M-3-D2', 3)) expect([6, 7, 8, 9]).toContain(n(question, 'by'));
+    expect(types(all('M-3-D2', 3))).toEqual(['numberPad']);
+  });
+
+  it('D.3 offers exactly one division of the family, then the missing member, then one fact that does not belong', () => {
+    expect(new Set(all('M-3-D3', 1).map((question) => question.facts.ask))).toEqual(new Set(['inFamily']));
+    expect(new Set(all('M-3-D3', 2).map((question) => question.facts.ask))).toEqual(new Set(['quotient']));
+    for (const question of all('M-3-D3', 3)) expect((question.facts.options as string[]).length).toBe(4);
+  });
+});

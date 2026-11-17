@@ -4,7 +4,7 @@ import type { Question, Say, SayPart } from '../engine/types';
 // signs as their words, a letter on its own as its name. A step it cannot read safely gives null,
 // and the screen falls back to the explanation's own spoken summary.
 
-const SIGNS: Record<string, string> = { '+': 'plus', '=': 'equals' };
+const SIGNS: Record<string, string> = { '+': 'plus', '=': 'equals', '×': 'times', '÷': 'divided by', '−': 'minus' };
 // Before one of these, "a" or "A" is the letter, not the word.
 const LETTER_CUES = new Set(['big', 'small', 'letter', 'letters', 'capital']);
 
@@ -14,7 +14,7 @@ function plural(n: number): SayPart[] {
 }
 
 export function stepSay(step: string): Say | null {
-  if (!/^[A-Za-z0-9 '.,:+=·!?-]+$/.test(step)) return null;
+  if (!/^[A-Za-z0-9 '.,:+=·!?×÷−-]+$/.test(step)) return null;
   const parts: SayPart[] = [];
   let words: string[] = [];
   const flush = (): void => {

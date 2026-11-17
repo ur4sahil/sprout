@@ -1,0 +1,4563 @@
+{
+ "skillId": "M-3-C1",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "rows": 3,
+   "cols": 4,
+   "ask": "groupsOf",
+   "options": [
+    "3 groups of 4",
+    "4 groups of 3",
+    "3 groups of 5"
+   ]
+  },
+  "prompt": {
+   "text": "Which words match the picture?",
+   "speak": [
+    "Which words match the picture?"
+   ]
+  },
+  "stimulus": {
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 4,
+     "layout": "dice"
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 4,
+     "layout": "dice"
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 4,
+     "layout": "dice"
+    }
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "3 groups of 4",
+    "size": "l",
+    "speak": [
+     {
+      "number": 3
+     },
+     "groups of",
+     {
+      "number": 4
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "4 groups of 3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 4
+     },
+     "groups of",
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "3 groups of 5",
+    "size": "l",
+    "speak": [
+     {
+      "number": 3
+     },
+     "groups of",
+     {
+      "number": 5
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "There are",
+    {
+     "number": 3
+    },
+    "groups with",
+    {
+     "number": 4
+    },
+    "in each.",
+    {
+     "number": 3
+    },
+    "groups of",
+    {
+     "number": 4
+    },
+    "is",
+    {
+     "number": 3
+    },
+    "times",
+    {
+     "number": 4
+    },
+    ", which is",
+    {
+     "number": 12
+    },
+    "."
+   ],
+   "steps": [
+    "There are 3 groups with 4 in each.",
+    "Count by 4s: 4, 8, 12.",
+    "3 × 4 = 12."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 4,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 4,
+      "layout": "dice"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎈",
+      "count": 4,
+      "layout": "dice"
+     }
+    ]
+   }
+  },
+  "skillId": "M-3-C1",
+  "level": 1,
+  "seed": 321,
+  "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":4,\"rows\":3}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "groupsOf",
+     "options": [
+      "4 groups of 2",
+      "2 groups of 4",
+      "4 groups of 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 groups of 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "ask": "groupsOf",
+     "options": [
+      "4 groups of 3",
+      "4 groups of 4",
+      "3 groups of 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 groups of 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12.",
+      "4 × 3 = 12."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":3,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "groupsOf",
+     "options": [
+      "4 groups of 3",
+      "2 groups of 4",
+      "4 groups of 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 groups of 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "groupsOf",
+     "options": [
+      "3 groups of 5",
+      "5 groups of 4",
+      "5 groups of 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 groups of 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12, 15.",
+      "5 × 3 = 15."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "groupsOf",
+     "options": [
+      "4 groups of 6",
+      "4 groups of 5",
+      "5 groups of 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 groups of 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":5,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "groupsOf",
+     "options": [
+      "4 groups of 3",
+      "2 groups of 4",
+      "4 groups of 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 groups of 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 4,
+     "ask": "groupsOf",
+     "options": [
+      "5 groups of 5",
+      "5 groups of 4",
+      "4 groups of 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 4 in each.",
+      "Count by 4s: 4, 8, 12, 16, 20.",
+      "5 × 4 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":4,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 4,
+     "ask": "groupsOf",
+     "options": [
+      "2 groups of 4",
+      "4 groups of 2",
+      "2 groups of 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 4 in each.",
+      "Count by 4s: 4, 8.",
+      "2 × 4 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":4,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "groupsOf",
+     "options": [
+      "2 groups of 5",
+      "5 groups of 2",
+      "2 groups of 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 groups of 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 groups of 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "groups of",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 5 in each.",
+      "Count by 5s: 5, 10.",
+      "2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "groupsOf",
+     "options": [
+      "5 groups of 4",
+      "4 groups of 5",
+      "4 groups of 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which words match the picture?",
+     "speak": [
+      "Which words match the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 groups of 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "groups of",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 groups of 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "groups of",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-C1|1|{\"ask\":\"groupsOf\",\"cols\":5,\"rows\":4}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 × 2",
+      "2 × 4",
+      "4 × 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "ask": "sentence",
+     "options": [
+      "4 × 3",
+      "4 × 4",
+      "3 × 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12.",
+      "4 × 3 = 12."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":3,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 × 3",
+      "2 × 4",
+      "4 × 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "sentence",
+     "options": [
+      "3 × 5",
+      "5 × 4",
+      "5 × 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12, 15.",
+      "5 × 3 = 15."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "4 × 6",
+      "4 × 5",
+      "5 × 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":5,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 × 3",
+      "2 × 4",
+      "4 × 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 4,
+     "ask": "sentence",
+     "options": [
+      "5 × 5",
+      "5 × 4",
+      "4 × 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 4 in each.",
+      "Count by 4s: 4, 8, 12, 16, 20.",
+      "5 × 4 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":4,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 4,
+     "ask": "sentence",
+     "options": [
+      "2 × 4",
+      "4 × 2",
+      "2 × 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 4 in each.",
+      "Count by 4s: 4, 8.",
+      "2 × 4 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":4,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "2 × 5",
+      "5 × 2",
+      "2 × 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 5 in each.",
+      "Count by 5s: 5, 10.",
+      "2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "5 × 4",
+      "4 × 5",
+      "4 × 6"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the picture?",
+     "speak": [
+      "Which multiplication matches the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-C1|2|{\"ask\":\"sentence\",\"cols\":5,\"rows\":4}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 12,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12.",
+      "4 × 3 = 12."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":3,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 3,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 3
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", which is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 3 in each.",
+      "Count by 3s: 3, 6, 9, 12, 15.",
+      "5 × 3 = 15."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 3,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":5,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 2,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 2
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 2 in each.",
+      "Count by 2s: 2, 4, 6, 8.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 2,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 4,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 5
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 groups with 4 in each.",
+      "Count by 4s: 4, 8, 12, 16, 20.",
+      "5 × 4 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⚽",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":4,\"rows\":5}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 4,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 4,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 4
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", which is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 4 in each.",
+      "Count by 4s: 4, 8.",
+      "2 × 4 = 8."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎈",
+        "count": 4,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":4,\"rows\":2}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 2
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 groups with 5 in each.",
+      "Count by 5s: 5, 10.",
+      "2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍓",
+       "count": 5,
+       "layout": "dice"
+      }
+     ]
+    },
+    "answer": 20,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "groups with",
+      {
+       "number": 5
+      },
+      "in each.",
+      {
+       "number": 4
+      },
+      "groups of",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", which is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 groups with 5 in each.",
+      "Count by 5s: 5, 10, 15, 20.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍓",
+        "count": 5,
+        "layout": "dice"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C1",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-C1|3|{\"ask\":\"total\",\"cols\":5,\"rows\":4}"
+   }
+  ]
+ }
+}

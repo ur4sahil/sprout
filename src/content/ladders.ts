@@ -28,6 +28,7 @@ export const LADDERS: readonly Ladder[] = [
   { id: 'time', subject: 'math', skillIds: ['M-1-C1', 'M-2-C1'] },
   { id: 'money', subject: 'math', skillIds: ['M-1-C4', 'M-2-C2'] },
   { id: 'fractions', subject: 'math', skillIds: ['M-1-D1', 'M-2-D2'] },
+  { id: 'multiply-divide', subject: 'math', skillIds: [...run(M.G3, 'C', 1, 6), ...run(M.G3, 'D', 1, 3)] },
   { id: 'letters', subject: 'ela', skillIds: [...run(E.PK, 'A', 1, 5), ...run(E.K, 'A', 1, 2)] },
   { id: 'sounds', subject: 'ela', skillIds: [...run(E.PK, 'B', 1, 3), ...run(E.K, 'B', 1, 3), 'E-K-B6'] },
   { id: 'phonics', subject: 'ela', skillIds: ['E-K-B4', 'E-K-B5', 'E-K-B7', ...run(E.G1, 'A', 1, 5)] },

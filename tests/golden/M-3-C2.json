@@ -1,0 +1,3102 @@
+{
+ "skillId": "M-3-C2",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "rows": 5,
+   "cols": 3,
+   "ask": "sentence",
+   "options": [
+    "5 + 3",
+    "5 × 3",
+    "6 × 3"
+   ]
+  },
+  "prompt": {
+   "text": "Which multiplication matches the array?",
+   "speak": [
+    "Which multiplication matches the array?"
+   ]
+  },
+  "stimulus": {
+   "kind": "array",
+   "rows": 5,
+   "cols": 3,
+   "emoji": "🐝"
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "5 + 3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 5
+     },
+     "plus",
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "5 × 3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 5
+     },
+     "times",
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "6 × 3",
+    "size": "l",
+    "speak": [
+     {
+      "number": 6
+     },
+     "times",
+     {
+      "number": 3
+     }
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "There are",
+    {
+     "number": 5
+    },
+    "rows with",
+    {
+     "number": 3
+    },
+    "in each row.",
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 15
+    },
+    "."
+   ],
+   "steps": [
+    "There are 5 rows with 3 in each row.",
+    "5 × 3 = 15."
+   ],
+   "visual": {
+    "kind": "array",
+    "rows": 5,
+    "cols": 3,
+    "emoji": "🐝"
+   }
+  },
+  "skillId": "M-3-C2",
+  "level": 1,
+  "seed": 322,
+  "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":3,\"rows\":5}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 × 2",
+      "5 × 2",
+      "4 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 2,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 2 in each row.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 2,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 3,
+     "ask": "sentence",
+     "options": [
+      "4 × 3",
+      "4 + 3",
+      "5 × 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 3,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 3
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 3 in each row.",
+      "4 × 3 = 12."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 3,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":3,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 + 2",
+      "5 × 2",
+      "4 × 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 2,
+     "emoji": "🍪"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 2 in each row.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 2,
+      "emoji": "🍪"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "sentence",
+     "options": [
+      "6 × 3",
+      "5 + 3",
+      "5 × 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 3,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "rows with",
+      {
+       "number": 3
+      },
+      "in each row.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 rows with 3 in each row.",
+      "5 × 3 = 15."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 3,
+      "emoji": "🚗"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "4 + 5",
+      "4 × 5",
+      "5 × 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 5,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 5 in each row.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🚗"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":5,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "sentence",
+     "options": [
+      "4 + 2",
+      "5 × 2",
+      "4 × 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 2,
+     "emoji": "🐸"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 2 in each row.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 2,
+      "emoji": "🐸"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 4,
+     "ask": "sentence",
+     "options": [
+      "5 + 4",
+      "5 × 4",
+      "6 × 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 4,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "rows with",
+      {
+       "number": 4
+      },
+      "in each row.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 rows with 4 in each row.",
+      "5 × 4 = 20."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 4,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":4,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 4,
+     "ask": "sentence",
+     "options": [
+      "2 × 4",
+      "3 × 4",
+      "2 + 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 4,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "rows with",
+      {
+       "number": 4
+      },
+      "in each row.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 rows with 4 in each row.",
+      "2 × 4 = 8."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 4,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":4,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "2 × 5",
+      "3 × 5",
+      "2 + 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 5,
+     "emoji": "🐟"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 rows with 5 in each row.",
+      "2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 5,
+      "emoji": "🐟"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 5,
+     "ask": "sentence",
+     "options": [
+      "5 × 5",
+      "4 × 5",
+      "4 + 5"
+     ]
+    },
+    "prompt": {
+     "text": "Which multiplication matches the array?",
+     "speak": [
+      "Which multiplication matches the array?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 5,
+     "emoji": "🍓"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 5 in each row.",
+      "4 × 5 = 20."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 5,
+      "emoji": "🍓"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-C2|1|{\"ask\":\"sentence\",\"cols\":5,\"rows\":4}"
+   }
+  ],
+  "2": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 2,
+     "emoji": "⚽"
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 rows with 2 in each row.",
+      "5 × 2 = 10."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 2,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":2,\"rows\":5}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 3,
+     "emoji": "🎈"
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "rows with",
+      {
+       "number": 3
+      },
+      "in each row.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 rows with 3 in each row.",
+      "5 × 3 = 15."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 3,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 2,
+     "emoji": "🍪"
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 5
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 5 rows with 2 in each row.",
+      "5 × 2 = 10."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 2,
+      "emoji": "🍪"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":2,\"rows\":5}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 3,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 3,
+     "emoji": "🚗"
+    },
+    "answer": 18,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "rows with",
+      {
+       "number": 3
+      },
+      "in each row.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "There are 6 rows with 3 in each row.",
+      "6 × 3 = 18."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 6,
+      "cols": 3,
+      "emoji": "🚗"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":3,\"rows\":6}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 3,
+     "cols": 5,
+     "emoji": "⭐"
+    },
+    "answer": 15,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 3
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "."
+     ],
+     "steps": [
+      "There are 3 rows with 5 in each row.",
+      "3 × 5 = 15."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 5,
+      "emoji": "⭐"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":5,\"rows\":3}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 2,
+     "emoji": "🐸"
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 2
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 2 in each row.",
+      "4 × 2 = 8."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 2,
+      "emoji": "🐸"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 5,
+     "emoji": "⚽"
+    },
+    "answer": 30,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 6
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "There are 6 rows with 5 in each row.",
+      "6 × 5 = 30."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 6,
+      "cols": 5,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":5,\"rows\":6}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 5,
+     "emoji": "🎈"
+    },
+    "answer": 10,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "rows with",
+      {
+       "number": 5
+      },
+      "in each row.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 rows with 5 in each row.",
+      "2 × 5 = 10."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 5,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 6,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 6,
+     "emoji": "🐟"
+    },
+    "answer": 12,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 2
+      },
+      "rows with",
+      {
+       "number": 6
+      },
+      "in each row.",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "There are 2 rows with 6 in each row.",
+      "2 × 6 = 12."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 6,
+      "emoji": "🐟"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":6,\"rows\":2}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 6,
+     "ask": "total"
+    },
+    "prompt": {
+     "text": "How many are there in all?",
+     "speak": [
+      "How many are there in all?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 6,
+     "emoji": "🍓"
+    },
+    "answer": 24,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "There are",
+      {
+       "number": 4
+      },
+      "rows with",
+      {
+       "number": 6
+      },
+      "in each row.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "There are 4 rows with 6 in each row.",
+      "4 × 6 = 24."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 4,
+      "cols": 6,
+      "emoji": "🍓"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-C2|2|{\"ask\":\"total\",\"cols\":6,\"rows\":4}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 2,
+     "ask": "turnaround",
+     "options": [
+      "2 × 5",
+      "5 + 2",
+      "5 × 3"
+     ]
+    },
+    "prompt": {
+     "text": "5 × 2 is the same as which?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 2,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 2
+      },
+      "rows of",
+      {
+       "number": 5
+      },
+      "now, and still",
+      {
+       "number": 10
+      },
+      "in all. So",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 2 rows of 5.",
+      "There are still 10 in all.",
+      "So 5 × 2 = 2 × 5."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 5,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":2,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 3,
+     "ask": "turnaround",
+     "options": [
+      "3 × 5",
+      "5 × 4",
+      "5 + 3"
+     ]
+    },
+    "prompt": {
+     "text": "5 × 3 is the same as which?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 3,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 3
+      },
+      "rows of",
+      {
+       "number": 5
+      },
+      "now, and still",
+      {
+       "number": 15
+      },
+      "in all. So",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is the same as",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 3 rows of 5.",
+      "There are still 15 in all.",
+      "So 5 × 3 = 3 × 5."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 5,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":3,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 5,
+     "cols": 2,
+     "ask": "turnaround",
+     "options": [
+      "5 × 3",
+      "5 + 2",
+      "2 × 5"
+     ]
+    },
+    "prompt": {
+     "text": "5 × 2 is the same as which?",
+     "speak": [
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 5,
+     "cols": 2,
+     "emoji": "🍪"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 2
+      },
+      "rows of",
+      {
+       "number": 5
+      },
+      "now, and still",
+      {
+       "number": 10
+      },
+      "in all. So",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 2 rows of 5.",
+      "There are still 10 in all.",
+      "So 5 × 2 = 2 × 5."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 5,
+      "emoji": "🍪"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":2,\"rows\":5}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 3,
+     "ask": "turnaround",
+     "options": [
+      "6 + 3",
+      "6 × 4",
+      "3 × 6"
+     ]
+    },
+    "prompt": {
+     "text": "6 × 3 is the same as which?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 3,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 3
+      },
+      "rows of",
+      {
+       "number": 6
+      },
+      "now, and still",
+      {
+       "number": 18
+      },
+      "in all. So",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is the same as",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 3 rows of 6.",
+      "There are still 18 in all.",
+      "So 6 × 3 = 3 × 6."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 3,
+      "cols": 6,
+      "emoji": "🚗"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":3,\"rows\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 5,
+     "ask": "turnaround",
+     "options": [
+      "5 × 3",
+      "3 × 6",
+      "3 + 5"
+     ]
+    },
+    "prompt": {
+     "text": "3 × 5 is the same as which?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 3,
+     "cols": 5,
+     "emoji": "⭐"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 5
+      },
+      "rows of",
+      {
+       "number": 3
+      },
+      "now, and still",
+      {
+       "number": 15
+      },
+      "in all. So",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 5 rows of 3.",
+      "There are still 15 in all.",
+      "So 3 × 5 = 5 × 3."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 3,
+      "emoji": "⭐"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":5,\"rows\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 2,
+     "ask": "turnaround",
+     "options": [
+      "4 × 3",
+      "4 + 2",
+      "2 × 4"
+     ]
+    },
+    "prompt": {
+     "text": "4 × 2 is the same as which?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 2,
+     "emoji": "🐸"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 2
+      },
+      "rows of",
+      {
+       "number": 4
+      },
+      "now, and still",
+      {
+       "number": 8
+      },
+      "in all. So",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is the same as",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 2 rows of 4.",
+      "There are still 8 in all.",
+      "So 4 × 2 = 2 × 4."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 2,
+      "cols": 4,
+      "emoji": "🐸"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":2,\"rows\":4}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 5,
+     "ask": "turnaround",
+     "options": [
+      "6 × 6",
+      "5 × 6",
+      "6 + 5"
+     ]
+    },
+    "prompt": {
+     "text": "6 × 5 is the same as which?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 5,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 5
+      },
+      "rows of",
+      {
+       "number": 6
+      },
+      "now, and still",
+      {
+       "number": 30
+      },
+      "in all. So",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 5 rows of 6.",
+      "There are still 30 in all.",
+      "So 6 × 5 = 5 × 6."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 6,
+      "emoji": "⚽"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":5,\"rows\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 5,
+     "ask": "turnaround",
+     "options": [
+      "5 × 2",
+      "2 + 5",
+      "2 × 6"
+     ]
+    },
+    "prompt": {
+     "text": "2 × 5 is the same as which?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 5,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 5
+      },
+      "rows of",
+      {
+       "number": 2
+      },
+      "now, and still",
+      {
+       "number": 10
+      },
+      "in all. So",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is the same as",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 5 rows of 2.",
+      "There are still 10 in all.",
+      "So 2 × 5 = 5 × 2."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 5,
+      "cols": 2,
+      "emoji": "🎈"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":5,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 2,
+     "cols": 6,
+     "ask": "turnaround",
+     "options": [
+      "6 × 2",
+      "2 + 6",
+      "2 × 7"
+     ]
+    },
+    "prompt": {
+     "text": "2 × 6 is the same as which?",
+     "speak": [
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 2,
+     "cols": 6,
+     "emoji": "🐟"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 6
+      },
+      "rows of",
+      {
+       "number": 2
+      },
+      "now, and still",
+      {
+       "number": 12
+      },
+      "in all. So",
+      {
+       "number": 2
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is the same as",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 6 rows of 2.",
+      "There are still 12 in all.",
+      "So 2 × 6 = 6 × 2."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 6,
+      "cols": 2,
+      "emoji": "🐟"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":6,\"rows\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 4,
+     "cols": 6,
+     "ask": "turnaround",
+     "options": [
+      "4 + 6",
+      "6 × 4",
+      "4 × 7"
+     ]
+    },
+    "prompt": {
+     "text": "4 × 6 is the same as which?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is the same as which?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 4,
+     "cols": 6,
+     "emoji": "🍓"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Turn the array round. It has",
+      {
+       "number": 6
+      },
+      "rows of",
+      {
+       "number": 4
+      },
+      "now, and still",
+      {
+       "number": 24
+      },
+      "in all. So",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is the same as",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Turn the array round: 6 rows of 4.",
+      "There are still 24 in all.",
+      "So 4 × 6 = 6 × 4."
+     ],
+     "visual": {
+      "kind": "array",
+      "rows": 6,
+      "cols": 4,
+      "emoji": "🍓"
+     }
+    },
+    "skillId": "M-3-C2",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-C2|3|{\"ask\":\"turnaround\",\"cols\":6,\"rows\":4}"
+   }
+  ]
+ }
+}

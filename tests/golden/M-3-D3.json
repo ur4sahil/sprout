@@ -1,0 +1,3872 @@
+{
+ "skillId": "M-3-D3",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "rows": 2,
+   "cols": 6,
+   "ask": "inFamily",
+   "options": [
+    "14 ÷ 2 = 7",
+    "12 ÷ 2 = 7",
+    "12 ÷ 2 = 6"
+   ]
+  },
+  "prompt": {
+   "text": "Which division goes with 2 × 6 = 12?",
+   "speak": [
+    "Which division goes with",
+    {
+     "number": 2
+    },
+    "times",
+    {
+     "number": 6
+    },
+    "equals",
+    {
+     "number": 12
+    },
+    "?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "14 ÷ 2 = 7",
+    "size": "l",
+    "speak": [
+     {
+      "number": 14
+     },
+     "divided by",
+     {
+      "number": 2
+     },
+     "equals",
+     {
+      "number": 7
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "12 ÷ 2 = 7",
+    "size": "l",
+    "speak": [
+     {
+      "number": 12
+     },
+     "divided by",
+     {
+      "number": 2
+     },
+     "equals",
+     {
+      "number": 7
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "12 ÷ 2 = 6",
+    "size": "l",
+    "speak": [
+     {
+      "number": 12
+     },
+     "divided by",
+     {
+      "number": 2
+     },
+     "equals",
+     {
+      "number": 6
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "The numbers",
+    {
+     "number": 2
+    },
+    ",",
+    {
+     "number": 6
+    },
+    "and",
+    {
+     "number": 12
+    },
+    "make a family of four facts. Two times and two divided by, all with the same three numbers."
+   ],
+   "steps": [
+    "The family of 2, 6 and 12:",
+    "2 × 6 = 12, 6 × 2 = 12",
+    "12 ÷ 2 = 6, 12 ÷ 6 = 2"
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "2 × 6 = 12   6 × 2 = 12   12 ÷ 2 = 6   12 ÷ 6 = 2",
+    "size": "m"
+   }
+  },
+  "skillId": "M-3-D3",
+  "level": 1,
+  "seed": 333,
+  "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":6,\"rows\":2}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "ask": "inFamily",
+     "options": [
+      "14 ÷ 7 = 2",
+      "21 ÷ 7 = 3",
+      "14 ÷ 7 = 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 7 × 2 = 14?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21 ÷ 7 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":2,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 4,
+     "ask": "inFamily",
+     "options": [
+      "35 ÷ 7 = 5",
+      "28 ÷ 7 = 5",
+      "28 ÷ 7 = 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 7 × 4 = 28?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 28
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "35 ÷ 7 = 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28 ÷ 7 = 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28 ÷ 7 = 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 28
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 4 and 28:",
+      "7 × 4 = 28, 4 × 7 = 28",
+      "28 ÷ 7 = 4, 28 ÷ 4 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 4 = 28   4 × 7 = 28   28 ÷ 7 = 4   28 ÷ 4 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":4,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "ask": "inFamily",
+     "options": [
+      "21 ÷ 7 = 3",
+      "14 ÷ 7 = 2",
+      "14 ÷ 7 = 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 7 × 2 = 14?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "21 ÷ 7 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":2,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 4,
+     "ask": "inFamily",
+     "options": [
+      "36 ÷ 9 = 5",
+      "45 ÷ 9 = 5",
+      "36 ÷ 9 = 4"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 9 × 4 = 36?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 36
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "36 ÷ 9 = 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "45 ÷ 9 = 5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 45
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36 ÷ 9 = 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 36
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 4 and 36:",
+      "9 × 4 = 36, 4 × 9 = 36",
+      "36 ÷ 9 = 4, 36 ÷ 4 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 4 = 36   4 × 9 = 36   36 ÷ 9 = 4   36 ÷ 4 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":4,\"rows\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 8,
+     "ask": "inFamily",
+     "options": [
+      "63 ÷ 7 = 9",
+      "56 ÷ 7 = 9",
+      "56 ÷ 7 = 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 7 × 8 = 56?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 56
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "63 ÷ 7 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "56 ÷ 7 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 56
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "56 ÷ 7 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 56
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 56
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 8 and 56:",
+      "7 × 8 = 56, 8 × 7 = 56",
+      "56 ÷ 7 = 8, 56 ÷ 8 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 8 = 56   8 × 7 = 56   56 ÷ 7 = 8   56 ÷ 8 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":8,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 2,
+     "ask": "inFamily",
+     "options": [
+      "18 ÷ 6 = 3",
+      "12 ÷ 6 = 2",
+      "12 ÷ 6 = 3"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 6 × 2 = 12?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "18 ÷ 6 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 ÷ 6 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 ÷ 6 = 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 12
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 2 and 12:",
+      "6 × 2 = 12, 2 × 6 = 12",
+      "12 ÷ 6 = 2, 12 ÷ 2 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 2 = 12   2 × 6 = 12   12 ÷ 6 = 2   12 ÷ 2 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":2,\"rows\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 7,
+     "ask": "inFamily",
+     "options": [
+      "72 ÷ 9 = 8",
+      "63 ÷ 9 = 7",
+      "63 ÷ 9 = 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 9 × 7 = 63?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 63
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "72 ÷ 9 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 72
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63 ÷ 9 = 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63 ÷ 9 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 63
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 7 and 63:",
+      "9 × 7 = 63, 7 × 9 = 63",
+      "63 ÷ 9 = 7, 63 ÷ 7 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 7 = 63   7 × 9 = 63   63 ÷ 9 = 7   63 ÷ 7 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":7,\"rows\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 7,
+     "ask": "inFamily",
+     "options": [
+      "24 ÷ 3 = 8",
+      "21 ÷ 3 = 8",
+      "21 ÷ 3 = 7"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 3 × 7 = 21?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 21
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "24 ÷ 3 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 24
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21 ÷ 3 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21 ÷ 3 = 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 21
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 7 and 21:",
+      "3 × 7 = 21, 7 × 3 = 21",
+      "21 ÷ 3 = 7, 21 ÷ 7 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 7 = 21   7 × 3 = 21   21 ÷ 3 = 7   21 ÷ 7 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":7,\"rows\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 8,
+     "ask": "inFamily",
+     "options": [
+      "27 ÷ 3 = 9",
+      "24 ÷ 3 = 9",
+      "24 ÷ 3 = 8"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 3 × 8 = 24?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 24
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "27 ÷ 3 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 27
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "24 ÷ 3 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 24
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "24 ÷ 3 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 24
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 24
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 8 and 24:",
+      "3 × 8 = 24, 8 × 3 = 24",
+      "24 ÷ 3 = 8, 24 ÷ 8 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 8 = 24   8 × 3 = 24   24 ÷ 3 = 8   24 ÷ 8 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":8,\"rows\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 9,
+     "ask": "inFamily",
+     "options": [
+      "54 ÷ 6 = 9",
+      "54 ÷ 6 = 10",
+      "60 ÷ 6 = 10"
+     ]
+    },
+    "prompt": {
+     "text": "Which division goes with 6 × 9 = 54?",
+     "speak": [
+      "Which division goes with",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 54
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "54 ÷ 6 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "54 ÷ 6 = 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60 ÷ 6 = 10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 54
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 9 and 54:",
+      "6 × 9 = 54, 9 × 6 = 54",
+      "54 ÷ 6 = 9, 54 ÷ 9 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 9 = 54   9 × 6 = 54   54 ÷ 6 = 9   54 ÷ 9 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-D3|1|{\"ask\":\"inFamily\",\"cols\":9,\"rows\":6}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "total": 14,
+     "by": 7,
+     "ask": "quotient",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "7 × 2 = 14. So 14 ÷ 7 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ". So",
+      {
+       "number": 14
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      14,
+      "÷",
+      7,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":2,\"rows\":7,\"total\":14}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 4,
+     "total": 28,
+     "by": 7,
+     "ask": "quotient",
+     "options": [
+      4,
+      5,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "7 × 4 = 28. So 28 ÷ 7 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 28
+      },
+      ". So",
+      {
+       "number": 28
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      28,
+      "÷",
+      7,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 28
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 4 and 28:",
+      "7 × 4 = 28, 4 × 7 = 28",
+      "28 ÷ 7 = 4, 28 ÷ 4 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 4 = 28   4 × 7 = 28   28 ÷ 7 = 4   28 ÷ 4 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":4,\"rows\":7,\"total\":28}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "total": 14,
+     "by": 7,
+     "ask": "quotient",
+     "options": [
+      2,
+      3,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "7 × 2 = 14. So 14 ÷ 7 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      ". So",
+      {
+       "number": 14
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      14,
+      "÷",
+      7,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":2,\"rows\":7,\"total\":14}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 4,
+     "total": 36,
+     "by": 9,
+     "ask": "quotient",
+     "options": [
+      4,
+      5,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "9 × 4 = 36. So 36 ÷ 9 equals what?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 36
+      },
+      ". So",
+      {
+       "number": 36
+      },
+      "divided by",
+      {
+       "number": 9
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      36,
+      "÷",
+      9,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 36
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 4 and 36:",
+      "9 × 4 = 36, 4 × 9 = 36",
+      "36 ÷ 9 = 4, 36 ÷ 4 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 4 = 36   4 × 9 = 36   36 ÷ 9 = 4   36 ÷ 4 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":9,\"cols\":4,\"rows\":9,\"total\":36}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 8,
+     "total": 56,
+     "by": 7,
+     "ask": "quotient",
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "7 × 8 = 56. So 56 ÷ 7 equals what?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 56
+      },
+      ". So",
+      {
+       "number": 56
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      56,
+      "÷",
+      7,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 56
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 8 and 56:",
+      "7 × 8 = 56, 8 × 7 = 56",
+      "56 ÷ 7 = 8, 56 ÷ 8 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 8 = 56   8 × 7 = 56   56 ÷ 7 = 8   56 ÷ 8 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":7,\"cols\":8,\"rows\":7,\"total\":56}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 2,
+     "total": 12,
+     "by": 6,
+     "ask": "quotient",
+     "options": [
+      1,
+      2,
+      6
+     ]
+    },
+    "prompt": {
+     "text": "6 × 2 = 12. So 12 ÷ 6 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 12
+      },
+      ". So",
+      {
+       "number": 12
+      },
+      "divided by",
+      {
+       "number": 6
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      12,
+      "÷",
+      6,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 12
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 2 and 12:",
+      "6 × 2 = 12, 2 × 6 = 12",
+      "12 ÷ 6 = 2, 12 ÷ 2 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 2 = 12   2 × 6 = 12   12 ÷ 6 = 2   12 ÷ 2 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":6,\"cols\":2,\"rows\":6,\"total\":12}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 7,
+     "total": 63,
+     "by": 9,
+     "ask": "quotient",
+     "options": [
+      5,
+      7,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "9 × 7 = 63. So 63 ÷ 9 equals what?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 63
+      },
+      ". So",
+      {
+       "number": 63
+      },
+      "divided by",
+      {
+       "number": 9
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      63,
+      "÷",
+      9,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 63
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 7 and 63:",
+      "9 × 7 = 63, 7 × 9 = 63",
+      "63 ÷ 9 = 7, 63 ÷ 7 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 7 = 63   7 × 9 = 63   63 ÷ 9 = 7   63 ÷ 7 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":9,\"cols\":7,\"rows\":9,\"total\":63}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 7,
+     "total": 21,
+     "by": 3,
+     "ask": "quotient",
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "3 × 7 = 21. So 21 ÷ 3 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 21
+      },
+      ". So",
+      {
+       "number": 21
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      21,
+      "÷",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 21
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 7 and 21:",
+      "3 × 7 = 21, 7 × 3 = 21",
+      "21 ÷ 3 = 7, 21 ÷ 7 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 7 = 21   7 × 3 = 21   21 ÷ 3 = 7   21 ÷ 7 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":3,\"cols\":7,\"rows\":3,\"total\":21}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 8,
+     "total": 24,
+     "by": 3,
+     "ask": "quotient",
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "3 × 8 = 24. So 24 ÷ 3 equals what?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 24
+      },
+      ". So",
+      {
+       "number": 24
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      24,
+      "÷",
+      3,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 24
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 8 and 24:",
+      "3 × 8 = 24, 8 × 3 = 24",
+      "24 ÷ 3 = 8, 24 ÷ 8 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 8 = 24   8 × 3 = 24   24 ÷ 3 = 8   24 ÷ 8 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":3,\"cols\":8,\"rows\":3,\"total\":24}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 9,
+     "total": 54,
+     "by": 6,
+     "ask": "quotient",
+     "options": [
+      6,
+      8,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "6 × 9 = 54. So 54 ÷ 6 equals what?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 54
+      },
+      ". So",
+      {
+       "number": 54
+      },
+      "divided by",
+      {
+       "number": 6
+      },
+      "equals what?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      54,
+      "÷",
+      6,
+      "=",
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 54
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 9 and 54:",
+      "6 × 9 = 54, 9 × 6 = 54",
+      "54 ÷ 6 = 9, 54 ÷ 9 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 9 = 54   9 × 6 = 54   54 ÷ 6 = 9   54 ÷ 9 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-D3|2|{\"ask\":\"quotient\",\"by\":6,\"cols\":9,\"rows\":6,\"total\":54}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "ask": "notInFamily",
+     "options": [
+      "7 × 2 = 14",
+      "2 × 7 = 14",
+      "7 × 3 = 21",
+      "14 ÷ 7 = 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 7, 2 and 14?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 × 2 = 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 7 = 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 3 = 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":2,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 4,
+     "ask": "notInFamily",
+     "options": [
+      "7 × 4 = 28",
+      "28 ÷ 7 = 4",
+      "7 × 5 = 35",
+      "4 × 7 = 28"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 7, 4 and 28?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 28
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 × 4 = 28",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 28
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "28 ÷ 7 = 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 28
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 5 = 35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 5
+       },
+       "equals",
+       {
+        "number": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 7 = 28",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 28
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 28
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 4 and 28:",
+      "7 × 4 = 28, 4 × 7 = 28",
+      "28 ÷ 7 = 4, 28 ÷ 4 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 4 = 28   4 × 7 = 28   28 ÷ 7 = 4   28 ÷ 4 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":4,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 2,
+     "ask": "notInFamily",
+     "options": [
+      "14 ÷ 7 = 2",
+      "7 × 3 = 21",
+      "7 × 2 = 14",
+      "2 × 7 = 14"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 7, 2 and 14?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "14 ÷ 7 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 14
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 3 = 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 2 = 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 7 = 14",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 14
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 2 and 14:",
+      "7 × 2 = 14, 2 × 7 = 14",
+      "14 ÷ 7 = 2, 14 ÷ 2 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 2 = 14   2 × 7 = 14   14 ÷ 7 = 2   14 ÷ 2 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":2,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 4,
+     "ask": "notInFamily",
+     "options": [
+      "4 × 9 = 36",
+      "36 ÷ 9 = 4",
+      "9 × 5 = 45",
+      "9 × 4 = 36"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 9, 4 and 36?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 36
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 × 9 = 36",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 36
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36 ÷ 9 = 4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 × 5 = 45",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "times",
+       {
+        "number": 5
+       },
+       "equals",
+       {
+        "number": 45
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 × 4 = 36",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "times",
+       {
+        "number": 4
+       },
+       "equals",
+       {
+        "number": 36
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 4
+      },
+      "and",
+      {
+       "number": 36
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 4 and 36:",
+      "9 × 4 = 36, 4 × 9 = 36",
+      "36 ÷ 9 = 4, 36 ÷ 4 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 4 = 36   4 × 9 = 36   36 ÷ 9 = 4   36 ÷ 4 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":4,\"rows\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 7,
+     "cols": 8,
+     "ask": "notInFamily",
+     "options": [
+      "56 ÷ 7 = 8",
+      "7 × 9 = 63",
+      "8 × 7 = 56",
+      "7 × 8 = 56"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 7, 8 and 56?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 56
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "56 ÷ 7 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 56
+       },
+       "divided by",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 9 = 63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 × 7 = 56",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 56
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 8 = 56",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 56
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 56
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 7, 8 and 56:",
+      "7 × 8 = 56, 8 × 7 = 56",
+      "56 ÷ 7 = 8, 56 ÷ 8 = 7"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "7 × 8 = 56   8 × 7 = 56   56 ÷ 7 = 8   56 ÷ 8 = 7",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":8,\"rows\":7}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 2,
+     "ask": "notInFamily",
+     "options": [
+      "6 × 3 = 18",
+      "2 × 6 = 12",
+      "6 × 2 = 12",
+      "12 ÷ 6 = 2"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 6, 2 and 12?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 12
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 × 3 = 18",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 18
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2 × 6 = 12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       },
+       "times",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 2 = 12",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 2
+       },
+       "equals",
+       {
+        "number": 12
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12 ÷ 6 = 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 12
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 2
+      },
+      "and",
+      {
+       "number": 12
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 2 and 12:",
+      "6 × 2 = 12, 2 × 6 = 12",
+      "12 ÷ 6 = 2, 12 ÷ 2 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 2 = 12   2 × 6 = 12   12 ÷ 6 = 2   12 ÷ 2 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":2,\"rows\":6}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 9,
+     "cols": 7,
+     "ask": "notInFamily",
+     "options": [
+      "9 × 8 = 72",
+      "9 × 7 = 63",
+      "7 × 9 = 63",
+      "63 ÷ 9 = 7"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 9, 7 and 63?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 63
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9 × 8 = 72",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "times",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 72
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9 × 7 = 63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 9 = 63",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 63
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "63 ÷ 9 = 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 63
+       },
+       "divided by",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 9
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 63
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 9, 7 and 63:",
+      "9 × 7 = 63, 7 × 9 = 63",
+      "63 ÷ 9 = 7, 63 ÷ 7 = 9"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "9 × 7 = 63   7 × 9 = 63   63 ÷ 9 = 7   63 ÷ 7 = 9",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":7,\"rows\":9}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 7,
+     "ask": "notInFamily",
+     "options": [
+      "3 × 7 = 21",
+      "3 × 8 = 24",
+      "21 ÷ 3 = 7",
+      "7 × 3 = 21"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 3, 7 and 21?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 21
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 × 7 = 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 7
+       },
+       "equals",
+       {
+        "number": 21
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 8 = 24",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 24
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "21 ÷ 3 = 7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 21
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 × 3 = 21",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 21
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 7
+      },
+      "and",
+      {
+       "number": 21
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 7 and 21:",
+      "3 × 7 = 21, 7 × 3 = 21",
+      "21 ÷ 3 = 7, 21 ÷ 7 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 7 = 21   7 × 3 = 21   21 ÷ 3 = 7   21 ÷ 7 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":7,\"rows\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 3,
+     "cols": 8,
+     "ask": "notInFamily",
+     "options": [
+      "3 × 9 = 27",
+      "8 × 3 = 24",
+      "24 ÷ 3 = 8",
+      "3 × 8 = 24"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 3, 8 and 24?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 24
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 × 9 = 27",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 27
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8 × 3 = 24",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       },
+       "times",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 24
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "24 ÷ 3 = 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 24
+       },
+       "divided by",
+       {
+        "number": 3
+       },
+       "equals",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 8 = 24",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 8
+       },
+       "equals",
+       {
+        "number": 24
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 8
+      },
+      "and",
+      {
+       "number": 24
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 3, 8 and 24:",
+      "3 × 8 = 24, 8 × 3 = 24",
+      "24 ÷ 3 = 8, 24 ÷ 8 = 3"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "3 × 8 = 24   8 × 3 = 24   24 ÷ 3 = 8   24 ÷ 8 = 3",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":8,\"rows\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "rows": 6,
+     "cols": 9,
+     "ask": "notInFamily",
+     "options": [
+      "9 × 6 = 54",
+      "6 × 9 = 54",
+      "6 × 10 = 60",
+      "54 ÷ 6 = 9"
+     ]
+    },
+    "prompt": {
+     "text": "Which one is not in the family of 6, 9 and 54?",
+     "speak": [
+      "Which one is not in the family of",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 54
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9 × 6 = 54",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       },
+       "times",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 9 = 54",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 9
+       },
+       "equals",
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 10 = 60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 10
+       },
+       "equals",
+       {
+        "number": 60
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "54 ÷ 6 = 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       },
+       "divided by",
+       {
+        "number": 6
+       },
+       "equals",
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The numbers",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 9
+      },
+      "and",
+      {
+       "number": 54
+      },
+      "make a family of four facts. Two times and two divided by, all with the same three numbers."
+     ],
+     "steps": [
+      "The family of 6, 9 and 54:",
+      "6 × 9 = 54, 9 × 6 = 54",
+      "54 ÷ 6 = 9, 54 ÷ 9 = 6"
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "6 × 9 = 54   9 × 6 = 54   54 ÷ 6 = 9   54 ÷ 9 = 6",
+      "size": "m"
+     }
+    },
+    "skillId": "M-3-D3",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-D3|3|{\"ask\":\"notInFamily\",\"cols\":9,\"rows\":6}"
+   }
+  ]
+ }
+}

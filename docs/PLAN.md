@@ -1393,6 +1393,20 @@ Added on Nov 17, 2026, with Math grade 3. Compound words are already Grade 1 B.2
 | D.2 | Main idea | RD | choice | Authored bank: pick the best title / pick what it is mostly about |
 | D.3 | Order of events | RD | order | Authored bank: put 3 events in order / 4 events |
 
+### Added on Nov 17, 2026: curriculum gaps (built after Grade 3 Math and Grade 2 Language Arts)
+
+The owner asked whether the app covers what curriculums teach. A check of each skill's Common Core tag against the Common Core lists found these gaps, and he chose to fill them. Rules by level are written when each is built, the same way as the tables above.
+
+**Grade 3 Math, 5 more skills (Grade 3 becomes 32):** times a multiple of 10 (3.NBT.A.3), number patterns in the addition and times tables (3.OA.D.9), line plots with halves and fourths (3.MD.B.4), sorting quadrilaterals (3.G.A.1), shapes cut into equal-area parts (3.G.A.2).
+
+**Math K to 2, about 12 skills:** position words, above, below, beside, next to (K.G.A.1); what can be measured (K.MD.A.1); shapes made from shapes (K.G.B.6, 1.G.A.2); order does not matter, 3 + 5 = 5 + 3 (1.OA.B.3); subtraction as a missing number (1.OA.B.4); count on to add (1.OA.C.5); measure in units, lining up (1.MD.A.2); add up to four numbers (2.NBT.B.6); measure in two units, estimate length, compare lengths (2.MD.A.2 to 2.MD.A.4); line plots (2.MD.D.9); rectangles split into rows and columns of squares (2.G.A.2).
+
+**Reading comprehension K to 2, about 10 skills, from written story and fact banks:** characters and setting (RL.K.3, RL.1.3); retell in order (RL.1.2, RL.2.2); true or false from a story; the main topic of a fact text (RI.1.2, RI.2.2); facts from a short fact text (RI.K.1, RI.1.1); word meaning from the sentence around it (L.2.4.a).
+
+**Harder Reasoning:** each of the 14 puzzles gets difficulty steps by age, and the missing puzzle types of gifted-screening tests are added (verbal analogies, number puzzles, figure matrices), so an able child keeps being stretched.
+
+Not covered, and not planned: writing and speaking, which a tapping app cannot mark; Virginia's own standards, not yet mapped (the `vaSol` field is empty).
+
 ### Reasoning (14 skills, all grades)
 
 These follow the figure-based style of gifted-screening tests. All share the strand RS and use the `shape`, `sequence` and `matrix` visuals. Reasoning skills have grade `all`: one page with no grade tabs, and one awards board.

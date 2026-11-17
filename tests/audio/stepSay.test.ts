@@ -28,6 +28,8 @@ describe('stepSay: a written step, said aloud', () => {
   it('every step of every skill is either read as valid speech, or the whole question falls back', () => {
     let read = 0;
     let fellBack = 0;
+    expect(stepSay('6 × 7 = 42')).toEqual([{ number: 6 }, 'times', { number: 7 }, 'equals', { number: 42 }]);
+    expect(stepSay('42 ÷ 6 = 7')).toEqual([{ number: 42 }, 'divided by', { number: 6 }, 'equals', { number: 7 }]);
     for (const generator of allGenerators()) {
       for (const level of [1, 2, 3]) {
         for (let seed = 1; seed <= 25; seed += 1) {

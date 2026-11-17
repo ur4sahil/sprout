@@ -59,7 +59,7 @@ describe('which check-in home offers', () => {
   it('the ladders hold only skills that are built, in ladder order', () => {
     const ready = new Set(allGenerators().map((generator) => generator.skillId));
     const math = diagnosticLadders('math');
-    expect(math.map((ladder) => ladder.id)).toEqual(['counting', 'comparing', 'add-subtract', 'place-value', 'shapes', 'length', 'patterns', 'data', 'time', 'money', 'fractions']);
+    expect(math.map((ladder) => ladder.id)).toEqual(['counting', 'comparing', 'add-subtract', 'place-value', 'shapes', 'length', 'patterns', 'data', 'time', 'money', 'fractions', 'multiply-divide']);
     // A ladder with no skill built yet is not a ladder yet. Every Language Arts ladder now has at least one.
     expect(diagnosticLadders('ela').map((ladder) => ladder.id)).toEqual(['letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading']);
     for (const ladder of [...math, ...diagnosticLadders('ela')]) for (const skill of ladder.skills) expect(ready.has(skill.id)).toBe(true);
