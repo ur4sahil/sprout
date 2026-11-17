@@ -1,0 +1,3087 @@
+{
+ "skillId": "M-3-B6",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "kind": "groups",
+   "a": 4,
+   "b": 4,
+   "template": 0,
+   "ask": "sign",
+   "options": [
+    "×",
+    "÷"
+   ]
+  },
+  "prompt": {
+   "text": "Mia has 4 boxes. Each box holds 4 bananas. How many bananas are there in all? Which sign would you use?",
+   "speak": [
+    "Mia has",
+    {
+     "number": 4
+    },
+    "boxes. Each box holds",
+    {
+     "number": 4
+    },
+    "bananas. How many bananas are there in all?",
+    "Which sign would you use?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "×",
+    "size": "xl",
+    "speak": [
+     "times"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "÷",
+    "size": "xl",
+    "speak": [
+     "divided by"
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "Equal groups are put together, so multiply.",
+    {
+     "number": 4
+    },
+    "times",
+    {
+     "number": 4
+    },
+    "equals",
+    {
+     "number": 16
+    },
+    "."
+   ],
+   "steps": [
+    "Equal groups are put together, so multiply.",
+    "4 × 4 = 16."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     4,
+     "×",
+     4,
+     "=",
+     16
+    ]
+   }
+  },
+  "skillId": "M-3-B6",
+  "level": 1,
+  "seed": 3106,
+  "key": "M-3-B6|1|{\"a\":4,\"ask\":\"sign\",\"b\":4,\"kind\":\"groups\",\"template\":0}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 54,
+     "b": 6,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe puts 54 balloons into 6 boxes, the same number in each. How many balloons go in each box? Which sign would you use?",
+     "speak": [
+      "Zoe puts",
+      {
+       "number": 54
+      },
+      "balloons into",
+      {
+       "number": 6
+      },
+      "boxes, the same number in each. How many balloons go in each box?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 54
+      },
+      "divided by",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "54 ÷ 6 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       54,
+       "÷",
+       6,
+       "=",
+       9
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-B6|1|{\"a\":54,\"ask\":\"sign\",\"b\":6,\"kind\":\"share\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 24,
+     "b": 4,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia puts 24 balls into 4 boxes, the same number in each. How many balls go in each box? Which sign would you use?",
+     "speak": [
+      "Mia puts",
+      {
+       "number": 24
+      },
+      "balls into",
+      {
+       "number": 4
+      },
+      "boxes, the same number in each. How many balls go in each box?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 24
+      },
+      "divided by",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "24 ÷ 4 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       24,
+       "÷",
+       4,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-B6|1|{\"a\":24,\"ask\":\"sign\",\"b\":4,\"kind\":\"share\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 10,
+     "b": 5,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Max puts 10 flowers into 5 boxes, the same number in each. How many flowers go in each box? Which sign would you use?",
+     "speak": [
+      "Max puts",
+      {
+       "number": 10
+      },
+      "flowers into",
+      {
+       "number": 5
+      },
+      "boxes, the same number in each. How many flowers go in each box?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 10
+      },
+      "divided by",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "10 ÷ 5 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "÷",
+       5,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-B6|1|{\"a\":10,\"ask\":\"sign\",\"b\":5,\"kind\":\"share\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 6,
+     "b": 3,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia shares 6 cookies equally among 3 friends. How many cookies does each friend get? Which sign would you use?",
+     "speak": [
+      "Mia shares",
+      {
+       "number": 6
+      },
+      "cookies equally among",
+      {
+       "number": 3
+      },
+      "friends. How many cookies does each friend get?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 6
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "6 ÷ 3 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "÷",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-B6|1|{\"a\":6,\"ask\":\"sign\",\"b\":3,\"kind\":\"share\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groupsOf",
+     "a": 18,
+     "b": 3,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 18 cookies and puts 3 in each basket. How many baskets does Ava fill? Which sign would you use?",
+     "speak": [
+      "Ava has",
+      {
+       "number": 18
+      },
+      "cookies and puts",
+      {
+       "number": 3
+      },
+      "in each basket. How many baskets does Ava fill?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "We find how many equal groups there are, so divide.",
+      {
+       "number": 18
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "We find how many equal groups there are, so divide.",
+      "18 ÷ 3 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       18,
+       "÷",
+       3,
+       "=",
+       6
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-B6|1|{\"a\":18,\"ask\":\"sign\",\"b\":3,\"kind\":\"groupsOf\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 21,
+     "b": 7,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia puts 21 apples into 7 bags, the same number in each. How many apples go in each bag? Which sign would you use?",
+     "speak": [
+      "Mia puts",
+      {
+       "number": 21
+      },
+      "apples into",
+      {
+       "number": 7
+      },
+      "bags, the same number in each. How many apples go in each bag?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 21
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "21 ÷ 7 = 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       21,
+       "÷",
+       7,
+       "=",
+       3
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-B6|1|{\"a\":21,\"ask\":\"sign\",\"b\":7,\"kind\":\"share\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groups",
+     "a": 9,
+     "b": 7,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe fills 9 boxes with 7 flowers in each. How many flowers is that in all? Which sign would you use?",
+     "speak": [
+      "Zoe fills",
+      {
+       "number": 9
+      },
+      "boxes with",
+      {
+       "number": 7
+      },
+      "flowers in each. How many flowers is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 63
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "9 × 7 = 63."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "×",
+       7,
+       "=",
+       63
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-B6|1|{\"a\":9,\"ask\":\"sign\",\"b\":7,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "array",
+     "a": 4,
+     "b": 7,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "A shop puts flowers on a shelf in 4 rows of 7. How many flowers are on the shelf? Which sign would you use?",
+     "speak": [
+      "A shop puts flowers on a shelf in",
+      {
+       "number": 4
+      },
+      "rows of",
+      {
+       "number": 7
+      },
+      ". How many flowers are on the shelf?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 28
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "4 × 7 = 28."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       7,
+       "=",
+       28
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-B6|1|{\"a\":4,\"ask\":\"sign\",\"b\":7,\"kind\":\"array\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "array",
+     "a": 3,
+     "b": 8,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "A shop puts balls on a shelf in 3 rows of 8. How many balls are on the shelf? Which sign would you use?",
+     "speak": [
+      "A shop puts balls on a shelf in",
+      {
+       "number": 3
+      },
+      "rows of",
+      {
+       "number": 8
+      },
+      ". How many balls are on the shelf?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "3 × 8 = 24."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       8,
+       "=",
+       24
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-B6|1|{\"a\":3,\"ask\":\"sign\",\"b\":8,\"kind\":\"array\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groupsOf",
+     "a": 56,
+     "b": 7,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia has 56 flowers and puts 7 in each bag. How many bags does Mia fill? Which sign would you use?",
+     "speak": [
+      "Mia has",
+      {
+       "number": 56
+      },
+      "flowers and puts",
+      {
+       "number": 7
+      },
+      "in each bag. How many bags does Mia fill?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "We find how many equal groups there are, so divide.",
+      {
+       "number": 56
+      },
+      "divided by",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "We find how many equal groups there are, so divide.",
+      "56 ÷ 7 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       56,
+       "÷",
+       7,
+       "=",
+       8
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-B6|1|{\"a\":56,\"ask\":\"sign\",\"b\":7,\"kind\":\"groupsOf\",\"template\":0}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groups",
+     "a": 6,
+     "b": 9,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe fills 6 boxes with 9 balloons in each. How many balloons is that in all? Which sign would you use?",
+     "speak": [
+      "Zoe fills",
+      {
+       "number": 6
+      },
+      "boxes with",
+      {
+       "number": 9
+      },
+      "balloons in each. How many balloons is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 54
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "6 × 9 = 54."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       9,
+       "=",
+       54
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-B6|2|{\"a\":6,\"ask\":\"sign\",\"b\":9,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groups",
+     "a": 4,
+     "b": 6,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia fills 4 boxes with 6 balls in each. How many balls is that in all? Which sign would you use?",
+     "speak": [
+      "Mia fills",
+      {
+       "number": 4
+      },
+      "boxes with",
+      {
+       "number": 6
+      },
+      "balls in each. How many balls is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "4 × 6 = 24."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       6,
+       "=",
+       24
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-B6|2|{\"a\":4,\"ask\":\"sign\",\"b\":6,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groups",
+     "a": 5,
+     "b": 2,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Max fills 5 boxes with 2 flowers in each. How many flowers is that in all? Which sign would you use?",
+     "speak": [
+      "Max fills",
+      {
+       "number": 5
+      },
+      "boxes with",
+      {
+       "number": 2
+      },
+      "flowers in each. How many flowers is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "5 × 2 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "×",
+       2,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-B6|2|{\"a\":5,\"ask\":\"sign\",\"b\":2,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "share",
+     "a": 6,
+     "b": 3,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia shares 6 cookies equally among 3 friends. How many cookies does each friend get? Which sign would you use?",
+     "speak": [
+      "Mia shares",
+      {
+       "number": 6
+      },
+      "cookies equally among",
+      {
+       "number": 3
+      },
+      "friends. How many cookies does each friend get?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 6
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "6 ÷ 3 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "÷",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-B6|2|{\"a\":6,\"ask\":\"sign\",\"b\":3,\"kind\":\"share\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "array",
+     "a": 3,
+     "b": 6,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Ava lines up cookies in 3 rows, with 6 in each row. How many cookies are there? Which sign would you use?",
+     "speak": [
+      "Ava lines up cookies in",
+      {
+       "number": 3
+      },
+      "rows, with",
+      {
+       "number": 6
+      },
+      "in each row. How many cookies are there?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "3 × 6 = 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       6,
+       "=",
+       18
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-B6|2|{\"a\":3,\"ask\":\"sign\",\"b\":6,\"kind\":\"array\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "groups",
+     "a": 7,
+     "b": 3,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia fills 7 bags with 3 apples in each. How many apples is that in all? Which sign would you use?",
+     "speak": [
+      "Mia fills",
+      {
+       "number": 7
+      },
+      "bags with",
+      {
+       "number": 3
+      },
+      "apples in each. How many apples is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "7 × 3 = 21."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       3,
+       "=",
+       21
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-B6|2|{\"a\":7,\"ask\":\"sign\",\"b\":3,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "join",
+     "a": 59,
+     "b": 30,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe picks 59 flowers in the morning and 30 more after lunch. How many flowers is that in all? Which sign would you use?",
+     "speak": [
+      "Zoe picks",
+      {
+       "number": 59
+      },
+      "flowers in the morning and",
+      {
+       "number": 30
+      },
+      "more after lunch. How many flowers is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 59
+      },
+      "plus",
+      {
+       "number": 30
+      },
+      "equals",
+      {
+       "number": 89
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "59 + 30 = 89."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       59,
+       "+",
+       30,
+       "=",
+       89
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-B6|2|{\"a\":59,\"ask\":\"sign\",\"b\":30,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "join",
+     "a": 26,
+     "b": 20,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Max picks 26 flowers in the morning and 20 more after lunch. How many flowers is that in all? Which sign would you use?",
+     "speak": [
+      "Max picks",
+      {
+       "number": 26
+      },
+      "flowers in the morning and",
+      {
+       "number": 20
+      },
+      "more after lunch. How many flowers is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "equals",
+      {
+       "number": 46
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "26 + 20 = 46."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       26,
+       "+",
+       20,
+       "=",
+       46
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-B6|2|{\"a\":26,\"ask\":\"sign\",\"b\":20,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "join",
+     "a": 18,
+     "b": 16,
+     "template": 1,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Max picks 18 balls in the morning and 16 more after lunch. How many balls is that in all? Which sign would you use?",
+     "speak": [
+      "Max picks",
+      {
+       "number": 18
+      },
+      "balls in the morning and",
+      {
+       "number": 16
+      },
+      "more after lunch. How many balls is that in all?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 34
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "18 + 16 = 34."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       18,
+       "+",
+       16,
+       "=",
+       34
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-B6|2|{\"a\":18,\"ask\":\"sign\",\"b\":16,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "kind": "array",
+     "a": 7,
+     "b": 8,
+     "template": 0,
+     "ask": "sign",
+     "options": [
+      "+",
+      "−",
+      "×",
+      "÷"
+     ]
+    },
+    "prompt": {
+     "text": "Mia lines up flowers in 7 rows, with 8 in each row. How many flowers are there? Which sign would you use?",
+     "speak": [
+      "Mia lines up flowers in",
+      {
+       "number": 7
+      },
+      "rows, with",
+      {
+       "number": 8
+      },
+      "in each row. How many flowers are there?",
+      "Which sign would you use?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "+",
+      "size": "xl",
+      "speak": [
+       "plus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "−",
+      "size": "xl",
+      "speak": [
+       "minus"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "×",
+      "size": "xl",
+      "speak": [
+       "times"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "÷",
+      "size": "xl",
+      "speak": [
+       "divided by"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 56
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "7 × 8 = 56."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       8,
+       "=",
+       56
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-B6|2|{\"a\":7,\"ask\":\"sign\",\"b\":8,\"kind\":\"array\",\"template\":0}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "groups",
+     "a": 6,
+     "b": 9,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "6 − 9",
+      "6 ÷ 9",
+      "6 × 9"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe fills 6 boxes with 9 balloons in each. How many balloons is that in all? Which number sentence solves it?",
+     "speak": [
+      "Zoe fills",
+      {
+       "number": 6
+      },
+      "boxes with",
+      {
+       "number": 9
+      },
+      "balloons in each. How many balloons is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 − 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "minus",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 ÷ 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "divided by",
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 × 9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "times",
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 54
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "6 × 9 = 54."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       9,
+       "=",
+       54
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-B6|3|{\"a\":6,\"ask\":\"sentence\",\"b\":9,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "groups",
+     "a": 4,
+     "b": 6,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "4 ÷ 6",
+      "4 × 6",
+      "4 + 6"
+     ]
+    },
+    "prompt": {
+     "text": "Mia fills 4 boxes with 6 balls in each. How many balls is that in all? Which number sentence solves it?",
+     "speak": [
+      "Mia fills",
+      {
+       "number": 4
+      },
+      "boxes with",
+      {
+       "number": 6
+      },
+      "balls in each. How many balls is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4 ÷ 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "divided by",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "4 × 6 = 24."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       6,
+       "=",
+       24
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-B6|3|{\"a\":4,\"ask\":\"sentence\",\"b\":6,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "groups",
+     "a": 5,
+     "b": 2,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "5 × 2",
+      "5 − 2",
+      "5 + 2"
+     ]
+    },
+    "prompt": {
+     "text": "Max fills 5 boxes with 2 flowers in each. How many flowers is that in all? Which number sentence solves it?",
+     "speak": [
+      "Max fills",
+      {
+       "number": 5
+      },
+      "boxes with",
+      {
+       "number": 2
+      },
+      "flowers in each. How many flowers is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 × 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 − 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "minus",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + 2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "5 × 2 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "×",
+       2,
+       "=",
+       10
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-B6|3|{\"a\":5,\"ask\":\"sentence\",\"b\":2,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "share",
+     "a": 6,
+     "b": 3,
+     "template": 0,
+     "ask": "sentence",
+     "options": [
+      "6 ÷ 3",
+      "6 − 3",
+      "6 + 3"
+     ]
+    },
+    "prompt": {
+     "text": "Mia shares 6 cookies equally among 3 friends. How many cookies does each friend get? Which number sentence solves it?",
+     "speak": [
+      "Mia shares",
+      {
+       "number": 6
+      },
+      "cookies equally among",
+      {
+       "number": 3
+      },
+      "friends. How many cookies does each friend get?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6 ÷ 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "divided by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 − 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "minus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6 + 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       },
+       "plus",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Things are shared out equally, so divide.",
+      {
+       "number": 6
+      },
+      "divided by",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Things are shared out equally, so divide.",
+      "6 ÷ 3 = 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "÷",
+       3,
+       "=",
+       2
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-B6|3|{\"a\":6,\"ask\":\"sentence\",\"b\":3,\"kind\":\"share\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "array",
+     "a": 3,
+     "b": 6,
+     "template": 0,
+     "ask": "sentence",
+     "options": [
+      "3 + 6",
+      "3 × 6",
+      "3 ÷ 6"
+     ]
+    },
+    "prompt": {
+     "text": "Ava lines up cookies in 3 rows, with 6 in each row. How many cookies are there? Which number sentence solves it?",
+     "speak": [
+      "Ava lines up cookies in",
+      {
+       "number": 3
+      },
+      "rows, with",
+      {
+       "number": 6
+      },
+      "in each row. How many cookies are there?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3 + 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "plus",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 × 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3 ÷ 6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       },
+       "divided by",
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "3 × 6 = 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       6,
+       "=",
+       18
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-B6|3|{\"a\":3,\"ask\":\"sentence\",\"b\":6,\"kind\":\"array\",\"template\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "groups",
+     "a": 7,
+     "b": 3,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "7 × 3",
+      "7 ÷ 3",
+      "7 − 3"
+     ]
+    },
+    "prompt": {
+     "text": "Mia fills 7 bags with 3 apples in each. How many apples is that in all? Which number sentence solves it?",
+     "speak": [
+      "Mia fills",
+      {
+       "number": 7
+      },
+      "bags with",
+      {
+       "number": 3
+      },
+      "apples in each. How many apples is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 × 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 ÷ 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "divided by",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 − 3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "minus",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal groups are put together, so multiply.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 21
+      },
+      "."
+     ],
+     "steps": [
+      "Equal groups are put together, so multiply.",
+      "7 × 3 = 21."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       3,
+       "=",
+       21
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-B6|3|{\"a\":7,\"ask\":\"sentence\",\"b\":3,\"kind\":\"groups\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "join",
+     "a": 59,
+     "b": 30,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "59 − 30",
+      "59 × 30",
+      "59 + 30"
+     ]
+    },
+    "prompt": {
+     "text": "Zoe picks 59 flowers in the morning and 30 more after lunch. How many flowers is that in all? Which number sentence solves it?",
+     "speak": [
+      "Zoe picks",
+      {
+       "number": 59
+      },
+      "flowers in the morning and",
+      {
+       "number": 30
+      },
+      "more after lunch. How many flowers is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "59 − 30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 59
+       },
+       "minus",
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "59 × 30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 59
+       },
+       "times",
+       {
+        "number": 30
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "59 + 30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 59
+       },
+       "plus",
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 59
+      },
+      "plus",
+      {
+       "number": 30
+      },
+      "equals",
+      {
+       "number": 89
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "59 + 30 = 89."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       59,
+       "+",
+       30,
+       "=",
+       89
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-B6|3|{\"a\":59,\"ask\":\"sentence\",\"b\":30,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "join",
+     "a": 26,
+     "b": 20,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "26 − 20",
+      "26 ÷ 20",
+      "26 + 20"
+     ]
+    },
+    "prompt": {
+     "text": "Max picks 26 flowers in the morning and 20 more after lunch. How many flowers is that in all? Which number sentence solves it?",
+     "speak": [
+      "Max picks",
+      {
+       "number": 26
+      },
+      "flowers in the morning and",
+      {
+       "number": 20
+      },
+      "more after lunch. How many flowers is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "26 − 20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       },
+       "minus",
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26 ÷ 20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       },
+       "divided by",
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26 + 20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       },
+       "plus",
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 20
+      },
+      "equals",
+      {
+       "number": 46
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "26 + 20 = 46."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       26,
+       "+",
+       20,
+       "=",
+       46
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-B6|3|{\"a\":26,\"ask\":\"sentence\",\"b\":20,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "join",
+     "a": 18,
+     "b": 16,
+     "template": 1,
+     "ask": "sentence",
+     "options": [
+      "18 × 16",
+      "18 ÷ 16",
+      "18 + 16"
+     ]
+    },
+    "prompt": {
+     "text": "Max picks 18 balls in the morning and 16 more after lunch. How many balls is that in all? Which number sentence solves it?",
+     "speak": [
+      "Max picks",
+      {
+       "number": 18
+      },
+      "balls in the morning and",
+      {
+       "number": 16
+      },
+      "more after lunch. How many balls is that in all?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "18 × 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       },
+       "times",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18 ÷ 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       },
+       "divided by",
+       {
+        "number": 16
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "18 + 16",
+      "size": "l",
+      "speak": [
+       {
+        "number": 18
+       },
+       "plus",
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Two amounts are put together, so add.",
+      {
+       "number": 18
+      },
+      "plus",
+      {
+       "number": 16
+      },
+      "equals",
+      {
+       "number": 34
+      },
+      "."
+     ],
+     "steps": [
+      "Two amounts are put together, so add.",
+      "18 + 16 = 34."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       18,
+       "+",
+       16,
+       "=",
+       34
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-B6|3|{\"a\":18,\"ask\":\"sentence\",\"b\":16,\"kind\":\"join\",\"template\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "kind": "array",
+     "a": 7,
+     "b": 8,
+     "template": 0,
+     "ask": "sentence",
+     "options": [
+      "7 × 8",
+      "7 + 8",
+      "7 ÷ 8"
+     ]
+    },
+    "prompt": {
+     "text": "Mia lines up flowers in 7 rows, with 8 in each row. How many flowers are there? Which number sentence solves it?",
+     "speak": [
+      "Mia lines up flowers in",
+      {
+       "number": 7
+      },
+      "rows, with",
+      {
+       "number": 8
+      },
+      "in each row. How many flowers are there?",
+      "Which number sentence solves it?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7 × 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "times",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 + 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "plus",
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7 ÷ 8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       },
+       "divided by",
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Equal rows are put together, so multiply.",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 56
+      },
+      "."
+     ],
+     "steps": [
+      "Equal rows are put together, so multiply.",
+      "7 × 8 = 56."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       8,
+       "=",
+       56
+      ]
+     }
+    },
+    "skillId": "M-3-B6",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-B6|3|{\"a\":7,\"ask\":\"sentence\",\"b\":8,\"kind\":\"array\",\"template\":0}"
+   }
+  ]
+ }
+}

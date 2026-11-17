@@ -1,0 +1,3115 @@
+{
+ "skillId": "M-3-E7",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "exprs": [
+    "1/3",
+    "2/3"
+   ],
+   "ask": "most",
+   "story": 2,
+   "options": [
+    "Zoe",
+    "Max"
+   ]
+  },
+  "prompt": {
+   "text": "The bottles are the same size. Zoe drank 1/3 of a bottle of water. Max drank 2/3 of a bottle of water. Who drank more water?",
+   "speak": [
+    "The bottles are the same size.",
+    "Zoe drank",
+    {
+     "number": 1
+    },
+    "third of a bottle of water.",
+    "Max drank",
+    {
+     "number": 2
+    },
+    "thirds of a bottle of water.",
+    "Who drank more water?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "Zoe",
+    "size": "l",
+    "speak": [
+     "Zoe"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "Max",
+    "size": "l",
+    "speak": [
+     "Max"
+    ]
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    "The parts are the same size, so more parts is more.",
+    "Max",
+    "has",
+    {
+     "number": 2
+    },
+    "thirds",
+    ", the",
+    "most."
+   ],
+   "steps": [
+    "The parts are the same size, so more parts is more.",
+    "Zoe: 1/3. Max: 2/3.",
+    "Max has 2/3, the most."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 3,
+      "shaded": 1,
+      "equal": true
+     },
+     {
+      "kind": "fraction",
+      "shape": "rectangle",
+      "parts": 3,
+      "shaded": 2,
+      "equal": true
+     }
+    ]
+   }
+  },
+  "skillId": "M-3-E7",
+  "level": 1,
+  "seed": 3127,
+  "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"1/3\",\"2/3\"],\"story\":2}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "5/6",
+      "2/6"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Sam",
+      "Max"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Sam painted 5/6 of a fence. Max painted 2/6 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Sam painted",
+      {
+       "number": 5
+      },
+      "sixths of a fence.",
+      "Max painted",
+      {
+       "number": 2
+      },
+      "sixths of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Sam",
+      "has",
+      {
+       "number": 5
+      },
+      "sixths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Sam: 5/6. Max: 2/6.",
+      "Sam has 5/6, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 5,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"5/6\",\"2/6\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/6",
+      "3/6"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Zoe",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Zoe walked 1/6 of a trail. Sam walked 3/6 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Zoe walked",
+      {
+       "number": 1
+      },
+      "sixth of a trail.",
+      "Sam walked",
+      {
+       "number": 3
+      },
+      "sixths of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Sam",
+      "has",
+      {
+       "number": 3
+      },
+      "sixths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Zoe: 1/6. Sam: 3/6.",
+      "Sam has 3/6, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"1/6\",\"3/6\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "4/6"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Max",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Max ate 3/6 of a pizza. Mia ate 4/6 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Max ate",
+      {
+       "number": 3
+      },
+      "sixths of a pizza.",
+      "Mia ate",
+      {
+       "number": 4
+      },
+      "sixths of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Mia",
+      "has",
+      {
+       "number": 4
+      },
+      "sixths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Max: 3/6. Mia: 4/6.",
+      "Mia has 4/6, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 4,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"3/6\",\"4/6\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "7/8",
+      "4/8"
+     ],
+     "ask": "most",
+     "story": 2,
+     "options": [
+      "Mia",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The bottles are the same size. Mia drank 7/8 of a bottle of water. Sam drank 4/8 of a bottle of water. Who drank more water?",
+     "speak": [
+      "The bottles are the same size.",
+      "Mia drank",
+      {
+       "number": 7
+      },
+      "eighths of a bottle of water.",
+      "Sam drank",
+      {
+       "number": 4
+      },
+      "eighths of a bottle of water.",
+      "Who drank more water?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Mia",
+      "has",
+      {
+       "number": 7
+      },
+      "eighths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Mia: 7/8. Sam: 4/8.",
+      "Mia has 7/8, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 7,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 4,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"7/8\",\"4/8\"],\"story\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "5/6"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Max",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Max walked 3/6 of a trail. Sam walked 5/6 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Max walked",
+      {
+       "number": 3
+      },
+      "sixths of a trail.",
+      "Sam walked",
+      {
+       "number": 5
+      },
+      "sixths of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Sam",
+      "has",
+      {
+       "number": 5
+      },
+      "sixths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Max: 3/6. Sam: 5/6.",
+      "Sam has 5/6, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 5,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"3/6\",\"5/6\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/5",
+      "4/5"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Zoe",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Zoe ate 3/5 of a pizza. Mia ate 4/5 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Zoe ate",
+      {
+       "number": 3
+      },
+      "fifths of a pizza.",
+      "Mia ate",
+      {
+       "number": 4
+      },
+      "fifths of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Mia",
+      "has",
+      {
+       "number": 4
+      },
+      "fifths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Zoe: 3/5. Mia: 4/5.",
+      "Mia has 4/5, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 4,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"3/5\",\"4/5\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "2/3",
+      "1/3"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Max",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Max ate 2/3 of a pizza. Sam ate 1/3 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Max ate",
+      {
+       "number": 2
+      },
+      "thirds of a pizza.",
+      "Sam ate",
+      {
+       "number": 1
+      },
+      "third of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Max",
+      "has",
+      {
+       "number": 2
+      },
+      "thirds",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Max: 2/3. Sam: 1/3.",
+      "Max has 2/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"2/3\",\"1/3\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/3",
+      "2/3"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Sam",
+      "Max"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Sam ate 1/3 of a pizza. Max ate 2/3 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Sam ate",
+      {
+       "number": 1
+      },
+      "third of a pizza.",
+      "Max ate",
+      {
+       "number": 2
+      },
+      "thirds of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Max",
+      "has",
+      {
+       "number": 2
+      },
+      "thirds",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Sam: 1/3. Max: 2/3.",
+      "Max has 2/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"1/3\",\"2/3\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/3",
+      "2/3"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Mia",
+      "Zoe"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Mia walked 1/3 of a trail. Zoe walked 2/3 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Mia walked",
+      {
+       "number": 1
+      },
+      "third of a trail.",
+      "Zoe walked",
+      {
+       "number": 2
+      },
+      "thirds of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Zoe",
+      "has",
+      {
+       "number": 2
+      },
+      "thirds",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Mia: 1/3. Zoe: 2/3.",
+      "Zoe has 2/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"1/3\",\"2/3\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/5",
+      "2/5"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Mia",
+      "Max"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Mia walked 1/5 of a trail. Max walked 2/5 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Mia walked",
+      {
+       "number": 1
+      },
+      "fifth of a trail.",
+      "Max walked",
+      {
+       "number": 2
+      },
+      "fifths of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Max",
+      "has",
+      {
+       "number": 2
+      },
+      "fifths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Mia: 1/5. Max: 2/5.",
+      "Max has 2/5, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-E7|1|{\"ask\":\"most\",\"exprs\":[\"1/5\",\"2/5\"],\"story\":3}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "2/8",
+      "2/4"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Max",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Max painted 2/8 of a fence. Sam painted 2/4 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Max painted",
+      {
+       "number": 2
+      },
+      "eighths of a fence.",
+      "Sam painted",
+      {
+       "number": 2
+      },
+      "fourths of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Sam",
+      "has",
+      {
+       "number": 2
+      },
+      "fourths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 2/8. Sam: 2/4.",
+      "Sam has 2/4, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"2/8\",\"2/4\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "3/8"
+     ],
+     "ask": "least",
+     "story": 3,
+     "options": [
+      "Zoe",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Zoe walked 3/6 of a trail. Sam walked 3/8 of a trail. Who walked a shorter way?",
+     "speak": [
+      "The trails are the same length.",
+      "Zoe walked",
+      {
+       "number": 3
+      },
+      "sixths of a trail.",
+      "Sam walked",
+      {
+       "number": 3
+      },
+      "eighths of a trail.",
+      "Who walked a shorter way?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Sam",
+      "has",
+      {
+       "number": 3
+      },
+      "eighths",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe: 3/6. Sam: 3/8.",
+      "Sam has 3/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-E7|2|{\"ask\":\"least\",\"exprs\":[\"3/6\",\"3/8\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "3/8"
+     ],
+     "ask": "least",
+     "story": 0,
+     "options": [
+      "Max",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Max ate 3/6 of a pizza. Mia ate 3/8 of a pizza. Who ate less pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Max ate",
+      {
+       "number": 3
+      },
+      "sixths of a pizza.",
+      "Mia ate",
+      {
+       "number": 3
+      },
+      "eighths of a pizza.",
+      "Who ate less pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia",
+      "has",
+      {
+       "number": 3
+      },
+      "eighths",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 3/6. Mia: 3/8.",
+      "Mia has 3/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-E7|2|{\"ask\":\"least\",\"exprs\":[\"3/6\",\"3/8\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/8",
+      "3/6"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Max",
+      "Leo"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Max walked 3/8 of a trail. Leo walked 3/6 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Max walked",
+      {
+       "number": 3
+      },
+      "eighths of a trail.",
+      "Leo walked",
+      {
+       "number": 3
+      },
+      "sixths of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Leo",
+      "has",
+      {
+       "number": 3
+      },
+      "sixths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 3/8. Leo: 3/6.",
+      "Leo has 3/6, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"3/8\",\"3/6\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "3/5"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Max",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Max walked 3/6 of a trail. Sam walked 3/5 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Max walked",
+      {
+       "number": 3
+      },
+      "sixths of a trail.",
+      "Sam walked",
+      {
+       "number": 3
+      },
+      "fifths of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Sam",
+      "has",
+      {
+       "number": 3
+      },
+      "fifths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 3/6. Sam: 3/5.",
+      "Sam has 3/5, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"3/6\",\"3/5\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "2/6",
+      "2/4"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Leo",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Leo painted 2/6 of a fence. Mia painted 2/4 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Leo painted",
+      {
+       "number": 2
+      },
+      "sixths of a fence.",
+      "Mia painted",
+      {
+       "number": 2
+      },
+      "fourths of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia",
+      "has",
+      {
+       "number": 2
+      },
+      "fourths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Leo: 2/6. Mia: 2/4.",
+      "Mia has 2/4, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"2/6\",\"2/4\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/5",
+      "1/8"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Zoe",
+      "Ava"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Zoe walked 1/5 of a trail. Ava walked 1/8 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Zoe walked",
+      {
+       "number": 1
+      },
+      "fifth of a trail.",
+      "Ava walked",
+      {
+       "number": 1
+      },
+      "eighth of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe",
+      "has",
+      {
+       "number": 1
+      },
+      "fifth",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe: 1/5. Ava: 1/8.",
+      "Zoe has 1/5, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"1/5\",\"1/8\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/8",
+      "1/2"
+     ],
+     "ask": "least",
+     "story": 2,
+     "options": [
+      "Max",
+      "Ava"
+     ]
+    },
+    "prompt": {
+     "text": "The bottles are the same size. Max drank 1/8 of a bottle of water. Ava drank 1/2 of a bottle of water. Who drank less water?",
+     "speak": [
+      "The bottles are the same size.",
+      "Max drank",
+      {
+       "number": 1
+      },
+      "eighth of a bottle of water.",
+      "Ava drank",
+      {
+       "number": 1
+      },
+      "half of a bottle of water.",
+      "Who drank less water?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max",
+      "has",
+      {
+       "number": 1
+      },
+      "eighth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 1/8. Ava: 1/2.",
+      "Max has 1/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-E7|2|{\"ask\":\"least\",\"exprs\":[\"1/8\",\"1/2\"],\"story\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/6",
+      "1/3"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Max",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Max painted 1/6 of a fence. Mia painted 1/3 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Max painted",
+      {
+       "number": 1
+      },
+      "sixth of a fence.",
+      "Mia painted",
+      {
+       "number": 1
+      },
+      "third of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia",
+      "has",
+      {
+       "number": 1
+      },
+      "third",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 1/6. Mia: 1/3.",
+      "Mia has 1/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"1/6\",\"1/3\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "2/4",
+      "2/3"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Ava",
+      "Zoe"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Ava ate 2/4 of a pizza. Zoe ate 2/3 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Ava ate",
+      {
+       "number": 2
+      },
+      "fourths of a pizza.",
+      "Zoe ate",
+      {
+       "number": 2
+      },
+      "thirds of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe",
+      "has",
+      {
+       "number": 2
+      },
+      "thirds",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Ava: 2/4. Zoe: 2/3.",
+      "Zoe has 2/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 2,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-E7|2|{\"ask\":\"most\",\"exprs\":[\"2/4\",\"2/3\"],\"story\":0}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/4",
+      "1/3",
+      "1/2"
+     ],
+     "ask": "least",
+     "story": 1,
+     "options": [
+      "Zoe",
+      "Sam",
+      "Ava"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Zoe painted 1/4 of a fence. Sam painted 1/3 of a fence. Ava painted 1/2 of a fence. Who painted less?",
+     "speak": [
+      "The fences are the same size.",
+      "Zoe painted",
+      {
+       "number": 1
+      },
+      "fourth of a fence.",
+      "Sam painted",
+      {
+       "number": 1
+      },
+      "third of a fence.",
+      "Ava painted",
+      {
+       "number": 1
+      },
+      "half of a fence.",
+      "Who painted less?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe",
+      "has",
+      {
+       "number": 1
+      },
+      "fourth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe: 1/4. Sam: 1/3. Ava: 1/2.",
+      "Zoe has 1/4, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"1/4\",\"1/3\",\"1/2\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/6",
+      "1/2",
+      "1/8"
+     ],
+     "ask": "most",
+     "story": 3,
+     "options": [
+      "Mia",
+      "Leo",
+      "Zoe"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Mia walked 1/6 of a trail. Leo walked 1/2 of a trail. Zoe walked 1/8 of a trail. Who walked farther?",
+     "speak": [
+      "The trails are the same length.",
+      "Mia walked",
+      {
+       "number": 1
+      },
+      "sixth of a trail.",
+      "Leo walked",
+      {
+       "number": 1
+      },
+      "half of a trail.",
+      "Zoe walked",
+      {
+       "number": 1
+      },
+      "eighth of a trail.",
+      "Who walked farther?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Leo",
+      "has",
+      {
+       "number": 1
+      },
+      "half",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia: 1/6. Leo: 1/2. Zoe: 1/8.",
+      "Leo has 1/2, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-E7|3|{\"ask\":\"most\",\"exprs\":[\"1/6\",\"1/2\",\"1/8\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/8",
+      "1/6",
+      "1/3"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Max",
+      "Zoe",
+      "Ava"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Max painted 1/8 of a fence. Zoe painted 1/6 of a fence. Ava painted 1/3 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Max painted",
+      {
+       "number": 1
+      },
+      "eighth of a fence.",
+      "Zoe painted",
+      {
+       "number": 1
+      },
+      "sixth of a fence.",
+      "Ava painted",
+      {
+       "number": 1
+      },
+      "third of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Ava",
+      "has",
+      {
+       "number": 1
+      },
+      "third",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Max: 1/8. Zoe: 1/6. Ava: 1/3.",
+      "Ava has 1/3, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 3,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-E7|3|{\"ask\":\"most\",\"exprs\":[\"1/8\",\"1/6\",\"1/3\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/4",
+      "1/5",
+      "1/8"
+     ],
+     "ask": "least",
+     "story": 3,
+     "options": [
+      "Sam",
+      "Leo",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The trails are the same length. Sam walked 1/4 of a trail. Leo walked 1/5 of a trail. Mia walked 1/8 of a trail. Who walked a shorter way?",
+     "speak": [
+      "The trails are the same length.",
+      "Sam walked",
+      {
+       "number": 1
+      },
+      "fourth of a trail.",
+      "Leo walked",
+      {
+       "number": 1
+      },
+      "fifth of a trail.",
+      "Mia walked",
+      {
+       "number": 1
+      },
+      "eighth of a trail.",
+      "Who walked a shorter way?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia",
+      "has",
+      {
+       "number": 1
+      },
+      "eighth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Sam: 1/4. Leo: 1/5. Mia: 1/8.",
+      "Mia has 1/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"1/4\",\"1/5\",\"1/8\"],\"story\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/6",
+      "3/8",
+      "3/5"
+     ],
+     "ask": "least",
+     "story": 2,
+     "options": [
+      "Zoe",
+      "Mia",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The bottles are the same size. Zoe drank 3/6 of a bottle of water. Mia drank 3/8 of a bottle of water. Sam drank 3/5 of a bottle of water. Who drank less water?",
+     "speak": [
+      "The bottles are the same size.",
+      "Zoe drank",
+      {
+       "number": 3
+      },
+      "sixths of a bottle of water.",
+      "Mia drank",
+      {
+       "number": 3
+      },
+      "eighths of a bottle of water.",
+      "Sam drank",
+      {
+       "number": 3
+      },
+      "fifths of a bottle of water.",
+      "Who drank less water?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Mia",
+      "has",
+      {
+       "number": 3
+      },
+      "eighths",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe: 3/6. Mia: 3/8. Sam: 3/5.",
+      "Mia has 3/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"3/6\",\"3/8\",\"3/5\"],\"story\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/6",
+      "1/8",
+      "1/2"
+     ],
+     "ask": "least",
+     "story": 0,
+     "options": [
+      "Leo",
+      "Sam",
+      "Max"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Leo ate 1/6 of a pizza. Sam ate 1/8 of a pizza. Max ate 1/2 of a pizza. Who ate less pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Leo ate",
+      {
+       "number": 1
+      },
+      "sixth of a pizza.",
+      "Sam ate",
+      {
+       "number": 1
+      },
+      "eighth of a pizza.",
+      "Max ate",
+      {
+       "number": 1
+      },
+      "half of a pizza.",
+      "Who ate less pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Sam",
+      "has",
+      {
+       "number": 1
+      },
+      "eighth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Leo: 1/6. Sam: 1/8. Max: 1/2.",
+      "Sam has 1/8, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 2,
+        "shaded": 1,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"1/6\",\"1/8\",\"1/2\"],\"story\":0}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "1/4",
+      "2/4",
+      "3/4"
+     ],
+     "ask": "least",
+     "story": 1,
+     "options": [
+      "Ava",
+      "Max",
+      "Mia"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Ava painted 1/4 of a fence. Max painted 2/4 of a fence. Mia painted 3/4 of a fence. Who painted less?",
+     "speak": [
+      "The fences are the same size.",
+      "Ava painted",
+      {
+       "number": 1
+      },
+      "fourth of a fence.",
+      "Max painted",
+      {
+       "number": 2
+      },
+      "fourths of a fence.",
+      "Mia painted",
+      {
+       "number": 3
+      },
+      "fourths of a fence.",
+      "Who painted less?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Ava",
+      "has",
+      {
+       "number": 1
+      },
+      "fourth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Ava: 1/4. Max: 2/4. Mia: 3/4.",
+      "Ava has 1/4, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"1/4\",\"2/4\",\"3/4\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "4/6",
+      "1/6",
+      "5/6"
+     ],
+     "ask": "least",
+     "story": 2,
+     "options": [
+      "Max",
+      "Ava",
+      "Zoe"
+     ]
+    },
+    "prompt": {
+     "text": "The bottles are the same size. Max drank 4/6 of a bottle of water. Ava drank 1/6 of a bottle of water. Zoe drank 5/6 of a bottle of water. Who drank less water?",
+     "speak": [
+      "The bottles are the same size.",
+      "Max drank",
+      {
+       "number": 4
+      },
+      "sixths of a bottle of water.",
+      "Ava drank",
+      {
+       "number": 1
+      },
+      "sixth of a bottle of water.",
+      "Zoe drank",
+      {
+       "number": 5
+      },
+      "sixths of a bottle of water.",
+      "Who drank less water?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Ava",
+      "has",
+      {
+       "number": 1
+      },
+      "sixth",
+      ", the",
+      "least."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Max: 4/6. Ava: 1/6. Zoe: 5/6.",
+      "Ava has 1/6, the least."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 4,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 1,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 6,
+        "shaded": 5,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-E7|3|{\"ask\":\"least\",\"exprs\":[\"4/6\",\"1/6\",\"5/6\"],\"story\":2}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "6/8",
+      "2/8",
+      "7/8"
+     ],
+     "ask": "most",
+     "story": 1,
+     "options": [
+      "Max",
+      "Mia",
+      "Sam"
+     ]
+    },
+    "prompt": {
+     "text": "The fences are the same size. Max painted 6/8 of a fence. Mia painted 2/8 of a fence. Sam painted 7/8 of a fence. Who painted more?",
+     "speak": [
+      "The fences are the same size.",
+      "Max painted",
+      {
+       "number": 6
+      },
+      "eighths of a fence.",
+      "Mia painted",
+      {
+       "number": 2
+      },
+      "eighths of a fence.",
+      "Sam painted",
+      {
+       "number": 7
+      },
+      "eighths of a fence.",
+      "Who painted more?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Max",
+      "size": "l",
+      "speak": [
+       "Max"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Mia",
+      "size": "l",
+      "speak": [
+       "Mia"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Sam",
+      "size": "l",
+      "speak": [
+       "Sam"
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "The parts are the same size, so more parts is more.",
+      "Sam",
+      "has",
+      {
+       "number": 7
+      },
+      "eighths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The parts are the same size, so more parts is more.",
+      "Max: 6/8. Mia: 2/8. Sam: 7/8.",
+      "Sam has 7/8, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 6,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 2,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 7,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-E7|3|{\"ask\":\"most\",\"exprs\":[\"6/8\",\"2/8\",\"7/8\"],\"story\":1}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "exprs": [
+      "3/5",
+      "3/4",
+      "3/8"
+     ],
+     "ask": "most",
+     "story": 0,
+     "options": [
+      "Ava",
+      "Zoe",
+      "Leo"
+     ]
+    },
+    "prompt": {
+     "text": "The pizzas are the same size. Ava ate 3/5 of a pizza. Zoe ate 3/4 of a pizza. Leo ate 3/8 of a pizza. Who ate more pizza?",
+     "speak": [
+      "The pizzas are the same size.",
+      "Ava ate",
+      {
+       "number": 3
+      },
+      "fifths of a pizza.",
+      "Zoe ate",
+      {
+       "number": 3
+      },
+      "fourths of a pizza.",
+      "Leo ate",
+      {
+       "number": 3
+      },
+      "eighths of a pizza.",
+      "Who ate more pizza?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Ava",
+      "size": "l",
+      "speak": [
+       "Ava"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Zoe",
+      "size": "l",
+      "speak": [
+       "Zoe"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "Leo",
+      "size": "l",
+      "speak": [
+       "Leo"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Zoe",
+      "has",
+      {
+       "number": 3
+      },
+      "fourths",
+      ", the",
+      "most."
+     ],
+     "steps": [
+      "The top numbers are the same. Fewer parts in the whole means bigger parts, so a smaller bottom number is more.",
+      "Ava: 3/5. Zoe: 3/4. Leo: 3/8.",
+      "Zoe has 3/4, the most."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 5,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 4,
+        "shaded": 3,
+        "equal": true
+       },
+       {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "parts": 8,
+        "shaded": 3,
+        "equal": true
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-E7",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-E7|3|{\"ask\":\"most\",\"exprs\":[\"3/5\",\"3/4\",\"3/8\"],\"story\":0}"
+   }
+  ]
+ }
+}

@@ -1,0 +1,4920 @@
+{
+ "skillId": "M-3-C9",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "facts": {
+   "expr": "8 × 3",
+   "ask": "equal",
+   "emoji": "🍪",
+   "options": [
+    "5 + (3 × 3)",
+    "(5 × 3) + (3 × 4)",
+    "(5 × 3) + (3 × 3)"
+   ]
+  },
+  "prompt": {
+   "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 3?",
+   "speak": [
+    "Split the",
+    {
+     "number": 8
+    },
+    "rows into",
+    {
+     "number": 5
+    },
+    "rows and",
+    {
+     "number": 3
+    },
+    "rows. Which matches",
+    {
+     "number": 8
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "?"
+   ]
+  },
+  "stimulus": {
+   "kind": "array",
+   "rows": 8,
+   "cols": 3,
+   "emoji": "🍪"
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "5 + (3 × 3)",
+    "size": "m",
+    "speak": [
+     {
+      "number": 5
+     },
+     "plus",
+     {
+      "number": 3
+     },
+     "times",
+     {
+      "number": 3
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "(5 × 3) + (3 × 4)",
+    "size": "m",
+    "speak": [
+     {
+      "number": 5
+     },
+     "times",
+     {
+      "number": 3
+     },
+     ", plus",
+     {
+      "number": 3
+     },
+     "times",
+     {
+      "number": 4
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "(5 × 3) + (3 × 3)",
+    "size": "m",
+    "speak": [
+     {
+      "number": 5
+     },
+     "times",
+     {
+      "number": 3
+     },
+     ", plus",
+     {
+      "number": 3
+     },
+     "times",
+     {
+      "number": 3
+     }
+    ]
+   }
+  ],
+  "answerIndex": 2,
+  "explanation": {
+   "speak": [
+    "Split the",
+    {
+     "number": 8
+    },
+    "rows into",
+    {
+     "number": 5
+    },
+    "rows and",
+    {
+     "number": 3
+    },
+    "rows.",
+    {
+     "number": 5
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 15
+    },
+    ".",
+    {
+     "number": 3
+    },
+    "times",
+    {
+     "number": 3
+    },
+    "is",
+    {
+     "number": 9
+    },
+    ". Together they make",
+    {
+     "number": 24
+    },
+    "."
+   ],
+   "steps": [
+    "Split 8 rows into 5 rows and 3 rows.",
+    "5 × 3 = 15. 3 × 3 = 9.",
+    "15 + 9 = 24, so 8 × 3 = 24."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "array",
+      "rows": 5,
+      "cols": 3,
+      "emoji": "🍪"
+     },
+     {
+      "kind": "array",
+      "rows": 3,
+      "cols": 3,
+      "emoji": "🍪"
+     }
+    ]
+   }
+  },
+  "skillId": "M-3-C9",
+  "level": 1,
+  "seed": 3109,
+  "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🍪\",\"expr\":\"8 × 3\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 2",
+     "ask": "equal",
+     "emoji": "🍪",
+     "options": [
+      "(5 × 2) + (3 × 2)",
+      "(5 × 2) + 3",
+      "5 + (3 × 2)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 2?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 2,
+     "emoji": "🍪"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (3 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + 3",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + (3 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Together they make",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 2 = 10. 3 × 2 = 6.",
+      "10 + 6 = 16, so 8 × 2 = 16."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 2,
+        "emoji": "🍪"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 2,
+        "emoji": "🍪"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🍪\",\"expr\":\"8 × 2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 3",
+     "ask": "equal",
+     "emoji": "🎈",
+     "options": [
+      "5 + (3 × 3)",
+      "(5 × 3) + (3 × 3)",
+      "(5 × 3) + 3"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 3?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 3,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 + (3 × 3)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 3) + (3 × 3)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 3) + 3",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       },
+       ", plus",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 9
+      },
+      ". Together they make",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 3 = 15. 3 × 3 = 9.",
+      "15 + 9 = 24, so 8 × 3 = 24."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 3,
+        "emoji": "🎈"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 3,
+        "emoji": "🎈"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🎈\",\"expr\":\"8 × 3\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 2",
+     "ask": "equal",
+     "emoji": "🌸",
+     "options": [
+      "(5 × 2) + (5 × 2)",
+      "(5 × 2) + (3 × 2)",
+      "5 + (3 × 2)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 2?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 2,
+     "emoji": "🌸"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (5 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (3 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + (3 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Together they make",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 2 = 10. 3 × 2 = 6.",
+      "10 + 6 = 16, so 8 × 2 = 16."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 2,
+        "emoji": "🌸"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 2,
+        "emoji": "🌸"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🌸\",\"expr\":\"8 × 2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "9 × 3",
+     "ask": "equal",
+     "emoji": "🚗",
+     "options": [
+      "5 + (4 × 3)",
+      "(5 × 3) + (4 × 4)",
+      "(5 × 3) + (4 × 3)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 9 rows into 5 rows and 4 rows. Which matches 9 × 3?",
+     "speak": [
+      "Split the",
+      {
+       "number": 9
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 4
+      },
+      "rows. Which matches",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 9,
+     "cols": 3,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 + (4 × 3)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 3) + (4 × 4)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       },
+       ", plus",
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 3) + (4 × 3)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 3
+       },
+       ", plus",
+       {
+        "number": 4
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 9
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 4
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". Together they make",
+      {
+       "number": 27
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 rows into 5 rows and 4 rows.",
+      "5 × 3 = 15. 4 × 3 = 12.",
+      "15 + 12 = 27, so 9 × 3 = 27."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 3,
+        "emoji": "🚗"
+       },
+       {
+        "kind": "array",
+        "rows": 4,
+        "cols": 3,
+        "emoji": "🚗"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🚗\",\"expr\":\"9 × 3\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 5",
+     "ask": "equal",
+     "emoji": "🚗",
+     "options": [
+      "(5 × 5) + (5 × 5)",
+      "(5 × 5) + (3 × 5)",
+      "5 + (3 × 5)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 5?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 5,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 5) + (5 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 5) + (3 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5 + (3 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ". Together they make",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 5 = 25. 3 × 5 = 15.",
+      "25 + 15 = 40, so 8 × 5 = 40."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 5,
+        "emoji": "🚗"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 5,
+        "emoji": "🚗"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🚗\",\"expr\":\"8 × 5\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 2",
+     "ask": "equal",
+     "emoji": "⚽",
+     "options": [
+      "(5 × 2) + (5 × 2)",
+      "(5 × 2) + (3 × 3)",
+      "(5 × 2) + (3 × 2)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 2?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 2,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (5 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (3 × 3)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (3 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Together they make",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 2 = 10. 3 × 2 = 6.",
+      "10 + 6 = 16, so 8 × 2 = 16."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 2,
+        "emoji": "⚽"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 2,
+        "emoji": "⚽"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"⚽\",\"expr\":\"8 × 2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "6 × 2",
+     "ask": "equal",
+     "emoji": "🍌",
+     "options": [
+      "(5 × 2) + 1",
+      "(5 × 2) + (1 × 2)",
+      "(5 × 2) + (5 × 2)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 6 rows into 5 rows and 1 rows. Which matches 6 × 2?",
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows. Which matches",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 2,
+     "emoji": "🍌"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 2) + 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (1 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 1
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 2) + (5 × 2)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       },
+       ", plus",
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 2
+      },
+      ". Together they make",
+      {
+       "number": 12
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 rows into 5 rows and 1 rows.",
+      "5 × 2 = 10. 1 × 2 = 2.",
+      "10 + 2 = 12, so 6 × 2 = 12."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 2,
+        "emoji": "🍌"
+       },
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 2,
+        "emoji": "🍌"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🍌\",\"expr\":\"6 × 2\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "6 × 4",
+     "ask": "equal",
+     "emoji": "🎈",
+     "options": [
+      "(5 × 4) + (5 × 4)",
+      "(5 × 4) + (1 × 4)",
+      "(5 × 4) + 1"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 6 rows into 5 rows and 1 rows. Which matches 6 × 4?",
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows. Which matches",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 4,
+     "emoji": "🎈"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 4) + (5 × 4)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       },
+       ", plus",
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 4) + (1 × 4)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       },
+       ", plus",
+       {
+        "number": 1
+       },
+       "times",
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 4) + 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 4
+       },
+       ", plus",
+       {
+        "number": 1
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 4
+      },
+      ". Together they make",
+      {
+       "number": 24
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 rows into 5 rows and 1 rows.",
+      "5 × 4 = 20. 1 × 4 = 4.",
+      "20 + 4 = 24, so 6 × 4 = 24."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 4,
+        "emoji": "🎈"
+       },
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 4,
+        "emoji": "🎈"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🎈\",\"expr\":\"6 × 4\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "6 × 5",
+     "ask": "equal",
+     "emoji": "🚗",
+     "options": [
+      "5 + (1 × 5)",
+      "(5 × 5) + 1",
+      "(5 × 5) + (1 × 5)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 6 rows into 5 rows and 1 rows. Which matches 6 × 5?",
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows. Which matches",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 6,
+     "cols": 5,
+     "emoji": "🚗"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5 + (1 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "plus",
+       {
+        "number": 1
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 5) + 1",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 5) + (1 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 1
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 6
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 1
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 5
+      },
+      ". Together they make",
+      {
+       "number": 30
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 rows into 5 rows and 1 rows.",
+      "5 × 5 = 25. 1 × 5 = 5.",
+      "25 + 5 = 30, so 6 × 5 = 30."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 5,
+        "emoji": "🚗"
+       },
+       {
+        "kind": "array",
+        "rows": 1,
+        "cols": 5,
+        "emoji": "🚗"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"🚗\",\"expr\":\"6 × 5\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 5",
+     "ask": "equal",
+     "emoji": "⚽",
+     "options": [
+      "(5 × 5) + (3 × 6)",
+      "(5 × 5) + 3",
+      "(5 × 5) + (3 × 5)"
+     ]
+    },
+    "prompt": {
+     "text": "Split the 8 rows into 5 rows and 3 rows. Which matches 8 × 5?",
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows. Which matches",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "?"
+     ]
+    },
+    "stimulus": {
+     "kind": "array",
+     "rows": 8,
+     "cols": 5,
+     "emoji": "⚽"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "(5 × 5) + (3 × 6)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 5) + 3",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "(5 × 5) + (3 × 5)",
+      "size": "m",
+      "speak": [
+       {
+        "number": 5
+       },
+       "times",
+       {
+        "number": 5
+       },
+       ", plus",
+       {
+        "number": 3
+       },
+       "times",
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Split the",
+      {
+       "number": 8
+      },
+      "rows into",
+      {
+       "number": 5
+      },
+      "rows and",
+      {
+       "number": 3
+      },
+      "rows.",
+      {
+       "number": 5
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 25
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ". Together they make",
+      {
+       "number": 40
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 rows into 5 rows and 3 rows.",
+      "5 × 5 = 25. 3 × 5 = 15.",
+      "25 + 15 = 40, so 8 × 5 = 40."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "array",
+        "rows": 5,
+        "cols": 5,
+        "emoji": "⚽"
+       },
+       {
+        "kind": "array",
+        "rows": 3,
+        "cols": 5,
+        "emoji": "⚽"
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-C9|1|{\"ask\":\"equal\",\"emoji\":\"⚽\",\"expr\":\"8 × 5\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 6 = (7 × 5) + (7 × □). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", plus",
+      {
+       "number": 7
+      },
+      "times blank",
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      6,
+      "=",
+      "(7",
+      "×",
+      "5)",
+      "+",
+      "(7",
+      "×",
+      "blank",
+      ")"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Together they make",
+      {
+       "number": 42
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "7 × 5 = 35. 7 × 1 = 7.",
+      "35 + 7 = 42, so 7 × 6 = 42."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       6,
+       "=",
+       "(7",
+       "×",
+       "5)",
+       "+",
+       "(7",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7 × 6 = (7 × 5) + (7 × □)",
+     "ask": "missing",
+     "options": [
+      1,
+      6,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "l",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"7 × 6 = (7 × 5) + (7 × □)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "8 × 7 = (8 × □) + (8 × 2). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "times blank, plus",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "×",
+      7,
+      "=",
+      "(8",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(8",
+      "×",
+      "2)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 7
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Together they make",
+      {
+       "number": 56
+      },
+      "."
+     ],
+     "steps": [
+      "Split 7 into 5 and 2.",
+      "8 × 5 = 40. 8 × 2 = 16.",
+      "40 + 16 = 56, so 8 × 7 = 56."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "×",
+       7,
+       "=",
+       "(8",
+       "×",
+       "5)",
+       "+",
+       "(8",
+       "×",
+       "2)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "8 × 7 = (8 × □) + (8 × 2)",
+     "ask": "missing",
+     "options": [
+      4,
+      5,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"8 × 7 = (8 × □) + (8 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "8 × 6 = (8 × □) + (8 × 1). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "times blank, plus",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 1
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "×",
+      6,
+      "=",
+      "(8",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(8",
+      "×",
+      "1)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Together they make",
+      {
+       "number": 48
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "8 × 5 = 40. 8 × 1 = 8.",
+      "40 + 8 = 48, so 8 × 6 = 48."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "×",
+       6,
+       "=",
+       "(8",
+       "×",
+       "5)",
+       "+",
+       "(8",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "8 × 6 = (8 × □) + (8 × 1)",
+     "ask": "missing",
+     "options": [
+      5,
+      6,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "l",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"8 × 6 = (8 × □) + (8 × 1)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "9 × 7 = (9 × □) + (9 × 2). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 9
+      },
+      "times blank, plus",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      9,
+      "×",
+      7,
+      "=",
+      "(9",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(9",
+      "×",
+      "2)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 7
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 45
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ". Together they make",
+      {
+       "number": 63
+      },
+      "."
+     ],
+     "steps": [
+      "Split 7 into 5 and 2.",
+      "9 × 5 = 45. 9 × 2 = 18.",
+      "45 + 18 = 63, so 9 × 7 = 63."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "×",
+       7,
+       "=",
+       "(9",
+       "×",
+       "5)",
+       "+",
+       "(9",
+       "×",
+       "2)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "9 × 7 = (9 × □) + (9 × 2)",
+     "ask": "missing",
+     "options": [
+      5,
+      6,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "l",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"9 × 7 = (9 × □) + (9 × 2)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "7 × 9 = (7 × □) + (7 × 4). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "times blank, plus",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      9,
+      "=",
+      "(7",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(7",
+      "×",
+      "4)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ". Together they make",
+      {
+       "number": 63
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "7 × 5 = 35. 7 × 4 = 28.",
+      "35 + 28 = 63, so 7 × 9 = 63."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       9,
+       "=",
+       "(7",
+       "×",
+       "5)",
+       "+",
+       "(7",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "7 × 9 = (7 × □) + (7 × 4)",
+     "ask": "missing",
+     "options": [
+      3,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "l",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"7 × 9 = (7 × □) + (7 × 4)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 6 = (6 × 5) + (6 × □). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", plus",
+      {
+       "number": 6
+      },
+      "times blank",
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      6,
+      "=",
+      "(6",
+      "×",
+      "5)",
+      "+",
+      "(6",
+      "×",
+      "blank",
+      ")"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Together they make",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "6 × 5 = 30. 6 × 1 = 6.",
+      "30 + 6 = 36, so 6 × 6 = 36."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       6,
+       "=",
+       "(6",
+       "×",
+       "5)",
+       "+",
+       "(6",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "6 × 6 = (6 × 5) + (6 × □)",
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"6 × 6 = (6 × 5) + (6 × □)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "3 × 6 = (3 × 5) + (3 × □). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", plus",
+      {
+       "number": 3
+      },
+      "times blank",
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      6,
+      "=",
+      "(3",
+      "×",
+      "5)",
+      "+",
+      "(3",
+      "×",
+      "blank",
+      ")"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Together they make",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "3 × 5 = 15. 3 × 1 = 3.",
+      "15 + 3 = 18, so 3 × 6 = 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       6,
+       "=",
+       "(3",
+       "×",
+       "5)",
+       "+",
+       "(3",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "3 × 6 = (3 × 5) + (3 × □)",
+     "ask": "missing",
+     "options": [
+      1,
+      2,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "l",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"3 × 6 = (3 × 5) + (3 × □)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 8 = (4 × □) + (4 × 3). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "times blank, plus",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "×",
+      8,
+      "=",
+      "(4",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(4",
+      "×",
+      "3)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". Together they make",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 into 5 and 3.",
+      "4 × 5 = 20. 4 × 3 = 12.",
+      "20 + 12 = 32, so 4 × 8 = 32."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       8,
+       "=",
+       "(4",
+       "×",
+       "5)",
+       "+",
+       "(4",
+       "×",
+       "3)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4 × 8 = (4 × □) + (4 × 3)",
+     "ask": "missing",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"4 × 8 = (4 × □) + (4 × 3)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "4 × 9 = (4 × □) + (4 × 4). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "times blank, plus",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "×",
+      9,
+      "=",
+      "(4",
+      "×",
+      "blank",
+      ")",
+      "+",
+      "(4",
+      "×",
+      "4)"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Together they make",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "4 × 5 = 20. 4 × 4 = 16.",
+      "20 + 16 = 36, so 4 × 9 = 36."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       9,
+       "=",
+       "(4",
+       "×",
+       "5)",
+       "+",
+       "(4",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "4 × 9 = (4 × □) + (4 × 4)",
+     "ask": "missing",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "l",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"4 × 9 = (4 × □) + (4 × 4)\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "6 × 9 = (6 × 5) + (6 × □). What number goes in the blank?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      ", plus",
+      {
+       "number": 6
+      },
+      "times blank",
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      9,
+      "=",
+      "(6",
+      "×",
+      "5)",
+      "+",
+      "(6",
+      "×",
+      "blank",
+      ")"
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ". Together they make",
+      {
+       "number": 54
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "6 × 5 = 30. 6 × 4 = 24.",
+      "30 + 24 = 54, so 6 × 9 = 54."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       9,
+       "=",
+       "(6",
+       "×",
+       "5)",
+       "+",
+       "(6",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "expr": "6 × 9 = (6 × 5) + (6 × □)",
+     "ask": "missing",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "l",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "l",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "l",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-C9",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-C9|2|{\"ask\":\"missing\",\"expr\":\"6 × 9 = (6 × 5) + (6 × □)\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "7 × 6 = 35 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "7 × 6 is 7 × 5 plus 7 × 1, and 7 × 5 = 35. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 1
+      },
+      ", and",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      6,
+      "=",
+      35,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 7,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ". Together they make",
+      {
+       "number": 42
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "7 × 5 = 35. 7 × 1 = 7.",
+      "35 + 7 = 42, so 7 × 6 = 42."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       6,
+       "=",
+       "(7",
+       "×",
+       "5)",
+       "+",
+       "(7",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"7 × 6 = 35 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 7 = 40 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "8 × 7 is 8 × 5 plus 8 × 2, and 8 × 5 = 40. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", and",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "×",
+      7,
+      "=",
+      40,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 16,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 7
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Together they make",
+      {
+       "number": 56
+      },
+      "."
+     ],
+     "steps": [
+      "Split 7 into 5 and 2.",
+      "8 × 5 = 40. 8 × 2 = 16.",
+      "40 + 16 = 56, so 8 × 7 = 56."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "×",
+       7,
+       "=",
+       "(8",
+       "×",
+       "5)",
+       "+",
+       "(8",
+       "×",
+       "2)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"8 × 7 = 40 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "8 × 6 = 40 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "8 × 6 is 8 × 5 plus 8 × 1, and 8 × 5 = 40. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 1
+      },
+      ", and",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      8,
+      "×",
+      6,
+      "=",
+      40,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 8,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ". Together they make",
+      {
+       "number": 48
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "8 × 5 = 40. 8 × 1 = 8.",
+      "40 + 8 = 48, so 8 × 6 = 48."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "×",
+       6,
+       "=",
+       "(8",
+       "×",
+       "5)",
+       "+",
+       "(8",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"8 × 6 = 40 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "9 × 7 = 45 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "9 × 7 is 9 × 5 plus 9 × 2, and 9 × 5 = 45. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 7
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 2
+      },
+      ", and",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 45
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      9,
+      "×",
+      7,
+      "=",
+      45,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 18,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 7
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 45
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "times",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 18
+      },
+      ". Together they make",
+      {
+       "number": 63
+      },
+      "."
+     ],
+     "steps": [
+      "Split 7 into 5 and 2.",
+      "9 × 5 = 45. 9 × 2 = 18.",
+      "45 + 18 = 63, so 9 × 7 = 63."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "×",
+       7,
+       "=",
+       "(9",
+       "×",
+       "5)",
+       "+",
+       "(9",
+       "×",
+       "2)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"9 × 7 = 45 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "7 × 9 = 35 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "7 × 9 is 7 × 5 plus 7 × 4, and 7 × 5 = 35. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", and",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      7,
+      "×",
+      9,
+      "=",
+      35,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 28,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 35
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 28
+      },
+      ". Together they make",
+      {
+       "number": 63
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "7 × 5 = 35. 7 × 4 = 28.",
+      "35 + 28 = 63, so 7 × 9 = 63."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "×",
+       9,
+       "=",
+       "(7",
+       "×",
+       "5)",
+       "+",
+       "(7",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"7 × 9 = 35 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "6 × 6 = 30 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "6 × 6 is 6 × 5 plus 6 × 1, and 6 × 5 = 30. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 1
+      },
+      ", and",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      6,
+      "=",
+      30,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 6,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ". Together they make",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "6 × 5 = 30. 6 × 1 = 6.",
+      "30 + 6 = 36, so 6 × 6 = 36."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       6,
+       "=",
+       "(6",
+       "×",
+       "5)",
+       "+",
+       "(6",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"6 × 6 = 30 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "3 × 6 = 15 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "3 × 6 is 3 × 5 plus 3 × 1, and 3 × 5 = 15. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 6
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 1
+      },
+      ", and",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      3,
+      "×",
+      6,
+      "=",
+      15,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 3,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 6
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "times",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 3
+      },
+      ". Together they make",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Split 6 into 5 and 1.",
+      "3 × 5 = 15. 3 × 1 = 3.",
+      "15 + 3 = 18, so 3 × 6 = 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       3,
+       "×",
+       6,
+       "=",
+       "(3",
+       "×",
+       "5)",
+       "+",
+       "(3",
+       "×",
+       "1)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"3 × 6 = 15 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "4 × 8 = 20 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "4 × 8 is 4 × 5 plus 4 × 3, and 4 × 5 = 20. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      ", and",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "×",
+      8,
+      "=",
+      20,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 12,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 8
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ". Together they make",
+      {
+       "number": 32
+      },
+      "."
+     ],
+     "steps": [
+      "Split 8 into 5 and 3.",
+      "4 × 5 = 20. 4 × 3 = 12.",
+      "20 + 12 = 32, so 4 × 8 = 32."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       8,
+       "=",
+       "(4",
+       "×",
+       "5)",
+       "+",
+       "(4",
+       "×",
+       "3)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"4 × 8 = 20 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "4 × 9 = 20 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "4 × 9 is 4 × 5 plus 4 × 4, and 4 × 5 = 20. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", and",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      4,
+      "×",
+      9,
+      "=",
+      20,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 16,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 20
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 16
+      },
+      ". Together they make",
+      {
+       "number": 36
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "4 × 5 = 20. 4 × 4 = 16.",
+      "20 + 16 = 36, so 4 × 9 = 36."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "×",
+       9,
+       "=",
+       "(4",
+       "×",
+       "5)",
+       "+",
+       "(4",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"4 × 9 = 20 + □\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "expr": "6 × 9 = 30 + □",
+     "ask": "missing"
+    },
+    "prompt": {
+     "text": "6 × 9 is 6 × 5 plus 6 × 4, and 6 × 5 = 30. What number goes in the blank?",
+     "speak": [
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 4
+      },
+      ", and",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ". What number goes in the blank?"
+     ]
+    },
+    "stimulus": {
+     "kind": "equation",
+     "parts": [
+      6,
+      "×",
+      9,
+      "=",
+      30,
+      "+",
+      "blank"
+     ]
+    },
+    "answer": 24,
+    "maxDigits": 2,
+    "explanation": {
+     "speak": [
+      "Split",
+      {
+       "number": 9
+      },
+      "into",
+      {
+       "number": 5
+      },
+      "and",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 30
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "times",
+      {
+       "number": 4
+      },
+      "is",
+      {
+       "number": 24
+      },
+      ". Together they make",
+      {
+       "number": 54
+      },
+      "."
+     ],
+     "steps": [
+      "Split 9 into 5 and 4.",
+      "6 × 5 = 30. 6 × 4 = 24.",
+      "30 + 24 = 54, so 6 × 9 = 54."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "×",
+       9,
+       "=",
+       "(6",
+       "×",
+       "5)",
+       "+",
+       "(6",
+       "×",
+       "4)"
+      ]
+     }
+    },
+    "skillId": "M-3-C9",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-C9|3|{\"ask\":\"missing\",\"expr\":\"6 × 9 = 30 + □\"}"
+   }
+  ]
+ }
+}

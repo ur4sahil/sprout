@@ -1,0 +1,4471 @@
+{
+ "skillId": "M-3-F10",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "prompt": {
+   "text": "How many minutes long is Library?",
+   "speak": [
+    "How many minutes long is Library?"
+   ]
+  },
+  "stimulus": {
+   "kind": "text",
+   "value": "Library 9:55 to 10:50. Gym 10:50 to 11:25. Art 11:30 to 12:10.",
+   "size": "m",
+   "speak": [
+    "Library,",
+    {
+     "time": {
+      "hour": 9,
+      "minute": 55
+     }
+    },
+    "to",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 50
+     }
+    },
+    ".",
+    "Gym,",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 50
+     }
+    },
+    "to",
+    {
+     "time": {
+      "hour": 11,
+      "minute": 25
+     }
+    },
+    ".",
+    "Art,",
+    {
+     "time": {
+      "hour": 11,
+      "minute": 30
+     }
+    },
+    "to",
+    {
+     "time": {
+      "hour": 12,
+      "minute": 10
+     }
+    },
+    "."
+   ]
+  },
+  "explanation": {
+   "speak": [
+    "From",
+    {
+     "time": {
+      "hour": 9,
+      "minute": 55
+     }
+    },
+    "to",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 0
+     }
+    },
+    "is",
+    {
+     "number": 5
+    },
+    "minutes. Then",
+    {
+     "number": 50
+    },
+    "more minutes to",
+    {
+     "time": {
+      "hour": 10,
+      "minute": 50
+     }
+    },
+    ". That is",
+    {
+     "number": 55
+    },
+    "minutes."
+   ],
+   "steps": [
+    "9:55 to 10:00 is 5 minutes.",
+    "10:00 to 10:50 is 50 minutes.",
+    "5 + 50 = 55 minutes long."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 55
+     },
+     {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 50
+     }
+    ]
+   }
+  },
+  "type": "choice",
+  "facts": {
+   "hour": 9,
+   "minute": 55,
+   "endHour": 10,
+   "endMinute": 50,
+   "ask": "minutes",
+   "plan": "Library 9:55-10:50, Gym 10:50-11:25, Art 11:30-12:10",
+   "pick": 0,
+   "options": [
+    55,
+    60,
+    65
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "55",
+    "size": "l",
+    "speak": [
+     {
+      "number": 55
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "60",
+    "size": "l",
+    "speak": [
+     {
+      "number": 60
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "65",
+    "size": "l",
+    "speak": [
+     {
+      "number": 65
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-3-F10",
+  "level": 1,
+  "seed": 3140,
+  "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":50,\"hour\":9,\"minute\":55,\"pick\":0,\"plan\":\"Library 9:55-10:50, Gym 10:50-11:25, Art 11:30-12:10\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Music?",
+     "speak": [
+      "How many minutes long is Music?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Music 9:40 to 10:35. Art 10:40 to 11:15. Library 11:15 to 11:50.",
+     "size": "m",
+     "speak": [
+      "Music,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 35
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "minutes. Then",
+      {
+       "number": 35
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:40 to 10:00 is 20 minutes.",
+      "10:00 to 10:35 is 35 minutes.",
+      "20 + 35 = 55 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 40
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 40,
+     "endHour": 10,
+     "endMinute": 35,
+     "ask": "minutes",
+     "plan": "Music 9:40-10:35, Art 10:40-11:15, Library 11:15-11:50",
+     "pick": 0,
+     "options": [
+      50,
+      55,
+      60
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "50",
+      "size": "l",
+      "speak": [
+       {
+        "number": 50
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55",
+      "size": "l",
+      "speak": [
+       {
+        "number": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "60",
+      "size": "l",
+      "speak": [
+       {
+        "number": 60
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":35,\"hour\":9,\"minute\":40,\"pick\":0,\"plan\":\"Music 9:40-10:35, Art 10:40-11:15, Library 11:15-11:50\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Spelling?",
+     "speak": [
+      "How many minutes long is Spelling?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 8:50 to 9:10. Reading 9:25 to 9:50. Math 9:55 to 10:45.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      ".",
+      "Reading,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ".",
+      "Math,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 45
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "minutes. Then",
+      {
+       "number": 10
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      ". That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "8:50 to 9:00 is 10 minutes.",
+      "9:00 to 9:10 is 10 minutes.",
+      "10 + 10 = 20 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 50
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 10
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 8,
+     "minute": 50,
+     "endHour": 9,
+     "endMinute": 10,
+     "ask": "minutes",
+     "plan": "Spelling 8:50-9:10, Reading 9:25-9:50, Math 9:55-10:45",
+     "pick": 0,
+     "options": [
+      10,
+      19,
+      20
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "l",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":10,\"hour\":8,\"minute\":50,\"pick\":0,\"plan\":\"Spelling 8:50-9:10, Reading 9:25-9:50, Math 9:55-10:45\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Art?",
+     "speak": [
+      "How many minutes long is Art?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 8:05 to 8:45. Spelling 8:45 to 9:05. Art 9:15 to 9:50.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      ".",
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 5
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 35
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 9:15 to 9:50.",
+      "That is 35 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "endHour": 9,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Math 8:05-8:45, Spelling 8:45-9:05, Art 9:15-9:50",
+     "pick": 2,
+     "options": [
+      35,
+      36,
+      40
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "36",
+      "size": "l",
+      "speak": [
+       {
+        "number": 36
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":50,\"hour\":9,\"minute\":15,\"pick\":2,\"plan\":\"Math 8:05-8:45, Spelling 8:45-9:05, Art 9:15-9:50\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Gym?",
+     "speak": [
+      "How many minutes long is Gym?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Library 10:15 to 11:00. Science 11:15 to 11:45. Gym 11:55 to 12:50.",
+     "size": "m",
+     "speak": [
+      "Library,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 45
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "minutes. Then",
+      {
+       "number": 50
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "11:55 to 12:00 is 5 minutes.",
+      "12:00 to 12:50 is 50 minutes.",
+      "5 + 50 = 55 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 55
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 11,
+     "minute": 55,
+     "endHour": 12,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Library 10:15-11:00, Science 11:15-11:45, Gym 11:55-12:50",
+     "pick": 2,
+     "options": [
+      54,
+      55,
+      56
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "54",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55",
+      "size": "l",
+      "speak": [
+       {
+        "number": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "56",
+      "size": "l",
+      "speak": [
+       {
+        "number": 56
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":50,\"hour\":11,\"minute\":55,\"pick\":2,\"plan\":\"Library 10:15-11:00, Science 11:15-11:45, Gym 11:55-12:50\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Spelling?",
+     "speak": [
+      "How many minutes long is Spelling?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 9:25 to 9:50. Music 10:05 to 10:50. Library 11:00 to 11:20.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ".",
+      "Music,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 50
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 20
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 9:25 to 9:50.",
+      "That is 25 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 25
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 25,
+     "endHour": 9,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Spelling 9:25-9:50, Music 10:05-10:50, Library 11:00-11:20",
+     "pick": 0,
+     "options": [
+      15,
+      20,
+      25
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":50,\"hour\":9,\"minute\":25,\"pick\":0,\"plan\":\"Spelling 9:25-9:50, Music 10:05-10:50, Library 11:00-11:20\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Library?",
+     "speak": [
+      "How many minutes long is Library?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 10:25 to 10:50. Gym 11:05 to 11:40. Library 11:40 to 12:00.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 50
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      ". That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 11:40 to 12:00.",
+      "That is 20 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 40
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 11,
+     "minute": 40,
+     "endHour": 12,
+     "endMinute": 0,
+     "ask": "minutes",
+     "plan": "Math 10:25-10:50, Gym 11:05-11:40, Library 11:40-12:00",
+     "pick": 2,
+     "options": [
+      10,
+      20,
+      30
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "l",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":0,\"hour\":11,\"minute\":40,\"pick\":2,\"plan\":\"Math 10:25-10:50, Gym 11:05-11:40, Library 11:40-12:00\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Library?",
+     "speak": [
+      "How many minutes long is Library?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 8:45 to 9:30. Library 9:35 to 10:00. Art 10:15 to 10:55.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 55
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ". That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 9:35 to 10:00.",
+      "That is 25 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 35
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 35,
+     "endHour": 10,
+     "endMinute": 0,
+     "ask": "minutes",
+     "plan": "Spelling 8:45-9:30, Library 9:35-10:00, Art 10:15-10:55",
+     "pick": 1,
+     "options": [
+      25,
+      26,
+      30
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "26",
+      "size": "l",
+      "speak": [
+       {
+        "number": 26
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "30",
+      "size": "l",
+      "speak": [
+       {
+        "number": 30
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":0,\"hour\":9,\"minute\":35,\"pick\":1,\"plan\":\"Spelling 8:45-9:30, Library 9:35-10:00, Art 10:15-10:55\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Gym?",
+     "speak": [
+      "How many minutes long is Gym?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Reading 8:45 to 9:05. Library 9:15 to 9:35. Gym 9:45 to 10:10.",
+     "size": "m",
+     "speak": [
+      "Reading,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 5
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 10
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes. Then",
+      {
+       "number": 10
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 10
+       }
+      },
+      ". That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:45 to 10:00 is 15 minutes.",
+      "10:00 to 10:10 is 10 minutes.",
+      "15 + 10 = 25 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 45
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 10
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 45,
+     "endHour": 10,
+     "endMinute": 10,
+     "ask": "minutes",
+     "plan": "Reading 8:45-9:05, Library 9:15-9:35, Gym 9:45-10:10",
+     "pick": 2,
+     "options": [
+      15,
+      20,
+      25
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "15",
+      "size": "l",
+      "speak": [
+       {
+        "number": 15
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "20",
+      "size": "l",
+      "speak": [
+       {
+        "number": 20
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "l",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":10,\"hour\":9,\"minute\":45,\"pick\":2,\"plan\":\"Reading 8:45-9:05, Library 9:15-9:35, Gym 9:45-10:10\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Science?",
+     "speak": [
+      "How many minutes long is Science?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 10:00 to 10:45. Library 10:55 to 11:35. Science 11:40 to 12:35.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 45
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 35
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "minutes. Then",
+      {
+       "number": 35
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "11:40 to 12:00 is 20 minutes.",
+      "12:00 to 12:35 is 35 minutes.",
+      "20 + 35 = 55 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 40
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 11,
+     "minute": 40,
+     "endHour": 12,
+     "endMinute": 35,
+     "ask": "minutes",
+     "plan": "Math 10:00-10:45, Library 10:55-11:35, Science 11:40-12:35",
+     "pick": 2,
+     "options": [
+      54,
+      55,
+      56
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "54",
+      "size": "l",
+      "speak": [
+       {
+        "number": 54
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "55",
+      "size": "l",
+      "speak": [
+       {
+        "number": 55
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "56",
+      "size": "l",
+      "speak": [
+       {
+        "number": 56
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":35,\"hour\":11,\"minute\":40,\"pick\":2,\"plan\":\"Math 10:00-10:45, Library 10:55-11:35, Science 11:40-12:35\"}"
+   },
+   {
+    "mode": "look",
+    "prompt": {
+     "text": "How many minutes long is Science?",
+     "speak": [
+      "How many minutes long is Science?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Music 8:00 to 8:55. Reading 9:10 to 9:35. Science 9:40 to 10:15.",
+     "size": "m",
+     "speak": [
+      "Music,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 55
+       }
+      },
+      ".",
+      "Reading,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "."
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "minutes. Then",
+      {
+       "number": 15
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      ". That is",
+      {
+       "number": 35
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:40 to 10:00 is 20 minutes.",
+      "10:00 to 10:15 is 15 minutes.",
+      "20 + 15 = 35 minutes long."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 40
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 15
+       }
+      ]
+     }
+    },
+    "type": "choice",
+    "facts": {
+     "hour": 9,
+     "minute": 40,
+     "endHour": 10,
+     "endMinute": 15,
+     "ask": "minutes",
+     "plan": "Music 8:00-8:55, Reading 9:10-9:35, Science 9:40-10:15",
+     "pick": 2,
+     "options": [
+      35,
+      40,
+      45
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "35",
+      "size": "l",
+      "speak": [
+       {
+        "number": 35
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "40",
+      "size": "l",
+      "speak": [
+       {
+        "number": 40
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "45",
+      "size": "l",
+      "speak": [
+       {
+        "number": 45
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-3-F10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-3-F10|1|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":15,\"hour\":9,\"minute\":40,\"pick\":2,\"plan\":\"Music 8:00-8:55, Reading 9:10-9:35, Science 9:40-10:15\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 0,
+     "plus": 35,
+     "ask": "end",
+     "name": "Math",
+     "options": [
+      "9:35",
+      "8:35",
+      "8:25"
+     ]
+    },
+    "prompt": {
+     "text": "Math starts at 8:00 and lasts 35 minutes. What time does it end?",
+     "speak": [
+      "Math starts at",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "and lasts",
+      {
+       "number": 35
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 8,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:25",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 25
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 35
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 8:00 to 8:35.",
+      "Math ends at 8:35."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":8,\"minute\":0,\"name\":\"Math\",\"plus\":35}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "plus": 25,
+     "ask": "end",
+     "name": "Spelling",
+     "options": [
+      "9:40",
+      "9:50",
+      "10:40"
+     ]
+    },
+    "prompt": {
+     "text": "Spelling starts at 9:15 and lasts 25 minutes. What time does it end?",
+     "speak": [
+      "Spelling starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "and lasts",
+      {
+       "number": 25
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 40
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:50",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 50
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 40
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      ". That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 9:15 to 9:40.",
+      "Spelling ends at 9:40."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":9,\"minute\":15,\"name\":\"Spelling\",\"plus\":25}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 0,
+     "plus": 35,
+     "ask": "end",
+     "name": "Reading",
+     "options": [
+      "10:35",
+      "9:45",
+      "9:35"
+     ]
+    },
+    "prompt": {
+     "text": "Reading starts at 9:00 and lasts 35 minutes. What time does it end?",
+     "speak": [
+      "Reading starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "and lasts",
+      {
+       "number": 35
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:45",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 45
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 35
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 35
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 9:00 to 9:35.",
+      "Reading ends at 9:35."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":9,\"minute\":0,\"name\":\"Reading\",\"plus\":35}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 12,
+     "minute": 15,
+     "plus": 20,
+     "ask": "end",
+     "name": "Reading",
+     "options": [
+      "12:35",
+      "1:35",
+      "11:35"
+     ]
+    },
+    "prompt": {
+     "text": "Reading starts at 12:15 and lasts 20 minutes. What time does it end?",
+     "speak": [
+      "Reading starts at",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      "and lasts",
+      {
+       "number": 20
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 12,
+     "minute": 15
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "12:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 35
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:35",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 35
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 12:15 to 12:35.",
+      "Reading ends at 12:35."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":12,\"minute\":15,\"name\":\"Reading\",\"plus\":20}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 45,
+     "plus": 20,
+     "ask": "end",
+     "name": "Spelling",
+     "options": [
+      "10:05",
+      "11:05",
+      "9:05"
+     ]
+    },
+    "prompt": {
+     "text": "Spelling starts at 9:45 and lasts 20 minutes. What time does it end?",
+     "speak": [
+      "Spelling starts at",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "and lasts",
+      {
+       "number": 20
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 9,
+     "minute": 45
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 10,
+         "minute": 5
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 11,
+         "minute": 5
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 5
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes. Then",
+      {
+       "number": 5
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 5
+       }
+      },
+      ". That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:45 to 10:00 is 15 minutes.",
+      "10:00 to 10:05 is 5 minutes.",
+      "Spelling ends at 10:05."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 45
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 5
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":9,\"minute\":45,\"name\":\"Spelling\",\"plus\":20}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 0,
+     "plus": 40,
+     "ask": "end",
+     "name": "Art",
+     "options": [
+      "7:40",
+      "7:30",
+      "6:40"
+     ]
+    },
+    "prompt": {
+     "text": "Art starts at 7:00 and lasts 40 minutes. What time does it end?",
+     "speak": [
+      "Art starts at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      "and lasts",
+      {
+       "number": 40
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 40
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7:30",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 7,
+         "minute": 30
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 6,
+         "minute": 40
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 40
+       }
+      },
+      ". That is",
+      {
+       "number": 40
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 7:00 to 7:40.",
+      "Art ends at 7:40."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":7,\"minute\":0,\"name\":\"Art\",\"plus\":40}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 1,
+     "minute": 0,
+     "plus": 55,
+     "ask": "end",
+     "name": "Gym",
+     "options": [
+      "2:05",
+      "12:55",
+      "1:55"
+     ]
+    },
+    "prompt": {
+     "text": "Gym starts at 1:00 and lasts 55 minutes. What time does it end?",
+     "speak": [
+      "Gym starts at",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      "and lasts",
+      {
+       "number": 55
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 1,
+     "minute": 0
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2:05",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 5
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "12:55",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 12,
+         "minute": 55
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1:55",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 1,
+         "minute": 55
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 55
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 1:00 to 1:55.",
+      "Gym ends at 1:55."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 55
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":1,\"minute\":0,\"name\":\"Gym\",\"plus\":55}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 2,
+     "minute": 35,
+     "plus": 25,
+     "ask": "end",
+     "name": "Gym",
+     "options": [
+      "2:00",
+      "3:10",
+      "3:00"
+     ]
+    },
+    "prompt": {
+     "text": "Gym starts at 2:35 and lasts 25 minutes. What time does it end?",
+     "speak": [
+      "Gym starts at",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "and lasts",
+      {
+       "number": 25
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 2,
+     "minute": 35
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 2,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:10",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 10
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 35
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
+      ". That is",
+      {
+       "number": 25
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 2:35 to 3:00.",
+      "Gym ends at 3:00."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 2,
+        "minute": 35
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":2,\"minute\":35,\"name\":\"Gym\",\"plus\":25}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 3,
+     "minute": 50,
+     "plus": 20,
+     "ask": "end",
+     "name": "Library",
+     "options": [
+      "4:00",
+      "4:10",
+      "4:20"
+     ]
+    },
+    "prompt": {
+     "text": "Library starts at 3:50 and lasts 20 minutes. What time does it end?",
+     "speak": [
+      "Library starts at",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "and lasts",
+      {
+       "number": 20
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 3,
+     "minute": 50
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4:00",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:10",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 10
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4:20",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 4,
+         "minute": 20
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "minutes. Then",
+      {
+       "number": 10
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 10
+       }
+      },
+      ". That is",
+      {
+       "number": 20
+      },
+      "minutes."
+     ],
+     "steps": [
+      "3:50 to 4:00 is 10 minutes.",
+      "4:00 to 4:10 is 10 minutes.",
+      "Library ends at 4:10."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 50
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":3,\"minute\":50,\"name\":\"Library\",\"plus\":20}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "hour": 7,
+     "minute": 55,
+     "plus": 45,
+     "ask": "end",
+     "name": "Library",
+     "options": [
+      "9:40",
+      "8:50",
+      "8:40"
+     ]
+    },
+    "prompt": {
+     "text": "Library starts at 7:55 and lasts 45 minutes. What time does it end?",
+     "speak": [
+      "Library starts at",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 55
+       }
+      },
+      "and lasts",
+      {
+       "number": 45
+      },
+      "minutes. What time does it end?"
+     ]
+    },
+    "stimulus": {
+     "kind": "clock",
+     "hour": 7,
+     "minute": 55
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 9,
+         "minute": 40
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:50",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 50
+        }
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8:40",
+      "size": "l",
+      "speak": [
+       {
+        "time": {
+         "hour": 8,
+         "minute": 40
+        }
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "minutes. Then",
+      {
+       "number": 40
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 40
+       }
+      },
+      ". That is",
+      {
+       "number": 45
+      },
+      "minutes."
+     ],
+     "steps": [
+      "7:55 to 8:00 is 5 minutes.",
+      "8:00 to 8:40 is 40 minutes.",
+      "Library ends at 8:40."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 55
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 40
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-3-F10|2|{\"ask\":\"end\",\"hour\":7,\"minute\":55,\"name\":\"Library\",\"plus\":45}"
+   }
+  ],
+  "3": [
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 40,
+     "endHour": 11,
+     "endMinute": 15,
+     "ask": "minutes",
+     "plan": "Music 9:40-10:35, Art 10:40-11:15, Library 11:15-11:50",
+     "pick": 0
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Music to the end of Art?",
+     "speak": [
+      "How many minutes is it from the start of Music to the end of Art?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Music 9:40 to 10:35. Art 10:40 to 11:15. Library 11:15 to 11:50.",
+     "size": "m",
+     "speak": [
+      "Music,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 35
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 95,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 20
+      },
+      "minutes. Then",
+      {
+       "number": 75
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      ". That is",
+      {
+       "number": 95
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:40 to 10:00 is 20 minutes.",
+      "10:00 to 11:15 is 75 minutes.",
+      "20 + 75 = 95 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 40
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 15
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 1,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":11,\"endMinute\":15,\"hour\":9,\"minute\":40,\"pick\":0,\"plan\":\"Music 9:40-10:35, Art 10:40-11:15, Library 11:15-11:50\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 50,
+     "endHour": 9,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Spelling 8:50-9:10, Reading 9:25-9:50, Math 9:55-10:45",
+     "pick": 0
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Spelling to the end of Reading?",
+     "speak": [
+      "How many minutes is it from the start of Spelling to the end of Reading?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 8:50 to 9:10. Reading 9:25 to 9:50. Math 9:55 to 10:45.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      ".",
+      "Reading,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ".",
+      "Math,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 45
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 60,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 50
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 10
+      },
+      "minutes. Then",
+      {
+       "number": 50
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 60
+      },
+      "minutes."
+     ],
+     "steps": [
+      "8:50 to 9:00 is 10 minutes.",
+      "9:00 to 9:50 is 50 minutes.",
+      "10 + 50 = 60 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 50
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 2,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":50,\"hour\":8,\"minute\":50,\"pick\":0,\"plan\":\"Spelling 8:50-9:10, Reading 9:25-9:50, Math 9:55-10:45\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 45,
+     "endHour": 9,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Math 8:05-8:45, Spelling 8:45-9:05, Art 9:15-9:50",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Spelling to the end of Art?",
+     "speak": [
+      "How many minutes is it from the start of Spelling to the end of Art?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 8:05 to 8:45. Spelling 8:45 to 9:05. Art 9:15 to 9:50.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      ".",
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 5
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 65,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes. Then",
+      {
+       "number": 50
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 65
+      },
+      "minutes."
+     ],
+     "steps": [
+      "8:45 to 9:00 is 15 minutes.",
+      "9:00 to 9:50 is 50 minutes.",
+      "15 + 50 = 65 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 45
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 3,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":9,\"endMinute\":50,\"hour\":8,\"minute\":45,\"pick\":1,\"plan\":\"Math 8:05-8:45, Spelling 8:45-9:05, Art 9:15-9:50\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 15,
+     "endHour": 12,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Library 10:15-11:00, Science 11:15-11:45, Gym 11:55-12:50",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Science to the end of Gym?",
+     "speak": [
+      "How many minutes is it from the start of Science to the end of Gym?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Library 10:15 to 11:00. Science 11:15 to 11:45. Gym 11:55 to 12:50.",
+     "size": "m",
+     "speak": [
+      "Library,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 45
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 50
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 95,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 45
+      },
+      "minutes. Then",
+      {
+       "number": 50
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 95
+      },
+      "minutes."
+     ],
+     "steps": [
+      "11:15 to 12:00 is 45 minutes.",
+      "12:00 to 12:50 is 50 minutes.",
+      "45 + 50 = 95 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 4,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":50,\"hour\":11,\"minute\":15,\"pick\":1,\"plan\":\"Library 10:15-11:00, Science 11:15-11:45, Gym 11:55-12:50\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 25,
+     "endHour": 10,
+     "endMinute": 50,
+     "ask": "minutes",
+     "plan": "Spelling 9:25-9:50, Music 10:05-10:50, Library 11:00-11:20",
+     "pick": 0
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Spelling to the end of Music?",
+     "speak": [
+      "How many minutes is it from the start of Spelling to the end of Music?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 9:25 to 9:50. Music 10:05 to 10:50. Library 11:00 to 11:20.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 50
+       }
+      },
+      ".",
+      "Music,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 50
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 20
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 85,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 35
+      },
+      "minutes. Then",
+      {
+       "number": 50
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 50
+       }
+      },
+      ". That is",
+      {
+       "number": 85
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:25 to 10:00 is 35 minutes.",
+      "10:00 to 10:50 is 50 minutes.",
+      "35 + 50 = 85 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 25
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 50
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 5,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":50,\"hour\":9,\"minute\":25,\"pick\":0,\"plan\":\"Spelling 9:25-9:50, Music 10:05-10:50, Library 11:00-11:20\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 11,
+     "minute": 5,
+     "endHour": 12,
+     "endMinute": 0,
+     "ask": "minutes",
+     "plan": "Math 10:25-10:50, Gym 11:05-11:40, Library 11:40-12:00",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Gym to the end of Library?",
+     "speak": [
+      "How many minutes is it from the start of Gym to the end of Library?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 10:25 to 10:50. Gym 11:05 to 11:40. Library 11:40 to 12:00.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 25
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 50
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 55,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "Count on from",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 5
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "Count on from 11:05 to 12:00.",
+      "That is 55 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 5
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 6,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":0,\"hour\":11,\"minute\":5,\"pick\":1,\"plan\":\"Math 10:25-10:50, Gym 11:05-11:40, Library 11:40-12:00\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 8,
+     "minute": 45,
+     "endHour": 10,
+     "endMinute": 0,
+     "ask": "minutes",
+     "plan": "Spelling 8:45-9:30, Library 9:35-10:00, Art 10:15-10:55",
+     "pick": 0
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Spelling to the end of Library?",
+     "speak": [
+      "How many minutes is it from the start of Spelling to the end of Library?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Spelling 8:45 to 9:30. Library 9:35 to 10:00. Art 10:15 to 10:55.",
+     "size": "m",
+     "speak": [
+      "Spelling,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ".",
+      "Art,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 55
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 75,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 15
+      },
+      "minutes. Then",
+      {
+       "number": 60
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ". That is",
+      {
+       "number": 75
+      },
+      "minutes."
+     ],
+     "steps": [
+      "8:45 to 9:00 is 15 minutes.",
+      "9:00 to 10:00 is 60 minutes.",
+      "15 + 60 = 75 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 45
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 7,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":0,\"hour\":8,\"minute\":45,\"pick\":0,\"plan\":\"Spelling 8:45-9:30, Library 9:35-10:00, Art 10:15-10:55\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 15,
+     "endHour": 10,
+     "endMinute": 10,
+     "ask": "minutes",
+     "plan": "Reading 8:45-9:05, Library 9:15-9:35, Gym 9:45-10:10",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Library to the end of Gym?",
+     "speak": [
+      "How many minutes is it from the start of Library to the end of Gym?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Reading 8:45 to 9:05. Library 9:15 to 9:35. Gym 9:45 to 10:10.",
+     "size": "m",
+     "speak": [
+      "Reading,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 5
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ".",
+      "Gym,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 45
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 10
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 55,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 15
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 45
+      },
+      "minutes. Then",
+      {
+       "number": 10
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 10
+       }
+      },
+      ". That is",
+      {
+       "number": 55
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:15 to 10:00 is 45 minutes.",
+      "10:00 to 10:10 is 10 minutes.",
+      "45 + 10 = 55 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 15
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 10
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 8,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":10,\"hour\":9,\"minute\":15,\"pick\":1,\"plan\":\"Reading 8:45-9:05, Library 9:15-9:35, Gym 9:45-10:10\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 10,
+     "minute": 55,
+     "endHour": 12,
+     "endMinute": 35,
+     "ask": "minutes",
+     "plan": "Math 10:00-10:45, Library 10:55-11:35, Science 11:40-12:35",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Library to the end of Science?",
+     "speak": [
+      "How many minutes is it from the start of Library to the end of Science?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Math 10:00 to 10:45. Library 10:55 to 11:35. Science 11:40 to 12:35.",
+     "size": "m",
+     "speak": [
+      "Math,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 45
+       }
+      },
+      ".",
+      "Library,",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 35
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 100,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 55
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "minutes. Then",
+      {
+       "number": 95
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 35
+       }
+      },
+      ". That is",
+      {
+       "number": 100
+      },
+      "minutes."
+     ],
+     "steps": [
+      "10:55 to 11:00 is 5 minutes.",
+      "11:00 to 12:35 is 95 minutes.",
+      "5 + 95 = 100 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 55
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 35
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 9,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":12,\"endMinute\":35,\"hour\":10,\"minute\":55,\"pick\":1,\"plan\":\"Math 10:00-10:45, Library 10:55-11:35, Science 11:40-12:35\"}"
+   },
+   {
+    "type": "numberPad",
+    "mode": "look",
+    "facts": {
+     "hour": 9,
+     "minute": 10,
+     "endHour": 10,
+     "endMinute": 15,
+     "ask": "minutes",
+     "plan": "Music 8:00-8:55, Reading 9:10-9:35, Science 9:40-10:15",
+     "pick": 1
+    },
+    "prompt": {
+     "text": "How many minutes is it from the start of Reading to the end of Science?",
+     "speak": [
+      "How many minutes is it from the start of Reading to the end of Science?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Music 8:00 to 8:55. Reading 9:10 to 9:35. Science 9:40 to 10:15.",
+     "size": "m",
+     "speak": [
+      "Music,",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 55
+       }
+      },
+      ".",
+      "Reading,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 35
+       }
+      },
+      ".",
+      "Science,",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 40
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      "."
+     ]
+    },
+    "answer": 65,
+    "maxDigits": 3,
+    "explanation": {
+     "speak": [
+      "From",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 10
+       }
+      },
+      "to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      "is",
+      {
+       "number": 50
+      },
+      "minutes. Then",
+      {
+       "number": 15
+      },
+      "more minutes to",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 15
+       }
+      },
+      ". That is",
+      {
+       "number": 65
+      },
+      "minutes."
+     ],
+     "steps": [
+      "9:10 to 10:00 is 50 minutes.",
+      "10:00 to 10:15 is 15 minutes.",
+      "50 + 15 = 65 minutes in all."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 10
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 15
+       }
+      ]
+     }
+    },
+    "skillId": "M-3-F10",
+    "level": 3,
+    "seed": 10,
+    "key": "M-3-F10|3|{\"ask\":\"minutes\",\"endHour\":10,\"endMinute\":15,\"hour\":9,\"minute\":10,\"pick\":1,\"plan\":\"Music 8:00-8:55, Reading 9:10-9:35, Science 9:40-10:15\"}"
+   }
+  ]
+ }
+}
