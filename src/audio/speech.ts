@@ -1,5 +1,6 @@
 import type { Say } from '../engine/types';
-import { hasClip, playClip, stopClip } from './clips';
+import { hasClip, playBytes, playClip, stopClip } from './clips';
+import { readyVoice } from './voice';
 import { isMuted } from './mute';
 import { saySegments } from './say';
 
@@ -10,6 +11,7 @@ import { saySegments } from './say';
 export const DEFAULT_RATE = 0.85;
 const CANCEL_WAIT_MS = 60; // speaking straight after a cancel can drop the new sentence
 const VOICE_WAIT_MS = 1000;
+const RECORDED_WAIT_MS = 700; // how long a sentence may take to arrive before the device voice says it instead
 const UTTERANCE_LIMIT_MS = 12_000; // long utterances cut off on some phones
 const PREFERRED = ['Samantha', 'Ava', 'Allison'];
 
@@ -93,6 +95,11 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE): Promise<bool
   if (isMuted() || say.length === 0) return false;
   try {
     await wait(CANCEL_WAIT_MS);
+    if (mine !== generation) return false;
+    // The recorded voice, when the sentence is ready in time. Otherwise the device's own voice, at once.
+    const recorded = await readyVoice(say, RECORDED_WAIT_MS);
+    if (mine !== generation) return false;
+    if (recorded && (await playBytes(recorded, rate / DEFAULT_RATE))) return mine === generation;
     if (mine !== generation) return false;
     const segments = saySegments(say, hasClip);
     const chosen = engine ? await chooseVoice(engine) : null;

@@ -56,6 +56,32 @@ export async function playClip(key: string): Promise<boolean> {
   }
 }
 
+// Plays audio the app was just handed (a recorded sentence). `speed` 1 is as recorded.
+// Resolves true when it has finished, false if it could not play.
+export async function playBytes(bytes: ArrayBuffer, speed = 1): Promise<boolean> {
+  const ctx = audioContext();
+  if (!ctx) return false;
+  try {
+    const buffer = await ctx.decodeAudioData(bytes.slice(0));
+    return await new Promise<boolean>((resolve) => {
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.playbackRate.value = speed;
+      source.connect(ctx.destination);
+      const giveUp = setTimeout(() => resolve(false), Math.ceil((buffer.duration / speed) * 1000) + 1500);
+      source.onended = () => {
+        clearTimeout(giveUp);
+        resolve(true);
+      };
+      active = source;
+      source.start();
+    });
+  } catch (error) {
+    logError(error);
+    return false;
+  }
+}
+
 let active: AudioBufferSourceNode | null = null;
 
 export function stopClip(): void {

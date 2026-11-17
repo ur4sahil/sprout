@@ -3,8 +3,8 @@ import type { ApiDeps } from '../../worker/index';
 import { handleApi } from '../../worker/index';
 import type { MemoryMailer } from '../../worker/mailer';
 import { memoryMailer } from '../../worker/mailer';
-import type { MemoryBackupStore, MemoryDataStore, MemoryPackStore, Store } from '../../worker/store';
-import { memoryBackupStore, memoryDataStore, memoryPackStore, memoryStore } from '../../worker/store';
+import type { MemoryBackupStore, MemoryDataStore, MemoryPackStore, MemoryVoiceStore, Store } from '../../worker/store';
+import { memoryBackupStore, memoryDataStore, memoryPackStore, memoryStore, memoryVoiceStore } from '../../worker/store';
 
 export const ORIGIN = 'https://sprout.test';
 export const PARENT = 'parent.one@example.com';
@@ -27,6 +27,7 @@ export interface Harness {
   pack: MemoryPackStore;
   backup: MemoryBackupStore;
   data: MemoryDataStore;
+  voice: MemoryVoiceStore;
   deps: ApiDeps;
   advance(ms: number): void;
   call(method: string, path: string, body?: unknown, options?: CallOptions): Promise<Response>;
@@ -49,6 +50,7 @@ export function makeHarness(): Harness {
   const pack = memoryPackStore();
   const backup = memoryBackupStore();
   const data = memoryDataStore();
+  const voice = memoryVoiceStore();
   // A real email takes time. The delay makes sure no test passes only because
   // the code happened to be sent before the test looked for it.
   const instant = mailer.sendCode;
@@ -71,6 +73,8 @@ export function makeHarness(): Harness {
     pack,
     backup,
     data,
+    voice,
+    voiceMaker: null,
     familyOf: () => 'family',
   };
 
@@ -114,6 +118,7 @@ export function makeHarness(): Harness {
     pack,
     backup,
     data,
+    voice,
     deps,
     advance: (ms) => {
       clock += ms;

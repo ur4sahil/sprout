@@ -15,11 +15,16 @@
   "d1_databases": [
     { "binding": "DB", "database_name": "sprout", "database_id": "f97e2bb8-3b85-490a-8017-600ba07c8e18" }
   ],
-  "r2_buckets": [{ "binding": "BACKUPS", "bucket_name": "sprout-backups" }],
+  "r2_buckets": [
+    { "binding": "BACKUPS", "bucket_name": "sprout-backups" },
+    { "binding": "VOICE", "bucket_name": "sprout-voice" }
+  ],
   "send_email": [{ "name": "MAIL" }],
   "vars": {
     "ENVIRONMENT": "production",
-    "APP_ORIGIN": "https://sprout.logstocks.com"
+    "APP_ORIGIN": "https://sprout.logstocks.com",
+    // The voice machine. Its key is a secret in the Worker's settings (VOICE_KEY), never here.
+    "VOICE_URL": "https://sprout-voice.logstocks.com"
   },
   "observability": { "enabled": true }
 }

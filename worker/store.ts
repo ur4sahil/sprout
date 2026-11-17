@@ -408,3 +408,36 @@ export function d1DataStore(db: D1Database): DataStore {
     },
   };
 }
+
+// ---- The spoken voice: one MP3 for each sentence, in its own R2 bucket ----
+
+export interface MemoryVoiceStore {
+  get(key: string): Promise<ArrayBuffer | null>;
+  put(key: string, body: ArrayBuffer): Promise<void>;
+  keys(): string[];
+}
+
+export function memoryVoiceStore(): MemoryVoiceStore {
+  const held = new Map<string, ArrayBuffer>();
+  return {
+    async get(key) {
+      return held.get(key)?.slice(0) ?? null;
+    },
+    async put(key, body) {
+      held.set(key, body.slice(0));
+    },
+    keys: () => [...held.keys()].sort(),
+  };
+}
+
+export function r2VoiceStore(bucket: R2Bucket): { get(key: string): Promise<ArrayBuffer | null>; put(key: string, body: ArrayBuffer): Promise<void> } {
+  return {
+    async get(key) {
+      const object = await bucket.get(key);
+      return object ? await object.arrayBuffer() : null;
+    },
+    async put(key, body) {
+      await bucket.put(key, body, { httpMetadata: { contentType: 'audio/mpeg' } });
+    },
+  };
+}

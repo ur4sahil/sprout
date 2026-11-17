@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useReview } from '../../app/useReview';
 import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
+import { warmQuestion } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import HoldButton from '../../components/HoldButton';
@@ -32,7 +33,10 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
 
   const questionId = question ? `${question.key}|${question.seed}` : null;
   useEffect(() => {
-    if (!question || !child.settings.autoSpeak) return;
+    if (!question) return;
+    // What this question may say is fetched now, so the recorded voice is ready when it is wanted.
+    warmQuestion(question);
+    if (!child.settings.autoSpeak) return;
     void speak(question.prompt.speak, rate);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown

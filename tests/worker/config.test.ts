@@ -23,7 +23,9 @@ describe('wrangler.jsonc', () => {
 
   it('holds no private setting', () => {
     const vars = Object.keys(readConfig().vars);
-    expect(vars.sort()).toEqual(['APP_ORIGIN', 'ENVIRONMENT']);
+    // The voice machine's address is not private: it answers only to a key, and the key is a secret setting.
+    expect(vars.sort()).toEqual(['APP_ORIGIN', 'ENVIRONMENT', 'VOICE_URL']);
+    expect(vars.some((name) => /KEY|SECRET|TOKEN|PEPPER|PASSWORD/i.test(name))).toBe(false);
   });
 
   it('serves the app for deep links and sends /api to the Worker first', () => {

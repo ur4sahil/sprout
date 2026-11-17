@@ -18,18 +18,24 @@ import type { BackupStore, DataStore, PackStore } from './store';
 import { d1DataStore, d1Store, r2BackupStore, r2PackStore } from './store';
 import { voicePack } from './voicePack';
 
+import { memoryVoiceStore, r2VoiceStore } from './store';
+import type { VoiceMaker, VoiceStore } from './voice';
+import { remoteVoiceMaker, voice } from './voice';
 // Routes /api. Everything else is the built app.
 
 export interface Env {
   DB: D1Database;
   MAIL: SendEmail;
   BACKUPS: R2Bucket;
+  VOICE?: R2Bucket;
   ASSETS: { fetch(request: Request): Promise<Response> };
   ENVIRONMENT: string;
   APP_ORIGIN: string;
   PARENT_EMAILS?: string;
   AUTH_PEPPER?: string;
   MAIL_FROM?: string;
+  VOICE_URL?: string;
+  VOICE_KEY?: string;
 }
 
 export interface ApiDeps extends AuthDeps {
@@ -37,6 +43,9 @@ export interface ApiDeps extends AuthDeps {
   pack: PackStore;
   backup: BackupStore;
   data: DataStore;
+  voice: VoiceStore;
+  // The machine that makes speech, or null where there is none (local runs, tests).
+  voiceMaker: VoiceMaker | null;
   // Whose records a signed-in parent reads and writes. Every listed parent shares one family.
   familyOf: (email: string) => string;
 }
@@ -91,6 +100,8 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return await getData(deps.data, deps.familyOf(session.email), request);
       case 'POST /api/data':
         return await postData(deps.data, deps.familyOf(session.email), request, deps.now());
+      case 'POST /api/voice':
+        return await voice(deps.voice, deps.voiceMaker, request, deps.defer);
       case 'GET /api/voice-pack':
         return await voicePack(deps.pack, request);
       default:
@@ -118,6 +129,8 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     pack: r2PackStore(env.BACKUPS),
     backup: r2BackupStore(env.BACKUPS),
     data: d1DataStore(env.DB),
+    voice: env.VOICE ? r2VoiceStore(env.VOICE) : memoryVoiceStore(),
+    voiceMaker: env.VOICE_URL && env.VOICE_KEY ? remoteVoiceMaker(env.VOICE_URL, env.VOICE_KEY) : null,
     // On the local test server each account keeps to itself, so one test never sees another's children.
     familyOf: (email) => (dev ? email : FAMILY),
   };

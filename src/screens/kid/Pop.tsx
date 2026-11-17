@@ -9,6 +9,7 @@ import { TIMING } from '../../app/timing';
 import { useWakeLock } from '../../app/useWakeLock';
 import { playSfx } from '../../audio/sfx';
 import { speak, stop } from '../../audio/speech';
+import { warmQuestion } from '../../audio/voice';
 import { openingWords } from '../../audio/stepSay';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
@@ -65,6 +66,7 @@ function PopRound({ child }: { child: Child }) {
       setTurn(found);
       setPicked(null);
       setPhase('asking');
+      warmQuestion(found.question);
       void speak(found.question.prompt.speak, rate);
       return;
     }
