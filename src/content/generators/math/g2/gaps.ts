@@ -139,7 +139,8 @@ export const unitsGenerator: SkillGenerator = {
 // Levels: which is longer / how much longer / typed. Oracles: compare, subtract.
 
 function compareLengths(level: Level, rng: Rng): QuestionDraft {
-  let [a, b] = [rng.int(3, 10), rng.int(2, 9)];
+  let a = rng.int(3, 10);
+  const b = rng.int(2, 9);
   if (a === b) a += 1;
   const picture: Visual = { kind: 'row', children: [ruler('pencil', a), ruler('crayon', b)] };
   if (level === 1) {
