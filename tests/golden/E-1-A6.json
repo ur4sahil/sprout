@@ -1,0 +1,2278 @@
+{
+ "skillId": "E-1-A6",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "read",
+  "facts": {
+   "relation": "ending",
+   "target": "s",
+   "read": [
+    "painted",
+    "paints",
+    "painting"
+   ],
+   "options": [
+    "painted",
+    "paints",
+    "painting"
+   ]
+  },
+  "prompt": {
+   "text": "Which word ends with s?",
+   "speak": [
+    "Which word ends with",
+    {
+     "letter": "s"
+    },
+    "?"
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "painted",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "paints",
+    "size": "l"
+   },
+   {
+    "kind": "text",
+    "value": "painting",
+    "size": "l"
+   }
+  ],
+  "answerIndex": 1,
+  "explanation": {
+   "speak": [
+    {
+     "word": "paints"
+    },
+    "is",
+    {
+     "word": "paint"
+    },
+    "with",
+    {
+     "letter": "s"
+    },
+    "on the end."
+   ],
+   "steps": [
+    "Paints is paint with s on the end."
+   ],
+   "visual": {
+    "kind": "text",
+    "value": "paint + s = paints",
+    "size": "xl"
+   }
+  },
+  "skillId": "E-1-A6",
+  "level": 1,
+  "seed": 1401,
+  "key": "E-1-A6|1|{\"read\":[\"painted\",\"paints\",\"painting\"],\"relation\":\"ending\",\"target\":\"s\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "rests",
+      "resting",
+      "rested"
+     ],
+     "options": [
+      "rests",
+      "resting",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "rests"
+      },
+      "is",
+      {
+       "word": "rest"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Rests is rest with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rest + s = rests",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 1,
+    "key": "E-1-A6|1|{\"read\":[\"rests\",\"resting\",\"rested\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "resting",
+      "rested",
+      "rests"
+     ],
+     "options": [
+      "resting",
+      "rested",
+      "rests"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "rests"
+      },
+      "is",
+      {
+       "word": "rest"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Rests is rest with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rest + s = rests",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 2,
+    "key": "E-1-A6|1|{\"read\":[\"resting\",\"rested\",\"rests\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "resting",
+      "rests",
+      "rested"
+     ],
+     "options": [
+      "resting",
+      "rests",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "rests"
+      },
+      "is",
+      {
+       "word": "rest"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Rests is rest with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rest + s = rests",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 3,
+    "key": "E-1-A6|1|{\"read\":[\"resting\",\"rests\",\"rested\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "kicked",
+      "kicking",
+      "kicks"
+     ],
+     "options": [
+      "kicked",
+      "kicking",
+      "kicks"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "kicked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicks",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "kicks"
+      },
+      "is",
+      {
+       "word": "kick"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Kicks is kick with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "kick + s = kicks",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 4,
+    "key": "E-1-A6|1|{\"read\":[\"kicked\",\"kicking\",\"kicks\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "ing",
+     "read": [
+      "resting",
+      "rested",
+      "rests"
+     ],
+     "options": [
+      "resting",
+      "rested",
+      "rests"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with ing?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "resting"
+      },
+      "is",
+      {
+       "word": "rest"
+      },
+      "with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Resting is rest with ing on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rest + ing = resting",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 5,
+    "key": "E-1-A6|1|{\"read\":[\"resting\",\"rested\",\"rests\"],\"relation\":\"ending\",\"target\":\"ing\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "cooking",
+      "cooks",
+      "cooked"
+     ],
+     "options": [
+      "cooking",
+      "cooks",
+      "cooked"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cooking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooks",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "cooks"
+      },
+      "is",
+      {
+       "word": "cook"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Cooks is cook with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "cook + s = cooks",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 6,
+    "key": "E-1-A6|1|{\"read\":[\"cooking\",\"cooks\",\"cooked\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "s",
+     "read": [
+      "jumps",
+      "jumped",
+      "jumping"
+     ],
+     "options": [
+      "jumps",
+      "jumped",
+      "jumping"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with s?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "s"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jumps",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumped",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumping",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "jumps"
+      },
+      "is",
+      {
+       "word": "jump"
+      },
+      "with",
+      {
+       "letter": "s"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Jumps is jump with s on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "jump + s = jumps",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 7,
+    "key": "E-1-A6|1|{\"read\":[\"jumps\",\"jumped\",\"jumping\"],\"relation\":\"ending\",\"target\":\"s\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "ed",
+     "read": [
+      "playing",
+      "played",
+      "plays"
+     ],
+     "options": [
+      "playing",
+      "played",
+      "plays"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with ed?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "d"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      {
+       "word": "played"
+      },
+      "is",
+      {
+       "word": "play"
+      },
+      "with",
+      {
+       "letter": "e"
+      },
+      {
+       "letter": "d"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Played is play with ed on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "play + ed = played",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 8,
+    "key": "E-1-A6|1|{\"read\":[\"playing\",\"played\",\"plays\"],\"relation\":\"ending\",\"target\":\"ed\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "ing",
+     "read": [
+      "playing",
+      "played",
+      "plays"
+     ],
+     "options": [
+      "playing",
+      "played",
+      "plays"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with ing?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      {
+       "word": "playing"
+      },
+      "is",
+      {
+       "word": "play"
+      },
+      "with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Playing is play with ing on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "play + ing = playing",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 9,
+    "key": "E-1-A6|1|{\"read\":[\"playing\",\"played\",\"plays\"],\"relation\":\"ending\",\"target\":\"ing\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "ending",
+     "target": "ing",
+     "read": [
+      "cooks",
+      "cooked",
+      "cooking"
+     ],
+     "options": [
+      "cooks",
+      "cooked",
+      "cooking"
+     ]
+    },
+    "prompt": {
+     "text": "Which word ends with ing?",
+     "speak": [
+      "Which word ends with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cooks",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooking",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      {
+       "word": "cooking"
+      },
+      "is",
+      {
+       "word": "cook"
+      },
+      "with",
+      {
+       "letter": "i"
+      },
+      {
+       "letter": "n"
+      },
+      {
+       "letter": "g"
+      },
+      "on the end."
+     ],
+     "steps": [
+      "Cooking is cook with ing on the end."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "cook + ing = cooking",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 1,
+    "seed": 10,
+    "key": "E-1-A6|1|{\"read\":[\"cooks\",\"cooked\",\"cooking\"],\"relation\":\"ending\",\"target\":\"ing\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Ben ___ every day.",
+     "base": "rest",
+     "options": [
+      "rests",
+      "rested",
+      "resting"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Ben blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Ben ___ every day.",
+     "size": "l",
+     "speak": [
+      "Ben blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Ben rests every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Ben rests every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Ben rests every day.",
+      "size": "l",
+      "speak": [
+       "Ben rests every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 1,
+    "key": "E-1-A6|2|{\"base\":\"rest\",\"relation\":\"endingSentence\",\"target\":\"Ben ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Mia ___ every day.",
+     "base": "rest",
+     "options": [
+      "rests",
+      "resting",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Mia blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Mia ___ every day.",
+     "size": "l",
+     "speak": [
+      "Mia blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Mia rests every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Mia rests every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Mia rests every day.",
+      "size": "l",
+      "speak": [
+       "Mia rests every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 2,
+    "key": "E-1-A6|2|{\"base\":\"rest\",\"relation\":\"endingSentence\",\"target\":\"Mia ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Mia ___ every day.",
+     "base": "rest",
+     "options": [
+      "resting",
+      "rested",
+      "rests"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Mia blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Mia ___ every day.",
+     "size": "l",
+     "speak": [
+      "Mia blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Mia rests every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Mia rests every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Mia rests every day.",
+      "size": "l",
+      "speak": [
+       "Mia rests every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 3,
+    "key": "E-1-A6|2|{\"base\":\"rest\",\"relation\":\"endingSentence\",\"target\":\"Mia ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Sam ___ every day.",
+     "base": "kick",
+     "options": [
+      "kicked",
+      "kicking",
+      "kicks"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Sam blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Sam ___ every day.",
+     "size": "l",
+     "speak": [
+      "Sam blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "kicked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicks",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Sam kicks every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Sam kicks every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Sam kicks every day.",
+      "size": "l",
+      "speak": [
+       "Sam kicks every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 4,
+    "key": "E-1-A6|2|{\"base\":\"kick\",\"relation\":\"endingSentence\",\"target\":\"Sam ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Right now, Sam is ___.",
+     "base": "rest",
+     "options": [
+      "resting",
+      "rests",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Right now, Sam is blank."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Right now, Sam is ___.",
+     "size": "l",
+     "speak": [
+      "Right now, Sam is blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Sam is resting."
+     ],
+     "steps": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Sam is resting."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Right now, Sam is resting.",
+      "size": "l",
+      "speak": [
+       "Right now, Sam is resting."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 5,
+    "key": "E-1-A6|2|{\"base\":\"rest\",\"relation\":\"endingSentence\",\"target\":\"Right now, Sam is ___.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Ben ___ every day.",
+     "base": "cook",
+     "options": [
+      "cooking",
+      "cooked",
+      "cooks"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Ben blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Ben ___ every day.",
+     "size": "l",
+     "speak": [
+      "Ben blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cooking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooks",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Ben cooks every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Ben cooks every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Ben cooks every day.",
+      "size": "l",
+      "speak": [
+       "Ben cooks every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 6,
+    "key": "E-1-A6|2|{\"base\":\"cook\",\"relation\":\"endingSentence\",\"target\":\"Ben ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Kim ___ every day.",
+     "base": "jump",
+     "options": [
+      "jumps",
+      "jumped",
+      "jumping"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Kim blank every day."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Kim ___ every day.",
+     "size": "l",
+     "speak": [
+      "Kim blank every day."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jumps",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumped",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumping",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Every day, and just one person, so add s.",
+      "Kim jumps every day."
+     ],
+     "steps": [
+      "Every day, and just one person, so add s.",
+      "Kim jumps every day."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Kim jumps every day.",
+      "size": "l",
+      "speak": [
+       "Kim jumps every day."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 7,
+    "key": "E-1-A6|2|{\"base\":\"jump\",\"relation\":\"endingSentence\",\"target\":\"Kim ___ every day.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Yesterday, Mia ___.",
+     "base": "play",
+     "options": [
+      "plays",
+      "played",
+      "playing"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Yesterday, Mia blank."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Yesterday, Mia ___.",
+     "size": "l",
+     "speak": [
+      "Yesterday, Mia blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Yesterday means it already happened, so add ed.",
+      "Yesterday, Mia played."
+     ],
+     "steps": [
+      "Yesterday means it already happened, so add ed.",
+      "Yesterday, Mia played."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Yesterday, Mia played.",
+      "size": "l",
+      "speak": [
+       "Yesterday, Mia played."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 8,
+    "key": "E-1-A6|2|{\"base\":\"play\",\"relation\":\"endingSentence\",\"target\":\"Yesterday, Mia ___.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Right now, Sam is ___.",
+     "base": "play",
+     "options": [
+      "plays",
+      "played",
+      "playing"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Right now, Sam is blank."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Right now, Sam is ___.",
+     "size": "l",
+     "speak": [
+      "Right now, Sam is blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Sam is playing."
+     ],
+     "steps": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Sam is playing."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Right now, Sam is playing.",
+      "size": "l",
+      "speak": [
+       "Right now, Sam is playing."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 9,
+    "key": "E-1-A6|2|{\"base\":\"play\",\"relation\":\"endingSentence\",\"target\":\"Right now, Sam is ___.\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "relation": "endingSentence",
+     "target": "Right now, Ben is ___.",
+     "base": "cook",
+     "options": [
+      "cooked",
+      "cooks",
+      "cooking"
+     ]
+    },
+    "prompt": {
+     "text": "Which word fits the sentence?",
+     "speak": [
+      "Which word fits the sentence?",
+      "Right now, Ben is blank."
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "Right now, Ben is ___.",
+     "size": "l",
+     "speak": [
+      "Right now, Ben is blank."
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooks",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooking",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Ben is cooking."
+     ],
+     "steps": [
+      "Is tells us it is happening right now, so add ing.",
+      "Right now, Ben is cooking."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "Right now, Ben is cooking.",
+      "size": "l",
+      "speak": [
+       "Right now, Ben is cooking."
+      ]
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 2,
+    "seed": 10,
+    "key": "E-1-A6|2|{\"base\":\"cook\",\"relation\":\"endingSentence\",\"target\":\"Right now, Ben is ___.\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "rests",
+     "read": [
+      "rest",
+      "resting",
+      "rested"
+     ],
+     "options": [
+      "rest",
+      "resting",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of rests?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "rests"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "rest",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "rests"
+      },
+      ". The root word is",
+      {
+       "word": "rest"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off rests.",
+      "The root word is rest."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rests − s = rest",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 1,
+    "key": "E-1-A6|3|{\"read\":[\"rest\",\"resting\",\"rested\"],\"relation\":\"root\",\"target\":\"rests\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "rests",
+     "read": [
+      "resting",
+      "rested",
+      "rest"
+     ],
+     "options": [
+      "resting",
+      "rested",
+      "rest"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of rests?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "rests"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rest",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "rests"
+      },
+      ". The root word is",
+      {
+       "word": "rest"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off rests.",
+      "The root word is rest."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rests − s = rest",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 2,
+    "key": "E-1-A6|3|{\"read\":[\"resting\",\"rested\",\"rest\"],\"relation\":\"root\",\"target\":\"rests\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "rests",
+     "read": [
+      "resting",
+      "rest",
+      "rested"
+     ],
+     "options": [
+      "resting",
+      "rest",
+      "rested"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of rests?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "rests"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "resting",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rest",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "rests"
+      },
+      ". The root word is",
+      {
+       "word": "rest"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off rests.",
+      "The root word is rest."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "rests − s = rest",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 3,
+    "key": "E-1-A6|3|{\"read\":[\"resting\",\"rest\",\"rested\"],\"relation\":\"root\",\"target\":\"rests\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "kicks",
+     "read": [
+      "kicked",
+      "kicking",
+      "kick"
+     ],
+     "options": [
+      "kicked",
+      "kicking",
+      "kick"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of kicks?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "kicks"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "kicked",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kicking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "kick",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "kicks"
+      },
+      ". The root word is",
+      {
+       "word": "kick"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off kicks.",
+      "The root word is kick."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "kicks − s = kick",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 4,
+    "key": "E-1-A6|3|{\"read\":[\"kicked\",\"kicking\",\"kick\"],\"relation\":\"root\",\"target\":\"kicks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "resting",
+     "read": [
+      "rested",
+      "rests",
+      "rest"
+     ],
+     "options": [
+      "rested",
+      "rests",
+      "rest"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of resting?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "resting"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "rested",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rests",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rest",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "resting"
+      },
+      ". The root word is",
+      {
+       "word": "rest"
+      },
+      "."
+     ],
+     "steps": [
+      "Take ing off resting.",
+      "The root word is rest."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "resting − ing = rest",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 5,
+    "key": "E-1-A6|3|{\"read\":[\"rested\",\"rests\",\"rest\"],\"relation\":\"root\",\"target\":\"resting\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "cooks",
+     "read": [
+      "cooking",
+      "cook",
+      "cooked"
+     ],
+     "options": [
+      "cooking",
+      "cook",
+      "cooked"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of cooks?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "cooks"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cooking",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cook",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "cooks"
+      },
+      ". The root word is",
+      {
+       "word": "cook"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off cooks.",
+      "The root word is cook."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "cooks − s = cook",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 6,
+    "key": "E-1-A6|3|{\"read\":[\"cooking\",\"cook\",\"cooked\"],\"relation\":\"root\",\"target\":\"cooks\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "jumps",
+     "read": [
+      "jump",
+      "jumped",
+      "jumping"
+     ],
+     "options": [
+      "jump",
+      "jumped",
+      "jumping"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of jumps?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "jumps"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "jump",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumped",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jumping",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "jumps"
+      },
+      ". The root word is",
+      {
+       "word": "jump"
+      },
+      "."
+     ],
+     "steps": [
+      "Take s off jumps.",
+      "The root word is jump."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "jumps − s = jump",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 7,
+    "key": "E-1-A6|3|{\"read\":[\"jump\",\"jumped\",\"jumping\"],\"relation\":\"root\",\"target\":\"jumps\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "played",
+     "read": [
+      "playing",
+      "plays",
+      "play"
+     ],
+     "options": [
+      "playing",
+      "plays",
+      "play"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of played?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "played"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "playing",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "play",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "played"
+      },
+      ". The root word is",
+      {
+       "word": "play"
+      },
+      "."
+     ],
+     "steps": [
+      "Take ed off played.",
+      "The root word is play."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "played − ed = play",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 8,
+    "key": "E-1-A6|3|{\"read\":[\"playing\",\"plays\",\"play\"],\"relation\":\"root\",\"target\":\"played\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "playing",
+     "read": [
+      "played",
+      "plays",
+      "play"
+     ],
+     "options": [
+      "played",
+      "plays",
+      "play"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of playing?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "playing"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "played",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "plays",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "play",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "playing"
+      },
+      ". The root word is",
+      {
+       "word": "play"
+      },
+      "."
+     ],
+     "steps": [
+      "Take ing off playing.",
+      "The root word is play."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "playing − ing = play",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 9,
+    "key": "E-1-A6|3|{\"read\":[\"played\",\"plays\",\"play\"],\"relation\":\"root\",\"target\":\"playing\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "root",
+     "target": "cooking",
+     "read": [
+      "cook",
+      "cooks",
+      "cooked"
+     ],
+     "options": [
+      "cook",
+      "cooks",
+      "cooked"
+     ]
+    },
+    "prompt": {
+     "text": "Which is the root word of cooking?",
+     "speak": [
+      "Which is the root word of",
+      {
+       "word": "cooking"
+      },
+      "?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "cook",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooks",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "cooked",
+      "size": "l"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Take the ending off",
+      {
+       "word": "cooking"
+      },
+      ". The root word is",
+      {
+       "word": "cook"
+      },
+      "."
+     ],
+     "steps": [
+      "Take ing off cooking.",
+      "The root word is cook."
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "cooking − ing = cook",
+      "size": "xl"
+     }
+    },
+    "skillId": "E-1-A6",
+    "level": 3,
+    "seed": 10,
+    "key": "E-1-A6|3|{\"read\":[\"cook\",\"cooks\",\"cooked\"],\"relation\":\"root\",\"target\":\"cooking\"}"
+   }
+  ]
+ }
+}

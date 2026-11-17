@@ -8,11 +8,11 @@ describe('ladders', () => {
   const all = LADDERS.flatMap((ladder) => ladder.skillIds);
 
   it('hold every skill built so far, each on exactly one ladder', () => {
-    expect(all).toHaveLength(227);
-    expect(new Set(all).size).toBe(227);
+    expect(all).toHaveLength(257);
+    expect(new Set(all).size).toBe(257);
     const count = (prefix: string): number => all.filter((id) => id.startsWith(prefix)).length;
     expect([count('M-PK-'), count('M-K-'), count('M-1-'), count('M-2-'), count('M-3-')]).toEqual([16, 31, 27, 27, 47]);
-    expect([count('E-PK-'), count('E-K-'), count('E-1-'), count('E-2-')]).toEqual([10, 18, 16, 18]);
+    expect([count('E-PK-'), count('E-K-'), count('E-1-'), count('E-2-')]).toEqual([10, 18, 31, 33]);
     expect(count('R-')).toBe(17);
   });
 
@@ -22,7 +22,7 @@ describe('ladders', () => {
       'letters', 'sounds', 'phonics', 'sight-words', 'grammar', 'vocabulary', 'reading',
       'figures', 'words-numbers',
     ]);
-    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 8, 41, 9, 12, 12, 7, 6, 5, 2, 10, 17, 1, 7, 7, 11, 4, 10, 9, 14, 9, 8]);
+    expect(LADDERS.map((ladder) => ladder.skillIds.length)).toEqual([18, 8, 41, 9, 12, 12, 7, 6, 5, 2, 10, 17, 1, 7, 7, 17, 5, 20, 15, 21, 9, 8]);
   });
 
   it('never go down a grade', () => {
