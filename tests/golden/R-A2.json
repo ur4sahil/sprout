@@ -1,6 +1,6 @@
 {
  "skillId": "R-A2",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -2419,6 +2419,1398 @@
     "level": 2,
     "seed": 10,
     "key": "R-A2|2|{\"answer\":\"shirt\",\"examples\":[\"sock\",\"shoe\"],\"relation\":\"category\",\"target\":\"clothes\"}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "people",
+     "relation": "category",
+     "examples": [
+      "boy",
+      "king",
+      "woman"
+     ],
+     "answer": "man",
+     "options": [
+      "clover",
+      "duck",
+      "elephant",
+      "man"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "boy"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🤴",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "king"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "woman"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "clover"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "These are all people. So is this one.",
+      {
+       "word": "man"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all people.",
+      "So is this one: man."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 1,
+    "key": "R-A2|3|{\"answer\":\"man\",\"examples\":[\"boy\",\"king\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "people",
+     "relation": "category",
+     "examples": [
+      "girl",
+      "woman",
+      "man"
+     ],
+     "answer": "baby",
+     "options": [
+      "monkey",
+      "elephant",
+      "baby",
+      "grapes"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👧",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "girl"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "woman"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👨",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "man"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "grapes"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are all people. So is this one.",
+      {
+       "word": "baby"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all people.",
+      "So is this one: baby."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A2|3|{\"answer\":\"baby\",\"examples\":[\"girl\",\"woman\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "people",
+     "relation": "category",
+     "examples": [
+      "boy",
+      "man",
+      "woman"
+     ],
+     "answer": "king",
+     "options": [
+      "king",
+      "rabbit",
+      "lion",
+      "rocket"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "boy"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👨",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "man"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "woman"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rocket"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These are all people. So is this one.",
+      {
+       "word": "king"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all people.",
+      "So is this one: king."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 3,
+    "key": "R-A2|3|{\"answer\":\"king\",\"examples\":[\"boy\",\"man\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "plants",
+     "relation": "category",
+     "examples": [
+      "clover",
+      "cactus",
+      "tree"
+     ],
+     "answer": "flower",
+     "options": [
+      "man",
+      "elephant",
+      "rabbit",
+      "flower"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍀",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "clover"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌵",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cactus"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌳",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "tree"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "elephant"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "These are all plants. So is this one.",
+      {
+       "word": "flower"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all plants.",
+      "So is this one: flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 4,
+    "key": "R-A2|3|{\"answer\":\"flower\",\"examples\":[\"clover\",\"cactus\",\"tree\"],\"relation\":\"category\",\"target\":\"plants\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "people",
+     "relation": "category",
+     "examples": [
+      "man",
+      "king",
+      "girl"
+     ],
+     "answer": "baby",
+     "options": [
+      "pig",
+      "baby",
+      "lion",
+      "pizza"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👨",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "man"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🤴",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "king"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👧",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "girl"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lion"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pizza"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "These are all people. So is this one.",
+      {
+       "word": "baby"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all people.",
+      "So is this one: baby."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A2|3|{\"answer\":\"baby\",\"examples\":[\"man\",\"king\",\"girl\"],\"relation\":\"category\",\"target\":\"people\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "clothes",
+     "relation": "category",
+     "examples": [
+      "glove",
+      "shoe",
+      "sock"
+     ],
+     "answer": "scarf",
+     "options": [
+      "ball",
+      "fish",
+      "scarf",
+      "box"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧤",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "glove"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "shoe"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sock"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are all clothes. So is this one.",
+      {
+       "word": "scarf"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all clothes.",
+      "So is this one: scarf."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "scarf"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 6,
+    "key": "R-A2|3|{\"answer\":\"scarf\",\"examples\":[\"glove\",\"shoe\",\"sock\"],\"relation\":\"category\",\"target\":\"clothes\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "animals",
+     "relation": "category",
+     "examples": [
+      "lion",
+      "duck",
+      "dog"
+     ],
+     "answer": "rabbit",
+     "options": [
+      "tree",
+      "rabbit",
+      "car",
+      "king"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦁",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "lion"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🦆",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "duck"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "dog"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "car"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤴",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "king"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "These are all animals. So is this one.",
+      {
+       "word": "rabbit"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all animals.",
+      "So is this one: rabbit."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rabbit"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 7,
+    "key": "R-A2|3|{\"answer\":\"rabbit\",\"examples\":[\"lion\",\"duck\",\"dog\"],\"relation\":\"category\",\"target\":\"animals\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "animals",
+     "relation": "category",
+     "examples": [
+      "elephant",
+      "frog",
+      "dog"
+     ],
+     "answer": "cat",
+     "options": [
+      "baby",
+      "dress",
+      "clover",
+      "cat"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐘",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "elephant"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐸",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "frog"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "dog"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dress"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "clover"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "These are all animals. So is this one.",
+      {
+       "word": "cat"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all animals.",
+      "So is this one: cat."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 8,
+    "key": "R-A2|3|{\"answer\":\"cat\",\"examples\":[\"elephant\",\"frog\",\"dog\"],\"relation\":\"category\",\"target\":\"animals\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "animals",
+     "relation": "category",
+     "examples": [
+      "fish",
+      "elephant",
+      "cat"
+     ],
+     "answer": "frog",
+     "options": [
+      "door",
+      "tree",
+      "frog",
+      "girl"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "fish"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐘",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "elephant"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "🐱",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "cat"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "door"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🌳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "tree"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are all animals. So is this one.",
+      {
+       "word": "frog"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all animals.",
+      "So is this one: frog."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 9,
+    "key": "R-A2|3|{\"answer\":\"frog\",\"examples\":[\"fish\",\"elephant\",\"cat\"],\"relation\":\"category\",\"target\":\"animals\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "clothes",
+     "relation": "category",
+     "examples": [
+      "sock",
+      "shoe",
+      "shirt"
+     ],
+     "answer": "pants",
+     "options": [
+      "boat",
+      "box",
+      "pants",
+      "ball"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🧦",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "sock"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👟",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "shoe"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👕",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "shirt"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "box"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pants"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These are all clothes. So is this one.",
+      {
+       "word": "pants"
+      },
+      "."
+     ],
+     "steps": [
+      "These are all clothes.",
+      "So is this one: pants."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pants"
+       }
+      ]
+     }
+    },
+    "skillId": "R-A2",
+    "level": 3,
+    "seed": 10,
+    "key": "R-A2|3|{\"answer\":\"pants\",\"examples\":[\"sock\",\"shoe\",\"shirt\"],\"relation\":\"category\",\"target\":\"clothes\"}"
    }
   ]
  }

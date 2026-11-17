@@ -1,6 +1,6 @@
 {
  "skillId": "R-A13",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -6150,6 +6150,2068 @@
     "level": 3,
     "seed": 10,
     "key": "R-A13|3|{\"blank\":3,\"colAttrs\":[\"green\",\"purple\",\"yellow\"],\"rowAttrs\":[\"square\",\"heart\",\"triangle\"]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "heart|purple",
+      "triangle|brown",
+      "square|red",
+      "triangle|red",
+      "blank",
+      "heart|brown",
+      "square|brown",
+      "heart|red",
+      "triangle|purple"
+     ],
+     "blank": 4,
+     "options": [
+      "square|red",
+      "heart|purple",
+      "triangle|brown",
+      "square|purple"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a purple square."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a purple square."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"heart|purple\",\"triangle|brown\",\"square|red\",\"triangle|red\",\"blank\",\"heart|brown\",\"square|brown\",\"heart|red\",\"triangle|purple\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|blue",
+      "heart|black",
+      "circle|orange",
+      "heart|orange",
+      "blank",
+      "triangle|black",
+      "circle|black",
+      "triangle|orange",
+      "heart|blue"
+     ],
+     "blank": 4,
+     "options": [
+      "triangle|orange",
+      "circle|black",
+      "circle|blue",
+      "heart|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a blue circle."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a blue circle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"triangle|blue\",\"heart|black\",\"circle|orange\",\"heart|orange\",\"blank\",\"triangle|black\",\"circle|black\",\"triangle|orange\",\"heart|blue\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|orange",
+      "square|black",
+      "heart|purple",
+      "heart|black",
+      "blank",
+      "square|orange",
+      "square|purple",
+      "heart|orange",
+      "triangle|black"
+     ],
+     "blank": 4,
+     "options": [
+      "triangle|black",
+      "triangle|purple",
+      "square|purple",
+      "heart|orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a purple triangle."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a purple triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"triangle|orange\",\"square|black\",\"heart|purple\",\"heart|black\",\"blank\",\"square|orange\",\"square|purple\",\"heart|orange\",\"triangle|black\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|blue",
+      "circle|pink",
+      "triangle|brown",
+      "triangle|pink",
+      "blank",
+      "circle|blue",
+      "circle|brown",
+      "triangle|blue",
+      "star|pink"
+     ],
+     "blank": 4,
+     "options": [
+      "star|blue",
+      "star|brown",
+      "circle|pink",
+      "triangle|brown"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a brown star."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a brown star."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"star|blue\",\"circle|pink\",\"triangle|brown\",\"triangle|pink\",\"blank\",\"circle|blue\",\"circle|brown\",\"triangle|blue\",\"star|pink\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|green",
+      "circle|blue",
+      "square|pink",
+      "square|blue",
+      "blank",
+      "circle|green",
+      "circle|pink",
+      "square|green",
+      "triangle|blue"
+     ],
+     "blank": 4,
+     "options": [
+      "circle|pink",
+      "square|green",
+      "triangle|pink",
+      "triangle|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a pink triangle."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a pink triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"triangle|green\",\"circle|blue\",\"square|pink\",\"square|blue\",\"blank\",\"circle|green\",\"circle|pink\",\"square|green\",\"triangle|blue\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "heart|blue",
+      "star|yellow",
+      "square|green",
+      "star|green",
+      "blank",
+      "heart|yellow",
+      "square|yellow",
+      "heart|green",
+      "star|blue"
+     ],
+     "blank": 4,
+     "options": [
+      "square|blue",
+      "star|yellow",
+      "heart|blue",
+      "square|green"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a blue square."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a blue square."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"heart|blue\",\"star|yellow\",\"square|green\",\"star|green\",\"blank\",\"heart|yellow\",\"square|yellow\",\"heart|green\",\"star|blue\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|purple",
+      "triangle|red",
+      "square|black",
+      "square|red",
+      "blank",
+      "triangle|purple",
+      "triangle|black",
+      "square|purple",
+      "star|red"
+     ],
+     "blank": 4,
+     "options": [
+      "square|black",
+      "triangle|red",
+      "star|purple",
+      "star|black"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a black star."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a black star."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"star|purple\",\"triangle|red\",\"square|black\",\"square|red\",\"blank\",\"triangle|purple\",\"triangle|black\",\"square|purple\",\"star|red\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|orange",
+      "heart|brown",
+      "square|pink",
+      "square|brown",
+      "blank",
+      "heart|orange",
+      "heart|pink",
+      "square|orange",
+      "star|brown"
+     ],
+     "blank": 4,
+     "options": [
+      "square|orange",
+      "star|brown",
+      "heart|pink",
+      "star|pink"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a pink star."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a pink star."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"star|orange\",\"heart|brown\",\"square|pink\",\"square|brown\",\"blank\",\"heart|orange\",\"heart|pink\",\"square|orange\",\"star|brown\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|orange",
+      "square|green",
+      "heart|black",
+      "square|black",
+      "blank",
+      "triangle|green",
+      "heart|green",
+      "triangle|black",
+      "square|orange"
+     ],
+     "blank": 4,
+     "options": [
+      "heart|orange",
+      "triangle|black",
+      "square|orange",
+      "heart|green"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs an orange heart."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs an orange heart."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"triangle|orange\",\"square|green\",\"heart|black\",\"square|black\",\"blank\",\"triangle|green\",\"heart|green\",\"triangle|black\",\"square|orange\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "circle|pink",
+      "square|yellow",
+      "heart|black",
+      "square|black",
+      "blank",
+      "circle|yellow",
+      "heart|yellow",
+      "circle|black",
+      "square|pink"
+     ],
+     "blank": 4,
+     "options": [
+      "square|yellow",
+      "heart|pink",
+      "circle|pink",
+      "heart|black"
+     ]
+    },
+    "prompt": {
+     "text": "Which piece finishes the picture?",
+     "speak": [
+      "Which piece finishes the picture?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "yellow",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row and each column has every shape once. Each row and each column has every colour once. The gap needs a pink heart."
+     ],
+     "steps": [
+      "Each row and each column has every shape once.",
+      "Each row and each column has every colour once.",
+      "The gap needs a pink heart."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A13",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A13|4|{\"blank\":4,\"cells\":[\"circle|pink\",\"square|yellow\",\"heart|black\",\"square|black\",\"blank\",\"circle|yellow\",\"heart|yellow\",\"circle|black\",\"square|pink\"],\"oracle\":\"figureGrid\"}"
    }
   ]
  }

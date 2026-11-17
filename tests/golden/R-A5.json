@@ -1,6 +1,6 @@
 {
  "skillId": "R-A5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3775,6 +3775,1328 @@
     "level": 3,
     "seed": 10,
     "key": "R-A5|3|{\"color\":\"black\",\"flip\":false,\"shape\":\"lShape\",\"startTurn\":2,\"step\":2,\"turns\":6}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 0,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "blue",
+      "orange"
+     ],
+     "shown": 3,
+     "options": [
+      "2|blue",
+      "0|orange",
+      "3|orange",
+      "3|blue"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "orange",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "blue",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "blue",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "orange",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "blue",
+      "size": "m",
+      "rotation": 270
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes blue, orange, blue, orange."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes blue, orange, blue, orange."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "blue",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A5|4|{\"colors\":[\"blue\",\"orange\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":0,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 0,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "red",
+      "brown"
+     ],
+     "shown": 3,
+     "options": [
+      "3|brown",
+      "0|red",
+      "1|brown",
+      "3|red"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "red",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "red",
+      "size": "m",
+      "rotation": 270
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes red, brown, red, brown."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes red, brown, red, brown."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "red",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A5|4|{\"colors\":[\"red\",\"brown\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":0,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 2,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "brown",
+      "purple"
+     ],
+     "shown": 3,
+     "options": [
+      "1|purple",
+      "3|brown",
+      "1|brown",
+      "2|purple"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes brown, purple, brown, purple."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes brown, purple, brown, purple."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A5|4|{\"colors\":[\"brown\",\"purple\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":2,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 2,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "green",
+      "purple"
+     ],
+     "shown": 3,
+     "options": [
+      "1|purple",
+      "1|green",
+      "0|green",
+      "2|purple"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "green",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes green, purple, green, purple."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes green, purple, green, purple."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A5|4|{\"colors\":[\"green\",\"purple\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":2,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 0,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "purple",
+      "green"
+     ],
+     "shown": 3,
+     "options": [
+      "3|purple",
+      "1|purple",
+      "3|green",
+      "0|green"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "green",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes purple, green, purple, green."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes purple, green, purple, green."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "green",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A5|4|{\"colors\":[\"purple\",\"green\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":0,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 0,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "brown",
+      "pink"
+     ],
+     "shown": 3,
+     "options": [
+      "3|brown",
+      "1|pink",
+      "0|brown",
+      "3|pink"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "pink",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "brown",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "pink",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "pink",
+      "size": "m",
+      "rotation": 270
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes brown, pink, brown, pink."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes brown, pink, brown, pink."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "pink",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "brown",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "pink",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A5|4|{\"colors\":[\"brown\",\"pink\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":0,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "arrow",
+     "startTurn": 2,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "purple",
+      "green"
+     ],
+     "shown": 3,
+     "options": [
+      "1|purple",
+      "2|purple",
+      "3|green",
+      "1|green"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "green",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "purple",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "green",
+      "size": "m",
+      "rotation": 90
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes purple, green, purple, green."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes purple, green, purple, green."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "purple",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "green",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "green",
+        "size": "m",
+        "rotation": 90
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A5|4|{\"colors\":[\"purple\",\"green\"],\"flip\":false,\"shape\":\"arrow\",\"shown\":3,\"startTurn\":2,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "arrow",
+     "startTurn": 0,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "pink",
+      "blue"
+     ],
+     "shown": 3,
+     "options": [
+      "3|pink",
+      "0|pink",
+      "3|blue",
+      "2|blue"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "blue",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "pink",
+       "size": "m",
+       "rotation": 180
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "pink",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "blue",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "blue",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes pink, blue, pink, blue."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes pink, blue, pink, blue."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "blue",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "pink",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "blue",
+        "size": "m",
+        "rotation": 270
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A5|4|{\"colors\":[\"pink\",\"blue\"],\"flip\":false,\"shape\":\"arrow\",\"shown\":3,\"startTurn\":0,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "arrow",
+     "startTurn": 1,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "brown",
+      "blue"
+     ],
+     "shown": 3,
+     "options": [
+      "3|blue",
+      "2|brown",
+      "0|brown",
+      "0|blue"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 90
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "blue",
+       "size": "m",
+       "rotation": 180
+      },
+      {
+       "kind": "shape",
+       "shape": "arrow",
+       "color": "brown",
+       "size": "m",
+       "rotation": 270
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "blue",
+      "size": "m",
+      "rotation": 270
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "arrow",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes brown, blue, brown, blue."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes brown, blue, brown, blue."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "brown",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "blue",
+        "size": "m",
+        "rotation": 180
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "brown",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "arrow",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A5|4|{\"colors\":[\"brown\",\"blue\"],\"flip\":false,\"shape\":\"arrow\",\"shown\":3,\"startTurn\":1,\"step\":1,\"turns\":3}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "shape": "lShape",
+     "startTurn": 3,
+     "turns": 3,
+     "flip": false,
+     "step": 1,
+     "colors": [
+      "blue",
+      "orange"
+     ],
+     "shown": 3,
+     "options": [
+      "1|orange",
+      "2|orange",
+      "0|blue",
+      "2|blue"
+     ]
+    },
+    "prompt": {
+     "text": "What comes next?",
+     "speak": [
+      "What comes next?"
+     ]
+    },
+    "stimulus": {
+     "kind": "sequence",
+     "items": [
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "blue",
+       "size": "m",
+       "rotation": 270
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "lShape",
+       "color": "blue",
+       "size": "m",
+       "rotation": 90
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "orange",
+      "size": "m",
+      "rotation": 90
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "orange",
+      "size": "m",
+      "rotation": 180
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "lShape",
+      "color": "blue",
+      "size": "m",
+      "rotation": 180
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "It makes a quarter turn each step. The colour goes blue, orange, blue, orange."
+     ],
+     "steps": [
+      "It makes a quarter turn each step.",
+      "The colour goes blue, orange, blue, orange."
+     ],
+     "visual": {
+      "kind": "sequence",
+      "items": [
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "blue",
+        "size": "m",
+        "rotation": 270
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "blue",
+        "size": "m",
+        "rotation": 90
+       },
+       {
+        "kind": "shape",
+        "shape": "lShape",
+        "color": "orange",
+        "size": "m",
+        "rotation": 180
+       }
+      ]
+     }
+    },
+    "skillId": "R-A5",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A5|4|{\"colors\":[\"blue\",\"orange\"],\"flip\":false,\"shape\":\"lShape\",\"shown\":3,\"startTurn\":3,\"step\":1,\"turns\":3}"
    }
   ]
  }

@@ -1,6 +1,6 @@
 {
  "skillId": "R-A4",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -3739,6 +3739,2068 @@
     "level": 3,
     "seed": 10,
     "key": "R-A4|3|{\"blank\":0,\"colAttrs\":[3,1],\"rowAttrs\":[\"green\",\"purple\"]}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "heart|purple",
+      "triangle|purple",
+      "square|purple",
+      "blank",
+      "square|red",
+      "heart|red",
+      "square|brown",
+      "heart|brown",
+      "triangle|brown"
+     ],
+     "blank": 3,
+     "options": [
+      "square|purple",
+      "square|red",
+      "triangle|red",
+      "triangle|purple"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a red triangle."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a red triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A4|4|{\"blank\":3,\"cells\":[\"heart|purple\",\"triangle|purple\",\"square|purple\",\"blank\",\"square|red\",\"heart|red\",\"square|brown\",\"heart|brown\",\"triangle|brown\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|blue",
+      "heart|blue",
+      "circle|blue",
+      "heart|orange",
+      "circle|orange",
+      "triangle|orange",
+      "circle|black",
+      "blank",
+      "heart|black"
+     ],
+     "blank": 7,
+     "options": [
+      "triangle|black",
+      "circle|orange",
+      "triangle|orange",
+      "circle|black"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a black triangle."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a black triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A4|4|{\"blank\":7,\"cells\":[\"triangle|blue\",\"heart|blue\",\"circle|blue\",\"heart|orange\",\"circle|orange\",\"triangle|orange\",\"circle|black\",\"blank\",\"heart|black\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|orange",
+      "heart|orange",
+      "square|orange",
+      "square|black",
+      "blank",
+      "heart|black",
+      "heart|purple",
+      "square|purple",
+      "triangle|purple"
+     ],
+     "blank": 4,
+     "options": [
+      "heart|purple",
+      "triangle|black",
+      "heart|black",
+      "triangle|purple"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a black triangle."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a black triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A4|4|{\"blank\":4,\"cells\":[\"triangle|orange\",\"heart|orange\",\"square|orange\",\"square|black\",\"blank\",\"heart|black\",\"heart|purple\",\"square|purple\",\"triangle|purple\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|blue",
+      "triangle|blue",
+      "circle|blue",
+      "circle|pink",
+      "star|pink",
+      "triangle|pink",
+      "triangle|brown",
+      "blank",
+      "star|brown"
+     ],
+     "blank": 7,
+     "options": [
+      "circle|brown",
+      "star|brown",
+      "star|pink",
+      "circle|pink"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a brown circle."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a brown circle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A4|4|{\"blank\":7,\"cells\":[\"star|blue\",\"triangle|blue\",\"circle|blue\",\"circle|pink\",\"star|pink\",\"triangle|pink\",\"triangle|brown\",\"blank\",\"star|brown\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "blank",
+      "square|green",
+      "circle|green",
+      "circle|blue",
+      "triangle|blue",
+      "square|blue",
+      "square|pink",
+      "circle|pink",
+      "triangle|pink"
+     ],
+     "blank": 0,
+     "options": [
+      "square|green",
+      "triangle|blue",
+      "triangle|green",
+      "square|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a green triangle."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a green triangle."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A4|4|{\"blank\":0,\"cells\":[\"blank\",\"square|green\",\"circle|green\",\"circle|blue\",\"triangle|blue\",\"square|blue\",\"square|pink\",\"circle|pink\",\"triangle|pink\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "blank",
+      "star|blue",
+      "square|blue",
+      "star|green",
+      "square|green",
+      "heart|green",
+      "square|yellow",
+      "heart|yellow",
+      "star|yellow"
+     ],
+     "blank": 0,
+     "options": [
+      "square|green",
+      "heart|blue",
+      "heart|green",
+      "square|blue"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "blue",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a blue heart."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a blue heart."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A4|4|{\"blank\":0,\"cells\":[\"blank\",\"star|blue\",\"square|blue\",\"star|green\",\"square|green\",\"heart|green\",\"square|yellow\",\"heart|yellow\",\"star|yellow\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|purple",
+      "square|purple",
+      "triangle|purple",
+      "triangle|red",
+      "blank",
+      "square|red",
+      "square|black",
+      "triangle|black",
+      "star|black"
+     ],
+     "blank": 4,
+     "options": [
+      "triangle|red",
+      "star|red",
+      "triangle|purple",
+      "star|purple"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "purple",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "red",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "red",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "purple",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a red star."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a red star."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A4|4|{\"blank\":4,\"cells\":[\"star|purple\",\"square|purple\",\"triangle|purple\",\"triangle|red\",\"blank\",\"square|red\",\"square|black\",\"triangle|black\",\"star|black\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "star|orange",
+      "blank",
+      "heart|orange",
+      "heart|brown",
+      "star|brown",
+      "square|brown",
+      "square|pink",
+      "heart|pink",
+      "star|pink"
+     ],
+     "blank": 1,
+     "options": [
+      "square|brown",
+      "heart|brown",
+      "square|orange",
+      "heart|orange"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "brown",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "star",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "brown",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "heart",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs an orange square."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs an orange square."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A4|4|{\"blank\":1,\"cells\":[\"star|orange\",\"blank\",\"heart|orange\",\"heart|brown\",\"star|brown\",\"square|brown\",\"square|pink\",\"heart|pink\",\"star|pink\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "triangle|orange",
+      "square|orange",
+      "heart|orange",
+      "square|black",
+      "heart|black",
+      "triangle|black",
+      "heart|green",
+      "triangle|green",
+      "blank"
+     ],
+     "blank": 8,
+     "options": [
+      "square|green",
+      "triangle|orange",
+      "square|orange",
+      "triangle|green"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "orange",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "triangle",
+       "color": "green",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a green square."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a green square."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "green",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A4|4|{\"blank\":8,\"cells\":[\"triangle|orange\",\"square|orange\",\"heart|orange\",\"square|black\",\"heart|black\",\"triangle|black\",\"heart|green\",\"triangle|green\",\"blank\"],\"oracle\":\"figureGrid\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "oracle": "figureGrid",
+     "cells": [
+      "circle|pink",
+      "square|pink",
+      "heart|pink",
+      "blank",
+      "heart|black",
+      "circle|black",
+      "heart|yellow",
+      "circle|yellow",
+      "square|yellow"
+     ],
+     "blank": 3,
+     "options": [
+      "square|black",
+      "circle|pink",
+      "circle|black",
+      "square|pink"
+     ]
+    },
+    "prompt": {
+     "text": "Which one goes in the empty box?",
+     "speak": [
+      "Which one goes in the empty box?"
+     ]
+    },
+    "stimulus": {
+     "kind": "matrix",
+     "cells": [
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "pink",
+       "size": "m",
+       "rotation": 0
+      },
+      "blank",
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "black",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "heart",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "circle",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      },
+      {
+       "kind": "shape",
+       "shape": "square",
+       "color": "yellow",
+       "size": "m",
+       "rotation": 0
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "black",
+      "size": "m",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "pink",
+      "size": "m",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each row has the same colour. Each row and each column has every shape once. The box needs a black square."
+     ],
+     "steps": [
+      "Each row has the same colour.",
+      "Each row and each column has every shape once.",
+      "The box needs a black square."
+     ],
+     "visual": {
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "black",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "yellow",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     }
+    },
+    "skillId": "R-A4",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A4|4|{\"blank\":3,\"cells\":[\"circle|pink\",\"square|pink\",\"heart|pink\",\"blank\",\"heart|black\",\"circle|black\",\"heart|yellow\",\"circle|yellow\",\"square|yellow\"],\"oracle\":\"figureGrid\"}"
    }
   ]
  }

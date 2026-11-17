@@ -11,7 +11,8 @@ import { RIDDLES } from '../../data/riddles';
 import type { SkillGenerator } from '../../generator';
 import type { Explanation } from '../ela/pk/parts';
 import { cap, pickApart, picture, row } from '../ela/pk/parts';
-import { a, shape, twoClearColors } from '../math/pk/parts';
+import { a, easyToTellApart, shape, twoClearColors } from '../math/pk/parts';
+import type { ColorName } from '../../data/colors';
 
 // Reasoning A.1, A.2, A.9 and A.14: questions about pictures and what they have in common.
 
@@ -35,7 +36,8 @@ const inGroup = (group: WordGroup): GroupWord[] => GROUP_WORDS.filter((entry) =>
 
 // ---- A.1 Odd one out ----
 // Levels: 3 pictures, one from another group / 3 pictures from closer groups /
-// 4 shapes, three the same and one differing by one attribute.
+// 4 shapes, three the same and one differing by one attribute /
+// 4 shapes that all look different, and a hidden rule three of them share: corners, colour or shape.
 
 const ODD = 'Which one does not belong?';
 // "Things" is never the group the others share: everything is a thing.
@@ -105,7 +107,65 @@ function oddShape(rng: Rng): QuestionDraft {
   };
 }
 
-const oddOneOut = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? oddShape(rng) : oddPictures(level, rng));
+// Level 4: no two options are the same picture. Three share one thing the fourth does not, and
+// everything else is mixed so that nothing else splits three to one: the sizes go two and two.
+const ROUND: ShapeName[] = ['circle', 'oval'];
+const CORNERED: ShapeName[] = ['square', 'triangle', 'star', 'hexagon', 'rectangle'];
+
+function fourClearColors(rng: Rng): ColorName[] {
+  for (;;) {
+    const colors = rng.sample(COLOR_NAMES, 4);
+    if (colors.every((one, i) => colors.slice(i + 1).every((two) => easyToTellApart(one, two)))) return colors;
+  }
+}
+
+function oddByRule(rng: Rng): QuestionDraft {
+  const oddAt = rng.int(0, 3);
+  const place = <T,>(same: T, odd: T): T[] => [0, 1, 2, 3].map((i) => (i === oddAt ? odd : same));
+  const by = rng.pick(['round', 'colour', 'shape'] as const);
+  const sizes = rng.shuffle<'s' | 'l'>(['s', 's', 'l', 'l']);
+  let forms: ShapeName[];
+  let colors: ColorName[];
+  let attrs: string[];
+  let same: string;
+  let different: string;
+  if (by === 'round') {
+    // Three shapes with corners and one round one, every colour different.
+    const cornered = rng.sample(CORNERED, 3);
+    const round = rng.pick(ROUND);
+    forms = [0, 1, 2, 3].map((i) => (i === oddAt ? round : (cornered[i < oddAt ? i : i - 1] as ShapeName)));
+    colors = fourClearColors(rng);
+    attrs = place('corners', 'round');
+    [same, different] = ['shapes with corners', 'round'];
+  } else if (by === 'colour') {
+    // Three of one colour and one of another, four different shapes that all have corners.
+    const [one, two] = twoClearColors(rng);
+    forms = rng.sample(CORNERED, 4);
+    colors = place(one, two);
+    attrs = colors;
+    [same, different] = [one, two];
+  } else {
+    // Three of one shape and one of another, every colour different.
+    const [one, two] = rng.sample(CORNERED, 2) as [ShapeName, ShapeName];
+    forms = place(one, two);
+    colors = fourClearColors(rng);
+    attrs = forms;
+    [same, different] = [`${one}s`, a(two)];
+  }
+  const options = forms.map((form, i) => shape(form, colors[i] as ColorName, sizes[i]));
+  const lines = [`These three are all ${same}.`, `This one is ${different}.`];
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { optionAttrs: attrs, by, options: forms.map((form, i) => `${form}|${colors[i]}|${sizes[i]}`) },
+    prompt: { text: ODD, speak: [ODD] },
+    options,
+    answerIndex: oddAt,
+    explanation: { speak: [lines.join(' ')], steps: lines, visual: options[oddAt] as Visual },
+  };
+}
+
+const oddOneOut = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? oddByRule(rng) : level === 3 ? oddShape(rng) : oddPictures(level, rng));
 
 const word = (name: string): GroupWord => GROUP_WORDS.find((entry) => entry.word === name) as GroupWord;
 
@@ -131,7 +191,7 @@ function oddLesson(): LessonStep[] {
 
 export const oddOneOutGenerator: SkillGenerator = {
   skillId: 'R-A1',
-  maxLevel: 3,
+  maxLevel: 4,
   itemTypes: ['choice'],
   lists: ['categories', 'colors'],
   generate: oddOneOut,
@@ -142,7 +202,8 @@ export const oddOneOutGenerator: SkillGenerator = {
 };
 
 // ---- A.2 Which belongs ----
-// Levels: two examples from a group, pick a third / closer distractors.
+// Levels: two examples from a group, pick a third / closer distractors /
+// three examples and four options: two from close groups and one from a far group.
 
 const BELONGS = 'Which one belongs with these?';
 
@@ -174,6 +235,31 @@ function whichBelongs(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+const avoid = (one: GroupWord, two: GroupWord): boolean => groupsClash(one.group, two.group) || wordClashesWithGroup(one.word, two.group) || wordClashesWithGroup(two.word, one.group);
+
+function belongsHarder(rng: Rng): QuestionDraft {
+  const group = rng.pick(SHARED_CLOSE);
+  const members = rng.sample(inGroup(group), 4) as [GroupWord, GroupWord, GroupWord, GroupWord];
+  const [one, two, three, answer] = members;
+  const allowed = (close: boolean): GroupWord[] => GROUP_WORDS.filter((entry) => mayMeet(entry, group, members) && isClose(entry.group, group) === close);
+  const near = pickApart(allowed(true), 2, rng, (entry, picked) => picked.every((taken) => !avoid(taken, entry)));
+  const far = pickApart(allowed(false), 1, rng, (entry) => near.every((taken) => !avoid(taken, entry)));
+  const options = rng.shuffle([answer, ...near, ...far]);
+  const lines = [`These are all ${group}.`, `So is this one: ${answer.word}.`];
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { target: group, relation: 'category', examples: [one.word, two.word, three.word], answer: answer.word, options: options.map((entry) => entry.word) },
+    prompt: { text: BELONGS, speak: [BELONGS] },
+    stimulus: row(groupPicture(one), groupPicture(two), groupPicture(three)),
+    options: options.map(groupPicture),
+    answerIndex: options.indexOf(answer),
+    explanation: { speak: [`These are all ${group}. So is this one.`, { word: answer.word }, '.'], steps: lines, visual: groupPicture(answer) },
+  };
+}
+
+const belongs = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? belongsHarder(rng) : whichBelongs(level, rng));
+
 function belongsLesson(): LessonStep[] {
   const shown = belongsExplanation('vehicles', word('train'));
   const revealed = belongsExplanation('clothes', word('hat'));
@@ -193,18 +279,20 @@ function belongsLesson(): LessonStep[] {
 
 export const whichBelongsGenerator: SkillGenerator = {
   skillId: 'R-A2',
-  maxLevel: 2,
+  maxLevel: 3,
   itemTypes: ['choice'],
   lists: ['categories'],
-  generate: whichBelongs,
+  generate: belongs,
   exampleSeed: 82,
-  example: () => whichBelongs(1, makeRng(82)),
+  example: () => belongs(1, makeRng(82)),
   lesson: belongsLesson,
   oracle: 'wordSet',
 };
 
 // ---- A.9 Picture analogies ----
 // Levels: "Sock goes with foot. Glove goes with what?": wrong options from other relations / from the same relation.
+// Level 3 runs the other way, "Foot is to sock as hand is to what?", with four options: the other first halves
+// of the same relation and one from another relation.
 // A wrong option from another relation is never one that could be argued for, such as an egg for a bird.
 
 function analogyPrompt(example: AnalogyPair, target: AnalogyPair): { text: string; speak: Say } {
@@ -238,6 +326,30 @@ function pictureAnalogy(level: Level, rng: Rng): QuestionDraft {
   };
 }
 
+function backAnalogy(rng: Rng): QuestionDraft {
+  const target = rng.pick(ANALOGY_PAIRS);
+  const sameRelation = ANALOGY_PAIRS.filter((pair) => pair.relation === target.relation && pair !== target);
+  const example = rng.pick(sameRelation);
+  const clashes = (pair: AnalogyPair): boolean => ANALOGY_CLASHES.some(([first, second]) => first === pair.first.word && second === target.second.word);
+  const other = rng.pick(ANALOGY_PAIRS.filter((pair) => pair.relation !== target.relation && !clashes(pair)));
+  const options = rng.shuffle([target, ...sameRelation, other]);
+  return {
+    type: 'choice',
+    mode: 'look',
+    facts: { target: target.second.word, relation: 'analogyBack', example: [example.second.word, example.first.word], options: options.map((pair) => pair.first.word) },
+    prompt: {
+      text: `${cap(example.second.word)} is to ${example.first.word} as ${target.second.word} is to what?`,
+      speak: [{ word: example.second.word }, 'is to', { word: example.first.word }, 'as', { word: target.second.word }, 'is to what?'],
+    },
+    stimulus: { kind: 'matrix', cells: [groupPicture(example.second), groupPicture(example.first), groupPicture(target.second), 'blank'] },
+    options: options.map((pair) => groupPicture(pair.first)),
+    answerIndex: options.indexOf(target),
+    explanation: { ...analogyExplanation(example, target), visual: row(groupPicture(target.second), groupPicture(target.first)) },
+  };
+}
+
+const analogy = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? backAnalogy(rng) : pictureAnalogy(level, rng));
+
 const pairOf = (first: string): AnalogyPair => ANALOGY_PAIRS.find((pair) => pair.first.word === first) as AnalogyPair;
 
 function analogyLesson(): LessonStep[] {
@@ -263,18 +375,18 @@ function analogyLesson(): LessonStep[] {
 
 export const pictureAnalogiesGenerator: SkillGenerator = {
   skillId: 'R-A9',
-  maxLevel: 2,
+  maxLevel: 3,
   itemTypes: ['choice'],
   lists: ['analogies'],
-  generate: pictureAnalogy,
+  generate: analogy,
   exampleSeed: 89,
-  example: () => pictureAnalogy(1, makeRng(89)),
+  example: () => analogy(1, makeRng(89)),
   lesson: analogyLesson,
   oracle: 'wordSet',
 };
 
 // ---- A.14 Picture riddles ----
-// Levels: spoken riddle with 2 pictures / 3 pictures.
+// Levels: spoken riddle with 2 pictures / 3 pictures / 4 pictures.
 
 function riddleExplanation(riddle: Riddle): Explanation {
   return {
@@ -286,7 +398,7 @@ function riddleExplanation(riddle: Riddle): Explanation {
 
 function pictureRiddle(level: Level, rng: Rng): QuestionDraft {
   const riddle = rng.pick(RIDDLES);
-  const wrong = rng.sample(RIDDLES.filter((other) => other !== riddle), level === 1 ? 1 : 2);
+  const wrong = rng.sample(RIDDLES.filter((other) => other !== riddle), level);
   const options = rng.shuffle([riddle, ...wrong]);
   return {
     type: 'choice',
@@ -319,7 +431,7 @@ function riddleLesson(): LessonStep[] {
 
 export const pictureRiddlesGenerator: SkillGenerator = {
   skillId: 'R-A14',
-  maxLevel: 2,
+  maxLevel: 3,
   itemTypes: ['choice'],
   lists: ['riddles'],
   generate: pictureRiddle,

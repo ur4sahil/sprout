@@ -39,6 +39,7 @@ import { transform } from './transform';
 import { truth } from './truth';
 import { twoStep } from './twoStep';
 import { wordSet } from './wordSet';
+import { balance, figureGrid, mirrorRow } from './reasoning3';
 
 describe('count', () => {
   it('is n', () => {
@@ -229,7 +230,7 @@ describe('the oracle list', () => {
 });
 
 const BASE_NAMES: string[] = (
-      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'verbalAnalogy', 'verbalClass', 'numberGrid', 'wordSet']
+      ['add', 'analogy', 'attribute', 'compare', 'composeShape', 'count', 'ela2', 'elapsed', 'estimate', 'fold', 'fraction', 'fractionValue', 'graph', 'letter', 'line', 'lineUp', 'makeTen', 'matchEqual', 'matrix', 'measure', 'measureTool', 'measureUnit', 'missing', 'money', 'multiply', 'numberName', 'numberRule', 'oddOne', 'order', 'parity', 'pattern', 'place', 'position', 'quadrilateral', 'rect', 'round', 'sentence', 'sequence', 'series', 'shapeFacts', 'sortBy', 'spell', 'subtract', 'sumList', 'time', 'transform', 'truth', 'turnaround', 'twoStep', 'unitChoice', 'verbalAnalogy', 'verbalClass', 'numberGrid', 'figureGrid', 'mirrorRow', 'balance', 'wordSet']
 );
 
 describe('judge', () => {
@@ -558,6 +559,71 @@ describe('wordSet, the reasoning relations', () => {
     expect(wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['bird', 'fish', 'car'] })).toEqual({ kind: 'index', index: 0 });
     expect(() => wordSet({ target: 'Which one can fly?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
     expect(() => wordSet({ target: 'Which one can swim?', relation: 'riddle', options: ['fish', 'car'] })).toThrow();
+  });
+  it('analogyBack: the first half of the pair the target ends', () => {
+    expect(wordSet({ target: 'hand', relation: 'analogyBack', options: ['sock', 'glove', 'glasses', 'bee'] })).toEqual({ kind: 'index', index: 1 });
+    expect(wordSet({ target: 'egg', relation: 'analogyBack', options: ['hen', 'cow'] })).toEqual({ kind: 'index', index: 0 });
+    expect(() => wordSet({ target: 'egg', relation: 'analogyBack', options: ['cow', 'bee'] })).toThrow();
+    expect(() => wordSet({ target: 'glove', relation: 'analogyBack', options: ['hand', 'sock'] })).toThrow();
+  });
+});
+
+describe('the harder Reasoning levels', () => {
+  it('numberRule: times 3 to 10, and double then add or take away', () => {
+    expect(numberRule({ examples: [[2, 6], [4, 12]], base: 5 })).toEqual({ kind: 'value', value: 15 });
+    expect(numberRule({ examples: [[1, 5], [3, 15]], base: 7 })).toEqual({ kind: 'value', value: 35 });
+    expect(numberRule({ examples: [[2, 5], [4, 9]], base: 6 })).toEqual({ kind: 'value', value: 13 });
+    expect(numberRule({ examples: [[3, 4], [5, 8]], base: 9 })).toEqual({ kind: 'value', value: 16 });
+    // One pair alone fits times 3 and double then add 2, and plus 4.
+    expect(() => numberRule({ examples: [[2, 6]], base: 5 })).toThrow(/3 rules/);
+  });
+  it('series: jumps that grow, and each number a few times the one before', () => {
+    expect(series({ start: 1, steps: [1], grow: 1, rule: 'grow', blankIndex: 5 })).toEqual({ kind: 'value', value: 16 }); // 1 2 4 7 11 16
+    expect(series({ start: 3, steps: [2], grow: 2, rule: 'grow', blankIndex: 3 })).toEqual({ kind: 'value', value: 15 }); // 3 5 9 15
+    expect(series({ start: 3, steps: [2], rule: 'times', blankIndex: 4 })).toEqual({ kind: 'value', value: 48 });
+    expect(series({ start: 2, steps: [3], rule: 'times', blankIndex: 4 })).toEqual({ kind: 'value', value: 162 });
+    expect(() => series({ start: 3, steps: [1], rule: 'times', blankIndex: 4 })).toThrow();
+    expect(() => series({ start: 3, steps: [2], grow: 0, rule: 'grow', blankIndex: 4 })).toThrow();
+    expect(() => series({ start: 3, steps: [2], rule: 'grow', blankIndex: 4 })).toThrow();
+    expect(() => series({ start: 3, steps: [2], rule: 'square', blankIndex: 4 })).toThrow();
+  });
+  it('transform: a turn and a colour that changes each step', () => {
+    expect(transform({ shape: 'arrow', startTurn: 1, turns: 3, flip: false, colors: ['red', 'blue'], shown: 3 })).toEqual({ kind: 'value', value: '0|blue' });
+    expect(transform({ shape: 'arrow', startTurn: 0, turns: 4, flip: false, colors: ['red', 'blue'], shown: 4 })).toEqual({ kind: 'value', value: '0|red' });
+    expect(() => transform({ shape: 'arrow', startTurn: 0, turns: 3, flip: false, colors: ['red', 'red'], shown: 3 })).toThrow();
+    expect(() => transform({ shape: 'arrow', startTurn: 0, turns: 3, flip: false, colors: ['red', 'blue'] })).toThrow();
+  });
+  it('figureGrid: a row that shares a value, a column that does, or every value once in each row and column', () => {
+    // Each row one colour; the shapes go round, so each row and column has every shape once.
+    const rowColour = ['circle|red', 'star|red', 'heart|red', 'star|blue', 'heart|blue', 'circle|blue', 'heart|green', 'circle|green', 'star|green'];
+    expect(figureGrid({ cells: rowColour.map((cell, i) => (i === 4 ? 'blank' : cell)), blank: 4 })).toEqual({ kind: 'value', value: 'heart|blue' });
+    expect(figureGrid({ cells: rowColour.map((cell, i) => (i === 6 ? 'blank' : cell)), blank: 6 })).toEqual({ kind: 'value', value: 'heart|green' });
+    // Shape and colour both go round, on different slants.
+    const both = ['circle|red', 'star|blue', 'heart|green', 'star|green', 'heart|red', 'circle|blue', 'heart|blue', 'circle|green', 'star|red'];
+    expect(figureGrid({ cells: both.map((cell, i) => (i === 4 ? 'blank' : cell)), blank: 4 })).toEqual({ kind: 'value', value: 'heart|red' });
+    // Each column one colour, each row one shape.
+    const grid = ['circle|red', 'circle|blue', 'circle|green', 'star|red', 'star|blue', 'star|green', 'heart|red', 'heart|blue', 'heart|green'];
+    expect(figureGrid({ cells: grid.map((cell, i) => (i === 2 ? 'blank' : cell)), blank: 2 })).toEqual({ kind: 'value', value: 'circle|green' });
+  });
+  it('figureGrid: refuses a grid that follows no rule, or a blank in the wrong place', () => {
+    const broken = ['circle|red', 'star|red', 'heart|red', 'star|blue', 'blank', 'circle|blue', 'heart|green', 'star|green', 'circle|green'];
+    expect(() => figureGrid({ cells: broken, blank: 4 })).toThrow();
+    const fine = ['circle|red', 'star|red', 'heart|red', 'star|blue', 'blank', 'circle|blue', 'heart|green', 'circle|green', 'star|green'];
+    expect(() => figureGrid({ cells: fine, blank: 3 })).toThrow();
+    expect(() => figureGrid({ cells: fine.slice(0, 8), blank: 4 })).toThrow();
+  });
+  it('mirrorRow: the pieces swap round and each one flips', () => {
+    expect(mirrorRow({ pieces: [{ shape: 'flag', color: 'red', turn: 0 }, { shape: 'lShape', color: 'blue', turn: 1 }] })).toEqual({ kind: 'value', value: 'lShape:blue:3f flag:red:0f' });
+    expect(mirrorRow({ pieces: [{ shape: 'flag', color: 'red', turn: 2 }, { shape: 'flag', color: 'blue', turn: 3 }] })).toEqual({ kind: 'value', value: 'flag:blue:1f flag:red:2f' });
+    expect(() => mirrorRow({ pieces: [{ shape: 'flag', color: 'red', turn: 0 }] })).toThrow();
+    expect(() => mirrorRow({ pieces: [{ shape: 'flag', color: 'red', turn: 4 }, { shape: 'flag', color: 'blue', turn: 0 }] })).toThrow();
+  });
+  it('balance: the number each empty box holds', () => {
+    expect(balance({ left: [2, 'blank', 'blank'], right: [14] })).toEqual({ kind: 'value', value: 6 });
+    expect(balance({ left: ['blank', 'blank', 'blank'], right: [10, 5] })).toEqual({ kind: 'value', value: 5 });
+    expect(() => balance({ left: [2, 'blank', 'blank'], right: [13] })).toThrow();
+    expect(() => balance({ left: [2, 3], right: [5] })).toThrow();
+    expect(() => balance({ left: [20, 'blank'], right: [5] })).toThrow();
   });
 });
 

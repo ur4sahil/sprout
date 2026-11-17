@@ -1,6 +1,6 @@
 {
  "skillId": "R-A1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -2700,6 +2700,768 @@
     "level": 3,
     "seed": 10,
     "key": "R-A1|3|{\"by\":\"size\",\"color\":\"brown\",\"optionAttrs\":[\"big\",\"big\",\"small\",\"big\"],\"shape\":\"star\"}"
+   }
+  ],
+  "4": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "corners",
+      "corners",
+      "round",
+      "corners"
+     ],
+     "by": "round",
+     "options": [
+      "rectangle|yellow|s",
+      "square|purple|s",
+      "oval|green|l",
+      "hexagon|black|l"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 1,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"corners\",\"corners\",\"round\",\"corners\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "corners",
+      "corners",
+      "round",
+      "corners"
+     ],
+     "by": "round",
+     "options": [
+      "square|yellow|s",
+      "star|red|l",
+      "circle|purple|l",
+      "rectangle|black|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 2,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"corners\",\"corners\",\"round\",\"corners\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "corners",
+      "corners",
+      "round",
+      "corners"
+     ],
+     "by": "round",
+     "options": [
+      "hexagon|black|l",
+      "rectangle|orange|l",
+      "oval|pink|s",
+      "square|blue|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "pink",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "pink",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 3,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"corners\",\"corners\",\"round\",\"corners\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "corners",
+      "corners",
+      "corners",
+      "round"
+     ],
+     "by": "round",
+     "options": [
+      "hexagon|red|s",
+      "triangle|brown|l",
+      "rectangle|yellow|l",
+      "oval|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "red",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "brown",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 3,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 4,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"corners\",\"corners\",\"corners\",\"round\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "square",
+      "square",
+      "hexagon",
+      "square"
+     ],
+     "by": "shape",
+     "options": [
+      "square|pink|l",
+      "square|black|l",
+      "hexagon|orange|s",
+      "square|blue|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "pink",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "orange",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all squares. This one is a hexagon."
+     ],
+     "steps": [
+      "These three are all squares.",
+      "This one is a hexagon."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "orange",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 5,
+    "key": "R-A1|4|{\"by\":\"shape\",\"optionAttrs\":[\"square\",\"square\",\"hexagon\",\"square\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "corners",
+      "corners",
+      "round",
+      "corners"
+     ],
+     "by": "round",
+     "options": [
+      "hexagon|orange|l",
+      "triangle|green|s",
+      "circle|blue|s",
+      "star|pink|l"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "green",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "pink",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "circle",
+      "color": "blue",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 6,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"corners\",\"corners\",\"round\",\"corners\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "round",
+      "corners",
+      "corners",
+      "corners"
+     ],
+     "by": "round",
+     "options": [
+      "oval|pink|s",
+      "rectangle|black|s",
+      "hexagon|green|l",
+      "square|orange|l"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "pink",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "orange",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all shapes with corners. This one is round."
+     ],
+     "steps": [
+      "These three are all shapes with corners.",
+      "This one is round."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "oval",
+      "color": "pink",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 7,
+    "key": "R-A1|4|{\"by\":\"round\",\"optionAttrs\":[\"round\",\"corners\",\"corners\",\"corners\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "brown",
+      "purple",
+      "purple",
+      "purple"
+     ],
+     "by": "colour",
+     "options": [
+      "hexagon|brown|s",
+      "rectangle|purple|l",
+      "star|purple|l",
+      "square|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "purple",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all purple. This one is brown."
+     ],
+     "steps": [
+      "These three are all purple.",
+      "This one is brown."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "hexagon",
+      "color": "brown",
+      "size": "s",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 8,
+    "key": "R-A1|4|{\"by\":\"colour\",\"optionAttrs\":[\"brown\",\"purple\",\"purple\",\"purple\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "square",
+      "rectangle",
+      "rectangle",
+      "rectangle"
+     ],
+     "by": "shape",
+     "options": [
+      "square|green|l",
+      "rectangle|orange|s",
+      "rectangle|black|l",
+      "rectangle|purple|s"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "orange",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "black",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "purple",
+      "size": "s",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "These three are all rectangles. This one is a square."
+     ],
+     "steps": [
+      "These three are all rectangles.",
+      "This one is a square."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "square",
+      "color": "green",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 9,
+    "key": "R-A1|4|{\"by\":\"shape\",\"optionAttrs\":[\"square\",\"rectangle\",\"rectangle\",\"rectangle\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "triangle",
+      "triangle",
+      "rectangle",
+      "triangle"
+     ],
+     "by": "shape",
+     "options": [
+      "triangle|yellow|s",
+      "triangle|black|s",
+      "rectangle|blue|l",
+      "triangle|red|l"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "black",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "triangle",
+      "color": "red",
+      "size": "l",
+      "rotation": 0
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "These three are all triangles. This one is a rectangle."
+     ],
+     "steps": [
+      "These three are all triangles.",
+      "This one is a rectangle."
+     ],
+     "visual": {
+      "kind": "shape",
+      "shape": "rectangle",
+      "color": "blue",
+      "size": "l",
+      "rotation": 0
+     }
+    },
+    "skillId": "R-A1",
+    "level": 4,
+    "seed": 10,
+    "key": "R-A1|4|{\"by\":\"shape\",\"optionAttrs\":[\"triangle\",\"triangle\",\"rectangle\",\"triangle\"]}"
    }
   ]
  }

@@ -217,6 +217,9 @@ export type BaseOracleId =
   | 'verbalAnalogy'
   | 'verbalClass'
   | 'numberGrid'
+  | 'figureGrid'
+  | 'mirrorRow'
+  | 'balance'
   | 'authored';
 
 // The facts each oracle reads. validateQuestion checks they are all present.
@@ -275,6 +278,9 @@ const BASE_ORACLE_FACTS: Record<BaseOracleId, string[]> = {
   verbalAnalogy: ['from', 'base', 'options'],
   verbalClass: ['words'],
   numberGrid: ['rows', 'rule'],
+  figureGrid: ['cells', 'blank'],
+  mirrorRow: ['pieces'],
+  balance: ['left', 'right'],
   authored: ['id'],
 };
 export const ORACLE_FACTS: Record<OracleId, readonly string[]> = { ...BASE_ORACLE_FACTS, ...H1_FACTS, ...H2_FACTS, ...H3_FACTS, ...H4_FACTS, ...H5_FACTS };

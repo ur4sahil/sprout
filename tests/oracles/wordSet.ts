@@ -25,6 +25,7 @@ import { list, text } from './types';
 //   opposite    the one option that is the target's opposite
 //   syllables   how many parts the target word has
 //   analogyPair the one option that is the second half of the pair the target starts
+//   analogyBack the one option that is the first half of the pair the target ends
 //   riddle      the one option that answers the riddle the target spells out
 //   firstLetter the letter the target word starts with (first sounds list)
 //   lastLetter  the letter a short-vowel word ends with
@@ -97,6 +98,11 @@ export const wordSet: Oracle = (facts) => {
       const pair = ANALOGY_PAIRS.find((candidate) => candidate.first.word === target);
       if (!pair) throw new Error(`oracle wordSet analogyPair: ${target} starts no pair in the list`);
       return theOne(words(facts), (word) => word === pair.second.word, relation);
+    }
+    case 'analogyBack': {
+      const pair = ANALOGY_PAIRS.find((candidate) => candidate.second.word === target);
+      if (!pair) throw new Error(`oracle wordSet analogyBack: ${target} ends no pair in the list`);
+      return theOne(words(facts), (word) => word === pair.first.word, relation);
     }
     case 'riddle': {
       const riddle = RIDDLES.find((candidate) => candidate.riddle === target);

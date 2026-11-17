@@ -15,6 +15,7 @@ import { fold } from './fold';
 import { fraction } from './fraction';
 import { ela2 } from './ela2';
 import { numberGrid, verbalAnalogy, verbalClass } from './reasoning2';
+import { balance, figureGrid, mirrorRow } from './reasoning3';
 import { composeShape, lineUp, measureTool, position, sumList, turnaround, unitChoice } from './kGaps';
 import { elapsed } from './elapsed';
 import { fractionValue } from './fractionValue';
@@ -71,6 +72,9 @@ export const ORACLES: Partial<Record<OracleId, Oracle>> = {
   verbalAnalogy,
   verbalClass,
   numberGrid,
+  figureGrid,
+  mirrorRow,
+  balance,
   sumList,
   unitChoice,
   round,

@@ -1449,14 +1449,14 @@ These follow the figure-based style of gifted-screening tests. All share the str
 
 | Code | Skill | Type | Rule by level |
 | --- | --- | --- | --- |
-| A.1 | Odd one out | choice | 3 pictures, one from another group / 3 pictures from closer groups / 4 shapes, three the same and one differing by one attribute (`twins`) |
-| A.2 | Which belongs | choice | Two examples from a group, pick a third / closer distractors |
-| A.3 | Figure analogies | choice | Big red circle is to small red circle as big blue square is to blank: one attribute changes / two change |
-| A.4 | Figure matrices | choice | 2 by 2 grid, rows share shape and columns share colour / size and count / rotation |
-| A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn. Colour and starting turn vary |
-| A.6 | Mirror images | choice | Pick the mirror of a flag / of an L shape / the wrong options are turned copies |
-| A.7 | Two-rule patterns | choice | Colour and size alternate on different beats / colour and shape |
-| A.8 | Number analogies | choice, numberPad | Two example pairs, then a third to finish: plus n / double / typed |
+| A.1 | Odd one out | choice | 3 pictures, one from another group / 3 pictures from closer groups / 4 shapes, three the same and one differing by one attribute (`twins`) / 4 different shapes, three sharing a hidden rule: corners, colour or shape |
+| A.2 | Which belongs | choice | Two examples from a group, pick a third / closer distractors / three examples, 4 options: two close, one far |
+| A.3 | Figure analogies | choice | Big red circle is to small red circle as big blue square is to blank: one attribute changes / two change / three of four change (shape, colour, size, how many) |
+| A.4 | Figure matrices | choice | 2 by 2 grid, rows share shape and columns share colour / size and count / rotation / 3 by 3, rows share colour, each row and column holds every shape once |
+| A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn / a quarter turn and a change of colour each step. Colour and starting turn vary |
+| A.6 | Mirror images | choice | Pick the mirror of a flag / of an L shape / the wrong options are turned copies / two pieces in two colours: they swap and each flips |
+| A.7 | Two-rule patterns | choice | Colour and size alternate on different beats / colour and shape / colour, size and a cycle of three shapes |
+| A.8 | Number analogies | choice, numberPad | Two example pairs, then a third to finish: plus n / double / typed / times 3 to 5, or double then add or take away, typed |
 
 ### Adding skills later
 
@@ -1468,12 +1468,12 @@ Six more skills round out the reasoning set to cover picture, number and spatial
 
 | Code | Skill | Type | Rule by level |
 | --- | --- | --- | --- |
-| A.9 | Picture analogies | choice | "Sock is to foot as glove is to blank": wrong options from other relations / from the same relation |
-| A.10 | Number series | choice, numberPad | Plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed |
-| A.11 | Number puzzles | choice, numberPad | Balance scale: 3 and blank balance 5 / both pans hold sums / typed |
-| A.12 | Paper folding | choice | One fold, one hole at an outer corner / one hole next to the fold / two holes |
-| A.13 | Pattern completion | choice | 3 by 3 striped tile with a missing corner / checkerboard with a missing middle / two attributes |
-| A.14 | Picture riddles | choice | Spoken riddle with 2 pictures / 3 pictures |
+| A.9 | Picture analogies | choice | "Sock is to foot as glove is to blank": wrong options from other relations / from the same relation / backwards ("Foot is to sock as hand is to blank"), 4 options |
+| A.10 | Number series | choice, numberPad | Plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed / jumps that grow, or times 2 or 3, typed |
+| A.11 | Number puzzles | choice, numberPad | Balance scale: 3 and blank balance 5 / both pans hold sums / typed / two or three boxes that hold the same number, typed |
+| A.12 | Paper folding | choice | One fold, one hole at an outer corner / one hole next to the fold / two holes / three holes |
+| A.13 | Pattern completion | choice | 3 by 3 striped tile with a missing corner / checkerboard with a missing middle / two attributes / every shape and colour once in each row and column, middle missing |
+| A.14 | Picture riddles | choice | Spoken riddle with 2 pictures / 3 pictures / 4 pictures |
 
 ### Prompt and explanation templates
 
