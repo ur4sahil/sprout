@@ -40,15 +40,15 @@ describe('child setup', () => {
   async function emptyDevice() {
     await setUp('1');
     const store = await repo();
-    await store.saveChild({ ...(await store.listChildren())[0]!, deletedAt: NOW.toISOString() });
+    for (const each of await store.listChildren()) await store.saveChild({ ...each, deletedAt: NOW.toISOString() });
     return openApp();
   }
 
-  it('first run has no children: the start screen offers "Add a child"', async () => {
+  it('first run has no children: the start screen offers "Add a child", which opens the grown-ups area', async () => {
     const user = await emptyDevice();
     expect(await screen.findByRole('heading', { name: 'Sprout' })).toBeTruthy();
-    // No child yet: the only card is the one that adds a child.
-    expect(screen.getByRole('group', { name: 'Who is playing?' }).querySelectorAll('button')).toHaveLength(1);
+    // No child yet, so no cards: just a way to the grown-ups' add-a-child screen.
+    expect(screen.queryByRole('group', { name: 'Who is playing?' })).toBeNull();
     expect(screen.getByText('Add your first child to begin.')).toBeTruthy();
     await user.click(await screen.findByRole('button', { name: 'Add a child' }));
     expect(screen.getByRole('heading', { name: 'Add a child' })).toBeTruthy();
@@ -139,7 +139,9 @@ describe('the profile picker', () => {
     await finishCheckIn('kid-2');
     const user = openApp();
     const group = await screen.findByRole('group', { name: 'Who is playing?' });
-    expect([...group.querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual(['Robin', 'Ada', 'Add a child']);
+    expect([...group.querySelectorAll('button')].map((b) => b.getAttribute('aria-label'))).toEqual(['Robin', 'Ada']);
+    // Adding a child is in the grown-ups area once there is one: not on this screen.
+    expect(screen.queryByRole('button', { name: /Add a child/ })).toBeNull();
     // Each card says who it is, their grade and how far along today's goal they are.
     const card = group.querySelector('[data-profile="Robin"]') as HTMLElement;
     expect(card.textContent).toContain('Kindergarten');

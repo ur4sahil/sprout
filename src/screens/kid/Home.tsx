@@ -106,7 +106,7 @@ export default function Home() {
               <span className={styles.grade}>{GRADE_NAME[child.grade] ?? child.grade}</span>
             </div>
             {/* Back to the profile page, where another child can be picked. At the top, where it is easy to find. */}
-            <BigButton tone="quiet" className={styles.switch} onClick={() => go('/')}>
+            <BigButton size="kid" tone="quiet" className={styles.switch} onClick={() => go('/')}>
               <Icon name="person" />
               Switch child
             </BigButton>

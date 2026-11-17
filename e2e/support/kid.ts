@@ -45,21 +45,35 @@ export async function finishCheckIn(page: Page): Promise<void> {
   });
 }
 
-// Adds a child through the screens. Ends on the profile picker.
+// Adds a child through the screens: from the start screen's "Add a child" for the first child,
+// and from Grown-ups → Settings after that. Ends on the profile picker.
 // A new child would start with the placement check-in. Tests about anything else skip it: the check-in
 // is marked finished unless `checkIn` is 'new'.
 export async function addChild(page: Page, name: string, grade: string, checkIn: 'done' | 'new' = 'done'): Promise<void> {
-  await page.getByRole('button', { name: 'Add a child' }).click();
+  const first = page.getByRole('button', { name: /Add a child/ });
+  const grownUps = page.getByRole('button', { name: /Grown-ups/ });
+  await expect(first.or(grownUps).first()).toBeVisible();
+  const fromStart = await first.isVisible();
+  await (fromStart ? first : grownUps).click();
   // Adding a child is behind the grown-ups gate. A grown-up who has just chosen the PIN is let through.
   // One who signed in on a device that already knew the family's PIN is asked for it.
   const gate = page.getByRole('heading', { name: 'Grown-ups only' });
-  await expect(gate.or(page.getByLabel('First name'))).toBeVisible();
+  const next = fromStart ? page.getByLabel('First name') : page.getByRole('heading', { name: 'Dashboard' });
+  await expect(gate.or(next)).toBeVisible();
   if (await gate.isVisible()) await typePin(page);
+  if (!fromStart) {
+    await page.getByRole('tab', { name: 'Settings' }).click();
+    await page.getByRole('button', { name: 'Add a child' }).click();
+  }
   await page.getByLabel('First name').fill(name);
   await page.getByRole('button', { name: 'turtle' }).click();
   await page.getByRole('button', { name: 'Next' }).click();
   await page.getByRole('button', { name: grade, exact: true }).click();
   await page.getByRole('button', { name: 'Save' }).click();
+  if (!fromStart) {
+    await expect(page.getByRole('heading', { name: 'Settings' })).toBeVisible();
+    await page.getByRole('button', { name: 'Done' }).click();
+  }
   await expect(page.getByRole('button', { name, exact: true })).toBeVisible();
   if (checkIn === 'done') await finishCheckIn(page);
 }

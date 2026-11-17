@@ -206,7 +206,7 @@
 
 - Practice opened by itself never stops for a break: it runs until the score reaches 100 or the child leaves. Only a pick in a Play run has sessions (`usePractice(child, skill, { sessions: true })`), and its card says the score with "Next one" and "Stop for now", never "All done".
 - The games are offered on the medal at 100, on home (Pop only when a skill fits), and between Play picks.
-- The profile page: `components/ProfileCard.tsx` cards (avatar, name, grade, today's progress), an "Add a child" card in the grid, and a grown-ups bar with Grown-ups and Sign out. Adding a child and signing out ask for the PIN.
+- The profile page: `components/ProfileCard.tsx` cards (avatar, name, grade, today's progress) and a grown-ups bar with Grown-ups and Sign out. Adding a child is in Grown-ups → Settings only (the owner's choice, Nov 17, 2026). Before the first child, the profile page shows one "Add a child" button that opens `/parent/settings?add=1`: the PIN, then child setup, then back to the profile page. The e2e `addChild` helper takes whichever way applies.
 - The look (the owner chose "calm and clean" on Nov 16, 2026): a pale page, white cards with a thin line and a soft shadow, one teal brand colour, Nunito for everything (the owner's pick on Nov 17, 2026, bundled by `@fontsource-variable/nunito` so it works offline), with headings and numerals at `--weight-display`. All of it is tokens in `tokens.css`.
 - `BigButton` is flat. `tone="quiet"` is the outlined second choice: one filled button on a screen, the rest quiet.
 - Home has a menu (`KidScreen` `nav`, made of `NavButton`): a column on the left from tablet width, and after the main area on a phone, where the whole page scrolls as one.

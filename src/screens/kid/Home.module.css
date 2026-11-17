@@ -20,7 +20,11 @@
 }
 
 .switch {
+  /* Tall enough for a child's finger, but no wider or louder than it needs to be beside the name. */
   flex: none;
+  min-width: 0;
+  padding: 0 var(--space-4);
+  font-size: var(--text-m);
 }
 
 .name {

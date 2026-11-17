@@ -44,10 +44,8 @@ test.describe('the grown-ups area', () => {
     await addChild(page, 'Robin', 'Kindergarten');
     await closeGate(page);
 
-    // Both grown-up doors on the start screen ask for the PIN.
-    await page.getByRole('button', { name: 'Add a child' }).click();
-    await expect(page.getByRole('heading', { name: 'Grown-ups only' })).toBeVisible();
-    await page.getByRole('button', { name: 'Cancel' }).click();
+    // Adding a child is in the grown-ups area, not on the start screen. Grown-ups asks for the PIN.
+    await expect(page.getByRole('button', { name: /Add a child/ })).toHaveCount(0);
     await openGrownUps(page);
     await expect(page.getByRole('heading', { name: 'Grown-ups only' })).toBeVisible();
     await checkScreen(page, 'the gate', 44);

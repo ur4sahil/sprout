@@ -40,17 +40,3 @@ export default function ProfileCard({ name, avatar, grade, done, goal, onClick }
     </button>
   );
 }
-
-// The last card in the grid: a grown-up adds a child.
-export function AddProfileCard({ onClick }: { onClick: () => void }) {
-  return (
-    <button type="button" className={`${styles.card} ${styles.add}`} aria-label="Add a child" data-profile-add="" onClick={onClick}>
-      <span className={styles.plus} aria-hidden="true">
-        ＋
-      </span>
-      <span className={styles.name} aria-hidden="true">
-        Add a child
-      </span>
-    </button>
-  );
-}

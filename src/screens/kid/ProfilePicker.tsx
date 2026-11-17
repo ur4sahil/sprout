@@ -9,13 +9,12 @@ import { speak } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
-import ProfileCard, { AddProfileCard } from '../../components/ProfileCard';
+import ProfileCard from '../../components/ProfileCard';
 import { daysBetween, localDay, localDayOf, now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { failureMessage, signOut } from '../../storage/account';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
-import ChildSetup from '../parent/ChildSetup';
 import Gate from '../parent/Gate';
 import { GRADE_NAME } from './Home';
 import styles from './ProfilePicker.module.css';
@@ -30,8 +29,7 @@ export default function ProfilePicker() {
   const dataVersion = useAppStore((s) => s.dataVersion);
   const [children, setChildren] = useState<Child[] | null>(null);
   // What a grown-up asked for. Both need the PIN first.
-  const [asking, setAsking] = useState<'add' | 'signOut' | null>(null);
-  const adding = asking === 'add';
+  const [asking, setAsking] = useState<'signOut' | null>(null);
   const [signingOut, setSigningOut] = useState(false);
   const [signOutFailed, setSignOutFailed] = useState<string | null>(null);
   // Questions each child has answered today, for the bar on their card.
@@ -66,7 +64,7 @@ export default function ProfilePicker() {
       alive = false;
     };
     // Read again when another device's children arrive.
-  }, [setChild, adding, dataVersion]);
+  }, [setChild, dataVersion]);
 
   // Past the gate, signing out happens at once. The app then shows the sign-in screen.
   const signOutNow = asking === 'signOut' && hasPass();
@@ -92,7 +90,6 @@ export default function ProfilePicker() {
 
   // Adding a child and signing out are for grown-ups: the PIN gate comes first, unless a grown-up passed it in the last few minutes.
   if (asking !== null && !hasPass()) return <Gate onPass={() => setPassed((n) => n + 1)} onCancel={() => setAsking(null)} />;
-  if (adding) return <ChildSetup onDone={() => setAsking(null)} onCancel={() => setAsking(null)} />;
   const daysLeft = account.status === 'signedIn' ? daysBetween(now().toISOString(), account.expiresAt) : null;
 
   return (
@@ -105,12 +102,18 @@ export default function ProfilePicker() {
         {failed && <Notice role="alert">The saved profiles could not be read. Close the app and open it again.</Notice>}
         {signOutFailed && <Notice role="alert">{signOutFailed}</Notice>}
         {children !== null && <p className={styles.ask}>{children.length > 0 ? 'Who is learning today?' : 'Add your first child to begin.'}</p>}
-        {children !== null && (
+        {/* Children are added in the grown-ups area (Settings). Before the first one, a way straight there. */}
+        {children !== null && children.length === 0 && (
+          <BigButton onClick={() => void navigate('/parent/settings?add=1')}>
+            <Icon name="plus" />
+            Add a child
+          </BigButton>
+        )}
+        {children !== null && children.length > 0 && (
           <div className={styles.children} role="group" aria-label="Who is playing?">
             {children.map((child) => (
               <ProfileCard key={child.id} name={child.name} avatar={child.avatar} grade={GRADE_NAME[child.grade] ?? child.grade} done={today[child.id] ?? 0} goal={child.settings.dailyGoalQuestions} onClick={() => pick(child)} />
             ))}
-            <AddProfileCard onClick={() => setAsking('add')} />
           </div>
         )}
         <div className={styles.bar} role="group" aria-label="For grown-ups">

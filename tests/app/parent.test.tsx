@@ -132,13 +132,10 @@ describe('first run', () => {
 });
 
 describe('the grown-ups gate on screen', () => {
-  it('"Grown-ups" and "Add a child" ask for the PIN; a wrong one is refused and the right one opens the dashboard', async () => {
+  it('"Grown-ups" asks for the PIN; a wrong one is refused and the right one opens the dashboard', async () => {
     await setUp('K', {}, { gate: 'closed' });
     const user = openApp();
     await screen.findByRole('button', { name: 'Robin' });
-    await user.click(screen.getByRole('button', { name: 'Add a child' }));
-    expect(await screen.findByRole('heading', { name: 'Grown-ups only' })).toBeTruthy();
-    await user.click(screen.getByRole('button', { name: 'Cancel' }));
     await user.click(await screen.findByRole('button', { name: 'Grown-ups' }));
     expect(await screen.findByRole('heading', { name: 'Grown-ups only' })).toBeTruthy();
     await typePin(user, '9999');

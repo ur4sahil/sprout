@@ -1,6 +1,8 @@
 import Art from '../../visuals/Art';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { hasPass } from '../../app/pin';
+import Gate from './Gate';
 import { CHECK_IN_SUBJECTS, SUBJECT_NAME } from '../../app/checkIn';
 import { useAppStore } from '../../app/store';
 import { isMuted, setMuted } from '../../audio/mute';
@@ -46,7 +48,11 @@ const withValue = (options: { value: string; label: string }[], value: number, u
 export default function Settings() {
   const navigate = useNavigate();
   const { children, child, pick, reload } = useChildren();
-  const [mode, setMode] = useState<'settings' | 'addChild' | 'pin'>('settings');
+  // Opened from the profile page's "Add a child" (?add=1): straight to adding a child, then back to that page.
+  const [params] = useSearchParams();
+  const fromStart = params.get('add') === '1';
+  const [mode, setMode] = useState<'settings' | 'addChild' | 'pin'>(fromStart ? 'addChild' : 'settings');
+  const [, setPassed] = useState(0);
   const [message, setMessage] = useState<string | null>(null);
   const [muted, setMutedHere] = useState(isMuted());
 
@@ -84,15 +90,16 @@ export default function Settings() {
   }
 
   if (mode === 'addChild') {
-    return (
-      <ChildSetup
-        onDone={() => {
-          setMode('settings');
-          reload();
-        }}
-        onCancel={() => setMode('settings')}
-      />
-    );
+    // Adding a child is for grown-ups: the PIN first, as for every grown-up page.
+    if (!hasPass()) return <Gate onPass={() => setPassed((n) => n + 1)} onCancel={() => void navigate('/', { replace: true })} />;
+    const back = (): void => {
+      if (fromStart) void navigate('/', { replace: true });
+      else {
+        setMode('settings');
+        reload();
+      }
+    };
+    return <ChildSetup onDone={back} onCancel={back} />;
   }
   if (mode === 'pin') return <ChoosePin title="Choose a new PIN" onDone={() => setMode('settings')} onCancel={() => setMode('settings')} />;
 
