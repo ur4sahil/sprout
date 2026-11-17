@@ -15,7 +15,7 @@
 - The Worker never reads or changes the backup file's contents. Merging happens on the device.
 - No GitHub Actions. The Cloudflare build runs `npm run verify` before every deploy.
 - No `window.open`. External links use `<a target="_blank" rel="noopener noreferrer">` and exist only in parent mode.
-- Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on, nothing that moves away before the child answers, no negative sounds.
+- Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on (one exception the owner chose: fast facts is always a race), nothing that moves away before the child answers, no negative sounds.
 - Layout: mobile first, flex column, scroll inside panels, never horizontal page scroll. Use `dvh`, not `vh`.
 - Every new skill needs: a generator file, a catalogue row, and a pass from the generator test suite.
 - Before finishing any phase run the audit in section 13 of the plan.
@@ -238,4 +238,5 @@
 - Never move a shipped skill to another ladder: saved placements point at it. Grade 2 B.8 stays on add-subtract; the new multiply-divide ladder starts at Grade 3.
 - A new skill's golden file can be rewritten while the skill has never shipped: delete it and run `npm run golden`. After it ships, bump its version.
 - Build order agreed with the owner on Nov 17, 2026 (plan section 8): Grade 3 Math (27 skills, step 1 of 3 done) and Grade 2 Language Arts (15), then the curriculum gaps he chose: 5 more Grade 3 Math skills, about 12 K to 2 Math skills, about 10 K to 2 reading comprehension skills, then harder Reasoning. He did not choose a Virginia SOL mapping or a check-in that tests every topic.
+- The plan for everything after Nov 17, 2026 is plan section 15: phases A to I (finish Grade 3, running level per topic, fact fluency, printables, five new question types, Grade 2 Language Arts, curriculum gaps, more skills in every grade in five waves, harder Reasoning). Each content wave's skill list goes into section 8 and is shown to the owner before building.
 

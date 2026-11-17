@@ -2470,3 +2470,91 @@ Each of these was your answer to a question. They replace anything earlier in th
 - **Name:** Sprout.
 
 Two details were settled by the build plan, not by a question, and are open to change. The voice clips are kept in private storage, not in the public repo, because Apple allows its voices for personal use only. The password is stretched on the device, because the free Cloudflare plan gives very little processor time per request.
+
+## 15. The next build, planned on Nov 17, 2026
+
+The owner compared Sprout with IXL and chose to close five gaps: (1) more skills in every grade, (2) a running level for each topic, (4) more kinds of question, plus printable worksheets and fact fluency. They join the work already agreed that day: Grade 3 Math, Grade 2 Language Arts, the curriculum gaps (section 8) and harder Reasoning. Nothing here changes what an existing seed produces unless the step says so and bumps the skill's version.
+
+### 15.1 Order of work
+
+Each phase ends the same way: unit tests, the 300-seed and oracle suites, the level-rule tests, a content dump read through, the browser checks for the screens touched (on the Oracle box), a push when the owner says so.
+
+| Phase | What | Size | Why here |
+| --- | --- | --- | --- |
+| A | Finish Grade 3 Math: fractions, time, area, perimeter, mass, graphs (10), and the 5 Common Core extras | 15 skills | Already under way |
+| B | Running level for each topic (15.3) | Engine, dashboard | Small, and parents see it at once |
+| C | Fact fluency (15.5) | Engine, one kid area, one parent page | Needs no new skills |
+| D | Printable worksheets (15.6) | Parent page, print layout | Uses the generators as they are |
+| E | New kinds of question (15.4) | 5 question types | New skills after this use them |
+| F | Grade 2 Language Arts | 15 skills | Uses the new question types |
+| G | Curriculum gaps: K to 2 Math, K to 2 reading | About 22 skills | Section 8 |
+| H | More skills in every grade (15.2), in waves | About 150 skills over 5 waves | The biggest job; one grade band a wave |
+| I | Harder Reasoning | 14 puzzles get age steps, 3 new puzzle types | After the content waves |
+
+### 15.2 More skills in every grade
+
+IXL lists 369 kindergarten Math skills. Many are one idea shown different ways: counting cubes, counting on frames, counting stickers, counting shapes. Sprout has 28. The aim is roughly to double each grade, chosen for children aged 4 to 8, not to match IXL's count.
+
+- **Sibling skills.** One generator family can produce several catalogue skills that differ only in what is counted or shown (a `look` setting: pictures, ten frames, cubes, dot cards, tally marks, number lines). Each sibling is its own catalogue row with its own id, Skill Score and golden file. This is the cheap way to add variety without new maths.
+- **New ideas** where a grade is thin: ordinal numbers (first, second), calendar and days of the week, more and less by 1 and 10, comparing with pictures and numerals mixed, even and odd with pictures, money in the earlier grades, word families and rhyming in more forms, beginning, middle and end sounds, and more sentence skills.
+- **Waves.** H1: Math K and Grade 1 (about 40). H2: Math Pre-K and Grade 2 (about 35). H3: Language Arts Pre-K and K (about 30). H4: Language Arts Grade 1 and 2 (about 30). H5: Grade 3 Math (about 15). Each wave starts with its skill list written into section 8 and shown to the owner before building.
+- **Targets after all waves:** Math Pre-K 16 to about 35, K 28 to about 60, Grade 1 22 to about 50, Grade 2 22 to about 50, Grade 3 32 to about 47. Language Arts roughly doubles in each grade too.
+
+### 15.3 A running level for each topic
+
+IXL's real-time diagnostic keeps a level for each strand ("math level 350", mid-grade 3) that moves as the child works. Sprout gets the same, from what it already saves.
+
+- **The level** is worked out for each ladder (counting, adding and subtracting, place value, phonics and so on), from the skill states on that ladder: the furthest skill the child has shown they know (mastered, placed past, or a Skill Score of 80 or more), plus part credit for the skill being worked on. The skill's grade turns that into a grade level, written like a school year: "about mid-grade 1" and, for a parent who wants the number, 1.5.
+- **Moves with practice.** Worked out again whenever home or the dashboard opens. Nothing new is stored for today's level; a weekly snapshot of each level is stored so the dashboard can draw the line over time.
+- **Where it shows:** the grown-ups dashboard, one row for each topic with its level, an arrow for the change since last week, and a small line for the last few months. A topic with nothing tried yet says "not tried yet", never a guess. Children never see a level.
+- **Above the top:** a child past the last skill of a ladder shows "above Sprout's top level", the honest answer.
+- **Tests:** pure functions with fixed skill states; a child who masters a skill moves up; a placed-out skill counts; a skill dropped below 80 by a failed review lowers the level.
+
+### 15.4 New kinds of question
+
+Five new item types, each with its component in `src/items/`, its check in `engine/check.ts`, its rules in `validate.ts`, its description for screen readers, its picture in the gallery, and a browser test with touch on the iPad sizes.
+
+| Type | What the child does | First skills to use it |
+| --- | --- | --- |
+| `numberLineTap` | Taps a point on a number line | Number lines, rounding, fractions on a number line |
+| `setClock` | Drags the clock hands to a time | Time to the hour, half hour, five minutes, minute |
+| `buildBar` | Drags bars up to make a bar graph | Bar graphs, picture graphs |
+| `columnSum` | Types digits into a written-out sum, with boxes for the carried and borrowed ones | Adding and subtracting within 1,000 |
+| `dragWord` | Drags a word or number into the gap in a sentence or equation | Grammar, homophones, missing numbers |
+
+- Existing skills gain a level that uses a new type only by adding a level at the top, so what existing seeds produce does not change. Where a level is replaced, the skill's version goes up and its golden file is renewed.
+- Every new type works with one finger, has targets of at least 64px on kid screens, and gives the same "Not quite" walk-through on a miss.
+
+### 15.5 Fact fluency
+
+Knowing 7 + 8 or 6 × 7 at once, not by counting. XtraMath and IXL's Fluency Zone do this with timed rounds. The owner chose an always-on race for fast facts only; everywhere else a child sees no clock unless a parent turns it on.
+
+- **Fact sets:** adding within 10, adding within 20, taking away within 10 and 20, times tables 2, 5, 10, then 3, 4, then 6 to 9, and division facts. A set opens when the child's grade reaches it, or a parent opens it.
+- **Every fact is tracked on its own** (7 + 8 is one fact, 8 + 7 another), in a new record `factStates` with a zod default for old records: answers, right answers, and the time of each recent answer.
+- **Fluent** means right and quick twice in a row: within 3 seconds for adding and taking away, 4 seconds for times and divide. The time is measured but not shown. A slow right answer still counts as right; it just does not make the fact fluent.
+- **Rounds:** a short round of 20 facts, picked from the facts not yet fluent, with a few fluent ones mixed in to keep them. Every round is a race (the owner's choice, Nov 17, 2026): a race track shows the child's car moving with each right answer and how fast the round went. This is the one place a child sees time without a parent turning the timer on; the rule for practice is unchanged.
+- **What the child sees:** a grid of the set's facts filling in with stars as they become fluent, and a "Fast facts" place in the home menu.
+- **What the parent sees:** each child's grid, the facts that are slow or often wrong, and the share of each set that is fluent.
+- **Skill Score is untouched.** Fact fluency is its own measure; a mastered skill stays mastered.
+
+### 15.6 Printable worksheets
+
+From the grown-ups area: pick a child, one or more skills (or "today's picks", or "trouble spots"), how many questions (10 or 20), and the level (the child's level, or one easier or harder). Sprout lays out a worksheet and an answer key and opens the iPad's print sheet. The certificate already prints this way.
+
+- Questions come from the same generators with fixed seeds, so the answer key always matches. The seed is printed small in the corner, so the same sheet can be printed again.
+- Each question type has a paper form: a choice question shows lettered options to circle; a number answer gets a box; ordering gets blanks to number; sorting gets lists to write into. Skills whose answer is a drag or a tap on a picture print as "draw a line" or "circle".
+- Listen questions and questions that need sound are left off a worksheet, and the page says why.
+- US Letter, black and white friendly, the child's name and date at the top, the app's drawn pictures in the questions.
+- **Packs:** "This week's worksheets" puts the child's picks and trouble spots on 3 pages.
+- Works offline. Nothing is uploaded.
+
+### 15.7 Not in this plan
+
+Science and social studies, Spanish, classrooms and teacher accounts, writing and speaking, Virginia SOL mapping (not chosen this time), and a check-in that tests every topic (not chosen).
+
+### 15.8 The owner's choices on this plan, Nov 17, 2026
+
+- The order of phases A to I as listed.
+- Fast facts is always a race.
+- About double the skills in every grade (about 150 new skills over five waves).
+
