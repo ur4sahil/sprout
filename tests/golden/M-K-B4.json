@@ -1,0 +1,2725 @@
+{
+ "skillId": "M-K-B4",
+ "version": 1,
+ "example": {
+  "type": "choice",
+  "mode": "look",
+  "fixedOrder": true,
+  "facts": {
+   "thing": "girl",
+   "need": 2,
+   "have": 3,
+   "ask": "enough",
+   "options": [
+    "Yes",
+    "No"
+   ]
+  },
+  "prompt": {
+   "text": "Is there a hat for every girl?",
+   "speak": [
+    "Is there a hat for every girl?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "👧",
+   "count": 2,
+   "emoji2": "🎩",
+   "count2": 3,
+   "layout": "scatter",
+   "slots": [
+    0,
+    1,
+    5,
+    6,
+    7
+   ]
+  },
+  "options": [
+   {
+    "kind": "text",
+    "value": "Yes",
+    "size": "l",
+    "speak": [
+     "Yes"
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "No",
+    "size": "l",
+    "speak": [
+     "No"
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "Match each girl with one hat.",
+    "Every girl gets one. There are enough."
+   ],
+   "steps": [
+    "Match each girl with one hat.",
+    "Every girl gets one. There are enough."
+   ],
+   "visual": {
+    "kind": "emojiGroup",
+    "emoji": "👧",
+    "count": 2,
+    "emoji2": "🎩",
+    "count2": 3,
+    "layout": "scatter",
+    "slots": [
+     0,
+     1,
+     5,
+     6,
+     7
+    ]
+   }
+  },
+  "skillId": "M-K-B4",
+  "level": 1,
+  "seed": 821,
+  "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":3,\"need\":2,\"thing\":\"girl\"}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a flower for every bee?",
+     "speak": [
+      "Is there a flower for every bee?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 1,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "mouse",
+     "need": 3,
+     "have": 4,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a piece of cheese for every mouse?",
+     "speak": [
+      "Is there a piece of cheese for every mouse?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 3,
+     "emoji2": "🧀",
+     "count2": 4,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 3,
+      "emoji2": "🧀",
+      "count2": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5,
+       6,
+       7,
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 2,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":4,\"need\":3,\"thing\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "mouse",
+     "need": 2,
+     "have": 2,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a piece of cheese for every mouse?",
+     "speak": [
+      "Is there a piece of cheese for every mouse?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 2,
+     "emoji2": "🧀",
+     "count2": 2,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 2,
+      "emoji2": "🧀",
+      "count2": 2,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5,
+       6
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 3,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":2,\"need\":2,\"thing\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "dog",
+     "need": 3,
+     "have": 3,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a ball for every dog?",
+     "speak": [
+      "Is there a ball for every dog?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 3,
+     "emoji2": "⚽",
+     "count2": 3,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each dog with one ball.",
+      "Every dog gets one. There are enough."
+     ],
+     "steps": [
+      "Match each dog with one ball.",
+      "Every dog gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 3,
+      "emoji2": "⚽",
+      "count2": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5,
+       6,
+       7
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 4,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":3,\"need\":3,\"thing\":\"dog\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "mouse",
+     "need": 5,
+     "have": 5,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a piece of cheese for every mouse?",
+     "speak": [
+      "Is there a piece of cheese for every mouse?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 5,
+     "emoji2": "🧀",
+     "count2": 5,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "Every mouse gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 5,
+      "emoji2": "🧀",
+      "count2": 5,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 5,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":5,\"need\":5,\"thing\":\"mouse\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a flower for every bee?",
+     "speak": [
+      "Is there a flower for every bee?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 6,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "rabbit",
+     "need": 2,
+     "have": 1,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a carrot for every rabbit?",
+     "speak": [
+      "Is there a carrot for every rabbit?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 2,
+     "emoji2": "🥕",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      {
+       "number": 1
+      },
+      " rabbit has none. We need ",
+      {
+       "number": 1
+      },
+      " more carrot."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "1 rabbit has none. We need 1 more carrot."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 2,
+      "emoji2": "🥕",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 7,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":1,\"need\":2,\"thing\":\"rabbit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "rabbit",
+     "need": 4,
+     "have": 5,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a carrot for every rabbit?",
+     "speak": [
+      "Is there a carrot for every rabbit?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 4,
+     "emoji2": "🥕",
+     "count2": 5,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      "Every rabbit gets one. There are enough."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "Every rabbit gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 4,
+      "emoji2": "🥕",
+      "count2": 5,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 8,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":5,\"need\":4,\"thing\":\"rabbit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "monkey",
+     "need": 5,
+     "have": 5,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a banana for every monkey?",
+     "speak": [
+      "Is there a banana for every monkey?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐵",
+     "count": 5,
+     "emoji2": "🍌",
+     "count2": 5,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Match each monkey with one banana.",
+      "Every monkey gets one. There are enough."
+     ],
+     "steps": [
+      "Match each monkey with one banana.",
+      "Every monkey gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 5,
+      "emoji2": "🍌",
+      "count2": 5,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 9,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":5,\"need\":5,\"thing\":\"monkey\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "thing": "bee",
+     "need": 5,
+     "have": 4,
+     "ask": "enough",
+     "options": [
+      "Yes",
+      "No"
+     ]
+    },
+    "prompt": {
+     "text": "Is there a flower for every bee?",
+     "speak": [
+      "Is there a flower for every bee?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 5,
+     "emoji2": "🌸",
+     "count2": 4,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "Yes",
+      "size": "l",
+      "speak": [
+       "Yes"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "No",
+      "size": "l",
+      "speak": [
+       "No"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 5,
+      "emoji2": "🌸",
+      "count2": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ]
+     }
+    },
+    "skillId": "M-K-B4",
+    "level": 1,
+    "seed": 10,
+    "key": "M-K-B4|1|{\"ask\":\"enough\",\"have\":4,\"need\":5,\"thing\":\"bee\"}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 1,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 3,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 3,
+     "emoji2": "🧀",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 2
+      },
+      " mice have none. We need ",
+      {
+       "number": 2
+      },
+      " more pieces of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "2 mice have none. We need 2 more pieces of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 3,
+      "emoji2": "🧀",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 2,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":3,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 2,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 2,
+     "emoji2": "🧀",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 1
+      },
+      " mouse has none. We need ",
+      {
+       "number": 1
+      },
+      " more piece of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "1 mouse has none. We need 1 more piece of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 2,
+      "emoji2": "🧀",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 3,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "dog",
+     "need": 3,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "Each dog needs one ball. How many more balls do we need?",
+     "speak": [
+      "Each dog needs one ball. How many more balls do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 3,
+     "emoji2": "⚽",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each dog with one ball.",
+      {
+       "number": 2
+      },
+      " dogs have none. We need ",
+      {
+       "number": 2
+      },
+      " more balls."
+     ],
+     "steps": [
+      "Match each dog with one ball.",
+      "2 dogs have none. We need 2 more balls."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 3,
+      "emoji2": "⚽",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 4,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":3,\"thing\":\"dog\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 5,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 5,
+     "emoji2": "🧀",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 4
+      },
+      " mice have none. We need ",
+      {
+       "number": 4
+      },
+      " more pieces of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "4 mice have none. We need 4 more pieces of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 5,
+      "emoji2": "🧀",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 5,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":5,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 6,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "rabbit",
+     "need": 2,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Each rabbit needs one carrot. How many more carrots do we need?",
+     "speak": [
+      "Each rabbit needs one carrot. How many more carrots do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 2,
+     "emoji2": "🥕",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      {
+       "number": 1
+      },
+      " rabbit has none. We need ",
+      {
+       "number": 1
+      },
+      " more carrot."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "1 rabbit has none. We need 1 more carrot."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 2,
+      "emoji2": "🥕",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 7,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"rabbit\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "rabbit",
+     "need": 4,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Each rabbit needs one carrot. How many more carrots do we need?",
+     "speak": [
+      "Each rabbit needs one carrot. How many more carrots do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 4,
+     "emoji2": "🥕",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      {
+       "number": 3
+      },
+      " rabbits have none. We need ",
+      {
+       "number": 3
+      },
+      " more carrots."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "3 rabbits have none. We need 3 more carrots."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 4,
+      "emoji2": "🥕",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 8,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":4,\"thing\":\"rabbit\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "monkey",
+     "need": 5,
+     "have": 1,
+     "ask": "more",
+     "options": [
+      1,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "Each monkey needs one banana. How many more bananas do we need?",
+     "speak": [
+      "Each monkey needs one banana. How many more bananas do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐵",
+     "count": 5,
+     "emoji2": "🍌",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each monkey with one banana.",
+      {
+       "number": 4
+      },
+      " monkeys have none. We need ",
+      {
+       "number": 4
+      },
+      " more bananas."
+     ],
+     "steps": [
+      "Match each monkey with one banana.",
+      "4 monkeys have none. We need 4 more bananas."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 5,
+      "emoji2": "🍌",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 9,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":1,\"need\":5,\"thing\":\"monkey\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 5,
+     "have": 3,
+     "ask": "more",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 5,
+     "emoji2": "🌸",
+     "count2": 3,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 2
+      },
+      " bees have none. We need ",
+      {
+       "number": 2
+      },
+      " more flowers."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "2 bees have none. We need 2 more flowers."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 5,
+      "emoji2": "🌸",
+      "count2": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-K-B4",
+    "level": 2,
+    "seed": 10,
+    "key": "M-K-B4|2|{\"ask\":\"more\",\"have\":3,\"need\":5,\"thing\":\"bee\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 1,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 3,
+     "have": 2,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 3,
+     "emoji2": "🧀",
+     "count2": 2,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5,
+      6
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 1
+      },
+      " mouse has none. We need ",
+      {
+       "number": 1
+      },
+      " more piece of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "1 mouse has none. We need 1 more piece of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 3,
+      "emoji2": "🧀",
+      "count2": 2,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5,
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 2,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":2,\"need\":3,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 2,
+     "have": 1,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 2,
+     "emoji2": "🧀",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 1
+      },
+      " mouse has none. We need ",
+      {
+       "number": 1
+      },
+      " more piece of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "1 mouse has none. We need 1 more piece of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 2,
+      "emoji2": "🧀",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 3,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "dog",
+     "need": 3,
+     "have": 1,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each dog needs one ball. How many more balls do we need?",
+     "speak": [
+      "Each dog needs one ball. How many more balls do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐶",
+     "count": 3,
+     "emoji2": "⚽",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each dog with one ball.",
+      {
+       "number": 2
+      },
+      " dogs have none. We need ",
+      {
+       "number": 2
+      },
+      " more balls."
+     ],
+     "steps": [
+      "Match each dog with one ball.",
+      "2 dogs have none. We need 2 more balls."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 3,
+      "emoji2": "⚽",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 4,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":1,\"need\":3,\"thing\":\"dog\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "mouse",
+     "need": 5,
+     "have": 3,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?",
+     "speak": [
+      "Each mouse needs one piece of cheese. How many more pieces of cheese do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐭",
+     "count": 5,
+     "emoji2": "🧀",
+     "count2": 3,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each mouse with one piece of cheese.",
+      {
+       "number": 2
+      },
+      " mice have none. We need ",
+      {
+       "number": 2
+      },
+      " more pieces of cheese."
+     ],
+     "steps": [
+      "Match each mouse with one piece of cheese.",
+      "2 mice have none. We need 2 more pieces of cheese."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐭",
+      "count": 5,
+      "emoji2": "🧀",
+      "count2": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 5,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":3,\"need\":5,\"thing\":\"mouse\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 2,
+     "have": 1,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 2,
+     "emoji2": "🌸",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 2,
+      "emoji2": "🌸",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 6,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"bee\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "rabbit",
+     "need": 2,
+     "have": 1,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each rabbit needs one carrot. How many more carrots do we need?",
+     "speak": [
+      "Each rabbit needs one carrot. How many more carrots do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 2,
+     "emoji2": "🥕",
+     "count2": 1,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      5
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      {
+       "number": 1
+      },
+      " rabbit has none. We need ",
+      {
+       "number": 1
+      },
+      " more carrot."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "1 rabbit has none. We need 1 more carrot."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 2,
+      "emoji2": "🥕",
+      "count2": 1,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       5
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 7,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":1,\"need\":2,\"thing\":\"rabbit\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "rabbit",
+     "need": 4,
+     "have": 3,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each rabbit needs one carrot. How many more carrots do we need?",
+     "speak": [
+      "Each rabbit needs one carrot. How many more carrots do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐰",
+     "count": 4,
+     "emoji2": "🥕",
+     "count2": 3,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each rabbit with one carrot.",
+      {
+       "number": 1
+      },
+      " rabbit has none. We need ",
+      {
+       "number": 1
+      },
+      " more carrot."
+     ],
+     "steps": [
+      "Match each rabbit with one carrot.",
+      "1 rabbit has none. We need 1 more carrot."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 4,
+      "emoji2": "🥕",
+      "count2": 3,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       5,
+       6,
+       7
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 8,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":3,\"need\":4,\"thing\":\"rabbit\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "monkey",
+     "need": 5,
+     "have": 5,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each monkey needs one banana. How many more bananas do we need?",
+     "speak": [
+      "Each monkey needs one banana. How many more bananas do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐵",
+     "count": 5,
+     "emoji2": "🍌",
+     "count2": 5,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each monkey with one banana.",
+      "Every monkey gets one. There are enough."
+     ],
+     "steps": [
+      "Match each monkey with one banana.",
+      "Every monkey gets one. There are enough."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 5,
+      "emoji2": "🍌",
+      "count2": 5,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 0,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 9,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":5,\"need\":5,\"thing\":\"monkey\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "thing": "bee",
+     "need": 5,
+     "have": 4,
+     "ask": "more"
+    },
+    "prompt": {
+     "text": "Each bee needs one flower. How many more flowers do we need?",
+     "speak": [
+      "Each bee needs one flower. How many more flowers do we need?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐝",
+     "count": 5,
+     "emoji2": "🌸",
+     "count2": 4,
+     "layout": "scatter",
+     "slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ]
+    },
+    "explanation": {
+     "speak": [
+      "Match each bee with one flower.",
+      {
+       "number": 1
+      },
+      " bee has none. We need ",
+      {
+       "number": 1
+      },
+      " more flower."
+     ],
+     "steps": [
+      "Match each bee with one flower.",
+      "1 bee has none. We need 1 more flower."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🐝",
+      "count": 5,
+      "emoji2": "🌸",
+      "count2": 4,
+      "layout": "scatter",
+      "slots": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 1,
+    "skillId": "M-K-B4",
+    "level": 3,
+    "seed": 10,
+    "key": "M-K-B4|3|{\"ask\":\"more\",\"have\":4,\"need\":5,\"thing\":\"bee\"}"
+   }
+  ]
+ }
+}

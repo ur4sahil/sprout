@@ -1,0 +1,3145 @@
+{
+ "skillId": "M-1-B16",
+ "version": 1,
+ "example": {
+  "mode": "look",
+  "facts": {
+   "a": 6,
+   "b": 4,
+   "total": 10,
+   "blank": "b",
+   "story": "birds",
+   "name": "Ava",
+   "options": [
+    4,
+    10,
+    16
+   ]
+  },
+  "prompt": {
+   "text": "6 birds sit in a tree. Some more birds come. Now there are 10 birds. How many birds came?",
+   "speak": [
+    {
+     "number": 6
+    },
+    " birds sit in a tree. Some more birds come. Now there are ",
+    {
+     "number": 10
+    },
+    " birds. How many birds came?"
+   ]
+  },
+  "stimulus": {
+   "kind": "emojiGroup",
+   "emoji": "🐦",
+   "count": 1,
+   "layout": "row"
+  },
+  "explanation": {
+   "speak": [
+    "Start at ",
+    {
+     "number": 6
+    },
+    ". Count up to ",
+    {
+     "number": 10
+    },
+    ".",
+    "That is ",
+    {
+     "number": 4
+    },
+    " more.",
+    {
+     "number": 6
+    },
+    " plus ",
+    {
+     "number": 4
+    },
+    " equals ",
+    {
+     "number": 10
+    },
+    "."
+   ],
+   "steps": [
+    "Start at 6. Count up to 10.",
+    "That is 4 more.",
+    "6 + 4 = 10."
+   ],
+   "visual": {
+    "kind": "equation",
+    "parts": [
+     6,
+     "+",
+     4,
+     "=",
+     10
+    ]
+   }
+  },
+  "type": "choice",
+  "options": [
+   {
+    "kind": "text",
+    "value": "4",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 4
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "10",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 10
+     }
+    ]
+   },
+   {
+    "kind": "text",
+    "value": "16",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 16
+     }
+    ]
+   }
+  ],
+  "answerIndex": 0,
+  "skillId": "M-1-B16",
+  "level": 1,
+  "seed": 915,
+  "key": "M-1-B16|1|{\"a\":6,\"b\":4,\"blank\":\"b\",\"name\":\"Ava\",\"story\":\"birds\",\"total\":10}"
+ },
+ "levels": {
+  "1": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 1,
+     "total": 10,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Zoe",
+     "options": [
+      1,
+      2,
+      19
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 9 stickers. Zoe gets some more. Now Zoe has 10 stickers. How many stickers did Zoe get?",
+     "speak": [
+      "Zoe has ",
+      {
+       "number": 9
+      },
+      " stickers. Zoe gets some more. Now Zoe has ",
+      {
+       "number": 10
+      },
+      " stickers. How many stickers did Zoe get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 9
+      },
+      ". Count up to ",
+      {
+       "number": 10
+      },
+      ".",
+      "That is ",
+      {
+       "number": 1
+      },
+      " more.",
+      {
+       "number": 9
+      },
+      " plus ",
+      {
+       "number": 1
+      },
+      " equals ",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 9. Count up to 10.",
+      "That is 1 more.",
+      "9 + 1 = 10."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "+",
+       1,
+       "=",
+       10
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-B16|1|{\"a\":9,\"b\":1,\"blank\":\"b\",\"name\":\"Zoe\",\"story\":\"stickers\",\"total\":10}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 1,
+     "total": 8,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Ava",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 7 stickers. Ava gets some more. Now Ava has 8 stickers. How many stickers did Ava get?",
+     "speak": [
+      "Ava has ",
+      {
+       "number": 7
+      },
+      " stickers. Ava gets some more. Now Ava has ",
+      {
+       "number": 8
+      },
+      " stickers. How many stickers did Ava get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 7
+      },
+      ". Count up to ",
+      {
+       "number": 8
+      },
+      ".",
+      "That is ",
+      {
+       "number": 1
+      },
+      " more.",
+      {
+       "number": 7
+      },
+      " plus ",
+      {
+       "number": 1
+      },
+      " equals ",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 7. Count up to 8.",
+      "That is 1 more.",
+      "7 + 1 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       1,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-B16|1|{\"a\":7,\"b\":1,\"blank\":\"b\",\"name\":\"Ava\",\"story\":\"stickers\",\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 1,
+     "total": 5,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Sam",
+     "options": [
+      1,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 4 stickers. Sam gets some more. Now Sam has 5 stickers. How many stickers did Sam get?",
+     "speak": [
+      "Sam has ",
+      {
+       "number": 4
+      },
+      " stickers. Sam gets some more. Now Sam has ",
+      {
+       "number": 5
+      },
+      " stickers. How many stickers did Sam get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 4
+      },
+      ". Count up to ",
+      {
+       "number": 5
+      },
+      ".",
+      "That is ",
+      {
+       "number": 1
+      },
+      " more.",
+      {
+       "number": 4
+      },
+      " plus ",
+      {
+       "number": 1
+      },
+      " equals ",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4. Count up to 5.",
+      "That is 1 more.",
+      "4 + 1 = 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       1,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-B16|1|{\"a\":4,\"b\":1,\"blank\":\"b\",\"name\":\"Sam\",\"story\":\"stickers\",\"total\":5}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 3,
+     "total": 5,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Leo",
+     "options": [
+      1,
+      3,
+      4
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 2 stickers. Leo gets some more. Now Leo has 5 stickers. How many stickers did Leo get?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 2
+      },
+      " stickers. Leo gets some more. Now Leo has ",
+      {
+       "number": 5
+      },
+      " stickers. How many stickers did Leo get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 2
+      },
+      ". Count up to ",
+      {
+       "number": 5
+      },
+      ".",
+      "That is ",
+      {
+       "number": 3
+      },
+      " more.",
+      {
+       "number": 2
+      },
+      " plus ",
+      {
+       "number": 3
+      },
+      " equals ",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 2. Count up to 5.",
+      "That is 3 more.",
+      "2 + 3 = 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       3,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-B16|1|{\"a\":2,\"b\":3,\"blank\":\"b\",\"name\":\"Leo\",\"story\":\"stickers\",\"total\":5}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 6,
+     "total": 8,
+     "blank": "b",
+     "story": "shells",
+     "name": "Leo",
+     "options": [
+      5,
+      6,
+      7
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 2 shells. Leo finds some more at the beach. Now Leo has 8 shells. How many shells did Leo find?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 2
+      },
+      " shells. Leo finds some more at the beach. Now Leo has ",
+      {
+       "number": 8
+      },
+      " shells. How many shells did Leo find?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐚",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 2
+      },
+      ". Count up to ",
+      {
+       "number": 8
+      },
+      ".",
+      "That is ",
+      {
+       "number": 6
+      },
+      " more.",
+      {
+       "number": 2
+      },
+      " plus ",
+      {
+       "number": 6
+      },
+      " equals ",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 2. Count up to 8.",
+      "That is 6 more.",
+      "2 + 6 = 8."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       2,
+       "+",
+       6,
+       "=",
+       8
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-B16|1|{\"a\":2,\"b\":6,\"blank\":\"b\",\"name\":\"Leo\",\"story\":\"shells\",\"total\":8}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "total": 6,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Ben",
+     "options": [
+      2,
+      3,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 4 stickers. Ben gets some more. Now Ben has 6 stickers. How many stickers did Ben get?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 4
+      },
+      " stickers. Ben gets some more. Now Ben has ",
+      {
+       "number": 6
+      },
+      " stickers. How many stickers did Ben get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 4
+      },
+      ". Count up to ",
+      {
+       "number": 6
+      },
+      ".",
+      "That is ",
+      {
+       "number": 2
+      },
+      " more.",
+      {
+       "number": 4
+      },
+      " plus ",
+      {
+       "number": 2
+      },
+      " equals ",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 4. Count up to 6.",
+      "That is 2 more.",
+      "4 + 2 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       4,
+       "+",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-B16|1|{\"a\":4,\"b\":2,\"blank\":\"b\",\"name\":\"Ben\",\"story\":\"stickers\",\"total\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "total": 9,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Max",
+     "options": [
+      2,
+      4,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "Max has 5 stickers. Max gets some more. Now Max has 9 stickers. How many stickers did Max get?",
+     "speak": [
+      "Max has ",
+      {
+       "number": 5
+      },
+      " stickers. Max gets some more. Now Max has ",
+      {
+       "number": 9
+      },
+      " stickers. How many stickers did Max get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 5
+      },
+      ". Count up to ",
+      {
+       "number": 9
+      },
+      ".",
+      "That is ",
+      {
+       "number": 4
+      },
+      " more.",
+      {
+       "number": 5
+      },
+      " plus ",
+      {
+       "number": 4
+      },
+      " equals ",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 5. Count up to 9.",
+      "That is 4 more.",
+      "5 + 4 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       4,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-B16|1|{\"a\":5,\"b\":4,\"blank\":\"b\",\"name\":\"Max\",\"story\":\"stickers\",\"total\":9}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 3,
+     "total": 9,
+     "blank": "b",
+     "story": "birds",
+     "name": "Ava",
+     "options": [
+      2,
+      3,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "6 birds sit in a tree. Some more birds come. Now there are 9 birds. How many birds came?",
+     "speak": [
+      {
+       "number": 6
+      },
+      " birds sit in a tree. Some more birds come. Now there are ",
+      {
+       "number": 9
+      },
+      " birds. How many birds came?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐦",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 6
+      },
+      ". Count up to ",
+      {
+       "number": 9
+      },
+      ".",
+      "That is ",
+      {
+       "number": 3
+      },
+      " more.",
+      {
+       "number": 6
+      },
+      " plus ",
+      {
+       "number": 3
+      },
+      " equals ",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 6. Count up to 9.",
+      "That is 3 more.",
+      "6 + 3 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "+",
+       3,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-B16|1|{\"a\":6,\"b\":3,\"blank\":\"b\",\"name\":\"Ava\",\"story\":\"birds\",\"total\":9}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 7,
+     "b": 2,
+     "total": 9,
+     "blank": "b",
+     "story": "shells",
+     "name": "Leo",
+     "options": [
+      0,
+      1,
+      2
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 7 shells. Leo finds some more at the beach. Now Leo has 9 shells. How many shells did Leo find?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 7
+      },
+      " shells. Leo finds some more at the beach. Now Leo has ",
+      {
+       "number": 9
+      },
+      " shells. How many shells did Leo find?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐚",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 7
+      },
+      ". Count up to ",
+      {
+       "number": 9
+      },
+      ".",
+      "That is ",
+      {
+       "number": 2
+      },
+      " more.",
+      {
+       "number": 7
+      },
+      " plus ",
+      {
+       "number": 2
+      },
+      " equals ",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 7. Count up to 9.",
+      "That is 2 more.",
+      "7 + 2 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       7,
+       "+",
+       2,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-B16|1|{\"a\":7,\"b\":2,\"blank\":\"b\",\"name\":\"Leo\",\"story\":\"shells\",\"total\":9}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 5,
+     "b": 4,
+     "total": 9,
+     "blank": "b",
+     "story": "shells",
+     "name": "Ben",
+     "options": [
+      2,
+      4,
+      14
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 5 shells. Ben finds some more at the beach. Now Ben has 9 shells. How many shells did Ben find?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 5
+      },
+      " shells. Ben finds some more at the beach. Now Ben has ",
+      {
+       "number": 9
+      },
+      " shells. How many shells did Ben find?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐚",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 5
+      },
+      ". Count up to ",
+      {
+       "number": 9
+      },
+      ".",
+      "That is ",
+      {
+       "number": 4
+      },
+      " more.",
+      {
+       "number": 5
+      },
+      " plus ",
+      {
+       "number": 4
+      },
+      " equals ",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 5. Count up to 9.",
+      "That is 4 more.",
+      "5 + 4 = 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       5,
+       "+",
+       4,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "14",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 14
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-B16|1|{\"a\":5,\"b\":4,\"blank\":\"b\",\"name\":\"Ben\",\"story\":\"shells\",\"total\":9}"
+   }
+  ],
+  "2": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 20,
+     "b": 19,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Zoe",
+     "options": [
+      1,
+      2,
+      19
+     ]
+    },
+    "prompt": {
+     "text": "Zoe has 20 cookies. Zoe gives some away. Now Zoe has 19 cookies. How many cookies did Zoe give away?",
+     "speak": [
+      "Zoe has ",
+      {
+       "number": 20
+      },
+      " cookies. Zoe gives some away. Now Zoe has ",
+      {
+       "number": 19
+      },
+      " cookies. How many cookies did Zoe give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 19
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "20 − 19 = 1.",
+      "The answer is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       20,
+       "-",
+       19,
+       "=",
+       1
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "19",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 19
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-B16|2|{\"a\":20,\"b\":19,\"name\":\"Zoe\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 13,
+     "b": 11,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Ava",
+     "options": [
+      0,
+      2,
+      3
+     ]
+    },
+    "prompt": {
+     "text": "Ava has 13 cookies. Ava gives some away. Now Ava has 11 cookies. How many cookies did Ava give away?",
+     "speak": [
+      "Ava has ",
+      {
+       "number": 13
+      },
+      " cookies. Ava gives some away. Now Ava has ",
+      {
+       "number": 11
+      },
+      " cookies. How many cookies did Ava give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "is",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "13 − 11 = 2.",
+      "The answer is 2."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "-",
+       11,
+       "=",
+       2
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "0",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 0
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-B16|2|{\"a\":13,\"b\":11,\"name\":\"Ava\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 5,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Sam",
+     "options": [
+      1,
+      2,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Sam has 6 cookies. Sam gives some away. Now Sam has 5 cookies. How many cookies did Sam give away?",
+     "speak": [
+      "Sam has ",
+      {
+       "number": 6
+      },
+      " cookies. Sam gives some away. Now Sam has ",
+      {
+       "number": 5
+      },
+      " cookies. How many cookies did Sam give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 5 = 1.",
+      "The answer is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       5,
+       "=",
+       1
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-B16|2|{\"a\":6,\"b\":5,\"name\":\"Sam\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 6,
+     "b": 2,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Leo",
+     "options": [
+      2,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 6 cookies. Leo gives some away. Now Leo has 2 cookies. How many cookies did Leo give away?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 6
+      },
+      " cookies. Leo gives some away. Now Leo has ",
+      {
+       "number": 2
+      },
+      " cookies. How many cookies did Leo give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "is",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 2 = 4.",
+      "The answer is 4."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       6,
+       "-",
+       2,
+       "=",
+       4
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-B16|2|{\"a\":6,\"b\":2,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 14,
+     "b": 3,
+     "oracle": "subtract",
+     "story": "balloons",
+     "name": "Leo",
+     "options": [
+      10,
+      11,
+      17
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 14 balloons. Some balloons float away. Now Leo has 3 balloons. How many balloons floated away?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 14
+      },
+      " balloons. Some balloons float away. Now Leo has ",
+      {
+       "number": 3
+      },
+      " balloons. How many balloons floated away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "is",
+      {
+       "number": 11
+      },
+      "."
+     ],
+     "steps": [
+      "14 − 3 = 11.",
+      "The answer is 11."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       14,
+       "-",
+       3,
+       "=",
+       11
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "17",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 17
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-B16|2|{\"a\":14,\"b\":3,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"balloons\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 5,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Ben",
+     "options": [
+      3,
+      4,
+      13
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 8 cookies. Ben gives some away. Now Ben has 5 cookies. How many cookies did Ben give away?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 8
+      },
+      " cookies. Ben gives some away. Now Ben has ",
+      {
+       "number": 5
+      },
+      " cookies. How many cookies did Ben give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "8 − 5 = 3.",
+      "The answer is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       5,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 13
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-B16|2|{\"a\":8,\"b\":5,\"name\":\"Ben\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 9,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Max",
+     "options": [
+      5,
+      7,
+      9
+     ]
+    },
+    "prompt": {
+     "text": "Max has 16 cookies. Max gives some away. Now Max has 9 cookies. How many cookies did Max give away?",
+     "speak": [
+      "Max has ",
+      {
+       "number": 16
+      },
+      " cookies. Max gives some away. Now Max has ",
+      {
+       "number": 9
+      },
+      " cookies. How many cookies did Max give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "is",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "16 − 9 = 7.",
+      "The answer is 7."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       16,
+       "-",
+       9,
+       "=",
+       7
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-B16|2|{\"a\":16,\"b\":9,\"name\":\"Max\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 16,
+     "b": 10,
+     "oracle": "subtract",
+     "story": "frogs",
+     "name": "Ava",
+     "options": [
+      5,
+      6,
+      10
+     ]
+    },
+    "prompt": {
+     "text": "16 frogs sit on a log. Some frogs jump into the pond. Now 10 frogs are on the log. How many frogs jumped?",
+     "speak": [
+      {
+       "number": 16
+      },
+      " frogs sit on a log. Some frogs jump into the pond. Now ",
+      {
+       "number": 10
+      },
+      " frogs are on the log. How many frogs jumped?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐸",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "is",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "16 − 10 = 6.",
+      "The answer is 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       16,
+       "-",
+       10,
+       "=",
+       6
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-B16|2|{\"a\":16,\"b\":10,\"name\":\"Ava\",\"oracle\":\"subtract\",\"story\":\"frogs\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 18,
+     "b": 13,
+     "oracle": "subtract",
+     "story": "balloons",
+     "name": "Leo",
+     "options": [
+      3,
+      4,
+      5
+     ]
+    },
+    "prompt": {
+     "text": "Leo has 18 balloons. Some balloons float away. Now Leo has 13 balloons. How many balloons floated away?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 18
+      },
+      " balloons. Some balloons float away. Now Leo has ",
+      {
+       "number": 13
+      },
+      " balloons. How many balloons floated away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "is",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "18 − 13 = 5.",
+      "The answer is 5."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       18,
+       "-",
+       13,
+       "=",
+       5
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-B16|2|{\"a\":18,\"b\":13,\"name\":\"Leo\",\"oracle\":\"subtract\",\"story\":\"balloons\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 8,
+     "oracle": "subtract",
+     "story": "balloons",
+     "name": "Ben",
+     "options": [
+      7,
+      9,
+      25
+     ]
+    },
+    "prompt": {
+     "text": "Ben has 17 balloons. Some balloons float away. Now Ben has 8 balloons. How many balloons floated away?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 17
+      },
+      " balloons. Some balloons float away. Now Ben has ",
+      {
+       "number": 8
+      },
+      " balloons. How many balloons floated away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "17 − 8 = 9.",
+      "The answer is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       17,
+       "-",
+       8,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "choice",
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "25",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 25
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "skillId": "M-1-B16",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-B16|2|{\"a\":17,\"b\":8,\"name\":\"Ben\",\"oracle\":\"subtract\",\"story\":\"balloons\"}"
+   }
+  ],
+  "3": [
+   {
+    "mode": "look",
+    "facts": {
+     "a": 20,
+     "b": 19,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Zoe"
+    },
+    "prompt": {
+     "text": "Zoe has 20 cookies. Zoe gives some away. Now Zoe has 19 cookies. How many cookies did Zoe give away?",
+     "speak": [
+      "Zoe has ",
+      {
+       "number": 20
+      },
+      " cookies. Zoe gives some away. Now Zoe has ",
+      {
+       "number": 19
+      },
+      " cookies. How many cookies did Zoe give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 19
+      },
+      "is",
+      {
+       "number": 1
+      },
+      "."
+     ],
+     "steps": [
+      "20 − 19 = 1.",
+      "The answer is 1."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       20,
+       "-",
+       19,
+       "=",
+       1
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-B16|3|{\"a\":20,\"b\":19,\"name\":\"Zoe\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 2,
+     "b": 11,
+     "total": 13,
+     "blank": "a",
+     "story": "marbles",
+     "name": "Ava"
+    },
+    "prompt": {
+     "text": "Ava has some marbles. Ava gets 11 more. Now Ava has 13 marbles. How many marbles did Ava have at the start?",
+     "speak": [
+      "Ava has some marbles. Ava gets ",
+      {
+       "number": 11
+      },
+      " more. Now Ava has ",
+      {
+       "number": 13
+      },
+      " marbles. How many marbles did Ava have at the start?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 13
+      },
+      " minus ",
+      {
+       "number": 11
+      },
+      " equals ",
+      {
+       "number": 2
+      },
+      ".",
+      "At the start there were ",
+      {
+       "number": 2
+      },
+      " marbles.",
+      "Check: ",
+      {
+       "number": 2
+      },
+      " plus ",
+      {
+       "number": 11
+      },
+      " equals ",
+      {
+       "number": 13
+      },
+      "."
+     ],
+     "steps": [
+      "13 − 11 = 2.",
+      "At the start there were 2 marbles.",
+      "Check: 2 + 11 = 13."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       "blank",
+       "+",
+       11,
+       "=",
+       13
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 2,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-B16|3|{\"a\":2,\"b\":11,\"blank\":\"a\",\"name\":\"Ava\",\"story\":\"marbles\",\"total\":13}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 1,
+     "b": 5,
+     "total": 6,
+     "blank": "a",
+     "story": "marbles",
+     "name": "Sam"
+    },
+    "prompt": {
+     "text": "Sam has some marbles. Sam gets 5 more. Now Sam has 6 marbles. How many marbles did Sam have at the start?",
+     "speak": [
+      "Sam has some marbles. Sam gets ",
+      {
+       "number": 5
+      },
+      " more. Now Sam has ",
+      {
+       "number": 6
+      },
+      " marbles. How many marbles did Sam have at the start?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      " minus ",
+      {
+       "number": 5
+      },
+      " equals ",
+      {
+       "number": 1
+      },
+      ".",
+      "At the start there were ",
+      {
+       "number": 1
+      },
+      " marbles.",
+      "Check: ",
+      {
+       "number": 1
+      },
+      " plus ",
+      {
+       "number": 5
+      },
+      " equals ",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 5 = 1.",
+      "At the start there were 1 marbles.",
+      "Check: 1 + 5 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       "blank",
+       "+",
+       5,
+       "=",
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 1,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-B16|3|{\"a\":1,\"b\":5,\"blank\":\"a\",\"name\":\"Sam\",\"story\":\"marbles\",\"total\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 4,
+     "b": 2,
+     "total": 6,
+     "blank": "a",
+     "story": "marbles",
+     "name": "Leo"
+    },
+    "prompt": {
+     "text": "Leo has some marbles. Leo gets 2 more. Now Leo has 6 marbles. How many marbles did Leo have at the start?",
+     "speak": [
+      "Leo has some marbles. Leo gets ",
+      {
+       "number": 2
+      },
+      " more. Now Leo has ",
+      {
+       "number": 6
+      },
+      " marbles. How many marbles did Leo have at the start?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⚪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 6
+      },
+      " minus ",
+      {
+       "number": 2
+      },
+      " equals ",
+      {
+       "number": 4
+      },
+      ".",
+      "At the start there were ",
+      {
+       "number": 4
+      },
+      " marbles.",
+      "Check: ",
+      {
+       "number": 4
+      },
+      " plus ",
+      {
+       "number": 2
+      },
+      " equals ",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "6 − 2 = 4.",
+      "At the start there were 4 marbles.",
+      "Check: 4 + 2 = 6."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       "blank",
+       "+",
+       2,
+       "=",
+       6
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 4,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-B16|3|{\"a\":4,\"b\":2,\"blank\":\"a\",\"name\":\"Leo\",\"story\":\"marbles\",\"total\":6}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 11,
+     "b": 3,
+     "total": 14,
+     "blank": "a",
+     "story": "apples",
+     "name": "Leo"
+    },
+    "prompt": {
+     "text": "There are some apples in a basket. Leo puts in 3 more. Now there are 14 apples. How many apples were in the basket at the start?",
+     "speak": [
+      "There are some apples in a basket. Leo puts in ",
+      {
+       "number": 3
+      },
+      " more. Now there are ",
+      {
+       "number": 14
+      },
+      " apples. How many apples were in the basket at the start?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍎",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 14
+      },
+      " minus ",
+      {
+       "number": 3
+      },
+      " equals ",
+      {
+       "number": 11
+      },
+      ".",
+      "At the start there were ",
+      {
+       "number": 11
+      },
+      " apples.",
+      "Check: ",
+      {
+       "number": 11
+      },
+      " plus ",
+      {
+       "number": 3
+      },
+      " equals ",
+      {
+       "number": 14
+      },
+      "."
+     ],
+     "steps": [
+      "14 − 3 = 11.",
+      "At the start there were 11 apples.",
+      "Check: 11 + 3 = 14."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       "blank",
+       "+",
+       3,
+       "=",
+       14
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 11,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-B16|3|{\"a\":11,\"b\":3,\"blank\":\"a\",\"name\":\"Leo\",\"story\":\"apples\",\"total\":14}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 8,
+     "b": 5,
+     "oracle": "subtract",
+     "story": "cookies",
+     "name": "Ben"
+    },
+    "prompt": {
+     "text": "Ben has 8 cookies. Ben gives some away. Now Ben has 5 cookies. How many cookies did Ben give away?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 8
+      },
+      " cookies. Ben gives some away. Now Ben has ",
+      {
+       "number": 5
+      },
+      " cookies. How many cookies did Ben give away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🍪",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "is",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "8 − 5 = 3.",
+      "The answer is 3."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       8,
+       "-",
+       5,
+       "=",
+       3
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 3,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-B16|3|{\"a\":8,\"b\":5,\"name\":\"Ben\",\"oracle\":\"subtract\",\"story\":\"cookies\"}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 9,
+     "b": 7,
+     "total": 16,
+     "blank": "b",
+     "story": "stickers",
+     "name": "Max"
+    },
+    "prompt": {
+     "text": "Max has 9 stickers. Max gets some more. Now Max has 16 stickers. How many stickers did Max get?",
+     "speak": [
+      "Max has ",
+      {
+       "number": 9
+      },
+      " stickers. Max gets some more. Now Max has ",
+      {
+       "number": 16
+      },
+      " stickers. How many stickers did Max get?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "⭐",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 9
+      },
+      ". Count up to ",
+      {
+       "number": 16
+      },
+      ".",
+      "That is ",
+      {
+       "number": 7
+      },
+      " more.",
+      {
+       "number": 9
+      },
+      " plus ",
+      {
+       "number": 7
+      },
+      " equals ",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 9. Count up to 16.",
+      "That is 7 more.",
+      "9 + 7 = 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       9,
+       "+",
+       7,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 7,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-B16|3|{\"a\":9,\"b\":7,\"blank\":\"b\",\"name\":\"Max\",\"story\":\"stickers\",\"total\":16}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 10,
+     "b": 6,
+     "total": 16,
+     "blank": "b",
+     "story": "birds",
+     "name": "Ava"
+    },
+    "prompt": {
+     "text": "10 birds sit in a tree. Some more birds come. Now there are 16 birds. How many birds came?",
+     "speak": [
+      {
+       "number": 10
+      },
+      " birds sit in a tree. Some more birds come. Now there are ",
+      {
+       "number": 16
+      },
+      " birds. How many birds came?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐦",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 10
+      },
+      ". Count up to ",
+      {
+       "number": 16
+      },
+      ".",
+      "That is ",
+      {
+       "number": 6
+      },
+      " more.",
+      {
+       "number": 10
+      },
+      " plus ",
+      {
+       "number": 6
+      },
+      " equals ",
+      {
+       "number": 16
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 10. Count up to 16.",
+      "That is 6 more.",
+      "10 + 6 = 16."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       10,
+       "+",
+       6,
+       "=",
+       16
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 6,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-B16|3|{\"a\":10,\"b\":6,\"blank\":\"b\",\"name\":\"Ava\",\"story\":\"birds\",\"total\":16}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 13,
+     "b": 5,
+     "total": 18,
+     "blank": "b",
+     "story": "shells",
+     "name": "Leo"
+    },
+    "prompt": {
+     "text": "Leo has 13 shells. Leo finds some more at the beach. Now Leo has 18 shells. How many shells did Leo find?",
+     "speak": [
+      "Leo has ",
+      {
+       "number": 13
+      },
+      " shells. Leo finds some more at the beach. Now Leo has ",
+      {
+       "number": 18
+      },
+      " shells. How many shells did Leo find?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🐚",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      "Start at ",
+      {
+       "number": 13
+      },
+      ". Count up to ",
+      {
+       "number": 18
+      },
+      ".",
+      "That is ",
+      {
+       "number": 5
+      },
+      " more.",
+      {
+       "number": 13
+      },
+      " plus ",
+      {
+       "number": 5
+      },
+      " equals ",
+      {
+       "number": 18
+      },
+      "."
+     ],
+     "steps": [
+      "Start at 13. Count up to 18.",
+      "That is 5 more.",
+      "13 + 5 = 18."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       13,
+       "+",
+       5,
+       "=",
+       18
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 5,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-B16|3|{\"a\":13,\"b\":5,\"blank\":\"b\",\"name\":\"Leo\",\"story\":\"shells\",\"total\":18}"
+   },
+   {
+    "mode": "look",
+    "facts": {
+     "a": 17,
+     "b": 8,
+     "oracle": "subtract",
+     "story": "balloons",
+     "name": "Ben"
+    },
+    "prompt": {
+     "text": "Ben has 17 balloons. Some balloons float away. Now Ben has 8 balloons. How many balloons floated away?",
+     "speak": [
+      "Ben has ",
+      {
+       "number": 17
+      },
+      " balloons. Some balloons float away. Now Ben has ",
+      {
+       "number": 8
+      },
+      " balloons. How many balloons floated away?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "🎈",
+     "count": 1,
+     "layout": "row"
+    },
+    "explanation": {
+     "speak": [
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "is",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "17 − 8 = 9.",
+      "The answer is 9."
+     ],
+     "visual": {
+      "kind": "equation",
+      "parts": [
+       17,
+       "-",
+       8,
+       "=",
+       9
+      ]
+     }
+    },
+    "type": "numberPad",
+    "answer": 9,
+    "maxDigits": 2,
+    "skillId": "M-1-B16",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-B16|3|{\"a\":17,\"b\":8,\"name\":\"Ben\",\"oracle\":\"subtract\",\"story\":\"balloons\"}"
+   }
+  ]
+ }
+}

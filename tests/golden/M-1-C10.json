@@ -1,0 +1,6244 @@
+{
+ "skillId": "M-1-C10",
+ "version": 1,
+ "example": {
+  "type": "sort",
+  "mode": "look",
+  "facts": {
+   "itemAttrs": [
+    "vehicles",
+    "animals",
+    "clothes",
+    "clothes",
+    "vehicles",
+    "animals"
+   ],
+   "binAttrs": [
+    "clothes",
+    "animals",
+    "vehicles"
+   ],
+   "items": [
+    "plane",
+    "dog",
+    "sock",
+    "dress",
+    "tractor",
+    "pig"
+   ]
+  },
+  "prompt": {
+   "text": "Sort the pictures into three groups.",
+   "speak": [
+    "Sort the pictures into three groups."
+   ]
+  },
+  "items": [
+   {
+    "kind": "emojiGroup",
+    "emoji": "✈️",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "plane"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐶",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "dog"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🧦",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "sock"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "👗",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "dress"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🚜",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "tractor"
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐷",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     "pig"
+    ]
+   }
+  ],
+  "bins": [
+   {
+    "label": "Clothes",
+    "speak": [
+     "clothes"
+    ]
+   },
+   {
+    "label": "Animals",
+    "speak": [
+     "animals"
+    ]
+   },
+   {
+    "label": "Vehicles",
+    "speak": [
+     "vehicles"
+    ]
+   }
+  ],
+  "answerBin": [
+   2,
+   1,
+   0,
+   0,
+   2,
+   1
+  ],
+  "explanation": {
+   "speak": [
+    "Clothes: sock, dress. Animals: dog, pig. Vehicles: plane, tractor."
+   ],
+   "steps": [
+    "Clothes: sock, dress.",
+    "Animals: dog, pig.",
+    "Vehicles: plane, tractor."
+   ],
+   "visual": {
+    "kind": "row",
+    "children": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row"
+     }
+    ]
+   }
+  },
+  "skillId": "M-1-C10",
+  "level": 1,
+  "seed": 943,
+  "key": "M-1-C10|1|{\"binAttrs\":[\"clothes\",\"animals\",\"vehicles\"],\"itemAttrs\":[\"vehicles\",\"animals\",\"clothes\",\"clothes\",\"vehicles\",\"animals\"],\"items\":[\"plane\",\"dog\",\"sock\",\"dress\",\"tractor\",\"pig\"]}"
+ },
+ "levels": {
+  "1": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "vehicles",
+      "animals",
+      "food",
+      "food",
+      "animals"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "train",
+      "bus",
+      "frog",
+      "apple",
+      "bread",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     2,
+     0,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: apple, bread. Vehicles: train, bus. Animals: frog, monkey."
+     ],
+     "steps": [
+      "Food: apple, bread.",
+      "Vehicles: train, bus.",
+      "Animals: frog, monkey."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 1,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"vehicles\",\"animals\",\"food\",\"food\",\"animals\"],\"items\":[\"train\",\"bus\",\"frog\",\"apple\",\"bread\",\"monkey\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "vehicles",
+      "food",
+      "animals",
+      "food",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "car",
+      "boat",
+      "grapes",
+      "dog",
+      "cookie",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     2,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: car, boat. Food: grapes, cookie. Animals: dog, frog."
+     ],
+     "steps": [
+      "Vehicles: car, boat.",
+      "Food: grapes, cookie.",
+      "Animals: dog, frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 2,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"vehicles\",\"food\",\"animals\",\"food\",\"animals\"],\"items\":[\"car\",\"boat\",\"grapes\",\"dog\",\"cookie\",\"frog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "food",
+      "animals",
+      "food",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "train",
+      "grapes",
+      "dog",
+      "carrot",
+      "lion",
+      "bus"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     1,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: train, bus. Food: grapes, carrot. Animals: dog, lion."
+     ],
+     "steps": [
+      "Vehicles: train, bus.",
+      "Food: grapes, carrot.",
+      "Animals: dog, lion."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 3,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"food\",\"animals\",\"food\",\"animals\",\"vehicles\"],\"items\":[\"train\",\"grapes\",\"dog\",\"carrot\",\"lion\",\"bus\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "vehicles",
+      "clothes",
+      "vehicles",
+      "clothes",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "clothes",
+      "animals"
+     ],
+     "items": [
+      "cat",
+      "train",
+      "shirt",
+      "bike",
+      "pants",
+      "duck"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pants"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     0,
+     1,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: train, bike. Clothes: shirt, pants. Animals: cat, duck."
+     ],
+     "steps": [
+      "Vehicles: train, bike.",
+      "Clothes: shirt, pants.",
+      "Animals: cat, duck."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 4,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"vehicles\",\"clothes\",\"animals\"],\"itemAttrs\":[\"animals\",\"vehicles\",\"clothes\",\"vehicles\",\"clothes\",\"animals\"],\"items\":[\"cat\",\"train\",\"shirt\",\"bike\",\"pants\",\"duck\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "food",
+      "food",
+      "animals",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "animals",
+      "food"
+     ],
+     "items": [
+      "rocket",
+      "grapes",
+      "pizza",
+      "rabbit",
+      "duck",
+      "tractor"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     2,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: rocket, tractor. Animals: rabbit, duck. Food: grapes, pizza."
+     ],
+     "steps": [
+      "Vehicles: rocket, tractor.",
+      "Animals: rabbit, duck.",
+      "Food: grapes, pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 5,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"vehicles\",\"animals\",\"food\"],\"itemAttrs\":[\"vehicles\",\"food\",\"food\",\"animals\",\"animals\",\"vehicles\"],\"items\":[\"rocket\",\"grapes\",\"pizza\",\"rabbit\",\"duck\",\"tractor\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "food",
+      "vehicles",
+      "animals",
+      "vehicles",
+      "animals"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "grapes",
+      "bread",
+      "train",
+      "cat",
+      "plane",
+      "monkey"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     2,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: grapes, bread. Vehicles: train, plane. Animals: cat, monkey."
+     ],
+     "steps": [
+      "Food: grapes, bread.",
+      "Vehicles: train, plane.",
+      "Animals: cat, monkey."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 6,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"food\",\"food\",\"vehicles\",\"animals\",\"vehicles\",\"animals\"],\"items\":[\"grapes\",\"bread\",\"train\",\"cat\",\"plane\",\"monkey\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "food",
+      "vehicles",
+      "vehicles",
+      "clothes",
+      "clothes"
+     ],
+     "binAttrs": [
+      "clothes",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "grapes",
+      "carrot",
+      "plane",
+      "boat",
+      "hat",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "hat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: hat, glove. Vehicles: plane, boat. Food: grapes, carrot."
+     ],
+     "steps": [
+      "Clothes: hat, glove.",
+      "Vehicles: plane, boat.",
+      "Food: grapes, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 7,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"clothes\",\"vehicles\",\"food\"],\"itemAttrs\":[\"food\",\"food\",\"vehicles\",\"vehicles\",\"clothes\",\"clothes\"],\"items\":[\"grapes\",\"carrot\",\"plane\",\"boat\",\"hat\",\"glove\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "vehicles",
+      "food",
+      "clothes",
+      "food",
+      "clothes"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food",
+      "vehicles"
+     ],
+     "items": [
+      "boat",
+      "plane",
+      "grapes",
+      "sock",
+      "cheese",
+      "scarf"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "sock"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "scarf"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     1,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: sock, scarf. Food: grapes, cheese. Vehicles: boat, plane."
+     ],
+     "steps": [
+      "Clothes: sock, scarf.",
+      "Food: grapes, cheese.",
+      "Vehicles: boat, plane."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 8,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"clothes\",\"food\",\"vehicles\"],\"itemAttrs\":[\"vehicles\",\"vehicles\",\"food\",\"clothes\",\"food\",\"clothes\"],\"items\":[\"boat\",\"plane\",\"grapes\",\"sock\",\"cheese\",\"scarf\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "clothes",
+      "food",
+      "food",
+      "vehicles",
+      "vehicles",
+      "clothes"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "clothes"
+     ],
+     "items": [
+      "shirt",
+      "cookie",
+      "apple",
+      "bike",
+      "tractor",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     1,
+     0,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: bike, tractor. Food: cookie, apple. Clothes: shirt, glove."
+     ],
+     "steps": [
+      "Vehicles: bike, tractor.",
+      "Food: cookie, apple.",
+      "Clothes: shirt, glove."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 9,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"vehicles\",\"food\",\"clothes\"],\"itemAttrs\":[\"clothes\",\"food\",\"food\",\"vehicles\",\"vehicles\",\"clothes\"],\"items\":[\"shirt\",\"cookie\",\"apple\",\"bike\",\"tractor\",\"glove\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "food",
+      "animals",
+      "food",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "animals",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "tractor",
+      "bread",
+      "elephant",
+      "apple",
+      "lion",
+      "train"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "elephant"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     2,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: elephant, lion. Vehicles: tractor, train. Food: bread, apple."
+     ],
+     "steps": [
+      "Animals: elephant, lion.",
+      "Vehicles: tractor, train.",
+      "Food: bread, apple."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 1,
+    "seed": 10,
+    "key": "M-1-C10|1|{\"binAttrs\":[\"animals\",\"vehicles\",\"food\"],\"itemAttrs\":[\"vehicles\",\"food\",\"animals\",\"food\",\"animals\",\"vehicles\"],\"items\":[\"tractor\",\"bread\",\"elephant\",\"apple\",\"lion\",\"train\"]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "animals",
+      "food",
+      "food",
+      "vehicles",
+      "vehicles",
+      "vehicles",
+      "food"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "lion",
+      "rabbit",
+      "banana",
+      "cheese",
+      "train",
+      "plane",
+      "rocket",
+      "apple"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     2,
+     0,
+     0,
+     1,
+     1,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Food: banana, cheese, apple. Vehicles: train, plane, rocket. Animals: lion, rabbit."
+     ],
+     "steps": [
+      "Food: banana, cheese, apple.",
+      "Vehicles: train, plane, rocket.",
+      "Animals: lion, rabbit."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 1,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"animals\",\"animals\",\"food\",\"food\",\"vehicles\",\"vehicles\",\"vehicles\",\"food\"],\"items\":[\"lion\",\"rabbit\",\"banana\",\"cheese\",\"train\",\"plane\",\"rocket\",\"apple\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "food",
+      "vehicles",
+      "animals",
+      "vehicles",
+      "vehicles",
+      "animals",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "carrot",
+      "bread",
+      "bus",
+      "frog",
+      "tractor",
+      "train",
+      "duck",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     2,
+     0,
+     0,
+     2,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: bus, tractor, train. Food: carrot, bread. Animals: frog, duck, dog."
+     ],
+     "steps": [
+      "Vehicles: bus, tractor, train.",
+      "Food: carrot, bread.",
+      "Animals: frog, duck, dog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 2,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"food\",\"food\",\"vehicles\",\"animals\",\"vehicles\",\"vehicles\",\"animals\",\"animals\"],\"items\":[\"carrot\",\"bread\",\"bus\",\"frog\",\"tractor\",\"train\",\"duck\",\"dog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "animals",
+      "animals",
+      "vehicles",
+      "vehicles",
+      "food",
+      "food",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "apple",
+      "frog",
+      "monkey",
+      "rocket",
+      "train",
+      "pizza",
+      "carrot",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     0,
+     0,
+     1,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: rocket, train. Food: apple, pizza, carrot. Animals: frog, monkey, dog."
+     ],
+     "steps": [
+      "Vehicles: rocket, train.",
+      "Food: apple, pizza, carrot.",
+      "Animals: frog, monkey, dog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 3,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"food\",\"animals\",\"animals\",\"vehicles\",\"vehicles\",\"food\",\"food\",\"animals\"],\"items\":[\"apple\",\"frog\",\"monkey\",\"rocket\",\"train\",\"pizza\",\"carrot\",\"dog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "animals",
+      "animals",
+      "clothes",
+      "animals",
+      "vehicles",
+      "clothes",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "clothes",
+      "animals"
+     ],
+     "items": [
+      "rocket",
+      "cat",
+      "pig",
+      "dress",
+      "lion",
+      "bus",
+      "shirt",
+      "tractor"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pig"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dress"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     2,
+     2,
+     1,
+     2,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: rocket, bus, tractor. Clothes: dress, shirt. Animals: cat, pig, lion."
+     ],
+     "steps": [
+      "Vehicles: rocket, bus, tractor.",
+      "Clothes: dress, shirt.",
+      "Animals: cat, pig, lion."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐷",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 4,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"vehicles\",\"clothes\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"animals\",\"animals\",\"clothes\",\"animals\",\"vehicles\",\"clothes\",\"vehicles\"],\"items\":[\"rocket\",\"cat\",\"pig\",\"dress\",\"lion\",\"bus\",\"shirt\",\"tractor\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "animals",
+      "animals",
+      "food",
+      "animals",
+      "vehicles",
+      "vehicles",
+      "food"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "animals",
+      "food"
+     ],
+     "items": [
+      "cookie",
+      "monkey",
+      "elephant",
+      "grapes",
+      "frog",
+      "plane",
+      "bus",
+      "carrot"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "elephant"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: plane, bus. Animals: monkey, elephant, frog. Food: cookie, grapes, carrot."
+     ],
+     "steps": [
+      "Vehicles: plane, bus.",
+      "Animals: monkey, elephant, frog.",
+      "Food: cookie, grapes, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 5,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"vehicles\",\"animals\",\"food\"],\"itemAttrs\":[\"food\",\"animals\",\"animals\",\"food\",\"animals\",\"vehicles\",\"vehicles\",\"food\"],\"items\":[\"cookie\",\"monkey\",\"elephant\",\"grapes\",\"frog\",\"plane\",\"bus\",\"carrot\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "vehicles",
+      "food",
+      "vehicles",
+      "food",
+      "animals",
+      "animals",
+      "animals"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "bus",
+      "rocket",
+      "banana",
+      "train",
+      "cookie",
+      "cat",
+      "lion",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "banana"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     2,
+     2,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: banana, cookie. Vehicles: bus, rocket, train. Animals: cat, lion, frog."
+     ],
+     "steps": [
+      "Food: banana, cookie.",
+      "Vehicles: bus, rocket, train.",
+      "Animals: cat, lion, frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 6,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"vehicles\",\"food\",\"vehicles\",\"food\",\"animals\",\"animals\",\"animals\"],\"items\":[\"bus\",\"rocket\",\"banana\",\"train\",\"cookie\",\"cat\",\"lion\",\"frog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "vehicles",
+      "clothes",
+      "clothes",
+      "food",
+      "clothes",
+      "vehicles",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "clothes",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "carrot",
+      "bike",
+      "glove",
+      "shirt",
+      "pizza",
+      "shoe",
+      "tractor",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shoe"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     0,
+     0,
+     2,
+     0,
+     1,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: glove, shirt, shoe. Vehicles: bike, tractor, car. Food: carrot, pizza."
+     ],
+     "steps": [
+      "Clothes: glove, shirt, shoe.",
+      "Vehicles: bike, tractor, car.",
+      "Food: carrot, pizza."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 7,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"clothes\",\"vehicles\",\"food\"],\"itemAttrs\":[\"food\",\"vehicles\",\"clothes\",\"clothes\",\"food\",\"clothes\",\"vehicles\",\"vehicles\"],\"items\":[\"carrot\",\"bike\",\"glove\",\"shirt\",\"pizza\",\"shoe\",\"tractor\",\"car\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "vehicles",
+      "food",
+      "clothes",
+      "vehicles",
+      "clothes",
+      "food",
+      "clothes"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food",
+      "vehicles"
+     ],
+     "items": [
+      "cheese",
+      "bus",
+      "cookie",
+      "hat",
+      "boat",
+      "scarf",
+      "carrot",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "hat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "scarf"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     1,
+     0,
+     2,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: hat, scarf, glove. Food: cheese, cookie, carrot. Vehicles: bus, boat."
+     ],
+     "steps": [
+      "Clothes: hat, scarf, glove.",
+      "Food: cheese, cookie, carrot.",
+      "Vehicles: bus, boat."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 8,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"clothes\",\"food\",\"vehicles\"],\"itemAttrs\":[\"food\",\"vehicles\",\"food\",\"clothes\",\"vehicles\",\"clothes\",\"food\",\"clothes\"],\"items\":[\"cheese\",\"bus\",\"cookie\",\"hat\",\"boat\",\"scarf\",\"carrot\",\"glove\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "food",
+      "clothes",
+      "food",
+      "vehicles",
+      "vehicles",
+      "clothes",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "clothes"
+     ],
+     "items": [
+      "bread",
+      "apple",
+      "sock",
+      "cheese",
+      "plane",
+      "rocket",
+      "pants",
+      "train"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "sock"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pants"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: plane, rocket, train. Food: bread, apple, cheese. Clothes: sock, pants."
+     ],
+     "steps": [
+      "Vehicles: plane, rocket, train.",
+      "Food: bread, apple, cheese.",
+      "Clothes: sock, pants."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 9,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"vehicles\",\"food\",\"clothes\"],\"itemAttrs\":[\"food\",\"food\",\"clothes\",\"food\",\"vehicles\",\"vehicles\",\"clothes\",\"vehicles\"],\"items\":[\"bread\",\"apple\",\"sock\",\"cheese\",\"plane\",\"rocket\",\"pants\",\"train\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "animals",
+      "vehicles",
+      "food",
+      "food",
+      "vehicles",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "animals",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "frog",
+      "lion",
+      "bike",
+      "apple",
+      "carrot",
+      "train",
+      "monkey",
+      "car"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     2,
+     2,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: frog, lion, monkey. Vehicles: bike, train, car. Food: apple, carrot."
+     ],
+     "steps": [
+      "Animals: frog, lion, monkey.",
+      "Vehicles: bike, train, car.",
+      "Food: apple, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 2,
+    "seed": 10,
+    "key": "M-1-C10|2|{\"binAttrs\":[\"animals\",\"vehicles\",\"food\"],\"itemAttrs\":[\"animals\",\"animals\",\"vehicles\",\"food\",\"food\",\"vehicles\",\"animals\",\"vehicles\"],\"items\":[\"frog\",\"lion\",\"bike\",\"apple\",\"carrot\",\"train\",\"monkey\",\"car\"]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "animals",
+      "food",
+      "vehicles",
+      "animals",
+      "vehicles",
+      "food",
+      "food",
+      "animals"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "train",
+      "monkey",
+      "apple",
+      "rocket",
+      "elephant",
+      "bus",
+      "bread",
+      "cheese",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "elephant"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: apple, bread, cheese. Vehicles: train, rocket, bus. Animals: monkey, elephant, frog."
+     ],
+     "steps": [
+      "Food: apple, bread, cheese.",
+      "Vehicles: train, rocket, bus.",
+      "Animals: monkey, elephant, frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 1,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"animals\",\"food\",\"vehicles\",\"animals\",\"vehicles\",\"food\",\"food\",\"animals\"],\"items\":[\"train\",\"monkey\",\"apple\",\"rocket\",\"elephant\",\"bus\",\"bread\",\"cheese\",\"frog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "vehicles",
+      "animals",
+      "animals",
+      "vehicles",
+      "food",
+      "food",
+      "food",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "tractor",
+      "boat",
+      "frog",
+      "dog",
+      "car",
+      "apple",
+      "grapes",
+      "cookie",
+      "rabbit"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     2,
+     2,
+     0,
+     1,
+     1,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: tractor, boat, car. Food: apple, grapes, cookie. Animals: frog, dog, rabbit."
+     ],
+     "steps": [
+      "Vehicles: tractor, boat, car.",
+      "Food: apple, grapes, cookie.",
+      "Animals: frog, dog, rabbit."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 2,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"vehicles\",\"vehicles\",\"animals\",\"animals\",\"vehicles\",\"food\",\"food\",\"food\",\"animals\"],\"items\":[\"tractor\",\"boat\",\"frog\",\"dog\",\"car\",\"apple\",\"grapes\",\"cookie\",\"rabbit\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "animals",
+      "vehicles",
+      "vehicles",
+      "food",
+      "animals",
+      "food",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "animals"
+     ],
+     "items": [
+      "carrot",
+      "lion",
+      "bus",
+      "train",
+      "grapes",
+      "cat",
+      "cheese",
+      "dog",
+      "plane"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚌",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bus"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "dog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     0,
+     0,
+     1,
+     2,
+     1,
+     2,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: bus, train, plane. Food: carrot, grapes, cheese. Animals: lion, cat, dog."
+     ],
+     "steps": [
+      "Vehicles: bus, train, plane.",
+      "Food: carrot, grapes, cheese.",
+      "Animals: lion, cat, dog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚌",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 3,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"vehicles\",\"food\",\"animals\"],\"itemAttrs\":[\"food\",\"animals\",\"vehicles\",\"vehicles\",\"food\",\"animals\",\"food\",\"animals\",\"vehicles\"],\"items\":[\"carrot\",\"lion\",\"bus\",\"train\",\"grapes\",\"cat\",\"cheese\",\"dog\",\"plane\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "clothes",
+      "clothes",
+      "vehicles",
+      "vehicles",
+      "animals",
+      "vehicles",
+      "clothes",
+      "animals"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "clothes",
+      "animals"
+     ],
+     "items": [
+      "cat",
+      "sock",
+      "pants",
+      "bike",
+      "train",
+      "rabbit",
+      "rocket",
+      "shirt",
+      "duck"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "sock"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pants"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     2,
+     1,
+     1,
+     0,
+     0,
+     2,
+     0,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: bike, train, rocket. Clothes: sock, pants, shirt. Animals: cat, rabbit, duck."
+     ],
+     "steps": [
+      "Vehicles: bike, train, rocket.",
+      "Clothes: sock, pants, shirt.",
+      "Animals: cat, rabbit, duck."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 4,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"vehicles\",\"clothes\",\"animals\"],\"itemAttrs\":[\"animals\",\"clothes\",\"clothes\",\"vehicles\",\"vehicles\",\"animals\",\"vehicles\",\"clothes\",\"animals\"],\"items\":[\"cat\",\"sock\",\"pants\",\"bike\",\"train\",\"rabbit\",\"rocket\",\"shirt\",\"duck\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "vehicles",
+      "animals",
+      "food",
+      "vehicles",
+      "food",
+      "food",
+      "animals",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "animals",
+      "food"
+     ],
+     "items": [
+      "elephant",
+      "bike",
+      "rabbit",
+      "pizza",
+      "tractor",
+      "bread",
+      "grapes",
+      "duck",
+      "rocket"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "elephant"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐰",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rabbit"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "duck"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     0,
+     1,
+     2,
+     0,
+     2,
+     2,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: bike, tractor, rocket. Animals: elephant, rabbit, duck. Food: pizza, bread, grapes."
+     ],
+     "steps": [
+      "Vehicles: bike, tractor, rocket.",
+      "Animals: elephant, rabbit, duck.",
+      "Food: pizza, bread, grapes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 5,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"vehicles\",\"animals\",\"food\"],\"itemAttrs\":[\"animals\",\"vehicles\",\"animals\",\"food\",\"vehicles\",\"food\",\"food\",\"animals\",\"vehicles\"],\"items\":[\"elephant\",\"bike\",\"rabbit\",\"pizza\",\"tractor\",\"bread\",\"grapes\",\"duck\",\"rocket\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "vehicles",
+      "food",
+      "food",
+      "vehicles",
+      "animals",
+      "animals",
+      "vehicles",
+      "animals"
+     ],
+     "binAttrs": [
+      "food",
+      "vehicles",
+      "animals"
+     ],
+     "items": [
+      "pizza",
+      "train",
+      "bread",
+      "grapes",
+      "plane",
+      "monkey",
+      "cat",
+      "rocket",
+      "frog"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "monkey"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     0,
+     1,
+     2,
+     2,
+     1,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Food: pizza, bread, grapes. Vehicles: train, plane, rocket. Animals: monkey, cat, frog."
+     ],
+     "steps": [
+      "Food: pizza, bread, grapes.",
+      "Vehicles: train, plane, rocket.",
+      "Animals: monkey, cat, frog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 6,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"food\",\"vehicles\",\"animals\"],\"itemAttrs\":[\"food\",\"vehicles\",\"food\",\"food\",\"vehicles\",\"animals\",\"animals\",\"vehicles\",\"animals\"],\"items\":[\"pizza\",\"train\",\"bread\",\"grapes\",\"plane\",\"monkey\",\"cat\",\"rocket\",\"frog\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "vehicles",
+      "food",
+      "food",
+      "food",
+      "clothes",
+      "vehicles",
+      "vehicles",
+      "clothes",
+      "clothes"
+     ],
+     "binAttrs": [
+      "clothes",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "rocket",
+      "carrot",
+      "apple",
+      "grapes",
+      "glove",
+      "plane",
+      "boat",
+      "pants",
+      "hat"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "rocket"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pants"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "hat"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     2,
+     0,
+     1,
+     1,
+     0,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: glove, pants, hat. Vehicles: rocket, plane, boat. Food: carrot, apple, grapes."
+     ],
+     "steps": [
+      "Clothes: glove, pants, hat.",
+      "Vehicles: rocket, plane, boat.",
+      "Food: carrot, apple, grapes."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 7,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"clothes\",\"vehicles\",\"food\"],\"itemAttrs\":[\"vehicles\",\"food\",\"food\",\"food\",\"clothes\",\"vehicles\",\"vehicles\",\"clothes\",\"clothes\"],\"items\":[\"rocket\",\"carrot\",\"apple\",\"grapes\",\"glove\",\"plane\",\"boat\",\"pants\",\"hat\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "food",
+      "vehicles",
+      "vehicles",
+      "clothes",
+      "vehicles",
+      "clothes",
+      "food",
+      "clothes"
+     ],
+     "binAttrs": [
+      "clothes",
+      "food",
+      "vehicles"
+     ],
+     "items": [
+      "pizza",
+      "grapes",
+      "train",
+      "boat",
+      "sock",
+      "plane",
+      "pants",
+      "cheese",
+      "scarf"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍇",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "grapes"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "boat"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "sock"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "plane"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pants"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cheese"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "scarf"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     1,
+     2,
+     2,
+     0,
+     2,
+     0,
+     1,
+     0
+    ],
+    "explanation": {
+     "speak": [
+      "Clothes: sock, pants, scarf. Food: pizza, grapes, cheese. Vehicles: train, boat, plane."
+     ],
+     "steps": [
+      "Clothes: sock, pants, scarf.",
+      "Food: pizza, grapes, cheese.",
+      "Vehicles: train, boat, plane."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 8,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"clothes\",\"food\",\"vehicles\"],\"itemAttrs\":[\"food\",\"food\",\"vehicles\",\"vehicles\",\"clothes\",\"vehicles\",\"clothes\",\"food\",\"clothes\"],\"items\":[\"pizza\",\"grapes\",\"train\",\"boat\",\"sock\",\"plane\",\"pants\",\"cheese\",\"scarf\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "food",
+      "clothes",
+      "food",
+      "clothes",
+      "vehicles",
+      "food",
+      "vehicles",
+      "vehicles",
+      "clothes"
+     ],
+     "binAttrs": [
+      "vehicles",
+      "food",
+      "clothes"
+     ],
+     "items": [
+      "apple",
+      "scarf",
+      "cookie",
+      "shirt",
+      "tractor",
+      "pizza",
+      "bike",
+      "car",
+      "glove"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "scarf"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "cookie"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "shirt"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pizza"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚲",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bike"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "glove"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     },
+     {
+      "label": "Clothes",
+      "speak": [
+       "clothes"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     1,
+     2,
+     0,
+     1,
+     0,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      "Vehicles: tractor, bike, car. Food: apple, cookie, pizza. Clothes: scarf, shirt, glove."
+     ],
+     "steps": [
+      "Vehicles: tractor, bike, car.",
+      "Food: apple, cookie, pizza.",
+      "Clothes: scarf, shirt, glove."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍪",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚲",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 9,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"vehicles\",\"food\",\"clothes\"],\"itemAttrs\":[\"food\",\"clothes\",\"food\",\"clothes\",\"vehicles\",\"food\",\"vehicles\",\"vehicles\",\"clothes\"],\"items\":[\"apple\",\"scarf\",\"cookie\",\"shirt\",\"tractor\",\"pizza\",\"bike\",\"car\",\"glove\"]}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "itemAttrs": [
+      "animals",
+      "vehicles",
+      "food",
+      "vehicles",
+      "animals",
+      "animals",
+      "food",
+      "food",
+      "vehicles"
+     ],
+     "binAttrs": [
+      "animals",
+      "vehicles",
+      "food"
+     ],
+     "items": [
+      "lion",
+      "tractor",
+      "bread",
+      "car",
+      "frog",
+      "elephant",
+      "apple",
+      "carrot",
+      "train"
+     ]
+    },
+    "prompt": {
+     "text": "Sort the pictures into three groups.",
+     "speak": [
+      "Sort the pictures into three groups."
+     ]
+    },
+    "items": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🦁",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "lion"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚜",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "tractor"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍞",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "bread"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "car"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "frog"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "elephant"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍎",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "apple"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥕",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "carrot"
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "train"
+      ]
+     }
+    ],
+    "bins": [
+     {
+      "label": "Animals",
+      "speak": [
+       "animals"
+      ]
+     },
+     {
+      "label": "Vehicles",
+      "speak": [
+       "vehicles"
+      ]
+     },
+     {
+      "label": "Food",
+      "speak": [
+       "food"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     1,
+     0,
+     0,
+     2,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      "Animals: lion, frog, elephant. Vehicles: tractor, car, train. Food: bread, apple, carrot."
+     ],
+     "steps": [
+      "Animals: lion, frog, elephant.",
+      "Vehicles: tractor, car, train.",
+      "Food: bread, apple, carrot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚜",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍞",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚗",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍎",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🥕",
+        "count": 1,
+        "layout": "row"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚂",
+        "count": 1,
+        "layout": "row"
+       }
+      ]
+     }
+    },
+    "skillId": "M-1-C10",
+    "level": 3,
+    "seed": 10,
+    "key": "M-1-C10|3|{\"binAttrs\":[\"animals\",\"vehicles\",\"food\"],\"itemAttrs\":[\"animals\",\"vehicles\",\"food\",\"vehicles\",\"animals\",\"animals\",\"food\",\"food\",\"vehicles\"],\"items\":[\"lion\",\"tractor\",\"bread\",\"car\",\"frog\",\"elephant\",\"apple\",\"carrot\",\"train\"]}"
+   }
+  ]
+ }
+}
