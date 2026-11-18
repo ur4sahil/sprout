@@ -1,3 +1,4 @@
+import { visitors } from './visitors';
 import type { CSSProperties } from 'react';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ChildDay } from '../app/childDay';
@@ -45,6 +46,7 @@ interface Props {
   onOpen: (part: PlanPart) => void; // the big button, or a stepping stone: open this part of today's plan
   onSkill: (skillId: string, mode: 'practice' | 'learn') => void; // a plant's card: Practice or Lesson
   onPlace: (place: GardenPlace) => void; // the signpost
+  onStory?: () => void; // the path is done and today's story waits: a button to read it (game feel, phase 7)
   onSpeak: (say: Say) => void; // say this aloud (a child who cannot read hears the plant's name)
 }
 
@@ -83,9 +85,11 @@ function useWide(): boolean {
 // plant, each topic a bed, each subject an area; today's plan is a path of stepping stones and the sun fills as
 // it is answered. Everything shown is worked out from what is saved. The garden saves nothing and goes nowhere
 // itself: it tells the screen that shows it what the child asked for.
-export default function Garden({ grade, day, calm, places = ALL_PLACES, menuBeside = false, skills = CATALOGUE, ladders = LADDERS, world, season, onOpen, onSkill, onPlace, onSpeak }: Props) {
+export default function Garden({ grade, day, calm, places = ALL_PLACES, menuBeside = false, skills = CATALOGUE, ladders = LADDERS, world, season, onOpen, onSkill, onPlace, onSpeak, onStory }: Props) {
   const home: HomeScene = (world ?? currentWorld()).home ?? (GARDEN.home as HomeScene);
   const layout = useMemo(() => layoutGarden({ grade, states: day.states, skills, ladders, plan: day.plan, reviewsDue: day.reviewsDue }), [grade, day.states, day.plan, day.reviewsDue, skills, ladders]);
+  // Animals that have moved in as the child's plants bloomed (game feel, phase 7).
+  const living = useMemo(() => visitors(day.states, skills).visitors, [day.states, skills]);
   const byId = useMemo(() => new Map(skills.map((skill) => [skill.id, skill])), [skills]);
   const still = wantsStill(calm);
   // The light is read once, as the garden opens: it does not change under a child who is looking at it.
@@ -194,7 +198,7 @@ export default function Garden({ grade, day, calm, places = ALL_PLACES, menuBesi
       <div className={styles.viewport} ref={viewport} data-garden-view="">
         <div className={styles.scene} ref={scene} style={sceneNumbers} data-garden-scene="">
           <GardenBackdrop width={layout.width} light={light} still={still} areas={layout.areas} look={seasonal} />
-          <GardenGround layout={layout} beds={beds} stones={stones} home={home} look={seasonal} />
+          <GardenGround layout={layout} beds={beds} stones={stones} home={home} look={seasonal} visitors={living} />
           {beds.flatMap((bed) =>
             bed.plants.map((plant) => {
               const skill = byId.get(plant.skillId);
@@ -260,10 +264,17 @@ export default function Garden({ grade, day, calm, places = ALL_PLACES, menuBesi
             {layout.path === 'going' ? home.path.going : home.path.start}
           </BigButton>
         ) : layout.path === 'done' ? (
-          <p className={styles.done} data-follow="done">
-            <Icon name="check" />
-            {home.path.done}
-          </p>
+          onStory ? (
+            <BigButton size="kid" className={styles.follow} data-follow="story" onClick={onStory}>
+              <Icon name="book" />
+              Story time!
+            </BigButton>
+          ) : (
+            <p className={styles.done} data-follow="done">
+              <Icon name="check" />
+              {home.path.done}
+            </p>
+          )
         ) : null}
       </div>
     </section>

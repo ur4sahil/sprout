@@ -1,3 +1,6 @@
+import { localDay } from '../../lib/clock';
+import { EPISODES } from '../../stories/episodes';
+import { storyForToday } from '../../stories/progress';
 import { LINES } from '../../audio/lines';
 import Art from '../../visuals/Art';
 import { useEffect, useMemo, useState } from 'react';
@@ -102,6 +105,8 @@ export default function Home() {
   const next = day ? nextPart(day.plan) : null;
   // The day's goal is the plan's questions added up.
   const goal = day ? planProgress(day.plan) : { done: 0, goal: 0 };
+  // Today's story (game feel, phase 7): once the plan is done, at most one new story a day.
+  const storyWaits = !!day && day.plan.length > 0 && nextPart(day.plan) === null && storyForToday(EPISODES, child.storiesRead, true, localDay()) !== null;
   const subjects = SUBJECTS.filter((subject) => readySkills.some((skill) => skill.subject === subject.id && !skill.retired));
   const factsOpen = openSets(child.grade, child.settings.factSets).length > 0;
   const asGarden = child.settings.homeView !== 'list';
@@ -134,6 +139,7 @@ export default function Home() {
             ))}
             {factsOpen && <NavButton icon="bolt" label="Fast facts" onClick={() => go('/facts')} />}
             <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
+            {child.storiesRead.length > 0 && <NavButton icon="book" label="Stories" onClick={() => go('/stories')} />}
             {popOffered && <NavButton icon="balloon" label="Pop" onClick={() => go('/games/pop')} />}
             <NavButton icon="cards" label="Pairs" onClick={() => go('/games/pairs')} />
           </div>
@@ -153,6 +159,7 @@ export default function Home() {
             onSkill={(skillId, mode) => go(mode === 'learn' ? `/skill/${skillId}/learn` : `/skill/${skillId}`)}
             onPlace={(place) => go(PLACE_PATH[place])}
             onSpeak={say}
+            onStory={storyWaits ? () => go('/story') : undefined}
           />
           {/* The same list as ever, for a grown-up's glance at the counts and for a screen reader. The garden's big button is the one way to start. */}
           {day.plan.length > 0 && <TodayPlan look="strip" plan={day.plan} onOpen={(part) => go(partPath(part))} onSpeak={say} />}

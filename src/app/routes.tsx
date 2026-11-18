@@ -17,6 +17,8 @@ import Practice from '../screens/kid/Practice';
 import ProfilePicker from '../screens/kid/ProfilePicker';
 import Review from '../screens/kid/Review';
 import SubjectPage from '../screens/kid/SubjectPage';
+import Stories from '../screens/kid/Stories';
+import StoryTime from '../screens/kid/StoryTime';
 import Dashboard from '../screens/parent/Dashboard';
 import ParentFacts from '../screens/parent/Facts';
 import Worksheet from '../screens/parent/Worksheet';
@@ -42,6 +44,8 @@ export const routes: RouteObject[] = [
   { path: '/mixed', element: <MixedBag /> },
   { path: '/diagnostic', element: <Diagnostic /> },
   { path: '/awards', element: <Awards /> },
+  { path: '/stories', element: <Stories /> },
+  { path: '/story', element: <StoryTime /> },
   { path: '/games/pop', element: <Pop /> },
   { path: '/games/pairs', element: <Pairs /> },
   { path: '/facts', element: <FastFacts /> },

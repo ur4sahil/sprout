@@ -40,19 +40,22 @@ export function forgetPresses(): void {
 
 // The stand-in for the saved record. To wire the real one: read `placed` from the child's saved sticker book and
 // save in `onPlace`; nothing else in the app looks behind this.
-export function usePlacedStickers(childId: string | undefined, earned: readonly AwardEarned[]): PlacedStickers {
+// `saved`: the stickers this child has pressed, as saved on the child record. A sticker earned before today that
+// is not saved counts as pressed (the book did not exist when it was earned), so only new ones lie loose.
+export function usePlacedStickers(childId: string | undefined, earned: readonly AwardEarned[], saved: readonly string[] = [], onSave?: (id: string) => void): PlacedStickers {
   const [presses, setPresses] = useState(0);
   const placed = useMemo(() => {
     void presses; // a press changes the remembered set, so the list is worked out again
-    return placedForNow(earned, localDay(), pressedThisRun.get(childId ?? '') ?? new Set<string>());
-  }, [earned, childId, presses]);
+    return [...new Set([...saved, ...placedForNow(earned, localDay(), pressedThisRun.get(childId ?? '') ?? new Set<string>())])];
+  }, [earned, childId, presses, saved]);
   const onPlace = useCallback(
     (id: string): void => {
       if (!childId) return;
       pressedThisRun.set(childId, new Set([...(pressedThisRun.get(childId) ?? []), id]));
       setPresses((n) => n + 1);
+      onSave?.(id);
     },
-    [childId],
+    [childId, onSave],
   );
   return { placed, onPlace };
 }

@@ -1,3 +1,6 @@
+import Visitor from './Visitor';
+import type { Visitor as VisitorRow } from './visitors';
+import { visitorSpot } from './visitors';
 import { PALETTE } from '../visuals/palette';
 import type { HomeScene, SeasonLook } from '../worlds/types';
 import styles from './GardenGround.module.css';
@@ -11,6 +14,7 @@ interface Props {
   stones: readonly Stone[]; // only the stones near the screen
   home: HomeScene;
   look?: SeasonLook | null; // the season's grass (game feel, phase 8). Left out: the usual colours
+  visitors?: readonly VisitorRow[]; // animals that have moved in as plants bloomed (game feel, phase 7)
 }
 
 const C = PALETTE.garden;
@@ -63,7 +67,7 @@ function landmark(area: AreaPlace, kind: HomeScene['areas']['math']['landmark'])
 // The ground the garden stands on: grass, the lane the path runs along, each area's sign and landmark, the soil
 // of the beds near the screen, and the small stones between today's stepping stones. It is one flat picture
 // under the plants; nothing in it is tapped.
-export default function GardenGround({ layout, beds, stones, home, look = null }: Props) {
+export default function GardenGround({ layout, beds, stones, home, look = null, visitors = [] }: Props) {
   const scenery = sceneryFor(look, 'afternoon');
   return (
     <svg className={styles.ground} viewBox={`0 0 ${layout.width} 100`} preserveAspectRatio="none" aria-hidden="true" data-layer="near">
@@ -79,6 +83,12 @@ export default function GardenGround({ layout, beds, stones, home, look = null }
             {home.areas[area.subject].name}
           </text>
           {landmark(area, home.areas[area.subject].landmark)}
+          {visitors
+            .filter((visitor) => visitor.subject === area.subject)
+            .map((visitor) => {
+              const spot = visitorSpot(area, visitor.slot);
+              return <Visitor key={visitor.id} kind={visitor.kind} x={spot.x} y={spot.y} flip={visitor.slot === 1} />;
+            })}
         </g>
       ))}
       {beds.map((bed) => (

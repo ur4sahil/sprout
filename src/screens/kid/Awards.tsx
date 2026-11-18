@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { saveStickerPlaced } from '../../app/collecting';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { PointerEvent } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { awardSkills, stickerFor, syncAwards } from '../../app/awardsRun';
@@ -52,7 +53,10 @@ export default function Awards() {
   const [landed, setLanded] = useState<string | null>(null);
   const swipe = useRef<{ x: number; y: number } | null>(null);
   const book = useRef<HTMLDivElement>(null);
-  const { placed, onPlace } = usePlacedStickers(child?.id, earned ?? NO_AWARDS);
+  const savePlaced = useCallback((id: string): void => {
+    if (child) void saveStickerPlaced(child, id);
+  }, [child]);
+  const { placed, onPlace } = usePlacedStickers(child?.id, earned ?? NO_AWARDS, child?.stickersPlaced ?? NO_PLACED, savePlaced);
 
   const awards = useMemo(() => allAwards(awardSkills()), []);
   const pages = useMemo(() => [...new Set(awards.map((award) => award.board))].map((id) => ({ id, awards: awards.filter((award) => award.board === id) })), [awards]);
@@ -212,4 +216,5 @@ export default function Awards() {
   );
 }
 
+const NO_PLACED: readonly string[] = [];
 const NO_AWARDS: AwardEarned[] = [];

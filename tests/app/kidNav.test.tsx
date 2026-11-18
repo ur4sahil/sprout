@@ -1,11 +1,13 @@
 import { KEEP_GOING_QUESTIONS } from '../../src/app/todaysPlan';
 import { LINES } from '../../src/audio/lines';
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from '../../src/app/App';
 import { summariseDay } from '../../src/app/childDay';
+import { saveStoryFinished } from '../../src/app/collecting';
+import { EPISODES } from '../../src/stories/episodes';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
 import { CATALOGUE } from '../../src/content/catalogue';
@@ -149,7 +151,32 @@ describe('home', () => {
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     const sun = await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` });
     expect(sun.hasAttribute('data-full')).toBe(true);
+    // The path is done, and today's story waits at its end (game feel, phase 7).
+    expect(screen.getByRole('button', { name: /Story time/ })).toBeTruthy();
+  });
+
+  it('the story at the end of the path: read once a day, saved when finished, then in the story book', async () => {
+    const child = await setUp('K', { planPractice: ['math'], planNew: false, planMixed: false });
+    const store = await repo();
+    const at = NOW.toISOString();
+    await store.saveSkillState({ ...newSkillState(child.id, ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
+    for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
+      await store.addAttempt({ id: `s-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
+    }
+    // No story book yet: nothing has been read.
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    expect(screen.queryByRole('button', { name: /^Stories$/ })).toBeNull();
+    // Saving a finished story: the story waits no more today, and the book appears.
+    await saveStoryFinished((await store.listChildren())[0]!, EPISODES[0]!.id, localDay(NOW));
+    expect((await store.listChildren())[0]?.storiesRead).toEqual([{ episodeId: EPISODES[0]!.id, day: localDay(NOW) }]);
+    cleanup();
+    const again = openApp();
+    await again.click(await screen.findByRole('button', { name: 'Robin' }));
+    await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` });
+    expect(screen.queryByRole('button', { name: /Story time/ })).toBeNull();
     expect(screen.getByText('Path done!')).toBeTruthy();
+    expect(screen.getByRole('button', { name: /^Stories$/ })).toBeTruthy();
   });
 
   it('a mastered skill whose review is due puts Review first in the plan', async () => {
@@ -619,7 +646,7 @@ describe('Start today\'s plan', () => {
     await holdHome();
     const plan = await screen.findByRole('list', { name: "Today's plan" });
     expect(plan.querySelector(`[data-skill="${ADD}"]`)?.hasAttribute('data-done')).toBe(true);
-    expect(await screen.findByText('Path done!')).toBeTruthy();
+    expect(await screen.findByRole('button', { name: /Story time/ })).toBeTruthy();
   });
 
   it('with a review due, the plan starts with the review', async () => {
