@@ -175,3 +175,25 @@
 .go[data-go='done'] {
   background: var(--color-correct);
 }
+
+/* On a phone the card keeps its words on few lines: a smaller title, the dots on one line, and no play circle
+   (the whole card is the button, and the ring shows which is next). */
+@media (max-width: 30em) {
+  .plan[data-look='cards'] .title {
+    font-size: var(--text-m);
+  }
+
+  .plan[data-look='cards'] .go {
+    display: none;
+  }
+
+  .dots {
+    flex-wrap: nowrap;
+    gap: var(--plan-dot-gap-narrow);
+  }
+
+  .dots i {
+    width: var(--plan-dot-narrow);
+    height: var(--plan-dot-narrow);
+  }
+}
