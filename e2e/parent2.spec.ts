@@ -1,3 +1,4 @@
+import { CATALOGUE } from '../src/content/catalogue';
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answer, answerRight, gotIt, holdHome, openSkill, shoot, sum } from './support/kid';
 import { checkScreen } from './support/layout';
@@ -50,11 +51,11 @@ test.describe('grown-ups area, part 2', () => {
     await checkScreen(page, 'plans, empty', 44);
     await page.getByRole('button', { name: 'Use this plan' }).click();
     const plan = page.getByRole('region', { name: 'Reasoning practice' });
-    await expect(plan).toContainText('14 skills. For: Robin.');
+    await expect(plan).toContainText(`${CATALOGUE.filter((skill) => skill.subject === 'reasoning').length} skills. For: Robin.`);
 
     // Change it: the editor fits the screen, and a skill can be moved and taken out.
     await plan.getByRole('button', { name: 'Change' }).click();
-    await expect(page.locator('[data-plan-skill]')).toHaveCount(14);
+    await expect(page.locator('[data-plan-skill]')).toHaveCount(CATALOGUE.filter((skill) => skill.subject === 'reasoning').length);
     await checkScreen(page, 'plan editor', 44);
     await shoot(page, 'parent-plan-editor');
     await page.getByRole('button', { name: 'Move Which belongs earlier' }).click();
@@ -64,7 +65,7 @@ test.describe('grown-ups area, part 2', () => {
 
     await page.getByRole('button', { name: 'Done' }).click();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    const picks = page.getByRole('group', { name: "Today's picks" });
+    const picks = page.getByRole('list', { name: "Today's plan" });
     await expect(picks.locator('[data-skill]').first()).toHaveAttribute('data-skill', 'R-A2');
   });
 
@@ -75,8 +76,8 @@ test.describe('grown-ups area, part 2', () => {
     await page.getByRole('tab', { name: 'Trouble spots' }).click();
     await expect(page.getByRole('status')).toContainText('No trouble spots for Robin.');
     await checkScreen(page, 'trouble spots', 44);
-    // All seven tabs are there and none is cut off.
-    await expect(page.getByRole('tab')).toHaveText(['Dashboard', 'Scores', 'Trouble spots', 'Question log', 'Plans', 'Settings', 'Data']);
+    // All nine tabs are there and none is cut off.
+    await expect(page.getByRole('tab')).toHaveText(['Dashboard', 'Scores', 'Trouble spots', 'Fast facts', 'Worksheets', 'Question log', 'Plans', 'Settings', 'Data']);
     await shoot(page, 'parent-tabs');
   });
 });

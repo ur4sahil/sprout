@@ -16,7 +16,7 @@ test.describe('practice', () => {
     await shoot(page, 'picker');
 
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     await checkScreen(page, 'home', 64);
     await shoot(page, 'home');
     // "Add to 10" is no longer one of the first picks, so it is opened from the Math page.
@@ -68,9 +68,10 @@ test.describe('practice', () => {
     await page.reload();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await expect(page.getByRole('img', { name: '2 of 15 questions today' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Add to 10. Score 20' })).toBeVisible();
+    // Today's plan has it (started today, so it is today's new skill), counting the 2 answers already given.
+    await expect(page.getByRole('button', { name: /\. Add to 10 · 2 of \d+/ })).toBeVisible();
     // And the next question is a new one, picking up from where the child was.
-    await page.getByRole('button', { name: /^Add to 10\./ }).click();
+    await page.getByRole('button', { name: /\. Add to 10 ·/ }).click();
     await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '20');
     await answerRight(page);
@@ -107,7 +108,7 @@ test.describe('practice', () => {
     await page.getByRole('button', { name: 'Learn this skill' }).click();
     await page.getByRole('button', { name: 'Back to practice' }).click();
     await holdHome(page);
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     expect(await page.evaluate(() => history.length)).toBe(before + 1);
   });
 

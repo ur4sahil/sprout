@@ -147,7 +147,7 @@ describe('Pop', () => {
     const child = await setUp('K');
     useAppStore.getState().setChild(child);
     openApp('/games/pop');
-    expect(await screen.findByRole('group', { name: "Today's picks" })).toBeTruthy();
+    expect(await screen.findByRole('list', { name: "Today's plan" })).toBeTruthy();
   });
 });
 

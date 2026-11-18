@@ -1,3 +1,4 @@
+import { KEEP_GOING_QUESTIONS } from '../../src/app/todaysPlan';
 import { LINES } from '../../src/audio/lines';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -13,7 +14,8 @@ import { addDays, advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
 import type { Attempt, Child, SkillState } from '../../src/storage/schema';
-import { NOW, answer, findOnMath, gotIt, holdHome, openApp, openSkill, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
+import { newSkillState } from '../../src/storage/schema';
+import { NOW, answer, gotIt, holdHome, openApp, openSkill, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
 const spoken = vi.hoisted(() => ({ said: [] as unknown[], sounds: [] as string[] }));
@@ -61,38 +63,45 @@ async function masterAllBut(keep: string[]): Promise<void> {
   }
 }
 
-const picksOnScreen = async (): Promise<string[]> => [...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill') ?? '');
+const picksOnScreen = async (): Promise<string[]> => [...(await screen.findByRole('list', { name: "Today's plan" })).querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill') ?? '');
 
 describe('home', () => {
-  it('shows the daily goal, Play, a picture tile for each pick, and the subjects', async () => {
+  it('shows the daily goal, today\'s plan with a Start button, and the subjects', async () => {
     await setUp('K', { preReader: false });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    // One pick from each of the first three ladders that have a kindergarten skill to start on.
-    expect(await picksOnScreen()).toEqual(['M-K-A1', 'M-K-B1', 'M-K-C1']);
-    expect(screen.getByRole('button', { name: /Play/ })).toBeTruthy();
+    // A new kindergarten child: keep going with Sprout's first picks, and one new skill. Nothing to mix yet.
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    const parts = [...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'));
+    expect(parts).toEqual(['keepGoing', 'keepGoing', 'new']);
+    expect(new Set(await picksOnScreen())).toEqual(new Set(['M-K-A1', 'M-K-B1', 'M-K-C1']));
+    expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
     expect(screen.getByRole('img', { name: '0 of 15 questions today' })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Language Arts/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Reasoning/ })).toBeTruthy();
     // Nothing is due for review.
-    expect(screen.queryByRole('button', { name: /Review/ })).toBeNull();
-    // A reader sees why each skill was picked.
-    expect(screen.getAllByText('Next up').length).toBe(3);
+    expect(screen.queryByRole('button', { name: /Review \(/ })).toBeNull();
   });
 
-  it('for a pre-reader, tiles carry no reason text, and the speaker corner says the skill name', async () => {
+  it('each part of the plan can be heard, and hearing it opens nothing', async () => {
     await setUp('K');
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     await picksOnScreen();
-    expect(screen.queryByText('Next up')).toBeNull();
     spoken.said.length = 0;
-    await user.click(screen.getByRole('button', { name: 'Hear the name: Add with pictures to 5' }));
+    await user.click(screen.getByRole('button', { name: 'Hear: Learn something new' }));
     expect(spoken.said).toHaveLength(1);
-    expect(JSON.stringify(spoken.said[0])).toContain('5');
-    // Hearing the name does not open the skill.
+    expect(JSON.stringify(spoken.said[0])).toContain('Learn something new');
     expect(screen.queryByRole('region', { name: 'Question' })).toBeNull();
+  });
+
+  it('the plan follows the grown-up\'s settings', async () => {
+    await setUp('K', { planKeepGoing: 1, planNew: false });
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    expect([...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'))).toEqual(['keepGoing']);
   });
 
   it('the goal ring counts today\'s answers and lights a star for each share of the goal', async () => {
@@ -121,12 +130,13 @@ describe('home', () => {
     expect(await screen.findByRole('img', { name: 'Daily goal reached: 2 questions today' })).toBeTruthy();
   });
 
-  it('a mastered skill whose review is due is offered as a review, first in the picks', async () => {
+  it('a mastered skill whose review is due puts Review first in the plan', async () => {
     await setUp('K');
     await (await repo()).saveSkillState(mastered(ADD, -1));
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    expect((await picksOnScreen())[0]).toBe(ADD);
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    expect(plan.querySelector('[data-plan-part]')?.getAttribute('data-plan-part')).toBe('review');
     expect(screen.getByRole('button', { name: /Review \(1\)/ })).toBeTruthy();
   });
 });
@@ -425,7 +435,9 @@ describe('review', () => {
     expect(sessions[0]).toMatchObject({ kind: 'review', questions: 3, correct: 3, skillId: null });
     await user.click(screen.getByRole('button', { name: /All done/ }));
     await screen.findByRole('heading', { name: 'Robin' });
-    expect(screen.queryByRole('button', { name: /Review/ })).toBeNull();
+    expect(screen.queryByRole('button', { name: /Review \(/ })).toBeNull();
+    // Today's review is ticked off in the plan.
+    expect((await screen.findByRole('list', { name: "Today's plan" })).querySelector('[data-plan-part="review"]')?.hasAttribute('data-done')).toBe(true);
   });
 
   it('2 right keeps the medal in the same box', async () => {
@@ -476,65 +488,43 @@ describe('review', () => {
   });
 });
 
-describe('Play', () => {
-  it('runs a pick for one session length, then "Next one" moves on with no menu in between', async () => {
-    await setUp('K', { sessionLength: 2 });
-    await masterAllBut([ADD]); // leaves "Add to 10" as the only pick
+describe('Start today\'s plan', () => {
+  it('opens the first part not done; a part ticks off when its answers are in', async () => {
+    await setUp('K', { planKeepGoing: 1, planNew: false });
+    await masterAllBut([ADD]);
+    await (await repo()).saveSkillState({ ...newSkillState('kid-1', ADD, NOW.toISOString()), attempts: 2, correct: 1, score: 20, lastPracticedAt: NOW.toISOString() });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD]);
-    await user.click(screen.getByRole('button', { name: /Play/ }));
+    await user.click(screen.getByRole('button', { name: /Start today's plan/ }));
     await screen.findByRole('region', { name: 'Question' });
-    for (let i = 0; i < 2; i += 1) {
-      await answer(user, sumOnScreen());
+    for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
+      await answer(user, wrongValue());
+      await gotIt(user);
       await settled();
     }
-    expect(document.querySelector('[data-break]')).not.toBeNull();
-    expect(screen.queryByRole('button', { name: /Keep going/ })).toBeNull();
-    // Between picks the card says the score, and never that the skill is done.
-    expect(document.querySelector('[data-break]')?.textContent).toMatch(/You answered 2 questions\. Score \d+ of 100\./);
-    expect(screen.getByRole('button', { name: /Stop for now/ })).toBeTruthy();
-    await user.click(screen.getByRole('button', { name: /Next one/ }));
-    expect(await screen.findByRole('dialog', { name: 'All done!' })).toBeTruthy();
-    await user.click(screen.getByRole('button', { name: /Home/ }));
-    expect(await screen.findByRole('img', { name: '2 of 15 questions today' })).toBeTruthy();
-    expect((await stateOf(ADD))?.attempts).toBe(2);
+    await holdHome();
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    expect(plan.querySelector(`[data-skill="${ADD}"]`)?.hasAttribute('data-done')).toBe(true);
+    expect(await screen.findByText('Plan done!')).toBeTruthy();
   });
 
-  it('a review pick runs as a review, then moves on', async () => {
+  it('with a review due, the plan starts with the review', async () => {
     await setUp('K');
     await masterAllBut([]);
     await (await repo()).saveSkillState(mastered(ADD, -1));
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    expect(await picksOnScreen()).toEqual([ADD]);
-    await user.click(screen.getByRole('button', { name: /Play/ }));
+    await user.click(await screen.findByRole('button', { name: /Start today's plan/ }));
     await screen.findByRole('heading', { name: /Review: Add to 10/ });
-    for (let i = 0; i < 3; i += 1) {
-      await screen.findByRole('region', { name: 'Question' });
-      await answer(user, sumOnScreen());
-      await settled();
-    }
-    await screen.findByRole('dialog', { name: 'Review done' });
-    await user.click(screen.getByRole('button', { name: /Next one/ }));
-    expect(await screen.findByRole('dialog', { name: 'All done!' })).toBeTruthy();
-    expect((await stateOf(ADD))?.reviewBox).toBe(1);
   });
 
-  it('"All done" on the break goes home, and Play with no picks goes home', async () => {
-    const child = await setUp('K', { sessionLength: 1 });
-    const user = openApp();
-    await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await user.click(await screen.findByRole('button', { name: /Play/ }));
-    await screen.findByRole('region', { name: 'Question' });
-    await holdHome();
-    expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
-    document.body.innerHTML = '';
+  it('/play goes to the next part, or home when the plan is done', async () => {
+    const child = await setUp('K');
     await masterAllBut([]);
     useAppStore.getState().setChild(child);
     openApp('/play');
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
-    await findOnMath(user, 'Add to 10');
   });
 });
 

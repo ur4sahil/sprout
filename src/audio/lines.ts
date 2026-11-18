@@ -11,6 +11,7 @@ export const LINES = {
   reviewDone: ['Review done. Nice work.'],
   nextOne: ['Nice work! On to the next one?'],
   knownAlready: ['You know this one already. On to the next.'],
+  mixedDone: ['Mixed bag done. Great work.'],
   // The bulb's choice screen: what it offers.
   choose: ['Pick a lesson with Sprout, or an example.'],
   chooseWithVideo: ['Pick a video, a lesson with Sprout, or an example.'],

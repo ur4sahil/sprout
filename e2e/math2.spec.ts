@@ -47,7 +47,7 @@ test.describe('Math grade 2', () => {
       );
       expect(cut, `${name}: a picture is cut off`).toEqual([]);
       await page.getByRole('button', { name: /^Back to home\. Press and hold/ }).dispatchEvent('pointerdown');
-      await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible({ timeout: 8000 });
+      await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible({ timeout: 8000 });
     }
   });
 
@@ -72,7 +72,7 @@ test.describe('Math grade 2', () => {
     await answer(page, (to ?? 0) - (from ?? 0));
     await expect(page.locator('[data-score]')).not.toHaveAttribute('data-score', '0');
     await page.getByRole('button', { name: /^Back to home\. Press and hold/ }).dispatchEvent('pointerdown');
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible({ timeout: 8000 });
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible({ timeout: 8000 });
 
     await openFromMath(page, 'Number lines to 100');
     const line = page.locator('[aria-label="Question"] [data-visual="numberLine"]');

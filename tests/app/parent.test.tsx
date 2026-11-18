@@ -367,7 +367,7 @@ describe('the grown-up pages', () => {
     expect(await screen.findByRole('heading', { name: 'Grown-ups only' })).toBeTruthy();
     await typePin(user, PIN);
     // Home opens with the extra time, for today only.
-    expect(await screen.findByRole('group', { name: "Today's picks" })).toBeTruthy();
+    expect(await screen.findByRole('list', { name: "Today's plan" })).toBeTruthy();
     expect((await store.listChildren())[0]?.settings.extraMinutes).toEqual({ day: localDay(NOW), minutes: 10 });
     expect(child.settings.dailyMinutes).toBe(1);
   });

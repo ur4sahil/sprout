@@ -70,7 +70,7 @@ describe('child setup', () => {
     const saved = (await (await repo()).listChildren())[0];
     expect(saved).toMatchObject({ name: 'Maya', avatar: '🦊', grade: 'K', resetAt: null, deletedAt: null });
     // Kindergarten defaults.
-    expect(saved?.settings).toEqual({ gentleScoring: true, sessionLength: 8, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: true, extraMinutes: { day: '', minutes: 0 }, factSets: [] });
+    expect(saved?.settings).toEqual({ gentleScoring: true, sessionLength: 8, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: true, extraMinutes: { day: '', minutes: 0 }, factSets: [], planKeepGoing: 3, planNew: true, planMixed: true });
     expect(saved?.id).toMatch(/^[0-9a-f-]{36}$/);
   });
 
@@ -152,11 +152,10 @@ describe('the profile picker', () => {
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
     expect(await screen.findByRole('heading', { name: 'Ada' })).toBeTruthy();
     expect(useAppStore.getState().child?.id).toBe('kid-2');
-    // Home shows today's picks for a kindergarten child: three kindergarten skills, each with a score of 0.
-    const picks = [...(await screen.findByRole('group', { name: "Today's picks" })).querySelectorAll('[data-skill]')];
+    // Home shows today's plan for a kindergarten child: three kindergarten skills to start on.
+    const picks = [...(await screen.findByRole('list', { name: "Today's plan" })).querySelectorAll('[data-skill]')];
     expect(picks).toHaveLength(3);
-    expect(picks.every((tile) => tile.getAttribute('data-skill')?.startsWith('M-K-'))).toBe(true);
-    expect(picks.every((tile) => tile.querySelector('button')?.getAttribute('aria-label')?.endsWith('. Score 0'))).toBe(true);
+    expect(picks.every((row) => row.getAttribute('data-skill')?.startsWith('M-K-'))).toBe(true);
   });
 
   it('"Switch child" goes back to the picker and forgets the child', async () => {
@@ -274,7 +273,7 @@ describe('the install guide', () => {
 
 describe('the saved record of an answer', () => {
   const skill = skillById('M-K-C4')!;
-  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 }, factSets: [] }, resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
+  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 }, factSets: [], planKeepGoing: 3, planNew: true, planMixed: true }, resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
 
   it('keeps the level and seed asked, exactly what was submitted, and a plain-text snapshot', () => {
     const question = generateQuestion('M-K-C4', 1, 77);

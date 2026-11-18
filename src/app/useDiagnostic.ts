@@ -116,7 +116,7 @@ export function useDiagnostic(child: Child, subject: DiagnosticSubject): Diagnos
         self.keys = {};
         self.asked = 0;
         self.startedAt = at;
-        self.session = { id: newId(), childId: child.id, kind: 'diagnostic', skillId: null, startedAt: at.toISOString(), endedAt: null, questions: 0, correct: 0, day: localDay(at) };
+        self.session = { id: newId(), childId: child.id, kind: 'diagnostic', skillId: null, startedAt: at.toISOString(), endedAt: null, questions: 0, correct: 0, day: localDay(at), mixed: false };
         if (self.alive) await step();
       } catch (error) {
         logError(error);

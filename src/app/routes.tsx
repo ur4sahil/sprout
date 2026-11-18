@@ -11,6 +11,7 @@ import Home from '../screens/kid/Home';
 import Lesson from '../screens/kid/Lesson';
 import Play from '../screens/kid/Play';
 import Pairs from '../screens/kid/Pairs';
+import MixedBag from '../screens/kid/MixedBag';
 import Pop from '../screens/kid/Pop';
 import Practice from '../screens/kid/Practice';
 import ProfilePicker from '../screens/kid/ProfilePicker';
@@ -38,6 +39,7 @@ export const routes: RouteObject[] = [
   { path: '/skill/:skillId', element: <Practice /> },
   { path: '/skill/:skillId/learn', element: <Lesson /> },
   { path: '/review', element: <Review /> },
+  { path: '/mixed', element: <MixedBag /> },
   { path: '/diagnostic', element: <Diagnostic /> },
   { path: '/awards', element: <Awards /> },
   { path: '/games/pop', element: <Pop /> },

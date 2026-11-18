@@ -105,6 +105,8 @@ const DRAWINGS = {
   bolt: <path d="M13 2L4 14h7l-1 8 9-12h-7z" />,
   minus: <path d="M5 12h14" />,
   flag: <path d="M5 21V4M5 4h11l-2 4 2 4H5" />,
+  // A bag with a handle, for the Mixed bag.
+  bag: <path d="M5 8h14l-1.2 12H6.2zM9 8V6.5a3 3 0 0 1 6 0V8" />,
   // A hand pointing up with one finger, for a lesson that points at what it counts.
   point: <path d="M9 12V4.5a1.5 1.5 0 0 1 3 0V11M12 10.5V9a1.5 1.5 0 0 1 3 0v2M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.8 15a1.5 1.5 0 0 1 2.4-1.8L9 15.5" />,
 } satisfies Record<string, ReactNode>;

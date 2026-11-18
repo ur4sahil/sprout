@@ -34,6 +34,7 @@ const GRADES = [
 const numbers = (values: number[], unit: (n: number) => string): { value: string; label: string }[] => values.map((n) => ({ value: String(n), label: unit(n) }));
 const SESSION = numbers([5, 6, 8, 10, 12, 15, 20], (n) => `${n} questions`);
 const GOAL = numbers([5, 10, 15, 20, 25, 30, 40, 50], (n) => `${n} questions`);
+const KEEP_GOING = numbers([0, 1, 2, 3, 4], (n) => (n === 0 ? 'None' : `${n} ${n === 1 ? 'skill' : 'skills'}`));
 const MINUTES = numbers([0, 10, 15, 20, 30, 45, 60, 90], (n) => (n === 0 ? 'No limit' : `${n} minutes`));
 const RATE = [
   { value: '0.7', label: 'Slow' },
@@ -122,6 +123,10 @@ export default function Settings() {
           <ToggleField label="Gentle scoring" hint="A wrong answer takes fewer points away." checked={child.settings.gentleScoring} onChange={(gentleScoring) => set({ gentleScoring })} />
           <ToggleField label="Show a timer" checked={child.settings.showTimer} onChange={(showTimer) => set({ showTimer })} />
           {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
+          <h3>Today's plan</h3>
+          <SelectField label="Keep going with" value={String(child.settings.planKeepGoing)} options={KEEP_GOING} onValue={(value) => set({ planKeepGoing: Number(value) })} />
+          <ToggleField label="Something new each day" hint="One new skill, opening on its video, lesson or example." checked={child.settings.planNew} onChange={(planNew) => set({ planNew })} />
+          <ToggleField label="Mixed bag" hint="Questions from several topics in progress, mixed together." checked={child.settings.planMixed} onChange={(planMixed) => set({ planMixed })} />
           <h3>Check-in</h3>
           <CenterRow>
             {CHECK_IN_SUBJECTS.map((subject) => (

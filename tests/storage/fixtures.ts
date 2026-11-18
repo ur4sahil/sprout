@@ -35,7 +35,7 @@ export function attempt(id: string, childId: string, skillId: string, correct: b
 }
 
 export function session(id: string, childId: string, startedAt: string, change: Partial<Session> = {}): Session {
-  return { id, childId, kind: 'practice', skillId: 'M-K-C4', startedAt, endedAt: null, questions: 3, correct: 2, day: startedAt.slice(0, 10), ...change };
+  return { id, childId, kind: 'practice', skillId: 'M-K-C4', startedAt, endedAt: null, questions: 3, correct: 2, day: startedAt.slice(0, 10), mixed: false, ...change };
 }
 
 export function plan(id: string, change: Partial<Plan> = {}): Plan {

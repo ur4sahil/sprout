@@ -14,13 +14,12 @@ import Icon, { type IconName } from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
 import { openSets } from '../../engine/facts';
 import NavButton from '../../components/NavButton';
+import TodayPlan from '../../components/TodayPlan';
+import { nextPart, partPath } from '../../app/todaysPlan';
 import Notice from '../../components/Notice';
-import SkillTile from '../../components/SkillTile';
-import TileGrid from '../../components/TileGrid';
-import { CATALOGUE, skillById } from '../../content/catalogue';
+import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
 import type { AwardDef } from '../../engine/awards';
-import type { PickReason } from '../../engine/recommend';
 import type { Say } from '../../engine/types';
 import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -29,13 +28,6 @@ import awardStyles from './Awards.module.css';
 import DailyLimit from './DailyLimit';
 import styles from './Home.module.css';
 
-const WHY: Record<PickReason, string> = {
-  review: 'Time to review',
-  plan: 'From your plan',
-  troubleSpot: 'Needs practice',
-  continue: 'Keep going',
-  next: 'Next up',
-};
 
 export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: IconName }[] = [
   { id: 'math', label: 'Math', icon: 'math' },
@@ -45,7 +37,7 @@ export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: 
 
 export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', '3': 'Grade 3', all: 'All' };
 
-// The child's home: the daily goal, today's picks, Play, reviews that are due, and the subjects.
+// The child's home: the daily goal, today's plan (plan section 18), reviews that are due, and the subjects.
 export default function Home() {
   const navigate = useNavigate();
   const child = useAppStore((s) => s.child);
@@ -93,6 +85,7 @@ export default function Home() {
   if (day?.firstVisit) return <Navigate to="/diagnostic?subject=math" replace />;
 
   const ready = new Set(allGenerators().map((generator) => generator.skillId));
+  const next = day ? nextPart(day.plan) : null;
   const subjects = SUBJECTS.filter((subject) => CATALOGUE.some((skill) => skill.subject === subject.id && !skill.retired && ready.has(skill.id)));
 
   return (
@@ -116,6 +109,7 @@ export default function Home() {
           <div className={styles.places} role="group" aria-label="Places to go">
             {day?.checkIn && <NavButton icon="compass" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
             {day && day.reviewsDue.length > 0 && <NavButton icon="repeat" label={`Review (${day.reviewsDue.length})`} onClick={() => go('/review')} />}
+            <NavButton icon="bag" label="Mixed bag" onClick={() => go('/mixed')} />
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}
@@ -138,33 +132,22 @@ export default function Home() {
                 {day.answeredToday >= child.settings.dailyGoalQuestions ? 'Goal reached!' : `${day.answeredToday} of ${child.settings.dailyGoalQuestions} questions`}
               </span>
             </div>
-            {day.picks.length > 0 && (
-              <BigButton size="kid" className={styles.playButton} onClick={() => go('/play')}>
+            {next ? (
+              <BigButton size="kid" className={styles.playButton} onClick={() => go(partPath(next))}>
                 <Icon name="play" />
-                Play
+                {day.plan.some((part) => part.done) ? 'Keep going' : "Start today's plan"}
               </BigButton>
-            )}
+            ) : day.plan.length > 0 ? (
+              <span className={styles.todayLine} data-plan-done="">
+                <Icon name="check" />
+                Plan done!
+              </span>
+            ) : null}
           </section>
-          {day.picks.length > 0 && (
+          {day.plan.length > 0 && (
             <>
-              <h2 className={styles.heading}>Picked for today</h2>
-              <TileGrid label="Today's picks" dense={child.settings.preReader} rows={!child.settings.preReader}>
-                {day.picks.map((pick) => {
-                  const skill = skillById(pick.skillId);
-                  if (!skill) return null;
-                  return (
-                    <SkillTile
-                      key={pick.skillId}
-                      skill={skill}
-                      look={child.settings.preReader ? 'tile' : 'row'}
-                      state={day.states.find((state) => state.skillId === pick.skillId)}
-                      note={child.settings.preReader ? undefined : WHY[pick.reason]}
-                      onOpen={() => go(pick.reason === 'review' ? '/review' : `/skill/${pick.skillId}`)}
-                      onSpeak={say}
-                    />
-                  );
-                })}
-              </TileGrid>
+              <h2 className={styles.heading}>Today's plan</h2>
+              <TodayPlan plan={day.plan} onOpen={(part) => go(partPath(part))} onSpeak={say} />
             </>
           )}
         </div>

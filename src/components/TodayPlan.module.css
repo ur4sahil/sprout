@@ -1,0 +1,64 @@
+/* Today's plan: one row for each part, the icon on the left, ticked parts faded with a check. */
+.plan {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.open {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--tap-min);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  color: var(--color-ink);
+  text-align: start;
+  font: inherit;
+  cursor: pointer;
+}
+
+.icon {
+  flex: none;
+  display: inline-flex;
+  font-size: var(--text-l);
+  color: var(--color-brand-deep);
+}
+
+.words {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-m);
+  font-weight: var(--weight-display);
+}
+
+.detail {
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
+.row[data-done] .open {
+  background: var(--color-brand-soft);
+}
+
+.row[data-done] .icon {
+  color: var(--color-correct);
+}

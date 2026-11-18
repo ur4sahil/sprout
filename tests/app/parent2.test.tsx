@@ -152,13 +152,12 @@ describe('the plans page', () => {
     expect(plans).toHaveLength(1);
     expect(plans[0]).toMatchObject({ name: 'Reasoning practice', childIds: ['kid-1'] });
 
-    // The child's picks now lead with the plan's first skill.
+    // The child's plan now keeps going with the plan's first skill.
     await user.click(screen.getByRole('button', { name: 'Done' }));
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    const picks = await screen.findByRole('group', { name: "Today's picks" });
+    const picks = await screen.findByRole('list', { name: "Today's plan" });
     const first = picks.querySelector('[data-skill]');
     expect(first?.getAttribute('data-skill')).toBe('R-A1');
-    expect(within(first as HTMLElement).getByText('From your plan')).toBeTruthy();
   });
 
   it('a parent names a plan, picks skills, orders them, assigns children, changes it and removes it', async () => {

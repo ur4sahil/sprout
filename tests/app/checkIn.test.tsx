@@ -242,7 +242,7 @@ describe('the check-in on screen', () => {
     await holdHome();
     const checkIn = await screen.findByRole('button', { name: /Check-in/ });
     expect(checkIn.getAttribute('data-check-in')).toBe('math');
-    expect(screen.getByRole('group', { name: "Today's picks" })).toBeTruthy();
+    expect(screen.getByRole('list', { name: "Today's plan" })).toBeTruthy();
 
     // Back in: answer "I don't know yet" until the sitting ends with a sticker.
     await user.click(checkIn);
@@ -268,7 +268,7 @@ describe('the check-in on screen', () => {
     await user.click(screen.getByRole('button', { name: /Home/ }));
 
     // One sitting a day: no check-in button now.
-    await screen.findByRole('group', { name: "Today's picks" });
+    await screen.findByRole('list', { name: "Today's plan" });
     expect(screen.queryByRole('button', { name: /Check-in/ })).toBeNull();
     expect(recentErrors()).toEqual([]);
   });
@@ -324,7 +324,7 @@ describe('stickers', () => {
 
     // Going home again does not celebrate the same sticker twice.
     await user.click(screen.getByRole('button', { name: 'Back to home' }));
-    await screen.findByRole('group', { name: "Today's picks" });
+    await screen.findByRole('list', { name: "Today's plan" });
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(document.querySelector('[data-card="new-stickers"]')).toBeNull();
     expect((await (await repo()).listAwards('kid-1')).filter((award) => award.awardId === 'mastered:math-K:1')).toHaveLength(1);
@@ -340,7 +340,7 @@ describe('stickers', () => {
 
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await screen.findByRole('group', { name: "Today's picks" });
+    await screen.findByRole('list', { name: "Today's plan" });
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(document.querySelector('[data-card="new-stickers"]')).toBeNull();
     await user.click(screen.getByRole('button', { name: /Stickers/ }));

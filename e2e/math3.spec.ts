@@ -57,7 +57,7 @@ test.describe('Math grade 3', () => {
       );
       expect(cut, `${name}: a picture is cut off`).toEqual([]);
       await page.getByRole('button', { name: /^Back to home\. Press and hold/ }).dispatchEvent('pointerdown');
-      await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible({ timeout: 8000 });
+      await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible({ timeout: 8000 });
     }
   });
 

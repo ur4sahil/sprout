@@ -1,3 +1,4 @@
+import { KEEP_GOING_QUESTIONS } from '../src/app/todaysPlan';
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answerAnything, answerRight, holdHome, openSkill, shoot, sum } from './support/kid';
 import { checkScreen } from './support/layout';
@@ -16,42 +17,34 @@ async function expectNoTextOnlyControls(page: import('@playwright/test').Page, w
 }
 
 test.describe('kid navigation', () => {
-  test('a child who cannot read goes from the picker through a full Play run with no text-only control', async ({ page }) => {
+  test("a child who cannot read goes from the picker through today's plan with no text-only control", async ({ page }) => {
     test.setTimeout(240_000);
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten'); // pre-reader mode is on by default
     // The child's own button is a picture. ("Add a child" on this screen is for grown-ups.)
     await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]').first()).toBeVisible();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    const picks = page.getByRole('group', { name: "Today's picks" });
-    await expect(picks.locator('[data-skill]')).toHaveCount(3);
-    await expect(page.getByText('Next up')).toHaveCount(0);
+    const plan = page.getByRole('list', { name: "Today's plan" });
+    await expect(plan.locator('[data-skill]')).toHaveCount(3);
     await expectNoTextOnlyControls(page, 'home');
-    await page.getByRole('button', { name: /Play/ }).click();
+    await checkScreen(page, 'home with the plan', 64);
+    await shoot(page, 'home-plan');
+    await page.getByRole('button', { name: /Start today's plan/ }).click();
 
-    // Each pick lasts one session: 8 questions for kindergarten. Then a break, with no menu.
-    for (const pick of [1, 2, 3]) {
-      await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
-      for (;;) {
-        if (await page.locator('[data-break]').isVisible()) break;
-        const keepGoing = page.getByRole('button', { name: /Keep going/ });
-        if (await page.locator('[data-celebration]').isVisible()) {
-          await keepGoing.click();
-          continue;
-        }
-        await answerAnything(page);
+    // The first part: keep going with one skill until its answers are in.
+    await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
+    for (let answered = 0; answered < KEEP_GOING_QUESTIONS; ) {
+      if (await page.locator('[data-celebration]').isVisible()) {
+        await page.getByRole('button', { name: /Keep going/ }).click();
+        continue;
       }
-      await expect(page.locator('[data-answered]')).toHaveText('8');
-      await expectNoTextOnlyControls(page, `break ${pick}`);
-      if (pick === 1) await shoot(page, 'play-break');
-      await checkScreen(page, `break ${pick}`, 64);
-      await page.getByRole('button', { name: /Next one/ }).click();
+      await answerAnything(page);
+      answered += 1;
     }
-    await expect(page.getByRole('dialog', { name: 'All done!' })).toBeVisible();
-    await expectNoTextOnlyControls(page, 'all done');
-    await page.getByRole('button', { name: /Home/ }).click();
-    await expect(page.getByRole('img', { name: 'Daily goal reached: 24 questions today' })).toBeVisible();
-    await shoot(page, 'home-goal-reached');
+    await holdHome(page);
+    await expect(plan.locator('[data-done]')).toHaveCount(1);
+    await expect(page.getByRole('button', { name: 'Keep going', exact: true })).toBeVisible();
+    await expectNoTextOnlyControls(page, 'home after one part');
   });
 
   test('the kid lock: a tap does not leave practice, a Back press does not, a 2-second hold does', async ({ page }) => {
@@ -88,11 +81,11 @@ test.describe('kid navigation', () => {
     await expect(page.locator('[data-answered]')).toHaveText('2');
 
     await holdHome(page);
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     // Back on home stays on home too.
     await page.goBack();
     await page.waitForTimeout(300);
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
   });
 
   test('the subject page: grade tabs, categories, and a speaker on every tile', async ({ page }) => {
@@ -112,7 +105,7 @@ test.describe('kid navigation', () => {
     await checkScreen(page, 'subject page, pre-K', 64);
     await shoot(page, 'subject-prek');
     await page.getByRole('button', { name: 'Back to home' }).click();
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
   });
 
   test('the lesson plays its four beats by itself, and the example goes step by step', async ({ page }) => {
@@ -177,7 +170,7 @@ test.describe('kid navigation', () => {
       }
     }
     await page.getByRole('button', { name: /All done/ }).click();
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     await expect(page.getByRole('button', { name: /Review/ })).toHaveCount(0);
 
     // Two days on, the app is opened again.

@@ -15,6 +15,8 @@ import { logError } from '../lib/errorLog';
 import { openRepo } from '../storage/index';
 import type { Attempt, Child, DiagnosticProgress, DiagnosticResult, DiagnosticSubject, Plan, Session, SkillState } from '../storage/schema';
 import { checkInToday, isFirstVisit, latestPlacements } from './checkIn';
+import type { PlanPart } from './todaysPlan';
+import { todaysPlan } from './todaysPlan';
 
 // What a child's home screen needs to know about today: picks, the daily goal, reviews due and minutes used.
 
@@ -27,6 +29,7 @@ export interface ChildDay {
   reviewsDue: string[]; // skill ids, at most one session's worth
   checkIn: DiagnosticSubject | null; // the check-in sitting offered today, if any
   firstVisit: boolean; // the child has never opened the check-in
+  plan: PlanPart[]; // today's plan (plan section 18)
 }
 
 const READY = (): Set<string> => new Set(allGenerators().map((generator) => generator.skillId));
@@ -84,6 +87,9 @@ export function summariseDay(input: {
 
   // Minutes are the sum of the day's answer times. Each is already capped at two minutes.
   const minutesToday = todays.reduce((sum, attempt) => sum + attempt.ms, 0) / 60_000;
+  const reviewsDue = dueForReview(states, nowIso)
+    .map((state) => state.skillId)
+    .filter((skillId) => ready.has(skillId));
   return {
     states,
     picks,
@@ -91,11 +97,10 @@ export function summariseDay(input: {
     minutesToday,
     // Minutes a parent added today through the gate count on top of the daily limit.
     limitReached: child.settings.dailyMinutes > 0 && minutesToday >= child.settings.dailyMinutes + (child.settings.extraMinutes.day === today ? child.settings.extraMinutes.minutes : 0),
-    reviewsDue: dueForReview(states, nowIso)
-      .map((state) => state.skillId)
-      .filter((skillId) => ready.has(skillId)),
+    reviewsDue,
     checkIn: input.progress ? checkInToday(child.grade, input.progress, today) : null,
     firstVisit: input.progress ? isFirstVisit(child.grade, input.progress) : false,
+    plan: todaysPlan({ child, today, states, picks, reviewsDue, attempts, sessions }),
   };
 }
 

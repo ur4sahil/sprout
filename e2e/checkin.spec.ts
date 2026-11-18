@@ -61,7 +61,7 @@ test.describe('check-in and stickers', () => {
 
     // A child can leave. Home opens, with the check-in offered again and today's picks already there.
     await holdHome(page);
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     const offer = page.getByRole('button', { name: /Check-in/ });
     await expect(offer).toHaveAttribute('data-check-in', 'math');
     await checkScreen(page, 'home with a check-in', 64);
@@ -81,14 +81,14 @@ test.describe('check-in and stickers', () => {
     await page.getByRole('button', { name: /Home/ }).click();
 
     // One sitting a day: home no longer offers it, and a Skill Score was never moved.
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     await expect(page.getByRole('button', { name: /Check-in/ })).toHaveCount(0);
-    await expect(page.locator('[data-skill] button[aria-label$=". Score 0"]').first()).toBeVisible();
+    await expect(page.locator('[data-plan-part]').first()).toBeVisible();
 
     // It is still not offered after the app is closed and opened again the same day.
     await page.reload();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     await expect(page.getByRole('button', { name: /Check-in/ })).toHaveCount(0);
   });
 
@@ -119,7 +119,7 @@ test.describe('check-in and stickers', () => {
 
     // Home does not celebrate the same sticker again.
     await page.getByRole('button', { name: 'Back to home' }).click();
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
     await page.waitForTimeout(400);
     await expect(card).toHaveCount(0);
   });
@@ -144,6 +144,6 @@ test.describe('a short check-in', () => {
     await expect(sticker.locator('[data-new-award="diagnostic:math"]')).toBeVisible();
     await page.getByRole('button', { name: /Yay/ }).click();
     await expect(page.getByRole('button', { name: /Check-in/ })).toHaveCount(0);
-    await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();
+    await expect(page.getByRole('list', { name: "Today's plan" })).toBeVisible();
   });
 });

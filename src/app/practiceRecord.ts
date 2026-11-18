@@ -72,6 +72,7 @@ export function newSession(child: Child, skillId: string, startedAt: Date): Sess
     questions: 0,
     correct: 0,
     day: localDay(startedAt),
+    mixed: false,
   };
 }
 

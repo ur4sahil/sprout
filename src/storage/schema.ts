@@ -26,6 +26,10 @@ export const childSettingsSchema = z.object({
   extraMinutes: z.object({ day: z.string(), minutes: z.number().int().min(0).max(600) }).default({ day: '', minutes: 0 }),
   // Fast-facts sets a parent opened before the child's grade reaches them (plan section 15.5).
   factSets: z.array(z.string()).default([]),
+  // Today's plan (plan section 18): how many skills in "Keep going", and whether to add something new and the Mixed bag.
+  planKeepGoing: z.number().int().min(0).max(4).default(3),
+  planNew: z.boolean().default(true),
+  planMixed: z.boolean().default(true),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -43,6 +47,9 @@ export function defaultSettings(grade: Grade): ChildSettings {
     preReader: young,
     extraMinutes: { day: '', minutes: 0 },
     factSets: [],
+    planKeepGoing: 3,
+    planNew: true,
+    planMixed: true,
   };
 }
 
@@ -122,6 +129,7 @@ export const sessionSchema = z.object({
   questions: z.number().int().min(0),
   correct: z.number().int().min(0),
   day, // local calendar date of startedAt
+  mixed: z.boolean().default(false), // practice that was part of a Mixed bag (plan section 17)
 });
 export type Session = z.infer<typeof sessionSchema>;
 
