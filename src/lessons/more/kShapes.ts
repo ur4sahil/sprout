@@ -1,5 +1,6 @@
-import type { Question } from '../../engine/types';
-import { alter, art, calm, countAlong, moment, num, numeral, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import { figureFor } from '../../engine/figures';
+import type { Question, Visual } from '../../engine/types';
+import { alter, art, calm, countAlong, moment, num, numeral, picture, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import { FLAT_THINGS, HOLD_THINGS, WEIGHT_THINGS } from '../../content/data/h1-things';
 import type { Tiered } from '../../content/data/h1-things';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
@@ -33,25 +34,29 @@ function countLabels(start: Scene, labelIds: readonly string[]): { moments: Mome
 
 // ---- M-K-E3 Sides and corners ----
 
-type Flat = 'square' | 'triangle';
-const SIDE_COUNT: Record<Flat, number> = { square: 4, triangle: 3 };
+type Flat = 'square' | 'triangle' | 'rectangle';
+const SIDE_COUNT: Record<Flat, number> = { square: 4, triangle: 3, rectangle: 4 };
 const SQUARES: Record<string, string> = { red: '🟥', blue: '🟦', green: '🟩', yellow: '🟨', orange: '🟧', purple: '🟪', brown: '🟫', black: '⬛' };
-const flatArt = (name: Flat, color: string): string => (name === 'triangle' ? '🔺' : (SQUARES[color] ?? '🟦'));
+// A rectangle is drawn as the questions draw it: wide, in the middle of its frame.
+const flatLook = (name: Flat, color: string): Piece['look'] =>
+  name === 'rectangle' ? picture({ kind: 'shape', shape: 'rectangle', color, size: 'l', rotation: 0 }) : art(name === 'triangle' ? '🔺' : (SQUARES[color] ?? '🟦'));
 
 // Where the side and corner numbers sit around a shape drawn 3 squares wide at (3.5, 0.6), going round from the top.
 const SIDE_SPOTS: Record<Flat, [number, number][]> = {
   square: [[4.6, 0.1], [6.2, 1.7], [4.6, 3.3], [3.0, 1.7]],
   triangle: [[3.5, 1.4], [5.7, 1.4], [4.6, 3.3]],
+  rectangle: [[4.6, 0.6], [6.4, 1.7], [4.6, 2.85], [2.8, 1.7]],
 };
 const CORNER_SPOTS: Record<Flat, [number, number][]> = {
   square: [[3.0, 0.1], [6.2, 0.1], [6.2, 3.3], [3.0, 3.3]],
   triangle: [[4.6, 0.1], [6.0, 2.9], [3.2, 2.9]],
+  rectangle: [[2.9, 0.7], [6.3, 0.7], [6.3, 2.7], [2.9, 2.7]],
 };
 
 function flatScene(name: Flat, color: string, prefix: string): Scene {
   const label = (kind: 's' | 'c', [x, y]: [number, number], i: number): Piece => ({ id: `${prefix}${kind}${i}`, look: numeral(i + 1), x, y, w: 0.8, h: 0.8, gone: true });
   return scene([
-    { id: `${prefix}shape`, look: art(flatArt(name, color)), x: 3.5, y: 0.6, w: 3, h: 3 },
+    { id: `${prefix}shape`, look: flatLook(name, color), x: 3.5, y: 0.6, w: 3, h: 3 },
     ...SIDE_SPOTS[name].map((spot, i) => label('s', spot, i)),
     ...CORNER_SPOTS[name].map((spot, i) => label('c', spot, i)),
   ]);
@@ -75,10 +80,21 @@ function sideMoments(name: Flat, color: string, prefix: string): { moments: Mome
   };
 }
 
+function cornerMoments(name: Flat, color: string, prefix: string): Moment[] {
+  const start = flatScene(name, color, prefix);
+  const counted = countLabels(start, cornerIds(name, prefix));
+  return [
+    moment([`Let us count the corners of this ${name}. A corner is where two sides meet.`], `Count the corners of the ${name}.`, set(start, [`${prefix}shape`], { lit: true })),
+    ...counted.moments,
+    moment([`We are back at the start. The ${name} has`, { number: CORNER_SPOTS[name].length }, 'corners.'], `A ${name} has ${CORNER_SPOTS[name].length} corners.`, set(counted.end, cornerIds(name, prefix), { lit: true })),
+  ];
+}
+
 function sidesWhy(question: Question): Moment[] {
   const name = str(question.facts, 'shape');
-  if (name !== 'square' && name !== 'triangle') throw new Error(`No drawing for a ${name}`);
-  return sideMoments(name, str(question.facts, 'color'), 'w').moments;
+  if (name !== 'square' && name !== 'triangle' && name !== 'rectangle') throw new Error(`No drawing for a ${name}`);
+  const color = str(question.facts, 'color');
+  return question.facts.ask === 'corners' ? cornerMoments(name, color, 'w') : sideMoments(name, color, 'w').moments;
 }
 
 export function sidesLesson(): Lesson {
@@ -91,9 +107,9 @@ export function sidesLesson(): Lesson {
   const fourCorners = set(corners.end, cornerIds('square', 'x'), { lit: true });
   const topSide = start.pieces.find((piece) => piece.id === 'xs0');
   const firstCorner = start.pieces.find((piece) => piece.id === 'xc0');
-  const plain = (f: Record<string, unknown>): boolean => f.ask === 'sides';
-  const first = turnQuestion('M-K-E3', 1, (f) => plain(f) && f.shape === 'triangle');
-  const second = turnQuestion('M-K-E3', 2, (f) => plain(f) && f.shape === 'square');
+  const first = turnQuestion('M-K-E3', 1, (f) => f.ask === 'sides' && f.shape === 'triangle');
+  // The second turn counts corners, on a shape the lesson has not counted yet.
+  const second = turnQuestion('M-K-E3', 3, (f) => f.ask === 'corners' && f.shape === 'rectangle');
   return {
     parts: [
       show(moment(['Shapes have sides. Let us learn to count them.'], 'Let us count the sides.', start)),
@@ -106,8 +122,9 @@ export function sidesLesson(): Lesson {
       show(moment(['A square has', { number: 4 }, 'corners, too.'], 'A square has 4 corners.', fourCorners)),
       turn(first, sidesWhy(first)),
       show(moment(['Count each side just once, and stop when you are back at the start.'], 'Count each side once.', calm(fourSides))),
+      show(moment(['Corners work the same way. Go around, and count each corner just once.'], 'Count each corner once.', calm(fourCorners))),
       turn(second, sidesWhy(second)),
-      show(moment(['Go around the shape, and count each side once.'], 'Go around and count each side once.', calm(fourCorners))),
+      show(moment(['Go around the shape, and count each side, or each corner, once.'], 'Go around. Count each one once.', calm(fourCorners))),
     ],
   };
 }
@@ -215,7 +232,7 @@ function rollWhy(question: Question): Moment[] {
   return [
     moment([`This is ${LIKE[solid]}.`], `This is a ${solid}.`, lit),
     moment(['Put another one on top.'], 'Put one on top.', onTop),
-    moment([stacks ? 'It stays there, because the faces are flat. So the answer is Yes.' : 'It rolls right off. It cannot stack, so the answer is No.'], stacks ? 'Yes, it can stack.' : 'No, it cannot stack.', stacks ? set(onTop, ['wa', 'wb'], { lit: true }) : fallen),
+    moment([stacks ? 'It stays there, because its top and bottom are flat. So the answer is Yes.' : 'It rolls right off. It cannot stack, so the answer is No.'], stacks ? 'Yes, it can stack.' : 'No, it cannot stack.', stacks ? set(onTop, ['wa', 'wb'], { lit: true }) : fallen),
   ];
 }
 
@@ -227,6 +244,8 @@ export function rollStackLesson(): Lesson {
     { id: 'ball2', look: art('⚽'), x: 8.4, y: 0, w: 1.1, h: 1.1, gone: true },
     { id: 'can', look: art('🥫'), x: 5.8, y: 1.9, w: 1.1, h: 1.1, gone: true },
     { id: 'can2', look: art('🥫'), x: 5.8, y: 0, w: 1.1, h: 1.1, gone: true },
+    { id: 'cone', look: picture({ kind: 'solid', solid: 'cone' }), x: 3.2, y: 1.9, w: 1.1, h: 1.1, gone: true },
+    { id: 'cone2', look: picture({ kind: 'solid', solid: 'cone' }), x: 3.2, y: 0.8, w: 1.1, h: 1.1, gone: true },
   ]);
   const ballLit = set(start, ['ball'], { lit: true });
   const rolled = set(ballLit, ['ball'], { x: 8.4 });
@@ -237,6 +256,10 @@ export function rollStackLesson(): Lesson {
   const ballFell = set(ballOnBall, ['ball2'], { x: 7.1, y: 1.9 });
   const can = set(calm(ballFell), ['can'], { gone: false, lit: true });
   const cans = set(can, ['can2'], { gone: false, y: 0.8, lit: true });
+  const cone = set(calm(cans), ['cone'], { gone: false, lit: true });
+  const coneRolled = set(cone, ['cone'], { x: 4.2 });
+  const coneOnCone = set(calm(coneRolled), ['cone2'], { gone: false, x: 4.2, lit: true });
+  const coneFell = set(coneOnCone, ['cone2'], { x: 3.0, y: 1.9 });
   const solids = (f: Record<string, unknown>): boolean => f.solid === 'sphere' || f.solid === 'cube' || f.solid === 'cylinder';
   const first = turnQuestion('M-K-E7', 1, (f) => solids(f) && f.solid !== 'sphere');
   const second = turnQuestion('M-K-E7', 2, (f) => solids(f) && f.solid !== first.facts.solid);
@@ -252,10 +275,14 @@ export function rollStackLesson(): Lesson {
       show(moment(['It rolls right off. A sphere cannot stack.'], 'A sphere cannot stack.', ballFell)),
       show(moment(['A can is a cylinder. It has a curved side, and two flat ends.'], 'A cylinder: a curved side and flat ends.', can)),
       show(moment(['On its side it rolls, and standing up it stacks.'], 'A cylinder can roll and stack.', cans)),
-      show(moment(['Curved sides roll. Flat faces stack.'], 'Curved sides roll. Flat faces stack.', calm(cans))),
+      show(moment(['This is a cone.'], 'A cone', cone)),
+      show(moment(['It has a curved side, so it rolls.'], 'A cone rolls.', coneRolled)),
+      show(moment(['But a cone has a point on top. Nothing can sit on a point.'], 'A point on top.', coneOnCone)),
+      show(moment(['It slips off. A cone cannot stack.'], 'A cone cannot stack.', coneFell)),
+      show(moment(['Curved sides roll. A flat top and a flat bottom stack.'], 'Curved sides roll. A flat top and bottom stack.', calm(coneFell))),
       turn(first, rollWhy(first)),
       turn(second, rollWhy(second)),
-      show(moment(['Look for curved sides to roll, and flat faces to stack.'], 'Curved: roll. Flat: stack.', set(calm(cans), ['ball', 'cube2'], { lit: true }))),
+      show(moment(['Look for a curved side to roll, and a flat top and bottom to stack.'], 'Curved: roll. Flat top and bottom: stack.', set(calm(coneFell), ['ball', 'cube2'], { lit: true }))),
     ],
   };
 }
@@ -457,7 +484,7 @@ function sortRuleOf(facts: Record<string, unknown>): string | null {
 }
 
 // ---- M-K-E5 Shapes made from shapes ----
-// Squares are drawn as square tiles (the `cube` look); the art has no half-square triangles, so the turns use squares.
+// Squares are drawn as square tiles (the `cube` look); triangles and trapezoids are drawn as the questions draw them.
 
 interface Tile {
   apart: [number, number];
@@ -487,23 +514,42 @@ const TWO: Tile[] = [
   { apart: [6.2, 1.4], together: [5.0, 1.4] },
 ];
 const TWO_EDGE = { x: 3.7, y: 1.3, w: 2.6, h: 1.4 };
-const FOUR: Tile[] = [
-  { apart: [2.4, 0.2], together: [3.8, 0.6] },
-  { apart: [6.4, 0.2], together: [5.0, 0.6] },
-  { apart: [2.4, 2.4], together: [3.8, 1.8] },
-  { apart: [6.4, 2.4], together: [5.0, 1.8] },
-];
-const FOUR_EDGE = { x: 3.7, y: 0.5, w: 2.6, h: 2.6 };
+// The question's own pieces, drawn as it draws them: pulled apart, pushed together with the joins showing, and whole.
+function figureMoments(prefix: string, piece: string, count: number, makes: string, intro: { say: string; text: string }): Moment[] {
+  const id = figureFor(makes, piece, count);
+  if (!id) throw new Error(`No figure for ${count} ${piece}s making a ${makes}`);
+  const at = (show: 'pieces' | 'cut' | 'whole', lit: boolean): Scene => {
+    const look: Visual = { kind: 'figure', figure: id, show };
+    return scene([{ id: `${prefix}figure`, look: picture(look), x: 3.5, y: 0.8, w: 3, h: 3, ...(lit ? { lit: true } : {}) }]);
+  };
+  return [
+    moment([intro.say], intro.text, at('pieces', false)),
+    moment(['Push them together, so they touch.'], 'Push them together.', at('cut', false)),
+    moment([`Now look at the outside edge. They make a ${makes}.`], `They make a ${makes}.`, at('whole', true)),
+  ];
+}
+
+const PIECE_INTRO: Record<string, { say: string; text: string }> = {
+  'triangle 2': { say: 'Here are two triangles.', text: '2 triangles' },
+  'triangle 6': { say: 'Here are six triangles.', text: '6 triangles' },
+  'trapezoid 2': { say: 'Here are two trapezoids. A trapezoid has four sides, a short one on top and a long one below.', text: '2 trapezoids' },
+};
 
 function composeWhy(question: Question): Moment[] {
   const count = num(question.facts, 'count');
+  const piece = str(question.facts, 'piece');
   const answer = answerOf(question);
-  const four = count === 4;
-  const join = four ? joinTiles(FOUR, FOUR_EDGE, 'w') : joinTiles(TWO, TWO_EDGE, 'w');
+  if (piece !== 'square') {
+    const intro = PIECE_INTRO[`${piece} ${count}`];
+    if (!intro) throw new Error(`No words for ${count} ${piece}s`);
+    return figureMoments('w', piece, count, answer, intro);
+  }
+  if (count !== 2) throw new Error('The lesson joins two squares');
+  const join = joinTiles(TWO, TWO_EDGE, 'w');
   return [
-    moment([four ? 'Here are four squares.' : 'Here are two squares.'], four ? '4 squares' : '2 squares', join.apart),
+    moment(['Here are two squares.'], '2 squares', join.apart),
     moment(['Push them together, so they touch.'], 'Push them together.', join.together),
-    moment([four ? 'Look at the outside edge. All four sides are the same length.' : 'Look at the outside edge. It has two long sides and two short sides.'], four ? '4 sides the same' : '2 long sides, 2 short sides', join.outlined),
+    moment(['Look at the outside edge. It has two long sides and two short sides.'], '2 long sides, 2 short sides', join.outlined),
     moment([`So they make a ${answer}.`], `They make a ${answer}.`, set(join.outlined, ids4('wt', count), { lit: true })),
   ];
 }
@@ -518,7 +564,9 @@ export function composeLesson(): Lesson {
   ];
   const join = joinTiles(three, { x: 3.1, y: 1.3, w: 3.8, h: 1.4 }, 'x');
   const first = turnQuestion('M-K-E5', 1, (f) => f.ask === 'makes' && f.piece === 'square' && f.count === 2);
-  const second = turnQuestion('M-K-E5', 2, (f) => f.ask === 'makes' && f.piece === 'square' && f.count === 4);
+  // Other pieces join too: two triangles are shown, then the child joins two trapezoids.
+  const triangles = figureMoments('y', 'triangle', 2, 'square', { say: 'Other shapes can join too. Here are two triangles.', text: '2 triangles' });
+  const second = turnQuestion('M-K-E5', 2, (f) => f.ask === 'makes' && f.piece === 'trapezoid');
   return {
     parts: [
       show(moment(['Small shapes can join together to make bigger shapes.'], 'Small shapes make bigger shapes.', join.apart)),
@@ -528,6 +576,7 @@ export function composeLesson(): Lesson {
       show(moment(['It has two long sides and two short sides. It is a rectangle.'], '3 squares make a rectangle.', set(join.outlined, ids4('xt', 3), { lit: true }))),
       show(moment(['The new shape is made of the small ones, all touching.'], 'The small shapes touch.', calm(join.outlined))),
       turn(first, composeWhy(first)),
+      ...triangles.map(show),
       turn(second, composeWhy(second)),
       show(moment(['Push the pieces together, and look at the outside edge.'], 'Push together. Look at the edge.', calm(join.outlined))),
     ],
@@ -588,6 +637,12 @@ export function shapesAroundLesson(): Lesson {
   const clock = set(start, ['xth0', 'xsh0'], { gone: false, lit: true });
   const pizza = set(calm(clock), ['xth1', 'xsh1'], { gone: false, lit: true });
   const door = set(calm(pizza), ['xth2', 'xsh2'], { gone: false, lit: true });
+  // The top level asks about solid shapes: a ball, a can and a box, named one at a time.
+  const solids = scene([
+    { id: 'zball', look: art('⚽'), x: 1.1, y: 1.6, w: 1.4, h: 1.4 },
+    { id: 'zcan', look: art('🥫'), x: 4.3, y: 1.6, w: 1.4, h: 1.4 },
+    { id: 'zbox', look: art('📦'), x: 7.5, y: 1.6, w: 1.4, h: 1.4 },
+  ]);
   const first = turnQuestion('M-K-E6', 1, (f) => f.ask === 'object' && Array.isArray(f.options) && !(f.options as string[]).includes('clock'));
   const second = turnQuestion('M-K-E6', 2, (f) => f.ask === 'shape' && f.object !== 'clock' && f.object !== 'door' && f.object !== 'pizza slice');
   return {
@@ -600,6 +655,9 @@ export function shapesAroundLesson(): Lesson {
       turn(first, shapedWhy(first)),
       show(moment(['Round means circle. Three sides means triangle. Long and short sides mean rectangle.'], 'circle, triangle, rectangle', set(calm(door), ['xsh0', 'xsh1', 'xsh2'], { lit: true }))),
       turn(second, shapedWhy(second)),
+      show(moment(['Some things are solid shapes. A ball is a sphere.'], 'A ball is a sphere.', set(solids, ['zball'], { lit: true }))),
+      show(moment(['A can is a cylinder.'], 'A can is a cylinder.', set(solids, ['zcan'], { lit: true }))),
+      show(moment(['A box is a cube.'], 'A box is a cube.', set(solids, ['zbox'], { lit: true }))),
       show(moment(['Look at the outside edge, and you will find the shape.'], 'Look at the outside edge.', calm(door))),
     ],
   };

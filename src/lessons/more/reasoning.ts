@@ -47,6 +47,13 @@ function listed(values: readonly number[]): Say {
   return values.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }]));
 }
 
+// Picture words that name more than one thing ("the pants are", not "the pants is").
+const MANY = new Set(['pants', 'grapes', 'glasses', 'eyes', 'sunglasses']);
+const isAre = (word: string): string => (MANY.has(word) ? 'are' : 'is');
+// One member of a picture group: "The car is not an animal."
+const ONE_OF: Record<string, string> = { animals: 'an animal', food: 'food', vehicles: 'a vehicle', clothes: 'something to wear', plants: 'a plant', people: 'a person', things: 'a thing' };
+const oneOf = (word: string, group: string): string => (MANY.has(word) ? group : (ONE_OF[group] ?? group));
+
 const BLUE = '🔵';
 const RED = '🔴';
 const GREEN = '🟢';
@@ -94,7 +101,10 @@ function pairMoments(p: string, examples: readonly (readonly [number, number])[]
   const start = pairScene(p, examples, base);
   const answer = ruled(rule, base);
   const first = showCounters(set(start, [`${p}f0`, `${p}t0`], { lit: true }), p, one[0], 0);
-  const firstChange = set(showCounters(calm(first), p, one[0], added(rule, one[0]), true), [`${p}a0`], { badge: badgeOf(rule) });
+  // A doubling pair also fits "add the same number", so its rule is not named until the next pair is checked.
+  const unsure = rule.kind === 'double' && two[0] !== one[0];
+  const firstCounted = showCounters(calm(first), p, one[0], added(rule, one[0]), true);
+  const firstChange = unsure ? firstCounted : set(firstCounted, [`${p}a0`], { badge: badgeOf(rule) });
   const second = set(showCounters(calm(firstChange), p, two[0], added(rule, two[0]), true), [`${p}f1`, `${p}t1`], { lit: true });
   const secondBadged = alter(second, (piece) => (piece.id === `${p}a1` ? { ...piece, badge: badgeOf(rule) } : piece));
   const last = set(showCounters(calm(secondBadged), p, base, 0), [`${p}f2`, `${p}t2`], { lit: true });
@@ -104,13 +114,31 @@ function pairMoments(p: string, examples: readonly (readonly [number, number])[]
     return piece;
   });
   const ruleSay: Say = rule.kind === 'double' ? ['The rule is, double the number.'] : ['The rule is, add', { number: rule.n }, '.'];
-  return [
+  const opening = [
     moment(['Look at the first pair.', { number: one[0] }, 'becomes', { number: one[1] }, '.'], `${one[0]} → ${one[1]}`, first),
     moment(changeSay(rule, one[0]), `${one[0]} + ${added(rule, one[0])} = ${one[1]}`, firstChange),
-    moment(ruleSay, rule.kind === 'double' ? 'Rule: double it.' : `Rule: add ${rule.n}.`, set(calm(firstChange), [`${p}a0`], { lit: true })),
-    moment(['Check the next pair.', ...changeSay(rule, two[0]), 'It works!'], `${two[0]} + ${added(rule, two[0])} = ${two[1]}`, secondBadged),
+  ];
+  const ending = [
     moment(['Now use the rule on', { number: base }, '.'], `Use the rule on ${base}.`, last),
     moment([...changeSay(rule, base), 'The answer is', { number: answer }, '.'], `${base} → ${answer}`, solved),
+  ];
+  if (unsure) {
+    const n = one[0];
+    const nextPair = set(calm(firstChange), [`${p}f1`, `${p}t1`], { lit: true });
+    const wrongTry = set(showCounters(calm(firstChange), p, two[0], n, true), [`${p}f1`, `${p}t1`], { lit: true });
+    return [
+      ...opening,
+      moment(['It could be, add', { number: n }, '. Let us check the next pair.'], `Add ${n}? Check.`, nextPair),
+      moment([{ number: two[0] }, ', and', { number: n }, 'more, make', { number: two[0] + n }, ', not', { number: two[1] }, '. So it is not, add', { number: n }, '.'], `${two[0]} + ${n} = ${two[0] + n}, not ${two[1]}`, wrongTry),
+      moment([...changeSay(rule, two[0]), 'The rule is, double. Double means the same number again.'], `${two[0]} + ${two[0]} = ${two[1]}. Rule: double it.`, secondBadged),
+      ...ending,
+    ];
+  }
+  return [
+    ...opening,
+    moment(ruleSay, rule.kind === 'double' ? 'Rule: double it.' : `Rule: add ${rule.n}.`, set(calm(firstChange), [`${p}a0`], { lit: true })),
+    moment(['Check the next pair.', ...changeSay(rule, two[0]), 'It works!'], `${two[0]} + ${added(rule, two[0])} = ${two[1]}`, secondBadged),
+    ...ending,
   ];
 }
 
@@ -127,9 +155,11 @@ export function numberAnalogyLesson(): Lesson {
   const double = pairMoments('y', [[3, 6], [5, 10]], 4, { kind: 'double' });
   const first = turnQuestion('R-A8', 1, (f) => {
     const [a = 0, b = 0] = numberRows(f, 'examples')[0] ?? [];
-    return b - a <= 3 && num(f, 'base') + b - a <= 12;
+    // Not the worked example's rule (add three), so the child has to find this one.
+    return b - a <= 2 && num(f, 'base') + b - a <= 12;
   });
-  const second = turnQuestion('R-A8', 2, (f) => num(f, 'base') <= 6);
+  // Nothing the doubling example already showed: its pairs start at three and five, and its last number is four.
+  const second = turnQuestion('R-A8', 2, (f) => num(f, 'base') <= 6 && ![3, 4, 5].includes(num(f, 'base')) && numberRows(f, 'examples').every(([from = 0]) => ![3, 4, 5].includes(from)));
   const plusStart = plus[0]?.scene ?? scene([]);
   const doubleStart = double[0]?.scene ?? scene([]);
   return {
@@ -138,7 +168,7 @@ export function numberAnalogyLesson(): Lesson {
       ...plus.map(show),
       show(moment(['Find a rule that works for every pair. Then use it on the last number.'], 'Find the rule. Use it on the last number.', calm(plus.at(-1)?.scene ?? plusStart))),
       turn(first, pairWhy(first)),
-      show(moment(['Some pairs double. Double means the same number again.'], 'Double: the same number again.', calm(doubleStart))),
+      show(moment(['Here is a trickier rule. Check every pair before you choose.'], 'A trickier rule.', calm(doubleStart))),
       ...double.map(show),
       turn(second, pairWhy(second)),
       show(moment(['Find the rule, check it on every pair, and then use it.'], 'Find it, check it, use it.', calm(double.at(-1)?.scene ?? doubleStart))),
@@ -304,12 +334,24 @@ function analogyScene(p: string, a: string, b: string, c: string, choices: reado
   ]);
 }
 
+// The words that link a pair: "lives in", "gives us". A colour is said plainly: "grass is green".
 function relationOf(a: string, b: string, c: string, d: string): string {
   const has = (pairs: readonly (readonly [string, string])[], x: string, y: string): boolean => pairs.some(([one, two]) => one === x && two === y);
-  const found = Object.values(VERBAL_RELATIONS).find((rel) => has(rel.pairs, a, b) && has(rel.pairs, c, d));
+  const found = Object.entries(VERBAL_RELATIONS).find(([, rel]) => has(rel.pairs, a, b) && has(rel.pairs, c, d));
   if (!found) throw new Error(`No relation for ${a} ${b} ${c} ${d}`);
-  return found.says;
+  return found[0] === 'colour' ? 'is' : found[1].says;
 }
+
+// Words said with no "a" before them: describing words, colours and stuff that is not counted.
+const BARE = new Set<string>([...(VERBAL_RELATIONS.opposite?.pairs ?? []).flat(), ...(VERBAL_RELATIONS.colour?.pairs ?? []).map(([, colour]) => colour), 'honey', 'milk', 'wool', 'wood', 'grass', 'snow', 'coal', 'paper', 'soup', 'hair']);
+const WITH_THE = new Set(['sky', 'floor']);
+const lead = (word: string): string => (BARE.has(word) ? '' : WITH_THE.has(word) ? 'the' : /^[aeiou]/.test(word) ? 'an' : 'a');
+const withLead = (word: string): Say => (lead(word) ? [lead(word), { word }] : [{ word }]);
+// "a bird lives in a nest", to say and to show.
+const linked = (c: string, says: string, d: string): { say: Say; text: string } => {
+  const written = [lead(c), c, says, lead(d), d].filter(Boolean).join(' ');
+  return { say: [...withLead(c), says, ...withLead(d)], text: `${written[0]?.toUpperCase() ?? ''}${written.slice(1)}` };
+};
 
 function analogyMoments(p: string, a: string, b: string, c: string, choices: readonly string[], d: string): Moment[] {
   const says = relationOf(a, b, c, d);
@@ -320,7 +362,7 @@ function analogyMoments(p: string, a: string, b: string, c: string, choices: rea
   const shown = set(ask, ids(`${p}o`, choices.length), { gone: false });
   const moments: Moment[] = [
     moment([{ word: a }, 'is to', { word: b }, '.'], `${a} → ${b}`, top),
-    moment(['How do they go together?', { word: a }, says, { word: b }, '.'], `${a} ${says} ${b}.`, link),
+    moment(['How do they go together?', ...linked(a, says, b).say, '.'], `${linked(a, says, b).text}.`, link),
     moment([{ word: c }, 'is to what?'], `${c} → ?`, ask),
     moment(['Try each word the same way.'], 'Try each word.', shown),
   ];
@@ -330,7 +372,7 @@ function analogyMoments(p: string, a: string, b: string, c: string, choices: rea
     if (word === d) return;
     now = set(calm(now), [`${p}o${i}`], { lit: true, crossed: true });
     now = set(now, [`${p}to1`], { badge: says });
-    moments.push(moment([{ word: c }, says, { word }, '? No.'], `${c} ${says} ${word}? No.`, now));
+    moments.push(moment([...linked(c, says, word).say, '? No.'], `${linked(c, says, word).text}? No.`, now));
   });
   const right = choices.indexOf(d);
   const placed = alter(calm(now), (piece) => {
@@ -339,7 +381,7 @@ function analogyMoments(p: string, a: string, b: string, c: string, choices: rea
     if (piece.id === `${p}to1`) return { ...piece, badge: says };
     return piece;
   });
-  moments.push(moment([{ word: c }, says, { word: d }, '. Yes!'], `${c} ${says} ${d}.`, placed));
+  moments.push(moment([...linked(c, says, d).say, '. Yes!'], `${linked(c, says, d).text}.`, placed));
   moments.push(moment(['So,', { word: a }, 'is to', { word: b }, ', as', { word: c }, 'is to', { word: d }, '.'], `${a} → ${b}, ${c} → ${d}`, set(calm(placed), [`${p}a`, `${p}b`, `${p}c`, `${p}o${right}`], { lit: true })));
   return moments;
 }
@@ -351,27 +393,38 @@ function analogyWhy(question: Question): Moment[] {
 
 export function wordAnalogyLesson(): Lesson {
   const opening = analogyMoments('x', 'bird', 'nest', 'bee', ['honey', 'hive', 'web'], 'hive');
+  const babies = analogyMoments('y', 'cat', 'kitten', 'dog', ['bone', 'puppy', 'kennel'], 'puppy');
   const first = turnQuestion('R-A15', 1, (f) => !['bird', 'bee'].some((word) => words(f, 'from').includes(word) || str(f, 'base') === word));
-  const second = turnQuestion('R-A15', 2);
+  // Not the pairs the lesson has just shown.
+  const second = turnQuestion('R-A15', 2, (f) => !['cat', 'dog', 'bee', 'hen'].some((word) => words(f, 'from').includes(word) || str(f, 'base') === word));
   const start = analogyScene('x', 'bird', 'nest', 'bee', ['honey', 'hive', 'web']);
-  const baby = scene([
-    { id: 'ya', look: text('cat'), x: 0.3, y: 0.3, w: 3, h: 1 },
-    { id: 'yto1', look: text('→'), x: 3.6, y: 0.3, w: 1, h: 1 },
-    { id: 'yb', look: text('kitten'), x: 4.9, y: 0.3, w: 3, h: 1 },
-    { id: 'yc', look: text('cow'), x: 0.3, y: 1.8, w: 3, h: 1 },
-    { id: 'yto2', look: text('→'), x: 3.6, y: 1.8, w: 1, h: 1 },
-    { id: 'yd', look: text('milk'), x: 4.9, y: 1.8, w: 3, h: 1 },
-  ]);
+  // Two finished pairs that share one link, in the same places as a solved puzzle.
+  const solvedPairs = (p: string, a: string, b: string, c: string, d: string): Scene =>
+    scene([
+      { id: `${p}a`, look: text(a), x: 0.3, y: 0.3, w: 3, h: 1 },
+      { id: `${p}to1`, look: text('→'), x: 3.6, y: 0.3, w: 1, h: 1 },
+      { id: `${p}b`, look: text(b), x: 4.9, y: 0.3, w: 3, h: 1 },
+      { id: `${p}c`, look: text(c), x: 0.3, y: 1.8, w: 3, h: 1 },
+      { id: `${p}to2`, look: text('→'), x: 3.6, y: 1.8, w: 1, h: 1 },
+      { id: `${p}d`, look: text(d), x: 4.9, y: 1.8, w: 3, h: 1 },
+    ]);
+  const opposites = solvedPairs('z', 'hot', 'cold', 'up', 'down');
+  const gives = solvedPairs('v', 'bee', 'honey', 'hen', 'egg');
+  const [topPair, ...restOfOpening] = opening;
   return {
     parts: [
       show(moment(['In a word puzzle like this, two pairs of words go together the same way.'], 'Two pairs go together the same way.', start)),
-      ...opening.map(show),
+      show(moment(['We say,', { word: 'bird' }, 'is to', { word: 'nest' }, '. That means,', { word: 'bird' }, 'goes with', { word: 'nest' }, '.'], '"is to" means "goes with".', topPair?.scene ?? start)),
+      ...restOfOpening.map(show),
       show(moment(['Say how the top pair goes together. Then say the same thing about the bottom pair.'], 'Find the link. Use the same link.', calm(opening.at(-1)?.scene ?? start))),
+      show(moment(['Some pairs are opposites. Hot is the opposite of cold.'], 'Opposites: hot → cold, up → down', set(opposites, ['za', 'zb'], { lit: true }))),
       turn(first, analogyWhy(first)),
-      show(moment(['Pairs can go together in many ways. A cat has a baby called a kitten.'], 'Cat has a baby called a kitten.', set(baby, ['ya', 'yb'], { lit: true }))),
-      show(moment(['And a cow gives us milk.'], 'Cow gives us milk.', set(baby, ['yc', 'yd'], { lit: true }))),
+      show(moment(['Here is another link.'], 'Another link.', calm(babies[0]?.scene ?? start))),
+      // The second example goes straight to the word that fits: trying each word was shown above.
+      ...babies.filter((_, i) => i < 3 || i >= babies.length - 2).map(show),
+      show(moment(['One more link. A bee gives us honey, and a hen gives us an egg.'], 'Bee gives honey. Hen gives an egg.', set(gives, ['va', 'vb', 'vc', 'vd'], { lit: true }))),
       turn(second, analogyWhy(second)),
-      show(moment(['Find the link in the first pair, and use the same link again.'], 'Same link, both pairs.', calm(baby))),
+      show(moment(['Find the link in the first pair, and use the same link again.'], 'Same link, both pairs.', calm(gives))),
     ],
   };
 }
@@ -431,11 +484,22 @@ function oddMoments(p: string, list: readonly string[], odd: string, label: stri
     const isOdd = Number(m[3]) === oddAt;
     return { ...piece, lit: isOdd && m[2] === main ? true : undefined, dim: isOdd ? undefined : true };
   });
+  const oddLit = set(sorted, [`${p}${main}${oddAt}`], { lit: true });
+  // Pictures are things on the table, so they are "the cat" and "the car". Words are read as words.
+  if (!layout.words) {
+    const shown = list.flatMap((word, i): Say => [i === 0 ? 'Look. The' : i === list.length - 1 ? ', and the' : ', the', { word }]);
+    return [
+      moment([...shown, '.'], list.join(', '), read),
+      moment(['The', { word: same[0] ?? '' }, 'and the', { word: same[1] ?? '' }, `are both ${label}.`], `${same.join(' and ')}: ${label}`, sorted),
+      moment(['But the', { word: odd }, `${isAre(odd)} not ${oneOf(odd, label)}.`], `${odd}: not ${label}`, oddLit),
+      moment(['So the', { word: odd }, `${MANY.has(odd) ? 'do' : 'does'} not belong.`], `${odd} ${MANY.has(odd) ? 'do' : 'does'} not belong.`, oddOut),
+    ];
+  }
   const named = list.flatMap((word, i): Say => (i === 0 ? [{ word }] : [',', { word }]));
   return [
-    moment([layout.words ? 'Read the words:' : 'Look. We have', ...named, '.'], list.join(', '), read),
+    moment(['Read the words:', ...named, '.'], list.join(', '), read),
     moment([{ word: same[0] ?? '' }, 'and', { word: same[1] ?? '' }, `are both ${label}.`], `${same.join(' and ')}: ${label}`, sorted),
-    moment(['But', { word: odd }, 'is not one of them.'], `${odd} is not.`, set(sorted, [`${p}${main}${oddAt}`], { lit: true })),
+    moment(['But', { word: odd }, 'is not one of them.'], `${odd} is not.`, oddLit),
     moment(['So', { word: odd }, 'does not belong.'], `${odd} does not belong.`, oddOut),
   ];
 }
@@ -508,14 +572,15 @@ function gridWhy(question: Question): Moment[] {
 }
 
 export function numberGridLesson(): Lesson {
-  const ones: number[][] = [[1, 2, 3], [4, 5, 6], [7, 8, -1]];
+  // Rows that do not run on from each other, so the answer comes from the rule and not from counting to nine.
+  const ones: number[][] = [[2, 3, 4], [7, 8, 9], [4, 5, -1]];
   const twos: number[][] = [[2, 4, 6], [5, 7, 9], [10, -1, 14]];
   const byOne = gridMoments('x', ones, 1);
   const byTwo = gridMoments('y', twos, 2);
   const first = turnQuestion('R-A17', 1);
   const second = turnQuestion('R-A17', 2, (f) => {
     const [a = 0, b = 0] = numberRows(f, 'rows')[0] ?? [];
-    return b - a <= 5;
+    return b - a === 3;
   });
   return {
     parts: [
@@ -523,7 +588,7 @@ export function numberGridLesson(): Lesson {
       ...byOne.map(show),
       show(moment(['Find the rule in a full row. Then use it in the row with the box.'], 'Find the rule. Use it on the box.', calm(byOne.at(-1)?.scene ?? gridScene('x', ones)))),
       turn(first, gridWhy(first)),
-      show(moment(['The jump can be bigger than one.'], 'Bigger jumps.', gridScene('y', twos))),
+      show(moment(['The jump can be bigger than one. Count on from the first number to the next to find it.'], 'Bigger jumps: count on to find them.', gridScene('y', twos))),
       ...byTwo.map(show),
       turn(second, gridWhy(second)),
       show(moment(['Find the jump in a full row, and make the same jump.'], 'Same jump in every row.', calm(byTwo.at(-1)?.scene ?? gridScene('y', twos)))),
@@ -622,20 +687,22 @@ function belongsScene(p: string, examples: readonly string[], choices: readonly 
   ]);
 }
 
-function belongsMoments(p: string, examples: readonly string[], group: string, choices: readonly string[], answer: string): Moment[] {
+// `notes` gives a wrong choice its own line, for one that is close to the group.
+function belongsMoments(p: string, examples: readonly string[], group: string, choices: readonly string[], answer: string, notes: Readonly<Record<string, Say>> = {}): Moment[] {
   const [one = '', two = ''] = examples;
   const start = belongsScene(p, examples, choices);
   const look = set(start, [`${p}e0`, `${p}e1`], { lit: true });
   const named = alter(look, (piece) => (piece.id === `${p}g` ? { ...piece, look: text(group), gone: false } : piece));
   const offered = set(set(calm(named), ids(`${p}o`, choices.length), { gone: false }), [`${p}box`], { lit: true });
-  const tried = tryEach(p, offered, choices, answer, (word) => [{ word }, '? No, it does not fit with them.'], { x: 1 + examples.length * 2.4, y: 0.2 });
+  const wrongSay = (word: string): Say => notes[word] ?? ['The', { word }, MANY.has(word) ? '? No, they do not fit with them.' : '? No, it does not fit with them.'];
+  const tried = tryEach(p, offered, choices, answer, wrongSay, { x: 1 + examples.length * 2.4, y: 0.2 });
   return [
-    moment(['Here are', { word: one }, 'and', { word: two }, '.'], `${one} and ${two}`, look),
+    moment(['Look at the', { word: one }, 'and the', { word: two }, '.'], `${one} and ${two}`, look),
     moment([`They are both ${group}.`], `Both ${group}`, named),
     moment(['Which one belongs with them? Let us try each one.'], 'Try each one.', offered),
     ...tried.moments,
-    moment([{ word: answer }, '? Yes! It fits with them.'], `${answer}: yes!`, tried.end),
-    moment([{ word: answer }, `is one of the ${group} too.`], `${answer}: ${group}`, set(calm(tried.end), [`${p}e0`, `${p}e1`, `${p}o${choices.indexOf(answer)}`], { lit: true })),
+    moment(['The', { word: answer }, MANY.has(answer) ? '? Yes! They fit with them.' : '? Yes! It fits with them.'], `${answer}: yes!`, tried.end),
+    moment(['The', { word: answer }, `${isAre(answer)} ${oneOf(answer, group)} too.`], `${answer}: ${group}`, set(calm(tried.end), [`${p}e0`, `${p}e1`, `${p}o${choices.indexOf(answer)}`], { lit: true })),
   ];
 }
 
@@ -645,18 +712,22 @@ function belongsWhy(question: Question): Moment[] {
 
 export function whichBelongsLesson(): Lesson {
   const opening = belongsMoments('x', ['car', 'bus'], 'vehicles', ['apple', 'train', 'hat'], 'train');
+  // A close wrong picture: a boy is alive, like the animals, but he is a person.
+  const close = belongsMoments('y', ['cat', 'dog'], 'animals', ['boy', 'rabbit', 'car'], 'rabbit', { boy: ['The', { word: 'boy' }, '? No. A boy is a person, not an animal.'] });
   const first = turnQuestion('R-A2', 1, (f) => str(f, 'target') !== 'vehicles');
-  const second = turnQuestion('R-A2', 2, (f) => str(f, 'target') !== str(first.facts, 'target'));
+  const second = turnQuestion('R-A2', 2, (f) => !['animals', str(first.facts, 'target')].includes(str(f, 'target')));
   const start = belongsScene('x', ['car', 'bus'], ['apple', 'train', 'hat']);
+  const closeStart = belongsScene('y', ['cat', 'dog'], ['boy', 'rabbit', 'car']);
   return {
     parts: [
       show(moment(['Things in a group share something. Let us find one more for the group.'], 'Find one more for the group.', start)),
       ...opening.map(show),
       show(moment(['First say what the pictures share. Then find the one that shares it too.'], 'What do they share? Find one more.', calm(opening.at(-1)?.scene ?? start))),
       turn(first, belongsWhy(first)),
-      show(moment(['Sometimes a wrong picture is close. Check the group carefully.'], 'Check the group carefully.', calm(start))),
+      show(moment(['Sometimes a wrong picture is close. Check the group carefully.'], 'Check the group carefully.', closeStart)),
+      ...close.map(show),
       turn(second, belongsWhy(second)),
-      show(moment(['Name the group, and pick the picture that is in it too.'], 'Name the group. Pick one more.', calm(opening.at(-1)?.scene ?? start))),
+      show(moment(['Name the group, and pick the picture that is in it too.'], 'Name the group. Pick one more.', calm(close.at(-1)?.scene ?? closeStart))),
     ],
   };
 }
@@ -676,20 +747,40 @@ function pictureAnalogyScene(p: string, example: AnalogyPair, target: AnalogyPai
   ]);
 }
 
-function pictureAnalogyMoments(p: string, example: AnalogyPair, target: AnalogyPair, choices: readonly string[]): Moment[] {
+// The first pair's link, tried on a wrong picture: "Does the glove go on the honey? No."
+function linkAsk(target: AnalogyPair, word: string): Say {
+  const thing = { word: target.first.word };
+  const many = MANY.has(target.first.word);
+  switch (target.relation) {
+    case 'wornOn':
+      return [many ? 'Do the' : 'Does the', thing, 'go on the', { word }, '? No.'];
+    case 'makes':
+      return [many ? 'Do the' : 'Does the', thing, 'make the', { word }, '? No.'];
+    case 'usedWith':
+      return [many ? 'Are the' : 'Is the', thing, 'used with the', { word }, '? No.'];
+    case 'livesIn':
+      return [many ? 'Do the' : 'Does the', thing, 'live in the', { word }, '? No.'];
+    case 'weather':
+      return ['In the', thing, ', do we use the', { word }, '? No.'];
+  }
+}
+
+// `notes` gives a wrong picture its own line, for one that almost fits.
+function pictureAnalogyMoments(p: string, example: AnalogyPair, target: AnalogyPair, choices: readonly string[], notes: Readonly<Record<string, Say>> = {}): Moment[] {
   const answer = target.second.word;
+  const goes = (word: string): string => (MANY.has(word) ? 'go with' : 'goes with');
   const start = pictureAnalogyScene(p, example, target, choices);
   const top = set(start, [`${p}a`, `${p}b`], { lit: true });
   const why = set(top, [`${p}to1`], { lit: true });
   const ask = set(set(calm(why), [`${p}c`, `${p}box`], { lit: true }), ids(`${p}o`, choices.length), { gone: false });
-  const tried = tryEach(p, ask, choices, answer, (word) => ['Does it go with', { word }, '? No.'], { x: 3.5, y: 2.5 });
+  const tried = tryEach(p, ask, choices, answer, (word) => notes[word] ?? linkAsk(target, word), { x: 3.5, y: 2.5 });
   return [
-    moment([{ word: example.first.word }, 'goes with', { word: example.second.word }, '.'], `${example.first.word} → ${example.second.word}`, top),
+    moment(['The', { word: example.first.word }, `${goes(example.first.word)} the`, { word: example.second.word }, '.'], `${example.first.word} → ${example.second.word}`, top),
     moment(['Why?', example.why], example.why, why),
-    moment([{ word: target.first.word }, 'goes with what? Let us try each picture.'], `${target.first.word} → ?`, ask),
+    moment(['The', { word: target.first.word }, `${goes(target.first.word)} what? Try each picture the same way.`], `${target.first.word} → ?`, ask),
     ...tried.moments,
     moment([target.why], target.why, tried.end),
-    moment(['So', { word: target.first.word }, 'goes with', { word: answer }, '.'], `${target.first.word} → ${answer}`, set(calm(tried.end), [`${p}c`, `${p}o${choices.indexOf(answer)}`], { lit: true })),
+    moment(['So the', { word: target.first.word }, `${goes(target.first.word)} the`, { word: answer }, '.'], `${target.first.word} → ${answer}`, set(calm(tried.end), [`${p}c`, `${p}o${choices.indexOf(answer)}`], { lit: true })),
   ];
 }
 
@@ -704,7 +795,11 @@ export function pictureAnalogyLesson(): Lesson {
   const bee = pairStarting('bee');
   const cow = pairStarting('cow');
   const opening = pictureAnalogyMoments('x', sock, glove, ['honey', 'hand', 'web']);
-  const close = pictureAnalogyMoments('y', bee, cow, ['egg', 'honey', 'milk']);
+  // The pictures that almost fit: each is made, but by another animal.
+  const close = pictureAnalogyMoments('y', bee, cow, ['egg', 'honey', 'milk'], {
+    egg: ['Does the', { word: 'cow' }, 'make the', { word: 'egg' }, '? No. A hen does.'],
+    honey: ['Does the', { word: 'cow' }, 'make the', { word: 'honey' }, '? No. The bee does.'],
+  });
   const first = turnQuestion('R-A9', 1, (f) => !['glove', 'cow'].includes(str(f, 'target')));
   const second = turnQuestion('R-A9', 2, (f) => !['glove', 'cow', str(first.facts, 'target')].includes(str(f, 'target')));
   const start = pictureAnalogyScene('x', sock, glove, ['honey', 'hand', 'web']);

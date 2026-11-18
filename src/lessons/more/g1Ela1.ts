@@ -81,6 +81,8 @@ function partMoments(prefix: string, entry: Part, buddy: Part | undefined): Mome
   const place = placeOf(entry);
   const told = place === 'start' ? 'starts with' : place === 'end' ? 'ends with' : 'has';
   const tail = place === 'middle' ? 'in the middle.' : '.';
+  // A doubled letter is said "two E letters", never the letter name twice.
+  const team: Say = entry.part.length === 2 && entry.part.charAt(0) === entry.part.charAt(1) ? ['two', { letter: entry.part.charAt(0) }, 'letters'] : spell(entry.part);
   const moments: Moment[] = [
     moment(['Look at the picture.', { word: entry.word }, '!'], gapText(entry), set(start, [`${prefix}p`], { lit: true })),
     moment(['Which letters are missing in', { word: entry.word }, '?'], `${gapText(entry)}  ?`, set(start, boxes, { lit: true })),
@@ -97,11 +99,11 @@ function partMoments(prefix: string, entry: Part, buddy: Part | undefined): Mome
         : [{ word: entry.word }, place === 'start' ? 'starts like' : 'ends like', { word: buddy.word }, '.'];
     moments.push(
       moment(like, `${entry.word}, ${buddy.word}`, set(now, [`${prefix}p`, `${prefix}b`], { lit: true })),
-      moment([{ word: buddy.word }, told, ...spell(entry.part), tail], `${buddy.word}: ${entry.part}`, set(now, [`${prefix}bw`], { lit: true })),
+      moment([{ word: buddy.word }, told, ...team, tail], `${buddy.word}: ${entry.part}`, set(now, [`${prefix}bw`], { lit: true })),
     );
   }
   const filled = alter(calm(now), (piece) => (boxes.includes(piece.id) ? { ...piece, look: text(entry.part.charAt(boxes.indexOf(piece.id))), lit: true } : piece));
-  moments.push(moment([{ word: entry.word }, told, ...spell(entry.part), tail], `${entry.word} ${told} ${entry.part}`, filled));
+  moments.push(moment([{ word: entry.word }, told, ...team, tail], `${entry.word} ${told} ${entry.part}`, filled));
   return moments;
 }
 
@@ -141,7 +143,7 @@ export function digraphsLesson(): Lesson {
   const second = turnQuestion('E-1-A1', 2, (f) => !['fish', 'dish'].includes(str(f, 'target')));
   return {
     parts: [
-      show(moment(['Sometimes two letters work together as a team.'], 'Two letters can be a team.', teamCards(teams))),
+      show(moment(['Sometimes two letters work together as a team, and make one sound.'], 'Two letters can be a team.', teamCards(teams))),
       show(moment(['Here are four teams:', ...teamList(teams)], 'sh, ch, th, wh', set(teamCards(teams), ['t0', 't1', 't2', 't3'], { lit: true }))),
       ...ship.map(show),
       show(moment(['Words that start the same way often use the same team.'], 'Same start, same team.', calm(last(ship)))),
@@ -211,7 +213,7 @@ export function vowelTeamsLesson(): Lesson {
   return {
     parts: [
       show(moment(['Two vowels can make a team in the middle of a word.'], 'Two vowels can be a team.', teamCards(teams))),
-      show(moment(['When two vowels team up, the first one says its name.'], 'The first vowel says its name.', set(teamCards(teams), ['t0', 't1', 't2'], { lit: true }))),
+      show(moment(['Here are three teams:', { letter: 'a' }, { letter: 'i' }, ', two', { letter: 'e' }, 'letters, and', { letter: 'o' }, { letter: 'a' }, '. In these three teams, the first vowel says its name.'], 'ai, ee, oa: the first vowel says its name.', set(teamCards(teams), ['t0', 't1', 't2'], { lit: true }))),
       ...rain.map(show),
       turn(first, teamWhy(first)),
       show(moment(['Here is one more.'], 'One more.', calm(partScene('y', find(TEAM_WORDS, 'boat'))))),
@@ -274,7 +276,7 @@ function silentWhy(question: Question): Moment[] {
     moment(['Look at the end. Only', { word: long }, 'has an', { letter: 'e' }, '.'], `${long} ends with e`, set(start, ['g3'], { lit: true })),
     isLong
       ? moment(['The', { letter: 'e' }, 'makes the', { letter: vowel }, 'say its name.'], `e makes ${vowel} say its name`, set(start, ['g1', 'g3'], { lit: true }))
-      : moment(['With no', { letter: 'e' }, 'at the end, the', { letter: vowel }, 'is short.'], `no e: short ${vowel}`, set(start, ['s1'], { lit: true })),
+      : moment(['With no', { letter: 'e' }, 'at the end, the', { letter: vowel }, 'does not say its name.'], `no e: ${vowel} does not say its name`, set(start, ['s1'], { lit: true })),
     moment(['The word is', { word: target }, '.'], `The word is ${target}.`, set(isLong ? set(start, ['s0', 's1', 's2'], { dim: true }) : set(start, ['g0', 'g1', 'g2', 'g3'], { dim: true }), tiles, { lit: true })),
   ];
 }
@@ -293,7 +295,7 @@ export function silentELesson(): Lesson {
     parts: [
       show(moment(['Today we meet a quiet letter: an', { letter: 'e' }, 'at the end of a word.'], 'A quiet e at the end.', start)),
       show(moment(['Look at the picture.', { word: 'pin' }, '!'], 'pin', set(start, ['pp'], { lit: true }))),
-      show(moment(['In', { word: 'pin' }, ', the', { letter: 'i' }, 'is short.'], 'pin: short i', set(start, ['l1'], { lit: true }))),
+      show(moment(['In', { word: 'pin' }, ', the', { letter: 'i' }, 'does not say its name.'], 'pin: i does not say its name', set(start, ['l1'], { lit: true }))),
       show(moment(['Now add an', { letter: 'e' }, 'at the end.'], 'pin + e', withE)),
       show(moment(['The word is now', { word: 'pine' }, '!'], 'pine', pine)),
       show(moment(['We do not hear the', { letter: 'e' }, '. It is quiet.'], 'The e is quiet.', set(calm(pine), ['l3'], { dim: true }))),
@@ -333,16 +335,30 @@ function splitRow(words: readonly string[], y: number, cols = 10, h = 1): Piece[
   });
 }
 
-function endingWhy(question: Question): Moment[] {
+// What the sentence's clue word tells, for each ending.
+const ENDING_CLUE: Record<string, string> = {
+  s: 'Every day, and just one person.',
+  ed: 'Yesterday means it already happened.',
+  ing: 'Right now means it is happening now.',
+};
+
+function sentenceLine(id: string, value: string, y: number): Piece {
+  return { id, look: text(value), x: 1.5, y, w: 9, h: 0.8 };
+}
+
+// A sentence with a gap on the wall, the three words on the table: the clue word picks the ending.
+function endingSentenceWhy(question: Question): Moment[] {
+  const sentence = str(question.facts, 'target');
   const options = optionsOf(question);
   const right = answerOf(question);
-  const ending = str(question.facts, 'target');
-  const start = scene(splitRow(options, 3.2, 12, 0.9), 12);
+  const ending = right.slice(str(question.facts, 'base').length);
+  const start = scene([sentenceLine('ln', sentence, 1), ...splitRow(options, 3.4, 12, 0.9)], 12);
   const at = options.indexOf(right);
+  const done = sentence.replace(/_+/g, right);
   return [
-    moment(['Which word ends with', ...spell(ending), '?'], `Which ends with ${ending}?`, start),
-    moment(['Look at the end of each word.'], 'Look at the ends.', set(start, ['e0', 'e1', 'e2'], { lit: true })),
-    moment([{ word: right }, 'ends with', ...spell(ending), '.'], `${right} ends with ${ending}`, set(start, [`r${at}`, `e${at}`], { lit: true })),
+    moment(['Listen:', sentence.replace(/_+/g, 'blank')], sentence, set(start, ['ln'], { lit: true })),
+    moment([ENDING_CLUE[ending] ?? ''], ENDING_CLUE[ending] ?? '', set(start, ['e0', 'e1', 'e2'], { lit: true })),
+    moment(['So the word is', { word: right }, '.', done], done, alter(set(start, [`r${at}`, `e${at}`], { lit: true }), (piece) => (piece.id === 'ln' ? { ...piece, look: text(done), lit: true } : piece))),
   ];
 }
 
@@ -362,22 +378,25 @@ export function endingsLesson(): Lesson {
   const ends = [card('es', 's', 6, 4.4), card('ee', 'ed', 6, 4.4), card('ei', 'ing', 6, 4.4)].map((piece) => ({ ...piece, gone: true }));
   const start = scene([root, ...ends]);
   const joined = (id: string): Scene => set(set(start, ['j'], { lit: true }), [id], { gone: false, lit: true, x: 3.2 + wide('jump'), y: 1 });
-  const first = turnQuestion('E-1-A6', 1, (f) => str(f, 'target') === 'ing' && !String((f.options as string[])[0]).startsWith('jump'));
+  const first = turnQuestion('E-1-A6', 2, (f) => str(f, 'base') !== 'jump' && !str(f, 'target').includes('Sam'));
   const second = turnQuestion('E-1-A6', 3, (f) => rootOf(str(f, 'target')) !== rootOf(answerOf(first)) && rootOf(str(f, 'target')) !== 'jump');
   const sample = scene(splitRow(['jumps', 'jumped', 'jumping'], 3.2, 12, 0.9), 12);
+  const told = scene([sentenceLine('s0', 'Sam jumps every day.', 0.6), sentenceLine('s1', 'Yesterday, Sam jumped.', 1.9), sentenceLine('s2', 'Right now, Sam is jumping.', 3.2)], 12);
   return {
     parts: [
       show(moment(['An action word can get an ending.'], 'Action words get endings.', start)),
       show(moment(['Here is the root word,', { word: 'jump' }, '.'], 'root word: jump', set(start, ['j'], { lit: true }))),
       show(moment(['Add', { letter: 's' }, ', and it says', { word: 'jumps' }, '.'], 'jump + s = jumps', joined('es'))),
-      show(moment(['Add', ...spell('ed'), ', and it says', { word: 'jumped' }, '. That already happened.'], 'jump + ed = jumped', joined('ee'))),
-      show(moment(['Add', ...spell('ing'), ', and it says', { word: 'jumping' }, '. That is happening now.'], 'jump + ing = jumping', joined('ei'))),
-      show(moment(['The root word stays the same. Only the ending changes.'], 'Same root, new ending.', sample)),
-      show(moment(['To find an ending, look at the end of the word.'], 's, ed, ing', set(sample, ['e0', 'e1', 'e2'], { lit: true }))),
-      turn(first, endingWhy(first)),
+      show(moment(['Add', ...spell('ed'), ', and it says', { word: 'jumped' }, '.'], 'jump + ed = jumped', joined('ee'))),
+      show(moment(['Add', ...spell('ing'), ', and it says', { word: 'jumping' }, '.'], 'jump + ing = jumping', joined('ei'))),
+      show(moment(['The root word stays the same. Only the ending changes.'], 'Same root, new ending.', set(sample, ['e0', 'e1', 'e2'], { lit: true }))),
+      show(moment(['Each ending tells us something. Sam jumps every day.'], 'Sam jumps every day.', set(told, ['s0'], { lit: true }))),
+      show(moment(['Yesterday, Sam jumped. That already happened.'], 'Yesterday, Sam jumped.', set(told, ['s1'], { lit: true }))),
+      show(moment(['Right now, Sam is jumping. That is happening now.'], 'Right now, Sam is jumping.', set(told, ['s2'], { lit: true }))),
+      turn(first, endingSentenceWhy(first)),
       show(moment(['To find the root word, take the ending off.'], 'jumping - ing = jump', set(set(scene(splitRow(['jumping'], 1.2)), ['e0'], { crossed: true, dim: true }), ['r0'], { lit: true }))),
       turn(second, rootWhy(second)),
-      show(moment(['A word is a root word and an ending. Look at the end to find each part.'], 'root + ending', calm(sample))),
+      show(moment(['A word is a root word and an ending. Words like yesterday, and right now, tell you which ending fits.'], 'root + ending', calm(sample))),
     ],
   };
 }
@@ -419,8 +438,10 @@ export function yVowelLesson(): Lesson {
   const flyClap = set(set(start, ['c0_0'], { gone: false, lit: true }), ['c0'], { lit: true });
   const both = set(calm(flyClap), ['c1_0', 'c1_1'], { gone: false });
   const babyClap = set(both, ['c1', 'c1_0', 'c1_1'], { lit: true });
-  const first = turnQuestion('E-1-A8', 3, (f) => str(f, 'target') === 'e');
-  const second = turnQuestion('E-1-A8', 3, (f) => str(f, 'target') === 'i');
+  // Neither turn shows the two words of the worked example.
+  const fresh = (f: Record<string, unknown>): boolean => !(Array.isArray(f.read) ? f.read.map(String) : []).some((each) => words.includes(each));
+  const first = turnQuestion('E-1-A8', 3, (f) => str(f, 'target') === 'e' && fresh(f));
+  const second = turnQuestion('E-1-A8', 3, (f) => str(f, 'target') === 'i' && fresh(f));
   return {
     parts: [
       show(moment(['At the end of a word,', { letter: 'y' }, 'can sound like', { letter: 'i' }, ', or like', { letter: 'e' }, '.'], 'y can sound like i or e', start)),
@@ -612,12 +633,33 @@ function abcWhy(question: Question): Moment[] {
   return abcMoments(optionsOf(question), true);
 }
 
+// After the first word is found: each of the others in turn, by its first letter.
+function restMoments(words: readonly string[]): Moment[] {
+  const sorted = [...words].sort();
+  const inOrder = withoutHand(calm(abcScene(words, sorted)));
+  const rest = sorted.slice(1).map((word, i) => {
+    const at = words.indexOf(word);
+    const place = i === sorted.length - 2 ? 'last' : 'next';
+    return moment([{ letter: word.charAt(0) }, `comes ${place}, so`, { word }, `is ${place}.`], `${word} is ${place}.`, set(inOrder, [`a${word.charAt(0)}`, `f${at}`, `r${at}`], { lit: true }));
+  });
+  const all = sorted.flatMap((word): Say => [{ word }, ',']).slice(0, -1);
+  return [...rest, moment(['In ABC order:', ...all, '.'], sorted.join(', '), set(inOrder, words.flatMap((_, i) => [`f${i}`, `r${i}`]), { lit: true }))];
+}
+
+// Putting all the words in order: the first one, then each of the rest.
+function abcOrderWhy(question: Question): Moment[] {
+  if (question.type !== 'order') throw new Error('Not an order question');
+  const words = question.items.map((each) => (each.kind === 'text' ? each.value : ''));
+  return [moment(['Put the words in ABC order.'], words.join(', '), abcScene(words)), ...abcMoments(words, false), ...restMoments(words)];
+}
+
 export function abcOrderLesson(): Lesson {
   const words = ['moon', 'dog', 'cat'];
   const worked = abcMoments(words, false);
   const first = turnQuestion('E-1-B5', 1, (f) => !str(f, 'target').split(' ').some((each) => words.includes(each)));
-  const second = turnQuestion('E-1-B5', 1, (f) => str(f, 'target') !== str(first.facts, 'target') && str(f, 'target').split(' ')[0] !== str(first.facts, 'target').split(' ')[0]);
+  const second = turnQuestion('E-1-B5', 2, (f) => !str(f, 'target').split(' ').some((each) => words.includes(each) || str(first.facts, 'target').split(' ').includes(each)));
   const start = abcScene(words);
+  const ordered = restMoments(words);
   return {
     parts: [
       show(moment(['ABC order puts words in the order of the alphabet.'], 'a b c d e f g ...', set(start, ['aa', 'ab', 'ac'], { lit: true }))),
@@ -625,8 +667,10 @@ export function abcOrderLesson(): Lesson {
       ...worked.map(show),
       show(moment(['The word whose first letter comes first in the alphabet goes first.'], 'Earliest first letter goes first.', calm(last(worked)))),
       turn(first, abcWhy(first)),
-      turn(second, abcWhy(second)),
-      show(moment(['Look at each first letter, and find it in the alphabet.'], 'First letters, then the alphabet.', calm(last(worked)))),
+      show(moment(['Now let us put all three words in order.'], 'cat, then ...', calm(last(worked)))),
+      ...ordered.map(show),
+      turn(second, abcOrderWhy(second)),
+      show(moment(['Look at each first letter, and find it in the alphabet.'], 'First letters, then the alphabet.', calm(last(ordered)))),
     ],
   };
 }
@@ -639,6 +683,8 @@ const groupOf = (value: string): { name: string; words: readonly string[] } => {
   if (!group) throw new Error(`No group for ${value}`);
   return group;
 };
+// One member of each group, as it is said: "Which word is a body part too?"
+const ONE_OF: Record<string, string> = { colors: 'a color', clothes: 'something to wear', foods: 'a food', 'body parts': 'a body part', 'things that go': 'a thing that goes' };
 const listSay = (words: readonly string[]): string => words.length < 2 ? (words[0] ?? '') : `${words.slice(0, -1).join(', ')}, and ${words.at(-1) ?? ''}`;
 
 // The group on the wall and the choices on the table.
@@ -654,7 +700,7 @@ function belongMoments(shown: readonly string[], options: readonly string[], rig
   return [
     moment(['What is the same about', listSay(shown), '?'], shown.join(', '), set(start, shown.map((_, i) => `g${i}`), { lit: true })),
     moment(['They are all', group.name, '.'], `All ${group.name}`, set(start, shown.map((_, i) => `g${i}`), { lit: true })),
-    moment(['Which word is one of the', group.name, 'too?'], `Which is ${group.name}?`, set(start, options.map((_, i) => `o${i}`), { lit: true })),
+    moment(['Which word is', ONE_OF[group.name] ?? `one of the ${group.name}`, 'too?'], 'Which one belongs?', set(start, options.map((_, i) => `o${i}`), { lit: true })),
     moment([{ word: right }, 'is one too, so it belongs.'], `${right} belongs.`, lifted),
   ];
 }
@@ -694,7 +740,13 @@ export function wordGroupsLesson(): Lesson {
   const worked = belongMoments(goes, ['sock', 'train', 'egg'], 'train');
   const odd = oddMoments(['red', 'blue', 'hat', 'green'], 'hat');
   const first = turnQuestion('E-1-B6', 1, (f) => !str(f, 'target').split(', ').some((each) => groupOf(each).name === 'things that go'));
-  const second = turnQuestion('E-1-B6', 2, (f) => !((f.options as string[] | undefined) ?? []).includes('hat'));
+  // The second turn is about another group than the first, and not the colors of the worked example.
+  const firstGroup = groupOf(str(first.facts, 'target').split(', ')[0] ?? '').name;
+  const second = turnQuestion('E-1-B6', 2, (f) => {
+    const shown = (f.options as string[] | undefined) ?? [];
+    const inGroup = (name: string): number => shown.filter((each) => groupOf(each).name === name).length;
+    return !shown.includes('hat') && inGroup(firstGroup) < 3 && inGroup('colors') < 3;
+  });
   return {
     parts: [
       show(moment(['Words can belong to a group, like colors, clothes, or foods.'], 'Words in groups', pics)),
@@ -756,7 +808,7 @@ function sortMoments(words: readonly string[]): Moment[] {
   return [
     moment(['Look at the end of each word. Is there an', { letter: 'e' }, '?'], 'Look at the end.', set(start, longIds, { lit: true })),
     moment([...named(longs), longs.length === 1 ? 'has an' : 'have an', { letter: 'e' }, 'at the end, so the vowel says its name. They go in the Long vowel group.'], `${longs.join(', ')}: Long vowel`, set(withLong, ['bl'], { lit: true })),
-    moment([...named(shorts), shorts.length === 1 ? 'has no' : 'have no', { letter: 'e' }, 'at the end. They go in the Short vowel group.'], `${shorts.join(', ')}: Short vowel`, set(both, ['bs'], { lit: true })),
+    moment([...named(shorts), shorts.length === 1 ? 'has no' : 'have no', { letter: 'e' }, 'at the end, and the vowel does not say its name. They go in the Short vowel group.'], `${shorts.join(', ')}: Short vowel`, set(both, ['bs'], { lit: true })),
   ];
 }
 
@@ -772,16 +824,16 @@ export function shortOrLongLesson(): Lesson {
   const worked = sortMoments(words);
   const readOf = (f: Record<string, unknown>): string[] => (Array.isArray(f.read) ? f.read.map(String) : []);
   const first = turnQuestion('E-1-A5', 1, (f) => !readOf(f).some((each) => words.includes(each)));
-  const second = turnQuestion('E-1-A5', 2, (f) => readOf(f).filter((each) => readOf(first.facts).includes(each)).length <= 1);
+  const second = turnQuestion('E-1-A5', 2, (f) => !readOf(f).some((each) => words.includes(each)) && readOf(f).filter((each) => readOf(first.facts).includes(each)).length <= 1);
   return {
     parts: [
       show(moment(['A long vowel says its own name. A short vowel does not.'], 'Long vowel: it says its name.', set(start, ['bs', 'bl'], { lit: true }))),
       show(moment(['In', { word: 'cape' }, ', the', { letter: 'a' }, 'says its name. In', { word: 'cap' }, ', it does not.'], 'cape: long a. cap: short a.', set(start, ['w0', 'w1'], { lit: true }))),
-      show(moment(['An', { letter: 'e' }, 'at the end is the clue.'], 'The clue: e at the end', calm(start))),
+      show(moment(['In these words, an', { letter: 'e' }, 'at the end is the clue.'], 'In these words, the clue is e at the end', calm(start))),
       ...worked.map(show),
       turn(first, sortWhy(first)),
       turn(second, sortWhy(second)),
-      show(moment(['An', { letter: 'e' }, 'at the end means a long vowel. No', { letter: 'e' }, 'means a short vowel.'], 'e at the end: long. No e: short.', calm(last(worked)))),
+      show(moment(['Does the vowel say its name? Then it is long. In these words, an', { letter: 'e' }, 'at the end is the clue.'], 'Says its name: long vowel.', calm(last(worked)))),
     ],
   };
 }

@@ -674,7 +674,7 @@ const BASE: readonly Skill[] = [
     ladder: 'shapes',
     icon: { kind: 'row', children: [{ kind: 'shape', shape: 'hexagon', color: 'green', size: 's', rotation: 0 }, { kind: 'shape', shape: 'oval', color: 'green', size: 's', rotation: 0 }] },
     speakName: ['Name flat shapes'],
-    version: 1,
+    version: 2,
     itemTypes: ['choice'],
     maxLevel: 3,
     prereqs: [],

@@ -1522,7 +1522,7 @@ Every generator uses its family's wording. Text in braces is filled from `facts`
 | Mirror images | Which one is the mirror picture? | A mirror flips left and right. | Left becomes right. |
 | Paper folding | The paper is folded and punched. How does it look unfolded? | One punch goes through both layers. The holes sit the same distance from the fold. | Each layer gets a hole. |
 
-Shape facts: a circle is round with no corners. A square has 4 equal sides. A triangle has 3 sides. A rectangle has 2 long sides and 2 short sides. A hexagon has 6 sides. A star has 5 points. An oval is a stretched circle. A diamond is a square standing on a corner.
+Shape facts: a circle is round with no corners. A square has 4 equal sides. A triangle has 3 sides. A rectangle has 2 long sides and 2 short sides. A hexagon has 6 sides. A star has 5 points. An oval is a stretched circle. A diamond has four sides, with a point at the top and a point at the bottom.
 
 Praise phrases, chosen at random: Great job. You got it. Nice work. That's right. Well done.
 

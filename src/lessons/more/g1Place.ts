@@ -1,8 +1,8 @@
 import { numberWords } from '../../audio/say';
 import { STORY_COUNTABLES } from '../../content/data/countables';
 import { spoken } from '../../content/generators/math/k/h1-parts';
-import type { Question, Say } from '../../engine/types';
-import { alter, art, calm, countAlong, group, ids, moment, num, numeral, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import type { Question, Say, Visual } from '../../engine/types';
+import { alter, art, calm, countAlong, group, ids, moment, num, numeral, picture, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, PieceLook, Scene } from '../types';
 
 // Grade 1 Math lessons that teach (plan section 16): numbers to 120, place value, adding and subtracting.
@@ -101,7 +101,8 @@ export function countTo120Lesson(): Lesson {
       ...crossing.slice(2).map(show),
       show(moment(['After', { number: 99 }, 'comes', { number: 100 }, '. Then', { number: 101 }, ', and', { number: 102 }, '.'], '99, 100, 101, 102', set(hundred, ids('h', 4), { lit: true }))),
       turn(second, afterMoments('w', num(second.facts, 'n'))),
-      show(moment(['To find the number after, count on by one.'], 'Count on by one.', calm(last(opening, hundred)))),
+      show(moment(['Before means the number just behind. Before', { number: 60 }, 'comes', { number: 59 }, '.'], 'Before 60 comes 59.', set(scene(eqRow('b', [59, 60], 1.8, 1.2)), ['b0'], { lit: true, badge: 'before' }))),
+      show(moment(['After is one more. Before is one less.'], 'After: one more. Before: one less.', calm(last(opening, hundred)))),
     ],
   };
 }
@@ -131,6 +132,9 @@ function skipMoments(p: string, start: number, step: number): Moment[] {
 export function skipCountLesson(): Lesson {
   const tens = skipMoments('x', 10, 10);
   const fives = skipMoments('y', 5, 5);
+  const twos = skipMoments('z', 2, 2);
+  // 5, 10, a box, 20, 25: the box is one jump on from the number before it.
+  const middle = scene([5, 10, 15, 20, 25].map((value, i): Piece => ({ id: `m${i}`, look: i === 2 ? { kind: 'box' } : numeral(value), x: 0.3 + i * 1.9, y: 1.9, w: 1.7, h: 1.1, lit: i === 1 || i === 2 ? true : undefined, badge: i === 2 ? '+5' : undefined })));
   const first = turnQuestion('M-1-A2', 1, (f) => num(f, 'start') !== 10 && num(f, 'start') <= 50);
   const second = turnQuestion('M-1-A2', 2, (f) => num(f, 'start') !== 5 && num(f, 'start') <= 30);
   const why = (q: Question): Moment[] => skipMoments('w', num(q.facts, 'start'), num(q.facts, 'step'));
@@ -139,10 +143,13 @@ export function skipCountLesson(): Lesson {
       show(moment(['Skip counting means jumping by the same number each time.'], 'Skip counting: the same jump each time.', calm(tens[0]?.scene ?? scene([])))),
       ...tens.map(show),
       turn(first, why(first)),
-      show(moment(['Now let us count by fives.'], 'Count by 5s.', calm(fives[0]?.scene ?? scene([])))),
+      show(moment(['Jumps can be other sizes too.'], 'Other jumps', calm(fives[0]?.scene ?? scene([])))),
       ...fives.map(show),
       turn(second, why(second)),
-      show(moment(['Find the jump, then add it one more time.'], 'Find the jump. Add it once more.', calm(last(fives, scene([]))))),
+      show(moment(['Now twos. They go fast.'], 'Count by 2s.', calm(twos[0]?.scene ?? scene([])))),
+      ...twos.map(show),
+      show(moment(['If the box is in the middle, jump from the number before it.'], 'A box in the middle? Jump from the number before.', middle)),
+      show(moment(['Find the jump, then add it one more time.'], 'Find the jump. Add it once more.', calm(last(twos, scene([]))))),
     ],
   };
 }
@@ -270,10 +277,13 @@ export function compareLesson(): Lesson {
       show(moment(['To compare two numbers, we look at the tens first.'], 'Compare the tens first.', compareScene('x', 52, 38))),
       ...opening.map(show),
       show(moment(['More tens means a greater number.'], 'More tens, greater number.', calm(last(opening, compareScene('x', 52, 38))))),
+      show(moment(['We write it with this sign. Its open side faces the bigger number.'], '52 > 38: greater than', set(calm(last(opening, compareScene('x', 52, 38))), ['xsign'], { lit: true }))),
       turn(first, why(first)),
       show(moment(['When the tens are the same, the ones decide.'], 'Same tens? The ones decide.', compareScene('y', 64, 67))),
       ...same.map(show),
+      show(moment(['This sign means less than. The open side still faces the bigger number.'], '64 < 67: less than', set(calm(last(same, compareScene('y', 64, 67))), ['ysign'], { lit: true }))),
       turn(second, why(second)),
+      show(moment(['Same tens, and same ones? Then the numbers are equal.'], '45 = 45: equal', set(scene(eqRow('q', [45, '=', 45], 1.2, 1.5)), ['q1'], { lit: true }))),
       show(moment(['Tens first. If the tens are the same, look at the ones.'], 'Tens first, then ones.', calm(last(same, compareScene('y', 64, 67))))),
     ],
   };
@@ -356,11 +366,11 @@ function orderMoments(p: string, values: readonly number[]): Moment[] {
     const before = sorted[k - 1]?.value;
     const say: Say =
       k === 0
-        ? ['The fewest tens is', { number: value }, '. It goes first.']
+        ? [{ number: value }, 'has the fewest tens. It goes first.']
         : before !== undefined && tens(before) === tens(value)
           ? [{ number: value }, 'has the same tens as', { number: before }, ', but more ones. It goes next.']
           : k === sorted.length - 1
-            ? ['The most tens is', { number: value }, '. It goes last.']
+            ? [{ number: value }, 'has the most tens. It goes last.']
             : ['Next is', { number: value }, '.'];
     moments.push(moment(say, String(value), now));
   });
@@ -383,6 +393,7 @@ export function orderLesson(): Lesson {
       show(moment(['If two numbers have the same tens, look at the ones.'], 'Same tens? Look at the ones.', orderScene('y', [64, 27, 61, 45]))),
       ...same.map(show),
       turn(second, why(second)),
+      show(moment(['A number past one hundred is bigger than any two-digit number.'], 'Past 100: bigger than any two-digit number.', set(orderScene('z', [87, 99, 104]), ['z2'], { lit: true }))),
       show(moment(['Fewest tens first. Same tens? Fewer ones first.'], 'Tens first, then ones.', calm(last(same, orderScene('y', [64, 27, 61, 45]))))),
     ],
   };
@@ -446,7 +457,7 @@ export function hearNumberLesson(): Lesson {
       turn(first, why(first)),
       show(moment(['Numbers past one hundred start with a one, for the hundred.'], 'Past 100: start with 1.', hearScene('y', 107, [17, 107, 170, 1007]))),
       ...hundred.map(show),
-      show(moment(['Seventeen and one hundred seventy look close, but they are not the same.'], '17 and 170 are different.', set(calm(last(hundred, hearScene('y', 107, [17, 107, 170, 1007]))), ['yo0', 'yo2'], { lit: true }))),
+      show(moment(['Be careful. Seventeen, and one hundred seventy, use the same digits. But they are not one hundred seven.'], '17 and 170 are not 107.', set(calm(last(hundred, hearScene('y', 107, [17, 107, 170, 1007]))), ['yo0', 'yo2'], { lit: true }))),
       turn(second, why(second)),
       show(moment(['Listen for the hundred, then the tens, then the ones.'], 'Hundred, tens, ones.', calm(last(hundred, hearScene('y', 107, [17, 107, 170, 1007]))))),
     ],
@@ -479,23 +490,52 @@ function tradeMoments(p: string, n: number): Moment[] {
   ];
 }
 
+// The number's two digits on top; its rods come for the first digit and its cubes for the second.
+// `match`, when given, is the picture of the right blocks, shown at the end.
+function buildMoments(p: string, n: number, match?: PieceLook): Moment[] {
+  const t = Math.floor(n / 10);
+  const o = n % 10;
+  const start = scene([
+    { id: `${p}dt`, look: numeral(t), x: 1.6, y: 0.2, w: 1, h: 1.3 },
+    { id: `${p}do`, look: numeral(o), x: 2.7, y: 0.2, w: 1, h: 1.3 },
+    ...rods(p, t, 0.4, 1.9).map((rod) => ({ ...rod, gone: true })),
+    ...cubes(p, o, 0.8 + t * ROD_STEP, 1.9).map((cube) => ({ ...cube, gone: true })),
+    ...(match ? [{ id: `${p}match`, look: match, x: 6, y: 1.6, w: 3.8, h: 3.2, gone: true }] : []),
+  ]);
+  const tens = set(start, [`${p}dt`, ...ids(`${p}r`, t)], { gone: false, lit: true });
+  const ones = set(calm(tens), [`${p}do`, ...ids(`${p}c`, o)], { gone: false, lit: true });
+  const moments: Moment[] = [
+    moment(['Which blocks show', { number: n }, '?'], `Which blocks show ${n}?`, set(start, [`${p}dt`, `${p}do`], { lit: true })),
+    moment(['The first digit is', { number: t }, '. So we need', { number: t }, t === 1 ? 'rod.' : 'rods.'], `${t} ${tensWord(t)}: ${t} ${t === 1 ? 'rod' : 'rods'}`, tens),
+    moment(['The second digit is', { number: o }, '. So we need', { number: o }, o === 1 ? 'cube.' : 'cubes.'], `${o} ${onesWord(o)}: ${o} ${o === 1 ? 'cube' : 'cubes'}`, ones),
+  ];
+  if (match) moments.push(moment(['These blocks match.', { number: t }, `${tensWord(t)}, and`, { number: o }, `${onesWord(o)}, show`, { number: n }, '.'], `${t} ${tensWord(t)} and ${o} ${onesWord(o)} show ${n}`, set(calm(ones), [`${p}match`], { gone: false, lit: true })));
+  return moments;
+}
+
 export function showTensOnesLesson(): Lesson {
   const opening = tradeMoments('x', 46);
   const start = tradeScene('x', 46);
-  const first = turnQuestion('M-1-A7', 3, (f) => num(f, 'n') >= 21 && num(f, 'n') <= 59 && num(f, 'n') % 10 !== 0 && num(f, 'n') !== 46);
-  const second = turnQuestion('M-1-A7', 3, (f) => num(f, 'n') >= 61 && num(f, 'n') % 10 !== 0);
+  const built = buildMoments('v', 34);
+  const first = turnQuestion('M-1-A7', 1, (f) => num(f, 'n') >= 21 && num(f, 'n') % 10 >= 2 && num(f, 'n') % 10 !== Math.floor(num(f, 'n') / 10) && num(f, 'n') !== 34);
+  const second = turnQuestion('M-1-A7', 3, (f) => num(f, 'n') >= 21 && num(f, 'n') <= 59 && num(f, 'n') % 10 !== 0 && num(f, 'n') !== 46);
+  const blocksWhy = (q: Question): Moment[] => {
+    if (q.type !== 'choice') throw new Error('M-1-A7 is a choice question');
+    return buildMoments('w', num(q.facts, 'n'), picture(q.options[q.answerIndex] as Visual));
+  };
   const why = (q: Question): Moment[] => [
     moment(['Which is another way to make', { number: num(q.facts, 'n') }, '?'], `Another way to make ${num(q.facts, 'n')}?`, tradeScene('w', num(q.facts, 'n'))),
     ...tradeMoments('w', num(q.facts, 'n')),
   ];
   return {
     parts: [
-      show(moment(['We can show a number with tens and ones in more than one way.'], 'More than one way to show a number.', start)),
-      show(moment(['A rod is ten cubes stuck together.'], 'A rod is 10 cubes.', set(start, ['xr0'], { lit: true }))),
+      show(moment(['A number tells us which blocks to use. A rod is a ten, and a cube is a one.'], 'Rods are tens. Cubes are ones.', calm(built[0]?.scene ?? start))),
+      ...built.map(show),
+      show(moment(['Not four rods and three cubes. That would be', { number: 43 }, '.'], 'Not 4 rods and 3 cubes: that is 43.', calm(last(built, start)))),
+      turn(first, blocksWhy(first)),
+      show(moment(['We can show a number in more than one way. A rod is ten cubes stuck together.'], 'More than one way to show a number.', set(start, ['xr0'], { lit: true }))),
       ...opening.map(show),
-      show(moment(['Trading a ten for ten ones does not change the number.'], 'Trading does not change the number.', calm(last(opening, start)))),
-      turn(first, why(first)),
-      show(moment(['Look for one less ten, and ten more ones.'], '1 less ten, 10 more ones.', calm(last(opening, start)))),
+      show(moment(['Trading a ten for ten ones does not change the number. Look for one less ten, and ten more ones.'], '1 less ten, 10 more ones.', calm(last(opening, start)))),
       turn(second, why(second)),
       show(moment(['Ten ones make a ten, and a ten makes ten ones.'], '10 ones = 1 ten', set(calm(last(opening, start)), ids('xb', 10), { lit: true }))),
     ],
@@ -592,12 +632,37 @@ export function numberWordsLesson(): Lesson {
     { id: `tn${i}`, look: numeral(value), x: 0.3 + i * 1.9, y: 1, w: 1.5, h: 1.1 },
     { id: `tw${i}`, look: text(numberWords(value)), x: 0.15 + i * 1.95, y: 2.4, w: 1.8, h: 0.7 },
   ]));
-  const first = turnQuestion('M-1-A10', 3, (f) => num(f, 'n') % 10 !== 0 && num(f, 'n') <= 59 && num(f, 'n') !== 47);
-  const second = turnQuestion('M-1-A10', 3, (f) => num(f, 'n') % 10 !== 0 && num(f, 'n') >= 61);
-  const why = (q: Question): Moment[] => [
-    moment(['Which word names', { number: num(q.facts, 'n') }, '? Let us read it in parts.'], 'Read it in parts.', wordScene('w', num(q.facts, 'n'))),
-    ...wordMoments('w', num(q.facts, 'n')),
-  ];
+  const first = turnQuestion('M-1-A10', 1, (f) => num(f, 'n') !== 14);
+  const second = turnQuestion('M-1-A10', 2, (f) => num(f, 'n') % 10 !== 0 && num(f, 'n') !== 47);
+  // A teen word beside the tens word that sounds like it: fourteen is 14, forty is 40.
+  const teens = scene([
+    { id: 'en', look: numeral(14), x: 1.2, y: 0.8, w: 2, h: 1.3 },
+    { id: 'ew', look: text('fourteen'), x: 0.4, y: 2.4, w: 3.6, h: 0.9 },
+    { id: 'yn', look: numeral(40), x: 6.8, y: 0.8, w: 2, h: 1.3 },
+    { id: 'yw', look: text('forty'), x: 6, y: 2.4, w: 3.6, h: 0.9 },
+  ]);
+  // Reading a word to find its number: the word on top, then the number it says.
+  const why = (q: Question): Moment[] => {
+    const n = num(q.facts, 'n');
+    const t = Math.floor(n / 10);
+    const o = n % 10;
+    const start = scene([
+      { id: 'ww', look: text(numberWords(n)), x: 1.5, y: 0.5, w: 7, h: 1.1 },
+      { id: 'wn', look: numeral(n), x: 4, y: 2.4, w: 2, h: 1.4, gone: true },
+    ]);
+    const done = set(start, ['wn'], { gone: false, lit: true });
+    if (n < 20) {
+      return [
+        moment([{ word: numberWords(n) }, 'ends in teen. So it is one ten, and', { number: o }, 'more.'], `${numberWords(n)}: 1 ten and ${o}`, set(start, ['ww'], { lit: true })),
+        moment(['One ten and', { number: o }, 'is', { number: n }, '.'], `${numberWords(n)} is ${n}`, done),
+      ];
+    }
+    return [
+      moment(['Read the word in parts.', { word: numberWords(t * 10) }, 'means', { number: t }, 'tens.'], `${numberWords(t * 10)}: ${t} tens`, set(start, ['ww'], { lit: true })),
+      moment(['Then', { word: numberWords(o) }, '. That is', { number: o }, `${onesWord(o)}.`], `${numberWords(o)}: ${o} ${onesWord(o)}`, set(start, ['ww'], { lit: true, badge: `${t} tens, ${o} ${onesWord(o)}` })),
+      moment(['So the word says', { number: n }, '.'], `${numberWords(n)} is ${n}`, done),
+    ];
+  };
   return {
     parts: [
       show(moment(['Every number has a name we can read and write.'], 'Numbers have names.', wordScene('x', 47))),
@@ -605,7 +670,10 @@ export function numberWordsLesson(): Lesson {
       show(moment(['Here is', { number: 47 }, '. We read it in two parts.'], '47 has two parts.', set(wordScene('x', 47), ['xdt', 'xdo'], { lit: true }))),
       ...opening.map(show),
       show(moment(['Say the tens word, then the ones word, with a little line between.'], 'Tens word - ones word', calm(last(opening, wordScene('x', 47))))),
+      show(moment(['Teen words end in teen. Fourteen is one ten and four.'], '14: fourteen', set(teens, ['en', 'ew'], { lit: true }))),
+      show(moment(['Forty sounds close, but it ends another way. Forty is four tens.'], '40: forty', set(teens, ['yn', 'yw'], { lit: true }))),
       turn(first, why(first)),
+      show(moment(['To read a longer word, find the tens word first.'], 'Find the tens word first.', calm(last(opening, wordScene('x', 47))))),
       turn(second, why(second)),
       show(moment(['Read the tens first, then the ones.'], 'Tens first, then ones.', calm(last(opening, wordScene('x', 47))))),
     ],
@@ -642,7 +710,7 @@ function countOnMoments(p: string, a: number, b: number): Moment[] {
 export function addWithin20Lesson(): Lesson {
   const opening = countOnMoments('x', 8, 3);
   const flipped = countOnMoments('y', 4, 9);
-  const first = turnQuestion('M-1-B1', 1, (f) => num(f, 'a') > num(f, 'b') && num(f, 'b') <= 4);
+  const first = turnQuestion('M-1-B1', 1, (f) => num(f, 'a') > num(f, 'b') && num(f, 'b') <= 4 && num(f, 'a') !== 8);
   const second = turnQuestion('M-1-B1', 2, (f) => num(f, 'a') < num(f, 'b') && num(f, 'a') <= 5);
   const why = (q: Question): Moment[] => countOnMoments('w', num(q.facts, 'a'), num(q.facts, 'b'));
   return {
@@ -725,22 +793,35 @@ function doubleMoments(p: string, a: number): Moment[] {
   ];
 }
 
+// A near double: one group has one extra. Double the smaller number, then add the extra one.
+function nearMoments(p: string, a: number, b: number): Moment[] {
+  const small = Math.min(a, b);
+  const start = doubleScene(p, a, b);
+  const extra = a > b ? `${p}r${a - 1}` : `${p}b${b - 1}`;
+  const pairs = set(start, [...ids(`${p}r`, small), ...ids(`${p}b`, small)], { lit: true });
+  return [
+    moment([{ number: a }, 'plus', { number: b }, 'is almost a double. One group has one extra dot.'], `${a} + ${b}: almost a double`, set(start, [extra], { lit: true })),
+    moment(['Double', { number: small }, 'is', { number: 2 * small }, '.'], `${small} + ${small} = ${2 * small}`, set(pairs, [`${p}r${small - 1}`], { badge: String(2 * small) })),
+    moment(['One more makes', { number: a + b }, '. So', { number: a }, ', plus', { number: b }, ', is', { number: a + b }, '.'], `${a} + ${b} = ${a + b}`, become(set(calm(pairs), [extra], { lit: true, badge: '+1' }), `${p}e4`, numeral(a + b))),
+  ];
+}
+
 export function doublesLesson(): Lesson {
   const opening = doubleMoments('x', 4);
-  const near = doubleScene('y', 6, 7);
+  const near = nearMoments('y', 6, 7);
   const first = turnQuestion('M-1-B3', 1, (f) => num(f, 'a') >= 3 && num(f, 'a') !== 4);
-  const second = turnQuestion('M-1-B3', 2, (f) => num(f, 'a') <= 8);
-  const why = (q: Question): Moment[] => doubleMoments('w', num(q.facts, 'a'));
+  const second = turnQuestion('M-1-B3', 3, (f) => Math.min(num(f, 'a'), num(f, 'b')) <= 8 && Math.min(num(f, 'a'), num(f, 'b')) >= 3 && Math.min(num(f, 'a'), num(f, 'b')) !== 6);
+  const why = (q: Question): Moment[] => (num(q.facts, 'a') === num(q.facts, 'b') ? doubleMoments('w', num(q.facts, 'a')) : nearMoments('w', num(q.facts, 'a'), num(q.facts, 'b')));
   return {
     parts: [
       show(moment(['A double is a number added to itself.'], 'A double: the same number twice.', doubleScene('x', 4))),
       ...opening.map(show),
       show(moment(['When both numbers are the same, it is a double.'], 'Both the same: a double.', calm(last(opening, doubleScene('x', 4))))),
       turn(first, why(first)),
-      show(moment(['Six plus seven is almost a double. There is one extra blue dot.'], '6 + 7: almost a double', set(near, ['yb6'], { lit: true }))),
-      show(moment(['Double', { number: 6 }, 'is', { number: 12 }, '. One more makes', { number: 13 }, '.'], '6 + 6 = 12, one more is 13', become(set(near, [...ids('yr', 6), ...ids('yb', 6)], { lit: true }), 'ye4', numeral(13)))),
+      show(moment(['Some sums are one away from a double.'], 'Near doubles', doubleScene('y', 6, 7))),
+      ...near.map(show),
       turn(second, why(second)),
-      show(moment(['A double is two groups of the same number.'], 'Two groups the same.', calm(last(opening, doubleScene('x', 4))))),
+      show(moment(['Know your doubles. For a near double, add one more.'], 'Double it, then one more.', calm(last(near, doubleScene('y', 6, 7))))),
     ],
   };
 }
@@ -1027,7 +1108,7 @@ function tensMoments(p: string, a: number, b: number, plus: boolean): Moment[] {
   return [
     moment([{ number: a }, 'is', { number: ta }, `${tensWord(ta)}.`], `${a} = ${ta} ${tensWord(ta)}`, set(start, [...ids(`${p}r`, ta), `${p}e0`], { lit: true })),
     moment([plus ? 'Add' : 'Take away', { number: b }, '. That is', { number: tb }, `${tensWord(tb)}.`], `${plus ? '+' : '-'} ${tb} ${tensWord(tb)}`, set(changed, [`${p}e2`], { lit: true })),
-    moment(['Count the tens that are left by tens.'], 'Count by tens.', kept),
+    moment([plus ? 'Now count all the tens, by tens.' : 'Count the tens that are left, by tens.'], 'Count by tens.', kept),
     ...counted,
     moment([{ number: ta }, plus ? `${tensWord(ta)} plus` : `${tensWord(ta)} minus`, { number: tb }, `${tensWord(tb)} is`, { number: tens }, `${tensWord(tens)}, which is`, { number: answer }, '.'], `${a} ${plus ? '+' : '-'} ${b} = ${answer}`, done),
   ];
@@ -1046,6 +1127,7 @@ export function addSubtractTensLesson(): Lesson {
       show(moment(['Taking away tens works the same way.'], 'Take away tens the same way.', tensScene('y', 70, 40, false))),
       ...minus.map(show),
       turn(second, tensMoments('w', num(second.facts, 'a'), num(second.facts, 'b'), false)),
+      show(moment([{ number: 34 }, 'plus', { number: 20 }, '. Add two tens, and the ones stay the same.', { number: 54 }, '.'], '34 + 20 = 54', set(scene(eqRow('m', [34, '+', 20, '=', 54], 1.8, 1.2)), ['m4'], { lit: true }))),
       show(moment(['Three and two make five, so three tens and two tens make five tens.'], '3 + 2 = 5, so 30 + 20 = 50', calm(last(opening, tensScene('x', 30, 20, true))))),
     ],
   };
@@ -1095,9 +1177,27 @@ function storyMoments(p: string, a: number, b: number, plus: boolean, kind: stri
   ];
 }
 
+// A compare story: two rows lined up, and the extra ones in the longer row counted.
+function compareStoryMoments(p: string, a: number, b: number, emoji: string): Moment[] {
+  const start = scene([
+    ...group(`${p}a`, art(emoji), a, 0.5, 1, 10, 0.9),
+    ...group(`${p}b`, art(emoji), b, 0.5, 2.4, 10, 0.9),
+    ...eqRow(`${p}e`, [a, '-', b, '=', a - b], 4.3, 1.1).map((each) => ({ ...each, gone: true })),
+  ]);
+  const extra = ids(`${p}a`, a - b, b);
+  const counted = countAlong(set(start, [...ids(`${p}a`, b), ...ids(`${p}b`, b)], { dim: true }), extra);
+  return [
+    moment(['Some stories ask, how many more? One row has', { number: a }, '. The other has', { number: b }, '.'], `${a} and ${b}: how many more?`, start),
+    moment(['Line them up, and count the extra ones.'], 'Count the extra ones.', set(start, extra, { lit: true })),
+    ...counted.moments,
+    moment(['There are', { number: a - b }, 'more. That is', { number: a }, ', minus', { number: b }, '.'], `${a} - ${b} = ${a - b}`, set(withoutHand(counted.end), ids(`${p}e`, 5), { gone: false, lit: true })),
+  ];
+}
+
 export function wordProblemsLesson(): Lesson {
   const opening = storyMoments('x', 8, 5, true, 'gets', 'apple');
   const away = storyMoments('y', 12, 4, false, 'givesAway', 'cookie');
+  const compare = compareStoryMoments('z', 9, 6, '⭐');
   const first = turnQuestion('M-1-B10', 1, (f) => num(f, 'b') <= 6);
   const second = turnQuestion('M-1-B10', 2, (f) => num(f, 'b') <= 5);
   const why = (q: Question, plus: boolean): Moment[] => [
@@ -1112,7 +1212,8 @@ export function wordProblemsLesson(): Lesson {
       show(moment(['In some stories, things go away.'], 'Some things go away.', storyScene('y', 12, 4, false, '🍪'))),
       ...away.map(show),
       turn(second, why(second, false)),
-      show(moment(['Getting more means plus. Going away means minus.'], 'More: +. Away: -.', calm(last(away, storyScene('y', 12, 4, false, '🍪'))))),
+      ...compare.map(show),
+      show(moment(['Getting more: add. Going away: take away. How many more: take away too.'], 'More: +. Away: -. How many more: -.', calm(last(compare, storyScene('y', 12, 4, false, '🍪'))))),
     ],
   };
 }

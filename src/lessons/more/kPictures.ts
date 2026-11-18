@@ -20,7 +20,7 @@ const FACT: Record<string, { say: Say; text: string }> = {
   rectangle: { say: ['A rectangle has', { number: 2 }, 'long sides, and', { number: 2 }, 'short sides.'], text: 'A rectangle has 2 long sides and 2 short sides.' },
   hexagon: { say: ['A hexagon has', { number: 6 }, 'sides.'], text: 'A hexagon has 6 sides.' },
   oval: { say: ['An oval is like a stretched circle.'], text: 'An oval is like a stretched circle.' },
-  diamond: { say: ['A diamond is a square, standing on a corner.'], text: 'A diamond is a square standing on a corner.' },
+  diamond: { say: ['A diamond has', { number: 4 }, 'sides, with a point at the top, and a point at the bottom.'], text: 'A diamond has 4 sides, with a point at the top and at the bottom.' },
   cube: { say: ['A cube has', { number: 6 }, 'flat faces. Each one is a square.'], text: 'A cube has 6 flat faces. Each one is a square.' },
   sphere: { say: ['A sphere is round all over, like a ball.'], text: 'A sphere is round all over, like a ball.' },
   cone: { say: ['A cone has a point, and a round base.'], text: 'A cone has a point and a round base.' },
@@ -100,6 +100,15 @@ function flatShapesLesson(): Lesson {
   const oval = meet(hexagon.scene, 'b', 'oval');
   const diamond = meet(oval.scene, 'b', 'diamond');
 
+  // The rectangle, asked at the top level, where shapes are turned: the same shape straight and turned.
+  const turned: Visual = { kind: 'shape', shape: 'rectangle', color: 'orange', size: 'm', rotation: 30 };
+  const last = scene([
+    { id: 'crectangle', look: picture(flat('rectangle', 'orange')), x: 1.5, y: 1.5, w: 2, h: 2 },
+    { id: 'cturned', look: picture(turned), x: 6.5, y: 1.5, w: 2, h: 2, gone: true },
+  ]);
+  const rectangle = moment(['This is a rectangle.', ...factOf('rectangle').say], factOf('rectangle').text, set(last, ['crectangle'], { lit: true }));
+  const stillOne = set(calm(rectangle.scene), ['cturned'], { gone: false, lit: true });
+
   const first = turnQuestion('M-K-E1', 1, (f) => f.target === 'triangle');
   const second = turnQuestion('M-K-E1', 2, (f) => f.target === 'hexagon' || f.target === 'oval');
   return {
@@ -116,7 +125,9 @@ function flatShapesLesson(): Lesson {
       show(oval),
       show(diamond),
       turn(second, findWhy(second)),
-      show(moment(['Hear the name. Then look for the shape that fits.'], 'Hear the name. Find the shape that fits.', set(diamond.scene, ['bhexagon', 'boval', 'bdiamond'], { lit: true, dim: undefined }))),
+      show(rectangle),
+      show(moment(['A shape keeps its name when it is turned. This is still a rectangle.'], 'Turned, it is still a rectangle.', stillOne)),
+      show(moment(['Hear the name. Then look for the shape that fits.'], 'Hear the name. Find the shape that fits.', set(stillOne, ['crectangle', 'cturned'], { lit: true }))),
     ],
   };
 }
@@ -147,22 +158,30 @@ function solidShapesLesson(): Lesson {
   const can = withThing(cylinder, 'cylinder');
   const all = set(calm(can), SOLID_NAMES.map((name) => `s${name}`), { lit: true });
 
+  // A flat shape beside a solid one, for the top level's "Which one is a solid shape?".
+  const pair = scene([
+    { id: 'fcircle', look: picture(flat('circle', 'blue')), x: 1.5, y: 1.5, w: 2, h: 2 },
+    { id: 'fsphere', look: picture(solid('sphere')), x: 6.5, y: 1.5, w: 2, h: 2, dim: true },
+  ]);
+
   const first = turnQuestion('M-K-E2', 1, (f) => f.target === 'sphere');
   const second = turnQuestion('M-K-E2', 2, (f) => f.target === 'cone' || f.target === 'cylinder');
   return {
     parts: [
       show(moment(['Some shapes are solid. Let us learn their names.'], 'Solid shapes have names.', start)),
       show(moment(['This is a cube.', ...factOf('cube').say], factOf('cube').text, cube)),
-      show(moment(['A dice is a cube.'], 'A dice is a cube.', dice)),
+      show(moment(['Dice are cubes.'], 'Dice are cubes.', dice)),
       show(moment(['This is a sphere.', ...factOf('sphere').say], factOf('sphere').text, sphere)),
-      show(moment(['A football is a sphere.'], 'A football is a sphere.', ball)),
+      show(moment(['A ball is a sphere.'], 'A ball is a sphere.', ball)),
       turn(first, findWhy(first)),
       show(moment(['This is a cone.', ...factOf('cone').say], factOf('cone').text, cone)),
       show(moment(['An ice cream cone has the same shape.'], 'An ice cream cone is a cone.', iceCream)),
       show(moment(['This is a cylinder.', ...factOf('cylinder').say], factOf('cylinder').text, cylinder)),
       show(moment(['A can of soup is a cylinder.'], 'A can is a cylinder.', can)),
       turn(second, findWhy(second)),
-      show(moment(['Solid shapes are not flat. You can hold them in your hand.'], 'Cube, sphere, cone, cylinder.', all)),
+      show(moment(['A circle is flat, like a drawing on paper.'], 'A circle is flat.', pickOut(pair, 'fcircle'))),
+      show(moment(['A sphere is solid. You can hold it in your hand.'], 'A sphere is solid.', pickOut(pair, 'fsphere'))),
+      show(moment(['Cube, sphere, cone and cylinder are all solid shapes.'], 'Cube, sphere, cone, cylinder.', all)),
     ],
   };
 }
@@ -301,7 +320,9 @@ function patternWhy(question: Question): Moment[] {
   const names = shown.map((_, i) => unit[i % unit.length] ?? '');
   const right = question.options[question.answerIndex];
   if (!right) throw new Error('No right option');
-  const answer = { look: picture(right), name: unit[shown.length % unit.length] ?? '' };
+  // A colour is said bare ("is blue"); a shape takes its little word ("is a circle").
+  const name = unit[shown.length % unit.length] ?? '';
+  const answer = { look: picture(right), name: question.facts.by === 'shape' ? an(name) : name };
   return [moment(['Find the part that repeats.'], 'Find the part that repeats.', patternScene('w', looks)), ...patternMoments('w', looks, names, unit.length, answer)];
 }
 
@@ -315,6 +336,17 @@ function patternsLesson(): Lesson {
   const lastTwo = two.at(-1);
   if (!lastOne || !lastTwo) throw new Error('A pattern has moments');
 
+  // The top level hides a picture in the middle of the row.
+  const holeAt = 4;
+  const holeRow = ['red', 'blue', 'blue', 'red', 'blue', 'blue'];
+  const hole = scene(
+    holeRow.map((color, i): Piece => (i === holeAt ? { id: 'cbox', look: { kind: 'box' }, x: 2 + i, y: 2, w: 0.9, h: 0.9, lit: true } : { id: `c${i}`, look: dot(color), x: 2 + i, y: 2, w: 0.9, h: 0.9 })),
+  );
+  const fits = add(
+    alter(calm(hole), (piece) => (piece.id === 'cbox' ? { ...piece, gone: true } : piece.id === 'c3' ? { ...piece, lit: true } : piece)),
+    [{ id: 'canswer', look: dot('blue'), x: 2 + holeAt, y: 2, w: 0.9, h: 0.9, lit: true }],
+  );
+
   const first = turnQuestion('M-K-G1', 1);
   const second = turnQuestion('M-K-G1', 2);
   return {
@@ -326,6 +358,8 @@ function patternsLesson(): Lesson {
       show(moment(['This pattern has three colours in its part.'], 'Three colours in the part.', patternScene('b', threeColours.map(dot)))),
       ...two.map(show),
       turn(second, patternWhy(second)),
+      show(moment(['Sometimes the hole is in the middle. Say the part again, and find what fits.'], 'A hole in the middle.', hole)),
+      show(moment(['Red, blue, blue. Then red, and the hole. Blue fits.'], 'red, blue, blue: blue fits', fits)),
       show(moment(['Find the part that repeats. Say it again, to see what comes next.'], 'Find the part that repeats.', alter(lastTwo.scene, (piece) => (piece.gone ? piece : { ...piece, lit: true })))),
     ],
   };

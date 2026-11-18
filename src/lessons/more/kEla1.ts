@@ -67,7 +67,14 @@ function abcMoments(prefix: string, letters: string[], blank: number): Moment[] 
   });
   const filled = set(set(withoutHand(now), [`${prefix}box`], { gone: true }), [`${prefix}${blank}`], { gone: false, lit: true });
   const neighbour = (next ? letters[blank - 1] : letters[blank + 1]) as string;
-  out.push(moment([next ? 'After' : 'Just before', { letter: neighbour }, 'comes', { letter: answer }, '.'], `${next ? 'After' : 'Before'} ${neighbour} comes ${answer}.`, filled));
+  if (next) {
+    out.push(moment(['After', { letter: neighbour }, 'comes', { letter: answer }, '.'], `After ${neighbour} comes ${answer}.`, filled));
+  } else {
+    // Say the letters that lead up to the row, so the child can hear which one comes just before it.
+    const back = Math.min(3, answer.toLowerCase().charCodeAt(0) - 'a'.charCodeAt(0));
+    const lead = [...Array.from({ length: back }, (_, i) => shift(answer, i - back)), answer, neighbour];
+    out.push(moment([lead[0]?.toLowerCase() === 'a' ? 'Start from the beginning:' : 'Say the letters in order:', ...listed(lead), '. The one just before', { letter: neighbour }, 'is', { letter: answer }, '.'], `Before ${neighbour} comes ${answer}.`, filled));
+  }
   out.push(moment([...listed(letters), '. Now the row is in order.'], letters.join(', '), set(filled, ids(prefix, letters.length), { lit: true })));
   return out;
 }
@@ -186,7 +193,7 @@ function wordPieces(prefix: string, word: string, x: number): Piece[] {
   ];
 }
 
-const article = (word: string): string => (/^[aeiou]/.test(word) ? 'This is an' : 'This is a');
+const article = (word: string): string => (word === 'sun' ? 'This is the' : /^[aeiou]/.test(word) ? 'This is an' : 'This is a');
 
 function lastMoments(word: string, prefix: string): Moment[] {
   const start = scene(wordPieces(prefix, word, 4));
@@ -213,8 +220,10 @@ export function lastLetterLesson(): Lesson {
     { id: 'hl', look: text('t'), x: 8, y: 3, lit: true },
   ];
   const both = add(calm(last(cat)), hat);
-  const first = turnQuestion('E-K-B2', 1, (f) => str(f, 'target') !== 'cat');
-  const second = turnQuestion('E-K-B2', 1, (f) => str(f, 'target').slice(-1) !== str(first.facts, 'target').slice(-1) && str(f, 'target') !== 'cat');
+  // Never lip: its picture is a mouth.
+  const fresh = (f: Record<string, unknown>): boolean => !['cat', 'hat', 'lip'].includes(str(f, 'target'));
+  const first = turnQuestion('E-K-B2', 1, fresh);
+  const second = turnQuestion('E-K-B2', 1, (f) => fresh(f) && str(f, 'target').slice(-1) !== str(first.facts, 'target').slice(-1));
   return {
     parts: [
       show(moment(['Every word ends with a sound, and that sound is written with a letter.'], 'Each word ends with a sound and a letter.', scene(wordPieces('x', 'cat', 4)))),
@@ -350,18 +359,21 @@ const sounds = (word: string): readonly string[] => SOUND_SPLITS.find((each) => 
 
 export function countSoundsLesson(): Lesson {
   const sun = soundMoments('x', 'sun');
+  const hand = soundMoments('z', 'hand');
   const fish = soundMoments('y', 'fish');
-  const first = turnQuestion('E-K-B10', 1, (f) => !['sun', 'fish'].includes(str(f, 'target')));
+  const first = turnQuestion('E-K-B10', 1, (f) => !['sun', 'fish', 'hand'].includes(str(f, 'target')));
   const second = turnQuestion('E-K-B10', 2, (f) => sounds(str(f, 'target')).some((sound) => sound.length > 1) && str(f, 'target') !== 'fish');
   return {
     parts: [
       show(moment(['Words are made of sounds. Let us count the sounds in a word.'], 'Count the sounds in a word.', soundScene('x', 'sun'))),
       ...sun.map(show),
       show(moment(['Say the word slowly. Count one for each sound you hear.'], 'One count for each sound.', calm(last(sun)))),
+      show(moment(['Some words have more sounds.'], 'Some words have more sounds.', soundScene('z', 'hand'))),
+      ...hand.map(show),
+      turn(first, soundsWhy(first)),
       show(moment(['Sometimes two letters make just one sound.'], 'Two letters can make one sound.', soundScene('y', 'fish'))),
       ...fish.map(show),
       show(moment([{ word: 'fish' }, 'has', { number: 4 }, 'letters, but only', { number: 3 }, 'sounds.'], 'fish: 4 letters, 3 sounds', calm(last(fish)))),
-      turn(first, soundsWhy(first)),
       turn(second, soundsWhy(second)),
       show(moment(['Count the sounds you hear, not the letters you see.'], 'Count the sounds, not the letters.', calm(last(sun)))),
     ],
@@ -401,6 +413,7 @@ const swapWhy = (question: Question): Moment[] => swapMoments('w', str(question.
 export function changeLetterLesson(): Lesson {
   const hat = swapMoments('x', 'cat', 'hat');
   const pin = swapMoments('y', 'pan', 'pin');
+  const cat = swapMoments('z', 'can', 'cat');
   const first = turnQuestion('E-K-B11', 1, (f) => str(f, 'target') !== 'hat');
   const second = turnQuestion('E-K-B11', 3, (f) => str(f, 'target') !== 'pin');
   return {
@@ -408,9 +421,11 @@ export function changeLetterLesson(): Lesson {
       show(moment(['Change one letter, and you make a new word.'], 'Change one letter, make a new word.', calm(hat[0]?.scene ?? scene([])))),
       ...hat.map(show),
       show(moment(['Say both words. Find the letter that changes. That is the new letter you need.'], 'Find the letter that changes.', calm(last(hat)))),
-      show(moment(['The letter that changes can be in the middle, too.'], 'It can be the middle letter.', calm(pin[0]?.scene ?? scene([])))),
-      ...pin.map(show),
       turn(first, swapWhy(first)),
+      show(moment(['The letter that changes can be the last one.'], 'It can be the last letter.', calm(cat[0]?.scene ?? scene([])))),
+      ...cat.map(show),
+      show(moment(['It can be in the middle, too.'], 'It can be the middle letter.', calm(pin[0]?.scene ?? scene([])))),
+      ...pin.map(show),
       turn(second, swapWhy(second)),
       show(moment(['Find the letter that changes, and put in the new one.'], 'Swap the letter that changes.', calm(last(pin)))),
     ],
@@ -516,7 +531,17 @@ export function bigSmallLettersLesson(): Lesson {
   const smalls = ['r', 'e', 'a', 'g'];
   const start = pairScene('x', bigs, smalls);
   const paired = pairMoments('x', bigs, smalls);
-  const alike = scene(['b', 'd', 'p'].map((letter, i) => ({ id: `k${i}`, look: text(letter), x: 2.4 + i * 2, y: 1.8, w: 1.4, h: 1.4 })));
+  const lookAlikes = ['b', 'd', 'p'];
+  const alike = scene([
+    ...lookAlikes.map((letter, i) => ({ id: `k${i}`, look: text(letter), x: 2.4 + i * 2, y: 2.6, w: 1.4, h: 1.4 })),
+    ...lookAlikes.map((letter, i) => ({ id: `K${i}`, look: text(letter.toUpperCase()), x: 2.4 + i * 2, y: 0.6, w: 1.4, h: 1.4, gone: true })),
+  ]);
+  // Each big letter appears above its own small letter, one at a time.
+  let partnered = alike;
+  const partners = lookAlikes.map((letter, i) => {
+    partnered = set(calm(partnered), [`K${i}`, `k${i}`], { gone: false, lit: true });
+    return moment(['Big', { letter: letter.toUpperCase() }, 'goes with small', { letter }, '.'], `${letter.toUpperCase()} goes with ${letter}`, partnered);
+  });
   const first = turnQuestion('E-K-A2', 1, (f) => !list(f, 'leftValues').some((letter) => bigs.includes(letter)));
   const second = turnQuestion('E-K-A2', 2);
   return {
@@ -526,6 +551,7 @@ export function bigSmallLettersLesson(): Lesson {
       ...paired.map(show),
       show(moment(['Some small letters look like their big letter. Some look very different.'], 'Some look alike. Some look different.', calm(last(paired)))),
       show(moment(['Small', { letter: 'b' }, ',', { letter: 'd' }, ', and', { letter: 'p' }, 'look alike. Look closely at which way each one faces.'], 'b, d and p look alike.', set(alike, ids('k', 3), { lit: true }))),
+      ...partners.map(show),
       turn(first, pairWhy(first)),
       turn(second, pairWhy(second)),
       show(moment(['Find the small shape that goes with each big letter.'], 'Match big to small.', calm(last(paired)))),
@@ -692,7 +718,7 @@ function readMoments(prefix: string, word: string, pictures: string[]): Moment[]
     const id = `${prefix}p${i}`;
     const same = each === word;
     now = same ? set(calm(now), [id, ...letters], { lit: true }) : set(calm(now), [id], { dim: true });
-    out.push(moment(['This is', /^[aeiou]/.test(each) ? 'an' : 'a', { word: each }, same ? '. It matches the word!' : '. It does not match.'], same ? `${each}: yes` : `${each}: no`, now));
+    out.push(moment(['This is', each === 'sun' ? 'the' : /^[aeiou]/.test(each) ? 'an' : 'a', { word: each }, same ? '. It matches the word!' : '. It does not match.'], same ? `${each}: yes` : `${each}: no`, now));
   });
   out.push(moment(['So the word', { word }, 'goes with this picture.'], `${word} goes with this picture.`, now));
   return out;
@@ -703,7 +729,7 @@ const readWhy = (question: Question): Moment[] => readMoments('w', str(question.
 export function readWordLesson(): Lesson {
   const hat = readMoments('x', 'hat', ['bag', 'hat', 'sun']);
   const near = scene([...wordTiles('a', 'pan', 1.5, 1.6, 1.1, 1.1), ...wordTiles('b', 'pin', 5.5, 1.6, 1.1, 1.1)]);
-  const first = turnQuestion('E-K-B4', 1, (f) => str(f, 'target') !== 'hat');
+  const first = turnQuestion('E-K-B4', 1, (f) => !['hat', 'pan', 'pin'].includes(str(f, 'target')));
   const second = turnQuestion('E-K-B4', 3, (f) => !['pan', 'pin'].includes(str(f, 'target')));
   return {
     parts: [
@@ -855,7 +881,7 @@ function soundMatchMoments(target: string, pictures: string[], at: 1 | 2, answer
     const same = each.charAt(at) === target.charAt(at);
     now = set(set(now, ids(`l${i}`, 3), { gone: false }), [`l${i}${at}`], same ? { lit: true } : { dim: true });
     if (!same) now = set(now, [`p${i}`], { dim: true });
-    out.push(moment([{ word: each }, 'has', { letter: each.charAt(at) }, at === 1 ? 'in the middle.' : 'at the end.', same ? 'That is the same!' : 'That is different.'], `${each}: ${each.charAt(at)}`, now));
+    out.push(moment(['Listen:', { word: target }, ',', { word: each }, '.', { word: each }, 'has', { letter: each.charAt(at) }, at === 1 ? 'in the middle.' : 'at the end.', same ? 'That is the same!' : 'That is different.'], `${target}, ${each}: ${each.charAt(at)}`, now));
   });
   const win = pictures.indexOf(answer);
   out.push(moment(['So', { word: answer }, at === 1 ? 'has the same middle sound as' : 'ends with the same sound as', { word: target }, '.'], `${answer} and ${target}`, set(now, [`p${win}`, 'tp'], { lit: true })));

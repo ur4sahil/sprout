@@ -16,7 +16,7 @@ const FACT: Record<string, { say: string; text: string }> = {
   rectangle: { say: 'A rectangle has two long sides and two short sides.', text: 'A rectangle has 2 long sides and 2 short sides.' },
   hexagon: { say: 'A hexagon has six sides.', text: 'A hexagon has 6 sides.' },
   oval: { say: 'An oval is a stretched circle.', text: 'An oval is a stretched circle.' },
-  diamond: { say: 'A diamond is a square standing on a corner.', text: 'A diamond is a square standing on a corner.' },
+  diamond: { say: 'A diamond has four sides, with a point at the top and at the bottom.', text: 'A diamond has 4 sides, with a point at the top and at the bottom.' },
   cube: { say: 'A cube has six square faces.', text: 'A cube has 6 square faces.' },
   sphere: { say: 'A sphere is round like a ball.', text: 'A sphere is round like a ball.' },
   cone: { say: 'A cone has a point and a round base.', text: 'A cone has a point and a round base.' },

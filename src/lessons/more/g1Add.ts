@@ -1,7 +1,7 @@
 import { COUNTABLES } from '../../content/data/countables';
 import { PART_STORIES, THREE_STORIES } from '../../content/data/h1-stories';
 import type { Question, Say } from '../../engine/types';
-import { add, alter, art, calm, countAlong, group, ids, moment, num, numeral, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import { add, alter, art, calm, countAlong, group, ids, moment, num, numeral, picture, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
 
 // Grade 1 Math lessons, adding and subtracting and measuring (plan section 16):
@@ -361,7 +361,6 @@ function threeMoments(p: string, counts: readonly [number, number, number], emoj
     moments: [
       moment(['Here are', { number: a }, ', then', { number: b }, ', then', { number: c }, '.'], `${a}, ${b} and ${c}`, set(apart, ids(`${p}e`, 5), { lit: true })),
       moment(['Add the first two numbers. Push them together.'], `First add ${a} + ${b}.`, set(two, [`${p}e0`, `${p}e1`, `${p}e2`], { lit: true })),
-      ...counted.moments,
       moment([{ number: a }, ', plus', { number: b }, ', is', { number: firstSum }, '.'], `${a} + ${b} = ${firstSum}`, set(withoutHand(counted.end), [...groupIds(0), ...groupIds(1)], { lit: true })),
       moment(['Now add the third number. Count on from', { number: firstSum }, '.'], `Now add ${c}. Count on from ${firstSum}.`, set(three, [`${p}e4`], { lit: true })),
       ...on.moments,
@@ -398,7 +397,7 @@ function threeLesson(): Lesson {
 // ---- M-1-B16 Stories with a missing part ----
 
 // Some came: `known` things, and spaces up to `total` that fill as we count up.
-function cameMoments(p: string, known: number, total: number, emoji: string, things: string): { moments: Moment[]; end: Scene } {
+function cameMoments(p: string, known: number, total: number, emoji: string, things: string, came_ = 'came'): { moments: Moment[]; end: Scene } {
   const came = total - known;
   const have = group(`${p}h`, art(emoji), known, 0.5, 2.2, 10, 0.9);
   const spaces = Array.from({ length: came }, (_, i): Piece => ({ id: `${p}c${i}`, look: { kind: 'box' }, x: 0.5 + (known + i) * 0.9, y: 2.2, w: 0.9, h: 0.9 }));
@@ -415,14 +414,14 @@ function cameMoments(p: string, known: number, total: number, emoji: string, thi
       moment(['We start with', { number: known }, `${things}, and end with`, { number: total }, '.'], `${known} + ? = ${total}`, set(start, ids(`${p}e`, 5), { lit: true })),
       moment(['Count up from', { number: known }, 'to', { number: total }, '.'], `Count up from ${known} to ${total}.`, set(withSpaces, ids(`${p}h`, known), { lit: true })),
       ...filling,
-      moment(['We counted up', { number: came }, '. So', { number: came }, `${things} came.`], `${came} came.`, end),
+      moment(came_ ? ['We counted up', { number: came }, '. So', { number: came }, `${things} ${came_}.`] : ['We counted up', { number: came }, '. So the hidden number is', { number: came }, '.'], came_ ? `${came} ${came_}.` : `${came} more ${things}`, end),
     ],
     end,
   };
 }
 
 // Some went: `total` things; the ones still here stay lit, the others are crossed and counted.
-function wentMoments(p: string, total: number, left: number, emoji: string, things: string): { moments: Moment[]; end: Scene } {
+function wentMoments(p: string, total: number, left: number, emoji: string, things: string, went_ = 'went'): { moments: Moment[]; end: Scene } {
   const went = total - left;
   const all = group(`${p}t`, art(emoji), total, 0.5, 2.2, 10, 0.9);
   const eq = sentence(`${p}e`, [total, '-', left, '=', 'blank'], 2.5, 0.4);
@@ -438,7 +437,7 @@ function wentMoments(p: string, total: number, left: number, emoji: string, thin
       moment(['These', { number: left }, 'stayed. The rest went away.'], `${left} stayed.`, marked),
       moment(['Count the ones that went.'], 'Count the ones that went.', calm(marked)),
       ...counted.moments,
-      moment([{ number: total }, ', minus', { number: left }, ', is', { number: went }, '. So', { number: went }, `${things} went.`], `${total} − ${left} = ${went}`, end),
+      moment([{ number: total }, ', minus', { number: left }, ', is', { number: went }, ...(went_ ? ['. So', { number: went }, `${things} ${went_}.`] : ['. So the hidden number is', { number: went }, '.'])], `${total} − ${left} = ${went}`, end),
     ],
     end,
   };
@@ -447,8 +446,8 @@ function wentMoments(p: string, total: number, left: number, emoji: string, thin
 function partWhy(q: Question): Moment[] {
   const story = PART_STORIES.find((each) => each.id === str(q.facts, 'story'));
   if (!story) throw new Error('No missing-part story');
-  if (story.kind === 'taken') return wentMoments('w', num(q.facts, 'a'), num(q.facts, 'b'), story.emoji, story.things).moments;
-  return cameMoments('w', num(q.facts, 'a'), num(q.facts, 'total'), story.emoji, story.things).moments;
+  if (story.kind === 'taken') return wentMoments('w', num(q.facts, 'a'), num(q.facts, 'b'), story.emoji, story.things, '').moments;
+  return cameMoments('w', num(q.facts, 'a'), num(q.facts, 'total'), story.emoji, story.things, '').moments;
 }
 
 function partLesson(): Lesson {
@@ -468,7 +467,7 @@ function partLesson(): Lesson {
       show(moment(['Eight frogs sit on a log. Some jump off. Now five are left. How many jumped?'], '8 frogs, some jump, 5 left', set(wentStart, ids('yt', 8), { lit: true }))),
       ...went.moments.map(show),
       turn(second, partWhy(second)),
-      show(moment(['Find what is missing: count up for more, or take away for less.'], 'Count up, or take away.', calm(went.end))),
+      show(moment(['Find what is missing: count up for more, or take away for less. If the start is hidden, put the two parts together.'], 'Count up, or take away.', calm(went.end))),
     ],
   };
 }
@@ -585,9 +584,8 @@ function downLesson(): Lesson {
   return {
     parts: [
       show(moment(['To take away past ten, we stop at ten on the way.'], 'Stop at 10 on the way.', startScene)),
-      show(moment(['Here are thirteen: a full ten, and three more.'], '13 is 10 and 3.', set(startScene, ids('xu', 3), { lit: true }))),
       ...opening.moments.map(show),
-      show(moment(['Taking away from ten is easy, because we know our tens facts.'], 'Ten facts are easy.', calm(opening.end))),
+      show(moment(['Taking away from ten is easy. We know the pairs that make ten.'], 'Taking away from 10 is easy.', calm(opening.end))),
       turn(first, downWhy(first)),
       turn(second, downWhy(second)),
       show(moment(['Go down to ten first, then take away the rest.'], 'Down to 10, then the rest.', calm(opening.end))),
@@ -624,7 +622,22 @@ function graphMoments(p: string, things: readonly string[], values: readonly num
   ];
 }
 
-const graphWhy = (q: Question): Moment[] => graphMoments('w', q.facts.things as string[], q.facts.values as number[], num(q.facts, 'index'));
+// Which row has the most, or the fewest: look for the longest or the shortest row.
+function mostMoments(p: string, things: readonly string[], values: readonly number[], ask: 'most' | 'least'): Moment[] {
+  const base = graphScene(p, things, values);
+  const want = ask === 'most' ? Math.max(...values) : Math.min(...values);
+  const index = values.indexOf(want);
+  const name = countable(things[index] as string).many;
+  const row = [`${p}l${index}`, ...rowIds(p, index, want)];
+  return [
+    moment([ask === 'most' ? 'Which one has the most? Look for the longest row.' : 'Which one has the fewest? Look for the shortest row.'], ask === 'most' ? 'Find the longest row.' : 'Find the shortest row.', base),
+    moment([`The ${name} row is the ${ask === 'most' ? 'longest' : 'shortest'}. It has`, { number: want }, '.'], `${name}: ${want}`, set(base, row, { lit: true })),
+    moment([`So ${name} have the ${ask === 'most' ? 'most' : 'fewest'}.`], `${name.charAt(0).toUpperCase()}${name.slice(1)} have the ${ask === 'most' ? 'most' : 'fewest'}.`, set(base, row, { lit: true, badge: undefined })),
+  ];
+}
+
+const graphWhy = (q: Question): Moment[] =>
+  q.facts.ask === 'most' || q.facts.ask === 'least' ? mostMoments('w', q.facts.things as string[], q.facts.values as number[], q.facts.ask) : graphMoments('w', q.facts.things as string[], q.facts.values as number[], num(q.facts, 'index'));
 
 function graphLesson(): Lesson {
   const things = ['apple', 'ball', 'flower'];
@@ -632,7 +645,8 @@ function graphLesson(): Lesson {
   const base = graphScene('x', things, values);
   const opening = graphMoments('x', things, values, 0);
   const first = turnQuestion('M-1-C3', 1, (f) => (f.values as number[])[num(f, 'index')] as number >= 3);
-  const second = turnQuestion('M-1-C3', 1, (f) => num(f, 'index') !== num(first.facts, 'index') && ((f.values as number[])[num(f, 'index')] as number) !== ((first.facts.values as number[])[num(first.facts, 'index')] as number));
+  const second = turnQuestion('M-1-C3', 2, (f) => new Set(f.values as number[]).size === 3 && Math.max(...(f.values as number[])) <= 6);
+  const extra = set(set(calm(base), [...rowIds('x', 0, 2), ...rowIds('x', 1, 2)], { dim: true }), ['xr0_2', 'xr0_3'], { lit: true });
   return {
     parts: [
       show(moment(['A picture graph shows how many. Each picture stands for one.'], 'Each picture stands for 1.', base)),
@@ -642,6 +656,7 @@ function graphLesson(): Lesson {
       show(moment(['The shortest row has the fewest. Balls have the fewest.'], 'The shortest row has the fewest.', set(calm(base), ['xl1', ...rowIds('x', 1, 2)], { lit: true }))),
       turn(first, graphWhy(first)),
       turn(second, graphWhy(second)),
+      show(moment(['How many more apples than balls? Line the rows up, and count the extra apples. Two more.'], '4 apples, 2 balls: 2 more apples', extra)),
       show(moment(['Find the row, then count its pictures.'], 'Find the row. Count it.', calm(base))),
     ],
   };
@@ -672,7 +687,20 @@ function clipMoments(p: string, name: string, n: number, gapFirst: boolean): Mom
   return moments;
 }
 
+// Three rows of clips, as the question draws them: the right one starts at the end and has no gaps.
+function linedWhy(q: Question): Moment[] {
+  if (q.type !== 'choice') throw new Error('M-1-C5 level 2 is a choice question');
+  const rows = q.options.map((option, i): Piece => ({ id: `wo${i}`, look: picture(option), x: 1.5, y: 0.3 + i * 1.8, w: 7, h: 1.5 }));
+  const base = scene(rows);
+  const others = rows.filter((_, i) => i !== q.answerIndex).map((row) => row.id);
+  return [
+    moment(['The clips must start at the end, and touch, with no gaps.'], 'From the end, no gaps.', base),
+    moment(['This row starts at the end, and has no gaps. It is lined up the right way.'], 'Lined up the right way', set(set(base, others, { dim: true }), [`wo${q.answerIndex}`], { lit: true })),
+  ];
+}
+
 function clipWhy(q: Question): Moment[] {
+  if (q.facts.ask === 'lined') return linedWhy(q);
   const name = /long is the (\w+)\?/.exec(q.prompt.text)?.[1] ?? 'pencil';
   return clipMoments('w', name, num(q.facts, 'n'), false);
 }
@@ -681,10 +709,7 @@ function clipLesson(): Lesson {
   const opening = clipMoments('x', 'pencil', 5, true);
   const startScene = calm(opening[0]?.scene ?? scene([]));
   const first = turnQuestion('M-1-C5', 1, (f) => num(f, 'n') >= 3 && num(f, 'n') <= 5);
-  const thingOf = (q: Question): string => /long is the (\w+)\?/.exec(q.prompt.text)?.[1] ?? '';
-  // The facts do not name the thing, so try each longer length and keep the first that measures something else.
-  const longer = [6, 7, 8].map((n) => turnQuestion('M-1-C5', 1, (f) => num(f, 'n') === n));
-  const second = longer.find((q) => thingOf(q) !== thingOf(first)) ?? (longer[0] as Question);
+  const second = turnQuestion('M-1-C5', 2);
   const last = opening.at(-1)?.scene ?? startScene;
   return {
     parts: [
@@ -692,7 +717,9 @@ function clipLesson(): Lesson {
       ...opening.map(show),
       show(moment(['All the clips are the same size, so each one counts as one.'], 'Each clip counts as 1.', calm(last))),
       turn(first, clipWhy(first)),
+      show(moment(['Now look for the row that is lined up the right way.'], 'Which row is lined up the right way?', calm(last))),
       turn(second, clipWhy(second)),
+      show(moment(['How much longer is one thing than another? Take the small number away from the big number.'], 'How much longer? Big number take away small number.', calm(last))),
       show(moment(['Start at the end, leave no gaps, and count the clips.'], 'Start at the end. No gaps. Count.', calm(last))),
     ],
   };

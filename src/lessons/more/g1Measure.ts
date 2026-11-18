@@ -1,7 +1,7 @@
 import { GROUP_WORDS } from '../../content/data/categories';
 import { DAYS, MONTHS, VOTES } from '../../content/data/h1-things';
-import type { Question, Say } from '../../engine/types';
-import { add, alter, art, calm, countAlong, ids, moment, num, numeral, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import type { Question, Say, ShapeName } from '../../engine/types';
+import { add, alter, art, calm, countAlong, ids, moment, num, numeral, picture, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
 
 // Lessons that teach (plan section 16), written in the rich look's style: Grade 1 time, data, length,
@@ -59,7 +59,7 @@ function stepMoments(prefix: string, ring: Ring, start: string, shift: 1 | -1): 
   return [
     moment([`Find ${start}.`], `Find ${start}.`, found),
     moment(shift > 0 ? ['After means the one that comes next. Take one step forward.'] : ['Before means the one just behind it. Take one step back.'], shift > 0 ? 'After: one step forward.' : 'Before: one step back.', set(found, [`${prefix}${at}`], { badge: 'start' })),
-    moment(shift > 0 ? [`After ${start} comes ${answer}.`] : [`Before ${start} comes ${answer}.`], shift > 0 ? `After ${start} comes ${answer}.` : `Before ${start} comes ${answer}.`, stepped),
+    moment(shift > 0 ? [`After ${start} comes ${answer}.`] : [`${answer} comes just before ${start}.`], shift > 0 ? `After ${start} comes ${answer}.` : `${answer} comes just before ${start}.`, stepped),
   ];
 }
 
@@ -69,7 +69,7 @@ function calendarWhy(question: Question, prefix: string, ring: Ring, unit: strin
   return [moment([`Here are the ${unit} in a circle.`], `The ${unit} in order.`, ringScene(prefix, ring)), ...stepMoments(prefix, ring, start, shift)];
 }
 
-function calendarLesson(skillId: string, ring: Ring, opening: Say, openText: string, unit: string, forward: string, back: string): Lesson {
+function calendarLesson(skillId: string, ring: Ring, opening: Say, openText: string, unit: string, forward: string, back: string, more: readonly [string, string][]): Lesson {
   const base = ringScene('x', ring);
   const count = ring.names.length;
   const first = ring.names[0] as string;
@@ -90,13 +90,17 @@ function calendarLesson(skillId: string, ring: Ring, opening: Say, openText: str
       show(moment(['Now let us go back the other way.'], 'Go back the other way.', calm(base))),
       ...stepMoments('x', ring, back, -1).map(show),
       turn(two, calendarWhy(two, 'w', ring, unit)),
+      ...more.map(([said, caption], i) => show(moment([said], caption, set(base, [`x${(ring.names.indexOf(forward) + i + 1) % count}`], { lit: true })))),
       show(moment(['After is one step forward. Before is one step back.'], 'After: forward. Before: back.', calm(base))),
     ],
   };
 }
 
-const daysLesson = (): Lesson => calendarLesson('M-1-C7', DAY_RING, ['A week has seven days. They always come in the same order.'], 'A week has 7 days.', 'days', 'Tuesday', 'Friday');
-const monthsLesson = (): Lesson => calendarLesson('M-1-C8', MONTH_RING, ['A year has twelve months. They always come in the same order.'], 'A year has 12 months.', 'months', 'April', 'September');
+const daysLesson = (): Lesson => calendarLesson('M-1-C7', DAY_RING, ['A week has seven days. They always come in the same order.'], 'A week has 7 days.', 'days', 'Tuesday', 'Friday', [
+  ['Tomorrow is the day after today. Yesterday is the day before today.', 'Tomorrow: one step forward. Yesterday: one step back.'],
+  ['For two days later, take two steps forward.', 'Two days later: two steps.'],
+]);
+const monthsLesson = (): Lesson => calendarLesson('M-1-C8', MONTH_RING, ['A year has twelve months. They always come in the same order.'], 'A year has 12 months.', 'months', 'April', 'September', [['For two months later, take two steps forward.', 'Two months later: two steps.']]);
 
 // ---- M-1-C9 Tally charts ----
 
@@ -142,6 +146,19 @@ function tallyRowMoments(prefix: string, vote: (typeof VOTES)[number], values: r
 function tallyWhy(question: Question): Moment[] {
   const vote = VOTES.find((each) => each.question === question.facts.vote) ?? (VOTES[0] as (typeof VOTES)[number]);
   const values = question.facts.values as number[];
+  if (question.facts.ask === 'most' || question.facts.ask === 'least') {
+    // Which got the most, or the fewest, votes: the row with the most, or the fewest, marks.
+    const most = question.facts.ask === 'most';
+    const want = most ? Math.max(...values) : Math.min(...values);
+    const r = values.indexOf(want);
+    const label = vote.rows[r]?.label ?? '';
+    const start = chartScene('w', vote, values);
+    const row = [`we${r}`, ...ids(`wr${r}m`, want)];
+    return [
+      moment([most ? 'Which got the most votes? Look for the row with the most marks.' : 'Which got the fewest votes? Look for the row with the fewest marks.'], most ? 'Find the most marks.' : 'Find the fewest marks.', start),
+      moment([`The ${label} row has`, { number: want }, want === 1 ? 'mark.' : 'marks.', most ? 'That is the most.' : 'That is the fewest.'], `${label}: ${want}`, point(set(start, row, { lit: true }), `we${r}`)),
+    ];
+  }
   return tallyRowMoments('w', vote, values, num(question.facts, 'index'));
 }
 
@@ -151,16 +168,16 @@ function tallyLesson(): Lesson {
   const chart = chartScene('x', pets, values);
   const valueOf = (f: Record<string, unknown>): number => (f.values as number[])[num(f, 'index')] as number;
   const one = turnQuestion('M-1-C9', 1, (f) => valueOf(f) >= 3 && valueOf(f) <= 4);
-  const two = turnQuestion('M-1-C9', 1, (f) => valueOf(f) >= 7 && f.vote !== one.facts.vote);
+  const two = turnQuestion('M-1-C9', 2, (f) => f.vote !== one.facts.vote);
   return {
     parts: [
       show(moment(['A tally chart counts with little marks. Each vote gets one mark.'], 'One mark for each vote.', chart)),
-      show(moment(['Children voted for their favourite pet.'], 'Favourite pet', set(chart, ['xe0', 'xe1', 'xe2'], { lit: true }))),
+      show(moment(['Children voted for their favorite pet.'], 'Favorite pet', set(chart, ['xe0', 'xe1', 'xe2'], { lit: true }))),
       ...tallyRowMoments('x', pets, values, 0).map(show),
       show(moment(['When we get to five, the mark goes across the other four.'], 'The 5th mark goes across.', point(set(chart, ['xr1m4'], { lit: true }), 'xr1m4'))),
       ...tallyRowMoments('x', pets, values, 1).map(show),
       turn(one, tallyWhy(one)),
-      show(moment(['Count a bundle as five, then count on.'], 'A bundle is 5. Count on.', set(chart, ids('xr1m', 5), { lit: true }))),
+      show(moment(['The row with the most marks got the most votes. Here, cats got the most.'], 'Most marks: most votes.', set(chart, ['xe1', ...ids('xr1m', 6)], { lit: true }))),
       turn(two, tallyWhy(two)),
       show(moment(['Find the row, and count the marks. A bundle is five.'], 'Find the row. Count the marks.', calm(chart))),
     ],
@@ -230,7 +247,7 @@ function towerWhy(question: Question): Moment[] {
 function tallerLesson(): Lesson {
   const drawable = (f: Record<string, unknown>): boolean => (f.options as string[]).every((color) => color in SQUARE);
   const one = turnQuestion('M-1-C12', 1, drawable);
-  const two = turnQuestion('M-1-C12', 2, drawable);
+  const two = turnQuestion('M-1-C12', 2, (f) => drawable(f) && JSON.stringify(f.pairs) !== JSON.stringify(one.facts.pairs));
   const worked = towerMoments('x', [['blue', 'green'], ['red', 'blue']], 'most');
   return {
     parts: [
@@ -240,6 +257,7 @@ function tallerLesson(): Lesson {
       turn(one, towerWhy(one)),
       show(moment(['To find the shortest, line them up the same way, and look at the end.'], 'The shortest is at the end.', calm(last(worked, scene([]))))),
       turn(two, towerWhy(two)),
+      show(moment(['Shorter than is the same clue, turned around. Green is shorter than blue means blue is taller than green.'], 'Green is shorter than blue: blue is taller.', worked[0]?.scene ?? scene([]))),
       show(moment(['Line them up: tallest, middle, shortest.'], 'Tallest, middle, shortest.', calm(last(worked, scene([]))))),
     ],
   };
@@ -278,6 +296,17 @@ function equalMoments(prefix: string, parts: number, equal: boolean): Moment[] {
 }
 
 function equalWhy(question: Question): Moment[] {
+  if (question.facts.ask === 'name' && question.type === 'choice') {
+    // Which shape shows halves (or fourths): the question's own three shapes, and the right one picked out.
+    const parts = num(question.facts, 'parts');
+    const name = parts === 2 ? 'halves' : 'fourths';
+    const base = scene(question.options.map((option, i): Piece => ({ id: `wo${i}`, look: picture(option), x: 0.4 + i * 3.2, y: 1.2, w: 2.8, h: 2.8 })));
+    const others = question.options.map((_, i) => `wo${i}`).filter((_, i) => i !== question.answerIndex);
+    return [
+      moment([`${parts === 2 ? 'Halves are two' : 'Fourths are four'} equal parts. Count the parts, and check they are the same size.`], `${name}: ${parts} equal parts`, base),
+      moment(['This shape has', { number: parts }, `equal parts. It shows ${name}.`], `${parts} equal parts: ${name}`, point(set(set(base, others, { dim: true }), [`wo${question.answerIndex}`], { lit: true }), `wo${question.answerIndex}`)),
+    ];
+  }
   return equalMoments('w', num(question.facts, 'parts'), question.facts.equal === true);
 }
 
@@ -285,20 +314,33 @@ function halvesLesson(): Lesson {
   const fair = equalMoments('x', 2, true);
   const unfair = equalMoments('y', 2, false);
   const rect = (f: Record<string, unknown>): boolean => f.shape === 'rectangle';
-  const one = turnQuestion('M-1-D1', 1, (f) => rect(f) && num(f, 'parts') === 4 && f.equal === true);
-  const two = turnQuestion('M-1-D1', 1, (f) => rect(f) && num(f, 'parts') === 4 && f.equal === false);
+  const one = turnQuestion('M-1-D1', 1, (f) => rect(f) && num(f, 'parts') === 4 && f.equal === false);
+  const two = turnQuestion('M-1-D1', 2);
   const fourths = cutScene('z', 4, true);
+  // Three small shapes: fourths, two parts that are not equal, and halves.
+  const small = (id: string, widths: readonly number[], x0: number): Piece[] => {
+    let x = x0;
+    return widths.map((w, i): Piece => {
+      const piece: Piece = { id: `${id}${i}`, look: { kind: 'cell' }, x: round(x), y: 1.5, w, h: 1.6 };
+      x += w;
+      return piece;
+    });
+  };
+  const three = scene([...small('qa', [0.65, 0.65, 0.65, 0.65], 0.4), ...small('qb', [1.9, 0.7], 3.7), ...small('qc', [1.3, 1.3], 7)]);
   return {
     parts: [
       show(moment(['Equal parts are the same size. Let us learn to spot them.'], 'Equal parts are the same size.', fair[0]?.scene ?? scene([]))),
       ...fair.map(show),
-      show(moment(['Two equal parts are called halves. Each friend gets a fair share.'], 'Two equal parts are halves.', last(fair, scene([])))),
-      ...unfair.map(show),
+      show(moment(['Two equal parts are called halves.'], 'Two equal parts are halves.', last(fair, scene([])))),
+      show(unfair[0] as Moment),
+      ...unfair.slice(2).map(show),
       show(moment(['Four equal parts are called fourths.'], 'Four equal parts are fourths.', set(fourths, ids('zp', 4), { lit: true }))),
       turn(one, equalWhy(one)),
-      show(moment(['If one part is bigger than another, the parts are not equal.'], 'One bigger part: not equal.', calm(last(unfair, scene([]))))),
+      show(moment(['Which shape shows halves? This one has four parts. Those are fourths.'], '4 equal parts: fourths', set(three, ids('qa', 4), { lit: true }))),
+      show(moment(['This one has two parts, but they are not equal. Not halves.'], '2 parts, not equal', set(three, ids('qb', 2), { lit: true }))),
+      show(moment(['This one has two equal parts. It shows halves.'], '2 equal parts: halves', set(three, ids('qc', 2), { lit: true, badge: 'halves' }))),
       turn(two, equalWhy(two)),
-      show(moment(['Equal parts are all the same size.'], 'Equal parts: the same size.', calm(fourths))),
+      show(moment(['Halves are two equal parts. Fourths are four equal parts.'], 'Halves: 2 equal parts. Fourths: 4 equal parts.', calm(fourths))),
     ],
   };
 }
@@ -352,25 +394,57 @@ function closedMoments(prefix: string, form: string, open: boolean): Moment[] {
 }
 
 function closedWhy(question: Question): Moment[] {
+  if (question.facts.ask === 'sides' && question.type === 'choice') {
+    // Which shape has that many sides: the question's own shapes, each with its number of sides, and the right one picked out.
+    const counts = question.facts.options as number[];
+    const n = counts[question.answerIndex] as number;
+    const step = 9.4 / question.options.length;
+    const base = scene(question.options.map((option, i): Piece => ({ id: `wo${i}`, look: picture(option), x: round(0.3 + i * step), y: 1.3, w: round(step - 0.3), h: round(step - 0.3) })));
+    const counted = alter(base, (piece) => ({ ...piece, badge: String(counts[Number(piece.id.slice(2))]) }));
+    const others = question.options.map((_, i) => `wo${i}`).filter((_, i) => i !== question.answerIndex);
+    return [
+      moment(['Count the straight sides of each shape.'], 'Count the sides.', counted),
+      moment(['This shape has', { number: n }, `sides. It is the ${str(question.facts, 'shape')}.`], `${n} sides: the ${str(question.facts, 'shape')}`, point(set(set(counted, others, { dim: true }), [`wo${question.answerIndex}`], { lit: true }), `wo${question.answerIndex}`)),
+    ];
+  }
   return closedMoments('w', str(question.facts, 'shape'), question.facts.open === true);
+}
+
+// A triangle, a square and a circle, each with its sides and corners written under it (hidden until taught).
+function sidesScene(): Scene {
+  const shapes: [ShapeName, string][] = [['triangle', '3 sides, 3 corners'], ['square', '4 sides, 4 corners'], ['circle', 'no sides, no corners']];
+  return scene(
+    shapes.flatMap(([form, label], i): Piece[] => [
+      { id: `s${i}`, look: picture({ kind: 'shape', shape: form, color: 'blue', size: 'm', rotation: 0 }), x: 0.5 + i * 3.2, y: 0.6, w: 2.4, h: 2.4 },
+      { id: `t${i}`, look: text(label), x: 0.1 + i * 3.2, y: 3.4, w: 3.2, h: 0.6, gone: true },
+    ]),
+  );
 }
 
 function closedLesson(): Lesson {
   const shut = closedMoments('x', 'square', false);
   const gap = closedMoments('y', 'square', true);
   const box = (f: Record<string, unknown>): boolean => f.shape === 'square' || f.shape === 'rectangle';
-  const one = turnQuestion('M-1-D2', 3, (f) => box(f) && f.open !== true && f.shape === 'rectangle');
+  const one = turnQuestion('M-1-D2', 1, (f) => f.shape === 'square' || f.shape === 'triangle' || f.shape === 'rectangle');
   const two = turnQuestion('M-1-D2', 3, (f) => box(f) && f.open === true && f.shape === 'rectangle');
+  const sides = sidesScene();
+  const triangle = set(sides, ['s0', 't0'], { lit: true, gone: false });
+  const square = set(calm(triangle), ['s1', 't1'], { lit: true, gone: false });
+  const circle = set(calm(square), ['s2', 't2'], { lit: true, gone: false });
   return {
     parts: [
-      show(moment(['A shape can be closed or open. Let us see how to tell.'], 'Closed or open?', calm(shut[0]?.scene ?? scene([])))),
-      ...shut.map(show),
+      show(moment(['Shapes have sides and corners. Let us count them.'], 'Sides and corners', sides)),
+      show(moment(['A side is a straight edge. Count the sides of the triangle:', { number: 1 }, ',', { number: 2 }, ',', { number: 3 }, '.'], 'A triangle has 3 sides.', set(sides, ['s0'], { lit: true, badge: '3 sides' }))),
+      show(moment(['A corner is where two sides meet. A triangle has three corners too.'], 'A triangle has 3 corners.', triangle)),
+      show(moment(['A square has four sides, and four corners.'], 'A square: 4 sides, 4 corners', square)),
+      show(moment(['A circle is round. It has no straight sides, and no corners.'], 'A circle: no sides, no corners', circle)),
+      turn(one, closedWhy(one)),
+      show(moment(['A shape can also be closed or open. Let us see how to tell.'], 'Closed or open?', calm(shut[0]?.scene ?? scene([])))),
+      ...[shut[0], shut[1], shut[5], shut[6]].flatMap((each) => (each ? [show(each)] : [])),
       show(moment(['Now the same square has a gap.'], 'A square with a gap', calm(gap[0]?.scene ?? scene([])))),
       ...gap.slice(1).map(show),
-      turn(one, closedWhy(one)),
-      show(moment(['A closed shape goes all the way around. An open shape has a gap.'], 'Closed: all the way round. Open: a gap.', calm(last(gap, scene([]))))),
       turn(two, closedWhy(two)),
-      show(moment(['No gap means closed. A gap means open.'], 'No gap: closed. Gap: open.', calm(last(shut, scene([]))))),
+      show(moment(['Count sides and corners. No gap means closed. A gap means open.'], 'No gap: closed. Gap: open.', calm(last(shut, scene([]))))),
     ],
   };
 }
@@ -461,6 +535,7 @@ function patternWhy(question: Question): Moment[] {
 function patternLesson(): Lesson {
   const worked = patternMoments('x', 3, 2);
   const fives = patternMoments('y', 4, 5);
+  const down = alter(patternScene('d', 20, -2), (piece) => (piece.id === 'dbox' ? { ...piece, look: numeral(12), lit: true } : piece.id.startsWith('dj') ? { ...piece, look: text('−2'), gone: false } : piece));
   const one = turnQuestion('M-1-E1', 1, (f) => num(f, 'step') === 2 && num(f, 'start') <= 20 && num(f, 'start') !== 3);
   const two = turnQuestion('M-1-E1', 2, (f) => num(f, 'step') === 10 && num(f, 'start') <= 30);
   return {
@@ -472,6 +547,7 @@ function patternLesson(): Lesson {
       show(moment(['Jumps can be bigger, like five or ten.'], 'Jumps can be 5 or 10.', calm(fives[0]?.scene ?? scene([])))),
       ...fives.slice(1).map(show),
       turn(two, patternWhy(two)),
+      show(moment(['Some patterns go down:', { number: 20 }, ',', { number: 18 }, ',', { number: 16 }, ',', { number: 14 }, '. Each jump takes away two. Next is', { number: 12 }, '.'], '20, 18, 16, 14: take away 2 each time. Next is 12.', down)),
       show(moment(['Look for the jump that stays the same.'], 'Look for the jump.', calm(last(fives, scene([]))))),
     ],
   };
@@ -518,7 +594,7 @@ function sortWhy(question: Question): Moment[] {
   const groups = question.facts.binAttrs as string[];
   return [
     moment(['Take one picture at a time. Ask, what kind of thing is it?'], 'What kind of thing is it?', sortScene('w', words, groups)),
-    ...sortMoments('w', words, kinds, groups, (word, label) => `The ${word} goes with the ${label}.`),
+    ...sortMoments('w', words, kinds, groups, (word, label) => `The ${word} ${word === 'pants' || word === 'grapes' ? 'go' : 'goes'} with the ${label}.`),
   ];
 }
 
@@ -527,7 +603,7 @@ function sortLesson(): Lesson {
   const kinds = ['animals', 'vehicles', 'clothes', 'animals', 'vehicles', 'clothes'];
   const groups = ['animals', 'vehicles', 'clothes'];
   const start = sortScene('x', words, groups);
-  const said: Record<string, string> = { animals: 'an animal', vehicles: 'a vehicle. It takes us places', clothes: 'clothes. We wear it' };
+  const said: Record<string, string> = { animals: 'an animal', vehicles: 'a vehicle. It takes us places', clothes: 'something we wear. It goes with the clothes' };
   const worked = sortMoments('x', words, kinds, groups, (word, label) => `A ${word} is ${said[label] ?? label}.`);
   const one = turnQuestion('M-1-C10', 1, (f) => !(f.binAttrs as string[]).includes('food'));
   const two = turnQuestion('M-1-C10', 2, (f) => (f.binAttrs as string[]).includes('food'));
@@ -540,7 +616,7 @@ function sortLesson(): Lesson {
       ...worked.map(show),
       show(moment(['Now each group holds things of one kind.'], 'Each group holds one kind.', set(calm(done), ids('xi', 6), { lit: true }))),
       turn(one, sortWhy(one)),
-      show(moment(['Food is things we eat, like an apple or bread.'], 'Food: things we eat.', calm(done))),
+      show(moment(['Food means things we eat, like an apple or bread.'], 'Food: things we eat.', calm(done))),
       turn(two, sortWhy(two)),
       show(moment(['One picture at a time. What kind is it? Put it in that group.'], 'One at a time. What kind is it?', calm(done))),
     ],

@@ -32,7 +32,7 @@ function wordPieces(prefix: string, word: string, emoji: string, x: number): Pie
 }
 
 // 'a' or 'an', as said before the word.
-const article = (word: string): string => (/^[aeiou]/.test(word) ? 'This is an' : 'This is a');
+const article = (word: string): string => (word === 'sun' ? 'This is the' : /^[aeiou]/.test(word) ? 'This is an' : 'This is a');
 
 function emojiFor(word: string): string {
   const found = FIRST_SOUNDS.find((each) => each.word === word) ?? CVC_WORDS.find((each) => each.word === word);
@@ -97,9 +97,21 @@ function middleMoments(word: string, emoji: string, prefix: string): Moment[] {
   ];
 }
 
+// The word as the question shows it, with a gap in the middle: say it, listen, and the letter drops in.
+function gapMoments(word: string, emoji: string, prefix: string): Moment[] {
+  const middle = word[1] ?? '';
+  const start = alter(set(scene(wordPieces(prefix, word, emoji, 5)), [`${prefix}l0`, `${prefix}l1`, `${prefix}l2`], { gone: false }), (piece) => (piece.id === `${prefix}l1` ? { ...piece, look: text('_') } : piece));
+  const filled = alter(start, (piece) => (piece.id === `${prefix}l1` ? { ...piece, look: text(middle), lit: true } : piece));
+  return [
+    moment([article(word), { word }, '. Its middle letter is missing.'], `${word[0] ?? ''}_${word[2] ?? ''}`, set(start, [`${prefix}l1`], { lit: true })),
+    moment(['Say', { word }, 'slowly, and listen to the middle.'], `Listen: ${word}`, set(start, [`${prefix}p`], { lit: true })),
+    moment(['The middle letter of', { word }, 'is', { letter: middle }, '.'], `The middle is ${middle}`, filled),
+  ];
+}
+
 function middleWhy(question: Question): Moment[] {
   const word = str(question.facts, 'target');
-  return middleMoments(word, pictureOf(question.stimulus), 'w');
+  return gapMoments(word, pictureOf(question.stimulus), 'w');
 }
 
 export function middleVowelLesson(): Lesson {
@@ -112,8 +124,11 @@ export function middleVowelLesson(): Lesson {
     return piece;
   });
   const vowels: Piece[] = ['a', 'e', 'i', 'o', 'u'].map((letter, i) => ({ id: `v${i}`, look: text(letter), x: 2.5 + i, y: 4.6, lit: true }));
-  const first = turnQuestion('E-K-B3', 1);
-  const second = turnQuestion('E-K-B3', 1, (f) => str(f, 'target')[1] !== str(first.facts, 'target')[1]);
+  const cat = gapMoments('cat', emojiFor('cat'), 'g');
+  // A turn never asks for a word the lesson has just shown, nor lip: its picture is a mouth.
+  const fresh = (f: Record<string, unknown>): boolean => !['pan', 'pin', 'cat', 'lip'].includes(str(f, 'target'));
+  const first = turnQuestion('E-K-B3', 1, fresh);
+  const second = turnQuestion('E-K-B3', 1, (f) => fresh(f) && str(f, 'target')[1] !== str(first.facts, 'target')[1]);
   return {
     parts: [
       show(moment(['Short words often have three sounds: a start, a middle, and an end.'], 'start, middle, end', scene(wordPieces('x', 'pan', emojiFor('pan'), 5)))),
@@ -121,6 +136,7 @@ export function middleVowelLesson(): Lesson {
       show(moment(['Change the middle letter, and you make a new word.'], 'Change the middle letter.', calm(panEnd))),
       show(moment(['With', { letter: 'i' }, 'in the middle,', { word: 'pan' }, 'becomes', { word: 'pin' }, '.'], 'pan becomes pin', toPin)),
       show(moment(['The middle letter is often one of these:', { letter: 'a' }, ',', { letter: 'e' }, ',', { letter: 'i' }, ',', { letter: 'o' }, ', and', { letter: 'u' }, '.'], 'a, e, i, o, u', add(calm(toPin), vowels))),
+      ...cat.map(show),
       turn(first, middleWhy(first)),
       turn(second, middleWhy(second)),
       show(moment(['Say the word slowly, and listen for the middle.'], 'Listen for the middle.', add(calm(toPin), vowels))),

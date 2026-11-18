@@ -151,7 +151,7 @@ function sortWordsWhy(q: Question): Moment[] {
   const done = sortInto(named, words, verbs, false);
   return [
     moment(['Ask for each word: does it name something, or is it something you do?'], words.join('   '), start),
-    moment([...listSay(nouns), nouns.length === 1 ? 'names something. It goes in Naming words.' : 'name things. They go in Naming words.'], `Naming words: ${nouns.join(', ')}`, set(named, ['binN'], { lit: true })),
+    moment([...listSay(nouns), nouns.length === 1 ? 'names a person, an animal, or a thing. It goes in Naming words.' : 'each name a person, an animal, or a thing. They go in Naming words.'], `Naming words: ${nouns.join(', ')}`, set(named, ['binN'], { lit: true })),
     moment([...listSay(verbs), verbs.length === 1 ? 'is something you do. It goes in Action words.' : 'are things you do. They go in Action words.'], `Action words: ${verbs.join(', ')}`, set(done, ['binA'], { lit: true })),
   ];
 }
@@ -164,8 +164,10 @@ export function namingActionLesson(): Lesson {
   const runIn = sortInto(dogIn, words, ['run'], false);
   const ballIn = sortInto(runIn, words, ['dog', 'ball'], true);
   const allIn = sortInto(ballIn, words, ['run', 'jump'], false);
-  const first = turnQuestion('E-1-C1', 1, (f) => !(f.items as unknown[]).includes('dog'));
-  const second = turnQuestion('E-1-C1', 2, (f) => (f.items as unknown[]).some((each) => !(first.facts.items as unknown[]).includes(each)));
+  // The first turn has none of the worked words; the second shares at most one word with the first.
+  const itemsOf = (f: Record<string, unknown>): string[] => (Array.isArray(f.items) ? f.items.map(String) : []);
+  const first = turnQuestion('E-1-C1', 1, (f) => !itemsOf(f).some((each) => words.includes(each)));
+  const second = turnQuestion('E-1-C1', 2, (f) => itemsOf(f).filter((each) => itemsOf(first.facts).includes(each)).length <= 1);
   return {
     parts: [
       show(moment(['Words can name things, or tell what we do.'], 'Naming words and action words', start)),
@@ -179,7 +181,7 @@ export function namingActionLesson(): Lesson {
       show(moment(['Ask: can I do it? If you can do it, it is an action word.'], 'Can I do it?', calm(allIn))),
       turn(first, sortWordsWhy(first)),
       turn(second, sortWordsWhy(second)),
-      show(moment(['Things are naming words. Things you do are action words.'], 'Naming words   Action words', calm(allIn))),
+      show(moment(['People, animals, and things are naming words. Things you do are action words.'], 'Naming words   Action words', calm(allIn))),
     ],
   };
 }
@@ -302,13 +304,20 @@ export function endMarksLesson(): Lesson {
 
 // ---- E-1-C4 Pronouns ----
 
-const PRONOUN_REASON: Record<string, string> = {
-  he: 'That is one boy or man.',
-  she: 'That is one girl or woman.',
-  it: 'That is one thing or animal.',
-  they: 'That is more than one.',
-  we: 'That is a group with me in it.',
+// Who each naming part is, said plainly: "Grandpa is one man."
+const WHO_IS: Record<string, string> = {
+  Dad: 'is one man.',
+  Grandpa: 'is one man.',
+  Ben: 'is one boy.',
+  Mom: 'is one woman.',
+  Nan: 'is one woman.',
+  Kim: 'is one girl.',
+  'The dog': 'is one animal.',
+  'My cat': 'is one animal.',
+  'The ball': 'is one thing.',
 };
+const WHO_ARE: Record<string, string> = { they: 'are more than one.', we: 'means me and someone else.' };
+const PLACE_OF: Record<string, string> = { he: 'his', she: 'her', it: 'its', they: 'their' };
 
 function pronounWhy(q: Question): Moment[] {
   const noun = str(q.facts, 'target');
@@ -316,10 +325,11 @@ function pronounWhy(q: Question): Moment[] {
   if (!entry) throw new Error(`No pronoun entry for ${noun}`);
   const start = scene([{ id: 'n', look: text(noun), x: 2.5, y: 1, w: 5, h: 1.1 }]);
   const swapped = alter(start, (piece) => ({ ...piece, look: text(entry.pronoun), lit: true }));
+  const who = WHO_IS[noun] ?? WHO_ARE[entry.pronoun] ?? 'is just one.';
   const moments = [
-    moment(['Look at', noun, '.'], noun, set(start, ['n'], { lit: true })),
-    moment([PRONOUN_REASON[entry.pronoun] ?? ''], PRONOUN_REASON[entry.pronoun] ?? '', set(start, ['n'], { badge: 'how many?' })),
-    moment(['So', { word: entry.pronoun }, 'can take its place.'], `${noun} → ${entry.pronoun}`, swapped),
+    moment(['Who is it, and how many?'], noun, set(start, ['n'], { lit: true })),
+    moment([noun, who], `${noun} ${who}`, set(start, ['n'], { badge: 'how many?' })),
+    moment(entry.pronoun === 'we' ? ['So we say', { word: 'we' }, '.'] : ['So', { word: entry.pronoun }, `can take ${PLACE_OF[entry.pronoun] ?? 'its'} place.`], `${noun} → ${entry.pronoun}`, swapped),
   ];
   if (str(q.facts, 'relation') === 'pronoun' && q.facts.capital === true) {
     const said = `${entry.pronoun.charAt(0).toUpperCase()}${entry.pronoun.slice(1)} ${entry.then}`;
@@ -344,6 +354,7 @@ export function pronounsLesson(): Lesson {
     { id: 'q3', look: text('they'), x: 7.95, y: 4.4, w: 1.5, h: 0.8 },
   ];
   const withChart = add(calm(he), chart);
+  const us = scene([lineAt('a', 'Mom and I bake.', 1), lineAt('b', 'We bake.', 2.4)]);
   const first = turnQuestion('E-1-C4', 1, (f) => str(f, 'target') !== 'Dad' && str(f, 'target') !== 'Mom');
   const second = turnQuestion('E-1-C4', 2, (f) => str(f, 'target') !== 'Dad' && str(f, 'target') !== str(first.facts, 'target') && PRONOUN_ENTRIES.find((each) => each.noun === str(f, 'target'))?.pronoun !== PRONOUN_ENTRIES.find((each) => each.noun === str(first.facts, 'target'))?.pronoun);
   return {
@@ -356,8 +367,9 @@ export function pronounsLesson(): Lesson {
       show(moment(['One boy or man:', { word: 'he' }, '. One girl or woman:', { word: 'she' }, '.'], 'he   she', set(withChart, ['p0', 'q0', 'p1', 'q1'], { lit: true }))),
       show(moment(['One thing or animal:', { word: 'it' }, '. More than one:', { word: 'they' }, '.'], 'it   they', set(withChart, ['p2', 'q2', 'p3', 'q3'], { lit: true }))),
       turn(first, pronounWhy(first)),
+      show(moment(['When it is me and someone else, we use', { word: 'we' }, '. Mom and I bake. We bake.'], 'Mom and I → We', set(us, ['b'], { lit: true }))),
       turn(second, pronounWhy(second)),
-      show(moment(['Ask: who is it, and how many? Then pick the word.'], 'he   she   it   they', withChart)),
+      show(moment(['Ask: who is it, and how many? Then pick the word.'], 'he   she   it   they   we', withChart)),
     ],
   };
 }
@@ -384,7 +396,7 @@ function agreeWhy(q: Question): Moment[] {
   const subjectIds = tileIds('w', subject.split(' ').length);
   const done = sentence.replace('___', right);
   return [
-    moment(['Look at who is doing it:', subject, '.'], subject, set(start, subjectIds, { lit: true })),
+    moment(['Look at who the sentence is about:', subject, '.'], subject, set(start, subjectIds, { lit: true })),
     moment([one ? 'That is just one.' : 'That is more than one.'], one ? 'one' : 'more than one', set(start, subjectIds, { lit: true, badge: one ? 'one' : 'more' })),
     moment(['So we say:', done], done, fillBlank(start, 'w', sentence, right)),
   ];
@@ -400,6 +412,8 @@ export function agreeLesson(): Lesson {
     return piece;
   });
   const isAre = scene([lineAt('a', 'The dog is happy.', 1), lineAt('b', 'The dogs are happy.', 2.4)]);
+  const wasWere = scene([lineAt('a', 'The dog was at home.', 1), lineAt('b', 'The dogs were at home.', 2.4)]);
+  const hasHave = scene([lineAt('a', 'The dog has a ball.', 1), lineAt('b', 'The dogs have a ball.', 2.4)]);
   const first = turnQuestion('E-1-C5', 1, (f) => !str(f, 'target').includes('runs') && !str(f, 'target').startsWith('The dog'));
   const second = turnQuestion('E-1-C5', 2, (f) => SUBJECTS_ONE.includes(str(f, 'subject')) !== SUBJECTS_ONE.includes(str(first.facts, 'subject')));
   return {
@@ -411,8 +425,10 @@ export function agreeLesson(): Lesson {
       show(moment(['For more than one, the action word has no', { letter: 's' }, '.'], 'run has no s', set(two, ['w2'], { lit: true }))),
       show(moment(['Is and are work the same way. One dog is happy. Two dogs are happy.'], 'is   are', set(isAre, ['a', 'b'], { lit: true }))),
       turn(first, agreeWhy(first)),
+      show(moment(['Was and were work the same way. One dog was at home. Two dogs were at home.'], 'was   were', set(wasWere, ['a', 'b'], { lit: true }))),
+      show(moment(['So do has and have. One dog has a ball. Two dogs have a ball.'], 'has   have', set(hasHave, ['a', 'b'], { lit: true }))),
       turn(second, agreeWhy(second)),
-      show(moment(['Look at who is doing it first: one, or more than one?'], 'One or more?', calm(two))),
+      show(moment(['First look at who the sentence is about: one, or more than one?'], 'One or more?', calm(two))),
     ],
   };
 }
@@ -483,20 +499,20 @@ export function properNounsLesson(): Lesson {
   const rex = set(set(start, ['a0', 'a2', 'dog'], { dim: true }), ['a1', 'rex'], { lit: true, gone: false });
   const rexBadge = set(rex, ['a1'], { badge: 'Rex' });
   const place = scene([
-    { id: 'a1', look: art('🏙️'), x: 4.2, y: 0.5, w: 1.6, h: 1.6 },
-    { id: 'dog', look: text('city'), x: 2, y: 3.7, w: 2.2, h: 0.9 },
-    { id: 'rex', look: text('Ohio'), x: 5.8, y: 3.7, w: 2.2, h: 0.9 },
+    { id: 'a1', look: art('🏠'), x: 4.2, y: 0.5, w: 1.6, h: 1.6 },
+    { id: 'dog', look: text('street'), x: 1.6, y: 3.7, w: 2.6, h: 0.9 },
+    { id: 'rex', look: text('Elm Street'), x: 5.2, y: 3.7, w: 3.6, h: 0.9 },
   ]);
-  const first = turnQuestion('E-1-C7', 1, (f) => str(f, 'target') !== 'Rex' && str(f, 'target') !== 'Ohio');
-  const second = turnQuestion('E-1-C7', 1, (f) => !['Rex', 'Ohio', str(first.facts, 'target')].includes(str(f, 'target')));
+  const first = turnQuestion('E-1-C7', 1, (f) => str(f, 'target') !== 'Rex' && str(f, 'target') !== 'Elm Street');
+  const second = turnQuestion('E-1-C7', 1, (f) => !['Rex', 'Elm Street', str(first.facts, 'target')].includes(str(f, 'target')));
   return {
     parts: [
-      show(moment(['A noun names a person, a place, or a thing.'], 'Nouns', start)),
+      show(moment(['A noun is a naming word. It names a person, a place, or a thing.'], 'Nouns', start)),
       show(moment(['The word', { word: 'dog' }, 'could be any dog at all.'], 'dog: any dog', anyDog)),
       show(moment(['Rex is the name of one special dog.'], 'Rex: one special dog', rexBadge)),
       show(moment(['Dog is a common noun. Rex is a proper noun.'], 'common: dog   proper: Rex', set(calm(rex), ['dog', 'rex'], { lit: true }))),
       show(moment(['A proper noun starts with a capital letter, like', { letter: 'R' }, 'in Rex.'], 'Rex starts with a capital R', set(calm(rex), ['rex'], { lit: true, badge: 'R' }))),
-      show(moment(['A place can have a special name too. City could be any city. Ohio is one place.'], 'city   Ohio', set(place, ['rex'], { lit: true }))),
+      show(moment(['A place can have a special name too. Street could be any street. Elm Street is one special street.'], 'street   Elm Street', set(place, ['rex'], { lit: true }))),
       turn(first, properWhy(first)),
       turn(second, properWhy(second)),
       show(moment(['A special name is a proper noun, with a capital letter.'], 'common: any one   proper: a special name', calm(place))),
@@ -544,7 +560,7 @@ export function questionWordsLesson(): Lesson {
   const chartOnly = scene(chart);
   const example = add(chartOnly, askScene('___ is the cat?', 'The cat is under the bed.').pieces);
   const filled = set(fillBlank(example, 'q', '___ is the cat?', 'Where'), ['c2', 'p2'], { lit: true });
-  const first = turnQuestion('E-1-C8', 1, (f) => str(f, 'target') !== '___ is the cat?');
+  const first = turnQuestion('E-1-C8', 1, (f) => str(f, 'target') !== '___ is the cat?' && !str(f, 'target').includes('color'));
   const second = turnQuestion('E-1-C8', 2, (f) => QUESTIONS.find((each) => each.question === str(f, 'target'))?.word === 'When');
   return {
     parts: [
@@ -566,9 +582,9 @@ export function questionWordsLesson(): Lesson {
 // ---- E-1-C9 Joining words: and, but, or ----
 
 const JOIN_REASON: Record<string, string> = {
-  and: 'The two go together.',
-  but: 'The two ideas are different.',
-  or: 'It gives a choice.',
+  and: 'Both parts are true together.',
+  but: 'The two parts do not match.',
+  or: 'You pick one.',
 };
 const JOIN_RULE: Record<string, string> = {
   and: 'And joins things that go together.',
@@ -667,10 +683,10 @@ export function charactersLesson(): Lesson {
   return {
     parts: [
       show(moment(['Characters are the people or animals in a story.'], 'Characters: who is in it', start)),
-      show(moment(['Tom has a red ball. His dog runs after it.'], 'Tom and his dog', set(start, ['l0', 'l2'], { lit: true }))),
+      show(moment(['Tom has a red ball. He kicks it to the park. His dog runs after it.'], 'Tom and his dog', set(start, ['l0', 'l1', 'l2'], { lit: true }))),
       show(moment(['So Tom and his dog are the characters.'], 'The characters: Tom and his dog', both)),
       show(moment(['The setting is where the story happens.'], 'Setting: where it happens', calm(people))),
-      show(moment(['He kicks it to the park. So the park is the setting.'], 'The setting: the park', place)),
+      show(moment(['Tom kicks the ball to the park. So the park is the setting.'], 'The setting: the park', place)),
       show(moment(['Who is in it? Where is it? Look back at the story to find out.'], 'Who? Where?', calm(place))),
       turn(first, lookBackWhy(first, null)),
       turn(second, lookBackWhy(second, null)),
@@ -694,6 +710,24 @@ function lastWhy(q: Question): Moment[] {
   ];
 }
 
+// Putting three things in order: find each one in the story, from the top down.
+function orderWhy(q: Question): Moment[] {
+  if (q.type !== 'order') throw new Error(`${q.skillId} turn is not an order`);
+  const story = sentencesOf(stimulusOf(q));
+  const events = q.answerOrder.map((index) => valueOf(q.items[index]));
+  const marks: Piece[] = ['first', 'next', 'last'].map((word, i) => ({ id: `m${i}`, look: text(word), x: 0.1, y: 3.3 + i * 0.75, w: 1.2, h: 0.55, gone: true }));
+  const start = scene([...lines('l', story, 0.2, 9.6), ...marks, ...lines('e', events, 1.4, 8.4, 3.3).map((piece) => ({ ...piece, gone: true }))]);
+  const steps = ['First:', 'Next:', 'Last:'];
+  let now = start;
+  return [
+    moment(['Look back at the story. It tells things in order, from the top down.'], 'Look back at the story.', set(start, tileIds('l', story.length), { lit: true })),
+    ...events.map((event, i) => {
+      now = set(set(calm(now), [`m${i}`, `e${i}`], { gone: false, lit: true }), [`l${bestSentence(story, event)}`], { lit: true });
+      return moment([steps[i] ?? '', event], `${steps[i] ?? ''} ${event}`, now);
+    }),
+  ];
+}
+
 export function retellLesson(): Lesson {
   const ben = G1_STORIES[2];
   if (!ben) throw new Error('No story');
@@ -704,8 +738,10 @@ export function retellLesson(): Lesson {
   const nextStep = set(set(calm(firstStep), ['m1'], { gone: false, lit: true }), ['l1'], { lit: true });
   const lastStep = set(set(calm(nextStep), ['m2'], { gone: false, lit: true }), ['l2'], { lit: true });
   const all = calm(lastStep);
-  const first = turnQuestion('E-1-D3', 2, (f) => !str(f, 'id').startsWith('g1s3'));
-  const second = turnQuestion('E-1-D3', 2, (f) => !str(f, 'id').startsWith('g1s3') && str(f, 'id') !== str(first.facts, 'id'));
+  // Not the worked story, and not the zoo story: its last event is worded unlike the story.
+  const fresh = (f: Record<string, unknown>): boolean => !str(f, 'id').startsWith('g1s3') && !str(f, 'id').startsWith('g1s8');
+  const first = turnQuestion('E-1-D3', 1, fresh);
+  const second = turnQuestion('E-1-D3', 2, (f) => fresh(f) && str(f, 'id').split('-')[0] !== str(first.facts, 'id').split('-')[0]);
   return {
     parts: [
       show(moment(['To retell a story, we say what happened first, next, and last.'], 'First, next, last', start)),
@@ -713,8 +749,8 @@ export function retellLesson(): Lesson {
       show(moment(['Next, he milks the cow.'], 'Next: he milks the cow.', nextStep)),
       show(moment(['Last, he gets eggs for lunch.'], 'Last: he gets eggs for lunch.', lastStep)),
       show(moment(['The story tells things in order, from the top down.'], 'In order, from the top', set(all, ['l0', 'l1', 'l2', 'l3'], { lit: true }))),
-      show(moment(['What happened last is near the end of the story.'], 'Last is near the end.', set(all, ['m2', 'l2'], { lit: true }))),
-      turn(first, lastWhy(first)),
+      show(moment(['The last thing Ben does is near the end of the story.'], 'Last is near the end.', set(all, ['m2', 'l2'], { lit: true }))),
+      turn(first, orderWhy(first)),
       turn(second, lastWhy(second)),
       show(moment(['First, next, last. Retell it in order.'], 'First, next, last', all)),
     ],

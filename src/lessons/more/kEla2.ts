@@ -246,7 +246,16 @@ function pluralWhy(question: Question): Moment[] {
   const one = str(question.facts, 'target');
   const many = bool(question.facts, 'many');
   const thing = countable(one);
-  const count = many ? (typeof question.facts.count === 'number' ? num(question.facts, 'count') : 3) : 1;
+  if (typeof question.facts.count !== 'number') {
+    // Written only, no picture: look at how each word ends. The word asked for is said last.
+    const x = 5 - ((one.length + 1) * 0.75) / 2;
+    const words = scene([...letterRow('a', thing.many, x, 1.4, 0.75), ...letterRow('b', one, x, 3.2, 0.75)]);
+    const ends = set(words, [`a${one.length}`], { lit: true });
+    const manySaid = moment([{ word: thing.many }, 'ends with', { letter: 's' }, ', so it means more than one.'], `${thing.many}: more than one`, set(ends, letterIds('a', thing.many), { lit: true }));
+    const oneSaid = moment([{ word: one }, 'has no', { letter: 's' }, 'at the end, so it means just one.'], `${one}: just one`, set(calm(words), letterIds('b', one), { lit: true }));
+    return [moment(['Look at the end of each word.'], 'Look at the ends.', ends), ...(many ? [oneSaid, manySaid] : [manySaid, oneSaid])];
+  }
+  const count = many ? num(question.facts, 'count') : 1;
   const start = scene([...pictures('p', thing.emoji, count), ...pluralWord('w', one)]);
   const counted = set(start, Array.from({ length: count }, (_, i) => `p${i}`), { lit: true });
   if (!many) {
@@ -274,7 +283,7 @@ export function pluralLesson(): Lesson {
   const frogs = scene([...pictures('f', frog.emoji, 2), ...pluralWord('v', 'frog')]);
   const frogsS = set(frogs, ['vs'], { gone: false, lit: true });
   const one = turnQuestion('E-K-D3', 1, (f) => bool(f, 'many'));
-  const two = turnQuestion('E-K-D3', 2, (f) => !bool(f, 'many') && str(f, 'target') !== str(one.facts, 'target'));
+  const two = turnQuestion('E-K-D3', 2, (f) => !bool(f, 'many') && !['ball', 'frog', str(one.facts, 'target')].includes(str(f, 'target')));
   return {
     parts: [
       show(moment(['A word can tell us if there is one thing, or more than one.'], 'One, or more than one?', start)),
@@ -378,8 +387,9 @@ export function questionWordsLesson(): Lesson {
   const who = step(placed, 0);
   const what = step(who, 1);
   const where = step(what, 2);
-  const one = turnQuestion('E-K-D5', 3, (f) => answerOf(str(f, 'target')).kind === 'where');
-  const two = turnQuestion('E-K-D5', 3, (f) => answerOf(str(f, 'target')).kind === 'who');
+  const fresh = (f: Record<string, unknown>): boolean => !['girl', 'ball', 'school'].includes(str(f, 'target'));
+  const one = turnQuestion('E-K-D5', 3, (f) => fresh(f) && answerOf(str(f, 'target')).kind === 'where');
+  const two = turnQuestion('E-K-D5', 3, (f) => fresh(f) && answerOf(str(f, 'target')).kind === 'who');
   return {
     parts: [
       show(moment(['We ask questions with special words: who, what, and where.'], 'Who? What? Where?', start)),
@@ -463,7 +473,7 @@ function realWhy(question: Question): Moment[] {
   return [
     moment(['Listen.', sentence], sentence, read),
     moment(['Could this really happen?'], 'Could it really happen?', read),
-    moment(entry.real ? ['Yes, it could. So the answer is Real.'] : ['No, it could not. So it is', { word: 'make-believe' }, '.'], entry.real ? 'Real' : 'Make-believe', answer),
+    moment(entry.real ? ['Yes, it could. So it is real.'] : ['No, it could not. So it is', { word: 'make-believe' }, '.'], entry.real ? 'Real' : 'Make-believe', answer),
   ];
 }
 
@@ -486,7 +496,8 @@ export function realLesson(): Lesson {
       show(moment(['Could a dog really read a book? No! So it is', { word: 'make-believe' }, '.'], 'Make-believe', make)),
       show(moment(['Ask yourself: could this really happen?'], 'Could it really happen?', calm(make))),
       turn(one, realWhy(one)),
-      show(moment(['Things can be make-believe too. A ball can not talk.'], 'A ball can not talk.', set(realScene('⚽', 'A ball can talk.'), ['make', 'pic'], { lit: true }))),
+      show(moment(['Things can be make-believe too. Listen. A ball can talk.'], 'A ball can talk.', set(realScene('⚽', 'A ball can talk.'), ['say'], { lit: true }))),
+      show(moment(['Could a ball really talk? No! So it is', { word: 'make-believe' }, '.'], 'Make-believe', set(realScene('⚽', 'A ball can talk.'), ['make', 'pic'], { lit: true }))),
       turn(two, realWhy(two)),
       show(moment(['If it could really happen, it is real. If not, it is', { word: 'make-believe' }, '.'], 'Real, or make-believe.', calm(start))),
     ],
@@ -807,7 +818,7 @@ function orderWhy(question: Question): Moment[] {
   return [
     moment(['What happens first? Then what? What happens last?'], 'First, next, last?', orderScene(sequence, shown)),
     ...done.moments,
-    moment(['First the', { word: a ?? '' }, ', next the', { word: b ?? '' }, ', and last the', { word: c ?? '' }, '.'], `${a ?? ''}, ${b ?? ''}, ${c ?? ''}`, calm(done.end)),
+    moment(['So the order is:', { word: a ?? '' }, ',', { word: b ?? '' }, ', and then', { word: c ?? '' }, '.'], `${a ?? ''}, ${b ?? ''}, ${c ?? ''}`, calm(done.end)),
   ];
 }
 
@@ -894,8 +905,10 @@ export function actionLesson(): Lesson {
   const emojis = [action('sleep').emoji, action('swim').emoji];
   const worked = actionMoments('swim', emojis, 1);
   const start = actionScene('swim', emojis);
-  const one = turnQuestion('E-K-D7', 1, (f) => str(f, 'target') !== 'swim');
-  const two = turnQuestion('E-K-D7', 2, (f) => str(f, 'target') !== 'swim' && str(f, 'target') !== str(one.facts, 'target'));
+  // Only words that are read the way they are spelled: never ski, surf, row, walk or ride.
+  const plain = (f: Record<string, unknown>): boolean => ['run', 'lift', 'sleep'].includes(str(f, 'target'));
+  const one = turnQuestion('E-K-D7', 1, plain);
+  const two = turnQuestion('E-K-D7', 2, (f) => plain(f) && str(f, 'target') !== str(one.facts, 'target'));
   return {
     parts: [
       show(moment(['An action word tells what someone does.'], 'An action word tells what someone does.', start)),
@@ -912,29 +925,41 @@ export function actionLesson(): Lesson {
 // ---- E-K-E7 Read and answer ----
 // Read a sentence, then answer who did it by tapping a picture.
 
-function whoMoments(sentence: string, ask: string, target: string, emojis: readonly string[], right: number): Moment[] {
+// `other` is the second character in the sentence, when it has one: then the child must tell who does it from who gets it.
+function whoMoments(sentence: string, ask: string, target: string, emojis: readonly string[], right: number, other?: string): Moment[] {
   const words = sentence.split(' ');
   const start = scene([...wordRow('w', words, 0.5, 1), ...pictureRow(emojis, 2.4)]);
   const read = set(start, words.map((_, i) => `w${i}`), { lit: true });
   const at = tileOf(sentence, target);
   const found = set(pickPicture(start, right, emojis.length), [`w${at}`], { lit: true });
-  return [
-    moment(['Read the sentence.', sentence], sentence, read),
-    moment([ask, 'Look back at the sentence to find out.'], ask, set(calm(read), [`w${at}`], { lit: true })),
-    moment(['The sentence tells us: the', { word: target }, '.'], `The ${target}.`, found),
-  ];
+  const out = [moment(['Read the sentence.', sentence], sentence, read)];
+  if (other === undefined) {
+    out.push(moment([ask, 'Look back at the sentence to find out.'], ask, set(calm(read), [`w${at}`], { lit: true })));
+  } else {
+    const otherAt = tileOf(sentence, other);
+    const doer = at < otherAt ? target : other;
+    const getter = at < otherAt ? other : target;
+    out.push(moment(['The', { word: doer }, 'and the', { word: getter }, 'are both in the sentence.'], `${doer} and ${getter}`, set(calm(read), [`w${at}`, `w${otherAt}`], { lit: true })));
+    out.push(moment(['The', { word: doer }, 'is the one doing it. The', { word: getter }, 'is the one it is done to.'], `${doer} does it.`, set(calm(read), [`w${Math.min(at, otherAt)}`], { lit: true })));
+    out.push(moment([ask], ask, set(calm(read), [`w${at}`], { lit: true })));
+  }
+  out.push(moment(['The sentence tells us: the', { word: target }, '.'], `The ${target}.`, found));
+  return out;
 }
 
 function whoWhy(question: Question): Moment[] {
   const sentence = str(question.facts, 'story');
-  return whoMoments(sentence, str(question.facts, 'ask'), str(question.facts, 'target'), optionEmojis(question), rightIndex(question));
+  const other = WHO_SENTENCES.find((each) => each.sentence === sentence)?.others[0]?.word;
+  return whoMoments(sentence, str(question.facts, 'ask'), str(question.facts, 'target'), optionEmojis(question), rightIndex(question), other);
 }
 
 export function whoLesson(): Lesson {
   const sentence = 'The frog hops on a log.';
   const emojis = ['🦆', '🐸'];
   const worked = whoMoments(sentence, 'Who hops?', 'frog', emojis, 1);
-  const used = (f: Record<string, unknown>): boolean => str(f, 'story') !== sentence && WHO_SENTENCES.some((each) => each.sentence === str(f, 'story'));
+  const pair = 'The dog chases the cat.';
+  const chase = whoMoments(pair, 'Who chases?', 'dog', ['🐱', '🐶'], 1, 'cat');
+  const used = (f: Record<string, unknown>): boolean => ![sentence, pair].includes(str(f, 'story')) && WHO_SENTENCES.some((each) => each.sentence === str(f, 'story'));
   const one = turnQuestion('E-K-E7', 1, used);
   const two = turnQuestion('E-K-E7', 2, used);
   return {
@@ -944,8 +969,10 @@ export function whoLesson(): Lesson {
       show(moment(['The duck is not in the sentence, so it is not the answer.'], 'The duck is not in it.', set(calm(last(worked)), ['p0'], { dim: true }))),
       show(moment(['The answer is right there in the sentence.'], 'The answer is in the sentence.', calm(last(worked)))),
       turn(one, whoWhy(one)),
+      show(moment(['Sometimes two are in the sentence. Then we ask who does it.'], 'Two in the sentence: who does it?', calm(chase[0]?.scene ?? scene([])))),
+      ...shows(chase),
       turn(two, whoWhy(two)),
-      show(moment(['Read the sentence, then look back to find the answer.'], 'Look back to find the answer.', calm(last(worked)))),
+      show(moment(['Read the sentence, then look back to find the answer.'], 'Look back to find the answer.', calm(last(chase)))),
     ],
   };
 }
@@ -955,22 +982,39 @@ export function whoLesson(): Lesson {
 
 const sentencesOf = (passage: string): string[] => passage.split(/(?<=\.)\s+/);
 
-function heardWhy(question: Question, passage: string, ask: string): Moment[] {
+const wordsOf = (line: string): string[] => line.toLowerCase().replace(/[^a-z ]/g, '').split(' ').filter(Boolean);
+
+// The sentence of the passage that answers the question: it names the answer and shares the most words with the question.
+function answerSentence(passage: string, ask: string, target: string): string | undefined {
+  const asked = wordsOf(ask);
+  const naming = sentencesOf(passage).filter((each) => each.toLowerCase().includes(target.toLowerCase()));
+  const score = (line: string): number => wordsOf(line).filter((word) => asked.includes(word)).length;
+  return naming.reduce<string | undefined>((best, each) => (best === undefined || score(each) > score(best) ? each : best), undefined);
+}
+
+// `also` is another character in the story that is offered as a wrong answer.
+function heardWhy(question: Question, passage: string, ask: string, also?: string): Moment[] {
   const target = str(question.facts, 'target');
   const emojis = optionEmojis(question);
   const start = scene(pictureRow(emojis, 1.6));
+  const heard = answerSentence(passage, ask, target);
+  const picked = pickPicture(start, rightIndex(question), emojis.length);
   return [
     moment(['Listen again.', ...sentencesOf(passage)], 'Listen again.', start),
     moment([ask], ask, start),
-    moment(['The answer is:', { word: target }, '.'], target, pickPicture(start, rightIndex(question), emojis.length)),
+    ...(also === undefined ? [] : [moment(['The', { word: also }, 'is in the story too. So we listen for who did it.'], `The ${also} is in it too.`, start)]),
+    heard === undefined ? moment(['The answer is:', { word: target }, '.'], target, picked) : moment(['We heard:', heard, 'So the answer is', { word: target }, '.'], target, picked),
   ];
 }
 
-function storyOf(question: Question): { text: string; ask: string } {
+function storyOf(question: Question): { text: string; ask: string; also?: string } {
   const [id, part] = str(question.facts, 'id').split('-');
   const story = K_STORIES.find((each) => each.id === id);
   if (!story) throw new Error(`No story ${id ?? ''}`);
-  return { text: story.text, ask: part === 'who' ? story.who.ask : story.where.ask };
+  if (part !== 'who') return { text: story.text, ask: story.where.ask };
+  // A wrong answer that is in the story too, such as the shark the fish swam away from.
+  const also = story.who.answers.slice(1).find((each) => story.text.toLowerCase().includes(each.name))?.name;
+  return { text: story.text, ask: story.who.ask, ...(also === undefined ? {} : { also }) };
 }
 
 export function storyLesson(): Lesson {
@@ -988,15 +1032,17 @@ export function storyLesson(): Lesson {
   const where = set(calm(who), ['where', 'whereL'], { gone: false, lit: true });
   const fresh = (f: Record<string, unknown>): boolean => !str(f, 'id').startsWith(`${story.id}-`);
   const one = turnQuestion('E-K-E2', 1, fresh);
-  const two = turnQuestion('E-K-E2', 2, (f) => fresh(f) && str(f, 'id').split('-')[0] !== str(one.facts, 'id').split('-')[0]);
+  // Never the snowman story's "where": the boy goes inside, and the story never says home.
+  const two = turnQuestion('E-K-E2', 2, (f) => fresh(f) && str(f, 'id') !== 'k8-where' && str(f, 'id').split('-')[0] !== str(one.facts, 'id').split('-')[0]);
   return {
     parts: [
       show(moment(['A story has characters and a setting.'], 'Characters and setting', start)),
       show(moment(['Listen.', ...sentencesOf(story.text)], 'Listen.', listening)),
-      show(moment(['The pig is in the story. The pig is a character.'], 'The pig is a character.', who)),
+      show(moment(['The pig and the farmer are in the story. They are the characters.'], 'The pig and the farmer are characters.', who)),
       show(moment(['The story happens on the farm. The farm is the setting.'], 'The farm is the setting.', where)),
       show(moment(['Characters are who is in the story. The setting is where it happens.'], 'Who is in it? Where is it?', set(calm(where), ['whoL', 'whereL'], { lit: true }))),
-      turn(one, heardWhy(one, storyOf(one).text, storyOf(one).ask)),
+      show(moment(['Now a question. Who rolled in the mud? The pig did.'], 'Who rolled in the mud? The pig.', set(calm(where), ['who'], { lit: true }))),
+      turn(one, heardWhy(one, storyOf(one).text, storyOf(one).ask, storyOf(one).also)),
       turn(two, heardWhy(two, storyOf(two).text, storyOf(two).ask)),
       show(moment(['Listen for who is in the story, and where it happens.'], 'Who? Where?', calm(where))),
     ],
@@ -1023,7 +1069,8 @@ export function factLesson(): Lesson {
   const hive = set(calm(honey), ['bee'], { lit: true });
   const asked = set(calm(hive), ['p2'], { gone: false });
   const answer = pickPicture(asked, 1, 3);
-  const fresh = (f: Record<string, unknown>): boolean => !str(f, 'id').startsWith(`${bees.id}-`);
+  // Never the two questions whose right picture is the whole animal (a squirrel for its tail, a fish for its fins).
+  const fresh = (f: Record<string, unknown>): boolean => !str(f, 'id').startsWith(`${bees.id}-`) && !['kf6-1', 'kf4-2'].includes(str(f, 'id'));
   const one = turnQuestion('E-K-E3', 1, fresh);
   const two = turnQuestion('E-K-E3', 2, (f) => fresh(f) && str(f, 'id').split('-')[0] !== str(one.facts, 'id').split('-')[0]);
   return {

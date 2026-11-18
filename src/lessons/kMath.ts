@@ -163,7 +163,10 @@ export function teenLesson(): Lesson {
   // Each counter appears as it is counted.
   const filling = fill.moments.map((each, i) => ({ ...each, scene: set(each.scene, ids('xt', i + 1), { gone: false }) }));
   const first = turnQuestion('M-K-D1', 1, (f) => f.ask === 'number' && num(f, 'ones') >= 2 && num(f, 'ones') <= 5);
-  const second = turnQuestion('M-K-D1', 1, (f) => f.ask === 'number' && num(f, 'ones') >= 6);
+  // The second turn is the next level's form of the question: "10 plus 6 equals what?".
+  const second = turnQuestion('M-K-D1', 2, (f) => f.ask === 'number' && num(f, 'ones') >= 6);
+  const thirteen = teenMoments(3, 'x').at(-1)?.scene ?? frame;
+  const written = add(set(calm(thirteen), ['xn1', 'xn2'], { gone: true }), [{ id: 'xsum', look: text('10 + 3 = 13'), x: 2.5, y: 4.2, w: 5, h: 1.2, lit: true }]);
   return {
     parts: [
       show(moment(['A ten-frame has ten boxes.'], 'A ten-frame has 10 boxes.', frame)),
@@ -172,6 +175,7 @@ export function teenLesson(): Lesson {
       ...teenMoments(3, 'x').map((each) => show(each)),
       show(moment(['Every teen number is ten and some more.'], 'A teen number is 10 and some more.', calm(teenMoments(3, 'x').at(-1)?.scene ?? frame))),
       turn(first, teenWhy(first)),
+      show(moment(['We can write it with plus:', { number: 10 }, 'plus', { number: 3 }, 'equals', { number: 13 }, '.'], '10 + 3 = 13', written)),
       turn(second, teenWhy(second)),
       show(moment(['Fill the ten first, then count on from ten.'], 'Fill the ten, then count on.', calm(teenMoments(3, 'x').at(-1)?.scene ?? frame))),
     ],

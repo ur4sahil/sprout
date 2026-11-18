@@ -5,7 +5,7 @@ import type { EnoughPair } from '../../content/data/h1-things';
 import { ENOUGH_PAIRS, LINE_ANIMALS } from '../../content/data/h1-things';
 import { generateFrom, generatorFor } from '../../content/registry';
 import type { Level, Question, Say } from '../../engine/types';
-import { COLS, add, alter, art, calm, countAlong, group, ids, moment, num, numeral, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import { COLS, add, alter, art, calm, countAlong, group, ids, moment, num, numeral, picture, pointAt, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
 
 // Kindergarten Math lessons for counting and comparing (plan section 16): A.2 to A.13 and B.1 to B.5.
@@ -331,7 +331,9 @@ export function countBackLesson(): Lesson {
   });
   const blastOff = set(withoutHand(now), ['rocket'], { y: 0, lit: true });
   const first = turnQuestion('M-K-A12', 1, (f) => num(f, 'start') !== 7);
-  const second = turnQuestion('M-K-A12', 2, (f) => (num(f, 'blankIndex') === 1 || num(f, 'blankIndex') === 2) && num(f, 'start') <= 15);
+  // A different row from the worked example, with a different answer from the first turn.
+  const firstAnswer = rowValues(first.facts)[num(first.facts, 'blankIndex')];
+  const second = turnQuestion('M-K-A12', 2, (f) => (num(f, 'blankIndex') === 1 || num(f, 'blankIndex') === 2) && num(f, 'start') <= 15 && num(f, 'start') !== 7 && rowValues(f)[num(f, 'blankIndex')] !== firstAnswer);
   return {
     parts: [
       show(moment(['Counting back means going down, one number at a time.'], 'Count back: go down by 1.', base)),
@@ -472,22 +474,30 @@ export function findTo20Lesson(): Lesson {
   const four = set(calm(start), ['ao'], { lit: true });
   const seventeen = set(calm(start), ['bt', 'bo'], { gone: false, lit: true });
   const alike = scene([...digits('c', 12, 2.2, 1.6), ...digits('d', 21, 6, 1.6)]);
+  // Two numbers side by side, with some of their parts lit.
+  const pair = (left: number, right: number, lit: string[]): Scene => set(scene([...digits('e', left, 2.2, 1.6), ...digits('f', right, 6, 1.6)]), lit, { lit: true });
   const first = turnQuestion('M-K-A9', 1, (f) => num(f, 'target') !== 14 && num(f, 'target') !== 17);
   const second = turnQuestion('M-K-A9', 3, (f) => num(f, 'target') !== 12 && num(f, 'target') !== num(first.facts, 'target'));
   return {
     parts: [
-      show(moment(['Numbers from', { number: 11 }, 'to', { number: 19 }, 'have two digits.'], '11 to 19 have two digits.', start)),
+      show(moment(['Numbers from', { number: 11 }, 'to', { number: 19 }, 'are written with two numbers, side by side.'], '11 to 19: two numbers, side by side.', start)),
       show(moment(['This is', { number: 14 }, '.'], '14', fourteen)),
       show(moment(['The one in front means one ten.'], 'The 1 means one ten.', ten)),
-      show(moment(['We hear', { number: 4 }, 'in', { number: 14 }, ', so a', { number: 4 }, 'comes next.'], 'We hear 4, so 4 comes next.', four)),
+      show(moment(['Listen to the start of the word:', { number: 14 }, '. We hear', { number: 4 }, ', so a', { number: 4 }, 'comes after the one.'], 'We hear 4, so 4 comes after the 1.', four)),
       show(moment(['In', { number: 17 }, ', we hear', { number: 7 }, '. So it is a one, then a', { number: 7 }, '.'], '17: a 1, then a 7', seventeen)),
-      show(moment(['Listen to the end of the number. It tells you the second digit.'], 'The end of the number tells the second digit.', calm(seventeen))),
+      show(moment(['The number we hear at the start of the word is written second, after the one.'], 'The number we hear is written second.', calm(seventeen))),
+      show(moment([{ number: 13 }, 'and', { number: 15 }, 'sound a little different, but they work the same way.'], '13 and 15 work the same way.', pair(13, 15, []))),
+      show(moment([{ number: 13 }, 'is a one, then a', { number: 3 }, '.', { number: 15 }, 'is a one, then a', { number: 5 }, '.'], '13: 1 then 3. 15: 1 then 5.', pair(13, 15, ['eo', 'fo']))),
+      show(moment([{ number: 11 }, 'and', { number: 12 }, 'are special. We just have to know them.'], '11 and 12 are special.', pair(11, 12, []))),
+      show(moment([{ number: 11 }, 'is a one, then a one.'], '11: 1 then 1', pair(11, 12, ['et', 'eo']))),
+      show(moment([{ number: 12 }, 'is a one, then a two.'], '12: 1 then 2', pair(11, 12, ['ft', 'fo']))),
+      show(moment([{ number: 20 }, 'is a two, then a zero.'], '20: 2 then 0', scene(digits('g', 20, 4.2, 1.6).map((piece) => ({ ...piece, lit: true }))))),
       turn(first, findWhy(first)),
       show(moment(['Be careful with numbers that look alike.'], 'Some numbers look alike.', alike)),
       show(moment([{ number: 12 }, 'starts with a one.'], '12 starts with 1.', set(alike, ['ct', 'co'], { lit: true }))),
       show(moment([{ number: 21 }, 'starts with a two. It is a different number.'], '21 starts with 2.', set(alike, ['dt', 'do'], { lit: true }))),
       turn(second, findWhy(second)),
-      show(moment(['Listen to the number, then check both digits.'], 'Listen, then check both digits.', calm(alike))),
+      show(moment(['Listen to the number. Then check the number in front, and the number after it.'], 'Listen, then check both numbers.', calm(alike))),
     ],
   };
 }
@@ -545,6 +555,12 @@ export function numberWordsLesson(): Lesson {
   });
   const shown = calm(now);
   const high = chart('y', 6, false);
+  let later = alter(high, (piece) => ({ ...piece, gone: true }));
+  const highStart = later;
+  const revealHigh: Moment[] = [6, 7, 8, 9, 10].map((value) => {
+    later = set(calm(later), chartRow('y', value, false), { gone: false, lit: true });
+    return moment(['This word says', { number: value }, '.'], `${numberWord(value)} is ${value}`, later);
+  });
   const first = turnQuestion('M-K-A10', 1, (f) => num(f, 'n') >= 2);
   const second = turnQuestion('M-K-A10', 3, (f) => num(f, 'n') >= 6);
   return {
@@ -554,7 +570,8 @@ export function numberWordsLesson(): Lesson {
       show(moment(['The words for', { number: 2 }, 'and', { number: 3 }, 'both start with', { letter: 't' }, '. Look at the whole word.'], 'two and three both start with t', set(shown, ['xw2', 'xw3'], { lit: true }))),
       show(moment(['The words for', { number: 4 }, 'and', { number: 5 }, 'both start with', { letter: 'f' }, '.'], 'four and five both start with f', set(shown, ['xw4', 'xw5'], { lit: true }))),
       turn(first, wordWhy(first)),
-      show(moment(['Here are the words for', { number: 6 }, 'to', { number: 10 }, '.'], 'six to ten', high)),
+      show(moment(['Now the words for', { number: 6 }, 'to', { number: 10 }, '.'], 'six to ten', highStart)),
+      ...revealHigh.map(show),
       show(moment(['The words for', { number: 6 }, 'and', { number: 7 }, 'both start with', { letter: 's' }, '.'], 'six and seven both start with s', set(high, ['yw6', 'yw7'], { lit: true }))),
       turn(second, wordWhy(second)),
       show(moment(['Read the whole word, then find its number.'], 'Read the whole word.', calm(high))),
@@ -659,6 +676,8 @@ export function tallyLesson(): Lesson {
   const four = alter(scene(tallyPieces('z', 7, 2.7, 2)), (piece) => (['zm4', 'zm5', 'zm6'].includes(piece.id) ? { ...piece, gone: true } : piece));
   const bundled = set(four, ['zm4'], { gone: false });
   const seven = tallyCount('z', 7);
+  // Two bundles, for the bigger numbers of the top level.
+  const ten = scene(tallyPieces('t', 10, 2.7, 2));
   const first = turnQuestion('M-K-A13', 1, (f) => num(f, 'n') >= 3);
   const second = turnQuestion('M-K-A13', 2, (f) => num(f, 'n') >= 8);
   return {
@@ -672,6 +691,8 @@ export function tallyLesson(): Lesson {
       show(moment(['Count a bundle as five, then count on by ones.'], 'A bundle is 5. Count on.', calm(last(seven)))),
       turn(first, tallyCount('w', num(first.facts, 'n'))),
       turn(second, tallyCount('w', num(second.facts, 'n'))),
+      show(moment(['Here are two bundles. We count bundles by fives.'], 'Count bundles by 5s.', set(ten, ids('tm', 5), { lit: true }))),
+      show(moment([{ number: 5 }, ',', { number: 10 }, '. Two bundles make', { number: 10 }, '. Then count on by ones.'], '5, 10. Two bundles make 10.', set(ten, ids('tm', 10), { lit: true }))),
       show(moment(['One mark for each thing, and every bundle is five.'], 'Every bundle is 5.', calm(last(seven)))),
     ],
   };
@@ -724,22 +745,37 @@ function equalWhy(question: Question): Moment[] {
   return [...paired.moments, counts, leftOver('w', a, b, of, paired.end)[0] as Moment, moment(['No. The groups are not equal.'], 'No. They are not equal.', last(leftOver('w', a, b, of, paired.end)))];
 }
 
+// "Which group has more?": line the two groups up, find the ones with no partner, and show the group asked for.
+function moreWhy(question: Question): Moment[] {
+  if (question.type !== 'choice') throw new Error(`${question.skillId} is not a choice`);
+  const [a, b] = numbers(question.facts, 'values') as [number, number];
+  const of = thing(str(question.facts, 'thing'));
+  const most = question.facts.ask === 'most';
+  const paired = pairUp('w', a, b, of);
+  const extra = leftOver('w', a, b, of, paired.end)[0] as Moment;
+  const wanted = most ? Math.max(a, b) : Math.min(a, b);
+  // The question's own two pictures, with the right one lit.
+  const options = scene(question.options.map((option, i): Piece => ({ id: `wo${i}`, look: picture(option), x: 0.5 + i * 5, y: 1.5, w: 4, h: 1.2, ...(i === question.answerIndex ? { lit: true } : { dim: true }) })));
+  return [...paired.moments, extra, moment(['So the group of', { number: wanted }, most ? 'has more.' : 'has fewer.'], `The group of ${wanted} has ${most ? 'more' : 'fewer'}.`, options)];
+}
+
 export function moreFewerEqualLesson(): Lesson {
   const star = thing('star');
   const apple = thing('apple');
   const stars = pairUp('x', 3, 5, star);
   const apples = pairUp('y', 4, 4, apple);
   const equal = (f: Record<string, unknown>): boolean => f.ask === 'equal';
-  const first = turnQuestion('M-K-B1', 3, (f) => equal(f) && numbers(f, 'values')[0] === numbers(f, 'values')[1] && (numbers(f, 'values')[0] ?? 0) >= 3);
-  const second = turnQuestion('M-K-B1', 3, (f) => equal(f) && numbers(f, 'values')[0] !== numbers(f, 'values')[1] && (numbers(f, 'values')[0] ?? 0) >= 3 && f.thing !== first.facts.thing);
+  // First the question a child meets first, "Which group has more?", then "Are the groups equal?".
+  const first = turnQuestion('M-K-B1', 1, (f) => f.ask === 'most' && Math.min(...numbers(f, 'values')) >= 2 && !(numbers(f, 'values').includes(3) && numbers(f, 'values').includes(5)) && f.thing !== 'star' && f.thing !== 'apple');
+  const second = turnQuestion('M-K-B1', 3, (f) => equal(f) && numbers(f, 'values')[0] !== numbers(f, 'values')[1] && (numbers(f, 'values')[0] ?? 0) >= 3 && f.thing !== first.facts.thing && f.thing !== 'apple');
   return {
     parts: [
       show(moment(['One group can have more, fewer, or the same as another.'], 'More, fewer, or the same', pairScenes('x', 3, 5, star).apart)),
       ...stars.moments.slice(1).map(show),
       ...leftOver('x', 3, 5, star, stars.end).map(show),
+      turn(first, moreWhy(first)),
       ...apples.moments.map(show),
       show(moment(['Every apple has a partner. The groups are equal.'], 'Every apple has a partner: equal.', set(apples.end, [...ids('ya', 4), ...ids('yb', 4)], { lit: true }))),
-      turn(first, equalWhy(first)),
       show(moment(['Equal means the same number. Not equal means one group has more.'], 'Equal means the same number.', calm(apples.end))),
       turn(second, equalWhy(second)),
       show(moment(['Line them up. If every one has a partner, the groups are equal.'], 'Line them up and find partners.', calm(stars.end))),
@@ -822,7 +858,7 @@ export function orderNumbersLesson(): Lesson {
     parts: [
       show(moment(['Numbers have an order. Smaller numbers come first when we count.'], 'Smaller numbers come first.', opening[0]?.scene ?? last(opening))),
       show(moment(['Let us put', { number: 4 }, ',', { number: 2 }, 'and', { number: 5 }, 'in order, smallest first.'], 'Put 4, 2, 5 in order.', opening[0]?.scene ?? last(opening))),
-      ...opening.slice(1).map(show),
+      ...opening.map(show),
       show(moment(['The smallest is on the left. The biggest is on the right.'], 'Smallest on the left.', calm(last(opening)))),
       turn(first, orderWhy(first)),
       show(moment(['Bigger numbers work the same way.'], 'Bigger numbers too.', bigger[0]?.scene ?? last(bigger))),

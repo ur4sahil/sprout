@@ -83,7 +83,7 @@ function readMoments(time: Time): Moment[] {
   }
   return [
     moment(['Find the long hand. It points straight down, to', { number: 6 }, '. That means half past.'], 'Long hand: on 6', long),
-    moment(['The short hand is halfway between', { number: time.hour }, 'and', { number: nextHour(time.hour) }, '. It has gone past', { number: time.hour }, '.'], `Short hand: just past ${time.hour}`, short),
+    moment(['The short hand is halfway between', { number: time.hour }, 'and', { number: nextHour(time.hour) }, '. It has gone past', { number: time.hour }, '.'], `Short hand: between ${time.hour} and ${nextHour(time.hour)}`, short),
     said,
   ];
 }
@@ -107,6 +107,7 @@ function tellTimeLesson(): Lesson {
       turn(one, readMoments({ hour: num(one.facts, 'hour'), minute: num(one.facts, 'minute') })),
       show(moment(['Now the long hand has gone halfway around the clock.'], 'Halfway around', clockScene({ hour: 7, minute: 30 }))),
       ...half.map(show),
+      show(moment(['We write half past seven like this:', { number: 7 }, ', then', { number: 30 }, '.'], '7:30 is half past 7.', set(calm(last(half, start)), ['t'], { lit: true }))),
       turn(two, readMoments({ hour: num(two.facts, 'hour'), minute: num(two.facts, 'minute') })),
       show(moment(['The short hand tells the hour. Long hand up is o\'clock. Long hand down is half past.'], "Up: o'clock. Down: half past.", calm(last(half, start)))),
     ],
@@ -134,9 +135,9 @@ function matchOne(from: Scene, time: Time, clock: number, card: number): Moment[
   const read: Say =
     time.minute === 0
       ? ['Look at this clock. The long hand is on', { number: 12 }, ', and the short hand is on', { number: time.hour }, '.']
-      : ['Look at this clock. The long hand is on', { number: 6 }, ', and the short hand is just past', { number: time.hour }, '.'];
+      : ['Look at this clock. The long hand is on', { number: 6 }, ', and the short hand is halfway between', { number: time.hour }, 'and', { number: nextHour(time.hour) }, '.'];
   return [
-    moment(read, time.minute === 0 ? `Long hand on 12, short hand on ${time.hour}` : `Long hand on 6, short hand past ${time.hour}`, looked),
+    moment(read, time.minute === 0 ? `Long hand on 12, short hand on ${time.hour}` : `Long hand on 6, short hand between ${time.hour} and ${nextHour(time.hour)}`, looked),
     moment(['That is', { time }, '. So this card goes with it.'], written(time), set(paired(looked, clock, card), [`k${clock}`], { lit: true })),
   ];
 }
@@ -166,7 +167,8 @@ function matchClocksLesson(): Lesson {
   const halfCards: Time[] = [halves[1] as Time, halves[2] as Time, halves[0] as Time];
   const again = matchScene(halves.map(clockVisual), halfCards);
   const near = set(again, ['k0', 'k1'], { lit: true });
-  const down = set(paired(again, 1, 0), ['k1'], { lit: true });
+  const up = set(paired(again, 0, 2), ['k0'], { lit: true });
+  const down = set(paired(up, 1, 0), ['k1'], { lit: true });
   const one = turnQuestion('M-1-C6', 1);
   const two = turnQuestion('M-1-C6', 2);
   return {
@@ -178,6 +180,7 @@ function matchClocksLesson(): Lesson {
       show(moment(['One card is left. This clock shows', { time: times[2] as Time }, ', so the card fits.'], written(times[2] as Time), third)),
       turn(one, matchWhy(one)),
       show(moment(['Now look. On two of these clocks, the short hand is near', { number: 4 }, '.'], 'Two clocks near 4', near)),
+      show(moment(['This long hand points up, to', { number: 12 }, '. That is', { time: halves[0] as Time }, '.'], written(halves[0] as Time), up)),
       show(moment(['This long hand points down, to', { number: 6 }, '. That is', { time: halves[1] as Time }, '.'], written(halves[1] as Time), down)),
       show(moment(['So check both hands, every time.'], 'Check both hands.', calm(down))),
       turn(two, matchWhy(two)),
@@ -194,7 +197,7 @@ const CENTS: Record<CoinName, number> = { penny: 1, nickel: 5, dime: 10, quarter
 const COIN_SIZE: Record<CoinName, number> = { penny: 1.5, nickel: 1.66, dime: 1.4, quarter: 1.9 };
 const LOOKS: Record<CoinName, string> = {
   penny: 'It is the only brown coin.',
-  nickel: 'It is silver, with a smooth edge.',
+  nickel: 'It is silver, and bigger than a penny.',
   dime: 'It is silver, and it is the smallest coin.',
   quarter: 'It is silver, and it is the biggest coin.',
 };
@@ -265,7 +268,7 @@ function coinsWhy(question: Question): Moment[] {
   const all = coinsScene(ask === 'value' ? COINS : []);
   const found = set(all, [`coin-${name}`], { lit: true });
   const out: Moment[] = [
-    moment([`Look at the coin. ${LOOKS[name]}`], 'Look at its colour and its size.', found),
+    moment([`Look at the coin. ${LOOKS[name]}`], 'Look at its color and its size.', found),
     moment([`So it is a ${name}.`], `a ${name}`, set(found, [`name-${name}`], { lit: true })),
   ];
   if (ask === 'value') out.push(moment([`A ${name} is worth`, { cents: CENTS[name] }, '.'], `${name}: ${CENTS[name]}¢`, point(set(found, [`name-${name}`, `worth-${name}`], { lit: true }), `worth-${name}`)));
@@ -292,7 +295,7 @@ function coinsLesson(): Lesson {
       ...dime.map(show),
       ...quarter.map(show),
       turn(one, coinsWhy(one)),
-      show(moment(['To know a coin, look at its colour, and its size.'], 'Look at colour and size.', all)),
+      show(moment(['To know a coin, look at its color, and its size.'], 'Look at color and size.', all)),
       turn(two, coinsWhy(two)),
       show(moment(['A bigger coin is not always worth more. Look at the dime and the nickel.'], 'Bigger is not always worth more.', compare)),
       show(moment(['The dime is smaller. But', { number: 10 }, 'is more than', { number: 5 }, ', so the dime is worth more.'], '10¢ is more than 5¢', set(compare, ['coin-nickel', 'name-nickel', 'worth-nickel'], { lit: undefined }))),

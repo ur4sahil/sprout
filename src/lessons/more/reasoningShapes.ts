@@ -201,8 +201,16 @@ function matrixWhy(question: Question): Moment[] {
   const facts = question.facts;
   const blank = numberOf(facts, 'blank');
   const [rowAttr, colAttr] = rightCode(question);
+  const count = rowAttr === '1' ? 'one' : 'two';
+  const form = String(facts.shape ?? 'shape');
   const lines: [string, string, string] =
-    question.level === 3
+    question.level === 2
+      ? [
+          `Look across the row with the empty box. Each box in this row has ${count}.`,
+          `Now look down the column. This column is all ${SIZE_WORD[colAttr ?? ''] ?? ''}.`,
+          `So the box needs ${count} ${SIZE_WORD[colAttr ?? ''] ?? ''} ${rowAttr === '1' ? form : (PLURAL[form] ?? `${form}s`)}.`,
+        ]
+      : question.level === 3
       ? [
           `Look across the row with the empty box. This row is ${rowAttr}.`,
           `Now look down the column. This column points ${POINTS[Number(colAttr)] ?? ''}.`,
@@ -220,11 +228,13 @@ export function figureMatrixLesson(): Lesson {
   const cells: Cell[] = [fig('circle', 'red'), fig('circle', 'blue'), fig('square', 'red'), 'blank'];
   const one = gridScene('x', cells, true);
   const solved = filled(one, 'x', 2, 3, fig('square', 'blue'));
-  const arrows: Cell[] = [fig('arrow', 'green', 'm', 0), fig('arrow', 'green', 'm', 90), fig('arrow', 'orange', 'm', 0), 'blank'];
-  const two = gridScene('y', arrows, true);
-  const solvedTwo = filled(two, 'y', 2, 3, fig('arrow', 'orange', 'm', 90));
+  // The next kind the questions ask: rows share how many, columns share the size.
+  const stars = (count: number, size: Size): Visual => ({ kind: 'row', children: Array.from({ length: count }, () => fig('star', 'green', size)) });
+  const counted: Cell[] = [stars(1, 'm'), stars(1, 's'), stars(2, 'm'), 'blank'];
+  const two = gridScene('y', counted, true);
+  const solvedTwo = filled(two, 'y', 2, 3, stars(2, 's'));
   const first = turnQuestion('R-A4', 1);
-  const second = turnQuestion('R-A4', 3);
+  const second = turnQuestion('R-A4', 2, (f) => f.shape !== 'star');
   return {
     parts: [
       show(told('This grid has an empty box. Let us find what goes in it.', light(one, ['xc3']))),
@@ -235,10 +245,12 @@ export function figureMatrixLesson(): Lesson {
       show(told('A square, and blue. A blue square goes in the box.', solved)),
       show(told('Look across the row. Then look down the column.', light(solved, [...rowIds('x', 2, 1), ...colIds('x', 2, 1)]))),
       turn(first, matrixWhy(first)),
-      show(told('Here, every shape is an arrow.', two)),
-      show(told('Look across. This row is orange.', light(two, rowIds('y', 2, 1)))),
-      show(told('Look down. This column points to the right.', light(two, colIds('y', 2, 1)))),
-      show(told('So the box needs an orange arrow, pointing to the right.', solvedTwo)),
+      show(told('Here, every shape is a green star. Look at how many, and how big.', two)),
+      show(told('Look across. The top row has one star in each box.', light(two, rowIds('y', 2, 0)))),
+      show(told('The bottom row has two stars. So the box needs two.', light(two, rowIds('y', 2, 1)))),
+      show(told('Look down. This column is all big.', light(two, colIds('y', 2, 0)))),
+      show(told('This column has a small one. So the box needs small stars.', light(two, colIds('y', 2, 1)))),
+      show(told('Two, and small. Two small stars go in the box.', solvedTwo)),
       turn(second, matrixWhy(second)),
       show(told('Across, then down. The answer must fit both.', light(solvedTwo, [...rowIds('y', 2, 1), ...colIds('y', 2, 1)]))),
     ],
@@ -299,7 +311,7 @@ export function turningShapesLesson(): Lesson {
     parts: [
       show(told('This arrow turns a little each step. Let us see how it turns.', start)),
       show(told('First, it points up.', light(start, ['xs0']))),
-      show(told('Next, it points to the right. It turned a quarter turn, like the hand of a clock.', one)),
+      show(told('Next, it points to the right. It turned one step, the way the hands of a clock go. We call that a quarter turn.', one)),
       show(told('Then it points down. It turned a quarter turn again.', two)),
       show(told('Every step is the same turn. So turn it once more.', three)),
       show(told('Now it points to the left.', done)),
@@ -352,6 +364,9 @@ export function mirrorImagesLesson(): Lesson {
   const same = set(light(flags, ['yp0']), ['yp0'], { crossed: true });
   const upsideDown = set(light(same, ['yp1']), ['yp1'], { crossed: true });
   const right = set(light(upsideDown, ['yp2']), ['yp0', 'yp1'], { dim: true });
+  // The next shape, in front of the mirror, with the hand on the side that faces it. Its mirror picture is left for the child.
+  const bentShape = mirrorScene('z', fig('lShape', 'green'));
+  const bentSide: Piece = { id: 'zside', look: { kind: 'hand' }, x: 1.4 + MIRROR_BOX - 0.5, y: MIRROR_Y + 0.6, w: 0.5, h: 0.6 };
   const first = turnQuestion('R-A6', 1, (f) => f.color !== 'blue');
   const second = turnQuestion('R-A6', 2);
   return {
@@ -360,11 +375,13 @@ export function mirrorImagesLesson(): Lesson {
       show(told('This arrow points at the mirror.', light(arrow, ['xshape']))),
       show(told('The mirror picture points the other way. It flipped.', arrowSeen)),
       show(told('A mirror swaps the two sides. The top stays at the top.', light(arrowSeen, ['xshape', 'xseen']))),
-      turn(first, mirrorWhy(first)),
       show(told('Be careful. Here are three flags. Only one is the mirror picture.', light(flags, ['yp0', 'yp1', 'yp2']))),
       show(told('This one is just the same. It did not flip.', same)),
       show(told('This one is upside down. It turned. It did not flip.', upsideDown)),
       show(told('This one waves the other way, and its top is still at the top. It is the mirror picture.', right)),
+      turn(first, mirrorWhy(first)),
+      show(told('Now a new shape. Find the part that sticks out toward the mirror.', pointAt(light(bentShape, ['zshape']), bentSide))),
+      show(told('In the mirror, that part will stick out the other way.', light(withoutHand(pointAt(bentShape, bentSide)), ['zmirror']))),
       turn(second, mirrorWhy(second)),
       show(told('In a mirror, the sides swap. The top stays on top.', light(right, ['yshape', 'yp2']))),
     ],
@@ -527,13 +544,15 @@ export function paperFoldingLesson(): Lesson {
     parts: [
       show(told('Let us fold a paper, punch a hole, and open it again.', flat)),
       show(told('Fold the paper in half. Now it has two layers.', folded)),
+      show(told('See the thick dark edge? That is the fold.', pointAt(rest(folded), foldSpot()))),
       show(told('Punch a hole. It goes through both layers.', punched)),
       show(told('Now open the paper. Look, two holes!', open)),
       show(told('This hole is where we punched.', pointAt(open, holeSpot(OPEN_X, corner)))),
       show(told('Its twin is across the fold, just as far from the fold.', pointAt(open, holeSpot(OPEN_X, twin('vertical', corner))))),
       show(told('The fold is like a mirror. Every hole gets a twin on the other side.', light(withoutHand(pointAt(open, holeSpot(OPEN_X, corner))), ['xopen']))),
       turn(first, foldingWhy(first)),
-      show(told('This paper is folded the other way. The hole is right next to the fold.', pointAt(acrossPaper, holeSpot(FOLDED_X, middle)))),
+      show(told('This paper is folded the other way. Find the thick dark edge. That is the fold.', pointAt(acrossPaper, foldSpot()))),
+      show(told('The hole is right next to the fold.', pointAt(acrossPaper, holeSpot(FOLDED_X, middle)))),
       show(told('Open it. The twin is right next to the fold too.', acrossOpen)),
       show(told('So the two holes sit close together.', light(acrossOpen, ['yopen']))),
       turn(second, foldingWhy(second)),
@@ -578,6 +597,8 @@ export function patternCompletionLesson(): Lesson {
   const checks: Cell[] = Array.from({ length: 9 }, (_, i): Cell => (i === 4 ? 'blank' : tile((Math.floor(i / 3) + (i % 3)) % 2 === 0 ? 'green' : 'orange')));
   const two = gridScene('y', checks, false);
   const solvedTwo = filled(two, 'y', 3, 4, tile('green'));
+  // Stripes that run down, as many of the questions have them.
+  const down = gridScene('v', Array.from({ length: 9 }, (_, i): Cell => tile(i % 3 === 1 ? 'orange' : 'green')), false);
   const first = turnQuestion('R-A13', 1, (f) => f.blank !== 8);
   const second = turnQuestion('R-A13', 2);
   return {
@@ -588,6 +609,7 @@ export function patternCompletionLesson(): Lesson {
       show(told('The bottom stripe starts with yellow, and yellow.', light(one, rowIds('x', 3, 2)))),
       show(told('So the missing piece is yellow. It finishes the stripe.', solved)),
       show(told('See how the colours go. Then follow them into the gap.', light(solved, rowIds('x', 3, 2)))),
+      show(told('Stripes can go down, too. Find which way the same colour runs.', light(down, colIds('v', 3, 0)))),
       turn(first, completionWhy(first)),
       show(told('This picture is like a checkerboard. The two colours take turns.', two)),
       show(told('Look at the pieces that touch the gap. They are all orange.', light(two, AROUND_MIDDLE.map((i) => `yc${i}`)))),

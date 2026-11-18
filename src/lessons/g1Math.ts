@@ -60,6 +60,33 @@ function hopMoments(prefix: string, known: number, total: number, boxFirst: bool
   return moments;
 }
 
+// A minus sentence with a box: start at the first number and hop back to the number that is left.
+function minusScene(prefix: string, whole: number, left: number): Scene {
+  return alter(equationScene(prefix, whole, left, false), (piece) => (piece.id === `${prefix}plus` ? { ...piece, look: text('−') } : piece));
+}
+
+function hopBackMoments(prefix: string, whole: number, left: number): Moment[] {
+  const missing = whole - left;
+  const start = minusScene(prefix, whole, left);
+  const startPiece = start.pieces.find((piece) => piece.id === `${prefix}n${whole}`);
+  let now = set(start, [`${prefix}n${whole}`, `${prefix}known`], { lit: true });
+  if (startPiece) now = pointAt(now, startPiece);
+  const moments: Moment[] = [
+    moment([{ number: whole }, 'minus what number equals', { number: left }, '?'], `${whole} − ? = ${left}`, set(start, [`${prefix}box`], { lit: true })),
+    moment(['With minus, start at', { number: whole }, ', and count back to', { number: left }, '.'], `Count back to ${left}.`, now),
+  ];
+  for (let hop = 1; hop <= missing; hop += 1) {
+    const at = whole - hop;
+    const piece = now.pieces.find((each) => each.id === `${prefix}n${at}`);
+    now = alter(now, (each) => (each.id === `${prefix}n${at}` ? { ...each, lit: true, badge: String(hop) } : each));
+    if (piece) now = pointAt(now, piece);
+    moments.push(moment([{ number: at }], String(at), now));
+  }
+  const filled = alter(withoutHand(now), (piece) => (piece.id === `${prefix}box` ? { ...piece, look: numeral(missing), lit: true } : piece));
+  moments.push(moment(['We made', { number: missing }, 'hops back. So the missing number is', { number: missing }, '.'], `${whole} − ${missing} = ${left}`, filled));
+  return moments;
+}
+
 function missingWhy(question: Question): Moment[] {
   const blank = str(question.facts, 'blank');
   const total = num(question.facts, 'total');
@@ -69,7 +96,7 @@ function missingWhy(question: Question): Moment[] {
 
 export function missingNumberLesson(): Lesson {
   const opening = hopMoments('x', 3, 7, false);
-  const second = hopMoments('y', 5, 9, false);
+  const second = hopBackMoments('y', 9, 5);
   const fits = (f: Record<string, unknown>): boolean => f.blank === 'b' && num(f, 'total') <= 10 && num(f, 'total') - num(f, 'a') >= 2;
   const first = turnQuestion('M-1-B5', 1, (f) => fits(f) && num(f, 'total') - num(f, 'a') <= 4);
   const later = turnQuestion('M-1-B5', 1, (f) => fits(f) && num(f, 'total') - num(f, 'a') >= 4 && num(f, 'a') !== num(first.facts, 'a'));
@@ -78,10 +105,10 @@ export function missingNumberLesson(): Lesson {
       show(moment(['A box in a number sentence hides a number we do not know yet.'], 'The box hides a number.', calm(equationScene('x', 3, 7, false)))),
       ...opening.map(show),
       turn(first, missingWhy(first)),
-      show(moment(['Here is one more. We count up the same way.'], 'One more, the same way.', calm(equationScene('y', 5, 9, false)))),
-      ...second.map(show),
       turn(later, missingWhy(later)),
-      show(moment(['Start at the number you know, and count up to the total. The hops are the missing number.'], 'Count up. The hops are the missing number.', calm(second.at(-1)?.scene ?? equationScene('y', 5, 9, false)))),
+      show(moment(['A box can hide in a minus sentence too.'], 'A box in a minus sentence', calm(minusScene('y', 9, 5)))),
+      ...second.map(show),
+      show(moment(['Start at the number you know, and hop to the other number. The hops are the missing number.'], 'Count the hops. They are the missing number.', calm(second.at(-1)?.scene ?? minusScene('y', 9, 5)))),
     ],
   };
 }

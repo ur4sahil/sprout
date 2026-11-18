@@ -287,7 +287,9 @@ function subtractPictures5(): Lesson {
     secondText: 'Eat 2. Cross them out.',
   });
   const first = turnQuestion('M-K-C5', 1, (f) => num(f, 'a') === 3 && f.thing !== 'apple');
-  const second = turnQuestion('M-K-C5', 2, (f) => num(f, 'b') >= 2 && f.thing !== first.facts.thing && f.thing !== 'apple');
+  // Not the worked example again, and an answer different from the first turn's.
+  const left = (f: Record<string, unknown>): number => num(f, 'a') - num(f, 'b');
+  const second = turnQuestion('M-K-C5', 2, (f) => num(f, 'b') >= 2 && left(f) >= 2 && left(f) !== left(first.facts) && !(num(f, 'a') === 5 && num(f, 'b') === 2) && f.thing !== first.facts.thing && f.thing !== 'apple');
   const end = last(opening, scene([], AWAY_COLS));
   return {
     parts: [
@@ -356,7 +358,7 @@ function fillMoments(prefix: string, have: number, total: number, look: PieceLoo
     moment([{ number: have }, have === 1 ? 'box is full.' : 'boxes are full.'], `${have} full`, set(start, ids(`${prefix}h`, have), { lit: true })),
     moment(['Let us fill each empty box, and count as we go.'], 'Fill the empty boxes and count.', set(start, ids(`${prefix}c`, need, have), { lit: true })),
     ...filled.moments,
-    moment(['We put in', { number: need }, 'more. Now the frame is full.'], `${need} more fill it.`, set(calm(filled.end), ids(`${prefix}n`, need), { lit: true })),
+    moment(['We put in', { number: need }, 'more. Now the frame is full.'], `${need} more ${need === 1 ? 'fills' : 'fill'} it.`, set(calm(filled.end), ids(`${prefix}n`, need), { lit: true })),
     moment([{ number: have }, ', and', { number: need }, ', make', { number: total }, '.'], `${have} + ${need} = ${total}`, done),
   ];
 }
@@ -401,14 +403,21 @@ function makeFive(): Lesson {
     { id: 'p2', look: text('2+3'), x: 5.5, y: 4.4, w: 2 },
     { id: 'p3', look: text('1+4'), x: 8, y: 4.4, w: 2 },
   ]);
+  // Some questions show a row of dots with no frame: the white dots are the empty places.
+  const row = scene(
+    Array.from({ length: 5 }, (_, i): Piece => ({ id: `r${i}`, look: art(i < 3 ? '⚫' : '⚪'), x: 2.5 + i, y: 2 })),
+    FRAME_COLS,
+  );
   return {
     parts: [
       show(moment(['Let us find how many more make five.'], 'How many more make 5?', calm(opening[0]?.scene ?? end))),
       ...opening.map(show),
       show(moment([{ number: 5 }, 'can be made in many ways:', { number: 4 }, 'and', { number: 1 }, ',', { number: 3 }, 'and', { number: 2 }, ',', { number: 2 }, 'and', { number: 3 }, ',', { number: 1 }, 'and', { number: 4 }, '.'], '4+1, 3+2, 2+3, 1+4', set(pairs, ['p0', 'p1', 'p2', 'p3'], { lit: true }))),
+      show(moment(['Sometimes there is no frame. Then the white dots are the empty places.'], 'White dots are the empty places.', set(row, ['r3', 'r4'], { lit: true }))),
+      show(moment(['Count the white dots:', { number: 1 }, ',', { number: 2 }, '. So', { number: 2 }, 'more make', { number: 5 }, '.'], '2 white dots: 2 more make 5.', set(row, ['r0', 'r1', 'r2', 'r3', 'r4'], { lit: true }))),
       turn(first, makeFiveWhy(first)),
       turn(second, makeFiveWhy(second)),
-      show(moment(['Count the empty boxes. That is how many more make five.'], 'Count the empty boxes.', calm(end))),
+      show(moment(['Count the empty places. That is how many more make five.'], 'Count the empty places.', calm(end))),
     ],
   };
 }
@@ -623,7 +632,7 @@ function plusOrTakeAway(): Lesson {
       show(moment(['Now let us watch a group get smaller.'], 'Watch it get smaller.', calm(taken[0]?.scene ?? end))),
       ...taken.map(show),
       turn(first, signWhy(first)),
-      show(moment(['In a number sentence, look at the end number. Is it bigger or smaller?'], 'Bigger or smaller at the end?', set(calm(last(joined, end)), ['xe0', 'xe4'], { lit: true }))),
+      show(moment(['In a number sentence, look at the last number. Is it bigger or smaller than the first number?'], 'Is the last number bigger or smaller than the first?', set(calm(last(joined, end)), ['xe0', 'xe4'], { lit: true }))),
       turn(second, signWhy(second)),
       show(moment(['Got bigger? Plus. Got smaller? Take away.'], 'Bigger: +. Smaller: −.', calm(end))),
     ],
