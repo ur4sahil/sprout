@@ -111,7 +111,6 @@ export default function Home() {
           <div className={styles.places} role="group" aria-label="Places to go">
             {day?.checkIn && <NavButton icon="compass" label="Check-in" data-check-in={day.checkIn} onClick={() => go(`/diagnostic?subject=${day.checkIn}`)} />}
             {day && day.reviewsDue.length > 0 && <NavButton icon="repeat" label={`Review (${day.reviewsDue.length})`} onClick={() => go('/review')} />}
-            <NavButton icon="bag" label="Mixed bag" onClick={() => go('/mixed')} />
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}

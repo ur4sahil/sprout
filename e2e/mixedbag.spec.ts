@@ -16,7 +16,9 @@ test('the Mixed bag switches topic with every question, by touch, and fits the s
   await stickers.waitFor({ state: 'visible', timeout: 4000 }).catch(() => undefined);
   if (await stickers.isVisible()) await page.getByRole('button', { name: /Yay/ }).click();
   await expect(page.locator('[data-plan-part="mixed"]')).toBeVisible();
-  await page.getByRole('button', { name: 'Mixed bag', exact: true }).click();
+  // It is opened from today's plan only: there is no Mixed bag button in the menu.
+  await expect(page.getByRole('group', { name: 'Places to go' }).getByRole('button', { name: /Mixed bag/ })).toHaveCount(0);
+  await page.locator('[data-plan-part="mixed"]').getByRole('button', { name: /^Mixed bag\./ }).click();
   const titles: string[] = [];
   for (let i = 0; i < 4; i += 1) {
     await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();

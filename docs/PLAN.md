@@ -2626,7 +2626,7 @@ The owner watched the four-beat lessons with his children and found them unusabl
 
 ## 17. Mixed bag (decided by the owner on Nov 18, 2026)
 
-- A "Mixed bag" button on home, any time. It teaches several things at once, not a test: 20 questions, 5 from each of up to 4 topics (ladders), shuffled together, all from skills the child is practising now (started, not mastered). No mastered skills are mixed in.
+- The Mixed bag is a part of today's plan, and opens only from there (owner, Nov 18, 2026: no button in the side menu). It teaches several things at once, not a test: 20 questions, 5 from each of up to 4 topics (ladders), shuffled together, all from skills the child is practising now (started, not mastered). No mastered skills are mixed in.
 - Each answer counts as ordinary practice on its skill: the Skill Score moves as in practice, and a miss shows the "Not quite" walk-through with its steps.
 - No separate report: it feeds the same scores, reviews and dashboard.
 
