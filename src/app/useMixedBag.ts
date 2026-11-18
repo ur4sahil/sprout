@@ -173,7 +173,7 @@ export function useMixedBag(child: Child): MixedBag {
       setRight((n) => n + 1);
       setPhase('correct');
       playSfx('chime');
-      const spoken = speak(praise, child.settings.speechRate);
+      const spoken = speak(praise.say, child.settings.speechRate, 'normal', praise.who);
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) next();
     })();

@@ -220,7 +220,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       self.rightInAll += 1;
       setPhase('correct');
       playSfx('chime');
-      const spoken = speak(praise, child.settings.speechRate);
+      const spoken = speak(praise.say, child.settings.speechRate, 'normal', praise.who);
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) await moveOn().catch(logError);
     })();

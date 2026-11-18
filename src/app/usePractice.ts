@@ -59,14 +59,15 @@ export const FRIEND_PRAISE_AFTER = 3;
 // right answer of a sitting, about one time in three, a cheer in the subject friend's own words instead. Never
 // both. Everything is chosen from the question's seed, so the same question always gets the same words.
 // `last` remembers the friend's last cheer, so it never says the same one twice running.
-export function praiseFor(q: Question, rightBefore: number, who: Who, last: { index: number | null }): Say {
-  const praise = makeRng(q.seed).pick(PRAISE).say;
+// The words, and whose voice says them: the usual praise is Sprout's; a friend's own cheer is in that friend's voice.
+export function praiseFor(q: Question, rightBefore: number, who: Who, last: { index: number | null }): { say: Say; who: Who } {
+  const praise = { say: makeRng(q.seed).pick(PRAISE).say, who: 'sprout' as Who };
   if (rightBefore < FRIEND_PRAISE_AFTER) return praise;
   const roll = makeRng((q.seed ^ 0x2f6b1d) >>> 0);
   if (roll.int(0, 2) !== 0) return praise;
   const line = pickLine(who, 'cheer', last.index, roll);
   last.index = line.index;
-  return line.say;
+  return { say: line.say, who };
 }
 
 // `testing`: the short test on a new skill asks at the skill's hardest level.
@@ -272,7 +273,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         setRight(self.right);
         setPhase('correct');
         // The next question loads once the praise has finished: 1.2 seconds at the earliest, 2.5 at the latest.
-        const spoken = speak(praise, child.settings.speechRate);
+        const spoken = speak(praise.say, child.settings.speechRate, 'normal', praise.who);
         await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
         if (self.alive) afterAnswer();
       })();

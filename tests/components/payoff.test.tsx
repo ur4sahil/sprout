@@ -92,7 +92,9 @@ describe('the friend says the praise sometimes', () => {
   it('never in the first three right answers of a sitting', () => {
     for (let seed = 1; seed < 200; seed += 1) {
       for (let before = 0; before < FRIEND_PRAISE_AFTER; before += 1) {
-        expect(generic.has(JSON.stringify(praiseFor(question(seed), before, 'pip', { index: null })))).toBe(true);
+        const said = praiseFor(question(seed), before, 'pip', { index: null });
+        expect(generic.has(JSON.stringify(said.say))).toBe(true);
+        expect(said.who).toBe('sprout');
       }
     }
   });
@@ -100,8 +102,11 @@ describe('the friend says the praise sometimes', () => {
   it('after that, about one right answer in three, in the friend\'s own words and never both', () => {
     let friend = 0;
     for (let seed = 1; seed <= 600; seed += 1) {
-      const said = JSON.stringify(praiseFor(question(seed), 5, 'pip', { index: null }));
+      const praise = praiseFor(question(seed), 5, 'pip', { index: null });
+      const said = JSON.stringify(praise.say);
       expect(generic.has(said) !== cheers.has(said)).toBe(true);
+      // A friend's own words are said in the friend's own voice; the usual praise in Sprout's.
+      expect(praise.who).toBe(cheers.has(said) ? 'pip' : 'sprout');
       if (cheers.has(said)) friend += 1;
     }
     expect(friend).toBeGreaterThan(150);
@@ -113,7 +118,7 @@ describe('the friend says the praise sometimes', () => {
       const a = praiseFor(question(seed), 4, 'finn', { index: null });
       const b = praiseFor(question(seed), 4, 'finn', { index: null });
       expect(a).toEqual(b);
-      if (generic.has(JSON.stringify(a))) expect(PRAISE.map((p) => p.say)).toContainEqual(a);
+      if (generic.has(JSON.stringify(a.say))) expect(PRAISE.map((p) => p.say)).toContainEqual(a.say);
     }
   });
 
@@ -121,7 +126,7 @@ describe('the friend says the praise sometimes', () => {
     const last = { index: null as number | null };
     let before: string | null = null;
     for (let seed = 1; seed <= 300; seed += 1) {
-      const said = JSON.stringify(praiseFor(question(seed), 10, 'olive', last));
+      const said = JSON.stringify(praiseFor(question(seed), 10, 'olive', last).say);
       if (!generic.has(said)) {
         expect(said).not.toBe(before);
         before = said;
