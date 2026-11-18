@@ -1,6 +1,8 @@
 import { LINES, MILESTONE_WORDS } from '../audio/lines';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
+import { castFor, pickLine } from '../cast';
+import type { Who } from '../cast';
 import { playSfx } from '../audio/sfx';
 import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
@@ -11,12 +13,14 @@ import { makeRng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
 import { SKIP_TEST_QUESTIONS, earnsSkipTest, passedByTest } from '../engine/fastTrack';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
-import type { Question, Response } from '../engine/types';
+import type { Question, Response, Say } from '../engine/types';
 import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { openRepo } from '../storage/index';
 import type { Child, Session, SkillState } from '../storage/schema';
 import { newSkillState } from '../storage/schema';
+import type { GrowthStage } from '../worlds';
+import { growthStage } from '../worlds';
 import type { AnswerOutcome } from './practiceRecord';
 import { newSession, recentKeys, recordAnswer } from './practiceRecord';
 import { TIMING } from './timing';
@@ -32,6 +36,8 @@ export interface Practice {
   state: SkillState | null;
   answered: number; // in this sitting
   run: number; // right answers in a row, in this sitting (a miss ends it)
+  right: number; // right answers in this sitting
+  startStage: GrowthStage; // the skill's plant as the sitting began, for the growth show at the end
   response: Response | null; // the answer so far
   lastResponse: Response | null; // the answer just submitted
   milestone: number | null; // the one being celebrated
@@ -45,6 +51,23 @@ export interface Practice {
 }
 
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+
+// After this many right answers in a sitting, the subject's friend sometimes says the praise instead.
+export const FRIEND_PRAISE_AFTER = 3;
+
+// What is said for a right answer (game feel, phase 5). Usually one of the app's praise lines; from the fourth
+// right answer of a sitting, about one time in three, a cheer in the subject friend's own words instead. Never
+// both. Everything is chosen from the question's seed, so the same question always gets the same words.
+// `last` remembers the friend's last cheer, so it never says the same one twice running.
+export function praiseFor(q: Question, rightBefore: number, who: Who, last: { index: number | null }): Say {
+  const praise = makeRng(q.seed).pick(PRAISE).say;
+  if (rightBefore < FRIEND_PRAISE_AFTER) return praise;
+  const roll = makeRng((q.seed ^ 0x2f6b1d) >>> 0);
+  if (roll.int(0, 2) !== 0) return praise;
+  const line = pickLine(who, 'cheer', last.index, roll);
+  last.index = line.index;
+  return line.say;
+}
 
 // `testing`: the short test on a new skill asks at the skill's hardest level.
 function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: readonly string[], testing = false): Question {
@@ -63,6 +86,8 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
   const [answered, setAnswered] = useState(0);
   const [run, setRun] = useState(0);
   const runSoFar = useRef(0);
+  const [right, setRight] = useState(0);
+  const [startStage, setStartStage] = useState<GrowthStage>(0);
   const [response, setResponse] = useState<Response | null>(null);
   const [lastResponse, setLastResponse] = useState<Response | null>(null);
   const [milestone, setMilestone] = useState<number | null>(null);
@@ -80,8 +105,10 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     pending: AnswerOutcome | null; // an answer worked out but not yet saved, kept for a retry
     crossed: number[];
     testLeft: number; // questions still to come in the short test on a new skill. 0 when there is no test
+    right: number; // right answers in this sitting
+    cheer: { index: number | null }; // the friend's last cheer, so it is not said twice running
     alive: boolean;
-  }>({ state: null, session: null, keys: [], question: null, shownAt: now(), answered: 0, pending: null, crossed: [], testLeft: 0, alive: true });
+  }>({ state: null, session: null, keys: [], question: null, shownAt: now(), answered: 0, pending: null, crossed: [], testLeft: 0, right: 0, cheer: { index: null }, alive: true });
 
   const show = useCallback(
     (next: SkillState, keys: string[]): void => {
@@ -117,8 +144,11 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         self.keys = recentKeys(attempts, skill);
         self.session = newSession(child, skill.id, now());
         self.answered = 0;
+        self.right = 0;
         setState(start);
         setAnswered(0);
+        setRight(0);
+        setStartStage(growthStage(start.score, start.masteredAt !== null));
         setStartedAt(self.session.startedAt);
         show(start, self.keys);
       } catch (error) {
@@ -237,10 +267,12 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         playSfx('chime', runSoFar.current);
         runSoFar.current += 1;
         setRun(runSoFar.current);
+        const praise = praiseFor(q, self.right, castFor(skill.subject), self.cheer);
+        self.right += 1;
+        setRight(self.right);
         setPhase('correct');
-        const praise = makeRng(q.seed).pick(PRAISE);
         // The next question loads once the praise has finished: 1.2 seconds at the earliest, 2.5 at the latest.
-        const spoken = speak(praise.say, child.settings.speechRate);
+        const spoken = speak(praise, child.settings.speechRate);
         await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
         if (self.alive) afterAnswer();
       })();
@@ -268,5 +300,5 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     show(self.state, self.keys);
   }, [phase, show]);
 
-  return { phase, question, state, answered, run, response, lastResponse, milestone, saveError, startedAt, setResponse, submit, gotIt, afterCelebration, keepGoing };
+  return { phase, question, state, answered, run, right, startStage, response, lastResponse, milestone, saveError, startedAt, setResponse, submit, gotIt, afterCelebration, keepGoing };
 }

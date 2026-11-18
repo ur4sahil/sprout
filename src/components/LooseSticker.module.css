@@ -1,0 +1,41 @@
+/* A loose sticker: a white sticker with one corner curled up, ready to peel. */
+.loose {
+  position: relative;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  font: inherit;
+  background: var(--color-surface);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* The curled corner. */
+.loose::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--sticker-curl);
+  height: var(--sticker-curl);
+  border-bottom-right-radius: var(--radius-m);
+  background: linear-gradient(135deg, var(--color-surface) 50%, var(--book-edge) 50%);
+  box-shadow: calc(var(--border) * -1) calc(var(--border) * -1) var(--space-1) var(--book-edge);
+}
+
+.picture {
+  font-size: var(--emoji-l);
+  line-height: 1;
+}
+
+/* In flight it rides over the page. */
+.flying {
+  z-index: var(--layer-fly);
+  box-shadow: var(--shadow-lift);
+}

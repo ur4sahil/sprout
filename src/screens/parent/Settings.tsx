@@ -44,6 +44,10 @@ const RATE = [
   { value: '0.85', label: 'Normal' },
   { value: '1', label: 'Fast' },
 ];
+const HOME_VIEWS = [
+  { value: 'garden', label: 'The garden' },
+  { value: 'list', label: 'A list' },
+];
 // A saved value that is not on the list is still shown, so opening the screen never changes it.
 const withValue = (options: { value: string; label: string }[], value: number, unit: string): { value: string; label: string }[] =>
   options.some((option) => Number(option.value) === value) ? options : [...options, { value: String(value), label: `${value} ${unit}` }];
@@ -125,9 +129,11 @@ export default function Settings() {
           <ToggleField label="Gentle scoring" hint="A wrong answer takes fewer points away." checked={child.settings.gentleScoring} onChange={(gentleScoring) => set({ gentleScoring })} />
           <ToggleField label="Show a timer" checked={child.settings.showTimer} onChange={(showTimer) => set({ showTimer })} />
           <ToggleField label="Calm mode" hint="Movement becomes short fades: no bouncing, no confetti. The iPad's own Reduce Motion setting does the same." checked={child.settings.calm} onChange={(calm) => set({ calm })} />
+          <ToggleField label="Music" hint="Soft music in the garden and while choosing an answer. It dips whenever the voice speaks." checked={child.settings.music} onChange={(music) => set({ music })} />
           {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
           <h3>Today's plan</h3>
           <p className={styles.soft}>The daily goal on the home screen is the plan's questions added up.</p>
+          <SelectField label="Home shows" value={child.settings.homeView} options={HOME_VIEWS} onValue={(value) => set({ homeView: value === 'list' ? 'list' : 'garden' })} />
           {PRACTICE_SUBJECTS.map(({ id, label }) => (
             <ToggleField
               key={id}

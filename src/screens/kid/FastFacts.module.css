@@ -36,7 +36,13 @@
 /* The race: the track with the car, the time, the fact and the pad. */
 .race {
   composes: card from '../../components/shared.module.css';
+  position: relative; /* the sparkles for a right answer sit over it */
   align-items: center;
+}
+
+/* Pushes the friend to the far corner of the top bar. */
+.spacer {
+  flex: 1;
 }
 
 .track {

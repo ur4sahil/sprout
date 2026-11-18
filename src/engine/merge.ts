@@ -15,10 +15,27 @@ export function laterWins<T extends { updatedAt: string }>(local: T, incoming: T
 
 // Children: the later copy wins, and resetAt is the later of the two.
 export function mergeChild(local: Child, incoming: Child): Child {
-  return { ...laterWins(local, incoming), resetAt: later(local.resetAt, incoming.resetAt), levelWeeks: mergeWeeks(local.levelWeeks, incoming.levelWeeks) };
+  return {
+    ...laterWins(local, incoming),
+    resetAt: later(local.resetAt, incoming.resetAt),
+    levelWeeks: mergeWeeks(local.levelWeeks, incoming.levelWeeks),
+    storiesRead: mergeStories(local.storiesRead, incoming.storiesRead),
+    // A sticker pressed on either iPad stays pressed.
+    stickersPlaced: [...new Set([...local.stickersPlaced, ...incoming.stickersPlaced])].sort(),
+  };
 }
 
 // Weekly level snapshots from two devices: every week either has, the later snapshot of a week both have.
+// A story finished on either iPad is finished, on the earlier of the two days.
+export function mergeStories(a: Child['storiesRead'], b: Child['storiesRead']): Child['storiesRead'] {
+  const byId = new Map<string, Child['storiesRead'][number]>();
+  for (const row of [...a, ...b]) {
+    const known = byId.get(row.episodeId);
+    if (!known || row.day < known.day) byId.set(row.episodeId, row);
+  }
+  return [...byId.values()].sort((x, y) => x.day.localeCompare(y.day) || x.episodeId.localeCompare(y.episodeId));
+}
+
 export function mergeWeeks(a: Child['levelWeeks'], b: Child['levelWeeks']): Child['levelWeeks'] {
   const byWeek = new Map<string, Child['levelWeeks'][number]>();
   for (const snapshot of [...a, ...b]) {

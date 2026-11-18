@@ -85,10 +85,13 @@ describe('home', () => {
     expect([...plan.querySelectorAll('[data-subject]')].map((el) => el.getAttribute('data-subject'))).toEqual(['math', 'ela', 'reasoning']);
     expect(screen.getByRole('button', { name: /^Math practice\./ })).toBeTruthy();
     expect((screen.getByRole('button', { name: /^Mixed bag\. Opens after/ }) as HTMLButtonElement).disabled).toBe(true);
-    expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
+    // Home is the garden: its big button starts the path, and the sun is the day's goal.
+    expect(screen.getByRole('region', { name: 'Your garden' })).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Follow the path' })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Start today's plan/ })).toBeNull();
     // The goal is the plan's questions added up: 10 + 10 + 10 + 5. The greyed-out Mixed bag adds nothing.
     expect(screen.getByRole('img', { name: '0 of 35 questions today' })).toBeTruthy();
-    expect(screen.getByText('0 of 35 questions')).toBeTruthy();
+    expect(document.querySelector('[data-sun-count]')?.textContent).toBe('0/35');
     expect(screen.getByRole('button', { name: /^Math$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Language Arts$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Reasoning$/ })).toBeTruthy();
@@ -117,7 +120,7 @@ describe('home', () => {
     expect(plan.querySelector('[data-subject]')?.getAttribute('data-subject')).toBe('math');
   });
 
-  it('the goal ring counts the plan\'s answers and lights a star for each share of the goal', async () => {
+  it('the sun counts the plan\'s answers and fills by the share of the goal', async () => {
     // One skill to practice, nothing else: the goal is that skill's 10 questions.
     await setUp('K', { planPractice: ['math'], planNew: false, planMixed: false });
     const user = openApp();
@@ -127,10 +130,11 @@ describe('home', () => {
       await settled();
     }
     await holdHome();
-    const ring = await screen.findByRole('img', { name: `3 of ${KEEP_GOING_QUESTIONS} questions today` });
-    expect(ring.querySelectorAll('[data-star="lit"]').length).toBe(3);
-    expect(ring.querySelectorAll('[data-star="unlit"]').length).toBe(KEEP_GOING_QUESTIONS - 3);
-    expect(screen.getByRole('button', { name: /^Continue/ })).toBeTruthy();
+    const sun = await screen.findByRole('img', { name: `3 of ${KEEP_GOING_QUESTIONS} questions today` });
+    expect(sun.getAttribute('data-goal-done')).toBe('3');
+    expect(sun.getAttribute('data-share')).toBe(String(Math.round((3 / KEEP_GOING_QUESTIONS) * 100)));
+    expect(sun.querySelector('[data-sun-count]')?.textContent).toBe(`3/${KEEP_GOING_QUESTIONS}`);
+    expect(screen.getByRole('button', { name: 'Keep going' })).toBeTruthy();
   });
 
   it('says the goal is reached once the plan is done', async () => {
@@ -143,8 +147,9 @@ describe('home', () => {
     }
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    expect(await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` })).toBeTruthy();
-    expect(screen.getByText('Goal reached!')).toBeTruthy();
+    const sun = await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` });
+    expect(sun.hasAttribute('data-full')).toBe(true);
+    expect(screen.getByText('Path done!')).toBeTruthy();
   });
 
   it('a mastered skill whose review is due puts Review first in the plan', async () => {
@@ -155,6 +160,96 @@ describe('home', () => {
     const plan = await screen.findByRole('list', { name: "Today's plan" });
     expect(plan.querySelector('[data-plan-part]')?.getAttribute('data-plan-part')).toBe('review');
     expect(screen.getByRole('button', { name: /Review \(1\)/ })).toBeTruthy();
+  });
+});
+
+describe('home as the garden, or as a list', () => {
+  it('the garden is home: its plants are the ready skills, the plan list sits under it, and the menu stays', async () => {
+    await setUp('K', { preReader: false });
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    const garden = screen.getByRole('region', { name: 'Your garden' });
+    expect(document.querySelector('[data-home-view]')?.getAttribute('data-home-view')).toBe('garden');
+    // The list is still there, under the garden, with the same parts.
+    expect([...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'))).toEqual(['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed']);
+    expect(garden.contains(plan)).toBe(false);
+    // The path's stones are the same parts, in the same order (only the stones near the screen are drawn).
+    const parts = ['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed'];
+    const stones = [...garden.querySelectorAll('[data-stone]')];
+    expect(stones.length).toBeGreaterThan(0);
+    for (const stone of stones) expect(stone.getAttribute('data-stone-part')).toBe(parts[Number(stone.getAttribute('data-stone'))]);
+    // Only skills that are ready grow in the garden.
+    const ready = new Set(allGenerators().map((generator) => generator.skillId));
+    const plants = [...garden.querySelectorAll('[data-plant-button]')].map((el) => el.getAttribute('data-skill') ?? '');
+    expect(plants.length).toBeGreaterThan(0);
+    expect(plants.every((id) => ready.has(id))).toBe(true);
+    // The old goal card is gone; the menu is as it was.
+    expect(screen.queryByRole('region', { name: 'Today' })).toBeNull();
+    expect(document.querySelector('[data-today-line]')).toBeNull();
+    for (const name of [/^Math$/, /^Language Arts$/, /^Reasoning$/, /^Stickers$/, /^Pairs$/, /Switch child/]) expect(screen.getByRole('button', { name })).toBeTruthy();
+    // The signpost (jsdom has no screen width, so it is a phone here) sends a child where the menu would.
+    await user.click(screen.getByRole('button', { name: 'Places' }));
+    expect([...document.querySelectorAll('[data-place]')].map((el) => el.getAttribute('data-place'))).toEqual(['subjects:math', 'subjects:ela', 'subjects:reasoning', 'stickers', 'switch']);
+    await user.click(screen.getByRole('button', { name: 'All Reasoning skills' }));
+    expect(await screen.findByRole('heading', { name: /Reasoning/ })).toBeTruthy();
+  });
+
+  it('the big button opens the first part that is not done', async () => {
+    const ELA = 'E-K-A1';
+    await setUp('K', { planPractice: ['math', 'ela'], planNew: false, planMixed: false });
+    await masterAllBut([ADD, ELA]);
+    // The Math part is finished: its ten answers are in today.
+    const store = await repo();
+    const at = NOW.toISOString();
+    await store.saveSkillState({ ...newSkillState('kid-1', ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
+    for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
+      await store.addAttempt({ id: `g-${i}`, childId: 'kid-1', skillId: ADD, sessionId: 's-g', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
+    }
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    expect(await picksOnScreen()).toEqual([ADD, ELA]);
+    expect(document.querySelector(`[data-plan-part][data-skill="${ADD}"]`)?.hasAttribute('data-done')).toBe(true);
+    // Under way, so the button says "Keep going", and it skips the finished part.
+    await user.click(screen.getByRole('button', { name: 'Keep going' }));
+    await screen.findByRole('region', { name: 'Question' });
+    expect(screen.getByRole('heading', { level: 1 }).textContent).toContain(CATALOGUE.find((skill) => skill.id === ELA)?.name ?? '-');
+  });
+
+  it("a plant's Practice button opens that skill, and Lesson opens its lesson", async () => {
+    await setUp('K');
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    await screen.findByRole('list', { name: "Today's plan" });
+    const plant = document.querySelector(`[data-plant-button][data-skill="${ADD}"]`) ?? document.querySelector('[data-plant-button]');
+    const skillId = plant?.getAttribute('data-skill') ?? '';
+    const name = CATALOGUE.find((skill) => skill.id === skillId)?.name ?? '';
+    await user.click(plant as HTMLElement);
+    const card = screen.getByRole('dialog', { name });
+    await user.click(card.querySelector('[data-card-way="practice"]') as HTMLElement);
+    await screen.findByRole('region', { name: 'Question' });
+    await holdHome();
+    await screen.findByRole('list', { name: "Today's plan" });
+    await user.click(document.querySelector(`[data-plant-button][data-skill="${skillId}"]`) as HTMLElement);
+    await user.click(screen.getByRole('dialog', { name }).querySelector('[data-card-way="learn"]') as HTMLElement);
+    await waitFor(() => expect(screen.queryByRole('region', { name: 'Your garden' })).toBeNull());
+    expect(screen.queryByRole('region', { name: 'Question' })).toBeNull();
+  });
+
+  it("with 'A list' chosen, home is the old list: the goal ring, Start today's plan, and no garden", async () => {
+    await setUp('K', { homeView: 'list', preReader: false });
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    const plan = await screen.findByRole('list', { name: "Today's plan" });
+    expect(plan.querySelectorAll('[data-plan-part]')).toHaveLength(5);
+    expect(screen.queryByRole('region', { name: 'Your garden' })).toBeNull();
+    expect(document.querySelector('[data-garden]')).toBeNull();
+    expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
+    const ring = screen.getByRole('img', { name: '0 of 35 questions today' });
+    expect(ring.querySelectorAll('[data-star]').length).toBeGreaterThan(0);
+    expect(screen.getByText('0 of 35 questions')).toBeTruthy();
+    await user.click(screen.getByRole('button', { name: /Start today's plan/ }));
+    await screen.findByRole('region', { name: 'Question' });
   });
 });
 
@@ -514,7 +609,7 @@ describe('Start today\'s plan', () => {
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD]);
-    await user.click(screen.getByRole('button', { name: /Start today's plan/ }));
+    await user.click(screen.getByRole('button', { name: 'Follow the path' }));
     await screen.findByRole('region', { name: 'Question' });
     for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
       await answer(user, wrongValue());
@@ -524,7 +619,7 @@ describe('Start today\'s plan', () => {
     await holdHome();
     const plan = await screen.findByRole('list', { name: "Today's plan" });
     expect(plan.querySelector(`[data-skill="${ADD}"]`)?.hasAttribute('data-done')).toBe(true);
-    expect(await screen.findByText('Plan done!')).toBeTruthy();
+    expect(await screen.findByText('Path done!')).toBeTruthy();
   });
 
   it('with a review due, the plan starts with the review', async () => {
@@ -533,7 +628,7 @@ describe('Start today\'s plan', () => {
     await (await repo()).saveSkillState(mastered(ADD, -1));
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await user.click(await screen.findByRole('button', { name: /Start today's plan/ }));
+    await user.click(await screen.findByRole('button', { name: 'Follow the path' }));
     await screen.findByRole('heading', { name: /Review: Add to 10/ });
   });
 

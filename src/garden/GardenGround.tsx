@@ -1,14 +1,16 @@
 import { PALETTE } from '../visuals/palette';
-import type { HomeScene } from '../worlds/types';
+import type { HomeScene, SeasonLook } from '../worlds/types';
 import styles from './GardenGround.module.css';
 import type { AreaPlace, BedPlace, GardenLayout, Stone } from './layout';
 import { LANE, SLOT } from './layout';
+import { sceneryFor } from './season';
 
 interface Props {
   layout: GardenLayout;
   beds: readonly BedPlace[]; // only the beds near the screen
   stones: readonly Stone[]; // only the stones near the screen
   home: HomeScene;
+  look?: SeasonLook | null; // the season's grass (game feel, phase 8). Left out: the usual colours
 }
 
 const C = PALETTE.garden;
@@ -61,11 +63,12 @@ function landmark(area: AreaPlace, kind: HomeScene['areas']['math']['landmark'])
 // The ground the garden stands on: grass, the lane the path runs along, each area's sign and landmark, the soil
 // of the beds near the screen, and the small stones between today's stepping stones. It is one flat picture
 // under the plants; nothing in it is tapped.
-export default function GardenGround({ layout, beds, stones, home }: Props) {
+export default function GardenGround({ layout, beds, stones, home, look = null }: Props) {
+  const scenery = sceneryFor(look, 'afternoon');
   return (
     <svg className={styles.ground} viewBox={`0 0 ${layout.width} 100`} preserveAspectRatio="none" aria-hidden="true" data-layer="near">
-      <path d={grass(layout.width)} fill={C.grass} />
-      <rect x="0" y={LANE - SLOT / 2} width={layout.width} height={100 - LANE + SLOT / 2} fill={C.grassFront} />
+      <path d={grass(layout.width)} fill={scenery.grass} />
+      <rect x="0" y={LANE - SLOT / 2} width={layout.width} height={100 - LANE + SLOT / 2} fill={scenery.grassFront} />
       {layout.areas.map((area) => (
         <g key={area.subject} data-area={area.subject}>
           {/* the area's sign: a board on a post, with a band in the subject's colour */}

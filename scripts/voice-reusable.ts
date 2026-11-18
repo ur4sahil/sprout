@@ -8,6 +8,7 @@
 import { writeFileSync } from 'node:fs';
 import { factAskSay, factMissSay } from '../src/app/facts';
 import { LINES, MILESTONE_WORDS } from '../src/audio/lines';
+import { LINES as CAST_LINES } from '../src/cast/lines';
 import { PRAISE } from '../src/audio/say';
 import type { Pace } from '../src/audio/voice';
 import { voicePieces, voiceText } from '../src/audio/voice';
@@ -17,7 +18,7 @@ import { FACT_SETS } from '../src/engine/facts';
 import { allLessons } from '../src/lessons';
 import type { Say } from '../src/engine/types';
 
-const [out, lessonOut] = process.argv.slice(2);
+const [out, lessonOut, castOut] = process.argv.slice(2);
 if (!out || !lessonOut) throw new Error('Usage: voice-reusable.ts <out file> <lesson out file>');
 
 const groups: Record<string, Say[]> = {
@@ -76,4 +77,18 @@ for (const [name, says] of Object.entries(groups)) {
 }
 writeFileSync(out, `${[...seen.normal].join('\n')}\n`);
 writeFileSync(lessonOut, `${[...seen.lesson].join('\n')}\n`);
+
+// The cast's own lines (docs/GAME_FEEL.md, phase 3), each in its character's voice: "who<tab>sentence". Sprout's are in
+// the teaching voice, so they need no name.
+if (castOut) {
+  const cast: string[] = [];
+  for (const [who, kinds] of Object.entries(CAST_LINES)) {
+    for (const say of Object.values(kinds).flat()) {
+      const text = voiceText(say);
+      if (text !== null) cast.push(who === 'sprout' ? text : `${who}\t${text}`);
+    }
+  }
+  writeFileSync(castOut, `${[...new Set(cast)].join('\n')}\n`);
+  console.log(`the cast: ${new Set(cast).size} lines`);
+}
 console.log(`${seen.normal.size} sentences at the normal pace, ${seen.lesson.size} at the lesson pace`);

@@ -187,6 +187,109 @@
   --cast-cheer-big: 1500ms; /* the big jump and spin */
   --cast-peek: 500ms; /* leaning in from the edge */
   --cast-z: 2600ms; /* a sleeping z floating up */
+  /* collecting (game feel, phase 7): the sticker book, sunny days and the weekly postcard */
+  --book-paper: #fffaf0; /* a page of the sticker book */
+  --book-edge: #eadfca; /* the page's edge and the spine's shadow */
+  --book-spine: 10px;
+  --book-turn: 420ms; /* one page turning */
+  --book-tilt: 14deg; /* how far a page swings as it turns in */
+  --sticker-slot: #c9bfa9; /* the dotted outline where a sticker will go */
+  --sticker-waiting: #fff3c4; /* the place a loose sticker is waiting to be pressed onto */
+  --sticker-curl: 14px; /* the peeled corner of a loose sticker */
+  --sticker-fly: 760ms; /* a sticker peeling off and flying to its place */
+  --sticker-land: 260ms; /* the small squash as it is pressed on */
+  --sticker-tray: 96px; /* how tall the strip of loose stickers is at the foot of a page */
+  --sunny-sun: 26px; /* one of the seven suns */
+  --sunny-sun-small: 18px; /* the same, on a profile card */
+  --sunny-ring: #0d7d6c; /* the ring round today's sun */
+  --sunny-glow: 900ms; /* today's sun lighting up */
+  --postcard-width: 600px;
+  --postcard-paper: #fffdf6;
+  --postcard-edge: #e3d6bd;
+  --postcard-stamp: 88px;
+  --postcard-stamp-edge: #e9a13b;
+  --postcard-mark: #8f9bb3; /* the postmark's ink */
+  --postcard-tilt: -1.5deg;
+  /* the payoff (game feel, phase 5): the friend in the corner, the plant in the status panel, the growth show,
+     review pots and the Mixed bag's basket */
+  --payoff-friend: 76px; /* the friend in the lower corner of the side panel: about one tap target */
+  --payoff-plant-width: 48px; /* the skill's plant in the status panel (a plant is 2 wide by 3 tall) */
+  --payoff-plant-height: 72px;
+  --payoff-show-width: 120px; /* the plant in the growth show */
+  --payoff-show-height: 180px;
+  --payoff-show-friend: 96px; /* the friend beside it */
+  --payoff-pot-width: 56px; /* one plant in its pot, above a review question */
+  --payoff-pot-height: 92px;
+  --payoff-pot: #c9744a; /* a clay pot */
+  --payoff-pot-rim: #a65a35;
+  --payoff-pot-current: #fff3c4; /* behind the pot whose questions are being asked now */
+  --payoff-basket: 60px; /* the Mixed bag's basket, above the card */
+  --payoff-sun: 20px; /* one of the week's suns among the growth show's facts */
+  --payoff-sun-off: #dfe4ee;
+  --payoff-fact-rise: 12px; /* how far a fact rises as it appears */
+  --payoff-rustle: 600ms; /* a plant that did not change stage gives a happy rustle */
+  --payoff-fly: 560ms; /* a card flying out of the basket */
+  --payoff-bob: 420ms; /* the basket giving a little hop as a card leaves it */
+  /* lessons 2.0 (game feel, phase 6): the host's acting, the friend beside a turn, and the chapter dots */
+  --host-nod: 700ms; /* one nod before a turn */
+  --host-lean: 1.05; /* how much nearer the host leans toward the child */
+  --host-lean-drop: 2%; /* and how far it dips as it leans */
+  --host-nod-dip: 5%;
+  --host-nod-squash: 0.97;
+  --host-hop-height: -14%; /* a small hop when a count finishes */
+  --lesson-turn-host: clamp(44px, min(16vw, 14dvh), 112px); /* the friend beside "Your turn!": small on a phone */
+  --lesson-helper: 40px; /* Pip, small beside the words under a Math lesson */
+  --chapter-dot: 14px;
+  --chapter-dot-here: 20px;
+  /* the stories (game feel, phase 7): the story reader and the story book */
+  --story-text: clamp(1.5rem, 4.2vw, 2.4rem); /* the words of a page: large, so a first grader can read along */
+  --story-word-gap: 0.1em 0.2em;
+  --story-word-pad: 0.04em 0.1em;
+  --story-word-lift: -0.06em; /* the word being read rises a little */
+  --story-word-lit: #fff1b8; /* behind the word being read */
+  --story-underline-gap: 0.18em; /* Calm mode: the line under the word being read */
+  --story-scene-min: 180px;
+  --story-panel-max: 40dvh;
+  --story-olive: clamp(48px, 10vw, 88px); /* Olive beside the words she reads */
+  --story-turn-from: 8%; /* how far a new page slides in from */
+  --story-x-left: 18%;
+  --story-x-middle: 50%;
+  --story-x-right: 82%;
+  --story-near: 3%; /* the ground at the front of a scene */
+  --story-far: 30%; /* further back, higher up */
+  --story-sky: 5%;
+  --story-friend-near: min(20cqw, 50cqh);
+  --story-friend-far: min(12cqw, 30cqh);
+  --story-prop-s: min(5cqw, 9cqh);
+  --story-prop-m: min(8cqw, 14cqh);
+  --story-prop-l: min(11cqw, 20cqh);
+  --story-prop-gap: 0.08em;
+  --story-sign: min(26cqw, 44cqh);
+  --story-picture: min(20cqw, 34cqh);
+  --story-cover: 148px;
+  --story-cover-picture: 3rem;
+  --story-spine: 8px;
+  --story-spring: #9bd17f;
+  --story-summer: #f6c445;
+  --story-autumn: #e58b4a;
+  --story-winter: #8fb8e0;
+  --story-closed: #eef1f6;
+  /* polish (game feel, phase 8): the profile cards, screen changes and the friend in a game's corner */
+  --profile-card: 188px; /* one child's card on the profile page: room for the seven small suns */
+  --profile-plant: 18%; /* one plant in the little garden on a card, as a share of the picture's width */
+  --profile-breath-scale: 1.04; /* how far an avatar swells as it breathes in */
+  --screen-push-from: 0.94; /* a screen we move into starts this much smaller */
+  --screen-pull-from: 1.05; /* the screen we come back to starts this much larger */
+  --screen-fly: 640ms; /* a profile card growing toward the screen as a child is picked: under --t-scene */
+  --screen-fly-to: 2.6; /* how big the card grows before it fades away */
+  --game-friend: 52px; /* the subject's friend in the corner of a game's top bar */
+  /* seasons (game feel, phase 8): the season's petals, leaves or snow drifting over the garden */
+  --garden-layer-season: 1; /* behind the plants (2) and the path, in front of the sky and the ground */
+  --season-fall-depth: 58%; /* they fall through the sky and the hills, and are gone before the beds */
+  --season-bit: 14px;
+  --season-fall: 14s; /* one fall, top to bottom */
+  --season-sway: 2600ms; /* one sway from side to side */
+  --season-swing: 10px;
 }
 
 *,

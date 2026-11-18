@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ChildDay } from '../app/childDay';
 import type { PlanPart } from '../app/todaysPlan';
 import { nextPart } from '../app/todaysPlan';
@@ -16,7 +16,7 @@ import type { Grade } from '../storage/schema';
 import { PALETTE } from '../visuals/palette';
 import { currentWorld } from '../worlds';
 import { GARDEN } from '../worlds/garden';
-import type { HomeScene, World } from '../worlds/types';
+import type { HomeScene, Season, World } from '../worlds/types';
 import styles from './Garden.module.css';
 import GardenBackdrop, { FAR_SPEED, MID_SPEED } from './GardenBackdrop';
 import GardenGround from './GardenGround';
@@ -25,6 +25,8 @@ import GardenSun from './GardenSun';
 import type { Stone } from './layout';
 import { KINDS_PER_AREA, PLANT_TALL, SCENE_HEIGHT, SLOT, bedsNear, firstView, layoutGarden, lightAt, plantOf, stonesNear, sunShare } from './layout';
 import PathStone from './PathStone';
+import { seasonAt, seasonLook } from './season';
+import SeasonTouch from './SeasonTouch';
 import PlantButton from './PlantButton';
 import PlantCard from './PlantCard';
 import type { GardenPlace } from './Signpost';
@@ -35,9 +37,11 @@ interface Props {
   day: Pick<ChildDay, 'states' | 'plan' | 'reviewsDue'>; // what home already works out: scores, today's plan, reviews due
   calm?: boolean; // the child's Calm mode. Left out: read from the page, as the rest of the app does
   places?: readonly GardenPlace[]; // what the signpost offers. Left out: everything
+  menuBeside?: boolean; // the screen has its own menu, a column beside the garden from tablet width: the signpost is shown on a phone only
   skills?: readonly Skill[]; // left out: the whole catalogue
   ladders?: readonly Ladder[];
   world?: World; // left out: the world in use
+  season?: Season; // left out: the season of today's date
   onOpen: (part: PlanPart) => void; // the big button, or a stepping stone: open this part of today's plan
   onSkill: (skillId: string, mode: 'practice' | 'learn') => void; // a plant's card: Practice or Lesson
   onPlace: (place: GardenPlace) => void; // the signpost
@@ -56,19 +60,44 @@ function wantsStill(calm: boolean | undefined): boolean {
   return typeof window !== 'undefined' && typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
+// The width from which a screen's menu is a column beside its main area (KidScreen's tablet layout).
+const MENU_BESIDE = '(min-width: 48em)';
+
+// Whether the screen is at least tablet width now, following turns of the iPad. With no way to ask (the unit
+// tests), it is taken as a phone.
+function useWide(): boolean {
+  const ask = (): boolean => typeof window !== 'undefined' && typeof window.matchMedia === 'function' && window.matchMedia(MENU_BESIDE).matches;
+  const [wide, setWide] = useState(ask);
+  useEffect(() => {
+    if (typeof window.matchMedia !== 'function') return;
+    const query = window.matchMedia(MENU_BESIDE);
+    const change = (): void => setWide(query.matches);
+    change();
+    query.addEventListener('change', change);
+    return () => query.removeEventListener('change', change);
+  }, []);
+  return wide;
+}
+
 // The child's home as a garden (game feel, phase 4): one wide scene scrolled sideways by finger. Each skill is a
 // plant, each topic a bed, each subject an area; today's plan is a path of stepping stones and the sun fills as
 // it is answered. Everything shown is worked out from what is saved. The garden saves nothing and goes nowhere
 // itself: it tells the screen that shows it what the child asked for.
-export default function Garden({ grade, day, calm, places = ALL_PLACES, skills = CATALOGUE, ladders = LADDERS, world, onOpen, onSkill, onPlace, onSpeak }: Props) {
+export default function Garden({ grade, day, calm, places = ALL_PLACES, menuBeside = false, skills = CATALOGUE, ladders = LADDERS, world, season, onOpen, onSkill, onPlace, onSpeak }: Props) {
   const home: HomeScene = (world ?? currentWorld()).home ?? (GARDEN.home as HomeScene);
   const layout = useMemo(() => layoutGarden({ grade, states: day.states, skills, ladders, plan: day.plan, reviewsDue: day.reviewsDue }), [grade, day.states, day.plan, day.reviewsDue, skills, ladders]);
   const byId = useMemo(() => new Map(skills.map((skill) => [skill.id, skill])), [skills]);
   const still = wantsStill(calm);
   // The light is read once, as the garden opens: it does not change under a child who is looking at it.
   const [light] = useState(() => lightAt(now()));
+  // The season is read the same way: the garden's scenery follows the month (game feel, phase 8).
+  const [today] = useState(() => seasonAt(now()));
+  const seasonal = seasonLook(world ?? currentWorld(), season ?? today);
   const [picked, setPicked] = useState<string | null>(null);
   const [signpost, setSignpost] = useState(false);
+  // Where the screen's own menu is a column beside the garden, the signpost would only repeat it: it is left out.
+  const wide = useWide();
+  const hasSignpost = !(menuBeside && wide);
 
   // Which stretch of the scene is on screen, in scene units. Beds outside it (and a margin) are not drawn.
   const [view, setView] = useState(() => {
@@ -161,11 +190,11 @@ export default function Garden({ grade, day, calm, places = ALL_PLACES, skills =
   const sproutPlace = { '--set-x': layout.sprout.x - SPROUT_WIDE / 2, '--set-y': layout.sprout.y - SPROUT_TALL + 1, '--set-w': SPROUT_WIDE, '--set-h': SPROUT_TALL } as CSSProperties;
 
   return (
-    <section className={styles.garden} aria-label={home.title} data-garden="" data-light={light} data-still={still ? '' : undefined} data-path={layout.path}>
+    <section className={styles.garden} aria-label={home.title} data-garden="" data-light={light} data-season={seasonal ? (season ?? today) : undefined} data-still={still ? '' : undefined} data-path={layout.path}>
       <div className={styles.viewport} ref={viewport} data-garden-view="">
         <div className={styles.scene} ref={scene} style={sceneNumbers} data-garden-scene="">
-          <GardenBackdrop width={layout.width} light={light} still={still} areas={layout.areas} />
-          <GardenGround layout={layout} beds={beds} stones={stones} home={home} />
+          <GardenBackdrop width={layout.width} light={light} still={still} areas={layout.areas} look={seasonal} />
+          <GardenGround layout={layout} beds={beds} stones={stones} home={home} look={seasonal} />
           {beds.flatMap((bed) =>
             bed.plants.map((plant) => {
               const skill = byId.get(plant.skillId);
@@ -187,11 +216,13 @@ export default function Garden({ grade, day, calm, places = ALL_PLACES, skills =
         </div>
       </div>
 
+      {seasonal && !still && <SeasonTouch look={seasonal} />}
+
       <div className={styles.sun}>
         <GardenSun share={sunShare(layout.progress)} done={layout.progress.done} goal={layout.progress.goal} label={home.sun} />
       </div>
 
-      {(pickedPlant && pickedSkill) || signpost ? (
+      {(pickedPlant && pickedSkill) || (signpost && hasSignpost) ? (
         <div className={styles.over}>
           {pickedPlant && pickedSkill ? (
             <PlantCard
@@ -213,14 +244,16 @@ export default function Garden({ grade, day, calm, places = ALL_PLACES, skills =
       ) : null}
 
       <div className={styles.bar}>
-        <IconButton
-          icon="compass"
-          label={home.signpost.open}
-          onClick={() => {
-            setPicked(null);
-            setSignpost((open) => !open);
-          }}
-        />
+        {hasSignpost && (
+          <IconButton
+            icon="compass"
+            label={home.signpost.open}
+            onClick={() => {
+              setPicked(null);
+              setSignpost((open) => !open);
+            }}
+          />
+        )}
         {next ? (
           <BigButton size="kid" className={styles.follow} data-follow={layout.path} onClick={() => onOpen(next)}>
             <Icon name={layout.path === 'going' ? 'next' : 'play'} />

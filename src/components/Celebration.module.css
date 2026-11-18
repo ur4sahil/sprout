@@ -5,11 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: var(--space-4);
   padding: var(--space-5);
   background: var(--color-bg);
   text-align: center;
+  /* A card taller than a small screen scrolls inside itself. The automatic margins centre it when it fits, and,
+     unlike centring the column, never push its top out of reach when it does not. */
+  overflow-y: auto;
+}
+
+.cover > :first-child {
+  margin-top: auto;
+}
+
+.cover > :last-child {
+  margin-bottom: auto;
 }
 
 .emoji {

@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { recordsOf } from '../../app/facts';
 import { useAppStore } from '../../app/store';
+import { castFor } from '../../cast';
 import BigButton from '../../components/BigButton';
+import GameFriend from '../../components/GameFriend';
 import Icon from '../../components/Icon';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
@@ -51,6 +53,8 @@ export default function FastFacts() {
           <h1 className={page.title}>
             <Icon name="bolt" />Fast facts
           </h1>
+          <span className={styles.spacer} />
+          <GameFriend who={castFor('math')} last={null} beat={0} />
         </>
       }
     >

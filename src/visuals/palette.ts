@@ -129,4 +129,148 @@ export const PALETTE = {
     pencilTip: '#5a3a22',
   },
   // ---- end of the garden ----
+  // ---- collecting (game feel, phase 7): the animals that move into the garden ----
+  visitors: {
+    eye: '#16213a',
+    nose: '#3a2b1a',
+    cheek: '#f6a6a6',
+    white: '#ffffff',
+    hedgehog: '#8a6a4f',
+    hedgehogDark: '#5f4632',
+    hedgehogFace: '#ecd3ad',
+    rabbit: '#cdbba7',
+    rabbitInner: '#f4c6c6',
+    rabbitTail: '#ffffff',
+    deer: '#b97a45',
+    deerLight: '#f3e3c8',
+    antler: '#7a5236',
+    snailShell: '#d98a4a',
+    snailSwirl: '#a85f2a',
+    snailBody: '#c9d8a0',
+    squirrel: '#c0682e',
+    squirrelBelly: '#f2d2a9',
+    fox: '#e8762f',
+    foxDark: '#4a2e1f',
+    duck: '#f9cf45',
+    duckWing: '#e9b52e',
+    beak: '#f59a4a',
+    turtleShell: '#5f9a4a',
+    turtlePlate: '#7fb865',
+    turtleSkin: '#a7d17f',
+    swan: '#ffffff',
+    swanShade: '#dfe8ef',
+    ripple: '#a9d8f7',
+  },
+  // ---- end of collecting ----
+  // ---- lessons 2.0 (game feel, phase 6): the place behind each lesson ----
+  // `ground` colours fill the big areas pieces stand on; `trim` colours draw the small things around the edges.
+  // Both are pale, so a dark numeral and the lit ring read on every one (tests/lessons/backdrops.test.ts).
+  places: {
+    picnic: {
+      ground: { sky: '#e4f3fb', grass: '#d6eec5', blanket: '#fde7e4' },
+      trim: { hill: '#d3ecc6', sun: '#fdeeb5', cloud: '#ffffff', check: '#f7d0cb' },
+    },
+    stall: {
+      ground: { wall: '#fff7ec', counterTop: '#f1dcbf', counter: '#f7e8d3' },
+      trim: { awningA: '#f9d3c4', awningB: '#fffaf3', pole: '#ead6bd', plank: '#ead3b4' },
+    },
+    workshop: {
+      ground: { board: '#eef0f3', benchTop: '#efd8b5', bench: '#f6e7cf' },
+      trim: { peg: '#dfe3e9', tool: '#dde2e8', benchLine: '#e8d1ad' },
+    },
+    site: {
+      ground: { sky: '#e6f2fb', plank: '#f7e2b8', sand: '#f4e7cc' },
+      trim: { crane: '#f5dfa6', brick: '#f3d5c4', cone: '#fbd9b8', cloud: '#ffffff' },
+    },
+    shop: {
+      ground: { wall: '#f2f6ee', counterTop: '#e7e0f0', counter: '#f3eff8' },
+      trim: { shelf: '#e4dccd', jarA: '#d9ecf7', jarB: '#f8e0d2', panel: '#e9e3f2' },
+    },
+    treehouse: {
+      ground: { boards: '#edf3df', floorTop: '#ecd5b2', floor: '#f5e6cd' },
+      trim: { boardLine: '#e0eacb', window: '#dff0fb', frame: '#e6d3b5', leaf: '#cfe6b8', floorLine: '#e7d0aa' },
+    },
+    nook: {
+      ground: { wall: '#f5effa', rug: '#fdeee0', floor: '#f3e6d6' },
+      trim: { shelf: '#e9dccb', bookA: '#f5d3d8', bookB: '#d6e6f6', bookC: '#e3f0d2', rugEdge: '#f6dcc4' },
+    },
+    pond: {
+      ground: { sky: '#e3f3fb', bank: '#d7ecc8', water: '#d7edf8' },
+      trim: { reed: '#cde3bd', cattail: '#e3cfb8', ripple: '#c6e3f3', pad: '#d3ebc3' },
+    },
+  },
+  // ---- end of lessons 2.0 ----
+  // ---- the stories (game feel, phase 7): the backdrops of "The Garden Year" ----
+  story: {
+    window: '#cfe3f2', // the sky through the treehouse window
+    fence: '#e8d3b0',
+    fenceEdge: '#c4a57a',
+    meadowFar: '#bfe0a6',
+    meadowFlower: '#f6d36b',
+    woodsSky: '#cfe8d2',
+    woodsFar: '#7fb47a',
+    woodsFloor: '#7e9a57',
+    path: '#d8c49a',
+    brook: '#8cc8ee',
+    plank: '#d9a46a',
+    plankLine: '#9a6638',
+    rug: '#e86a6a',
+    moon: '#fff2b8',
+    nightHill: '#24406a',
+    nightGrass: '#2f5a4a',
+    nightBush: '#24493c',
+    sign: '#d9a46a',
+    signEdge: '#8a5a33',
+  },
+  // ---- end of the stories ----
+  // ---- seasons (game feel, phase 8): the garden's sky, hills, grass and trees through the year ----
+  // Only the scenery changes. Flowers, stems, soil, stones and the sun keep their own colours in every season,
+  // so a child's blooms never look dead and the path always stands out against the grass.
+  seasons: {
+    spring: {
+      sky: { morning: ['#a6daf7', '#fdf2e2'], afternoon: ['#79c0f0', '#dcf1fb'] },
+      hillFar: '#b6e1a6',
+      hillMid: '#92cf80',
+      grass: '#7cc464',
+      grassFront: '#69b552',
+      tree: '#58a94f',
+      treeLight: '#f5bcd2', // trees in blossom
+      petal: '#f7c3d8',
+      petalLight: '#fff0f5',
+    },
+    summer: {
+      sky: { morning: ['#8ccdf6', '#fdf0cf'], afternoon: ['#5cb2ef', '#d2edfb'] },
+      hillFar: '#a2d391',
+      hillMid: '#7cbf6c',
+      grass: '#6db456',
+      grassFront: '#5ba346',
+      tree: '#3f8f3d',
+      treeLight: '#58a64a',
+      sun: '#ffd84a',
+      sunGlow: '#fff3b0',
+    },
+    autumn: {
+      sky: { morning: ['#a9cfe8', '#fbe9cf'], afternoon: ['#86bde6', '#f4e6d2'] },
+      hillFar: '#cfc98f',
+      hillMid: '#b4b56c',
+      grass: '#93b65c',
+      grassFront: '#84a84e',
+      tree: '#e08a3c',
+      treeLight: '#e9b949',
+      leaf: '#e8762f',
+      leafGold: '#f0b13a',
+    },
+    winter: {
+      sky: { morning: ['#bcd8ec', '#eef4f8'], afternoon: ['#a2c9e8', '#e6f0f7'] },
+      hillFar: '#dbe7ee',
+      hillMid: '#a9c79c',
+      grass: '#97bd86',
+      grassFront: '#86ae76',
+      tree: '#2f6f4f', // evergreens
+      treeLight: '#4a8a63',
+      snow: '#ffffff',
+      snowShade: '#e4eef6',
+    },
+  },
+  // ---- end of seasons ----
 } as const;

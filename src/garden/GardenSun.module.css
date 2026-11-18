@@ -44,3 +44,8 @@
     animation: none;
   }
 }
+
+/* A device that cannot keep up (the old-device fallback): the sun's rays stop turning. */
+:global(:root[data-lowfx]) .rays {
+  animation: none;
+}

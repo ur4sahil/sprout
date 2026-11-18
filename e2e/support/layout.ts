@@ -15,11 +15,13 @@ export async function checkScreen(page: Page, label: string, minTap = 44): Promi
   expect(widths.doc, `${label}: page scrolls sideways`).toBeLessThanOrEqual(widths.inner);
   expect(widths.body, `${label}: body scrolls sideways`).toBeLessThanOrEqual(widths.inner);
 
-  const controls = page.locator('button, input:not([aria-hidden="true"])');
-  const count = await controls.count();
-  expect(count).toBeGreaterThan(0);
-  for (let i = 0; i < count; i += 1) {
-    const control = controls.nth(i);
+  // Each control is held by its own handle, not by its place in the list: bringing one into view can slide the
+  // garden, which draws only the beds near the screen, so beds far off are taken away and others put in. A control
+  // that has been taken away is no longer on the page and is passed over; every control still there is checked.
+  const controls = await page.locator('button, input:not([aria-hidden="true"])').elementHandles();
+  expect(controls.length).toBeGreaterThan(0);
+  for (const [i, control] of controls.entries()) {
+    if (!(await control.evaluate((el) => el.isConnected))) continue;
     await control.scrollIntoViewIfNeeded();
     const box = await control.boundingBox();
     const name = (await control.textContent()) || (await control.getAttribute('name')) || `#${i}`;

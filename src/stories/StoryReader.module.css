@@ -1,0 +1,121 @@
+/* The story reader: the scene fills the top, the words sit below it, the controls along the bottom. */
+.reader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  min-height: 0;
+  padding: var(--space-3);
+  background: var(--color-bg);
+}
+
+.stage {
+  position: relative;
+  flex: 1 1 0;
+  min-height: var(--story-scene-min);
+  overflow: hidden;
+  border-radius: var(--radius-l);
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  animation: story-turn-forward var(--t-move) var(--ease-settle) both;
+}
+
+.page[data-turn='back'] {
+  animation-name: story-turn-back;
+}
+
+/* Calm mode and Reduce Motion: a page fades in, it does not slide. */
+.reader[data-still] .page {
+  animation: story-fade var(--t-calm) linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page,
+  .page[data-turn='back'] {
+    animation: story-fade var(--t-calm) linear both;
+  }
+}
+
+@keyframes story-turn-forward {
+  from {
+    opacity: 0;
+    transform: translateX(var(--story-turn-from));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes story-turn-back {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-1 * var(--story-turn-from)));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes story-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+}
+
+.panel {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  max-height: var(--story-panel-max);
+  overflow-y: auto;
+  padding: var(--space-3);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.olive {
+  flex: none;
+  width: var(--story-olive);
+}
+
+.words {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.options {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.optionPicture {
+  font-size: var(--emoji-l);
+}
+
+.controls {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+}

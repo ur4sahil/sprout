@@ -6,11 +6,26 @@
   margin-inline: auto;
 }
 
-.hostSmall {
+/* The teacher beside "Your turn!": as big as the screen allows without pushing the question down; small on a phone. */
+.turnHost {
   display: inline-block;
-  width: var(--size-badge);
-  vertical-align: middle;
+  flex: none;
+  width: var(--lesson-turn-host);
   margin-inline-end: var(--space-2);
+}
+
+/* Pip, small beside the words of a Math lesson. */
+.wordsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.helper {
+  flex: none;
+  width: var(--lesson-helper);
 }
 
 .progress {
@@ -28,6 +43,8 @@
 }
 
 .yourTurn {
+  display: flex;
+  align-items: center;
   margin: 0;
   font-size: var(--text-l);
   font-weight: var(--weight-display);

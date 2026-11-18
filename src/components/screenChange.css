@@ -1,0 +1,172 @@
+/* Screen changes (game feel, phase 8). Loaded once, with KidScreen. Every kid screen is named "kid-screen" for the
+   browser's view transitions, and the page says which way the child moved (`data-screen-change` on the root, from
+   src/app/screenChange.ts): push (deeper in), pull (back out) or fade (sideways). Nothing waits for these: the new
+   screen is live underneath from the first moment, and a tap goes straight through to it. */
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(kid-screen) {
+  animation-duration: var(--t-move);
+  animation-timing-function: var(--ease-settle);
+}
+
+/* Push: the camera moves in. The old screen grows past us and fades; the new one grows in from the middle. */
+:root[data-screen-change='push']::view-transition-old(kid-screen) {
+  animation: screen-out-push var(--t-move) var(--ease-settle) both;
+}
+
+:root[data-screen-change='push']::view-transition-new(kid-screen) {
+  animation: screen-in-push var(--t-move) var(--ease-settle) both;
+}
+
+/* Pull: the camera moves back out. The old screen shrinks away; the one we return to settles in from larger. */
+:root[data-screen-change='pull']::view-transition-old(kid-screen) {
+  animation: screen-out-pull var(--t-move) var(--ease-settle) both;
+}
+
+:root[data-screen-change='pull']::view-transition-new(kid-screen) {
+  animation: screen-in-pull var(--t-move) var(--ease-settle) both;
+}
+
+:root[data-screen-change='fade']::view-transition-old(kid-screen) {
+  animation: screen-fade-out var(--t-pop) linear both;
+}
+
+:root[data-screen-change='fade']::view-transition-new(kid-screen) {
+  animation: screen-fade-in var(--t-pop) linear both;
+}
+
+/* The picked child's card on the profile page grows toward the screen and fades, while their home arrives. */
+[data-flying] {
+  view-transition-name: profile-fly;
+}
+
+::view-transition-old(profile-fly) {
+  animation: profile-fly var(--screen-fly) var(--ease-settle) both;
+}
+
+/* Where the browser has no view transitions, the new screen plays the same entrance by itself. It keeps no
+   transform once it has arrived, so nothing fixed inside it is ever placed differently. */
+[data-screen-in='push'] {
+  animation: screen-in-push var(--t-move) var(--ease-settle) backwards;
+}
+
+[data-screen-in='pull'] {
+  animation: screen-in-pull var(--t-move) var(--ease-settle) backwards;
+}
+
+[data-screen-in='fade'] {
+  animation: screen-fade-in var(--t-pop) linear backwards;
+}
+
+/* Calm mode and Reduce Motion: every change is a short fade, and the card does not grow. */
+:root[data-calm][data-screen-change]::view-transition-old(kid-screen),
+:root[data-calm]::view-transition-old(profile-fly) {
+  animation: screen-fade-out var(--t-calm) linear both;
+}
+
+:root[data-calm][data-screen-change]::view-transition-new(kid-screen) {
+  animation: screen-fade-in var(--t-calm) linear both;
+}
+
+:root[data-calm]::view-transition-group(kid-screen) {
+  animation-duration: var(--t-calm);
+}
+
+:root[data-calm] [data-screen-in] {
+  animation: screen-fade-in var(--t-calm) linear backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-screen-change]::view-transition-old(kid-screen),
+  :root::view-transition-old(profile-fly) {
+    animation: screen-fade-out var(--t-calm) linear both;
+  }
+
+  :root[data-screen-change]::view-transition-new(kid-screen) {
+    animation: screen-fade-in var(--t-calm) linear both;
+  }
+
+  :root::view-transition-group(kid-screen) {
+    animation-duration: var(--t-calm);
+  }
+
+  :root [data-screen-in] {
+    animation: screen-fade-in var(--t-calm) linear backwards;
+  }
+}
+
+@keyframes screen-in-push {
+  from {
+    opacity: 0;
+    transform: scale(var(--screen-push-from));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes screen-out-push {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--screen-pull-from));
+  }
+}
+
+@keyframes screen-in-pull {
+  from {
+    opacity: 0;
+    transform: scale(var(--screen-pull-from));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes screen-out-pull {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--screen-push-from));
+  }
+}
+
+@keyframes screen-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes screen-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes profile-fly {
+  from {
+    opacity: 1;
+    transform: none;
+  }
+  to {
+    opacity: 0;
+    transform: scale(var(--screen-fly-to));
+  }
+}

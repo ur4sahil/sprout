@@ -19,12 +19,15 @@ let made = 0;
 let saved = 0;
 let failed = 0;
 note(`start: ${sentences.length} sentences`);
-for (const [index, text] of sentences.entries()) {
+for (const [index, sentence] of sentences.entries()) {
+  // A line for one character of the cast is written "who<tab>sentence"; any other line is said in the teaching voice.
+  const tab = sentence.indexOf('\t');
+  const line = tab === -1 ? { who: null, text: sentence } : { who: sentence.slice(0, tab), text: sentence.slice(tab + 1) };
   let outcome = 'failed';
   // A sentence the voice machine was too busy for is tried again, a few times.
   for (let attempt = 0; attempt < 4 && outcome === 'failed'; attempt += 1) {
     try {
-      const reply = await fetch(`${base}/api/voice`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: base, Cookie: cookies }, body: JSON.stringify(pace === 'normal' ? { text } : { text, pace }) });
+      const reply = await fetch(`${base}/api/voice`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: base, Cookie: cookies }, body: JSON.stringify({ text: line.text, ...(pace === 'normal' ? {} : { pace }), ...(line.who ? { who: line.who } : {}) }) });
       await reply.arrayBuffer();
       if (reply.status === 401) {
         note('stopped: the session has ended. Sign in again and rerun.');
@@ -41,7 +44,7 @@ for (const [index, text] of sentences.entries()) {
   else if (outcome === 'saved') saved += 1;
   else {
     failed += 1;
-    note(`${outcome}: ${text}`);
+    note(`${outcome}: ${line.text}`);
   }
   if ((index + 1) % 100 === 0) note(`progress: ${index + 1} of ${sentences.length} (made ${made}, already there ${saved}, failed ${failed})`);
 }

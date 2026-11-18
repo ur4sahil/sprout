@@ -1,0 +1,112 @@
+/* A story page's picture. Everything in it is placed in shares of the scene, so it fits any screen. */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  container-type: size;
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.backdrop svg {
+  display: block;
+}
+
+.friend,
+.prop,
+.sign,
+.picture {
+  position: absolute;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.friend[data-at='left'],
+.prop[data-at='left'],
+.sign[data-at='left'],
+.picture[data-at='left'] {
+  left: var(--story-x-left);
+}
+
+.friend[data-at='middle'],
+.prop[data-at='middle'],
+.sign[data-at='middle'],
+.picture[data-at='middle'] {
+  left: var(--story-x-middle);
+}
+
+.friend[data-at='right'],
+.prop[data-at='right'],
+.sign[data-at='right'],
+.picture[data-at='right'] {
+  left: var(--story-x-right);
+}
+
+.friend[data-depth='near'] {
+  bottom: var(--story-near);
+  width: var(--story-friend-near);
+}
+
+.friend[data-depth='far'] {
+  bottom: var(--story-far);
+  width: var(--story-friend-far);
+}
+
+/* A row of pictures sits on one line. */
+.prop {
+  display: flex;
+  gap: var(--story-prop-gap);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.prop[data-depth='near'] {
+  bottom: var(--story-near);
+}
+
+.prop[data-depth='far'] {
+  bottom: var(--story-far);
+}
+
+.prop[data-depth='sky'] {
+  top: var(--story-sky);
+}
+
+.prop[data-size='s'] {
+  font-size: var(--story-prop-s);
+}
+
+.prop[data-size='m'] {
+  font-size: var(--story-prop-m);
+}
+
+.prop[data-size='l'] {
+  font-size: var(--story-prop-l);
+}
+
+.sign {
+  bottom: var(--story-far);
+  width: var(--story-sign);
+}
+
+.sign svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.picture {
+  top: var(--story-sky);
+  width: var(--story-picture);
+}
+
+.picture svg {
+  width: 100%;
+  height: auto;
+}

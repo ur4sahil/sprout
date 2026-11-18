@@ -17,6 +17,8 @@ const MAX_HELD = 150; // sentences kept in memory
 
 // Questions at the normal pace; lessons and their examples slower, each sentence on its own (worker/voice.ts PACES).
 export type Pace = 'normal' | 'lesson';
+// Whose voice says a line: each character of the cast has its own (worker/voice.ts WHO_VOICE). Sprout is the teaching voice.
+export type Who = 'sprout' | 'pip' | 'olive' | 'finn';
 
 let on = false; // turned on by the real app at launch. Tests and stories run without it
 let gone = false; // this server has no voice machine: stop asking
@@ -50,20 +52,20 @@ export function voiceText(say: Say): string | null {
 }
 
 // Early asks wait for a free place; a sentence wanted now (`urgent`) goes straight away.
-async function ask(text: string, pace: Pace, urgent: boolean): Promise<ArrayBuffer | null> {
+async function ask(text: string, pace: Pace, urgent: boolean, who: Who): Promise<ArrayBuffer | null> {
   if (!urgent && inFlight >= AT_ONCE) await new Promise<void>((resolve) => queue.push(resolve));
   inFlight += 1;
   try {
-    return await send(text, pace);
+    return await send(text, pace, who);
   } finally {
     inFlight -= 1;
     queue.shift()?.();
   }
 }
 
-async function send(text: string, pace: Pace): Promise<ArrayBuffer | null> {
+async function send(text: string, pace: Pace, who: Who): Promise<ArrayBuffer | null> {
   try {
-    const reply = await fetch('/api/voice', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(pace === 'normal' ? { text } : { text, pace }) });
+    const reply = await fetch('/api/voice', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text, ...(pace === 'normal' ? {} : { pace }), ...(who === 'sprout' ? {} : { who }) }) });
     if (reply.status === 503) gone = true;
     if (!reply.ok) return null;
     const body = await reply.arrayBuffer();
@@ -102,14 +104,14 @@ export function voicePieces(say: Say, pace: Pace = 'normal'): Say[] {
   return pieces.length > 0 ? pieces : [say];
 }
 
-function fetchVoice(say: Say, pace: Pace, urgent: boolean): Promise<ArrayBuffer | null> | null {
+function fetchVoice(say: Say, pace: Pace, urgent: boolean, who: Who = 'sprout'): Promise<ArrayBuffer | null> | null {
   if (!on || gone) return null;
   const text = voiceText(say);
   if (text === null) return null;
-  const id = `${pace}|${text}`;
+  const id = who === 'sprout' ? `${pace}|${text}` : `${who}|${pace}|${text}`;
   const known = held.get(id);
   if (known) return known;
-  const asked = ask(text, pace, urgent).then((bytes) => {
+  const asked = ask(text, pace, urgent, who).then((bytes) => {
     // A sentence that did not arrive is asked for again next time.
     if (bytes === null) held.delete(id);
     return bytes;
@@ -123,8 +125,8 @@ function fetchVoice(say: Say, pace: Pace, urgent: boolean): Promise<ArrayBuffer 
 }
 
 // Starts fetching a sentence, so it is ready by the time it is wanted.
-export function warm(say: Say, pace: Pace = 'normal'): void {
-  for (const piece of voicePieces(say, pace)) void fetchVoice(piece, pace, false);
+export function warm(say: Say, pace: Pace = 'normal', who: Who = 'sprout'): void {
+  for (const piece of voicePieces(say, pace)) void fetchVoice(piece, pace, false, who);
 }
 
 // Starts fetching several sentences, in order.
@@ -144,8 +146,8 @@ export function warmQuestion(question: Question): void {
 }
 
 // The recorded sentence if it arrives within `waitMs`, otherwise null (and it keeps arriving in the background).
-export async function readyVoice(say: Say, waitMs: number, pace: Pace = 'normal'): Promise<ArrayBuffer | null> {
-  const asked = fetchVoice(say, pace, true);
+export async function readyVoice(say: Say, waitMs: number, pace: Pace = 'normal', who: Who = 'sprout'): Promise<ArrayBuffer | null> {
+  const asked = fetchVoice(say, pace, true, who);
   if (!asked) return null;
   let timer: ReturnType<typeof setTimeout> | undefined;
   const late = new Promise<null>((resolve) => {

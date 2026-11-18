@@ -1,12 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
 import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { skillById } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
-import { makeRng } from '../engine/rng';
 import type { Question, Response } from '../engine/types';
 import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
@@ -15,6 +13,8 @@ import type { Child, Session, SkillState } from '../storage/schema';
 import { inProgress, mixedBagOrder, mixedTurn } from './mixedBag';
 import { newSession, recentKeys, recordAnswer } from './practiceRecord';
 import { TIMING } from './timing';
+import { castFor } from '../cast';
+import { praiseFor } from './usePractice';
 
 // Runs one Mixed bag (plan section 17). Every answer is saved as ordinary practice on its skill, so its Skill Score
 // moves as in practice; a miss shows the "Not quite" walk-through. A skill that reaches 100 during the bag is done:
@@ -60,8 +60,10 @@ export function useMixedBag(child: Child): MixedBag {
     skill: Skill | null;
     shownAt: Date;
     pending: ReturnType<typeof recordAnswer> | null;
+    right: number; // right answers in this bag
+    cheer: { index: number | null }; // the friend's last cheer, so it is not said twice running
     alive: boolean;
-  }>({ order: [], at: 0, states: new Map(), keys: new Map(), sessions: new Map(), question: null, skill: null, shownAt: now(), pending: null, alive: true });
+  }>({ order: [], at: 0, states: new Map(), keys: new Map(), sessions: new Map(), question: null, skill: null, shownAt: now(), pending: null, right: 0, cheer: { index: null }, alive: true });
 
   // Shows the next turn whose skill is still in progress; ends the bag when none is left.
   const next = useCallback((): void => {
@@ -104,6 +106,7 @@ export function useMixedBag(child: Child): MixedBag {
         }
         self.order = order;
         self.at = 0;
+        self.right = 0;
         self.states = new Map(states.map((state) => [state.skillId, state]));
         const attempts = await repo.listAttempts(child.id, {});
         for (const id of new Set(order)) {
@@ -164,11 +167,13 @@ export function useMixedBag(child: Child): MixedBag {
         void speak(openingWords(q), child.settings.speechRate);
         return;
       }
+      // The friend in the corner is the one for this question's subject, so it is the one who may cheer.
+      const praise = praiseFor(q, self.right, castFor(current.subject), self.cheer);
+      self.right += 1;
       setRight((n) => n + 1);
       setPhase('correct');
       playSfx('chime');
-      const praise = makeRng(q.seed).pick(PRAISE);
-      const spoken = speak(praise.say, child.settings.speechRate);
+      const spoken = speak(praise, child.settings.speechRate);
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) next();
     })();

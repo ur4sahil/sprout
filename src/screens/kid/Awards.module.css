@@ -1,6 +1,27 @@
-/* One board of stickers: its name and how far along it is, then the stickers, all on one card. */
+/* The sticker book: one page open at a time, the arrows and page dots under it. A sideways swipe turns the page;
+   up and down still scroll. */
+.book {
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  touch-action: pan-y;
+}
+
+/* One page: a sheet of paper with the spine's shadow down its left edge. */
 .board {
   composes: card from '../../components/shared.module.css';
+  background: var(--book-paper);
+  border-color: var(--book-edge);
+  border-inline-start: var(--book-spine) solid var(--book-edge);
+  border-start-start-radius: var(--radius-s);
+  border-end-start-radius: var(--radius-s);
+  transform-origin: 0 50%;
+}
+
+.board[hidden] {
+  display: none;
 }
 
 .boardHead {
@@ -13,42 +34,113 @@
   accent-color: var(--color-brand);
 }
 
-.square {
-  margin: 0;
-  padding: var(--space-3) var(--space-2);
-  min-height: var(--size-avatar);
+/* The loose stickers at the foot of the page. */
+.tray {
+  min-height: var(--sticker-tray);
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  text-align: center;
-  font-size: var(--text-s);
-  color: var(--color-ink-soft);
-  background: none;
-  border: var(--border-thin) dashed var(--color-line);
-  border-radius: var(--radius-m);
+  gap: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: var(--border) dashed var(--book-edge);
 }
 
-.earned {
-  color: var(--color-ink);
-  font-weight: 700;
+/* What a tapped sticker is, or what earns it: written, said, and said again on the speaker. */
+.telling {
+  composes: spread from '../../components/shared.module.css';
+  flex-wrap: nowrap;
+  padding: var(--space-3) var(--space-4);
   background: var(--color-surface);
-  border-style: solid;
-  border-color: var(--color-star);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
   box-shadow: var(--shadow-card);
 }
 
-.sticker {
-  font-size: var(--emoji-l);
-  line-height: 1;
+.tellingText {
+  margin: 0;
+  font-weight: 700;
 }
 
-.covered {
-  filter: grayscale(1);
-  opacity: 0.35;
+.turns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
 }
 
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.dot {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-line);
+}
+
+.dotOn {
+  background: var(--color-brand);
+}
+
+/* A page turning in: from the right when going forward, from the left when going back. */
+.turnNext {
+  animation: turn-next var(--book-turn) var(--ease-settle) both;
+}
+
+.turnBack {
+  animation: turn-back var(--book-turn) var(--ease-settle) both;
+}
+
+@keyframes turn-next {
+  from {
+    opacity: 0;
+    transform: perspective(60em) rotateY(calc(var(--book-tilt) * -1)) translateX(var(--space-6));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes turn-back {
+  from {
+    opacity: 0;
+    transform: perspective(60em) rotateY(var(--book-tilt)) translateX(calc(var(--space-6) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Calm mode and Reduce Motion: the new page fades in. */
+:global(:root[data-calm]) .turnNext,
+:global(:root[data-calm]) .turnBack {
+  animation-name: appear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turnNext,
+  .turnBack {
+    animation: appear var(--t-calm) linear both;
+  }
+}
+
+/* The list on home's "New sticker" card. */
 .fresh {
   margin: 0;
   padding: 0;

@@ -1,0 +1,73 @@
+/* Seven small suns in a row, with the total beside them. It wraps under the suns when the room is narrow. */
+.week {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  --sun-size: var(--sunny-sun);
+}
+
+.small {
+  --sun-size: var(--sunny-sun-small);
+  font-size: var(--text-s);
+}
+
+.suns {
+  display: inline-flex;
+  gap: var(--space-1);
+}
+
+.sun {
+  display: block;
+  width: var(--sun-size);
+  height: var(--sun-size);
+  overflow: visible;
+}
+
+.ring {
+  stroke: var(--sunny-ring);
+}
+
+.total {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+/* Today's sun, when today is sunny, lights up once as it appears. */
+.glow {
+  transform-origin: 50% 50%;
+  animation: light-up var(--sunny-glow) var(--ease-bounce) both;
+}
+
+@keyframes light-up {
+  from {
+    transform: scale(0.4);
+    opacity: 0.2;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Calm mode and Reduce Motion: it only fades in. */
+:global(:root[data-calm]) .glow {
+  animation-name: appear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    animation: appear var(--t-calm) linear both;
+  }
+}

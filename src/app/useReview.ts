@@ -1,12 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
 import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
 import { REVIEW_QUESTIONS, applyReview, reviewLevel } from '../engine/review';
-import { makeRng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
 import type { Question, Response } from '../engine/types';
 import { now } from '../lib/clock';
@@ -15,6 +13,8 @@ import { openRepo } from '../storage/index';
 import type { Child, Session, SkillState } from '../storage/schema';
 import { newReviewSession, recentKeys, recordReviewAnswer } from './practiceRecord';
 import { TIMING } from './timing';
+import { castFor } from '../cast';
+import { praiseFor } from './usePractice';
 
 // A review session: 3 questions on each due skill. 3 right moves it up a box, 2 keeps it,
 // 0 or 1 drops it to 85 and back into normal practice.
@@ -27,8 +27,17 @@ export interface ReviewResult {
   passed: boolean;
 }
 
+// Where the review is: which skill (its place in the list), and how its questions have gone so far. The review
+// screen shows each skill as a plant in a pot, watered by each right answer.
+export interface ReviewPlace {
+  index: number;
+  answered: number; // of this skill's three
+  right: number;
+}
+
 export interface Review {
   phase: ReviewPhase;
+  place: ReviewPlace;
   question: Question | null;
   skill: Skill | null; // the one being reviewed now
   asked: number; // questions answered so far, over all skills
@@ -53,6 +62,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
   const [lastResponse, setLastResponse] = useState<Response | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [results, setResults] = useState<ReviewResult[]>([]);
+  const [place, setPlace] = useState<ReviewPlace>({ index: 0, answered: 0, right: 0 });
 
   const live = useRef<{
     index: number; // which skill
@@ -67,8 +77,10 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     asked: number;
     pending: ReturnType<typeof recordReviewAnswer> | null;
     results: ReviewResult[];
+    rightInAll: number; // right answers in this review, over all skills
+    cheer: { index: number | null }; // the friend's last cheer, so it is not said twice running
     alive: boolean;
-  }>({ index: 0, number: 0, right: 0, state: null, reviewsSoFar: 0, keys: [], session: null, question: null, shownAt: now(), asked: 0, pending: null, results: [], alive: true });
+  }>({ index: 0, number: 0, right: 0, state: null, reviewsSoFar: 0, keys: [], session: null, question: null, shownAt: now(), asked: 0, pending: null, results: [], rightInAll: 0, cheer: { index: null }, alive: true });
 
   const show = useCallback((): void => {
     const self = live.current;
@@ -79,6 +91,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     self.shownAt = now();
     self.pending = null;
     setSkill(current);
+    setPlace({ index: self.index, answered: self.number, right: self.right });
     setQuestion(q);
     setResponse(null);
     setLastResponse(null);
@@ -132,6 +145,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       try {
         self.session = newReviewSession(child, now());
         self.results = [];
+        self.rightInAll = 0;
         self.asked = 0;
         for (let index = 0; index < skills.length; index += 1) {
           if (await open(index)) {
@@ -191,6 +205,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       self.reviewsSoFar += 1;
       self.asked += 1;
       setAsked(self.asked);
+      setPlace({ index: self.index, answered: self.number, right: self.right });
       if (reviewed) {
         self.state = reviewed.state;
         self.results = [...self.results, { skill: current, right, passed: reviewed.passed }];
@@ -201,10 +216,11 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
         void speak(openingWords(q), child.settings.speechRate);
         return;
       }
+      const praise = praiseFor(q, self.rightInAll, castFor(current.subject), self.cheer);
+      self.rightInAll += 1;
       setPhase('correct');
       playSfx('chime');
-      const praise = makeRng(q.seed).pick(PRAISE);
-      const spoken = speak(praise.say, child.settings.speechRate);
+      const spoken = speak(praise, child.settings.speechRate);
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) await moveOn().catch(logError);
     })();
@@ -216,5 +232,5 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     void moveOn().catch(logError);
   }, [moveOn, phase]);
 
-  return { phase, question, skill, asked, total: skills.length * REVIEW_QUESTIONS, response, lastResponse, saveError, results, setResponse, submit, gotIt };
+  return { phase, place, question, skill, asked, total: skills.length * REVIEW_QUESTIONS, response, lastResponse, saveError, results, setResponse, submit, gotIt };
 }

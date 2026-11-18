@@ -1,0 +1,95 @@
+/* A place on a page of the sticker book. Its particles fly inside it, so it is positioned. */
+.slot {
+  position: relative;
+  margin: 0;
+  min-height: var(--tap-min);
+  padding: var(--space-3) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font: inherit;
+  font-size: var(--text-s);
+  text-align: center;
+  color: var(--color-ink-soft);
+  background: none;
+  border: var(--border) dotted var(--sticker-slot);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sticker {
+  font-size: var(--emoji-l);
+  line-height: 1;
+}
+
+.label {
+  overflow-wrap: anywhere;
+}
+
+/* Not earned yet: only the outline, and a question mark that a tap answers. */
+.locked .sticker {
+  color: var(--sticker-slot);
+}
+
+/* Earned, waiting at the foot of the page to be pressed on: its place glows. */
+.loose {
+  color: var(--color-ink);
+  background: var(--sticker-waiting);
+  border-color: var(--color-star);
+}
+
+.loose .sticker {
+  color: var(--color-star);
+  opacity: 0.5;
+}
+
+/* Pressed on. */
+.placed {
+  color: var(--color-ink);
+  font-weight: 700;
+  background: var(--color-surface);
+  border-style: solid;
+  border-width: var(--border-thin);
+  border-color: var(--color-star);
+  box-shadow: var(--shadow-card);
+}
+
+/* Just pressed on: a small squash, as a thumb would press it. */
+.landed {
+  animation: press var(--sticker-land) var(--ease-bounce) both;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(1.25);
+  }
+  45% {
+    transform: scale(0.88, 0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Calm mode and Reduce Motion: it fades in where it lands. */
+:global(:root[data-calm]) .landed {
+  animation-name: appear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landed {
+    animation: appear var(--t-calm) linear both;
+  }
+}

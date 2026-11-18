@@ -11,7 +11,12 @@ import FullScreenCard from '../../components/FullScreenCard';
 import HoldButton from '../../components/HoldButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
+import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
+import ReviewPot from '../../components/ReviewPot';
+import { plantKindFor } from '../../components/plantKind';
+import { castFor } from '../../cast';
+import { REVIEW_QUESTIONS } from '../../engine/review';
 import type { Skill } from '../../content/catalogue';
 import type { Say } from '../../engine/types';
 import type { Child } from '../../storage/schema';
@@ -44,6 +49,19 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
 
+  // Each skill under review is a plant in a pot, watered by each right answer (game feel, phase 5). A skill whose
+  // review is due is a mastered one, so its plant is in bloom; a miss never takes that away.
+  const asking = question !== null && (phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong');
+  const pots = skills.flatMap((each, index) => {
+    const kind = plantKindFor(each);
+    if (!kind) return [];
+    const result = review.results.find((r) => r.skill.id === each.id);
+    const here = index === review.place.index;
+    const done = result !== undefined || (here && review.place.answered >= REVIEW_QUESTIONS);
+    const watered = result?.right ?? (here ? review.place.right : 0);
+    return [{ skill: each, kind, done, watered, current: here && !done }];
+  });
+
   const kept = review.results.filter((result) => result.passed).length;
   useEffect(() => {
     if (phase === 'done') void speak(LINES.reviewDone, rate);
@@ -60,14 +78,24 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
         </>
       }
       side={
-        <p className={styles.count} data-review-count="">
-          {review.asked} of {review.total}
-        </p>
+        <>
+          <p className={styles.count} data-review-count="">
+            {review.asked} of {review.total}
+          </p>
+          {review.skill && <PracticeFriend who={castFor(review.skill.subject)} questionKey={questionId} phase={phase} />}
+        </>
       }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
       {phase === 'failed' && <Notice role="alert">The review could not be opened. Go back and try again.</Notice>}
-      {question && (phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong') && (
+      {asking && pots.length > 0 && (
+        <ul className={styles.pots} aria-label="Plants to water">
+          {pots.map((pot) => (
+            <ReviewPot key={pot.skill.id} kind={pot.kind} stage={4} watered={pot.watered} done={pot.done} current={pot.current} label={pot.skill.name} />
+          ))}
+        </ul>
+      )}
+      {question && asking && (
         <QuestionStage
           question={question}
           phase={phase}

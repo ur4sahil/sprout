@@ -1,0 +1,113 @@
+/* The growth show sits inside a full-screen card, in place of its picture. A tap anywhere on it skips to the end. */
+.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: var(--width-question);
+  text-align: center;
+}
+
+/* The plant with the friend beside it. The particle layer covers both. */
+.stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* The plant is two wide by three tall, and never takes more than a quarter of a short screen. */
+.plant {
+  height: min(var(--payoff-show-height), 24dvh);
+  aspect-ratio: 2 / 3;
+}
+
+.friend {
+  width: min(var(--payoff-show-friend), 15dvh);
+}
+
+/* A plant whose stage did not change still shows it was cared for: a happy rustle. */
+.rustle {
+  transform-origin: 50% 100%;
+  animation: rustle var(--payoff-rustle) var(--ease-settle) 1;
+}
+
+.facts {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-l);
+}
+
+/* Each fact rises into place as its turn comes. Until then it keeps its room, so nothing below it jumps. */
+.fact {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition:
+    opacity var(--t-move) var(--ease-settle),
+    transform var(--t-move) var(--ease-bounce);
+}
+
+.fact:not([data-on]) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(var(--payoff-fact-rise));
+}
+
+.number {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+}
+
+.suns {
+  height: var(--payoff-sun);
+  width: auto;
+  aspect-ratio: 7 / 1;
+}
+
+.sun {
+  fill: var(--payoff-sun-off);
+}
+
+.sun[data-lit] {
+  fill: var(--color-star);
+}
+
+@keyframes rustle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-4deg);
+  }
+  45% {
+    transform: rotate(3.5deg);
+  }
+  70% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* Calm mode and Reduce Motion: the show is not played at all (the component knows), and nothing slides. */
+:global(:root[data-calm]) .rustle {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rustle {
+    animation: none;
+  }
+
+  .fact {
+    transition: none;
+  }
+}

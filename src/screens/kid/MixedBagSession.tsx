@@ -10,9 +10,13 @@ import HoldButton from '../../components/HoldButton';
 import Icon from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
+import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
+import { castFor } from '../../cast';
+import { PALETTE } from '../../visuals/palette';
 import type { Say } from '../../engine/types';
 import type { Child } from '../../storage/schema';
+import bagStyles from './MixedBagSession.module.css';
 import styles from './ReviewSession.module.css';
 
 // One Mixed bag, from its first question to its last card.
@@ -49,25 +53,37 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
         </>
       }
       side={
-        <p className={styles.count} data-mixed-count="">
-          {bag.asked} of {bag.total}
-        </p>
+        <>
+          <p className={styles.count} data-mixed-count="">
+            {bag.asked} of {bag.total}
+          </p>
+          {/* The friend in the corner is the one for this question's subject, so it changes as the subjects do. */}
+          {bag.skill && <PracticeFriend who={castFor(bag.skill.subject)} questionKey={questionId} phase={phase} />}
+        </>
       }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
       {phase === 'failed' && <Notice role="alert">The Mixed bag could not be opened. Go back and try again.</Notice>}
-      {question && (phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong') && (
-        <QuestionStage
-          question={question}
-          phase={phase}
-          response={bag.response}
-          lastResponse={bag.lastResponse}
-          saveError={bag.saveError}
-          onChange={bag.setResponse}
-          onSubmit={bag.submit}
-          onGotIt={bag.gotIt}
-          onSpeak={say}
-        />
+      {question && bag.skill && (phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong') && (
+        // The bag is a basket (game feel, phase 5): each question flies out of it as a card edged in its subject's colour.
+        <div className={bagStyles.bag} data-subject={bag.skill.subject}>
+          <svg key={question.key} className={bagStyles.basket} viewBox="0 0 60 40" aria-hidden="true" data-basket="">
+            <path d="M18 18 C 18 2, 42 2, 42 18" stroke={PALETTE.garden.basketDark} strokeWidth="3" fill="none" />
+            <path d="M10 17 L 50 17 L 45 38 L 15 38 Z" fill={PALETTE.garden.basket} stroke={PALETTE.garden.basketDark} strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M12 24 L 48 24 M 13.5 31 L 46.5 31" stroke={PALETTE.garden.basketDark} strokeWidth="1.2" />
+          </svg>
+          <QuestionStage
+            question={question}
+            phase={phase}
+            response={bag.response}
+            lastResponse={bag.lastResponse}
+            saveError={bag.saveError}
+            onChange={bag.setResponse}
+            onSubmit={bag.submit}
+            onGotIt={bag.gotIt}
+            onSpeak={say}
+          />
+        </div>
       )}
       {(phase === 'done' || phase === 'none') && (
         <FullScreenCard

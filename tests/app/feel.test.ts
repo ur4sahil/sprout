@@ -7,7 +7,7 @@ import { childSettingsSchema, defaultSettings } from '../../src/storage/schema';
 import { WORLDS, currentWorld, growthStage, worldFor } from '../../src/worlds';
 
 // How the app feels (plan section 19, phase 1): the world, Calm mode, touch, sounds and particles.
-const child = (change: Partial<Child['settings']> = {}): Child => ({ id: 'kid-1', name: 'Robin', avatar: '🐢', grade: 'K', settings: { ...defaultSettings('K'), ...change }, resetAt: null, levelWeeks: [], createdAt: '', updatedAt: '', deletedAt: null });
+const child = (change: Partial<Child['settings']> = {}): Child => ({ id: 'kid-1', name: 'Robin', avatar: '🐢', grade: 'K', settings: { ...defaultSettings('K'), ...change }, resetAt: null, levelWeeks: [], storiesRead: [], stickersPlaced: [], createdAt: '', updatedAt: '', deletedAt: null });
 
 afterEach(() => applyChildFeel(null));
 
@@ -23,6 +23,15 @@ describe('the world', () => {
     delete old.calm;
     delete old.world;
     expect(childSettingsSchema.parse(old)).toMatchObject({ calm: false, world: 'garden' });
+  });
+
+  it('home is the garden by default, and settings saved before the choice existed read as the garden', () => {
+    expect(defaultSettings('K').homeView).toBe('garden');
+    const old: Record<string, unknown> = { ...defaultSettings('2') };
+    delete old.homeView;
+    expect(childSettingsSchema.parse(old).homeView).toBe('garden');
+    expect(childSettingsSchema.parse({ ...old, homeView: 'list' }).homeView).toBe('list');
+    expect(childSettingsSchema.safeParse({ ...old, homeView: 'grid' }).success).toBe(false);
   });
 
   it('every world names all five stages, a sound for each moment, and colours as tokens', () => {

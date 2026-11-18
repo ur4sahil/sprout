@@ -1,0 +1,60 @@
+/* The words of a story page: big, dark and easy to tap. */
+.text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--story-word-gap);
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--story-text);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.word {
+  padding: var(--story-word-pad);
+  border: none;
+  border-radius: var(--radius-s);
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition:
+    background-color var(--t-pop) var(--ease-settle),
+    transform var(--t-pop) var(--ease-bounce);
+}
+
+.word:disabled {
+  cursor: default;
+}
+
+/* The word being read lights up and lifts a little. */
+.word[data-lit] {
+  background: var(--story-word-lit);
+  transform: translateY(var(--story-word-lift));
+}
+
+/* Calm mode: no movement and no light, just a line under the word being read. */
+.text[data-still] .word {
+  transition: none;
+}
+
+.text[data-still] .word[data-lit] {
+  background: transparent;
+  transform: none;
+  text-decoration: underline;
+  text-decoration-thickness: var(--border-thick);
+  text-underline-offset: var(--story-underline-gap);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word {
+    transition: none;
+  }
+
+  .word[data-lit] {
+    transform: none;
+  }
+}

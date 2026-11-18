@@ -160,3 +160,10 @@
     transition: none;
   }
 }
+
+/* A device that cannot keep up (the old-device fallback): plants stand still and visitors stop fluttering. */
+:global(:root[data-lowfx]) .sway,
+:global(:root[data-lowfx]) .hover,
+:global(:root[data-lowfx]) .wings {
+  animation: none;
+}

@@ -75,3 +75,21 @@
 .row[data-locked] .icon {
   color: var(--color-ink-soft);
 }
+
+/* Under the garden the plan is a strip. On a phone, where the page scrolls as one, it stays a list. From tablet
+   width it is one row that slides sideways inside itself, so the garden above keeps its height. */
+@media (min-width: 48em) {
+  .plan[data-look='strip'] {
+    flex: none;
+    flex-direction: row;
+    gap: var(--space-4);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+  }
+
+  .plan[data-look='strip'] .row {
+    flex: none;
+    max-width: 100%;
+  }
+}

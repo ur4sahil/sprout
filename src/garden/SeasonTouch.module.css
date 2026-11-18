@@ -1,0 +1,72 @@
+/* The season's falling things: a window over the sky and the hills, with each thing falling down its own lane.
+   It sits behind the plants and the path and lets every touch through. */
+.fall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--season-fall-depth);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: var(--garden-layer-season);
+}
+
+/* A lane is as tall as the window, so moving it down by its own height carries its thing from top to bottom. */
+.lane {
+  position: absolute;
+  top: 0;
+  left: calc(var(--set-x) * 1%);
+  width: var(--season-bit);
+  height: 100%;
+  animation: fall calc(var(--season-fall) * var(--set-pace)) linear infinite;
+  animation-delay: calc(var(--season-fall) * var(--set-delay) * -1);
+}
+
+/* Each thing sways from side to side as it falls, turning a little. */
+.bit {
+  display: block;
+  width: var(--season-bit);
+  height: var(--season-bit);
+  animation: sway var(--season-sway) ease-in-out infinite alternate;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: translateX(calc(var(--season-swing) * -1)) rotate(-20deg);
+  }
+  to {
+    transform: translateX(var(--season-swing)) rotate(25deg);
+  }
+}
+
+:global(:root[data-calm]) .fall {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fall {
+    display: none;
+  }
+}
+
+/* A device that cannot keep up (the old-device fallback, `data-lowfx`): nothing drifts. */
+:global(:root[data-lowfx]) .fall {
+  display: none;
+}

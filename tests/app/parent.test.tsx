@@ -327,9 +327,14 @@ describe('the grown-up pages', () => {
     await user.click(screen.getByRole('switch', { name: /Show a timer/ }));
     await user.click(screen.getByRole('switch', { name: /Videos in lessons/ }));
     await user.click(screen.getByRole('switch', { name: /Read questions aloud/ }));
+    // Home shows the garden unless a grown-up picks the plain list.
+    expect((screen.getByLabelText('Home shows') as HTMLSelectElement).value).toBe('garden');
+    await user.selectOptions(screen.getByLabelText('Home shows'), 'list');
     await waitFor(async () =>
-      expect((await (await repo()).listChildren())[0]?.settings).toMatchObject({ dailyMinutes: 20, sessionLength: 12, speechRate: 0.7, preReader: false, gentleScoring: false, showTimer: true, allowVideos: false, autoSpeak: false }),
+      expect((await (await repo()).listChildren())[0]?.settings).toMatchObject({ dailyMinutes: 20, sessionLength: 12, speechRate: 0.7, preReader: false, gentleScoring: false, showTimer: true, allowVideos: false, autoSpeak: false, homeView: 'list' }),
     );
+    await user.selectOptions(screen.getByLabelText('Home shows'), 'garden');
+    await waitFor(async () => expect((await (await repo()).listChildren())[0]?.settings.homeView).toBe('garden'));
 
     // Restarting the math check-in clears its progress and leaves scores alone.
     await (await repo()).saveSkillState({ ...newSkillState('kid-1', 'M-K-C4', NOW.toISOString()), score: 55 });

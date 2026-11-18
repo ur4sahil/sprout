@@ -22,6 +22,73 @@
   height: 100%;
 }
 
+.hop,
+.nod {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 100%;
+}
+
+/* The friend fills its place on the stage. */
+.host {
+  height: auto;
+}
+
+/* On the stage the host reaches with a long arm drawn by the stage itself, on the side it faces. The friend's own
+   arm on that side is put away, so it never has three. */
+.body[data-faces='right'] .host [data-part='arm-right'],
+.body[data-faces='left'] .host [data-part='arm-left'] {
+  visibility: hidden;
+}
+
+/* Before a turn: a small lean out toward the child, held while the moment is said, and a nod. */
+.nod {
+  transition: transform var(--t-move) var(--ease-settle);
+}
+
+.body[data-look-up] .nod {
+  transform: translateY(var(--host-lean-drop)) scale(var(--host-lean));
+}
+
+.body[data-nod] .nod {
+  animation: host-nod var(--host-nod) var(--ease-settle) 1;
+}
+
+/* A count has finished: one small hop. */
+.body[data-hop] .hop {
+  animation: host-hop var(--host-hop) var(--ease-bounce) 1;
+}
+
+@keyframes host-nod {
+  0%,
+  100% {
+    transform: translateY(var(--host-lean-drop)) scale(var(--host-lean));
+  }
+  35% {
+    transform: translateY(var(--host-nod-dip)) scale(var(--host-lean), var(--host-nod-squash));
+  }
+  65% {
+    transform: translateY(var(--host-lean-drop)) scale(var(--host-lean));
+  }
+}
+
+@keyframes host-hop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(var(--host-hop-height));
+  }
+}
+
+/* Calm mode: no hop, no nod and no lean. */
+:root[data-calm] .hop,
+:root[data-calm] .nod {
+  animation: none;
+  transform: none;
+}
+
 /* The arm: a rounded bar from the shoulder, turned toward what the host reaches for, with a hand at its end. */
 .arm {
   left: calc(var(--set-x) * var(--unit));
@@ -30,7 +97,7 @@
   height: calc(var(--unit) * 0.24);
   margin-top: calc(var(--unit) * -0.12);
   border-radius: var(--radius-pill);
-  background: var(--color-host-arm);
+  background: var(--set-arm, var(--color-host-arm));
   transform-origin: 0 50%;
   transform: rotate(var(--set-angle));
   transition:
@@ -48,13 +115,21 @@
   height: calc(var(--unit) * 0.44);
   margin-top: calc(var(--unit) * -0.22);
   border-radius: 50%;
-  background: var(--color-host-hand);
-  box-shadow: 0 0 0 var(--border-thin) var(--color-host-arm);
+  background: var(--set-hand, var(--color-host-hand));
+  box-shadow: 0 0 0 var(--border-thin) var(--set-arm, var(--color-host-arm));
 }
 
 @media (prefers-reduced-motion: reduce) {
   .body,
-  .arm {
+  .arm,
+  .nod {
     transition: none;
+  }
+
+  .body[data-hop] .hop,
+  .body[data-nod] .nod,
+  .body[data-look-up] .nod {
+    animation: none;
+    transform: none;
   }
 }

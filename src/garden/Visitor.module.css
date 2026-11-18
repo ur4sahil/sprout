@@ -1,0 +1,116 @@
+/* An animal living in the garden. Each moves one small part now and then, as slowly as the leaves sway. */
+.visitor {
+  pointer-events: none;
+}
+
+.shadow {
+  fill: var(--color-ink);
+  opacity: 0.12;
+}
+
+.alone {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ears,
+.nose,
+.head,
+.tail,
+.bob,
+.bobLate {
+  transform-box: fill-box;
+  animation: twitch var(--garden-sway) var(--ease-settle) infinite;
+}
+
+.ears {
+  transform-origin: 50% 100%;
+}
+
+.nose,
+.head {
+  transform-origin: 0% 100%;
+  animation-name: nod;
+}
+
+.tail {
+  transform-origin: 100% 100%;
+}
+
+.bob,
+.bobLate {
+  transform-origin: 50% 100%;
+  animation-name: bob;
+}
+
+.bobLate {
+  animation-delay: calc(var(--garden-sway) / -2);
+}
+
+@keyframes twitch {
+  0%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+  88% {
+    transform: rotate(-8deg);
+  }
+  94% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes nod {
+  0%,
+  70%,
+  100% {
+    transform: rotate(0);
+  }
+  80% {
+    transform: rotate(6deg);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4%);
+  }
+}
+
+/* Calm mode and Reduce Motion: the animals stand still. */
+:global(:root[data-calm]) .ears,
+:global(:root[data-calm]) .nose,
+:global(:root[data-calm]) .head,
+:global(:root[data-calm]) .tail,
+:global(:root[data-calm]) .bob,
+:global(:root[data-calm]) .bobLate {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ears,
+  .nose,
+  .head,
+  .tail,
+  .bob,
+  .bobLate {
+    animation: none;
+  }
+}
+
+/* A device that cannot keep up (the old-device fallback): the animals keep still. */
+:global(:root[data-lowfx]) .ears,
+:global(:root[data-lowfx]) .nose,
+:global(:root[data-lowfx]) .head,
+:global(:root[data-lowfx]) .tail,
+:global(:root[data-lowfx]) .bob,
+:global(:root[data-lowfx]) .bobLate {
+  animation: none;
+}

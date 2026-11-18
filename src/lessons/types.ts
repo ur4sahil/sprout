@@ -31,11 +31,15 @@ export interface Piece {
   badge?: string; // a small label above it, such as the count so far
 }
 
+// A drawn place behind the pieces. Each has a calm surface three rows from the bottom where pieces sit (row 3 of
+// a 6-row stage): 'table' is a wall and a table; the rest are the places for each topic (lessons 2.0).
+export type BackdropName = 'table' | 'picnic' | 'stall' | 'workshop' | 'site' | 'shop' | 'treehouse' | 'nook' | 'pond';
+
 export interface Scene {
   cols: number;
   rows: number;
   pieces: Piece[];
-  backdrop?: 'table'; // a drawn place behind the pieces: a wall and a table whose top is at row 3
+  backdrop?: BackdropName;
 }
 
 // One spoken sentence and the scene while it is said.

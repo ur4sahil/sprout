@@ -30,7 +30,7 @@ export async function setUp(grade: Grade = '1', change: Partial<Child['settings'
     grade,
     settings: { ...defaultSettings(grade), ...change },
     resetAt: null,
-    levelWeeks: [],
+    levelWeeks: [], storiesRead: [], stickersPlaced: [],
     createdAt: NOW.toISOString(),
     updatedAt: NOW.toISOString(),
     deletedAt: null,

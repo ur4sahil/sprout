@@ -26,6 +26,29 @@ export interface World {
   sounds: { tap: SoundName; pick: SoundName; drop: SoundName; right: SoundName; next: SoundName; open: SoundName; close: SoundName; star: SoundName };
   // The child's home drawn as a place (game feel, phase 4). A world without one keeps the plain home.
   home?: HomeScene;
+  // The home scene's colours through the year (game feel, phase 8). A world without them looks the same all year.
+  seasons?: Readonly<Record<Season, SeasonLook>>;
+}
+
+// The four seasons, from the month: spring March to May, summer June to August, autumn September to November,
+// winter December to February.
+export type Season = 'spring' | 'summer' | 'autumn' | 'winter';
+
+// One season's scenery: the colours that replace the usual ones, and one small seasonal touch. Only scenery:
+// the plants, stones and the sun are never changed, so they read the same in every season.
+export interface SeasonLook {
+  // The sky in the day, top then bottom. Evening and night keep the usual skies.
+  sky: Readonly<Record<'morning' | 'afternoon', readonly [string, string]>>;
+  hillFar: string;
+  hillMid: string;
+  grass: string;
+  grassFront: string;
+  tree: string; // tree tops, two shades
+  treeLight: string;
+  hillEdge?: string; // a line along the hill tops: snow in winter
+  // blossom petals drifting, a bright sun in the sky, leaves drifting, or light snow.
+  touch: 'blossom' | 'sun' | 'leaves' | 'snow';
+  touchColours: readonly [string, string];
 }
 
 // The shape of a flower's head. Each is drawn once, in `src/garden/PlantHead.tsx`.

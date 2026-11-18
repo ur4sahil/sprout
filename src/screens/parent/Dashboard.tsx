@@ -9,6 +9,7 @@ import { LADDER_NAME, dayBars, ladderLevel } from '../../app/parentData';
 import { useAppStore } from '../../app/store';
 import BigButton from '../../components/BigButton';
 import Notice from '../../components/Notice';
+import Postcard from '../../components/Postcard';
 import Tabs from '../../components/Tabs';
 import { skillById } from '../../content/catalogue';
 import { addDays, daysBetween, localDayOf, localWeek, now } from '../../lib/clock';
@@ -176,6 +177,8 @@ export default function Dashboard() {
               <li data-fact="picks">Today's picks: {summary.picks.length > 0 ? summary.picks.join(', ') : 'none'}</li>
             </ul>
           </section>
+          {/* The weekly postcard (game feel, phase 7): only for a week with 4 or more sunny days. */}
+          <Postcard key={child.id} child={child} />
           <section className={styles.panel} aria-label="Levels by topic">
             <h2>Levels by topic</h2>
             <p className={styles.soft}>From the skills {child.name} has shown they know. Worked out again each time this page opens.</p>

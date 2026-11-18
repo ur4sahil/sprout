@@ -3,6 +3,8 @@ import Art from '../visuals/Art';
 import Icon from './Icon';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
+import GrowthShow from './GrowthShow';
+import type { GrowthInfo } from './GrowthShow';
 import styles from './Celebration.module.css';
 
 interface Props {
@@ -13,20 +15,23 @@ interface Props {
   games?: { onPop: (() => void) | null; onPairs: () => void };
   // At the half-way milestone, a skill with a second lesson offers it: its harder questions start about here.
   onNextLesson?: () => void;
+  // At 100, the sitting is over: the growth show plays first, with the plant in full bloom (game feel, phase 5).
+  growth?: GrowthInfo | null;
 }
 
 
 // A short full-screen celebration, the first time a milestone is crossed.
-export default function Celebration({ milestone, skillName, onDone, games, onNextLesson }: Props) {
+export default function Celebration({ milestone, skillName, onDone, games, onNextLesson, growth = null }: Props) {
   const words = MILESTONE_WORDS[milestone] ?? (MILESTONE_WORDS[50] as { emoji: string; title: string; line: string });
-  return (
-    <div className={styles.cover} role="dialog" aria-modal="true" aria-label={words.title} data-celebration={milestone}>
-      <div className={styles.emoji} aria-hidden="true">
-        <Art emoji={words.emoji} />
-      </div>
+  const head = (
+    <>
       <h2 className={styles.title}>{words.title}</h2>
       <p className={styles.line}>{words.line}</p>
       <p className={styles.skill}>{skillName}</p>
+    </>
+  );
+  const buttons = (
+    <>
       <BigButton size="kid" onClick={onDone}>
         <Icon name="next" />
         {milestone === 100 ? 'All done' : 'Keep going'}
@@ -48,6 +53,23 @@ export default function Celebration({ milestone, skillName, onDone, games, onNex
             <Icon name="cards" />Play Pairs
           </BigButton>
         </CenterRow>
+      )}
+    </>
+  );
+  return (
+    <div className={styles.cover} role="dialog" aria-modal="true" aria-label={words.title} data-celebration={milestone}>
+      {milestone === 100 && growth ? (
+        <GrowthShow info={growth} bloom head={head}>
+          {buttons}
+        </GrowthShow>
+      ) : (
+        <>
+          <div className={styles.emoji} aria-hidden="true">
+            <Art emoji={words.emoji} />
+          </div>
+          {head}
+          {buttons}
+        </>
       )}
     </div>
   );

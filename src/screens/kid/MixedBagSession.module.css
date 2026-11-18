@@ -1,0 +1,98 @@
+/* The Mixed bag as a basket (game feel, phase 5): a small basket above the question, and each question card flying
+   up out of it, its top edge in the subject's colour. */
+.bag {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  --bag-colour: var(--color-line);
+}
+
+.bag[data-subject='math'] {
+  --bag-colour: var(--subject-math);
+}
+
+.bag[data-subject='ela'] {
+  --bag-colour: var(--subject-ela);
+}
+
+.bag[data-subject='reasoning'] {
+  --bag-colour: var(--subject-reasoning);
+}
+
+/* The basket gives a little hop as each card leaves it. */
+.basket {
+  flex: none;
+  width: var(--payoff-basket);
+  height: auto;
+  transform-origin: 50% 100%;
+  animation: basket-hop var(--payoff-bob) var(--ease-bounce) 1;
+}
+
+/* The question card (and the steps after a miss) wear the subject's colour along the top. */
+.bag > [data-arrive] {
+  border-top: var(--border-thick) solid var(--bag-colour);
+}
+
+/* A new question flies up out of the basket and grows to full size, in place of the usual slide from the side.
+   Calm mode and Reduce Motion fade it in instead (below). */
+.bag > [data-phase][data-arrive] {
+  transform-origin: 50% 0;
+  animation: fly-out var(--payoff-fly) var(--ease-settle) both;
+}
+
+@keyframes fly-out {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--payoff-basket) * -0.6)) scale(0.25);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes basket-hop {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  30% {
+    transform: translateY(0) scale(1.08, 0.88);
+  }
+  60% {
+    transform: translateY(-12%) scale(0.96, 1.06);
+  }
+}
+
+:global(:root[data-calm]) .basket {
+  animation: none;
+}
+
+/* Calm mode: the card fades in where it stands. */
+:global(:root[data-calm]) .bag > [data-phase][data-arrive] {
+  animation-name: fade-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .basket {
+    animation: none;
+  }
+
+  .bag > [data-phase][data-arrive] {
+    animation: fade-in var(--t-calm) linear both;
+  }
+}

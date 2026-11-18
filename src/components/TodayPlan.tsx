@@ -11,6 +11,7 @@ interface Props {
   plan: readonly PlanPart[];
   onOpen: (part: PlanPart) => void;
   onSpeak: (say: Say) => void;
+  look?: 'list' | 'strip'; // strip: under the garden, one row that slides sideways from tablet width. Left out: the list
 }
 
 // Today's plan (plan section 18): one row for each part, in order, ticked when done. Each row opens its part.
@@ -31,9 +32,9 @@ function words(part: PlanPart): { icon: IconName; title: string; detail: string;
   }
 }
 
-export default function TodayPlan({ plan, onOpen, onSpeak }: Props) {
+export default function TodayPlan({ plan, onOpen, onSpeak, look = 'list' }: Props) {
   return (
-    <ol className={styles.plan} aria-label="Today's plan">
+    <ol className={styles.plan} aria-label="Today's plan" data-look={look}>
       {plan.map((part, i) => {
         const shown = words(part);
         const locked = part.kind === 'mixed' && part.locked;

@@ -1,0 +1,129 @@
+/* A postcard: the message on the left, the stamp, postmark and address lines on the right, split by a line.
+   On a narrow screen the stamp side sits on top. */
+.card {
+  width: 100%;
+  max-width: var(--postcard-width);
+  flex: none;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--postcard-paper);
+  border: var(--border-thin) solid var(--postcard-edge);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-lift);
+  transform: rotate(var(--postcard-tilt));
+  animation: arrive var(--t-scene) var(--ease-bounce) both;
+}
+
+@media (min-width: 40em) {
+  .card {
+    flex-direction: row;
+  }
+}
+
+.message {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-l);
+  color: var(--color-brand-deep);
+}
+
+.week {
+  margin: 0;
+  font-weight: 700;
+}
+
+.facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  line-height: 1.4;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.side {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+  padding-inline-start: var(--space-4);
+  border-inline-start: var(--border) dashed var(--postcard-edge);
+}
+
+/* The child's avatar as the stamp, in a frame with a zig-zag edge. */
+.stamp {
+  width: var(--postcard-stamp);
+  height: var(--postcard-stamp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--emoji-l);
+  background: var(--color-surface);
+  border: var(--border-thick) dotted var(--postcard-stamp-edge);
+  outline: var(--border-thin) solid var(--postcard-stamp-edge);
+  outline-offset: calc(var(--border-thick) * -2);
+}
+
+.postmark {
+  padding: var(--space-2) var(--space-3);
+  border: var(--border) solid var(--postcard-mark);
+  border-radius: var(--radius-pill);
+  color: var(--postcard-mark);
+  font-size: var(--text-s);
+  font-weight: 700;
+  white-space: nowrap;
+  transform: rotate(calc(var(--postcard-tilt) * -6));
+}
+
+.line {
+  width: 100%;
+  min-width: var(--postcard-stamp);
+  border-bottom: var(--border-thin) solid var(--postcard-edge);
+  height: var(--space-4);
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(var(--space-5)) rotate(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(var(--postcard-tilt));
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Calm mode and Reduce Motion: the card fades in where it lies. */
+:global(:root[data-calm]) .card {
+  animation-name: appear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: appear var(--t-calm) linear both;
+  }
+}

@@ -118,13 +118,27 @@
   font-size: calc(var(--unit) * 0.6);
 }
 
-/* A drawn place behind the pieces. */
-.backdrop {
+/* A drawn place behind the pieces, clipped to the stage, so that when the camera leans in the place is cut off at
+   the stage's edge. The pieces are never clipped: the camera keeps every one inside. */
+.scenery {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  overflow: hidden;
   border-radius: var(--radius-m);
+}
+
+/* The camera (game feel, phase 6): the scene leans in toward what the lesson is about, by a scale and a pan in
+   stage squares worked out in src/lessons/actor.ts, and back out when nothing is in focus. */
+.camera {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  transform: scale(var(--set-zoom)) translate(calc(var(--set-pan-x) * -100cqw / var(--set-cols)), calc(var(--set-pan-y) * -100cqw / var(--set-cols)));
+  transition: transform var(--lesson-glide) var(--ease-settle);
+}
+
+:root[data-calm] .camera {
+  transform: none;
 }
 
 /* The rich look: pieces overshoot a little and settle, so groups land and things pop in. */
@@ -138,6 +152,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .piece {
+    transition: none;
+  }
+
+  .camera {
+    transform: none;
     transition: none;
   }
 }

@@ -1,16 +1,20 @@
+import { useMemo } from 'react';
 import { useTeach } from '../app/useTeach';
 import { speak } from '../audio/speech';
 import { describeAnswer } from '../engine/describe';
+import Character from '../cast/Character';
 import type { Say } from '../engine/types';
 import QuestionView from '../items/QuestionView';
+import { castOn, lessonBackdrop } from '../lessons/backdrops';
+import { chapterAt, chaptersOf } from '../lessons/chapters';
 import type { Lesson } from '../lessons/types';
 import BigButton from './BigButton';
 import CenterRow from './CenterRow';
+import ChapterDots from './ChapterDots';
 import Icon from './Icon';
 import IconButton from './IconButton';
 import Confetti from './Confetti';
 import type { HostMood } from './LessonHost';
-import LessonHost from './LessonHost';
 import LessonStage from './LessonStage';
 import styles from './TeachLesson.module.css';
 
@@ -28,6 +32,9 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
   const say = (words: Say): void => void speak(words, rate);
   const rich = lesson.look === 'rich';
   const mood: HostMood = teach.cheering ? 'cheering' : teach.talking ? 'talking' : 'idle';
+  // The friend who teaches here (the place says which subject), and Pip beside the words in Math.
+  const cast = castOn(lessonBackdrop(lesson));
+  const chapters = useMemo(() => chaptersOf(lesson), [lesson]);
 
   return (
     <section className={styles.card} aria-label="Lesson" data-teach-phase={phase} data-part={teach.partIndex}>
@@ -37,8 +44,9 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
         <>
           <p className={styles.yourTurn} data-your-turn="">
             {rich ? (
-              <span className={styles.hostSmall}>
-                <LessonHost mood={mood} />
+              // The teacher stays beside the question, leaning in and waiting for the child.
+              <span className={styles.turnHost} data-turn-host={cast.host}>
+                <Character who={cast.host} mood={teach.cheering ? 'cheer' : 'listen'} />
               </span>
             ) : (
               <Icon name="star" />
@@ -57,14 +65,21 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
         <>
           {moment &&
             (rich ? (
-              <LessonStage scene={moment.scene} label={moment.text} lively actor={mood} />
+              <LessonStage scene={moment.scene} label={moment.text} lively actor={mood} who={cast.host} cue={teach.cue} />
             ) : (
               <LessonStage scene={moment.scene} label={moment.text} />
             ))}
           {moment && (
-            <p className={styles.words} data-moment-text="">
-              {moment.text}
-            </p>
+            <div className={styles.wordsRow}>
+              {rich && cast.helper && (
+                <span className={styles.helper} data-helper={cast.helper}>
+                  <Character who={cast.helper} mood={teach.cheering ? 'cheer' : 'idle'} />
+                </span>
+              )}
+              <p className={styles.words} data-moment-text="">
+                {moment.text}
+              </p>
+            </div>
           )}
           {phase === 'shown' && turn && (
             <p className={styles.answer} data-lesson-answer="">
@@ -72,6 +87,7 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
               {describeAnswer(turn.question)}
             </p>
           )}
+          <ChapterDots chapters={chapters} current={phase === 'done' ? -1 : chapterAt(chapters, teach.partIndex)} onPick={teach.goTo} />
         </>
       )}
       <CenterRow>

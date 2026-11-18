@@ -1,19 +1,24 @@
 import { PART2_AT_SCORE, teachingPart2For } from '../../lessons';
 import Icon from '../../components/Icon';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { popSkills } from '../../app/games';
+import { answersByDay, sunnyDays } from '../../app/sunnyDays';
 import { usePractice } from '../../app/usePractice';
 import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
+import { useMusic } from '../../audio/useMusic';
 import { warmQuestion } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import Celebration from '../../components/Celebration';
 import FullScreenCard from '../../components/FullScreenCard';
+import type { GrowthInfo } from '../../components/GrowthShow';
 import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
+import PracticeFriend from '../../components/PracticeFriend';
+import { plantKindFor } from '../../components/plantKind';
 import QuestionStage from '../../components/QuestionStage';
 import Scratchpad from '../../components/Scratchpad';
 import SoftBreak from '../../components/SoftBreak';
@@ -24,6 +29,8 @@ import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
+import { castFor } from '../../cast';
+import { growthStage } from '../../worlds';
 import { GRADE_NAME, SUBJECTS } from './Home';
 import styles from './PracticeSession.module.css';
 
@@ -77,6 +84,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
   }
 
   const asking = phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong';
+  useMusic('practice', phase !== 'asking' || question?.mode === 'listen');
 
   // From grade 1, a pencil opens a drawing layer over the question. It is closed again for each new question.
   const canDraw = child.grade !== 'PK' && child.grade !== 'K';
@@ -101,6 +109,30 @@ export default function PracticeSession({ child, skill, play }: Props) {
       alive = false;
     };
   }, [phase, child]);
+  // The skill's plant, in the status panel and in the growth show at the end of the sitting (game feel, phase 5).
+  const kind = useMemo(() => plantKindFor(skill), [skill]);
+  const friend = castFor(skill.subject);
+  const stage = state ? growthStage(state.score, state.masteredAt !== null) : 0;
+
+  // The growth show ends a sitting: on the break card, or on the medal at 100. Its last fact is this week's sunny
+  // days, counted from the answers saved since a week ago.
+  const ending = phase === 'break' || (phase === 'celebrating' && practice.milestone === 100);
+  const [sunny, setSunny] = useState<boolean[] | null>(null);
+  useEffect(() => {
+    if (!ending) return;
+    let alive = true;
+    void (async () => {
+      const { repo } = await openRepo();
+      const since = new Date(now().getTime() - 8 * 86_400_000).toISOString();
+      const days = answersByDay(await repo.listAttempts(child.id, { since }));
+      if (alive) setSunny(sunnyDays(days, now()).week);
+    })().catch(logError);
+    return () => {
+      alive = false;
+    };
+  }, [ending, child]);
+  const growth: GrowthInfo | null = kind && state ? { who: friend, kind, from: practice.startStage, to: stage, right: practice.right, score: state.score, sunny } : null;
+
   const games = { onPop: popOffered ? () => void navigate('/games/pop', { replace: true }) : null, onPairs: () => void navigate('/games/pairs', { replace: true }) };
 
   return (
@@ -122,7 +154,14 @@ export default function PracticeSession({ child, skill, play }: Props) {
           <IconButton icon="bulb" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
         </>
       }
-      side={state && <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} />}
+      side={
+        state && (
+          <>
+            <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} plant={kind ? { kind, stage } : null} />
+            <PracticeFriend who={friend} questionKey={questionId} phase={phase} />
+          </>
+        )
+      }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
       {phase === 'failed' && (
@@ -152,7 +191,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
           milestone={practice.milestone}
           skillName={skill.name}
           onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
-          onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} />
+          onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} growth={growth} />
       )}
       {phase === 'skipped' && (
         <FullScreenCard emoji="🚀" title="You know this one!" line={`${skill.name}: no need to practise it.`} name="skipped">
@@ -162,7 +201,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
           </BigButton>
         </FullScreenCard>
       )}
-      {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} />}
+      {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} growth={growth} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
     </KidScreen>
   );

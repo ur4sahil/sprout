@@ -34,6 +34,10 @@ export const childSettingsSchema = z.object({
   // How the app feels (plan section 19). Calm mode: movement becomes short fades. The world: where its look comes from.
   calm: z.boolean().default(false),
   world: z.enum(['garden']).default('garden'),
+  // What the child's home shows: the garden, or the plain list of today's plan (kept in case the garden misbehaves on a device).
+  homeView: z.enum(['garden', 'list']).default('garden'),
+  // Soft music under the garden and practice (docs/GAME_FEEL.md, phase 8). The mute switch silences it too.
+  music: z.boolean().default(true),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -56,6 +60,8 @@ export function defaultSettings(grade: Grade): ChildSettings {
     planMixed: true,
     calm: false,
     world: 'garden',
+    homeView: 'garden',
+    music: true,
   };
 }
 
@@ -69,6 +75,11 @@ export const childSchema = z.object({
   // One snapshot of the topic levels a week (plan section 15.3), keyed by the week's Monday. A topic
   // the child has not tried is left out. The newest 26 weeks are kept.
   levelWeeks: z.array(z.object({ week: z.string(), at: iso, levels: z.record(z.string(), z.number()) })).default([]),
+  // Stories the child has finished (docs/GAME_FEEL.md, phase 7): the episode's id, never its place in a list, and the
+  // local day it was finished, which is what allows at most one new story a day.
+  storiesRead: z.array(z.object({ episodeId: z.string().min(1), day: z.string() })).default([]),
+  // Stickers the child has pressed into the sticker book: award ids.
+  stickersPlaced: z.array(z.string().min(1)).default([]),
   createdAt: iso,
   updatedAt: iso,
   deletedAt: iso.nullable(),

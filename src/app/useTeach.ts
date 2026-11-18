@@ -8,6 +8,8 @@ import { check } from '../engine/check';
 import { makeRng } from '../engine/rng';
 import type { Response } from '../engine/types';
 import { lessonSays } from '../lessons';
+import { NO_CUE, partCue, whyCue } from '../lessons/actor';
+import type { HostCue } from '../lessons/actor';
 import type { Lesson, Moment, Turn } from '../lessons/types';
 
 // Runs a lesson that teaches (plan section 16). Moments play one after another; a turn waits for the child.
@@ -35,6 +37,8 @@ export interface Teach {
   next: () => void; // after a shown answer
   togglePause: () => void;
   restart: () => void;
+  goTo: (partIndex: number) => void; // replay from this part (a chapter dot)
+  cue: HostCue; // the host's look, nod or hop for the moment on show
   talking: boolean; // the lesson is saying something now (the host moves its mouth)
   cheering: boolean; // a turn was just answered right (the host hops, confetti falls)
 }
@@ -60,6 +64,7 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
   }, []);
   const alive = useRef(true);
   const praising = useRef(false); // a right answer is being praised: further taps wait
+  const jumps = useRef(0); // goes up when the child jumps to a chapter, so a praise still running does not move on
 
   useEffect(() => {
     alive.current = true;
@@ -113,7 +118,8 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
       cancelled = true;
       stop();
     };
-  }, [paused, phase, current, partIndex, whyIndex, turn, rate, goTo, sayNow]);
+    // `attempt` goes up on every jump, so choosing the chapter already on show plays it again.
+  }, [paused, phase, current, partIndex, whyIndex, turn, rate, goTo, sayNow, attempt]);
 
   // A turn reads its question aloud as it appears.
   useEffect(() => {
@@ -136,9 +142,11 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
       playSfx('chime');
       setCheering(true);
       const praise = makeRng(turn.question.seed + attempt).pick(PRAISE);
+      const jump = jumps.current;
       void (async () => {
         await sayNow(praise.say, rate);
         await new Promise((resolve) => setTimeout(resolve, TIMING.momentGapMs));
+        if (jump !== jumps.current) return; // the child chose a chapter meanwhile
         praising.current = false;
         setCheering(false);
         if (alive.current) goTo(partIndex + 1);
@@ -154,6 +162,21 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
       setPhase('shown');
     }
   }, [turn, response, phase, attempt, rate, partIndex, goTo, sayNow]);
+
+  // The child picks where to play from: whatever was being said stops, and play goes on from there.
+  const jumpTo = useCallback(
+    (index: number): void => {
+      jumps.current += 1;
+      praising.current = false;
+      stop();
+      setCheering(false);
+      setPaused(false);
+      goTo(index);
+    },
+    [goTo],
+  );
+
+  const cue = phase === 'showing' ? partCue(lesson, partIndex) : phase === 'why' && turn ? whyCue(turn, whyIndex) : NO_CUE;
 
   return {
     phase,
@@ -173,11 +196,11 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
     },
     talking,
     cheering,
+    cue,
+    goTo: jumpTo,
     restart: () => {
-      stop();
-      setPaused(false);
       setLastMoment(null);
-      goTo(0);
+      jumpTo(0);
     },
   };
 }

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { isLowFx } from '../lib/frameWatch';
 import { burst, fade, step } from '../lib/particles';
 import type { ParticleKind } from '../worlds';
 import { currentWorld } from '../worlds';
@@ -83,5 +84,7 @@ export default function ParticleBurst({ kind, at, seed = 1 }: Props) {
     return () => window.cancelAnimationFrame(frame);
   }, [what, x, y, seed, world]);
 
+  // On a device that cannot keep up (the old-device fallback, `data-lowfx`), no particles are drawn at all.
+  if (isLowFx()) return null;
   return <canvas ref={canvas} className={styles.layer} aria-hidden="true" data-particles={what} />;
 }

@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { MAX_VOICE_TEXT, PACES, VOICE_ID, remoteVoiceMaker, voiceKey } from '../../worker/voice';
+import { MAX_VOICE_TEXT, PACES, VOICE_ID, WHO_VOICE, remoteVoiceMaker, voiceKey } from '../../worker/voice';
 import type { Harness } from './harness';
 import { makeHarness } from './harness';
 
@@ -9,6 +9,7 @@ let h: Harness;
 let cookie: string;
 let made: string[];
 let speeds: number[];
+let voices: (string | undefined)[];
 const bytes = (text: string): ArrayBuffer => new TextEncoder().encode(`mp3:${text}`).buffer as ArrayBuffer;
 const say = (text: unknown, options: Parameters<Harness['call']>[3] = {}): Promise<Response> => h.call('POST', '/api/voice', { text }, { cookie, ...options });
 
@@ -17,10 +18,12 @@ beforeEach(async () => {
   cookie = await h.signUp();
   made = [];
   speeds = [];
+  voices = [];
   h.deps.voiceMaker = {
-    async make(text, speed) {
+    async make(text, speed, voice) {
       made.push(text);
       speeds.push(speed);
+      voices.push(voice);
       return bytes(`${text}@${speed}`);
     },
   };
@@ -63,6 +66,23 @@ describe('POST /api/voice', () => {
     expect(made).toEqual(['Count the dots.', 'Count the dots.']);
     // Only the two paces exist.
     expect((await h.call('POST', '/api/voice', { text: 'Count the dots.', pace: 'fast' }, { cookie })).status).toBe(400);
+  });
+
+  it('each character has a voice of its own: made in that voice, and kept apart from Sprout\'s copy', async () => {
+    await say('Great counting!');
+    const pip = await h.call('POST', '/api/voice', { text: 'Great counting!', who: 'pip' }, { cookie });
+    expect(pip.status).toBe(200);
+    await h.flush();
+    expect(voices).toEqual([WHO_VOICE.sprout, WHO_VOICE.pip]);
+    expect(new Set(Object.values(WHO_VOICE)).size).toBe(4);
+    // Sprout's files stay where they were; Pip's go in a folder named for his voice.
+    expect(await voiceKey('Great counting!', 'normal', 'sprout')).toBe(await voiceKey('Great counting!'));
+    expect((await voiceKey('Great counting!', 'normal', 'pip')).startsWith(`kokoro-${WHO_VOICE.pip}-0.9/`)).toBe(true);
+    expect(new Set(h.voice.keys())).toEqual(new Set([await voiceKey('Great counting!'), await voiceKey('Great counting!', 'normal', 'pip')]));
+    const again = await h.call('POST', '/api/voice', { text: 'Great counting!', who: 'pip' }, { cookie });
+    expect(again.headers.get('X-Voice')).toBe('saved');
+    // Only the four characters exist.
+    expect((await h.call('POST', '/api/voice', { text: 'Great counting!', who: 'nobody' }, { cookie })).status).toBe(400);
   });
 
   it('refuses text that is not a plain sentence, and makes nothing', async () => {

@@ -109,8 +109,20 @@ test.describe('check-in and stickers', () => {
 
     await page.getByRole('button', { name: /Stickers/ }).click();
     await expect(page.getByRole('heading', { name: /Stickers/ })).toBeVisible();
-    // A board for each subject and grade with skills, one for Reasoning and one for Milestones.
-    for (const board of ['math-PK', 'math-K', 'ela-PK', 'reasoning', 'milestones']) await expect(page.locator(`[data-board="${board}"]`)).toBeVisible();
+    // A page for each subject and grade with skills, one for Reasoning and one for Milestones. The book shows one page
+    // at a time: every page is in the book, and turning through them shows each in turn.
+    const boards = ['math-PK', 'math-K', 'ela-PK', 'reasoning', 'milestones'];
+    for (const board of boards) await expect(page.locator(`[data-board="${board}"]`)).toHaveCount(1);
+    const seen = new Set<string>();
+    for (let turn = 0; turn < 12 && seen.size < boards.length; turn += 1) {
+      for (const board of boards) if (await page.locator(`[data-board="${board}"]`).isVisible()) seen.add(board);
+      const next = page.getByRole('button', { name: 'Next page' });
+      if (await next.isDisabled()) break;
+      await next.click();
+    }
+    expect([...seen].sort()).toEqual([...boards].sort());
+    // Back to the Kindergarten Math page, where the new sticker is.
+    for (let turn = 0; turn < 12 && !(await page.locator('[data-board="math-K"]').isVisible()); turn += 1) await page.getByRole('button', { name: 'Page before' }).click();
     await expect(page.locator('[data-award="mastered:math-K:1"]')).toHaveAttribute('data-earned', 'yes');
     await expect(page.locator('[data-award="mastered:math-K:3"]')).toHaveAttribute('data-earned', 'no');
     await expect(page.locator('[data-board="math-K"] h2')).toHaveText(/^Math, Kindergarten: 1 of \d+$/);

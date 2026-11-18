@@ -8,16 +8,22 @@ import { useAppStore } from '../../app/store';
 import { TIMING } from '../../app/timing';
 import { useWakeLock } from '../../app/useWakeLock';
 import { playSfx } from '../../audio/sfx';
+import { playSound } from '../../audio/sounds';
 import { speak, stop } from '../../audio/speech';
 import { warmQuestion } from '../../audio/voice';
 import { openingWords } from '../../audio/stepSay';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
+import type { GameBeat } from '../../components/GameFriend';
+import GameFriend from '../../components/GameFriend';
 import GameButton from '../../components/GameButton';
 import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import NotQuite from '../../components/NotQuite';
+import ParticleBurst from '../../components/ParticleBurst';
+import { castFor } from '../../cast';
+import { burstAt } from '../../lib/burstAt';
 import Notice from '../../components/Notice';
 import StepWalk from '../../components/StepWalk';
 import { describeVisual } from '../../engine/describe';
@@ -47,6 +53,10 @@ function PopRound({ child }: { child: Child }) {
   const [asked, setAsked] = useState(0);
   const [right, setRight] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
+  // The feel of the round: the friend's reaction to each answer, and sparkles where a right balloon popped.
+  const [feel, setFeel] = useState<{ last: GameBeat; run: number; beat: number }>({ last: null, run: 0, beat: 0 });
+  const [burst, setBurst] = useState<{ key: number; at: { x: number; y: number } } | null>(null);
+  const field = useRef<HTMLDivElement>(null);
   const live = useRef<{ states: SkillState[]; sessions: Map<string, Session>; keys: string[]; shownAt: Date; alive: boolean; at: number }>({ states: [], sessions: new Map(), keys: [], shownAt: now(), alive: true, at: 0 });
   const rate = child.settings.speechRate;
   useWakeLock();
@@ -100,7 +110,7 @@ function PopRound({ child }: { child: Child }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one round for each child
   }, [child]);
 
-  function tap(index: number): void {
+  function tap(index: number, balloon: Element | null): void {
     const self = live.current;
     if (phase !== 'asking' || !turn) return;
     if (now().getTime() - self.shownAt.getTime() < TIMING.tapGuardMs) return;
@@ -124,12 +134,18 @@ function PopRound({ child }: { child: Child }) {
       setAsked((count) => count + 1);
       if (!outcome.correct) {
         setPhase('wrong');
+        playSound('notyet');
+        setFeel((before) => ({ last: 'miss', run: 0, beat: before.beat + 1 }));
         void speak(openingWords(turn.question), rate);
         return;
       }
       setRight((count) => count + 1);
       setPhase('right');
-      playSfx('chime');
+      // The balloon pops (its sound and its burst), then the same chime as practice, climbing with a run.
+      playSound('pop');
+      playSfx('chime', Math.min(feel.run, 7));
+      setFeel((before) => ({ last: 'right', run: before.run + 1, beat: before.beat + 1 }));
+      setBurst((before) => ({ key: (before?.key ?? 0) + 1, at: burstAt(field.current, balloon) }));
       await wait(TIMING.praiseMinMs);
       if (self.alive) advance(asked + 1);
     })();
@@ -166,6 +182,7 @@ function PopRound({ child }: { child: Child }) {
           <span className={styles.count} data-pop-count={asked} aria-label={`Question ${Math.min(asked + 1, POP_ROUND)} of ${POP_ROUND}`}>
             {Math.min(asked + 1, POP_ROUND)} / {POP_ROUND}
           </span>
+          <GameFriend who={turn ? castFor(turn.skill.subject) : 'sprout'} last={feel.last} run={feel.run} beat={feel.beat} />
         </>
       }
     >
@@ -177,7 +194,7 @@ function PopRound({ child }: { child: Child }) {
             <IconButton icon="speaker" label="Hear the question" onClick={() => void speak(question.prompt.speak, rate)} />
           </div>
           {question.stimulus && <VisualView visual={question.stimulus} />}
-          <div className={styles.balloons} role="group" aria-label="Balloons">
+          <div ref={field} className={styles.balloons} role="group" aria-label="Balloons">
             {question.options.map((option, index) => (
               <GameButton
                 key={index}
@@ -187,11 +204,12 @@ function PopRound({ child }: { child: Child }) {
                 data-right={phase === 'wrong' && index === question.answerIndex ? '' : undefined}
                 aria-label={describeVisual(option)}
                 disabled={phase !== 'asking'}
-                onClick={() => tap(index)}
+                onClick={(event) => tap(index, event.currentTarget)}
               >
                 <VisualView visual={option} />
               </GameButton>
             ))}
+            {burst && <ParticleBurst key={burst.key} seed={burst.key} at={burst.at} />}
           </div>
           {phase === 'wrong' && (
             <div className={styles.explain} data-pop-explanation="">

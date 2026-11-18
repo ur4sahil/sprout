@@ -2,6 +2,8 @@ import { missingNumberLesson } from './g1Math';
 import { firstLetterLesson, middleVowelLesson } from './kEla';
 import { addPicturesLesson, countLesson, teenLesson } from './kMath';
 import type { Say } from '../engine/types';
+import { CATALOGUE } from '../content/catalogue';
+import { backdropFor } from './backdrops';
 import { rich } from './build';
 import { LESSONS as kCount } from './more/kCount';
 import { LESSONS as kAdd } from './more/kAdd';
@@ -39,17 +41,20 @@ const WRITTEN: Readonly<Record<string, () => Lesson>> = {
   'M-1-B5': missingNumberLesson,
 };
 
-// Every lesson in the rich look (the owner's choice, Nov 18, 2026): the host, the table, the bounce and confetti.
+// Every lesson in the rich look (the owner's choice, Nov 18, 2026): the host, the bounce and confetti, in the place
+// for its skill's topic (game feel, phase 6: picnic, stall, workshop, site, shop, treehouse, nook or pond).
 // The app is American: some generators keep the British word as a data key ("colour"), and a lesson that builds a
 // sentence from such a key would say it. Every sentence and caption is put right here, in one place.
 const american = (words: string): string => words.replace(/colour/g, 'color').replace(/Colour/g, 'Color');
 const spelled = (each: Moment): Moment => ({ ...each, text: american(each.text), say: each.say.map((part) => (typeof part === 'string' ? american(part) : part)) });
-function finished(lesson: Lesson): Lesson {
-  const look = lesson.look === 'rich' ? lesson : rich(lesson, 'table');
+const SKILLS = new Map(CATALOGUE.map((skill) => [skill.id, skill]));
+function finished(skillId: string, lesson: Lesson): Lesson {
+  const skill = SKILLS.get(skillId);
+  const look = rich(lesson, skill ? backdropFor(skill) : 'table');
   return { ...look, parts: look.parts.map((part) => (part.kind === 'show' ? { kind: 'show', moment: spelled(part.moment) } : { kind: 'turn', turn: { ...part.turn, why: part.turn.why.map(spelled) } })) };
 }
 const richly = (written: Readonly<Record<string, () => Lesson>>): Readonly<Record<string, () => Lesson>> =>
-  Object.fromEntries(Object.entries(written).map(([skillId, make]) => [skillId, () => finished(make())]));
+  Object.fromEntries(Object.entries(written).map(([skillId, make]) => [skillId, () => finished(skillId, make())]));
 
 export const LESSONS: Readonly<Record<string, () => Lesson>> = richly(WRITTEN);
 

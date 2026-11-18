@@ -11,6 +11,10 @@ import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
 import ProfileCard from '../../components/ProfileCard';
 import { loadChildDay } from '../../app/childDay';
+import type { ProfilePlant } from '../../app/profileGarden';
+import { profilePlants } from '../../app/profileGarden';
+import type { SunnyDays } from '../../app/sunnyDays';
+import { answersByDay, sunnyDays } from '../../app/sunnyDays';
 import { planProgress } from '../../app/todaysPlan';
 import { daysBetween, localDayOf, now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -34,8 +38,13 @@ export default function ProfilePicker() {
   const [asking, setAsking] = useState<'signOut' | null>(null);
   const [signingOut, setSigningOut] = useState(false);
   const [signOutFailed, setSignOutFailed] = useState<string | null>(null);
-  // Each child's goal for today, the plan's questions, and how many are answered, for the bar on their card.
-  const [today, setToday] = useState<Record<string, { done: number; goal: number }>>({});
+  // Each child's goal for today, the plan's questions, and how many are answered, for the bar on their card,
+  // and a few of their plants for the little garden behind them.
+  const [today, setToday] = useState<Record<string, { done: number; goal: number; plants: ProfilePlant[] }>>({});
+  // This week's suns for each child. Counted after the cards show, since it reads every answer they have given.
+  const [sunny, setSunny] = useState<Record<string, SunnyDays>>({});
+  // The child just picked: their card grows toward the screen as their home arrives.
+  const [flying, setFlying] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
   const [passed, setPassed] = useState(0);
 
@@ -46,11 +55,21 @@ export default function ProfilePicker() {
       try {
         const { repo } = await openRepo();
         const list = await repo.listChildren();
-        const counts: Record<string, { done: number; goal: number }> = {};
-        for (const child of list) counts[child.id] = planProgress((await loadChildDay(child)).plan);
-        if (alive) {
-          setChildren(list);
-          setToday(counts);
+        const counts: Record<string, { done: number; goal: number; plants: ProfilePlant[] }> = {};
+        for (const child of list) {
+          const day = await loadChildDay(child);
+          counts[child.id] = { ...planProgress(day.plan), plants: profilePlants(day.states, day.plan) };
+        }
+        if (!alive) return;
+        setChildren(list);
+        setToday(counts);
+        // The suns are a nicety: if they cannot be counted, the cards simply show none.
+        try {
+          const suns: Record<string, SunnyDays> = {};
+          for (const child of list) suns[child.id] = sunnyDays(answersByDay(await repo.listAttempts(child.id, {})), now());
+          if (alive) setSunny(suns);
+        } catch (error) {
+          logError(error);
         }
       } catch (error) {
         logError(error);
@@ -80,6 +99,7 @@ export default function ProfilePicker() {
     void unlockAudio();
     void speak(['Hi', { word: child.name }], child.settings.speechRate);
     setChild(child);
+    setFlying(child.id);
     // The one entry kid navigation adds. Everything after it replaces, so a Back press
     // or a swipe from the edge has nowhere to go but here, and the app puts the child back.
     void navigate('/home');
@@ -109,7 +129,18 @@ export default function ProfilePicker() {
         {children !== null && children.length > 0 && (
           <div className={styles.children} role="group" aria-label="Who is playing?">
             {children.map((child) => (
-              <ProfileCard key={child.id} name={child.name} avatar={child.avatar} grade={GRADE_NAME[child.grade] ?? child.grade} done={today[child.id]?.done ?? 0} goal={today[child.id]?.goal ?? 0} onClick={() => pick(child)} />
+              <ProfileCard
+                key={child.id}
+                name={child.name}
+                avatar={child.avatar}
+                grade={GRADE_NAME[child.grade] ?? child.grade}
+                done={today[child.id]?.done ?? 0}
+                goal={today[child.id]?.goal ?? 0}
+                plants={today[child.id]?.plants}
+                sunny={sunny[child.id] ?? null}
+                flying={flying === child.id}
+                onClick={() => pick(child)}
+              />
             ))}
           </div>
         )}

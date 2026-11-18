@@ -1,0 +1,80 @@
+/* The story book: a heading, then a shelf of covers that scrolls inside itself. */
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 100%;
+  min-height: 0;
+  padding: var(--space-4);
+  background: var(--color-bg);
+}
+
+.head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--text-xl);
+}
+
+.shelf {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--story-cover), 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.place {
+  display: flex;
+  border-radius: var(--radius-l);
+  border-inline-start: var(--story-spine) solid var(--story-spring);
+}
+
+.place[data-season='summer'] {
+  border-inline-start-color: var(--story-summer);
+}
+
+.place[data-season='autumn'] {
+  border-inline-start-color: var(--story-autumn);
+}
+
+.place[data-season='winter'] {
+  border-inline-start-color: var(--story-winter);
+}
+
+/* A cover fills its place on the shelf. */
+.place > * {
+  flex: 1 1 auto;
+  min-height: var(--story-cover);
+}
+
+.picture {
+  font-size: var(--story-cover-picture);
+}
+
+.name {
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* A story not reached yet: a plain closed cover, no title. */
+.closed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-thin) dashed var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--story-closed);
+  color: var(--color-ink-soft);
+  font-size: var(--text-xl);
+}

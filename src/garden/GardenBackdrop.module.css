@@ -43,3 +43,16 @@
     animation: none;
   }
 }
+
+/* A device that cannot keep up (the old-device fallback, `data-lowfx`): the far layers do not slide. They lie
+   along the whole scene and move with it, as in Calm mode, and the clouds stop drifting. */
+:global(:root[data-lowfx]) .far,
+:global(:root[data-lowfx]) .mid {
+  width: 100%;
+  transform: none;
+  will-change: auto;
+}
+
+:global(:root[data-lowfx]) .cloud {
+  animation: none;
+}

@@ -36,6 +36,7 @@
 }
 
 .balloons {
+  position: relative; /* the sparkles of a popped balloon sit over it */
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -51,6 +52,7 @@
 }
 
 .cards {
+  position: relative; /* the sparkles of a found pair sit over it */
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--space-3);
@@ -61,4 +63,88 @@
   .cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+/* The feel (game feel, phase 8). A right balloon pops: it swells, then shrinks away; the next question brings
+   it back. A card turns over as it is flipped, and a found pair gives one happy pulse. */
+.pop[data-phase='right'] .balloons > [data-picked] {
+  animation: balloon-pop var(--t-move) var(--ease-settle) forwards;
+}
+
+.cards > [data-up]:not([data-matched]) {
+  animation: card-turn var(--t-pop) var(--ease-settle);
+}
+
+.cards > [data-matched] {
+  animation: card-found var(--t-item) var(--ease-bounce);
+}
+
+@keyframes balloon-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes card-turn {
+  from {
+    transform: rotateY(90deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+@keyframes card-found {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Calm mode and Reduce Motion: a popped balloon fades, and cards change without turning. */
+:global(:root[data-calm]) .pop[data-phase='right'] .balloons > [data-picked] {
+  animation: balloon-fade var(--t-calm) linear forwards;
+}
+
+:global(:root[data-calm]) .cards > [data-up],
+:global(:root[data-calm]) .cards > [data-matched] {
+  animation: none;
+}
+
+@keyframes balloon-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pop[data-phase='right'] .balloons > [data-picked] {
+    animation: balloon-fade var(--t-calm) linear forwards;
+  }
+
+  .cards > [data-up],
+  .cards > [data-matched] {
+    animation: none;
+  }
+}
+
+/* A device that cannot keep up (the old-device fallback): the balloons stop bobbing. */
+:global(:root[data-lowfx]) .balloons > * {
+  animation-name: none;
+}
+
+:global(:root[data-lowfx]) .pop[data-phase='right'] .balloons > [data-picked] {
+  animation: balloon-fade var(--t-calm) linear forwards;
 }

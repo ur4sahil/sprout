@@ -137,7 +137,7 @@ describe('other records', () => {
     grade: 'K',
     settings: defaultSettings('K'),
     resetAt: null,
-    levelWeeks: [],
+    levelWeeks: [], storiesRead: [], stickersPlaced: [],
     createdAt: T(1),
     updatedAt: T(1),
     deletedAt: null,

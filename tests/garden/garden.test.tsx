@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { PlanPart } from '../../src/app/todaysPlan';
+import { planProgress } from '../../src/app/todaysPlan';
 import { CATALOGUE, skillById } from '../../src/content/catalogue';
 import Garden from '../../src/garden/Garden';
 import { layoutGarden } from '../../src/garden/layout';
@@ -61,7 +62,8 @@ for (const mode of ['normal', 'calm'] as const) {
       expect(plantButtons(container).length).toBeGreaterThan(5);
       expect(container.querySelector('[data-sprout]')?.getAttribute('data-on-stone')).toBe('0');
       expect(container.querySelector('[data-sprout] svg')).not.toBeNull();
-      expect(container.querySelector('[data-sun]')?.getAttribute('aria-label')).toBe("Today's sun: 0 of 18");
+      // The sun is the day's goal, named as the goal has always been named.
+      expect(container.querySelector('[data-sun]')?.getAttribute('aria-label')).toBe('0 of 18 questions today');
       expect(container.querySelector('[data-sun-count]')?.textContent).toBe('0/18');
     });
 
@@ -194,6 +196,7 @@ for (const mode of ['normal', 'calm'] as const) {
       expect(container.querySelector('[data-follow="done"]')?.textContent).toBe('Path done!');
       expect(container.querySelector('button[data-follow]')).toBeNull();
       expect(container.querySelector('[data-sun]')?.hasAttribute('data-full')).toBe(true);
+      expect(container.querySelector('[data-sun]')?.getAttribute('aria-label')).toBe(`Daily goal reached: ${planProgress(done).goal} questions today`);
       expect(container.querySelectorAll('[data-stone-icon="flowers"]')).toHaveLength(3);
       // Sprout cheers, but not in Calm mode.
       expect(container.querySelector('[data-sprout]')?.getAttribute('data-mood')).toBe(mode === 'calm' ? 'idle' : 'cheering');
@@ -206,6 +209,7 @@ for (const mode of ['normal', 'calm'] as const) {
       expect(container.querySelector('[data-follow]')).toBeNull();
       expect(container.querySelectorAll('[data-stone]')).toHaveLength(0);
       expect(container.querySelector('[data-sun-count]')).toBeNull();
+      expect(container.querySelector('[data-sun]')?.getAttribute('aria-label')).toBe("Today's sun");
       expect(container.querySelector('[data-sprout]')).not.toBeNull();
       expect(plantButtons(container).length).toBeGreaterThan(0);
     });
@@ -272,5 +276,36 @@ describe('Garden: light and Calm', () => {
       wide.mockRestore();
       throw error;
     }
+  });
+});
+
+describe('Garden inside a screen with its own menu', () => {
+  const widthIs = (wide: boolean): void => {
+    vi.stubGlobal('matchMedia', (query: string) => ({ matches: wide && query.includes('min-width'), media: query, addEventListener: () => undefined, removeEventListener: () => undefined }));
+  };
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('from tablet width, where the menu is a column beside it, the signpost is left out', () => {
+    widthIs(true);
+    const { container } = show(small, { menuBeside: true });
+    expect(screen.queryByRole('button', { name: 'Places' })).toBeNull();
+    expect(container.querySelector('[data-signpost]')).toBeNull();
+    // The big button is still there.
+    expect(screen.getByRole('button', { name: 'Follow the path' })).toBeTruthy();
+  });
+
+  it('on a phone, where the menu lies under the garden, the signpost stays', () => {
+    widthIs(false);
+    show(small, { menuBeside: true });
+    fireEvent.click(screen.getByRole('button', { name: 'Places' }));
+    expect(screen.getByRole('dialog', { name: 'Places' })).toBeTruthy();
+  });
+
+  it('a garden shown on its own keeps the signpost at any width', () => {
+    widthIs(true);
+    show(small);
+    expect(screen.getByRole('button', { name: 'Places' })).toBeTruthy();
   });
 });

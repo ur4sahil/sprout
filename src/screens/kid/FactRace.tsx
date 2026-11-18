@@ -5,15 +5,20 @@ import { warmAll } from '../../audio/voice';
 import { useAppStore } from '../../app/store';
 import { useWakeLock } from '../../app/useWakeLock';
 import { playSfx } from '../../audio/sfx';
+import { playSound } from '../../audio/sounds';
 import { speak, stop } from '../../audio/speech';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
+import type { GameBeat } from '../../components/GameFriend';
+import GameFriend from '../../components/GameFriend';
 import HoldButton from '../../components/HoldButton';
 import Icon from '../../components/Icon';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import NotQuite from '../../components/NotQuite';
 import Notice from '../../components/Notice';
+import ParticleBurst from '../../components/ParticleBurst';
+import { castFor } from '../../cast';
 import type { Fact, FactRecord } from '../../engine/facts';
 import { ROUND_SIZE, factSetById, openSets, pickRound } from '../../engine/facts';
 import { makeRng } from '../../engine/rng';
@@ -56,6 +61,9 @@ function Race({ child, setId }: { child: Child; setId: string }) {
   const [newFast, setNewFast] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [given, setGiven] = useState<number | null>(null);
+  // How the last answer went, for the friend in the corner and the climbing chime: right answers in a row, and a
+  // count of answers so each one gets its own reaction.
+  const [feel, setFeel] = useState<{ last: GameBeat; run: number; beat: number }>({ last: null, run: 0, beat: 0 });
   const live = useRef<{ records: Map<string, FactRecord>; startedAt: number; shownAt: number; endedAt: number | null; alive: boolean }>({ records: new Map(), startedAt: 0, shownAt: 0, endedAt: null, alive: true });
   const rate = child.settings.speechRate;
   useWakeLock();
@@ -122,10 +130,14 @@ function Race({ child, setId }: { child: Child; setId: string }) {
       if (outcome.becameFluent) setNewFast((count) => count + 1);
       if (outcome.right) {
         setRight((count) => count + 1);
-        playSfx('chime');
+        // The same chime as practice, a step higher for each right answer in a row.
+        playSfx('chime', Math.min(feel.run, 7));
+        setFeel((before) => ({ last: 'right', run: before.run + 1, beat: before.beat + 1 }));
         advance();
       } else {
         setPhase('wrong');
+        playSound('notyet');
+        setFeel((before) => ({ last: 'miss', run: 0, beat: before.beat + 1 }));
         void speak(factMissSay(fact), rate);
       }
     })();
@@ -172,12 +184,16 @@ function Race({ child, setId }: { child: Child; setId: string }) {
             <Icon name="bolt" />
             {set.name}
           </h1>
+          <span className={styles.spacer} />
+          <GameFriend who={castFor('math')} last={feel.last} run={feel.run} beat={feel.beat} />
         </>
       }
     >
       {phase === 'failed' && <Notice role="alert">The race could not go on. Go back and try again.</Notice>}
       {fact && phase !== 'failed' && (
         <section className={styles.race} aria-label="Question" data-phase={phase} data-fact={fact.id}>
+          {/* Sparkles for each right answer, from where the fact is written. */}
+          {right > 0 && <ParticleBurst key={right} seed={right} at={{ x: 0.5, y: 0.4 }} />}
           <div className={styles.track} role="img" aria-label={`${right} of ${ROUND_SIZE} right`} data-right={right}>
             <span className={styles.car} style={{ left: `calc(${Math.round(progress * 85)}% + var(--space-6))` }} aria-hidden="true">
               <Art emoji="🏎️" />

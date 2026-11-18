@@ -2,6 +2,7 @@ import { PALETTE } from '../visuals/palette';
 import type { World } from './types';
 
 const C = PALETTE.garden;
+const S = PALETTE.seasons;
 
 // Sprout's garden: the first world. Each skill is a plant; practice makes it grow and mastery makes it bloom.
 export const GARDEN: World = {
@@ -69,4 +70,11 @@ export const GARDEN: World = {
     signpost: { open: 'Places', close: 'Back to the garden', math: 'All Math skills', ela: 'All Language Arts skills', reasoning: 'All Reasoning skills', stickers: 'Stickers', facts: 'Fast facts', switch: 'Switch child' },
   },
   sounds: { tap: 'tap', pick: 'pick', drop: 'drop', right: 'right', next: 'whoosh-in', open: 'open', close: 'close', star: 'star' },
+  // The garden through the year (game feel, phase 8): only the scenery changes; every flower keeps its colours.
+  seasons: {
+    spring: { sky: S.spring.sky, hillFar: S.spring.hillFar, hillMid: S.spring.hillMid, grass: S.spring.grass, grassFront: S.spring.grassFront, tree: S.spring.tree, treeLight: S.spring.treeLight, touch: 'blossom', touchColours: [S.spring.petal, S.spring.petalLight] },
+    summer: { sky: S.summer.sky, hillFar: S.summer.hillFar, hillMid: S.summer.hillMid, grass: S.summer.grass, grassFront: S.summer.grassFront, tree: S.summer.tree, treeLight: S.summer.treeLight, touch: 'sun', touchColours: [S.summer.sun, S.summer.sunGlow] },
+    autumn: { sky: S.autumn.sky, hillFar: S.autumn.hillFar, hillMid: S.autumn.hillMid, grass: S.autumn.grass, grassFront: S.autumn.grassFront, tree: S.autumn.tree, treeLight: S.autumn.treeLight, touch: 'leaves', touchColours: [S.autumn.leaf, S.autumn.leafGold] },
+    winter: { sky: S.winter.sky, hillFar: S.winter.hillFar, hillMid: S.winter.hillMid, grass: S.winter.grass, grassFront: S.winter.grassFront, tree: S.winter.tree, treeLight: S.winter.treeLight, hillEdge: S.winter.snow, touch: 'snow', touchColours: [S.winter.snow, S.winter.snowShade] },
+  },
 };

@@ -1,0 +1,56 @@
+/* The chapter dots under the lesson stage. They wrap onto a second line rather than squeeze a tap target. */
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* A small mark inside a full-size tap target. */
+.dot {
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.dot::before {
+  content: '';
+  width: var(--chapter-dot);
+  height: var(--chapter-dot);
+  border: var(--border) solid var(--color-brand);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  transition:
+    width var(--t-pop) var(--ease-bounce),
+    height var(--t-pop) var(--ease-bounce),
+    background var(--t-pop) ease;
+}
+
+/* A turn is a small diamond, so the child sees where their turns are. */
+.dot[data-chapter='turn']::before {
+  border-radius: var(--radius-s);
+  transform: rotate(45deg);
+}
+
+.dot[data-done]::before {
+  background: var(--color-brand-soft);
+}
+
+.dot[data-here]::before {
+  width: var(--chapter-dot-here);
+  height: var(--chapter-dot-here);
+  background: var(--color-brand);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::before {
+    transition: none;
+  }
+}

@@ -1,14 +1,18 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { useState } from 'react';
-import { actorPose } from '../lessons/actor';
-import type { ActorPose } from '../lessons/actor';
+import { useEffect, useRef, useState } from 'react';
+import { playSound } from '../audio/sounds';
+import type { Who } from '../cast/types';
+import { useStill } from '../cast/useStill';
+import { WIDE, actorPose, cameraFor, countersLand } from '../lessons/actor';
+import type { ActorPose, Camera, HostCue } from '../lessons/actor';
 import type { Piece, Scene } from '../lessons/types';
 import Art from '../visuals/Art';
 import VisualView from '../visuals/VisualView';
-import { PALETTE } from '../visuals/palette';
+import { currentWorld } from '../worlds';
 import Icon from './Icon';
 import type { HostMood } from './LessonHost';
 import { ActorArm, ActorBody } from './StageActor';
+import StageBackdrop from './StageBackdrop';
 import styles from './LessonStage.module.css';
 
 // The stage of a lesson (plan section 16). Each piece keeps its element from one scene to the next,
@@ -18,22 +22,8 @@ interface Props {
   label: string; // what the scene shows, for a screen reader
   lively?: boolean; // pieces land with a little bounce
   actor?: HostMood; // the host stands on the stage and acts the scene out; the pointing hand is then its own
-}
-
-// A wall with stripes and a wooden table whose top is at row 3, drawn in stage squares.
-function Backdrop({ scene }: { scene: Scene }) {
-  const { cols, rows } = scene;
-  return (
-    <svg className={styles.backdrop} viewBox={`0 0 ${cols} ${rows}`} preserveAspectRatio="none" aria-hidden="true">
-      <rect x="0" y="0" width={cols} height={rows} fill={PALETTE.wall} />
-      {Array.from({ length: Math.ceil(cols / 1.2) }, (_, i) => (
-        <rect key={i} x={i * 1.2} y="0" width="0.6" height="3" fill={PALETTE.wallStripe} />
-      ))}
-      <rect x="0.2" y="3" width={cols - 0.4} height="0.35" rx="0.08" fill={PALETTE.tableTop} />
-      <rect x="0.3" y="3.35" width={cols - 0.6} height={rows - 3.35} fill={PALETTE.tableEdge} />
-      <rect x="0.5" y="3.35" width={cols - 1} height="0.12" fill={PALETTE.tableLeg} opacity="0.5" />
-    </svg>
-  );
+  who?: Who; // which friend the host is (Sprout when left out)
+  cue?: HostCue; // a look, a nod or a hop for this moment
 }
 
 function look(piece: Piece): ReactNode {
@@ -73,39 +63,65 @@ function look(piece: Piece): ReactNode {
   }
 }
 
-export default function LessonStage({ scene, label, lively = false, actor }: Props) {
-  // The host's pose for this scene, worked out from the scene before it and kept until the scene changes.
-  const [held, setHeld] = useState<{ scene: Scene; pose: ActorPose }>(() => ({ scene, pose: actorPose(null, scene, null) }));
-  let pose = held.pose;
+export default function LessonStage({ scene, label, lively = false, actor, who, cue }: Props) {
+  // The host's pose and the camera for this scene, worked out from the scene before it and kept until it changes.
+  const [held, setHeld] = useState<{ scene: Scene; pose: ActorPose; camera: Camera }>(() => {
+    const pose = actorPose(null, scene, null);
+    return { scene, pose, camera: cameraFor(null, scene, pose) };
+  });
+  let { pose, camera } = held;
   if (held.scene !== scene) {
     pose = actorPose(held.scene, scene, held.pose.left);
-    setHeld({ scene, pose });
+    camera = cameraFor(held.scene, scene, pose);
+    setHeld({ scene, pose, camera });
   }
+  // Calm mode and Reduce Motion: the camera stays back and never moves.
+  const still = useStill();
+  if (still) camera = WIDE;
+
+  // Counters clack as they land: one sound for the moment, however many land together.
+  const landed = useRef<Scene | null>(null);
+  useEffect(() => {
+    const before = landed.current;
+    landed.current = scene;
+    if (countersLand(before, scene)) playSound(currentWorld().sounds.drop);
+  }, [scene]);
+
   const stage = { '--set-cols': scene.cols, '--set-rows': scene.rows } as CSSProperties;
+  const lens = { '--set-zoom': camera.zoom, '--set-pan-x': camera.x, '--set-pan-y': camera.y } as CSSProperties;
+  const zoomed = camera.zoom > 1 ? '' : undefined;
   return (
     <div className={styles.stage} style={stage} role="img" aria-label={label} data-lesson-stage="" data-lively={lively ? '' : undefined} data-acted={actor ? '' : undefined}>
-      {scene.backdrop === 'table' && <Backdrop scene={scene} />}
-      {actor && <ActorBody pose={pose} mood={actor} />}
-      {scene.pieces.map((piece) => {
-        const place = { '--set-x': piece.x, '--set-y': piece.y, '--set-w': piece.w ?? 1, '--set-h': piece.h ?? 1 } as CSSProperties;
-        return (
-          <div
-            key={piece.id}
-            className={styles.piece}
-            style={place}
-            data-piece={piece.id}
-            data-kind={piece.look.kind}
-            data-lit={piece.lit ? '' : undefined}
-            data-dim={piece.dim ? '' : undefined}
-            data-gone={piece.gone ? '' : undefined}
-            data-crossed={piece.crossed ? '' : undefined}
-          >
-            {look(piece)}
-            {piece.badge && <span className={styles.badge}>{piece.badge}</span>}
+      {scene.backdrop && (
+        <div className={styles.scenery}>
+          <div className={styles.camera} style={lens} data-zoomed={zoomed}>
+            <StageBackdrop place={scene.backdrop} cols={scene.cols} rows={scene.rows} />
           </div>
-        );
-      })}
-      {actor && <ActorArm pose={pose} mood={actor} />}
+        </div>
+      )}
+      <div className={styles.camera} style={lens} data-camera={camera.zoom.toFixed(3)} data-zoomed={zoomed}>
+        {actor && <ActorBody pose={pose} mood={actor} who={who} cue={cue} />}
+        {scene.pieces.map((piece) => {
+          const place = { '--set-x': piece.x, '--set-y': piece.y, '--set-w': piece.w ?? 1, '--set-h': piece.h ?? 1 } as CSSProperties;
+          return (
+            <div
+              key={piece.id}
+              className={styles.piece}
+              style={place}
+              data-piece={piece.id}
+              data-kind={piece.look.kind}
+              data-lit={piece.lit ? '' : undefined}
+              data-dim={piece.dim ? '' : undefined}
+              data-gone={piece.gone ? '' : undefined}
+              data-crossed={piece.crossed ? '' : undefined}
+            >
+              {look(piece)}
+              {piece.badge && <span className={styles.badge}>{piece.badge}</span>}
+            </div>
+          );
+        })}
+        {actor && <ActorArm pose={pose} mood={actor} who={who} />}
+      </div>
     </div>
   );
 }

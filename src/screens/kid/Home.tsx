@@ -1,12 +1,14 @@
 import { LINES } from '../../audio/lines';
 import Art from '../../visuals/Art';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { stickerFor, syncAwards } from '../../app/awardsRun';
 import { useChildDay } from '../../app/childDay';
 import { popSkills } from '../../app/games';
 import { useAppStore } from '../../app/store';
 import { speak } from '../../audio/speech';
+import { gardenMood } from '../../audio/music';
+import { useMusic } from '../../audio/useMusic';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import GoalRing from '../../components/GoalRing';
@@ -20,6 +22,8 @@ import Notice from '../../components/Notice';
 import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
 import type { AwardDef } from '../../engine/awards';
+import Garden from '../../garden/Garden';
+import type { GardenPlace } from '../../garden/Signpost';
 import type { Say } from '../../engine/types';
 import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -37,11 +41,17 @@ export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: 
 
 export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', '3': 'Grade 3', all: 'All' };
 
-// The child's home: the daily goal, today's plan (plan section 18), reviews that are due, and the subjects.
+// Where each place on the garden's signpost leads: the same screens the menu opens.
+const PLACE_PATH: Record<GardenPlace, string> = { 'subjects:math': '/subject/math', 'subjects:ela': '/subject/ela', 'subjects:reasoning': '/subject/reasoning', stickers: '/awards', facts: '/facts', switch: '/' };
+
+// The child's home: the menu of places to go, and today's plan (plan section 18) with the daily goal. The plan is
+// shown as the garden (game feel, phase 4) with the plan's list under it, or, when a grown-up chose "A list" in
+// Settings, as the goal card and the list alone.
 export default function Home() {
   const navigate = useNavigate();
   const child = useAppStore((s) => s.child);
   const { day, failed } = useChildDay(child);
+  useMusic(child && child.settings.homeView !== 'list' && day && !day.limitReached && !day.firstVisit ? gardenMood(now()) : null);
   const [fresh, setFresh] = useState<AwardDef[]>([]);
   // Pop is offered when the child has a skill in progress whose next question is a choice.
   const [popOffered, setPopOffered] = useState(false);
@@ -74,6 +84,11 @@ export default function Home() {
       alive = false;
     };
   }, [child, day]);
+  // The garden's plants are the skills that are ready to play, as everywhere on home.
+  const readySkills = useMemo(() => {
+    const ready = new Set(allGenerators().map((generator) => generator.skillId));
+    return CATALOGUE.filter((skill) => ready.has(skill.id));
+  }, []);
   if (!child) return <Navigate to="/" replace />;
 
   const go = (path: string): void => {
@@ -84,11 +99,14 @@ export default function Home() {
   // A child who has never opened the check-in starts with it.
   if (day?.firstVisit) return <Navigate to="/diagnostic?subject=math" replace />;
 
-  const ready = new Set(allGenerators().map((generator) => generator.skillId));
   const next = day ? nextPart(day.plan) : null;
   // The day's goal is the plan's questions added up.
   const goal = day ? planProgress(day.plan) : { done: 0, goal: 0 };
-  const subjects = SUBJECTS.filter((subject) => CATALOGUE.some((skill) => skill.subject === subject.id && !skill.retired && ready.has(skill.id)));
+  const subjects = SUBJECTS.filter((subject) => readySkills.some((skill) => skill.subject === subject.id && !skill.retired));
+  const factsOpen = openSets(child.grade, child.settings.factSets).length > 0;
+  const asGarden = child.settings.homeView !== 'list';
+  // The signpost is shown on a phone only, where the menu lies under the garden. It offers the menu's lasting places.
+  const places: GardenPlace[] = [...subjects.map((subject): GardenPlace => `subjects:${subject.id}`), 'stickers', ...(factsOpen ? (['facts'] as const) : []), 'switch'];
 
   return (
     <KidScreen
@@ -114,7 +132,7 @@ export default function Home() {
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}
-            {openSets(child.grade, child.settings.factSets).length > 0 && <NavButton icon="bolt" label="Fast facts" onClick={() => go('/facts')} />}
+            {factsOpen && <NavButton icon="bolt" label="Fast facts" onClick={() => go('/facts')} />}
             <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
             {popOffered && <NavButton icon="balloon" label="Pop" onClick={() => go('/games/pop')} />}
             <NavButton icon="cards" label="Pairs" onClick={() => go('/games/pairs')} />
@@ -123,8 +141,25 @@ export default function Home() {
       }
     >
       {failed && <Notice role="alert">Your scores could not be read. Close the app and open it again.</Notice>}
-      {day && (
-        <div className={styles.page}>
+      {day && asGarden && (
+        <div className={styles.gardenPage} data-home-view="garden">
+          <Garden
+            grade={child.grade}
+            day={day}
+            skills={readySkills}
+            places={places}
+            menuBeside
+            onOpen={(part) => go(partPath(part))}
+            onSkill={(skillId, mode) => go(mode === 'learn' ? `/skill/${skillId}/learn` : `/skill/${skillId}`)}
+            onPlace={(place) => go(PLACE_PATH[place])}
+            onSpeak={say}
+          />
+          {/* The same list as ever, for a grown-up's glance at the counts and for a screen reader. The garden's big button is the one way to start. */}
+          {day.plan.length > 0 && <TodayPlan look="strip" plan={day.plan} onOpen={(part) => go(partPath(part))} onSpeak={say} />}
+        </div>
+      )}
+      {day && !asGarden && (
+        <div className={styles.page} data-home-view="list">
           <section className={styles.today} aria-label="Today">
             {goal.goal > 0 && <GoalRing done={goal.done} goal={goal.goal} />}
             <div className={styles.todayText}>

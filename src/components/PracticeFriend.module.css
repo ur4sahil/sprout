@@ -1,0 +1,16 @@
+/* The friend in the corner. Left out on a phone, where the side panel is a thin strip above the question. */
+.corner {
+  display: none;
+  pointer-events: none;
+}
+
+/* From tablet width up it stands at the foot of the side panel, below the status cards: the lower corner. */
+@media (min-width: 48em) {
+  .corner {
+    display: block;
+    flex: none;
+    width: var(--payoff-friend);
+    margin-top: auto;
+    align-self: flex-end;
+  }
+}

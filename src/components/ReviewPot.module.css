@@ -1,0 +1,38 @@
+/* One plant in its pot. The particle layer sits over it. */
+.pot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--payoff-pot-width);
+  height: var(--payoff-pot-height);
+  padding: var(--space-1);
+  border-radius: var(--radius-m);
+  transition: background var(--t-move) var(--ease-settle);
+}
+
+.pot[data-current] {
+  background: var(--payoff-pot-current);
+}
+
+/* The plant stands in the pot: its soil sits just inside the rim. */
+.plant {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  margin-bottom: calc(var(--space-2) * -1);
+}
+
+.clay {
+  flex: none;
+  width: 80%;
+  height: auto;
+}
+
+.body {
+  fill: var(--payoff-pot);
+}
+
+.rim {
+  fill: var(--payoff-pot-rim);
+}

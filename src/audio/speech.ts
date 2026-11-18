@@ -1,9 +1,10 @@
 import type { Say } from '../engine/types';
 import { playBytes, stopClip } from './clips';
-import type { Pace } from './voice';
+import type { Pace, Who } from './voice';
 import { readyVoice, voicePieces } from './voice';
 import { isMuted } from './mute';
 import { saySegments } from './say';
+import { setSpeaking } from './speaking';
 
 // The only way the app speaks.
 // speak() cancels anything playing, waits 60 ms, then plays each Say part in turn.
@@ -89,7 +90,8 @@ function utter(engine: SpeechSynthesis, text: string, rate: number, chosen: Spee
 // Speaks the parts in order. Resolves true if it played to the end, false if it was cut off,
 // muted, or speech is not available.
 // `pace` 'lesson' says each sentence on its own, in the slower lesson recording, with a pause between them.
-export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 'normal'): Promise<boolean> {
+// `who`: the character whose voice says it (Sprout, the teaching voice, when left out).
+export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 'normal', who: Who = 'sprout'): Promise<boolean> {
   const mine = (generation += 1);
   const engine = synth();
   stopClip();
@@ -98,7 +100,10 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
   } catch {
     // Nothing was playing.
   }
+  // The music listens to this, and dips while the voice speaks.
+  setSpeaking(false);
   if (isMuted() || say.length === 0) return false;
+  setSpeaking(true);
   try {
     await wait(CANCEL_WAIT_MS);
     if (mine !== generation) return false;
@@ -111,7 +116,7 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
         await wait(LESSON_PAUSE_MS);
         if (mine !== generation) return false;
       }
-      const recorded = await readyVoice(piece, RECORDED_WAIT_MS, pace);
+      const recorded = await readyVoice(piece, RECORDED_WAIT_MS, pace, who);
       if (mine !== generation) return false;
       if (recorded && (await playBytes(recorded, rate / DEFAULT_RATE))) {
         spoke = true;
@@ -129,12 +134,15 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
     return spoke && mine === generation;
   } catch {
     return false;
+  } finally {
+    if (mine === generation) setSpeaking(false);
   }
 }
 
 // Stops anything being said.
 export function stop(): void {
   generation += 1;
+  setSpeaking(false);
   stopClip();
   try {
     synth()?.cancel();
