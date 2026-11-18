@@ -174,7 +174,7 @@ test.describe('kid navigation', () => {
         else for (const digit of String(value)) await page.getByRole('button', { name: digit, exact: true }).click();
         const submit = page.getByRole('button', { name: /Submit/ });
         await expect(async () => {
-          if (await submit.isVisible()) await submit.click();
+          if ((await submit.isVisible()) && (await submit.isEnabled())) await submit.click({ timeout: 1000 });
           await expect(submit).toBeHidden({ timeout: 300 });
         }).toPass();
         await expect(page.locator('[data-phase="asking"], [data-celebration], [data-break]').first()).toBeVisible();
@@ -200,7 +200,7 @@ test.describe('kid navigation', () => {
       else for (const digit of String(value)) await page.getByRole('button', { name: digit, exact: true }).click();
       const submit = page.getByRole('button', { name: /Submit/ });
       await expect(async () => {
-        if (await submit.isVisible()) await submit.click();
+        if ((await submit.isVisible()) && (await submit.isEnabled())) await submit.click({ timeout: 1000 });
         await expect(submit).toBeHidden({ timeout: 300 });
       }).toPass();
       await expect(page.locator('[data-review-count]')).toHaveText(`${i + 1} of 3`);

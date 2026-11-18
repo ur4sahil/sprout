@@ -51,7 +51,7 @@ export const submit = async (page: Page): Promise<void> => {
   const button = page.getByRole('button', { name: /Submit/ });
   await expect(button).toBeEnabled();
   await expect(async () => {
-    if (await button.isVisible()) await button.click();
+    if ((await button.isVisible()) && (await button.isEnabled())) await button.click({ timeout: 1000 });
     await expect(button).toBeHidden({ timeout: 300 });
   }).toPass();
 };

@@ -120,7 +120,7 @@ export async function answer(page: Page, value: number, by: 'label' | 'index' = 
   await expect(submit).toBeEnabled();
   // Taps in the first 400 ms after a question appears are ignored, so keep tapping until one lands.
   await expect(async () => {
-    if (await submit.isVisible()) await submit.click();
+    if ((await submit.isVisible()) && (await submit.isEnabled())) await submit.click({ timeout: 1000 });
     await expect(submit).toBeHidden({ timeout: 300 });
   }).toPass();
 }
@@ -165,7 +165,7 @@ export async function answerAnything(page: Page): Promise<void> {
   } else throw new Error(`No way to answer a "${type}" question yet`);
   const submit = page.getByRole('button', { name: /Submit/ });
   await expect(async () => {
-    if (await submit.isVisible()) await submit.click();
+    if ((await submit.isVisible()) && (await submit.isEnabled())) await submit.click({ timeout: 1000 });
     await expect(submit).toBeHidden({ timeout: 300 });
   }).toPass();
   const explained = page.locator('[data-explanation]');

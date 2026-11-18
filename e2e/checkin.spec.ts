@@ -113,6 +113,9 @@ test.describe('check-in and stickers', () => {
     // at a time: every page is in the book, and turning through them shows each in turn.
     const boards = ['math-PK', 'math-K', 'ela-PK', 'reasoning', 'milestones'];
     for (const board of boards) await expect(page.locator(`[data-board="${board}"]`)).toHaveCount(1);
+    // The book opens on the page of the newest sticker, so turn back to the first page before reading through.
+    const before = page.getByRole('button', { name: 'Page before' });
+    for (let turn = 0; turn < 12 && !(await before.isDisabled()); turn += 1) await before.click();
     const seen = new Set<string>();
     for (let turn = 0; turn < 12 && seen.size < boards.length; turn += 1) {
       for (const board of boards) if (await page.locator(`[data-board="${board}"]`).isVisible()) seen.add(board);

@@ -81,7 +81,7 @@ test.describe('the games', () => {
       const nextStep = page.getByRole('button', { name: /Next step/ });
       while (await nextStep.isVisible()) await nextStep.click();
       const gotIt = page.getByRole('button', { name: /Got it/ });
-      if (await gotIt.isVisible()) await gotIt.click();
+      if ((await gotIt.isVisible()) && (await gotIt.isEnabled())) await gotIt.click({ timeout: 1000 });
       await expect(page.locator('[data-pop-count="1"]')).toBeVisible({ timeout: 500 });
     }).toPass();
   });

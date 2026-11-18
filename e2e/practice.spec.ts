@@ -94,7 +94,7 @@ test.describe('practice', () => {
     await tapInOrder(page);
     const submit = page.getByRole('button', { name: /Submit/ });
     await expect(async () => {
-      if (await submit.isVisible()) await submit.click();
+      if ((await submit.isVisible()) && (await submit.isEnabled())) await submit.click({ timeout: 1000 });
       await expect(submit).toBeHidden({ timeout: 300 });
     }).toPass();
     await expect(page.locator('[data-score]')).toHaveAttribute('data-score', '10');
