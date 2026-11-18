@@ -14,7 +14,6 @@ for (const [skillId, make] of Object.entries(LESSONS)) {
   if (wanted.length > 0 && !wanted.some((prefix) => skillId.startsWith(prefix))) continue;
   const skill = CATALOGUE.find((each) => each.id === skillId);
   console.log(`\n=== ${skillId}  ${skill?.name ?? ''}  (grade ${skill?.grade ?? '?'})`);
-  console.log(`    ${skill?.description ?? ''}`);
   for (const part of make().parts) {
     if (part.kind === 'show') console.log(line(part.moment));
     else {
