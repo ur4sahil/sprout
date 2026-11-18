@@ -9,6 +9,7 @@ export const TIMING = {
   beatGapMs: 700, // the pause between two beats of a lesson
   momentGapMs: 700, // the pause after each moment of a lesson that teaches (plan section 16)
   pairsLookMs: 1100, // two cards that do not match stay face up this long, then turn back
+  missLookMs: import.meta.env.MODE === 'test' ? 0 : 700, // after a miss the child's own answer stays up this long, with a wobble, before the steps show
   maxAnswerMs: 120_000, // one abandoned question never counts as more than two minutes
 };
 

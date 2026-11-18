@@ -28,3 +28,49 @@
   font-weight: 700;
   color: var(--color-correct);
 }
+
+/* A right answer (plan section 19, phase 2): the chosen answer pops up and glows, the others fade back. */
+.correct [aria-pressed='true'],
+.correct [aria-checked='true'] {
+  animation: answer-pop var(--t-move) var(--ease-bounce) both;
+  border-color: var(--color-correct);
+  box-shadow: 0 0 0 var(--lesson-ring) var(--color-correct-bg);
+}
+
+.correct [aria-pressed='false'] {
+  opacity: 0.45;
+  transition: opacity var(--t-pop) linear;
+}
+
+/* A miss is never a loss: a small wobble in a soft amber, not red. */
+.missed [aria-pressed='true'],
+.missed [aria-checked='true'] {
+  animation: answer-wobble var(--t-move) var(--ease-settle) both;
+  border-color: var(--color-warn);
+  background: var(--color-notice-bg);
+}
+
+@keyframes answer-pop {
+  0% {
+    transform: scale(0.94);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes answer-wobble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3%);
+  }
+  75% {
+    transform: translateX(3%);
+  }
+}

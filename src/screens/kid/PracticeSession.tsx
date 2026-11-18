@@ -137,6 +137,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
         <QuestionStage
           question={question}
           phase={phase}
+          run={practice.run}
           response={practice.response}
           lastResponse={practice.lastResponse}
           saveError={practice.saveError}

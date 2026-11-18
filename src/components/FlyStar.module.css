@@ -1,0 +1,12 @@
+/* The star that flies from a right answer to the score. It starts at the middle of the question card, unseen. */
+.star {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  z-index: var(--layer-fly);
+  font-size: var(--text-xl);
+  line-height: 1;
+  color: var(--color-star);
+  opacity: 0;
+  pointer-events: none;
+}

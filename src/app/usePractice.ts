@@ -31,6 +31,7 @@ export interface Practice {
   question: Question | null;
   state: SkillState | null;
   answered: number; // in this sitting
+  run: number; // right answers in a row, in this sitting (a miss ends it)
   response: Response | null; // the answer so far
   lastResponse: Response | null; // the answer just submitted
   milestone: number | null; // the one being celebrated
@@ -60,6 +61,8 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
   const [question, setQuestion] = useState<Question | null>(null);
   const [state, setState] = useState<SkillState | null>(null);
   const [answered, setAnswered] = useState(0);
+  const [run, setRun] = useState(0);
+  const runSoFar = useRef(0);
   const [response, setResponse] = useState<Response | null>(null);
   const [lastResponse, setLastResponse] = useState<Response | null>(null);
   const [milestone, setMilestone] = useState<number | null>(null);
@@ -202,6 +205,8 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         if (!outcome.correct) {
           self.testLeft = 0; // a miss ends the short test, and ordinary practice carries on
           // No buzzer. It says "Not quite", then the explanation is read aloud, and it waits for "Got it".
+          runSoFar.current = 0;
+          setRun(0);
           setPhase('wrong');
           void speak(openingWords(q), child.settings.speechRate);
           return;
@@ -228,8 +233,11 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
             }
           }
         }
+        // A run of right answers: the sound climbs a step with each one.
+        playSfx('chime', runSoFar.current);
+        runSoFar.current += 1;
+        setRun(runSoFar.current);
         setPhase('correct');
-        playSfx('chime');
         const praise = makeRng(q.seed).pick(PRAISE);
         // The next question loads once the praise has finished: 1.2 seconds at the earliest, 2.5 at the latest.
         const spoken = speak(praise.say, child.settings.speechRate);
@@ -260,5 +268,5 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     show(self.state, self.keys);
   }, [phase, show]);
 
-  return { phase, question, state, answered, response, lastResponse, milestone, saveError, startedAt, setResponse, submit, gotIt, afterCelebration, keepGoing };
+  return { phase, question, state, answered, run, response, lastResponse, milestone, saveError, startedAt, setResponse, submit, gotIt, afterCelebration, keepGoing };
 }
