@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { removeOldClips, resetClips } from '../../src/audio/clips';
 import { setMuted } from '../../src/audio/mute';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
-import { isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
+import { LESSON_PAUSE_MS, isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
 import { openRepo } from '../../src/storage/index';
 
 // A stand-in for the browser's speech and audio, recording everything in one timeline.
@@ -136,6 +136,13 @@ describe('speak', () => {
     installAudio();
     await speak(['Find the letter', { letter: 'b' }, 'and', { number: 7 }, '.']);
     expect(events).toEqual(['cancel', 'say:Find the letter bee and seven.']);
+  });
+
+  it('a lesson is said a sentence at a time, with a pause between sentences', async () => {
+    installSpeech();
+    await speak(['Count the dots. Then say the number.'], 0.85, 'lesson');
+    expect(events).toEqual(['cancel', 'say:Count the dots.', 'say:Then say the number.']);
+    expect((spokeAt[1] as number) - (spokeAt[0] as number)).toBeGreaterThanOrEqual(LESSON_PAUSE_MS - 5);
   });
 
   it('never plays an old voice-pack clip, even one still on the device', async () => {

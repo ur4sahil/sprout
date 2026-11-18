@@ -86,6 +86,20 @@ describe('the recorded voice', () => {
     expect(new Set(asked)).toEqual(new Set(['Add the ones.', 'Now add seven and eight.']));
   });
 
+  it('a lesson is asked for a sentence at a time, at the lesson pace, apart from the same words at the normal pace', async () => {
+    setVoiceOn(true);
+    const bodies: string[] = [];
+    vi.stubGlobal('fetch', async (_url: string, init: RequestInit) => {
+      bodies.push(String(init.body));
+      return audio(String(init.body));
+    });
+    expect(voicePieces(['Count the dots. Then say the number.'], 'lesson')).toEqual([['Count the dots.'], ['Then say the number.']]);
+    expect(voicePieces(['Count the dots. Then say the number.'])).toEqual([['Count the dots. Then say the number.']]);
+    await readyVoice(['Count the dots.'], 200, 'lesson');
+    await readyVoice(['Count the dots.'], 200);
+    expect(bodies).toEqual(['{"text":"Count the dots.","pace":"lesson"}', '{"text":"Count the dots."}']);
+  });
+
   it('sends sentences with quotation marks', async () => {
     setVoiceOn(true);
     const say = ['Which word can take the place of "did not"?'];

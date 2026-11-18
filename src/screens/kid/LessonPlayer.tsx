@@ -46,7 +46,7 @@ export default function LessonPlayer({ child, skill }: Props) {
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
   // Everything the lesson and its example say is asked for as the lesson opens, so each line is ready in time.
   useEffect(() => {
-    warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak]);
+    warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson");
   }, [beats, example]);
   const [mode, setMode] = useState<"lesson" | "example">("lesson");
   const [index, setIndex] = useState(0);
@@ -84,13 +84,13 @@ export default function LessonPlayer({ child, skill }: Props) {
     if (mode !== "lesson" || !playing || !beat) return;
     let cancelled = false;
     void (async () => {
-      await speak(beat.speak, rate);
+      await speak(beat.speak, rate, "lesson");
       if (cancelled) return;
       if (beat.reveal) {
         await wait(TIMING.tryPauseMs);
         if (cancelled) return;
         setRevealed(true);
-        await speak(beat.reveal.speak, rate);
+        await speak(beat.reveal.speak, rate, "lesson");
         if (cancelled) return;
       }
       await wait(TIMING.beatGapMs);
@@ -115,6 +115,7 @@ export default function LessonPlayer({ child, skill }: Props) {
     void speak(
       stepsShown === 0 ? example.prompt.speak : example.explanation.speak,
       rate,
+      "lesson",
     );
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- once when the example opens and once when its answer is shown
