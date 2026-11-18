@@ -77,7 +77,7 @@ function turningColours(rng: Rng): QuestionDraft {
   ];
   const options = rng.shuffle(offered);
   const shown = Array.from({ length: SHOWN }, (_, i) => posed(form, colourAt(i), at(i)));
-  const lines = [turnLine(1), `The colour goes ${colors[0]}, ${colors[1]}, ${colors[0]}, ${colors[1]}.`];
+  const lines = [turnLine(1), `The color goes ${colors[0]}, ${colors[1]}, ${colors[0]}, ${colors[1]}.`];
   return {
     type: 'choice',
     mode: 'look',

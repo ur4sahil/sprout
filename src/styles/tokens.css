@@ -148,6 +148,45 @@
   /* fill a shape: the big shape, and one piece in the tray */
   --size-fill: 320px;
   --size-fill-piece: 44px;
+
+  /* a touch for each kind of question (game feel, phase 2b): used by src/items only */
+  --item-lift: -6px; /* how far a chosen card stays raised */
+  --item-tilt: 3deg; /* a picked-up tile leans this much */
+  --item-near: 1.14; /* how much a gap or a group opens as a word or tile comes near */
+  --item-stagger: 40ms; /* between pins, letters and words that go one after another */
+  --item-stagger-slow: 110ms; /* between bigger things in turn: bars, groups, bows */
+  --t-item: 520ms; /* one right-answer movement: a flip, a chug, a wave */
+  --item-line: 4px; /* the thread between two matched things */
+  --shadow-lift: 0 8px 16px rgb(22 33 58 / 0.16); /* under a raised card */
+  --shadow-glow: 0 0 0 4px rgb(242 169 0 / 0.35), 0 0 20px rgb(242 169 0 / 0.55); /* a number or shape that lights up */
+  /* the garden (game feel, phase 4): the home scene */
+  --garden-unit: 6px; /* one hundredth of the scene's height, until the screen has been measured */
+  --garden-min-height: 540px; /* the scene is never shorter, so a plant's square never drops under a child's finger */
+  --garden-card: 420px; /* the widest the plant card and the signpost get */
+  --garden-sun: 84px;
+  --garden-drift: 8px; /* how far a cloud wanders, in the sky picture's own units (a hundredth of its height) */
+  --garden-grow: 700ms; /* a plant growing from one stage to the next */
+  --garden-bounce: 480ms; /* a plant tapped */
+  --garden-sway: 3800ms; /* leaves in the wind */
+  --garden-cloud: 46s; /* a cloud there and back */
+  --garden-flutter: 1500ms; /* a butterfly's wings, a bee's hover */
+  --garden-layer-plants: 2;
+  --garden-layer-path: 40;
+  --garden-layer-tint: 60;
+  --garden-layer-top: 70; /* the sun, the card and the signpost sit over the scene */
+  /* the cast (plan section 19, phase 3): the four friends' sizes and timings */
+  --cast-unit: 1px; /* a friend given a size is that many of these wide */
+  --cast-breath: 3200ms; /* one slow breath in and out */
+  --cast-sleep-breath: 5200ms; /* breathing while asleep */
+  --cast-sway: 2800ms; /* leaves, ear tufts, wings and the frog's throat */
+  --cast-blink: 13500ms; /* one loop of three blinks, 3.5, 4.5 and 5.5 seconds apart */
+  --cast-talk: 640ms; /* one loop of the four talking mouth shapes */
+  --cast-wave: 380ms; /* one swing of a waving hand */
+  --cast-greet: 900ms; /* hopping in to say hello */
+  --cast-cheer: 600ms; /* the small hop for a right answer */
+  --cast-cheer-big: 1500ms; /* the big jump and spin */
+  --cast-peek: 500ms; /* leaning in from the edge */
+  --cast-z: 2600ms; /* a sleeping z floating up */
 }
 
 *,

@@ -355,7 +355,7 @@ function patternsLesson(): Lesson {
       ...one.map(show),
       show(moment(['The part that repeats tells us what comes next.'], 'The part that repeats tells us.', alter(lastOne.scene, (piece) => (piece.gone ? piece : { ...piece, lit: true })))),
       turn(first, patternWhy(first)),
-      show(moment(['This pattern has three colours in its part.'], 'Three colours in the part.', patternScene('b', threeColours.map(dot)))),
+      show(moment(['This pattern has three colors in its part.'], 'Three colors in the part.', patternScene('b', threeColours.map(dot)))),
       ...two.map(show),
       turn(second, patternWhy(second)),
       show(moment(['Sometimes the hole is in the middle. Say the part again, and find what fits.'], 'A hole in the middle.', hole)),

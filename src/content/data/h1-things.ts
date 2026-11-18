@@ -88,13 +88,13 @@ export const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', '
 
 // Tally charts: what the children voted for, and the things on the chart.
 export interface Vote {
-  question: string; // "Children voted for their favourite pet."
+  question: string; // "Children voted for their favorite pet."
   asked: string; // "chose" or "came by"
   rows: readonly { emoji: string; label: string }[];
 }
 export const VOTES: readonly Vote[] = [
-  { question: 'Children voted for their favourite pet.', asked: 'chose', rows: [{ emoji: '🐶', label: 'dogs' }, { emoji: '🐱', label: 'cats' }, { emoji: '🐟', label: 'fish' }] },
-  { question: 'Children voted for their favourite fruit.', asked: 'chose', rows: [{ emoji: '🍎', label: 'apples' }, { emoji: '🍌', label: 'bananas' }, { emoji: '🍇', label: 'grapes' }] },
+  { question: 'Children voted for their favorite pet.', asked: 'chose', rows: [{ emoji: '🐶', label: 'dogs' }, { emoji: '🐱', label: 'cats' }, { emoji: '🐟', label: 'fish' }] },
+  { question: 'Children voted for their favorite fruit.', asked: 'chose', rows: [{ emoji: '🍎', label: 'apples' }, { emoji: '🍌', label: 'bananas' }, { emoji: '🍇', label: 'grapes' }] },
   { question: 'Children told how they came to school.', asked: 'came by', rows: [{ emoji: '🚗', label: 'car' }, { emoji: '🚌', label: 'bus' }, { emoji: '🚲', label: 'bike' }] },
 ];
 

@@ -13,10 +13,14 @@ const CATEGORIES: Record<string, Record<string, string>> = {
   K: { A: 'A. Letters', B: 'B. Sounds and spelling', C: 'C. Sight words', D: 'D. Words and sentences', E: 'E. Reading' },
 };
 
+// Skills whose questions have changed since the wave shipped, and the version each is on now.
+const VERSIONS: Record<string, number> = { 'E-PK-C6': 2, 'E-K-A3': 2, 'E-K-A5': 2, 'E-K-B8': 2, 'E-K-B9': 2, 'E-K-B11': 2, 'E-K-B13': 2, 'E-K-D7': 2 };
+
 function row(grade: 'PK' | 'K', code: string, name: string, strand: string, ladder: string, icon: Visual, maxLevel: Level, itemTypes: ItemType[], ccss?: string): Skill {
   const letter = code.charAt(0);
+  const id = `E-${grade}-${code.replace('.', '')}`;
   return {
-    id: `E-${grade}-${code.replace('.', '')}`,
+    id,
     subject: 'ela',
     grade: grade as SkillGrade,
     category: CATEGORIES[grade]?.[letter] as string,
@@ -26,7 +30,7 @@ function row(grade: 'PK' | 'K', code: string, name: string, strand: string, ladd
     ladder,
     icon,
     speakName: [name],
-    version: 1,
+    version: VERSIONS[id] ?? 1,
     itemTypes,
     maxLevel,
     prereqs: [],

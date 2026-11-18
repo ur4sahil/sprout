@@ -1,18 +1,18 @@
 {
  "skillId": "E-K-D7",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "read",
   "facts": {
    "relation": "action",
-   "target": "ski",
+   "target": "sit",
    "read": [
-    "ski"
+    "sit"
    ],
    "options": [
-    "ski",
-    "walk"
+    "lift",
+    "sit"
    ]
   },
   "prompt": {
@@ -23,53 +23,53 @@
   },
   "stimulus": {
    "kind": "text",
-   "value": "ski",
+   "value": "sit",
    "size": "xl"
   },
   "options": [
    {
     "kind": "emojiGroup",
-    "emoji": "⛷️",
+    "emoji": "🏋️",
     "count": 1,
     "layout": "row"
    },
    {
     "kind": "emojiGroup",
-    "emoji": "🚶",
+    "emoji": "🧘",
     "count": 1,
     "layout": "row"
    }
   ],
-  "answerIndex": 0,
+  "answerIndex": 1,
   "explanation": {
    "speak": [
     "This word is",
     {
-     "word": "ski"
+     "word": "sit"
     },
     ".",
-    "This one is skiing."
+    "This one is sitting."
    ],
    "steps": [
-    "This word is ski.",
-    "This one is skiing."
+    "This word is sit.",
+    "This one is sitting."
    ],
    "visual": {
     "kind": "row",
     "children": [
      {
       "kind": "text",
-      "value": "ski",
+      "value": "sit",
       "size": "xl"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🧘",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "skiing"
+        "word": "sitting"
        }
       ]
      }
@@ -79,7 +79,7 @@
   "skillId": "E-K-D7",
   "level": 1,
   "seed": 4271,
-  "key": "E-K-D7|1|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
+  "key": "E-K-D7|1|{\"read\":[\"sit\"],\"relation\":\"action\",\"target\":\"sit\"}"
  },
  "levels": {
   "1": [
@@ -88,252 +88,12 @@
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "surf",
+     "target": "hug",
      "read": [
-      "surf"
+      "hug"
      ],
      "options": [
-      "lift",
-      "surf"
-     ]
-    },
-    "prompt": {
-     "text": "Read the action word. Which picture shows it?",
-     "speak": [
-      "Read the action word. Which picture shows it?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "surf",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏋️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏄",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This word is",
-      {
-       "word": "surf"
-      },
-      ".",
-      "This one is surfing."
-     ],
-     "steps": [
-      "This word is surf.",
-      "This one is surfing."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "surf",
-        "size": "xl"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🏄",
-        "count": 1,
-        "layout": "row",
-        "speak": [
-         {
-          "word": "surfing"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-D7",
-    "level": 1,
-    "seed": 1,
-    "key": "E-K-D7|1|{\"read\":[\"surf\"],\"relation\":\"action\",\"target\":\"surf\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "read",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "read": [
-      "ski"
-     ],
-     "options": [
-      "ski",
-      "surf"
-     ]
-    },
-    "prompt": {
-     "text": "Read the action word. Which picture shows it?",
-     "speak": [
-      "Read the action word. Which picture shows it?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "ski",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏄",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "This word is",
-      {
-       "word": "ski"
-      },
-      ".",
-      "This one is skiing."
-     ],
-     "steps": [
-      "This word is ski.",
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "ski",
-        "size": "xl"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⛷️",
-        "count": 1,
-        "layout": "row",
-        "speak": [
-         {
-          "word": "skiing"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-D7",
-    "level": 1,
-    "seed": 2,
-    "key": "E-K-D7|1|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "read",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "read": [
-      "ski"
-     ],
-     "options": [
-      "ride",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Read the action word. Which picture shows it?",
-     "speak": [
-      "Read the action word. Which picture shows it?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "ski",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚴",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This word is",
-      {
-       "word": "ski"
-      },
-      ".",
-      "This one is skiing."
-     ],
-     "steps": [
-      "This word is ski.",
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "ski",
-        "size": "xl"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⛷️",
-        "count": 1,
-        "layout": "row",
-        "speak": [
-         {
-          "word": "skiing"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-D7",
-    "level": 1,
-    "seed": 3,
-    "key": "E-K-D7|1|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "read",
-    "facts": {
-     "relation": "action",
-     "target": "lift",
-     "read": [
-      "lift"
-     ],
-     "options": [
-      "lift",
+      "hug",
       "sleep"
      ]
     },
@@ -345,13 +105,13 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "lift",
+     "value": "hug",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
@@ -367,31 +127,271 @@
      "speak": [
       "This word is",
       {
-       "word": "lift"
+       "word": "hug"
       },
       ".",
-      "This one is lifting."
+      "This one is hugging."
      ],
      "steps": [
-      "This word is lift.",
-      "This one is lifting."
+      "This word is hug.",
+      "This one is hugging."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "lift",
+        "value": "hug",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🏋️",
+        "emoji": "🫂",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lifting"
+          "word": "hugging"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D7",
+    "level": 1,
+    "seed": 1,
+    "key": "E-K-D7|1|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "action",
+     "target": "hug",
+     "read": [
+      "hug"
+     ],
+     "options": [
+      "clap",
+      "hug"
+     ]
+    },
+    "prompt": {
+     "text": "Read the action word. Which picture shows it?",
+     "speak": [
+      "Read the action word. Which picture shows it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "hug",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👏",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🫂",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "hug"
+      },
+      ".",
+      "This one is hugging."
+     ],
+     "steps": [
+      "This word is hug.",
+      "This one is hugging."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hug",
+        "size": "xl"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🫂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hugging"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D7",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-D7|1|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "action",
+     "target": "hug",
+     "read": [
+      "hug"
+     ],
+     "options": [
+      "sit",
+      "hug"
+     ]
+    },
+    "prompt": {
+     "text": "Read the action word. Which picture shows it?",
+     "speak": [
+      "Read the action word. Which picture shows it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "hug",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🫂",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "hug"
+      },
+      ".",
+      "This one is hugging."
+     ],
+     "steps": [
+      "This word is hug.",
+      "This one is hugging."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hug",
+        "size": "xl"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🫂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hugging"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D7",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-D7|1|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "action",
+     "target": "stand",
+     "read": [
+      "stand"
+     ],
+     "options": [
+      "stand",
+      "sit"
+     ]
+    },
+    "prompt": {
+     "text": "Read the action word. Which picture shows it?",
+     "speak": [
+      "Read the action word. Which picture shows it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "stand",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "stand"
+      },
+      ".",
+      "This one is standing."
+     ],
+     "steps": [
+      "This word is stand.",
+      "This one is standing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "stand",
+        "size": "xl"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧍",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "standing"
          }
         ]
        }
@@ -401,20 +401,20 @@
     "skillId": "E-K-D7",
     "level": 1,
     "seed": 4,
-    "key": "E-K-D7|1|{\"read\":[\"lift\"],\"relation\":\"action\",\"target\":\"lift\"}"
+    "key": "E-K-D7|1|{\"read\":[\"stand\"],\"relation\":\"action\",\"target\":\"stand\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "ski",
+     "target": "hug",
      "read": [
-      "ski"
+      "hug"
      ],
      "options": [
-      "ski",
-      "lift"
+      "clap",
+      "hug"
      ]
     },
     "prompt": {
@@ -425,53 +425,53 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "ski",
+     "value": "hug",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This word is",
       {
-       "word": "ski"
+       "word": "hug"
       },
       ".",
-      "This one is skiing."
+      "This one is hugging."
      ],
      "steps": [
-      "This word is ski.",
-      "This one is skiing."
+      "This word is hug.",
+      "This one is hugging."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "ski",
+        "value": "hug",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "⛷️",
+        "emoji": "🫂",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "skiing"
+          "word": "hugging"
          }
         ]
        }
@@ -481,20 +481,20 @@
     "skillId": "E-K-D7",
     "level": 1,
     "seed": 5,
-    "key": "E-K-D7|1|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
+    "key": "E-K-D7|1|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "clap",
      "read": [
-      "walk"
+      "clap"
      ],
      "options": [
-      "walk",
-      "row"
+      "clap",
+      "hug"
      ]
     },
     "prompt": {
@@ -505,19 +505,19 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "walk",
+     "value": "clap",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚣",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      }
@@ -527,31 +527,31 @@
      "speak": [
       "This word is",
       {
-       "word": "walk"
+       "word": "clap"
       },
       ".",
-      "This one is walking."
+      "This one is clapping."
      ],
      "steps": [
-      "This word is walk.",
-      "This one is walking."
+      "This word is clap.",
+      "This one is clapping."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "walk",
+        "value": "clap",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🚶",
+        "emoji": "👏",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "walking"
+          "word": "clapping"
          }
         ]
        }
@@ -561,7 +561,7 @@
     "skillId": "E-K-D7",
     "level": 1,
     "seed": 6,
-    "key": "E-K-D7|1|{\"read\":[\"walk\"],\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-K-D7|1|{\"read\":[\"clap\"],\"relation\":\"action\",\"target\":\"clap\"}"
    },
    {
     "type": "choice",
@@ -573,8 +573,8 @@
       "swim"
      ],
      "options": [
-      "swim",
-      "ski"
+      "hug",
+      "swim"
      ]
     },
     "prompt": {
@@ -591,18 +591,18 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏊",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🏊",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This word is",
@@ -653,8 +653,8 @@
       "run"
      ],
      "options": [
-      "run",
-      "walk"
+      "swim",
+      "run"
      ]
     },
     "prompt": {
@@ -671,18 +671,18 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏃",
+      "emoji": "🏊",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "🏃",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This word is",
@@ -733,8 +733,8 @@
       "run"
      ],
      "options": [
-      "ski",
-      "run"
+      "run",
+      "sleep"
      ]
     },
     "prompt": {
@@ -751,18 +751,18 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🏃",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏃",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "This word is",
@@ -808,13 +808,13 @@
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "clap",
      "read": [
-      "walk"
+      "clap"
      ],
      "options": [
       "sleep",
-      "walk"
+      "clap"
      ]
     },
     "prompt": {
@@ -825,7 +825,7 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "walk",
+     "value": "clap",
      "size": "xl"
     },
     "options": [
@@ -837,7 +837,7 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      }
@@ -847,31 +847,31 @@
      "speak": [
       "This word is",
       {
-       "word": "walk"
+       "word": "clap"
       },
       ".",
-      "This one is walking."
+      "This one is clapping."
      ],
      "steps": [
-      "This word is walk.",
-      "This one is walking."
+      "This word is clap.",
+      "This one is clapping."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "walk",
+        "value": "clap",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🚶",
+        "emoji": "👏",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "walking"
+          "word": "clapping"
          }
         ]
        }
@@ -881,7 +881,7 @@
     "skillId": "E-K-D7",
     "level": 1,
     "seed": 10,
-    "key": "E-K-D7|1|{\"read\":[\"walk\"],\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-K-D7|1|{\"read\":[\"clap\"],\"relation\":\"action\",\"target\":\"clap\"}"
    }
   ],
   "2": [
@@ -890,14 +890,14 @@
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "surf",
+     "target": "hug",
      "read": [
-      "surf"
+      "hug"
      ],
      "options": [
-      "surf",
-      "ride",
-      "lift"
+      "sleep",
+      "hug",
+      "run"
      ]
     },
     "prompt": {
@@ -908,59 +908,59 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "surf",
+     "value": "hug",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏄",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚴",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🏃",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This word is",
       {
-       "word": "surf"
+       "word": "hug"
       },
       ".",
-      "This one is surfing."
+      "This one is hugging."
      ],
      "steps": [
-      "This word is surf.",
-      "This one is surfing."
+      "This word is hug.",
+      "This one is hugging."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "surf",
+        "value": "hug",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🏄",
+        "emoji": "🫂",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "surfing"
+          "word": "hugging"
          }
         ]
        }
@@ -970,21 +970,21 @@
     "skillId": "E-K-D7",
     "level": 2,
     "seed": 1,
-    "key": "E-K-D7|2|{\"read\":[\"surf\"],\"relation\":\"action\",\"target\":\"surf\"}"
+    "key": "E-K-D7|2|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "ski",
+     "target": "hug",
      "read": [
-      "ski"
+      "hug"
      ],
      "options": [
-      "surf",
-      "ski",
-      "swim"
+      "hug",
+      "swim",
+      "clap"
      ]
     },
     "prompt": {
@@ -995,19 +995,13 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "ski",
+     "value": "hug",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏄",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
@@ -1016,178 +1010,10 @@
       "emoji": "🏊",
       "count": 1,
       "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This word is",
-      {
-       "word": "ski"
-      },
-      ".",
-      "This one is skiing."
-     ],
-     "steps": [
-      "This word is ski.",
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "ski",
-        "size": "xl"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⛷️",
-        "count": 1,
-        "layout": "row",
-        "speak": [
-         {
-          "word": "skiing"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-D7",
-    "level": 2,
-    "seed": 2,
-    "key": "E-K-D7|2|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "read",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "read": [
-      "ski"
-     ],
-     "options": [
-      "surf",
-      "ride",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Read the action word. Which picture shows it?",
-     "speak": [
-      "Read the action word. Which picture shows it?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "ski",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏄",
-      "count": 1,
-      "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚴",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "This word is",
-      {
-       "word": "ski"
-      },
-      ".",
-      "This one is skiing."
-     ],
-     "steps": [
-      "This word is ski.",
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "ski",
-        "size": "xl"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⛷️",
-        "count": 1,
-        "layout": "row",
-        "speak": [
-         {
-          "word": "skiing"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-D7",
-    "level": 2,
-    "seed": 3,
-    "key": "E-K-D7|2|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "read",
-    "facts": {
-     "relation": "action",
-     "target": "lift",
-     "read": [
-      "lift"
-     ],
-     "options": [
-      "lift",
-      "walk",
-      "sleep"
-     ]
-    },
-    "prompt": {
-     "text": "Read the action word. Which picture shows it?",
-     "speak": [
-      "Read the action word. Which picture shows it?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "lift",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏋️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🛌",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      }
@@ -1197,31 +1023,205 @@
      "speak": [
       "This word is",
       {
-       "word": "lift"
+       "word": "hug"
       },
       ".",
-      "This one is lifting."
+      "This one is hugging."
      ],
      "steps": [
-      "This word is lift.",
-      "This one is lifting."
+      "This word is hug.",
+      "This one is hugging."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "lift",
+        "value": "hug",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🏋️",
+        "emoji": "🫂",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lifting"
+          "word": "hugging"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D7",
+    "level": 2,
+    "seed": 2,
+    "key": "E-K-D7|2|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "action",
+     "target": "hug",
+     "read": [
+      "hug"
+     ],
+     "options": [
+      "sit",
+      "clap",
+      "hug"
+     ]
+    },
+    "prompt": {
+     "text": "Read the action word. Which picture shows it?",
+     "speak": [
+      "Read the action word. Which picture shows it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "hug",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👏",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🫂",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "hug"
+      },
+      ".",
+      "This one is hugging."
+     ],
+     "steps": [
+      "This word is hug.",
+      "This one is hugging."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "hug",
+        "size": "xl"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🫂",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hugging"
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-D7",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-D7|2|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "read",
+    "facts": {
+     "relation": "action",
+     "target": "stand",
+     "read": [
+      "stand"
+     ],
+     "options": [
+      "stand",
+      "sit",
+      "lift"
+     ]
+    },
+    "prompt": {
+     "text": "Read the action word. Which picture shows it?",
+     "speak": [
+      "Read the action word. Which picture shows it?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "stand",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This word is",
+      {
+       "word": "stand"
+      },
+      ".",
+      "This one is standing."
+     ],
+     "steps": [
+      "This word is stand.",
+      "This one is standing."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "stand",
+        "size": "xl"
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧍",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "standing"
          }
         ]
        }
@@ -1231,21 +1231,21 @@
     "skillId": "E-K-D7",
     "level": 2,
     "seed": 4,
-    "key": "E-K-D7|2|{\"read\":[\"lift\"],\"relation\":\"action\",\"target\":\"lift\"}"
+    "key": "E-K-D7|2|{\"read\":[\"stand\"],\"relation\":\"action\",\"target\":\"stand\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "ski",
+     "target": "hug",
      "read": [
-      "ski"
+      "hug"
      ],
      "options": [
-      "lift",
-      "ski",
-      "walk"
+      "hug",
+      "sleep",
+      "clap"
      ]
     },
     "prompt": {
@@ -1256,59 +1256,59 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "ski",
+     "value": "hug",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "This word is",
       {
-       "word": "ski"
+       "word": "hug"
       },
       ".",
-      "This one is skiing."
+      "This one is hugging."
      ],
      "steps": [
-      "This word is ski.",
-      "This one is skiing."
+      "This word is hug.",
+      "This one is hugging."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "ski",
+        "value": "hug",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "⛷️",
+        "emoji": "🫂",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "skiing"
+          "word": "hugging"
          }
         ]
        }
@@ -1318,21 +1318,21 @@
     "skillId": "E-K-D7",
     "level": 2,
     "seed": 5,
-    "key": "E-K-D7|2|{\"read\":[\"ski\"],\"relation\":\"action\",\"target\":\"ski\"}"
+    "key": "E-K-D7|2|{\"read\":[\"hug\"],\"relation\":\"action\",\"target\":\"hug\"}"
    },
    {
     "type": "choice",
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "clap",
      "read": [
-      "walk"
+      "clap"
      ],
      "options": [
-      "row",
-      "walk",
-      "ski"
+      "clap",
+      "hug",
+      "sit"
      ]
     },
     "prompt": {
@@ -1343,59 +1343,59 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "walk",
+     "value": "clap",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🚣",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🧘",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "This word is",
       {
-       "word": "walk"
+       "word": "clap"
       },
       ".",
-      "This one is walking."
+      "This one is clapping."
      ],
      "steps": [
-      "This word is walk.",
-      "This one is walking."
+      "This word is clap.",
+      "This one is clapping."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "walk",
+        "value": "clap",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🚶",
+        "emoji": "👏",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "walking"
+          "word": "clapping"
          }
         ]
        }
@@ -1405,7 +1405,7 @@
     "skillId": "E-K-D7",
     "level": 2,
     "seed": 6,
-    "key": "E-K-D7|2|{\"read\":[\"walk\"],\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-K-D7|2|{\"read\":[\"clap\"],\"relation\":\"action\",\"target\":\"clap\"}"
    },
    {
     "type": "choice",
@@ -1417,9 +1417,9 @@
       "swim"
      ],
      "options": [
-      "swim",
-      "lift",
-      "ski"
+      "stand",
+      "hug",
+      "swim"
      ]
     },
     "prompt": {
@@ -1436,24 +1436,24 @@
     "options": [
      {
       "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🫂",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
       "emoji": "🏊",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏋️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "This word is",
@@ -1504,9 +1504,9 @@
       "run"
      ],
      "options": [
+      "stand",
       "swim",
-      "run",
-      "walk"
+      "run"
      ]
     },
     "prompt": {
@@ -1523,6 +1523,12 @@
     "options": [
      {
       "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
       "emoji": "🏊",
       "count": 1,
       "layout": "row"
@@ -1532,15 +1538,9 @@
       "emoji": "🏃",
       "count": 1,
       "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "This word is",
@@ -1591,9 +1591,9 @@
       "run"
      ],
      "options": [
-      "ride",
-      "ski",
-      "run"
+      "sleep",
+      "run",
+      "stand"
      ]
     },
     "prompt": {
@@ -1610,13 +1610,7 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🚴",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      },
@@ -1625,9 +1619,15 @@
       "emoji": "🏃",
       "count": 1,
       "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This word is",
@@ -1673,14 +1673,14 @@
     "mode": "read",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "clap",
      "read": [
-      "walk"
+      "clap"
      ],
      "options": [
-      "ski",
       "sleep",
-      "walk"
+      "swim",
+      "clap"
      ]
     },
     "prompt": {
@@ -1691,16 +1691,10 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "walk",
+     "value": "clap",
      "size": "xl"
     },
     "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     },
      {
       "kind": "emojiGroup",
       "emoji": "🛌",
@@ -1709,7 +1703,13 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "🏊",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👏",
       "count": 1,
       "layout": "row"
      }
@@ -1719,31 +1719,31 @@
      "speak": [
       "This word is",
       {
-       "word": "walk"
+       "word": "clap"
       },
       ".",
-      "This one is walking."
+      "This one is clapping."
      ],
      "steps": [
-      "This word is walk.",
-      "This one is walking."
+      "This word is clap.",
+      "This one is clapping."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "walk",
+        "value": "clap",
         "size": "xl"
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🚶",
+        "emoji": "👏",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "walking"
+          "word": "clapping"
          }
         ]
        }
@@ -1753,7 +1753,7 @@
     "skillId": "E-K-D7",
     "level": 2,
     "seed": 10,
-    "key": "E-K-D7|2|{\"read\":[\"walk\"],\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-K-D7|2|{\"read\":[\"clap\"],\"relation\":\"action\",\"target\":\"clap\"}"
    }
   ]
  }

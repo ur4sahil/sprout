@@ -14,7 +14,7 @@ const PREK: [string, string][] = [
   ['M-PK-C4', 'Heavy and light'],
   ['M-PK-C5', 'Shapes around us'],
   ['M-PK-C6', 'Same shape'],
-  ['M-PK-C7', 'Colours around us'],
+  ['M-PK-C7', 'Colors around us'],
   ['M-PK-C8', 'Ball, box or can'],
   ['M-PK-C9', 'Order by size'],
   ['M-PK-D4', 'Fill the gap in a pattern'],

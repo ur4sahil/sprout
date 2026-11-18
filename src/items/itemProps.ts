@@ -8,6 +8,8 @@ export interface ItemProps<T extends Question['type']> {
   onChange: (response: Response | null) => void;
   // Asked to say a picture's spoken label. Never called in a listen question.
   onSpeak: (say: Say) => void;
+  // True once this answer has been marked right: the component plays its own small celebration.
+  right?: boolean;
 }
 
 // A picture's spoken label may be said on tap, except in a listen question,

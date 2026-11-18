@@ -59,7 +59,7 @@ export default function QuestionStage({ question, phase, response, lastResponse,
   }
   return (
     <div key={question.key} className={`${styles.question} ${phase === 'correct' ? styles.correct : ''} ${missed ? styles.missed : ''}`} data-phase={phase} data-run={run} data-arrive="">
-      <QuestionView question={question} disabled={phase !== 'asking'} onChange={onChange} onSpeak={onSpeak} />
+      <QuestionView question={question} disabled={phase !== 'asking'} onChange={onChange} onSpeak={onSpeak} right={phase === 'correct'} />
       {phase === 'correct' && <ParticleBurst kind={runParticles(run)} seed={question.seed} at={{ x: 0.5, y: 0.7 }} />}
       {phase === 'correct' && <FlyStar />}
       {saveError && <Notice role="alert">{saveError}</Notice>}

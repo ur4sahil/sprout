@@ -176,9 +176,14 @@ const ACTION_ROWS: [string, string, string][] = [
   ['juggle', 'juggling', '🤹'],
   ['row', 'rowing a boat', '🚣'],
   ['lift', 'lifting', '🏋️'],
+  ['clap', 'clapping', '👏'],
+  ['hug', 'hugging', '🫂'],
+  ['sit', 'sitting', '🧘'],
+  ['stand', 'standing', '🧍'],
 ];
 
 export const ACTIONS: readonly Action[] = ACTION_ROWS.map(([verb, doing, emoji]) => ({ verb, doing, emoji }));
 
 // The verbs a kindergarten child reads: short and spelled the way they sound.
-export const READ_VERBS: readonly string[] = ['swim', 'run', 'ride', 'sleep', 'walk', 'ski', 'row', 'lift', 'surf'];
+// Never ski, surf, row, walk or ride: a kindergartner can not sound those out.
+export const READ_VERBS: readonly string[] = ['swim', 'run', 'sleep', 'lift', 'clap', 'hug', 'sit', 'stand'];

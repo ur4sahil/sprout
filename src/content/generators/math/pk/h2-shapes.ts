@@ -93,7 +93,7 @@ function sameShape(level: Level, rng: Rng): QuestionDraft {
   const turn = (): number => (level === 3 ? rng.pick([90, 180, 270]) : 0);
   const options = offered.map((form) => shape(form, colors[1] as ColorName, size(), turn()));
   const prompt = 'Which one is the same shape?';
-  const why = level === 3 ? 'It is turned, but it is still the same shape.' : 'The colour and size do not matter.';
+  const why = level === 3 ? 'It is turned, but it is still the same shape.' : 'The color and size do not matter.';
   return {
     type: 'choice',
     mode: 'look',
@@ -113,11 +113,11 @@ export const sameShapeGenerator: SkillGenerator = skill({
   lists: ['colors'],
   generate: sameShape,
   exampleSeed: 922,
-  lesson: { see: 'Two shapes can be the same shape in different colours.', remember: 'Look at the sides and corners, not the colour.', tryLevel: 2 },
+  lesson: { see: 'Two shapes can be the same shape in different colors.', remember: 'Look at the sides and corners, not the color.', tryLevel: 2 },
   oracle: 'attribute',
 });
 
-// ---- C.7 Colours around us ----
+// ---- C.7 Colors around us ----
 // Levels: which thing is red, yellow or purple / any of five colours / what colour a thing is. Oracle: h2World.
 // Three colours in a question are always easy to tell apart (no red with green, no orange with red or yellow).
 
@@ -135,7 +135,7 @@ function coloursAround(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
     const thing = rng.pick(COLOURED.filter((each) => each.colour === target));
     const offered = rng.shuffle(hues);
-    const prompt = `What colour ${plural(thing.name) ? 'are' : 'is'} ${the(thing.name)}?`;
+    const prompt = `What color ${plural(thing.name) ? 'are' : 'is'} ${the(thing.name)}?`;
     const said = `${cap(the(thing.name))} ${plural(thing.name) ? 'are' : 'is'} ${target}.`;
     return {
       type: 'choice',
@@ -170,7 +170,7 @@ export const coloursAroundGenerator: SkillGenerator = skill({
   lists: ['h2-world'],
   generate: coloursAround,
   exampleSeed: 923,
-  lesson: { see: 'Many things have their own colour. A banana is yellow.', remember: 'Colours have names. Say the colour you see.', tryLevel: 2 },
+  lesson: { see: 'Many things have their own color. A banana is yellow.', remember: 'Colors have names. Say the color you see.', tryLevel: 2 },
   oracle: 'h2World',
 });
 

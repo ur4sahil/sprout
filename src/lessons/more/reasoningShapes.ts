@@ -127,7 +127,7 @@ interface Change {
 }
 
 // A figure as the facts write it: [shape, colour, size].
-const ATTRIBUTE = ['shape', 'colour', 'size'] as const;
+const ATTRIBUTE = ['shape', 'color', 'size'] as const;
 const figureWord = (i: number, value: string): string => (i === 2 ? (SIZE_WORD[value] ?? value) : value);
 const figureName = (figure: readonly string[]): string => `${figureWord(2, figure[2] ?? '')} ${figure[1] ?? ''} ${figure[0] ?? ''}`;
 
@@ -466,7 +466,7 @@ export function twoRulePatternLesson(): Lesson {
       ...one.map(show),
       show(told('Follow one rule at a time. Then put the two answers together.', rest(one.at(-1)?.scene ?? scene([])))),
       turn(first, patternWhy(first)),
-      show(told('Here, the two rules are colour and shape.', ruleScene('y', formed, shapeRules))),
+      show(told('Here, the two rules are color and shape.', ruleScene('y', formed, shapeRules))),
       ...two.map(show),
       turn(second, patternWhy(second)),
       show(told('Two rules? Take them one at a time.', rest(two.at(-1)?.scene ?? scene([])))),
@@ -576,8 +576,8 @@ function completionWhy(question: Question): Moment[] {
   if (question.level === 2) {
     const [one, two] = strings(facts, 'colors');
     return [
-      told(`The two colours take turns. The pieces that touch the gap are all ${two}.`, light(start, AROUND_MIDDLE.map((i) => `wc${i}`))),
-      told(`So the gap is the other colour, ${one}.`, done),
+      told(`The two colors take turns. The pieces that touch the gap are all ${two}.`, light(start, AROUND_MIDDLE.map((i) => `wc${i}`))),
+      told(`So the gap is the other color, ${one}.`, done),
     ];
   }
   const rows = strings(facts, 'rowAttrs');
@@ -608,14 +608,14 @@ export function patternCompletionLesson(): Lesson {
       show(told('The middle is a blue stripe.', light(one, rowIds('x', 3, 1)))),
       show(told('The bottom stripe starts with yellow, and yellow.', light(one, rowIds('x', 3, 2)))),
       show(told('So the missing piece is yellow. It finishes the stripe.', solved)),
-      show(told('See how the colours go. Then follow them into the gap.', light(solved, rowIds('x', 3, 2)))),
-      show(told('Stripes can go down, too. Find which way the same colour runs.', light(down, colIds('v', 3, 0)))),
+      show(told('See how the colors go. Then follow them into the gap.', light(solved, rowIds('x', 3, 2)))),
+      show(told('Stripes can go down, too. Find which way the same color runs.', light(down, colIds('v', 3, 0)))),
       turn(first, completionWhy(first)),
-      show(told('This picture is like a checkerboard. The two colours take turns.', two)),
+      show(told('This picture is like a checkerboard. The two colors take turns.', two)),
       show(told('Look at the pieces that touch the gap. They are all orange.', light(two, AROUND_MIDDLE.map((i) => `yc${i}`)))),
       show(told('Next to orange comes green. So the gap is green.', solvedTwo)),
       turn(second, completionWhy(second)),
-      show(told('Follow the colours into the gap.', light(solvedTwo, AROUND_MIDDLE.map((i) => `yc${i}`)))),
+      show(told('Follow the colors into the gap.', light(solvedTwo, AROUND_MIDDLE.map((i) => `yc${i}`)))),
     ],
   };
 }

@@ -102,7 +102,7 @@ export const STORIES_2: readonly Story2[] = [
     id: 's2-10',
     text: 'Nina wanted to win the school race. She ran every day after school. On race day she ran as fast as she could. She came in second. Nina smiled because she did her best.',
     who: { ask: 'What place did Nina come in?', answers: ['Second', 'First', 'Last'], because: 'She came in second.' },
-    why: { ask: 'Why did Nina smile?', answers: ['She did her best.', 'She won first place.', 'The race was cancelled.'], because: 'Nina smiled because she did her best.' },
+    why: { ask: 'Why did Nina smile?', answers: ['She did her best.', 'She won first place.', 'The race was canceled.'], because: 'Nina smiled because she did her best.' },
     title: ['Nina Runs a Race', 'A Day Off School', 'The Fast Car'],
     about: ['A girl trains for a race and does her best.', 'A girl learns to swim.', 'A school gets a new playground.'],
     events: ['Nina ran every day.', 'Race day came.', 'She ran fast.', 'She came in second.'],

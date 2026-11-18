@@ -1,0 +1,27 @@
+/* The ground: one flat picture the whole size of the scene, under the plants. */
+.ground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+}
+
+/* The band on an area's sign is the subject's own colour, the same one as on its skill pages. */
+.band[data-subject='math'] {
+  fill: var(--subject-math);
+}
+
+.band[data-subject='ela'] {
+  fill: var(--subject-ela);
+}
+
+.band[data-subject='reasoning'] {
+  fill: var(--subject-reasoning);
+}

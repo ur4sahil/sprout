@@ -1,0 +1,162 @@
+/* One plant. The picture is 60 by 90; places inside it are given as shares of that box, so nothing here is a size. */
+.plant {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Every part that comes and goes glides: it grows out of the place where it joins the plant. */
+.part {
+  transform-box: view-box;
+  transition:
+    transform var(--garden-grow) var(--ease-bounce),
+    opacity var(--t-move) var(--ease-settle);
+}
+
+.packet {
+  transform-origin: 50% 93.3%;
+}
+
+.packet:not([data-on]),
+.seedLeaves:not([data-on]),
+.bud:not([data-on]),
+.leafLow:not([data-on]),
+.leafHigh:not([data-on]),
+.visitor:not([data-on]),
+.can:not([data-on]),
+.tip:not([data-on]) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* The stem grows up from the soil. */
+.stem {
+  transform-origin: 50% 93.3%;
+  transform: scaleY(var(--set-grow));
+}
+
+.leafLow {
+  transform-origin: 50% 77.8%;
+}
+
+.leafHigh {
+  transform-origin: 50% 66.7%;
+}
+
+/* The top of the plant sits lower while the stem is short. */
+.head {
+  transform: translateY(calc(var(--set-rise) * 1%));
+}
+
+.seedLeaves,
+.bud,
+.bloom,
+.tip,
+.nod {
+  transform-box: view-box;
+  transform-origin: 50% 33.3%;
+}
+
+.bloom {
+  transform: scale(var(--set-open));
+}
+
+.bloom:not([data-on]) {
+  opacity: 0;
+}
+
+.visitor {
+  transform-origin: 82% 15%;
+}
+
+.can {
+  transform-origin: 85% 93.3%;
+}
+
+/* A plant that is due a review leans a little and its head nods. It never wilts: nothing is lost by waiting. */
+.lean,
+.nod {
+  transform-box: view-box;
+  transition: transform var(--garden-grow) var(--ease-settle);
+}
+
+.lean {
+  transform-origin: 50% 93.3%;
+}
+
+[data-droop] .lean {
+  transform: rotate(9deg);
+}
+
+[data-droop] .nod {
+  transform: rotate(32deg);
+}
+
+/* Leaves in the wind. Each plant starts at its own point in the sway. */
+.sway {
+  transform-box: view-box;
+  transform-origin: 50% 93.3%;
+  animation: sway var(--garden-sway) ease-in-out infinite alternate;
+  animation-delay: calc(var(--set-sway-shift) * var(--garden-sway) * -2);
+}
+
+/* The visitor hovers, and its wings beat. */
+.hover {
+  transform-box: view-box;
+  animation: hover var(--garden-flutter) ease-in-out infinite alternate;
+}
+
+.wings {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: flutter var(--garden-flutter) ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-1.8deg);
+  }
+  to {
+    transform: rotate(1.8deg);
+  }
+}
+
+@keyframes hover {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-3%);
+  }
+}
+
+@keyframes flutter {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.45);
+  }
+}
+
+/* Calm mode and Reduce Motion: nothing sways or flutters, and a change of stage is a plain swap. */
+:global(:root[data-calm]) .sway,
+:global(:root[data-calm]) .hover,
+:global(:root[data-calm]) .wings {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sway,
+  .hover,
+  .wings {
+    animation: none;
+  }
+
+  .part,
+  .lean,
+  .nod {
+    transition: none;
+  }
+}

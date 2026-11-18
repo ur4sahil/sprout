@@ -1,0 +1,15 @@
+/* The signpost's board: a short list of places over the scene. */
+.board {
+  composes: card from '../components/shared.module.css';
+  max-width: var(--garden-card);
+  max-height: 100%;
+  margin: 0 auto;
+  gap: var(--space-1);
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+}

@@ -6,7 +6,7 @@ export const VERBAL_RELATIONS: Record<string, { says: string; pairs: readonly (r
   home: { says: 'lives in', pairs: [['bird', 'nest'], ['bee', 'hive'], ['spider', 'web'], ['horse', 'stable'], ['fish', 'pond'], ['pig', 'sty']] },
   baby: { says: 'has a baby called', pairs: [['cat', 'kitten'], ['dog', 'puppy'], ['cow', 'calf'], ['sheep', 'lamb'], ['hen', 'chick'], ['bear', 'cub'], ['horse', 'foal']] },
   makes: { says: 'gives us', pairs: [['bee', 'honey'], ['cow', 'milk'], ['hen', 'egg'], ['sheep', 'wool'], ['tree', 'wood']] },
-  colour: { says: 'is the colour', pairs: [['grass', 'green'], ['sky', 'blue'], ['snow', 'white'], ['banana', 'yellow'], ['cherry', 'red'], ['coal', 'black']] },
+  colour: { says: 'is the color', pairs: [['grass', 'green'], ['sky', 'blue'], ['snow', 'white'], ['banana', 'yellow'], ['cherry', 'red'], ['coal', 'black']] },
   part: { says: 'is part of', pairs: [['wheel', 'car'], ['page', 'book'], ['petal', 'flower'], ['finger', 'hand'], ['leaf', 'tree'], ['key', 'piano']] },
   tool: { says: 'is used with', pairs: [['pencil', 'paper'], ['broom', 'floor'], ['spoon', 'soup'], ['brush', 'hair'], ['key', 'lock'], ['bat', 'ball']] },
 };

@@ -133,7 +133,7 @@ function oddShapeWhy(question: Question): Moment[] {
   }
   const look = told('No two of these look the same. So check one thing at a time.', all);
   if (by === 'round') return [look, told('Look for corners. These three all have corners.', three), told('This one is round. It has no corners. It does not belong.', out)];
-  if (by === 'colour') return [look, told(`Look at the colours. These three are all ${same}.`, three), told(`This one is ${odd}. It does not belong.`, out)];
+  if (by === 'colour') return [look, told(`Look at the colors. These three are all ${same}.`, three), told(`This one is ${odd}. It does not belong.`, out)];
   return [look, told(`Look at the shapes. These three are all ${same}s.`, three), told(`This one is ${a(odd)}. It does not belong.`, out)];
 }
 
@@ -146,17 +146,17 @@ function oddShapeLesson(): Lesson {
     parts: [
       show(told('You know how to find the picture that does not belong. Now let us do it with shapes.', hearts)),
       show(told('Three of these are just the same. One is different, in one small way.', light(hearts, count('xo', 4)))),
-      show(told('Look at the colour. They are all red. Look at the shape. They are all hearts.', rest(hearts))),
+      show(told('Look at the color. They are all red. Look at the shape. They are all hearts.', rest(hearts))),
       show(told('Now look at the size. These three are big.', light(hearts, allBut('x', 2)))),
       show(told('This one is small. It does not belong.', leftOut(hearts, 'x', 2))),
-      show(told('Check the colour, the shape, and the size. One of them will be different.', light(hearts, ['xo2']))),
+      show(told('Check the color, the shape, and the size. One of them will be different.', light(hearts, ['xo2']))),
       turn(first, oddShapeWhy(first)),
       show(told('Here is a harder one. No two of these look the same.', mixed)),
-      show(told('Every colour is different. So the colour does not help.', light(mixed, count('yo', 4)))),
+      show(told('Every color is different. So the color does not help.', light(mixed, count('yo', 4)))),
       show(told('Two are big, and two are small. So the size does not help.', light(mixed, ['yo0', 'yo2']))),
       show(told('Now look for corners. The square, the triangle, and the star all have corners.', light(mixed, allBut('y', 2)))),
       show(told('The circle is round. It has no corners. It does not belong.', leftOut(mixed, 'y', 2))),
-      show(told('Other times, three share a colour, or three are the same shape. Check each thing in turn.', rest(mixed))),
+      show(told('Other times, three share a color, or three are the same shape. Check each thing in turn.', rest(mixed))),
       turn(second, oddShapeWhy(second)),
       show(told('Find the one thing that three of them share. The one left out does not belong.', light(mixed, allBut('y', 2)))),
     ],
@@ -252,8 +252,8 @@ function whichBelongsLesson(): Lesson {
 // ---- R-A3 Figure analogies: three changes ----
 
 // A figure as the facts write it at the top level: [shape, colour, size, how many].
-const ATTRIBUTE4 = ['shape', 'colour', 'size', 'number of shapes'] as const;
-const BADGE4 = ['shape', 'colour', 'size', 'how many'] as const;
+const ATTRIBUTE4 = ['shape', 'color', 'size', 'number of shapes'] as const;
+const BADGE4 = ['shape', 'color', 'size', 'how many'] as const;
 const worded4 = (i: number, value: string): string => (i === 2 ? (SIZE_WORD[value] ?? value) : i === 3 ? (value === '1' ? 'one' : 'two') : value);
 const figure4 = (code: readonly string[]): Visual => {
   const one = fig(at(code, 0) as ShapeName, at(code, 1), at(code, 2) as Size);
@@ -321,9 +321,9 @@ function figureAnalogyLesson(): Lesson {
     parts: [
       show(told('You know how to find what changed in a pair. Now three things change at once.', start)),
       ...worked.map(show),
-      show(told('Be careful. This one forgot to change the colour. Every wrong answer forgets one change.', { ...rest(solved), pieces: [...rest(solved).pieces, forgot] })),
+      show(told('Be careful. This one forgot to change the color. Every wrong answer forgets one change.', { ...rest(solved), pieces: [...rest(solved).pieces, forgot] })),
       turn(first, threeChangeWhy(first)),
-      show(told('Check four things. The shape, the colour, the size, and how many.', light(solved, ['xfrom', 'xto']))),
+      show(told('Check four things. The shape, the color, the size, and how many.', light(solved, ['xfrom', 'xto']))),
       show(told('Three of them change. Your answer must show all three.', light(solved, ['xanswer']))),
       turn(second, threeChangeWhy(second)),
       show(told('Find every change. Then make them all.', light(solved, ['xarrow0', 'xarrow1']))),
@@ -407,9 +407,9 @@ function figureMatrixLesson(): Lesson {
       show(told('Look across. The top row is red. The bottom row is blue. So the box needs blue.', light(arrows, rowIds('x', 2, 1)))),
       show(told('Now look down. In this column, the arrow points to the right.', light(arrows, colIds('x', 2, 1)))),
       show(told('So the box needs a blue arrow, pointing to the right.', arrowsDone)),
-      show(told('Be careful. A wrong answer can be the right colour, but point a new way. Check which way it points.', { ...rest(arrowsDone), pieces: [...rest(arrowsDone).pieces, wrongWay] })),
+      show(told('Be careful. A wrong answer can be the right color, but point a new way. Check which way it points.', { ...rest(arrowsDone), pieces: [...rest(arrowsDone).pieces, wrongWay] })),
       turn(first, matrixWhy(first)),
-      show(told('Now a bigger grid. Look across. Each row has one colour.', light(grid, rowIds('y', 3, 0)))),
+      show(told('Now a bigger grid. Look across. Each row has one color.', light(grid, rowIds('y', 3, 0)))),
       show(told('And each row has a circle, a square, and a star. Every shape, one time.', light(grid, rowIds('y', 3, 1)))),
       show(told('It is the same going down. Every shape, one time.', light(grid, colIds('y', 3, 0)))),
       show(told('The row with the box is blue. It has a star, and a circle. The square is missing.', light(grid, rowIds('y', 3, 2)))),
@@ -451,7 +451,7 @@ function turningWhy(question: Question): Moment[] {
     const [c0 = '', c1 = ''] = strings(question.facts, 'colors');
     return [
       told('Look at the turn first. It makes a quarter turn each step.', three),
-      told(`Now look at the colour. It goes ${c0}, ${c1}, ${c0}. So next is ${c1}.`, light(three, count('ws', 3))),
+      told(`Now look at the color. It goes ${c0}, ${c1}, ${c0}. So next is ${c1}.`, light(three, count('ws', 3))),
       told(`A quarter turn more, and ${c1}. ${last}`, done),
     ];
   }
@@ -484,12 +484,12 @@ function turningShapesLesson(): Lesson {
       show(told('One more half turn. Now it points down.', done)),
       show(told('So first see how far it turns each step. A quarter turn, or a half turn?', light(done, count('xt', 3)))),
       turn(first, turningWhy(first)),
-      show(told('Now two things change at once. The shape turns, and its colour changes.', both)),
+      show(told('Now two things change at once. The shape turns, and its color changes.', both)),
       show(told('First the turn. It is a quarter turn each step. So next, it points to the left.', bothTurns)),
-      show(told('Now the colour. Purple, orange, purple. So next is orange.', light(bothTurns, count('ys', 3)))),
+      show(told('Now the color. Purple, orange, purple. So next is orange.', light(bothTurns, count('ys', 3)))),
       show(told('Put them together. An orange arrow, pointing to the left.', bothDone)),
       turn(second, turningWhy(second)),
-      show(told('Check the turn. Then check the colour.', light(bothDone, count('yt', 3)))),
+      show(told('Check the turn. Then check the color.', light(bothDone, count('yt', 3)))),
     ],
   };
 }
@@ -633,7 +633,7 @@ function threeRulePatternLesson(): Lesson {
     parts: [
       show(told('You know how to follow two rules, one at a time. Now there are three rules at once.', start)),
       ...worked.map(show),
-      show(told('Each wrong answer breaks just one rule. So check the colour, the size, and the shape.', light(solved, ['xs6']))),
+      show(told('Each wrong answer breaks just one rule. So check the color, the size, and the shape.', light(solved, ['xs6']))),
       turn(first, patternWhy(first)),
       show(told('Remember, each rule keeps its own beat. Follow each one by itself, right to the end of the row.', light(solved, count('xr2n', 7)))),
       turn(second, patternWhy(second)),
@@ -1005,7 +1005,7 @@ function completionWhy(question: Question): Moment[] {
   const beside = rowIds('w', 3, r).filter((id) => id !== `wc${blank}`);
   return [
     told(`Look across the middle row. It has ${a(at(at(inRow, 0), 0))}, and ${a(at(at(inRow, 1), 0))}. So the ${form} is missing.`, light(start, rowIds('w', 3, r))),
-    told(`Now its colours. It has ${at(at(inRow, 0), 1)}, and ${at(at(inRow, 1), 1)}. So ${colour} is missing.`, light(start, beside)),
+    told(`Now its colors. It has ${at(at(inRow, 0), 1)}, and ${at(at(inRow, 1), 1)}. So ${colour} is missing.`, light(start, beside)),
     told(`The gap needs ${a(`${colour} ${form}`)}. Check going down. It fits there too.`, set(done, colIds('w', 3, c), { lit: true })),
   ];
 }
@@ -1026,19 +1026,19 @@ function patternCompletionLesson(): Lesson {
   const second = turnQuestion('R-A13', 4, (f) => !at(strings(f, 'options'), 0).startsWith('star') || !strings(f, 'options').includes('star|red'));
   return {
     parts: [
-      show(told('You know how to follow the colours into the gap. Now each piece has a shape, and a colour.', light(plain, ['xc5']))),
+      show(told('You know how to follow the colors into the gap. Now each piece has a shape, and a color.', light(plain, ['xc5']))),
       show(told('Look across. The top row is all circles. The row with the gap is all squares.', light(plain, rowIds('x', 3, 1)))),
       show(told('So the missing piece is a square.', light(plain, ['xc3', 'xc4']))),
       show(told('Now look down. This column is all yellow.', light(plain, colIds('x', 3, 2)))),
       show(told('A square, and yellow. The missing piece is a yellow square.', plainDone)),
       turn(first, completionWhy(first)),
-      show(told('This one is trickier. No row is all one shape, and no row is all one colour.', slanted)),
+      show(told('This one is trickier. No row is all one shape, and no row is all one color.', slanted)),
       show(told('But every row has a circle, a square, and a star. And every row has red, blue, and green.', light(slanted, rowIds('y', 3, 0)))),
       show(told('Look at the middle row. It has a square, and a circle. So the star is missing.', light(slanted, rowIds('y', 3, 1)))),
-      show(told('Its colours are blue, and green. So red is missing.', light(slanted, ['yc3', 'yc5']))),
+      show(told('Its colors are blue, and green. So red is missing.', light(slanted, ['yc3', 'yc5']))),
       show(told('The gap needs a red star. Check going down. It fits there too.', set(slantedDone, colIds('y', 3, 1), { lit: true }))),
       turn(second, completionWhy(second)),
-      show(told('Find the shape that is missing. Then find the colour that is missing.', light(slantedDone, ['yc4']))),
+      show(told('Find the shape that is missing. Then find the color that is missing.', light(slantedDone, ['yc4']))),
     ],
   };
 }
@@ -1296,7 +1296,7 @@ function wordAnalogyLesson(): Lesson {
 
 const GROUP_NAMES: Record<string, string> = { fruit: 'fruits', vegetable: 'vegetables', farmAnimal: 'farm animals', wildAnimal: 'wild animals', land: 'things that go on land', water: 'things that go on water', clothes: 'clothes', furniture: 'furniture', colour: 'colours', shape: 'shapes', weather: 'kinds of weather' };
 // What the odd word is instead: "But a boat goes on water."
-const ODD_IS: Record<string, string> = { fruit: 'is a fruit', vegetable: 'is a vegetable', farmAnimal: 'is a farm animal', wildAnimal: 'is a wild animal', land: 'goes on land', water: 'goes on water', clothes: 'is something to wear', furniture: 'is furniture', colour: 'is a colour', shape: 'is a shape', weather: 'is a kind of weather' };
+const ODD_IS: Record<string, string> = { fruit: 'is a fruit', vegetable: 'is a vegetable', farmAnimal: 'is a farm animal', wildAnimal: 'is a wild animal', land: 'goes on land', water: 'goes on water', clothes: 'is something to wear', furniture: 'is furniture', colour: 'is a color', shape: 'is a shape', weather: 'is a kind of weather' };
 
 function classOf(word: string): string {
   const found = Object.entries(WORD_CLASSES).find(([, members]) => members.includes(word));

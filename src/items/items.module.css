@@ -140,6 +140,7 @@
 }
 
 .pairs {
+  position: relative; /* the threads between matched things are drawn over it */
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4) var(--space-6);
@@ -230,6 +231,7 @@
   height: auto;
   touch-action: none;
   cursor: pointer;
+  overflow: visible; /* the hopper's jump may rise above the drawing */
 }
 
 /* Set the clock: the face takes a finger to drag the minute hand; the buttons sit under it. */
@@ -416,5 +418,541 @@
   .fillPlaced,
   [data-bounced] .fillOdd {
     animation: none;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------
+   A touch for each kind of question (game feel, phase 2b). Everything here moves with transforms, shadows and
+   colours only, so nothing changes size or pushes its neighbours. Every element that moves carries `data-feel`,
+   and the last block of this file turns all of it into a short fade for Calm mode and Reduce Motion.
+   ------------------------------------------------------------------------------------------------------------ */
+
+/* Choice: the card lifts under the finger, the chosen one stays up, and a right one flips to a tick. */
+.lift {
+  transition:
+    transform var(--t-pop) var(--ease-bounce),
+    box-shadow var(--t-pop) linear;
+}
+
+.lift:not(:disabled):active {
+  transform: translateY(var(--item-lift)) scale(1.03);
+  box-shadow: var(--shadow-lift);
+}
+
+.raised {
+  transform: translateY(var(--item-lift));
+  box-shadow: var(--shadow-lift);
+}
+
+.tile.flip[aria-pressed] {
+  animation: item-flip var(--t-item) var(--ease-settle) both;
+}
+
+.tickFace {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+  background: var(--color-correct-bg);
+  color: var(--color-correct);
+  font-size: var(--text-xl);
+  animation: item-face var(--t-item) linear both;
+}
+
+/* Pins: the small numbers on picked things, and the ticks they pop into, one after another. */
+.pin {
+  background: var(--color-brand);
+  animation: item-pop var(--t-pop) var(--ease-bounce) both;
+}
+
+.pinTick {
+  background: var(--color-correct);
+  animation: item-pop var(--t-pop) var(--ease-bounce) both;
+  animation-delay: calc(var(--set-turn, 0) * var(--item-stagger));
+}
+
+/* Tap to count: a tapped thing bounces; when right, the last number stamps in as the total. */
+.bounce {
+  animation: item-bounce var(--t-move) var(--ease-bounce);
+}
+
+.stamp {
+  background: var(--color-correct);
+  animation: item-stamp var(--t-move) var(--ease-bounce) both;
+  animation-delay: var(--t-move);
+}
+
+/* A digit or a tile dropping into its box. A bare letter or digit must be a block to be moved at all. */
+span.dropIn {
+  display: inline-block;
+}
+
+.dropIn {
+  animation: item-drop var(--t-pop) var(--ease-bounce) both;
+}
+
+/* A number or a clock that lights up. */
+.glow {
+  border-color: var(--color-correct);
+  color: var(--color-correct);
+  box-shadow: var(--shadow-glow);
+  animation: item-glow var(--t-item) var(--ease-settle) both;
+}
+
+.clockRight {
+  filter: drop-shadow(0 0 var(--space-3) var(--color-star));
+  animation: item-swell var(--t-item) var(--ease-settle) both;
+}
+
+/* Order: a picked tile leans the way it will travel and casts a bigger shadow; right ones link up and chug. */
+.lean {
+  transform: translateY(var(--item-lift)) rotate(calc(var(--set-lean, 0) * var(--item-tilt)));
+  box-shadow: var(--shadow-lift);
+}
+
+.tile.chug[aria-pressed] {
+  animation: item-chug var(--t-item) var(--ease-settle) both;
+  animation-delay: var(--t-move);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: calc(100% + var(--border));
+  top: 50%;
+  width: var(--space-4);
+  height: var(--item-line);
+  background: var(--color-correct);
+  transform: translateY(-50%);
+  animation: item-fade var(--t-move) linear both;
+  animation-delay: var(--t-move);
+}
+
+/* Sort: with a thing in hand each group lifts to take it; when right, each gives a happy shake. */
+.binReady {
+  transform: translateY(var(--item-lift));
+  border-color: var(--color-brand);
+  box-shadow: var(--shadow-lift);
+}
+
+.binHappy {
+  animation: item-shake var(--t-item) var(--ease-settle) both;
+  animation-delay: calc(var(--set-turn, 0) * var(--item-stagger-slow));
+}
+
+/* Match: a thread joins each pair, a held thing shows the thread's end, and a right pair gets a bow. */
+.threadLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.thread {
+  fill: none;
+  stroke: var(--color-brand);
+  stroke-width: var(--item-line);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  animation: item-draw var(--t-move) var(--ease-settle) both;
+}
+
+.threadDone {
+  stroke: var(--color-correct);
+}
+
+.threadEnd::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: var(--space-3);
+  height: var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  translate: -50% -50%;
+  animation: item-pulse var(--t-scene) ease-in-out infinite;
+}
+
+.bow {
+  fill: var(--color-petal);
+  stroke: var(--color-ink);
+  stroke-width: var(--border-thin);
+  stroke-linejoin: round;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: item-pop var(--t-move) var(--ease-bounce) both;
+  animation-delay: calc(var(--t-pop) + var(--set-turn, 0) * var(--item-stagger-slow));
+}
+
+/* Tiles: a tile sent back slides home; when right, the letters light in turn. */
+.back {
+  animation: item-back var(--t-move) var(--ease-settle);
+}
+
+.light {
+  border-style: solid;
+  border-color: var(--color-correct);
+  color: var(--color-correct);
+  animation: item-light var(--t-item) var(--ease-settle) both;
+  animation-delay: calc(var(--set-turn, 0) * var(--item-stagger-slow));
+}
+
+/* Number line: the hopper lands with a squash, and the number under it lights. */
+.hopperLand {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: item-land var(--t-move) var(--ease-bounce) both;
+}
+
+.lit {
+  fill: var(--color-correct);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: item-pop var(--t-move) var(--ease-bounce) both;
+  animation-delay: var(--t-pop);
+}
+
+/* Build a bar: a new block pops in; when right, the bars wave, the tallest last. */
+.barBlockOn {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: item-pop var(--t-pop) var(--ease-bounce);
+}
+
+.barWave {
+  animation: item-wave var(--t-item) var(--ease-settle) both;
+  animation-delay: calc(var(--set-turn, 0) * var(--item-stagger-slow));
+}
+
+/* Column sum: a carried one hops up from the column it came from; a right answer underlines itself. */
+.carryHop {
+  display: inline-block;
+  animation: item-carry var(--t-move) var(--ease-bounce) both;
+}
+
+/* The answer row comes to rest when right: no box pops alone, and every digit stays clear to read. */
+.tile.sumBox.sumRest {
+  animation: none;
+  box-shadow: none;
+}
+
+.tile.sumBox.sumDone {
+  opacity: 1;
+}
+
+.sumDone::after {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--space-1) - var(--border));
+  right: calc(-1 * var(--space-1) - var(--border));
+  top: calc(100% + var(--space-1));
+  height: var(--item-line);
+  border-radius: var(--radius-pill);
+  background: var(--color-correct);
+  transform-origin: left center;
+  animation: item-underline var(--t-pop) linear both;
+  animation-delay: calc(var(--set-turn, 0) * var(--t-pop));
+}
+
+/* Drag a word: the gap opens as the word comes near; a right sentence glows from left to right. */
+.gapNear {
+  transform: scaleX(var(--item-near));
+  border-style: solid;
+  background: var(--color-brand-soft);
+}
+
+.wordGlow {
+  display: inline-block;
+  color: var(--color-correct);
+  animation: item-word var(--t-item) var(--ease-settle) both;
+  animation-delay: calc(var(--set-turn, 0) * var(--item-stagger-slow));
+}
+
+/* Fill a shape: the filled shape glows and turns once. */
+.fillDone {
+  filter: drop-shadow(0 0 var(--space-2) var(--color-star));
+  animation: item-turn var(--t-scene) var(--ease-settle) both;
+}
+
+@keyframes item-fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes item-flip {
+  0% {
+    transform: perspective(40em) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(40em) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(40em) rotateY(0deg);
+  }
+}
+
+@keyframes item-face {
+  0%,
+  49% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes item-pop {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes item-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-18%);
+  }
+}
+
+@keyframes item-stamp {
+  0% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+@keyframes item-drop {
+  from {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes item-glow {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.06);
+  }
+  100% {
+    box-shadow: var(--shadow-glow);
+    transform: scale(1);
+  }
+}
+
+@keyframes item-swell {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes item-chug {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6%);
+  }
+  55% {
+    transform: translateX(8%);
+  }
+  80% {
+    transform: translateX(-2%);
+  }
+}
+
+@keyframes item-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(calc(-1 * var(--item-tilt)));
+  }
+  50% {
+    transform: rotate(var(--item-tilt));
+  }
+  75% {
+    transform: rotate(calc(-0.5 * var(--item-tilt)));
+  }
+}
+
+@keyframes item-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes item-pulse {
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.5;
+  }
+}
+
+@keyframes item-back {
+  from {
+    transform: translateY(-60%);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes item-light {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+    background: var(--color-surface);
+  }
+  40% {
+    transform: scale(1.12);
+    box-shadow: var(--shadow-glow);
+    background: var(--color-surface);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+    background: var(--color-correct-bg);
+  }
+}
+
+@keyframes item-land {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  35% {
+    transform: scaleY(0.7);
+  }
+  70% {
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes item-wave {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(1);
+  }
+  35% {
+    transform: translateY(-20%) scaleX(1.03);
+  }
+  70% {
+    transform: translateY(8%) scaleX(1);
+  }
+}
+
+@keyframes item-carry {
+  from {
+    transform: translate(70%, 120%) scale(1.6);
+    opacity: 0.2;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes item-underline {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes item-word {
+  0% {
+    transform: scale(1);
+    color: var(--color-ink);
+    text-shadow: none;
+  }
+  50% {
+    transform: scale(1.1);
+    color: var(--color-star);
+    text-shadow: 0 0 var(--space-2) var(--color-star);
+  }
+  100% {
+    transform: scale(1);
+    color: var(--color-correct);
+    text-shadow: none;
+  }
+}
+
+@keyframes item-turn {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.72);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Calm mode and Reduce Motion: every touch above becomes one short fade, all at the same moment. Nothing flips,
+   hops, slides or turns; what a thing ends up looking like (a tick, a thread, a lit number) is still shown. */
+:root[data-calm] [data-feel],
+:root[data-calm] [data-feel]::after {
+  animation: item-fade var(--t-calm) linear both !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-feel],
+  [data-feel]::after {
+    animation: item-fade var(--t-calm) linear both !important;
   }
 }

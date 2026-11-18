@@ -67,11 +67,11 @@ export const sameMiddleGenerator: SkillGenerator = {
   example: () => sameMiddle(1, makeRng(4081)),
   lesson: () => {
     const cat = middleExplanation(cvc('cat'), cvc('map'));
-    const pig = middleExplanation(cvc('pig'), cvc('lip'));
+    const pig = middleExplanation(cvc('pig'), cvc('bin'));
     return beats(
       { ...line('Short words have a sound in the middle. Say cat slowly and listen to the middle.'), visual: shown(cvc('cat')) },
       { text: `${middlePrompt('cat').text} ${cat.steps.join(' ')}`, speak: [...middlePrompt('cat').speak, ...cat.speak], visual: cat.visual },
-      { ...middlePrompt('pig'), visual: row(shown(cvc('pig')), shown(cvc('sun')), shown(cvc('lip'))) },
+      { ...middlePrompt('pig'), visual: row(shown(cvc('pig')), shown(cvc('sun')), shown(cvc('bin'))) },
       { text: pig.steps.join(' '), speak: pig.speak, visual: pig.visual },
       { ...line('Stretch the word out and listen to the middle.'), visual: cat.visual },
     );

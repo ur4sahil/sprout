@@ -159,7 +159,7 @@ describe('kindergarten', () => {
     for (const q of all('M-K-F4', 1)) expect(q.facts.ask).toBe('most');
     for (const q of all('M-K-F4', 2)) expect(q.facts.ask).toBe('least');
     for (const q of all('M-K-F4', 3)) expect((q.facts.options as string[]).length).toBe(3);
-    for (const q of all('M-K-F6', 1)) expect(q.facts.options).toEqual(['by colour', 'by shape']);
+    for (const q of all('M-K-F6', 1)) expect(q.facts.options).toEqual(['by color', 'by shape']);
   });
 
   it('G.2 offers three rows with three different patterns', () => {
@@ -279,7 +279,7 @@ describe('the wave H1 oracles', () => {
     expect(oracle('h1Solids', { ask: 'which', want: 'both', options: ['cube', 'cylinder', 'sphere'] })).toEqual({ kind: 'value', value: 'cylinder' });
     expect(oracle('h1Solids', { ask: 'faces', solid: 'cube' })).toEqual({ kind: 'value', value: 6 });
     expect(oracle('h1MeasureOrder', { kind: 'weight', ask: 'least', options: ['horse', 'key', 'dog'] })).toEqual({ kind: 'value', value: 'key' });
-    expect(oracle('h1SortRule', { groups: [[['circle', 'red', 's'], ['square', 'red', 'l']], [['circle', 'blue', 'l'], ['square', 'blue', 's']]] })).toEqual({ kind: 'value', value: 'by colour' });
+    expect(oracle('h1SortRule', { groups: [[['circle', 'red', 's'], ['square', 'red', 'l']], [['circle', 'blue', 'l'], ['square', 'blue', 's']]] })).toEqual({ kind: 'value', value: 'by color' });
     expect(oracle('h1PatternKind', { target: 'circle circle square circle circle square', options: ['a b a b', 'a a b a a b', 'a b b a b b'] })).toEqual({ kind: 'value', value: 'a a b a a b' });
     expect(oracle('h1TensOnes', { n: 46, options: [[4, 6], [6, 4]] })).toEqual({ kind: 'value', value: [4, 6] });
     expect(oracle('h1Chart', { topLeft: 34, blank: 8 })).toEqual({ kind: 'value', value: 56 });

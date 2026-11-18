@@ -132,7 +132,7 @@ describe('A.3 Figure analogies', () => {
 
 describe('A.4 Figure matrices and A.13 Pattern completion', () => {
   it('A.4: the grid follows its rows and columns at every level, with the empty box anywhere', () => {
-    const names: Record<number, [string, string]> = { 1: ['shape', 'colour'], 2: ['number of shapes', 'size'], 3: ['colour', 'turn'] };
+    const names: Record<number, [string, string]> = { 1: ['shape', 'color'], 2: ['number of shapes', 'size'], 3: ['color', 'turn'] };
     for (const level of [1, 2, 3] as Level[]) {
       const blanks = new Set<number>();
       for (const question of choices('R-A4', level)) {

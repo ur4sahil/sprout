@@ -1,18 +1,27 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Icon from '../components/Icon';
 import type { ClockTime } from '../engine/types';
 import ClockVisual from '../visuals/ClockVisual';
+import { feelSound } from './itemFeel';
 import type { ItemProps } from './itemProps';
 import styles from './items.module.css';
 
 // Set the clock to a time: the hour and minute buttons turn the hands, and on the face a finger can drag
-// the minute hand round to a mark. The hour hand moves with the minutes, as on a real clock.
-export default function SetClockItem({ question, disabled, onChange }: ItemProps<'setClock'>) {
+// the minute hand round to a mark. The hour hand moves with the minutes, as on a real clock. Each step of a hand
+// makes a soft tick. When the answer is right the clock chimes once and glows.
+export default function SetClockItem({ question, disabled, onChange, right }: ItemProps<'setClock'>) {
   const [time, setTime] = useState<ClockTime>(question.start);
   const face = useRef<HTMLDivElement>(null);
   const step = question.minuteStep;
 
+  // The chime, once, as the answer is marked right. Lifted a little, so it is not the same note as the star
+  // that lands on the score a moment later.
+  useEffect(() => {
+    if (right) feelSound('star', 4);
+  }, [right]);
+
   function set(next: ClockTime): void {
+    feelSound('tick');
     setTime(next);
     onChange({ time: next });
   }
@@ -36,7 +45,9 @@ export default function SetClockItem({ question, disabled, onChange }: ItemProps
     <div className={styles.column}>
       <div
         ref={face}
-        className={styles.clockFace}
+        className={`${styles.clockFace} ${right ? styles.clockRight : ''}`}
+        data-feel={right ? '' : undefined}
+        data-chimed={right ? '' : undefined}
         data-set-clock={`${time.hour}:${String(time.minute).padStart(2, '0')}`}
         onPointerDown={(event) => {
           event.currentTarget.setPointerCapture?.(event.pointerId);

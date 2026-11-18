@@ -301,8 +301,8 @@ const an = (name: CoinName): string => `a ${name}`;
 function coinExplanation(name: CoinName): Explanation {
   const cents = CENTS[name];
   return {
-    speak: [`This is ${an(name)}. It is worth`, { cents }, '. Look at its size, its colour and its picture.'],
-    steps: [`This is ${an(name)}.`, `It is worth ${cents} ${cents === 1 ? 'cent' : 'cents'}.`, 'Look at its size, its colour and its picture.'],
+    speak: [`This is ${an(name)}. It is worth`, { cents }, '. Look at its size, its color and its picture.'],
+    steps: [`This is ${an(name)}.`, `It is worth ${cents} ${cents === 1 ? 'cent' : 'cents'}.`, 'Look at its size, its color and its picture.'],
     visual: coin(name),
   };
 }

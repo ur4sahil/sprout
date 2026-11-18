@@ -1,0 +1,368 @@
+/* The cast (plan section 19, phase 3). One sheet of styles moves all four friends, so they move alike.
+   Every part turns about a point on the drawing's own sheet, which the drawing hands over as a share of the sheet. */
+.character {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  --brow: 0%; /* how far the brows are lifted */
+  --wing: 0deg; /* how far the ladybug's wings are open */
+}
+
+.character[data-sized] {
+  width: calc(var(--set-size) * var(--cast-unit));
+}
+
+.act,
+.turn,
+.breath,
+.armLeft,
+.armRight,
+.signLeft,
+.signRight,
+.wingLeft,
+.wingRight,
+.swell,
+.lid,
+.brow {
+  transform-box: view-box;
+}
+
+/* The whole friend: where each mood puts it. Feet stay on the floor, so it turns about the bottom middle. */
+.act {
+  transform-origin: 50% 100%;
+  transition: transform var(--t-move) var(--ease-settle);
+}
+
+/* The spin of the big cheer goes about the friend's middle. */
+.turn {
+  transform-origin: 50% 58%;
+}
+
+/* Always: slow breathing. */
+.breath {
+  transform-origin: 50% 100%;
+  animation: breathe var(--cast-breath) ease-in-out infinite;
+}
+
+/* Arms hang straight down in the drawing and are turned to where the mood wants them. */
+.armLeft {
+  transform: rotate(var(--set-arm-left));
+  transition: transform var(--t-move) var(--ease-bounce);
+}
+
+.armRight {
+  transform: rotate(var(--set-arm-right));
+  transition: transform var(--t-move) var(--ease-bounce);
+}
+
+.brow {
+  transform: translateY(var(--brow));
+  transition: transform var(--t-pop) var(--ease-settle);
+}
+
+/* The signature parts, always a little alive: leaves and ear tufts sway, wings stir, the throat swells. */
+.signLeft {
+  animation: sway var(--cast-sway) ease-in-out infinite alternate;
+}
+
+.signRight {
+  animation: sway var(--cast-sway) ease-in-out infinite alternate-reverse;
+}
+
+.wingLeft {
+  transform: rotate(var(--wing));
+  animation: stir-left var(--cast-sway) ease-in-out infinite alternate;
+}
+
+.wingRight {
+  transform: rotate(calc(var(--wing) * -1));
+  animation: stir-right var(--cast-sway) ease-in-out infinite alternate;
+}
+
+.swell {
+  animation: swell var(--cast-sway) ease-in-out infinite alternate;
+}
+
+/* A blink: the lid is the eye's own shape, squashed flat against its top edge until it comes down. */
+.lid {
+  transform: scaleY(0);
+  animation: blink var(--cast-blink) linear infinite;
+}
+
+/* A mouth talking by itself: four shapes, each shown for a quarter of the loop. With movement off the second
+   (a small open mouth) is the one that stays. */
+.talk0,
+.talk1,
+.talk2,
+.talk3 {
+  visibility: hidden;
+  animation: say var(--cast-talk) step-end infinite;
+}
+
+.talk1 {
+  visibility: visible;
+  animation-delay: calc(var(--cast-talk) * -0.75);
+}
+
+.talk2 {
+  animation-delay: calc(var(--cast-talk) * -0.5);
+}
+
+.talk3 {
+  animation-delay: calc(var(--cast-talk) * -0.25);
+}
+
+.zed {
+  opacity: 0.7;
+  animation: drift var(--cast-z) ease-in-out infinite;
+}
+
+/* The moods. Each is a still pose first; the movement is added on top. */
+.character[data-mood='greet'],
+.character[data-mood='cheer'],
+.character[data-mood='cheerBig'] {
+  --brow: -1.5%;
+  --wing: 14deg;
+}
+
+.character[data-mood='listen'],
+.character[data-mood='think'],
+.character[data-mood='encourage'],
+.character[data-mood='peek'] {
+  --brow: -1.2%;
+}
+
+.character[data-mood='greet'] .act {
+  animation: hop-in var(--cast-greet) var(--ease-settle) 1;
+}
+
+.character[data-mood='greet'] .armRight {
+  animation: wave var(--cast-wave) ease-in-out 6 alternate;
+}
+
+.character[data-mood='talk'] .armRight {
+  animation: wave var(--cast-sway) ease-in-out infinite alternate;
+}
+
+.character[data-mood='listen'] .act {
+  transform: rotate(5deg);
+}
+
+.character[data-mood='think'] .act {
+  transform: rotate(-3deg);
+}
+
+.character[data-mood='cheer'] .act {
+  animation: hop var(--cast-cheer) ease-out 1;
+}
+
+.character[data-mood='cheerBig'] .act {
+  animation: jump var(--cast-cheer-big) ease-in-out 1;
+}
+
+.character[data-mood='cheerBig'] .turn {
+  animation: spin var(--cast-cheer-big) ease-in-out 1;
+}
+
+/* Asleep: sunk down and tipped to one side, breathing slower. */
+.character[data-mood='sleep'] .act {
+  transform: rotate(-6deg) scale(1.04, 0.9);
+}
+
+.character[data-mood='sleep'] .breath {
+  animation-duration: var(--cast-sleep-breath);
+}
+
+/* Peeking: most of the friend is past the edge of its own box, which hides it; the head leans in. */
+.character[data-mood='peek'] {
+  overflow: hidden;
+}
+
+.character[data-mood='peek'] .act {
+  transform: translateX(-40%) rotate(13deg);
+  animation: peek-in var(--cast-peek) var(--ease-settle) 1;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.01, 1.028);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes stir-left {
+  from {
+    transform: rotate(var(--wing));
+  }
+  to {
+    transform: rotate(calc(var(--wing) + 4deg));
+  }
+}
+
+@keyframes stir-right {
+  from {
+    transform: rotate(calc(var(--wing) * -1));
+  }
+  to {
+    transform: rotate(calc(var(--wing) * -1 - 4deg));
+  }
+}
+
+@keyframes swell {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.08, 1.16);
+  }
+}
+
+/* Three blinks in one long loop, three and a half, four and a half and five and a half seconds apart, so the
+   blinking never looks like a clock. */
+@keyframes blink {
+  0%,
+  24.8%,
+  27.2%,
+  58.3%,
+  60.7%,
+  97.6% {
+    transform: scaleY(0);
+  }
+  26%,
+  59.5%,
+  98.8% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes say {
+  0% {
+    visibility: visible;
+  }
+  25%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(calc(var(--set-arm-right) + 13deg));
+  }
+  to {
+    transform: rotate(calc(var(--set-arm-right) - 13deg));
+  }
+}
+
+@keyframes hop-in {
+  0% {
+    transform: translate(-70%, 0);
+    opacity: 0;
+  }
+  45% {
+    transform: translate(-25%, -14%);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(0, 0) scale(1.05, 0.93);
+  }
+  100% {
+    transform: translate(0, 0) scale(1, 1);
+  }
+}
+
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  18% {
+    transform: translateY(0) scale(1.06, 0.9);
+  }
+  50% {
+    transform: translateY(-16%) scale(0.97, 1.05);
+  }
+  82% {
+    transform: translateY(0) scale(1.05, 0.93);
+  }
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  10% {
+    transform: translateY(0) scale(1.08, 0.86);
+  }
+  30%,
+  70% {
+    transform: translateY(-28%) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-34%) scale(1, 1);
+  }
+  90% {
+    transform: translateY(0) scale(1.06, 0.9);
+  }
+}
+
+@keyframes spin {
+  0%,
+  18% {
+    transform: rotate(0deg);
+  }
+  82%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes peek-in {
+  from {
+    transform: translateX(-100%) rotate(0deg);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(-3%, 5%);
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(3%, -4%);
+    opacity: 0;
+  }
+}
+
+/* Movement off: Calm mode (marked on the page, and on the friend itself once it has looked), and the device's
+   Reduce Motion. Every loop and hop stops, and each mood is left as its still pose. */
+.character[data-still] *,
+:root[data-calm] .character * {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .character * {
+    animation: none !important;
+  }
+}

@@ -24,6 +24,9 @@ const SPOKEN: Record<string, Say> = {
   'E-2-B8': ['ABC order to the second letter'],
 };
 
+// Skills whose questions have changed since the wave shipped, and the version each is on now.
+const VERSIONS: Record<string, number> = { 'E-1-C8': 2 };
+
 function skill(id: string, name: string, icon: Visual, itemTypes: ItemType[], maxLevel: Level, ccss: string, ladder?: string): Skill {
   const [, grade, code] = id.split('-') as [string, '1' | '2', string];
   const letter = code.charAt(0);
@@ -38,7 +41,7 @@ function skill(id: string, name: string, icon: Visual, itemTypes: ItemType[], ma
     ladder: ladder ?? (LADDERS[letter] as string),
     icon,
     speakName: SPOKEN[id] ?? [name],
-    version: 1,
+    version: VERSIONS[id] ?? 1,
     itemTypes,
     maxLevel,
     prereqs: [],

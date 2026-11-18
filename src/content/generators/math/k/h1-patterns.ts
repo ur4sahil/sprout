@@ -19,6 +19,8 @@ type Size = 's' | 'm' | 'l';
 type Item = [ShapeName, ColorName, Size];
 const FORMS: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 const INDEX: Record<Rule, number> = { shape: 0, colour: 1, size: 2 };
+// The word a child sees and hears for each rule.
+const SAID: Record<Rule, string> = { shape: 'shape', colour: 'color', size: 'size' };
 
 // The attributes that are the same inside each group and different between the groups.
 function rulesOf(groups: Item[][]): Rule[] {
@@ -51,9 +53,9 @@ function sortRule(level: Level, rng: Rng): QuestionDraft {
     const changes = (group: Item[], each: Rule): boolean => new Set(group.map((item) => item[INDEX[each]])).size > 1;
     const mixed = rules.filter((each) => each !== rule).every((each) => (level === 3 ? groups.every((group) => changes(group, each)) : groups.some((group) => changes(group, each))));
     if (found.length !== 1 || found[0] !== rule || !mixed) continue;
-    const options = rules.map((each) => `by ${each}`);
-    const line = rule === 'colour' ? 'Each group is all one colour.' : rule === 'shape' ? 'Each group is all one shape.' : 'One group is all small. The other is all big.';
-    const explanation: Explanation = { speak: [`${line} They were sorted by ${rule}.`], steps: [line, `They were sorted by ${rule}.`], visual: { kind: 'row', children: groups.map(box) } };
+    const options = rules.map((each) => `by ${SAID[each]}`);
+    const line = rule === 'colour' ? 'Each group is all one color.' : rule === 'shape' ? 'Each group is all one shape.' : 'One group is all small. The other is all big.';
+    const explanation: Explanation = { speak: [`${line} They were sorted by ${SAID[rule]}.`], steps: [line, `They were sorted by ${SAID[rule]}.`], visual: { kind: 'row', children: groups.map(box) } };
     const prompt = 'How were the shapes sorted?';
     return {
       type: 'choice',
@@ -79,7 +81,7 @@ export const sortRuleGenerator: SkillGenerator = h1Skill({
   generate: sortRule,
   lesson: (make) =>
     lessonOf(
-      'Things can be sorted by colour, by shape or by size.',
+      'Things can be sorted by color, by shape or by size.',
       { kind: 'row', children: [box([['circle', 'red', 'm'], ['square', 'red', 'm'], ['star', 'red', 'm'], ['circle', 'red', 'm']]), box([['square', 'blue', 'm'], ['circle', 'blue', 'm'], ['square', 'blue', 'm'], ['star', 'blue', 'm']])] },
       make(1, 871),
       make(2, 872),

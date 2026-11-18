@@ -1,0 +1,67 @@
+/* A plant's square of soil, placed in the scene. The scene's unit is one hundredth of its height. */
+.plant {
+  position: absolute;
+  left: calc(var(--set-x) * var(--set-unit));
+  top: calc(var(--set-y) * var(--set-unit));
+  width: calc(var(--set-slot) * var(--set-unit));
+  height: calc(var(--set-slot) * var(--set-unit));
+  /* A row nearer the path is drawn over the row behind it. */
+  z-index: calc(var(--garden-layer-plants) + var(--set-row));
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The picture stands on the front edge of the square and rises above it. */
+.picture {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(var(--set-tall) * var(--set-unit));
+  pointer-events: none;
+  transform-origin: 50% 100%;
+}
+
+/* A tapped plant bounces once. */
+.plant[data-picked] .picture {
+  animation: bounce var(--garden-bounce) var(--ease-bounce);
+}
+
+/* A plant that today's path leads to has a ring of light on its soil. */
+.plant[data-today]::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -4%;
+  height: 26%;
+  border: var(--border-thick) solid var(--color-star);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1);
+  }
+  30% {
+    transform: scale(1.08, 0.86);
+  }
+  60% {
+    transform: scale(0.94, 1.12);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plant[data-picked] .picture {
+    animation: none;
+  }
+}

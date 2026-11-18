@@ -20,11 +20,12 @@ const options = (question: Question): number => (question.type === 'choice' ? qu
 const digitsOf = (value: number): number[] => String(value).split('').map(Number);
 
 describe('the wave', () => {
-  it('adds 16 pre-K and 19 grade 2 skills, each at version 1 with three levels', () => {
+  it('adds 16 pre-K and 19 grade 2 skills, each with three levels', () => {
     expect(ROWS.filter((row) => row.grade === 'PK')).toHaveLength(16);
     expect(ROWS.filter((row) => row.grade === '2')).toHaveLength(19);
     for (const row of ROWS) {
-      expect(row.version).toBe(1);
+      // Version 1 as shipped; 2 for the two whose wording changed (color, American spelling).
+      expect(row.version).toBe(['M-PK-C6', 'M-PK-C7'].includes(row.id) ? 2 : 1);
       expect(row.maxLevel).toBe(3);
       expect(CATALOGUE.filter((skill) => skill.id === row.id)).toHaveLength(1);
       if (row.grade === '2') expect(row.ccss, row.id).toMatch(/^2\./);

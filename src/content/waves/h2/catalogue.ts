@@ -34,7 +34,7 @@ const ROWS_IN: Row[] = [
   { id: 'M-PK-C4', category: PK.C, name: 'Heavy and light', strand: 'MD', ladder: 'length', icon: { kind: 'row', children: [one('🐘'), one('🐭')] }, itemTypes: CHOICE },
   { id: 'M-PK-C5', category: PK.C, name: 'Shapes around us', strand: 'G', ladder: 'shapes', icon: { kind: 'row', children: [one('🍕'), { kind: 'shape', shape: 'triangle', color: 'blue', size: 'm', rotation: 0 }] }, itemTypes: CHOICE },
   { id: 'M-PK-C6', category: PK.C, name: 'Same shape', strand: 'G', ladder: 'shapes', icon: { kind: 'row', children: [{ kind: 'shape', shape: 'heart', color: 'red', size: 'm', rotation: 0 }, { kind: 'shape', shape: 'heart', color: 'blue', size: 's', rotation: 0 }] }, itemTypes: CHOICE },
-  { id: 'M-PK-C7', category: PK.C, name: 'Colours around us', strand: 'G', ladder: 'shapes', icon: { kind: 'row', children: [one('🍌'), { kind: 'shape', shape: 'circle', color: 'yellow', size: 'm', rotation: 0 }] }, itemTypes: CHOICE },
+  { id: 'M-PK-C7', category: PK.C, name: 'Colors around us', strand: 'G', ladder: 'shapes', icon: { kind: 'row', children: [one('🍌'), { kind: 'shape', shape: 'circle', color: 'yellow', size: 'm', rotation: 0 }] }, itemTypes: CHOICE },
   { id: 'M-PK-C8', category: PK.C, name: 'Ball, box or can', strand: 'G', ladder: 'shapes', icon: { kind: 'row', children: [one('⚽'), one('📦'), one('🥫')] }, itemTypes: CHOICE },
   { id: 'M-PK-C9', category: PK.C, name: 'Order by size', strand: 'MD', ladder: 'length', icon: { kind: 'row', children: [{ kind: 'shape', shape: 'star', color: 'orange', size: 's', rotation: 0 }, { kind: 'shape', shape: 'star', color: 'orange', size: 'm', rotation: 0 }, { kind: 'shape', shape: 'star', color: 'orange', size: 'l', rotation: 0 }] }, itemTypes: ['order'] },
   { id: 'M-PK-D4', category: PK.D, name: 'Fill the gap in a pattern', strand: 'PA', ladder: 'patterns', icon: { kind: 'sequence', items: [{ kind: 'shape', shape: 'circle', color: 'red', size: 's', rotation: 0 }, 'blank', { kind: 'shape', shape: 'circle', color: 'red', size: 's', rotation: 0 }, { kind: 'shape', shape: 'circle', color: 'blue', size: 's', rotation: 0 }] }, itemTypes: CHOICE },
@@ -62,6 +62,9 @@ const ROWS_IN: Row[] = [
   { id: 'M-2-D4', category: G2.D, name: 'Faces, edges and corners', strand: 'G', ladder: 'shapes', icon: { kind: 'solid', solid: 'cube' }, itemTypes: CHOICE, ccss: '2.G.A.1' },
 ];
 
+// Skills whose questions have changed since the wave shipped, and the version each is on now.
+const VERSIONS: Record<string, number> = { 'M-PK-C6': 2, 'M-PK-C7': 2 };
+
 function codeOf(id: string): string {
   const part = id.split('-')[2] ?? '';
   return `${part.charAt(0)}.${part.slice(1)}`;
@@ -78,7 +81,7 @@ export const ROWS: readonly Skill[] = ROWS_IN.map((row) => ({
   ladder: row.ladder,
   icon: row.icon,
   speakName: row.speakName ?? [row.name],
-  version: 1,
+  version: VERSIONS[row.id] ?? 1,
   itemTypes: row.itemTypes,
   maxLevel: 3 as Level,
   prereqs: [],

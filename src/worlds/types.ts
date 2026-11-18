@@ -1,4 +1,5 @@
 import type { SoundName } from '../audio/sounds';
+import type { Say } from '../engine/types';
 
 // A world (the owner's choice, Nov 18, 2026): the one place the app's look and feel come from. Screens ask the
 // current world for its words, colours, particles and sounds instead of having "garden" written into them, so a
@@ -23,6 +24,44 @@ export interface World {
   particles: { right: ParticleKind; milestone: ParticleKind; colours: readonly string[] };
   // Which sound each moment plays.
   sounds: { tap: SoundName; pick: SoundName; drop: SoundName; right: SoundName; next: SoundName; open: SoundName; close: SoundName; star: SoundName };
+  // The child's home drawn as a place (game feel, phase 4). A world without one keeps the plain home.
+  home?: HomeScene;
+}
+
+// The shape of a flower's head. Each is drawn once, in `src/garden/PlantHead.tsx`.
+export type FlowerHead = 'daisy' | 'tulip' | 'bell' | 'star' | 'puff' | 'cattail';
+
+// One kind of plant: a head shape and its two colours (values from the picture palette).
+export interface FlowerKind {
+  id: string;
+  head: FlowerHead;
+  petal: string;
+  centre: string;
+}
+
+// One of the three areas of the home scene, one for each subject.
+export interface HomeArea {
+  name: string; // "Number Meadow"
+  say: Say;
+  landmark: 'hay' | 'log' | 'pond'; // the one big thing that tells the area apart without reading
+  kinds: readonly [FlowerKind, FlowerKind, FlowerKind, FlowerKind]; // so the beds of an area do not all look the same
+}
+
+export interface HomeScene {
+  title: string; // what a screen reader calls the scene
+  areas: Readonly<Record<'math' | 'ela' | 'reasoning', HomeArea>>;
+  // A skill's stage on its card, and the same words to say aloud.
+  stages: readonly [string, string, string, string, string];
+  stageSay: readonly [Say, Say, Say, Say, Say];
+  thirsty: string; // on the card of a plant whose review is due
+  thirstySay: Say;
+  // The big button under the scene: before the first step, in the middle, and when the path is finished.
+  path: { start: string; going: string; done: string };
+  // What each stepping stone is called (a screen reader says it, and a tap on the speaker).
+  stones: { review: string; practice: string; fresh: string; mixed: string; locked: string; done: string };
+  sun: string; // "Today's sun"
+  card: { practice: string; lesson: string; close: string; hear: string };
+  signpost: { open: string; close: string; math: string; ela: string; reasoning: string; stickers: string; facts: string; switch: string };
 }
 
 // A skill's stage from its score: not started, 1 to 24, 25 to 74, 75 to 99, mastered.

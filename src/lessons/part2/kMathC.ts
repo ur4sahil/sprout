@@ -408,7 +408,7 @@ function solidThingsLesson(): Lesson {
       show(moment(['A present has flat, square faces. It is shaped like a cube.'], 'A present is a cube.', present)),
       show(moment(['Round all over means a sphere. Two round ends mean a cylinder. Flat, square faces mean a cube.'], 'sphere, cylinder, cube', solids)),
       turn(first, solidThingWhy(first)),
-      show(moment(['The colour and the size of a thing do not matter. Only its shape does.'], 'Only the shape matters.', thingsLit)),
+      show(moment(['The color and the size of a thing do not matter. Only its shape does.'], 'Only the shape matters.', thingsLit)),
       turn(second, solidThingWhy(second)),
       show(moment(['Look at the whole thing. Is it a sphere, a cylinder, or a cube?'], 'Sphere, cylinder, or cube?', calm(present))),
     ],
@@ -898,7 +898,7 @@ function checkRulesMoments(groups: Item[][], prefix: string): Moment[] {
     piece.id === `${prefix}0word` ? { ...piece, look: text(`all ${left}`), gone: false } : piece.id === `${prefix}1word` ? { ...piece, look: text(`all ${right}`), gone: false } : piece,
   );
   return [
-    moment(['Check one thing at a time: colour, then shape, then size.'], 'colour, shape, size', start),
+    moment(['Check one thing at a time: color, then shape, then size.'], 'color, shape, size', start),
     ...ruledOut,
     moment([`Now look at ${rule}. This group is all ${left}. That group is all ${right}.`], `all ${left}, all ${right}`, named),
     moment([`So they were sorted by ${rule}.`], `sorted by ${rule}`, set(named, [`${prefix}0word`, `${prefix}1word`], { lit: true })),
@@ -925,7 +925,7 @@ function mixedSortLesson(): Lesson {
       turn(first, checkRulesMoments(asGroups(first.facts.groups), 'w')),
       show(moment(['Do not stop at the first thing you see. Check all three.'], 'Check all three.', light(end, ['a0word', 'a1word']))),
       turn(second, checkRulesMoments(asGroups(second.facts.groups), 'w')),
-      show(moment(['Colour, shape, size. Find the one that is the same all through each group.'], 'colour, shape, size', calm(end))),
+      show(moment(['Color, shape, size. Find the one that is the same all through each group.'], 'color, shape, size', calm(end))),
     ],
   };
 }

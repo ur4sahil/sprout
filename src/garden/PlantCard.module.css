@@ -1,0 +1,50 @@
+/* The card a tapped plant opens. It floats over the scene, above the buttons at the foot of the garden. */
+.card {
+  composes: card from '../components/shared.module.css';
+  max-width: var(--garden-card);
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.picture {
+  flex: none;
+  width: var(--tap-min);
+  height: var(--size-tile);
+}
+
+.words {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: var(--text-m);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.stage {
+  margin: 0;
+  font-size: var(--text-s);
+  color: var(--color-ink-soft);
+}
+
+/* Practice and Lesson sit side by side, and one under the other on a phone. */
+.ways {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.way {
+  flex: 1 1 0;
+  min-width: var(--size-display-width);
+  padding: 0 var(--space-3);
+}

@@ -9,14 +9,15 @@ interface Props {
   disabled: boolean;
   onChange: (response: Response | null) => void;
   onSpeak: (say: Say) => void;
+  right?: boolean; // the answer was just marked right: each kind of question celebrates in its own way
 }
 
 // One question: its prompt with a speaker button, its picture, and its answer area.
 // A listen question shows a large speaker button where the target would be, and never shows the target.
-export default function QuestionView({ question, disabled, onChange, onSpeak }: Props) {
+export default function QuestionView({ question, disabled, onChange, onSpeak, right = false }: Props) {
   const listen = question.mode === 'listen';
   return (
-    <section className={styles.question} aria-label="Question" data-mode={question.mode} data-type={question.type}>
+    <section className={styles.question} aria-label="Question" data-mode={question.mode} data-type={question.type} data-right={right ? '' : undefined}>
       <div className={styles.prompt}>
         <p className={styles.promptText}>{question.prompt.text}</p>
         {!listen && (
@@ -35,7 +36,7 @@ export default function QuestionView({ question, disabled, onChange, onSpeak }: 
           <VisualView visual={question.stimulus} />
         </div>
       )}
-      <ItemView key={`${question.key}|${question.seed}`} question={question} disabled={disabled} onChange={onChange} onSpeak={onSpeak} />
+      <ItemView key={`${question.key}|${question.seed}`} question={question} disabled={disabled} onChange={onChange} onSpeak={onSpeak} right={right} />
     </section>
   );
 }

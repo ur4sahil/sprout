@@ -14,7 +14,7 @@ const SKILLS: [string, string][] = [
   ['M-PK-B1', 'Which has more'],
   ['M-PK-B2', 'Which has fewer'],
   ['M-PK-C1', 'Find the shape'],
-  ['M-PK-C2', 'Find the colour'],
+  ['M-PK-C2', 'Find the color'],
   ['M-PK-C3', 'Big and small'],
   ['M-PK-D1', 'Which one is different'],
   ['M-PK-D2', 'What comes next: AB patterns'],

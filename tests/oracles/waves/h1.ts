@@ -148,7 +148,7 @@ const h1MeasureOrder: Oracle = (facts) => {
   return { kind: 'value', value: only(options.filter((_, i) => values[i] === want), 'h1MeasureOrder') };
 };
 
-const ATTRIBUTES = ['by shape', 'by colour', 'by size'];
+const ATTRIBUTES = ['by shape', 'by color', 'by size'];
 
 // Groups of items, each [shape, colour, size]: the attribute that is the same inside every group and
 // different from group to group.

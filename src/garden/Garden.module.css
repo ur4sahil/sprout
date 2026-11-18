@@ -1,0 +1,119 @@
+/* The garden fills the space it is given: the scene above, and a bar with the signpost and the big button under
+   it, so neither ever covers a plant or the path. */
+.garden {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  min-width: 0;
+  /* Where the space it is given has no height of its own (a page that scrolls as one), the garden still takes
+     room for a full scene and its bar, but never more than the screen. */
+  min-height: min(100dvh, calc(var(--garden-min-height) + var(--tap-min) + var(--space-5)));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+}
+
+/* The window onto the scene. A finger slides the scene sideways inside it; the page itself never scrolls
+   sideways. On a very short screen the scene keeps its least height and also slides up and down in here, so the
+   bar under it is always in reach. */
+.viewport {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+/* The scene: 100 units tall and as many wide as the garden needs. One unit is a hundredth of its height; the
+   garden measures it and sets it, and every plant, stone and layer is placed in units. */
+.scene {
+  --set-unit: var(--garden-unit);
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Never so short that a plant's square drops under the size of a child's finger. */
+  height: max(100%, var(--garden-min-height));
+  width: calc(var(--set-wide) * var(--set-unit));
+  overflow: hidden;
+}
+
+.sprout {
+  position: absolute;
+  left: calc(var(--set-x) * var(--set-unit));
+  top: calc(var(--set-y) * var(--set-unit));
+  width: calc(var(--set-w) * var(--set-unit));
+  height: calc(var(--set-h) * var(--set-unit));
+  z-index: calc(var(--garden-layer-path) + 1);
+  pointer-events: none;
+}
+
+/* The dimming of evening and night lies over the whole scene and lets every touch through. */
+.tint {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--garden-layer-tint);
+  pointer-events: none;
+}
+
+/* The sun stays in the top right corner of the window, however far the scene is scrolled. */
+.sun {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: var(--garden-layer-top);
+  pointer-events: none;
+}
+
+/* The plant card or the signpost's board, floating at the foot of the window. */
+.over {
+  position: absolute;
+  left: var(--space-3);
+  right: var(--space-3);
+  bottom: calc(var(--tap-min) + var(--space-5) + var(--space-3));
+  max-height: calc(100% - var(--tap-min) - var(--space-7));
+  z-index: var(--garden-layer-top);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.bar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-top: var(--border-thin) solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.follow {
+  flex: 1;
+  min-width: 0;
+}
+
+.done {
+  flex: 1;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-l);
+  color: var(--color-brand-deep);
+}

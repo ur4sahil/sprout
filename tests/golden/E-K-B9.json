@@ -1,51 +1,40 @@
 {
  "skillId": "E-K-B9",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
   "facts": {
    "relation": "sameEnd",
-   "target": "lip",
-   "answer": "cup",
+   "target": "bin",
+   "answer": "sun",
    "options": [
-    "cup",
-    "sun"
+    "sun",
+    "pig"
    ]
   },
   "prompt": {
-   "text": "Which one ends with the same sound as lip?",
+   "text": "Which one ends with the same sound as bin?",
    "speak": [
     "Which one ends with the same sound as",
     {
-     "word": "lip"
+     "word": "bin"
     },
     "?"
    ]
   },
   "stimulus": {
    "kind": "emojiGroup",
-   "emoji": "👄",
+   "emoji": "🗑️",
    "count": 1,
    "layout": "row",
    "speak": [
     {
-     "word": "lip"
+     "word": "bin"
     }
    ]
   },
   "options": [
-   {
-    "kind": "emojiGroup",
-    "emoji": "🥤",
-    "count": 1,
-    "layout": "row",
-    "speak": [
-     {
-      "word": "cup"
-     }
-    ]
-   },
    {
     "kind": "emojiGroup",
     "emoji": "☀️",
@@ -56,50 +45,61 @@
       "word": "sun"
      }
     ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🐷",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "pig"
+     }
+    ]
    }
   ],
   "answerIndex": 0,
   "explanation": {
    "speak": [
     {
-     "word": "lip"
+     "word": "bin"
     },
     "and",
     {
-     "word": "cup"
+     "word": "sun"
     },
     "end with the same sound. Both end with the letter",
     {
-     "letter": "p"
+     "letter": "n"
     },
     "."
    ],
    "steps": [
-    "Lip and cup end with the same sound.",
-    "Both end with the letter p."
+    "Bin and sun end with the same sound.",
+    "Both end with the letter n."
    ],
    "visual": {
     "kind": "row",
     "children": [
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "🗑️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "bin"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🥤",
+      "emoji": "☀️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "cup"
+        "word": "sun"
        }
       ]
      }
@@ -109,7 +109,7 @@
   "skillId": "E-K-B9",
   "level": 1,
   "seed": 4091,
-  "key": "E-K-B9|1|{\"answer\":\"cup\",\"relation\":\"sameEnd\",\"target\":\"lip\"}"
+  "key": "E-K-B9|1|{\"answer\":\"sun\",\"relation\":\"sameEnd\",\"target\":\"bin\"}"
  },
  "levels": {
   "1": [
@@ -121,7 +121,7 @@
      "target": "pin",
      "answer": "van",
      "options": [
-      "lip",
+      "bag",
       "van"
      ]
     },
@@ -149,12 +149,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "👜",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "bag"
        }
       ]
      },
@@ -338,43 +338,43 @@
     "mode": "look",
     "facts": {
      "relation": "sameEnd",
-     "target": "lip",
-     "answer": "map",
+     "target": "bin",
+     "answer": "van",
      "options": [
-      "map",
+      "van",
       "web"
      ]
     },
     "prompt": {
-     "text": "Which one ends with the same sound as lip?",
+     "text": "Which one ends with the same sound as bin?",
      "speak": [
       "Which one ends with the same sound as",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row",
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       }
      ]
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🗺️",
+      "emoji": "🚐",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "map"
+        "word": "van"
        }
       ]
      },
@@ -394,44 +394,44 @@
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "and",
       {
-       "word": "map"
+       "word": "van"
       },
       "end with the same sound. Both end with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip and map end with the same sound.",
-      "Both end with the letter p."
+      "Bin and van end with the same sound.",
+      "Both end with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🗺️",
+        "emoji": "🚐",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "map"
+          "word": "van"
          }
         ]
        }
@@ -441,7 +441,7 @@
     "skillId": "E-K-B9",
     "level": 1,
     "seed": 3,
-    "key": "E-K-B9|1|{\"answer\":\"map\",\"relation\":\"sameEnd\",\"target\":\"lip\"}"
+    "key": "E-K-B9|1|{\"answer\":\"van\",\"relation\":\"sameEnd\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -558,31 +558,31 @@
     "mode": "look",
     "facts": {
      "relation": "sameEnd",
-     "target": "lip",
-     "answer": "cup",
+     "target": "bin",
+     "answer": "pen",
      "options": [
       "nut",
-      "cup"
+      "pen"
      ]
     },
     "prompt": {
-     "text": "Which one ends with the same sound as lip?",
+     "text": "Which one ends with the same sound as bin?",
      "speak": [
       "Which one ends with the same sound as",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row",
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       }
      ]
     },
@@ -600,12 +600,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🥤",
+      "emoji": "🖊️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "cup"
+        "word": "pen"
        }
       ]
      }
@@ -614,44 +614,44 @@
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "and",
       {
-       "word": "cup"
+       "word": "pen"
       },
       "end with the same sound. Both end with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip and cup end with the same sound.",
-      "Both end with the letter p."
+      "Bin and pen end with the same sound.",
+      "Both end with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🥤",
+        "emoji": "🖊️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "cup"
+          "word": "pen"
          }
         ]
        }
@@ -661,7 +661,7 @@
     "skillId": "E-K-B9",
     "level": 1,
     "seed": 5,
-    "key": "E-K-B9|1|{\"answer\":\"cup\",\"relation\":\"sameEnd\",\"target\":\"lip\"}"
+    "key": "E-K-B9|1|{\"answer\":\"pen\",\"relation\":\"sameEnd\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -1223,8 +1223,8 @@
      "target": "pin",
      "answer": "van",
      "options": [
-      "lip",
       "bag",
+      "cat",
       "van"
      ]
     },
@@ -1252,23 +1252,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "lip"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "👜",
       "count": 1,
       "layout": "row",
       "speak": [
        {
         "word": "bag"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cat"
        }
       ]
      },
@@ -1346,7 +1346,7 @@
      "answer": "leg",
      "options": [
       "pin",
-      "lip",
+      "cat",
       "leg"
      ]
     },
@@ -1385,12 +1385,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "🐱",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "cat"
        }
       ]
      },
@@ -1464,44 +1464,44 @@
     "mode": "look",
     "facts": {
      "relation": "sameEnd",
-     "target": "lip",
-     "answer": "map",
+     "target": "bin",
+     "answer": "van",
      "options": [
-      "map",
+      "van",
       "web",
-      "sun"
+      "leg"
      ]
     },
     "prompt": {
-     "text": "Which one ends with the same sound as lip?",
+     "text": "Which one ends with the same sound as bin?",
      "speak": [
       "Which one ends with the same sound as",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row",
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       }
      ]
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🗺️",
+      "emoji": "🚐",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "map"
+        "word": "van"
        }
       ]
      },
@@ -1518,12 +1518,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "☀️",
+      "emoji": "🦵",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "sun"
+        "word": "leg"
        }
       ]
      }
@@ -1532,44 +1532,44 @@
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "and",
       {
-       "word": "map"
+       "word": "van"
       },
       "end with the same sound. Both end with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip and map end with the same sound.",
-      "Both end with the letter p."
+      "Bin and van end with the same sound.",
+      "Both end with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🗺️",
+        "emoji": "🚐",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "map"
+          "word": "van"
          }
         ]
        }
@@ -1579,7 +1579,7 @@
     "skillId": "E-K-B9",
     "level": 2,
     "seed": 3,
-    "key": "E-K-B9|2|{\"answer\":\"map\",\"relation\":\"sameEnd\",\"target\":\"lip\"}"
+    "key": "E-K-B9|2|{\"answer\":\"van\",\"relation\":\"sameEnd\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -1708,44 +1708,44 @@
     "mode": "look",
     "facts": {
      "relation": "sameEnd",
-     "target": "lip",
-     "answer": "cup",
+     "target": "bin",
+     "answer": "pen",
      "options": [
-      "sun",
+      "dog",
       "nut",
-      "cup"
+      "pen"
      ]
     },
     "prompt": {
-     "text": "Which one ends with the same sound as lip?",
+     "text": "Which one ends with the same sound as bin?",
      "speak": [
       "Which one ends with the same sound as",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row",
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       }
      ]
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "☀️",
+      "emoji": "🐶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "sun"
+        "word": "dog"
        }
       ]
      },
@@ -1762,12 +1762,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🥤",
+      "emoji": "🖊️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "cup"
+        "word": "pen"
        }
       ]
      }
@@ -1776,44 +1776,44 @@
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "and",
       {
-       "word": "cup"
+       "word": "pen"
       },
       "end with the same sound. Both end with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip and cup end with the same sound.",
-      "Both end with the letter p."
+      "Bin and pen end with the same sound.",
+      "Both end with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🥤",
+        "emoji": "🖊️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "cup"
+          "word": "pen"
          }
         ]
        }
@@ -1823,7 +1823,7 @@
     "skillId": "E-K-B9",
     "level": 2,
     "seed": 5,
-    "key": "E-K-B9|2|{\"answer\":\"cup\",\"relation\":\"sameEnd\",\"target\":\"lip\"}"
+    "key": "E-K-B9|2|{\"answer\":\"pen\",\"relation\":\"sameEnd\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -2078,7 +2078,7 @@
      "answer": "nut",
      "options": [
       "nut",
-      "lip",
+      "bin",
       "dog"
      ]
     },
@@ -2117,12 +2117,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "🗑️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "bin"
        }
       ]
      },

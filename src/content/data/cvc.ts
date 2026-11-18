@@ -12,7 +12,7 @@ export interface CvcWord {
 const ROWS: Record<ShortVowel, [string, string][]> = {
   a: [['cat', '🐱'], ['hat', '🎩'], ['bat', '🦇'], ['van', '🚐'], ['pan', '🍳'], ['map', '🗺️'], ['bag', '👜']],
   e: [['bed', '🛏️'], ['hen', '🐔'], ['pen', '🖊️'], ['web', '🕸️'], ['leg', '🦵']],
-  i: [['pig', '🐷'], ['pin', '📌'], ['lip', '👄']],
+  i: [['pig', '🐷'], ['pin', '📌'], ['bin', '🗑️']],
   o: [['dog', '🐶'], ['fox', '🦊'], ['box', '📦']],
   u: [['sun', '☀️'], ['bus', '🚌'], ['bug', '🐛'], ['cup', '🥤'], ['nut', '🥜']],
 };

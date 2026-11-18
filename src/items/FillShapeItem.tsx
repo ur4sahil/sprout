@@ -3,6 +3,7 @@ import { FIGURES, inside, pointsText } from '../engine/figures';
 import type { Point } from '../engine/figures';
 import { INK } from '../visuals/geometry';
 import { PALETTE } from '../visuals/palette';
+import { feelSound } from './itemFeel';
 import type { ItemProps } from './itemProps';
 import styles from './items.module.css';
 
@@ -10,6 +11,7 @@ import styles from './items.module.css';
 // A piece is dragged from the tray onto a spot, or tapped and then a spot tapped; it snaps in and the count goes up.
 // A placed piece is tapped to take it out. With `odd`, the tray also holds a piece that does not fit: it slides back.
 // The answer is how many pieces were placed. The tray holds one more fitting piece than is needed.
+// A piece that fits lands with a soft sound. When the answer is right the filled shape glows and turns once.
 
 type Kind = 'fit' | 'odd';
 
@@ -32,7 +34,7 @@ function PieceDrawing({ polygon, colour }: { polygon: readonly Point[]; colour: 
   );
 }
 
-export default function FillShapeItem({ question, disabled, onChange }: ItemProps<'fillShape'>) {
+export default function FillShapeItem({ question, disabled, onChange, right }: ItemProps<'fillShape'>) {
   const figure = FIGURES[question.figure];
   const [placed, setPlaced] = useState<boolean[]>(() => figure.slots.map(() => false));
   const [held, setHeld] = useState<Kind | null>(null); // a piece picked up by a tap
@@ -55,6 +57,7 @@ export default function FillShapeItem({ question, disabled, onChange }: ItemProp
       return;
     }
     if (fitLeft <= 0) return;
+    feelSound('drop');
     setPlaced((now) => now.map((was, i) => (i === slot ? true : was)));
     setHeld(null);
   }
@@ -103,7 +106,7 @@ export default function FillShapeItem({ question, disabled, onChange }: ItemProp
 
   return (
     <div className={styles.column} data-fill={question.figure} data-placed={count}>
-      <svg ref={shape} className={styles.fillShape} viewBox="0 0 100 100" role="group" aria-label={`A ${figure.whole} to fill with ${figure.piece}s`}>
+      <svg ref={shape} className={`${styles.fillShape} ${right ? styles.fillDone : ''}`} data-feel={right ? '' : undefined} data-turned={right ? '' : undefined} viewBox="0 0 100 100" role="group" aria-label={`A ${figure.whole} to fill with ${figure.piece}s`}>
         <polygon points={pointsText(figure.outline)} fill={PALETTE.paper} stroke={INK} strokeWidth="2.5" strokeLinejoin="round" />
         {figure.slots.map((slot, i) => (
           <polygon

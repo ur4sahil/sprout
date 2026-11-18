@@ -1,0 +1,46 @@
+/* The sun: a picture with today's count written across it. */
+.sun {
+  position: relative;
+  width: var(--garden-sun);
+  height: var(--garden-sun);
+}
+
+.picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.count {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--text-s);
+  color: var(--color-ink);
+}
+
+/* The rays turn slowly, as slowly as a cloud drifts. */
+.rays {
+  transform-origin: 50% 50%;
+  animation: turn var(--garden-cloud) linear infinite;
+}
+
+@keyframes turn {
+  to {
+    transform: rotate(30deg);
+  }
+}
+
+:global(:root[data-calm]) .rays {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rays {
+    animation: none;
+  }
+}

@@ -431,7 +431,7 @@ function sortedMoments(groups: Item[][], rule: string, prefix: string): { moment
       moment(['Look inside this group. What is the same in all of them?'], 'What is the same?', set(start, groupIds(prefix, 0), { lit: true })),
       moment([`They are all ${left}.`], `all ${left}`, one),
       moment([`And these are all ${right}.`], `all ${right}`, two),
-      moment([`So they were sorted by ${rule}.`], `sorted by ${rule}`, both),
+      moment([`So they were sorted by ${rule === 'colour' ? 'color' : rule}.`], `sorted by ${rule === 'colour' ? 'color' : rule}`, both),
     ],
     end: both,
   };
@@ -463,7 +463,7 @@ export function sortRuleLesson(): Lesson {
       show(moment(['Someone sorted these shapes into two groups. How did they sort them?'], 'How were they sorted?', start)),
       show(moment(['In this group, the shapes are not all the same.'], 'Not the same shape.', notShape)),
       ...colour.moments.slice(1).map(show),
-      show(moment(['Shapes can be sorted by colour, by shape, or by size.'], 'by colour, by shape, or by size', calm(colour.end))),
+      show(moment(['Shapes can be sorted by color, by shape, or by size.'], 'by color, by shape, or by size', calm(colour.end))),
       turn(first, sortWhy(first)),
       show(moment(['Here is another sorting. Look at how big they are.'], 'Look at how big they are.', sizeStart)),
       ...size.moments.slice(1).map(show),
@@ -715,7 +715,7 @@ function sortCountWhy(question: Question): Moment[] {
   const two = moveToBin(one, 'w', question.answerBin, 1);
   const line = (w: string): string => (byColour ? `The ${w} ones go in the ${w} group.` : `The ${w} go in the ${w} group.`);
   return [
-    moment([byColour ? 'Look at the colour of each one.' : 'Look at the shape of each one.'], byColour ? 'Look at each colour.' : 'Look at each shape.', labelled),
+    moment([byColour ? 'Look at the color of each one.' : 'Look at the shape of each one.'], byColour ? 'Look at each color.' : 'Look at each shape.', labelled),
     moment([line(words[0] ?? '')], line(words[0] ?? ''), one),
     moment([line(words[1] ?? '')], line(words[1] ?? ''), two),
   ];
@@ -741,7 +741,7 @@ export function sortCountLesson(): Lesson {
   return {
     parts: [
       show(moment(['We can sort things into groups, and then count each group.'], 'Sort, then count.', start)),
-      show(moment(['Let us sort these by colour.'], 'Sort by colour.', labelled)),
+      show(moment(['Let us sort these by color.'], 'Sort by color.', labelled)),
       show(moment(['The red ones go in the red group.'], 'Red ones here.', reds)),
       show(moment(['The blue ones go in the blue group.'], 'Blue ones here.', blues)),
       show(moment(['Now count each group.'], 'Count each group.', calm(blues))),

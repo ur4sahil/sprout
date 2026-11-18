@@ -28,7 +28,7 @@ function clearFrom(others: ColorName[], rng: Rng): ColorName {
 // Levels: one attribute changes / two change / three of four change (shape, colour, size and how many),
 // and every wrong option misses one of the three changes.
 
-const ATTRIBUTE = ['shape', 'colour', 'size'] as const;
+const ATTRIBUTE = ['shape', 'color', 'size'] as const;
 const ANALOGY = 'Look at the first pair. Which one finishes the second pair the same way?';
 
 // The same figure with attribute `i` changed to something else.
@@ -82,7 +82,7 @@ function figureAnalogy(level: Level, rng: Rng): QuestionDraft {
 
 // Level 3: a figure is [shape, colour, size, how many]. Sizes are small and middle, so two fit in a box.
 type Figure4 = [ShapeName, ColorName, 's' | 'm', '1' | '2'];
-const ATTRIBUTE4 = ['shape', 'colour', 'size', 'number of shapes'] as const;
+const ATTRIBUTE4 = ['shape', 'color', 'size', 'number of shapes'] as const;
 
 function draw4([form, color, size, count]: Figure4): Visual {
   return count === '1' ? shape(form, color, size) : row(shape(form, color, size), shape(form, color, size));
@@ -188,7 +188,7 @@ function gridFor(level: Level, rng: Rng): Grid {
       rowAttrs: forms,
       colAttrs: colors,
       rowName: 'shape',
-      colName: 'colour',
+      colName: 'color',
       cell: (form, color) => shape(form as ShapeName, color as ColorName),
       needs: (form, color) => `${a(String(color))} ${form}`,
       extra: {},
@@ -213,7 +213,7 @@ function gridFor(level: Level, rng: Rng): Grid {
   return {
     rowAttrs: colors,
     colAttrs: [turns[0], turns[1]],
-    rowName: 'colour',
+    rowName: 'color',
     colName: 'turn',
     cell: (color, turn) => shape('arrow', color as ColorName, 'm', (turn as number) * 90),
     needs: (color) => `${a(String(color))} arrow that points the same way as the other one in its column`,
@@ -291,7 +291,7 @@ function latinMatrix(rng: Rng): QuestionDraft {
   const otherCol = rng.pick([0, 1, 2].filter((i) => i !== c));
   // Right shape and another row's colour, a shape already in the row, and both wrong.
   const offered = [at(r, c), piece(formAt(r, c), colors[otherRow] as ColorName), at(r, otherCol), piece(formAt(r, otherCol), colors[otherRow] as ColorName)];
-  const lines = ['Each row has the same colour.', 'Each row and each column has every shape once.', `The box needs ${a(colors[r] as string)} ${formAt(r, c)}.`];
+  const lines = ['Each row has the same color.', 'Each row and each column has every shape once.', `The box needs ${a(colors[r] as string)} ${formAt(r, c)}.`];
   return gridQuestion(grid, blank, offered, MATRIX, lines, rng);
 }
 
@@ -300,8 +300,8 @@ const matrixOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? latin
 function matrixLesson(): LessonStep[] {
   const cell = (form: ShapeName, color: ColorName): Visual => shape(form, color);
   const full: Visual = { kind: 'matrix', cells: [cell('circle', 'red'), cell('circle', 'blue'), cell('square', 'red'), cell('square', 'blue')] };
-  const lines = ['Each row has the same shape.', 'Each column has the same colour.', 'The box needs a blue square.'];
-  const tryLines = ['Each row has the same shape.', 'Each column has the same colour.', 'The box needs a green star.'];
+  const lines = ['Each row has the same shape.', 'Each column has the same color.', 'The box needs a blue square.'];
+  const tryLines = ['Each row has the same shape.', 'Each column has the same color.', 'The box needs a green star.'];
   return [
     { beat: 'see', text: 'A grid has rows and columns. Rows go across. Columns go down.', speak: ['A grid has rows and columns. Rows go across. Columns go down.'], visual: full },
     { beat: 'watch', text: lines.join(' '), speak: [lines.join(' ')], visual: { kind: 'matrix', cells: [cell('circle', 'red'), cell('circle', 'blue'), cell('square', 'red'), 'blank'] } },
@@ -362,9 +362,9 @@ function twoRules(level: Level, rng: Rng): TwoRules {
     const sizeGoes = (slow: boolean): string => (slow ? [sizes[0], sizes[0], sizes[1], sizes[1]] : sizes).map((size) => SIZE_WORD[size as string]).join(', ');
     return {
       unit: order.map(([color, size]) => beat(color, size)),
-      slowName: colourIsSlow ? 'colour' : 'size',
+      slowName: colourIsSlow ? 'color' : 'size',
       slowGoes: colourIsSlow ? colourGoes(true) : sizeGoes(true),
-      fastName: colourIsSlow ? 'size' : 'colour',
+      fastName: colourIsSlow ? 'size' : 'color',
       fastGoes: colourIsSlow ? sizeGoes(false) : colourGoes(false),
     };
   }
@@ -374,9 +374,9 @@ function twoRules(level: Level, rng: Rng): TwoRules {
   const goes = (values: readonly string[], slow: boolean): string => (slow ? [values[0], values[0], values[1], values[1]] : values).join(', ');
   return {
     unit: order.map(([color, form]) => beat(color, form)),
-    slowName: colourIsSlow ? 'colour' : 'shape',
+    slowName: colourIsSlow ? 'color' : 'shape',
     slowGoes: colourIsSlow ? goes(colors, true) : goes(forms, true),
-    fastName: colourIsSlow ? 'shape' : 'colour',
+    fastName: colourIsSlow ? 'shape' : 'color',
     fastGoes: colourIsSlow ? goes(forms, false) : goes(colors, false),
   };
 }
@@ -428,7 +428,7 @@ function threeRulePattern(rng: Rng): QuestionDraft {
   const options = rng.shuffle([answer, ...wrong]);
   const goes = (values: readonly string[], isSlow: boolean): string => (isSlow ? [values[0], values[0], values[1], values[1]] : values).join(', ');
   const sizeWords = sizes.map((each) => SIZE_WORD[each] as string);
-  const lines = [`The colour goes ${goes(colors, colourIsSlow)}.`, `The size goes ${goes(sizeWords, !colourIsSlow)}.`, `The shape goes ${forms.join(', ')}.`, `Next is ${a(answer.name)}.`];
+  const lines = [`The color goes ${goes(colors, colourIsSlow)}.`, `The size goes ${goes(sizeWords, !colourIsSlow)}.`, `The shape goes ${forms.join(', ')}.`, `Next is ${a(answer.name)}.`];
   return {
     type: 'choice',
     mode: 'look',
@@ -446,12 +446,12 @@ const patternOf = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? thre
 function patternLesson(): LessonStep[] {
   const beat = (color: ColorName, size: Size): Beat => ({ code: `${color}|${size}`, picture: shape('circle', color, size), name: `${SIZE_WORD[size]} ${color} circle` });
   const unit = [beat('red', 'l'), beat('red', 's'), beat('blue', 'l'), beat('blue', 's')];
-  const rules: TwoRules = { unit, slowName: 'colour', slowGoes: 'red, red, blue, blue', fastName: 'size', fastGoes: 'big, small' };
+  const rules: TwoRules = { unit, slowName: 'color', slowGoes: 'red, red, blue, blue', fastName: 'size', fastGoes: 'big, small' };
   const shownRow = (count: number, last: Visual | 'blank'): Visual => ({ kind: 'sequence', items: [...Array.from({ length: count }, (_, i) => (unit[i % 4] as Beat).picture), last] });
   const watch = patternExplanation(rules, unit[1] as Beat);
   const tryIt = patternExplanation(rules, unit[2] as Beat);
   return [
-    { beat: 'see', text: 'A pattern can follow two rules at once. Watch the colour, then watch the size.', speak: ['A pattern can follow two rules at once. Watch the colour, then watch the size.'], visual: shownRow(4, (unit[0] as Beat).picture) },
+    { beat: 'see', text: 'A pattern can follow two rules at once. Watch the color, then watch the size.', speak: ['A pattern can follow two rules at once. Watch the color, then watch the size.'], visual: shownRow(4, (unit[0] as Beat).picture) },
     { beat: 'watch', text: watch.steps.join(' '), speak: watch.speak, visual: shownRow(5, (unit[1] as Beat).picture) },
     { beat: 'try', text: NEXT, speak: [NEXT], visual: shownRow(6, 'blank'), reveal: { text: tryIt.steps.join(' '), speak: tryIt.speak, visual: tryIt.visual } },
     { beat: 'remember', text: 'Follow one rule at a time.', speak: ['Follow one rule at a time.'], visual: shownRow(4, (unit[0] as Beat).picture) },
@@ -482,7 +482,7 @@ function threeColors(rng: Rng): [ColorName, ColorName, ColorName] {
   return pickApart(COLOR_NAMES, 3, rng, (color, picked) => picked.every((other) => easyToTellApart(color, other))) as [ColorName, ColorName, ColorName];
 }
 
-const COMPLETE: Explanation['steps'] = ['Follow the lines and colours into the gap.'];
+const COMPLETE: Explanation['steps'] = ['Follow the lines and colors into the gap.'];
 
 function completion(level: Level, rng: Rng): QuestionDraft {
   const [one, two, three] = threeColors(rng);
@@ -555,7 +555,7 @@ function slantedTile(rng: Rng): QuestionDraft {
   const [sideForm, sideColor] = parts(side);
   const [farForm, farColor] = parts(8 - side);
   const offered = [piece(form, color), piece(form, sideColor), piece(farForm, color), piece(sideForm, farColor)];
-  const lines = ['Each row and each column has every shape once.', 'Each row and each column has every colour once.', `The gap needs ${a(color)} ${form}.`];
+  const lines = ['Each row and each column has every shape once.', 'Each row and each column has every color once.', `The gap needs ${a(color)} ${form}.`];
   return gridQuestion(grid, blank, offered, PIECE, lines, rng);
 }
 
@@ -565,8 +565,8 @@ function completionLesson(): LessonStep[] {
   const stripes = (missing: number | null): Visual => ({ kind: 'matrix', cells: Array.from({ length: 9 }, (_, i) => (i === missing ? 'blank' : tile(Math.floor(i / 3) === 1 ? 'blue' : 'yellow'))) });
   const checks = (missing: number | null): Visual => ({ kind: 'matrix', cells: Array.from({ length: 9 }, (_, i) => (i === missing ? 'blank' : tile((Math.floor(i / 3) + (i % 3)) % 2 === 0 ? 'green' : 'orange'))) });
   return [
-    { beat: 'see', text: 'This picture is made of stripes. Each stripe is one colour.', speak: ['This picture is made of stripes. Each stripe is one colour.'], visual: stripes(null) },
-    { beat: 'watch', text: 'A piece is missing. Follow the lines and colours into the gap. The stripe is yellow, so the piece is yellow.', speak: ['A piece is missing. Follow the lines and colours into the gap. The stripe is yellow, so the piece is yellow.'], visual: stripes(8) },
+    { beat: 'see', text: 'This picture is made of stripes. Each stripe is one color.', speak: ['This picture is made of stripes. Each stripe is one color.'], visual: stripes(null) },
+    { beat: 'watch', text: 'A piece is missing. Follow the lines and colors into the gap. The stripe is yellow, so the piece is yellow.', speak: ['A piece is missing. Follow the lines and colors into the gap. The stripe is yellow, so the piece is yellow.'], visual: stripes(8) },
     { beat: 'try', text: PIECE, speak: [PIECE], visual: checks(4), reveal: { text: COMPLETE.join(' '), speak: COMPLETE, visual: checks(null) } },
     { beat: 'remember', text: 'The piece must match every edge.', speak: ['The piece must match every edge.'], visual: stripes(null) },
   ];

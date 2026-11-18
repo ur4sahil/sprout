@@ -77,7 +77,7 @@ export const QUESTIONS: readonly { word: string; question: string; answer: strin
   { word: 'Who', question: '___ is your teacher?', answer: 'Mr. Green is my teacher.' },
   { word: 'What', question: '___ is in the box?', answer: 'A toy car is in the box.' },
   { word: 'What', question: '___ do you want to eat?', answer: 'I want soup.' },
-  { word: 'What', question: '___ color is your bike?', answer: 'My bike is blue.' },
+  { word: 'What', question: '___ did you draw?', answer: 'I drew a boat.' },
   { word: 'Where', question: '___ is the cat?', answer: 'The cat is under the bed.' },
   { word: 'Where', question: '___ do you live?', answer: 'I live on Elm Street.' },
   { word: 'Where', question: '___ did you put my hat?', answer: 'It is on the chair.' },

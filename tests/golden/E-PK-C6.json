@@ -1,21 +1,21 @@
 {
  "skillId": "E-PK-C6",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "listen",
   "facts": {
    "relation": "action",
-   "target": "ski",
+   "target": "lift",
    "options": [
     "sleep",
-    "ski"
+    "lift"
    ]
   },
   "prompt": {
    "text": "Listen. Who is doing it?",
    "speak": [
-    "Who is skiing?"
+    "Who is lifting?"
    ]
   },
   "options": [
@@ -27,7 +27,7 @@
    },
    {
     "kind": "emojiGroup",
-    "emoji": "⛷️",
+    "emoji": "🏋️",
     "count": 1,
     "layout": "row"
    }
@@ -35,19 +35,19 @@
   "answerIndex": 1,
   "explanation": {
    "speak": [
-    "This one is skiing."
+    "This one is lifting."
    ],
    "steps": [
-    "This one is skiing."
+    "This one is lifting."
    ],
    "visual": {
     "kind": "emojiGroup",
-    "emoji": "⛷️",
+    "emoji": "🏋️",
     "count": 1,
     "layout": "row",
     "speak": [
      {
-      "word": "skiing"
+      "word": "lifting"
      }
     ]
    }
@@ -55,7 +55,7 @@
   "skillId": "E-PK-C6",
   "level": 1,
   "seed": 3261,
-  "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
+  "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"lift\"}"
  },
  "levels": {
   "1": [
@@ -64,16 +64,16 @@
     "mode": "listen",
     "facts": {
      "relation": "action",
-     "target": "surf",
+     "target": "row",
      "options": [
       "climb",
-      "surf"
+      "row"
      ]
     },
     "prompt": {
      "text": "Listen. Who is doing it?",
      "speak": [
-      "Who is surfing?"
+      "Who is rowing a boat?"
      ]
     },
     "options": [
@@ -85,7 +85,7 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏄",
+      "emoji": "🚣",
       "count": 1,
       "layout": "row"
      }
@@ -93,19 +93,19 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "This one is surfing."
+      "This one is rowing a boat."
      ],
      "steps": [
-      "This one is surfing."
+      "This one is rowing a boat."
      ],
      "visual": {
       "kind": "emojiGroup",
-      "emoji": "🏄",
+      "emoji": "🚣",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "surfing"
+        "word": "rowing a boat"
        }
       ]
      }
@@ -113,119 +113,7 @@
     "skillId": "E-PK-C6",
     "level": 1,
     "seed": 1,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"surf\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "options": [
-      "dance",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is skiing?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "💃",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is skiing."
-     ],
-     "steps": [
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "skiing"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 1,
-    "seed": 2,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "options": [
-      "dance",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is skiing?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "💃",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is skiing."
-     ],
-     "steps": [
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "skiing"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 1,
-    "seed": 3,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"row\"}"
    },
    {
     "type": "choice",
@@ -234,7 +122,7 @@
      "relation": "action",
      "target": "lift",
      "options": [
-      "dance",
+      "surf",
       "lift"
      ]
     },
@@ -247,7 +135,7 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "💃",
+      "emoji": "🏄",
       "count": 1,
       "layout": "row"
      },
@@ -280,7 +168,175 @@
     },
     "skillId": "E-PK-C6",
     "level": 1,
+    "seed": 2,
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"lift\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "lift",
+     "options": [
+      "lift",
+      "clap"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is lifting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👏",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This one is lifting."
+     ],
+     "steps": [
+      "This one is lifting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lifting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 1,
+    "seed": 3,
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"lift\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "sit",
+     "options": [
+      "sit",
+      "juggle"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is sitting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤹",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This one is sitting."
+     ],
+     "steps": [
+      "This one is sitting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sitting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 1,
     "seed": 4,
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"sit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "lift",
+     "options": [
+      "row",
+      "lift"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is lifting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚣",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This one is lifting."
+     ],
+     "steps": [
+      "This one is lifting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lifting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 1,
+    "seed": 5,
     "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"lift\"}"
    },
    {
@@ -291,7 +347,7 @@
      "target": "ski",
      "options": [
       "ski",
-      "lift"
+      "climb"
      ]
     },
     "prompt": {
@@ -309,7 +365,7 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🧗",
       "count": 1,
       "layout": "row"
      }
@@ -336,64 +392,8 @@
     },
     "skillId": "E-PK-C6",
     "level": 1,
-    "seed": 5,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "walk",
-     "options": [
-      "ride",
-      "walk"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is walking?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚴",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is walking."
-     ],
-     "steps": [
-      "This one is walking."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "walking"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 1,
     "seed": 6,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
    },
    {
     "type": "choice",
@@ -402,7 +402,7 @@
      "relation": "action",
      "target": "swim",
      "options": [
-      "ski",
+      "juggle",
       "swim"
      ]
     },
@@ -415,7 +415,7 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⛷️",
+      "emoji": "🤹",
       "count": 1,
       "layout": "row"
      },
@@ -456,66 +456,10 @@
     "mode": "listen",
     "facts": {
      "relation": "action",
-     "target": "run",
-     "options": [
-      "juggle",
-      "run"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is running?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🤹",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏃",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is running."
-     ],
-     "steps": [
-      "This one is running."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🏃",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "running"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 1,
-    "seed": 8,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"run\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
      "target": "ride",
      "options": [
       "ride",
-      "climb"
+      "run"
      ]
     },
     "prompt": {
@@ -533,7 +477,7 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🧗",
+      "emoji": "🏃",
       "count": 1,
       "layout": "row"
      }
@@ -560,7 +504,7 @@
     },
     "skillId": "E-PK-C6",
     "level": 1,
-    "seed": 9,
+    "seed": 8,
     "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ride\"}"
    },
    {
@@ -568,87 +512,22 @@
     "mode": "listen",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "sleep",
      "options": [
-      "row",
-      "walk"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is walking?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚣",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is walking."
-     ],
-     "steps": [
-      "This one is walking."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "walking"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 1,
-    "seed": 10,
-    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"walk\"}"
-   }
-  ],
-  "2": [
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "surf",
-     "options": [
-      "lift",
-      "surf",
+      "sleep",
       "climb"
      ]
     },
     "prompt": {
      "text": "Listen. Who is doing it?",
      "speak": [
-      "Who is surfing?"
+      "Who is sleeping?"
      ]
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏄",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      },
@@ -659,22 +538,143 @@
       "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "This one is surfing."
+      "This one is sleeping."
      ],
      "steps": [
-      "This one is surfing."
+      "This one is sleeping."
      ],
      "visual": {
       "kind": "emojiGroup",
-      "emoji": "🏄",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "surfing"
+        "word": "sleeping"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 1,
+    "seed": 9,
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"sleep\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "ski",
+     "options": [
+      "ski",
+      "stand"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is skiing?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛷️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "This one is skiing."
+     ],
+     "steps": [
+      "This one is skiing."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "⛷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "skiing"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 1,
+    "seed": 10,
+    "key": "E-PK-C6|1|{\"relation\":\"action\",\"target\":\"ski\"}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "row",
+     "options": [
+      "climb",
+      "sit",
+      "row"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is rowing a boat?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧗",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚣",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This one is rowing a boat."
+     ],
+     "steps": [
+      "This one is rowing a boat."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🚣",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rowing a boat"
        }
       ]
      }
@@ -682,133 +682,7 @@
     "skillId": "E-PK-C6",
     "level": 2,
     "seed": 1,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"surf\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "options": [
-      "dance",
-      "walk",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is skiing?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "💃",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "This one is skiing."
-     ],
-     "steps": [
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "skiing"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 2,
-    "seed": 2,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "ski",
-     "options": [
-      "row",
-      "dance",
-      "ski"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is skiing?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚣",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "💃",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "This one is skiing."
-     ],
-     "steps": [
-      "This one is skiing."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "⛷️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "skiing"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 2,
-    "seed": 3,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ski\"}"
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"row\"}"
    },
    {
     "type": "choice",
@@ -817,9 +691,9 @@
      "relation": "action",
      "target": "lift",
      "options": [
-      "lift",
+      "ski",
       "surf",
-      "dance"
+      "lift"
      ]
     },
     "prompt": {
@@ -831,7 +705,7 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "⛷️",
       "count": 1,
       "layout": "row"
      },
@@ -843,12 +717,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "💃",
+      "emoji": "🏋️",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "This one is lifting."
@@ -870,7 +744,196 @@
     },
     "skillId": "E-PK-C6",
     "level": 2,
+    "seed": 2,
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"lift\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "lift",
+     "options": [
+      "clap",
+      "lift",
+      "sit"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is lifting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👏",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This one is lifting."
+     ],
+     "steps": [
+      "This one is lifting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lifting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 2,
+    "seed": 3,
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"lift\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "sit",
+     "options": [
+      "juggle",
+      "sit",
+      "row"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is sitting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤹",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚣",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This one is sitting."
+     ],
+     "steps": [
+      "This one is sitting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🧘",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "sitting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 2,
     "seed": 4,
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"sit\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "lift",
+     "options": [
+      "dance",
+      "row",
+      "lift"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is lifting?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "💃",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚣",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "This one is lifting."
+     ],
+     "steps": [
+      "This one is lifting."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "🏋️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "lifting"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 2,
+    "seed": 5,
     "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"lift\"}"
    },
    {
@@ -881,8 +944,8 @@
      "target": "ski",
      "options": [
       "ski",
-      "lift",
-      "run"
+      "climb",
+      "hug"
      ]
     },
     "prompt": {
@@ -900,13 +963,13 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
+      "emoji": "🧗",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🏃",
+      "emoji": "🫂",
       "count": 1,
       "layout": "row"
      }
@@ -933,71 +996,8 @@
     },
     "skillId": "E-PK-C6",
     "level": 2,
-    "seed": 5,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ski\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
-     "target": "walk",
-     "options": [
-      "juggle",
-      "walk",
-      "ride"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is walking?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🤹",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚴",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "This one is walking."
-     ],
-     "steps": [
-      "This one is walking."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "walking"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 2,
     "seed": 6,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ski\"}"
    },
    {
     "type": "choice",
@@ -1006,9 +1006,9 @@
      "relation": "action",
      "target": "swim",
      "options": [
-      "lift",
       "ski",
-      "swim"
+      "swim",
+      "juggle"
      ]
     },
     "prompt": {
@@ -1020,12 +1020,6 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🏋️",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "⛷️",
       "count": 1,
       "layout": "row"
@@ -1035,9 +1029,15 @@
       "emoji": "🏊",
       "count": 1,
       "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🤹",
+      "count": 1,
+      "layout": "row"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "This one is swimming."
@@ -1067,74 +1067,11 @@
     "mode": "listen",
     "facts": {
      "relation": "action",
-     "target": "run",
-     "options": [
-      "walk",
-      "juggle",
-      "run"
-     ]
-    },
-    "prompt": {
-     "text": "Listen. Who is doing it?",
-     "speak": [
-      "Who is running?"
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚶",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🤹",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🏃",
-      "count": 1,
-      "layout": "row"
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "This one is running."
-     ],
-     "steps": [
-      "This one is running."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🏃",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "running"
-       }
-      ]
-     }
-    },
-    "skillId": "E-PK-C6",
-    "level": 2,
-    "seed": 8,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"run\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "listen",
-    "facts": {
-     "relation": "action",
      "target": "ride",
      "options": [
-      "sleep",
       "ride",
-      "climb"
+      "run",
+      "walk"
      ]
     },
     "prompt": {
@@ -1146,24 +1083,24 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🛌",
-      "count": 1,
-      "layout": "row"
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "🚴",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🧗",
+      "emoji": "🏃",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚶",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "This one is riding a bike."
@@ -1185,7 +1122,7 @@
     },
     "skillId": "E-PK-C6",
     "level": 2,
-    "seed": 9,
+    "seed": 8,
     "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ride\"}"
    },
    {
@@ -1193,55 +1130,118 @@
     "mode": "listen",
     "facts": {
      "relation": "action",
-     "target": "walk",
+     "target": "sleep",
      "options": [
-      "row",
-      "dance",
-      "walk"
+      "sleep",
+      "climb",
+      "swim"
      ]
     },
     "prompt": {
      "text": "Listen. Who is doing it?",
      "speak": [
-      "Who is walking?"
+      "Who is sleeping?"
      ]
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🚣",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "💃",
+      "emoji": "🧗",
       "count": 1,
       "layout": "row"
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "🏊",
       "count": 1,
       "layout": "row"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "This one is walking."
+      "This one is sleeping."
      ],
      "steps": [
-      "This one is walking."
+      "This one is sleeping."
      ],
      "visual": {
       "kind": "emojiGroup",
-      "emoji": "🚶",
+      "emoji": "🛌",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "walking"
+        "word": "sleeping"
+       }
+      ]
+     }
+    },
+    "skillId": "E-PK-C6",
+    "level": 2,
+    "seed": 9,
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"sleep\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "listen",
+    "facts": {
+     "relation": "action",
+     "target": "ski",
+     "options": [
+      "stand",
+      "ski",
+      "hug"
+     ]
+    },
+    "prompt": {
+     "text": "Listen. Who is doing it?",
+     "speak": [
+      "Who is skiing?"
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🧍",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛷️",
+      "count": 1,
+      "layout": "row"
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🫂",
+      "count": 1,
+      "layout": "row"
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "This one is skiing."
+     ],
+     "steps": [
+      "This one is skiing."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "⛷️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "skiing"
        }
       ]
      }
@@ -1249,7 +1249,7 @@
     "skillId": "E-PK-C6",
     "level": 2,
     "seed": 10,
-    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"walk\"}"
+    "key": "E-PK-C6|2|{\"relation\":\"action\",\"target\":\"ski\"}"
    }
   ]
  }

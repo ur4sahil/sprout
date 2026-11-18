@@ -1,19 +1,19 @@
 {
  "skillId": "E-K-A3",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "match",
   "mode": "look",
   "facts": {
    "leftValues": [
-    "fig",
-    "dot",
-    "nut"
+    "dig",
+    "hop",
+    "pop"
    ],
    "rightValues": [
-    "fig",
-    "nut",
-    "dot"
+    "pop",
+    "hop",
+    "dig"
    ]
   },
   "prompt": {
@@ -25,95 +25,95 @@
   "left": [
    {
     "kind": "text",
-    "value": "FIG",
+    "value": "DIG",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "DOT",
+    "value": "HOP",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "NUT",
+    "value": "POP",
     "size": "l"
    }
   ],
   "right": [
    {
     "kind": "text",
-    "value": "fig",
+    "value": "pop",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "nut",
+    "value": "hop",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "dot",
+    "value": "dig",
     "size": "l"
    }
   ],
   "answerPairs": [
    [
     0,
-    0
-   ],
-   [
-    1,
     2
    ],
    [
-    2,
+    1,
     1
+   ],
+   [
+    2,
+    0
    ]
   ],
   "explanation": {
    "speak": [
     "Big and small letters spell the same word.",
     {
-     "word": "fig"
+     "word": "dig"
     },
     "goes with",
     {
-     "word": "fig"
+     "word": "dig"
     },
     ".",
     {
-     "word": "dot"
+     "word": "hop"
     },
     "goes with",
     {
-     "word": "dot"
+     "word": "hop"
     },
     ".",
     {
-     "word": "nut"
+     "word": "pop"
     },
     "goes with",
     {
-     "word": "nut"
+     "word": "pop"
     },
     "."
    ],
    "steps": [
-    "FIG goes with fig.",
-    "DOT goes with dot.",
-    "NUT goes with nut."
+    "DIG goes with dig.",
+    "HOP goes with hop.",
+    "POP goes with pop."
    ],
    "visual": {
     "kind": "row",
     "children": [
      {
       "kind": "text",
-      "value": "FIG",
+      "value": "DIG",
       "size": "xl"
      },
      {
       "kind": "text",
-      "value": "fig",
+      "value": "dig",
       "size": "xl"
      }
     ]
@@ -122,7 +122,7 @@
   "skillId": "E-K-A3",
   "level": 1,
   "seed": 4031,
-  "key": "E-K-A3|1|{\"leftValues\":[\"fig\",\"dot\",\"nut\"],\"rightValues\":[\"fig\",\"nut\",\"dot\"]}"
+  "key": "E-K-A3|1|{\"leftValues\":[\"dig\",\"hop\",\"pop\"],\"rightValues\":[\"pop\",\"hop\",\"dig\"]}"
  },
  "levels": {
   "1": [
@@ -131,13 +131,13 @@
     "mode": "look",
     "facts": {
      "leftValues": [
-      "sat",
       "wet",
-      "mat"
+      "pop",
+      "bag"
      ],
      "rightValues": [
-      "mat",
-      "sat",
+      "bag",
+      "pop",
       "wet"
      ]
     },
@@ -150,644 +150,29 @@
     "left": [
      {
       "kind": "text",
-      "value": "SAT",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "WET",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "MAT",
-      "size": "l"
-     }
-    ],
-    "right": [
-     {
-      "kind": "text",
-      "value": "mat",
+      "value": "POP",
       "size": "l"
      },
-     {
-      "kind": "text",
-      "value": "sat",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "wet",
-      "size": "l"
-     }
-    ],
-    "answerPairs": [
-     [
-      0,
-      1
-     ],
-     [
-      1,
-      2
-     ],
-     [
-      2,
-      0
-     ]
-    ],
-    "explanation": {
-     "speak": [
-      "Big and small letters spell the same word.",
-      {
-       "word": "sat"
-      },
-      "goes with",
-      {
-       "word": "sat"
-      },
-      ".",
-      {
-       "word": "wet"
-      },
-      "goes with",
-      {
-       "word": "wet"
-      },
-      ".",
-      {
-       "word": "mat"
-      },
-      "goes with",
-      {
-       "word": "mat"
-      },
-      "."
-     ],
-     "steps": [
-      "SAT goes with sat.",
-      "WET goes with wet.",
-      "MAT goes with mat."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "SAT",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "sat",
-        "size": "xl"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A3",
-    "level": 1,
-    "seed": 1,
-    "key": "E-K-A3|1|{\"leftValues\":[\"sat\",\"wet\",\"mat\"],\"rightValues\":[\"mat\",\"sat\",\"wet\"]}"
-   },
-   {
-    "type": "match",
-    "mode": "look",
-    "facts": {
-     "leftValues": [
-      "bag",
-      "rug",
-      "dig"
-     ],
-     "rightValues": [
-      "dig",
-      "rug",
-      "bag"
-     ]
-    },
-    "prompt": {
-     "text": "Match each big word to its small word.",
-     "speak": [
-      "Match each big word to its small word."
-     ]
-    },
-    "left": [
      {
       "kind": "text",
       "value": "BAG",
       "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "RUG",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "DIG",
-      "size": "l"
      }
     ],
     "right": [
-     {
-      "kind": "text",
-      "value": "dig",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "rug",
-      "size": "l"
-     },
      {
       "kind": "text",
       "value": "bag",
       "size": "l"
-     }
-    ],
-    "answerPairs": [
-     [
-      0,
-      2
-     ],
-     [
-      1,
-      1
-     ],
-     [
-      2,
-      0
-     ]
-    ],
-    "explanation": {
-     "speak": [
-      "Big and small letters spell the same word.",
-      {
-       "word": "bag"
-      },
-      "goes with",
-      {
-       "word": "bag"
-      },
-      ".",
-      {
-       "word": "rug"
-      },
-      "goes with",
-      {
-       "word": "rug"
-      },
-      ".",
-      {
-       "word": "dig"
-      },
-      "goes with",
-      {
-       "word": "dig"
-      },
-      "."
-     ],
-     "steps": [
-      "BAG goes with bag.",
-      "RUG goes with rug.",
-      "DIG goes with dig."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "BAG",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "bag",
-        "size": "xl"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A3",
-    "level": 1,
-    "seed": 2,
-    "key": "E-K-A3|1|{\"leftValues\":[\"bag\",\"rug\",\"dig\"],\"rightValues\":[\"dig\",\"rug\",\"bag\"]}"
-   },
-   {
-    "type": "match",
-    "mode": "look",
-    "facts": {
-     "leftValues": [
-      "dog",
-      "mop",
-      "win"
-     ],
-     "rightValues": [
-      "dog",
-      "win",
-      "mop"
-     ]
-    },
-    "prompt": {
-     "text": "Match each big word to its small word.",
-     "speak": [
-      "Match each big word to its small word."
-     ]
-    },
-    "left": [
-     {
-      "kind": "text",
-      "value": "DOG",
-      "size": "l"
      },
      {
       "kind": "text",
-      "value": "MOP",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "WIN",
-      "size": "l"
-     }
-    ],
-    "right": [
-     {
-      "kind": "text",
-      "value": "dog",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "win",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "mop",
-      "size": "l"
-     }
-    ],
-    "answerPairs": [
-     [
-      0,
-      0
-     ],
-     [
-      1,
-      2
-     ],
-     [
-      2,
-      1
-     ]
-    ],
-    "explanation": {
-     "speak": [
-      "Big and small letters spell the same word.",
-      {
-       "word": "dog"
-      },
-      "goes with",
-      {
-       "word": "dog"
-      },
-      ".",
-      {
-       "word": "mop"
-      },
-      "goes with",
-      {
-       "word": "mop"
-      },
-      ".",
-      {
-       "word": "win"
-      },
-      "goes with",
-      {
-       "word": "win"
-      },
-      "."
-     ],
-     "steps": [
-      "DOG goes with dog.",
-      "MOP goes with mop.",
-      "WIN goes with win."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "DOG",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "dog",
-        "size": "xl"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A3",
-    "level": 1,
-    "seed": 3,
-    "key": "E-K-A3|1|{\"leftValues\":[\"dog\",\"mop\",\"win\"],\"rightValues\":[\"dog\",\"win\",\"mop\"]}"
-   },
-   {
-    "type": "match",
-    "mode": "look",
-    "facts": {
-     "leftValues": [
-      "can",
-      "not",
-      "pen"
-     ],
-     "rightValues": [
-      "not",
-      "pen",
-      "can"
-     ]
-    },
-    "prompt": {
-     "text": "Match each big word to its small word.",
-     "speak": [
-      "Match each big word to its small word."
-     ]
-    },
-    "left": [
-     {
-      "kind": "text",
-      "value": "CAN",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "NOT",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "PEN",
-      "size": "l"
-     }
-    ],
-    "right": [
-     {
-      "kind": "text",
-      "value": "not",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "pen",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "can",
-      "size": "l"
-     }
-    ],
-    "answerPairs": [
-     [
-      0,
-      2
-     ],
-     [
-      1,
-      0
-     ],
-     [
-      2,
-      1
-     ]
-    ],
-    "explanation": {
-     "speak": [
-      "Big and small letters spell the same word.",
-      {
-       "word": "can"
-      },
-      "goes with",
-      {
-       "word": "can"
-      },
-      ".",
-      {
-       "word": "not"
-      },
-      "goes with",
-      {
-       "word": "not"
-      },
-      ".",
-      {
-       "word": "pen"
-      },
-      "goes with",
-      {
-       "word": "pen"
-      },
-      "."
-     ],
-     "steps": [
-      "CAN goes with can.",
-      "NOT goes with not.",
-      "PEN goes with pen."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "CAN",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "can",
-        "size": "xl"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A3",
-    "level": 1,
-    "seed": 4,
-    "key": "E-K-A3|1|{\"leftValues\":[\"can\",\"not\",\"pen\"],\"rightValues\":[\"not\",\"pen\",\"can\"]}"
-   },
-   {
-    "type": "match",
-    "mode": "look",
-    "facts": {
-     "leftValues": [
-      "net",
-      "fin",
-      "rug"
-     ],
-     "rightValues": [
-      "rug",
-      "net",
-      "fin"
-     ]
-    },
-    "prompt": {
-     "text": "Match each big word to its small word.",
-     "speak": [
-      "Match each big word to its small word."
-     ]
-    },
-    "left": [
-     {
-      "kind": "text",
-      "value": "NET",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "FIN",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "RUG",
-      "size": "l"
-     }
-    ],
-    "right": [
-     {
-      "kind": "text",
-      "value": "rug",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "net",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "fin",
-      "size": "l"
-     }
-    ],
-    "answerPairs": [
-     [
-      0,
-      1
-     ],
-     [
-      1,
-      2
-     ],
-     [
-      2,
-      0
-     ]
-    ],
-    "explanation": {
-     "speak": [
-      "Big and small letters spell the same word.",
-      {
-       "word": "net"
-      },
-      "goes with",
-      {
-       "word": "net"
-      },
-      ".",
-      {
-       "word": "fin"
-      },
-      "goes with",
-      {
-       "word": "fin"
-      },
-      ".",
-      {
-       "word": "rug"
-      },
-      "goes with",
-      {
-       "word": "rug"
-      },
-      "."
-     ],
-     "steps": [
-      "NET goes with net.",
-      "FIN goes with fin.",
-      "RUG goes with rug."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "NET",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "net",
-        "size": "xl"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A3",
-    "level": 1,
-    "seed": 5,
-    "key": "E-K-A3|1|{\"leftValues\":[\"net\",\"fin\",\"rug\"],\"rightValues\":[\"rug\",\"net\",\"fin\"]}"
-   },
-   {
-    "type": "match",
-    "mode": "look",
-    "facts": {
-     "leftValues": [
-      "wet",
-      "top",
-      "pig"
-     ],
-     "rightValues": [
-      "top",
-      "pig",
-      "wet"
-     ]
-    },
-    "prompt": {
-     "text": "Match each big word to its small word.",
-     "speak": [
-      "Match each big word to its small word."
-     ]
-    },
-    "left": [
-     {
-      "kind": "text",
-      "value": "WET",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "TOP",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "PIG",
-      "size": "l"
-     }
-    ],
-    "right": [
-     {
-      "kind": "text",
-      "value": "top",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "pig",
+      "value": "pop",
       "size": "l"
      },
      {
@@ -803,11 +188,11 @@
      ],
      [
       1,
-      0
+      1
      ],
      [
       2,
-      1
+      0
      ]
     ],
     "explanation": {
@@ -822,26 +207,26 @@
       },
       ".",
       {
-       "word": "top"
+       "word": "pop"
       },
       "goes with",
       {
-       "word": "top"
+       "word": "pop"
       },
       ".",
       {
-       "word": "pig"
+       "word": "bag"
       },
       "goes with",
       {
-       "word": "pig"
+       "word": "bag"
       },
       "."
      ],
      "steps": [
       "WET goes with wet.",
-      "TOP goes with top.",
-      "PIG goes with pig."
+      "POP goes with pop.",
+      "BAG goes with bag."
      ],
      "visual": {
       "kind": "row",
@@ -861,22 +246,22 @@
     },
     "skillId": "E-K-A3",
     "level": 1,
-    "seed": 6,
-    "key": "E-K-A3|1|{\"leftValues\":[\"wet\",\"top\",\"pig\"],\"rightValues\":[\"top\",\"pig\",\"wet\"]}"
+    "seed": 1,
+    "key": "E-K-A3|1|{\"leftValues\":[\"wet\",\"pop\",\"bag\"],\"rightValues\":[\"bag\",\"pop\",\"wet\"]}"
    },
    {
     "type": "match",
     "mode": "look",
     "facts": {
      "leftValues": [
-      "mat",
-      "pen",
-      "box"
+      "bed",
+      "pop",
+      "web"
      ],
      "rightValues": [
-      "box",
-      "mat",
-      "pen"
+      "pop",
+      "bed",
+      "web"
      ]
     },
     "prompt": {
@@ -888,34 +273,157 @@
     "left": [
      {
       "kind": "text",
-      "value": "MAT",
+      "value": "BED",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "PEN",
+      "value": "POP",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "BOX",
+      "value": "WEB",
       "size": "l"
      }
     ],
     "right": [
      {
       "kind": "text",
-      "value": "box",
+      "value": "pop",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "mat",
+      "value": "bed",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "pen",
+      "value": "web",
+      "size": "l"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Big and small letters spell the same word.",
+      {
+       "word": "bed"
+      },
+      "goes with",
+      {
+       "word": "bed"
+      },
+      ".",
+      {
+       "word": "pop"
+      },
+      "goes with",
+      {
+       "word": "pop"
+      },
+      ".",
+      {
+       "word": "web"
+      },
+      "goes with",
+      {
+       "word": "web"
+      },
+      "."
+     ],
+     "steps": [
+      "BED goes with bed.",
+      "POP goes with pop.",
+      "WEB goes with web."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "BED",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A3",
+    "level": 1,
+    "seed": 2,
+    "key": "E-K-A3|1|{\"leftValues\":[\"bed\",\"pop\",\"web\"],\"rightValues\":[\"pop\",\"bed\",\"web\"]}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      "bin",
+      "pan",
+      "web"
+     ],
+     "rightValues": [
+      "web",
+      "bin",
+      "pan"
+     ]
+    },
+    "prompt": {
+     "text": "Match each big word to its small word.",
+     "speak": [
+      "Match each big word to its small word."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "BIN",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "PAN",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "WEB",
+      "size": "l"
+     }
+    ],
+    "right": [
+     {
+      "kind": "text",
+      "value": "web",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pan",
       "size": "l"
      }
     ],
@@ -937,46 +445,538 @@
      "speak": [
       "Big and small letters spell the same word.",
       {
-       "word": "mat"
+       "word": "bin"
       },
       "goes with",
       {
-       "word": "mat"
+       "word": "bin"
       },
       ".",
       {
-       "word": "pen"
+       "word": "pan"
       },
       "goes with",
       {
-       "word": "pen"
+       "word": "pan"
       },
       ".",
       {
-       "word": "box"
+       "word": "web"
       },
       "goes with",
       {
-       "word": "box"
+       "word": "web"
       },
       "."
      ],
      "steps": [
-      "MAT goes with mat.",
-      "PEN goes with pen.",
-      "BOX goes with box."
+      "BIN goes with bin.",
+      "PAN goes with pan.",
+      "WEB goes with web."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "MAT",
+        "value": "BIN",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "mat",
+        "value": "bin",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A3",
+    "level": 1,
+    "seed": 3,
+    "key": "E-K-A3|1|{\"leftValues\":[\"bin\",\"pan\",\"web\"],\"rightValues\":[\"web\",\"bin\",\"pan\"]}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      "bat",
+      "rat",
+      "sun"
+     ],
+     "rightValues": [
+      "sun",
+      "rat",
+      "bat"
+     ]
+    },
+    "prompt": {
+     "text": "Match each big word to its small word.",
+     "speak": [
+      "Match each big word to its small word."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "BAT",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "RAT",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "SUN",
+      "size": "l"
+     }
+    ],
+    "right": [
+     {
+      "kind": "text",
+      "value": "sun",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "rat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Big and small letters spell the same word.",
+      {
+       "word": "bat"
+      },
+      "goes with",
+      {
+       "word": "bat"
+      },
+      ".",
+      {
+       "word": "rat"
+      },
+      "goes with",
+      {
+       "word": "rat"
+      },
+      ".",
+      {
+       "word": "sun"
+      },
+      "goes with",
+      {
+       "word": "sun"
+      },
+      "."
+     ],
+     "steps": [
+      "BAT goes with bat.",
+      "RAT goes with rat.",
+      "SUN goes with sun."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "BAT",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "bat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A3",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-A3|1|{\"leftValues\":[\"bat\",\"rat\",\"sun\"],\"rightValues\":[\"sun\",\"rat\",\"bat\"]}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      "bat",
+      "mug",
+      "dog"
+     ],
+     "rightValues": [
+      "mug",
+      "bat",
+      "dog"
+     ]
+    },
+    "prompt": {
+     "text": "Match each big word to its small word.",
+     "speak": [
+      "Match each big word to its small word."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "BAT",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "MUG",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "DOG",
+      "size": "l"
+     }
+    ],
+    "right": [
+     {
+      "kind": "text",
+      "value": "mug",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "dog",
+      "size": "l"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Big and small letters spell the same word.",
+      {
+       "word": "bat"
+      },
+      "goes with",
+      {
+       "word": "bat"
+      },
+      ".",
+      {
+       "word": "mug"
+      },
+      "goes with",
+      {
+       "word": "mug"
+      },
+      ".",
+      {
+       "word": "dog"
+      },
+      "goes with",
+      {
+       "word": "dog"
+      },
+      "."
+     ],
+     "steps": [
+      "BAT goes with bat.",
+      "MUG goes with mug.",
+      "DOG goes with dog."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "BAT",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "bat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A3",
+    "level": 1,
+    "seed": 5,
+    "key": "E-K-A3|1|{\"leftValues\":[\"bat\",\"mug\",\"dog\"],\"rightValues\":[\"mug\",\"bat\",\"dog\"]}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      "bat",
+      "wig",
+      "dot"
+     ],
+     "rightValues": [
+      "dot",
+      "bat",
+      "wig"
+     ]
+    },
+    "prompt": {
+     "text": "Match each big word to its small word.",
+     "speak": [
+      "Match each big word to its small word."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "BAT",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "WIG",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "DOT",
+      "size": "l"
+     }
+    ],
+    "right": [
+     {
+      "kind": "text",
+      "value": "dot",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bat",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      0
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Big and small letters spell the same word.",
+      {
+       "word": "bat"
+      },
+      "goes with",
+      {
+       "word": "bat"
+      },
+      ".",
+      {
+       "word": "wig"
+      },
+      "goes with",
+      {
+       "word": "wig"
+      },
+      ".",
+      {
+       "word": "dot"
+      },
+      "goes with",
+      {
+       "word": "dot"
+      },
+      "."
+     ],
+     "steps": [
+      "BAT goes with bat.",
+      "WIG goes with wig.",
+      "DOT goes with dot."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "BAT",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "bat",
+        "size": "xl"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A3",
+    "level": 1,
+    "seed": 6,
+    "key": "E-K-A3|1|{\"leftValues\":[\"bat\",\"wig\",\"dot\"],\"rightValues\":[\"dot\",\"bat\",\"wig\"]}"
+   },
+   {
+    "type": "match",
+    "mode": "look",
+    "facts": {
+     "leftValues": [
+      "hen",
+      "nut",
+      "fox"
+     ],
+     "rightValues": [
+      "nut",
+      "fox",
+      "hen"
+     ]
+    },
+    "prompt": {
+     "text": "Match each big word to its small word.",
+     "speak": [
+      "Match each big word to its small word."
+     ]
+    },
+    "left": [
+     {
+      "kind": "text",
+      "value": "HEN",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "NUT",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "FOX",
+      "size": "l"
+     }
+    ],
+    "right": [
+     {
+      "kind": "text",
+      "value": "nut",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "fox",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hen",
+      "size": "l"
+     }
+    ],
+    "answerPairs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "explanation": {
+     "speak": [
+      "Big and small letters spell the same word.",
+      {
+       "word": "hen"
+      },
+      "goes with",
+      {
+       "word": "hen"
+      },
+      ".",
+      {
+       "word": "nut"
+      },
+      "goes with",
+      {
+       "word": "nut"
+      },
+      ".",
+      {
+       "word": "fox"
+      },
+      "goes with",
+      {
+       "word": "fox"
+      },
+      "."
+     ],
+     "steps": [
+      "HEN goes with hen.",
+      "NUT goes with nut.",
+      "FOX goes with fox."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "HEN",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "hen",
         "size": "xl"
        }
       ]
@@ -985,21 +985,21 @@
     "skillId": "E-K-A3",
     "level": 1,
     "seed": 7,
-    "key": "E-K-A3|1|{\"leftValues\":[\"mat\",\"pen\",\"box\"],\"rightValues\":[\"box\",\"mat\",\"pen\"]}"
+    "key": "E-K-A3|1|{\"leftValues\":[\"hen\",\"nut\",\"fox\"],\"rightValues\":[\"nut\",\"fox\",\"hen\"]}"
    },
    {
     "type": "match",
     "mode": "look",
     "facts": {
      "leftValues": [
-      "hot",
-      "map",
-      "bug"
+      "fig",
+      "sun",
+      "wet"
      ],
      "rightValues": [
-      "map",
-      "hot",
-      "bug"
+      "wet",
+      "sun",
+      "fig"
      ]
     },
     "prompt": {
@@ -1011,95 +1011,95 @@
     "left": [
      {
       "kind": "text",
-      "value": "HOT",
+      "value": "FIG",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "MAP",
+      "value": "SUN",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "BUG",
+      "value": "WET",
       "size": "l"
      }
     ],
     "right": [
      {
       "kind": "text",
-      "value": "map",
+      "value": "wet",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "hot",
+      "value": "sun",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bug",
+      "value": "fig",
       "size": "l"
      }
     ],
     "answerPairs": [
      [
       0,
-      1
+      2
      ],
      [
       1,
-      0
+      1
      ],
      [
       2,
-      2
+      0
      ]
     ],
     "explanation": {
      "speak": [
       "Big and small letters spell the same word.",
       {
-       "word": "hot"
+       "word": "fig"
       },
       "goes with",
       {
-       "word": "hot"
+       "word": "fig"
       },
       ".",
       {
-       "word": "map"
+       "word": "sun"
       },
       "goes with",
       {
-       "word": "map"
+       "word": "sun"
       },
       ".",
       {
-       "word": "bug"
+       "word": "wet"
       },
       "goes with",
       {
-       "word": "bug"
+       "word": "wet"
       },
       "."
      ],
      "steps": [
-      "HOT goes with hot.",
-      "MAP goes with map.",
-      "BUG goes with bug."
+      "FIG goes with fig.",
+      "SUN goes with sun.",
+      "WET goes with wet."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "HOT",
+        "value": "FIG",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "hot",
+        "value": "fig",
         "size": "xl"
        }
       ]
@@ -1108,7 +1108,7 @@
     "skillId": "E-K-A3",
     "level": 1,
     "seed": 8,
-    "key": "E-K-A3|1|{\"leftValues\":[\"hot\",\"map\",\"bug\"],\"rightValues\":[\"map\",\"hot\",\"bug\"]}"
+    "key": "E-K-A3|1|{\"leftValues\":[\"fig\",\"sun\",\"wet\"],\"rightValues\":[\"wet\",\"sun\",\"fig\"]}"
    },
    {
     "type": "match",
@@ -1116,13 +1116,13 @@
     "facts": {
      "leftValues": [
       "cat",
-      "dog",
-      "hen"
+      "ran",
+      "fig"
      ],
      "rightValues": [
-      "hen",
       "cat",
-      "dog"
+      "fig",
+      "ran"
      ]
     },
     "prompt": {
@@ -1139,21 +1139,16 @@
      },
      {
       "kind": "text",
-      "value": "DOG",
+      "value": "RAN",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "HEN",
+      "value": "FIG",
       "size": "l"
      }
     ],
     "right": [
-     {
-      "kind": "text",
-      "value": "hen",
-      "size": "l"
-     },
      {
       "kind": "text",
       "value": "cat",
@@ -1161,14 +1156,19 @@
      },
      {
       "kind": "text",
-      "value": "dog",
+      "value": "fig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "ran",
       "size": "l"
      }
     ],
     "answerPairs": [
      [
       0,
-      1
+      0
      ],
      [
       1,
@@ -1176,7 +1176,7 @@
      ],
      [
       2,
-      0
+      1
      ]
     ],
     "explanation": {
@@ -1191,26 +1191,26 @@
       },
       ".",
       {
-       "word": "dog"
+       "word": "ran"
       },
       "goes with",
       {
-       "word": "dog"
+       "word": "ran"
       },
       ".",
       {
-       "word": "hen"
+       "word": "fig"
       },
       "goes with",
       {
-       "word": "hen"
+       "word": "fig"
       },
       "."
      ],
      "steps": [
       "CAT goes with cat.",
-      "DOG goes with dog.",
-      "HEN goes with hen."
+      "RAN goes with ran.",
+      "FIG goes with fig."
      ],
      "visual": {
       "kind": "row",
@@ -1231,21 +1231,21 @@
     "skillId": "E-K-A3",
     "level": 1,
     "seed": 9,
-    "key": "E-K-A3|1|{\"leftValues\":[\"cat\",\"dog\",\"hen\"],\"rightValues\":[\"hen\",\"cat\",\"dog\"]}"
+    "key": "E-K-A3|1|{\"leftValues\":[\"cat\",\"ran\",\"fig\"],\"rightValues\":[\"cat\",\"fig\",\"ran\"]}"
    },
    {
     "type": "match",
     "mode": "look",
     "facts": {
      "leftValues": [
-      "bag",
-      "lip",
-      "wet"
+      "mat",
+      "ran",
+      "sun"
      ],
      "rightValues": [
-      "wet",
-      "lip",
-      "bag"
+      "sun",
+      "mat",
+      "ran"
      ]
     },
     "prompt": {
@@ -1257,45 +1257,45 @@
     "left": [
      {
       "kind": "text",
-      "value": "BAG",
+      "value": "MAT",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "LIP",
+      "value": "RAN",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "WET",
+      "value": "SUN",
       "size": "l"
      }
     ],
     "right": [
      {
       "kind": "text",
-      "value": "wet",
+      "value": "sun",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "lip",
+      "value": "mat",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bag",
+      "value": "ran",
       "size": "l"
      }
     ],
     "answerPairs": [
      [
       0,
-      2
+      1
      ],
      [
       1,
-      1
+      2
      ],
      [
       2,
@@ -1306,46 +1306,46 @@
      "speak": [
       "Big and small letters spell the same word.",
       {
-       "word": "bag"
+       "word": "mat"
       },
       "goes with",
       {
-       "word": "bag"
+       "word": "mat"
       },
       ".",
       {
-       "word": "lip"
+       "word": "ran"
       },
       "goes with",
       {
-       "word": "lip"
+       "word": "ran"
       },
       ".",
       {
-       "word": "wet"
+       "word": "sun"
       },
       "goes with",
       {
-       "word": "wet"
+       "word": "sun"
       },
       "."
      ],
      "steps": [
-      "BAG goes with bag.",
-      "LIP goes with lip.",
-      "WET goes with wet."
+      "MAT goes with mat.",
+      "RAN goes with ran.",
+      "SUN goes with sun."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "BAG",
+        "value": "MAT",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "bag",
+        "value": "mat",
         "size": "xl"
        }
       ]
@@ -1354,7 +1354,7 @@
     "skillId": "E-K-A3",
     "level": 1,
     "seed": 10,
-    "key": "E-K-A3|1|{\"leftValues\":[\"bag\",\"lip\",\"wet\"],\"rightValues\":[\"wet\",\"lip\",\"bag\"]}"
+    "key": "E-K-A3|1|{\"leftValues\":[\"mat\",\"ran\",\"sun\"],\"rightValues\":[\"sun\",\"mat\",\"ran\"]}"
    }
   ],
   "2": [

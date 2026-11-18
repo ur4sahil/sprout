@@ -1,6 +1,6 @@
 {
  "skillId": "E-K-A5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "sort",
   "mode": "look",
@@ -10,8 +10,8 @@
    "items": [
     "r",
     "s",
-    "big",
-    "dot"
+    "ran",
+    "hat"
    ],
    "bins": [
     "letter",
@@ -37,12 +37,12 @@
    },
    {
     "kind": "text",
-    "value": "big",
+    "value": "ran",
     "size": "l"
    },
    {
     "kind": "text",
-    "value": "dot",
+    "value": "hat",
     "size": "l"
    }
   ],
@@ -73,13 +73,13 @@
     },
     "is one letter.",
     {
-     "word": "big"
+     "word": "ran"
     },
     "is a word: letters together."
    ],
    "steps": [
     "r is one letter.",
-    "big is a word: letters together."
+    "ran is a word: letters together."
    ],
    "visual": {
     "kind": "row",
@@ -91,7 +91,7 @@
      },
      {
       "kind": "text",
-      "value": "big",
+      "value": "ran",
       "size": "l"
      }
     ]
@@ -100,7 +100,7 @@
   "skillId": "E-K-A5",
   "level": 1,
   "seed": 4051,
-  "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"r\",\"s\",\"big\",\"dot\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+  "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"r\",\"s\",\"ran\",\"hat\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
  },
  "levels": {
   "1": [
@@ -111,10 +111,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
-      "net",
-      "u",
+      "mop",
       "k",
-      "mug"
+      "u",
+      "nut"
      ],
      "bins": [
       "letter",
@@ -130,12 +130,7 @@
     "items": [
      {
       "kind": "text",
-      "value": "net",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "u",
+      "value": "mop",
       "size": "l"
      },
      {
@@ -145,7 +140,12 @@
      },
      {
       "kind": "text",
-      "value": "mug",
+      "value": "u",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "nut",
       "size": "l"
      }
     ],
@@ -172,29 +172,29 @@
     "explanation": {
      "speak": [
       {
-       "letter": "u"
+       "letter": "k"
       },
       "is one letter.",
       {
-       "word": "net"
+       "word": "mop"
       },
       "is a word: letters together."
      ],
      "steps": [
-      "u is one letter.",
-      "net is a word: letters together."
+      "k is one letter.",
+      "mop is a word: letters together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "u",
+        "value": "k",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "net",
+        "value": "mop",
         "size": "l"
        }
       ]
@@ -203,7 +203,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 1,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"net\",\"u\",\"k\",\"mug\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"mop\",\"k\",\"u\",\"nut\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -212,10 +212,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
-      "s",
-      "pin",
+      "mop",
       "r",
-      "pot"
+      "pin",
+      "s"
      ],
      "bins": [
       "letter",
@@ -231,12 +231,7 @@
     "items": [
      {
       "kind": "text",
-      "value": "s",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "pin",
+      "value": "mop",
       "size": "l"
      },
      {
@@ -246,7 +241,12 @@
      },
      {
       "kind": "text",
-      "value": "pot",
+      "value": "pin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "s",
       "size": "l"
      }
     ],
@@ -265,37 +265,37 @@
      }
     ],
     "answerBin": [
-     0,
      1,
      0,
-     1
+     1,
+     0
     ],
     "explanation": {
      "speak": [
       {
-       "letter": "s"
+       "letter": "r"
       },
       "is one letter.",
       {
-       "word": "pin"
+       "word": "mop"
       },
       "is a word: letters together."
      ],
      "steps": [
-      "s is one letter.",
-      "pin is a word: letters together."
+      "r is one letter.",
+      "mop is a word: letters together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "s",
+        "value": "r",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "pin",
+        "value": "mop",
         "size": "l"
        }
       ]
@@ -304,7 +304,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 2,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"s\",\"pin\",\"r\",\"pot\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"mop\",\"r\",\"pin\",\"s\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -313,10 +313,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
+      "pan",
       "u",
-      "fox",
-      "web",
-      "n"
+      "n",
+      "jet"
      ],
      "bins": [
       "letter",
@@ -332,22 +332,22 @@
     "items": [
      {
       "kind": "text",
+      "value": "pan",
+      "size": "l"
+     },
+     {
+      "kind": "text",
       "value": "u",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "fox",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "web",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "n",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "jet",
       "size": "l"
      }
     ],
@@ -366,10 +366,10 @@
      }
     ],
     "answerBin": [
+     1,
      0,
-     1,
-     1,
-     0
+     0,
+     1
     ],
     "explanation": {
      "speak": [
@@ -378,13 +378,13 @@
       },
       "is one letter.",
       {
-       "word": "fox"
+       "word": "pan"
       },
       "is a word: letters together."
      ],
      "steps": [
       "u is one letter.",
-      "fox is a word: letters together."
+      "pan is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -396,7 +396,7 @@
        },
        {
         "kind": "text",
-        "value": "fox",
+        "value": "pan",
         "size": "l"
        }
       ]
@@ -405,7 +405,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 3,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"u\",\"fox\",\"web\",\"n\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"pan\",\"u\",\"n\",\"jet\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -416,8 +416,8 @@
      "items": [
       "b",
       "t",
-      "bag",
-      "hop"
+      "wig",
+      "pop"
      ],
      "bins": [
       "letter",
@@ -443,12 +443,12 @@
      },
      {
       "kind": "text",
-      "value": "bag",
+      "value": "wig",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "hop",
+      "value": "pop",
       "size": "l"
      }
     ],
@@ -479,13 +479,13 @@
       },
       "is one letter.",
       {
-       "word": "bag"
+       "word": "wig"
       },
       "is a word: letters together."
      ],
      "steps": [
       "b is one letter.",
-      "bag is a word: letters together."
+      "wig is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -493,6 +493,107 @@
        {
         "kind": "text",
         "value": "b",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "wig",
+        "size": "l"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A5",
+    "level": 1,
+    "seed": 4,
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"b\",\"t\",\"wig\",\"pop\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "printKind",
+     "target": "letter|word",
+     "items": [
+      "y",
+      "bag",
+      "x",
+      "pen"
+     ],
+     "bins": [
+      "letter",
+      "word"
+     ]
+    },
+    "prompt": {
+     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
+     "speak": [
+      "Is it a letter, a word or a sentence? Put each card in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "y",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bag",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "x",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pen",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letter",
+      "speak": [
+       "Letter"
+      ]
+     },
+     {
+      "label": "Word",
+      "speak": [
+       "Word"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "letter": "y"
+      },
+      "is one letter.",
+      {
+       "word": "bag"
+      },
+      "is a word: letters together."
+     ],
+     "steps": [
+      "y is one letter.",
+      "bag is a word: letters together."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "y",
         "size": "xl"
        },
        {
@@ -505,109 +606,8 @@
     },
     "skillId": "E-K-A5",
     "level": 1,
-    "seed": 4,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"b\",\"t\",\"bag\",\"hop\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "relation": "printKind",
-     "target": "letter|word",
-     "items": [
-      "bat",
-      "pig",
-      "y",
-      "x"
-     ],
-     "bins": [
-      "letter",
-      "word"
-     ]
-    },
-    "prompt": {
-     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
-     "speak": [
-      "Is it a letter, a word or a sentence? Put each card in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "bat",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "pig",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "y",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "x",
-      "size": "l"
-     }
-    ],
-    "bins": [
-     {
-      "label": "Letter",
-      "speak": [
-       "Letter"
-      ]
-     },
-     {
-      "label": "Word",
-      "speak": [
-       "Word"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     1,
-     0,
-     0
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "letter": "y"
-      },
-      "is one letter.",
-      {
-       "word": "bat"
-      },
-      "is a word: letters together."
-     ],
-     "steps": [
-      "y is one letter.",
-      "bat is a word: letters together."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "y",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "bat",
-        "size": "l"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A5",
-    "level": 1,
     "seed": 5,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"bat\",\"pig\",\"y\",\"x\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"y\",\"bag\",\"x\",\"pen\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -616,10 +616,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
+      "wig",
       "h",
-      "n",
-      "fan",
-      "sat"
+      "pet",
+      "n"
      ],
      "bins": [
       "letter",
@@ -633,6 +633,11 @@
      ]
     },
     "items": [
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
      {
       "kind": "text",
       "value": "h",
@@ -640,17 +645,12 @@
      },
      {
       "kind": "text",
+      "value": "pet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
       "value": "n",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "fan",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "sat",
       "size": "l"
      }
     ],
@@ -669,10 +669,10 @@
      }
     ],
     "answerBin": [
-     0,
+     1,
      0,
      1,
-     1
+     0
     ],
     "explanation": {
      "speak": [
@@ -681,13 +681,13 @@
       },
       "is one letter.",
       {
-       "word": "fan"
+       "word": "wig"
       },
       "is a word: letters together."
      ],
      "steps": [
       "h is one letter.",
-      "fan is a word: letters together."
+      "wig is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -699,7 +699,7 @@
        },
        {
         "kind": "text",
-        "value": "fan",
+        "value": "wig",
         "size": "l"
        }
       ]
@@ -708,7 +708,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 6,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"h\",\"n\",\"fan\",\"sat\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"wig\",\"h\",\"pet\",\"n\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -718,9 +718,9 @@
      "target": "letter|word",
      "items": [
       "p",
-      "dog",
-      "z",
-      "top"
+      "pop",
+      "can",
+      "z"
      ],
      "bins": [
       "letter",
@@ -741,17 +741,17 @@
      },
      {
       "kind": "text",
-      "value": "dog",
+      "value": "pop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "can",
       "size": "l"
      },
      {
       "kind": "text",
       "value": "z",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "top",
       "size": "l"
      }
     ],
@@ -772,8 +772,8 @@
     "answerBin": [
      0,
      1,
-     0,
-     1
+     1,
+     0
     ],
     "explanation": {
      "speak": [
@@ -782,13 +782,13 @@
       },
       "is one letter.",
       {
-       "word": "dog"
+       "word": "pop"
       },
       "is a word: letters together."
      ],
      "steps": [
       "p is one letter.",
-      "dog is a word: letters together."
+      "pop is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -800,7 +800,7 @@
        },
        {
         "kind": "text",
-        "value": "dog",
+        "value": "pop",
         "size": "l"
        }
       ]
@@ -809,7 +809,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 7,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"p\",\"dog\",\"z\",\"top\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"p\",\"pop\",\"can\",\"z\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -818,10 +818,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
-      "box",
       "t",
-      "d",
-      "hen"
+      "fin",
+      "bed",
+      "d"
      ],
      "bins": [
       "letter",
@@ -837,22 +837,22 @@
     "items": [
      {
       "kind": "text",
-      "value": "box",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "t",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "d",
+      "value": "fin",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "hen",
+      "value": "bed",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "d",
       "size": "l"
      }
     ],
@@ -871,10 +871,10 @@
      }
     ],
     "answerBin": [
+     0,
      1,
-     0,
-     0,
-     1
+     1,
+     0
     ],
     "explanation": {
      "speak": [
@@ -883,13 +883,13 @@
       },
       "is one letter.",
       {
-       "word": "box"
+       "word": "fin"
       },
       "is a word: letters together."
      ],
      "steps": [
       "t is one letter.",
-      "box is a word: letters together."
+      "fin is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -901,7 +901,7 @@
        },
        {
         "kind": "text",
-        "value": "box",
+        "value": "fin",
         "size": "l"
        }
       ]
@@ -910,7 +910,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 8,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"box\",\"t\",\"d\",\"hen\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"t\",\"fin\",\"bed\",\"d\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -919,10 +919,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
-      "top",
-      "hat",
       "w",
-      "b"
+      "wet",
+      "b",
+      "hat"
      ],
      "bins": [
       "letter",
@@ -938,22 +938,22 @@
     "items": [
      {
       "kind": "text",
-      "value": "top",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "hat",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "w",
       "size": "l"
      },
      {
       "kind": "text",
+      "value": "wet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
       "value": "b",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "hat",
       "size": "l"
      }
     ],
@@ -972,10 +972,10 @@
      }
     ],
     "answerBin": [
-     1,
+     0,
      1,
      0,
-     0
+     1
     ],
     "explanation": {
      "speak": [
@@ -984,13 +984,13 @@
       },
       "is one letter.",
       {
-       "word": "top"
+       "word": "wet"
       },
       "is a word: letters together."
      ],
      "steps": [
       "w is one letter.",
-      "top is a word: letters together."
+      "wet is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -1002,7 +1002,7 @@
        },
        {
         "kind": "text",
-        "value": "top",
+        "value": "wet",
         "size": "l"
        }
       ]
@@ -1011,7 +1011,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 9,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"top\",\"hat\",\"w\",\"b\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"w\",\"wet\",\"b\",\"hat\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    },
    {
     "type": "sort",
@@ -1020,10 +1020,10 @@
      "relation": "printKind",
      "target": "letter|word",
      "items": [
+      "web",
       "g",
-      "bug",
       "d",
-      "dig"
+      "bus"
      ],
      "bins": [
       "letter",
@@ -1039,12 +1039,12 @@
     "items": [
      {
       "kind": "text",
-      "value": "g",
+      "value": "web",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bug",
+      "value": "g",
       "size": "l"
      },
      {
@@ -1054,7 +1054,7 @@
      },
      {
       "kind": "text",
-      "value": "dig",
+      "value": "bus",
       "size": "l"
      }
     ],
@@ -1073,8 +1073,8 @@
      }
     ],
     "answerBin": [
-     0,
      1,
+     0,
      0,
      1
     ],
@@ -1085,13 +1085,13 @@
       },
       "is one letter.",
       {
-       "word": "bug"
+       "word": "web"
       },
       "is a word: letters together."
      ],
      "steps": [
       "g is one letter.",
-      "bug is a word: letters together."
+      "web is a word: letters together."
      ],
      "visual": {
       "kind": "row",
@@ -1103,7 +1103,7 @@
        },
        {
         "kind": "text",
-        "value": "bug",
+        "value": "web",
         "size": "l"
        }
       ]
@@ -1112,7 +1112,7 @@
     "skillId": "E-K-A5",
     "level": 1,
     "seed": 10,
-    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"g\",\"bug\",\"d\",\"dig\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
+    "key": "E-K-A5|1|{\"bins\":[\"letter\",\"word\"],\"items\":[\"web\",\"g\",\"d\",\"bus\"],\"relation\":\"printKind\",\"target\":\"letter|word\"}"
    }
   ],
   "2": [
@@ -1123,12 +1123,12 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "mug",
-      "The pig is big.",
-      "k",
-      "I like cake.",
       "u",
-      "net"
+      "I like my bed.",
+      "I see a bug.",
+      "k",
+      "nut",
+      "mop"
      ],
      "bins": [
       "letter",
@@ -1145,12 +1145,17 @@
     "items": [
      {
       "kind": "text",
-      "value": "mug",
+      "value": "u",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "The pig is big.",
+      "value": "I like my bed.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "I see a bug.",
       "size": "m"
      },
      {
@@ -1160,17 +1165,12 @@
      },
      {
       "kind": "text",
-      "value": "I like cake.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "u",
+      "value": "nut",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "net",
+      "value": "mop",
       "size": "l"
      }
     ],
@@ -1195,42 +1195,42 @@
      }
     ],
     "answerBin": [
+     0,
+     2,
+     2,
+     0,
      1,
-     2,
-     0,
-     2,
-     0,
      1
     ],
     "explanation": {
      "speak": [
       {
-       "letter": "k"
+       "letter": "u"
       },
       "is one letter.",
       {
-       "word": "mug"
+       "word": "nut"
       },
       "is a word: letters together.",
-      "The pig is big.",
+      "I like my bed.",
       "That is a sentence: words together."
      ],
      "steps": [
-      "k is one letter.",
-      "mug is a word: letters together.",
-      "\"The pig is big.\" is a sentence: words together."
+      "u is one letter.",
+      "nut is a word: letters together.",
+      "\"I like my bed.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "k",
+        "value": "u",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "mug",
+        "value": "nut",
         "size": "l"
        }
       ]
@@ -1239,7 +1239,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 1,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"mug\",\"The pig is big.\",\"k\",\"I like cake.\",\"u\",\"net\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"u\",\"I like my bed.\",\"I see a bug.\",\"k\",\"nut\",\"mop\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -1248,12 +1248,12 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "The bird sings a song.",
-      "s",
-      "pot",
-      "We can run.",
+      "mop",
+      "My cat likes to nap.",
+      "The dog can jump.",
       "r",
-      "pin"
+      "pin",
+      "s"
      ],
      "bins": [
       "letter",
@@ -1270,22 +1270,17 @@
     "items": [
      {
       "kind": "text",
-      "value": "The bird sings a song.",
+      "value": "mop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "My cat likes to nap.",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "s",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "pot",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "We can run.",
+      "value": "The dog can jump.",
       "size": "m"
      },
      {
@@ -1297,6 +1292,11 @@
       "kind": "text",
       "value": "pin",
       "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "s",
+      "size": "l"
      }
     ],
     "bins": [
@@ -1320,42 +1320,42 @@
      }
     ],
     "answerBin": [
+     1,
+     2,
      2,
      0,
      1,
-     2,
-     0,
-     1
+     0
     ],
     "explanation": {
      "speak": [
       {
-       "letter": "s"
+       "letter": "r"
       },
       "is one letter.",
       {
-       "word": "pot"
+       "word": "mop"
       },
       "is a word: letters together.",
-      "The bird sings a song.",
+      "My cat likes to nap.",
       "That is a sentence: words together."
      ],
      "steps": [
-      "s is one letter.",
-      "pot is a word: letters together.",
-      "\"The bird sings a song.\" is a sentence: words together."
+      "r is one letter.",
+      "mop is a word: letters together.",
+      "\"My cat likes to nap.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "s",
+        "value": "r",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "pot",
+        "value": "mop",
         "size": "l"
        }
       ]
@@ -1364,7 +1364,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 2,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"The bird sings a song.\",\"s\",\"pot\",\"We can run.\",\"r\",\"pin\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"mop\",\"My cat likes to nap.\",\"The dog can jump.\",\"r\",\"pin\",\"s\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -1373,11 +1373,386 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "fox",
-      "web",
       "u",
-      "We like to play ball.",
-      "He can see a red bus.",
+      "pan",
+      "The sun is hot.",
+      "jet",
+      "n",
+      "The dog ran to the park."
+     ],
+     "bins": [
+      "letter",
+      "word",
+      "sentence"
+     ]
+    },
+    "prompt": {
+     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
+     "speak": [
+      "Is it a letter, a word or a sentence? Put each card in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "u",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pan",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "The sun is hot.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "jet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "n",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "The dog ran to the park.",
+      "size": "m"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letter",
+      "speak": [
+       "Letter"
+      ]
+     },
+     {
+      "label": "Word",
+      "speak": [
+       "Word"
+      ]
+     },
+     {
+      "label": "Sentence",
+      "speak": [
+       "Sentence"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     1,
+     2,
+     1,
+     0,
+     2
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "letter": "u"
+      },
+      "is one letter.",
+      {
+       "word": "pan"
+      },
+      "is a word: letters together.",
+      "The sun is hot.",
+      "That is a sentence: words together."
+     ],
+     "steps": [
+      "u is one letter.",
+      "pan is a word: letters together.",
+      "\"The sun is hot.\" is a sentence: words together."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "u",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "pan",
+        "size": "l"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A5",
+    "level": 2,
+    "seed": 3,
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"u\",\"pan\",\"The sun is hot.\",\"jet\",\"n\",\"The dog ran to the park.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "printKind",
+     "target": "letter|word|sentence",
+     "items": [
+      "t",
+      "b",
+      "pop",
+      "We go to school.",
+      "He can hop.",
+      "wig"
+     ],
+     "bins": [
+      "letter",
+      "word",
+      "sentence"
+     ]
+    },
+    "prompt": {
+     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
+     "speak": [
+      "Is it a letter, a word or a sentence? Put each card in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "t",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "b",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "pop",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "We go to school.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "He can hop.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letter",
+      "speak": [
+       "Letter"
+      ]
+     },
+     {
+      "label": "Word",
+      "speak": [
+       "Word"
+      ]
+     },
+     {
+      "label": "Sentence",
+      "speak": [
+       "Sentence"
+      ]
+     }
+    ],
+    "answerBin": [
+     0,
+     0,
+     1,
+     2,
+     2,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "letter": "t"
+      },
+      "is one letter.",
+      {
+       "word": "pop"
+      },
+      "is a word: letters together.",
+      "We go to school.",
+      "That is a sentence: words together."
+     ],
+     "steps": [
+      "t is one letter.",
+      "pop is a word: letters together.",
+      "\"We go to school.\" is a sentence: words together."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "t",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "pop",
+        "size": "l"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A5",
+    "level": 2,
+    "seed": 4,
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"t\",\"b\",\"pop\",\"We go to school.\",\"He can hop.\",\"wig\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "printKind",
+     "target": "letter|word|sentence",
+     "items": [
+      "pen",
+      "I like cake.",
+      "The pig is big.",
+      "y",
+      "x",
+      "bag"
+     ],
+     "bins": [
+      "letter",
+      "word",
+      "sentence"
+     ]
+    },
+    "prompt": {
+     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
+     "speak": [
+      "Is it a letter, a word or a sentence? Put each card in its group."
+     ]
+    },
+    "items": [
+     {
+      "kind": "text",
+      "value": "pen",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I like cake.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "The pig is big.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "y",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "x",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "bag",
+      "size": "l"
+     }
+    ],
+    "bins": [
+     {
+      "label": "Letter",
+      "speak": [
+       "Letter"
+      ]
+     },
+     {
+      "label": "Word",
+      "speak": [
+       "Word"
+      ]
+     },
+     {
+      "label": "Sentence",
+      "speak": [
+       "Sentence"
+      ]
+     }
+    ],
+    "answerBin": [
+     1,
+     2,
+     2,
+     0,
+     0,
+     1
+    ],
+    "explanation": {
+     "speak": [
+      {
+       "letter": "y"
+      },
+      "is one letter.",
+      {
+       "word": "pen"
+      },
+      "is a word: letters together.",
+      "I like cake.",
+      "That is a sentence: words together."
+     ],
+     "steps": [
+      "y is one letter.",
+      "pen is a word: letters together.",
+      "\"I like cake.\" is a sentence: words together."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "text",
+        "value": "y",
+        "size": "xl"
+       },
+       {
+        "kind": "text",
+        "value": "pen",
+        "size": "l"
+       }
+      ]
+     }
+    },
+    "skillId": "E-K-A5",
+    "level": 2,
+    "seed": 5,
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"pen\",\"I like cake.\",\"The pig is big.\",\"y\",\"x\",\"bag\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+   },
+   {
+    "type": "sort",
+    "mode": "look",
+    "facts": {
+     "relation": "printKind",
+     "target": "letter|word|sentence",
+     "items": [
+      "The duck can swim fast.",
+      "h",
+      "We go to school.",
+      "pet",
+      "wig",
       "n"
      ],
      "bins": [
@@ -1395,387 +1770,7 @@
     "items": [
      {
       "kind": "text",
-      "value": "fox",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "web",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "u",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "We like to play ball.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "He can see a red bus.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "n",
-      "size": "l"
-     }
-    ],
-    "bins": [
-     {
-      "label": "Letter",
-      "speak": [
-       "Letter"
-      ]
-     },
-     {
-      "label": "Word",
-      "speak": [
-       "Word"
-      ]
-     },
-     {
-      "label": "Sentence",
-      "speak": [
-       "Sentence"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     1,
-     0,
-     2,
-     2,
-     0
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "letter": "u"
-      },
-      "is one letter.",
-      {
-       "word": "fox"
-      },
-      "is a word: letters together.",
-      "We like to play ball.",
-      "That is a sentence: words together."
-     ],
-     "steps": [
-      "u is one letter.",
-      "fox is a word: letters together.",
-      "\"We like to play ball.\" is a sentence: words together."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "u",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "fox",
-        "size": "l"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A5",
-    "level": 2,
-    "seed": 3,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"fox\",\"web\",\"u\",\"We like to play ball.\",\"He can see a red bus.\",\"n\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "relation": "printKind",
-     "target": "letter|word|sentence",
-     "items": [
-      "hop",
-      "t",
-      "b",
-      "bag",
-      "My hat is red.",
-      "I see a bug."
-     ],
-     "bins": [
-      "letter",
-      "word",
-      "sentence"
-     ]
-    },
-    "prompt": {
-     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
-     "speak": [
-      "Is it a letter, a word or a sentence? Put each card in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "hop",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "t",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "b",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "bag",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "My hat is red.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "I see a bug.",
-      "size": "m"
-     }
-    ],
-    "bins": [
-     {
-      "label": "Letter",
-      "speak": [
-       "Letter"
-      ]
-     },
-     {
-      "label": "Word",
-      "speak": [
-       "Word"
-      ]
-     },
-     {
-      "label": "Sentence",
-      "speak": [
-       "Sentence"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     0,
-     0,
-     1,
-     2,
-     2
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "letter": "t"
-      },
-      "is one letter.",
-      {
-       "word": "hop"
-      },
-      "is a word: letters together.",
-      "My hat is red.",
-      "That is a sentence: words together."
-     ],
-     "steps": [
-      "t is one letter.",
-      "hop is a word: letters together.",
-      "\"My hat is red.\" is a sentence: words together."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "t",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "hop",
-        "size": "l"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A5",
-    "level": 2,
-    "seed": 4,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"hop\",\"t\",\"b\",\"bag\",\"My hat is red.\",\"I see a bug.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "relation": "printKind",
-     "target": "letter|word|sentence",
-     "items": [
-      "pig",
-      "bat",
-      "The sun is hot.",
-      "I like cake.",
-      "y",
-      "x"
-     ],
-     "bins": [
-      "letter",
-      "word",
-      "sentence"
-     ]
-    },
-    "prompt": {
-     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
-     "speak": [
-      "Is it a letter, a word or a sentence? Put each card in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "pig",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "bat",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "The sun is hot.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "I like cake.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "y",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "x",
-      "size": "l"
-     }
-    ],
-    "bins": [
-     {
-      "label": "Letter",
-      "speak": [
-       "Letter"
-      ]
-     },
-     {
-      "label": "Word",
-      "speak": [
-       "Word"
-      ]
-     },
-     {
-      "label": "Sentence",
-      "speak": [
-       "Sentence"
-      ]
-     }
-    ],
-    "answerBin": [
-     1,
-     1,
-     2,
-     2,
-     0,
-     0
-    ],
-    "explanation": {
-     "speak": [
-      {
-       "letter": "y"
-      },
-      "is one letter.",
-      {
-       "word": "pig"
-      },
-      "is a word: letters together.",
-      "The sun is hot.",
-      "That is a sentence: words together."
-     ],
-     "steps": [
-      "y is one letter.",
-      "pig is a word: letters together.",
-      "\"The sun is hot.\" is a sentence: words together."
-     ],
-     "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "text",
-        "value": "y",
-        "size": "xl"
-       },
-       {
-        "kind": "text",
-        "value": "pig",
-        "size": "l"
-       }
-      ]
-     }
-    },
-    "skillId": "E-K-A5",
-    "level": 2,
-    "seed": 5,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"pig\",\"bat\",\"The sun is hot.\",\"I like cake.\",\"y\",\"x\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
-   },
-   {
-    "type": "sort",
-    "mode": "look",
-    "facts": {
-     "relation": "printKind",
-     "target": "letter|word|sentence",
-     "items": [
-      "sat",
-      "She can swim.",
-      "h",
-      "n",
-      "fan",
-      "I see a bug."
-     ],
-     "bins": [
-      "letter",
-      "word",
-      "sentence"
-     ]
-    },
-    "prompt": {
-     "text": "Is it a letter, a word or a sentence? Put each card in its group.",
-     "speak": [
-      "Is it a letter, a word or a sentence? Put each card in its group."
-     ]
-    },
-    "items": [
-     {
-      "kind": "text",
-      "value": "sat",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "She can swim.",
+      "value": "The duck can swim fast.",
       "size": "m"
      },
      {
@@ -1785,18 +1780,23 @@
      },
      {
       "kind": "text",
+      "value": "We go to school.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "pet",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wig",
+      "size": "l"
+     },
+     {
+      "kind": "text",
       "value": "n",
       "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "fan",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "I see a bug.",
-      "size": "m"
      }
     ],
     "bins": [
@@ -1820,12 +1820,12 @@
      }
     ],
     "answerBin": [
-     1,
      2,
      0,
-     0,
+     2,
      1,
-     2
+     1,
+     0
     ],
     "explanation": {
      "speak": [
@@ -1834,16 +1834,16 @@
       },
       "is one letter.",
       {
-       "word": "sat"
+       "word": "pet"
       },
       "is a word: letters together.",
-      "She can swim.",
+      "The duck can swim fast.",
       "That is a sentence: words together."
      ],
      "steps": [
       "h is one letter.",
-      "sat is a word: letters together.",
-      "\"She can swim.\" is a sentence: words together."
+      "pet is a word: letters together.",
+      "\"The duck can swim fast.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
@@ -1855,7 +1855,7 @@
        },
        {
         "kind": "text",
-        "value": "sat",
+        "value": "pet",
         "size": "l"
        }
       ]
@@ -1864,7 +1864,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 6,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"sat\",\"She can swim.\",\"h\",\"n\",\"fan\",\"I see a bug.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"The duck can swim fast.\",\"h\",\"We go to school.\",\"pet\",\"wig\",\"n\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -1874,11 +1874,11 @@
      "target": "letter|word|sentence",
      "items": [
       "p",
-      "dog",
-      "z",
       "We can run.",
-      "top",
-      "She can swim."
+      "pop",
+      "can",
+      "I like cake.",
+      "z"
      ],
      "bins": [
       "letter",
@@ -1900,28 +1900,28 @@
      },
      {
       "kind": "text",
-      "value": "dog",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "z",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "We can run.",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "top",
+      "value": "pop",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "She can swim.",
+      "value": "can",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "I like cake.",
       "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "z",
+      "size": "l"
      }
     ],
     "bins": [
@@ -1946,11 +1946,11 @@
     ],
     "answerBin": [
      0,
-     1,
-     0,
      2,
      1,
-     2
+     1,
+     2,
+     0
     ],
     "explanation": {
      "speak": [
@@ -1959,7 +1959,7 @@
       },
       "is one letter.",
       {
-       "word": "dog"
+       "word": "pop"
       },
       "is a word: letters together.",
       "We can run.",
@@ -1967,7 +1967,7 @@
      ],
      "steps": [
       "p is one letter.",
-      "dog is a word: letters together.",
+      "pop is a word: letters together.",
       "\"We can run.\" is a sentence: words together."
      ],
      "visual": {
@@ -1980,7 +1980,7 @@
        },
        {
         "kind": "text",
-        "value": "dog",
+        "value": "pop",
         "size": "l"
        }
       ]
@@ -1989,7 +1989,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 7,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"p\",\"dog\",\"z\",\"We can run.\",\"top\",\"She can swim.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"p\",\"We can run.\",\"pop\",\"can\",\"I like cake.\",\"z\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -1998,12 +1998,12 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "hen",
-      "I have a big dog.",
-      "d",
-      "box",
+      "We go to school.",
+      "We can play in the snow.",
+      "bed",
       "t",
-      "The cat is on the mat."
+      "fin",
+      "d"
      ],
      "bins": [
       "letter",
@@ -2020,22 +2020,17 @@
     "items": [
      {
       "kind": "text",
-      "value": "hen",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "I have a big dog.",
+      "value": "We go to school.",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "d",
-      "size": "l"
+      "value": "We can play in the snow.",
+      "size": "m"
      },
      {
       "kind": "text",
-      "value": "box",
+      "value": "bed",
       "size": "l"
      },
      {
@@ -2045,8 +2040,13 @@
      },
      {
       "kind": "text",
-      "value": "The cat is on the mat.",
-      "size": "m"
+      "value": "fin",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "d",
+      "size": "l"
      }
     ],
     "bins": [
@@ -2070,42 +2070,42 @@
      }
     ],
     "answerBin": [
-     1,
      2,
-     0,
+     2,
      1,
      0,
-     2
+     1,
+     0
     ],
     "explanation": {
      "speak": [
       {
-       "letter": "d"
+       "letter": "t"
       },
       "is one letter.",
       {
-       "word": "hen"
+       "word": "bed"
       },
       "is a word: letters together.",
-      "I have a big dog.",
+      "We go to school.",
       "That is a sentence: words together."
      ],
      "steps": [
-      "d is one letter.",
-      "hen is a word: letters together.",
-      "\"I have a big dog.\" is a sentence: words together."
+      "t is one letter.",
+      "bed is a word: letters together.",
+      "\"We go to school.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "d",
+        "value": "t",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "hen",
+        "value": "bed",
         "size": "l"
        }
       ]
@@ -2114,7 +2114,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 8,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"hen\",\"I have a big dog.\",\"d\",\"box\",\"t\",\"The cat is on the mat.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"We go to school.\",\"We can play in the snow.\",\"bed\",\"t\",\"fin\",\"d\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -2123,12 +2123,12 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "w",
-      "I like cake.",
+      "We go to school.",
       "hat",
-      "He can see a red bus.",
-      "top",
-      "b"
+      "I see a bug.",
+      "w",
+      "b",
+      "wet"
      ],
      "bins": [
       "letter",
@@ -2145,12 +2145,7 @@
     "items": [
      {
       "kind": "text",
-      "value": "w",
-      "size": "l"
-     },
-     {
-      "kind": "text",
-      "value": "I like cake.",
+      "value": "We go to school.",
       "size": "m"
      },
      {
@@ -2160,17 +2155,22 @@
      },
      {
       "kind": "text",
-      "value": "He can see a red bus.",
+      "value": "I see a bug.",
       "size": "m"
      },
      {
       "kind": "text",
-      "value": "top",
+      "value": "w",
       "size": "l"
      },
      {
       "kind": "text",
       "value": "b",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "wet",
       "size": "l"
      }
     ],
@@ -2195,12 +2195,12 @@
      }
     ],
     "answerBin": [
+     2,
+     1,
+     2,
      0,
-     2,
-     1,
-     2,
-     1,
-     0
+     0,
+     1
     ],
     "explanation": {
      "speak": [
@@ -2212,13 +2212,13 @@
        "word": "hat"
       },
       "is a word: letters together.",
-      "I like cake.",
+      "We go to school.",
       "That is a sentence: words together."
      ],
      "steps": [
       "w is one letter.",
       "hat is a word: letters together.",
-      "\"I like cake.\" is a sentence: words together."
+      "\"We go to school.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
@@ -2239,7 +2239,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 9,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"w\",\"I like cake.\",\"hat\",\"He can see a red bus.\",\"top\",\"b\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"We go to school.\",\"hat\",\"I see a bug.\",\"w\",\"b\",\"wet\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    },
    {
     "type": "sort",
@@ -2248,12 +2248,12 @@
      "relation": "printKind",
      "target": "letter|word|sentence",
      "items": [
-      "d",
       "g",
-      "The cat is on the mat.",
-      "We can run.",
-      "dig",
-      "bug"
+      "bus",
+      "The sun is hot.",
+      "d",
+      "web",
+      "She can swim."
      ],
      "bins": [
       "letter",
@@ -2270,33 +2270,33 @@
     "items": [
      {
       "kind": "text",
-      "value": "d",
-      "size": "l"
-     },
-     {
-      "kind": "text",
       "value": "g",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "The cat is on the mat.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "We can run.",
-      "size": "m"
-     },
-     {
-      "kind": "text",
-      "value": "dig",
+      "value": "bus",
       "size": "l"
      },
      {
       "kind": "text",
-      "value": "bug",
+      "value": "The sun is hot.",
+      "size": "m"
+     },
+     {
+      "kind": "text",
+      "value": "d",
       "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "web",
+      "size": "l"
+     },
+     {
+      "kind": "text",
+      "value": "She can swim.",
+      "size": "m"
      }
     ],
     "bins": [
@@ -2321,41 +2321,41 @@
     ],
     "answerBin": [
      0,
-     0,
-     2,
-     2,
      1,
-     1
+     2,
+     0,
+     1,
+     2
     ],
     "explanation": {
      "speak": [
       {
-       "letter": "d"
+       "letter": "g"
       },
       "is one letter.",
       {
-       "word": "dig"
+       "word": "bus"
       },
       "is a word: letters together.",
-      "The cat is on the mat.",
+      "The sun is hot.",
       "That is a sentence: words together."
      ],
      "steps": [
-      "d is one letter.",
-      "dig is a word: letters together.",
-      "\"The cat is on the mat.\" is a sentence: words together."
+      "g is one letter.",
+      "bus is a word: letters together.",
+      "\"The sun is hot.\" is a sentence: words together."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "d",
+        "value": "g",
         "size": "xl"
        },
        {
         "kind": "text",
-        "value": "dig",
+        "value": "bus",
         "size": "l"
        }
       ]
@@ -2364,7 +2364,7 @@
     "skillId": "E-K-A5",
     "level": 2,
     "seed": 10,
-    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"d\",\"g\",\"The cat is on the mat.\",\"We can run.\",\"dig\",\"bug\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
+    "key": "E-K-A5|2|{\"bins\":[\"letter\",\"word\",\"sentence\"],\"items\":[\"g\",\"bus\",\"The sun is hot.\",\"d\",\"web\",\"She can swim.\"],\"relation\":\"printKind\",\"target\":\"letter|word|sentence\"}"
    }
   ]
  }

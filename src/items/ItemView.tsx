@@ -19,6 +19,7 @@ interface Props {
   disabled: boolean;
   onChange: (response: Response | null) => void;
   onSpeak: (say: Say) => void;
+  right?: boolean; // the answer was just marked right
 }
 
 // The answer area for any question. Give it a `key` that changes with the question, so it starts fresh.

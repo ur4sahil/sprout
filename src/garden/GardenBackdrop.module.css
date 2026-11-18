@@ -1,0 +1,45 @@
+/* The far and middle layers. Each is a long picture laid along the scene from its left end; the garden moves it
+   sideways as the child scrolls (a number set from code), so it seems further away. */
+.far,
+.mid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: calc(var(--set-strip) * var(--set-unit));
+  pointer-events: none;
+  will-change: transform;
+}
+
+.far {
+  transform: translateX(var(--set-far-shift, 0));
+}
+
+.mid {
+  transform: translateX(var(--set-mid-shift, 0));
+}
+
+/* Clouds drift a little way and back. */
+.cloud {
+  animation: drift var(--garden-cloud) ease-in-out infinite alternate;
+  animation-delay: calc(var(--set-sway-shift) * var(--garden-cloud) * -2);
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--garden-drift));
+  }
+}
+
+:global(:root[data-calm]) .cloud {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation: none;
+  }
+}

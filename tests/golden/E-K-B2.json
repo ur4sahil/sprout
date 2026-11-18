@@ -1,6 +1,6 @@
 {
  "skillId": "E-K-B2",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "listen",
@@ -99,12 +99,12 @@
     "type": "choice",
     "mode": "listen",
     "facts": {
-     "target": "lip",
+     "target": "bin",
      "relation": "lastLetter",
      "options": [
-      "l",
-      "k",
-      "p"
+      "n",
+      "v",
+      "l"
      ]
     },
     "prompt": {
@@ -112,70 +112,70 @@
      "speak": [
       "Which letter does",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "end with?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row"
     },
     "options": [
      {
       "kind": "text",
+      "value": "n",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
+      "value": "v",
+      "size": "xl"
+     },
+     {
+      "kind": "text",
       "value": "l",
-      "size": "xl"
-     },
-     {
-      "kind": "text",
-      "value": "k",
-      "size": "xl"
-     },
-     {
-      "kind": "text",
-      "value": "p",
       "size": "xl"
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "ends with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip ends with the letter p."
+      "Bin ends with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "lip",
+        "value": "bin",
         "size": "l",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        }
@@ -185,7 +185,7 @@
     "skillId": "E-K-B2",
     "level": 1,
     "seed": 1,
-    "key": "E-K-B2|1|{\"relation\":\"lastLetter\",\"target\":\"lip\"}"
+    "key": "E-K-B2|1|{\"relation\":\"lastLetter\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -1113,12 +1113,12 @@
     "type": "choice",
     "mode": "listen",
     "facts": {
-     "target": "lip",
+     "target": "bin",
      "relation": "lastLetter",
      "options": [
-      "q",
-      "d",
-      "p"
+      "m",
+      "h",
+      "n"
      ]
     },
     "prompt": {
@@ -1126,31 +1126,31 @@
      "speak": [
       "Which letter does",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "end with?"
      ]
     },
     "stimulus": {
      "kind": "emojiGroup",
-     "emoji": "👄",
+     "emoji": "🗑️",
      "count": 1,
      "layout": "row"
     },
     "options": [
      {
       "kind": "text",
-      "value": "q",
+      "value": "m",
       "size": "xl"
      },
      {
       "kind": "text",
-      "value": "d",
+      "value": "h",
       "size": "xl"
      },
      {
       "kind": "text",
-      "value": "p",
+      "value": "n",
       "size": "xl"
      }
     ],
@@ -1158,38 +1158,38 @@
     "explanation": {
      "speak": [
       {
-       "word": "lip"
+       "word": "bin"
       },
       "ends with the letter",
       {
-       "letter": "p"
+       "letter": "n"
       },
       "."
      ],
      "steps": [
-      "Lip ends with the letter p."
+      "Bin ends with the letter n."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "text",
-        "value": "lip",
+        "value": "bin",
         "size": "l",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        }
@@ -1199,7 +1199,7 @@
     "skillId": "E-K-B2",
     "level": 2,
     "seed": 2,
-    "key": "E-K-B2|2|{\"relation\":\"lastLetter\",\"target\":\"lip\"}"
+    "key": "E-K-B2|2|{\"relation\":\"lastLetter\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",

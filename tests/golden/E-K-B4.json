@@ -1,6 +1,6 @@
 {
  "skillId": "E-K-B4",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "read",
@@ -1164,15 +1164,15 @@
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "lip",
+     "target": "bin",
      "relation": "cvc",
      "read": [
-      "lip"
+      "bin"
      ],
      "options": [
-      "pen",
       "hen",
-      "lip"
+      "sun",
+      "bin"
      ]
     },
     "prompt": {
@@ -1183,21 +1183,10 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "lip",
+     "value": "bin",
      "size": "xl"
     },
     "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🖊️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "pen"
-       }
-      ]
-     },
      {
       "kind": "emojiGroup",
       "emoji": "🐔",
@@ -1211,12 +1200,23 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "☀️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "sun"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🗑️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bin"
        }
       ]
      }
@@ -1226,34 +1226,34 @@
      "speak": [
       "This word is",
       {
-       "word": "lip"
+       "word": "bin"
       },
       "."
      ],
      "steps": [
-      "This word is lip."
+      "This word is bin."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "lip",
+        "value": "bin",
         "size": "xl",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "👄",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "lip"
+          "word": "bin"
          }
         ]
        }
@@ -1263,7 +1263,7 @@
     "skillId": "E-K-B4",
     "level": 2,
     "seed": 1,
-    "key": "E-K-B4|2|{\"read\":[\"lip\"],\"relation\":\"cvc\",\"target\":\"lip\"}"
+    "key": "E-K-B4|2|{\"read\":[\"bin\"],\"relation\":\"cvc\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -1276,7 +1276,7 @@
      ],
      "options": [
       "pin",
-      "lip",
+      "bin",
       "fox"
      ]
     },
@@ -1305,12 +1305,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👄",
+      "emoji": "🗑️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lip"
+        "word": "bin"
        }
       ]
      },
@@ -2216,15 +2216,15 @@
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "pig",
+     "target": "pin",
      "relation": "cvc",
      "read": [
-      "pig"
+      "pin"
      ],
      "options": [
-      "pin",
-      "hen",
-      "pig"
+      "bin",
+      "pan",
+      "pin"
      ]
     },
     "prompt": {
@@ -2235,10 +2235,32 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "pig",
+     "value": "pin",
      "size": "xl"
     },
     "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🗑️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bin"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍳",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pan"
+       }
+      ]
+     },
      {
       "kind": "emojiGroup",
       "emoji": "📌",
@@ -2249,28 +2271,6 @@
         "word": "pin"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐔",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "hen"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐷",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "pig"
-       }
-      ]
      }
     ],
     "answerIndex": 2,
@@ -2278,34 +2278,34 @@
      "speak": [
       "This word is",
       {
-       "word": "pig"
+       "word": "pin"
       },
       "."
      ],
      "steps": [
-      "This word is pig."
+      "This word is pin."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "pig",
+        "value": "pin",
         "size": "xl",
         "speak": [
          {
-          "word": "pig"
+          "word": "pin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🐷",
+        "emoji": "📌",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "pig"
+          "word": "pin"
          }
         ]
        }
@@ -2315,7 +2315,7 @@
     "skillId": "E-K-B4",
     "level": 3,
     "seed": 1,
-    "key": "E-K-B4|3|{\"read\":[\"pig\"],\"relation\":\"cvc\",\"target\":\"pig\"}"
+    "key": "E-K-B4|3|{\"read\":[\"pin\"],\"relation\":\"cvc\",\"target\":\"pin\"}"
    },
    {
     "type": "choice",
@@ -2426,14 +2426,14 @@
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "fox",
+     "target": "bin",
      "relation": "cvc",
      "read": [
-      "fox"
+      "bin"
      ],
      "options": [
-      "fox",
-      "box",
+      "bin",
+      "pin",
       "web"
      ]
     },
@@ -2445,29 +2445,29 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "fox",
+     "value": "bin",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🦊",
+      "emoji": "🗑️",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "fox"
+        "word": "bin"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "📦",
+      "emoji": "📌",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "box"
+        "word": "pin"
        }
       ]
      },
@@ -2488,34 +2488,34 @@
      "speak": [
       "This word is",
       {
-       "word": "fox"
+       "word": "bin"
       },
       "."
      ],
      "steps": [
-      "This word is fox."
+      "This word is bin."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "fox",
+        "value": "bin",
         "size": "xl",
         "speak": [
          {
-          "word": "fox"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "🦊",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "fox"
+          "word": "bin"
          }
         ]
        }
@@ -2525,7 +2525,7 @@
     "skillId": "E-K-B4",
     "level": 3,
     "seed": 3,
-    "key": "E-K-B4|3|{\"read\":[\"fox\"],\"relation\":\"cvc\",\"target\":\"fox\"}"
+    "key": "E-K-B4|3|{\"read\":[\"bin\"],\"relation\":\"cvc\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",
@@ -2636,15 +2636,15 @@
     "type": "choice",
     "mode": "read",
     "facts": {
-     "target": "pin",
+     "target": "bin",
      "relation": "cvc",
      "read": [
-      "pin"
+      "bin"
      ],
      "options": [
-      "pan",
-      "pen",
-      "pin"
+      "cup",
+      "pin",
+      "bin"
      ]
     },
     "prompt": {
@@ -2655,29 +2655,18 @@
     },
     "stimulus": {
      "kind": "text",
-     "value": "pin",
+     "value": "bin",
      "size": "xl"
     },
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🍳",
+      "emoji": "🥤",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "pan"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🖊️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "pen"
+        "word": "cup"
        }
       ]
      },
@@ -2691,6 +2680,17 @@
         "word": "pin"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🗑️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bin"
+       }
+      ]
      }
     ],
     "answerIndex": 2,
@@ -2698,34 +2698,34 @@
      "speak": [
       "This word is",
       {
-       "word": "pin"
+       "word": "bin"
       },
       "."
      ],
      "steps": [
-      "This word is pin."
+      "This word is bin."
      ],
      "visual": {
       "kind": "row",
       "children": [
        {
         "kind": "text",
-        "value": "pin",
+        "value": "bin",
         "size": "xl",
         "speak": [
          {
-          "word": "pin"
+          "word": "bin"
          }
         ]
        },
        {
         "kind": "emojiGroup",
-        "emoji": "📌",
+        "emoji": "🗑️",
         "count": 1,
         "layout": "row",
         "speak": [
          {
-          "word": "pin"
+          "word": "bin"
          }
         ]
        }
@@ -2735,7 +2735,7 @@
     "skillId": "E-K-B4",
     "level": 3,
     "seed": 5,
-    "key": "E-K-B4|3|{\"read\":[\"pin\"],\"relation\":\"cvc\",\"target\":\"pin\"}"
+    "key": "E-K-B4|3|{\"read\":[\"bin\"],\"relation\":\"cvc\",\"target\":\"bin\"}"
    },
    {
     "type": "choice",

@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import { feelSound } from './itemFeel';
 import type { ItemProps } from './itemProps';
 import styles from './items.module.css';
 
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-// Type a number on an on-screen pad. The device keyboard never opens.
-export default function NumberPadItem({ question, disabled, onChange }: ItemProps<'numberPad'>) {
+// Type a number on an on-screen pad. The device keyboard never opens. Each key ticks and its digit drops into
+// the box; when the answer is right the number glows.
+export default function NumberPadItem({ question, disabled, onChange, right }: ItemProps<'numberPad'>) {
   const [digits, setDigits] = useState('');
 
   function update(next: string): void {
@@ -15,14 +17,20 @@ export default function NumberPadItem({ question, disabled, onChange }: ItemProp
 
   function press(key: string): void {
     if (digits.length >= question.maxDigits) return;
+    feelSound('tick');
     // A leading zero is replaced, so "07" cannot be typed. Zero itself can.
     update(digits === '0' ? key : digits + key);
   }
 
   return (
     <div className={styles.column}>
-      <output className={styles.display} aria-label="Your answer" data-display="">
-        {digits}
+      <output className={`${styles.display} ${right ? styles.glow : ''}`} aria-label="Your answer" data-display="" data-feel={right ? '' : undefined} data-glow={right ? '' : undefined}>
+        {digits.split('').map((digit, place) => (
+          // Keyed by place and digit, so only a digit that has just been typed drops in.
+          <span key={`${place}${digit}`} className={styles.dropIn} data-feel="" data-digit="">
+            {digit}
+          </span>
+        ))}
       </output>
       <div className={styles.pad} role="group" aria-label="Number pad">
         {KEYS.map((key) => (

@@ -78,7 +78,7 @@ function oddWord(level: Level, rng: Rng): QuestionDraft {
   const odd = rng.pick(WORD_CLASSES[other] as readonly string[]);
   const choices = rng.shuffle([...same, odd]);
   const prompt = 'Which word does not belong?';
-  const label = (name: string): string => ({ fruit: 'fruits', vegetable: 'vegetables', farmAnimal: 'farm animals', wildAnimal: 'wild animals', land: 'things that go on land', water: 'things that go on water', clothes: 'clothes', furniture: 'furniture', colour: 'colours', shape: 'shapes', weather: 'kinds of weather' })[name] ?? name;
+  const label = (name: string): string => ({ fruit: 'fruits', vegetable: 'vegetables', farmAnimal: 'farm animals', wildAnimal: 'wild animals', land: 'things that go on land', water: 'things that go on water', clothes: 'clothes', furniture: 'furniture', colour: 'colors', shape: 'shapes', weather: 'kinds of weather' })[name] ?? name;
   return {
     type: 'choice',
     mode: 'look',

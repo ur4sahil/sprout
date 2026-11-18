@@ -2,18 +2,26 @@ import { useState } from 'react';
 import CenterRow from '../components/CenterRow';
 import { describeVisual } from '../engine/describe';
 import VisualView from '../visuals/VisualView';
+import { feelSound, turn } from './itemFeel';
 import type { ItemProps } from './itemProps';
 import { speakable } from './itemProps';
 import styles from './items.module.css';
 
-// Tap an item, then a bin. Tap an item in a bin to take it back out.
-export default function SortItem({ question, disabled, onChange, onSpeak }: ItemProps<'sort'>) {
+// Tap an item, then a bin. Tap an item in a bin to take it back out. With an item in hand every group lifts to
+// take it, and the item drops in with a soft sound. When the answer is right each group gives a happy shake.
+export default function SortItem({ question, disabled, onChange, onSpeak, right }: ItemProps<'sort'>) {
   const [bins, setBins] = useState<(number | null)[]>(() => question.items.map(() => null));
   const [held, setHeld] = useState<number | null>(null);
 
   function update(next: (number | null)[]): void {
     setBins(next);
     onChange(next.every((bin) => bin !== null) ? { bins: next as number[] } : null);
+  }
+
+  function dropInto(binIndex: number): void {
+    feelSound('drop');
+    update(bins.map((value, index) => (index === held ? binIndex : value)));
+    setHeld(null);
   }
 
   return (
@@ -44,7 +52,11 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
         {question.bins.map((bin, binIndex) => (
           <div
             key={binIndex}
-            className={styles.bin}
+            className={`${styles.bin} ${held !== null && !disabled ? styles.binReady : ''} ${right ? styles.binHappy : ''}`}
+            style={right ? turn(binIndex) : undefined}
+            data-feel={right ? '' : undefined}
+            data-ready={held !== null && !disabled ? '' : undefined}
+            data-happy={right ? '' : undefined}
             role="button"
             tabIndex={disabled ? -1 : 0}
             aria-label={`${bin.label} group`}
@@ -52,14 +64,12 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
             data-bin={binIndex}
             onClick={() => {
               if (disabled || held === null) return;
-              update(bins.map((value, index) => (index === held ? binIndex : value)));
-              setHeld(null);
+              dropInto(binIndex);
             }}
             onKeyDown={(event) => {
               if (disabled || held === null || (event.key !== 'Enter' && event.key !== ' ')) return;
               event.preventDefault();
-              update(bins.map((value, index) => (index === held ? binIndex : value)));
-              setHeld(null);
+              dropInto(binIndex);
             }}
           >
             {bin.icon && <VisualView visual={bin.icon} />}
@@ -70,7 +80,8 @@ export default function SortItem({ question, disabled, onChange, onSpeak }: Item
                   <button
                     key={index}
                     type="button"
-                    className={`${styles.tile} ${styles.small}`}
+                    className={`${styles.tile} ${styles.small} ${styles.dropIn}`}
+                    data-feel=""
                     aria-label={`${describeVisual(item)}, in ${bin.label}. Tap to take out`}
                     disabled={disabled}
                     data-placed={index}
