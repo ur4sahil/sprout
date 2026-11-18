@@ -1,0 +1,73 @@
+/* How the whole app feels under the finger (plan section 19, phase 1). Loaded once, after the tokens. */
+
+/* Touch response: every button and tile sinks a little within 90 ms of the finger, and comes back with a bounce. */
+button,
+[role='button'],
+[role='tab'],
+[role='switch'] {
+  transition: transform var(--t-pop) var(--ease-bounce);
+}
+
+button:not(:disabled):active,
+[role='button']:active,
+[role='tab']:active,
+[role='switch']:active {
+  transform: scale(var(--press-scale));
+  transition: transform var(--t-tap) var(--ease-settle);
+}
+
+/* A thing arriving from the side: a new question, a new card. */
+@keyframes feel-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(var(--slide-from));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes feel-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+[data-arrive] {
+  animation: feel-slide-in var(--t-move) var(--ease-settle) both;
+}
+
+/* Calm mode (a switch for each child), and the device's own Reduce Motion: movement becomes a short fade, loops
+   stop, nothing bounces. */
+:root[data-calm] *,
+:root[data-calm] *::before,
+:root[data-calm] *::after {
+  animation-duration: var(--t-calm) !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: var(--t-calm) !important;
+  transition-timing-function: linear !important;
+}
+
+:root[data-calm] button:active,
+:root[data-calm] [role='button']:active {
+  transform: none;
+}
+
+:root[data-calm] [data-arrive] {
+  animation-name: feel-fade-in;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:active,
+  [role='button']:active {
+    transform: none;
+  }
+
+  [data-arrive] {
+    animation: feel-fade-in var(--t-calm) linear both;
+  }
+}

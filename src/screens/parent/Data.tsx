@@ -23,6 +23,7 @@ const CREDITS = [
   'The order of the math skills and the kinds of question follow Illustrative Mathematics K–5, © Illustrative Mathematics, used under the CC BY 4.0 licence.',
   'Pictures are the emoji that come with this device.',
   'Skills follow the Common Core State Standards. © Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved.',
+  'Sound effects are from Interface Sounds by Kenney (kenney.nl), given to the public domain (CC0).',
   'Built with React, Vite, zustand, zod and idb, each under its own open licence.',
 ];
 

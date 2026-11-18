@@ -124,6 +124,7 @@ export default function Settings() {
           <ToggleField label="Pre-reader mode" hint="Picture tiles and spoken buttons, for a child who cannot read yet." checked={child.settings.preReader} onChange={(preReader) => set({ preReader })} />
           <ToggleField label="Gentle scoring" hint="A wrong answer takes fewer points away." checked={child.settings.gentleScoring} onChange={(gentleScoring) => set({ gentleScoring })} />
           <ToggleField label="Show a timer" checked={child.settings.showTimer} onChange={(showTimer) => set({ showTimer })} />
+          <ToggleField label="Calm mode" hint="Movement becomes short fades: no bouncing, no confetti. The iPad's own Reduce Motion setting does the same." checked={child.settings.calm} onChange={(calm) => set({ calm })} />
           {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
           <h3>Today's plan</h3>
           <p className={styles.soft}>The daily goal on the home screen is the plan's questions added up.</p>

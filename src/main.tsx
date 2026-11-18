@@ -6,6 +6,7 @@ import { setVoiceOn } from './audio/voice';
 // The typeface is bundled with the app, so it is there with no internet.
 import '@fontsource-variable/nunito';
 import './styles/tokens.css';
+import './styles/feel.css';
 
 // The recorded voice is used by the real app. Tests run without it.
 setVoiceOn(true);

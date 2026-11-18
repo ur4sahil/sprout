@@ -17,6 +17,15 @@ import { LESSONS as reasoning } from './more/reasoning';
 import { LESSONS as kPictures } from './more/kPictures';
 import { LESSONS as g1Pictures } from './more/g1Pictures';
 import { LESSONS as reasoningShapes } from './more/reasoningShapes';
+import { LESSONS as kMathAPart2 } from './part2/kMathA';
+import { LESSONS as kMathBPart2 } from './part2/kMathB';
+import { LESSONS as kMathCPart2 } from './part2/kMathC';
+import { LESSONS as g1MathCPart2 } from './part2/g1MathC';
+import { LESSONS as kElaPart2 } from './part2/kEla';
+import { LESSONS as g1MathAPart2 } from './part2/g1MathA';
+import { LESSONS as g1MathBPart2 } from './part2/g1MathB';
+import { LESSONS as g1ElaPart2 } from './part2/g1Ela';
+import { LESSONS as reasoningPart2 } from './part2/reasoning';
 import type { Lesson } from './types';
 
 // The skills that have a lesson that teaches (plan section 16). Any other skill keeps its old four beats.
@@ -37,6 +46,38 @@ export const LESSONS: Readonly<Record<string, () => Lesson>> = Object.fromEntrie
     return lesson.look === 'rich' ? lesson : rich(lesson, 'table');
   }]),
 );
+
+// Part 2 (the owner's choice, Nov 18, 2026): a second short lesson for the skill's harder levels, for the skills whose
+// first lesson stops at the starting levels. Offered on the bulb's choice screen and at the half-way milestone.
+const richly = (written: Readonly<Record<string, () => Lesson>>): Readonly<Record<string, () => Lesson>> =>
+  Object.fromEntries(
+    Object.entries(written).map(([skillId, make]) => [skillId, () => {
+      const lesson = make();
+      return lesson.look === 'rich' ? lesson : rich(lesson, 'table');
+    }]),
+  );
+export const LESSONS_PART2: Readonly<Record<string, () => Lesson>> = richly({ ...kMathAPart2, ...kMathBPart2, ...kMathCPart2, ...g1MathCPart2, ...kElaPart2, ...g1MathAPart2, ...g1MathBPart2, ...g1ElaPart2, ...reasoningPart2 });
+export const PART2_AT_SCORE = 50; // the score from which part 2 is put forward
+
+const madePart2 = new Map<string, Lesson>();
+
+export function teachingPart2For(skillId: string): Lesson | null {
+  const make = LESSONS_PART2[skillId];
+  if (!make) return null;
+  const known = madePart2.get(skillId);
+  if (known) return known;
+  const lesson = make();
+  madePart2.set(skillId, lesson);
+  return lesson;
+}
+
+// Every written lesson, first parts then second parts: [its name for a person, the skill, how to make it].
+export function allLessons(): [string, string, () => Lesson][] {
+  return [
+    ...Object.entries(LESSONS).map(([skillId, make]): [string, string, () => Lesson] => [skillId, skillId, make]),
+    ...Object.entries(LESSONS_PART2).map(([skillId, make]): [string, string, () => Lesson] => [`${skillId} part 2`, skillId, make]),
+  ];
+}
 
 const made = new Map<string, Lesson>();
 

@@ -14,7 +14,7 @@ import { voicePieces, voiceText } from '../src/audio/voice';
 import { CATALOGUE } from '../src/content/catalogue';
 import { exampleQuestion, generatorFor } from '../src/content/registry';
 import { FACT_SETS } from '../src/engine/facts';
-import { LESSONS } from '../src/lessons';
+import { allLessons } from '../src/lessons';
 import type { Say } from '../src/engine/types';
 
 const [out, lessonOut] = process.argv.slice(2);
@@ -53,9 +53,9 @@ const groups: Record<string, Say[]> = {
     ]),
   ],
   // Lessons that teach (plan section 16): each turn's question is read at the normal pace.
-  'lesson turns': Object.values(LESSONS).flatMap((make) => make().parts.flatMap((part) => (part.kind === 'turn' ? [part.turn.question.prompt.speak] : []))),
+  'lesson turns': allLessons().flatMap(([, , make]) => make().parts.flatMap((part) => (part.kind === 'turn' ? [part.turn.question.prompt.speak] : []))),
   // ... and their moments and whys at the lesson pace.
-  'teaching lessons': Object.values(LESSONS).flatMap((make) => make().parts.flatMap((part) => (part.kind === 'show' ? [part.moment.say] : part.turn.why.map((each) => each.say)))),
+  'teaching lessons': allLessons().flatMap(([, , make]) => make().parts.flatMap((part) => (part.kind === 'show' ? [part.moment.say] : part.turn.why.map((each) => each.say)))),
   'fast facts': FACT_SETS.flatMap((set) => set.facts.flatMap((fact) => [factAskSay(fact), factMissSay(fact)])),
 };
 

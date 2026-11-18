@@ -43,6 +43,8 @@
   --band-5: #ede7f6;
   --band-6: #e0f2f1;
   --color-star: #f2a900;
+  --color-petal: #e86a92; /* particles: petals */
+  --color-sky: #5aa9e6; /* particles: drops and cool sparkles */
 
   /* spacing */
   --space-1: 4px;
@@ -119,6 +121,16 @@
   --icon-speaker: 1.6rem;
   --icon-speaker-big: 3.2rem;
 
+  /* the shared timings and movements (plan section 19): every screen moves on these, so the app moves as one thing */
+  --t-tap: 90ms; /* a button going down under the finger */
+  --t-pop: 180ms; /* a thing appearing, a tick, a badge */
+  --t-move: 320ms; /* a tile sliding, a question arriving */
+  --t-scene: 900ms; /* one screen changing to another */
+  --t-calm: 150ms; /* Calm mode: every movement becomes a fade this long */
+  --ease-settle: cubic-bezier(0.2, 0.8, 0.2, 1); /* starts fast, eases to a stop */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* overshoots a little and settles back */
+  --press-scale: 0.96; /* how far a pressed button sinks */
+  --slide-from: 6%; /* how far to the side a new question starts */
   /* the lesson stage (plan section 16): how long a piece takes to glide, and the ring around a lit piece */
   --lesson-glide: 650ms;
   --lesson-ring: 3px;

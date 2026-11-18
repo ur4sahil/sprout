@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { LESSONS } from '../../src/lessons';
+import { allLessons } from '../../src/lessons';
 import { ACTOR_H, ACTOR_W, actorFocus, actorPose } from '../../src/lessons/actor';
 import { group, art, pointAt, scene, set, withoutHand } from '../../src/lessons/build';
 
@@ -33,7 +33,7 @@ describe('the lesson host', () => {
   });
 
   it('stays on the stage and keeps its arm a sensible length in every scene of every lesson', () => {
-    for (const [skillId, make] of Object.entries(LESSONS)) {
+    for (const [skillId, , make] of allLessons()) {
       const scenes = make().parts.flatMap((part) => (part.kind === 'show' ? [part.moment.scene] : part.turn.why.map((each) => each.scene)));
       let before = null as (typeof scenes)[number] | null;
       let left: number | null = null;

@@ -4,7 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { setTimingForTests } from '../../src/app/timing';
 import TeachLesson from '../../src/components/TeachLesson';
 import { generateQuestion } from '../../src/content/registry';
-import { LESSONS } from '../../src/lessons';
+import { allLessons } from '../../src/lessons';
 import { moment, scene } from '../../src/lessons/build';
 import type { Lesson } from '../../src/lessons/types';
 
@@ -100,10 +100,9 @@ describe('a lesson that teaches', () => {
 
 // Every written lesson: its opening moments play on the real screen and its first turn's question is drawn, whatever
 // kind of question it is (choice, sort, match, tiles ...), and every scene of the lesson can be drawn.
-describe.each(Object.keys(LESSONS))('the %s lesson on screen', (skillId) => {
+describe.each(allLessons())('the %s lesson on screen', (_name, _skillId, make) => {
   it('plays to its first turn and draws that question', async () => {
-    const made = LESSONS[skillId]?.();
-    if (!made) throw new Error(`No lesson for ${skillId}`);
+    const made = make();
     render(<TeachLesson lesson={made} rate={0.85} onPractise={() => undefined} />);
     await screen.findByText('Your turn!', undefined, { timeout: 8000 });
     expect(document.querySelector('[data-your-turn]')).not.toBeNull();

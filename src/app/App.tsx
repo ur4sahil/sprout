@@ -17,6 +17,7 @@ import { keepErrorsInDeviceRecord, openRepo, requestPersistence, syncFamily, wat
 import type { SyncResult } from '../storage/sync';
 import styles from './App.module.css';
 import { runCatalogueGrowth } from './checkIn';
+import { applyChildFeel, startTouchSounds } from './feel';
 import { hasPin } from './pin';
 import { routes } from './routes';
 import { finishUpdate, isSafeToUpdate, startUpdates, watchForUpdates } from './updates';
@@ -39,6 +40,11 @@ export default function App() {
   if (!steppedBack && held !== location) setHeld(location);
   const screen = useRoutes(routes, steppedBack ? held : location);
   const status = useAppStore((s) => s.account.status);
+
+  // How the app feels follows the child who is playing: their world, Calm mode, and a sound under every touch.
+  const child = useAppStore((s) => s.child);
+  useEffect(() => applyChildFeel(child), [child]);
+  useEffect(() => startTouchSounds(), []);
 
   const storageSaved = useAppStore((s) => s.storageSaved);
   // The family's grown-ups PIN. A family that has none yet chooses one before the profile picker.

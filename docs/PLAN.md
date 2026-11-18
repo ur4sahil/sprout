@@ -2640,3 +2640,14 @@ The owner watched the four-beat lessons with his children and found them unusabl
 - Each part has a fixed size of its own. The daily goal is the plan's questions added up (owner's choice, Nov 18, 2026): the ring, the profile card and the dashboard show answers inside the plan's parts out of that total, and the old Daily goal setting is gone. Answers past a part's size, or on skills outside the plan, do not count.
 - A grown-up sets the parts for each child in Settings: which subjects get a Practice part, whether to add something new each day, and the Mixed bag.
 - Play becomes "Start today's plan" and works through the parts in order; any part can also be tapped on its own.
+
+## 19. Game feel (decided by the owner on Nov 18, 2026)
+
+The app should feel like a game without being one: a place a child visits. The full plan, with its seven rules and eight phases, is the owner's document "Sprout: the game-feel plan". What is fixed here:
+
+- **Rules.** The learning is the play; a miss is never a loss; missing a day costs nothing; nothing to buy and nothing random; the grown-up's limits win; celebrations are short and can be tapped through; Calm mode is always an option.
+- **Worlds.** Everything about the look and feel comes from the current world (`src/worlds`): its words, colours, particles and sounds, and later its home scene, growth pictures and backdrops. The garden is the first world. A child's world is a setting (`world`); switching worlds changes nothing a child has earned, because progress is outside any world. A skill is shown in five stages from its score (`growthStage`): not started, 1 to 24, 25 to 74, 75 to 99, mastered.
+- **Phase 1, feel (built).** Shared timings and movements as tokens (`--t-tap`, `--t-pop`, `--t-move`, `--t-scene`, `--ease-settle`, `--ease-bounce`); every button and tile sinks under the finger (`src/styles/feel.css`); a tap sound under every control while a child plays (`src/app/feel.ts`); recorded sounds in `public/sounds` from Kenney's CC0 interface packs (`src/audio/sounds.ts`), with a right answer's sound able to climb a scale along a run; a particle engine (`src/lib/particles.ts`, `ParticleBurst`), used for sparkles on a right answer; a new question slides in (`data-arrive`); Calm mode, a switch per child (`calm`), which with the device's Reduce Motion turns movement into short fades and draws no particles.
+- **Phases 2 to 8** follow in order, each shown to the owner first: the answer sequences for each question type; the cast; the garden as home; the growth payoff; lessons in topic places with a camera; collecting and stories; music, seasons and polish.
+- **Part 2 lessons.** A skill whose first lesson stops at the starting levels has a second short lesson for its harder levels (`src/lessons/part2`, `LESSONS_PART2`), offered on the bulb's choice screen and put forward from a score of 50 (`PART2_AT_SCORE`).
+

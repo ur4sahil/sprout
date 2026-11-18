@@ -1,10 +1,11 @@
 // @vitest-environment node
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { build } from 'vite';
 import { describe, expect, it } from 'vitest';
+import { SOUND_NAMES } from '../../src/audio/sounds';
 
 function trackedFiles(): string[] {
   // Tracked files plus new ones not yet committed, minus anything git ignores.
@@ -29,9 +30,16 @@ describe('the public repo', () => {
     expect(found).toEqual([]);
   });
 
-  it('holds no audio file: the voice pack lives in private storage only', () => {
+  it('holds no voice recording: the voice lives in private storage only', () => {
+    // The one kind of audio in the repo is the short sound effects in public/sounds, which are public domain (CC0).
     const audio = trackedFiles().filter((name) => /\.(m4a|mp3|aac|wav|aiff?|ogg|caf|opus)$/i.test(name) || /voice-pack\.json$/i.test(name));
-    expect(audio).toEqual([]);
+    expect(audio.filter((name) => !/^public\/sounds\/[a-z-]+\.mp3$/.test(name))).toEqual([]);
+  });
+
+  it('keeps the sound effects small, and has one file for each sound the app names', () => {
+    const files = readdirSync('public/sounds').sort();
+    expect(files).toEqual([...SOUND_NAMES].map((name) => `${name}.mp3`).sort());
+    for (const file of files) expect(statSync(`public/sounds/${file}`).size, file).toBeLessThan(20_000);
   });
 
   it('does not track local secrets', () => {

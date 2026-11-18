@@ -4,6 +4,7 @@ import QuestionView from '../items/QuestionView';
 import BigButton from './BigButton';
 import ExplanationPanel from './ExplanationPanel';
 import Notice from './Notice';
+import ParticleBurst from './ParticleBurst';
 import styles from './QuestionStage.module.css';
 
 interface Props {
@@ -29,8 +30,9 @@ export default function QuestionStage({ question, phase, response, lastResponse,
     );
   }
   return (
-    <div className={`${styles.question} ${phase === 'correct' ? styles.correct : ''}`} data-phase={phase}>
+    <div key={question.key} className={`${styles.question} ${phase === 'correct' ? styles.correct : ''}`} data-phase={phase} data-arrive="">
       <QuestionView question={question} disabled={phase !== 'asking'} onChange={onChange} onSpeak={onSpeak} />
+      {phase === 'correct' && <ParticleBurst seed={question.seed} at={{ x: 0.5, y: 0.7 }} />}
       {saveError && <Notice role="alert">{saveError}</Notice>}
       {phase === 'correct' ? (
         <p className={styles.praise} role="status" data-correct="">

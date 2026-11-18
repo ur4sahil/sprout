@@ -6,7 +6,7 @@ import { generatorFor } from '../../src/content/registry';
 import { CATALOGUE } from '../../src/content/catalogue';
 import { validateQuestion } from '../../src/engine/validate';
 import type { OracleId, Question, Say, Visual } from '../../src/engine/types';
-import { LESSONS } from '../../src/lessons';
+import { LESSONS, LESSONS_PART2, allLessons } from '../../src/lessons';
 import type { Lesson, Moment } from '../../src/lessons/types';
 import { ORACLES } from '../oracles/index';
 import { judge } from '../oracles/judge';
@@ -64,7 +64,7 @@ function seconds(say: Say): number {
   return sayWords(say).split(/\s+/).filter(Boolean).length / WORDS_PER_SECOND;
 }
 
-describe.each(Object.entries(LESSONS))('the lesson for %s', (skillId, make) => {
+describe.each(allLessons())('the lesson for %s', (_name, skillId, make) => {
   const lesson = make();
 
   it('belongs to a skill that exists', () => {
@@ -156,5 +156,15 @@ describe.each(Object.entries(LESSONS))('the lesson for %s', (skillId, make) => {
     for (let i = 1; i < all.length; i += 1) {
       expect(sayWords(all[i]?.say ?? []), 'said twice in a row').not.toBe(sayWords(all[i - 1]?.say ?? []));
     }
+  });
+});
+
+// Part 2 lessons: for a skill that has a first lesson, and going further up the skill than that lesson's turns do.
+describe.each(Object.entries(LESSONS_PART2))('part 2 for %s', (skillId, make) => {
+  const top = (lesson: Lesson): number => Math.max(...lesson.parts.flatMap((part) => (part.kind === 'turn' ? [part.turn.question.level] : [])));
+  it('follows a first lesson, and its turns reach a harder level than the first lesson\'s', () => {
+    const first = LESSONS[skillId];
+    expect(first, 'a part 2 needs a part 1').toBeDefined();
+    if (first) expect(top(make())).toBeGreaterThan(top(first()));
   });
 });

@@ -31,6 +31,9 @@ export const childSettingsSchema = z.object({
   planPractice: z.array(z.enum(['math', 'ela', 'reasoning'])).default(['math', 'ela', 'reasoning']),
   planNew: z.boolean().default(true),
   planMixed: z.boolean().default(true),
+  // How the app feels (plan section 19). Calm mode: movement becomes short fades. The world: where its look comes from.
+  calm: z.boolean().default(false),
+  world: z.enum(['garden']).default('garden'),
 });
 export type ChildSettings = z.infer<typeof childSettingsSchema>;
 
@@ -51,6 +54,8 @@ export function defaultSettings(grade: Grade): ChildSettings {
     planPractice: ['math', 'ela', 'reasoning'],
     planNew: true,
     planMixed: true,
+    calm: false,
+    world: 'garden',
   };
 }
 
