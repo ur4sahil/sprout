@@ -57,12 +57,7 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
         <>
           {moment &&
             (rich ? (
-              <div className={styles.withHost}>
-                <div className={styles.hostSpot}>
-                  <LessonHost mood={mood} />
-                </div>
-                <LessonStage scene={moment.scene} label={moment.text} lively />
-              </div>
+              <LessonStage scene={moment.scene} label={moment.text} lively actor={mood} />
             ) : (
               <LessonStage scene={moment.scene} label={moment.text} />
             ))}

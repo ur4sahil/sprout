@@ -125,7 +125,20 @@ describe.each(Object.entries(LESSONS))('the lesson for %s', (skillId, make) => {
       // A picture answer with no spoken label falls back to the word the question is about (facts.target).
       const target = typeof q.facts.target === 'string' ? q.facts.target : null;
       const answers = [...spokenAnswers(q), ...(target ? [sayWords([{ word: target }])] : [])];
-      expect(answers.length, `a ${q.type} question has an answer the why can say`).toBeGreaterThan(0);
+      // An answer that is a picture with no name (a turned shape, a row of shapes, a bar): the why must end by showing
+      // that very picture on the stage.
+      const right = q.type === 'choice' ? q.options[q.answerIndex] : null;
+      const shownAtEnd = right ? (part.turn.why.at(-1)?.scene.pieces ?? []).some((piece) => piece.look.kind === 'visual' && !piece.gone && JSON.stringify(piece.look.visual) === JSON.stringify(right)) : false;
+      if (shownAtEnd) continue;
+      // Putting pictures in order: the why must end with those pictures on the stage in the right order, read top to
+      // bottom, then left to right.
+      if (q.type === 'order') {
+        const last = (part.turn.why.at(-1)?.scene.pieces ?? []).filter((piece) => piece.look.kind === 'visual' && !piece.gone);
+        const inOrder = [...last].sort((one, two) => one.y - two.y || one.x - two.x).map((piece) => (piece.look.kind === 'visual' ? JSON.stringify(piece.look.visual) : ''));
+        const wanted = q.answerOrder.map((index) => JSON.stringify(q.items[index]));
+        if (JSON.stringify(inOrder.filter((each) => wanted.includes(each))) === JSON.stringify(wanted)) continue;
+      }
+      expect(answers.length, `a ${q.type} question has an answer the why can say, or shows at its end`).toBeGreaterThan(0);
       expect(
         answers.some((answer) => words.includes(answer)),
         `the why never says ${answers.join(' / ')}`,

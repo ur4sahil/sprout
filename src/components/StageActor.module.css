@@ -1,0 +1,60 @@
+/* The lesson host on the stage. Placed in stage squares like a piece (`--unit` is one square), and it glides at
+   the pieces' speed, so a piece that moves and the host beside it travel together. */
+.body,
+.arm {
+  --unit: calc(100cqw / var(--set-cols));
+  position: absolute;
+  pointer-events: none;
+}
+
+.body {
+  left: calc(var(--set-x) * var(--unit));
+  top: calc(var(--set-y) * var(--unit));
+  width: calc(var(--set-w) * var(--unit));
+  height: calc(var(--set-h) * var(--unit));
+  transition:
+    left var(--lesson-glide) ease,
+    top var(--lesson-glide) ease;
+}
+
+.body svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* The arm: a rounded bar from the shoulder, turned toward what the host reaches for, with a hand at its end. */
+.arm {
+  left: calc(var(--set-x) * var(--unit));
+  top: calc(var(--set-y) * var(--unit));
+  width: calc(var(--set-length) * var(--unit));
+  height: calc(var(--unit) * 0.24);
+  margin-top: calc(var(--unit) * -0.12);
+  border-radius: var(--radius-pill);
+  background: var(--color-host-arm);
+  transform-origin: 0 50%;
+  transform: rotate(var(--set-angle));
+  transition:
+    left var(--lesson-glide) ease,
+    top var(--lesson-glide) ease,
+    width var(--lesson-glide) ease,
+    transform var(--lesson-glide) ease;
+}
+
+.hand {
+  position: absolute;
+  right: calc(var(--unit) * -0.2);
+  top: 50%;
+  width: calc(var(--unit) * 0.44);
+  height: calc(var(--unit) * 0.44);
+  margin-top: calc(var(--unit) * -0.22);
+  border-radius: 50%;
+  background: var(--color-host-hand);
+  box-shadow: 0 0 0 var(--border-thin) var(--color-host-arm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body,
+  .arm {
+    transition: none;
+  }
+}

@@ -1,4 +1,4 @@
-import type { Question, Say } from '../engine/types';
+import type { Question, Say, Visual } from '../engine/types';
 
 // A lesson that teaches (plan section 16): moments of speech over a moving scene, and turns the child answers.
 
@@ -11,7 +11,9 @@ export type PieceLook =
   | { kind: 'rod' } // a ten: a stick of ten small squares
   | { kind: 'cube' } // a one
   | { kind: 'box' } // an empty answer box
-  | { kind: 'hand' }; // a pointing hand
+  | { kind: 'hand' } // a pointing hand
+  // Any picture a question can show (a clock, a coin, a shape, a solid, a bar ...), drawn as the questions draw it.
+  | { kind: 'visual'; visual: Visual };
 
 // One piece. Its place and size are in stage squares (the stage is `cols` by `rows` squares).
 // A piece keeps its id from moment to moment, so the player moves it rather than redrawing it.

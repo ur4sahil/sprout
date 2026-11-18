@@ -1,5 +1,5 @@
 import { generateFrom, generatorFor } from '../content/registry';
-import type { Level, Question, Say } from '../engine/types';
+import type { Level, Question, Say, Visual } from '../engine/types';
 import type { Lesson, Moment, Piece, PieceLook, Scene } from './types';
 
 // Small tools for writing lessons (plan section 16). A lesson is written as a story of scenes:
@@ -53,6 +53,7 @@ export function ids(prefix: string, count: number, from = 0): string[] {
 export const art = (emoji: string): PieceLook => ({ kind: 'art', emoji });
 export const text = (value: string): PieceLook => ({ kind: 'text', text: value });
 export const numeral = (value: number): PieceLook => ({ kind: 'numeral', value });
+export const picture = (visual: Visual): PieceLook => ({ kind: 'visual', visual });
 
 // Counting out loud: one moment for each piece, each lit in turn with its number above it, and the hand on it.
 // The pieces already counted stay lit. Starts the count at `from` + 1.

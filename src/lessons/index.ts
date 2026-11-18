@@ -14,11 +14,14 @@ import { LESSONS as g1Measure } from './more/g1Measure';
 import { LESSONS as g1Ela1 } from './more/g1Ela1';
 import { LESSONS as g1Ela2 } from './more/g1Ela2';
 import { LESSONS as reasoning } from './more/reasoning';
+import { LESSONS as kPictures } from './more/kPictures';
+import { LESSONS as g1Pictures } from './more/g1Pictures';
+import { LESSONS as reasoningShapes } from './more/reasoningShapes';
 import type { Lesson } from './types';
 
 // The skills that have a lesson that teaches (plan section 16). Any other skill keeps its old four beats.
 const WRITTEN: Readonly<Record<string, () => Lesson>> = {
-  ...kCount, ...kAdd, ...kShapes, ...kEla1, ...kEla2, ...g1Place, ...g1Add, ...g1Measure, ...g1Ela1, ...g1Ela2, ...reasoning,
+  ...kCount, ...kAdd, ...kShapes, ...kEla1, ...kEla2, ...g1Place, ...g1Add, ...g1Measure, ...g1Ela1, ...g1Ela2, ...reasoning, ...kPictures, ...g1Pictures, ...reasoningShapes,
   'M-K-A1': countLesson,
   'M-K-C1': addPicturesLesson,
   'M-K-D1': teenLesson,

@@ -1,8 +1,14 @@
 import type { CSSProperties, ReactNode } from 'react';
+import { useState } from 'react';
+import { actorPose } from '../lessons/actor';
+import type { ActorPose } from '../lessons/actor';
 import type { Piece, Scene } from '../lessons/types';
 import Art from '../visuals/Art';
+import VisualView from '../visuals/VisualView';
 import { PALETTE } from '../visuals/palette';
 import Icon from './Icon';
+import type { HostMood } from './LessonHost';
+import { ActorArm, ActorBody } from './StageActor';
 import styles from './LessonStage.module.css';
 
 // The stage of a lesson (plan section 16). Each piece keeps its element from one scene to the next,
@@ -11,6 +17,7 @@ interface Props {
   scene: Scene;
   label: string; // what the scene shows, for a screen reader
   lively?: boolean; // pieces land with a little bounce
+  actor?: HostMood; // the host stands on the stage and acts the scene out; the pointing hand is then its own
 }
 
 // A wall with stripes and a wooden table whose top is at row 3, drawn in stage squares.
@@ -51,6 +58,12 @@ function look(piece: Piece): ReactNode {
       return <span className={styles.cell} />;
     case 'box':
       return <span className={styles.box} />;
+    case 'visual':
+      return (
+        <span className={styles.visual}>
+          <VisualView visual={piece.look.visual} />
+        </span>
+      );
     case 'hand':
       return (
         <span className={styles.hand}>
@@ -60,11 +73,19 @@ function look(piece: Piece): ReactNode {
   }
 }
 
-export default function LessonStage({ scene, label, lively = false }: Props) {
+export default function LessonStage({ scene, label, lively = false, actor }: Props) {
+  // The host's pose for this scene, worked out from the scene before it and kept until the scene changes.
+  const [held, setHeld] = useState<{ scene: Scene; pose: ActorPose }>(() => ({ scene, pose: actorPose(null, scene, null) }));
+  let pose = held.pose;
+  if (held.scene !== scene) {
+    pose = actorPose(held.scene, scene, held.pose.left);
+    setHeld({ scene, pose });
+  }
   const stage = { '--set-cols': scene.cols, '--set-rows': scene.rows } as CSSProperties;
   return (
-    <div className={styles.stage} style={stage} role="img" aria-label={label} data-lesson-stage="" data-lively={lively ? '' : undefined}>
+    <div className={styles.stage} style={stage} role="img" aria-label={label} data-lesson-stage="" data-lively={lively ? '' : undefined} data-acted={actor ? '' : undefined}>
       {scene.backdrop === 'table' && <Backdrop scene={scene} />}
+      {actor && <ActorBody pose={pose} mood={actor} />}
       {scene.pieces.map((piece) => {
         const place = { '--set-x': piece.x, '--set-y': piece.y, '--set-w': piece.w ?? 1, '--set-h': piece.h ?? 1 } as CSSProperties;
         return (
@@ -84,6 +105,7 @@ export default function LessonStage({ scene, label, lively = false }: Props) {
           </div>
         );
       })}
+      {actor && <ActorArm pose={pose} mood={actor} />}
     </div>
   );
 }
