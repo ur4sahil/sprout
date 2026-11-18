@@ -23,10 +23,8 @@ interface AppState {
   // Goes up when records from another device arrive, so a screen showing a list reads it again.
   dataVersion: number;
   bumpData: () => void;
-  updateReady: boolean; // a newer version of the app has been fetched and is waiting
-  setUpdateReady: (ready: boolean) => void;
-  updateTookOver: boolean; // the new version is in charge. The page loads again at the next safe moment
-  setUpdateTookOver: (took: boolean) => void;
+  newerBuild: boolean; // the server has a newer build. The page loads again at the next safe moment
+  setNewerBuild: (newer: boolean) => void;
   setChild: (child: Child | null) => void;
   setSession: (sessionId: string | null) => void;
   setMuted: (muted: boolean) => void;
@@ -47,10 +45,8 @@ export const useAppStore = create<AppState>((set) => ({
   setLink: (link) => set({ link }),
   dataVersion: 0,
   bumpData: () => set((state) => ({ dataVersion: state.dataVersion + 1 })),
-  updateReady: false,
-  setUpdateReady: (updateReady) => set({ updateReady }),
-  updateTookOver: false,
-  setUpdateTookOver: (updateTookOver) => set({ updateTookOver }),
+  newerBuild: false,
+  setNewerBuild: (newerBuild) => set({ newerBuild }),
   setChild: (child) => set({ child, activeChildId: child ? child.id : null, sessionId: null }),
   setSession: (sessionId) => set({ sessionId }),
   setMuted: (muted) => set({ muted }),

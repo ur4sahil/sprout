@@ -25,6 +25,5 @@ afterEach(() => {
   useAppStore.getState().setChild(null);
   useAppStore.getState().setInstallGuide(false);
   useAppStore.getState().setLink('waiting');
-  useAppStore.getState().setUpdateReady(false);
-  useAppStore.getState().setUpdateTookOver(false);
+  useAppStore.getState().setNewerBuild(false);
 });
