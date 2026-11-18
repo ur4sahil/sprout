@@ -15,15 +15,11 @@ import type { Attempt, Child, SkillState } from '../../src/storage/schema';
 import { NOW, answer, findOnMath, gotIt, holdHome, openApp, openSkill, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
-const spoken = vi.hoisted(() => ({ said: [] as unknown[], phrases: [] as string[], sounds: [] as string[] }));
+const spoken = vi.hoisted(() => ({ said: [] as unknown[], sounds: [] as string[] }));
 vi.mock('../../src/audio/speech', async (original) => ({
   ...(await original<typeof import('../../src/audio/speech')>()),
   speak: async (say: unknown) => {
     spoken.said.push(say);
-    return true;
-  },
-  speakPhrase: async (key: string) => {
-    spoken.phrases.push(key);
     return true;
   },
   stop: () => undefined,
@@ -41,7 +37,6 @@ vi.mock('../../src/audio/sfx', async (original) => ({
 
 beforeEach(() => {
   spoken.said.length = 0;
-  spoken.phrases.length = 0;
   spoken.sounds.length = 0;
 });
 

@@ -29,6 +29,9 @@ export function answerFact(childId: string, fact: Fact, held: FactRecord | undef
 const OP_WORD: Record<Fact['op'], string> = { '+': 'plus', '-': 'minus', '×': 'times', '÷': 'divided by' };
 export const factText = (fact: Fact): string => `${fact.a} ${fact.op === '-' ? '−' : fact.op} ${fact.b}`;
 export const factSay = (fact: Fact): Say => [{ number: fact.a }, OP_WORD[fact.op], { number: fact.b }];
+// What the race says: the fact read aloud on the speaker, and the right answer after a miss.
+export const factAskSay = (fact: Fact): Say => [...factSay(fact), 'equals what?'];
+export const factMissSay = (fact: Fact): Say => ['Not quite.', ...factSay(fact), 'is', { number: fact.answer }, '.'];
 
 // "1:05" for a round's time.
 export function clockText(ms: number): string {

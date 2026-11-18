@@ -7,7 +7,8 @@ import { json } from './auth';
 export const VOICE_ID = 'kokoro-af_heart-0.9';
 export const MAX_VOICE_TEXT = 300;
 // Plain words only: what the app's own sentences are made of.
-const SAFE_TEXT = /^[A-Za-z0-9 .,:;!?'’-]+$/;
+// The same characters the app sends (src/audio/voice.ts), quotation marks included.
+const SAFE_TEXT = /^[A-Za-z0-9 .,:;!?'’"“”-]+$/;
 
 export interface VoiceStore {
   get(key: string): Promise<ArrayBuffer | null>;

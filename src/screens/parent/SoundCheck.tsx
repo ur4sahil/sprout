@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { clipCount } from '../../audio/clips';
 import { isMuted } from '../../audio/mute';
 import type { SfxName } from '../../audio/sfx';
 import { playSfx, unlockAudio } from '../../audio/sfx';
@@ -21,7 +20,6 @@ const SOUNDS: { name: SfxName; label: string }[] = [
 // Plays every letter name, the numbers 0 to 20 and each sound effect, so a parent hears exactly what the child will hear on this iPad.
 export default function SoundCheck() {
   const [playing, setPlaying] = useState<string | null>(null);
-  const clips = clipCount();
 
   async function say(what: string, parts: Say): Promise<void> {
     await unlockAudio();
@@ -33,7 +31,7 @@ export default function SoundCheck() {
   return (
     <ParentArea page="settings" title="Sound check">
       <section className={styles.panel} aria-label="Sound check">
-        <Notice role="status">{clips > 0 ? `The voice pack is on this device (${clips} clips).` : 'The voice pack is not on this device. The device voice is used instead.'}</Notice>
+        <Notice role="status">Everything is said in the recorded voice. With no internet, this device's own voice is used instead.</Notice>
         {isMuted() && <Notice role="alert">This device is muted in Settings. Nothing will play until that is turned off.</Notice>}
         <CenterRow>
           <BigButton disabled={playing !== null} onClick={() => void say('letters', ALPHABET.map((letter) => ({ letter })))}>

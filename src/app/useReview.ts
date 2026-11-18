@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
-import { speak, speakPhrase, stop } from '../audio/speech';
+import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
@@ -204,7 +204,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       setPhase('correct');
       playSfx('chime');
       const praise = makeRng(q.seed).pick(PRAISE);
-      const spoken = speakPhrase(praise.key, praise.say, child.settings.speechRate);
+      const spoken = speak(praise.say, child.settings.speechRate);
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) await moveOn().catch(logError);
     })();

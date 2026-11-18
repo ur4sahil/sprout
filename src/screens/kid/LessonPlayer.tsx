@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { TIMING } from "../../app/timing";
 import { useWakeLock } from "../../app/useWakeLock";
 import { speak, stop } from "../../audio/speech";
+import { warmAll } from "../../audio/voice";
 import BigButton from "../../components/BigButton";
 import CenterRow from "../../components/CenterRow";
 import Column from "../../components/Column";
@@ -43,6 +44,10 @@ export default function LessonPlayer({ child, skill }: Props) {
   const navigate = useNavigate();
   const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
+  // Everything the lesson and its example say is asked for as the lesson opens, so each line is ready in time.
+  useEffect(() => {
+    warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak]);
+  }, [beats, example]);
   const [mode, setMode] = useState<"lesson" | "example">("lesson");
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(true);

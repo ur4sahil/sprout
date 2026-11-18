@@ -21,7 +21,7 @@ import { stubServer } from '../storage/serverStub';
 import { PARENT } from '../worker/harness';
 import { NOW, PIN, openApp, setUp } from './practiceHelpers';
 
-vi.mock('../../src/audio/speech', async (original) => ({ ...(await original<typeof import('../../src/audio/speech')>()), speak: async () => true, speakPhrase: async () => true, stop: () => undefined, isSpeechAvailable: () => true }));
+vi.mock('../../src/audio/speech', async (original) => ({ ...(await original<typeof import('../../src/audio/speech')>()), speak: async () => true, stop: () => undefined, isSpeechAvailable: () => true }));
 vi.mock('../../src/audio/sfx', async (original) => ({ ...(await original<typeof import('../../src/audio/sfx')>()), playSfx: () => undefined, unlockAudio: async () => undefined }));
 
 const repo = async () => (await openRepo()).repo;

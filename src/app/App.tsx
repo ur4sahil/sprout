@@ -6,7 +6,7 @@ import Notice from '../components/Notice';
 import ChoosePin from '../screens/parent/ChoosePin';
 import SignIn from '../screens/account/SignIn';
 import InstallGuide from '../screens/kid/InstallGuide';
-import { loadClipKeys, syncVoicePack } from '../audio/clips';
+import { removeOldClips } from '../audio/clips';
 import { setMuted } from '../audio/mute';
 import { CATALOGUE_VERSION } from '../content/catalogue';
 import { now } from '../lib/clock';
@@ -62,7 +62,6 @@ export default function App() {
         const device = await repo.getDeviceState();
         setMuted(device.muted);
         useAppStore.getState().setInstallGuide(needsInstallGuide() && !device.browserModeAccepted);
-        await loadClipKeys();
         await checkSession();
         await requestPersistence(repo);
       } catch (error) {
@@ -90,11 +89,10 @@ export default function App() {
     if (steppedBack) void navigate(1);
   }, [steppedBack, location, navigate]);
 
-  // Once signed in, fetch the voice pack in the background if this device does not have the current one.
-  // The app never waits for it: until it arrives, the device voice says everything.
+  // The old voice pack is no longer used: any clips left on this device are removed in the background.
   useEffect(() => {
-    if (status === 'signedIn') void syncVoicePack();
-  }, [status]);
+    void removeOldClips();
+  }, []);
 
   // The device keeps a copy of the family's records, so the app opens at once, with or without the
   // internet. The server holds the main copy: a run fetches what other devices saved and sends what

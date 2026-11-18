@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
-import { answerFact, clockText, factSay, factText, recordsOf } from '../../app/facts';
+import { answerFact, clockText, factAskSay, factMissSay, factSay, factText, recordsOf } from '../../app/facts';
+import { warmAll } from '../../audio/voice';
 import { useAppStore } from '../../app/store';
 import { useWakeLock } from '../../app/useWakeLock';
 import { playSfx } from '../../audio/sfx';
@@ -70,7 +71,10 @@ function Race({ child, setId }: { child: Child; setId: string }) {
       const records = recordsOf(await repo.listFactStates(child.id));
       if (!self.alive || !set) return;
       self.records = records;
-      setRound(pickRound(set, records, makeRng(now().getTime() % 2147483647)));
+      const picked = pickRound(set, records, makeRng(now().getTime() % 2147483647));
+      setRound(picked);
+      // What the race may say about each fact is asked for now, so it is ready the moment it is wanted.
+      warmAll(picked.flatMap((each) => [factAskSay(each), factMissSay(each)]));
       self.startedAt = now().getTime();
       self.shownAt = self.startedAt;
       setPhase('asking');
@@ -122,7 +126,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
         advance();
       } else {
         setPhase('wrong');
-        void speak(['Not quite.', ...factSay(fact), 'is', { number: fact.answer }, '.'], rate);
+        void speak(factMissSay(fact), rate);
       }
     })();
   }
@@ -189,7 +193,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
             <p className={styles.fact} data-fact-text="">
               {factText(fact)} = {phase === 'wrong' ? fact.answer : '?'}
             </p>
-            <IconButton icon="speaker" label="Hear the fact" onClick={() => void speak([...factSay(fact), 'equals what?'], rate)} />
+            <IconButton icon="speaker" label="Hear the fact" onClick={() => void speak(factAskSay(fact), rate)} />
           </div>
           {phase === 'wrong' ? (
             <div className={styles.miss} data-fact-miss="">

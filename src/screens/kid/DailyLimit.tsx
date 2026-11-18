@@ -1,3 +1,4 @@
+import { LINES } from '../../audio/lines';
 import { useEffect, useState } from 'react';
 import { hasPass } from '../../app/pin';
 import { useAppStore } from '../../app/store';
@@ -23,7 +24,7 @@ export const EXTRA_MINUTES = 10;
 export default function DailyLimit({ child, onDone }: Props) {
   const [asking, setAsking] = useState(false);
   useEffect(() => {
-    void speak(['All done for today. Great work. See you tomorrow.'], child.settings.speechRate);
+    void speak(LINES.dailyLimit, child.settings.speechRate);
     return () => stop();
   }, [child]);
 

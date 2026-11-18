@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { readyVoice, resetVoice, setVoiceOn, voiceText, warm, warmQuestion } from '../../src/audio/voice';
+import { readyVoice, resetVoice, setVoiceOn, voicePieces, voiceText, warm, warmAll, warmQuestion } from '../../src/audio/voice';
 import { generateQuestion } from '../../src/content/registry';
 
-// The recorded voice on the device: ask once for each sentence, never wait long, fall back quietly.
+// The recorded voice on the device: ask once for each sentence, wait for it, fall back quietly only when it cannot come.
 
 let asked: string[];
 let reply: (text: string) => Promise<Response>;
@@ -71,6 +71,46 @@ describe('the recorded voice', () => {
     expect(voiceText(['x'.repeat(301)])).toBeNull();
     expect(await readyVoice(['50% off <b>'], 50)).toBeNull();
     expect(asked).toEqual([]);
+  });
+
+  it('speech too long for one recording is recorded one sentence at a time', async () => {
+    setVoiceOn(true);
+    const long = [`${'Add the ones. '.repeat(25)}Now add`, { number: 7 }, 'and', { number: 8 }, '.'];
+    const pieces = voicePieces(long);
+    expect(pieces.length).toBe(26);
+    expect(pieces.every((piece) => voiceText(piece) !== null)).toBe(true);
+    expect(voiceText(pieces[25] ?? [])).toBe('Now add seven and eight.');
+    expect(voicePieces(['Short.'])).toEqual([['Short.']]);
+    warm(long);
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    expect(new Set(asked)).toEqual(new Set(['Add the ones.', 'Now add seven and eight.']));
+  });
+
+  it('sends sentences with quotation marks', async () => {
+    setVoiceOn(true);
+    const say = ['Which word can take the place of "did not"?'];
+    expect(voiceText(say)).toBe('Which word can take the place of "did not"?');
+    expect(text(await readyVoice(say, 200))).toBe('mp3:Which word can take the place of "did not"?');
+  });
+
+  it('asks for at most two early sentences at once, and a sentence wanted now goes straight away', async () => {
+    setVoiceOn(true);
+    const waiting: (() => void)[] = [];
+    reply = (sentence) => new Promise((resolve) => waiting.push(() => resolve(audio(sentence))));
+    warmAll([['One.'], ['Two.'], ['Three.'], ['Four.']]);
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(asked).toEqual(['One.', 'Two.']);
+    const now = readyVoice(['Now.'], 1000);
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(asked).toEqual(['One.', 'Two.', 'Now.']);
+    // Each sentence that finishes frees a place for the next early one.
+    waiting[2]?.();
+    expect(text(await now)).toBe('mp3:Now.');
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(asked).toEqual(['One.', 'Two.', 'Now.', 'Three.']);
+    waiting[0]?.();
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(asked).toEqual(['One.', 'Two.', 'Now.', 'Three.', 'Four.']);
   });
 
   it('warms everything a question may say: its prompt, "Not quite" with the first step, and the later steps', async () => {

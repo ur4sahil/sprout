@@ -1,3 +1,4 @@
+import { PRAISE } from '../../src/audio/say';
 import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../src/app/store';
@@ -9,15 +10,11 @@ import { newSkillState } from '../../src/storage/schema';
 import { NOW, answer, findOnMath, gotIt, holdHome, openApp, openSkill, passInterruptions, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
 // What the app says and plays, recorded instead of spoken.
-const spoken = vi.hoisted(() => ({ said: [] as unknown[], phrases: [] as string[], sounds: [] as string[] }));
+const spoken = vi.hoisted(() => ({ said: [] as unknown[], sounds: [] as string[] }));
 vi.mock('../../src/audio/speech', async (original) => ({
   ...(await original<typeof import('../../src/audio/speech')>()),
   speak: async (say: unknown) => {
     spoken.said.push(say);
-    return true;
-  },
-  speakPhrase: async (key: string) => {
-    spoken.phrases.push(key);
     return true;
   },
   stop: () => undefined,
@@ -34,7 +31,6 @@ vi.mock('../../src/audio/sfx', async (original) => ({
 
 beforeEach(() => {
   spoken.said.length = 0;
-  spoken.phrases.length = 0;
   spoken.sounds.length = 0;
 });
 
@@ -321,14 +317,14 @@ describe('the answer flow', () => {
     await answer(user, sumOnScreen());
     await settled();
     expect(spoken.sounds).toEqual(['unlock', 'chime']);
-    expect(spoken.phrases).toHaveLength(1);
-    expect(spoken.phrases[0]).toMatch(/^phrase:/);
-    // Tapping the option said its number, then the next prompt was read, once.
-    await waitFor(() => expect(spoken.said.length).toBe(before + 2));
+    // Tapping the option said its number, then the praise, in the recorded voice like everything else,
+    // then the next prompt was read, once.
+    await waitFor(() => expect(spoken.said.length).toBe(before + 3));
     expect(spoken.said[before]).toEqual([{ number: expect.any(Number) }]);
-    expect(JSON.stringify(spoken.said[before + 1])).toContain('equals what?');
+    expect(PRAISE.map((p) => p.say)).toContainEqual(spoken.said[before + 1]);
+    expect(JSON.stringify(spoken.said[before + 2])).toContain('equals what?');
     await new Promise((r) => setTimeout(r, 150));
-    expect(spoken.said.length).toBe(before + 2);
+    expect(spoken.said.length).toBe(before + 3);
   });
 
   it('does not read the prompt when auto-speak is off', async () => {

@@ -1,3 +1,4 @@
+import { MILESTONE_WORDS } from '../audio/lines';
 import Art from '../visuals/Art';
 import Icon from './Icon';
 import BigButton from './BigButton';
@@ -12,12 +13,6 @@ interface Props {
   games?: { onPop: (() => void) | null; onPairs: () => void };
 }
 
-export const MILESTONE_WORDS: Record<number, { emoji: string; title: string; line: string }> = {
-  50: { emoji: '⭐', title: 'Halfway there!', line: 'You are halfway to mastering this skill.' },
-  80: { emoji: '🎗️', title: 'Proficient!', line: 'You earned a ribbon.' },
-  90: { emoji: '🔥', title: 'Challenge zone!', line: 'These are the hardest questions. You are ready.' },
-  100: { emoji: '🏅', title: 'Mastered!', line: 'You earned a medal.' },
-};
 
 // A short full-screen celebration, the first time a milestone is crossed.
 export default function Celebration({ milestone, skillName, onDone, games }: Props) {

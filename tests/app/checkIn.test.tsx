@@ -21,7 +21,6 @@ vi.mock('../../src/audio/speech', async (original) => ({
     spoken.said.push(say);
     return true;
   },
-  speakPhrase: async () => true,
   stop: () => undefined,
   isSpeechAvailable: () => true,
 }));

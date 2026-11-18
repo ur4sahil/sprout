@@ -1,3 +1,4 @@
+import { LINES } from '../../audio/lines';
 import Icon from '../../components/Icon';
 import { useEffect } from 'react';
 import { Navigate, useNavigate, useSearchParams } from 'react-router-dom';
@@ -7,7 +8,7 @@ import { useAppStore } from '../../app/store';
 import { DONT_KNOW, useDiagnostic } from '../../app/useDiagnostic';
 import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
-import { warm } from '../../audio/voice';
+import { warm, warmAll } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import HoldButton from '../../components/HoldButton';
@@ -47,10 +48,15 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
 
+  // The closing lines are asked for at the start, so they are ready when a sitting ends.
+  useEffect(() => {
+    warmAll([LINES.checkInSitting, LINES.checkInDone]);
+  }, []);
+
   const over = phase === 'sittingOver' || phase === 'done';
   useEffect(() => {
-    if (phase === 'sittingOver') void speak(['All done for today. Here is a sticker.'], rate);
-    if (phase === 'done') void speak(['The check-in is finished. Here is a sticker.'], rate);
+    if (phase === 'sittingOver') void speak(LINES.checkInSitting, rate);
+    if (phase === 'done') void speak(LINES.checkInDone, rate);
   }, [phase, rate]);
 
   return (

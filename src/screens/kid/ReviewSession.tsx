@@ -1,3 +1,4 @@
+import { LINES } from '../../audio/lines';
 import Art from '../../visuals/Art';
 import Icon from '../../components/Icon';
 import { useEffect } from 'react';
@@ -45,7 +46,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
 
   const kept = review.results.filter((result) => result.passed).length;
   useEffect(() => {
-    if (phase === 'done') void speak(['Review done. Nice work.'], rate);
+    if (phase === 'done') void speak(LINES.reviewDone, rate);
   }, [phase, rate]);
 
   return (

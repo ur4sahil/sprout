@@ -1,6 +1,6 @@
 import type { Say } from '../engine/types';
-import { hasClip, playBytes, playClip, stopClip } from './clips';
-import { readyVoice } from './voice';
+import { playBytes, stopClip } from './clips';
+import { readyVoice, voicePieces } from './voice';
 import { isMuted } from './mute';
 import { saySegments } from './say';
 
@@ -11,7 +11,9 @@ import { saySegments } from './say';
 export const DEFAULT_RATE = 0.85;
 const CANCEL_WAIT_MS = 60; // speaking straight after a cancel can drop the new sentence
 const VOICE_WAIT_MS = 1000;
-const RECORDED_WAIT_MS = 700; // how long a sentence may take to arrive before the device voice says it instead
+// The recorded voice is waited for, even while the voice machine makes a new sentence (the owner's choice,
+// Nov 17, 2026). This is only a safety limit, so a child is never left in silence if the machine hangs.
+export const RECORDED_WAIT_MS = 20_000;
 const UTTERANCE_LIMIT_MS = 12_000; // long utterances cut off on some phones
 const PREFERRED = ['Samantha', 'Ava', 'Allison'];
 
@@ -96,47 +98,30 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE): Promise<bool
   try {
     await wait(CANCEL_WAIT_MS);
     if (mine !== generation) return false;
-    // The recorded voice, when the sentence is ready in time. Otherwise the device's own voice, at once.
-    const recorded = await readyVoice(say, RECORDED_WAIT_MS);
-    if (mine !== generation) return false;
-    if (recorded && (await playBytes(recorded, rate / DEFAULT_RATE))) return mine === generation;
-    if (mine !== generation) return false;
-    const segments = saySegments(say, hasClip);
-    const chosen = engine ? await chooseVoice(engine) : null;
-    if (mine !== generation) return false;
+    // The recorded voice, piece by piece (a long story is one piece for each sentence).
+    // The device's own voice says a piece only when its recording cannot come.
     let spoke = false;
-    for (const segment of segments) {
+    for (const piece of voicePieces(say)) {
       if (mine !== generation) return false;
-      if (segment.kind === 'clip' && (await playClip(segment.key))) {
+      const recorded = await readyVoice(piece, RECORDED_WAIT_MS);
+      if (mine !== generation) return false;
+      if (recorded && (await playBytes(recorded, rate / DEFAULT_RATE))) {
         spoke = true;
         continue;
       }
       if (mine !== generation) return false;
       if (!engine) continue;
-      await utter(engine, segment.kind === 'clip' ? segment.fallback : segment.text, rate, chosen);
-      spoke = true;
+      const chosen = await chooseVoice(engine);
+      for (const segment of saySegments(piece)) {
+        if (mine !== generation) return false;
+        await utter(engine, segment.kind === 'clip' ? segment.fallback : segment.text, rate, chosen);
+        spoke = true;
+      }
     }
     return spoke && mine === generation;
   } catch {
     return false;
   }
-}
-
-// Says a ready-made phrase: its voice-pack clip when the device has it, otherwise the words through the device voice.
-export async function speakPhrase(clipKey: string, say: Say, rate: number = DEFAULT_RATE): Promise<boolean> {
-  if (!hasClip(clipKey)) return speak(say, rate);
-  const mine = (generation += 1);
-  stopClip();
-  try {
-    synth()?.cancel();
-  } catch {
-    // Nothing was playing.
-  }
-  if (isMuted()) return false;
-  await wait(CANCEL_WAIT_MS);
-  if (mine !== generation) return false;
-  if (await playClip(clipKey)) return mine === generation;
-  return mine === generation ? speak(say, rate) : false;
 }
 
 // Stops anything being said.

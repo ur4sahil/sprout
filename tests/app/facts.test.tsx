@@ -17,7 +17,6 @@ async function setUp(...args: Parameters<typeof baseSetUp>): Promise<Child> {
 vi.mock('../../src/audio/speech', async (original) => ({
   ...(await original<typeof import('../../src/audio/speech')>()),
   speak: async () => true,
-  speakPhrase: async () => true,
   stop: () => undefined,
   isSpeechAvailable: () => true,
 }));

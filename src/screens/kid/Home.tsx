@@ -1,3 +1,4 @@
+import { LINES } from '../../audio/lines';
 import Art from '../../visuals/Art';
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -74,7 +75,7 @@ export default function Home() {
       .then((awards) => {
         if (!alive || awards.fresh.length === 0) return;
         setFresh(awards.fresh);
-        void speak([awards.fresh.length === 1 ? 'You earned a new sticker.' : 'You earned new stickers.'], child.settings.speechRate);
+        void speak(awards.fresh.length === 1 ? LINES.newSticker : LINES.newStickers, child.settings.speechRate);
       })
       .catch(logError);
     return () => {

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { loadClipKeys, resetClips, syncVoicePack } from '../../src/audio/clips';
+import { removeOldClips, resetClips } from '../../src/audio/clips';
 import { setMuted } from '../../src/audio/mute';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
 import { isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
@@ -88,7 +88,6 @@ function installAudio(): void {
 async function putClips(keys: Record<string, number>): Promise<void> {
   const { repo } = await openRepo();
   for (const [key, size] of Object.entries(keys)) await repo.saveClip({ key, bytes: new ArrayBuffer(size), mimeType: 'audio/mp4', packVersion: 'v1' });
-  await loadClipKeys();
 }
 
 beforeEach(() => {
@@ -132,35 +131,19 @@ describe('speak', () => {
     expect(() => stop()).not.toThrow();
   });
 
-  it('with no voice pack on the device, every part uses the device voice', async () => {
+  it('without the recorded voice, every part is said by the device voice, letters by their names', async () => {
     installSpeech();
     installAudio();
-    await loadClipKeys();
     await speak(['Find the letter', { letter: 'b' }, 'and', { number: 7 }, '.']);
     expect(events).toEqual(['cancel', 'say:Find the letter bee and seven.']);
   });
 
-  it('plays the parts in order, with a clip in the middle', async () => {
+  it('never plays an old voice-pack clip, even one still on the device', async () => {
     installSpeech();
     installAudio();
-    await putClips({ 'letter:b': 111 });
+    await putClips({ 'letter:b': 111, 'number:7': 77 });
     expect(await speak(['Find the letter', { letter: 'B' }, 'in the box.'])).toBe(true);
-    expect(events).toEqual(['cancel', 'say:Find the letter', 'clip:111', 'say:in the box.']);
-  });
-
-  it('falls back to the device voice for a part when its clip cannot play', async () => {
-    installSpeech();
-    await putClips({ 'number:7': 77 }); // the clip is there, but this device has no WebAudio
-    await speak(['The number', { number: 7 }]);
-    expect(events).toEqual(['cancel', 'say:The number', 'say:seven']);
-  });
-
-  it('still plays clips on a device with no speech at all', async () => {
-    removeSpeech();
-    installAudio();
-    await putClips({ 'number:7': 77 });
-    expect(await speak([{ number: 7 }])).toBe(true);
-    expect(events).toEqual(['clip:77']);
+    expect(events).toEqual(['cancel', 'say:Find the letter bee in the box.']);
   });
 
   it('a newer speak cuts off an older one, so a prompt is never said over another', async () => {
@@ -277,63 +260,11 @@ describe('sound effects', () => {
   });
 });
 
-describe('getting the voice pack', () => {
-  const pack = (version: string, clips: Record<string, string>): string => JSON.stringify({ version, mimeType: 'audio/mp4', clips });
-  function serve(reply: () => Response | Promise<Response>): string[] {
-    const urls: string[] = [];
-    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
-      urls.push(String(input));
-      return reply();
-    });
-    return urls;
-  }
-
-  it('downloads the pack once and stores every clip as bytes', async () => {
-    serve(() => new Response(pack('p1', { 'letter:a': btoa('abc'), 'number:7': btoa('seven!') }), { headers: { 'X-Pack-Version': 'etag-1' } }));
-    expect(await syncVoicePack()).toBe('downloaded');
+describe('the old voice pack', () => {
+  it('clips left on the device are removed', async () => {
+    await putClips({ 'letter:a': 1, 'number:7': 2 });
+    await removeOldClips();
     const { repo } = await openRepo();
-    expect(await repo.listClipKeys()).toEqual(['letter:a', 'number:7']);
-    const clip = await repo.getClip('number:7');
-    expect(String.fromCharCode(...new Uint8Array(clip?.bytes ?? new ArrayBuffer(0)))).toBe('seven!');
-    expect(clip?.packVersion).toBe('etag-1');
-    expect((await repo.getDeviceState()).voicePackVersion).toBe('etag-1');
-    // Clips stay on the device: storing them is not a change to back up.
-    expect((await repo.getDeviceState()).dirty).toBe(false);
-  });
-
-  it('asks with the version it has, and downloads nothing when that is current', async () => {
-    serve(() => new Response(pack('p1', { 'letter:a': btoa('abc') }), { headers: { 'X-Pack-Version': 'etag-1' } }));
-    await syncVoicePack();
-    const urls = serve(() => new Response(JSON.stringify({ version: 'etag-1', unchanged: true })));
-    expect(await syncVoicePack()).toBe('upToDate');
-    expect(urls).toEqual(['/api/voice-pack?have=etag-1']);
-  });
-
-  it('a new pack replaces the old clips, and removes ones it no longer has', async () => {
-    serve(() => new Response(pack('p1', { 'letter:a': btoa('old'), 'letter:b': btoa('gone') }), { headers: { 'X-Pack-Version': 'etag-1' } }));
-    await syncVoicePack();
-    serve(() => new Response(pack('p2', { 'letter:a': btoa('new') }), { headers: { 'X-Pack-Version': 'etag-2' } }));
-    expect(await syncVoicePack()).toBe('downloaded');
-    const { repo } = await openRepo();
-    expect(await repo.listClipKeys()).toEqual(['letter:a']);
-    expect(String.fromCharCode(...new Uint8Array((await repo.getClip('letter:a'))?.bytes ?? new ArrayBuffer(0)))).toBe('new');
-  });
-
-  it('with no pack, no network, a server fault or a damaged file, the device is left as it was', async () => {
-    const { repo } = await openRepo();
-    serve(() => new Response('{"error":"no_pack"}', { status: 404 }));
-    expect(await syncVoicePack()).toBe('noPack');
-    vi.stubGlobal('fetch', async () => {
-      throw new TypeError('Load failed');
-    });
-    expect(await syncVoicePack()).toBe('offline');
-    serve(() => new Response('{}', { status: 500 }));
-    expect(await syncVoicePack()).toBe('failed');
-    serve(() => new Response('{"version":"x","clips":"nope"}'));
-    expect(await syncVoicePack()).toBe('failed');
-    serve(() => new Response('<html>not json</html>'));
-    expect(await syncVoicePack()).toBe('failed');
     expect(await repo.listClipKeys()).toEqual([]);
-    expect((await repo.getDeviceState()).voicePackVersion).toBeNull();
   });
 });

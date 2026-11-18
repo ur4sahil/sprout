@@ -1,9 +1,9 @@
+import { LINES, MILESTONE_WORDS } from '../audio/lines';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
 import { playSfx } from '../audio/sfx';
-import { speak, speakPhrase, stop } from '../audio/speech';
+import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
-import { MILESTONE_WORDS } from '../components/Celebration';
 import type { Skill } from '../content/catalogue';
 import { ladderPrerequisite } from '../content/ladders';
 import { nextQuestion } from '../content/registry';
@@ -141,7 +141,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     if (!self.state) return;
     if (sessions && self.answered > 0 && self.answered % child.settings.sessionLength === 0) {
       setPhase('break');
-      void speak(['Nice work! On to the next one?'], child.settings.speechRate);
+      void speak(LINES.nextOne, child.settings.speechRate);
       return;
     }
     show(self.state, self.keys);
@@ -220,7 +220,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
               setState(passed);
               playSfx('fanfare');
               setPhase('skipped');
-              void speak(['You know this one already. On to the next.'], child.settings.speechRate);
+              void speak(LINES.knownAlready, child.settings.speechRate);
               return;
             } catch (error) {
               // It could not be saved: the child simply carries on practising, with the two answers counted.
@@ -232,7 +232,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         playSfx('chime');
         const praise = makeRng(q.seed).pick(PRAISE);
         // The next question loads once the praise has finished: 1.2 seconds at the earliest, 2.5 at the latest.
-        const spoken = speakPhrase(praise.key, praise.say, child.settings.speechRate);
+        const spoken = speak(praise.say, child.settings.speechRate);
         await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
         if (self.alive) afterAnswer();
       })();
