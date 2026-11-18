@@ -13,7 +13,7 @@
 - Every `/api` route except the sign-in routes checks the session before doing anything else.
 - The Worker reaches D1, R2 and email only through the interfaces in `worker/store.ts` and `worker/mailer.ts`, so tests run with in-memory versions.
 - The Worker never reads or changes the backup file's contents. Merging happens on the device.
-- No GitHub Actions. The Cloudflare build runs `npm run verify` before every deploy.
+- No GitHub Actions. The Cloudflare build runs only `npm run build` (type check and bundle) before it deploys (the owner's choice, Nov 18, 2026, to cut a deploy from about 10 minutes to 1 or 2). So `npm run verify` must pass on the Mac before every push to `main`: nothing in the cloud runs the tests.
 - No `window.open`. External links use `<a target="_blank" rel="noopener noreferrer">` and exist only in parent mode.
 - Kid screens: tap targets at least 64px, no text-only instructions below grade 1, no timers unless the parent turned the timer on (one exception the owner chose: fast facts is always a race), nothing that moves away before the child answers, no negative sounds.
 - Layout: mobile first, flex column, scroll inside panels, never horizontal page scroll. Use `dvh`, not `vh`.
@@ -50,7 +50,7 @@
 - Step 2, Phase A (hosting and sign-in), is built: the scaffold gaps, `wrangler.jsonc`, `worker/`, `account.ts`, the SignIn and SetPassword screens and the sign-in guard. Until Phase 3 adds the device record, the app asks the server for the session at every launch, so it does not open offline yet.
 - `APP_ORIGIN` is a plain setting next to `ENVIRONMENT`. The Worker compares the `Origin` header of every write against it.
 - Local run: copy `.dev.vars.example` to `.dev.vars`, run `npx wrangler d1 execute sprout --local --file worker/schema.sql` once, then `npm run dev:worker` and `npm run dev`. The sign-in code is printed in the Worker's terminal.
-- The app is live at `https://sprout.logstocks.com`. Workers Builds is connected to this repo: a push to `main` runs `npm run verify`, then `npx wrangler deploy`.
+- The app is live at `https://sprout.logstocks.com`. Workers Builds is connected to this repo: a push to `main` runs `npm run build`, then `npx wrangler deploy` (until Nov 18, 2026 it ran `npm run verify`; see the rule on GitHub Actions below).
 - Browser tests were brought forward from Phase 4a at the owner's request. `npm run e2e` builds the app, starts the real Worker locally over HTTPS with a throwaway database, and drives every account screen in WebKit (iPad landscape, iPad portrait, phone, 360 px) and Chromium. `npm run e2e:live` runs read-only checks on the live site and never asks for a code. Neither runs in `npm run verify` or in the cloud build. Every new screen and button gets a browser test in the same phase.
 - `public/_headers` sets the safety headers for pages and files. A Cloudflare redirect rule, for the Sprout address only, sends plain http to https.
 - Step 3, Phase 1 (engine core), is built: `rng`, `seed`, `types`, `check`, `validate`, `canonical`, `describe`, the registry, twelve oracles in `tests/oracles/`, the 300-seed generator and oracle harnesses, golden files, and three reference skills (M-PK-A2, M-K-B3, M-K-C4).
