@@ -47,7 +47,7 @@ test('the deployed app works end to end for a new family', async ({ page, browse
   });
 
   await test.step('practice: a question appears and the recorded voice is fetched without any tap', async () => {
-    await page.getByRole('button', { name: /Math/ }).click();
+    await page.getByRole('button', { name: 'Math', exact: true }).click();
     await page.getByRole('button', { name: /^Add within 20\./ }).click();
     await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
     // The prompt, "Not quite" with step one, and the later steps are all asked for as the question shows.
@@ -148,7 +148,7 @@ test('the deployed app works end to end for a new family', async ({ page, browse
     await expect(other.getByRole('button', { name: 'Robin', exact: true })).toBeVisible({ timeout: 30_000 });
     await expect(other.getByRole('button', { name: 'Kit', exact: true })).toBeVisible();
     await other.getByRole('button', { name: 'Robin', exact: true }).click();
-    await other.getByRole('button', { name: /Math/ }).click();
+    await other.getByRole('button', { name: 'Math', exact: true }).click();
     await expect(other.getByRole('button', { name: /^Add within 20\. Score [1-9]/ })).toBeVisible();
     await second.close();
   });

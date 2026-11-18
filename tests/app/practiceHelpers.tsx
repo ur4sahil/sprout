@@ -78,7 +78,7 @@ export async function holdHome(): Promise<void> {
 
 // From home to a skill's tile on the Math page.
 export async function findOnMath(user: User, skillName: string): Promise<HTMLElement> {
-  await user.click(await screen.findByRole('button', { name: /Math/ }));
+  await user.click(await screen.findByRole('button', { name: /^Math$/ }));
   await screen.findByRole('heading', { name: /Math/ });
   // The skill may sit under another grade's tab.
   const tile = (): HTMLElement | null => screen.queryByRole('button', { name: new RegExp(`^${skillName}\\.`) });

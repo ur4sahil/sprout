@@ -1,14 +1,19 @@
 import { skillById } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
+import type { Skill } from '../content/catalogue';
 import type { TodayPick } from '../engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../storage/schema';
 import { REVIEW_QUESTIONS } from '../engine/review';
 import { inProgress, mixedBagOrder } from './mixedBag';
 
 // Today's plan (plan section 18): one list in order, each part ticked off when done.
-// 1. Review the mastered skills that are due. 2. Practice: skills in progress. 3. A new skill. 4. The Mixed bag.
+// 1. Review the mastered skills that are due. 2. Practice: one skill in each subject the grown-up picked (Math,
+// Language Arts, Reasoning; the owner's choice, Nov 18, 2026). 3. A new skill. 4. The Mixed bag, shown greyed out
+// until two topics are in progress (it then has something to mix).
 // Each part has a fixed size; a grown-up sets the parts for each child. The home screen's goal is the plan's
 // questions added up (the owner's choice, Nov 18, 2026), so there is one goal for the day, not two.
+
+const SUBJECTS: readonly Skill['subject'][] = ['math', 'ela', 'reasoning'];
 
 export const KEEP_GOING_QUESTIONS = 10; // answers today on a Practice skill to tick it off
 export const NEW_QUESTIONS = 5; // answers today on the new skill to tick it off
@@ -16,15 +21,15 @@ export const MIXED_QUESTIONS = 10; // Mixed bag answers today to tick it off
 
 export type PlanPart =
   | { kind: 'review'; skillIds: string[]; answered: number; done: boolean } // skillIds: the ones still due
-  | { kind: 'keepGoing'; skillId: string; answered: number; done: boolean }
+  | { kind: 'keepGoing'; subject: Skill['subject']; skillId: string; answered: number; done: boolean }
   | { kind: 'new'; skillId: string; answered: number; done: boolean }
-  | { kind: 'mixed'; answered: number; done: boolean };
+  | { kind: 'mixed'; answered: number; done: boolean; locked: boolean }; // locked: nothing to mix yet
 
 export function todaysPlan(input: {
   child: Child;
   today: string; // the local day
   states: readonly SkillState[];
-  picks: readonly TodayPick[];
+  picks: readonly TodayPick[]; // every candidate in priority order (rankCandidates)
   reviewsDue: readonly string[];
   attempts: readonly Attempt[]; // recent attempts; today's are picked out by day
   sessions: readonly Session[]; // recent sessions; tells which answers were in a Mixed bag
@@ -53,27 +58,26 @@ export function todaysPlan(input: {
     fresh = startedToday?.skillId ?? picks.find((pick) => pick.reason === 'next' && (stateOf(pick.skillId)?.attempts ?? 0) === 0 && usable(pick.skillId))?.skillId ?? null;
   }
 
-  // 2. Keep going: skills practised today first (so a tick does not move), then the picks below, then the most
-  // recently practised skills in progress.
-  if (settings.planKeepGoing > 0) {
-    const chosen: string[] = [];
-    const take = (skillId: string): void => {
-      if (chosen.length < settings.planKeepGoing && skillId !== fresh && !chosen.includes(skillId) && usable(skillId)) chosen.push(skillId);
-    };
-    for (const state of states) if (practisedToday(state.skillId) > 0 && (inProgress(state) || masteredToday(state.skillId))) take(state.skillId);
-    // A grown-up's plan, trouble spots and Sprout's own "continue" picks come next; a plan's skill may not be started yet.
-    for (const pick of picks) {
-      const state = stateOf(pick.skillId);
-      if (pick.reason !== 'review' && pick.reason !== 'next' && (state?.masteredAt ?? null) === null) take(pick.skillId);
-    }
-    const going = states.filter(inProgress).sort((a, b) => (b.lastPracticedAt ?? '').localeCompare(a.lastPracticedAt ?? ''));
-    for (const state of going) take(state.skillId);
-    // A child with nothing in progress keeps going with Sprout's next picks.
-    for (const pick of picks) if (pick.reason === 'next') take(pick.skillId);
-    for (const skillId of chosen) {
-      const answered = practisedToday(skillId);
-      parts.push({ kind: 'keepGoing', skillId, answered, done: answered >= KEEP_GOING_QUESTIONS || masteredToday(skillId) });
-    }
+  // 2. Practice: one skill for each subject picked. In a subject: a skill practised today first (so a tick does not
+  // move), then a grown-up's plan, trouble spots and Sprout's "continue" picks, then the most recently practised skill
+  // in progress, then Sprout's next pick. Today's new skill is never also a Practice skill.
+  const chosen = new Set<string>();
+  for (const subject of SUBJECTS) {
+    if (!settings.planPractice.includes(subject)) continue;
+    const mine = (skillId: string): boolean => skillById(skillId)?.subject === subject && skillId !== fresh && !chosen.has(skillId) && usable(skillId);
+    const today = states
+      .filter((state) => mine(state.skillId) && practisedToday(state.skillId) > 0 && (inProgress(state) || masteredToday(state.skillId)))
+      .sort((a, b) => practisedToday(b.skillId) - practisedToday(a.skillId) || a.skillId.localeCompare(b.skillId))[0]?.skillId;
+    const picked = picks.find((pick) => pick.reason !== 'review' && pick.reason !== 'next' && mine(pick.skillId) && (stateOf(pick.skillId)?.masteredAt ?? null) === null)?.skillId;
+    const going = states
+      .filter((state) => mine(state.skillId) && inProgress(state))
+      .sort((a, b) => (b.lastPracticedAt ?? '').localeCompare(a.lastPracticedAt ?? ''))[0]?.skillId;
+    const next = picks.find((pick) => pick.reason === 'next' && mine(pick.skillId))?.skillId;
+    const skillId = today ?? picked ?? going ?? next;
+    if (!skillId) continue;
+    chosen.add(skillId);
+    const answered = practisedToday(skillId);
+    parts.push({ kind: 'keepGoing', subject, skillId, answered, done: answered >= KEEP_GOING_QUESTIONS || masteredToday(skillId) });
   }
 
   if (fresh) {
@@ -81,10 +85,11 @@ export function todaysPlan(input: {
     parts.push({ kind: 'new', skillId: fresh, answered, done: answered >= NEW_QUESTIONS });
   }
 
-  // 4. The Mixed bag: offered when two topics are in progress, and kept on the list once started today.
+  // 4. The Mixed bag: playable when two topics are in progress (and kept once started today); greyed out before.
   if (settings.planMixed) {
     const answered = todays.filter((attempt) => mixedSessions.has(attempt.sessionId)).length;
-    if (answered > 0 || mixedBagOrder(states, LADDERS).length > 0) parts.push({ kind: 'mixed', answered, done: answered >= MIXED_QUESTIONS });
+    const locked = answered === 0 && mixedBagOrder(states, LADDERS).length === 0;
+    parts.push({ kind: 'mixed', answered, done: !locked && answered >= MIXED_QUESTIONS, locked });
   }
   return parts;
 }
@@ -103,7 +108,7 @@ export function partSize(part: PlanPart): number {
     case 'new':
       return NEW_QUESTIONS;
     case 'mixed':
-      return MIXED_QUESTIONS;
+      return part.locked ? 0 : MIXED_QUESTIONS; // a greyed-out Mixed bag is not part of the goal
   }
 }
 
@@ -130,5 +135,5 @@ export function partPath(part: PlanPart): string {
 
 // The first part not yet done, or null when the plan is finished.
 export function nextPart(plan: readonly PlanPart[]): PlanPart | null {
-  return plan.find((part) => !part.done) ?? null;
+  return plan.find((part) => !part.done && !(part.kind === 'mixed' && part.locked)) ?? null;
 }

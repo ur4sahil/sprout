@@ -80,7 +80,7 @@ export async function addChild(page: Page, name: string, grade: string, checkIn:
 
 // From home: opens Math and taps a skill's tile, looking under each grade tab.
 export async function openOnMath(page: Page, skill: string): Promise<void> {
-  await page.getByRole('button', { name: /Math/ }).click();
+  await page.getByRole('button', { name: /^Math$/ }).click();
   await expect(page.getByRole('heading', { name: /Math/ })).toBeVisible();
   const tile = page.getByRole('button', { name: new RegExp(`^${skill}\\.`) });
   const tabs = page.getByRole('tab');

@@ -26,8 +26,9 @@ export const childSettingsSchema = z.object({
   extraMinutes: z.object({ day: z.string(), minutes: z.number().int().min(0).max(600) }).default({ day: '', minutes: 0 }),
   // Fast-facts sets a parent opened before the child's grade reaches them (plan section 15.5).
   factSets: z.array(z.string()).default([]),
-  // Today's plan (plan section 18): how many skills in "Keep going", and whether to add something new and the Mixed bag.
-  planKeepGoing: z.number().int().min(0).max(4).default(3),
+  // Today's plan (plan section 18): the subjects with a Practice part each day (one skill each), and whether to add
+  // something new and the Mixed bag.
+  planPractice: z.array(z.enum(['math', 'ela', 'reasoning'])).default(['math', 'ela', 'reasoning']),
   planNew: z.boolean().default(true),
   planMixed: z.boolean().default(true),
 });
@@ -47,7 +48,7 @@ export function defaultSettings(grade: Grade): ChildSettings {
     preReader: young,
     extraMinutes: { day: '', minutes: 0 },
     factSets: [],
-    planKeepGoing: 3,
+    planPractice: ['math', 'ela', 'reasoning'],
     planNew: true,
     planMixed: true,
   };

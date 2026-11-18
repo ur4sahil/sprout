@@ -6,7 +6,7 @@ import { CATALOGUE } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
 import { allGenerators, generateQuestion } from '../content/registry';
 import type { TodayPick } from '../engine/recommend';
-import { recommend } from '../engine/recommend';
+import { rankCandidates, recommend } from '../engine/recommend';
 import { dueForReview } from '../engine/review';
 import { seedFor } from '../engine/seed';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
@@ -66,7 +66,7 @@ export function summariseDay(input: {
   const lastSession = sessions.filter((session) => session.kind === 'practice' && session.questions > 0).sort((a, b) => a.startedAt.localeCompare(b.startedAt)).at(-1);
   const stateOf = (skillId: string): SkillState | undefined => states.find((state) => state.skillId === skillId);
 
-  const picks = recommend({
+  const recommendInput = {
     childId: child.id,
     grade: child.grade,
     nowIso,
@@ -78,12 +78,13 @@ export function summariseDay(input: {
     attemptsLast14Days,
     lastSessionSkillId: lastSession?.skillId ?? null,
     canListen,
-    isListenNext: (skillId) => {
+    isListenNext: (skillId: string) => {
       const skill = skills.find((row) => row.id === skillId);
       return skill !== undefined && ready.has(skillId) && isListenNext(child, skill, stateOf(skillId));
     },
-    hasGenerator: (skillId) => ready.has(skillId),
-  });
+    hasGenerator: (skillId: string) => ready.has(skillId),
+  };
+  const picks = recommend(recommendInput);
 
   // Minutes are the sum of the day's answer times. Each is already capped at two minutes.
   const minutesToday = todays.reduce((sum, attempt) => sum + attempt.ms, 0) / 60_000;
@@ -100,7 +101,7 @@ export function summariseDay(input: {
     reviewsDue,
     checkIn: input.progress ? checkInToday(child.grade, input.progress, today) : null,
     firstVisit: input.progress ? isFirstVisit(child.grade, input.progress) : false,
-    plan: todaysPlan({ child, today, states, picks, reviewsDue, attempts, sessions }),
+    plan: todaysPlan({ child, today, states, picks: rankCandidates(recommendInput), reviewsDue, attempts, sessions }),
   };
 }
 

@@ -2634,9 +2634,9 @@ The owner watched the four-beat lessons with his children and found them unusabl
 
 - "Today's plan" replaces "Today's picks" on home: one list, in order, each part ticked off when done.
   1. Review: mastered skills due today (3 questions each, as reviews are now).
-  2. Practice: skills the child is in the middle of, one row each.
+  2. Practice: one skill a day in each of Math, Language Arts and Reasoning (owner, Nov 18, 2026), titled "Math practice" and so on. In each subject: a skill practised today, else a grown-up's plan, trouble spot or skill in progress, else Sprout's next pick.
   3. New skill: one new skill; it opens on the bulb's choice screen (video, lesson, example) before practice.
-  4. Mixed bag (section 17).
+  4. Mixed bag (section 17). Before two topics are in progress it is shown greyed out ("Opens after you practice two topics"), cannot be opened, and is not part of the goal.
 - Each part has a fixed size of its own. The daily goal is the plan's questions added up (owner's choice, Nov 18, 2026): the ring, the profile card and the dashboard show answers inside the plan's parts out of that total, and the old Daily goal setting is gone. Answers past a part's size, or on skills outside the plan, do not count.
-- A grown-up sets the parts for each child in Settings: how many skills to practice, whether to add something new each day, and the Mixed bag.
+- A grown-up sets the parts for each child in Settings: which subjects get a Practice part, whether to add something new each day, and the Mixed bag.
 - Play becomes "Start today's plan" and works through the parts in order; any part can also be tapped on its own.

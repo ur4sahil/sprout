@@ -70,7 +70,7 @@ describe('child setup', () => {
     const saved = (await (await repo()).listChildren())[0];
     expect(saved).toMatchObject({ name: 'Maya', avatar: '🦊', grade: 'K', resetAt: null, deletedAt: null });
     // Kindergarten defaults.
-    expect(saved?.settings).toEqual({ gentleScoring: true, sessionLength: 8, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: true, extraMinutes: { day: '', minutes: 0 }, factSets: [], planKeepGoing: 3, planNew: true, planMixed: true });
+    expect(saved?.settings).toEqual({ gentleScoring: true, sessionLength: 8, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: true, extraMinutes: { day: '', minutes: 0 }, factSets: [], planPractice: ['math', 'ela', 'reasoning'], planNew: true, planMixed: true });
     expect(saved?.id).toMatch(/^[0-9a-f-]{36}$/);
   });
 
@@ -145,18 +145,19 @@ describe('the profile picker', () => {
     // Each card says who it is, their grade and how far along today's goal they are.
     const card = group.querySelector('[data-profile="Robin"]') as HTMLElement;
     expect(card.textContent).toContain('Kindergarten');
-    // The goal is today's plan added up: two skills to practice (10 each) and a new skill (5).
-    expect(card.textContent).toContain('0 of 25 today');
-    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 25 questions today.');
+    // The goal is today's plan added up: a practice skill in each subject (10 each) and a new skill (5).
+    expect(card.textContent).toContain('0 of 35 today');
+    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 35 questions today.');
     await user.click(screen.getByRole('button', { name: 'Ada' }));
     expect(spoken.sounds).toEqual(['unlock']);
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
     expect(await screen.findByRole('heading', { name: 'Ada' })).toBeTruthy();
     expect(useAppStore.getState().child?.id).toBe('kid-2');
-    // Home shows today's plan for a kindergarten child: three kindergarten skills to start on.
+    // Home shows today's plan for a kindergarten child: a kindergarten Math and Language Arts skill, a Reasoning skill
+    // (Reasoning has no grades), and a new kindergarten skill.
     const picks = [...(await screen.findByRole('list', { name: "Today's plan" })).querySelectorAll('[data-skill]')];
-    expect(picks).toHaveLength(3);
-    expect(picks.every((row) => row.getAttribute('data-skill')?.startsWith('M-K-'))).toBe(true);
+    expect(picks).toHaveLength(4);
+    expect(picks.every((row) => /^(M-K-|E-K-|R-)/.test(row.getAttribute('data-skill') ?? ''))).toBe(true);
   });
 
   it('"Switch child" goes back to the picker and forgets the child', async () => {
@@ -274,7 +275,7 @@ describe('the install guide', () => {
 
 describe('the saved record of an answer', () => {
   const skill = skillById('M-K-C4')!;
-  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 }, factSets: [], planKeepGoing: 3, planNew: true, planMixed: true }, resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
+  const child = { id: 'kid-1', name: 'Robin', avatar: '🐢', grade: '1' as const, settings: { gentleScoring: false, sessionLength: 10, speechRate: 0.85, autoSpeak: true, showTimer: false, dailyGoalQuestions: 15, allowVideos: true, dailyMinutes: 0, preReader: false, extraMinutes: { day: '', minutes: 0 }, factSets: [], planPractice: ['math', 'ela', 'reasoning'] as ('math' | 'ela' | 'reasoning')[], planNew: true, planMixed: true }, resetAt: null, levelWeeks: [], createdAt: NOW.toISOString(), updatedAt: NOW.toISOString(), deletedAt: null };
 
   it('keeps the level and seed asked, exactly what was submitted, and a plain-text snapshot', () => {
     const question = generateQuestion('M-K-C4', 1, 77);

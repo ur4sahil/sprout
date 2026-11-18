@@ -28,6 +28,12 @@ vi.mock('../../src/audio/speech', async (original) => ({
   stop: () => undefined,
   isSpeechAvailable: () => true,
 }));
+// The old four-beat lesson is still what a skill without a teaching lesson gets. A test turns the teaching lessons off to see it.
+const lessons = vi.hoisted(() => ({ off: false }));
+vi.mock('../../src/lessons', async (original) => {
+  const actual = await original<typeof import('../../src/lessons')>();
+  return { ...actual, teachingFor: (skillId: string) => (lessons.off ? null : actual.teachingFor(skillId)) };
+});
 vi.mock('../../src/audio/sfx', async (original) => ({
   ...(await original<typeof import('../../src/audio/sfx')>()),
   playSfx: (name: string) => {
@@ -39,6 +45,7 @@ vi.mock('../../src/audio/sfx', async (original) => ({
 }));
 
 beforeEach(() => {
+  lessons.off = false;
   spoken.said.length = 0;
   spoken.sounds.length = 0;
 });
@@ -70,18 +77,21 @@ describe('home', () => {
     await setUp('K', { preReader: false });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    // A new kindergarten child: keep going with Sprout's first picks, and one new skill. Nothing to mix yet.
+    // A new kindergarten child: one practice skill in each subject from Sprout's first picks, one new skill, and the
+    // Mixed bag greyed out: nothing to mix yet.
     const plan = await screen.findByRole('list', { name: "Today's plan" });
     const parts = [...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'));
-    expect(parts).toEqual(['keepGoing', 'keepGoing', 'new']);
-    expect(new Set(await picksOnScreen())).toEqual(new Set(['M-K-A1', 'M-K-B1', 'M-K-C1']));
+    expect(parts).toEqual(['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed']);
+    expect([...plan.querySelectorAll('[data-subject]')].map((el) => el.getAttribute('data-subject'))).toEqual(['math', 'ela', 'reasoning']);
+    expect(screen.getByRole('button', { name: /^Math practice\./ })).toBeTruthy();
+    expect((screen.getByRole('button', { name: /^Mixed bag\. Opens after/ }) as HTMLButtonElement).disabled).toBe(true);
     expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
-    // The goal is the plan's questions added up: 10 + 10 + 5.
-    expect(screen.getByRole('img', { name: '0 of 25 questions today' })).toBeTruthy();
-    expect(screen.getByText('0 of 25 questions')).toBeTruthy();
-    expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
-    expect(screen.getByRole('button', { name: /Language Arts/ })).toBeTruthy();
-    expect(screen.getByRole('button', { name: /Reasoning/ })).toBeTruthy();
+    // The goal is the plan's questions added up: 10 + 10 + 10 + 5. The greyed-out Mixed bag adds nothing.
+    expect(screen.getByRole('img', { name: '0 of 35 questions today' })).toBeTruthy();
+    expect(screen.getByText('0 of 35 questions')).toBeTruthy();
+    expect(screen.getByRole('button', { name: /^Math$/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /^Language Arts$/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /^Reasoning$/ })).toBeTruthy();
     // Nothing is due for review.
     expect(screen.queryByRole('button', { name: /Review \(/ })).toBeNull();
   });
@@ -99,16 +109,17 @@ describe('home', () => {
   });
 
   it('the plan follows the grown-up\'s settings', async () => {
-    await setUp('K', { planKeepGoing: 1, planNew: false });
+    await setUp('K', { planPractice: ['math'], planNew: false, planMixed: false });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     const plan = await screen.findByRole('list', { name: "Today's plan" });
     expect([...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'))).toEqual(['keepGoing']);
+    expect(plan.querySelector('[data-subject]')?.getAttribute('data-subject')).toBe('math');
   });
 
   it('the goal ring counts the plan\'s answers and lights a star for each share of the goal', async () => {
     // One skill to practice, nothing else: the goal is that skill's 10 questions.
-    await setUp('K', { planKeepGoing: 1, planNew: false, planMixed: false });
+    await setUp('K', { planPractice: ['math'], planNew: false, planMixed: false });
     const user = openApp();
     await openSkill(user, 'Add to 10');
     for (let i = 0; i < 3; i += 1) {
@@ -123,7 +134,7 @@ describe('home', () => {
   });
 
   it('says the goal is reached once the plan is done', async () => {
-    const child = await setUp('K', { planKeepGoing: 1, planNew: false, planMixed: false });
+    const child = await setUp('K', { planPractice: ['math'], planNew: false, planMixed: false });
     const store = await repo();
     const at = NOW.toISOString();
     await store.saveSkillState({ ...newSkillState(child.id, ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
@@ -153,7 +164,7 @@ describe('the subject page', () => {
     await setUp('3');
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await user.click(await screen.findByRole('button', { name: /Math/ }));
+    await user.click(await screen.findByRole('button', { name: /^Math$/ }));
     const tabs = await screen.findAllByRole('tab');
     expect(tabs.map((tab) => tab.getAttribute('aria-selected'))).toEqual(tabs.map((_, i) => (i === tabs.length - 1 ? 'true' : 'false')));
     await user.click(screen.getByRole('tab', { name: 'Kindergarten' }));
@@ -346,6 +357,7 @@ describe('the daily limit', () => {
 
 describe('the lesson player', () => {
   it('steps through the four beats, speaking each, then offers Practise', async () => {
+    lessons.off = true;
     await setUp('K');
     const user = openApp();
     await openSkill(user, 'Add to 10');
@@ -496,7 +508,7 @@ describe('review', () => {
 
 describe('Start today\'s plan', () => {
   it('opens the first part not done; a part ticks off when its answers are in', async () => {
-    await setUp('K', { planKeepGoing: 1, planNew: false });
+    await setUp('K', { planPractice: ['math'], planNew: false });
     await masterAllBut([ADD]);
     await (await repo()).saveSkillState({ ...newSkillState('kid-1', ADD, NOW.toISOString()), attempts: 2, correct: 1, score: 20, lastPracticedAt: NOW.toISOString() });
     const user = openApp();

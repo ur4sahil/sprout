@@ -156,8 +156,8 @@ describe('the plans page', () => {
     await user.click(screen.getByRole('button', { name: 'Done' }));
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     const picks = await screen.findByRole('list', { name: "Today's plan" });
-    const first = picks.querySelector('[data-skill]');
-    expect(first?.getAttribute('data-skill')).toBe('R-A1');
+    // R-A1 is a Reasoning skill, so it is the Reasoning practice.
+    expect(picks.querySelector('[data-subject="reasoning"]')?.getAttribute('data-skill')).toBe('R-A1');
   });
 
   it('a parent names a plan, picks skills, orders them, assigns children, changes it and removes it', async () => {

@@ -42,7 +42,7 @@ test.describe('Math kindergarten, part 2', () => {
 
   test('the Math page lists adding and subtracting together, then tens and ones', async ({ page }) => {
     await start(page);
-    await page.getByRole('button', { name: /Math/ }).click();
+    await page.getByRole('button', { name: /^Math$/ }).click();
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', 'K'));
     await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', 'K'));
     await checkScreen(page, 'Math page with all 28 kindergarten skills', 64);

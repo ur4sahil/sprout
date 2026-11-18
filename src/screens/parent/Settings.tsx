@@ -33,7 +33,11 @@ const GRADES = [
 ];
 const numbers = (values: number[], unit: (n: number) => string): { value: string; label: string }[] => values.map((n) => ({ value: String(n), label: unit(n) }));
 const SESSION = numbers([5, 6, 8, 10, 12, 15, 20], (n) => `${n} questions`);
-const KEEP_GOING = numbers([0, 1, 2, 3, 4], (n) => (n === 0 ? 'None' : `${n} ${n === 1 ? 'skill' : 'skills'}`));
+const PRACTICE_SUBJECTS = [
+  { id: 'math', label: 'Math' },
+  { id: 'ela', label: 'Language Arts' },
+  { id: 'reasoning', label: 'Reasoning' },
+] as const;
 const MINUTES = numbers([0, 10, 15, 20, 30, 45, 60, 90], (n) => (n === 0 ? 'No limit' : `${n} minutes`));
 const RATE = [
   { value: '0.7', label: 'Slow' },
@@ -123,7 +127,15 @@ export default function Settings() {
           {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
           <h3>Today's plan</h3>
           <p className={styles.soft}>The daily goal on the home screen is the plan's questions added up.</p>
-          <SelectField label="Skills to practice" value={String(child.settings.planKeepGoing)} options={KEEP_GOING} onValue={(value) => set({ planKeepGoing: Number(value) })} />
+          {PRACTICE_SUBJECTS.map(({ id, label }) => (
+            <ToggleField
+              key={id}
+              label={`${label} practice`}
+              hint="One skill a day, 10 questions."
+              checked={child.settings.planPractice.includes(id)}
+              onChange={(on) => set({ planPractice: PRACTICE_SUBJECTS.map((subject) => subject.id).filter((each) => (each === id ? on : child.settings.planPractice.includes(each))) })}
+            />
+          ))}
           <ToggleField label="Something new each day" hint="One new skill, opening on its video, lesson or example." checked={child.settings.planNew} onChange={(planNew) => set({ planNew })} />
           <ToggleField label="Mixed bag" hint="Questions from several topics in progress, mixed together." checked={child.settings.planMixed} onChange={(planMixed) => set({ planMixed })} />
           <h3>Check-in</h3>

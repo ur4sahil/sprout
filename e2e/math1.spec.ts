@@ -39,7 +39,7 @@ test.describe('Math grade 1', () => {
     await signUp(page);
     await addChild(page, 'Robin', 'Grade 1');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await page.getByRole('button', { name: /Math/ }).click();
+    await page.getByRole('button', { name: /^Math$/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 1' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('math', '1'));
     await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', '1'));

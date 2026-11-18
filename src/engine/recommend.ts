@@ -44,7 +44,8 @@ export interface RecommendInput {
   hasGenerator: (skillId: string) => boolean;
 }
 
-export function recommend(input: RecommendInput): TodayPick[] {
+// Every candidate in priority order, before the cut to MAX_PICKS. Today's plan reads it to find one skill per subject.
+export function rankCandidates(input: RecommendInput): TodayPick[] {
   const skillById = new Map(input.skills.map((skill) => [skill.id, skill]));
   const stateById = new Map(input.states.map((state) => [state.skillId, state]));
 
@@ -123,6 +124,12 @@ export function recommend(input: RecommendInput): TodayPick[] {
     if (next) add(next, 'next');
   }
 
+  return candidates;
+}
+
+export function recommend(input: RecommendInput): TodayPick[] {
+  const skillById = new Map(input.skills.map((skill) => [skill.id, skill]));
+  const candidates = rankCandidates(input);
   // Variety: no repeats (already true), two strands when possible, never lead with the last session's skill.
   const picks = candidates.slice(0, MAX_PICKS);
   const strandOf = (pick: TodayPick): string => skillById.get(pick.skillId)?.strand ?? '';

@@ -90,7 +90,7 @@ test.describe('the grown-ups area', () => {
     await shoot(page, 'parent-scores');
 
     await page.getByRole('tab', { name: 'Settings' }).click();
-    await page.getByLabel('Skills to practice').selectOption('2');
+    await page.getByRole('switch', { name: /Reasoning practice/ }).click();
     await expect(page.getByRole('status')).toHaveText('Saved.');
     await page.getByRole('switch', { name: /Pre-reader mode/ }).click();
     await checkScreen(page, 'settings', 44);
@@ -109,7 +109,9 @@ test.describe('the grown-ups area', () => {
     await page.getByRole('button', { name: 'Done' }).click();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await expect(page.getByRole('img', { name: /^3 of \d+ questions today$/ })).toBeVisible();
+    // Reasoning practice was turned off: Math and Language Arts are left.
     await expect(page.locator('[data-plan-part="keepGoing"]')).toHaveCount(2);
+    await expect(page.locator('[data-subject="reasoning"]')).toHaveCount(0);
   });
 
   test('export makes a backup file, and importing it on a wiped device brings everything back', async ({ page, browserName }) => {

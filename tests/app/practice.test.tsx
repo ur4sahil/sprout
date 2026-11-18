@@ -488,6 +488,6 @@ describe('getting to a skill', () => {
     useAppStore.getState().setChild(child);
     openApp('/skill/M-9-Z9');
     expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
-    expect(await screen.findByRole('button', { name: /Math/ })).toBeTruthy();
+    expect(await screen.findByRole('button', { name: /^Math$/ })).toBeTruthy();
   });
 });

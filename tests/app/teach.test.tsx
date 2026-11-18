@@ -1,9 +1,10 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { setTimingForTests } from '../../src/app/timing';
 import TeachLesson from '../../src/components/TeachLesson';
 import { generateQuestion } from '../../src/content/registry';
+import { LESSONS } from '../../src/lessons';
 import { moment, scene } from '../../src/lessons/build';
 import type { Lesson } from '../../src/lessons/types';
 
@@ -96,3 +97,25 @@ describe('a lesson that teaches', () => {
     await waitFor(() => expect(spoken.said.filter((each) => each === 'lesson:["First moment."]').length).toBe(2));
   });
 });
+
+// Every written lesson: its opening moments play on the real screen and its first turn's question is drawn, whatever
+// kind of question it is (choice, sort, match, tiles ...), and every scene of the lesson can be drawn.
+describe.each(Object.keys(LESSONS))('the %s lesson on screen', (skillId) => {
+  it('plays to its first turn and draws that question', async () => {
+    const made = LESSONS[skillId]?.();
+    if (!made) throw new Error(`No lesson for ${skillId}`);
+    render(<TeachLesson lesson={made} rate={0.85} onPractise={() => undefined} />);
+    await screen.findByText('Your turn!', undefined, { timeout: 8000 });
+    expect(document.querySelector('[data-your-turn]')).not.toBeNull();
+    expect(screen.getByRole('button', { name: /Check/ })).toBeTruthy();
+    cleanup();
+    // The scenes after the first turn, and every why: each one alone as a lesson of one moment.
+    const later = made.parts.flatMap((part) => (part.kind === 'show' ? [part.moment] : part.turn.why));
+    for (const each of later) {
+      const view = render(<TeachLesson lesson={{ look: made.look, parts: [{ kind: 'show', moment: each }] }} rate={0.85} onPractise={() => undefined} />);
+      expect(view.container.querySelector('[data-moment-text]')?.textContent ?? view.container.textContent).toBeTruthy();
+      view.unmount();
+    }
+  });
+});
+

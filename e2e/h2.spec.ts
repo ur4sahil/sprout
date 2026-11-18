@@ -59,7 +59,7 @@ test.describe('Math wave H2', () => {
     await signUp(page);
     await addChild(page, 'Robin', 'Pre-K');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await page.getByRole('button', { name: /Math/ }).click();
+    await page.getByRole('button', { name: /^Math$/ }).click();
     await expect(page.getByRole('tab', { name: 'Pre-K' })).toHaveAttribute('aria-selected', 'true');
     for (const [id] of PREK) await expect(page.locator(`[data-skill="${id}"]`)).toHaveCount(1);
   });

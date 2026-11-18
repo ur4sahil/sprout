@@ -38,7 +38,7 @@ export async function saveScores(page: Page, ids: string[], score: number): Prom
 
 // Opens a skill from its tile on a subject's page. `tab` is the grade tab to switch to first, when it is not the child's own.
 export async function openFromSubject(page: Page, subject: string, name: string, tab?: string): Promise<void> {
-  await page.getByRole('button', { name: new RegExp(subject) }).click();
+  await page.getByRole('button', { name: subject, exact: true }).click();
   if (tab) await page.getByRole('tab', { name: tab }).click();
   // Every character with a meaning in a pattern is escaped, so a name such as "Which operation?" matches itself.
   await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[.*+?^${}()|[\]\\/:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();

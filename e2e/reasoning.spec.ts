@@ -55,7 +55,7 @@ test.describe('Reasoning', () => {
 
   test('Reasoning is one page for every grade, with no grade tabs', async ({ page }) => {
     await start(page, 'Pre-K');
-    await page.getByRole('button', { name: /Reasoning/ }).click();
+    await page.getByRole('button', { name: /^Reasoning$/ }).click();
     await expect(page.getByRole('heading', { name: /Reasoning/ })).toBeVisible();
     await expect(page.getByRole('tab')).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Thinking puzzles']);

@@ -66,7 +66,8 @@ test.describe('grown-ups area, part 2', () => {
     await page.getByRole('button', { name: 'Done' }).click();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     const picks = page.getByRole('list', { name: "Today's plan" });
-    await expect(picks.locator('[data-skill]').first()).toHaveAttribute('data-skill', 'R-A2');
+    // The plan's first skill is a Reasoning skill, so it is today's Reasoning practice.
+    await expect(picks.locator('[data-subject="reasoning"]')).toHaveAttribute('data-skill', 'R-A2');
   });
 
   test('trouble spots is empty for a child who is doing fine, and every new page fits', async ({ page }) => {

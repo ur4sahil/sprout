@@ -52,7 +52,7 @@ test.describe('Language Arts grade 1', () => {
 
   test('the Language Arts page opens on Grade 1, with its four groups', async ({ page }) => {
     await start(page);
-    await page.getByRole('button', { name: /Language Arts/ }).click();
+    await page.getByRole('button', { name: /^Language Arts$/ }).click();
     await expect(page.getByRole('tab', { name: 'Grade 1' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', '1'));
     await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', '1'));

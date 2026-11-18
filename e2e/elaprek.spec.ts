@@ -47,7 +47,7 @@ test.describe('Language Arts pre-K', () => {
 
   test('Language Arts is offered on home, with its three groups of skills', async ({ page }) => {
     await start(page);
-    await page.getByRole('button', { name: /Language Arts/ }).click();
+    await page.getByRole('button', { name: /^Language Arts$/ }).click();
     await expect(page.getByRole('heading', { name: /Language Arts/ })).toBeVisible();
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(groupNames('ela', 'PK'));
     await expect(page.locator('[data-skill]')).toHaveCount(skillCount('ela', 'PK'));

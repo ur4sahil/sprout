@@ -13,7 +13,7 @@ export async function openLesson(page: Page, skillId: string): Promise<void> {
   await signUp(page);
   await addChild(page, 'Robin', GRADE_NAME[skill.grade] ?? 'Kindergarten');
   await page.getByRole('button', { name: 'Robin', exact: true }).click();
-  await page.getByRole('button', { name: skill.subject === 'math' ? /Math/ : /Language Arts/ }).click();
+  await page.getByRole('button', { name: { math: 'Math', ela: 'Language Arts', reasoning: 'Reasoning' }[skill.subject], exact: true }).click();
   const tile = page.getByRole('button', { name: new RegExp(`^${skill.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\.`) });
   const tabs = page.getByRole('tab');
   for (let i = 0; i < (await tabs.count()) && !(await tile.isVisible()); i += 1) await tabs.nth(i).click();

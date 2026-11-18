@@ -18,28 +18,45 @@ const next = (skillId: string): TodayPick => ({ skillId, reason: 'next' });
 const base = { today: TODAY, reviewsDue: [] as string[], attempts: [] as Attempt[], sessions: [] as Session[] };
 
 describe("today's plan", () => {
-  it('keeps going with skills in progress, adds one new skill, then the Mixed bag', () => {
-    const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')] });
-    expect(plan.map((part) => part.kind)).toEqual(['keepGoing', 'keepGoing', 'new', 'mixed']);
+  it('one Practice skill for each subject, then one new skill, then the Mixed bag', () => {
+    const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1'), going('E-K-B1')], picks: [next('M-K-A1'), next('R-A1')] });
+    expect(plan.map((part) => part.kind)).toEqual(['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed']);
+    // Math has two skills in progress: only one is today's Math practice. Reasoning has none, so it is Sprout's next pick.
+    expect(plan.filter((part) => part.kind === 'keepGoing').map((part) => [part.subject, part.skillId])).toEqual([['math', 'M-K-C1'], ['ela', 'E-K-B1'], ['reasoning', 'R-A1']]);
     expect(plan.find((part) => part.kind === 'new')).toMatchObject({ skillId: 'M-K-A1' });
-    expect(partPath(plan[2] as never)).toBe('/skill/M-K-A1/learn');
+    expect(partPath(plan[3] as never)).toBe('/skill/M-K-A1/learn');
   });
 
-  it('follows the settings: how many to keep going with, and whether to add something new or the Mixed bag', () => {
-    const plan = todaysPlan({ ...base, child: child({ planKeepGoing: 1, planNew: false, planMixed: false }), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')] });
-    expect(plan.map((part) => part.kind)).toEqual(['keepGoing']);
+  it('a skill practised today stays its subject\'s Practice skill, so the row does not change under the child', () => {
+    const attempts = [answer('M-K-B1', 's0', '2026-03-08'), answer('M-K-B1')];
+    const plan = todaysPlan({ ...base, child: child({ planNew: false, planMixed: false }), states: [going('M-K-C1'), going('M-K-B1', '2026-03-01T10:00:00.000Z')], picks: [], attempts });
+    expect(plan.find((part) => part.kind === 'keepGoing' && part.subject === 'math')).toMatchObject({ skillId: 'M-K-B1', answered: 1 });
+  });
+
+  it('follows the settings: which subjects to practice, and whether to add something new or the Mixed bag', () => {
+    const plan = todaysPlan({ ...base, child: child({ planPractice: ['ela'], planNew: false, planMixed: false }), states: [going('M-K-C1'), going('E-K-B1')], picks: [next('M-K-A1')] });
+    expect(plan).toMatchObject([{ kind: 'keepGoing', subject: 'ela', skillId: 'E-K-B1' }]);
   });
 
   it('ticks a part off once its answers are in, and Start goes to the first one not done', () => {
-    const attempts = Array.from({ length: KEEP_GOING_QUESTIONS }, () => answer('M-K-C1'));
-    const plan = todaysPlan({ ...base, child: child({ planKeepGoing: 2, planNew: false, planMixed: false }), states: [going('M-K-C1'), going('M-K-B1', '2026-03-08T10:00:00.000Z')], picks: [], attempts });
+    const attempts = [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: KEEP_GOING_QUESTIONS }, () => answer('M-K-C1'))];
+    const plan = todaysPlan({ ...base, child: child({ planPractice: ['math', 'ela'], planNew: false, planMixed: false }), states: [going('M-K-C1'), going('E-K-B1')], picks: [], attempts });
     expect(plan.map((part) => part.done)).toEqual([true, false]);
-    expect(nextPart(plan)).toMatchObject({ kind: 'keepGoing', skillId: 'M-K-B1' });
+    expect(nextPart(plan)).toMatchObject({ kind: 'keepGoing', skillId: 'E-K-B1' });
+  });
+
+  it('the Mixed bag is greyed out until two topics are in progress: not in the goal, and Start skips it', () => {
+    const plan = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [] });
+    expect(plan.map((part) => part.kind)).toEqual(['keepGoing', 'mixed']);
+    expect(plan[1]).toMatchObject({ locked: true, done: false });
+    expect(planProgress(plan).goal).toBe(KEEP_GOING_QUESTIONS);
+    const finished = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [], attempts: [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: KEEP_GOING_QUESTIONS }, () => answer('M-K-C1'))] });
+    expect(nextPart(finished)).toBeNull();
   });
 
   it('the new skill stays the same all day once started, and ticks off after its answers', () => {
     const started = { ...going('M-K-A1'), attempts: NEW_QUESTIONS };
-    const plan = todaysPlan({ ...base, child: child({ planKeepGoing: 0, planMixed: false }), states: [started], picks: [next('M-K-B1')], attempts: Array.from({ length: NEW_QUESTIONS }, () => answer('M-K-A1')) });
+    const plan = todaysPlan({ ...base, child: child({ planPractice: [], planMixed: false }), states: [started], picks: [next('M-K-B1')], attempts: Array.from({ length: NEW_QUESTIONS }, () => answer('M-K-A1')) });
     expect(plan).toEqual([{ kind: 'new', skillId: 'M-K-A1', answered: NEW_QUESTIONS, done: true }]);
   });
 
@@ -57,18 +74,18 @@ describe("today's plan", () => {
   });
 
   it('the goal is the plan\'s questions added up, counting only answers inside each part', () => {
-    const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')] });
-    expect(planProgress(plan)).toEqual({ done: 0, goal: KEEP_GOING_QUESTIONS * 2 + NEW_QUESTIONS + MIXED_QUESTIONS });
+    const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('E-K-B1')], picks: [next('M-K-A1'), next('R-A1')] });
+    expect(planProgress(plan)).toEqual({ done: 0, goal: KEEP_GOING_QUESTIONS * 3 + NEW_QUESTIONS + MIXED_QUESTIONS });
     // 12 answers on one skill count as 10; answers on a skill outside the plan do not count.
     // (C1 was practised yesterday too, so it is a skill to practice, not today's new skill.)
     const attempts = [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: 12 }, () => answer('M-K-C1')), answer('M-K-Z9')];
-    const later = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')], attempts });
+    const later = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('E-K-B1')], picks: [next('M-K-A1'), next('R-A1')], attempts });
     expect(planProgress(later).done).toBe(KEEP_GOING_QUESTIONS);
   });
 
   it('a part ticked off early counts in full, so a finished plan reaches its goal', () => {
     const mastered = { ...going('M-K-C1'), score: 100, masteredAt: NOW };
-    const plan = todaysPlan({ ...base, child: child({ planKeepGoing: 1, planNew: false, planMixed: false }), states: [mastered], picks: [], attempts: [answer('M-K-C1')] });
+    const plan = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false, planMixed: false }), states: [mastered], picks: [], attempts: [answer('M-K-C1')] });
     expect(plan[0]).toMatchObject({ done: true, answered: 1 });
     expect(planProgress(plan)).toEqual({ done: KEEP_GOING_QUESTIONS, goal: KEEP_GOING_QUESTIONS });
   });

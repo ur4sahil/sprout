@@ -25,7 +25,9 @@ test.describe('kid navigation', () => {
     await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]').first()).toBeVisible();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     const plan = page.getByRole('list', { name: "Today's plan" });
-    await expect(plan.locator('[data-skill]')).toHaveCount(3);
+    // A practice skill in Math, Language Arts and Reasoning, a new skill, and the Mixed bag greyed out (nothing to mix yet).
+    await expect(plan.locator('[data-skill]')).toHaveCount(4);
+    await expect(plan.locator('[data-plan-part="mixed"][data-locked]').getByRole('button', { name: /^Mixed bag\./ })).toBeDisabled();
     await expectNoTextOnlyControls(page, 'home');
     await checkScreen(page, 'home with the plan', 64);
     await shoot(page, 'home-plan');
@@ -92,7 +94,7 @@ test.describe('kid navigation', () => {
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await page.getByRole('button', { name: /Math/ }).click();
+    await page.getByRole('button', { name: /^Math$/ }).click();
     await expect(page.getByRole('tab', { name: 'Kindergarten' })).toHaveAttribute('aria-selected', 'true');
     await expect(page.locator('[data-skill]')).toHaveCount(skillCount('math', 'K'));
     await checkScreen(page, 'subject page', 64);
@@ -111,8 +113,9 @@ test.describe('kid navigation', () => {
   test('the lesson plays its four beats by itself, and the example goes step by step', async ({ page }) => {
     test.setTimeout(90_000);
     await signUp(page);
-    await addChild(page, 'Robin', 'Kindergarten');
-    await openSkill(page, 'Robin', 'Add to 10');
+    // A Grade 2 skill: it has no teaching lesson yet (plan section 16 covers K, Grade 1 and Reasoning), so it plays the four beats.
+    await addChild(page, 'Robin', 'Grade 2');
+    await openSkill(page, 'Robin', 'Hundreds, tens, ones');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
     await pickHelp(page, 'Lesson with Sprout');
     const lesson = page.getByRole('region', { name: 'Lesson' });

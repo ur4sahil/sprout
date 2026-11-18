@@ -5,7 +5,7 @@ import { voicePieces, voiceText } from '../../src/audio/voice';
 import { generatorFor } from '../../src/content/registry';
 import { CATALOGUE } from '../../src/content/catalogue';
 import { validateQuestion } from '../../src/engine/validate';
-import type { OracleId, Say } from '../../src/engine/types';
+import type { OracleId, Question, Say, Visual } from '../../src/engine/types';
 import { LESSONS } from '../../src/lessons';
 import type { Lesson, Moment } from '../../src/lessons/types';
 import { ORACLES } from '../oracles/index';
@@ -16,6 +16,45 @@ import { judge } from '../oracles/judge';
 const WORDS_PER_SECOND = 1.9; // the lesson voice (0.7 speed), slower than the questions
 const PAUSE_SECONDS = 1.7; // between moments: the gap, a sentence's pause and the glide
 const TURN_SECONDS = 10; // hearing a turn's question and answering it
+
+// What a why may say to give a question's answer, as the voice says it.
+function spokenVisual(visual: Visual | undefined): string | null {
+  if (!visual) return null;
+  if (visual.speak) return sayWords(visual.speak);
+  if (visual.kind === 'text' && /^\d+$/.test(visual.value)) return sayWords([{ number: Number(visual.value) }]); // a numeral is said as a number
+  if (visual.kind === 'text') return sayWords([visual.value.length === 1 ? { letter: visual.value } : visual.value]);
+  return null;
+}
+
+function spokenAnswers(q: Question): string[] {
+  const keep = (values: (string | null)[]): string[] => values.filter((value): value is string => !!value && value.trim().length > 0);
+  switch (q.type) {
+    case 'choice':
+    case 'dragWord':
+      return keep([spokenVisual(q.options[q.answerIndex])]);
+    case 'multiSelect':
+      return keep(q.answerIndexes.map((index) => spokenVisual(q.options[index])));
+    case 'tapCount':
+    case 'numberPad':
+    case 'columnSum':
+    case 'fillShape':
+      return [sayWords([{ number: q.answer }])];
+    case 'numberLineTap':
+      return q.line.denominator ? [] : [sayWords([{ number: q.answer }])];
+    case 'tiles':
+      return [sayWords([{ word: q.answer }]), sayWords(q.answer.split('').map((letter) => ({ letter })))];
+    case 'setClock':
+      return [sayWords([{ time: q.answer }])];
+    case 'order':
+      return keep(q.answerOrder.map((index) => spokenVisual(q.items[index])));
+    case 'sort':
+      return keep(q.answerBin.map((bin) => sayWords(q.bins[bin]?.speak ?? [])));
+    case 'match':
+      return keep(q.answerPairs.map(([, r]) => spokenVisual(q.right[r])));
+    case 'buildBar':
+      return [];
+  }
+}
 
 function moments(lesson: Lesson): Moment[] {
   return lesson.parts.flatMap((part) => (part.kind === 'show' ? [part.moment] : part.turn.why));
@@ -63,12 +102,15 @@ describe.each(Object.entries(LESSONS))('the lesson for %s', (skillId, make) => {
     for (const turn of turns) {
       const q = turn.question;
       expect(q.skillId).toBe(skillId);
-      expect(validateQuestion(q)).toEqual([]);
+      expect(turn.why.length, 'a turn has a why').toBeGreaterThan(0);
+      // Checked as the generator tests check it: with the skill's grade and oracle (banked questions use 'authored').
+      expect(validateQuestion(q, { grade: CATALOGUE.find((skill) => skill.id === skillId)?.grade, oracle: generatorFor(skillId).oracle })).toEqual([]);
       const named = typeof q.facts.oracle === 'string' ? (q.facts.oracle as OracleId) : generatorFor(skillId).oracle;
+      // Banked questions ('authored') carry their own answers, checked by the review sheet as in the oracle tests.
+      if (named === 'authored') continue;
       const oracle = ORACLES[named];
       expect(oracle, named).toBeDefined();
       if (oracle) expect(judge(q, oracle(q.facts))).toEqual([]);
-      expect(turn.why.length, 'a turn has a why').toBeGreaterThan(0);
     }
     // Two turns never ask the same question.
     expect(new Set(turns.map((turn) => turn.question.key)).size).toBe(turns.length);
@@ -79,10 +121,15 @@ describe.each(Object.entries(LESSONS))('the lesson for %s', (skillId, make) => {
       if (part.kind !== 'turn') continue;
       const q = part.turn.question;
       const words = part.turn.why.map((each) => sayWords(each.say)).join(' ');
-      const right = q.type === 'choice' ? q.options[q.answerIndex] : null;
-      const answer = right && right.kind === 'text' ? sayWords(right.speak ?? [right.value.length === 1 ? { letter: right.value } : right.value]) : null;
-      expect(answer, 'the right option says its answer').not.toBeNull();
-      expect(words, `the why never says ${answer ?? ''}`).toContain(answer ?? '');
+      // Any one of these said in the why is enough: e.g. one pair of a match, one item's bin in a sort.
+      // A picture answer with no spoken label falls back to the word the question is about (facts.target).
+      const target = typeof q.facts.target === 'string' ? q.facts.target : null;
+      const answers = [...spokenAnswers(q), ...(target ? [sayWords([{ word: target }])] : [])];
+      expect(answers.length, `a ${q.type} question has an answer the why can say`).toBeGreaterThan(0);
+      expect(
+        answers.some((answer) => words.includes(answer)),
+        `the why never says ${answers.join(' / ')}`,
+      ).toBe(true);
     }
   });
 
