@@ -1,0 +1,55 @@
+import type { Question, Say } from '../engine/types';
+
+// A lesson that teaches (plan section 16): moments of speech over a moving scene, and turns the child answers.
+
+// What a piece on the stage looks like.
+export type PieceLook =
+  | { kind: 'art'; emoji: string } // one of the app's drawn pictures
+  | { kind: 'numeral'; value: number }
+  | { kind: 'text'; text: string } // a letter, a word, a sign such as + or =
+  | { kind: 'cell' } // one empty square of a ten-frame
+  | { kind: 'rod' } // a ten: a stick of ten small squares
+  | { kind: 'cube' } // a one
+  | { kind: 'box' } // an empty answer box
+  | { kind: 'hand' }; // a pointing hand
+
+// One piece. Its place and size are in stage squares (the stage is `cols` by `rows` squares).
+// A piece keeps its id from moment to moment, so the player moves it rather than redrawing it.
+export interface Piece {
+  id: string;
+  look: PieceLook;
+  x: number; // left edge
+  y: number; // top edge
+  w?: number; // width, 1 when left out
+  h?: number; // height, 1 when left out
+  lit?: boolean; // picked out: a ring and a little larger
+  dim?: boolean; // faded back
+  gone?: boolean; // shrunk away (it fades out, or in the moment it comes back)
+  crossed?: boolean; // crossed out, for taking away
+  badge?: string; // a small label above it, such as the count so far
+}
+
+export interface Scene {
+  cols: number;
+  rows: number;
+  pieces: Piece[];
+}
+
+// One spoken sentence and the scene while it is said.
+export interface Moment {
+  say: Say;
+  text: string; // the words under the stage
+  scene: Scene;
+}
+
+// A question the child answers inside the lesson. `why` replays the idea on this question after a miss.
+export interface Turn {
+  question: Question;
+  why: Moment[];
+}
+
+export type LessonPart = { kind: 'show'; moment: Moment } | { kind: 'turn'; turn: Turn };
+
+export interface Lesson {
+  parts: LessonPart[];
+}

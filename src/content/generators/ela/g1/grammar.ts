@@ -1,4 +1,4 @@
-import readingStories from '../../../banks/readingStories.json';
+import readingStories from '../../../banks/readingStories.json' with { type: 'json' };
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, SortBin, Visual } from '../../../../engine/types';

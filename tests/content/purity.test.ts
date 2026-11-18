@@ -12,7 +12,7 @@ function files(dir: string): string[] {
 
 // engine/ and content/ must run in plain Node, and every question must be replayable.
 describe('engine and content code', () => {
-  const sources = [...files('src/engine'), ...files('src/content')].filter((path) => /\.tsx?$/.test(path));
+  const sources = [...files('src/engine'), ...files('src/content'), ...files('src/lessons')].filter((path) => /\.tsx?$/.test(path));
 
   it('exists', () => {
     expect(sources.length).toBeGreaterThan(5);

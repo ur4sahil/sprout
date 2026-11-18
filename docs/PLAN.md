@@ -2596,3 +2596,30 @@ Science and social studies, Spanish, classrooms and teacher accounts, writing an
 - Fast facts is always a race.
 - About double the skills in every grade (about 150 new skills over five waves).
 
+
+## 16. Lessons that teach (decided by the owner on Nov 17, 2026)
+
+The owner watched the four-beat lessons with his children and found them unusable: plain statements over a still picture, no explanation of why, nothing for the child to do, and some lines wrong or repeated. They are replaced, grade by grade, starting with Kindergarten and Grade 1 (Math and Language Arts, 165 skills). Other grades keep the old lesson until their turn.
+
+### What a lesson is
+
+- One to two minutes. Show the idea with moving pictures, explain why it works, give the child two turns, and end on a one-line recap.
+- A lesson is a list of parts. A `show` part is one **moment**: one spoken sentence (lesson pace: slower voice, one sentence at a time) and the **scene** as it is while that sentence is said. A `turn` part is a question the child answers.
+- A scene is a stage of **pieces** (a picture, a numeral, a letter, a word tile, a base-ten block, a ten-frame, a box, a hand or an arrow), each with a stable id and a place on a grid. Moving from one moment to the next, each piece glides, grows, fades or lights up to its new state (CSS transitions keyed by id). Things light up as they are counted, groups slide together, a ten breaks into ones, a hand points. A child with reduced motion set sees each scene without the movement.
+- Counting is said one number per moment while each piece lights in turn, so the voice and the picture never drift apart.
+- A turn is a real question, made by the skill's own generator at a fixed level and seed, so validation and the oracles check it like any other question. It uses the same question components and Submit as practice. Right: the chime and a short praise, then on. Wrong: the turn's **why** moments replay the idea on that question (count again, one by one), and the child tries the same question once more. Wrong again: the right answer is shown and said, and the lesson carries on. Lesson turns never change a Skill Score.
+- Controls: Pause and Play, Start again, and Back to practice. At the end: "Practise". Every control is at least 64 px. Nothing moves on before a turn is answered.
+- The worked example tab stays. Its explanation is spoken at the lesson pace.
+
+### How lessons are written
+
+- `src/lessons/` holds the types, the stage component, the player and the **builders**: one function for each kind of teaching move (count along, join two groups, take some away, fill a ten-frame, make a teen number, hop on a number line, break a ten, say a word slowly sound by sound, swap a first sound, build a word from letters, light the words of a sentence, and so on). A skill's lesson is written with builders, so most lessons are a few lines and the same move looks the same everywhere.
+- A generator gains `teach(): Lesson`. When it has one, the lesson screen plays it; otherwise the old four beats play.
+- Tests for every lesson: each moment's speech passes the speech rules and the voice limits; piece ids are unique and every piece is inside the stage; each turn passes `validateQuestion` and its oracle; each turn's why ends with the turn's answer; a lesson's time is between 40 seconds and 2 minutes 30 seconds at the lesson pace (estimated from word count, with about 10 seconds for each turn); no two moments in a row say the same sentence.
+- Browser test: one lesson of each builder kind is played through by touch in WebKit at phone and iPad size, answering one turn wrong and one right.
+
+### Order
+
+1. The player, the stage and the builders, with six sample lessons (K: count to 20, add with pictures, teen numbers, first letter, middle vowel; Grade 1: missing number). A screen recording goes to the owner before any more are written.
+2. The rest of Kindergarten and Grade 1, family by family.
+3. The lesson lines are recorded ahead at the lesson pace (`scripts/voice-reusable.ts`).

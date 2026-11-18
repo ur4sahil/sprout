@@ -5,6 +5,8 @@ import { TIMING } from "../../app/timing";
 import { useWakeLock } from "../../app/useWakeLock";
 import { speak, stop } from "../../audio/speech";
 import { warmAll } from "../../audio/voice";
+import TeachLesson from "../../components/TeachLesson";
+import { teachingFor } from "../../lessons";
 import BigButton from "../../components/BigButton";
 import CenterRow from "../../components/CenterRow";
 import Column from "../../components/Column";
@@ -44,13 +46,16 @@ export default function LessonPlayer({ child, skill }: Props) {
   const navigate = useNavigate();
   const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
+  // A lesson that teaches (plan section 16), where the skill has one. Otherwise the old four beats.
+  const teaching = useMemo(() => teachingFor(skill.id), [skill]);
   // Everything the lesson and its example say is asked for as the lesson opens, so each line is ready in time.
   useEffect(() => {
+    if (teaching) return;
     warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson");
-  }, [beats, example]);
+  }, [beats, example, teaching]);
   const [mode, setMode] = useState<"lesson" | "example">("lesson");
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(teaching === null);
   const [revealed, setRevealed] = useState(false);
   const [finished, setFinished] = useState(false);
   const [stepsShown, setStepsShown] = useState(0);
@@ -81,7 +86,7 @@ export default function LessonPlayer({ child, skill }: Props) {
 
   // Plays one beat: says it, waits and reveals the answer for "Try it together", then moves on.
   useEffect(() => {
-    if (mode !== "lesson" || !playing || !beat) return;
+    if (teaching || mode !== "lesson" || !playing || !beat) return;
     let cancelled = false;
     void (async () => {
       await speak(beat.speak, rate, "lesson");
@@ -107,7 +112,7 @@ export default function LessonPlayer({ child, skill }: Props) {
       cancelled = true;
       stop();
     };
-  }, [mode, playing, index, beat, beats.length, rate]);
+  }, [teaching, mode, playing, index, beat, beats.length, rate]);
 
   // The example: its question is read first, then each step as it is shown.
   useEffect(() => {
@@ -162,12 +167,16 @@ export default function LessonPlayer({ child, skill }: Props) {
             return;
           }
           setMode(id as "lesson" | "example");
-          setPlaying(id === "lesson");
+          setPlaying(id === "lesson" && teaching === null);
           setStepsShown(0);
         }}
       />
 
-      {mode === "lesson" && beat && (
+      {mode === "lesson" && teaching && (
+        <TeachLesson key={skill.id} lesson={teaching} rate={rate} onPractise={practise} />
+      )}
+
+      {mode === "lesson" && !teaching && beat && (
         <Column label="Lesson" data-beat={beat.beat} data-playing={playing}>
           <div className={styles.card}>
             <h2 className={styles.beatName}>{BEAT_NAME[beat.beat]}</h2>

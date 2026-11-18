@@ -43,11 +43,14 @@ describe('one place for colours and sizes', () => {
     const missing: string[] = [];
     for (const path of SOURCES.filter((name) => name.endsWith('.css'))) {
       const text = readFileSync(path, 'utf8');
+      // A name the file itself gives a value to is defined there.
+      const own = new Set([...text.matchAll(/(--[a-z0-9-]+)\s*:/g)].map((m) => m[1]));
       for (const match of text.matchAll(/var\((--[a-z0-9-]+)/g)) {
         const name = match[1] as string;
         // --visual-emoji is set by a parent to resize a picture, and --ems by an equation to say how
         // wide it is. Both are numbers set in code, and both always have a fallback.
-        if (!defined.has(name) && name !== '--visual-emoji' && name !== '--ems') missing.push(`${path}: ${name}`);
+        // A name starting --set- is a number the component sets on the element itself, such as a piece's place.
+        if (!defined.has(name) && !own.has(name) && !name.startsWith('--set-') && name !== '--visual-emoji' && name !== '--ems') missing.push(`${path}: ${name}`);
       }
     }
     expect(missing).toEqual([]);

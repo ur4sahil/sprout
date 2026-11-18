@@ -1,4 +1,4 @@
-import list from './videos.json';
+import list from './videos.json' with { type: 'json' };
 
 // Concept videos (plan sections 10 and 12). The list is curated by hand and checked by
 // `npm run check:videos`. A skill with no good video has no entry: its lesson covers it.

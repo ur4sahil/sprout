@@ -1,0 +1,125 @@
+/* A stage of `--set-cols` by `--set-rows` squares (set by the component). One square is `--unit` wide; pieces are placed and sized in squares. */
+.stage {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  max-width: var(--width-question);
+  aspect-ratio: var(--set-cols) / var(--set-rows);
+  margin-inline: auto;
+}
+
+.piece {
+  --unit: calc(100cqw / var(--set-cols));
+  position: absolute;
+  left: calc(var(--set-x) * var(--unit));
+  top: calc(var(--set-y) * var(--unit));
+  width: calc(var(--set-w) * var(--unit));
+  height: calc(var(--set-h) * var(--unit));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--set-h) * var(--unit) * 0.72);
+  border-radius: var(--radius-m);
+  transition:
+    left var(--lesson-glide) ease,
+    top var(--lesson-glide) ease,
+    width var(--lesson-glide) ease,
+    height var(--lesson-glide) ease,
+    opacity var(--lesson-glide) ease,
+    transform var(--lesson-glide) ease,
+    box-shadow var(--lesson-glide) ease;
+}
+
+.piece img {
+  width: 82%;
+  height: 82%;
+}
+
+.piece[data-lit] {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 var(--lesson-ring) var(--color-brand);
+  background: var(--color-brand-soft);
+}
+
+.piece[data-dim] {
+  opacity: 0.3;
+}
+
+.piece[data-gone] {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.piece[data-crossed]::after {
+  content: '';
+  position: absolute;
+  inset: 45% 5%;
+  border-top: var(--lesson-ring) solid var(--color-cross);
+  transform: rotate(-35deg);
+}
+
+.word {
+  font-weight: var(--weight-display);
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.badge {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: calc(var(--unit) * 0.55);
+  padding: 0 calc(var(--unit) * 0.1);
+  border-radius: var(--radius-pill);
+  background: var(--color-brand);
+  color: var(--color-brand-ink);
+  font-size: calc(var(--unit) * 0.38);
+  font-weight: var(--weight-display);
+  text-align: center;
+}
+
+.cell,
+.cube,
+.box {
+  width: 90%;
+  height: 90%;
+  border-radius: var(--radius-s);
+}
+
+.cell {
+  border: var(--border) solid var(--color-line);
+}
+
+.cube {
+  border: var(--border) solid var(--color-brand-deep);
+  background: var(--color-brand-soft);
+}
+
+.box {
+  border: var(--border-thick) dashed var(--color-ink-soft);
+}
+
+.rod {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rodSquare {
+  flex: 1;
+  border: var(--border-thin) solid var(--color-brand-deep);
+  background: var(--color-brand-soft);
+}
+
+.hand {
+  color: var(--color-brand-deep);
+  font-size: calc(var(--unit) * 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece {
+    transition: none;
+  }
+}
