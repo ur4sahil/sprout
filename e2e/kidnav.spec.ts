@@ -37,6 +37,7 @@ test.describe('kid navigation', () => {
     await expect(page.getByRole('region', { name: 'Your garden' })).toBeVisible();
     await expect(page.getByRole('img', { name: /^0 of \d+ questions today$/ })).toBeVisible();
     await checkScreen(page, 'the whole garden', 64);
+    await shoot(page, 'garden-visit');
     await page.getByRole('button', { name: 'Back to home' }).click();
     // The ringed card starts the first part.
     await plan.locator('[data-plan-part][data-next] > button').first().click();
@@ -55,6 +56,7 @@ test.describe('kid navigation', () => {
     await expect(plan.locator('[data-done]')).toHaveCount(1);
     await expect(page.getByRole('button', { name: /^Next up: Language Arts practice/ })).toBeVisible();
     await expectNoTextOnlyControls(page, 'home after one part');
+    await shoot(page, 'home-after-one-part');
   });
 
   test('the kid lock: a tap does not leave practice, a Back press does not, a 2-second hold does', async ({ page }) => {
