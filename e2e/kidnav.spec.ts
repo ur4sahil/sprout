@@ -54,7 +54,9 @@ test.describe('kid navigation', () => {
     }
     await holdHome(page);
     await expect(plan.locator('[data-done]')).toHaveCount(1);
-    await expect(page.getByRole('button', { name: /^Next up: Language Arts practice/ })).toBeVisible();
+    // Sprout says what is next. (A skill first tried today counts as today's new skill, so the Math card may now
+    // show another skill: the owner's choice, Nov 18, 2026, to leave it so.)
+    await expect(page.getByRole('button', { name: /^Next up: / })).toBeVisible();
     await expectNoTextOnlyControls(page, 'home after one part');
     await shoot(page, 'home-after-one-part');
   });
