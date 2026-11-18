@@ -8,12 +8,12 @@ const BUILD_ID = Date.now().toString(36);
 
 export default defineConfig({
   define: { __BUILD_ID__: JSON.stringify(BUILD_ID) },
-  // The teaching lessons (plan section 16) go in a file of their own: with them the main file would pass the
+  // The teaching lessons (plan section 16) go in files of their own, first parts and second parts: with them the main file would pass the
   // 2 MB limit for files kept on the device, and the app would stop opening offline.
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id: string) => (id.includes('/src/lessons/') ? 'lessons' : undefined),
+        manualChunks: (id: string) => (id.includes('/src/lessons/part2/') ? 'lessons2' : id.includes('/src/lessons/') ? 'lessons' : undefined),
       },
     },
   },

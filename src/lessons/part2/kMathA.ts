@@ -434,7 +434,7 @@ function countBackBigLesson(): Lesson {
   const front = missingMoments('z', [15, 14, 13, 12], 0);
   const answerOf = (f: Record<string, unknown>): number => num(f, 'start') - num(f, 'blankIndex');
   const first = turnQuestion('M-K-A12', 3, (f) => num(f, 'blankIndex') >= 1 && num(f, 'start') >= 24 && answerOf(f) % 10 !== 9);
-  const second = turnQuestion('M-K-A12', 3, (f) => num(f, 'blankIndex') === 0 && num(f, 'start') >= 8 && num(f, 'start') !== 15 && num(f, 'start') !== answerOf(first.facts));
+  const second = turnQuestion('M-K-A12', 3, (f) => num(f, 'blankIndex') === 0 && num(f, 'start') >= 8 && ![15, 21, 23, num(first.facts, 'start')].includes(num(f, 'start')));
   return {
     parts: [
       show(moment(['You know that counting back goes down by one.'], 'Counting back goes down by 1.', set(digitRow('x', [23, 22, 21, 20], 2), ['xbox'], { lit: true }))),
@@ -500,8 +500,9 @@ function missingTenLesson(): Lesson {
     parts: [
       show(moment(['You know how to count by tens:', ...sayList([10, 20, 30, 40]), ', and on.'], '10, 20, 30, 40 ...', onStrip(start, 'x', [10, 20, 30, 40]))),
       show(moment(['Now a ten is missing from the middle of a row.'], 'A ten is missing.', set(start, ['xbox'], { lit: true }))),
-      ...opening.slice(0, 4).map(show),
-      show(moment(['The front numbers count just like one, two, three. That is a good trick.'], 'Front numbers count by ones.', last(opening.slice(0, 3)))),
+      ...opening.slice(0, 3).map(show),
+      show(moment(['The front numbers count just like one, two, three. That is a good trick.'], 'Front numbers count by ones.', set(last(opening.slice(0, 3)), ['xbox'], { gone: true }))),
+      show(opening[3] as Moment),
       turn(first, tensWhy(first)),
       show(moment(['Sometimes the box comes first.'], 'The box can come first.', set(frontStart, ['ybox'], { lit: true }))),
       ...frontMoments.slice(0, 4).map(show),
@@ -544,7 +545,7 @@ function beforeAfterBigLesson(): Lesson {
   const before17 = sideMoments('x', 17, 'before', 11);
   const after29 = sideMoments('y', 29, 'after', 25);
   const before50 = sideMoments('z', 50, 'before', 45);
-  const first = turnQuestion('M-K-A5', 3, (f) => num(f, 'n') >= 12 && num(f, 'n') <= 18 && num(f, 'n') !== 17 && num(f, 'n') !== 16);
+  const first = turnQuestion('M-K-A5', 3, (f) => f.side === 'after' && num(f, 'n') >= 12 && num(f, 'n') <= 18 && num(f, 'n') !== 17 && num(f, 'n') !== 16);
   const second = turnQuestion('M-K-A5', 4, (f) => f.side === 'before' && num(f, 'n') % 10 === 0 && num(f, 'n') !== 50);
   return {
     parts: [
@@ -723,7 +724,7 @@ function orderBig(p: string, values: readonly number[]): Moment[] {
     teens.forEach((value, i) => {
       drop(value);
       now = set(set(now, [`${p}c${value}t`], { lit: undefined }), [`${p}c${value}o`], { lit: true });
-      out.push(moment([i === 0 ? 'The smallest one is' : 'Then', { number: value % 10 }, ', so', { number: value }, place()], placed === 1 ? `${value} is first.` : `Then ${value}`, now));
+      out.push(moment(i === 0 ? [{ number: value % 10 }, 'is the smallest, so', { number: value }, place()] : ['Then', { number: value % 10 }, ', so', { number: value }, place()], placed === 1 ? `${value} is first.` : `Then ${value}`, now));
     });
   }
   if (sorted.includes(20)) {
@@ -740,7 +741,7 @@ const orderWhy = (question: Question): Moment[] => {
 };
 
 function orderBigLesson(): Lesson {
-  const values = [14, 8, 17, 11];
+  const values = [14, 8, 17, 12];
   const cards = scene(values.flatMap((value, i) => cardPieces('x', value, i)));
   const opening = orderBig('x', values);
   const withTwenty = [20, 13, 19, 16];
@@ -753,7 +754,7 @@ function orderBigLesson(): Lesson {
   return {
     parts: [
       show(moment(['You know how to put numbers in order, smallest first.'], 'Smallest first.', cards)),
-      show(moment(['Now there are four numbers, and some are bigger than ten.'], '4 numbers. Some are bigger than 10.', set(cards, [...cardIds('x', 14), ...cardIds('x', 17), ...cardIds('x', 11)], { lit: true }))),
+      show(moment(['Now there are four numbers, and some are bigger than ten.'], '4 numbers. Some are bigger than 10.', set(cards, [...cardIds('x', 14), ...cardIds('x', 17), ...cardIds('x', 12)], { lit: true }))),
       ...opening.map(show),
       show(moment(['Numbers below ten come first. Then the numbers that start with a one.'], 'Below 10 first. Then the ones that start with 1.', calm(last(opening)))),
       turn(first, orderWhy(first)),
@@ -881,13 +882,13 @@ function teenBreakLesson(): Lesson {
   return {
     parts: [
       show(moment(['You know that a teen number is ten and some more.'], 'A teen number is 10 and some more.', set(start, [...ids('xt', 10), ...ids('xo', 5)], { lit: true }))),
-      show(moment(['Now we start with the number, and find the some more.'], 'Start with the number.', start)),
+      show(moment(['Now we start with the number, and find how many more than ten.'], 'Start with the number.', start)),
       ...fifteen.map(show),
-      show(moment(['The one in front is the full ten. It is not the answer.'], 'The 1 in front is the ten.', front)),
+      show(moment(['The one in front is the full ten. We want the number at the end.'], 'The 1 in front is the ten.', front)),
       turn(first, breakWhy(first)),
       show(moment(['We do not even need counters. Look at', { number: 18 }, '.'], 'Look at 18.', eighteen)),
       show(moment(['The one in front is the ten.'], 'The 1 is the ten.', set(eighteen, ['yn1'], { lit: true }))),
-      show(moment(['The', { number: 8 }, 'at the end is the some more. So', { number: 18 }, 'is ten, and', { number: 8 }, '.'], '18 = 10 + 8', set(set(eighteen, ['yn2'], { lit: true }), ['ysum'], { gone: false, lit: true }))),
+      show(moment(['The', { number: 8 }, 'at the end tells how many more. So', { number: 18 }, 'is ten, and', { number: 8 }, '.'], '18 = 10 + 8', set(set(eighteen, ['yn2'], { lit: true }), ['ysum'], { gone: false, lit: true }))),
       turn(second, breakWhy(second)),
       show(moment(['A teen number is ten, and the number at its end.'], 'Ten, and the number at the end.', calm(set(eighteen, ['ysum'], { gone: false })))),
     ],

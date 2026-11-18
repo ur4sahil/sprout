@@ -1,3 +1,4 @@
+import { PART2_AT_SCORE, teachingPart2For } from '../../lessons';
 import Icon from '../../components/Icon';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -146,7 +147,11 @@ export default function PracticeSession({ child, skill, play }: Props) {
         />
       )}
       {phase === 'celebrating' && practice.milestone !== null && (
-        <Celebration milestone={practice.milestone} skillName={skill.name} onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} />
+        <Celebration
+          milestone={practice.milestone}
+          skillName={skill.name}
+          onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
+          onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} />
       )}
       {phase === 'skipped' && (
         <FullScreenCard emoji="🚀" title="You know this one!" line={`${skill.name}: no need to practise it.`} name="skipped">

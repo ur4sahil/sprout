@@ -7,7 +7,7 @@ import { speak, stop } from "../../audio/speech";
 import { warmAll } from "../../audio/voice";
 import { LINES } from "../../audio/lines";
 import TeachLesson from "../../components/TeachLesson";
-import { teachingFor } from "../../lessons";
+import { teachingFor, teachingPart2For } from "../../lessons";
 import BigButton from "../../components/BigButton";
 import CenterRow from "../../components/CenterRow";
 import Column from "../../components/Column";
@@ -30,6 +30,7 @@ import styles from "./LessonPlayer.module.css";
 interface Props {
   child: Child;
   skill: Skill;
+  startOnPart2?: boolean; // opened from the half-way milestone: straight to the second lesson
 }
 
 const BEAT_NAME = {
@@ -43,19 +44,21 @@ const wait = (ms: number): Promise<void> =>
 
 // Two kinds of help: a narrated mini-lesson in four beats, and one example solved step by step.
 // They use the same pictures as the questions and work with no network. Some skills add a third: a video.
-export default function LessonPlayer({ child, skill }: Props) {
+export default function LessonPlayer({ child, skill, startOnPart2 = false }: Props) {
   const navigate = useNavigate();
   const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
   // A lesson that teaches (plan section 16), where the skill has one. Otherwise the old four beats.
   const teaching = useMemo(() => teachingFor(skill.id), [skill]);
+  // Part 2: a second short lesson for the skill's harder levels, where one is written.
+  const teaching2 = useMemo(() => teachingPart2For(skill.id), [skill]);
   // Everything the lesson and its example say is asked for as the lesson opens, so each line is ready in time.
   useEffect(() => {
     if (teaching) return;
     warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson");
   }, [beats, example, teaching]);
   // The bulb opens on a choice (the owner's choice, Nov 18, 2026): nothing starts until a kind of help is tapped.
-  const [mode, setMode] = useState<"choose" | "lesson" | "example">("choose");
+  const [mode, setMode] = useState<"choose" | "lesson" | "lesson2" | "example">(startOnPart2 && teaching2 ? "lesson2" : "choose");
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -93,7 +96,7 @@ export default function LessonPlayer({ child, skill }: Props) {
       setWatching(true);
       return;
     }
-    setMode(id as "lesson" | "example");
+    setMode(id as "lesson" | "lesson2" | "example");
     setIndex(0);
     setRevealed(false);
     setFinished(false);
@@ -189,6 +192,12 @@ export default function LessonPlayer({ child, skill }: Props) {
               <Icon name="film" />
               Lesson with Sprout
             </BigButton>
+            {teaching2 && (
+              <BigButton size="kid" tone="quiet" onClick={() => pick("lesson2")}>
+                <Icon name="film" />
+                Lesson, part 2
+              </BigButton>
+            )}
             <BigButton size="kid" tone="quiet" onClick={() => pick("example")}>
               <Icon name="pencil" />
               Example
@@ -200,7 +209,8 @@ export default function LessonPlayer({ child, skill }: Props) {
           label="Kind of help"
           tabs={[
             ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
-            { id: "lesson", label: "Lesson", icon: "film" as const },
+            { id: "lesson", label: teaching2 ? "Lesson 1" : "Lesson", icon: "film" as const },
+            ...(teaching2 ? [{ id: "lesson2", label: "Lesson 2", icon: "film" as const }] : []),
             { id: "example", label: "Example", icon: "pencil" as const },
           ]}
           current={mode}
@@ -210,6 +220,10 @@ export default function LessonPlayer({ child, skill }: Props) {
 
       {mode === "lesson" && teaching && decided && !watching && (
         <TeachLesson key={skill.id} lesson={teaching} rate={rate} onPractise={practise} />
+      )}
+
+      {mode === "lesson2" && teaching2 && decided && !watching && (
+        <TeachLesson key={`${skill.id}|2`} lesson={teaching2} rate={rate} onPractise={practise} />
       )}
 
       {mode === "lesson" && !teaching && beat && (

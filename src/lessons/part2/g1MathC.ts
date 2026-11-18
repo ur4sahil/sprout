@@ -150,7 +150,7 @@ function tellTimePart2(): Lesson {
   const shown: Time[] = [{ hour: 5, minute: 0 }, { hour: 6, minute: 30 }, want];
   const worked = pickMoments(want, shown.map(clockVisual), shown, 2);
   const start = pickScene(want, shown.map(clockVisual));
-  const trap = set(set(calm(worked.long.scene), ['k1'], { lit: true }), ['k0'], { dim: true });
+  const trap = set(set(withoutHand(calm(worked.short.scene)), ['k1'], { lit: true }), ['k0'], { dim: true });
   const making = setMoments({ hour: 4, minute: 30 });
   const one = turnQuestion('M-1-C1', 3, (f) => num(f, 'minute') === 0 && num(f, 'hour') !== 5 && strings(f, 'options').includes(`${num(f, 'hour')}:30`));
   const two = turnQuestion('M-1-C1', 4, (f) => num(f, 'minute') === 30 && num(f, 'hour') !== 4 && num(f, 'hour') !== 12 && num(f, 'hour') !== num(one.facts, 'hour'));
@@ -158,8 +158,8 @@ function tellTimePart2(): Lesson {
     parts: [
       show(moment(['You know how to read a clock. Now let us go the other way: from a written time, to the clock.'], 'From a time to the clock', start)),
       show(worked.long),
-      show(moment(['Careful. On this clock, the short hand is past', { number: 6 }, '. It shows', { time: shown[1] as Time }, '.'], 'This one shows 6:30.', trap)),
       show(worked.short),
+      show(moment(['Careful. On this clock, the short hand is past', { number: 6 }, '. It shows', { time: shown[1] as Time }, '.'], 'This one shows 6:30.', trap)),
       show(worked.found),
       show(moment(['Check the long hand first. Then check the short hand.'], 'Long hand first, then short hand.', calm(worked.found.scene))),
       turn(one, pickWhy(one)),
@@ -346,7 +346,7 @@ function groupMoments(looks: readonly PieceLook[], words: readonly string[], kin
     const named = mine.map((i) => `the ${words[i] as string}`);
     const list = `${named.slice(0, -1).join(', ')}, and ${named.at(-1) ?? ''}`;
     const label = GROUP_NAME[group] ?? group;
-    const sentence = g === groups.length - 1 ? `What is left? ${list.charAt(0).toUpperCase()}${list.slice(1)}. They are all ${label}.` : `Find all the ${label}. ${list.charAt(0).toUpperCase()}${list.slice(1)}, are ${label}.`;
+    const sentence = g === groups.length - 1 ? `What is left? ${list.charAt(0).toUpperCase()}${list.slice(1)}. They are all ${label}.` : `Find all the ${label}. ${list.charAt(0).toUpperCase()}${list.slice(1)} are ${label}.`;
     return moment([sentence], `${label}: ${mine.map((i) => words[i] as string).join(', ')}`, now);
   });
 }
@@ -442,7 +442,7 @@ function dimesAndPenniesPart2(): Lesson {
   const six = moneyScene(2, 4);
   const sixCoins = alter(six, (piece) => (piece.look.kind === 'visual' ? { ...piece, lit: true } : piece));
   const one = turnQuestion('M-1-C11', 3, (f) => [4, 5, 6].includes(count(f, 'dime')) && count(f, 'penny') >= 2 && count(f, 'penny') <= 5);
-  const two = turnQuestion('M-1-C11', 3, (f) => count(f, 'dime') >= 2 && count(f, 'dime') !== count(one.facts, 'dime') && count(f, 'penny') >= 7 && !(count(f, 'dime') === 3 && count(f, 'penny') === 6));
+  const two = turnQuestion('M-1-C11', 3, (f) => count(f, 'dime') >= 3 && count(f, 'dime') !== count(one.facts, 'dime') && count(f, 'penny') >= 7 && !(count(f, 'dime') === 3 && count(f, 'penny') === 6));
   return {
     parts: [
       show(moment(['You know how to count dimes by tens, and pennies by ones. Now you will type the answer yourself.'], 'Now you type the answer.', start)),
@@ -579,7 +579,7 @@ function nameMoments(whole: Whole, parts: number, visuals: readonly Visual[], co
     out.push(moment(say, notes[i] ?? '', now));
   });
   now = look(right);
-  out.push(moment(['This shape has', { number: parts }, `parts, all the same size. It shows ${name}.`], `${parts} equal parts: ${name}`, now));
+  out.push(moment(['This shape has', { number: parts }, `parts, ${parts === 2 ? 'both' : 'all'} the same size. It shows ${name}.`], `${parts} equal parts: ${name}`, now));
   return out;
 }
 

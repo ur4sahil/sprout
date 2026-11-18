@@ -141,7 +141,7 @@ function thinkAddPart2(): Lesson {
   const start = first(opening);
   const crossesTen = (f: Record<string, unknown>): boolean => num(f, 'b') < 10 && num(f, 'a') > 10 && 10 - num(f, 'b') >= 2 && num(f, 'a') - 10 >= 2;
   const one = turnQuestion('M-1-B12', 2, (f) => crossesTen(f) && num(f, 'a') <= 12);
-  const two = turnQuestion('M-1-B12', 3, (f) => crossesTen(f) && num(f, 'a') >= 14 && num(f, 'a') <= 16);
+  const two = turnQuestion('M-1-B12', 3, (f) => crossesTen(f) && num(f, 'a') >= 14 && num(f, 'a') <= 16 && num(f, 'b') >= 7);
   return {
     parts: [
       show(moment(['You know how to take away, by thinking of adding.'], 'Minus? Think plus.', start)),
@@ -265,8 +265,9 @@ function familyPart2(): Lesson {
   const start = first(opening);
   const whole = (f: Record<string, unknown>): number => (f.numbers as number[])[2] ?? 0;
   const small = (f: Record<string, unknown>): number => Math.min((f.numbers as number[])[0] ?? 0, (f.numbers as number[])[1] ?? 0);
-  const one = turnQuestion('M-1-B14', 3, (f) => whole(f) >= 9 && whole(f) <= 12 && small(f) >= 3);
-  const two = turnQuestion('M-1-B14', 3, (f) => whole(f) >= 16 && small(f) >= 4);
+  const left = (f: Record<string, unknown>): number => whole(f) - num(f, 'b');
+  const one = turnQuestion('M-1-B14', 3, (f) => whole(f) >= 9 && whole(f) <= 12 && small(f) >= 3 && left(f) !== 6);
+  const two = turnQuestion('M-1-B14', 3, (f) => whole(f) >= 16 && small(f) >= 4 && left(f) !== 6 && left(f) !== left(one.facts));
   return {
     parts: [
       show(moment(['You know the four facts in a fact family.'], 'A fact family has four facts.', start)),
@@ -405,7 +406,7 @@ function partPart2(): Lesson {
   const start = first(opening);
   const hiddenStart = (f: Record<string, unknown>): boolean => f.blank === 'a' && num(f, 'a') >= 2 && num(f, 'b') >= 2 && num(f, 'b') !== 5;
   const one = turnQuestion('M-1-B16', 3, (f) => hiddenStart(f) && num(f, 'total') <= 10 && num(f, 'a') <= 6);
-  const two = turnQuestion('M-1-B16', 3, (f) => hiddenStart(f) && f.story !== one.facts.story && num(f, 'total') >= 13 && num(f, 'total') <= 17 && num(f, 'a') <= 9);
+  const two = turnQuestion('M-1-B16', 3, (f) => hiddenStart(f) && f.story !== one.facts.story && num(f, 'total') >= 13 && num(f, 'total') <= 17 && num(f, 'a') <= 9 && num(f, 'a') !== 7 && num(f, 'b') <= 8);
   return {
     parts: [
       show(moment(['You know how to find how many came, and how many went away.'], 'How many came? How many went?', start)),
@@ -491,8 +492,11 @@ function balancePart2(): Lesson {
   const start = first(opening);
   const secondStart = first(second);
   const side = (f: Record<string, unknown>, which: 'left' | 'right'): Side => f[which] as Side;
-  const one = turnQuestion('M-1-B17', 3, (f) => side(f, 'left')[1] === '-' && (side(f, 'left')[0] as number) <= 12 && side(f, 'left')[0] !== 9 && (side(f, 'left')[2] as number) >= 2 && (side(f, 'right')[0] as number) >= 2 && (side(f, 'left')[0] as number) - (side(f, 'left')[2] as number) - (side(f, 'right')[0] as number) >= 2);
-  const two = turnQuestion('M-1-B17', 3, (f) => side(f, 'right')[1] === '-' && (side(f, 'right')[0] as number) <= 14 && side(f, 'right')[0] !== 11 && (side(f, 'left')[0] as number) >= 2 && (side(f, 'left')[2] as number) >= 2 && (side(f, 'left')[0] as number) + (side(f, 'left')[2] as number) >= 5 && (side(f, 'right')[0] as number) - (side(f, 'left')[0] as number) - (side(f, 'left')[2] as number) >= 2);
+  const at = (f: Record<string, unknown>, which: 'left' | 'right', i: number): number => side(f, which)[i] as number;
+  const leftValue = (f: Record<string, unknown>): number => (side(f, 'left')[1] === '-' ? at(f, 'left', 0) - at(f, 'left', 2) : at(f, 'left', 0) + at(f, 'left', 2));
+  const fresh = (f: Record<string, unknown>): boolean => leftValue(f) !== 7 && leftValue(f) !== 8 && at(f, 'left', 0) >= 2 && at(f, 'left', 2) >= 2 && at(f, 'right', 0) >= 2;
+  const one = turnQuestion('M-1-B17', 3, (f) => side(f, 'left')[1] === '-' && fresh(f) && at(f, 'left', 0) <= 12 && at(f, 'left', 0) !== 9 && leftValue(f) - at(f, 'right', 0) >= 3 && leftValue(f) - at(f, 'right', 0) !== at(f, 'left', 2));
+  const two = turnQuestion('M-1-B17', 3, (f) => side(f, 'right')[1] === '-' && fresh(f) && at(f, 'right', 0) <= 14 && at(f, 'right', 0) !== 11 && at(f, 'right', 0) !== 9 && leftValue(f) >= 5 && leftValue(f) !== leftValue(one.facts) && at(f, 'right', 0) - leftValue(f) >= 2);
   return {
     parts: [
       show(moment(['You know the equal sign means, both sides make the same number.'], '= means the same as.', set(start, ['xe3', 'xeq'], { lit: true }))),
@@ -548,7 +552,7 @@ function downPart2(): Lesson {
   const start = first(opening);
   const restOf = (f: Record<string, unknown>): number => num(f, 'b') - (num(f, 'a') - 10);
   const one = turnQuestion('M-1-B19', 3, (f) => num(f, 'a') === 12 && restOf(f) >= 2);
-  const two = turnQuestion('M-1-B19', 3, (f) => (num(f, 'a') === 15 || num(f, 'a') === 17) && restOf(f) >= 2 && num(f, 'b') !== 9);
+  const two = turnQuestion('M-1-B19', 3, (f) => [14, 15, 17].includes(num(f, 'a')) && restOf(f) >= 2 && restOf(f) !== 3 && num(f, 'a') - num(f, 'b') !== 7);
   return {
     parts: [
       show(moment(['You know how to stop at ten on the way, when you take away.'], 'Stop at 10 on the way.', start)),
@@ -618,8 +622,9 @@ function graphPart2(): Lesson {
   const base = graphScene('x', things, values);
   const gap = (f: Record<string, unknown>): number => ((f.values as number[])[num(f, 'index')] ?? 0) - ((f.values as number[])[num(f, 'other')] ?? 0);
   const big = (f: Record<string, unknown>): number => (f.values as number[])[num(f, 'index')] ?? 0;
-  const one = turnQuestion('M-1-C3', 3, (f) => gap(f) === 2 && big(f) <= 4 && Math.abs(num(f, 'index') - num(f, 'other')) === 1);
-  const two = turnQuestion('M-1-C3', 3, (f) => gap(f) >= 3 && big(f) === 6 && Math.abs(num(f, 'index') - num(f, 'other')) === 2 && !(f.things as string[]).includes('banana'));
+  const fresh = (f: Record<string, unknown>): boolean => !(f.things as string[]).includes('banana') && !(f.things as string[]).includes('cookie');
+  const one = turnQuestion('M-1-C3', 3, (f) => gap(f) === 2 && big(f) === 6 && Math.abs(num(f, 'index') - num(f, 'other')) === 1 && fresh(f));
+  const two = turnQuestion('M-1-C3', 3, (f) => gap(f) === 4 && big(f) === 5 && Math.abs(num(f, 'index') - num(f, 'other')) === 2 && fresh(f));
   return {
     parts: [
       show(moment(['You know how to find a row in a picture graph, and count it.'], 'Find the row. Count it.', base)),
@@ -658,7 +663,7 @@ function longerMoments(p: string, name: string, long: number, short: number): To
     moments: [
       moment([`The ${name} is`, { number: long }, 'paper clips long.'], `The ${name}: ${long} clips`, set(start, [`${p}obj`, ...ids(`${p}a`, long)], { lit: true })),
       moment(['The key is', { number: short }, 'paper clips long.'], `The key: ${short} clips`, set(two, [`${p}key`, ...ids(`${p}b`, short)], { lit: true })),
-      moment(['Both rows start at the same place. Match the clips, one above one.'], 'Match the clips.', set(calm(two), [...ids(`${p}a`, short), ...ids(`${p}b`, short)], { lit: true, badge: '✓' })),
+      moment(['Both rows start at the same place. Match each clip on top, with a clip below.'], 'Match the clips.', set(calm(two), [...ids(`${p}a`, short), ...ids(`${p}b`, short)], { lit: true, badge: '✓' })),
       moment([`The ${name} has extra clips. Count them.`], 'Count the extra clips.', set(paired, extra, { lit: true })),
       ...counted.moments,
       moment([{ number: long }, ', minus', { number: short }, ', is', { number: long - short }, `. The ${name} is`, { number: long - short }, 'clips longer.'], `${long} − ${short} = ${long - short}`, end),
@@ -676,7 +681,7 @@ function clipPart2(): Lesson {
   const opening = longerMoments('x', 'carrot', 8, 3);
   const start = first(opening);
   const one = turnQuestion('M-1-C5', 3, (f) => num(f, 'a') <= 6 && num(f, 'b') !== 3 && num(f, 'a') - num(f, 'b') !== 5);
-  const two = turnQuestion('M-1-C5', 3, (f) => num(f, 'a') === 9 && num(f, 'b') !== 3 && num(f, 'b') !== num(one.facts, 'b'));
+  const two = turnQuestion('M-1-C5', 3, (f) => (num(f, 'a') === 7 || num(f, 'a') === 9) && num(f, 'b') !== 3 && num(f, 'a') - num(f, 'b') !== 5 && num(f, 'a') - num(f, 'b') !== num(one.facts, 'a') - num(one.facts, 'b'));
   return {
     parts: [
       show(moment(['You know how to measure with paper clips: from the end, with no gaps.'], 'Measure with paper clips.', start)),

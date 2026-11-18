@@ -11,11 +11,13 @@ interface Props {
   onDone: () => void;
   // At 100, the games are offered. Pop is left out when the child has no skill it can draw on.
   games?: { onPop: (() => void) | null; onPairs: () => void };
+  // At the half-way milestone, a skill with a second lesson offers it: its harder questions start about here.
+  onNextLesson?: () => void;
 }
 
 
 // A short full-screen celebration, the first time a milestone is crossed.
-export default function Celebration({ milestone, skillName, onDone, games }: Props) {
+export default function Celebration({ milestone, skillName, onDone, games, onNextLesson }: Props) {
   const words = MILESTONE_WORDS[milestone] ?? (MILESTONE_WORDS[50] as { emoji: string; title: string; line: string });
   return (
     <div className={styles.cover} role="dialog" aria-modal="true" aria-label={words.title} data-celebration={milestone}>
@@ -29,6 +31,12 @@ export default function Celebration({ milestone, skillName, onDone, games }: Pro
         <Icon name="next" />
         {milestone === 100 ? 'All done' : 'Keep going'}
       </BigButton>
+      {onNextLesson && (
+        <BigButton size="kid" tone="quiet" onClick={onNextLesson} data-next-lesson="">
+          <Icon name="film" />
+          Lesson, part 2
+        </BigButton>
+      )}
       {milestone === 100 && games && (
         <CenterRow>
           {games.onPop && (
