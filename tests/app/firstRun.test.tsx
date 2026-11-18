@@ -145,8 +145,9 @@ describe('the profile picker', () => {
     // Each card says who it is, their grade and how far along today's goal they are.
     const card = group.querySelector('[data-profile="Robin"]') as HTMLElement;
     expect(card.textContent).toContain('Kindergarten');
-    expect(card.textContent).toContain('0 of 15 today');
-    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 15 questions today.');
+    // The goal is today's plan added up: two skills to practice (10 each) and a new skill (5).
+    expect(card.textContent).toContain('0 of 25 today');
+    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 25 questions today.');
     await user.click(screen.getByRole('button', { name: 'Ada' }));
     expect(spoken.sounds).toEqual(['unlock']);
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);
@@ -348,9 +349,11 @@ describe('the grown-ups bar on the profile page', () => {
     expect(useAppStore.getState().account.status).toBe('signedIn');
   });
 
-  it('holds Grown-ups and Sign out, and a card shows the answers given today', async () => {
+  it('holds Grown-ups and Sign out, and a card shows the plan answers given today', async () => {
     const child = await setUp('K');
     const store = await repo();
+    // A skill practised today is one of the plan's skills to practice, so its answers count toward the goal.
+    await store.saveSkillState({ ...newSkillState(child.id, 'M-K-C4', NOW.toISOString()), attempts: 4, correct: 4, score: 30, lastPracticedAt: NOW.toISOString() });
     for (let i = 0; i < 4; i += 1) {
       await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: 'M-K-C4', sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: NOW.toISOString() });
     }

@@ -76,7 +76,9 @@ describe('home', () => {
     expect(parts).toEqual(['keepGoing', 'keepGoing', 'new']);
     expect(new Set(await picksOnScreen())).toEqual(new Set(['M-K-A1', 'M-K-B1', 'M-K-C1']));
     expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
-    expect(screen.getByRole('img', { name: '0 of 15 questions today' })).toBeTruthy();
+    // The goal is the plan's questions added up: 10 + 10 + 5.
+    expect(screen.getByRole('img', { name: '0 of 25 questions today' })).toBeTruthy();
+    expect(screen.getByText('0 of 25 questions')).toBeTruthy();
     expect(screen.getByRole('button', { name: /Math/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Language Arts/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /Reasoning/ })).toBeTruthy();
@@ -90,9 +92,9 @@ describe('home', () => {
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     await picksOnScreen();
     spoken.said.length = 0;
-    await user.click(screen.getByRole('button', { name: 'Hear: Learn something new' }));
+    await user.click(screen.getByRole('button', { name: 'Hear: New skill' }));
     expect(spoken.said).toHaveLength(1);
-    expect(JSON.stringify(spoken.said[0])).toContain('Learn something new');
+    expect(JSON.stringify(spoken.said[0])).toContain('A new skill');
     expect(screen.queryByRole('region', { name: 'Question' })).toBeNull();
   });
 
@@ -104,8 +106,9 @@ describe('home', () => {
     expect([...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'))).toEqual(['keepGoing']);
   });
 
-  it('the goal ring counts today\'s answers and lights a star for each share of the goal', async () => {
-    await setUp('K', { dailyGoalQuestions: 4 });
+  it('the goal ring counts the plan\'s answers and lights a star for each share of the goal', async () => {
+    // One skill to practice, nothing else: the goal is that skill's 10 questions.
+    await setUp('K', { planKeepGoing: 1, planNew: false, planMixed: false });
     const user = openApp();
     await openSkill(user, 'Add to 10');
     for (let i = 0; i < 3; i += 1) {
@@ -113,21 +116,24 @@ describe('home', () => {
       await settled();
     }
     await holdHome();
-    const ring = await screen.findByRole('img', { name: '3 of 4 questions today' });
+    const ring = await screen.findByRole('img', { name: `3 of ${KEEP_GOING_QUESTIONS} questions today` });
     expect(ring.querySelectorAll('[data-star="lit"]').length).toBe(3);
-    expect(ring.querySelectorAll('[data-star="unlit"]').length).toBe(1);
+    expect(ring.querySelectorAll('[data-star="unlit"]').length).toBe(KEEP_GOING_QUESTIONS - 3);
+    expect(screen.getByRole('button', { name: /^Continue/ })).toBeTruthy();
   });
 
-  it('says the goal is reached once it is', async () => {
-    await setUp('K', { dailyGoalQuestions: 2 });
-    const user = openApp();
-    await openSkill(user, 'Add to 10');
-    for (let i = 0; i < 2; i += 1) {
-      await answer(user, sumOnScreen());
-      await settled();
+  it('says the goal is reached once the plan is done', async () => {
+    const child = await setUp('K', { planKeepGoing: 1, planNew: false, planMixed: false });
+    const store = await repo();
+    const at = NOW.toISOString();
+    await store.saveSkillState({ ...newSkillState(child.id, ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
+    for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
+      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
     }
-    await holdHome();
-    expect(await screen.findByRole('img', { name: 'Daily goal reached: 2 questions today' })).toBeTruthy();
+    const user = openApp();
+    await user.click(await screen.findByRole('button', { name: 'Robin' }));
+    expect(await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` })).toBeTruthy();
+    expect(screen.getByText('Goal reached!')).toBeTruthy();
   });
 
   it('a mastered skill whose review is due puts Review first in the plan', async () => {

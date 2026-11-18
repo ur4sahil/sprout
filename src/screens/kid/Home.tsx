@@ -15,7 +15,7 @@ import KidScreen from '../../components/KidScreen';
 import { openSets } from '../../engine/facts';
 import NavButton from '../../components/NavButton';
 import TodayPlan from '../../components/TodayPlan';
-import { nextPart, partPath } from '../../app/todaysPlan';
+import { nextPart, partPath, planProgress } from '../../app/todaysPlan';
 import Notice from '../../components/Notice';
 import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
@@ -86,6 +86,8 @@ export default function Home() {
 
   const ready = new Set(allGenerators().map((generator) => generator.skillId));
   const next = day ? nextPart(day.plan) : null;
+  // The day's goal is the plan's questions added up.
+  const goal = day ? planProgress(day.plan) : { done: 0, goal: 0 };
   const subjects = SUBJECTS.filter((subject) => CATALOGUE.some((skill) => skill.subject === subject.id && !skill.retired && ready.has(skill.id)));
 
   return (
@@ -125,17 +127,17 @@ export default function Home() {
       {day && (
         <div className={styles.page}>
           <section className={styles.today} aria-label="Today">
-            <GoalRing done={day.answeredToday} goal={child.settings.dailyGoalQuestions} />
+            {goal.goal > 0 && <GoalRing done={goal.done} goal={goal.goal} />}
             <div className={styles.todayText}>
               <span className={styles.eyebrow}>Today</span>
               <span className={styles.todayLine} data-today-line="">
-                {day.answeredToday >= child.settings.dailyGoalQuestions ? 'Goal reached!' : `${day.answeredToday} of ${child.settings.dailyGoalQuestions} questions`}
+                {goal.goal === 0 ? 'Pick anything to practice' : goal.done >= goal.goal ? 'Goal reached!' : `${goal.done} of ${goal.goal} questions`}
               </span>
             </div>
             {next ? (
               <BigButton size="kid" className={styles.playButton} onClick={() => go(partPath(next))}>
                 <Icon name="play" />
-                {day.plan.some((part) => part.done) ? 'Keep going' : "Start today's plan"}
+                {day.plan.some((part) => part.done || part.answered > 0) ? 'Continue' : "Start today's plan"}
               </BigButton>
             ) : day.plan.length > 0 ? (
               <span className={styles.todayLine} data-plan-done="">

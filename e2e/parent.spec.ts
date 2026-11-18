@@ -74,7 +74,7 @@ test.describe('the grown-ups area', () => {
     await openGrownUps(page);
 
     const practice = page.getByRole('region', { name: 'Practice' });
-    await expect(practice.locator('[data-fact="goal"]')).toHaveText('Today: 3 of 15 questions');
+    await expect(practice.locator('[data-fact="goal"]')).toHaveText(/^Today's plan: 3 of \d+ questions$/);
     await expect(practice.getByRole('img', { name: 'Questions each day for the last 14 days. 3 in all.' })).toBeVisible();
     await expect(practice.locator('[data-fact="picks"]')).toContainText('Add to 10');
     await checkScreen(page, 'dashboard', 44);
@@ -90,7 +90,7 @@ test.describe('the grown-ups area', () => {
     await shoot(page, 'parent-scores');
 
     await page.getByRole('tab', { name: 'Settings' }).click();
-    await page.getByLabel('Daily goal').selectOption('25');
+    await page.getByLabel('Skills to practice').selectOption('2');
     await expect(page.getByRole('status')).toHaveText('Saved.');
     await page.getByRole('switch', { name: /Pre-reader mode/ }).click();
     await checkScreen(page, 'settings', 44);
@@ -105,11 +105,11 @@ test.describe('the grown-ups area', () => {
     await checkScreen(page, 'data', 44);
     await shoot(page, 'parent-data');
 
-    // The new goal reached the child's home, and with pre-reader mode off the picks say why they were chosen.
+    // The new setting reached the child's home: the goal is the plan's questions added up, with its skills to practice.
     await page.getByRole('button', { name: 'Done' }).click();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await expect(page.getByRole('img', { name: '3 of 25 questions today' })).toBeVisible();
-    await expect(page.getByText('Keep going').first()).toBeVisible();
+    await expect(page.getByRole('img', { name: /^3 of \d+ questions today$/ })).toBeVisible();
+    await expect(page.locator('[data-plan-part="keepGoing"]')).toHaveCount(2);
   });
 
   test('export makes a backup file, and importing it on a wiped device brings everything back', async ({ page, browserName }) => {

@@ -252,7 +252,7 @@ describe('the grown-up pages', () => {
     expect(within(facts).getByRole('img', { name: 'Minutes each day for the last 14 days. 4 in all.' })).toBeTruthy();
     expect(facts.querySelectorAll('[data-bars="Questions"] rect')).toHaveLength(14);
     expect(facts.querySelector(`[data-bars="Questions"] rect[data-day="${localDay(NOW)}"]`)?.getAttribute('data-value')).toBe('7');
-    expect(facts.querySelector('[data-fact="goal"]')?.textContent).toBe('Today: 7 of 15 questions');
+    expect(facts.querySelector('[data-fact="goal"]')?.textContent).toBe("Today's plan: 7 of 35 questions");
     expect(facts.querySelector('[data-fact="mastered"]')?.textContent).toBe('Skills mastered: 1');
     expect(facts.querySelector('[data-fact="picks"]')?.textContent).toMatch(/^Today's picks: .+/);
     expect(screen.getByRole('region', { name: 'Check-in levels' }).textContent).toContain('Math: Counting: Kindergarten, 29% through');
@@ -320,7 +320,6 @@ describe('the grown-up pages', () => {
     await user.selectOptions(screen.getByLabelText('Grade'), '1');
     await waitFor(async () => expect((await (await repo()).listChildren())[0]?.grade).toBe('1'));
     await user.selectOptions(screen.getByLabelText('Daily time limit'), '20');
-    await user.selectOptions(screen.getByLabelText('Daily goal'), '25');
     await user.selectOptions(screen.getByLabelText('Questions in a session'), '12');
     await user.selectOptions(screen.getByLabelText('Voice speed'), '0.7');
     await user.click(screen.getByRole('switch', { name: /Pre-reader mode/ }));
@@ -329,7 +328,7 @@ describe('the grown-up pages', () => {
     await user.click(screen.getByRole('switch', { name: /Videos in lessons/ }));
     await user.click(screen.getByRole('switch', { name: /Read questions aloud/ }));
     await waitFor(async () =>
-      expect((await (await repo()).listChildren())[0]?.settings).toMatchObject({ dailyMinutes: 20, dailyGoalQuestions: 25, sessionLength: 12, speechRate: 0.7, preReader: false, gentleScoring: false, showTimer: true, allowVideos: false, autoSpeak: false }),
+      expect((await (await repo()).listChildren())[0]?.settings).toMatchObject({ dailyMinutes: 20, sessionLength: 12, speechRate: 0.7, preReader: false, gentleScoring: false, showTimer: true, allowVideos: false, autoSpeak: false }),
     );
 
     // Restarting the math check-in clears its progress and leaves scores alone.

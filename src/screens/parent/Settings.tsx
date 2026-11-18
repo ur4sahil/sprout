@@ -33,7 +33,6 @@ const GRADES = [
 ];
 const numbers = (values: number[], unit: (n: number) => string): { value: string; label: string }[] => values.map((n) => ({ value: String(n), label: unit(n) }));
 const SESSION = numbers([5, 6, 8, 10, 12, 15, 20], (n) => `${n} questions`);
-const GOAL = numbers([5, 10, 15, 20, 25, 30, 40, 50], (n) => `${n} questions`);
 const KEEP_GOING = numbers([0, 1, 2, 3, 4], (n) => (n === 0 ? 'None' : `${n} ${n === 1 ? 'skill' : 'skills'}`));
 const MINUTES = numbers([0, 10, 15, 20, 30, 45, 60, 90], (n) => (n === 0 ? 'No limit' : `${n} minutes`));
 const RATE = [
@@ -115,7 +114,6 @@ export default function Settings() {
           </h2>
           <SelectField label="Grade" value={child.grade} options={GRADES} onValue={(grade) => void save({ ...child, grade: grade as Grade })} />
           <SelectField label="Questions in a session" value={String(child.settings.sessionLength)} options={withValue(SESSION, child.settings.sessionLength, 'questions')} onValue={(value) => set({ sessionLength: Number(value) })} />
-          <SelectField label="Daily goal" value={String(child.settings.dailyGoalQuestions)} options={withValue(GOAL, child.settings.dailyGoalQuestions, 'questions')} onValue={(value) => set({ dailyGoalQuestions: Number(value) })} />
           <SelectField label="Daily time limit" value={String(child.settings.dailyMinutes)} options={withValue(MINUTES, child.settings.dailyMinutes, 'minutes')} onValue={(value) => set({ dailyMinutes: Number(value) })} />
           <SelectField label="Voice speed" value={String(child.settings.speechRate)} options={withValue(RATE, child.settings.speechRate, '')} onValue={(value) => set({ speechRate: Number(value) })} />
           <ToggleField label="Read questions aloud" checked={child.settings.autoSpeak} onChange={(autoSpeak) => set({ autoSpeak })} />
@@ -124,7 +122,8 @@ export default function Settings() {
           <ToggleField label="Show a timer" checked={child.settings.showTimer} onChange={(showTimer) => set({ showTimer })} />
           {VIDEOS_ENABLED && <ToggleField label="Videos in lessons" checked={child.settings.allowVideos} onChange={(allowVideos) => set({ allowVideos })} />}
           <h3>Today's plan</h3>
-          <SelectField label="Keep going with" value={String(child.settings.planKeepGoing)} options={KEEP_GOING} onValue={(value) => set({ planKeepGoing: Number(value) })} />
+          <p className={styles.soft}>The daily goal on the home screen is the plan's questions added up.</p>
+          <SelectField label="Skills to practice" value={String(child.settings.planKeepGoing)} options={KEEP_GOING} onValue={(value) => set({ planKeepGoing: Number(value) })} />
           <ToggleField label="Something new each day" hint="One new skill, opening on its video, lesson or example." checked={child.settings.planNew} onChange={(planNew) => set({ planNew })} />
           <ToggleField label="Mixed bag" hint="Questions from several topics in progress, mixed together." checked={child.settings.planMixed} onChange={(planMixed) => set({ planMixed })} />
           <h3>Check-in</h3>

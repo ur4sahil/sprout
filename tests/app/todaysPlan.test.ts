@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partPath, todaysPlan } from '../../src/app/todaysPlan';
+import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partPath, partSize, planProgress, todaysPlan } from '../../src/app/todaysPlan';
+import { REVIEW_QUESTIONS } from '../../src/engine/review';
 import type { TodayPick } from '../../src/engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../../src/storage/schema';
 import { defaultSettings, newSkillState } from '../../src/storage/schema';
@@ -53,5 +54,30 @@ describe("today's plan", () => {
     expect(todaysPlan({ ...base, child: child(), states: [], picks: [], reviewsDue: ['M-K-C4'] })[0]).toMatchObject({ kind: 'review', done: false });
     const reviewed = { ...answer('M-K-C4'), kind: 'review' as const };
     expect(todaysPlan({ ...base, child: child(), states: [], picks: [], attempts: [reviewed] })[0]).toMatchObject({ kind: 'review', done: true });
+  });
+
+  it('the goal is the plan\'s questions added up, counting only answers inside each part', () => {
+    const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')] });
+    expect(planProgress(plan)).toEqual({ done: 0, goal: KEEP_GOING_QUESTIONS * 2 + NEW_QUESTIONS + MIXED_QUESTIONS });
+    // 12 answers on one skill count as 10; answers on a skill outside the plan do not count.
+    // (C1 was practised yesterday too, so it is a skill to practice, not today's new skill.)
+    const attempts = [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: 12 }, () => answer('M-K-C1')), answer('M-K-Z9')];
+    const later = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('M-K-B1')], picks: [next('M-K-A1')], attempts });
+    expect(planProgress(later).done).toBe(KEEP_GOING_QUESTIONS);
+  });
+
+  it('a part ticked off early counts in full, so a finished plan reaches its goal', () => {
+    const mastered = { ...going('M-K-C1'), score: 100, masteredAt: NOW };
+    const plan = todaysPlan({ ...base, child: child({ planKeepGoing: 1, planNew: false, planMixed: false }), states: [mastered], picks: [], attempts: [answer('M-K-C1')] });
+    expect(plan[0]).toMatchObject({ done: true, answered: 1 });
+    expect(planProgress(plan)).toEqual({ done: KEEP_GOING_QUESTIONS, goal: KEEP_GOING_QUESTIONS });
+  });
+
+  it('a review asks its questions on each skill, without counting a half-reviewed skill twice', () => {
+    const due = (answered: number, skillIds: string[]) => ({ kind: 'review' as const, skillIds, answered, done: skillIds.length === 0 });
+    expect(partSize(due(0, ['a', 'b']))).toBe(2 * REVIEW_QUESTIONS);
+    expect(partSize(due(1, ['a', 'b']))).toBe(2 * REVIEW_QUESTIONS); // "a" is under way and still due
+    expect(partSize(due(REVIEW_QUESTIONS, ['b']))).toBe(2 * REVIEW_QUESTIONS);
+    expect(partSize(due(2 * REVIEW_QUESTIONS, []))).toBe(2 * REVIEW_QUESTIONS);
   });
 });

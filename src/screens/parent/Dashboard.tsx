@@ -2,6 +2,7 @@ import Art from '../../visuals/Art';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { loadChildDay } from '../../app/childDay';
+import { planProgress } from '../../app/todaysPlan';
 import { CHECK_IN_SUBJECTS, SUBJECT_NAME, diagnosticLadders } from '../../app/checkIn';
 import type { DayBar } from '../../app/parentData';
 import { LADDER_NAME, dayBars, ladderLevel } from '../../app/parentData';
@@ -30,6 +31,7 @@ interface Summary {
   levels: { ladder: string; text: string }[];
   topics: TopicRow[];
   saveFailed: boolean;
+  goal: { done: number; goal: number }; // today's plan: its questions, and how many are answered
 }
 
 async function summarise(child: Child): Promise<Summary> {
@@ -57,6 +59,7 @@ async function summarise(child: Child): Promise<Summary> {
     saveFailed,
     bars: dayBars(attempts, nowIso),
     mastered: states.filter((state) => state.masteredAt !== null).length,
+    goal: planProgress(day.plan),
     picks: day.picks.map((pick) => skillById(pick.skillId)?.name ?? pick.skillId),
     levels: ladders.flatMap(({ subject, ladder }) => {
       const result = latest.get(ladder.id);
@@ -166,7 +169,8 @@ export default function Dashboard() {
             </div>
             <ul className={styles.facts}>
               <li data-fact="goal">
-                Today: {today?.questions ?? 0} of {child.settings.dailyGoalQuestions} questions
+                {summary.goal.goal > 0 ? `Today's plan: ${summary.goal.done} of ${summary.goal.goal} questions` : 'Today: no plan'}
+                {today && today.questions > summary.goal.done ? ` (${today.questions} answered in all)` : ''}
               </li>
               <li data-fact="mastered">Skills mastered: {summary.mastered}</li>
               <li data-fact="picks">Today's picks: {summary.picks.length > 0 ? summary.picks.join(', ') : 'none'}</li>

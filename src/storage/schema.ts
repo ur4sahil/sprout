@@ -18,7 +18,7 @@ export const childSettingsSchema = z.object({
   speechRate: z.number().min(0.7).max(1.1), // default 0.85
   autoSpeak: z.boolean(), // default true for PK, K, 1
   showTimer: z.boolean(), // default false. The only clock a child can ever see
-  dailyGoalQuestions: z.number().int().min(1).max(200), // default 15
+  dailyGoalQuestions: z.number().int().min(1).max(200), // no longer read: the goal is today's plan added up (Nov 18, 2026)
   allowVideos: z.boolean(), // default true
   dailyMinutes: z.number().int().min(0).max(600), // 0 means no limit
   preReader: z.boolean(), // default true for PK and K

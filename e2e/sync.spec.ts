@@ -31,10 +31,11 @@ test.describe('two iPads, one family', () => {
       // The family's child is there when the picker opens, with the score from the first iPad.
       await other.getByRole('button', { name: 'Robin', exact: true }).click();
       expect(await isSilent(other)).toBe(true);
-      await expect(other.getByRole('button', { name: 'Add to 10. Score 20' })).toBeVisible();
+      // Today's plan there counts the two answers from the first iPad (Add to 10, started today, is the new skill).
+      await expect(other.getByRole('button', { name: /\. Add to 10 · 2 of \d+/ })).toBeVisible();
 
       // Practice on the second iPad goes back to the first.
-      await other.getByRole('button', { name: /^Add to 10\./ }).click();
+      await other.getByRole('button', { name: /\. Add to 10 · / }).click();
       await expect(other.locator('[data-phase="asking"]')).toBeVisible();
       const back = other.waitForResponse(isSave);
       await answerRight(other);
@@ -43,8 +44,8 @@ test.describe('two iPads, one family', () => {
       // The first iPad is opened again: it fetches, and shows all three answers.
       await page.reload();
       await page.getByRole('button', { name: 'Robin', exact: true }).click();
-      await expect(page.getByRole('img', { name: '3 of 15 questions today' })).toBeVisible();
-      await expect(page.getByRole('button', { name: 'Add to 10. Score 31' })).toBeVisible();
+      await expect(page.getByRole('img', { name: /^3 of \d+ questions today$/ })).toBeVisible();
+      await expect(page.getByRole('button', { name: /\. Add to 10 · 3 of \d+/ })).toBeVisible();
     } finally {
       await second.close();
     }

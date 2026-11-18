@@ -10,7 +10,9 @@ import BigButton from '../../components/BigButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
 import ProfileCard from '../../components/ProfileCard';
-import { daysBetween, localDay, localDayOf, now } from '../../lib/clock';
+import { loadChildDay } from '../../app/childDay';
+import { planProgress } from '../../app/todaysPlan';
+import { daysBetween, localDayOf, now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { failureMessage, signOut } from '../../storage/account';
 import { openRepo } from '../../storage/index';
@@ -32,8 +34,8 @@ export default function ProfilePicker() {
   const [asking, setAsking] = useState<'signOut' | null>(null);
   const [signingOut, setSigningOut] = useState(false);
   const [signOutFailed, setSignOutFailed] = useState<string | null>(null);
-  // Questions each child has answered today, for the bar on their card.
-  const [today, setToday] = useState<Record<string, number>>({});
+  // Each child's goal for today, the plan's questions, and how many are answered, for the bar on their card.
+  const [today, setToday] = useState<Record<string, { done: number; goal: number }>>({});
   const [failed, setFailed] = useState(false);
   const [passed, setPassed] = useState(0);
 
@@ -44,13 +46,8 @@ export default function ProfilePicker() {
       try {
         const { repo } = await openRepo();
         const list = await repo.listChildren();
-        const day = localDay(now());
-        const counts: Record<string, number> = {};
-        for (const child of list) {
-          // Yesterday onward is enough to find today's answers in any time zone.
-          const recent = await repo.listAttempts(child.id, { since: new Date(now().getTime() - 36 * 3_600_000).toISOString() });
-          counts[child.id] = recent.filter((attempt) => attempt.day === day).length;
-        }
+        const counts: Record<string, { done: number; goal: number }> = {};
+        for (const child of list) counts[child.id] = planProgress((await loadChildDay(child)).plan);
         if (alive) {
           setChildren(list);
           setToday(counts);
@@ -112,7 +109,7 @@ export default function ProfilePicker() {
         {children !== null && children.length > 0 && (
           <div className={styles.children} role="group" aria-label="Who is playing?">
             {children.map((child) => (
-              <ProfileCard key={child.id} name={child.name} avatar={child.avatar} grade={GRADE_NAME[child.grade] ?? child.grade} done={today[child.id] ?? 0} goal={child.settings.dailyGoalQuestions} onClick={() => pick(child)} />
+              <ProfileCard key={child.id} name={child.name} avatar={child.avatar} grade={GRADE_NAME[child.grade] ?? child.grade} done={today[child.id]?.done ?? 0} goal={today[child.id]?.goal ?? 0} onClick={() => pick(child)} />
             ))}
           </div>
         )}

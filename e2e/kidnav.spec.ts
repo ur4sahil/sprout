@@ -43,7 +43,7 @@ test.describe('kid navigation', () => {
     }
     await holdHome(page);
     await expect(plan.locator('[data-done]')).toHaveCount(1);
-    await expect(page.getByRole('button', { name: 'Keep going', exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Continue', exact: true })).toBeVisible();
     await expectNoTextOnlyControls(page, 'home after one part');
   });
 

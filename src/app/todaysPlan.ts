@@ -2,18 +2,20 @@ import { skillById } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
 import type { TodayPick } from '../engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../storage/schema';
+import { REVIEW_QUESTIONS } from '../engine/review';
 import { inProgress, mixedBagOrder } from './mixedBag';
 
 // Today's plan (plan section 18): one list in order, each part ticked off when done.
-// 1. Review the mastered skills that are due. 2. Keep going with skills in progress. 3. Learn something new.
-// 4. The Mixed bag. Each part has a fixed size; a grown-up sets the parts for each child.
+// 1. Review the mastered skills that are due. 2. Practice: skills in progress. 3. A new skill. 4. The Mixed bag.
+// Each part has a fixed size; a grown-up sets the parts for each child. The home screen's goal is the plan's
+// questions added up (the owner's choice, Nov 18, 2026), so there is one goal for the day, not two.
 
-export const KEEP_GOING_QUESTIONS = 10; // answers today on a "Keep going" skill to tick it off
+export const KEEP_GOING_QUESTIONS = 10; // answers today on a Practice skill to tick it off
 export const NEW_QUESTIONS = 5; // answers today on the new skill to tick it off
 export const MIXED_QUESTIONS = 10; // Mixed bag answers today to tick it off
 
 export type PlanPart =
-  | { kind: 'review'; skillIds: string[]; done: boolean }
+  | { kind: 'review'; skillIds: string[]; answered: number; done: boolean } // skillIds: the ones still due
   | { kind: 'keepGoing'; skillId: string; answered: number; done: boolean }
   | { kind: 'new'; skillId: string; answered: number; done: boolean }
   | { kind: 'mixed'; answered: number; done: boolean };
@@ -41,8 +43,8 @@ export function todaysPlan(input: {
   const parts: PlanPart[] = [];
 
   // 1. Review: shown while reviews are due, and ticked once today's are all done.
-  const reviewedToday = todays.some((attempt) => attempt.kind === 'review');
-  if (reviewsDue.length > 0 || reviewedToday) parts.push({ kind: 'review', skillIds: [...reviewsDue], done: reviewsDue.length === 0 });
+  const reviewAnswers = todays.filter((attempt) => attempt.kind === 'review').length;
+  if (reviewsDue.length > 0 || reviewAnswers > 0) parts.push({ kind: 'review', skillIds: [...reviewsDue], answered: reviewAnswers, done: reviewsDue.length === 0 });
 
   // 3, chosen first so "Keep going" leaves it out: the new skill. One started today stays the new skill all day.
   let fresh: string | null = null;
@@ -85,6 +87,37 @@ export function todaysPlan(input: {
     if (answered > 0 || mixedBagOrder(states, LADDERS).length > 0) parts.push({ kind: 'mixed', answered, done: answered >= MIXED_QUESTIONS });
   }
   return parts;
+}
+
+// How many questions a part asks. A review asks REVIEW_QUESTIONS on each skill: the ones reviewed today, and the
+// ones still due (a skill half reviewed is still due, so it is not counted twice).
+export function partSize(part: PlanPart): number {
+  switch (part.kind) {
+    case 'review': {
+      const started = Math.ceil(part.answered / REVIEW_QUESTIONS);
+      const halfDone = part.answered % REVIEW_QUESTIONS > 0 ? 1 : 0;
+      return (started + Math.max(part.skillIds.length - halfDone, 0)) * REVIEW_QUESTIONS;
+    }
+    case 'keepGoing':
+      return KEEP_GOING_QUESTIONS;
+    case 'new':
+      return NEW_QUESTIONS;
+    case 'mixed':
+      return MIXED_QUESTIONS;
+  }
+}
+
+// The day's goal: the plan's questions added up, and how many of them are answered. Answers past a part's size, or on
+// skills outside the plan, do not count; a part ticked off early (a skill mastered today) counts in full.
+export function planProgress(plan: readonly PlanPart[]): { done: number; goal: number } {
+  let done = 0;
+  let goal = 0;
+  for (const part of plan) {
+    const size = partSize(part);
+    goal += size;
+    done += part.done ? size : Math.min(part.answered, size);
+  }
+  return { done, goal };
 }
 
 // Where a part is done: the review, a skill's practice, the new skill's choice screen (video, lesson, example), or the bag.

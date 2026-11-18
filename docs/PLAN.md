@@ -2101,7 +2101,7 @@ Days practised counts the different local `day` values with at least one answer.
 - **Trouble spots:** flagged skills, each with the three most recent missed questions redrawn, and a button to add the skill to a plan.
 - **Question log:** every attempt, newest first, filtered by child, skill and date. Each row redraws the question from its skill, level and seed and shows the child's answer beside the correct one.
 - **Plans:** name a plan, pick skills, order them, assign children. Nothing is created on first run. The screen offers one ready-made template, "Reasoning practice", holding all 14 reasoning skills in ladder order. Tapping "Use this plan" makes an ordinary plan from it.
-- **Settings:** per child: grade, gentle scoring, session length, speech rate, auto-speak, timer, daily goal, daily minutes, pre-reader mode, videos, and restart diagnostic. For the device: mute. For the family: change the PIN.
+- **Settings:** per child: grade, gentle scoring, session length, speech rate, auto-speak, timer, daily minutes, pre-reader mode, videos, and restart diagnostic. For the device: mute. For the family: change the PIN.
 - **Data:** export everything through the share sheet, import a file (it merges and never wipes), reset one child, the time of the last backup with a "Back up now" button, who is signed in and until when, sign out, sign out everywhere, storage and install status, any saved items that could not be read, flags, the last 20 errors, and credits.
 
 ### Look and feel
@@ -2634,9 +2634,9 @@ The owner watched the four-beat lessons with his children and found them unusabl
 
 - "Today's plan" replaces "Today's picks" on home: one list, in order, each part ticked off when done.
   1. Review: mastered skills due today (3 questions each, as reviews are now).
-  2. Keep going: skills the child is in the middle of.
-  3. Learn something new: one new skill; it opens on the bulb's choice screen (video, lesson, example) before practice.
+  2. Practice: skills the child is in the middle of, one row each.
+  3. New skill: one new skill; it opens on the bulb's choice screen (video, lesson, example) before practice.
   4. Mixed bag (section 17).
-- Each part has a fixed size of its own; the daily goal ring only counts questions answered.
-- A grown-up sets the parts for each child in Settings: how many Keep going skills, whether to add something new each day, and the Mixed bag.
+- Each part has a fixed size of its own. The daily goal is the plan's questions added up (owner's choice, Nov 18, 2026): the ring, the profile card and the dashboard show answers inside the plan's parts out of that total, and the old Daily goal setting is gone. Answers past a part's size, or on skills outside the plan, do not count.
+- A grown-up sets the parts for each child in Settings: how many skills to practice, whether to add something new each day, and the Mixed bag.
 - Play becomes "Start today's plan" and works through the parts in order; any part can also be tapped on its own.

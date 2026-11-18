@@ -1,5 +1,5 @@
 import type { PlanPart } from '../app/todaysPlan';
-import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS } from '../app/todaysPlan';
+import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, partSize } from '../app/todaysPlan';
 import { skillById } from '../content/catalogue';
 import type { Say } from '../engine/types';
 import type { IconName } from './Icon';
@@ -18,11 +18,11 @@ function words(part: PlanPart): { icon: IconName; title: string; detail: string;
   const name = (skillId: string): string => skillById(skillId)?.name ?? '';
   switch (part.kind) {
     case 'review':
-      return { icon: 'repeat', title: 'Review', detail: part.done ? 'Done' : `${part.skillIds.length} ${part.skillIds.length === 1 ? 'skill' : 'skills'}`, say: ['Review the skills you know.'] };
+      return { icon: 'repeat', title: 'Review', detail: part.done ? 'Done' : `${part.skillIds.length} ${part.skillIds.length === 1 ? 'skill' : 'skills'} · ${Math.min(part.answered, partSize(part))} of ${partSize(part)}`, say: ['Review the skills you know.'] };
     case 'keepGoing':
-      return { icon: 'pencil', title: 'Keep going', detail: `${name(part.skillId)} · ${Math.min(part.answered, KEEP_GOING_QUESTIONS)} of ${KEEP_GOING_QUESTIONS}`, say: ['Keep going:', ...(skillById(part.skillId)?.speakName ?? [])] };
+      return { icon: 'pencil', title: 'Practice', detail: `${name(part.skillId)} · ${Math.min(part.answered, KEEP_GOING_QUESTIONS)} of ${KEEP_GOING_QUESTIONS}`, say: ['Practice:', ...(skillById(part.skillId)?.speakName ?? [])] };
     case 'new':
-      return { icon: 'bulb', title: 'Learn something new', detail: `${name(part.skillId)} · ${Math.min(part.answered, NEW_QUESTIONS)} of ${NEW_QUESTIONS}`, say: ['Learn something new:', ...(skillById(part.skillId)?.speakName ?? [])] };
+      return { icon: 'bulb', title: 'New skill', detail: `${name(part.skillId)} · ${Math.min(part.answered, NEW_QUESTIONS)} of ${NEW_QUESTIONS}`, say: ['A new skill:', ...(skillById(part.skillId)?.speakName ?? [])] };
     case 'mixed':
       return { icon: 'bag', title: 'Mixed bag', detail: `${Math.min(part.answered, MIXED_QUESTIONS)} of ${MIXED_QUESTIONS}`, say: ['Mixed bag: questions from lots of topics.'] };
   }
