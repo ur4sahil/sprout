@@ -1,3 +1,4 @@
+import type { FigureId } from './figures';
 import { FACTS as H1_FACTS } from './oracleFacts/h1';
 import { FACTS as H2_FACTS } from './oracleFacts/h2';
 import { FACTS as H3_FACTS } from './oracleFacts/h3';
@@ -80,6 +81,9 @@ export type Visual = VisualBase &
     | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number }
     // X marks above a number line counted in halves or fourths: counts[i] marks above min + i / denominator.
     | { kind: 'linePlot'; min: number; max: number; denominator: 1 | 2 | 4; counts: number[]; unit: string }
+    // A shape made of pieces (src/engine/figures.ts): the whole shape, the whole with the lines where it is cut,
+    // or the pieces pulled a little apart, so a child sees they fit.
+    | { kind: 'figure'; figure: FigureId; show: 'whole' | 'cut' | 'pieces' }
     | { kind: 'ruler'; lengthUnits: number; startUnit: number; object: 'pencil' | 'crayon' | 'ribbon' }
     | { kind: 'fraction'; shape: 'circle' | 'rectangle'; parts: number; shaded: number; equal: boolean }
     | { kind: 'row'; children: Visual[] }
@@ -97,7 +101,7 @@ export type Visual = VisualBase &
 
 export type Level = 1 | 2 | 3 | 4;
 export type Mode = 'look' | 'listen' | 'read';
-export type ItemType = 'choice' | 'multiSelect' | 'tapCount' | 'numberPad' | 'order' | 'sort' | 'match' | 'tiles' | 'numberLineTap' | 'setClock' | 'buildBar' | 'columnSum' | 'dragWord';
+export type ItemType = 'choice' | 'multiSelect' | 'tapCount' | 'numberPad' | 'order' | 'sort' | 'match' | 'tiles' | 'numberLineTap' | 'setClock' | 'buildBar' | 'columnSum' | 'dragWord' | 'fillShape';
 export type ClockTime = { hour: number; minute: number };
 
 export interface QuestionBase {
@@ -140,7 +144,10 @@ export type Question =
   // A sum written in columns: the child fills the answer digit by digit, with boxes for carried and borrowed ones.
   | (QuestionBase & { type: 'columnSum'; top: number; bottom: number; op: '+' | '-'; answer: number })
   // Move a word or number into the gap: before + [gap] + after. Each option is a text picture.
-  | (QuestionBase & { type: 'dragWord'; before: string; after: string; options: Visual[]; answerIndex: number });
+  | (QuestionBase & { type: 'dragWord'; before: string; after: string; options: Visual[]; answerIndex: number })
+  // Fill a shape with pieces (the owner's request, Nov 18, 2026): drag or tap pieces into its outlined spots, then
+  // answer with how many were placed. With `odd`, the tray also holds a piece that does not fit and slides back.
+  | (QuestionBase & { type: 'fillShape'; figure: FigureId; odd: boolean; answer: number });
 
 // What a generator hands back. The registry adds the id, level, seed and key.
 type WithoutStamp<T> = T extends unknown ? Omit<T, 'skillId' | 'level' | 'seed' | 'key'> : never;
@@ -157,7 +164,7 @@ export type Response =
   | { pairs: [number, number][] } // match
   | { tiles: string[] } // tiles
   | { time: ClockTime } // setClock
-  | { values: number[] }; // buildBar. numberLineTap and columnSum answer { value }, dragWord { index }
+  | { values: number[] }; // buildBar. numberLineTap, columnSum and fillShape answer { value }, dragWord { index }
 
 export type OracleId = WaveOracleId | BaseOracleId;
 // Oracles added by the waves of plan section 15, named in src/engine/oracleFacts/.

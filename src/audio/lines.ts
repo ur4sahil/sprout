@@ -11,6 +11,9 @@ export const LINES = {
   reviewDone: ['Review done. Nice work.'],
   nextOne: ['Nice work! On to the next one?'],
   knownAlready: ['You know this one already. On to the next.'],
+  // The bulb's choice screen: what it offers.
+  choose: ['Pick a lesson with Sprout, or an example.'],
+  chooseWithVideo: ['Pick a video, a lesson with Sprout, or an example.'],
 } as const satisfies Record<string, Say>;
 
 // The words and picture of each milestone card, shown and said.

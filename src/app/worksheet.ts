@@ -53,6 +53,7 @@ export function paperAnswer(question: Question): string {
     case 'buildBar':
       return describeAnswer(question);
     case 'columnSum':
+    case 'fillShape':
       return String(question.answer);
     case 'dragWord':
       return `${LETTERS[question.answerIndex] ?? ''} (${describeVisual(question.options[question.answerIndex] ?? 'blank')})`;

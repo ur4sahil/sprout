@@ -158,3 +158,39 @@ describe('dragWord', () => {
     expect(last()).toEqual({ index: 2 });
   });
 });
+
+describe('fillShape', () => {
+  const question: Question = { ...base(), type: 'fillShape', figure: 'square-2tri', odd: true, answer: 2 };
+
+  it('is valid, and is answered by how many pieces were placed', () => {
+    expect(validateQuestion(question)).toEqual([]);
+    expect(validateQuestion({ ...question, answer: 3 })).toContain('17: the answer must be the number of pieces that fill the figure');
+    expect(check(question, { value: 2 })).toBe(true);
+    expect(check(question, { value: 1 })).toBe(false);
+    expect(describeAnswer(question)).toBe('2');
+    expect(describeResponse(question, { value: 1 })).toBe('1');
+  });
+
+  it('a piece tapped and then a spot tapped fills the spot; a filled spot tapped empties it', async () => {
+    const { user, last } = setup(question);
+    expect(screen.getAllByRole('button', { name: 'A triangle' })).toHaveLength(3); // one more than it takes
+    await user.click(screen.getAllByRole('button', { name: 'A triangle' })[0] as HTMLElement);
+    await user.click(screen.getByRole('button', { name: 'Empty spot 1' }));
+    expect(last()).toEqual({ value: 1 });
+    await user.click(screen.getAllByRole('button', { name: 'A triangle' })[0] as HTMLElement);
+    await user.click(screen.getByRole('button', { name: 'Empty spot 2' }));
+    expect(last()).toEqual({ value: 2 });
+    expect(document.querySelector('[data-fill-count]')?.getAttribute('data-fill-count')).toBe('2');
+    await user.click(screen.getByRole('button', { name: /triangle in spot 1/ }));
+    expect(last()).toEqual({ value: 1 });
+  });
+
+  it('the piece that does not fit never fills a spot: it shakes and stays in the tray', async () => {
+    const { user, responses } = setup(question);
+    await user.click(screen.getByRole('button', { name: 'A different triangle' }));
+    await user.click(screen.getByRole('button', { name: 'Empty spot 1' }));
+    expect(responses.filter((r) => r !== null)).toEqual([]);
+    expect(document.querySelector('[data-bounced]')).not.toBeNull();
+    expect(screen.getByRole('button', { name: 'A different triangle' })).toBeTruthy();
+  });
+});

@@ -1,3 +1,4 @@
+import { LINES } from '../../src/audio/lines';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
@@ -334,8 +335,8 @@ describe('the lesson player', () => {
     await openSkill(user, 'Add to 10');
     spoken.said.length = 0;
     await user.click(screen.getByRole('button', { name: 'Learn this skill' }));
-    // The skill has a video, which opens first (video first). Nothing is said until it is closed.
-    await user.click(await screen.findByRole('button', { name: /Close/ }));
+    // The bulb opens on a choice; the lesson starts when it is picked.
+    await user.click(await screen.findByRole('button', { name: /Lesson with Sprout/ }));
     const beats = generatorFor(ADD).lesson();
     expect(beats.map((beat) => beat.beat)).toEqual(['see', 'watch', 'try', 'remember']);
     await screen.findByRole('button', { name: /Practise/ });
@@ -344,7 +345,9 @@ describe('the lesson player', () => {
       expected.push(beat.speak);
       if (beat.reveal) expected.push(beat.reveal.speak);
     }
-    expect(spoken.said).toEqual(expected);
+    // The choice screen's own line comes first; then each beat in turn.
+    const choice = [JSON.stringify(LINES.choose), JSON.stringify(LINES.chooseWithVideo)];
+    expect(spoken.said.filter((said) => !choice.includes(JSON.stringify(said)))).toEqual(expected);
     expect(document.querySelector('[data-beat]')?.getAttribute('data-beat')).toBe('remember');
     expect(screen.getAllByRole('button', { name: /step \d of 4/ }).length).toBe(4);
     // A dot jumps back to its beat and plays on from there.
@@ -364,7 +367,7 @@ describe('the lesson player', () => {
     const user = openApp();
     await openSkill(user, 'Add to 10');
     await user.click(screen.getByRole('button', { name: 'Learn this skill' }));
-    await user.click(await screen.findByRole('tab', { name: /Example/ }));
+    await user.click(await screen.findByRole('button', { name: /^Example/ }));
     const region = await screen.findByRole('region', { name: 'Example' });
     expect(region.querySelectorAll('li').length).toBe(0);
     expect(document.querySelector('[data-example-answer]')).toBeNull();

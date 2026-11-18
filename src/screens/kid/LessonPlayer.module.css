@@ -50,3 +50,13 @@
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
 }
+
+/* The bulb's choice: big buttons in a column, one under the other. */
+.choices {
+  width: 100%;
+  max-width: var(--width-form);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}

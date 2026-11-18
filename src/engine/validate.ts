@@ -1,4 +1,5 @@
 import { canonicalJson, canonicalVisual, questionKey } from './canonical';
+import { FIGURES } from './figures';
 import type { OracleId, Question, Say, SkillGrade, Visual } from './types';
 import { ORACLE_FACTS } from './types';
 
@@ -246,6 +247,12 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
       if (!(step > 0 && max > min && Number.isInteger(marks))) problems.push('17: the line must run from min to max in whole steps');
       else if (marks > 20) problems.push('17: a line has at most 21 marks, or they are too close to tell apart');
       if (!(q.answer >= min && q.answer <= max && Number.isInteger((q.answer - min) / step))) problems.push('17: the answer must be a mark on the line');
+      break;
+    }
+    case 'fillShape': {
+      const figure = FIGURES[q.figure];
+      if (!figure) problems.push('17: fillShape names a figure that does not exist');
+      else if (q.answer !== figure.slots.length) problems.push('17: the answer must be the number of pieces that fill the figure');
       break;
     }
     case 'setClock': {

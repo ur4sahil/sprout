@@ -1,10 +1,10 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import { figureFor } from '../../../../engine/figures';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
-import { shape } from '../pk/parts';
 
 // Grade 1 skills added by the Nov 17, 2026 curriculum check: B.11 order does not matter, B.12 subtract by
 // thinking of adding, B.13 count on to add, C.5 measure with paper clips, D.3 how many pieces make a shape.
@@ -226,7 +226,9 @@ export const paperClipsGenerator: SkillGenerator = {
 };
 
 // ---- D.3 How many pieces make a shape ----
-// Levels: 2-piece shapes / up to 6 pieces / typed. Oracle: composeShape.
+// The child fills the shape with pieces that really fit (the owner's request, Nov 18, 2026), then answers with
+// how many it took. Levels: shapes of 2 to 4 pieces / every shape / every shape, with a piece in the tray that does not fit.
+// Oracle: composeShape.
 
 const PIECES: readonly { piece: ShapeName; count: number; makes: ShapeName }[] = [
   { piece: 'square', count: 2, makes: 'rectangle' },
@@ -238,33 +240,37 @@ const PIECES: readonly { piece: ShapeName; count: number; makes: ShapeName }[] =
 
 function howManyPieces(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(level === 1 ? PIECES.filter((each) => each.count <= 4) : PIECES);
-  const prompt = `How many ${entry.piece}s make this ${entry.makes}?`;
-  const base = {
-    mode: 'look' as const,
+  const figure = figureFor(entry.makes, entry.piece, entry.count);
+  if (!figure) throw new Error(`No figure for ${entry.count} ${entry.piece}s making a ${entry.makes}`);
+  const whole = entry.makes === entry.piece ? `big ${entry.makes}` : entry.makes;
+  const prompt = `Fill the ${whole} with ${entry.piece}s. How many does it take?`;
+  const line = `${entry.count} ${entry.piece}s fit together to make the ${whole}.`;
+  return {
+    type: 'fillShape',
+    mode: 'look',
+    figure,
+    odd: level === 3,
+    answer: entry.count,
     facts: { ask: 'count', piece: entry.piece, makes: entry.makes },
-    prompt: { text: prompt, speak: [prompt] },
-    stimulus: { kind: 'row', children: [shape(entry.makes, 'orange', 'l'), shape(entry.piece, 'blue', 's')] } as Visual,
-    explanation: { speak: spoken(`${entry.count} ${entry.piece}s fit together to make a ${entry.makes === entry.piece ? `bigger ${entry.makes}` : entry.makes}.`), steps: [`${entry.count} ${entry.piece}s fit together to make a ${entry.makes}.`], visual: { kind: 'row', children: Array.from({ length: entry.count }, (): Visual => shape(entry.piece, 'blue', 's')) } as Visual },
+    prompt: { text: prompt, speak: spoken(prompt) },
+    explanation: { speak: spoken(line), steps: [line], visual: { kind: 'figure', figure, show: 'cut' } },
   };
-  if (level === 3) return { ...base, type: 'numberPad', answer: entry.count, maxDigits: 1 };
-  const values = numeralChoices(entry.count, [entry.count + 1, entry.count - 1, entry.count + 2, entry.count - 2], 1, 8, rng);
-  return { ...base, type: 'choice', facts: { ...base.facts, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(entry.count) };
 }
 
 export const howManyPiecesGenerator: SkillGenerator = {
   skillId: 'M-1-D3',
   maxLevel: 3,
-  itemTypes: ['choice', 'numberPad'],
+  itemTypes: ['fillShape'],
   lists: [],
   pool: { 1: 4, 2: 5, 3: 5 },
   generate: howManyPieces,
   exampleSeed: 655,
   example: () => howManyPieces(1, makeRng(655)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'Shapes can be built from smaller shapes.', speak: ['Shapes can be built from smaller shapes.'], visual: shape('hexagon', 'orange', 'l') },
-    { beat: 'watch', text: '6 triangles fit together to make a hexagon.', speak: ['Six triangles fit together to make a hexagon.'], visual: { kind: 'row', children: Array.from({ length: 6 }, (): Visual => shape('triangle', 'blue', 's')) } },
-    { beat: 'try', text: 'How many squares make this rectangle?', speak: ['How many squares make this rectangle?'], visual: shape('rectangle', 'orange', 'l'), reveal: { text: '2 squares make a rectangle.', speak: ['Two squares make a rectangle.'], visual: { kind: 'row', children: [shape('square', 'blue', 's'), shape('square', 'blue', 's')] } } },
-    { beat: 'remember', text: 'Big shapes can be split into small ones.', speak: ['Big shapes can be split into small ones.'], visual: shape('hexagon', 'orange', 'l') },
+    { beat: 'see', text: 'Shapes can be built from smaller shapes.', speak: ['Shapes can be built from smaller shapes.'], visual: { kind: 'figure', figure: 'hex-6tri', show: 'whole' } },
+    { beat: 'watch', text: '6 triangles fit together to make a hexagon.', speak: ['Six triangles fit together to make a hexagon.'], visual: { kind: 'figure', figure: 'hex-6tri', show: 'cut' } },
+    { beat: 'try', text: 'How many triangles make this square?', speak: ['How many triangles make this square?'], visual: { kind: 'figure', figure: 'square-2tri', show: 'whole' }, reveal: { text: '2 triangles make the square.', speak: ['Two triangles make the square.'], visual: { kind: 'figure', figure: 'square-2tri', show: 'cut' } } },
+    { beat: 'remember', text: 'Big shapes can be split into small ones.', speak: ['Big shapes can be split into small ones.'], visual: { kind: 'figure', figure: 'hex-6tri', show: 'pieces' } },
   ],
   oracle: 'composeShape',
 };

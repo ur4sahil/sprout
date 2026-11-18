@@ -1,41 +1,21 @@
 {
  "skillId": "M-1-D3",
- "version": 1,
+ "version": 2,
  "example": {
+  "type": "fillShape",
   "mode": "look",
+  "figure": "square-2tri",
+  "odd": false,
+  "answer": 2,
   "facts": {
    "ask": "count",
    "piece": "triangle",
-   "makes": "square",
-   "options": [
-    2,
-    3,
-    4
-   ]
+   "makes": "square"
   },
   "prompt": {
-   "text": "How many triangles make this square?",
+   "text": "Fill the square with triangles. How many does it take?",
    "speak": [
-    "How many triangles make this square?"
-   ]
-  },
-  "stimulus": {
-   "kind": "row",
-   "children": [
-    {
-     "kind": "shape",
-     "shape": "square",
-     "color": "orange",
-     "size": "l",
-     "rotation": 0
-    },
-    {
-     "kind": "shape",
-     "shape": "triangle",
-     "color": "blue",
-     "size": "s",
-     "rotation": 0
-    }
+    "Fill the square with triangles. How many does it take?"
    ]
   },
   "explanation": {
@@ -43,65 +23,17 @@
     {
      "number": 2
     },
-    " triangles fit together to make a square."
+    " triangles fit together to make the square."
    ],
    "steps": [
-    "2 triangles fit together to make a square."
+    "2 triangles fit together to make the square."
    ],
    "visual": {
-    "kind": "row",
-    "children": [
-     {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "blue",
-      "size": "s",
-      "rotation": 0
-     },
-     {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "blue",
-      "size": "s",
-      "rotation": 0
-     }
-    ]
+    "kind": "figure",
+    "figure": "square-2tri",
+    "show": "cut"
    }
   },
-  "type": "choice",
-  "options": [
-   {
-    "kind": "text",
-    "value": "2",
-    "size": "xl",
-    "speak": [
-     {
-      "number": 2
-     }
-    ]
-   },
-   {
-    "kind": "text",
-    "value": "3",
-    "size": "xl",
-    "speak": [
-     {
-      "number": 3
-     }
-    ]
-   },
-   {
-    "kind": "text",
-    "value": "4",
-    "size": "xl",
-    "speak": [
-     {
-      "number": 4
-     }
-    ]
-   }
-  ],
-  "answerIndex": 0,
   "skillId": "M-1-D3",
   "level": 1,
   "seed": 655,
@@ -110,40 +42,20 @@
  "levels": {
   "1": [
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -151,105 +63,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 1,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -257,105 +101,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 2,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -363,105 +139,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 3,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "tri-4tri",
+    "odd": false,
+    "answer": 4,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "triangle",
-     "options": [
-      4,
-      5,
-      6
-     ]
+     "makes": "triangle"
     },
     "prompt": {
-     "text": "How many triangles make this triangle?",
+     "text": "Fill the big triangle with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this triangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the big triangle with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -469,119 +177,37 @@
       {
        "number": 4
       },
-      " triangles fit together to make a bigger triangle."
+      " triangles fit together to make the big triangle."
      ],
      "steps": [
-      "4 triangles fit together to make a triangle."
+      "4 triangles fit together to make the big triangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "tri-4tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "5",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 5
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 4,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"triangle\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      1,
-      2,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -589,105 +215,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 5,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -695,105 +253,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 6,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -801,105 +291,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 7,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      1,
-      2,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -907,105 +329,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 8,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      1,
-      2,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -1013,105 +367,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 9,
     "key": "M-1-D3|1|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      1,
-      2,
-      3
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -1119,65 +405,17 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 1,
     "seed": 10,
@@ -1186,40 +424,20 @@
   ],
   "2": [
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": false,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "hexagon",
-     "options": [
-      6,
-      7,
-      8
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -1227,133 +445,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 1,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": false,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "hexagon",
-     "options": [
-      6,
-      7,
-      8
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -1361,133 +483,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 2,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": false,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "hexagon",
-     "options": [
-      6,
-      7,
-      8
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -1495,133 +521,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 3,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "tri-4tri",
+    "odd": false,
+    "answer": 4,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "triangle",
-     "options": [
-      4,
-      5,
-      6
-     ]
+     "makes": "triangle"
     },
     "prompt": {
-     "text": "How many triangles make this triangle?",
+     "text": "Fill the big triangle with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this triangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the big triangle with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -1629,119 +559,37 @@
       {
        "number": 4
       },
-      " triangles fit together to make a bigger triangle."
+      " triangles fit together to make the big triangle."
      ],
      "steps": [
-      "4 triangles fit together to make a triangle."
+      "4 triangles fit together to make the big triangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "tri-4tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "5",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 5
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 4,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"triangle\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": false,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
-     "makes": "hexagon",
-     "options": [
-      4,
-      5,
-      6
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -1749,133 +597,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "5",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 5
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 5,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -1883,105 +635,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 6,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      2,
-      3,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -1989,105 +673,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 7,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      1,
-      2,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -2095,105 +711,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 8,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
-     "makes": "rectangle",
-     "options": [
-      1,
-      2,
-      4
-     ]
+     "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -2201,105 +749,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "4",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 4
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 9,
     "key": "M-1-D3|2|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": false,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
-     "makes": "hexagon",
-     "options": [
-      1,
-      2,
-      3
-     ]
+     "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -2307,65 +787,17 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "choice",
-    "options": [
-     {
-      "kind": "text",
-      "value": "1",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 1
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "3",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 3
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "M-1-D3",
     "level": 2,
     "seed": 10,
@@ -2374,35 +806,20 @@
   ],
   "3": [
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": true,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -2410,97 +827,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 6,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 1,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": true,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -2508,97 +865,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 6,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 2,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": true,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -2606,97 +903,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 6,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 3,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "tri-4tri",
+    "odd": true,
+    "answer": 4,
     "facts": {
      "ask": "count",
      "piece": "triangle",
      "makes": "triangle"
     },
     "prompt": {
-     "text": "How many triangles make this triangle?",
+     "text": "Fill the big triangle with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this triangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the big triangle with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -2704,83 +941,37 @@
       {
        "number": 4
       },
-      " triangles fit together to make a bigger triangle."
+      " triangles fit together to make the big triangle."
      ],
      "steps": [
-      "4 triangles fit together to make a triangle."
+      "4 triangles fit together to make the big triangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "tri-4tri",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 4,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 4,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"triangle\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-6tri",
+    "odd": true,
+    "answer": 6,
     "facts": {
      "ask": "count",
      "piece": "triangle",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many triangles make this hexagon?",
+     "text": "Fill the hexagon with triangles. How many does it take?",
      "speak": [
-      "How many triangles make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "triangle",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with triangles. How many does it take?"
      ]
     },
     "explanation": {
@@ -2788,97 +979,37 @@
       {
        "number": 6
       },
-      " triangles fit together to make a hexagon."
+      " triangles fit together to make the hexagon."
      ],
      "steps": [
-      "6 triangles fit together to make a hexagon."
+      "6 triangles fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "triangle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-6tri",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 6,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 5,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"triangle\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": true,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -2886,69 +1017,37 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 2,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 6,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"hexagon\",\"piece\":\"trapezoid\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": true,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
      "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -2956,69 +1055,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 2,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 7,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": true,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
      "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -3026,69 +1093,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 2,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 8,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "rect-2sq",
+    "odd": true,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "square",
      "makes": "rectangle"
     },
     "prompt": {
-     "text": "How many squares make this rectangle?",
+     "text": "Fill the rectangle with squares. How many does it take?",
      "speak": [
-      "How many squares make this rectangle?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "rectangle",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "square",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the rectangle with squares. How many does it take?"
      ]
     },
     "explanation": {
@@ -3096,69 +1131,37 @@
       {
        "number": 2
       },
-      " squares fit together to make a rectangle."
+      " squares fit together to make the rectangle."
      ],
      "steps": [
-      "2 squares fit together to make a rectangle."
+      "2 squares fit together to make the rectangle."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "square",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "rect-2sq",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 2,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 9,
     "key": "M-1-D3|3|{\"ask\":\"count\",\"makes\":\"rectangle\",\"piece\":\"square\"}"
    },
    {
+    "type": "fillShape",
     "mode": "look",
+    "figure": "hex-2trap",
+    "odd": true,
+    "answer": 2,
     "facts": {
      "ask": "count",
      "piece": "trapezoid",
      "makes": "hexagon"
     },
     "prompt": {
-     "text": "How many trapezoids make this hexagon?",
+     "text": "Fill the hexagon with trapezoids. How many does it take?",
      "speak": [
-      "How many trapezoids make this hexagon?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "shape",
-       "shape": "hexagon",
-       "color": "orange",
-       "size": "l",
-       "rotation": 0
-      },
-      {
-       "kind": "shape",
-       "shape": "trapezoid",
-       "color": "blue",
-       "size": "s",
-       "rotation": 0
-      }
+      "Fill the hexagon with trapezoids. How many does it take?"
      ]
     },
     "explanation": {
@@ -3166,34 +1169,17 @@
       {
        "number": 2
       },
-      " trapezoids fit together to make a hexagon."
+      " trapezoids fit together to make the hexagon."
      ],
      "steps": [
-      "2 trapezoids fit together to make a hexagon."
+      "2 trapezoids fit together to make the hexagon."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       },
-       {
-        "kind": "shape",
-        "shape": "trapezoid",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
-       }
-      ]
+      "kind": "figure",
+      "figure": "hex-2trap",
+      "show": "cut"
      }
     },
-    "type": "numberPad",
-    "answer": 2,
-    "maxDigits": 1,
     "skillId": "M-1-D3",
     "level": 3,
     "seed": 10,

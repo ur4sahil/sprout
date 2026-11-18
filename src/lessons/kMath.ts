@@ -1,6 +1,6 @@
 import { COUNTABLES } from '../content/data/countables';
 import type { Question, Say } from '../engine/types';
-import { add, alter, art, calm, countAlong, group, ids, moment, num, numeral, scene, set, str, text, turnQuestion, withoutHand } from './build';
+import { add, alter, art, calm, countAlong, group, ids, moment, num, numeral, rich, scene, set, str, text, turnQuestion, withoutHand } from './build';
 import type { Lesson, LessonPart, Moment, Scene } from './types';
 
 // Kindergarten Math lessons (plan section 16).
@@ -102,7 +102,7 @@ function addWhy(question: Question): Moment[] {
 
 // The rich look (a host, a table, a bounce and confetti) is a sample the owner is judging: `rich(plainAddPictures(), 'table')`.
 export function addPicturesLesson(): Lesson {
-  return plainAddPictures();
+  return rich(plainAddPictures(), 'table');
 }
 
 function plainAddPictures(): Lesson {

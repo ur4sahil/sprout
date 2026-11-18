@@ -27,7 +27,7 @@ export function judge(question: Question, answer: OracleAnswer): string[] {
         }
         return sameSet(right, q.answerIndexes) ? [] : [`marked ${q.answerIndexes.join(',')}, but the right set is ${right.join(',')}`];
       }
-      if (q.type === 'numberPad' || q.type === 'tapCount' || q.type === 'tiles' || q.type === 'numberLineTap' || q.type === 'columnSum') {
+      if (q.type === 'numberPad' || q.type === 'tapCount' || q.type === 'tiles' || q.type === 'numberLineTap' || q.type === 'columnSum' || q.type === 'fillShape') {
         return q.answer === answer.value ? [] : [`marked ${String(q.answer)}, but the answer is ${String(answer.value)}`];
       }
       if (q.type === 'setClock') {

@@ -6,13 +6,17 @@ import { openFromMath } from './support/sweep';
 // Concept videos (step 21). YouTube itself is not loaded in these checks: a blank page stands in
 // for the player, so they need no network and play nothing.
 test.describe('a video in a lesson', () => {
-  test('opens by itself over the lesson (video first) in a sandboxed frame, fits the screen, and closes with one button', async ({ page }) => {
+  test('the bulb offers a video; it opens in a sandboxed frame, fits the screen, and closes with one button', async ({ page }) => {
     await page.route('https://www.youtube-nocookie.com/**', (route) => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>player</title>' }));
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await openFromMath(page, 'Add to 5');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
+    // Nothing plays until a kind of help is picked.
+    await expect(page.locator('[data-learn-choice]')).toBeVisible();
+    await expect(page.locator('[data-video]')).toHaveCount(0);
+    await page.getByRole('button', { name: /Watch a video/ }).click();
     const player = page.getByRole('dialog', { name: 'Introduction to addition' });
     await expect(player).toBeVisible();
     const frame = player.locator('iframe');
@@ -28,17 +32,17 @@ test.describe('a video in a lesson', () => {
     await checkScreen(page, 'video player', 64);
     await page.getByRole('button', { name: /Close/ }).click();
     await expect(player).toBeHidden();
-    await expect(page.getByRole('tab', { name: /Lesson/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Lesson with Sprout/ })).toBeVisible();
   });
 
-  test('a skill with no video has no Video tab', async ({ page }) => {
+  test('a skill with no video offers no video', async ({ page }) => {
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await openFromMath(page, 'Are there enough?');
+    await openFromMath(page, 'Same shape', 'Pre-K');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
-    await expect(page.getByRole('tab', { name: /Lesson/ })).toBeVisible();
-    await expect(page.getByRole('tab', { name: /Video/ })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: /Lesson with Sprout/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Watch a video/ })).toHaveCount(0);
     await expect(page.locator('[data-video]')).toHaveCount(0);
   });
 });

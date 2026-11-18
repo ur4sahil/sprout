@@ -1,6 +1,8 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { FigureId } from '../../../../engine/figures';
+import { figureFor } from '../../../../engine/figures';
 import type { SkillGenerator } from '../../../generator';
 import { shape } from '../pk/parts';
 
@@ -103,11 +105,18 @@ const MADE: readonly { piece: ShapeName; count: number; makes: ShapeName }[] = [
   { piece: 'square', count: 4, makes: 'square' },
 ];
 const CANNOT: ShapeName[] = ['circle', 'heart', 'oval', 'star'];
-const pieces = (piece: ShapeName, count: number): Visual => ({ kind: 'row', children: Array.from({ length: count }, (_, i): Visual => shape(piece, 'blue', 's', piece === 'triangle' && i % 2 === 1 ? 180 : 0)) });
+// The pieces of a shape, drawn as the real pieces that fit it (pulled a little apart), never as loose shapes of
+// the same name: two triangles that make a square are the square's two halves.
+function figureOf(piece: ShapeName, count: number, makes: ShapeName): FigureId {
+  const found = figureFor(makes, piece, count);
+  if (!found) throw new Error(`No figure for ${count} ${piece}s making a ${makes}`);
+  return found;
+}
+const pieces = (piece: ShapeName, count: number, makes: ShapeName): Visual => ({ kind: 'figure', figure: figureOf(piece, count, makes), show: 'pieces' });
 
 function composeExplanation(entry: (typeof MADE)[number]): Explanation {
   const line = `${entry.count} ${entry.piece}s put together make a ${entry.makes === 'square' && entry.piece === 'square' ? 'bigger square' : entry.makes}.`;
-  return { speak: spoken(line), steps: [line], visual: shape(entry.makes, 'blue', 'l') };
+  return { speak: spoken(line), steps: [line], visual: { kind: 'figure', figure: figureOf(entry.piece, entry.count, entry.makes), show: 'cut' } };
 }
 
 function composeShapes(level: Level, rng: Rng): QuestionDraft {
@@ -124,7 +133,7 @@ function composeShapes(level: Level, rng: Rng): QuestionDraft {
       facts: { ask: 'pieces', makes: entry.makes, options: choices.map((each) => `${each.count} ${each.piece}`) },
       prompt: { text: prompt, speak: [prompt] },
       stimulus: shape(entry.makes, 'orange', 'l'),
-      options: choices.map((each) => pieces(each.piece, each.count)),
+      options: choices.map((each) => pieces(each.piece, each.count, each.makes)),
       answerIndex: choices.indexOf(entry),
       explanation: composeExplanation(entry),
     };
@@ -136,7 +145,7 @@ function composeShapes(level: Level, rng: Rng): QuestionDraft {
     mode: 'look',
     facts: { ask: 'makes', piece: entry.piece, count: entry.count, options: choices },
     prompt: { text: prompt, speak: [prompt] },
-    stimulus: pieces(entry.piece, entry.count),
+    stimulus: pieces(entry.piece, entry.count, entry.makes),
     options: choices.map((each) => ({ ...shape(each, 'orange', 'm'), speak: [each] }) as Visual),
     answerIndex: choices.indexOf(entry.makes),
     explanation: composeExplanation(entry),
@@ -153,10 +162,10 @@ export const composeShapesGenerator: SkillGenerator = {
   exampleSeed: 642,
   example: () => composeShapes(1, makeRng(642)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'Small shapes can be put together to make bigger shapes.', speak: ['Small shapes can be put together to make bigger shapes.'], visual: pieces('square', 2) },
+    { beat: 'see', text: 'Small shapes can be put together to make bigger shapes.', speak: ['Small shapes can be put together to make bigger shapes.'], visual: pieces('square', 2, 'rectangle') },
     { beat: 'watch', text: '2 squares side by side make a rectangle.', speak: ['Two squares side by side make a rectangle.'], visual: shape('rectangle', 'blue', 'l') },
-    { beat: 'try', text: 'Put the triangles together. Which shape can they make?', speak: ['Put the triangles together. Which shape can they make?'], visual: pieces('triangle', 2), reveal: { text: '2 triangles make a square.', speak: ['Two triangles make a square.'], visual: shape('square', 'blue', 'l') } },
-    { beat: 'remember', text: 'Shapes fit together to make new shapes.', speak: ['Shapes fit together to make new shapes.'], visual: pieces('trapezoid', 2) },
+    { beat: 'try', text: 'Put the triangles together. Which shape can they make?', speak: ['Put the triangles together. Which shape can they make?'], visual: pieces('triangle', 2, 'square'), reveal: { text: '2 triangles make a square.', speak: ['Two triangles make a square.'], visual: { kind: 'figure', figure: 'square-2tri', show: 'cut' } } },
+    { beat: 'remember', text: 'Shapes fit together to make new shapes.', speak: ['Shapes fit together to make new shapes.'], visual: pieces('trapezoid', 2, 'hexagon') },
   ],
   oracle: 'composeShape',
 };

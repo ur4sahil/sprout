@@ -36,6 +36,7 @@ export function check(question: Question, response: Response): boolean {
     }
     case 'numberLineTap':
     case 'columnSum':
+    case 'fillShape':
       return 'value' in response && response.value === question.answer;
     case 'dragWord':
       return 'index' in response && response.index === question.answerIndex;

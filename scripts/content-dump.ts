@@ -29,6 +29,8 @@ function answerLines(question: Question): string[] {
       return [`- Line: ${question.line.min} to ${question.line.max}${question.line.denominator ? ` in parts of ${question.line.denominator}` : ` by ${question.line.step}`}`, `- Answer: ${describeAnswer(question)}`];
     case 'columnSum':
       return [`- Sum: ${question.top} ${question.op} ${question.bottom}`, `- Answer: ${question.answer}`];
+    case 'fillShape':
+      return [`- Fill: ${question.figure}${question.odd ? ', with a piece that does not fit' : ''}`, `- Answer: ${question.answer} pieces`];
     case 'setClock':
       return [`- Starts at ${question.start.hour}:${String(question.start.minute).padStart(2, '0')}, steps of ${question.minuteStep}`, `- Answer: ${describeAnswer(question)}`];
     case 'buildBar':

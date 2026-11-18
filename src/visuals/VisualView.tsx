@@ -6,6 +6,7 @@ import ClockVisual from './ClockVisual';
 import CoinsVisual from './CoinsVisual';
 import EmojiGroupVisual from './EmojiGroupVisual';
 import EquationVisual from './EquationVisual';
+import FigureVisual from './FigureVisual';
 import FoldPunchVisual from './FoldPunchVisual';
 import FractionVisual from './FractionVisual';
 import GraphVisual from './GraphVisual';
@@ -63,6 +64,8 @@ export default function VisualView({ visual }: { visual: Visual }) {
       return <ArrayVisual visual={visual} />;
     case 'tally':
       return <TallyVisual visual={visual} />;
+    case 'figure':
+      return <FigureVisual visual={visual} />;
     case 'scale':
       return <ScaleVisual visual={visual} />;
     case 'foldPunch':

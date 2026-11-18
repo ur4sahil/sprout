@@ -41,6 +41,7 @@ function rightResponse(question: Question): Response {
       return { value: question.answer };
     case 'numberLineTap':
     case 'columnSum':
+    case 'fillShape':
       return { value: question.answer };
     case 'dragWord':
       return { index: question.answerIndex };

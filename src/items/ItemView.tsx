@@ -3,6 +3,7 @@ import BuildBarItem from './BuildBarItem';
 import ChoiceItem from './ChoiceItem';
 import ColumnSumItem from './ColumnSumItem';
 import DragWordItem from './DragWordItem';
+import FillShapeItem from './FillShapeItem';
 import MatchItem from './MatchItem';
 import MultiSelectItem from './MultiSelectItem';
 import NumberLineTapItem from './NumberLineTapItem';
@@ -49,5 +50,7 @@ export default function ItemView({ question, ...rest }: Props) {
       return <ColumnSumItem question={question} {...rest} />;
     case 'dragWord':
       return <DragWordItem question={question} {...rest} />;
+    case 'fillShape':
+      return <FillShapeItem question={question} {...rest} />;
   }
 }

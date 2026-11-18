@@ -2623,3 +2623,20 @@ The owner watched the four-beat lessons with his children and found them unusabl
 1. The player, the stage and the builders, with six sample lessons (K: count to 20, add with pictures, teen numbers, first letter, middle vowel; Grade 1: missing number). A screen recording goes to the owner before any more are written.
 2. The rest of Kindergarten and Grade 1, family by family.
 3. The lesson lines are recorded ahead at the lesson pace (`scripts/voice-reusable.ts`).
+
+## 17. Mixed bag (decided by the owner on Nov 18, 2026)
+
+- A "Mixed bag" button on home, any time. It teaches several things at once, not a test: 20 questions, 5 from each of up to 4 topics (ladders), shuffled together, all from skills the child is practising now (started, not mastered). No mastered skills are mixed in.
+- Each answer counts as ordinary practice on its skill: the Skill Score moves as in practice, and a miss shows the "Not quite" walk-through with its steps.
+- No separate report: it feeds the same scores, reviews and dashboard.
+
+## 18. Today's plan (decided by the owner on Nov 18, 2026)
+
+- "Today's plan" replaces "Today's picks" on home: one list, in order, each part ticked off when done.
+  1. Review: mastered skills due today (3 questions each, as reviews are now).
+  2. Keep going: skills the child is in the middle of.
+  3. Learn something new: one new skill; it opens on the bulb's choice screen (video, lesson, example) before practice.
+  4. Mixed bag (section 17).
+- Each part has a fixed size of its own; the daily goal ring only counts questions answered.
+- A grown-up sets the parts for each child in Settings: how many Keep going skills, whether to add something new each day, and the Mixed bag.
+- Play becomes "Start today's plan" and works through the parts in order; any part can also be tapped on its own.

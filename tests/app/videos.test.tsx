@@ -11,17 +11,18 @@ vi.mock('../../src/audio/speech', async (original) => ({
   isSpeechAvailable: () => true,
 }));
 
-// Concept videos in a lesson (plan section 10, Video safety). "Add to 5" (M-K-C2) has one. "Break apart numbers" does too; reasoning skills have none.
+// Concept videos in a lesson (plan section 10, Video safety). "Add to 5" (M-K-C2) has one. "Break apart numbers" does too; most reasoning skills have none.
 const WITH_VIDEO = 'M-K-C2';
-const NO_VIDEO = 'R-A1';
-const videoTab = (): HTMLElement | null => screen.queryByRole('tab', { name: /Video/ });
+const NO_VIDEO = 'R-A2';
+// The video is offered on the bulb's choice screen.
+const videoTab = (): HTMLElement | null => screen.queryByRole('button', { name: /Watch a video/ });
 const frame = (): HTMLIFrameElement | null => document.querySelector('[data-video] iframe');
 
 async function openLesson(skillId: string, change: Parameters<typeof setUp>[1] = {}) {
   const child = await setUp('K', change);
   useAppStore.getState().setChild(child);
   const user = openApp(`/skill/${skillId}/learn`);
-  await screen.findByRole('tab', { name: /Lesson/ });
+  await screen.findByRole('button', { name: /Lesson with Sprout/ });
   return user;
 }
 
@@ -49,23 +50,30 @@ describe('a video in a lesson', () => {
     expect(player.querySelectorAll('button')).toHaveLength(1);
     await user.click(screen.getByRole('button', { name: /Close/ }));
     expect(frame()).toBeNull();
-    // The lesson is still there behind it.
-    expect(screen.getByRole('tab', { name: /Lesson/ })).toBeTruthy();
+    // The choice is still there behind it.
+    expect(screen.getByRole('button', { name: /Lesson with Sprout/ })).toBeTruthy();
   });
 
-  it('opens first, by itself, when the skill has one (video first); the lesson starts once it is closed', async () => {
+  it('the bulb opens on a choice, and nothing plays until one is picked', async () => {
     const user = await openLesson(WITH_VIDEO);
+    await screen.findByRole('button', { name: /Watch a video/ });
+    expect(screen.getByRole('button', { name: /Lesson with Sprout/ })).toBeTruthy();
+    expect(screen.getByRole('button', { name: /Example/ })).toBeTruthy();
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(screen.queryByRole('dialog')).toBeNull();
+    expect(screen.queryByRole('region', { name: 'Lesson' })).toBeNull();
+    await user.click(screen.getByRole('button', { name: /Watch a video/ }));
     await screen.findByRole('dialog', { name: 'Introduction to addition' });
-    // The Video tab comes first.
-    expect(screen.getAllByRole('tab')[0]?.textContent).toMatch(/Video/);
     await user.click(screen.getByRole('button', { name: /Close/ }));
+    // Closing the video starts nothing: the tabs wait for the next pick.
     expect(frame()).toBeNull();
-    expect(screen.getByRole('region', { name: 'Lesson' })).toBeTruthy();
+    expect(screen.queryByRole('region', { name: 'Lesson' })).toBeNull();
   });
 
-  it('does not open by itself for a skill with no video', async () => {
+  it('a skill with no video offers only the lesson and the example', async () => {
     await openLesson(NO_VIDEO);
-    await new Promise((resolve) => setTimeout(resolve, 100));
+    await screen.findByRole('button', { name: /Lesson with Sprout/ });
+    expect(screen.queryByRole('button', { name: /Watch a video/ })).toBeNull();
     expect(screen.queryByRole('dialog')).toBeNull();
   });
 
@@ -133,7 +141,7 @@ describe('a parent removes a video', () => {
     const child = (await repo.listChildren())[0]!;
     useAppStore.getState().setChild(child);
     openApp(`/skill/${WITH_VIDEO}/learn`);
-    await screen.findByRole('tab', { name: /Lesson/ });
+    await screen.findByRole('button', { name: /Lesson with Sprout/ });
     await act(async () => { await new Promise((resolve) => setTimeout(resolve, 20)); });
     expect(videoTab()).toBeNull();
   });

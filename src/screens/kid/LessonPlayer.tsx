@@ -1,10 +1,11 @@
 import Icon from "../../components/Icon";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TIMING } from "../../app/timing";
 import { useWakeLock } from "../../app/useWakeLock";
 import { speak, stop } from "../../audio/speech";
 import { warmAll } from "../../audio/voice";
+import { LINES } from "../../audio/lines";
 import TeachLesson from "../../components/TeachLesson";
 import { teachingFor } from "../../lessons";
 import BigButton from "../../components/BigButton";
@@ -53,9 +54,10 @@ export default function LessonPlayer({ child, skill }: Props) {
     if (teaching) return;
     warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson");
   }, [beats, example, teaching]);
-  const [mode, setMode] = useState<"lesson" | "example">("lesson");
+  // The bulb opens on a choice (the owner's choice, Nov 18, 2026): nothing starts until a kind of help is tapped.
+  const [mode, setMode] = useState<"choose" | "lesson" | "example">("choose");
   const [index, setIndex] = useState(0);
-  const [playing, setPlaying] = useState(teaching === null);
+  const [playing, setPlaying] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [finished, setFinished] = useState(false);
   const [stepsShown, setStepsShown] = useState(0);
@@ -81,21 +83,30 @@ export default function LessonPlayer({ child, skill }: Props) {
     removed !== null && child.settings.allowVideos && navigator.onLine
       ? videoFor(skill.id, removed)
       : null;
-  // Video first (the owner's choice, Nov 17, 2026): a skill with a video opens on it, once per visit.
-  // The lesson waits until it is known whether there is a video, so it never starts and then stops.
   const decided = removed !== null;
-  const openedVideo = useRef(false);
-  useEffect(() => {
-    if (!video || openedVideo.current) return;
-    openedVideo.current = true;
+  const closeVideo = (): void => setWatching(false);
+  // A choice from the opening screen, or from the tabs once a kind of help is open.
+  const pick = (id: string): void => {
     stop();
-    setPlaying(false);
-    setWatching(true);
-  }, [video]);
-  const closeVideo = (): void => {
-    setWatching(false);
-    if (mode === "lesson" && teaching === null) setPlaying(true);
+    if (id === "video") {
+      setPlaying(false);
+      setWatching(true);
+      return;
+    }
+    setMode(id as "lesson" | "example");
+    setIndex(0);
+    setRevealed(false);
+    setFinished(false);
+    setPlaying(id === "lesson" && teaching === null);
+    setStepsShown(0);
   };
+  // The choice screen says what it offers, once, as it opens.
+  useEffect(() => {
+    if (mode !== "choose" || !decided) return;
+    void speak(video ? LINES.chooseWithVideo : LINES.choose, rate);
+    return () => stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once, when the choice is first shown
+  }, [decided]);
 
   const beat = beats[index];
 
@@ -165,27 +176,37 @@ export default function LessonPlayer({ child, skill }: Props) {
         </>
       }
     >
-      <Tabs
-        label="Kind of help"
-        tabs={[
-          ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
-          { id: "lesson", label: "Lesson", icon: "film" as const },
-          { id: "example", label: "Example", icon: "pencil" as const },
-        ]}
-        current={mode}
-        onPick={(id) => {
-          // The video opens over the lesson, which waits behind it.
-          if (id === "video") {
-            stop();
-            setPlaying(false);
-            setWatching(true);
-            return;
-          }
-          setMode(id as "lesson" | "example");
-          setPlaying(id === "lesson" && teaching === null);
-          setStepsShown(0);
-        }}
-      />
+      {mode === "choose" ? (
+        <Column label="Choose how to learn">
+          <div className={styles.choices} data-learn-choice="">
+            {video && (
+              <BigButton size="kid" onClick={() => pick("video")}>
+                <Icon name="video" />
+                Watch a video
+              </BigButton>
+            )}
+            <BigButton size="kid" tone={video ? "quiet" : "main"} onClick={() => pick("lesson")}>
+              <Icon name="film" />
+              Lesson with Sprout
+            </BigButton>
+            <BigButton size="kid" tone="quiet" onClick={() => pick("example")}>
+              <Icon name="pencil" />
+              Example
+            </BigButton>
+          </div>
+        </Column>
+      ) : (
+        <Tabs
+          label="Kind of help"
+          tabs={[
+            ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
+            { id: "lesson", label: "Lesson", icon: "film" as const },
+            { id: "example", label: "Example", icon: "pencil" as const },
+          ]}
+          current={mode}
+          onPick={pick}
+        />
+      )}
 
       {mode === "lesson" && teaching && decided && !watching && (
         <TeachLesson key={skill.id} lesson={teaching} rate={rate} onPractise={practise} />

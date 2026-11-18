@@ -1,3 +1,4 @@
+import { FIGURES } from './figures';
 import type { Question, Response, Say, SayPart, Visual } from './types';
 
 // Plain-text descriptions. Used for aria-labels, the question log snapshot and the review sheet.
@@ -101,6 +102,13 @@ export function describeVisual(visual: Visual | 'blank'): string {
       return `${visual.rows} rows of ${visual.cols} ${visual.emoji}`;
     case 'tally':
       return `${plural(visual.count, 'tally mark', 'tally marks')}`;
+    case 'figure': {
+      const figure = FIGURES[visual.figure];
+      const n = figure.slots.length;
+      if (visual.show === 'whole') return figure.whole;
+      if (visual.show === 'cut') return `${figure.whole} cut into ${plural(n, figure.piece, `${figure.piece}s`)}`;
+      return plural(n, figure.piece, `${figure.piece}s`);
+    }
     case 'scale':
       return `balance scale: ${visual.left.map((n) => (n === 'blank' ? '□' : n)).join(' and ')} on the left, ${visual.right.join(' and ')} on the right`;
     case 'foldPunch':
@@ -122,6 +130,7 @@ export function describeAnswer(question: Question): string {
     case 'numberPad':
     case 'tiles':
     case 'columnSum':
+    case 'fillShape':
       return String(question.answer);
     case 'numberLineTap':
       return question.line.denominator ? partLabel(question.answer, question.line.denominator) : String(question.answer);
@@ -147,6 +156,7 @@ export function describeResponse(question: Question, response: Response): string
   if (question.type === 'tapCount' && 'count' in response) return String(response.count);
   if (question.type === 'numberPad' && 'value' in response) return String(response.value);
   if (question.type === 'tiles' && 'tiles' in response) return response.tiles.join('');
+  if (question.type === 'fillShape' && 'value' in response) return String(response.value);
   if ((question.type === 'numberLineTap' || question.type === 'columnSum') && 'value' in response) {
     return question.type === 'numberLineTap' && question.line.denominator ? partLabel(response.value, question.line.denominator) : String(response.value);
   }

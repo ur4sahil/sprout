@@ -28,7 +28,7 @@ describe('the video list', () => {
     expect(videoFor('M-PK-A1')).toEqual(video);
     expect(videoFor('M-PK-A1', ['M-PK-A1'])).toBeNull();
     expect(videoFor('M-PK-A1', ['M-K-C2'])).toEqual(video);
-    expect(videoFor('R-A1')).toBeNull();
+    expect(videoFor('R-A2')).toBeNull(); // a puzzle skill with no video
     expect(videoFor('no-such-skill')).toBeNull();
   });
 });

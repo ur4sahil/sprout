@@ -220,6 +220,15 @@ function Answer({ question }: { question: SheetItem['question'] }) {
           Use these: <strong>{question.bank.join('  ')}</strong>. Write it here: <span className={styles.line} />
         </p>
       );
+    case 'fillShape':
+      return (
+        <>
+          <p className={styles.how}>
+            Count the pieces in the shape. Write how many: <span className={styles.line} />
+          </p>
+          <VisualView visual={{ kind: 'figure', figure: question.figure, show: 'cut' }} />
+        </>
+      );
     case 'numberLineTap':
       return (
         <>

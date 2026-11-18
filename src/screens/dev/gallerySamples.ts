@@ -223,4 +223,13 @@ export const GALLERY: GallerySection[] = [
       { label: 'pencils in inches, halves', visual: { kind: 'linePlot', min: 6, max: 10, denominator: 2, counts: [1, 3, 0, 2, 1], unit: 'Length of pencils (inches)' } },
     ],
   },
+  {
+    title: 'figure',
+    samples: [
+      { label: 'a square cut into two triangles', visual: { kind: 'figure', figure: 'square-2tri', show: 'cut' } },
+      { label: 'the two triangles, pulled apart', visual: { kind: 'figure', figure: 'square-2tri', show: 'pieces' } },
+      { label: 'a hexagon of six triangles', visual: { kind: 'figure', figure: 'hex-6tri', show: 'cut' } },
+      { label: 'a big triangle of four', visual: { kind: 'figure', figure: 'tri-4tri', show: 'pieces' } },
+    ],
+  },
 ];
