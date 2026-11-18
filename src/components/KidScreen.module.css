@@ -39,7 +39,8 @@
 
 .side {
   display: flex;
-  align-items: center;
+  /* The facts' headings sit on one line, whatever the height of what is under each (a ring, a plant, a number). */
+  align-items: flex-start;
   justify-content: center;
   gap: var(--space-4);
   padding: var(--space-2) var(--space-4);

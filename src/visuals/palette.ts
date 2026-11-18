@@ -90,6 +90,8 @@ export const PALETTE = {
     packet: '#fdf3e1',
     packetBand: '#e9a13b',
     packetStick: '#b98a5a',
+    seed: '#c9935a', // a skill not started: a seed in the soil
+    seedEdge: '#8a5a34',
     can: '#5aa9e6',
     canDark: '#3b83c4',
     water: '#bfe3fb',

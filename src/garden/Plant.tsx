@@ -23,7 +23,7 @@ interface Props {
 const C = PALETTE.garden;
 const on = (shown: boolean): '' | undefined => (shown ? '' : undefined);
 
-// One plant in any of its five stages: a seed packet, a sprout, a plant with a bud, a bud opening, a bloom with a
+// One plant in any of its five stages: a seed in the soil, a sprout, a plant with a bud, a bud opening, a bloom with a
 // visitor. Every part is always in the picture; a stage only says which parts show and how tall the stem is, so
 // moving from one stage to the next is a glide, not a swap. The picture is 60 wide and 90 tall; the soil is at 84.
 export default function Plant({ stage, kind, droop = false, visitor = 'butterfly', swayShift = 0, ref }: Props) {
@@ -45,13 +45,15 @@ export default function Plant({ stage, kind, droop = false, visitor = 'butterfly
       <ellipse cx="30" cy="85" rx="15" ry="4" fill={C.soilEdge} />
       <ellipse cx="30" cy="84" rx="12" ry="3" fill={C.soilLight} />
 
-      {/* the seed packet on its stick: a skill not started yet */}
+      {/* a skill not started yet (the owner's choice, Nov 18, 2026): a seed in a small mound of soil, with a tiny
+          green tip just showing, so it reads as "about to grow". The first right answer makes it sprout. */}
       <g className={`${styles.part} ${styles.packet}`} data-part="packet" data-on={on(parts.packet)}>
-        <path d="M30 84 L 30 62" stroke={C.packetStick} strokeWidth="3" strokeLinecap="round" />
-        <rect x="18" y="38" width="24" height="30" rx="3" fill={C.packet} stroke={C.packetStick} strokeWidth="1.5" />
-        <rect x="18" y="38" width="24" height="8" rx="3" fill={C.packetBand} />
-        <circle cx="30" cy="56" r="5" fill={kind.petal} stroke={C.packetStick} strokeWidth="0.8" />
-        <circle cx="30" cy="56" r="2" fill={kind.centre} />
+        <path d="M5 86 C 10 58, 50 58, 55 86 Z" fill={C.soilEdge} />
+        <path d="M10 86 C 15 64, 45 64, 50 86 Z" fill={C.soilLight} />
+        <ellipse cx="30" cy="64" rx="11" ry="8" fill={C.seed} stroke={C.seedEdge} strokeWidth="1.5" />
+        <path d="M24 61 C 28 58, 33 58, 37 61" stroke={C.seedEdge} strokeWidth="1.2" fill="none" strokeLinecap="round" />
+        <path d="M30 57 C 30 49, 32 42, 37 37" stroke={C.stem} strokeWidth="3.5" fill="none" strokeLinecap="round" />
+        <path d="M37 37 C 45 32, 50 39, 44 43 C 40.5 44.5, 38 41, 37 37 Z" fill={C.leaf} />
       </g>
 
       <g className={styles.lean} data-part="lean">

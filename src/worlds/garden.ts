@@ -58,7 +58,7 @@ export const GARDEN: World = {
         ],
       },
     },
-    stages: ['A seed packet', 'A little sprout', 'A plant with a bud', 'A bud opening', 'In full bloom'],
+    stages: ['A seed in the soil', 'A little sprout', 'A plant with a bud', 'A bud opening', 'In full bloom'],
     // Said straight after the skill's name: "Count to ten is a little sprout."
     stageSay: [['is a seed, ready to plant.'], ['is a little sprout.'], ['is a plant with a bud.'], ['has a bud that is opening.'], ['is in full bloom.']],
     thirsty: 'Ready for some water',
