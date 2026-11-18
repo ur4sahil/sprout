@@ -6,14 +6,13 @@ import { openFromMath } from './support/sweep';
 // Concept videos (step 21). YouTube itself is not loaded in these checks: a blank page stands in
 // for the player, so they need no network and play nothing.
 test.describe('a video in a lesson', () => {
-  test('opens over the lesson in a sandboxed frame, fits the screen, and closes with one button', async ({ page }) => {
+  test('opens by itself over the lesson (video first) in a sandboxed frame, fits the screen, and closes with one button', async ({ page }) => {
     await page.route('https://www.youtube-nocookie.com/**', (route) => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>player</title>' }));
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await openFromMath(page, 'Add to 5');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
-    await page.getByRole('tab', { name: /Video/ }).click();
     const player = page.getByRole('dialog', { name: 'Introduction to addition' });
     await expect(player).toBeVisible();
     const frame = player.locator('iframe');
@@ -36,9 +35,10 @@ test.describe('a video in a lesson', () => {
     await signUp(page);
     await addChild(page, 'Robin', 'Kindergarten');
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await openFromMath(page, 'Add with pictures to 5');
+    await openFromMath(page, 'Are there enough?');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
     await expect(page.getByRole('tab', { name: /Lesson/ })).toBeVisible();
     await expect(page.getByRole('tab', { name: /Video/ })).toHaveCount(0);
+    await expect(page.locator('[data-video]')).toHaveCount(0);
   });
 });

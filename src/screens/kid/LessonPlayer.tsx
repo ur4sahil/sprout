@@ -1,5 +1,5 @@
 import Icon from "../../components/Icon";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TIMING } from "../../app/timing";
 import { useWakeLock } from "../../app/useWakeLock";
@@ -81,12 +81,27 @@ export default function LessonPlayer({ child, skill }: Props) {
     removed !== null && child.settings.allowVideos && navigator.onLine
       ? videoFor(skill.id, removed)
       : null;
+  // Video first (the owner's choice, Nov 17, 2026): a skill with a video opens on it, once per visit.
+  // The lesson waits until it is known whether there is a video, so it never starts and then stops.
+  const decided = removed !== null;
+  const openedVideo = useRef(false);
+  useEffect(() => {
+    if (!video || openedVideo.current) return;
+    openedVideo.current = true;
+    stop();
+    setPlaying(false);
+    setWatching(true);
+  }, [video]);
+  const closeVideo = (): void => {
+    setWatching(false);
+    if (mode === "lesson" && teaching === null) setPlaying(true);
+  };
 
   const beat = beats[index];
 
   // Plays one beat: says it, waits and reveals the answer for "Try it together", then moves on.
   useEffect(() => {
-    if (teaching || mode !== "lesson" || !playing || !beat) return;
+    if (teaching || !decided || watching || mode !== "lesson" || !playing || !beat) return;
     let cancelled = false;
     void (async () => {
       await speak(beat.speak, rate, "lesson");
@@ -112,7 +127,7 @@ export default function LessonPlayer({ child, skill }: Props) {
       cancelled = true;
       stop();
     };
-  }, [teaching, mode, playing, index, beat, beats.length, rate]);
+  }, [teaching, decided, watching, mode, playing, index, beat, beats.length, rate]);
 
   // The example: its question is read first, then each step as it is shown.
   useEffect(() => {
@@ -153,9 +168,9 @@ export default function LessonPlayer({ child, skill }: Props) {
       <Tabs
         label="Kind of help"
         tabs={[
+          ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
           { id: "lesson", label: "Lesson", icon: "film" as const },
           { id: "example", label: "Example", icon: "pencil" as const },
-          ...(video ? [{ id: "video", label: "Video", icon: "video" as const }] : []),
         ]}
         current={mode}
         onPick={(id) => {
@@ -172,7 +187,7 @@ export default function LessonPlayer({ child, skill }: Props) {
         }}
       />
 
-      {mode === "lesson" && teaching && (
+      {mode === "lesson" && teaching && decided && !watching && (
         <TeachLesson key={skill.id} lesson={teaching} rate={rate} onPractise={practise} />
       )}
 
@@ -254,7 +269,7 @@ export default function LessonPlayer({ child, skill }: Props) {
         </Column>
       )}
       {watching && video && (
-        <VideoPlayer video={video} onClose={() => setWatching(false)} />
+        <VideoPlayer video={video} onClose={closeVideo} />
       )}
     </KidScreen>
   );

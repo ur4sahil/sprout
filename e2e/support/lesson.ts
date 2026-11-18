@@ -20,4 +20,15 @@ export async function openLesson(page: Page, skillId: string): Promise<void> {
   await tile.click();
   await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
   await page.getByRole('button', { name: 'Learn this skill' }).click();
+  await closeOpeningVideo(page);
+}
+
+// A skill with a video opens on it (video first). Closes it, so the lesson behind it starts.
+export async function closeOpeningVideo(page: Page): Promise<void> {
+  const dialog = page.locator('[data-video]');
+  const lesson = page.getByRole('tab', { name: /Lesson/ });
+  await expect(lesson).toBeVisible();
+  await page.waitForTimeout(800);
+  if (await dialog.isVisible()) await page.getByRole('button', { name: /Close/ }).click();
+  await expect(dialog).toHaveCount(0);
 }

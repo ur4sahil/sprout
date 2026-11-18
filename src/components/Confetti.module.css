@@ -1,0 +1,40 @@
+/* Confetti falls across the whole card and is gone in under two seconds. */
+.burst {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.piece {
+  position: absolute;
+  top: -5%;
+  left: var(--set-left);
+  width: var(--space-2);
+  height: var(--space-3);
+  border-radius: var(--radius-s);
+  opacity: 0;
+  animation: fall var(--confetti-fall) ease-in var(--set-delay) forwards;
+}
+
+@keyframes fall {
+  0% {
+    top: -5%;
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+    transform: translateX(var(--set-drift)) rotate(var(--set-turn));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .piece {
+    animation: none;
+  }
+}

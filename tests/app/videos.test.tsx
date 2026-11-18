@@ -53,6 +53,22 @@ describe('a video in a lesson', () => {
     expect(screen.getByRole('tab', { name: /Lesson/ })).toBeTruthy();
   });
 
+  it('opens first, by itself, when the skill has one (video first); the lesson starts once it is closed', async () => {
+    const user = await openLesson(WITH_VIDEO);
+    await screen.findByRole('dialog', { name: 'Introduction to addition' });
+    // The Video tab comes first.
+    expect(screen.getAllByRole('tab')[0]?.textContent).toMatch(/Video/);
+    await user.click(screen.getByRole('button', { name: /Close/ }));
+    expect(frame()).toBeNull();
+    expect(screen.getByRole('region', { name: 'Lesson' })).toBeTruthy();
+  });
+
+  it('does not open by itself for a skill with no video', async () => {
+    await openLesson(NO_VIDEO);
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    expect(screen.queryByRole('dialog')).toBeNull();
+  });
+
   it('closes by itself three seconds before the end, and ignores messages from anywhere else', async () => {
     const user = await openLesson(WITH_VIDEO);
     await waitFor(() => expect(videoTab()).not.toBeNull());

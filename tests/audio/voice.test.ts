@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { readyVoice, resetVoice, setVoiceOn, voicePieces, voiceText, warm, warmAll, warmQuestion } from '../../src/audio/voice';
 import { generateQuestion } from '../../src/content/registry';
+import { sayWords } from '../../src/audio/say';
 
 // The recorded voice on the device: ask once for each sentence, wait for it, fall back quietly only when it cannot come.
 
@@ -98,6 +99,21 @@ describe('the recorded voice', () => {
     await readyVoice(['Count the dots.'], 200, 'lesson');
     await readyVoice(['Count the dots.'], 200);
     expect(bodies).toEqual(['{"text":"Count the dots.","pace":"lesson"}', '{"text":"Count the dots."}']);
+  });
+
+  it('splits a lesson into sentences between parts, so the device voice still gets letters and numbers as parts', () => {
+    expect(voicePieces(['Sun starts with', { letter: 's' }, '. Count to', { number: 3 }, 'now.'], 'lesson')).toEqual([
+      ['Sun starts with', { letter: 's' }, '.'],
+      ['Count to', { number: 3 }, 'now.'],
+    ]);
+    expect(voiceText(['Sun starts with', { letter: 's' }, '.'])).toBe('Sun starts with S.');
+    expect(sayWords(['Sun starts with', { letter: 's' }, '.'])).toBe('Sun starts with ess.');
+  });
+
+  it('sends a letter as its capital, which the voice reads as the letter name', () => {
+    expect(voiceText(['The first letter is', { letter: 'a' }, '.'])).toBe('The first letter is A.');
+    expect(voiceText([{ letter: 'f' }])).toBe('F');
+    expect(voicePieces(['It starts with', { letter: 's' }, '. Then', { letter: 'u' }, '.'], 'lesson').map(voiceText)).toEqual(['It starts with S.', 'Then U.']);
   });
 
   it('sends sentences with quotation marks', async () => {

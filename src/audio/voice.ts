@@ -36,9 +36,16 @@ export function resetVoice(): void {
   queue.length = 0;
 }
 
+// The words as the recorded voice reads them. A letter is sent as its capital ("the letter A"): the voice
+// reads a capital as the letter's name, while it misreads some spelled names ("ay" as "aye", "eff" as "ee-eff-eff").
+// The device voice keeps the spelled names (sayWords), which it reads correctly.
+function recordedWords(say: Say): string {
+  return sayWords(say.map((part) => (typeof part === 'object' && 'letter' in part ? part.letter.toUpperCase() : part)));
+}
+
 // The sentence as the voice machine is given it, or null when it cannot be sent.
 export function voiceText(say: Say): string | null {
-  const text = sayWords(say).replace(/\s+/g, ' ').trim();
+  const text = recordedWords(say).replace(/\s+/g, ' ').trim();
   return text.length > 0 && text.length <= MAX_TEXT && SAFE_TEXT.test(text) ? text : null;
 }
 
@@ -69,11 +76,30 @@ async function send(text: string, pace: Pace): Promise<ArrayBuffer | null> {
 // The pieces a Say is recorded in: the whole of it when it fits, otherwise one piece for each sentence,
 // played one after another. A piece the voice cannot take is still returned; it is said by the device voice.
 // A lesson is always one piece for each sentence, so the app can pause between them.
+// The split is made between parts, so letters, sounds and numbers stay typed parts: the device voice can still say them.
 export function voicePieces(say: Say, pace: Pace = 'normal'): Say[] {
-  const words = sayWords(say).replace(/\s+/g, ' ').trim();
+  const words = recordedWords(say).replace(/\s+/g, ' ').trim();
   if (pace === 'normal' && (voiceText(say) !== null || words.length <= MAX_TEXT)) return [say];
-  const sentences = words.match(/[^.?!]+[.?!]+["”]?|[^.?!]+$/g) ?? [words];
-  return sentences.map((sentence) => sentence.trim()).filter((sentence) => sentence.length > 0).map((sentence) => [sentence]);
+  const pieces: Say[] = [];
+  let current: Say = [];
+  const close = (): void => {
+    if (current.some((part) => typeof part !== 'string' || part.trim().length > 0)) pieces.push(current);
+    current = [];
+  };
+  for (const part of say) {
+    if (typeof part !== 'string') {
+      current.push(part);
+      continue;
+    }
+    // A sentence ends at . ? or ! (and a closing quotation mark after it) followed by a space or the end.
+    const bits = part.split(/(?<=[.?!]["”]?)\s+/);
+    bits.forEach((bit, i) => {
+      if (bit.trim().length > 0) current.push(bit.trim());
+      if (i < bits.length - 1 || /[.?!]["”]?\s*$/.test(bit)) close();
+    });
+  }
+  close();
+  return pieces.length > 0 ? pieces : [say];
 }
 
 function fetchVoice(say: Say, pace: Pace, urgent: boolean): Promise<ArrayBuffer | null> | null {

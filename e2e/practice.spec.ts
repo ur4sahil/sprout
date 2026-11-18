@@ -1,4 +1,5 @@
 import { expect, signUp, test } from './support/fixtures';
+import { closeOpeningVideo } from './support/lesson';
 import { checkScreen } from './support/layout';
 import { addChild, answer, answerRight, gotIt, holdHome, openOnMath, openSkill, shoot, sum, tapInOrder } from './support/kid';
 import { BASE_URL } from './support/paths';
@@ -104,6 +105,7 @@ test.describe('practice', () => {
     const before = await page.evaluate(() => history.length);
     await openSkill(page, 'Robin', 'Add to 10');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
+    await closeOpeningVideo(page);
     await page.getByRole('button', { name: 'Back to practice' }).click();
     await holdHome(page);
     await expect(page.getByRole('group', { name: "Today's picks" })).toBeVisible();

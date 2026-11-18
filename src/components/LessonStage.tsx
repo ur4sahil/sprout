@@ -1,6 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { Piece, Scene } from '../lessons/types';
 import Art from '../visuals/Art';
+import { PALETTE } from '../visuals/palette';
 import Icon from './Icon';
 import styles from './LessonStage.module.css';
 
@@ -9,6 +10,23 @@ import styles from './LessonStage.module.css';
 interface Props {
   scene: Scene;
   label: string; // what the scene shows, for a screen reader
+  lively?: boolean; // pieces land with a little bounce
+}
+
+// A wall with stripes and a wooden table whose top is at row 3, drawn in stage squares.
+function Backdrop({ scene }: { scene: Scene }) {
+  const { cols, rows } = scene;
+  return (
+    <svg className={styles.backdrop} viewBox={`0 0 ${cols} ${rows}`} preserveAspectRatio="none" aria-hidden="true">
+      <rect x="0" y="0" width={cols} height={rows} fill={PALETTE.wall} />
+      {Array.from({ length: Math.ceil(cols / 1.2) }, (_, i) => (
+        <rect key={i} x={i * 1.2} y="0" width="0.6" height="3" fill={PALETTE.wallStripe} />
+      ))}
+      <rect x="0.2" y="3" width={cols - 0.4} height="0.35" rx="0.08" fill={PALETTE.tableTop} />
+      <rect x="0.3" y="3.35" width={cols - 0.6} height={rows - 3.35} fill={PALETTE.tableEdge} />
+      <rect x="0.5" y="3.35" width={cols - 1} height="0.12" fill={PALETTE.tableLeg} opacity="0.5" />
+    </svg>
+  );
 }
 
 function look(piece: Piece): ReactNode {
@@ -42,10 +60,11 @@ function look(piece: Piece): ReactNode {
   }
 }
 
-export default function LessonStage({ scene, label }: Props) {
+export default function LessonStage({ scene, label, lively = false }: Props) {
   const stage = { '--set-cols': scene.cols, '--set-rows': scene.rows } as CSSProperties;
   return (
-    <div className={styles.stage} style={stage} role="img" aria-label={label} data-lesson-stage="">
+    <div className={styles.stage} style={stage} role="img" aria-label={label} data-lesson-stage="" data-lively={lively ? '' : undefined}>
+      {scene.backdrop === 'table' && <Backdrop scene={scene} />}
       {scene.pieces.map((piece) => {
         const place = { '--set-x': piece.x, '--set-y': piece.y, '--set-w': piece.w ?? 1, '--set-h': piece.h ?? 1 } as CSSProperties;
         return (

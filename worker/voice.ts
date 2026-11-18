@@ -4,11 +4,13 @@ import { json } from './auth';
 // kept in R2, and served from there ever after. The caller has already checked the session and the Origin.
 
 // The voice and its speed. A different voice or speed is a different set of saved files.
-// Questions are said at 0.9; lessons and their examples slower, at 0.8 (the owner's choice, Nov 17, 2026).
+// Questions are said at 0.9; lessons and their examples slower, at 0.7, with longer pauses (the owner's choices, Nov 17, 2026).
+// The voice is Bella (the owner's choice, Nov 17, 2026, after Heart added an 'a' before lone words).
 export type Pace = 'normal' | 'lesson';
+export const VOICE_NAME = 'af_bella';
 export const PACES: Record<Pace, { id: string; speed: number }> = {
-  normal: { id: 'kokoro-af_heart-0.9', speed: 0.9 },
-  lesson: { id: 'kokoro-af_heart-0.8', speed: 0.8 },
+  normal: { id: `kokoro-${VOICE_NAME}-0.9`, speed: 0.9 },
+  lesson: { id: `kokoro-${VOICE_NAME}-0.7`, speed: 0.7 },
 };
 export const VOICE_ID = PACES.normal.id;
 export const MAX_VOICE_TEXT = 300;
@@ -71,7 +73,7 @@ export function remoteVoiceMaker(url: string, key: string, fetcher: typeof fetch
         const reply = await fetcher(`${url.replace(/\/$/, '')}/tts`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-Voice-Key': key },
-          body: JSON.stringify({ text, speed }),
+          body: JSON.stringify({ text, speed, voice: VOICE_NAME }),
           signal: AbortSignal.timeout(25_000),
         });
         if (!reply.ok || !(reply.headers.get('Content-Type') ?? '').startsWith('audio/')) return null;

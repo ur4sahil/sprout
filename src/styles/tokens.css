@@ -122,6 +122,14 @@
   /* the lesson stage (plan section 16): how long a piece takes to glide, and the ring around a lit piece */
   --lesson-glide: 650ms;
   --lesson-ring: 3px;
+  /* the lesson host and its scene */
+  --host-size: 22%; /* of the stage's width */
+  --host-bob: 2600ms;
+  --host-blink: 4200ms;
+  --host-talk: 260ms;
+  --host-hop: 700ms;
+  --lesson-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* glides that overshoot a little and settle, for a lively landing */
+  --confetti-fall: 1400ms;
 }
 
 *,

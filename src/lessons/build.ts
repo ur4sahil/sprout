@@ -1,6 +1,6 @@
 import { generateFrom, generatorFor } from '../content/registry';
 import type { Level, Question, Say } from '../engine/types';
-import type { Moment, Piece, PieceLook, Scene } from './types';
+import type { Lesson, Moment, Piece, PieceLook, Scene } from './types';
 
 // Small tools for writing lessons (plan section 16). A lesson is written as a story of scenes:
 // each moment takes the scene before it and changes a few pieces, so pieces move instead of jumping.
@@ -101,4 +101,13 @@ export function str(facts: Record<string, unknown>, key: string): string {
   const value = facts[key];
   if (typeof value !== 'string') throw new Error(`facts.${key} is not a string`);
   return value;
+}
+
+// The rich look for a whole lesson: every scene, the whys included, stands in the same drawn place.
+export function rich(lesson: Lesson, backdrop: NonNullable<Scene['backdrop']>): Lesson {
+  const place = (each: Moment): Moment => ({ ...each, scene: { ...each.scene, backdrop } });
+  return {
+    look: 'rich',
+    parts: lesson.parts.map((part) => (part.kind === 'show' ? { kind: 'show', moment: place(part.moment) } : { kind: 'turn', turn: { ...part.turn, why: part.turn.why.map(place) } })),
+  };
 }

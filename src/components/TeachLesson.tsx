@@ -8,6 +8,9 @@ import BigButton from './BigButton';
 import CenterRow from './CenterRow';
 import Icon from './Icon';
 import IconButton from './IconButton';
+import Confetti from './Confetti';
+import type { HostMood } from './LessonHost';
+import LessonHost from './LessonHost';
 import LessonStage from './LessonStage';
 import styles from './TeachLesson.module.css';
 
@@ -23,14 +26,23 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
   const { phase, moment, turn } = teach;
   const answering = (phase === 'asking' || phase === 'again') && turn !== null;
   const say = (words: Say): void => void speak(words, rate);
+  const rich = lesson.look === 'rich';
+  const mood: HostMood = teach.cheering ? 'cheering' : teach.talking ? 'talking' : 'idle';
 
   return (
     <section className={styles.card} aria-label="Lesson" data-teach-phase={phase} data-part={teach.partIndex}>
+      {rich && teach.cheering && <Confetti />}
       <progress className={styles.progress} max={teach.partCount} value={Math.min(teach.partIndex, teach.partCount)} aria-label="How far through the lesson" />
       {answering ? (
         <>
           <p className={styles.yourTurn} data-your-turn="">
-            <Icon name="star" />
+            {rich ? (
+              <span className={styles.hostSmall}>
+                <LessonHost mood={mood} />
+              </span>
+            ) : (
+              <Icon name="star" />
+            )}
             {phase === 'again' ? 'Try it again!' : 'Your turn!'}
           </p>
           <QuestionView key={`${turn.question.key}|${teach.attempt}`} question={turn.question} disabled={false} onChange={teach.setResponse} onSpeak={say} />
@@ -43,7 +55,17 @@ export default function TeachLesson({ lesson, rate, onPractise }: Props) {
         </>
       ) : (
         <>
-          {moment && <LessonStage scene={moment.scene} label={moment.text} />}
+          {moment &&
+            (rich ? (
+              <div className={styles.withHost}>
+                <div className={styles.hostSpot}>
+                  <LessonHost mood={mood} />
+                </div>
+                <LessonStage scene={moment.scene} label={moment.text} lively />
+              </div>
+            ) : (
+              <LessonStage scene={moment.scene} label={moment.text} />
+            ))}
           {moment && (
             <p className={styles.words} data-moment-text="">
               {moment.text}

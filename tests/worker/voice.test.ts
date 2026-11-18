@@ -51,12 +51,12 @@ describe('POST /api/voice', () => {
 
   it('a lesson sentence is made slower and kept apart from the same sentence at the normal pace', async () => {
     const lesson = await h.call('POST', '/api/voice', { text: 'Count the dots.', pace: 'lesson' }, { cookie });
-    expect(new TextDecoder().decode(await lesson.arrayBuffer())).toBe('mp3:Count the dots.@0.8');
+    expect(new TextDecoder().decode(await lesson.arrayBuffer())).toBe('mp3:Count the dots.@0.7');
     await say('Count the dots.');
     await h.flush();
     expect(speeds).toEqual([PACES.lesson.speed, PACES.normal.speed]);
     expect(new Set(h.voice.keys())).toEqual(new Set([await voiceKey('Count the dots.', 'lesson'), await voiceKey('Count the dots.')]));
-    expect((await voiceKey('Count the dots.', 'lesson')).startsWith('kokoro-af_heart-0.8/')).toBe(true);
+    expect((await voiceKey('Count the dots.', 'lesson')).startsWith('kokoro-af_bella-0.7/')).toBe(true);
     // Asked again, each comes from its own kept copy.
     const again = await h.call('POST', '/api/voice', { text: 'Count the dots.', pace: 'lesson' }, { cookie });
     expect(again.headers.get('X-Voice')).toBe('saved');
@@ -101,7 +101,7 @@ describe('the link to the voice machine', () => {
       return new Response(bytes('hi'), { headers: { 'Content-Type': 'audio/mpeg' } });
     });
     expect(new TextDecoder().decode((await maker.make('hi', 0.8)) ?? new ArrayBuffer(0))).toBe('mp3:hi');
-    expect(seen).toEqual([{ url: 'https://voice.test/tts', key: 'the-key', body: '{"text":"hi","speed":0.8}' }]);
+    expect(seen).toEqual([{ url: 'https://voice.test/tts', key: 'the-key', body: '{"text":"hi","speed":0.8,"voice":"af_bella"}' }]);
   });
 
   it('gives null for a refusal, a page that is not audio, an empty reply or a failure', async () => {

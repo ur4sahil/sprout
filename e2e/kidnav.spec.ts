@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild, answerAnything, answerRight, holdHome, openSkill, shoot, sum } from './support/kid';
 import { checkScreen } from './support/layout';
+import { closeOpeningVideo } from './support/lesson';
 import { groupNames, skillCount } from './support/catalogue';
 
 // Every control a child who cannot read meets must carry a picture, not only words.
@@ -120,6 +121,7 @@ test.describe('kid navigation', () => {
     await addChild(page, 'Robin', 'Kindergarten');
     await openSkill(page, 'Robin', 'Add to 10');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
+    await closeOpeningVideo(page);
     const lesson = page.getByRole('region', { name: 'Lesson' });
     await expect(lesson).toHaveAttribute('data-beat', 'see');
     await checkScreen(page, 'lesson', 64);

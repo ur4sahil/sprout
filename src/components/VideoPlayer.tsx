@@ -29,8 +29,15 @@ export default function VideoPlayer({ video, onClose }: Props) {
   }, [video, onClose]);
 
   // Asks the player to report its play time. It answers with a message every few moments.
+  // The frame may have landed somewhere other than the player (a consent or error page, or no network):
+  // the browser then refuses a message meant for the player's address, and throws. The video still plays;
+  // it only cannot close itself just before the end.
   function listen(): void {
-    frame.current?.contentWindow?.postMessage(JSON.stringify({ event: 'listening', id: 'sprout', channel: 'widget' }), PLAYER_ORIGIN);
+    try {
+      frame.current?.contentWindow?.postMessage(JSON.stringify({ event: 'listening', id: 'sprout', channel: 'widget' }), PLAYER_ORIGIN);
+    } catch {
+      // Nothing to do: see above.
+    }
   }
 
   return (

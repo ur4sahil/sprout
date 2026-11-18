@@ -13,8 +13,8 @@ import { judge } from '../oracles/judge';
 
 // Every lesson that teaches (plan section 16).
 
-const WORDS_PER_SECOND = 2.2; // the lesson voice, slower than the questions
-const PAUSE_SECONDS = 0.8; // between moments: the gap, a sentence's pause and the glide
+const WORDS_PER_SECOND = 1.9; // the lesson voice (0.7 speed), slower than the questions
+const PAUSE_SECONDS = 1.7; // between moments: the gap, a sentence's pause and the glide
 const TURN_SECONDS = 10; // hearing a turn's question and answering it
 
 function moments(lesson: Lesson): Moment[] {

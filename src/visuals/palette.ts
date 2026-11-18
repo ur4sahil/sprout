@@ -29,4 +29,16 @@ export const PALETTE = {
   copper: '#b8733a',
   silver: '#c4c8cc',
   bars: [COLORS.blue, COLORS.orange, COLORS.green, COLORS.purple, COLORS.red],
+  // The lesson host, a sprout with a face (plan section 16), and the scene it stands in.
+  hostBody: '#7cc66b',
+  hostShade: '#5aa84a',
+  hostLeaf: '#4f9e3f',
+  hostCheek: '#f6a6a6',
+  hostMouth: '#8a2f3b',
+  wall: '#fdf3e1',
+  wallStripe: '#f8e6c6',
+  tableTop: '#c98b52',
+  tableEdge: '#a86d3b',
+  tableLeg: '#94602f',
+  confetti: [COLORS.red, COLORS.yellow, COLORS.blue, COLORS.green, COLORS.purple, COLORS.orange],
 } as const;

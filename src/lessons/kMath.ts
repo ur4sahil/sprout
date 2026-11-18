@@ -78,11 +78,11 @@ function joinMoments(a: number, b: number, of: { emoji: string; one: string; man
   const all = [...ids(`${prefix}a`, a), ...ids(`${prefix}b`, b)];
   const counted = countAlong(together, all);
   const sum = add(set(counted.end, all, { lit: true }), [
-    { id: `${prefix}e0`, look: numeral(a), x: 2, y: 4 },
-    { id: `${prefix}e1`, look: text('+'), x: 3, y: 4 },
-    { id: `${prefix}e2`, look: numeral(b), x: 4, y: 4 },
-    { id: `${prefix}e3`, look: text('='), x: 5, y: 4 },
-    { id: `${prefix}e4`, look: numeral(a + b), x: 6, y: 4 },
+    { id: `${prefix}e0`, look: numeral(a), x: 2, y: 0.6 },
+    { id: `${prefix}e1`, look: text('+'), x: 3, y: 0.6 },
+    { id: `${prefix}e2`, look: numeral(b), x: 4, y: 0.6 },
+    { id: `${prefix}e3`, look: text('='), x: 5, y: 0.6 },
+    { id: `${prefix}e4`, look: numeral(a + b), x: 6, y: 0.6 },
   ]);
   return [
     moment(['Here', a === 1 ? 'is' : 'are', { number: a }, `${many(a, of)}.`], `${a} ${many(a, of)}`, set(apart, ids(`${prefix}a`, a), { lit: true })),
@@ -90,7 +90,8 @@ function joinMoments(a: number, b: number, of: { emoji: string; one: string; man
     moment(['Let us push them together.'], 'Push them together.', calm(together)),
     moment(['Now count them all.'], 'Count them all.', calm(together)),
     ...counted.moments,
-    moment([{ number: a }, 'and', { number: b }, 'more make', { number: a + b }, '.'], `${a} + ${b} = ${a + b}`, sum),
+    // Said slowly, a part at a time: the sentence the lesson is about.
+    moment([{ number: a }, ', and', { number: b }, 'more, make', { number: a + b }, '.'], `${a} + ${b} = ${a + b}`, sum),
   ];
 }
 
@@ -99,7 +100,12 @@ function addWhy(question: Question): Moment[] {
   return joinMoments(num(question.facts, 'a'), num(question.facts, 'b'), of, 'w');
 }
 
+// The rich look (a host, a table, a bounce and confetti) is a sample the owner is judging: `rich(plainAddPictures(), 'table')`.
 export function addPicturesLesson(): Lesson {
+  return plainAddPictures();
+}
+
+function plainAddPictures(): Lesson {
   const apple = thing('apple');
   const first = turnQuestion('M-K-C1', 1, (f) => num(f, 'a') >= 1 && num(f, 'b') >= 1 && num(f, 'a') + num(f, 'b') >= 3);
   const second = turnQuestion('M-K-C1', 2, (f) => num(f, 'a') + num(f, 'b') >= 4 && str(f, 'thing') !== 'apple');
@@ -140,7 +146,7 @@ function teenMoments(ones: number, prefix: string): Moment[] {
     moment(['Here', ones === 1 ? 'is' : 'are', { number: ones }, 'more.'], `${ones} more`, calm(withOnes)),
     moment(['Start at ten, and count on.'], 'Start at 10 and count on.', set(calm(withOnes), ids(`${prefix}t`, 10), { lit: true })),
     ...counted.moments,
-    moment(['Ten and', { number: ones }, 'more make', { number: value }, '.'], `10 and ${ones} make ${value}`, named),
+    moment(['Ten, and', { number: ones }, 'more, make', { number: value }, '.'], `10 and ${ones} make ${value}`, named),
     moment(['In', { number: value }, ', the one means one ten, and the', { number: ones }, 'means', { number: ones }, 'more.'], `${value}: 1 ten and ${ones} more`, set(named, [`${prefix}n1`, `${prefix}n2`, ...ids(`${prefix}t`, 10), ...ids(`${prefix}o`, ones)], { lit: true })),
   ];
 }

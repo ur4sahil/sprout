@@ -52,7 +52,7 @@ function hopMoments(prefix: string, known: number, total: number, boxFirst: bool
     moment(['We made', { number: missing }, missing === 1 ? 'hop.' : 'hops.'], `${missing} ${missing === 1 ? 'hop' : 'hops'}`, withoutHand(now)),
     moment(['So the missing number is', { number: missing }, '.'], `The missing number is ${missing}.`, filled),
     moment(
-      boxFirst ? ['Check:', { number: missing }, 'plus', { number: known }, 'equals', { number: total }, '.'] : ['Check:', { number: known }, 'plus', { number: missing }, 'equals', { number: total }, '.'],
+      boxFirst ? ['Check:', { number: missing }, ', plus', { number: known }, ', equals', { number: total }, '.'] : ['Check:', { number: known }, ', plus', { number: missing }, ', equals', { number: total }, '.'],
       boxFirst ? `${missing} + ${known} = ${total}` : `${known} + ${missing} = ${total}`,
       set(calm(filled), [`${prefix}box`, `${prefix}known`, `${prefix}total`], { lit: true }),
     ),

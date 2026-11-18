@@ -33,6 +33,7 @@ export interface Scene {
   cols: number;
   rows: number;
   pieces: Piece[];
+  backdrop?: 'table'; // a drawn place behind the pieces: a wall and a table whose top is at row 3
 }
 
 // One spoken sentence and the scene while it is said.
@@ -52,4 +53,6 @@ export type LessonPart = { kind: 'show'; moment: Moment } | { kind: 'turn'; turn
 
 export interface Lesson {
   parts: LessonPart[];
+  // 'rich': the host stands beside the stage, pieces land with a bounce, and a right turn ends in confetti.
+  look?: 'plain' | 'rich';
 }

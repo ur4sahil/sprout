@@ -17,7 +17,8 @@ describe('the video list', () => {
       expect(ids.has(skillId), skillId).toBe(true);
       expect(each.youtubeId).toMatch(/^[A-Za-z0-9_-]{11}$/);
       expect(each.title.length).toBeGreaterThan(3);
-      expect(each.source).toBe('Khan Academy');
+      // The channel, exactly as YouTube names it (npm run check:videos confirms it).
+      expect(each.source.trim().length).toBeGreaterThan(0);
       expect(Number.isInteger(each.seconds) && each.seconds >= 20 && each.seconds <= 600).toBe(true);
     }
   });

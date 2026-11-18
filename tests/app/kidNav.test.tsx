@@ -334,6 +334,8 @@ describe('the lesson player', () => {
     await openSkill(user, 'Add to 10');
     spoken.said.length = 0;
     await user.click(screen.getByRole('button', { name: 'Learn this skill' }));
+    // The skill has a video, which opens first (video first). Nothing is said until it is closed.
+    await user.click(await screen.findByRole('button', { name: /Close/ }));
     const beats = generatorFor(ADD).lesson();
     expect(beats.map((beat) => beat.beat)).toEqual(['see', 'watch', 'try', 'remember']);
     await screen.findByRole('button', { name: /Practise/ });

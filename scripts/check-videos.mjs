@@ -3,14 +3,15 @@
 // may be embedded. The script fails on any that does not load, on a title that has changed, on a
 // video from another channel, and on a skill id that is not in the catalogue.
 //
-//   npm run check:videos
+//   npm run check:videos   (tsx scripts/check-videos.mjs)
 //
 // It needs the network, so it is not part of `npm run verify`.
 import { readFileSync } from 'node:fs';
 
 const list = JSON.parse(readFileSync(new URL('../src/content/videos.json', import.meta.url), 'utf8'));
-const catalogue = readFileSync(new URL('../src/content/catalogue.ts', import.meta.url), 'utf8');
-const skillIds = new Set([...catalogue.matchAll(/^\s+id: '([A-Z0-9-]+)',$/gm)].map((match) => match[1]));
+// The skill list itself, every wave included (run through tsx, which loads TypeScript).
+const { CATALOGUE } = await import('../src/content/catalogue.ts');
+const skillIds = new Set(CATALOGUE.map((skill) => skill.id));
 
 const problems = [];
 const entries = Object.entries(list.videos);

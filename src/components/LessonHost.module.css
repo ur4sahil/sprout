@@ -1,0 +1,113 @@
+/* The host stands at the stage's lower left, about a fifth of its width. */
+.host {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.body {
+  transform-origin: 50% 100%;
+  animation: bob var(--host-bob) ease-in-out infinite;
+}
+
+.eyes {
+  transform-origin: 50% 70%;
+  animation: blink var(--host-blink) ease-in-out infinite;
+}
+
+.mouth {
+  transform-box: fill-box;
+  transform-origin: 50% 30%;
+  transform: scaleY(0.45);
+}
+
+[data-host='talking'] .mouth {
+  animation: talk var(--host-talk) ease-in-out infinite alternate;
+}
+
+[data-host='cheering'] .body {
+  animation: hop var(--host-hop) ease-out 2;
+}
+
+[data-host='cheering'] .mouth {
+  transform: scaleY(1.1);
+}
+
+.leafLeft,
+.leafRight {
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+  animation: sway var(--host-bob) ease-in-out infinite alternate;
+}
+
+.leafRight {
+  transform-origin: 0% 100%;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3%);
+  }
+}
+
+@keyframes blink {
+  0%,
+  46%,
+  50%,
+  100% {
+    transform: scaleY(1);
+  }
+  48% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes talk {
+  from {
+    transform: scaleY(0.25);
+  }
+  to {
+    transform: scaleY(1.05);
+  }
+}
+
+@keyframes hop {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
+  15% {
+    transform: translateY(0) scaleY(0.88);
+  }
+  50% {
+    transform: translateY(-18%) scaleY(1.05);
+  }
+  85% {
+    transform: translateY(0) scaleY(0.92);
+  }
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body,
+  .eyes,
+  .leafLeft,
+  .leafRight,
+  [data-host='talking'] .mouth,
+  [data-host='cheering'] .body {
+    animation: none;
+  }
+}

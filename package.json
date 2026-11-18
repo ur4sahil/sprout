@@ -20,7 +20,7 @@
     "clips": "bash scripts/make-clips.sh",
     "art": "node scripts/make-art.mjs",
     "content:dump": "tsx scripts/content-dump.ts",
-    "check:videos": "node scripts/check-videos.mjs",
+    "check:videos": "tsx scripts/check-videos.mjs",
     "verify": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "type": "module",

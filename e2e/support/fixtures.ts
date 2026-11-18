@@ -235,6 +235,8 @@ export const test = base.extend<Fixtures>({
   realBackup: [false, { option: true }],
   context: async ({ context, realBackup }, run) => {
     await context.addInitScript(silence);
+    // A lesson opens on its video (video first). YouTube itself is never loaded in tests: a blank page stands in.
+    await context.route('https://www.youtube-nocookie.com/**', (route) => route.fulfill({ contentType: 'text/html', body: '<!doctype html><title>player</title>' }));
     if (!realBackup) await noBackup(context);
     await run(context);
   },
