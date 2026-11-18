@@ -93,3 +93,85 @@
     max-width: 100%;
   }
 }
+
+/* Home's cards (the owner's choice A, Nov 18, 2026): big, one tap starts the part. The friend of its subject on
+   the left, progress dots under the words, a round play button (a tick once done) on the right. The next part is
+   the biggest, with a ring round it. */
+.plan[data-look='cards'] {
+  gap: var(--space-3);
+}
+
+.plan[data-look='cards'] .open {
+  min-height: var(--plan-card-height);
+  padding: var(--space-3);
+  border-width: var(--plan-card-border);
+  border-radius: var(--radius-l);
+}
+
+.plan[data-look='cards'] .icon {
+  width: var(--plan-card-picture);
+  height: var(--plan-card-picture);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius-l);
+  background: var(--color-brand-soft);
+  font-size: var(--text-xl);
+}
+
+.plan[data-look='cards'] .words {
+  flex: 1;
+}
+
+.plan[data-look='cards'] .title {
+  font-size: var(--text-l);
+  line-height: 1.15;
+}
+
+.plan[data-look='cards'] .row[data-next] .open {
+  min-height: calc(var(--plan-card-height) * 1.2);
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 var(--plan-card-ring) var(--color-brand-soft), var(--shadow-card);
+}
+
+.plan[data-look='cards'] .row[data-next] .icon {
+  width: calc(var(--plan-card-picture) * 1.18);
+  height: calc(var(--plan-card-picture) * 1.18);
+}
+
+.plan[data-look='cards'] .row[data-done] .open {
+  opacity: 0.7;
+}
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--plan-dot-gap);
+  margin-top: var(--space-1);
+}
+
+.dots i {
+  width: var(--plan-dot);
+  height: var(--plan-dot);
+  border-radius: 50%;
+  background: var(--color-line);
+}
+
+.dots i[data-on] {
+  background: var(--color-star);
+}
+
+.go {
+  flex: none;
+  width: var(--tap-min);
+  height: var(--tap-min);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-brand);
+  color: var(--color-on-accent);
+  font-size: var(--text-m);
+}
+
+.go[data-go='done'] {
+  background: var(--color-correct);
+}

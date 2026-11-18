@@ -1,0 +1,27 @@
+.says {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--color-ink);
+  text-align: start;
+  cursor: pointer;
+}
+
+.sprout {
+  flex: none;
+  width: var(--sprout-says);
+}
+
+.bubble {
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-thin) solid var(--color-line);
+  border-radius: var(--radius-l);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  font-size: var(--text-m);
+  font-weight: var(--weight-display);
+}

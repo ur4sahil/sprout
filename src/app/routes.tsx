@@ -8,6 +8,7 @@ import Diagnostic from '../screens/kid/Diagnostic';
 import FactRace from '../screens/kid/FactRace';
 import FastFacts from '../screens/kid/FastFacts';
 import Home from '../screens/kid/Home';
+import GardenVisit from '../screens/kid/GardenVisit';
 import Lesson from '../screens/kid/Lesson';
 import Play from '../screens/kid/Play';
 import Pairs from '../screens/kid/Pairs';
@@ -36,6 +37,7 @@ import Trouble from '../screens/parent/Trouble';
 export const routes: RouteObject[] = [
   { path: '/', element: <ProfilePicker /> },
   { path: '/home', element: <Home /> },
+  { path: '/garden', element: <GardenVisit /> },
   { path: '/play', element: <Play /> },
   { path: '/subject/:subject', element: <SubjectPage /> },
   { path: '/skill/:skillId', element: <Practice /> },

@@ -12,6 +12,9 @@ export const LINES = {
   nextOne: ['Nice work! On to the next one?'],
   knownAlready: ['You know this one already. On to the next.'],
   mixedDone: ['Mixed bag done. Great work.'],
+  // Home: Sprout over today's plan cards. "Next up!" is followed by the next card's own words.
+  nextUp: ['Next up!'],
+  planDone: ['Plan done! Great work.'],
   // The bulb's choice screen: what it offers.
   choose: ['Pick a lesson with Sprout, or an example.'],
   chooseWithVideo: ['Pick a video, a lesson with Sprout, or an example.'],

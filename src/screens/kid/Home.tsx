@@ -19,14 +19,14 @@ import Icon, { type IconName } from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
 import { openSets } from '../../engine/facts';
 import NavButton from '../../components/NavButton';
-import TodayPlan from '../../components/TodayPlan';
+import TodayPlan, { partSay, partTitle } from '../../components/TodayPlan';
+import SproutSays from '../../components/SproutSays';
+import GardenStrip from '../../garden/GardenStrip';
 import { nextPart, partPath, planProgress } from '../../app/todaysPlan';
 import Notice from '../../components/Notice';
 import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
 import type { AwardDef } from '../../engine/awards';
-import Garden from '../../garden/Garden';
-import type { GardenPlace } from '../../garden/Signpost';
 import type { Say } from '../../engine/types';
 import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
@@ -44,12 +44,10 @@ export const SUBJECTS: { id: 'math' | 'ela' | 'reasoning'; label: string; icon: 
 
 export const GRADE_NAME: Record<string, string> = { PK: 'Pre-K', K: 'Kindergarten', '1': 'Grade 1', '2': 'Grade 2', '3': 'Grade 3', all: 'All' };
 
-// Where each place on the garden's signpost leads: the same screens the menu opens.
-const PLACE_PATH: Record<GardenPlace, string> = { 'subjects:math': '/subject/math', 'subjects:ela': '/subject/ela', 'subjects:reasoning': '/subject/reasoning', stickers: '/awards', facts: '/facts', switch: '/' };
-
-// The child's home: the menu of places to go, and today's plan (plan section 18) with the daily goal. The plan is
-// shown as the garden (game feel, phase 4) with the plan's list under it, or, when a grown-up chose "A list" in
-// Settings, as the goal card and the list alone.
+// The child's home: the menu of places to go, and today's plan (plan section 18) with the daily goal. By default
+// (the owner's choice A, Nov 18, 2026) the plan is big picture cards, the next one ringed, with Sprout saying what
+// is next and a strip of the garden on top that opens the whole garden (/garden). When a grown-up chose "A list"
+// in Settings: the goal card and the plain list.
 export default function Home() {
   const navigate = useNavigate();
   const child = useAppStore((s) => s.child);
@@ -110,8 +108,9 @@ export default function Home() {
   const subjects = SUBJECTS.filter((subject) => readySkills.some((skill) => skill.subject === subject.id && !skill.retired));
   const factsOpen = openSets(child.grade, child.settings.factSets).length > 0;
   const asGarden = child.settings.homeView !== 'list';
-  // The signpost is shown on a phone only, where the menu lies under the garden. It offers the menu's lasting places.
-  const places: GardenPlace[] = [...subjects.map((subject): GardenPlace => `subjects:${subject.id}`), 'stickers', ...(factsOpen ? (['facts'] as const) : []), 'switch'];
+  // What Sprout says over the cards: the next part, or that the plan is done.
+  const sproutSay: Say = next ? [...LINES.nextUp, ...partSay(next)] : LINES.planDone;
+  const sproutWords = next ? `Next up: ${partTitle(next)}` : day && day.plan.length > 0 ? 'Plan done! Great work.' : null;
 
   return (
     <KidScreen
@@ -137,6 +136,7 @@ export default function Home() {
             {subjects.map((subject) => (
               <NavButton key={subject.id} icon={subject.icon} label={subject.label} marker={subject.id} onClick={() => go(`/subject/${subject.id}`)} />
             ))}
+            {asGarden && <NavButton icon="sprout" label="Garden" onClick={() => go('/garden')} />}
             {factsOpen && <NavButton icon="bolt" label="Fast facts" onClick={() => go('/facts')} />}
             <NavButton icon="star" label="Stickers" onClick={() => go('/awards')} />
             {child.storiesRead.length > 0 && <NavButton icon="book" label="Stories" onClick={() => go('/stories')} />}
@@ -148,21 +148,22 @@ export default function Home() {
     >
       {failed && <Notice role="alert">Your scores could not be read. Close the app and open it again.</Notice>}
       {day && asGarden && (
-        <div className={styles.gardenPage} data-home-view="garden">
-          <Garden
-            grade={child.grade}
-            day={day}
-            skills={readySkills}
-            places={places}
-            menuBeside
-            onOpen={(part) => go(partPath(part))}
-            onSkill={(skillId, mode) => go(mode === 'learn' ? `/skill/${skillId}/learn` : `/skill/${skillId}`)}
-            onPlace={(place) => go(PLACE_PATH[place])}
-            onSpeak={say}
-            onStory={storyWaits ? () => go('/story') : undefined}
-          />
-          {/* The same list as ever, for a grown-up's glance at the counts and for a screen reader. The garden's big button is the one way to start. */}
-          {day.plan.length > 0 && <TodayPlan look="strip" plan={day.plan} onOpen={(part) => go(partPath(part))} onSpeak={say} />}
+        <div className={styles.page} data-home-view="cards">
+          <GardenStrip grade={child.grade} day={day} skills={readySkills} onOpen={() => go('/garden')} />
+          {sproutWords && (
+            <SproutSays words={sproutWords} mood={next ? 'point' : 'cheer'} onHear={() => say(sproutSay)} />
+          )}
+          {storyWaits && (
+            <BigButton size="kid" className={styles.playButton} onClick={() => go('/story')}>
+              <Icon name="book" />
+              Story time!
+            </BigButton>
+          )}
+          {day.plan.length > 0 ? (
+            <TodayPlan look="cards" plan={day.plan} onOpen={(part) => go(partPath(part))} onSpeak={say} />
+          ) : (
+            <Notice role="status">Pick anything to practice from the menu.</Notice>
+          )}
         </div>
       )}
       {day && !asGarden && (

@@ -31,10 +31,15 @@ test.describe('kid navigation', () => {
     await expectNoTextOnlyControls(page, 'home');
     await checkScreen(page, 'home with the plan', 64);
     await shoot(page, 'home-plan');
-    // Home is the garden: the plan is its path, and the big button follows it.
+    // Home is the plan's cards under a strip of the garden. The strip opens the whole garden and its path.
+    await expect(page.getByRole('button', { name: /^Your garden\. Open it\. 0 of \d+ questions today\.$/ })).toBeVisible();
+    await page.getByRole('button', { name: /^Your garden\. Open it\./ }).click();
     await expect(page.getByRole('region', { name: 'Your garden' })).toBeVisible();
     await expect(page.getByRole('img', { name: /^0 of \d+ questions today$/ })).toBeVisible();
-    await page.getByRole('button', { name: 'Follow the path', exact: true }).click();
+    await checkScreen(page, 'the whole garden', 64);
+    await page.getByRole('button', { name: 'Back to home' }).click();
+    // The ringed card starts the first part.
+    await plan.locator('[data-plan-part][data-next] > button').first().click();
 
     // The first part: keep going with one skill until its answers are in.
     await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
@@ -48,7 +53,7 @@ test.describe('kid navigation', () => {
     }
     await holdHome(page);
     await expect(plan.locator('[data-done]')).toHaveCount(1);
-    await expect(page.getByRole('button', { name: 'Keep going', exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^Next up: Language Arts practice/ })).toBeVisible();
     await expectNoTextOnlyControls(page, 'home after one part');
   });
 

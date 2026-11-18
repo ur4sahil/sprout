@@ -72,6 +72,15 @@ async function masterAllBut(keep: string[]): Promise<void> {
   }
 }
 
+// Home's ringed card: the next part of today's plan. A tap on it starts that part.
+const nextCard = async (): Promise<HTMLElement> => {
+  await screen.findByRole('list', { name: "Today's plan" });
+  const card = document.querySelector('[data-plan-part][data-next] > button');
+  if (!card) throw new Error('No next card on home');
+  return card as HTMLElement;
+};
+const gardenStrip = (name: RegExp | string) => screen.findByRole('button', { name: typeof name === 'string' ? `Your garden. Open it. ${name}` : name });
+
 const picksOnScreen = async (): Promise<string[]> => [...(await screen.findByRole('list', { name: "Today's plan" })).querySelectorAll('[data-skill]')].map((el) => el.getAttribute('data-skill') ?? '');
 
 describe('home', () => {
@@ -87,13 +96,14 @@ describe('home', () => {
     expect([...plan.querySelectorAll('[data-subject]')].map((el) => el.getAttribute('data-subject'))).toEqual(['math', 'ela', 'reasoning']);
     expect(screen.getByRole('button', { name: /^Math practice\./ })).toBeTruthy();
     expect((screen.getByRole('button', { name: /^Mixed bag\. Opens after/ }) as HTMLButtonElement).disabled).toBe(true);
-    // Home is the garden: its big button starts the path, and the sun is the day's goal.
-    expect(screen.getByRole('region', { name: 'Your garden' })).toBeTruthy();
-    expect(screen.getByRole('button', { name: 'Follow the path' })).toBeTruthy();
+    // Home is the plan's cards (the owner's choice A): the first card is ringed as next, and Sprout says it.
+    expect(plan.querySelector('[data-next]')?.getAttribute('data-subject')).toBe('math');
+    expect(screen.getByRole('button', { name: 'Next up: Math practice Hear it.' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: /Start today's plan/ })).toBeNull();
-    // The goal is the plan's questions added up: 10 + 10 + 10 + 5. The greyed-out Mixed bag adds nothing.
-    expect(screen.getByRole('img', { name: '0 of 35 questions today' })).toBeTruthy();
-    expect(document.querySelector('[data-sun-count]')?.textContent).toBe('0/35');
+    // A strip of the garden on top carries the day's sun. The goal is the plan's questions added up: 10 + 10 + 10 + 5.
+    // The greyed-out Mixed bag adds nothing.
+    const strip = await gardenStrip('0 of 35 questions today.');
+    expect(strip.querySelector('[data-strip-sun]')?.textContent).toBe('0/35');
     expect(screen.getByRole('button', { name: /^Math$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Language Arts$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Reasoning$/ })).toBeTruthy();
@@ -132,10 +142,16 @@ describe('home', () => {
       await settled();
     }
     await holdHome();
+    const strip = await gardenStrip(`3 of ${KEEP_GOING_QUESTIONS} questions today.`);
+    expect(strip.querySelector('[data-strip-sun]')?.textContent).toBe(`3/${KEEP_GOING_QUESTIONS}`);
+    // The card shows its three answers as three lit dots out of ten.
+    const card = document.querySelector('[data-plan-part][data-next]');
+    expect(card?.querySelectorAll('[data-on]')).toHaveLength(3);
+    // The whole garden, a tap away, shows the same sun.
+    await user.click(strip);
     const sun = await screen.findByRole('img', { name: `3 of ${KEEP_GOING_QUESTIONS} questions today` });
     expect(sun.getAttribute('data-goal-done')).toBe('3');
     expect(sun.getAttribute('data-share')).toBe(String(Math.round((3 / KEEP_GOING_QUESTIONS) * 100)));
-    expect(sun.querySelector('[data-sun-count]')?.textContent).toBe(`3/${KEEP_GOING_QUESTIONS}`);
     expect(screen.getByRole('button', { name: 'Keep going' })).toBeTruthy();
   });
 
@@ -149,9 +165,10 @@ describe('home', () => {
     }
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    const sun = await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` });
-    expect(sun.hasAttribute('data-full')).toBe(true);
-    // The path is done, and today's story waits at its end (game feel, phase 7).
+    await gardenStrip(`${KEEP_GOING_QUESTIONS} of ${KEEP_GOING_QUESTIONS} questions today.`);
+    expect(screen.getByRole('button', { name: 'Plan done! Great work. Hear it.' })).toBeTruthy();
+    expect(document.querySelector('[data-plan-part][data-next]')).toBeNull();
+    // Today's story waits (game feel, phase 7).
     expect(screen.getByRole('button', { name: /Story time/ })).toBeTruthy();
   });
 
@@ -173,9 +190,9 @@ describe('home', () => {
     cleanup();
     const again = openApp();
     await again.click(await screen.findByRole('button', { name: 'Robin' }));
-    await screen.findByRole('img', { name: `Daily goal reached: ${KEEP_GOING_QUESTIONS} questions today` });
+    await gardenStrip(`${KEEP_GOING_QUESTIONS} of ${KEEP_GOING_QUESTIONS} questions today.`);
     expect(screen.queryByRole('button', { name: /Story time/ })).toBeNull();
-    expect(screen.getByText('Path done!')).toBeTruthy();
+    expect(screen.getByText('Plan done! Great work.')).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Stories$/ })).toBeTruthy();
   });
 
@@ -191,30 +208,36 @@ describe('home', () => {
 });
 
 describe('home as the garden, or as a list', () => {
-  it('the garden is home: its plants are the ready skills, the plan list sits under it, and the menu stays', async () => {
+  it("home is the plan's cards under a strip of the garden; the strip opens the whole garden", async () => {
     await setUp('K', { preReader: false });
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     const plan = await screen.findByRole('list', { name: "Today's plan" });
-    const garden = screen.getByRole('region', { name: 'Your garden' });
-    expect(document.querySelector('[data-home-view]')?.getAttribute('data-home-view')).toBe('garden');
-    // The list is still there, under the garden, with the same parts.
-    expect([...plan.querySelectorAll('[data-plan-part]')].map((el) => el.getAttribute('data-plan-part'))).toEqual(['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed']);
-    expect(garden.contains(plan)).toBe(false);
-    // The path's stones are the same parts, in the same order (only the stones near the screen are drawn).
+    expect(document.querySelector('[data-home-view]')?.getAttribute('data-home-view')).toBe('cards');
+    expect(plan.getAttribute('data-look')).toBe('cards');
+    // Each practice card shows its subject's friend.
+    expect([...plan.querySelectorAll('[data-plan-part="keepGoing"] > button:first-of-type')].map((el) => /with (\w+)/.exec(el.textContent ?? '')?.[1])).toEqual(['Pip', 'Olive', 'Finn']);
+    // The strip shows only ready skills, today's first.
+    const ready = new Set(allGenerators().map((generator) => generator.skillId));
+    const strip = await gardenStrip(/^Your garden\. Open it\./);
+    const shown = [...strip.querySelectorAll('[data-strip-plant]')].map((el) => el.getAttribute('data-strip-plant') ?? '');
+    expect(shown.length).toBeGreaterThan(0);
+    expect(shown.every((id) => ready.has(id))).toBe(true);
+    for (const id of await picksOnScreen()) expect(shown).toContain(id);
+    // The old goal card is gone; the menu is as it was, with the garden in it too.
+    expect(screen.queryByRole('region', { name: 'Today' })).toBeNull();
+    expect(screen.queryByRole('region', { name: 'Your garden' })).toBeNull();
+    for (const name of [/^Math$/, /^Language Arts$/, /^Reasoning$/, /^Stickers$/, /^Pairs$/, /^Garden$/, /Switch child/]) expect(screen.getByRole('button', { name })).toBeTruthy();
+    // The strip opens the whole garden: the path's stones are the plan's parts, in order.
+    await user.click(strip);
+    const garden = await screen.findByRole('region', { name: 'Your garden' });
     const parts = ['keepGoing', 'keepGoing', 'keepGoing', 'new', 'mixed'];
     const stones = [...garden.querySelectorAll('[data-stone]')];
     expect(stones.length).toBeGreaterThan(0);
     for (const stone of stones) expect(stone.getAttribute('data-stone-part')).toBe(parts[Number(stone.getAttribute('data-stone'))]);
-    // Only skills that are ready grow in the garden.
-    const ready = new Set(allGenerators().map((generator) => generator.skillId));
     const plants = [...garden.querySelectorAll('[data-plant-button]')].map((el) => el.getAttribute('data-skill') ?? '');
     expect(plants.length).toBeGreaterThan(0);
     expect(plants.every((id) => ready.has(id))).toBe(true);
-    // The old goal card is gone; the menu is as it was.
-    expect(screen.queryByRole('region', { name: 'Today' })).toBeNull();
-    expect(document.querySelector('[data-today-line]')).toBeNull();
-    for (const name of [/^Math$/, /^Language Arts$/, /^Reasoning$/, /^Stickers$/, /^Pairs$/, /Switch child/]) expect(screen.getByRole('button', { name })).toBeTruthy();
     // The signpost (jsdom has no screen width, so it is a phone here) sends a child where the menu would.
     await user.click(screen.getByRole('button', { name: 'Places' }));
     expect([...document.querySelectorAll('[data-place]')].map((el) => el.getAttribute('data-place'))).toEqual(['subjects:math', 'subjects:ela', 'subjects:reasoning', 'stickers', 'switch']);
@@ -237,8 +260,9 @@ describe('home as the garden, or as a list', () => {
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD, ELA]);
     expect(document.querySelector(`[data-plan-part][data-skill="${ADD}"]`)?.hasAttribute('data-done')).toBe(true);
-    // Under way, so the button says "Keep going", and it skips the finished part.
-    await user.click(screen.getByRole('button', { name: 'Keep going' }));
+    // The ringed card skips the finished part.
+    expect(document.querySelector(`[data-plan-part][data-skill="${ELA}"]`)?.hasAttribute('data-next')).toBe(true);
+    await user.click(await nextCard());
     await screen.findByRole('region', { name: 'Question' });
     expect(screen.getByRole('heading', { level: 1 }).textContent).toContain(CATALOGUE.find((skill) => skill.id === ELA)?.name ?? '-');
   });
@@ -247,7 +271,8 @@ describe('home as the garden, or as a list', () => {
     await setUp('K');
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await screen.findByRole('list', { name: "Today's plan" });
+    await user.click(await gardenStrip(/^Your garden\. Open it\./));
+    await screen.findByRole('region', { name: 'Your garden' });
     const plant = document.querySelector(`[data-plant-button][data-skill="${ADD}"]`) ?? document.querySelector('[data-plant-button]');
     const skillId = plant?.getAttribute('data-skill') ?? '';
     const name = CATALOGUE.find((skill) => skill.id === skillId)?.name ?? '';
@@ -256,7 +281,8 @@ describe('home as the garden, or as a list', () => {
     await user.click(card.querySelector('[data-card-way="practice"]') as HTMLElement);
     await screen.findByRole('region', { name: 'Question' });
     await holdHome();
-    await screen.findByRole('list', { name: "Today's plan" });
+    await user.click(await gardenStrip(/^Your garden\. Open it\./));
+    await screen.findByRole('region', { name: 'Your garden' });
     await user.click(document.querySelector(`[data-plant-button][data-skill="${skillId}"]`) as HTMLElement);
     await user.click(screen.getByRole('dialog', { name }).querySelector('[data-card-way="learn"]') as HTMLElement);
     await waitFor(() => expect(screen.queryByRole('region', { name: 'Your garden' })).toBeNull());
@@ -636,7 +662,7 @@ describe('Start today\'s plan', () => {
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
     expect(await picksOnScreen()).toEqual([ADD]);
-    await user.click(screen.getByRole('button', { name: 'Follow the path' }));
+    await user.click(await nextCard());
     await screen.findByRole('region', { name: 'Question' });
     for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
       await answer(user, wrongValue());
@@ -655,7 +681,7 @@ describe('Start today\'s plan', () => {
     await (await repo()).saveSkillState(mastered(ADD, -1));
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
-    await user.click(await screen.findByRole('button', { name: 'Follow the path' }));
+    await user.click(await nextCard());
     await screen.findByRole('heading', { name: /Review: Add to 10/ });
   });
 
