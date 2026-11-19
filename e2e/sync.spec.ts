@@ -44,7 +44,7 @@ test.describe('two iPads, one family', () => {
       // The first iPad is opened again: it fetches, and shows all three answers.
       await page.reload();
       await page.getByRole('button', { name: 'Robin', exact: true }).click();
-      await expect(page.getByRole('img', { name: /^3 of \d+ questions today$/ })).toBeVisible();
+      await expect(page.getByRole('button', { name: /^Your garden\. Open it\. 3 of \d+ questions today\.$/ })).toBeVisible();
       await expect(page.getByRole('button', { name: /\. Add to 10 · 3 of \d+/ })).toBeVisible();
     } finally {
       await second.close();

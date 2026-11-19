@@ -67,7 +67,7 @@ test.describe('practice', () => {
     await answerRight(page);
     await page.reload();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await expect(page.getByRole('img', { name: /^2 of \d+ questions today$/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^Your garden\. Open it\. 2 of \d+ questions today\.$/ })).toBeVisible();
     // Today's plan has it (started today, so it is today's new skill), counting the 2 answers already given.
     await expect(page.getByRole('button', { name: /\. Add to 10 · 2 of \d+/ })).toBeVisible();
     // And the next question is a new one, picking up from where the child was.

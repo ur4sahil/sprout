@@ -48,6 +48,8 @@ test.describe('the grown-ups area', () => {
     await expect(page.getByRole('button', { name: /Add a child/ })).toHaveCount(0);
     await openGrownUps(page);
     await expect(page.getByRole('heading', { name: 'Grown-ups only' })).toBeVisible();
+    // The gate says "One moment." while it reads the family's PIN; the check waits for the number pad.
+    await expect(page.getByRole('button', { name: '1', exact: true })).toBeVisible();
     await checkScreen(page, 'the gate', 44);
     await shoot(page, 'parent-gate');
     await typePin(page, '9999');
@@ -108,7 +110,7 @@ test.describe('the grown-ups area', () => {
     // The new setting reached the child's home: the goal is the plan's questions added up, with its skills to practice.
     await page.getByRole('button', { name: 'Done' }).click();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
-    await expect(page.getByRole('img', { name: /^3 of \d+ questions today$/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^Your garden\. Open it\. 3 of \d+ questions today\.$/ })).toBeVisible();
     // Reasoning practice was turned off: Math and Language Arts are left.
     await expect(page.locator('[data-plan-part="keepGoing"]')).toHaveCount(2);
     await expect(page.locator('[data-subject="reasoning"]')).toHaveCount(0);

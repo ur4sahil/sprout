@@ -7,7 +7,8 @@ export const BASE_URL = process.env.SPROUT_BASE_URL ?? `https://localhost:${PORT
 export const DIR = path.resolve('.e2e');
 export const WORKER_LOG = path.join(DIR, 'worker.log');
 export const COUNTER = path.join(DIR, 'counter');
-export const POOL_SIZE = 600;
+// One address per signed-up test, two for the two-iPad test. The run has passed 600 tests; three digits allow 1,000.
+export const POOL_SIZE = 1000;
 
 // Made-up addresses on the family list for a test run.
 export function poolEmail(index: number): string {

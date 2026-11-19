@@ -71,7 +71,7 @@ test.describe('offline and updates', () => {
     // A deep address works offline too, and the score is still there after another reload.
     await page.goto('/home');
     await page.getByRole('button', { name, exact: true }).click();
-    await expect(page.getByRole('img', { name: /^2 of \d+ questions today$/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: /^Your garden\. Open it\. 2 of \d+ questions today\.$/ })).toBeVisible();
     await expect(page.getByRole('button', { name: /\. Add to 10 · 2 of \d+/ })).toBeVisible();
 
     await context.setOffline(false);
