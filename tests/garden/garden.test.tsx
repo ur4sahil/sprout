@@ -186,7 +186,7 @@ for (const mode of ['normal', 'calm'] as const) {
       expect(container.querySelectorAll('[data-bed]').length).toBeLessThan(layout.beds.length);
       // The path is under way, so the button says so.
       expect(screen.getByRole('button', { name: 'Keep going' }).getAttribute('data-follow')).toBe('going');
-      expect(container.querySelector('[data-sun-count]')?.textContent).toBe('4/30');
+      expect(container.querySelector('[data-sun-count]')?.textContent).toBe('4/20');
     });
 
     it('when the path is done the button gives way to "Path done!" and the sun is full', () => {

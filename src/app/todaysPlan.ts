@@ -109,7 +109,7 @@ export function partSize(part: PlanPart): number {
     case 'new':
       return NEW_QUESTIONS;
     case 'mixed':
-      return part.locked ? 0 : MIXED_QUESTIONS; // a greyed-out Mixed bag is not part of the goal
+      return 0; // extra practice: never part of the goal (the owner's choice, Nov 19, 2026)
   }
 }
 
@@ -134,7 +134,8 @@ export function partPath(part: PlanPart): string {
   return `/skill/${part.skillId}`;
 }
 
-// The first part not yet done, or null when the plan is finished.
+// The first part not yet done, or null when the plan is finished. The Mixed bag is extra practice after the plan:
+// Start never goes to it, and the plan is done without it (the owner's choice, Nov 19, 2026).
 export function nextPart(plan: readonly PlanPart[]): PlanPart | null {
-  return plan.find((part) => !part.done && !(part.kind === 'mixed' && part.locked)) ?? null;
+  return plan.find((part) => !part.done && part.kind !== 'mixed') ?? null;
 }

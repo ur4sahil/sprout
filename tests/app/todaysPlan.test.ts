@@ -45,13 +45,13 @@ describe("today's plan", () => {
     expect(nextPart(plan)).toMatchObject({ kind: 'keepGoing', skillId: 'E-K-B1' });
   });
 
-  it('the Mixed bag is open with one topic practised (another fills in): it is in the goal, and Start goes to it last', () => {
+  it('the Mixed bag is open with one topic practised (another fills in), but it is extra practice: not in the goal, and Start skips it', () => {
     const plan = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [] });
     expect(plan.map((part) => part.kind)).toEqual(['keepGoing', 'mixed']);
     expect(plan[1]).toMatchObject({ locked: false, done: false });
-    expect(planProgress(plan).goal).toBe(KEEP_GOING_QUESTIONS + MIXED_QUESTIONS);
+    expect(planProgress(plan).goal).toBe(KEEP_GOING_QUESTIONS);
     const finished = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [], attempts: [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: KEEP_GOING_QUESTIONS }, () => answer('M-K-C1'))] });
-    expect(nextPart(finished)).toMatchObject({ kind: 'mixed' });
+    expect(nextPart(finished)).toBeNull(); // the plan is done; the Mixed bag stays there as extra practice
   });
 
   it('the Mixed bag stays open after every practised skill reached 100 (Nov 19, 2026)', () => {
@@ -81,7 +81,7 @@ describe("today's plan", () => {
 
   it('the goal is the plan\'s questions added up, counting only answers inside each part', () => {
     const plan = todaysPlan({ ...base, child: child(), states: [going('M-K-C1'), going('E-K-B1')], picks: [next('M-K-A1'), next('R-A1')] });
-    expect(planProgress(plan)).toEqual({ done: 0, goal: KEEP_GOING_QUESTIONS * 3 + NEW_QUESTIONS + MIXED_QUESTIONS });
+    expect(planProgress(plan)).toEqual({ done: 0, goal: KEEP_GOING_QUESTIONS * 3 + NEW_QUESTIONS }); // the Mixed bag is extra practice, not in the goal
     // 12 answers on one skill count as 10; answers on a skill outside the plan do not count.
     // (C1 was practised yesterday too, so it is a skill to practice, not today's new skill.)
     const attempts = [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: 12 }, () => answer('M-K-C1')), answer('M-K-Z9')];

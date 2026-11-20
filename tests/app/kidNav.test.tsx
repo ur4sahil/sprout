@@ -101,10 +101,10 @@ describe('home', () => {
     expect(screen.getByRole('button', { name: 'Next up: Math practice Hear it.' })).toBeTruthy();
     // One big Start button opens the next part (the owner's choice, Nov 19, 2026).
     expect(screen.getByRole('button', { name: /Start today's plan/ }).hasAttribute('data-start-plan')).toBe(true);
-    // A strip of the garden on top carries the day's sun. The goal is the plan's questions added up: 10 + 10 + 10 + 5
-    // and the Mixed bag's 10.
-    const strip = await gardenStrip('0 of 45 questions today.');
-    expect(strip.querySelector('[data-strip-sun]')?.textContent).toBe('0/45');
+    // A strip of the garden on top carries the day's sun. The goal is the plan's questions added up: 10 + 10 + 10 + 5.
+    // The Mixed bag is extra practice and adds nothing.
+    const strip = await gardenStrip('0 of 35 questions today.');
+    expect(strip.querySelector('[data-strip-sun]')?.textContent).toBe('0/35');
     expect(screen.getByRole('button', { name: /^Math$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Language Arts$/ })).toBeTruthy();
     expect(screen.getByRole('button', { name: /^Reasoning$/ })).toBeTruthy();
@@ -299,9 +299,9 @@ describe('home as the garden, or as a list', () => {
     expect(screen.queryByRole('region', { name: 'Your garden' })).toBeNull();
     expect(document.querySelector('[data-garden]')).toBeNull();
     expect(screen.getByRole('button', { name: /Start today's plan/ })).toBeTruthy();
-    const ring = screen.getByRole('img', { name: '0 of 45 questions today' });
+    const ring = screen.getByRole('img', { name: '0 of 35 questions today' });
     expect(ring.querySelectorAll('[data-star]').length).toBeGreaterThan(0);
-    expect(screen.getByText('0 of 45 questions')).toBeTruthy();
+    expect(screen.getByText('0 of 35 questions')).toBeTruthy();
     await user.click(screen.getByRole('button', { name: /Start today's plan/ }));
     await screen.findByRole('region', { name: 'Question' });
   });

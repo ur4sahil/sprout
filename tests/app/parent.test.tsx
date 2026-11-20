@@ -252,7 +252,7 @@ describe('the grown-up pages', () => {
     expect(within(facts).getByRole('img', { name: 'Minutes each day for the last 14 days. 4 in all.' })).toBeTruthy();
     expect(facts.querySelectorAll('[data-bars="Questions"] rect')).toHaveLength(14);
     expect(facts.querySelector(`[data-bars="Questions"] rect[data-day="${localDay(NOW)}"]`)?.getAttribute('data-value')).toBe('7');
-    expect(facts.querySelector('[data-fact="goal"]')?.textContent).toBe("Today's plan: 7 of 45 questions");
+    expect(facts.querySelector('[data-fact="goal"]')?.textContent).toBe("Today's plan: 7 of 35 questions");
     expect(facts.querySelector('[data-fact="mastered"]')?.textContent).toBe('Skills mastered: 1');
     expect(facts.querySelector('[data-fact="picks"]')?.textContent).toMatch(/^Today's picks: .+/);
     expect(screen.getByRole('region', { name: 'Check-in levels' }).textContent).toContain('Math: Counting: Kindergarten, 29% through');
