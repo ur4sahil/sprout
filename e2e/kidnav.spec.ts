@@ -25,9 +25,11 @@ test.describe('kid navigation', () => {
     await expect(page.getByRole('button', { name: 'Robin', exact: true }).locator('[aria-hidden="true"]').first()).toBeVisible();
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     const plan = page.getByRole('list', { name: "Today's plan" });
-    // A practice skill in Math, Language Arts and Reasoning, a new skill, and the Mixed bag greyed out (nothing to mix yet).
+    // A practice skill in Math, Language Arts and Reasoning, a new skill, and the Mixed bag, open from the start.
     await expect(plan.locator('[data-skill]')).toHaveCount(4);
-    await expect(plan.locator('[data-plan-part="mixed"][data-locked]').getByRole('button', { name: /^Mixed bag\./ })).toBeDisabled();
+    await expect(plan.locator('[data-plan-part="mixed"]').getByRole('button', { name: /^Mixed bag\./ })).toBeEnabled();
+    // One big button starts the plan.
+    await expect(page.getByRole('button', { name: /Start today's plan/ })).toBeVisible();
     await expectNoTextOnlyControls(page, 'home');
     await checkScreen(page, 'home with the plan', 64);
     await shoot(page, 'home-plan');

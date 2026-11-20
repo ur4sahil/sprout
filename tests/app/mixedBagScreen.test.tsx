@@ -57,10 +57,11 @@ describe('the Mixed bag', () => {
     expect(wrong).toBeGreaterThanOrEqual(0);
   });
 
-  it('says there is nothing to mix when fewer than two topics are in progress', async () => {
+  it('opens for a child who has practised nothing yet, with topics not yet started (the owner\'s choice, Nov 19, 2026)', async () => {
     const child = await setUp('K');
     useAppStore.getState().setChild(child);
     openApp('/mixed');
-    await screen.findByText('Nothing to mix yet');
+    await screen.findByRole('region', { name: 'Question' });
+    expect(screen.queryByText('Nothing to mix yet')).toBeNull();
   });
 });

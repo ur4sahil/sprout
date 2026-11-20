@@ -146,8 +146,8 @@ describe('the profile picker', () => {
     const card = group.querySelector('[data-profile="Robin"]') as HTMLElement;
     expect(card.textContent).toContain('Kindergarten');
     // The goal is today's plan added up: a practice skill in each subject (10 each) and a new skill (5).
-    expect(card.textContent).toContain('0 of 35 today');
-    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 35 questions today.');
+    expect(card.textContent).toContain('0 of 45 today');
+    expect(document.getElementById(card.getAttribute('aria-describedby') ?? '')?.textContent).toBe('Kindergarten. 0 of 45 questions today.');
     await user.click(screen.getByRole('button', { name: 'Ada' }));
     expect(spoken.sounds).toEqual(['unlock']);
     expect(spoken.said).toEqual([['Hi', { word: 'Ada' }]]);

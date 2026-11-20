@@ -45,13 +45,19 @@ describe("today's plan", () => {
     expect(nextPart(plan)).toMatchObject({ kind: 'keepGoing', skillId: 'E-K-B1' });
   });
 
-  it('the Mixed bag is greyed out until two topics are in progress: not in the goal, and Start skips it', () => {
+  it('the Mixed bag is open with one topic practised (another fills in): it is in the goal, and Start goes to it last', () => {
     const plan = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [] });
     expect(plan.map((part) => part.kind)).toEqual(['keepGoing', 'mixed']);
-    expect(plan[1]).toMatchObject({ locked: true, done: false });
-    expect(planProgress(plan).goal).toBe(KEEP_GOING_QUESTIONS);
+    expect(plan[1]).toMatchObject({ locked: false, done: false });
+    expect(planProgress(plan).goal).toBe(KEEP_GOING_QUESTIONS + MIXED_QUESTIONS);
     const finished = todaysPlan({ ...base, child: child({ planPractice: ['math'], planNew: false }), states: [going('M-K-C1')], picks: [], attempts: [answer('M-K-C1', 's0', '2026-03-08'), ...Array.from({ length: KEEP_GOING_QUESTIONS }, () => answer('M-K-C1'))] });
-    expect(nextPart(finished)).toBeNull();
+    expect(nextPart(finished)).toMatchObject({ kind: 'mixed' });
+  });
+
+  it('the Mixed bag stays open after every practised skill reached 100 (Nov 19, 2026)', () => {
+    const mastered = [{ ...going('M-K-C1'), score: 100 }, { ...going('M-K-B1'), score: 100 }];
+    const plan = todaysPlan({ ...base, child: child({ planPractice: [], planNew: false }), states: mastered, picks: [] });
+    expect(plan).toEqual([{ kind: 'mixed', answered: 0, done: false, locked: false }]);
   });
 
   it('the new skill stays the same all day once started, and ticks off after its answers', () => {

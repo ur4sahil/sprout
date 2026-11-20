@@ -92,7 +92,7 @@ for (const mode of ['normal', 'calm'] as const) {
       expect(stones.map((stone) => stone.querySelector('[data-stone-icon]')?.getAttribute('data-stone-icon'))).toEqual(['can', 'pencil', 'seed', 'basket']);
       expect(stones[3]?.disabled).toBe(true);
       expect(stones[3]?.querySelector('[data-stone-icon="padlock"]')).not.toBeNull();
-      expect(stones[3]?.getAttribute('aria-label')).toBe('The basket opens after you practice two topics');
+      expect(stones[3]?.getAttribute('aria-label')).toBe('The basket opens when there is something to mix');
       expect(stones[1]?.getAttribute('aria-label')).toBe(`Practice: ${skillById('M-K-A2')?.name}`);
       fireEvent.click(stones[1] as HTMLElement);
       expect(onOpen).toHaveBeenCalledWith(SMALL_PLAN[1]);

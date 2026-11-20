@@ -64,7 +64,7 @@ export const GARDEN: World = {
     thirsty: 'Ready for some water',
     thirstySay: ['It is ready for some water.'],
     path: { start: 'Follow the path', going: 'Keep going', done: 'Path done!' },
-    stones: { review: 'Water your plants', practice: 'Practice', fresh: 'A new seed', mixed: 'The basket', locked: 'The basket opens after you practice two topics', done: 'Done' },
+    stones: { review: 'Water your plants', practice: 'Practice', fresh: 'A new seed', mixed: 'The basket', locked: 'The basket opens when there is something to mix', done: 'Done' },
     sun: "Today's sun",
     card: { practice: 'Practice', lesson: 'Lesson', close: 'Close', hear: 'Hear it' },
     signpost: { open: 'Places', close: 'Back to the garden', math: 'All Math skills', ela: 'All Language Arts skills', reasoning: 'All Reasoning skills', stickers: 'Stickers', facts: 'Fast facts', switch: 'Switch child' },

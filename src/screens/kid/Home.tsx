@@ -153,6 +153,13 @@ export default function Home() {
           {sproutWords && (
             <SproutSays words={sproutWords} mood={next ? 'point' : 'cheer'} onHear={() => say(sproutSay)} />
           )}
+          {/* One big button that starts the next part of the plan (the owner's choice, Nov 19, 2026). */}
+          {next && (
+            <BigButton size="kid" className={styles.playButton} data-start-plan="" onClick={() => go(partPath(next))}>
+              <Icon name="play" />
+              {day.plan.some((part) => part.done || part.answered > 0) ? 'Continue' : "Start today's plan"}
+            </BigButton>
+          )}
           {storyWaits && (
             <BigButton size="kid" className={styles.playButton} onClick={() => go('/story')}>
               <Icon name="book" />

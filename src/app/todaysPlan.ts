@@ -8,8 +8,8 @@ import { inProgress, mixedBagOrder } from './mixedBag';
 
 // Today's plan (plan section 18): one list in order, each part ticked off when done.
 // 1. Review the mastered skills that are due. 2. Practice: one skill in each subject the grown-up picked (Math,
-// Language Arts, Reasoning; the owner's choice, Nov 18, 2026). 3. A new skill. 4. The Mixed bag, shown greyed out
-// until two topics are in progress (it then has something to mix).
+// Language Arts, Reasoning; the owner's choice, Nov 18, 2026). 3. A new skill. 4. The Mixed bag, open whenever there
+// are two topics to mix (mixedBag.ts).
 // Each part has a fixed size; a grown-up sets the parts for each child. The home screen's goal is the plan's
 // questions added up (the owner's choice, Nov 18, 2026), so there is one goal for the day, not two.
 
@@ -85,10 +85,11 @@ export function todaysPlan(input: {
     parts.push({ kind: 'new', skillId: fresh, answered, done: answered >= NEW_QUESTIONS });
   }
 
-  // 4. The Mixed bag: playable when two topics are in progress (and kept once started today); greyed out before.
+  // 4. The Mixed bag: open whenever it has two topics to mix, which takes each topic's next skill when its skills are
+  // all mastered, and topics not yet practised (the owner's choice, Nov 19, 2026). Greyed out only with nothing to mix.
   if (settings.planMixed) {
     const answered = todays.filter((attempt) => mixedSessions.has(attempt.sessionId)).length;
-    const locked = answered === 0 && mixedBagOrder(states, LADDERS).length === 0;
+    const locked = answered === 0 && mixedBagOrder(states, LADDERS, child.grade).length === 0;
     parts.push({ kind: 'mixed', answered, done: !locked && answered >= MIXED_QUESTIONS, locked });
   }
   return parts;

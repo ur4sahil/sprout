@@ -10,7 +10,8 @@ import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { openRepo } from '../storage/index';
 import type { Child, Session, SkillState } from '../storage/schema';
-import { inProgress, mixedBagOrder, mixedTurn } from './mixedBag';
+import { newSkillState } from '../storage/schema';
+import { mixable, mixedBagOrder, mixedTurn } from './mixedBag';
 import { newSession, recentKeys, recordAnswer } from './practiceRecord';
 import { TIMING } from './timing';
 import { castFor } from '../cast';
@@ -65,15 +66,17 @@ export function useMixedBag(child: Child): MixedBag {
     alive: boolean;
   }>({ order: [], at: 0, states: new Map(), keys: new Map(), sessions: new Map(), question: null, skill: null, shownAt: now(), pending: null, right: 0, cheer: { index: null }, alive: true });
 
-  // Shows the next turn whose skill is still in progress; ends the bag when none is left.
+  // Shows the next turn whose skill is not yet mastered; ends the bag when none is left.
   const next = useCallback((): void => {
     const self = live.current;
     while (self.at < self.order.length) {
       const id = self.order[self.at] as string;
       self.at += 1;
       const found = skillById(id);
-      const state = self.states.get(id);
-      if (!found || !state || !inProgress(state)) continue;
+      // A topic's next skill may not be started yet: it begins here, from a blank score.
+      const state = self.states.get(id) ?? newSkillState(child.id, id, now().toISOString());
+      if (!found || !mixable(state)) continue;
+      self.states.set(id, state);
       const q = mixedTurn(child, found, state, self.keys.get(id) ?? []);
       self.question = q;
       self.skill = found;
@@ -98,7 +101,7 @@ export function useMixedBag(child: Child): MixedBag {
       try {
         const { repo } = await openRepo();
         const states = await repo.getSkillStates(child.id);
-        const order = mixedBagOrder(states, LADDERS);
+        const order = mixedBagOrder(states, LADDERS, child.grade);
         if (!self.alive) return;
         if (order.length === 0) {
           setPhase('none');
