@@ -19,13 +19,13 @@ const SMALL_PLAN: PlanPart[] = [
   { kind: 'review', skillIds: ['M-K-A1'], answered: 0, done: false },
   { kind: 'keepGoing', subject: 'math', skillId: 'M-K-A2', answered: 0, done: false },
   { kind: 'new', skillId: 'M-K-A3', answered: 0, done: false },
-  { kind: 'mixed', answered: 0, done: false, locked: true },
+  { kind: 'mixed', answered: 0, size: 0, done: false, locked: true },
 ];
 const small = { grade: 'K' as Grade, day: { states: [scored('M-K-A1', 100), scored('M-K-A2', 40)], plan: SMALL_PLAN, reviewsDue: ['M-K-A1'] } };
 const BIG_PLAN: PlanPart[] = [
   { kind: 'keepGoing', subject: 'math', skillId: 'M-3-A1', answered: 4, done: false },
   { kind: 'keepGoing', subject: 'ela', skillId: 'E-2-A1', answered: 0, done: false },
-  { kind: 'mixed', answered: 0, done: false, locked: false },
+  { kind: 'mixed', answered: 0, size: 20, done: false, locked: false },
 ];
 const big = { grade: '3' as Grade, day: { states: CATALOGUE.filter((skill) => !skill.retired).slice(0, 300).map((skill, i) => scored(skill.id, (i * 13) % 101)), plan: BIG_PLAN, reviewsDue: [] as string[] } };
 

@@ -155,7 +155,7 @@ export default function Home() {
           )}
           {/* One big button that starts the next part of the plan (the owner's choice, Nov 19, 2026). */}
           {next && (
-            <BigButton size="kid" className={styles.playButton} data-start-plan="" onClick={() => go(partPath(next))}>
+            <BigButton size="kid" className={styles.playButton} data-start-plan="" onClick={() => go('/play?go=1')}>
               <Icon name="play" />
               {day.plan.some((part) => part.done || part.answered > 0) ? 'Continue' : "Start today's plan"}
             </BigButton>
@@ -184,7 +184,7 @@ export default function Home() {
               </span>
             </div>
             {next ? (
-              <BigButton size="kid" className={styles.playButton} onClick={() => go(partPath(next))}>
+              <BigButton size="kid" className={styles.playButton} onClick={() => go('/play?go=1')}>
                 <Icon name="play" />
                 {day.plan.some((part) => part.done || part.answered > 0) ? 'Continue' : "Start today's plan"}
               </BigButton>

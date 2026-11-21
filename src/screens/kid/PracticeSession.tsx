@@ -39,18 +39,22 @@ interface Props {
   skill: Skill;
   // Set when this skill is one pick in a Play run: the break offers "Next one", and each pick lasts one session.
   play?: { onNext: () => void };
+  // Set when this skill is one part of a run through today's plan: after `left` answers the run goes on.
+  run?: { left: number; onDone: () => void };
 }
 
 // The practice screen: the question on the left, the status panel on the right.
-export default function PracticeSession({ child, skill, play }: Props) {
+export default function PracticeSession({ child, skill, play, run }: Props) {
   const navigate = useNavigate();
-  const practice = usePractice(child, skill, { sessions: play !== undefined });
+  const practice = usePractice(child, skill, { sessions: play !== undefined, stopAfter: run?.left, onStop: run?.onDone });
   const { phase, question, state } = practice;
   const [seconds, setSeconds] = useState(0);
   const rate = child.settings.speechRate;
   const goHome = (): void => {
     void navigate('/home', { replace: true });
   };
+  // At the end of a sitting (a skill mastered, or known already), a plan run goes on to its next part.
+  const finish = play ? play.onNext : run ? run.onDone : goHome;
   const say = (text: Say): void => void speak(text, rate);
   useWakeLock();
 
@@ -151,7 +155,7 @@ export default function PracticeSession({ child, skill, play }: Props) {
           </div>
           <span className={styles.spacer} />
           {canDraw && question && phase === 'asking' && <IconButton icon="pencil" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
-          <IconButton icon="bulb" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn`, { replace: true })} />
+          <IconButton icon="bulb" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn${run ? `?run=${Math.max(run.left - practice.answered, 1)}` : ''}`, { replace: true })} />
         </>
       }
       side={
@@ -191,13 +195,13 @@ export default function PracticeSession({ child, skill, play }: Props) {
           milestone={practice.milestone}
           skillName={skill.name}
           onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
-          onDone={practice.milestone === 100 ? (play ? play.onNext : goHome) : practice.afterCelebration} games={games} growth={growth} />
+          onDone={practice.milestone === 100 ? finish : practice.afterCelebration} games={games} growth={growth} />
       )}
       {phase === 'skipped' && (
         <FullScreenCard emoji="🚀" title="You know this one!" line={`${skill.name}: no need to practise it.`} name="skipped">
-          <BigButton size="kid" onClick={play ? play.onNext : goHome}>
+          <BigButton size="kid" onClick={finish}>
             <Icon name="next" />
-            {play ? "Next one" : "Home"}
+            {play || run ? "Next one" : "Home"}
           </BigButton>
         </FullScreenCard>
       )}

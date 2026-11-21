@@ -17,13 +17,13 @@ const SUBJECTS: readonly Skill['subject'][] = ['math', 'ela', 'reasoning'];
 
 export const KEEP_GOING_QUESTIONS = 10; // answers today on a Practice skill to tick it off
 export const NEW_QUESTIONS = 5; // answers today on the new skill to tick it off
-export const MIXED_QUESTIONS = 10; // Mixed bag answers today to tick it off
+export const MIXED_QUESTIONS = 20; // the most a Mixed bag asks: 5 from each of up to 4 topics (the owner's choice, Nov 21, 2026)
 
 export type PlanPart =
   | { kind: 'review'; skillIds: string[]; answered: number; done: boolean } // skillIds: the ones still due
   | { kind: 'keepGoing'; subject: Skill['subject']; skillId: string; answered: number; done: boolean }
   | { kind: 'new'; skillId: string; answered: number; done: boolean }
-  | { kind: 'mixed'; answered: number; done: boolean; locked: boolean }; // locked: nothing to mix yet
+  | { kind: 'mixed'; answered: number; size: number; done: boolean; locked: boolean }; // size: the questions this bag asks; locked: nothing to mix yet
 
 export function todaysPlan(input: {
   child: Child;
@@ -89,8 +89,12 @@ export function todaysPlan(input: {
   // all mastered, and topics not yet practised (the owner's choice, Nov 19, 2026). Greyed out only with nothing to mix.
   if (settings.planMixed) {
     const answered = todays.filter((attempt) => mixedSessions.has(attempt.sessionId)).length;
-    const locked = answered === 0 && mixedBagOrder(states, LADDERS, child.grade).length === 0;
-    parts.push({ kind: 'mixed', answered, done: !locked && answered >= MIXED_QUESTIONS, locked });
+    // Its size is the bag's own length (10, 15 or 20 for 2, 3 or 4 topics), so the card counts what the bag asks.
+    // A bag that shrank during the day (its skills mastered) still counts what was answered in it.
+    const bag = Math.min(mixedBagOrder(states, LADDERS, child.grade).length, MIXED_QUESTIONS);
+    const size = Math.max(bag, Math.min(answered, MIXED_QUESTIONS));
+    const locked = size === 0;
+    parts.push({ kind: 'mixed', answered, size, done: !locked && answered >= size, locked });
   }
   return parts;
 }
@@ -132,6 +136,14 @@ export function partPath(part: PlanPart): string {
   if (part.kind === 'mixed') return '/mixed';
   if (part.kind === 'new' && part.answered === 0) return `/skill/${part.skillId}/learn`;
   return `/skill/${part.skillId}`;
+}
+
+// Where a part is done as one step of a run through the whole plan (Start, the owner's choice, Nov 21, 2026):
+// practice says how many answers are left for the part, so it hands back to /play when the part is done.
+export function partRunPath(part: PlanPart): string {
+  const path = partPath(part);
+  const left = part.kind === 'keepGoing' ? KEEP_GOING_QUESTIONS - part.answered : part.kind === 'new' ? NEW_QUESTIONS - part.answered : 1;
+  return `${path}?run=${Math.max(left, 1)}`;
 }
 
 // The first part not yet done, or null when the plan is finished. The Mixed bag is extra practice after the plan:

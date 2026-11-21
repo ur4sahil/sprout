@@ -26,7 +26,7 @@ describe('the plants on a profile card', () => {
     const plan: PlanPart[] = [
       { kind: 'keepGoing', subject: 'math', skillId: c, answered: 0, done: false },
       { kind: 'new', skillId: d, answered: 0, done: false },
-      { kind: 'mixed', answered: 0, done: false, locked: true },
+      { kind: 'mixed', answered: 0, size: 0, done: false, locked: true },
     ];
     const plants = profilePlants([state(a, 40)], plan);
     expect(plants.map((plant) => [plant.skillId, plant.stage])).toEqual([

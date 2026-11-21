@@ -491,3 +491,19 @@ describe('getting to a skill', () => {
     expect(await screen.findByRole('button', { name: /^Math$/ })).toBeTruthy();
   });
 });
+
+describe('a run through today\'s plan (Nov 21, 2026)', () => {
+  it('practice opened with ?run=2 hands back to /play after 2 answers, which says what is next', async () => {
+    const child = await setUp('1');
+    useAppStore.getState().setChild(child);
+    const user = openApp('/skill/M-K-C4?run=2');
+    for (let i = 0; i < 2; i += 1) {
+      await screen.findByRole('region', { name: 'Question' });
+      await answer(user, sumOnScreen());
+      await settled();
+      await passInterruptions(user);
+    }
+    expect(await screen.findByRole('dialog', { name: /^Next up: / })).toBeTruthy();
+    expect(await attempts()).toHaveLength(2);
+  });
+});

@@ -31,6 +31,7 @@ interface Props {
   child: Child;
   skill: Skill;
   startOnPart2?: boolean; // opened from the half-way milestone: straight to the second lesson
+  run?: string; // answers left in a run through today's plan, passed on to practice
 }
 
 const BEAT_NAME = {
@@ -44,7 +45,7 @@ const wait = (ms: number): Promise<void> =>
 
 // Two kinds of help: a narrated mini-lesson in four beats, and one example solved step by step.
 // They use the same pictures as the questions and work with no network. Some skills add a third: a video.
-export default function LessonPlayer({ child, skill, startOnPart2 = false }: Props) {
+export default function LessonPlayer({ child, skill, startOnPart2 = false, run }: Props) {
   const navigate = useNavigate();
   const beats = useMemo(() => generatorFor(skill.id).lesson(), [skill]);
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
@@ -163,7 +164,7 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false }: Pro
   }
 
   const practise = (): void => {
-    void navigate(`/skill/${skill.id}`, { replace: true });
+    void navigate(`/skill/${skill.id}${run ? `?run=${run}` : ''}`, { replace: true });
   };
   const steps = example.explanation.steps;
 

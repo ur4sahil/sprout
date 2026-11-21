@@ -12,5 +12,7 @@ export default function Lesson() {
   const skill = skillId ? skillById(skillId) : undefined;
   if (!child) return <Navigate to="/" replace />;
   if (!skill || skill.retired || !allGenerators().some((generator) => generator.skillId === skill.id)) return <Navigate to="/home" replace />;
-  return <LessonPlayer key={`${child.id}|${skill.id}`} child={child} skill={skill} startOnPart2={params.get('part') === '2'} />;
+  // ?run=N: the new skill's part in a run through today's plan; practice after the lesson keeps it.
+  const run = /^\d+$/.test(params.get('run') ?? '') ? (params.get('run') as string) : undefined;
+  return <LessonPlayer key={`${child.id}|${skill.id}`} child={child} skill={skill} startOnPart2={params.get('part') === '2'} run={run} />;
 }

@@ -169,7 +169,7 @@ describe('the garden layout: areas and beds', () => {
 
   it('the same input gives the same garden, whatever order the saved rows come in', () => {
     const states = CATALOGUE.slice(0, 120).map((skill, i) => (i % 3 === 0 ? mastered(skill.id) : scored(skill.id, (i * 7) % 100)));
-    const plan: PlanPart[] = [{ kind: 'review', skillIds: ['M-PK-A1'], answered: 0, done: false }, practice('math', 'M-K-A2'), practice('ela', 'E-K-A1'), { kind: 'mixed', answered: 0, done: false, locked: false }];
+    const plan: PlanPart[] = [{ kind: 'review', skillIds: ['M-PK-A1'], answered: 0, done: false }, practice('math', 'M-K-A2'), practice('ela', 'E-K-A1'), { kind: 'mixed', answered: 0, size: 20, done: false, locked: false }];
     const first = layoutGarden(input({ states, plan, reviewsDue: ['M-PK-A1'] }));
     const again = layoutGarden(input({ states: [...states], plan: [...plan], reviewsDue: ['M-PK-A1'] }));
     const turned = layoutGarden(input({ states: [...states].reverse(), plan, reviewsDue: ['M-PK-A1'], skills: [...CATALOGUE].reverse().reverse() }));
@@ -215,7 +215,7 @@ describe("the garden layout: today's path", () => {
     practice('ela', 'E-K-B1'),
     practice('reasoning', 'R-A1'),
     { kind: 'new', skillId: 'M-K-A3', answered: 0, done: false },
-    { kind: 'mixed', answered: 0, done: false, locked: false },
+    { kind: 'mixed', answered: 0, size: 20, done: false, locked: false },
   ];
 
   it('one stone for each part of the plan, in the plan’s order, each with its own picture', () => {
@@ -262,14 +262,14 @@ describe("the garden layout: today's path", () => {
   });
 
   it('a Mixed bag with nothing to mix is a locked stone, and Sprout never waits on it', () => {
-    const locked: PlanPart[] = [practice('math', 'M-K-C1', { done: true, answered: 10 }), { kind: 'mixed', answered: 0, done: false, locked: true }];
+    const locked: PlanPart[] = [practice('math', 'M-K-C1', { done: true, answered: 10 }), { kind: 'mixed', answered: 0, size: 0, done: false, locked: true }];
     const layout = layoutGarden(input({ states, plan: locked }));
     expect(layout.stones[1]).toMatchObject({ state: 'locked', icon: 'basket', skillId: null });
     // Everything that can be done is done: the path is finished and Sprout stays on the last done stone.
     expect(layout.path).toBe('done');
     expect(layout.sprout.stone).toBe(0);
     // A locked stone alone is no path to follow.
-    expect(pathState([{ kind: 'mixed', answered: 0, done: false, locked: true }])).toBe('none');
+    expect(pathState([{ kind: 'mixed', answered: 0, size: 0, done: false, locked: true }])).toBe('none');
   });
 
   it('with no plan there is no path, and Sprout waits by the entrance', () => {
@@ -287,7 +287,7 @@ describe("the garden layout: today's path", () => {
       practice('math', 'M-K-A1'),
       { kind: 'new', skillId: 'M-K-A2', answered: 0, done: false },
       practice('ela', 'not-a-skill'),
-      { kind: 'mixed', answered: 0, done: false, locked: false },
+      { kind: 'mixed', answered: 0, size: 20, done: false, locked: false },
     ];
     const layout = layoutGarden(input({ plan: crowded }));
     expect(layout.stones).toHaveLength(5);

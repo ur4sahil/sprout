@@ -1,5 +1,5 @@
 import type { PlanPart } from '../app/todaysPlan';
-import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partSize } from '../app/todaysPlan';
+import { KEEP_GOING_QUESTIONS, NEW_QUESTIONS, nextPart, partSize } from '../app/todaysPlan';
 import { CAST_NAMES, Character, castFor } from '../cast';
 import { skillById } from '../content/catalogue';
 import type { Say } from '../engine/types';
@@ -29,7 +29,7 @@ function words(part: PlanPart): { icon: IconName; title: string; detail: string;
       return { icon: 'bulb', title: 'New skill', detail: `${name(part.skillId)} · ${Math.min(part.answered, NEW_QUESTIONS)} of ${NEW_QUESTIONS}`, say: ['A new skill:', ...(skillById(part.skillId)?.speakName ?? [])] };
     case 'mixed':
       if (part.locked) return { icon: 'bag', title: 'Mixed bag', detail: 'Opens when there is something to mix', say: ['Mixed bag. It opens when there is something to mix.'] };
-      return { icon: 'bag', title: 'Mixed bag', detail: `Extra practice · ${Math.min(part.answered, MIXED_QUESTIONS)} of ${MIXED_QUESTIONS}`, say: ['Mixed bag: extra practice from lots of topics.'] };
+      return { icon: 'bag', title: 'Mixed bag', detail: `Extra practice · ${Math.min(part.answered, part.size)} of ${part.size}`, say: ['Mixed bag: extra practice from lots of topics.'] };
   }
 }
 

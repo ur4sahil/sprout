@@ -79,8 +79,12 @@ function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: reado
 
 // `sessions` is set for a pick in a Play run: it lasts one session length, then stops for the next pick.
 // Practice opened by itself has no sessions: it carries on until the score reaches 100, or the child leaves.
-export function usePractice(child: Child, skill: Skill, options: { sessions?: boolean } = {}): Practice {
+// `stopAfter` is set when practice is one part of a run through today's plan: after that many answers it calls
+// `onStop` (the run goes on to the next part) instead of asking another question.
+export function usePractice(child: Child, skill: Skill, options: { sessions?: boolean; stopAfter?: number; onStop?: () => void } = {}): Practice {
   const sessions = options.sessions === true;
+  const stopAfter = options.stopAfter;
+  const onStop = options.onStop;
   const [phase, setPhase] = useState<PracticePhase>('loading');
   const [question, setQuestion] = useState<Question | null>(null);
   const [state, setState] = useState<SkillState | null>(null);
@@ -173,13 +177,17 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
   const advance = useCallback((): void => {
     const self = live.current;
     if (!self.state) return;
+    if (stopAfter !== undefined && onStop && self.answered >= stopAfter) {
+      onStop();
+      return;
+    }
     if (sessions && self.answered > 0 && self.answered % child.settings.sessionLength === 0) {
       setPhase('break');
       void speak(LINES.nextOne, child.settings.speechRate);
       return;
     }
     show(self.state, self.keys);
-  }, [child, show, sessions]);
+  }, [child, show, sessions, stopAfter, onStop]);
 
   const afterAnswer = useCallback((): void => {
     const self = live.current;

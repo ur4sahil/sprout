@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partPath, partSize, planProgress, todaysPlan } from '../../src/app/todaysPlan';
+import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partPath, partRunPath, partSize, planProgress, todaysPlan } from '../../src/app/todaysPlan';
 import { REVIEW_QUESTIONS } from '../../src/engine/review';
 import type { TodayPick } from '../../src/engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../../src/storage/schema';
@@ -57,7 +57,7 @@ describe("today's plan", () => {
   it('the Mixed bag stays open after every practised skill reached 100 (Nov 19, 2026)', () => {
     const mastered = [{ ...going('M-K-C1'), score: 100 }, { ...going('M-K-B1'), score: 100 }];
     const plan = todaysPlan({ ...base, child: child({ planPractice: [], planNew: false }), states: mastered, picks: [] });
-    expect(plan).toEqual([{ kind: 'mixed', answered: 0, done: false, locked: false }]);
+    expect(plan).toEqual([{ kind: 'mixed', answered: 0, size: 10, done: false, locked: false }]); // two topics: 5 each
   });
 
   it('the new skill stays the same all day once started, and ticks off after its answers', () => {
@@ -103,4 +103,16 @@ describe("today's plan", () => {
     expect(partSize(due(REVIEW_QUESTIONS, ['b']))).toBe(2 * REVIEW_QUESTIONS);
     expect(partSize(due(2 * REVIEW_QUESTIONS, []))).toBe(2 * REVIEW_QUESTIONS);
   });
+
+  it('the Mixed bag card counts what the bag asks: 5 for each topic, up to 20 (Nov 21, 2026)', () => {
+    const four = [going('M-K-C1'), going('M-K-B1'), going('M-K-A1'), going('E-K-B1')];
+    expect(todaysPlan({ ...base, child: child({ planPractice: [], planNew: false }), states: four, picks: [] })[0]).toMatchObject({ kind: 'mixed', size: MIXED_QUESTIONS });
+  });
+
+  it('a run goes into each part with the answers it still needs', () => {
+    expect(partRunPath({ kind: 'keepGoing', subject: 'math', skillId: 'M-K-C1', answered: 3, done: false })).toBe('/skill/M-K-C1?run=7');
+    expect(partRunPath({ kind: 'new', skillId: 'M-K-A1', answered: 0, done: false })).toBe(`/skill/M-K-A1/learn?run=${NEW_QUESTIONS}`);
+    expect(partRunPath({ kind: 'review', skillIds: ['M-K-C4'], answered: 0, done: false })).toBe('/review?run=1');
+  });
 });
+
