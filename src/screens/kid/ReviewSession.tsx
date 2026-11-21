@@ -1,13 +1,15 @@
 import { LINES } from '../../audio/lines';
 import Art from '../../visuals/Art';
 import Icon from '../../components/Icon';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useReview } from '../../app/useReview';
 import { useWakeLock } from '../../app/useWakeLock';
 import { speak, stop } from '../../audio/speech';
 import { warmQuestion } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
+import HintButton from '../../components/HintButton';
+import HintPanel from '../../components/HintPanel';
 import HoldButton from '../../components/HoldButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
@@ -62,6 +64,17 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
     return [{ skill: each, kind, done, watered, current: here && !done }];
   });
 
+  // 3 hints for the whole review, each remembered by the question it was opened on.
+  const [hintOn, setHintOn] = useState<string | null>(null);
+  const hinting = questionId !== null && hintOn === questionId && phase === 'asking';
+  const openHint = (): void => {
+    if (questionId !== null && review.hints.take(questionId)) setHintOn(questionId);
+  };
+  const closeHint = (): void => {
+    stop();
+    setHintOn(null);
+  };
+
   const kept = review.results.filter((result) => result.passed).length;
   useEffect(() => {
     if (phase === 'done') void speak(LINES.reviewDone, rate);
@@ -75,6 +88,10 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           <h1 className={styles.title}>
             <Icon name="repeat" />Review{review.skill ? `: ${review.skill.name}` : ''}
           </h1>
+          <span className={styles.spacer} />
+          {question && questionId !== null && asking && (
+            <HintButton left={review.hints.left} open={review.hints.opened(questionId)} disabled={phase !== 'asking' || !review.hints.canOpen(questionId)} onOpen={openHint} />
+          )}
         </>
       }
       side={
@@ -108,6 +125,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           onSpeak={say}
         />
       )}
+      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
       {phase === 'done' && (
         <FullScreenCard
           emoji={kept === review.results.length && kept > 0 ? '🏅' : '🌱'}

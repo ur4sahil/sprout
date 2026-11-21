@@ -4,7 +4,7 @@ import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
-import { REVIEW_QUESTIONS, applyReview, reviewLevel } from '../engine/review';
+import { REVIEW_QUESTIONS, applyReview, reviewLevel, reviewRight } from '../engine/review';
 import { seedFor } from '../engine/seed';
 import type { Question, Response } from '../engine/types';
 import { now } from '../lib/clock';
@@ -13,6 +13,9 @@ import { openRepo } from '../storage/index';
 import type { Child, Session, SkillState } from '../storage/schema';
 import { newReviewSession, recentKeys, recordReviewAnswer } from './practiceRecord';
 import { TIMING } from './timing';
+import { hintId } from './hints';
+import type { HintAllowance } from './useHintBook';
+import { useHintBook } from './useHintBook';
 import { castFor } from '../cast';
 import { praiseFor } from './usePractice';
 
@@ -46,6 +49,7 @@ export interface Review {
   lastResponse: Response | null;
   saveError: string | null;
   results: ReviewResult[];
+  hints: HintAllowance; // 3 for the whole review
   setResponse: (response: Response | null) => void;
   submit: () => void;
   gotIt: () => void;
@@ -63,11 +67,14 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
   const [saveError, setSaveError] = useState<string | null>(null);
   const [results, setResults] = useState<ReviewResult[]>([]);
   const [place, setPlace] = useState<ReviewPlace>({ index: 0, answered: 0, right: 0 });
+  const hints = useHintBook(asked);
+  const usedHint = hints.usedOn;
 
   const live = useRef<{
     index: number; // which skill
     number: number; // which of its questions, 0 to 2
     right: number;
+    helped: number; // of those right answers, the ones given after a hint
     state: SkillState | null;
     reviewsSoFar: number; // review answers this child has ever given on this skill
     keys: string[];
@@ -80,7 +87,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     rightInAll: number; // right answers in this review, over all skills
     cheer: { index: number | null }; // the friend's last cheer, so it is not said twice running
     alive: boolean;
-  }>({ index: 0, number: 0, right: 0, state: null, reviewsSoFar: 0, keys: [], session: null, question: null, shownAt: now(), asked: 0, pending: null, results: [], rightInAll: 0, cheer: { index: null }, alive: true });
+  }>({ index: 0, number: 0, right: 0, helped: 0, state: null, reviewsSoFar: 0, keys: [], session: null, question: null, shownAt: now(), asked: 0, pending: null, results: [], rightInAll: 0, cheer: { index: null }, alive: true });
 
   const show = useCallback((): void => {
     const self = live.current;
@@ -112,6 +119,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       self.index = index;
       self.number = 0;
       self.right = 0;
+      self.helped = 0;
       self.state = state;
       self.reviewsSoFar = attempts.filter((a) => a.kind === 'review').length;
       self.keys = recentKeys(attempts.map((a) => ({ ...a, kind: 'practice' as const })), current);
@@ -181,11 +189,14 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     setSaveError(null);
     setLastResponse(response);
     void (async () => {
-      const outcome = self.pending ?? recordReviewAnswer({ child, skill: current, state: self.state as SkillState, session: self.session as Session, question: q, response, shownAt: self.shownAt, answeredAt: now() });
+      const hinted = usedHint(hintId(q));
+      const outcome = self.pending ?? recordReviewAnswer({ child, skill: current, state: self.state as SkillState, session: self.session as Session, question: q, response, shownAt: self.shownAt, answeredAt: now(), hinted });
       self.pending = outcome;
       const last = self.number + 1 >= REVIEW_QUESTIONS;
       const right = self.right + (outcome.correct ? 1 : 0);
-      const reviewed = last ? applyReview(self.state as SkillState, right, now().toISOString()) : null;
+      const helped = self.helped + (outcome.correct && hinted ? 1 : 0);
+      // A right answer after a hint counts for half (`reviewRight`).
+      const reviewed = last ? applyReview(self.state as SkillState, reviewRight(right - helped, helped), now().toISOString()) : null;
       try {
         const { repo } = await openRepo();
         await repo.saveAnswer({ attempt: outcome.attempt, states: reviewed ? [reviewed.state] : [], session: outcome.session });
@@ -202,6 +213,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       self.keys = [...self.keys, q.key].slice(-6);
       self.number += 1;
       self.right = right;
+      self.helped = helped;
       self.reviewsSoFar += 1;
       self.asked += 1;
       setAsked(self.asked);
@@ -224,7 +236,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) await moveOn().catch(logError);
     })();
-  }, [child, moveOn, phase, response, skills]);
+  }, [child, moveOn, phase, response, skills, usedHint]);
 
   const gotIt = useCallback((): void => {
     if (phase !== 'wrong') return;
@@ -232,5 +244,5 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     void moveOn().catch(logError);
   }, [moveOn, phase]);
 
-  return { phase, place, question, skill, asked, total: skills.length * REVIEW_QUESTIONS, response, lastResponse, saveError, results, setResponse, submit, gotIt };
+  return { phase, place, question, skill, asked, total: skills.length * REVIEW_QUESTIONS, response, lastResponse, saveError, results, hints, setResponse, submit, gotIt };
 }

@@ -38,6 +38,13 @@ export function reviewLevel(maxLevel: Level): Level {
   return Math.min(REVIEW_LEVEL, maxLevel) as Level;
 }
 
+// What a review's right answers count as when some came after a hint (the owner's choice, Nov 21, 2026: a hinted
+// right answer counts for half). Rounded down, so moving up a box needs all 3 right with no hint, and two hinted
+// answers keep the medal only beside a third right on its own.
+export function reviewRight(unaided: number, hinted: number): number {
+  return Math.min(REVIEW_QUESTIONS, Math.floor(unaided + hinted / 2));
+}
+
 // The skill state after a review of 3 questions.
 // 3 right: up one box. 2 right: same box. 0 or 1 right: back to 85, no medal, box 0, normal practice.
 export function applyReview(state: SkillState, right: number, nowIso: string): { state: SkillState; passed: boolean } {

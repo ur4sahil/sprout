@@ -63,7 +63,7 @@ export function isDead(madeAt: string, resetAt: string | null): boolean {
   return resetAt !== null && madeAt < resetAt;
 }
 
-// attempts, correct and recent, recounted from the practice answers in the attempt log.
+// attempts, correct, hintedRight and recent, recounted from the practice answers in the attempt log.
 export function recount(state: SkillState, attempts: readonly Attempt[]): SkillState {
   const mine = attempts
     .filter((attempt) => attempt.childId === state.childId && attempt.skillId === state.skillId && attempt.kind === 'practice')
@@ -72,6 +72,7 @@ export function recount(state: SkillState, attempts: readonly Attempt[]): SkillS
     ...state,
     attempts: mine.length,
     correct: mine.filter((attempt) => attempt.correct).length,
+    hintedRight: mine.filter((attempt) => attempt.correct && attempt.hinted).length,
     recent: mine.slice(-10).map((attempt) => attempt.correct),
   };
 }

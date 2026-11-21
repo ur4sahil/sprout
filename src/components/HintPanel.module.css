@@ -1,0 +1,57 @@
+/* Over the question, which stays where it was underneath: the child comes back to it with their answer as it was. */
+.layer {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-4);
+  overflow-y: auto;
+  background: color-mix(in srgb, var(--color-ink) 35%, transparent);
+}
+
+.card {
+  composes: card from './shared.module.css';
+  height: max-content;
+  margin: auto 0;
+  align-items: center;
+}
+
+.eyebrow {
+  composes: eyebrow from './shared.module.css';
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.nudge {
+  composes: prompt from './ExplanationPanel.module.css';
+}
+
+.asked {
+  composes: asked from './ExplanationPanel.module.css';
+}
+
+.prompt {
+  composes: prompt from './ExplanationPanel.module.css';
+}
+
+.picture {
+  composes: picture from './ExplanationPanel.module.css';
+}
+
+.answer {
+  composes: answer from './ExplanationPanel.module.css';
+}
+
+.label {
+  composes: label from './ExplanationPanel.module.css';
+}
+
+.box {
+  composes: box right from './ExplanationPanel.module.css';
+}
+
+.text {
+  composes: text from './ExplanationPanel.module.css';
+}

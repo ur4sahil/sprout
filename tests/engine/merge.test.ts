@@ -20,6 +20,7 @@ function attempt(id: string, correct: boolean, createdAt: string, change: Partia
     contentVersion: 1,
     snapshot: { prompt: 'p', correct: 'c', given: 'g' },
     correct,
+    hinted: false,
     ms: 1000,
     scoreBefore: 0,
     scoreAfter: 0,
@@ -114,7 +115,7 @@ describe('recount', () => {
       attempt('other-skill', true, T(4), { skillId: 'M-K-B3' }),
       attempt('other-child', true, T(4), { childId: 'sibling' }),
     ];
-    const state = recount({ ...newSkillState('kid', 'M-K-C4', T(1)), attempts: 99, correct: 99, recent: [] }, log);
+    const state = recount({ ...newSkillState('kid', 'M-K-C4', T(1)), attempts: 99, correct: 99, hintedRight: 0, recent: [] }, log);
     expect(state.attempts).toBe(3);
     expect(state.correct).toBe(2);
     expect(state.recent).toEqual([false, true, true]);

@@ -18,6 +18,9 @@ export const LINES = {
   // The bulb's choice screen: what it offers.
   choose: ['Pick a lesson with Sprout, or an example.'],
   chooseWithVideo: ['Pick a video, a lesson with Sprout, or an example.'],
+  // A hint (the owner's choice, Nov 21, 2026): the nudge is followed by the step itself, the example by its question.
+  hintNudge: ['Here is a hint.'],
+  hintExample: ['Here is one like it, worked out.'],
 } as const satisfies Record<string, Say>;
 
 // The words and picture of each milestone card, shown and said.

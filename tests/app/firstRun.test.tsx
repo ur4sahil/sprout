@@ -284,7 +284,7 @@ describe('the saved record of an answer', () => {
     const session = newSession(child, skill.id, NOW);
     const outcome = recordAnswer({ child, skill, state: newSkillState('kid-1', skill.id, NOW.toISOString()), session, question, response: { index: wrong }, shownAt: NOW, answeredAt: new Date(NOW.getTime() + 4200) });
     expect(outcome.correct).toBe(false);
-    expect(outcome.attempt).toMatchObject({ childId: 'kid-1', skillId: 'M-K-C4', sessionId: session.id, level: 1, seed: 77, itemType: 'choice', response: { index: wrong }, contentVersion: 1, correct: false, ms: 4200, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day: '2026-03-09' });
+    expect(outcome.attempt).toMatchObject({ childId: 'kid-1', skillId: 'M-K-C4', sessionId: session.id, level: 1, seed: 77, itemType: 'choice', response: { index: wrong }, contentVersion: 1, correct: false, hinted: false, ms: 4200, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day: '2026-03-09' });
     expect(outcome.attempt.snapshot.correct).toBe(describeAnswer(question));
     expect(outcome.attempt.snapshot.given).toBe(describeResponse(question, { index: wrong }));
     expect(outcome.attempt.snapshot.given).not.toBe(outcome.attempt.snapshot.correct);
@@ -356,7 +356,7 @@ describe('the grown-ups bar on the profile page', () => {
     // A skill practised today is one of the plan's skills to practice, so its answers count toward the goal.
     await store.saveSkillState({ ...newSkillState(child.id, 'M-K-C4', NOW.toISOString()), attempts: 4, correct: 4, score: 30, lastPracticedAt: NOW.toISOString() });
     for (let i = 0; i < 4; i += 1) {
-      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: 'M-K-C4', sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: NOW.toISOString() });
+      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: 'M-K-C4', sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, hinted: false, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: NOW.toISOString() });
     }
     openApp();
     const bar = await screen.findByRole('group', { name: 'For grown-ups' });

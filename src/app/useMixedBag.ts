@@ -14,6 +14,9 @@ import { newSkillState } from '../storage/schema';
 import { mixable, mixedBagOrder, mixedTurn } from './mixedBag';
 import { newSession, recentKeys, recordAnswer } from './practiceRecord';
 import { TIMING } from './timing';
+import { hintId } from './hints';
+import type { HintAllowance } from './useHintBook';
+import { useHintBook } from './useHintBook';
 import { castFor } from '../cast';
 import { praiseFor } from './usePractice';
 
@@ -33,6 +36,7 @@ export interface MixedBag {
   response: Response | null;
   lastResponse: Response | null;
   saveError: string | null;
+  hints: HintAllowance; // 3 for the whole bag
   setResponse: (response: Response | null) => void;
   submit: () => void;
   gotIt: () => void;
@@ -50,6 +54,8 @@ export function useMixedBag(child: Child): MixedBag {
   const [response, setResponse] = useState<Response | null>(null);
   const [lastResponse, setLastResponse] = useState<Response | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
+  const hints = useHintBook(asked);
+  const usedHint = hints.usedOn;
 
   const live = useRef<{
     order: string[];
@@ -147,7 +153,7 @@ export function useMixedBag(child: Child): MixedBag {
     setLastResponse(response);
     void (async () => {
       const session = self.sessions.get(current.id) ?? { ...newSession(child, current.id, now()), mixed: true };
-      const outcome = self.pending ?? recordAnswer({ child, skill: current, state, session, question: q, response, shownAt: self.shownAt, answeredAt: now() });
+      const outcome = self.pending ?? recordAnswer({ child, skill: current, state, session, question: q, response, shownAt: self.shownAt, answeredAt: now(), hinted: usedHint(hintId(q)) });
       self.pending = outcome;
       try {
         const { repo } = await openRepo();
@@ -180,7 +186,7 @@ export function useMixedBag(child: Child): MixedBag {
       await Promise.all([wait(TIMING.praiseMinMs), Promise.race([spoken, wait(TIMING.praiseMaxMs)])]);
       if (self.alive) next();
     })();
-  }, [child, next, phase, response]);
+  }, [child, next, phase, response, usedHint]);
 
   const gotIt = useCallback((): void => {
     if (phase !== 'wrong') return;
@@ -188,5 +194,5 @@ export function useMixedBag(child: Child): MixedBag {
     next();
   }, [next, phase]);
 
-  return { phase, question, skill, asked, right, total, response, lastResponse, saveError, setResponse, submit, gotIt };
+  return { phase, question, skill, asked, right, total, response, lastResponse, saveError, hints, setResponse, submit, gotIt };
 }

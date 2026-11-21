@@ -42,7 +42,7 @@ async function typePin(user: User, pin: string): Promise<void> {
 }
 
 function attempt(id: string, skillId: string, day: string, ms: number, correct = true): Attempt {
-  return { id, childId: 'kid-1', skillId, sessionId: 's-1', level: 1, seed: 1, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct, ms, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day, createdAt: `${day}T15:00:00.000Z` };
+  return { id, childId: 'kid-1', skillId, sessionId: 's-1', level: 1, seed: 1, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct, hinted: false, ms, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day, createdAt: `${day}T15:00:00.000Z` };
 }
 
 describe('the PIN', () => {
@@ -236,8 +236,8 @@ describe('what the dashboard and scores are made from', () => {
 async function practised(child: Child): Promise<void> {
   const store = await repo();
   const today = localDay(NOW);
-  await store.saveSkillState({ ...newSkillState(child.id, 'M-K-C4', NOW.toISOString()), score: 100, bestScore: 100, attempts: 5, correct: 5, recent: [true, true, true, true, true], masteredAt: NOW.toISOString(), lastPracticedAt: NOW.toISOString() });
-  await store.saveSkillState({ ...newSkillState(child.id, 'M-K-A1', NOW.toISOString()), score: 40, bestScore: 40, attempts: 2, correct: 2, recent: [true, true], lastPracticedAt: NOW.toISOString() });
+  await store.saveSkillState({ ...newSkillState(child.id, 'M-K-C4', NOW.toISOString()), score: 100, bestScore: 100, attempts: 5, correct: 5, hintedRight: 0, recent: [true, true, true, true, true], masteredAt: NOW.toISOString(), lastPracticedAt: NOW.toISOString() });
+  await store.saveSkillState({ ...newSkillState(child.id, 'M-K-A1', NOW.toISOString()), score: 40, bestScore: 40, attempts: 2, correct: 2, hintedRight: 0, recent: [true, true], lastPracticedAt: NOW.toISOString() });
   for (let i = 0; i < 7; i += 1) await store.addAttempt(attempt(`t-${i}`, i < 5 ? 'M-K-C4' : 'M-K-A1', today, 30_000));
   await store.saveDiagnostic({ id: 'd-1', childId: child.id, subject: 'math', ladderId: 'counting', placementSkillId: 'M-K-A3', estimateGrade: 'K', estimateFraction: 2 / 7, takenAt: NOW.toISOString() });
 }

@@ -37,6 +37,7 @@ function answered(id: string, skillId: string, seed: number, correct: boolean, m
     contentVersion: skillById(skillId)?.version ?? 1,
     snapshot: { prompt: describePrompt(question), correct: describeAnswer(question), given: describeResponse(question, { index }) },
     correct,
+    hinted: false,
     ms: 5000,
     scoreBefore: 0,
     scoreAfter: 0,
@@ -89,14 +90,14 @@ describe('the question log filters', () => {
 
 function struggling(skillId: string): { state: SkillState; attempts: Attempt[] } {
   const attempts = [true, false, false, true, false, false].map((correct, i) => answered(`${skillId}-${i}`, skillId, 100 + i, correct, 60 - i));
-  return { state: { ...newSkillState('kid-1', skillId, NOW.toISOString()), score: 12, attempts: 6, correct: 2, recent: [true, false, false, true, false, false], lastPracticedAt: NOW.toISOString() }, attempts };
+  return { state: { ...newSkillState('kid-1', skillId, NOW.toISOString()), score: 12, attempts: 6, correct: 2, hintedRight: 0, recent: [true, false, false, true, false, false], lastPracticedAt: NOW.toISOString() }, attempts };
 }
 
 describe('trouble spots', () => {
   it('lists a skill with 5 or more recent answers, mostly wrong, with its three newest misses', () => {
     const skills = CATALOGUE.filter((skill) => ['M-K-C4', 'M-K-A1'].includes(skill.id));
     const hard = struggling('M-K-C4');
-    const fine = { ...newSkillState('kid-1', 'M-K-A1', NOW.toISOString()), score: 60, attempts: 6, correct: 5, recent: [true, true, true, false, true, true] };
+    const fine = { ...newSkillState('kid-1', 'M-K-A1', NOW.toISOString()), score: 60, attempts: 6, correct: 5, hintedRight: 0, recent: [true, true, true, false, true, true] };
     const spots = troubleSpots(skills, [hard.state, fine], [...hard.attempts, ...[0, 1, 2, 3, 4, 5].map((i) => answered(`f-${i}`, 'M-K-A1', i, true, i))]);
     expect(spots.map((spot) => spot.skill.id)).toEqual(['M-K-C4']);
     // The three most recent wrong answers, newest first.

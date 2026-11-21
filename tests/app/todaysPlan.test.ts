@@ -12,7 +12,7 @@ const NOW = `${TODAY}T16:30:00.000Z`;
 const child = (change: Partial<Child['settings']> = {}): Child => ({ id: 'kid-1', name: 'Robin', avatar: '🐢', grade: 'K', settings: { ...defaultSettings('K'), ...change }, resetAt: null, levelWeeks: [], storiesRead: [], stickersPlaced: [], createdAt: NOW, updatedAt: NOW, deletedAt: null });
 const going = (skillId: string, at = NOW): SkillState => ({ ...newSkillState('kid-1', skillId, NOW), attempts: 4, correct: 2, score: 30, lastPracticedAt: at });
 let made = 0;
-const answer = (skillId: string, sessionId = 's1', day = TODAY): Attempt => ({ id: `${skillId}-${(made += 1)}`, childId: 'kid-1', skillId, sessionId, level: 1, seed: 1, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: '', correct: '', given: '' }, correct: true, ms: 3000, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day, createdAt: NOW });
+const answer = (skillId: string, sessionId = 's1', day = TODAY): Attempt => ({ id: `${skillId}-${(made += 1)}`, childId: 'kid-1', skillId, sessionId, level: 1, seed: 1, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: '', correct: '', given: '' }, correct: true, hinted: false, ms: 3000, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day, createdAt: NOW });
 const session = (id: string, mixed: boolean): Session => ({ id, childId: 'kid-1', kind: 'practice', skillId: null, startedAt: NOW, endedAt: null, questions: 1, correct: 1, day: TODAY, mixed });
 const next = (skillId: string): TodayPick => ({ skillId, reason: 'next' });
 const base = { today: TODAY, reviewsDue: [] as string[], attempts: [] as Attempt[], sessions: [] as Session[] };

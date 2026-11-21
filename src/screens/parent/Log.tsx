@@ -89,6 +89,7 @@ export default function Log() {
                 <div className={styles.line}>
                   <span className={styles.soft}>
                     {attempt.day} · {skill ? `${skill.code} ${skill.name}` : attempt.skillId} · level {attempt.level} · {KIND[attempt.kind]}
+                    {attempt.hinted && <span data-hinted=""> · with a hint</span>}
                   </span>
                   {flagged ? (
                     <span className={styles.chip} data-flagged="">

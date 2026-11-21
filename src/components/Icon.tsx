@@ -109,6 +109,13 @@ const DRAWINGS = {
   bag: <path d="M5 8h14l-1.2 12H6.2zM9 8V6.5a3 3 0 0 1 6 0V8" />,
   // A hand pointing up with one finger, for a lesson that points at what it counts.
   point: <path d="M9 12V4.5a1.5 1.5 0 0 1 3 0V11M12 10.5V9a1.5 1.5 0 0 1 3 0v2M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3.8 15a1.5 1.5 0 0 1 2.4-1.8L9 15.5" />,
+  // A key, for a hint: a little help that opens the way.
+  hint: (
+    <>
+      <circle cx="8" cy="15" r="4" />
+      <path d="M11 12l8-8M16 7l2 2M14 9l2 2" />
+    </>
+  ),
 } satisfies Record<string, ReactNode>;
 
 export type IconName = keyof typeof DRAWINGS;

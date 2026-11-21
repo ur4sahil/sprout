@@ -21,9 +21,12 @@ import type { Child, Session, SkillState } from '../storage/schema';
 import { newSkillState } from '../storage/schema';
 import type { GrowthStage } from '../worlds';
 import { growthStage } from '../worlds';
+import { HINT_REFILL_EVERY, hintId } from './hints';
 import type { AnswerOutcome } from './practiceRecord';
 import { newSession, recentKeys, recordAnswer } from './practiceRecord';
 import { TIMING } from './timing';
+import type { HintAllowance } from './useHintBook';
+import { useHintBook } from './useHintBook';
 
 // One child practising one skill: which question is showing, and what happens after each answer.
 
@@ -43,6 +46,7 @@ export interface Practice {
   milestone: number | null; // the one being celebrated
   saveError: string | null;
   startedAt: string | null;
+  hints: HintAllowance | null; // null during the short test on a new skill, which takes no hints
   setResponse: (response: Response | null) => void;
   submit: (response?: Response) => void;
   gotIt: () => void; // closes the explanation
@@ -98,8 +102,13 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
   const [milestone, setMilestone] = useState<number | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [startedAt, setStartedAt] = useState<string | null>(null);
+  const [testing, setTesting] = useState(false);
+  // 3 hints for each part: a Play pick's session, or this part of today's plan. Practice opened by itself has no
+  // parts, so the 3 come back every 10 answers.
+  const hintBook = useHintBook(answered, sessions ? child.settings.sessionLength : stopAfter !== undefined ? undefined : HINT_REFILL_EVERY);
 
   // What the answer flow needs between renders.
+  const usedHint = hintBook.usedOn;
   const live = useRef<{
     state: SkillState | null;
     session: Session | null;
@@ -143,6 +152,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         // The skill before this one, mastered without a miss, earns a two-question test on this one.
         const before = ladderPrerequisite(skill.id);
         self.testLeft = earnsSkipTest(saved, all.find((s) => s.skillId === before)) ? SKIP_TEST_QUESTIONS : 0;
+        setTesting(self.testLeft > 0);
         const attempts = await repo.listAttempts(child.id, { skillId: skill.id, limit: 12 });
         if (!self.alive) return;
         self.state = start;
@@ -218,7 +228,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
       void (async () => {
         const outcome =
           self.pending ??
-          recordAnswer({ child, skill, state: self.state as SkillState, session: self.session as Session, question: q, response: answer, shownAt: self.shownAt, answeredAt: now() });
+          recordAnswer({ child, skill, state: self.state as SkillState, session: self.session as Session, question: q, response: answer, shownAt: self.shownAt, answeredAt: now(), hinted: self.testLeft === 0 && usedHint(hintId(q)) });
         self.pending = outcome;
         try {
           // Each answer is saved before the next question renders. Leaving mid-session loses nothing.
@@ -243,6 +253,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
 
         if (!outcome.correct) {
           self.testLeft = 0; // a miss ends the short test, and ordinary practice carries on
+          setTesting(false);
           // No buzzer. It says "Not quite", then the explanation is read aloud, and it waits for "Got it".
           runSoFar.current = 0;
           setRun(0);
@@ -253,6 +264,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         // The short test: every answer right and the skill is passed without practising it.
         if (self.testLeft > 0) {
           self.testLeft -= 1;
+          if (self.testLeft === 0) setTesting(false);
           if (self.testLeft === 0) {
             const passed = passedByTest(outcome.state, now().toISOString());
             try {
@@ -286,7 +298,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         if (self.alive) afterAnswer();
       })();
     },
-    [afterAnswer, child, phase, response, skill],
+    [afterAnswer, child, phase, response, skill, usedHint],
   );
 
   const gotIt = useCallback((): void => {
@@ -309,5 +321,5 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     show(self.state, self.keys);
   }, [phase, show]);
 
-  return { phase, question, state, answered, run, right, startStage, response, lastResponse, milestone, saveError, startedAt, setResponse, submit, gotIt, afterCelebration, keepGoing };
+  return { phase, question, state, answered, run, right, startStage, response, lastResponse, milestone, saveError, startedAt, hints: testing ? null : hintBook, setResponse, submit, gotIt, afterCelebration, keepGoing };
 }

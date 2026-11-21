@@ -21,7 +21,7 @@ describe('a worksheet', () => {
   });
 
   it('asks at the child\'s level, or one easier or harder', () => {
-    const state = { childId: 'kid-1', skillId: 'M-1-B1', score: 75, bestScore: 75, streak: 0, attempts: 10, correct: 8, recent: [], masteredAt: null, placedOut: false, reviewBox: 0, reviewDueAt: null, lastPracticedAt: null, updatedAt: '2026-03-08T10:00:00.000Z' };
+    const state = { childId: 'kid-1', skillId: 'M-1-B1', score: 75, bestScore: 75, streak: 0, attempts: 10, correct: 8, hintedRight: 0, recent: [], masteredAt: null, placedOut: false, reviewBox: 0, reviewDueAt: null, lastPracticedAt: null, updatedAt: '2026-03-08T10:00:00.000Z' };
     const at = (shift: -1 | 0 | 1) => buildSheet(skills('M-1-B1'), [state], { skillIds: ['M-1-B1'], count: 4, shift, seed: 7 }).items.map((item) => item.question.level);
     expect(at(0)).toEqual([3, 3, 3, 3]);
     expect(at(-1)).toEqual([2, 2, 2, 2]);

@@ -163,6 +163,7 @@ export function useDiagnostic(child: Child, subject: DiagnosticSubject): Diagnos
           contentVersion: skill.version,
           snapshot: { prompt: describePrompt(q), correct: describeAnswer(q), given: given === null ? DONT_KNOW : describeResponse(q, given) },
           correct,
+          hinted: false, // the check-in never offers a hint
           ms: Math.min(Math.max(at.getTime() - self.shownAt.getTime(), 0), TIMING.maxAnswerMs),
           // A check-in answer never changes a Skill Score.
           scoreBefore: score,

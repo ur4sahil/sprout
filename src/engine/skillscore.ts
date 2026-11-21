@@ -70,9 +70,16 @@ export interface ScoreResult {
   mastered: boolean; // true when this answer reached 100
 }
 
+// A right answer given after a hint gains half its band's points (rounded up), with no streak bonus, and leaves
+// the streak where it was (the owner's choice, Nov 21, 2026). A wrong answer after a hint is like any wrong answer.
+export function hintedGain(band: number): number {
+  return Math.ceil(band / 2);
+}
+
 // The new score and streak after one practice answer.
-export function applyAnswer(state: ScoreState, correct: boolean, gentle: boolean): ScoreResult {
-  const streak = correct ? state.streak + 1 : 0;
+export function applyAnswer(state: ScoreState, correct: boolean, gentle: boolean, hinted = false): ScoreResult {
+  const helped = correct && hinted;
+  const streak = correct ? (helped ? state.streak : state.streak + 1) : 0;
   // Rule 5: once mastered, practice never lowers the score.
   if (state.masteredAt !== null || state.score >= 100) return { score: 100, streak, mastered: false };
 
@@ -81,12 +88,13 @@ export function applyAnswer(state: ScoreState, correct: boolean, gentle: boolean
     const loss = gentle ? band.gentleLoss : band.loss;
     return { score: Math.max(0, state.score - loss), streak, mastered: false };
   }
+  const gain = helped ? hintedGain(band.gain) : band.gain;
   let score: number;
   if (state.score < CHALLENGE) {
-    const bonus = Math.min(3, Math.max(0, state.streak - 1)); // rule 1
-    score = Math.min(CHALLENGE, state.score + band.gain + bonus); // rule 2
+    const bonus = helped ? 0 : Math.min(3, Math.max(0, state.streak - 1)); // rule 1
+    score = Math.min(CHALLENGE, state.score + gain + bonus); // rule 2
   } else {
-    score = Math.min(100, state.score + band.gain);
+    score = Math.min(100, state.score + gain);
   }
   return { score, streak, mastered: score >= 100 };
 }
@@ -97,11 +105,12 @@ export interface PracticeResult {
   mastered: boolean;
 }
 
-// The whole skill state after one practice answer.
-export function applyPractice(state: SkillState, correct: boolean, gentle: boolean, nowIso: string): PracticeResult {
-  const result = applyAnswer(state, correct, gentle);
-  // The fast track: the first five answers on a skill, all right, take the score straight to the challenge zone.
-  if (correct && state.attempts === FAST_RUN - 1 && state.correct === FAST_RUN - 1 && result.score < CHALLENGE) result.score = CHALLENGE;
+// The whole skill state after one practice answer. `hinted`: the child opened a hint on this question.
+export function applyPractice(state: SkillState, correct: boolean, gentle: boolean, nowIso: string, hinted = false): PracticeResult {
+  const helped = correct && hinted;
+  const result = applyAnswer(state, correct, gentle, hinted);
+  // The fast track: the first five answers on a skill, all right without a hint, take the score straight to the challenge zone.
+  if (correct && !helped && state.attempts === FAST_RUN - 1 && state.correct === FAST_RUN - 1 && state.hintedRight === 0 && result.score < CHALLENGE) result.score = CHALLENGE;
   const milestones = MILESTONES.filter((mark) => result.score >= mark && state.bestScore < mark);
   const next: SkillState = {
     ...state,
@@ -110,6 +119,7 @@ export function applyPractice(state: SkillState, correct: boolean, gentle: boole
     streak: result.streak,
     attempts: state.attempts + 1,
     correct: state.correct + (correct ? 1 : 0),
+    hintedRight: state.hintedRight + (helped ? 1 : 0),
     recent: [...state.recent, correct].slice(-10),
     lastPracticedAt: nowIso,
     updatedAt: nowIso,

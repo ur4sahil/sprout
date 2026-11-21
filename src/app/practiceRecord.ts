@@ -28,11 +28,13 @@ export function recordAnswer(input: {
   response: Response;
   shownAt: Date;
   answeredAt: Date;
+  hinted?: boolean; // the child opened a hint on this question: a right answer counts for half
 }): AnswerOutcome {
   const { child, skill, state, session, question, response, shownAt, answeredAt } = input;
+  const hinted = input.hinted === true;
   const correct = check(question, response);
   const at = answeredAt.toISOString();
-  const result = applyPractice(state, correct, child.settings.gentleScoring, at);
+  const result = applyPractice(state, correct, child.settings.gentleScoring, at, hinted);
   const ms = Math.min(Math.max(answeredAt.getTime() - shownAt.getTime(), 0), TIMING.maxAnswerMs);
   const attempt: Attempt = {
     id: newId(),
@@ -46,6 +48,7 @@ export function recordAnswer(input: {
     contentVersion: skill.version,
     snapshot: { prompt: describePrompt(question), correct: describeAnswer(question), given: describeResponse(question, response) },
     correct,
+    hinted,
     ms,
     scoreBefore: state.score,
     scoreAfter: result.state.score,
@@ -86,8 +89,9 @@ export function recentKeys(attempts: readonly Attempt[], skill: Skill): string[]
 
 // One review answer. Review answers are logged with kind `review` and never change the score by themselves:
 // the result of the whole review is applied once, after its last question.
-export function recordReviewAnswer(input: { child: Child; skill: Skill; state: SkillState; session: Session; question: Question; response: Response; shownAt: Date; answeredAt: Date }): { correct: boolean; attempt: Attempt; session: Session } {
+export function recordReviewAnswer(input: { child: Child; skill: Skill; state: SkillState; session: Session; question: Question; response: Response; shownAt: Date; answeredAt: Date; hinted?: boolean }): { correct: boolean; attempt: Attempt; session: Session } {
   const { child, skill, state, session, question, response, shownAt, answeredAt } = input;
+  const hinted = input.hinted === true;
   const correct = check(question, response);
   const attempt: Attempt = {
     id: newId(),
@@ -101,6 +105,7 @@ export function recordReviewAnswer(input: { child: Child; skill: Skill; state: S
     contentVersion: skill.version,
     snapshot: { prompt: describePrompt(question), correct: describeAnswer(question), given: describeResponse(question, response) },
     correct,
+    hinted,
     ms: Math.min(Math.max(answeredAt.getTime() - shownAt.getTime(), 0), TIMING.maxAnswerMs),
     scoreBefore: state.score,
     scoreAfter: state.score,

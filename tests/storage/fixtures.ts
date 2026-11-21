@@ -24,6 +24,7 @@ export function attempt(id: string, childId: string, skillId: string, correct: b
     contentVersion: 1,
     snapshot: { prompt: 'How many?', correct: '3', given: '3' },
     correct,
+    hinted: false,
     ms: 4000,
     scoreBefore: 0,
     scoreAfter: 10,

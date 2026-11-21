@@ -60,7 +60,7 @@ const ORDER = 'M-K-B3';
 // A mastered skill. `dueInDays` below zero means its review is due.
 function mastered(skillId: string, dueInDays: number): SkillState {
   const at = addDays(NOW.toISOString(), -3);
-  return { childId: 'kid-1', skillId, score: 100, bestScore: 100, streak: 6, attempts: 20, correct: 19, recent: Array.from({ length: 10 }, () => true), masteredAt: at, placedOut: false, reviewBox: 0, reviewDueAt: addDays(NOW.toISOString(), dueInDays), lastPracticedAt: at, updatedAt: at };
+  return { childId: 'kid-1', skillId, score: 100, bestScore: 100, streak: 6, attempts: 20, correct: 19, hintedRight: 0, recent: Array.from({ length: 10 }, () => true), masteredAt: at, placedOut: false, reviewBox: 0, reviewDueAt: addDays(NOW.toISOString(), dueInDays), lastPracticedAt: at, updatedAt: at };
 }
 
 // Marks every skill that is ready as mastered and not due, except the ones named.
@@ -162,7 +162,7 @@ describe('home', () => {
     const at = NOW.toISOString();
     await store.saveSkillState({ ...newSkillState(child.id, ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
     for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
-      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
+      await store.addAttempt({ id: `t-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, hinted: false, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
     }
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
@@ -179,7 +179,7 @@ describe('home', () => {
     const at = NOW.toISOString();
     await store.saveSkillState({ ...newSkillState(child.id, ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
     for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
-      await store.addAttempt({ id: `s-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
+      await store.addAttempt({ id: `s-${i}`, childId: child.id, skillId: ADD, sessionId: 's-1', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, hinted: false, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
     }
     // No story book yet: nothing has been read.
     const user = openApp();
@@ -255,7 +255,7 @@ describe('home as the garden, or as a list', () => {
     const at = NOW.toISOString();
     await store.saveSkillState({ ...newSkillState('kid-1', ADD, at), attempts: KEEP_GOING_QUESTIONS, correct: KEEP_GOING_QUESTIONS, score: 60, lastPracticedAt: at });
     for (let i = 0; i < KEEP_GOING_QUESTIONS; i += 1) {
-      await store.addAttempt({ id: `g-${i}`, childId: 'kid-1', skillId: ADD, sessionId: 's-g', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
+      await store.addAttempt({ id: `g-${i}`, childId: 'kid-1', skillId: ADD, sessionId: 's-g', level: 1, seed: i, itemType: 'choice', response: { index: 0 }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, hinted: false, ms: 1000, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day: localDay(NOW), createdAt: at });
     }
     const user = openApp();
     await user.click(await screen.findByRole('button', { name: 'Robin' }));
@@ -490,7 +490,7 @@ describe('the daily limit', () => {
 
   it('the limit is for the local day: tomorrow the child can play again, and 0 means no limit', async () => {
     const child = await setUp('K', { dailyMinutes: 1 });
-    const attempt = (createdAt: string, day: string, ms: number): Attempt => ({ id: `a-${createdAt}`, childId: 'kid-1', skillId: ADD, sessionId: 's', level: 1, seed: 1, itemType: 'choice', response: { type: 'choice', optionId: 'a' }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, ms, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day, createdAt });
+    const attempt = (createdAt: string, day: string, ms: number): Attempt => ({ id: `a-${createdAt}`, childId: 'kid-1', skillId: ADD, sessionId: 's', level: 1, seed: 1, itemType: 'choice', response: { type: 'choice', optionId: 'a' }, contentVersion: 1, snapshot: { prompt: 'p', correct: 'c', given: 'g' }, correct: true, hinted: false, ms, scoreBefore: 0, scoreAfter: 10, kind: 'practice', day, createdAt });
     const base = { child, states: [], sessions: [], plans: [], diagnostics: [], canListen: true };
     const yesterday = attempt(addDays(NOW.toISOString(), -1), '2026-03-08', 120_000);
     const today = (ms: number): Attempt => attempt(NOW.toISOString(), '2026-03-09', ms);

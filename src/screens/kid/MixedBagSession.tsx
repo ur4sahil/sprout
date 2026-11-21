@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useMixedBag } from '../../app/useMixedBag';
 import { useWakeLock } from '../../app/useWakeLock';
 import { LINES } from '../../audio/lines';
@@ -6,6 +6,8 @@ import { speak, stop } from '../../audio/speech';
 import { warmQuestion } from '../../audio/voice';
 import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
+import HintButton from '../../components/HintButton';
+import HintPanel from '../../components/HintPanel';
 import HoldButton from '../../components/HoldButton';
 import Icon from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
@@ -41,6 +43,18 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
     if (phase === 'done') void speak(LINES.mixedDone, rate);
   }, [phase, rate]);
 
+  // 3 hints for the whole bag, each remembered by the question it was opened on.
+  const asking = phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong';
+  const [hintOn, setHintOn] = useState<string | null>(null);
+  const hinting = questionId !== null && hintOn === questionId && phase === 'asking';
+  const openHint = (): void => {
+    if (questionId !== null && bag.hints.take(questionId)) setHintOn(questionId);
+  };
+  const closeHint = (): void => {
+    stop();
+    setHintOn(null);
+  };
+
   return (
     <KidScreen
       bar={
@@ -50,6 +64,10 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
             <Icon name="bag" />
             Mixed bag{bag.skill ? `: ${bag.skill.name}` : ''}
           </h1>
+          <span className={styles.spacer} />
+          {question && questionId !== null && asking && (
+            <HintButton left={bag.hints.left} open={bag.hints.opened(questionId)} disabled={phase !== 'asking' || !bag.hints.canOpen(questionId)} onOpen={openHint} />
+          )}
         </>
       }
       side={
@@ -64,7 +82,7 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
       {phase === 'failed' && <Notice role="alert">The Mixed bag could not be opened. Go back and try again.</Notice>}
-      {question && bag.skill && (phase === 'asking' || phase === 'saving' || phase === 'correct' || phase === 'wrong') && (
+      {question && bag.skill && asking && (
         // The bag is a basket (game feel, phase 5): each question flies out of it as a card edged in its subject's colour.
         <div className={bagStyles.bag} data-subject={bag.skill.subject}>
           <svg key={question.key} className={bagStyles.basket} viewBox="0 0 60 40" aria-hidden="true" data-basket="">
@@ -85,6 +103,7 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
           />
         </div>
       )}
+      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
       {(phase === 'done' || phase === 'none') && (
         <FullScreenCard
           emoji={phase === 'done' ? '🎒' : '🌱'}

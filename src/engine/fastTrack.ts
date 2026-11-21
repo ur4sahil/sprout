@@ -10,9 +10,9 @@ export const FAST_RUN = 5;
 export const SKIP_TEST_QUESTIONS = 2;
 export const SKIPPED_SCORE = 80; // the same score the check-in gives a skill it places a child past
 
-// Mastered, and never answered wrong on the way.
-export function flawless(state: Pick<SkillState, 'masteredAt' | 'attempts' | 'correct'> | undefined): boolean {
-  return state !== undefined && state.masteredAt !== null && state.attempts > 0 && state.attempts === state.correct;
+// Mastered, never answered wrong on the way, and never helped by a hint.
+export function flawless(state: Pick<SkillState, 'masteredAt' | 'attempts' | 'correct' | 'hintedRight'> | undefined): boolean {
+  return state !== undefined && state.masteredAt !== null && state.attempts > 0 && state.attempts === state.correct && state.hintedRight === 0;
 }
 
 // Whether a child opening this skill starts with the test: the skill is untouched, and the one before

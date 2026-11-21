@@ -94,6 +94,7 @@ export const skillStateSchema = z.object({
   streak: z.number().int().min(0), // consecutive correct, resets on a miss
   attempts: z.number().int().min(0),
   correct: z.number().int().min(0),
+  hintedRight: z.number().int().min(0).default(0), // right answers given after a hint (they count for half)
   recent: z.array(z.boolean()).max(10), // last 10 results, newest last
   masteredAt: iso.nullable(),
   placedOut: z.boolean(), // set by the diagnostic
@@ -127,6 +128,7 @@ export const attemptSchema = z.object({
   contentVersion: z.number().int().min(1), // the skill's version when answered
   snapshot: z.object({ prompt: z.string(), correct: z.string(), given: z.string() }),
   correct: z.boolean(),
+  hinted: z.boolean().default(false), // the child opened a hint on this question before answering
   ms: z.number().int().min(0).max(120_000), // question shown to answer submitted, capped
   scoreBefore: z.number().int().min(0).max(100),
   scoreAfter: z.number().int().min(0).max(100),
@@ -268,6 +270,7 @@ export function newSkillState(childId: string, skillId: string, nowIso: string):
     streak: 0,
     attempts: 0,
     correct: 0,
+    hintedRight: 0,
     recent: [],
     masteredAt: null,
     placedOut: false,

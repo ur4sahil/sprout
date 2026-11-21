@@ -13,6 +13,8 @@ import BigButton from '../../components/BigButton';
 import Celebration from '../../components/Celebration';
 import FullScreenCard from '../../components/FullScreenCard';
 import type { GrowthInfo } from '../../components/GrowthShow';
+import HintButton from '../../components/HintButton';
+import HintPanel from '../../components/HintPanel';
 import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
@@ -97,6 +99,17 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   const [drawingOn, setDrawingOn] = useState<string | null>(null);
   const drawing = questionId !== null && drawingOn === questionId;
   const setDrawing = (open: boolean): void => setDrawingOn(open ? questionId : null);
+  // A hint is remembered by its question in the same way. No hint during the short test on a new skill.
+  const hints = practice.hints;
+  const [hintOn, setHintOn] = useState<string | null>(null);
+  const hinting = questionId !== null && hintOn === questionId && phase === 'asking';
+  const openHint = (): void => {
+    if (questionId !== null && hints?.take(questionId)) setHintOn(questionId);
+  };
+  const closeHint = (): void => {
+    stop();
+    setHintOn(null);
+  };
 
   // The games are offered when a skill is mastered, and between the picks of a Play run.
   // Pop needs a skill in progress whose next question is a choice.
@@ -155,6 +168,9 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
           </div>
           <span className={styles.spacer} />
           {canDraw && question && phase === 'asking' && <IconButton icon="pencil" label="Open the scratchpad" onClick={() => setDrawing(true)} />}
+          {hints && question && questionId !== null && asking && (
+            <HintButton left={hints.left} open={hints.opened(questionId)} disabled={phase !== 'asking' || !hints.canOpen(questionId)} onOpen={openHint} />
+          )}
           <IconButton icon="bulb" label="Learn this skill" onClick={() => void navigate(`/skill/${skill.id}/learn${run ? `?run=${Math.max(run.left - practice.answered, 1)}` : ''}`, { replace: true })} />
         </>
       }
@@ -207,6 +223,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
       )}
       {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} growth={growth} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
+      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
     </KidScreen>
   );
 }
