@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { removeOldClips, resetClips } from '../../src/audio/clips';
 import { setMuted } from '../../src/audio/mute';
+import { audioContext, wakeAudioOnTaps } from '../../src/audio/context';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
 import { LESSON_PAUSE_MS, isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
 import { openRepo } from '../../src/storage/index';
@@ -264,6 +265,86 @@ describe('sound effects', () => {
     await unlockAudio();
     await unlockAudio();
     expect(events).toEqual(['resume']);
+  });
+
+  it('a tap anywhere wakes the sound again after the iPad stopped it, suspended or interrupted', async () => {
+    installAudio();
+    const stopListening = wakeAudioOnTaps();
+    try {
+      const ctx = audioContext() as unknown as { state: string };
+      document.body.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      await Promise.resolve();
+      expect(events).toEqual(['resume']);
+      // Running: a tap does nothing.
+      document.body.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      await Promise.resolve();
+      expect(events).toEqual(['resume']);
+      // The screen locked: Safari says "interrupted". The next tap, touch or key brings it back.
+      ctx.state = 'interrupted';
+      document.body.dispatchEvent(new Event('touchend', { bubbles: true }));
+      await Promise.resolve();
+      ctx.state = 'suspended';
+      document.body.dispatchEvent(new Event('keydown', { bubbles: true }));
+      await Promise.resolve();
+      expect(events).toEqual(['resume', 'resume', 'resume']);
+    } finally {
+      stopListening();
+    }
+  });
+
+  it('a tap a screen stops still wakes the sound, because the listener runs first', async () => {
+    installAudio();
+    const stopListening = wakeAudioOnTaps();
+    const button = document.createElement('div');
+    button.addEventListener('pointerdown', (event) => event.stopPropagation());
+    document.body.append(button);
+    try {
+      button.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      await Promise.resolve();
+      expect(events).toEqual(['resume']);
+    } finally {
+      button.remove();
+      stopListening();
+    }
+  });
+
+  it('a closed context is left alone, and calling it twice listens once', async () => {
+    installAudio();
+    const first = wakeAudioOnTaps();
+    const second = wakeAudioOnTaps();
+    try {
+      (audioContext() as unknown as { state: string }).state = 'closed';
+      document.body.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      await Promise.resolve();
+      expect(events).toEqual([]);
+    } finally {
+      second();
+      first();
+    }
+  });
+
+  it('asks the device to play Sprout as media, so the silent switch does not mute it', () => {
+    const session = { type: 'auto' };
+    vi.stubGlobal('navigator', Object.assign(Object.create(navigator) as object, { audioSession: session }));
+    const stopListening = wakeAudioOnTaps();
+    stopListening();
+    expect(session.type).toBe('playback');
+  });
+
+  it('the first tap says one silent, empty word, so the device voice may speak later', () => {
+    installAudio();
+    const said: { text: string; volume: number }[] = [];
+    vi.stubGlobal('SpeechSynthesisUtterance', class { text: string; volume = 1; constructor(text: string) { this.text = text; } });
+    Object.defineProperty(window, 'speechSynthesis', { configurable: true, value: { speak: (word: { text: string; volume: number }) => said.push(word) } });
+    const stopListening = wakeAudioOnTaps();
+    try {
+      document.body.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      document.body.dispatchEvent(new Event('pointerdown', { bubbles: true }));
+      expect(said).toEqual([{ text: '', volume: 0 }]);
+    } finally {
+      stopListening();
+      Reflect.deleteProperty(window, 'speechSynthesis');
+    }
   });
 });
 
