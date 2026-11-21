@@ -4,9 +4,13 @@ import {
   canInvite,
   checkSession,
   derivePasswordKey,
+  invitedParents,
   inviteToken,
   joinWithInvite,
   makeInvite,
+  makeResetLink,
+  resetToken,
+  resetWithLink,
   requestCode,
   setPasswordWithCode,
   signIn,
@@ -159,3 +163,29 @@ describe('invites (Nov 21, 2026)', () => {
     expect(inviteToken({ pathname: '/join', hash: '' })).toBeNull();
   });
 });
+
+describe('reset links (Nov 21, 2026)', () => {
+  it('the first family lists who they invited and makes a reset link; the parent sets a new password with it', async () => {
+    const stub = stubServer();
+    await signUp(stub);
+    const made = await makeInvite();
+    if (!made.ok) throw new Error('no invite');
+    await signOut();
+    await joinWithInvite(made.url.split('#')[1] as string, 'new.parent@example.com', 'first long password');
+    await signOut();
+    await signIn(PARENT, PASSWORD);
+
+    expect((await invitedParents())?.map((member) => member.email)).toEqual(['new.parent@example.com']);
+    const reset = await makeResetLink('new.parent@example.com');
+    if (!reset.ok) throw new Error('no reset link');
+    const url = new URL(reset.url);
+    const token = resetToken({ pathname: url.pathname, hash: url.hash }) as string;
+    await signOut();
+
+    expect(await resetWithLink(token, 'new.parent@example.com', 'second long password')).toEqual({ ok: true });
+    await signOut();
+    expect(await signIn('new.parent@example.com', 'first long password')).toEqual({ ok: false, reason: 'invalid' });
+    expect(await signIn('new.parent@example.com', 'second long password')).toEqual({ ok: true });
+  });
+});
+

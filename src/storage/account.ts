@@ -14,7 +14,7 @@ const PBKDF2_ROUNDS = 310_000;
 const sessionReply = z.object({ email: z.string(), expiresAt: z.string() });
 const errorReply = z.object({ error: z.string() });
 
-export type AuthFailure = 'invalid' | 'locked' | 'bad_code' | 'bad_invite' | 'taken' | 'offline' | 'server';
+export type AuthFailure = 'invalid' | 'locked' | 'bad_code' | 'bad_invite' | 'bad_reset' | 'taken' | 'offline' | 'server';
 export type AuthResult = { ok: true } | { ok: false; reason: AuthFailure };
 
 function toHex(bytes: Uint8Array): string {
@@ -69,7 +69,7 @@ async function readJson(reply: Response): Promise<unknown> {
 async function failureOf(reply: Response): Promise<AuthFailure> {
   const parsed = errorReply.safeParse(await readJson(reply));
   const code = parsed.success ? parsed.data.error : '';
-  if (code === 'invalid' || code === 'locked' || code === 'bad_code' || code === 'bad_invite' || code === 'taken') return code;
+  if (code === 'invalid' || code === 'locked' || code === 'bad_code' || code === 'bad_invite' || code === 'bad_reset' || code === 'taken') return code;
   return 'server';
 }
 
@@ -185,11 +185,56 @@ export async function joinWithInvite(token: string, email: string, password: str
   return acceptSession(await post('/api/auth/join', { token, email: cleanEmail(email), passwordKey }));
 }
 
-// The token in an invite link (/join#<token>), or null when this is not one.
-export function inviteToken(location: { pathname: string; hash: string }): string | null {
-  if (location.pathname !== '/join') return null;
+function linkToken(location: { pathname: string; hash: string }, path: string): string | null {
+  if (location.pathname !== path) return null;
   const token = location.hash.replace(/^#/, '');
   return /^[A-Za-z0-9_-]{20,100}$/.test(token) ? token : null;
+}
+
+// The token in an invite link (/join#<token>), or null when this is not one.
+export function inviteToken(location: { pathname: string; hash: string }): string | null {
+  return linkToken(location, '/join');
+}
+
+// The token in a reset link (/reset#<token>), or null when this is not one.
+export function resetToken(location: { pathname: string; hash: string }): string | null {
+  return linkToken(location, '/reset');
+}
+
+// Whose reset link this is: the email, or why it cannot be used.
+export async function checkResetLink(token: string): Promise<{ ok: true; email: string } | { ok: false; reason: AuthFailure }> {
+  const reply = await post('/api/auth/reset-check', { token });
+  if (!reply) return { ok: false, reason: 'offline' };
+  if (!reply.ok) return { ok: false, reason: await failureOf(reply) };
+  const parsed = z.object({ email: z.string() }).safeParse(await readJson(reply));
+  return parsed.success ? { ok: true, email: parsed.data.email } : { ok: false, reason: 'server' };
+}
+
+// Sets a new password with a reset link the first family sent (invited parents get no emailed codes).
+export async function resetWithLink(token: string, email: string, password: string): Promise<AuthResult> {
+  const passwordKey = await derivePasswordKey(email, password);
+  return acceptSession(await post('/api/auth/reset', { token, passwordKey }));
+}
+
+// The parents this family invited, for Grown-ups (the first family only), or null when it cannot be told.
+export async function invitedParents(): Promise<{ email: string; joinedAt: string }[] | null> {
+  try {
+    const reply = await fetch('/api/members', { credentials: 'same-origin' });
+    if (!reply.ok) return null;
+    const parsed = z.object({ members: z.array(z.object({ email: z.string(), joinedAt: z.string() })) }).safeParse(await readJson(reply));
+    return parsed.success ? parsed.data.members : null;
+  } catch {
+    return null;
+  }
+}
+
+// A one-time link for an invited parent to set a new password, good for 3 days.
+export async function makeResetLink(email: string): Promise<{ ok: true; url: string; expiresAt: string } | { ok: false; reason: AuthFailure }> {
+  const reply = await post('/api/members/reset', { email });
+  if (!reply) return { ok: false, reason: 'offline' };
+  if (!reply.ok) return { ok: false, reason: 'server' };
+  const parsed = z.object({ url: z.string(), expiresAt: z.string() }).safeParse(await readJson(reply));
+  return parsed.success ? { ok: true, ...parsed.data } : { ok: false, reason: 'server' };
 }
 
 // Whether this parent may make invite links (the first family only). False when it cannot be told (offline).
@@ -241,6 +286,8 @@ export function failureMessage(reason: AuthFailure): string {
       return 'That code is not right, or it has run out. Ask for a new code.';
     case 'bad_invite':
       return 'This invite link has been used or has run out. Ask for a new one.';
+    case 'bad_reset':
+      return 'This reset link has been used or has run out. Ask for a new one.';
     case 'taken':
       return 'That email already has a Sprout account. Sign in instead.';
     case 'offline':

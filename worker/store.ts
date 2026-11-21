@@ -47,6 +47,17 @@ export interface MemberRow {
   joinedAt: string;
 }
 
+// A one-time link the first family makes for a parent they invited, to set a new password (no email: the
+// owner's choice A, Nov 21, 2026).
+export interface ResetRow {
+  tokenHash: string;
+  email: string;
+  createdBy: string;
+  createdAt: string;
+  expiresAt: string;
+  usedAt: string | null;
+}
+
 export interface Store {
   getUser(email: string): Promise<UserRow | null>;
   saveUser(row: UserRow): Promise<void>;
@@ -68,6 +79,10 @@ export interface Store {
   claimInvite(tokenHash: string, at: string): Promise<boolean>;
   getMember(email: string): Promise<MemberRow | null>;
   saveMember(row: MemberRow): Promise<void>;
+  listMembers(): Promise<MemberRow[]>;
+  saveReset(row: ResetRow): Promise<void>;
+  getReset(tokenHash: string): Promise<ResetRow | null>;
+  claimReset(tokenHash: string, at: string): Promise<boolean>;
 }
 
 export function memoryStore(): Store {
@@ -77,7 +92,24 @@ export function memoryStore(): Store {
   const attempts = new Map<string, LoginAttemptRow>();
   const invites = new Map<string, InviteRow>();
   const members = new Map<string, MemberRow>();
+  const resets = new Map<string, ResetRow>();
   return {
+    async listMembers() {
+      return [...members.values()].map((row) => ({ ...row })).sort((a, b) => a.joinedAt.localeCompare(b.joinedAt));
+    },
+    async saveReset(row) {
+      resets.set(row.tokenHash, { ...row });
+    },
+    async getReset(tokenHash) {
+      const row = resets.get(tokenHash);
+      return row ? { ...row } : null;
+    },
+    async claimReset(tokenHash, at) {
+      const row = resets.get(tokenHash);
+      if (!row || row.usedAt !== null) return false;
+      row.usedAt = at;
+      return true;
+    },
     async saveInvite(row) {
       invites.set(row.tokenHash, { ...row });
     },
@@ -180,6 +212,14 @@ interface MemberRecord {
   family: string;
   joined_at: string;
 }
+interface ResetRecord {
+  token_hash: string;
+  email: string;
+  created_by: string;
+  created_at: string;
+  expires_at: string;
+  used_at: string | null;
+}
 interface AttemptRecord {
   email: string;
   window_start: string;
@@ -188,6 +228,25 @@ interface AttemptRecord {
 
 export function d1Store(db: D1Database): Store {
   return {
+    async listMembers() {
+      const { results } = await db.prepare('select * from family_members order by joined_at').all<MemberRecord>();
+      return results.map((r) => ({ email: r.email, family: r.family, joinedAt: r.joined_at }));
+    },
+    async saveReset(row) {
+      await db
+        .prepare('insert into reset_links (token_hash, email, created_by, created_at, expires_at, used_at) values (?, ?, ?, ?, ?, ?)')
+        .bind(row.tokenHash, row.email, row.createdBy, row.createdAt, row.expiresAt, row.usedAt)
+        .run();
+    },
+    async getReset(tokenHash) {
+      const r = await db.prepare('select * from reset_links where token_hash = ?').bind(tokenHash).first<ResetRecord>();
+      if (!r) return null;
+      return { tokenHash: r.token_hash, email: r.email, createdBy: r.created_by, createdAt: r.created_at, expiresAt: r.expires_at, usedAt: r.used_at };
+    },
+    async claimReset(tokenHash, at) {
+      const result = await db.prepare('update reset_links set used_at = ? where token_hash = ? and used_at is null').bind(at, tokenHash).run();
+      return result.meta.changes > 0;
+    },
     async saveInvite(row) {
       await db
         .prepare('insert into invites (token_hash, created_by, created_at, expires_at, used_at) values (?, ?, ?, ?, ?)')

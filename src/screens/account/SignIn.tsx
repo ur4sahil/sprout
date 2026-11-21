@@ -8,7 +8,8 @@ import FormLinks from '../../components/FormLinks';
 import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import TextField from '../../components/TextField';
-import { failureMessage, inviteToken, signIn } from '../../storage/account';
+import { failureMessage, inviteToken, resetToken, signIn } from '../../storage/account';
+import ResetWithLink from './ResetWithLink';
 import JoinFamily from './JoinFamily';
 import SetPassword from './SetPassword';
 
@@ -16,6 +17,7 @@ export default function SignIn() {
   const navigate = useNavigate();
   const location = useLocation();
   const token = inviteToken(location);
+  const reset = resetToken(location);
   const startedOffline = useAppStore((s) => s.account.status === 'signedOut' && s.account.offline);
   const [mode, setMode] = useState<'signIn' | 'setPassword'>('signIn');
   const [email, setEmail] = useState('');
@@ -45,6 +47,9 @@ export default function SignIn() {
   }
 
   // An invite link opens on making an account; "I already have an account" comes back here.
+  if (reset && mode === 'signIn' && !declinedInvite) {
+    return <ResetWithLink token={reset} onSignIn={() => setDeclinedInvite(true)} onDone={done} />;
+  }
   if (token && mode === 'signIn' && !declinedInvite) {
     return <JoinFamily token={token} onSignIn={() => setDeclinedInvite(true)} onDone={done} />;
   }

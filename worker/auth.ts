@@ -13,6 +13,7 @@ export const CODE_RESEND_SECONDS = 60;
 export const LOCK_TRIES = 5;
 export const LOCK_MINUTES = 15;
 export const INVITE_DAYS = 7;
+export const RESET_DAYS = 3;
 
 const MINUTE = 60_000;
 const DAY = 24 * 60 * MINUTE;
@@ -38,6 +39,12 @@ const passwordBody = z.object({
 const joinBody = z.object({
   token: z.string().regex(/^[A-Za-z0-9_-]{20,100}$/),
   email: emailField,
+  passwordKey: z.string().regex(/^[0-9a-f]{64}$/),
+});
+const resetMakeBody = z.object({ email: emailField });
+const resetCheckBody = z.object({ token: z.string().regex(/^[A-Za-z0-9_-]{20,100}$/) });
+const resetBody = z.object({
+  token: z.string().regex(/^[A-Za-z0-9_-]{20,100}$/),
   passwordKey: z.string().regex(/^[0-9a-f]{64}$/),
 });
 const loginBody = z.object({
@@ -290,3 +297,57 @@ export async function logoutAll(deps: AuthDeps, session: SessionRow): Promise<Re
   await deps.store.deleteSessionsFor(session.email);
   return json(200, { ok: true }, { 'Set-Cookie': clearedCookie() });
 }
+
+// GET /api/members: the parents the first family invited, for Grown-ups. The first family only.
+export async function listMembers(deps: AuthDeps, session: SessionRow): Promise<Response> {
+  if (!isFirstFamily(deps, session.email)) return json(403, { error: 'forbidden' });
+  const members = await deps.store.listMembers();
+  return json(200, { members: members.map((member) => ({ email: member.email, joinedAt: member.joinedAt })) });
+}
+
+// POST /api/members/reset: a one-time link for an invited parent to set a new password, good for RESET_DAYS.
+// The first family only, and only for a parent who joined through an invite (the first family use emailed codes).
+export async function createReset(deps: AuthDeps, session: SessionRow, request: Request, appOrigin: string): Promise<Response> {
+  if (!isFirstFamily(deps, session.email)) return json(403, { error: 'forbidden' });
+  const body = await readBody(request, resetMakeBody);
+  if (!body) return json(400, { error: 'bad_request' });
+  const email = normalise(body.email);
+  if ((await deps.store.getMember(email)) === null) return json(404, { error: 'not_found' });
+  const at = deps.now();
+  const token = randomToken();
+  const expiresAt = new Date(at.getTime() + RESET_DAYS * DAY).toISOString();
+  await deps.store.saveReset({ tokenHash: await sha256Hex(token), email, createdBy: session.email, createdAt: at.toISOString(), expiresAt, usedAt: null });
+  return json(200, { url: `${appOrigin}/reset#${token}`, expiresAt });
+}
+
+async function liveReset(deps: AuthDeps, token: string) {
+  const row = await deps.store.getReset(await sha256Hex(token));
+  if (!row || row.usedAt !== null || deps.now().getTime() >= new Date(row.expiresAt).getTime()) return null;
+  if ((await deps.store.getMember(row.email)) === null) return null;
+  return row;
+}
+
+// POST /api/auth/reset-check: whose reset link this is, so the device can stretch the new password with the email.
+export async function checkReset(deps: AuthDeps, request: Request): Promise<Response> {
+  const body = await readBody(request, resetCheckBody);
+  if (!body) return json(400, { error: 'bad_request' });
+  const row = await liveReset(deps, body.token);
+  return row ? json(200, { email: row.email }) : json(400, { error: 'bad_reset' });
+}
+
+// POST /api/auth/reset: sets the new password, signs out everywhere else, and signs in here.
+export async function resetPassword(deps: AuthDeps, request: Request): Promise<Response> {
+  const body = await readBody(request, resetBody);
+  if (!body) return json(400, { error: 'bad_request' });
+  const tokenHash = await sha256Hex(body.token);
+  const row = await liveReset(deps, body.token);
+  const at = deps.now().toISOString();
+  if (!row || !(await deps.store.claimReset(tokenHash, at))) return json(400, { error: 'bad_reset' });
+  const old = await deps.store.getUser(row.email);
+  const salt = randomHex(16);
+  await deps.store.saveUser({ email: row.email, pwHash: await passwordHash(deps, salt, body.passwordKey), pwSalt: salt, createdAt: old?.createdAt ?? at, updatedAt: at });
+  await deps.store.deleteSessionsFor(row.email);
+  await deps.store.clearAttempts(row.email);
+  return startSession(deps, row.email);
+}
+

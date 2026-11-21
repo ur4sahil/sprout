@@ -94,3 +94,49 @@ describe('invites', () => {
     expect(h.mailer.sent).toEqual([]);
   });
 });
+
+describe('reset links for invited parents (Nov 21, 2026)', () => {
+  async function invitedParent(): Promise<string> {
+    const owner = await h.signUp();
+    expect((await joinWith(await invite(owner))).status).toBe(200);
+    return owner;
+  }
+  const makeReset = (cookie: string, email = NEW_PARENT) => h.call('POST', '/api/members/reset', { email }, { cookie });
+
+  it('the first family sees who they invited, makes a link, and the parent sets a new password with it', async () => {
+    const owner = await invitedParent();
+    const list = (await (await h.call('GET', '/api/members', undefined, { cookie: owner })).json()) as { members: { email: string }[] };
+    expect(list.members.map((member) => member.email)).toEqual([NEW_PARENT]);
+
+    const made = await makeReset(owner);
+    expect(made.status).toBe(200);
+    const token = ((await made.json()) as { url: string }).url.split('/reset#')[1] as string;
+    const check = await h.call('POST', '/api/auth/reset-check', { token });
+    expect(await check.json()).toEqual({ email: NEW_PARENT });
+
+    const reset = await h.call('POST', '/api/auth/reset', { token, passwordKey: KEY_A });
+    expect(reset.status).toBe(200);
+    expect((await h.call('POST', '/api/auth/login', { email: NEW_PARENT, passwordKey: KEY_A })).status).toBe(200);
+    expect((await h.call('POST', '/api/auth/login', { email: NEW_PARENT, passwordKey: KEY_B })).status).toBe(401);
+    // Once only.
+    expect((await h.call('POST', '/api/auth/reset', { token, passwordKey: KEY_B })).status).toBe(400);
+  });
+
+  it('runs out, and works only for parents who joined through an invite', async () => {
+    const owner = await invitedParent();
+    expect((await makeReset(owner, PARENT)).status).toBe(404);
+    expect((await makeReset(owner, STRANGER)).status).toBe(404);
+    const token = ((await (await makeReset(owner)).json()) as { url: string }).url.split('#')[1] as string;
+    h.advance(3 * DAY);
+    expect((await h.call('POST', '/api/auth/reset-check', { token })).status).toBe(400);
+    expect((await h.call('POST', '/api/auth/reset', { token, passwordKey: KEY_A })).status).toBe(400);
+  });
+
+  it('an invited parent can neither list parents nor make reset links', async () => {
+    await invitedParent();
+    const newcomer = cookieFrom(await h.call('POST', '/api/auth/login', { email: NEW_PARENT, passwordKey: KEY_B }));
+    expect((await h.call('GET', '/api/members', undefined, { cookie: newcomer })).status).toBe(403);
+    expect((await makeReset(newcomer)).status).toBe(403);
+  });
+});
+

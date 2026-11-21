@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import App from '../../src/app/App';
 import { giveFamilyPin } from '../helpers/familyPin';
 import { useAppStore } from '../../src/app/store';
-import { makeInvite, requestCode, setPasswordWithCode, signOut } from '../../src/storage/account';
+import { joinWithInvite, makeInvite, makeResetLink, requestCode, setPasswordWithCode, signIn, signOut } from '../../src/storage/account';
 import { stubServer } from '../storage/serverStub';
 import { PARENT } from '../worker/harness';
 
@@ -121,3 +121,31 @@ describe('an invite link (Nov 21, 2026)', () => {
     expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
   });
 });
+
+describe('a reset link (Nov 21, 2026)', () => {
+  it('opens on a new password for the invited parent it was made for, and signs them in', async () => {
+    const stub = stubServer();
+    await requestCode(PARENT);
+    await setPasswordWithCode(PARENT, stub.server.lastCode(), 'a long password');
+    const made = await makeInvite();
+    if (!made.ok) throw new Error('no invite');
+    await signOut();
+    await joinWithInvite(made.url.split('#')[1] as string, 'new.parent@example.com', 'first long password');
+    await signOut();
+    await signIn(PARENT, 'a long password');
+    const reset = await makeResetLink('new.parent@example.com');
+    if (!reset.ok) throw new Error('no reset');
+    await signOut();
+    useAppStore.getState().setAccount({ status: 'checking' });
+
+    const user = userEvent.setup();
+    renderAt(`/reset#${reset.url.split('#')[1]}`);
+    expect(await screen.findByText('For new.parent@example.com.')).toBeTruthy();
+    await user.type(screen.getByLabelText('New password'), 'second long password');
+    await user.type(screen.getByLabelText('New password again'), 'second long password');
+    await user.click(screen.getByRole('button', { name: 'Save password and sign in' }));
+    await screen.findByRole('heading', { name: 'Choose a grown-ups PIN' });
+    expect(useAppStore.getState().account).toMatchObject({ status: 'signedIn', email: 'new.parent@example.com' });
+  });
+});
+

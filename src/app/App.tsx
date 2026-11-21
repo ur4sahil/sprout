@@ -12,7 +12,7 @@ import { CATALOGUE_VERSION } from '../content/catalogue';
 import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { needsInstallGuide } from '../lib/platform';
-import { checkSession, inviteToken } from '../storage/account';
+import { checkSession, inviteToken, resetToken } from '../storage/account';
 import { keepErrorsInDeviceRecord, openRepo, requestPersistence, syncFamily, watchSync } from '../storage/index';
 import type { SyncResult } from '../storage/sync';
 import styles from './App.module.css';
@@ -202,7 +202,7 @@ export default function App() {
         <Art emoji="🌱" />
       </main>
     );
-  } else if (installGuide && !(status === 'signedOut' && inviteToken(location))) {
+  } else if (installGuide && !(status === 'signedOut' && (inviteToken(location) || resetToken(location)))) {
     // First of all, before sign-in: in a Safari tab on an iPad or iPhone, only the install guide. An invite link
     // is the one exception: the account is made in the tab, since the installed app opens without the link.
     content = <InstallGuide onUseBrowser={useBrowser} />;

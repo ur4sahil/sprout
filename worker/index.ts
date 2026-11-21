@@ -1,7 +1,11 @@
 import type { D1Database, R2Bucket, SendEmail } from '@cloudflare/workers-types';
 import type { AuthDeps } from './auth';
 import {
+  checkReset,
   createInvite,
+  createReset,
+  listMembers,
+  resetPassword,
   familyFor,
   findSession,
   isFirstFamily,
@@ -65,6 +69,8 @@ const SIGN_IN_ROUTES: Record<string, Handler> = {
   'POST /api/auth/password': setPassword,
   'POST /api/auth/login': login,
   'POST /api/auth/join': join,
+  'POST /api/auth/reset-check': checkReset,
+  'POST /api/auth/reset': resetPassword,
 };
 
 // A request that changes something must be JSON, or the gzip file for the backup, sent by the app itself.
@@ -98,6 +104,10 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return sessionInfo(deps, session);
       case 'POST /api/invites':
         return await createInvite(deps, session, deps.appOrigin);
+      case 'GET /api/members':
+        return await listMembers(deps, session);
+      case 'POST /api/members/reset':
+        return await createReset(deps, session, request, deps.appOrigin);
       case 'POST /api/auth/logout':
         return await logout(deps, session);
       case 'POST /api/auth/logout-all':

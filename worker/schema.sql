@@ -57,3 +57,13 @@ create table if not exists family_members (
   joined_at text not null
 );
 
+-- Reset links (Nov 21, 2026): the first family makes one for a parent they invited, who sets a new password with
+-- it. Invited parents get no emailed codes, so this is their "Forgot password".
+create table if not exists reset_links (
+  token_hash text primary key,        -- SHA-256 of the token in the link
+  email      text not null,           -- the invited parent it is for
+  created_by text not null,
+  created_at text not null,
+  expires_at text not null,
+  used_at    text
+);
