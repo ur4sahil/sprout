@@ -102,3 +102,10 @@
     background: transparent;
   }
 }
+
+/* A tablet held upright (an iPad's 810 to 834 wide): a narrower menu leaves the main area room for its cards. */
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .nav {
+    width: var(--width-nav-narrow);
+  }
+}
