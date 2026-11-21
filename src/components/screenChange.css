@@ -1,7 +1,10 @@
 /* Screen changes (game feel, phase 8). Loaded once, with KidScreen. Every kid screen is named "kid-screen" for the
    browser's view transitions, and the page says which way the child moved (`data-screen-change` on the root, from
    src/app/screenChange.ts): push (deeper in), pull (back out) or fade (sideways). Nothing waits for these: the new
-   screen is live underneath from the first moment, and a tap goes straight through to it. */
+   screen is live underneath from the first moment, and a tap goes straight through to it.
+   Since Nov 21, 2026 only the plain CSS entrances ([data-screen-in], below) play: KidScreen no longer asks the browser
+   for view transitions, which leaked memory in Safari's engine. The ::view-transition rules stay for now but are
+   not reached. */
 
 ::view-transition {
   pointer-events: none;

@@ -44,12 +44,6 @@ export function resetScreensForTests(): void {
   if (typeof document !== 'undefined') delete document.documentElement.dataset.screenChange;
 }
 
-// Whether the browser draws screen changes itself (the View Transitions API: iPad Safari 18 has it). Where it does
-// not, the new screen plays a plain CSS entrance instead.
-export function canViewTransition(): boolean {
-  return typeof document !== 'undefined' && typeof (document as Document & { startViewTransition?: unknown }).startViewTransition === 'function';
-}
-
 // For a kid screen as it opens: which change brought it here. The answer is fixed when the screen first draws.
 // The page is told too (`data-screen-change` on the root), because the browser's view transition styles hang
 // from the root, not from the screen.

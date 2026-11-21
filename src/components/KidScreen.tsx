@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { ViewTransition, useEffect } from 'react';
-import { canViewTransition, useScreenArrival } from '../app/screenChange';
+import { useEffect } from 'react';
+import { useScreenArrival } from '../app/screenChange';
 import { watchFrames } from '../lib/frameWatch';
 import styles from './KidScreen.module.css';
 import './screenChange.css';
@@ -15,17 +15,18 @@ interface Props {
 // The frame of every kid screen: a flex column that never scrolls sideways.
 // Scrolling happens inside the main area. Double-tap zoom, the long-press menu and text selection are off.
 // As it opens it arrives the way the child moved (game feel, phase 8): into a skill it grows in from the middle,
-// back to home it settles in from a little larger. Where the browser has view transitions, it draws the change
-// between the two screens; elsewhere the new screen plays the same entrance by itself. Neither waits or holds a tap.
+// back to home it settles in from a little larger. The new screen plays that entrance by itself, in plain CSS, on
+// every browser. The browser's own view transitions are not used (Nov 21, 2026): in Safari's engine each one kept
+// about 450 MB of screen pictures that were never given back, and after a few skills the page crashed. Nothing
+// waits or holds a tap.
 export default function KidScreen({ bar, side, nav, children }: Props) {
   const arrival = useScreenArrival();
   // Each kid screen is a moment to check the device keeps up with the movement (the old-device fallback).
   useEffect(() => {
     if (import.meta.env.MODE !== 'test') watchFrames();
   }, []);
-  const drawnByBrowser = canViewTransition();
-  const screen = (
-    <div className={styles.screen} data-screen-in={arrival !== 'none' && !drawnByBrowser ? arrival : undefined}>
+  return (
+    <div className={styles.screen} data-screen-in={arrival !== 'none' ? arrival : undefined}>
       {bar && <header className={styles.bar}>{bar}</header>}
       <div className={styles.body} data-menu={nav ? '' : undefined}>
         <main className={styles.main}>{children}</main>
@@ -33,12 +34,5 @@ export default function KidScreen({ bar, side, nav, children }: Props) {
         {side && <aside className={styles.side}>{side}</aside>}
       </div>
     </div>
-  );
-  // The browser's view transition is asked for only where it exists; elsewhere the screen plays its own entrance.
-  if (!drawnByBrowser) return screen;
-  return (
-    <ViewTransition name="kid-screen" update="none">
-      {screen}
-    </ViewTransition>
   );
 }
