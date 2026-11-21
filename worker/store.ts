@@ -31,6 +31,22 @@ export interface LoginAttemptRow {
   count: number;
 }
 
+// A one-time link a parent of the first family made for another family (the owner's choice, Nov 21, 2026).
+export interface InviteRow {
+  tokenHash: string; // SHA-256 of the token in the link
+  createdBy: string;
+  createdAt: string;
+  expiresAt: string;
+  usedAt: string | null;
+}
+
+// A parent who joined through an invite, and the family of their own that they joined into.
+export interface MemberRow {
+  email: string;
+  family: string;
+  joinedAt: string;
+}
+
 export interface Store {
   getUser(email: string): Promise<UserRow | null>;
   saveUser(row: UserRow): Promise<void>;
@@ -46,6 +62,12 @@ export interface Store {
   getAttempts(email: string): Promise<LoginAttemptRow | null>;
   saveAttempts(row: LoginAttemptRow): Promise<void>;
   clearAttempts(email: string): Promise<void>;
+  saveInvite(row: InviteRow): Promise<void>;
+  getInvite(tokenHash: string): Promise<InviteRow | null>;
+  // Marks an unused invite used. False when it was already used (or is not there): only one parent gets in on it.
+  claimInvite(tokenHash: string, at: string): Promise<boolean>;
+  getMember(email: string): Promise<MemberRow | null>;
+  saveMember(row: MemberRow): Promise<void>;
 }
 
 export function memoryStore(): Store {
@@ -53,7 +75,29 @@ export function memoryStore(): Store {
   const sessions = new Map<string, SessionRow>();
   const codes = new Map<string, EmailCodeRow>();
   const attempts = new Map<string, LoginAttemptRow>();
+  const invites = new Map<string, InviteRow>();
+  const members = new Map<string, MemberRow>();
   return {
+    async saveInvite(row) {
+      invites.set(row.tokenHash, { ...row });
+    },
+    async getInvite(tokenHash) {
+      const row = invites.get(tokenHash);
+      return row ? { ...row } : null;
+    },
+    async claimInvite(tokenHash, at) {
+      const row = invites.get(tokenHash);
+      if (!row || row.usedAt !== null) return false;
+      row.usedAt = at;
+      return true;
+    },
+    async getMember(email) {
+      const row = members.get(email);
+      return row ? { ...row } : null;
+    },
+    async saveMember(row) {
+      members.set(row.email, { ...row });
+    },
     async getUser(email) {
       const row = users.get(email);
       return row ? { ...row } : null;
@@ -124,6 +168,18 @@ interface CodeRecord {
   expires_at: string;
   tries: number;
 }
+interface InviteRecord {
+  token_hash: string;
+  created_by: string;
+  created_at: string;
+  expires_at: string;
+  used_at: string | null;
+}
+interface MemberRecord {
+  email: string;
+  family: string;
+  joined_at: string;
+}
 interface AttemptRecord {
   email: string;
   window_start: string;
@@ -132,6 +188,29 @@ interface AttemptRecord {
 
 export function d1Store(db: D1Database): Store {
   return {
+    async saveInvite(row) {
+      await db
+        .prepare('insert into invites (token_hash, created_by, created_at, expires_at, used_at) values (?, ?, ?, ?, ?)')
+        .bind(row.tokenHash, row.createdBy, row.createdAt, row.expiresAt, row.usedAt)
+        .run();
+    },
+    async getInvite(tokenHash) {
+      const r = await db.prepare('select * from invites where token_hash = ?').bind(tokenHash).first<InviteRecord>();
+      if (!r) return null;
+      return { tokenHash: r.token_hash, createdBy: r.created_by, createdAt: r.created_at, expiresAt: r.expires_at, usedAt: r.used_at };
+    },
+    async claimInvite(tokenHash, at) {
+      const result = await db.prepare('update invites set used_at = ? where token_hash = ? and used_at is null').bind(at, tokenHash).run();
+      return result.meta.changes > 0;
+    },
+    async getMember(email) {
+      const r = await db.prepare('select * from family_members where email = ?').bind(email).first<MemberRecord>();
+      if (!r) return null;
+      return { email: r.email, family: r.family, joinedAt: r.joined_at };
+    },
+    async saveMember(row) {
+      await db.prepare('insert into family_members (email, family, joined_at) values (?, ?, ?)').bind(row.email, row.family, row.joinedAt).run();
+    },
     async getUser(email) {
       const r = await db.prepare('select * from users where email = ?').bind(email).first<UserRecord>();
       if (!r) return null;

@@ -270,7 +270,7 @@ describe('sessions', () => {
     const first = await h.call('GET', '/api/auth/session', undefined, { cookie });
     expect(first.status).toBe(200);
     const body = (await first.json()) as { email: string; expiresAt: string };
-    expect(body).toEqual({ email: PARENT, expiresAt: new Date(start + 30 * DAY).toISOString() });
+    expect(body).toEqual({ email: PARENT, expiresAt: new Date(start + 30 * DAY).toISOString(), canInvite: true });
 
     // Using the session never extends it.
     h.advance(29 * DAY);

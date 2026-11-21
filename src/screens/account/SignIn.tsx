@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../app/store';
 import BigButton from '../../components/BigButton';
 import FormCard from '../../components/FormCard';
@@ -8,15 +8,19 @@ import FormLinks from '../../components/FormLinks';
 import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import TextField from '../../components/TextField';
-import { failureMessage, signIn } from '../../storage/account';
+import { failureMessage, inviteToken, signIn } from '../../storage/account';
+import JoinFamily from './JoinFamily';
 import SetPassword from './SetPassword';
 
 export default function SignIn() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const token = inviteToken(location);
   const startedOffline = useAppStore((s) => s.account.status === 'signedOut' && s.account.offline);
   const [mode, setMode] = useState<'signIn' | 'setPassword'>('signIn');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [declinedInvite, setDeclinedInvite] = useState(false);
   const [busy, setBusy] = useState(false);
   const [message, setMessage] = useState<string | null>(startedOffline ? failureMessage('offline') : null);
 
@@ -38,6 +42,11 @@ export default function SignIn() {
     } finally {
       setBusy(false);
     }
+  }
+
+  // An invite link opens on making an account; "I already have an account" comes back here.
+  if (token && mode === 'signIn' && !declinedInvite) {
+    return <JoinFamily token={token} onSignIn={() => setDeclinedInvite(true)} onDone={done} />;
   }
 
   if (mode === 'setPassword') {

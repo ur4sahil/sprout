@@ -14,7 +14,7 @@ const PBKDF2_ROUNDS = 310_000;
 const sessionReply = z.object({ email: z.string(), expiresAt: z.string() });
 const errorReply = z.object({ error: z.string() });
 
-export type AuthFailure = 'invalid' | 'locked' | 'bad_code' | 'offline' | 'server';
+export type AuthFailure = 'invalid' | 'locked' | 'bad_code' | 'bad_invite' | 'taken' | 'offline' | 'server';
 export type AuthResult = { ok: true } | { ok: false; reason: AuthFailure };
 
 function toHex(bytes: Uint8Array): string {
@@ -69,7 +69,7 @@ async function readJson(reply: Response): Promise<unknown> {
 async function failureOf(reply: Response): Promise<AuthFailure> {
   const parsed = errorReply.safeParse(await readJson(reply));
   const code = parsed.success ? parsed.data.error : '';
-  if (code === 'invalid' || code === 'locked' || code === 'bad_code') return code;
+  if (code === 'invalid' || code === 'locked' || code === 'bad_code' || code === 'bad_invite' || code === 'taken') return code;
   return 'server';
 }
 
@@ -178,6 +178,41 @@ export async function signIn(email: string, password: string): Promise<AuthResul
   return acceptSession(await post('/api/auth/login', { email: cleanEmail(email), passwordKey }));
 }
 
+// Another family's parent makes an account from an invite link: their email and a new password. No code is
+// emailed; the link stands in for it (the owner's choice, Nov 21, 2026).
+export async function joinWithInvite(token: string, email: string, password: string): Promise<AuthResult> {
+  const passwordKey = await derivePasswordKey(email, password);
+  return acceptSession(await post('/api/auth/join', { token, email: cleanEmail(email), passwordKey }));
+}
+
+// The token in an invite link (/join#<token>), or null when this is not one.
+export function inviteToken(location: { pathname: string; hash: string }): string | null {
+  if (location.pathname !== '/join') return null;
+  const token = location.hash.replace(/^#/, '');
+  return /^[A-Za-z0-9_-]{20,100}$/.test(token) ? token : null;
+}
+
+// Whether this parent may make invite links (the first family only). False when it cannot be told (offline).
+export async function canInvite(): Promise<boolean> {
+  try {
+    const reply = await fetch('/api/auth/session', { credentials: 'same-origin' });
+    if (!reply.ok) return false;
+    const parsed = z.object({ canInvite: z.boolean() }).safeParse(await readJson(reply));
+    return parsed.success && parsed.data.canInvite;
+  } catch {
+    return false;
+  }
+}
+
+// A new one-time invite link, good for 7 days, or why it could not be made.
+export async function makeInvite(): Promise<{ ok: true; url: string; expiresAt: string } | { ok: false; reason: AuthFailure }> {
+  const reply = await post('/api/invites', {});
+  if (!reply) return { ok: false, reason: 'offline' };
+  if (!reply.ok) return { ok: false, reason: 'server' };
+  const parsed = z.object({ url: z.string(), expiresAt: z.string() }).safeParse(await readJson(reply));
+  return parsed.success ? { ok: true, ...parsed.data } : { ok: false, reason: 'server' };
+}
+
 async function endSession(path: string): Promise<AuthResult> {
   const reply = await post(path, {});
   if (!reply) return { ok: false, reason: 'offline' };
@@ -204,6 +239,10 @@ export function failureMessage(reason: AuthFailure): string {
       return 'Too many tries. Wait 15 minutes, or use "Forgot password".';
     case 'bad_code':
       return 'That code is not right, or it has run out. Ask for a new code.';
+    case 'bad_invite':
+      return 'This invite link has been used or has run out. Ask for a new one.';
+    case 'taken':
+      return 'That email already has a Sprout account. Sign in instead.';
     case 'offline':
       return 'No internet connection. Signing in needs the internet.';
     case 'server':

@@ -40,3 +40,20 @@ create table if not exists records (
   updated_at text not null,
   primary key (family, store, key)
 );
+
+-- Invites (Nov 21, 2026): a parent of the first family makes a one-time link; another family's parent
+-- uses it to make an account, and gets a family of their own.
+create table if not exists invites (
+  token_hash text primary key,        -- SHA-256 of the token in the link
+  created_by text not null,
+  created_at text not null,
+  expires_at text not null,
+  used_at    text                     -- null until a parent joins with it
+);
+
+create table if not exists family_members (
+  email     text primary key,         -- lower case; a parent who joined through an invite
+  family    text not null,            -- their own family, never the first one
+  joined_at text not null
+);
+

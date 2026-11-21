@@ -151,7 +151,7 @@ describe('whose records they are', () => {
   });
 
   it('where accounts are kept apart, one never sees or changes another\'s records', async () => {
-    h.deps.familyOf = (email) => email;
+    h.deps.familyOf = async (email) => email;
     await save({ puts: [child('kid-1')] });
     const second = await h.signUp('parent.two@example.com');
     expect(((await (await h.call('GET', '/api/data', undefined, { cookie: second })).json()) as Page).rows).toEqual([]);

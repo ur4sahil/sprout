@@ -1,9 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import App from '../../src/app/App';
 import { giveFamilyPin } from '../helpers/familyPin';
-import { requestCode, setPasswordWithCode } from '../../src/storage/account';
+import { useAppStore } from '../../src/app/store';
+import { makeInvite, requestCode, setPasswordWithCode, signOut } from '../../src/storage/account';
 import { stubServer } from '../storage/serverStub';
 import { PARENT } from '../worker/harness';
 
@@ -87,5 +89,35 @@ describe('App shell with a session', () => {
     renderAt('/no/such/page');
     expect(await screen.findByRole('heading', { name: 'Sprout' })).toBeTruthy();
     expect(screen.queryByRole('button', { name: 'Sign in' })).toBeNull();
+  });
+});
+
+describe('an invite link (Nov 21, 2026)', () => {
+  it('opens on making an account, which signs the new parent in to an empty family of their own', async () => {
+    const stub = stubServer();
+    await requestCode(PARENT);
+    await setPasswordWithCode(PARENT, stub.server.lastCode(), 'a long password');
+    const made = await makeInvite();
+    if (!made.ok) throw new Error('no invite');
+    await signOut();
+    useAppStore.getState().setAccount({ status: 'checking' });
+
+    const user = userEvent.setup();
+    renderAt(`/join#${made.url.split('#')[1]}`);
+    expect(await screen.findByRole('heading', { name: 'Welcome to Sprout' })).toBeTruthy();
+    await user.type(screen.getByLabelText('Email'), 'new.parent@example.com');
+    await user.type(screen.getByLabelText('New password'), 'another long password');
+    await user.type(screen.getByLabelText('New password again'), 'another long password');
+    await user.click(screen.getByRole('button', { name: 'Make my account' }));
+    await screen.findByRole('heading', { name: 'Choose a grown-ups PIN' });
+    expect(useAppStore.getState().account).toMatchObject({ status: 'signedIn', email: 'new.parent@example.com' });
+  });
+
+  it('"I already have an account" goes to the usual sign-in', async () => {
+    stubServer();
+    const user = userEvent.setup();
+    renderAt(`/join#${'A'.repeat(43)}`);
+    await user.click(await screen.findByRole('button', { name: 'I already have an account' }));
+    expect(screen.getByRole('button', { name: 'Sign in' })).toBeTruthy();
   });
 });

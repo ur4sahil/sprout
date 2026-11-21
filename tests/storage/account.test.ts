@@ -1,8 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { useAppStore } from '../../src/app/store';
 import {
+  canInvite,
   checkSession,
   derivePasswordKey,
+  inviteToken,
+  joinWithInvite,
+  makeInvite,
   requestCode,
   setPasswordWithCode,
   signIn,
@@ -121,5 +125,37 @@ describe('account against the real Worker code', () => {
     expect(await requestCode(PARENT)).toEqual({ ok: false, reason: 'offline' });
     expect(await signOut()).toEqual({ ok: false, reason: 'offline' });
     expect(account().status).toBe('signedIn');
+  });
+});
+
+describe('invites (Nov 21, 2026)', () => {
+  it('a parent of the first family makes a link; another parent makes an account from it, and cannot invite', async () => {
+    const stub = stubServer();
+    await signUp(stub);
+    expect(await canInvite()).toBe(true);
+    const made = await makeInvite();
+    expect(made.ok).toBe(true);
+    if (!made.ok) return;
+    const url = new URL(made.url);
+    const token = inviteToken({ pathname: url.pathname, hash: url.hash });
+    expect(token).not.toBeNull();
+    await signOut();
+
+    const NEW_PASSWORD = 'another long password';
+    expect(await joinWithInvite(token as string, 'New.Parent@example.com', NEW_PASSWORD)).toEqual({ ok: true });
+    expect(account()).toMatchObject({ status: 'signedIn', email: 'new.parent@example.com' });
+    expect(await canInvite()).toBe(false);
+    for (const call of stub.calls) expect(call.body ?? '').not.toContain(NEW_PASSWORD);
+    // The link is used up.
+    await signOut();
+    expect(await joinWithInvite(token as string, 'someone@example.com', NEW_PASSWORD)).toEqual({ ok: false, reason: 'bad_invite' });
+  });
+
+  it('reads the token only from a /join link', () => {
+    const token = 'A'.repeat(43);
+    expect(inviteToken({ pathname: '/join', hash: `#${token}` })).toBe(token);
+    expect(inviteToken({ pathname: '/', hash: `#${token}` })).toBeNull();
+    expect(inviteToken({ pathname: '/join', hash: '#short' })).toBeNull();
+    expect(inviteToken({ pathname: '/join', hash: '' })).toBeNull();
   });
 });

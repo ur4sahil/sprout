@@ -20,6 +20,7 @@ import { openRepo } from '../../storage/index';
 import type { Child, ChildSettings, DiagnosticSubject, Grade } from '../../storage/schema';
 import ChildSetup from './ChildSetup';
 import ChoosePin from './ChoosePin';
+import InviteParent from './InviteParent';
 import ParentArea from './ParentArea';
 import styles from './Parent.module.css';
 import { useChildren } from './useChildren';
@@ -164,6 +165,7 @@ export default function Settings() {
           <BigButton onClick={() => void navigate('/parent/sound', { replace: true })}>Sound check</BigButton>
         </CenterRow>
       </section>
+      <InviteParent />
     </ParentArea>
   );
 }

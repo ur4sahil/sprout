@@ -1,4 +1,4 @@
-import { COOKIE_NAME } from '../../worker/auth';
+import { COOKIE_NAME, familyFor } from '../../worker/auth';
 import type { ApiDeps } from '../../worker/index';
 import { handleApi } from '../../worker/index';
 import type { MemoryMailer } from '../../worker/mailer';
@@ -75,7 +75,8 @@ export function makeHarness(): Harness {
     data,
     voice,
     voiceMaker: null,
-    familyOf: () => 'family',
+    // As the live Worker does: the first family's parents share 'family'; an invited parent has a family of their own.
+    familyOf: (email) => familyFor(deps, email, 'family'),
   };
 
   async function call(method: string, path: string, body?: unknown, options: CallOptions = {}) {

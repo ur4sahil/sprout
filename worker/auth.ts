@@ -12,6 +12,7 @@ export const CODE_TRIES = 5;
 export const CODE_RESEND_SECONDS = 60;
 export const LOCK_TRIES = 5;
 export const LOCK_MINUTES = 15;
+export const INVITE_DAYS = 7;
 
 const MINUTE = 60_000;
 const DAY = 24 * 60 * MINUTE;
@@ -32,6 +33,11 @@ const startBody = z.object({ email: emailField });
 const passwordBody = z.object({
   email: emailField,
   code: z.string().regex(/^\d{6}$/),
+  passwordKey: z.string().regex(/^[0-9a-f]{64}$/),
+});
+const joinBody = z.object({
+  token: z.string().regex(/^[A-Za-z0-9_-]{20,100}$/),
+  email: emailField,
   passwordKey: z.string().regex(/^[0-9a-f]{64}$/),
 });
 const loginBody = z.object({
@@ -63,8 +69,20 @@ function normalise(email: string): string {
   return email.trim().toLowerCase();
 }
 
-function isListed(deps: AuthDeps, email: string): boolean {
+// The first family: the parents on the list in the Worker's settings. Only they can invite.
+export function isFirstFamily(deps: AuthDeps, email: string): boolean {
   return deps.parentEmails.includes(email);
+}
+
+// A parent who may sign in: one of the first family, or one who joined through an invite.
+async function isListed(deps: AuthDeps, email: string): Promise<boolean> {
+  return isFirstFamily(deps, email) || (await deps.store.getMember(email)) !== null;
+}
+
+// Whose records a parent reads and writes: the first family's, or the family of their own they joined into.
+export async function familyFor(deps: AuthDeps, email: string, firstFamily: string): Promise<string | null> {
+  if (isFirstFamily(deps, email)) return firstFamily;
+  return (await deps.store.getMember(email))?.family ?? null;
 }
 
 function sessionCookie(token: string): string {
@@ -127,7 +145,7 @@ export async function findSession(deps: AuthDeps, request: Request): Promise<Ses
   const tokenHash = await sha256Hex(token);
   const row = await deps.store.getSession(tokenHash);
   if (!row) return null;
-  if (deps.now().getTime() >= new Date(row.expiresAt).getTime() || !isListed(deps, row.email)) {
+  if (deps.now().getTime() >= new Date(row.expiresAt).getTime() || !(await isListed(deps, row.email))) {
     await deps.store.deleteSession(tokenHash);
     return null;
   }
@@ -139,7 +157,8 @@ export async function start(deps: AuthDeps, request: Request): Promise<Response>
   const body = await readBody(request, startBody);
   if (!body) return json(400, { error: 'bad_request' });
   const email = normalise(body.email);
-  if (isListed(deps, email)) deps.defer(sendCode(deps, email));
+  // Checked after the reply too, so a listed and an unlisted address take the same time to answer.
+  deps.defer(isListed(deps, email).then((listed) => (listed ? sendCode(deps, email) : undefined)));
   return json(200, { ok: true });
 }
 
@@ -169,7 +188,7 @@ export async function setPassword(deps: AuthDeps, request: Request): Promise<Res
   if (!body) return json(400, { error: 'bad_request' });
   const email = normalise(body.email);
   const fail = () => json(400, { error: 'bad_code' });
-  if (!isListed(deps, email)) return fail();
+  if (!(await isListed(deps, email))) return fail();
   const row = await deps.store.getCode(email);
   if (!row) return fail();
   const at = deps.now();
@@ -205,7 +224,7 @@ export async function login(deps: AuthDeps, request: Request): Promise<Response>
   if (live && live.count >= LOCK_TRIES) return json(429, { error: 'locked' });
 
   // An unknown address does the same work as a known one.
-  const user = isListed(deps, email) ? await deps.store.getUser(email) : null;
+  const user = (await isListed(deps, email)) ? await deps.store.getUser(email) : null;
   const expected = user ? user.pwHash : '0'.repeat(64);
   const actual = await passwordHash(deps, user ? user.pwSalt : '0'.repeat(32), body.passwordKey);
   const matches = safeEqual(actual, expected);
@@ -222,9 +241,42 @@ export async function login(deps: AuthDeps, request: Request): Promise<Response>
   return startSession(deps, email);
 }
 
-// GET /api/auth/session
-export function sessionInfo(session: SessionRow): Response {
-  return json(200, { email: session.email, expiresAt: session.expiresAt });
+// GET /api/auth/session. canInvite: this parent may make invite links (the first family only).
+export function sessionInfo(deps: AuthDeps, session: SessionRow): Response {
+  return json(200, { email: session.email, expiresAt: session.expiresAt, canInvite: isFirstFamily(deps, session.email) });
+}
+
+// POST /api/invites: a one-time link for another family's parent, good for INVITE_DAYS. Only the first family
+// may make one. The token is in the link's #fragment, so it never reaches a server log; only its hash is kept.
+export async function createInvite(deps: AuthDeps, session: SessionRow, appOrigin: string): Promise<Response> {
+  if (!isFirstFamily(deps, session.email)) return json(403, { error: 'forbidden' });
+  const at = deps.now();
+  const token = randomToken();
+  const expiresAt = new Date(at.getTime() + INVITE_DAYS * DAY).toISOString();
+  await deps.store.saveInvite({ tokenHash: await sha256Hex(token), createdBy: session.email, createdAt: at.toISOString(), expiresAt, usedAt: null });
+  return json(200, { url: `${appOrigin}/join#${token}`, expiresAt });
+}
+
+// POST /api/auth/join: a parent with an invite link makes an account with their email and a password, and gets a
+// family of their own. The link stands in for the emailed code: it was handed to them by someone who knows them.
+export async function join(deps: AuthDeps, request: Request): Promise<Response> {
+  const body = await readBody(request, joinBody);
+  if (!body) return json(400, { error: 'bad_request' });
+  const email = normalise(body.email);
+  const tokenHash = await sha256Hex(body.token);
+  const invite = await deps.store.getInvite(tokenHash);
+  const at = deps.now();
+  if (!invite || invite.usedAt !== null || at.getTime() >= new Date(invite.expiresAt).getTime()) return json(400, { error: 'bad_invite' });
+  // An address that can already sign in keeps its account: an invite never moves a parent to another family.
+  if ((await isListed(deps, email)) || (await deps.store.getUser(email)) !== null) return json(409, { error: 'taken' });
+  if (!(await deps.store.claimInvite(tokenHash, at.toISOString()))) return json(400, { error: 'bad_invite' });
+
+  const stamp = at.toISOString();
+  await deps.store.saveMember({ email, family: `f-${randomHex(16)}`, joinedAt: stamp });
+  const salt = randomHex(16);
+  await deps.store.saveUser({ email, pwHash: await passwordHash(deps, salt, body.passwordKey), pwSalt: salt, createdAt: stamp, updatedAt: stamp });
+  await deps.store.clearAttempts(email);
+  return startSession(deps, email);
 }
 
 // POST /api/auth/logout

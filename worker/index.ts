@@ -1,7 +1,11 @@
 import type { D1Database, R2Bucket, SendEmail } from '@cloudflare/workers-types';
 import type { AuthDeps } from './auth';
 import {
+  createInvite,
+  familyFor,
   findSession,
+  isFirstFamily,
+  join,
   json,
   login,
   logout,
@@ -46,8 +50,11 @@ export interface ApiDeps extends AuthDeps {
   voice: VoiceStore;
   // The machine that makes speech, or null where there is none (local runs, tests).
   voiceMaker: VoiceMaker | null;
-  // Whose records a signed-in parent reads and writes. Every listed parent shares one family.
-  familyOf: (email: string) => string;
+  // Whose records a signed-in parent reads and writes: the first family's, or their own family's (invites).
+  // Null when the parent belongs to no family, which a signed-in parent never should.
+  familyOf: (email: string) => Promise<string | null>;
+  // Local runs: every account keeps to itself, so one test never sees another's children.
+  dev?: boolean;
 }
 
 type Handler = (deps: ApiDeps, request: Request) => Promise<Response>;
@@ -57,6 +64,7 @@ const SIGN_IN_ROUTES: Record<string, Handler> = {
   'POST /api/auth/start': start,
   'POST /api/auth/password': setPassword,
   'POST /api/auth/login': login,
+  'POST /api/auth/join': join,
 };
 
 // A request that changes something must be JSON, or the gzip file for the backup, sent by the app itself.
@@ -87,19 +95,26 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
 
     switch (route) {
       case 'GET /api/auth/session':
-        return sessionInfo(session);
+        return sessionInfo(deps, session);
+      case 'POST /api/invites':
+        return await createInvite(deps, session, deps.appOrigin);
       case 'POST /api/auth/logout':
         return await logout(deps, session);
       case 'POST /api/auth/logout-all':
         return await logoutAll(deps, session);
+      // The old backup file is the first family's alone: another family never reads or writes it.
       case 'GET /api/backup':
+        if (!deps.dev && !isFirstFamily(deps, session.email)) return json(403, { error: 'forbidden' });
         return await getBackup(deps.backup, request);
       case 'PUT /api/backup':
+        if (!deps.dev && !isFirstFamily(deps, session.email)) return json(403, { error: 'forbidden' });
         return await putBackup(deps.backup, request, deps.now());
       case 'GET /api/data':
-        return await getData(deps.data, deps.familyOf(session.email), request);
-      case 'POST /api/data':
-        return await postData(deps.data, deps.familyOf(session.email), request, deps.now());
+      case 'POST /api/data': {
+        const family = await deps.familyOf(session.email);
+        if (family === null) return json(403, { error: 'forbidden' });
+        return route === 'GET /api/data' ? await getData(deps.data, family, request) : await postData(deps.data, family, request, deps.now());
+      }
       case 'POST /api/voice':
         return await voice(deps.voice, deps.voiceMaker, request, deps.defer);
       case 'GET /api/voice-pack':
@@ -118,11 +133,13 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
   if (!env.AUTH_PEPPER || env.AUTH_PEPPER.length < 32) return null;
   const dev = env.ENVIRONMENT === 'dev';
   if (!dev && !env.MAIL_FROM) return null;
-  return {
-    store: d1Store(env.DB),
+  const store = d1Store(env.DB);
+  const parentEmails = parseParentEmails(env.PARENT_EMAILS);
+  const deps: ApiDeps = {
+    store,
     mailer: dev ? consoleMailer() : cloudflareMailer(env.MAIL, env.MAIL_FROM ?? ''),
     pepper: env.AUTH_PEPPER,
-    parentEmails: parseParentEmails(env.PARENT_EMAILS),
+    parentEmails,
     now: () => new Date(),
     defer: (work) => ctx.waitUntil(work),
     appOrigin: env.APP_ORIGIN,
@@ -132,8 +149,10 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     voice: env.VOICE ? r2VoiceStore(env.VOICE) : memoryVoiceStore(),
     voiceMaker: env.VOICE_URL && env.VOICE_KEY ? remoteVoiceMaker(env.VOICE_URL, env.VOICE_KEY) : null,
     // On the local test server each account keeps to itself, so one test never sees another's children.
-    familyOf: (email) => (dev ? email : FAMILY),
+    familyOf: (email) => (dev ? Promise.resolve(email) : familyFor(deps, email, FAMILY)),
+    dev,
   };
+  return deps;
 }
 
 export default {
