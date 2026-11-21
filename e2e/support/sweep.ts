@@ -43,6 +43,13 @@ export async function openFromSubject(page: Page, subject: string, name: string,
   // Every character with a meaning in a pattern is escaped, so a name such as "Which operation?" matches itself.
   await page.locator(`[data-skill] >> role=button[name=/^${name.replace(/[.*+?^${}()|[\]\\/:,]/g, (c) => `\\${c}`)}\\. Score/]`).click();
   await expect(page.locator('[data-phase="asking"]')).toBeVisible();
+  await screenSettled(page);
+}
+
+// Waits until the change from one screen to the next has finished. Measured mid-change, the old screen is still
+// fading out over the new one, and a picture can look cut off when it is not (seen at the foldable's size).
+export async function screenSettled(page: Page): Promise<void> {
+  await page.waitForFunction(() => document.getAnimations().every((animation) => animation.playState !== 'running' || animation.effect?.getComputedTiming().iterations === Infinity), undefined, { timeout: 5000 }).catch(() => undefined);
 }
 
 export const openFromMath = (page: Page, name: string, tab?: string): Promise<void> => openFromSubject(page, 'Math', name, tab);
