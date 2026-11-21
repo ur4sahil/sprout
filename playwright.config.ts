@@ -29,6 +29,9 @@ export default defineConfig({
     { name: 'ipad-landscape', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 1024, height: 768 } } },
     { name: 'ipad-portrait', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 820, height: 1180 } } },
     { name: 'phone', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 390, height: 844 } } },
+    // iPhone Duo, the foldable (Sept 2026): 7.6-inch inner screen 1878 x 2670 pixels at 3x, so 626 x 890 open. Closed,
+    // its 5.4-inch outer screen is phone sized, which 'phone' and 'narrow-360' already cover.
+    { name: 'fold-open', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, deviceScaleFactor: 3, viewport: { width: 626, height: 890 } } },
     { name: 'narrow-360', testIgnore: /(api|offline)\.spec\.ts/, use: { ...touch, viewport: { width: 360, height: 640 } } },
     {
       name: 'laptop-chromium',
