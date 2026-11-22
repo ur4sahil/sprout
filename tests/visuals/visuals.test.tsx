@@ -8,7 +8,7 @@ import VisualView from '../../src/visuals/VisualView';
 import { COIN_MM, DICE_CELLS, SHAPES, clockAngles, partShares, shapeTransform, unfoldHoles, wedge } from '../../src/visuals/geometry';
 
 const KINDS = [
-  'emojiGroup', 'text', 'shape', 'solid', 'tenFrame', 'baseTen', 'numberLine', 'equation', 'sequence', 'matrix', 'clock',
+  'emojiGroup', 'text', 'shape', 'solid', 'tenFrame', 'baseTen', 'numberLine', 'equation', 'pairs', 'sequence', 'matrix', 'clock',
   'coins', 'graph', 'ruler', 'fraction', 'row', 'bar', 'array', 'tally', 'scale', 'foldPunch', 'linePlot', 'figure',
   'twoRulers', 'measuredRect', 'holders', 'clipRow', 'measuringCup',
 ];
@@ -235,6 +235,28 @@ describe('number pictures', () => {
     const equation = draw({ kind: 'equation', parts: [9, '-', 'blank', '=', 5] });
     expect(equation.querySelectorAll('[data-blank]')).toHaveLength(1);
     expect(equation.textContent).toBe('9−=5');
+  });
+
+  // Reasoning A.8 (the owner's choice, Nov 22, 2026): "6 → 9 4 → 7 5 → ?" in one row read as "6 → 94 → 75 → ?".
+  it('number pairs stand one a line, each pair in its own box, with the blank box last and dots only when asked', () => {
+    const pairs = draw({ kind: 'pairs', pairs: [{ from: 6, to: 9 }, { from: 4, to: 7 }, { from: 5, to: 'blank' }] });
+    const boxes = [...pairs.querySelectorAll('[data-pair]')];
+    expect(boxes).toHaveLength(3);
+    // Each box holds exactly its own pair and nothing of the next.
+    expect(boxes.map((box) => box.textContent)).toEqual(['6→9', '4→7', '5→']);
+    expect(boxes.every((box) => box.parentElement === pairs.firstElementChild)).toBe(true);
+    expect(boxes[2]?.querySelectorAll('[data-blank]')).toHaveLength(1);
+    expect(pairs.querySelectorAll('[data-blank]')).toHaveLength(1);
+    expect(pairs.querySelectorAll('[data-dots]')).toHaveLength(0);
+    expect(pairs.firstElementChild?.getAttribute('aria-label')).toBe('6 → 9; 4 → 7; 5 → □');
+
+    const dotted = draw({ kind: 'pairs', pairs: [{ from: 2, to: 3 }, { from: 7, to: 8 }, { from: 5, to: 'blank' }], dots: true });
+    // Dots under every number shown, as many as the number, and none under the blank.
+    expect([...dotted.querySelectorAll('[data-dots]')].map((dots) => [dots.getAttribute('data-dots'), dots.querySelectorAll('[data-item]').length])).toEqual([
+      ['2', 2], ['3', 3], ['7', 7], ['8', 8], ['5', 5],
+    ]);
+    expect(dotted.querySelector('[data-pair="2"]')?.querySelectorAll('[data-dots]')).toHaveLength(1);
+    expect(dotted.firstElementChild?.getAttribute('aria-label')).toBe('2 → 3; 7 → 8; 5 → □, with dots');
   });
 
   it('tally marks come in bundles of five', () => {

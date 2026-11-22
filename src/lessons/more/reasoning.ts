@@ -6,7 +6,7 @@ import { RIDDLES } from '../../content/data/riddles';
 import type { Riddle } from '../../content/data/riddles';
 import { VERBAL_RELATIONS, WORD_CLASSES } from '../../content/data/verbal';
 import type { Question, Say } from '../../engine/types';
-import { alter, art, calm, countAlong, ids, moment, num, numeral, scene, set, str, text, turnQuestion, withoutHand } from '../build';
+import { alter, art, calm, countAlong, ids, moment, num, numeral, pairStack, scene, set, str, text, turnQuestion, withoutHand } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
 
 // Reasoning lessons that teach (plan section 16): number analogies, number series, number puzzles,
@@ -59,28 +59,22 @@ const RED = '🔴';
 const GREEN = '🟢';
 
 // ---- R-A8 Number analogies ----
+// The first lesson teaches the counting levels (the owner's choice, Nov 22, 2026): it starts with "goes up by 1", the
+// numbers counted out as dots, then "goes up by 2". Doubling and the other rules are in the second lesson.
 
-type PairRule = { kind: 'plus'; n: number } | { kind: 'double' };
-const ruled = (rule: PairRule, value: number): number => (rule.kind === 'double' ? value * 2 : value + rule.n);
-const added = (rule: PairRule, value: number): number => ruled(rule, value) - value;
+type PairRule = { kind: 'plus'; n: number };
+const ruled = (rule: PairRule, value: number): number => value + rule.n;
 
-// Three pairs across the top (the last one ends in a box), and counters on the table that show each change:
-// blue for the number we start with, red for what the rule adds.
+// The pairs stacked on the left, one a line in its own box (the last ends in a box to fill), as the questions draw
+// them, and dots on the table on the right that count each change: blue for the number we start with, red for
+// what the rule adds.
 function pairScene(p: string, examples: readonly (readonly [number, number])[], base: number): Scene {
   const pairs: [number, number | null][] = [...examples.map(([from, to]): [number, number | null] => [from, to]), [base, null]];
-  const top = pairs.flatMap(([from, to], i): Piece[] => {
-    const x = 0.2 + i * 3.3;
-    return [
-      { id: `${p}f${i}`, look: numeral(from), x, y: 0.4, w: 1.1, h: 1.1 },
-      { id: `${p}a${i}`, look: text('→'), x: x + 1.1, y: 0.4, w: 0.8, h: 1.1 },
-      { id: `${p}t${i}`, look: to === null ? { kind: 'box' } : numeral(to), x: x + 1.9, y: 0.4, w: 1.1, h: 1.1 },
-    ];
-  });
-  const counters = [...ids(`${p}b`, 10).map((id) => ({ id, look: art(BLUE), x: 0.5, y: 2.2, gone: true })), ...ids(`${p}r`, 10).map((id) => ({ id, look: art(RED), x: 0.5, y: 2.2, gone: true }))];
-  return scene([...top, ...counters]);
+  const counters = [...ids(`${p}b`, 10).map((id) => ({ id, look: art(BLUE), x: 4.8, y: 0.8, gone: true })), ...ids(`${p}r`, 10).map((id) => ({ id, look: art(RED), x: 4.8, y: 0.8, gone: true }))];
+  return scene([...pairStack(p, pairs, 0.3, 0.3), ...counters]);
 }
 
-// `blue` blue counters, then `red` red ones, in rows of ten on the table.
+// `blue` blue dots, then `red` red ones, in rows of five on the right.
 function showCounters(from: Scene, p: string, blue: number, red: number, redLit = false): Scene {
   return alter(from, (piece) => {
     const isBlue = piece.id.startsWith(`${p}b`);
@@ -89,56 +83,35 @@ function showCounters(from: Scene, p: string, blue: number, red: number, redLit 
     const i = Number(piece.id.slice(p.length + 1));
     const k = isBlue ? i : blue + i;
     const shown = isBlue ? i < blue : i < red;
-    return { ...piece, x: 0.5 + (k % 10) * 0.9, y: 2.2 + Math.floor(k / 10), w: 0.85, h: 0.85, gone: !shown, lit: isRed && shown && redLit ? true : undefined };
+    return { ...piece, x: 4.8 + (k % 5) * 0.95, y: 0.8 + Math.floor(k / 5) * 0.95, w: 0.85, h: 0.85, gone: !shown, lit: isRed && shown && redLit ? true : undefined };
   });
 }
 
-const changeSay = (rule: PairRule, from: number): Say => [{ number: from }, ', and', { number: added(rule, from) }, 'more, make', { number: ruled(rule, from) }, '.'];
-const badgeOf = (rule: PairRule): string => (rule.kind === 'double' ? 'double' : `+${rule.n}`);
+const changeSay = (rule: PairRule, from: number): Say => [{ number: from }, ', and', { number: rule.n }, 'more, make', { number: ruled(rule, from) }, '.'];
+const badgeOf = (rule: PairRule): string => `+${rule.n}`;
 
 function pairMoments(p: string, examples: readonly (readonly [number, number])[], base: number, rule: PairRule): Moment[] {
   const [one, two] = examples as [readonly [number, number], readonly [number, number]];
   const start = pairScene(p, examples, base);
   const answer = ruled(rule, base);
   const first = showCounters(set(start, [`${p}f0`, `${p}t0`], { lit: true }), p, one[0], 0);
-  // A doubling pair also fits "add the same number", so its rule is not named until the next pair is checked.
-  const unsure = rule.kind === 'double' && two[0] !== one[0];
-  const firstCounted = showCounters(calm(first), p, one[0], added(rule, one[0]), true);
-  const firstChange = unsure ? firstCounted : set(firstCounted, [`${p}a0`], { badge: badgeOf(rule) });
-  const second = set(showCounters(calm(firstChange), p, two[0], added(rule, two[0]), true), [`${p}f1`, `${p}t1`], { lit: true });
+  const firstCounted = showCounters(calm(first), p, one[0], rule.n, true);
+  const firstChange = set(firstCounted, [`${p}a0`], { badge: badgeOf(rule) });
+  const second = set(showCounters(calm(firstChange), p, two[0], rule.n, true), [`${p}f1`, `${p}t1`], { lit: true });
   const secondBadged = alter(second, (piece) => (piece.id === `${p}a1` ? { ...piece, badge: badgeOf(rule) } : piece));
   const last = set(showCounters(calm(secondBadged), p, base, 0), [`${p}f2`, `${p}t2`], { lit: true });
-  const solved = alter(showCounters(calm(last), p, base, added(rule, base), true), (piece) => {
+  const solved = alter(showCounters(calm(last), p, base, rule.n, true), (piece) => {
     if (piece.id === `${p}t2`) return { ...piece, look: numeral(answer), lit: true };
     if (piece.id === `${p}a2`) return { ...piece, badge: badgeOf(rule) };
     return piece;
   });
-  const ruleSay: Say = rule.kind === 'double' ? ['The rule is, double the number.'] : ['The rule is, add', { number: rule.n }, '.'];
-  const opening = [
-    moment(['Look at the first pair.', { number: one[0] }, 'becomes', { number: one[1] }, '.'], `${one[0]} → ${one[1]}`, first),
-    moment(changeSay(rule, one[0]), `${one[0]} + ${added(rule, one[0])} = ${one[1]}`, firstChange),
-  ];
-  const ending = [
+  return [
+    moment(['Look at the first pair.', { number: one[0] }, 'becomes', { number: one[1] }, '. Count the dots.'], `${one[0]} → ${one[1]}`, first),
+    moment(changeSay(rule, one[0]), `${one[0]} + ${rule.n} = ${one[1]}`, firstChange),
+    moment(['Each number goes up by', { number: rule.n }, '.'], `Each number goes up by ${rule.n}.`, set(calm(firstChange), [`${p}a0`], { lit: true })),
+    moment(['Check the next pair.', ...changeSay(rule, two[0]), 'It works!'], `${two[0]} + ${rule.n} = ${two[1]}`, secondBadged),
     moment(['Now use the rule on', { number: base }, '.'], `Use the rule on ${base}.`, last),
     moment([...changeSay(rule, base), 'The answer is', { number: answer }, '.'], `${base} → ${answer}`, solved),
-  ];
-  if (unsure) {
-    const n = one[0];
-    const nextPair = set(calm(firstChange), [`${p}f1`, `${p}t1`], { lit: true });
-    const wrongTry = set(showCounters(calm(firstChange), p, two[0], n, true), [`${p}f1`, `${p}t1`], { lit: true });
-    return [
-      ...opening,
-      moment(['It could be, add', { number: n }, '. Let us check the next pair.'], `Add ${n}? Check.`, nextPair),
-      moment([{ number: two[0] }, ', and', { number: n }, 'more, make', { number: two[0] + n }, ', not', { number: two[1] }, '. So it is not, add', { number: n }, '.'], `${two[0]} + ${n} = ${two[0] + n}, not ${two[1]}`, wrongTry),
-      moment([...changeSay(rule, two[0]), 'The rule is, double. Double means the same number again.'], `${two[0]} + ${two[0]} = ${two[1]}. Rule: double it.`, secondBadged),
-      ...ending,
-    ];
-  }
-  return [
-    ...opening,
-    moment(ruleSay, rule.kind === 'double' ? 'Rule: double it.' : `Rule: add ${rule.n}.`, set(calm(firstChange), [`${p}a0`], { lit: true })),
-    moment(['Check the next pair.', ...changeSay(rule, two[0]), 'It works!'], `${two[0]} + ${added(rule, two[0])} = ${two[1]}`, secondBadged),
-    ...ending,
   ];
 }
 
@@ -146,32 +119,32 @@ function pairWhy(question: Question): Moment[] {
   const examples = numberRows(question.facts, 'examples') as [number, number][];
   const base = num(question.facts, 'base');
   const [from, to] = examples[0] as [number, number];
-  const rule: PairRule = question.level === 2 ? { kind: 'double' } : { kind: 'plus', n: to - from };
-  return pairMoments('w', examples, base, rule);
+  return pairMoments('w', examples, base, { kind: 'plus', n: to - from });
 }
 
 export function numberAnalogyLesson(): Lesson {
-  const plus = pairMoments('x', [[2, 5], [4, 7]], 6, { kind: 'plus', n: 3 });
-  const double = pairMoments('y', [[3, 6], [5, 10]], 4, { kind: 'double' });
-  const first = turnQuestion('R-A8', 1, (f) => {
-    const [a = 0, b = 0] = numberRows(f, 'examples')[0] ?? [];
-    // Not the worked example's rule (add three), so the child has to find this one.
-    return b - a <= 2 && num(f, 'base') + b - a <= 12;
+  const byOne = pairMoments('x', [[2, 3], [5, 6]], 7, { kind: 'plus', n: 1 });
+  const byTwo = pairMoments('y', [[3, 5], [6, 8]], 4, { kind: 'plus', n: 2 });
+  // Not the worked example's last number.
+  const first = turnQuestion('R-A8', 1, (f) => num(f, 'base') !== 7);
+  // Up by 2, with nothing the example already showed: its pairs start at three and six, and its last number is four.
+  const second = turnQuestion('R-A8', 2, (f) => {
+    const rows = numberRows(f, 'examples');
+    const [a = 0, b = 0] = rows[0] ?? [];
+    return b - a === 2 && ![3, 4, 6].includes(num(f, 'base')) && rows.every(([from = 0]) => ![3, 6].includes(from));
   });
-  // Nothing the doubling example already showed: its pairs start at three and five, and its last number is four.
-  const second = turnQuestion('R-A8', 2, (f) => num(f, 'base') <= 6 && ![3, 4, 5].includes(num(f, 'base')) && numberRows(f, 'examples').every(([from = 0]) => ![3, 4, 5].includes(from)));
-  const plusStart = plus[0]?.scene ?? scene([]);
-  const doubleStart = double[0]?.scene ?? scene([]);
+  const oneStart = byOne[0]?.scene ?? scene([]);
+  const twoStart = byTwo[0]?.scene ?? scene([]);
   return {
     parts: [
-      show(moment(['In each pair, the first number changes by the same secret rule.'], 'Each pair follows one rule.', calm(withoutHand(plusStart)))),
-      ...plus.map(show),
-      show(moment(['Find a rule that works for every pair. Then use it on the last number.'], 'Find the rule. Use it on the last number.', calm(plus.at(-1)?.scene ?? plusStart))),
+      show(moment(['Each number changes the same way. Find the rule that fits every pair.'], 'Each pair follows one rule.', calm(withoutHand(oneStart)))),
+      ...byOne.map(show),
+      show(moment(['Find a rule that works for every pair. Then use it on the last number.'], 'Find the rule. Use it on the last number.', calm(byOne.at(-1)?.scene ?? oneStart))),
       turn(first, pairWhy(first)),
-      show(moment(['Here is a trickier rule. Check every pair before you choose.'], 'A trickier rule.', calm(doubleStart))),
-      ...double.map(show),
+      show(moment(['Here the numbers go up by more. Check every pair before you choose.'], 'A new rule.', calm(twoStart))),
+      ...byTwo.map(show),
       turn(second, pairWhy(second)),
-      show(moment(['Find the rule, check it on every pair, and then use it.'], 'Find it, check it, use it.', calm(double.at(-1)?.scene ?? doubleStart))),
+      show(moment(['Find the rule, check it on every pair, and then use it.'], 'Find it, check it, use it.', calm(byTwo.at(-1)?.scene ?? twoStart))),
     ],
   };
 }

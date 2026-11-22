@@ -102,6 +102,9 @@ export function describeVisual(visual: Visual | 'blank'): string {
     }
     case 'equation':
       return visual.parts.map((part) => (part === 'blank' ? '□' : String(part))).join(' ');
+    case 'pairs':
+      // "6 → 9; 4 → 7; 5 → □", and "with dots" when each number has its dots under it.
+      return `${visual.pairs.map((pair) => `${pair.from} → ${pair.to === 'blank' ? '□' : pair.to}`).join('; ')}${visual.dots ? ', with dots' : ''}`;
     case 'sequence':
       return visual.items.map((item) => describeVisual(item)).join(', ');
     case 'matrix':

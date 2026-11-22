@@ -98,6 +98,15 @@ export const GALLERY: GallerySection[] = [
     ],
   },
   {
+    title: 'pairs',
+    samples: [
+      { label: 'up by 1, dots, 10 at most', visual: { kind: 'pairs', pairs: [{ from: 6, to: 7 }, { from: 9, to: 10 }, { from: 4, to: 'blank' }], dots: true } },
+      { label: 'doubles, no dots', visual: { kind: 'pairs', pairs: [{ from: 6, to: 12 }, { from: 4, to: 8 }, { from: 5, to: 'blank' }] } },
+      { label: 'the widest: 5 times 5', visual: { kind: 'pairs', pairs: [{ from: 3, to: 15 }, { from: 4, to: 20 }, { from: 5, to: 'blank' }] } },
+      { label: 'one pair, answered', visual: { kind: 'pairs', pairs: [{ from: 7, to: 8 }], dots: true } },
+    ],
+  },
+  {
     title: 'sequence',
     samples: [
       { label: 'shapes', visual: { kind: 'sequence', items: [shape('circle', 'red', { size: 's' }), shape('square', 'blue', { size: 's' }), shape('circle', 'red', { size: 's' }), shape('square', 'blue', { size: 's' }), 'blank'] } },

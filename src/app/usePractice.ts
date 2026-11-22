@@ -13,6 +13,7 @@ import { nextQuestion } from '../content/registry';
 import { makeRng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
 import { SKIP_TEST_QUESTIONS, earnsSkipTest, passedByTest } from '../engine/fastTrack';
+import { maxLevelFor } from '../engine/grades';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
 import type { Question, Response, Say } from '../engine/types';
 import { now } from '../lib/clock';
@@ -77,9 +78,11 @@ export function praiseFor(q: Question, rightBefore: number, who: Who, last: { in
   return { say: line.say, who };
 }
 
-// `testing`: the short test on a new skill asks at the skill's hardest level.
-function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: readonly string[], testing = false): Question {
-  const level = testing ? skill.maxLevel : levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
+// `testing`: the short test on a new skill asks at the hardest level this child is asked on it (`maxLevelFor`: a
+// young child's ceiling, when the skill has one).
+export function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: readonly string[], testing = false): Question {
+  const top = maxLevelFor(skill, child.grade);
+  const level = testing ? top : levelToAsk(state.score, lastWasMiss(state), top);
   // n is how many answers the child has already given on this skill.
   return nextQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state.attempts), keys);
 }

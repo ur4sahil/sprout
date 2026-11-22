@@ -6,7 +6,7 @@ import { CATALOGUE } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
 import { allGenerators, generateQuestion } from '../content/registry';
 import type { TodayPick } from '../engine/recommend';
-import { offeredTo } from '../engine/grades';
+import { maxLevelFor, offeredTo } from '../engine/grades';
 import { rankCandidates, recommend } from '../engine/recommend';
 import { dueForReview } from '../engine/review';
 import { seedFor } from '../engine/seed';
@@ -37,7 +37,7 @@ const READY = (): Set<string> => new Set(allGenerators().map((generator) => gene
 
 // Whether the next question this child would get on a skill is a listen question.
 export function isListenNext(child: Child, skill: Skill, state: SkillState | undefined): boolean {
-  const level = levelToAsk(state?.score ?? 0, state ? lastWasMiss(state) : false, skill.maxLevel);
+  const level = levelToAsk(state?.score ?? 0, state ? lastWasMiss(state) : false, maxLevelFor(skill, child.grade));
   return generateQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state?.attempts ?? 0)).mode === 'listen';
 }
 

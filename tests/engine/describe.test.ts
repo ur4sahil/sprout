@@ -34,6 +34,8 @@ describe('describeVisual', () => {
     [{ kind: 'baseTen', hundreds: 1, tens: 0, ones: 1 }, '1 hundred, 1 one'],
     [{ kind: 'numberLine', min: 0, max: 10, step: 1, marked: [4] }, 'number line from 0 to 10 by 1, dot at 4'],
     [{ kind: 'equation', parts: [3, '+', 'blank', '=', 7] }, '3 + □ = 7'],
+    [{ kind: 'pairs', pairs: [{ from: 6, to: 9 }, { from: 4, to: 7 }, { from: 5, to: 'blank' }] }, '6 → 9; 4 → 7; 5 → □'],
+    [{ kind: 'pairs', pairs: [{ from: 7, to: 8 }], dots: true }, '7 → 8, with dots'],
     [{ kind: 'sequence', items: [{ kind: 'text', value: 'A', size: 'l' }, 'blank'] }, 'A, blank'],
     [{ kind: 'clock', hour: 3, minute: 30 }, 'clock showing 3:30'],
     [{ kind: 'coins', coins: ['dime', 'penny'] }, 'dime, penny'],

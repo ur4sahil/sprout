@@ -25,6 +25,7 @@ export interface Skill {
   prereqs: string[]; // extra prerequisites, on top of the ladder default
   retired?: true; // hidden from children, history kept
   fromGrade?: Exclude<SkillGrade, 'all'>; // offered only from this grade up (offeredTo in engine/grades.ts)
+  youngMaxLevel?: Level; // the highest level a pre-K or kindergarten child is asked (maxLevelFor in engine/grades.ts)
   ccss?: string; // Common Core code where one applies
   vaSol?: string; // Virginia SOL code, filled in a later content pass
   video?: { youtubeId: string; title: string; source: string; seconds: number };
@@ -3444,9 +3445,13 @@ const BASE: readonly Skill[] = [
     ladder: 'words-numbers',
     icon: { kind: 'equation', parts: [2, '→', 5] },
     speakName: ['Number analogies'],
-    version: 3,
+    // 4: the owner's choice of Nov 22, 2026: the pairs stacked one a line, each in its own box, and a gentler ramp
+    // (up by 1 with dots; up by 1 or 2 with dots; up or down by 1 to 5 or doubles, picked; the typed level as before).
+    version: 4,
     itemTypes: ['choice', 'numberPad'],
     maxLevel: 4,
+    // A pre-K or kindergarten child masters it on "goes up by 1" (the same choice).
+    youngMaxLevel: 1,
     prereqs: [],
   },
   {

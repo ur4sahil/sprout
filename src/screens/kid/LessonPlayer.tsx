@@ -52,8 +52,8 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
   const example = useMemo(() => exampleQuestion(skill.id), [skill]);
   // A lesson that teaches (plan section 16), where the skill has one. Otherwise the old four beats.
   const teaching = useMemo(() => teachingFor(skill.id), [skill]);
-  // Part 2: a second short lesson for the skill's harder levels, where one is written.
-  const teaching2 = useMemo(() => teachingPart2For(skill.id), [skill]);
+  // Part 2: a second short lesson for the skill's harder levels, where one is written and this child is asked them.
+  const teaching2 = useMemo(() => teachingPart2For(skill.id, child.grade), [skill, child.grade]);
   // Who tells the lessons and the example: the subject's friend once the server speaks with the new voices, Sprout
   // until then (plan section 20). The choice screen names that teller, and Sprout says its line.
   const teacher = voiceFor(skill.subject);

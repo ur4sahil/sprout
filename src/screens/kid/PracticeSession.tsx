@@ -213,7 +213,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
         <Celebration
           milestone={practice.milestone}
           skillName={skill.name}
-          onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
+          onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id, child.grade) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
           onDone={practice.milestone === 100 ? finish : practice.afterCelebration} games={games} growth={growth} />
       )}
       {phase === 'skipped' && (

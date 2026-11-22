@@ -4,6 +4,7 @@ import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
 import type { Skill } from '../content/catalogue';
 import { nextQuestion } from '../content/registry';
+import { maxLevelFor } from '../engine/grades';
 import { REVIEW_QUESTIONS, applyReview, reviewLevel, reviewRight } from '../engine/review';
 import { seedFor } from '../engine/seed';
 import type { Question, Response } from '../engine/types';
@@ -55,6 +56,11 @@ export interface Review {
   gotIt: () => void;
 }
 
+// A review question: at the review level, never above what this child is asked on the skill (maxLevelFor).
+export function reviewTurn(child: Child, skill: Skill, reviewsSoFar: number, keys: readonly string[]): Question {
+  return nextQuestion(skill.id, reviewLevel(maxLevelFor(skill, child.grade)), seedFor(child.id, skill.id, 'review', reviewsSoFar), keys);
+}
+
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 export function useReview(child: Child, skills: readonly Skill[]): Review {
@@ -93,7 +99,7 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
     const self = live.current;
     const current = skills[self.index];
     if (!current || !self.state) return;
-    const q = nextQuestion(current.id, reviewLevel(current.maxLevel), seedFor(child.id, current.id, 'review', self.reviewsSoFar), self.keys);
+    const q = reviewTurn(child, current, self.reviewsSoFar, self.keys);
     self.question = q;
     self.shownAt = now();
     self.pending = null;

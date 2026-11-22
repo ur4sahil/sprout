@@ -3,6 +3,7 @@ import { LADDERS } from '../content/ladders';
 import { allGenerators } from '../content/registry';
 import type { DiagnosticLadder } from '../engine/diagnostic';
 import { applyPlacement, placementsOf, shouldWalk } from '../engine/diagnostic';
+import { maxLevelFor } from '../engine/grades';
 import { newId } from '../lib/ids';
 import type { Repo } from '../storage/repo';
 import type { Child, DiagnosticProgress, DiagnosticResult, DiagnosticSubject, Grade, SkillState } from '../storage/schema';
@@ -12,8 +13,9 @@ import type { Child, DiagnosticProgress, DiagnosticResult, DiagnosticSubject, Gr
 export const CHECK_IN_SUBJECTS: readonly DiagnosticSubject[] = ['math', 'ela'];
 export const SUBJECT_NAME: Record<DiagnosticSubject, string> = { math: 'Math', ela: 'Language Arts' };
 
-// A subject's ladders, holding only the skills that are built. Reasoning is never checked.
-export function diagnosticLadders(subject: DiagnosticSubject): DiagnosticLadder[] {
+// A subject's ladders, holding only the skills that are built. Reasoning is never checked. With the child's grade,
+// each skill's top level is the one that child is asked (maxLevelFor), so a check-in never asks above it.
+export function diagnosticLadders(subject: DiagnosticSubject, grade?: Grade): DiagnosticLadder[] {
   const ready = new Set(allGenerators().map((generator) => generator.skillId));
   const rows = new Map(CATALOGUE.filter((skill) => !skill.retired && ready.has(skill.id)).map((skill) => [skill.id, skill]));
   // A ladder with no skill built yet is left out. Saving a placement on it would say the child had
@@ -23,7 +25,7 @@ export function diagnosticLadders(subject: DiagnosticSubject): DiagnosticLadder[
       id: ladder.id,
       skills: ladder.skillIds.flatMap((id) => {
         const skill = rows.get(id);
-        return skill ? [{ id, grade: skill.grade, maxLevel: skill.maxLevel }] : [];
+        return skill ? [{ id, grade: skill.grade, maxLevel: grade ? maxLevelFor(skill, grade) : skill.maxLevel }] : [];
       }),
     }))
     .filter((ladder) => ladder.skills.length > 0);

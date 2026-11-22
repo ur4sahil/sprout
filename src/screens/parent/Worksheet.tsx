@@ -44,7 +44,7 @@ export default function Worksheet() {
         if (alive) setFound('missing');
         return;
       }
-      const sheet = buildSheet(skills, await repo.getSkillStates(child.id), { skillIds, count, shift, seed });
+      const sheet = buildSheet(skills, await repo.getSkillStates(child.id), { skillIds, count, shift, seed, grade: child.grade });
       if (alive) setFound({ child, sheet });
     })().catch((error: unknown) => {
       logError(error);

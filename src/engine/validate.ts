@@ -410,6 +410,19 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
     }
   }
 
+  // 19: a pairs picture (Reasoning A.8) holds at least one pair of whole numbers 0 to 1,000, a blank only as the
+  // last pair's second number, and dots only when every number is small enough to count (10 or less)
+  const pictures: Visual[] = [...seen];
+  if (q.explanation?.visual) visualsIn(q.explanation.visual, pictures);
+  for (const visual of pictures) {
+    if (visual.kind !== 'pairs') continue;
+    if (visual.pairs.length === 0) problems.push('19: a pairs picture has no pairs');
+    const numbers = visual.pairs.flatMap((pair) => (pair.to === 'blank' ? [pair.from] : [pair.from, pair.to]));
+    if (!numbers.every((value) => Number.isInteger(value) && value >= 0 && value <= 1000)) problems.push('19: a pairs picture has a number that is not a whole number from 0 to 1,000');
+    if (visual.pairs.some((pair, i) => pair.to === 'blank' && i !== visual.pairs.length - 1)) problems.push('19: a pairs picture has a blank before its last pair');
+    if (visual.dots && numbers.some((value) => value > 10)) problems.push('19: a pairs picture has dots under a number bigger than 10');
+  }
+
   return problems;
 }
 

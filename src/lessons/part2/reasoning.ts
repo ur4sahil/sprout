@@ -5,7 +5,7 @@ import { RIDDLES } from '../../content/data/riddles';
 import type { Riddle } from '../../content/data/riddles';
 import { VERBAL_RELATIONS, WORD_CLASSES } from '../../content/data/verbal';
 import type { Question, Say, ShapeName, Visual } from '../../engine/types';
-import { alter, art, moment, numeral, picture, pointAt, scene, set, text, turnQuestion } from '../build';
+import { alter, art, moment, numeral, pairStack, picture, pointAt, scene, set, text, turnQuestion } from '../build';
 import type { Lesson, LessonPart, Moment, Piece, Scene } from '../types';
 
 // Part 2 lessons (plan section 16): a second short lesson for a skill's harder levels, offered once the child is
@@ -687,19 +687,11 @@ function ruleBadge(rule: NumRule): string {
   return rule.more > 0 ? `double +${rule.more}` : `double −${-rule.more}`;
 }
 
-// Three pairs across the top; the last one ends in a box. Ids: f (first number), a (arrow), t (second number).
+// The three pairs stacked in the middle, one a line in its own box (as the questions draw them, the owner's choice
+// of Nov 22, 2026); the last ends in a box. Ids: p (the pair's box), f (first number), a (arrow), t (second number).
 function numberPairScene(p: string, examples: readonly (readonly number[])[], base: number): Scene {
   const pairs: [number, number | null][] = [...examples.map((pair): [number, number | null] => [at(pair, 0), at(pair, 1)]), [base, null]];
-  return scene(
-    pairs.flatMap(([from, to], i): Piece[] => {
-      const x = 0.2 + i * 3.3;
-      return [
-        { id: `${p}f${i}`, look: numeral(from), x, y: 0.9, w: 1.1, h: 1.1 },
-        { id: `${p}a${i}`, look: text('→'), x: x + 1.1, y: 0.9, w: 0.8, h: 1.1 },
-        { id: `${p}t${i}`, look: to === null ? { kind: 'box' } : numeral(to), x: x + 1.9, y: 0.9, w: 1.1, h: 1.1 },
-      ];
-    }),
-  );
+  return scene(pairStack(p, pairs, 3.2, 0.3));
 }
 const pairLit = (from: Scene, p: string, i: number, badge?: string): Scene => (badge ? set(light(from, [`${p}f${i}`, `${p}t${i}`]), [`${p}a${i}`], { badge }) : light(from, [`${p}f${i}`, `${p}t${i}`]));
 const pairSolved = (from: Scene, p: string, answer: number, badge: string): Scene => alter(pairLit(from, p, 2, badge), (piece) => (piece.id === `${p}t2` ? { ...piece, look: numeral(answer) } : piece));

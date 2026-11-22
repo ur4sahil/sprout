@@ -3,7 +3,6 @@ import { makeRng } from '../../../engine/rng';
 import type { Explanation, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../engine/types';
 import type { SkillGenerator } from '../../generator';
 import { numeral } from '../../generator';
-import { row } from '../ela/pk/parts';
 import { numeralChoices } from '../math/k/numerals';
 import type { Line } from './parts';
 import { explained, line } from './parts';
@@ -12,15 +11,28 @@ import { explained, line } from './parts';
 // The same change is worded the same way in all three: a number "goes up by", "goes down by" or "doubles".
 
 // ---- A.8 Number analogies ----
-// Levels: two example pairs, then a third to finish: plus n / double / typed /
-// typed, with times 3, 4 or 5 (from a number up to 5), or two steps: double, then add or take away a little.
+// Two example pairs, then a third to finish. The ramp (the owner's choice, Nov 22, 2026: "ease the child into
+// learning this reasoning skill"), by the level the Skill Score asks for:
+//   1: "goes up by 1" only, every number 10 or less, dots under every number to count, pick 1 of 3.
+//   2: "goes up by 1" or "goes up by 2", numbers to 10, dots under each number, pick 1 of 3.
+//   3: up or down by 1 to 5, or doubles, no dots, pick 1 of 3.
+//   4: typed, times 3, 4 or 5 (from a number up to 5), or two steps: double, then add or take away a little.
+// A pre-K or kindergarten child is never asked above level 1 (`youngMaxLevel` on the catalogue row).
 // One pair is never enough: "2 and 4" fits both plus 2 and double.
 // The prompt says what the arrows mean: "Each number changes the same way. What does 4 change to?"
+// Every picture stacks the pairs one a line, each in its own light box (the `pairs` picture).
 
 type Rule = { kind: 'plus' | 'minus'; n: number } | { kind: 'double' };
 
 const applied = (rule: Rule, value: number): number => (rule.kind === 'double' ? value * 2 : rule.kind === 'plus' ? value + rule.n : value - rule.n);
-const pairPicture = (from: number, to: number | 'blank'): Visual => ({ kind: 'equation', parts: [from, '→', to] });
+// Dots under the numbers at the two counting levels.
+const dotted = (level: Level): boolean => level <= 2;
+// The biggest number in a picture at the counting levels: a young child counts the dots.
+const COUNTING_TOP = 10;
+// The pairs, stacked; the last may end in the blank box.
+function pairsPicture(pairs: readonly (readonly [number, number | 'blank'])[], dots: boolean): Visual {
+  return { kind: 'pairs', pairs: pairs.map(([from, to]) => ({ from, to })), ...(dots ? { dots: true as const } : {}) };
+}
 
 function pairsPrompt(base: number): { text: string; speak: Say } {
   return line('Each number changes the same way. What does', base, 'change to?');
@@ -31,7 +43,8 @@ function hintPair(examples: readonly (readonly [number, number])[], answer: numb
   return examples.find(([from, to]) => from !== answer && to !== answer && from > 1) ?? examples.find(([from, to]) => from !== answer && to !== answer) ?? (examples[0] as readonly [number, number]);
 }
 
-function ruleExplanation(rule: Rule, base: number, hint: string): Explanation {
+// The steps after a miss. At the counting levels they count: "Each number goes up by 1. 7 goes up to 8."
+function ruleExplanation(rule: Rule, base: number, hint: string, dots: boolean): Explanation {
   const answer = applied(rule, base);
   const lines: Line[] =
     rule.kind === 'double'
@@ -39,26 +52,44 @@ function ruleExplanation(rule: Rule, base: number, hint: string): Explanation {
       : rule.kind === 'plus'
         ? [line('Each number goes up by', rule.n, '.'), line(base, 'goes up to', answer, '.')]
         : [line('Each number goes down by', rule.n, '.'), line(base, 'goes down to', answer, '.')];
-  return explained(lines, pairPicture(base, answer), hint);
+  return explained(lines, pairsPicture([[base, answer]], dots), hint);
+}
+
+// The rule for a level: up by 1; up by 1 or 2; up or down by 1 to 5, or doubles.
+function ruleFor(level: Level, rng: Rng): Rule {
+  if (level === 1) return { kind: 'plus', n: 1 };
+  if (level === 2) return { kind: 'plus', n: rng.int(1, 2) };
+  const kind = rng.pick(['plus', 'minus', 'double'] as const);
+  return kind === 'double' ? { kind } : { kind, n: rng.int(1, 5) };
 }
 
 function numberAnalogy(level: Level, rng: Rng): QuestionDraft {
-  const kind = level === 1 ? 'plus' : level === 2 ? 'double' : rng.pick(['plus', 'minus', 'double'] as const);
-  const rule: Rule = kind === 'double' ? { kind } : { kind, n: rng.int(1, 5) };
-  // Three different starting numbers. With "take away", each is big enough to take from.
+  const rule = ruleFor(level, rng);
+  const dots = dotted(level);
+  // Three different starting numbers. At the counting levels every number, the answer too, is 10 or less. With
+  // "take away", each is big enough to take from.
   const lowest = rule.kind === 'minus' ? rule.n + 1 : 1;
-  const starts = rng.sample(Array.from({ length: 9 }, (_, i) => lowest + i), 3) as [number, number, number];
+  const highest = dots && rule.kind === 'plus' ? COUNTING_TOP - rule.n : lowest + 8;
+  const starts = rng.sample(Array.from({ length: highest - lowest + 1 }, (_, i) => lowest + i), 3) as [number, number, number];
   const [first, second, base] = starts;
   const examples = [first, second].map((from): [number, number] => [from, applied(rule, from)]);
   const answer = applied(rule, base);
   const [from, to] = hintPair(examples, answer);
-  const stimulus = row(pairPicture(first, applied(rule, first)), pairPicture(second, applied(rule, second)), pairPicture(base, 'blank'));
-  const common = { mode: 'look' as const, prompt: pairsPrompt(base), stimulus, explanation: ruleExplanation(rule, base, `How does ${from} change into ${to}?`) };
-  if (level === 3) return { ...common, type: 'numberPad', facts: { examples, base }, answer, maxDigits: 2 };
-  // The slips: the other rule, or the number the last example ended on.
-  const other = rule.kind === 'double' ? base + (second as number) : base * 2;
-  const values = numeralChoices(answer, [other, applied(rule, second)], 0, 40, rng);
-  return { ...common, type: 'choice', facts: { examples, base, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer) };
+  const stimulus = pairsPicture([...examples, [base, 'blank']], dots);
+  // The slips. Counting: the number staying the same, or going up by the other step. Otherwise: the other rule,
+  // or the number the last example ended on.
+  const slips = dots && rule.kind === 'plus' ? [base, base + (rule.n === 1 ? 2 : 1)] : [rule.kind === 'double' ? base + second : base * 2, applied(rule, second)];
+  const values = numeralChoices(answer, slips, 0, dots ? COUNTING_TOP + 2 : 40, rng);
+  return {
+    type: 'choice',
+    mode: 'look',
+    prompt: pairsPrompt(base),
+    stimulus,
+    facts: { examples, base, options: values },
+    options: values.map((value) => numeral(value)),
+    answerIndex: values.indexOf(answer),
+    explanation: ruleExplanation(rule, base, `How does ${from} change into ${to}?`, dots),
+  };
 }
 
 type HardRule = { kind: 'times'; n: number } | { kind: 'twoStep'; m: number };
@@ -68,12 +99,12 @@ const hardApplied = (rule: HardRule, value: number): number => (rule.kind === 't
 function hardExplanation(rule: HardRule, base: number, hint: string): Explanation {
   const answer = hardApplied(rule, base);
   if (rule.kind === 'times') {
-    return explained([line('Each number becomes', rule.n, 'times as big.'), line(base, 'times', rule.n, 'is', answer, '.')], pairPicture(base, answer), hint);
+    return explained([line('Each number becomes', rule.n, 'times as big.'), line(base, 'times', rule.n, 'is', answer, '.')], pairsPicture([[base, answer]], false), hint);
   }
   const m = Math.abs(rule.m);
   return explained(
     [line('Each number doubles, then goes', rule.m > 0 ? 'up' : 'down', 'by', m, '.'), line(base, 'doubles to', base * 2, '.'), line(base * 2, rule.m > 0 ? 'plus' : 'minus', m, 'is', answer, '.')],
-    pairPicture(base, answer),
+    pairsPicture([[base, answer]], false),
     hint,
   );
 }
@@ -96,7 +127,7 @@ function hardAnalogy(rng: Rng): QuestionDraft {
     mode: 'look',
     facts: { examples, base },
     prompt: pairsPrompt(base),
-    stimulus: row(pairPicture(first, hardApplied(rule, first)), pairPicture(second, hardApplied(rule, second)), pairPicture(base, 'blank')),
+    stimulus: pairsPicture([...examples, [base, 'blank']], false),
     answer,
     maxDigits: 2,
     explanation: hardExplanation(rule, base, hint),
@@ -105,22 +136,22 @@ function hardAnalogy(rng: Rng): QuestionDraft {
 
 const analogyOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? hardAnalogy(rng) : numberAnalogy(level, rng));
 
+// The old four beats, kept for a device that plays them: they start with "goes up by 1" and dots, as the levels do.
 function analogyLesson(): LessonStep[] {
-  const plus: Rule = { kind: 'plus', n: 3 };
-  const double: Rule = { kind: 'double' };
-  const watch = ruleExplanation(plus, 6, 'How does 2 change into 5?');
-  const reveal = ruleExplanation(double, 4, 'How does 3 change into 6?');
+  const up: Rule = { kind: 'plus', n: 1 };
+  const watch = ruleExplanation(up, 6, 'How does 2 change into 3?', true);
+  const reveal = ruleExplanation({ kind: 'plus', n: 2 }, 4, 'How does 3 change into 5?', true);
   return [
-    { beat: 'see', text: 'A pair of numbers can follow a rule. 2 changes to 5: it goes up by 3.', speak: ['A pair of numbers can follow a rule.', { number: 2 }, 'changes to', { number: 5 }, ': it goes up by', { number: 3 }, '.'], visual: pairPicture(2, 5) },
-    { beat: 'watch', text: watch.steps.join(' '), speak: watch.speak, visual: row(pairPicture(2, 5), pairPicture(4, 7), pairPicture(6, 9)) },
+    { beat: 'see', text: 'A pair of numbers can follow a rule. 2 changes to 3: it goes up by 1.', speak: ['A pair of numbers can follow a rule.', { number: 2 }, 'changes to', { number: 3 }, ': it goes up by', { number: 1 }, '.'], visual: pairsPicture([[2, 3]], true) },
+    { beat: 'watch', text: watch.steps.join(' '), speak: watch.speak, visual: pairsPicture([[2, 3], [4, 5], [6, 7]], true) },
     {
       beat: 'try',
       text: pairsPrompt(4).text,
       speak: pairsPrompt(4).speak,
-      visual: row(pairPicture(1, 2), pairPicture(3, 6), pairPicture(4, 'blank')),
-      reveal: { text: reveal.steps.join(' '), speak: reveal.speak, visual: pairPicture(4, 8) },
+      visual: pairsPicture([[3, 5], [6, 8], [4, 'blank']], true),
+      reveal: { text: reveal.steps.join(' '), speak: reveal.speak, visual: pairsPicture([[4, 6]], true) },
     },
-    { beat: 'remember', text: 'Find the rule that fits every pair.', speak: ['Find the rule that fits every pair.'], visual: row(pairPicture(2, 5), pairPicture(4, 7)) },
+    { beat: 'remember', text: 'Find the rule that fits every pair.', speak: ['Find the rule that fits every pair.'], visual: pairsPicture([[2, 3], [4, 5]], true) },
   ];
 }
 

@@ -102,6 +102,12 @@ export function canonicalVisual(visual: Visual | 'blank'): Plain {
       return { kind: 'matrix', cells: visual.cells.map((cell) => canonicalVisual(cell)) };
     case 'row':
       return { kind: 'row', children: visual.children.map((child) => canonicalVisual(child)) };
+    case 'pairs': {
+      // The pairs in their order (it is the order they are read in), and the dots only when they are drawn.
+      const out: { [key: string]: Plain } = { kind: 'pairs', pairs: visual.pairs.map((pair) => ({ from: pair.from, to: pair.to })) };
+      if (visual.dots) out.dots = true;
+      return out;
+    }
     case 'coins':
       // The same coins in another order are the same handful.
       return { kind: 'coins', coins: visual.coins.slice().sort() };
