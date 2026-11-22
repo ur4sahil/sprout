@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, nextPart, partPath, partRunPath, partSize, planProgress, todaysPlan } from '../../src/app/todaysPlan';
+import { KEEP_GOING_QUESTIONS, MIXED_QUESTIONS, NEW_QUESTIONS, moreAfter, nextPart, partPath, partRunPath, partSize, planProgress, todaysPlan } from '../../src/app/todaysPlan';
+import type { PlanPart } from '../../src/app/todaysPlan';
 import { REVIEW_QUESTIONS } from '../../src/engine/review';
 import type { TodayPick } from '../../src/engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../../src/storage/schema';
@@ -113,6 +114,24 @@ describe("today's plan", () => {
     expect(partRunPath({ kind: 'keepGoing', subject: 'math', skillId: 'M-K-C1', answered: 3, done: false })).toBe('/skill/M-K-C1?run=7');
     expect(partRunPath({ kind: 'new', skillId: 'M-K-A1', answered: 0, done: false })).toBe(`/skill/M-K-A1/learn?run=${NEW_QUESTIONS}`);
     expect(partRunPath({ kind: 'review', skillIds: ['M-K-C4'], answered: 0, done: false })).toBe('/review?run=1');
+  });
+
+  it("a run goes on after a skill's part while another part is not done; the Mixed bag does not count (Nov 22, 2026)", () => {
+    const keep = (skillId: string, done = false): PlanPart => ({ kind: 'keepGoing', subject: skillId.startsWith('E') ? 'ela' : 'math', skillId, answered: 0, done });
+    const bag: PlanPart = { kind: 'mixed', answered: 0, size: 10, done: false, locked: false };
+    expect(moreAfter([keep('M-K-C1'), keep('E-K-B1')], 'M-K-C1')).toBe(true);
+    expect(moreAfter([keep('M-K-C1'), { kind: 'new', skillId: 'M-K-A1', answered: 0, done: false }], 'M-K-C1')).toBe(true);
+    // A review left undone is still ahead of the run.
+    expect(moreAfter([{ kind: 'review', skillIds: ['M-K-B1'], answered: 0, done: false }, keep('M-K-C1')], 'M-K-C1')).toBe(true);
+    // The skill's own part, whether the medal has ticked it yet or not, is never "more".
+    expect(moreAfter([keep('M-K-C1')], 'M-K-C1')).toBe(false);
+    expect(moreAfter([keep('M-K-C1', true)], 'M-K-C1')).toBe(false);
+    expect(moreAfter([keep('M-K-C1'), keep('E-K-B1', true)], 'M-K-C1')).toBe(false);
+    // Start never goes into the Mixed bag, so the plan ends without it.
+    expect(moreAfter([keep('M-K-C1'), bag], 'M-K-C1')).toBe(false);
+    // Each part agrees with where /play goes next once this part is ticked off.
+    const plan = [keep('M-K-C1', true), keep('E-K-B1'), bag];
+    expect(moreAfter(plan, 'M-K-C1')).toBe(nextPart(plan) !== null);
   });
 });
 

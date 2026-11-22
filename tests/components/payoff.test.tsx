@@ -298,6 +298,17 @@ describe('the growth show', () => {
     expect(rest.container.querySelector('[data-break] [data-growth-show]')).not.toBeNull();
     expect(screen.getByRole('button', { name: /Stop for now/ })).toBeTruthy();
   });
+
+  it('the medal\'s button says where it goes: "All done", or "Next one" in a run that goes on (Nov 22, 2026)', () => {
+    const medal = render(<Celebration milestone={100} skillName="Add to 10" onDone={() => undefined} doneLabel="Next one" />);
+    expect(screen.getByRole('button', { name: /Next one/ })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /All done/ })).toBeNull();
+    medal.unmount();
+    // The other milestones carry on with the same skill, whatever the medal would say.
+    render(<Celebration milestone={90} skillName="Add to 10" onDone={() => undefined} doneLabel="Next one" />);
+    expect(screen.getByRole('button', { name: /Keep going/ })).toBeTruthy();
+    expect(screen.queryByRole('button', { name: /Next one/ })).toBeNull();
+  });
 });
 
 describe('a plant in a review pot', () => {

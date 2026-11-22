@@ -17,11 +17,14 @@ interface Props {
   onNextLesson?: () => void;
   // At 100, the sitting is over: the growth show plays first, with the plant in full bloom (game feel, phase 5).
   growth?: GrowthInfo | null;
+  // At 100, the big button's words: "All done" when it ends the sitting, "Next one" when a run through today's plan goes
+  // on to another part (the owner's choice, Nov 22, 2026).
+  doneLabel?: string;
 }
 
 
 // A short full-screen celebration, the first time a milestone is crossed.
-export default function Celebration({ milestone, skillName, onDone, games, onNextLesson, growth = null }: Props) {
+export default function Celebration({ milestone, skillName, onDone, games, onNextLesson, growth = null, doneLabel = 'All done' }: Props) {
   const words = MILESTONE_WORDS[milestone] ?? (MILESTONE_WORDS[50] as { emoji: string; title: string; line: string });
   const head = (
     <>
@@ -34,7 +37,7 @@ export default function Celebration({ milestone, skillName, onDone, games, onNex
     <>
       <BigButton size="kid" onClick={onDone}>
         <Icon name="next" />
-        {milestone === 100 ? 'All done' : 'Keep going'}
+        {milestone === 100 ? doneLabel : 'Keep going'}
       </BigButton>
       {onNextLesson && (
         <BigButton size="kid" tone="quiet" onClick={onNextLesson} data-next-lesson="">

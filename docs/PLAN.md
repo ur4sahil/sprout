@@ -1956,7 +1956,8 @@ letter parts: the recorded voice is sent the capital ('A'), which it reads as th
 word parts:   passed to the voice as written
 number parts: written as words by a function, 0 to 10,000 ('forty-seven', 'two thousand four hundred six')
 time parts:   as a digital clock is read: 8:00 'eight o'clock', 8:05 'eight oh five', 8:15 'eight fifteen',
-              8:30 'eight thirty', 8:45 'eight forty-five'. Never 'half past', 'quarter past' or 'quarter to'
+              8:30 'eight thirty', 8:45 'eight forty-five'. Never 'half past', 'quarter past' or 'quarter to',
+              except grade 3 F.1 level 3, which teaches those words (the owner's choice, Nov 22, 2026)
 cents parts:  25 'twenty-five cents', 1 'one cent'
 sound parts:  a letter sound from letterSounds.ts, shown /b/: its recording, or its letters ('the sound of B')
 plain strings: must not contain digits or symbols. Write 'plus', 'take away' (K) or 'minus'

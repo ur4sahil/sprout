@@ -152,3 +152,11 @@ export function partRunPath(part: PlanPart): string {
 export function nextPart(plan: readonly PlanPart[]): PlanPart | null {
   return plan.find((part) => !part.done && part.kind !== 'mixed') ?? null;
 }
+
+// Whether a run through the plan goes on after this skill's part: another part not yet done, the Mixed bag aside as in
+// nextPart. A skill mastered on its part then says "Next one" on the medal, and "All done" on the plan's last part
+// (the owner's choice, Nov 22, 2026).
+export function moreAfter(plan: readonly PlanPart[], skillId: string): boolean {
+  const own = (part: PlanPart): boolean => (part.kind === 'keepGoing' || part.kind === 'new') && part.skillId === skillId;
+  return plan.some((part) => !part.done && part.kind !== 'mixed' && !own(part));
+}

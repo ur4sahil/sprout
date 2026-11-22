@@ -41,8 +41,9 @@ interface Props {
   skill: Skill;
   // Set when this skill is one pick in a Play run: the break offers "Next one", and each pick lasts one session.
   play?: { onNext: () => void };
-  // Set when this skill is one part of a run through today's plan: after `left` answers the run goes on.
-  run?: { left: number; onDone: () => void };
+  // Set when this skill is one part of a run through today's plan: after `left` answers the run goes on. `more`: the
+  // plan has another part after this one, so the medal's button says "Next one" rather than "All done".
+  run?: { left: number; more: boolean; onDone: () => void };
 }
 
 // The practice screen: the question on the left, the status panel on the right.
@@ -214,7 +215,8 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
           milestone={practice.milestone}
           skillName={skill.name}
           onNextLesson={practice.milestone === PART2_AT_SCORE && teachingPart2For(skill.id) ? () => void navigate(`/skill/${skill.id}/learn?part=2`, { replace: true }) : undefined}
-          onDone={practice.milestone === 100 ? finish : practice.afterCelebration} games={games} growth={growth} />
+          onDone={practice.milestone === 100 ? finish : practice.afterCelebration} games={games} growth={growth}
+          doneLabel={play || run?.more ? 'Next one' : 'All done'} />
       )}
       {phase === 'skipped' && (
         <FullScreenCard emoji="🚀" title="You know this one!" line={`${skill.name}: no need to practise it.`} name="skipped">

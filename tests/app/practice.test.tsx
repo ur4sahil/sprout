@@ -2,6 +2,7 @@ import { PRAISE } from '../../src/audio/say';
 import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../src/app/store';
+import { KEEP_GOING_QUESTIONS } from '../../src/app/todaysPlan';
 import { setTimingForTests } from '../../src/app/timing';
 import { skillById } from '../../src/content/catalogue';
 import { advanceClock, localDay } from '../../src/lib/clock';
@@ -506,5 +507,36 @@ describe('a run through today\'s plan (Nov 21, 2026)', () => {
     }
     expect(await screen.findByRole('dialog', { name: /^Next up: / })).toBeTruthy();
     expect(await attempts()).toHaveLength(2);
+  });
+
+  // Add to 10 two points short of its medal, practised before today: one right answer masters it.
+  const nearlyMastered = async (): Promise<void> => {
+    const at = new Date(NOW.getTime() - 86_400_000).toISOString();
+    await (await repo()).saveSkillState({ ...newSkillState('kid-1', 'M-K-C4', at), score: 98, bestScore: 98, streak: 3, attempts: 30, correct: 28, recent: Array.from({ length: 10 }, () => true), lastPracticedAt: at });
+  };
+  const masterOnItsPart = async (planPractice: ('math' | 'ela')[]) => {
+    const child = await setUp('K', { planPractice, planNew: false, planMixed: false });
+    await nearlyMastered();
+    useAppStore.getState().setChild(child);
+    const user = openApp(`/skill/M-K-C4?run=${KEEP_GOING_QUESTIONS}`);
+    await screen.findByRole('region', { name: 'Question' });
+    await answer(user, sumOnScreen());
+    await settled();
+    expect(await screen.findByRole('heading', { name: 'Mastered!' })).toBeTruthy();
+    return user;
+  };
+
+  it('a skill mastered on its part says "Next one" while the plan has more, and the run goes on (Nov 22, 2026)', async () => {
+    const user = await masterOnItsPart(['math', 'ela']);
+    expect(screen.queryByRole('button', { name: /All done/ })).toBeNull();
+    await user.click(screen.getByRole('button', { name: /Next one/ }));
+    expect(await screen.findByRole('dialog', { name: /^Next up: Language Arts/ })).toBeTruthy();
+  });
+
+  it('on the plan\'s last part the medal says "All done", and the run ends at home (Nov 22, 2026)', async () => {
+    const user = await masterOnItsPart(['math']);
+    expect(screen.queryByRole('button', { name: /Next one/ })).toBeNull();
+    await user.click(screen.getByRole('button', { name: /All done/ }));
+    expect(await screen.findByRole('heading', { name: 'Robin' })).toBeTruthy();
   });
 });
