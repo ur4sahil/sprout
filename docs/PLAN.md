@@ -2651,3 +2651,14 @@ The app should feel like a game without being one: a place a child visits. The f
 - **Phases 2 to 8** follow in order, each shown to the owner first: the answer sequences for each question type; the cast; the garden as home; the growth payoff; lessons in topic places with a camera; collecting and stories; music, seasons and polish.
 - **Part 2 lessons.** A skill whose first lesson stops at the starting levels has a second short lesson for its harder levels (`src/lessons/part2`, `LESSONS_PART2`), offered on the bulb's choice screen and put forward from a score of 50 (`PART2_AT_SCORE`).
 
+
+## 20. Voices, acting friends and lessons for a 5-year-old (decided by the owner on Nov 21 to 22, 2026)
+
+The build plan is `docs/VOICES_AND_LESSONS.md`; this section keeps the decisions.
+
+- **Voices (Piper).** Sprout: Amy. Pip (Math): Ryan, made younger. Finn (Reasoning): Joe, made younger. Olive (Language Arts and the stories): Kristin. Letter sounds: Chatterbox, made once, said once inside a sentence and three times on their own.
+- **One slow pace** for every child: Piper length 1.6, a 0.7 s pause after a sentence and 0.42 s after a comma.
+- **Who speaks.** The subject's friend says everything inside its subject (questions, hints, steps, praise, lessons); Sprout says everything outside.
+- **The question screen.** The friend talks with its mouth matching the sounds, reacts, can be tapped to hear the question again, shows on phones, and looks and points at what it talks about; Calm mode keeps only the mouth.
+- **Lessons** follow the approved "Make a ten" shape: a reason to care, the idea made concrete, every object counted aloud, I do / we do (the child taps) / you do, a quick check, a recap. A wrong answer inside a lesson gets its own small lesson, then the same question again; a second miss gets the answer said kindly and the lesson moves on. About 3 minutes.
+- **Order.** Phase 1 the voice switch, 2 the acting friend on the question screen, 3 the lesson engine and stage kit, 4 every lesson rewritten in waves (Math K and 1 first), 5 recording after the wording fixes, 6 the switch and tidy-up. Each phase is shown to the owner first; each push needs his word.
