@@ -7,6 +7,7 @@ import styles from './visuals.module.css';
 type Props = { visual: Extract<Visual, { kind: 'emojiGroup' }> };
 
 // Countable objects in a row, in rows of five, scattered, or as the dots on a die.
+// With a caption, its words are printed under the picture ("eat breakfast"), and the two are one picture.
 export default function EmojiGroupVisual({ visual }: Props) {
   const second = visual.emoji2 !== undefined && visual.count2 ? visual.count2 : 0;
   const total = visual.count + second;
@@ -22,20 +23,33 @@ export default function EmojiGroupVisual({ visual }: Props) {
     columns = 3;
   }
   const layout = cells ? (visual.layout === 'dice' ? styles.dice : styles.scatter) : visual.layout === 'row' ? styles.row : styles.grid5;
+  const objects = items.map((emoji, i) => {
+    const cell = cells ? (cells[i] as number) : null;
+    const place = cell === null ? undefined : { gridColumn: (cell % columns) + 1, gridRow: Math.floor(cell / columns) + 1 };
+    const crossed = i < visual.count && i >= crossedFrom;
+    return (
+      <span key={i} className={`${styles.item} ${crossed ? styles.crossed : ''}`} style={place} data-item={crossed ? 'crossed' : 'object'} aria-hidden="true">
+        <Art emoji={emoji} />
+        {visual.numbered && <span className={styles.number}>{i + 1}</span>}
+      </span>
+    );
+  });
 
+  if (visual.caption) {
+    return (
+      <div className={styles.captioned} role="img" aria-label={describeVisual(visual)} data-visual="emojiGroup">
+        <div className={`${styles.group} ${layout}`} aria-hidden="true">
+          {objects}
+        </div>
+        <span className={styles.caption} aria-hidden="true" data-caption="">
+          {visual.caption}
+        </span>
+      </div>
+    );
+  }
   return (
     <div className={`${styles.group} ${layout}`} role="img" aria-label={describeVisual(visual)} data-visual="emojiGroup">
-      {items.map((emoji, i) => {
-        const cell = cells ? (cells[i] as number) : null;
-        const place = cell === null ? undefined : { gridColumn: (cell % columns) + 1, gridRow: Math.floor(cell / columns) + 1 };
-        const crossed = i < visual.count && i >= crossedFrom;
-        return (
-          <span key={i} className={`${styles.item} ${crossed ? styles.crossed : ''}`} style={place} data-item={crossed ? 'crossed' : 'object'} aria-hidden="true">
-            <Art emoji={emoji} />
-            {visual.numbered && <span className={styles.number}>{i + 1}</span>}
-          </span>
-        );
-      })}
+      {objects}
     </div>
   );
 }

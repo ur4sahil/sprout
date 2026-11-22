@@ -1,6 +1,7 @@
 import { FIGURES } from './figures';
 import { soundOf } from './letterSounds';
-import type { Question, Response, Say, SayPart, Visual } from './types';
+import type { Question, Response, RulerUnit, Say, SayPart, Visual } from './types';
+import { aboutCentimeters } from './units';
 
 // Plain-text descriptions. Used for aria-labels, the question log snapshot and the review sheet.
 
@@ -36,17 +37,38 @@ export function partLabel(value: number, denominator: number): string {
   return whole === 0 ? `${part}/${denominator}` : `${whole} ${part}/${denominator}`;
 }
 
+// ---- For the pictures added on Nov 22, 2026 ----
+
+const RULER_OF: Record<RulerUnit, string> = { cm: 'a centimeter ruler', in: 'an inch ruler' };
+
+// What a measuredRect prints along one side: its length and unit ("6 cm"), or "?" for the side to be found.
+export function sideLabel(visual: Extract<Visual, { kind: 'measuredRect' }>, side: 'length' | 'width'): string {
+  return visual.unknown === side ? '?' : `${visual[side]} ${visual.unit}`;
+}
+
+// How a row of paper clips lies under its thing, as a child would say it: from the end, with a gap, or not straight.
+function clipWays(visual: Extract<Visual, { kind: 'clipRow' }>): string {
+  const ways: string[] = [];
+  if ((visual.clips[0] ?? 0) > 0) ways.push('not starting at its end');
+  if (visual.clips.some((at, i) => i > 0 && at !== (visual.clips[i - 1] as number) + 1)) ways.push('with a gap');
+  if (visual.bent) ways.push('not in a straight line');
+  return ways.length > 0 ? `, ${ways.join(', ')}` : ', end to end';
+}
+
 export function describeVisual(visual: Visual | 'blank'): string {
   if (visual === 'blank') return 'blank';
   switch (visual.kind) {
     case 'emojiGroup': {
+      // One picture with its words printed under it is described by those words: "eat breakfast".
+      if (visual.count === 1 && !visual.count2 && !visual.crossed && visual.caption) return visual.caption;
       // One picture with a spoken name is described by that name: "cat", not "1 🐱".
       if (visual.count === 1 && !visual.count2 && !visual.crossed && visual.speak) return sayText(visual.speak);
       const second = visual.emoji2 !== undefined && visual.count2 ? ` and ${visual.count2} ${visual.emoji2}` : '';
       const crossed = visual.crossed ? `, ${visual.crossed} crossed out` : '';
       const layout =
         visual.layout === 'scatter' ? ', scattered' : visual.layout === 'dice' ? ', as dots on a die' : visual.layout === 'grid5' ? ', in rows of five' : '';
-      return `${visual.count} ${visual.emoji}${second}${crossed}${layout}`;
+      const caption = visual.caption ? `: ${visual.caption}` : '';
+      return `${visual.count} ${visual.emoji}${second}${crossed}${layout}${caption}`;
     }
     case 'text':
       return visual.value;
@@ -89,11 +111,11 @@ export function describeVisual(visual: Visual | 'blank'): string {
     case 'coins':
       return visual.coins.join(', ');
     case 'graph':
-      return `${visual.type} graph${visual.scale && visual.scale > 1 ? `, each ${visual.type === 'picture' ? 'picture' : 'step'} is ${visual.scale}` : ''}: ${visual.categories.map((c) => `${c.label} ${c.value}`).join(', ')}`;
+      return `${visual.title ? `${visual.title}, ` : ''}${visual.type} graph${visual.scale && visual.scale > 1 ? `, each ${visual.type === 'picture' ? 'picture' : 'step'} is ${visual.scale}` : ''}: ${visual.categories.map((c) => `${c.label} ${c.value}`).join(', ')}`;
     case 'linePlot':
       return `line plot of ${visual.unit}: ${visual.counts.map((count, i) => `${partLabel(visual.min + i, visual.denominator)}, ${count}`).join('; ')}`;
     case 'ruler':
-      return `${visual.object} on a ruler from ${visual.startUnit} to ${visual.startUnit + visual.lengthUnits}`;
+      return `${visual.object} on ${visual.unit ? RULER_OF[visual.unit] : 'a ruler'} from ${visual.startUnit} to ${visual.startUnit + visual.lengthUnits}`;
     case 'fraction':
       return `${visual.shape} in ${visual.parts} ${visual.equal ? 'equal' : 'unequal'} parts, ${visual.shaded} shaded`;
     case 'row':
@@ -115,6 +137,20 @@ export function describeVisual(visual: Visual | 'blank'): string {
       return `balance scale: ${visual.left.map((n) => (n === 'blank' ? '□' : n)).join(' and ')} on the left, ${visual.right.join(' and ')} on the right`;
     case 'foldPunch':
       return `${visual.state} paper, ${visual.fold} fold, holes at ${visual.holes.map((hole) => `(${hole.col},${hole.row})`).join(' ')}`;
+    case 'twoRulers':
+      return `${visual.object} ${plural(visual.inches, 'inch', 'inches')} long on an inch ruler, and about ${plural(aboutCentimeters(visual.inches), 'centimeter', 'centimeters')} on a centimeter ruler`;
+    case 'measuredRect':
+      return `rectangle ${sideLabel(visual, 'length')} by ${sideLabel(visual, 'width')}${visual.allSides ? ', every side labelled' : ''}`;
+    case 'holders': {
+      const [one, many] = visual.holder === 'plate' ? (['plate', 'plates'] as const) : (['basket', 'baskets'] as const);
+      if (!visual.filled) return plural(visual.count, `empty ${one}`, `empty ${many}`);
+      return `${plural(visual.count, one, many)} with ${visual.filled.each} ${visual.filled.emoji} ${visual.holder === 'plate' ? 'on' : 'in'} each`;
+    }
+    case 'clipRow':
+      return `${visual.object} ${plural(visual.length, 'paper clip', 'paper clips')} long, with ${plural(visual.clips.length, 'paper clip', 'paper clips')} under it${clipWays(visual)}`;
+    case 'measuringCup':
+      // Like one picture with a spoken name: "a measuring cup", as the ruler and the scale beside it are named.
+      return visual.speak ? sayText(visual.speak) : 'measuring cup';
   }
 }
 

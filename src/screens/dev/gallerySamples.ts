@@ -29,6 +29,8 @@ export const GALLERY: GallerySection[] = [
       { label: '6, 2 crossed', visual: { kind: 'emojiGroup', emoji: '🍪', count: 6, layout: 'row', crossed: 2 } },
       { label: 'numbered', visual: { kind: 'emojiGroup', emoji: '🐸', count: 4, layout: 'row', numbered: true } },
       { label: 'two kinds', visual: { kind: 'emojiGroup', emoji: '🔴', count: 3, layout: 'row', emoji2: '🔵', count2: 2 } },
+      { label: 'with words under it', visual: { kind: 'emojiGroup', emoji: '🥞', count: 1, layout: 'row', caption: 'eat breakfast', speak: ['eat breakfast'] } },
+      { label: 'with long words under it', visual: { kind: 'emojiGroup', emoji: '🐔', count: 1, layout: 'row', caption: 'hear the rooster wake everyone up', speak: ['hear the rooster wake everyone up'] } },
     ],
   },
   {
@@ -160,6 +162,14 @@ export const GALLERY: GallerySection[] = [
         label: 'bar graph in fives',
         visual: { kind: 'graph', type: 'bar', scale: 5, categories: [{ label: 'ducks', emoji: '🦆', value: 15 }, { label: 'frogs', emoji: '🐸', value: 30 }, { label: 'bees', emoji: '🐝', value: 10 }] },
       },
+      {
+        label: 'picture graph with a title',
+        visual: { kind: 'graph', type: 'picture', title: 'Our favorite things', categories: [{ label: 'strawberries', emoji: '🍓', value: 6 }, { label: 'balloons', emoji: '🎈', value: 3 }, { label: 'cookies', emoji: '🍪', value: 5 }] },
+      },
+      {
+        label: 'bar graph with a title',
+        visual: { kind: 'graph', type: 'bar', title: 'Our favorite things', categories: [{ label: 'strawberries', emoji: '🍓', value: 10 }, { label: 'balls', emoji: '⚽', value: 4 }, { label: 'cars', emoji: '🚗', value: 7 }] },
+      },
     ],
   },
   {
@@ -168,6 +178,8 @@ export const GALLERY: GallerySection[] = [
       { label: 'pencil, 0 to 4', visual: { kind: 'ruler', lengthUnits: 4, startUnit: 0, object: 'pencil' } },
       { label: 'crayon, 2 to 5', visual: { kind: 'ruler', lengthUnits: 3, startUnit: 2, object: 'crayon' } },
       { label: 'ribbon, 1 to 8', visual: { kind: 'ruler', lengthUnits: 7, startUnit: 1, object: 'ribbon' } },
+      { label: 'in centimeters, 0 to 9', visual: { kind: 'ruler', lengthUnits: 9, startUnit: 0, object: 'pencil', unit: 'cm' } },
+      { label: 'in inches, 3 to 7', visual: { kind: 'ruler', lengthUnits: 4, startUnit: 3, object: 'crayon', unit: 'in' } },
     ],
   },
   {
@@ -182,7 +194,10 @@ export const GALLERY: GallerySection[] = [
   },
   {
     title: 'row',
-    samples: [{ label: 'two groups', visual: { kind: 'row', children: [{ kind: 'emojiGroup', emoji: '🚗', count: 3, layout: 'row' }, { kind: 'emojiGroup', emoji: '🚗', count: 5, layout: 'grid5' }] } }],
+    samples: [
+      { label: 'two groups', visual: { kind: 'row', children: [{ kind: 'emojiGroup', emoji: '🚗', count: 3, layout: 'row' }, { kind: 'emojiGroup', emoji: '🚗', count: 5, layout: 'grid5' }] } },
+      { label: '10 apples beside 2 plates', visual: { kind: 'row', children: [{ kind: 'emojiGroup', emoji: '🍎', count: 10, layout: 'grid5' }, { kind: 'holders', holder: 'plate', count: 2 }] } },
+    ],
   },
   {
     title: 'bar',
@@ -231,5 +246,44 @@ export const GALLERY: GallerySection[] = [
       { label: 'a hexagon of six triangles', visual: { kind: 'figure', figure: 'hex-6tri', show: 'cut' } },
       { label: 'a big triangle of four', visual: { kind: 'figure', figure: 'tri-4tri', show: 'pieces' } },
     ],
+  },
+  {
+    title: 'twoRulers',
+    samples: [
+      { label: 'ribbon, 2 inches', visual: { kind: 'twoRulers', object: 'ribbon', inches: 2 } },
+      { label: 'crayon, 4 inches', visual: { kind: 'twoRulers', object: 'crayon', inches: 4 } },
+      { label: 'pencil, 6 inches (the longest)', visual: { kind: 'twoRulers', object: 'pencil', inches: 6 } },
+    ],
+  },
+  {
+    title: 'measuredRect',
+    samples: [
+      { label: '6 cm by 4 cm', visual: { kind: 'measuredRect', length: 6, width: 4, unit: 'cm' } },
+      { label: '9 by 2, every side', visual: { kind: 'measuredRect', length: 9, width: 2, unit: 'cm', allSides: true } },
+      { label: '3 cm by ?, tall', visual: { kind: 'measuredRect', length: 3, width: 9, unit: 'cm', unknown: 'width' } },
+      { label: '7 m by 5 m', visual: { kind: 'measuredRect', length: 7, width: 5, unit: 'm' } },
+    ],
+  },
+  {
+    title: 'holders',
+    samples: [
+      { label: '3 empty plates', visual: { kind: 'holders', holder: 'plate', count: 3 } },
+      { label: '5 empty baskets', visual: { kind: 'holders', holder: 'basket', count: 5 } },
+      { label: '3 plates of 4', visual: { kind: 'holders', holder: 'plate', count: 3, filled: { emoji: '🍎', each: 4 } } },
+      { label: '5 baskets of 6 (the most)', visual: { kind: 'holders', holder: 'basket', count: 5, filled: { emoji: '⚽', each: 6 } } },
+    ],
+  },
+  {
+    title: 'clipRow',
+    samples: [
+      { label: 'pencil, 4 clips end to end', visual: { kind: 'clipRow', object: 'pencil', length: 4, clips: [0, 1, 2, 3] } },
+      { label: 'crayon, a gap', visual: { kind: 'clipRow', object: 'crayon', length: 4, clips: [0, 2, 3] } },
+      { label: 'crayon, not straight', visual: { kind: 'clipRow', object: 'crayon', length: 3, clips: [0, 1, 2], bent: true } },
+      { label: 'spoon, 8 clips (the longest)', visual: { kind: 'clipRow', object: 'spoon', length: 8, clips: [0, 1, 2, 3, 4, 5, 6, 7] } },
+    ],
+  },
+  {
+    title: 'measuringCup',
+    samples: [{ label: 'a measuring cup', visual: { kind: 'measuringCup' } }],
   },
 ];

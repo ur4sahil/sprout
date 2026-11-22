@@ -2,6 +2,7 @@ import type { Visual } from '../engine/types';
 import ArrayVisual from './ArrayVisual';
 import BarVisual from './BarVisual';
 import BaseTenVisual from './BaseTenVisual';
+import ClipRowVisual from './ClipRowVisual';
 import ClockVisual from './ClockVisual';
 import CoinsVisual from './CoinsVisual';
 import EmojiGroupVisual from './EmojiGroupVisual';
@@ -10,8 +11,11 @@ import FigureVisual from './FigureVisual';
 import FoldPunchVisual from './FoldPunchVisual';
 import FractionVisual from './FractionVisual';
 import GraphVisual from './GraphVisual';
+import HoldersVisual from './HoldersVisual';
 import LinePlotVisual from './LinePlotVisual';
 import MatrixVisual from './MatrixVisual';
+import MeasuredRectVisual from './MeasuredRectVisual';
+import MeasuringCupVisual from './MeasuringCupVisual';
 import NumberLineVisual from './NumberLineVisual';
 import RowVisual from './RowVisual';
 import RulerVisual from './RulerVisual';
@@ -22,6 +26,7 @@ import SolidVisual from './SolidVisual';
 import TallyVisual from './TallyVisual';
 import TenFrameVisual from './TenFrameVisual';
 import TextVisual from './TextVisual';
+import TwoRulersVisual from './TwoRulersVisual';
 
 // Draws any Visual. Stimuli, answer options and explanations all go through here.
 export default function VisualView({ visual }: { visual: Visual }) {
@@ -72,5 +77,15 @@ export default function VisualView({ visual }: { visual: Visual }) {
       return <FoldPunchVisual visual={visual} />;
     case 'linePlot':
       return <LinePlotVisual visual={visual} />;
+    case 'twoRulers':
+      return <TwoRulersVisual visual={visual} />;
+    case 'measuredRect':
+      return <MeasuredRectVisual visual={visual} />;
+    case 'holders':
+      return <HoldersVisual visual={visual} />;
+    case 'clipRow':
+      return <ClipRowVisual visual={visual} />;
+    case 'measuringCup':
+      return <MeasuringCupVisual visual={visual} />;
   }
 }

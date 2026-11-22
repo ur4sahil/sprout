@@ -13,6 +13,9 @@ const VERSIONS: Record<string, number> = {
   'M-3-E5': 2, 'M-3-E6': 2, 'M-3-E7': 2, 'M-3-F8': 2, 'M-3-F9': 2, 'M-3-F10': 2,
 };
 
+// Skills changed by the new pictures (Nov 22, 2026): F.9's rectangle drawn to its sides. Read before VERSIONS.
+const PICTURE_VERSIONS: Record<string, number> = { 'M-3-F9': 3 };
+
 function row(code: string, name: string, speakName: Say, strand: string, ladder: string, icon: Visual, itemTypes: ItemType[], ccss: string): Skill {
   const letter = code[0] as keyof typeof CATEGORIES;
   const id = `M-3-${code.replace('.', '')}`;
@@ -27,7 +30,7 @@ function row(code: string, name: string, speakName: Say, strand: string, ladder:
     ladder,
     icon,
     speakName,
-    version: VERSIONS[id] ?? 1,
+    version: PICTURE_VERSIONS[id] ?? VERSIONS[id] ?? 1,
     itemTypes,
     maxLevel: 3,
     prereqs: [],

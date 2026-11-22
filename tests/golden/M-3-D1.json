@@ -1,63 +1,59 @@
 {
  "skillId": "M-3-D1",
- "version": 2,
+ "version": 3,
  "example": {
   "mode": "look",
   "prompt": {
-   "text": "Put 9 bananas into 3 equal groups. How many go in each group?",
+   "text": "Share 9 bananas equally onto 3 plates. How many go on each plate?",
    "speak": [
-    "Put",
+    "Share",
     {
      "number": 9
     },
-    "bananas into",
+    "bananas equally onto",
     {
      "number": 3
     },
-    "equal groups. How many go in each group?"
+    "plates. How many go on each plate?"
    ]
   },
   "stimulus": {
-   "kind": "emojiGroup",
-   "emoji": "🍌",
-   "count": 9,
-   "layout": "grid5"
+   "kind": "row",
+   "children": [
+    {
+     "kind": "emojiGroup",
+     "emoji": "🍌",
+     "count": 9,
+     "layout": "grid5"
+    },
+    {
+     "kind": "holders",
+     "holder": "plate",
+     "count": 3
+    }
+   ]
   },
   "explanation": {
    "speak": [
-    "Give one to each group, and keep going until none are left. Each group gets",
+    "Put one on each plate, and keep going until none are left. Each plate gets",
     {
      "number": 3
     },
     "."
    ],
    "steps": [
-    "Give one to each group, and keep going until none are left.",
-    "Each group gets 3.",
+    "Put one on each plate, and keep going until none are left.",
+    "Each plate gets 3.",
     "3 × 3 = 9, so 9 ÷ 3 = 3."
    ],
    "visual": {
-    "kind": "row",
-    "children": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍌",
-      "count": 3,
-      "layout": "dice"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍌",
-      "count": 3,
-      "layout": "dice"
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍌",
-      "count": 3,
-      "layout": "dice"
-     }
-    ]
+    "kind": "holders",
+    "holder": "plate",
+    "count": 3,
+    "filled": {
+     "emoji": "🍌",
+     "each": 3
+    }
    }
   },
   "type": "choice",
@@ -116,60 +112,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 6 cookies into 3 equal groups. How many go in each group?",
+     "text": "Share 6 cookies equally onto 3 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 6
       },
-      "cookies into",
+      "cookies equally onto",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 6,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 6,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "3 × 2 = 6, so 6 ÷ 3 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 3,
+      "filled": {
+       "emoji": "🍪",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -226,60 +218,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 9 balloons into 3 equal groups. How many go in each group?",
+     "text": "Share 9 balloons equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 9
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 9,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 9,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "3 × 3 = 9, so 9 ÷ 3 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "🎈",
+       "each": 3
+      }
      }
     },
     "type": "choice",
@@ -336,60 +324,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 6 flowers into 3 equal groups. How many go in each group?",
+     "text": "Share 6 flowers equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 6
       },
-      "flowers into",
+      "flowers equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🌸",
-     "count": 6,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 6,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "3 × 2 = 6, so 6 ÷ 3 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "🌸",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -446,60 +430,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 9 cars into 3 equal groups. How many go in each group?",
+     "text": "Share 9 cars equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 9
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 9,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 9,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "3 × 3 = 9, so 9 ÷ 3 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "🚗",
+       "each": 3
+      }
      }
     },
     "type": "choice",
@@ -556,60 +536,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 15 cars into 3 equal groups. How many go in each group?",
+     "text": "Share 15 cars equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 15
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 15,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 15,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "3 × 5 = 15, so 15 ÷ 3 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "🚗",
+       "each": 5
+      }
      }
     },
     "type": "choice",
@@ -666,60 +642,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 6 balls into 3 equal groups. How many go in each group?",
+     "text": "Share 6 balls equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 6
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 6,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 6,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "3 × 2 = 6, so 6 ÷ 3 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "⚽",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -776,54 +748,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 4 bananas into 2 equal groups. How many go in each group?",
+     "text": "Share 4 bananas equally onto 2 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 4
       },
-      "bananas into",
+      "bananas equally onto",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍌",
-     "count": 4,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 4,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "2 × 2 = 4, so 4 ÷ 2 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 2,
+      "filled": {
+       "emoji": "🍌",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -880,54 +854,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 balloons into 2 equal groups. How many go in each group?",
+     "text": "Share 8 balloons equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 4
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 4.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 4.",
       "2 × 4 = 8, so 8 ÷ 2 = 4."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 4,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 4,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🎈",
+       "each": 4
+      }
      }
     },
     "type": "choice",
@@ -984,54 +960,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 10 cars into 2 equal groups. How many go in each group?",
+     "text": "Share 10 cars equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 10
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 10,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 10,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "2 × 5 = 10, so 10 ÷ 2 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🚗",
+       "each": 5
+      }
      }
     },
     "type": "choice",
@@ -1088,60 +1066,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 15 balls into 3 equal groups. How many go in each group?",
+     "text": "Share 15 balls equally into 3 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 15
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 3
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 15,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 15,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 3
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "3 × 5 = 15, so 15 ÷ 3 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 3,
+      "filled": {
+       "emoji": "⚽",
+       "each": 5
+      }
      }
     },
     "type": "choice",
@@ -1200,66 +1174,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 cookies into 4 equal groups. How many go in each group?",
+     "text": "Share 8 cookies equally onto 4 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "cookies into",
+      "cookies equally onto",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 4,
+      "filled": {
+       "emoji": "🍪",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -1316,66 +1280,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 12 balloons into 4 equal groups. How many go in each group?",
+     "text": "Share 12 balloons equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 12
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 12,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 12,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "4 × 3 = 12, so 12 ÷ 4 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🎈",
+       "each": 3
+      }
      }
     },
     "type": "choice",
@@ -1432,66 +1386,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 flowers into 4 equal groups. How many go in each group?",
+     "text": "Share 8 flowers equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "flowers into",
+      "flowers equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🌸",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🌸",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -1548,72 +1492,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 15 cars into 5 equal groups. How many go in each group?",
+     "text": "Share 15 cars equally into 5 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 15
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 5
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 15,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 15,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 5
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "5 × 3 = 15, so 15 ÷ 5 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 5,
+      "filled": {
+       "emoji": "🚗",
+       "each": 3
+      }
      }
     },
     "type": "choice",
@@ -1670,66 +1598,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 20 cars into 4 equal groups. How many go in each group?",
+     "text": "Share 20 cars equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 20
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 20,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 20,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "4 × 5 = 20, so 20 ÷ 4 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🚗",
+       "each": 5
+      }
      }
     },
     "type": "choice",
@@ -1786,66 +1704,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 balls into 4 equal groups. How many go in each group?",
+     "text": "Share 8 balls equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "⚽",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -1902,54 +1810,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 4 bananas into 2 equal groups. How many go in each group?",
+     "text": "Share 4 bananas equally onto 2 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 4
       },
-      "bananas into",
+      "bananas equally onto",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍌",
-     "count": 4,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 4,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "2 × 2 = 4, so 4 ÷ 2 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 2,
+      "filled": {
+       "emoji": "🍌",
+       "each": 2
+      }
      }
     },
     "type": "choice",
@@ -2006,54 +1916,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 10 balloons into 2 equal groups. How many go in each group?",
+     "text": "Share 10 balloons equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 10
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 10,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 10,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "2 × 5 = 10, so 10 ÷ 2 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🎈",
+       "each": 5
+      }
      }
     },
     "type": "choice",
@@ -2110,54 +2022,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 12 cars into 2 equal groups. How many go in each group?",
+     "text": "Share 12 cars equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 12
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 12,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 12,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 6
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 6.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 6.",
       "2 × 6 = 12, so 12 ÷ 2 = 6."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 6,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🚗",
+       "each": 6
+      }
      }
     },
     "type": "choice",
@@ -2214,66 +2128,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 24 balls into 4 equal groups. How many go in each group?",
+     "text": "Share 24 balls equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 24
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 24,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 24,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 6
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 6.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 6.",
       "4 × 6 = 24, so 24 ÷ 4 = 6."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "⚽",
+       "each": 6
+      }
      }
     },
     "type": "choice",
@@ -2332,66 +2236,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 cookies into 4 equal groups. How many go in each group?",
+     "text": "Share 8 cookies equally onto 4 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "cookies into",
+      "cookies equally onto",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍪",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍪",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 4,
+      "filled": {
+       "emoji": "🍪",
+       "each": 2
+      }
      }
     },
     "type": "numberPad",
@@ -2412,66 +2306,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 12 balloons into 4 equal groups. How many go in each group?",
+     "text": "Share 12 balloons equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 12
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 12,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 12,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "4 × 3 = 12, so 12 ÷ 4 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🎈",
+       "each": 3
+      }
      }
     },
     "type": "numberPad",
@@ -2492,66 +2376,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 flowers into 4 equal groups. How many go in each group?",
+     "text": "Share 8 flowers equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "flowers into",
+      "flowers equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🌸",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🌸",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🌸",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🌸",
+       "each": 2
+      }
      }
     },
     "type": "numberPad",
@@ -2572,72 +2446,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 15 cars into 5 equal groups. How many go in each group?",
+     "text": "Share 15 cars equally into 5 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 15
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 5
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 15,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 15,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 5
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 3
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 3.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 3.",
       "5 × 3 = 15, so 15 ÷ 5 = 3."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 3,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 5,
+      "filled": {
+       "emoji": "🚗",
+       "each": 3
+      }
      }
     },
     "type": "numberPad",
@@ -2658,66 +2516,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 20 cars into 4 equal groups. How many go in each group?",
+     "text": "Share 20 cars equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 20
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 20,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 20,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "4 × 5 = 20, so 20 ÷ 4 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "🚗",
+       "each": 5
+      }
      }
     },
     "type": "numberPad",
@@ -2738,66 +2586,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 8 balls into 4 equal groups. How many go in each group?",
+     "text": "Share 8 balls equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 8
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 8,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 8,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 2.",
       "4 × 2 = 8, so 8 ÷ 4 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "⚽",
+       "each": 2
+      }
      }
     },
     "type": "numberPad",
@@ -2818,54 +2656,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 4 bananas into 2 equal groups. How many go in each group?",
+     "text": "Share 4 bananas equally onto 2 plates. How many go on each plate?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 4
       },
-      "bananas into",
+      "bananas equally onto",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "plates. How many go on each plate?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍌",
-     "count": 4,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🍌",
+       "count": 4,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "plate",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one on each plate, and keep going until none are left. Each plate gets",
       {
        "number": 2
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 2.",
+      "Put one on each plate, and keep going until none are left.",
+      "Each plate gets 2.",
       "2 × 2 = 4, so 4 ÷ 2 = 2."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🍌",
-        "count": 2,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "plate",
+      "count": 2,
+      "filled": {
+       "emoji": "🍌",
+       "each": 2
+      }
      }
     },
     "type": "numberPad",
@@ -2886,54 +2726,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 10 balloons into 2 equal groups. How many go in each group?",
+     "text": "Share 10 balloons equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 10
       },
-      "balloons into",
+      "balloons equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 10,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🎈",
+       "count": 10,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 5
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 5.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 5.",
       "2 × 5 = 10, so 10 ÷ 2 = 5."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 5,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🎈",
-        "count": 5,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🎈",
+       "each": 5
+      }
      }
     },
     "type": "numberPad",
@@ -2954,54 +2796,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 12 cars into 2 equal groups. How many go in each group?",
+     "text": "Share 12 cars equally into 2 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 12
       },
-      "cars into",
+      "cars equally into",
       {
        "number": 2
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🚗",
-     "count": 12,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "🚗",
+       "count": 12,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 2
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 6
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 6.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 6.",
       "2 × 6 = 12, so 12 ÷ 2 = 6."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "🚗",
-        "count": 6,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 2,
+      "filled": {
+       "emoji": "🚗",
+       "each": 6
+      }
      }
     },
     "type": "numberPad",
@@ -3022,66 +2866,56 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "Put 24 balls into 4 equal groups. How many go in each group?",
+     "text": "Share 24 balls equally into 4 baskets. How many go in each basket?",
      "speak": [
-      "Put",
+      "Share",
       {
        "number": 24
       },
-      "balls into",
+      "balls equally into",
       {
        "number": 4
       },
-      "equal groups. How many go in each group?"
+      "baskets. How many go in each basket?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚽",
-     "count": 24,
-     "layout": "grid5"
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "⚽",
+       "count": 24,
+       "layout": "grid5"
+      },
+      {
+       "kind": "holders",
+       "holder": "basket",
+       "count": 4
+      }
+     ]
     },
     "explanation": {
      "speak": [
-      "Give one to each group, and keep going until none are left. Each group gets",
+      "Put one in each basket, and keep going until none are left. Each basket gets",
       {
        "number": 6
       },
       "."
      ],
      "steps": [
-      "Give one to each group, and keep going until none are left.",
-      "Each group gets 6.",
+      "Put one in each basket, and keep going until none are left.",
+      "Each basket gets 6.",
       "4 × 6 = 24, so 24 ÷ 4 = 6."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       },
-       {
-        "kind": "emojiGroup",
-        "emoji": "⚽",
-        "count": 6,
-        "layout": "dice"
-       }
-      ]
+      "kind": "holders",
+      "holder": "basket",
+      "count": 4,
+      "filled": {
+       "emoji": "⚽",
+       "each": 6
+      }
      }
     },
     "type": "numberPad",

@@ -320,8 +320,10 @@ describe('steps show how, in the words of the question', () => {
   it('D.1 says how to share, and when to stop', () => {
     for (const level of [1, 2, 3] as Level[]) {
       for (const q of all('M-3-D1', level)) {
-        expect(q.prompt.text).toMatch(/^Put \d+ [a-z]+ into \d equal groups\. How many go in each group\?$/);
-        expect(q.explanation.steps[0]).toBe('Give one to each group, and keep going until none are left.');
+        // Shared onto the plates, or into the baskets, drawn beside the things (the owner's choice, Nov 22, 2026).
+        expect(q.prompt.text).toMatch(/^Share \d+ [a-z]+ equally (onto \d plates\. How many go on each plate|into \d baskets\. How many go in each basket)\?$/);
+        const plates = /plates/.test(q.prompt.text);
+        expect(q.explanation.steps[0]).toBe(plates ? 'Put one on each plate, and keep going until none are left.' : 'Put one in each basket, and keep going until none are left.');
       }
     }
   });

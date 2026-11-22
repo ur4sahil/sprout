@@ -198,3 +198,53 @@
   font-size: var(--text-s);
   font-weight: 700;
 }
+
+/* ---- The pictures added on Nov 22, 2026 ---- */
+
+/* A picture with its words printed under it: "eat breakfast". The words wrap, so a long caption stays as wide as
+   its picture's tile. */
+.captioned {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  max-width: 100%;
+}
+
+.caption {
+  max-width: var(--width-caption);
+  font-size: var(--text-s);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-ink);
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+/* The heading over a graph: "Our favorite things". */
+.graphTitle {
+  grid-column: 1 / -1;
+  max-width: 100%;
+  font-weight: var(--weight-display);
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Plates or baskets side by side, wrapping onto a second line on a phone. */
+.holders {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  max-width: 100%;
+}
+
+.holder {
+  display: block;
+  width: var(--size-holder);
+  max-width: 100%;
+  height: auto;
+}

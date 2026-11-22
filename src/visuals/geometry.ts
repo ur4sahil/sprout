@@ -96,6 +96,48 @@ export function wedge(cx: number, cy: number, radius: number, fromDegrees: numbe
   return `M ${cx} ${cy} L ${a.x.toFixed(2)} ${a.y.toFixed(2)} A ${radius} ${radius} 0 ${large} 1 ${b.x.toFixed(2)} ${b.y.toFixed(2)} Z`;
 }
 
+// ---- The pictures added on Nov 22, 2026 (the owner's choice) ----
+
+// A rectangle drawn to its sides: the longer side is `long` across, the other in proportion.
+export function rectBox(length: number, width: number, long: number): { w: number; h: number } {
+  const most = Math.max(length, width, 1);
+  return { w: (length / most) * long, h: (width / most) * long };
+}
+
+// A paper clip lying flat, `length` long and 12 high, its left end at (x, y): the wire runs along the top, round
+// the right end, back along the bottom, round the left end and in again, and bends back inside itself.
+export const CLIP_HIGH = 12;
+export function clipPath(x: number, y: number, length: number): string {
+  const right = x + length - 6;
+  return [
+    `M ${x + 5} ${y}`,
+    `H ${right}`,
+    `A 6 6 0 0 1 ${right} ${y + 12}`,
+    `H ${x + 4}`,
+    `A 4 4 0 0 1 ${x + 4} ${y + 4}`,
+    `H ${right - 4}`,
+    `A 2 2 0 0 1 ${right - 4} ${y + 8}`,
+    `H ${x + 9}`,
+  ].join(' ');
+}
+
+// Where each thing sits on a plate or in a basket drawn 96 wide: one row of up to 4, or for 5 or 6 a back row and a
+// front row set half a thing apart, like a little pile (the back row has the odd one). Each place is the top left
+// of a picture `THING` across; no two places overlap by more than a little, so every thing can be counted.
+export const HOLDER = { width: 96, height: 64, most: 6 } as const;
+export const THING = 20;
+export function holderSpots(each: number): { x: number; y: number }[] {
+  const rows = each <= 4 ? [each] : [Math.ceil(each / 2), Math.floor(each / 2)];
+  const tops = rows.length === 1 ? [26] : [14, 30];
+  // Two rows of the same length would stand in columns, so they are pushed apart; 3 and 2 fall between already.
+  const even = rows.length === 2 && rows[0] === rows[1];
+  return rows.flatMap((count, r) => {
+    const across = count * (THING + 2) - 2;
+    const nudge = even ? (r === 0 ? -6 : 6) : 0;
+    return Array.from({ length: count }, (_, i) => ({ x: (HOLDER.width - across) / 2 + nudge + i * (THING + 2), y: tops[r] as number }));
+  });
+}
+
 // The holes of a folded paper once it is opened out (plan section 5, Paper folding).
 // A vertical fold copies each hole to column 3 minus its column. A horizontal fold copies to row 3 minus its row.
 export function unfoldHoles(fold: 'vertical' | 'horizontal', holes: readonly { col: number; row: number }[]): { col: number; row: number }[] {

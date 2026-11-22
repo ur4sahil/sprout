@@ -92,6 +92,8 @@ export function canonicalVisual(visual: Visual | 'blank'): Plain {
         out.emoji2 = visual.emoji2;
         out.count2 = visual.count2;
       }
+      // Words printed under a picture are part of what a child sees.
+      if (visual.caption) out.caption = visual.caption;
       return out;
     }
     case 'sequence':

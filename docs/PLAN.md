@@ -851,6 +851,21 @@ These complete the visual set. Build them in Phase 4a with the rest.
 | `shape.open` | boolean | Draws the outline with a gap, for open and closed shapes |
 | `matrix.cells` | 4 or 9 cells | A 3 by 3 grid for pattern completion |
 
+Added on Nov 22, 2026 (the owner's choice, "build all of them"):
+
+| Kind or field | Fields | Draws |
+| --- | --- | --- |
+| `ruler.unit` | `cm` or `in` | The unit printed at the right end of the ruler, after its last number. Every ruler in a measuring question has one |
+| `twoRulers` | object (pencil, crayon, ribbon), inches | One thing between an inch ruler (above) and a centimeter ruler (below), both from 0 at its left end, drawn to true scale (1 inch is 2.54 cm), with a dashed line from its end to each ruler. 2, 4 or 6 inches end close to 5, 10 or 15 cm |
+| `graph.title` | text | A heading over the graph that says what was counted: "Our favorite things". Every graph has one, and so does a bar graph a child builds (`buildBar.title`, on screen and on paper) |
+| `emojiGroup.caption` | text | Words printed under the picture ("eat breakfast"). One picture with a caption is described by it. A listen question never shows its target in a caption or a title, and a read question's picture never says the words it prints (rules 14 and 15) |
+| `measuredRect` | length, width, unit (`cm`, `m`, `in`, `ft`), unknown (`length` or `width`), allSides | A rectangle drawn to its sides: "6 cm" along the top, "4 cm" down the left side, "?" on the side to find; `allSides` labels the bottom and the right side too |
+| `holders` | holder (`plate` or `basket`), count, filled: {emoji, each} | Plates or baskets to share onto, empty, or each holding its share (up to 6, never one over another). Each is its own small picture, so they wrap on a phone |
+| `clipRow` | object (pencil, crayon, spoon), length, clips, bent | Paper clips (drawn, not an emoji) under a drawn thing `length` clips long. `clips` lists where each lies, in clip lengths from the thing's left end; `bent` drops every other clip. A dashed line marks each end of the thing |
+| `measuringCup` | none | A clear jug with a spout, a handle, lines up its side and some water. There is no emoji for one; the glass of milk stays a glass |
+
+Where they are used: grade 2 C.3 and C.6 rulers in centimeters; grade 2 C.5 level 2 on two rulers; grade 1 C.3, grade 2 C.4 and C.11 titled "Our favorite things", grade 3 F.6 "Things we counted"; grade 2 C.8 level 3's picture choices; grade 3 F.4 level 2 and F.9 levels 2 and 3 (F.8 level 2 stays a story); grade 3 D.1 (food on plates, other things in baskets); grade 1 C.5 levels 1 and 2; kindergarten F.3.
+
 **Paper folding.** The paper is a 4 by 4 grid of cells. Column 0 is at the left and row 0 is at the top. A `vertical` fold brings the right half over onto the left, so the folded paper shows columns 0 and 1. A `horizontal` fold brings the bottom half up onto the top, so the folded paper shows rows 0 and 1. A hole is always given as a cell of the half that shows. Unfolding a vertical fold copies each hole to column 3 minus its column. Unfolding a horizontal fold copies each hole to row 3 minus its row. Holes sit inside cells, never on the fold line.
 
 **Coins.** Coins are drawn as SVG with their true relative sizes and colours: a copper penny, then nickel, dime and quarter in silver, with the dime smallest. The dime and quarter have ridged edges. Each face carries a simple emblem and no words or numbers, so the picture never gives away the name or the value: a shield on the penny, a domed building on the nickel, a torch on the dime, an eagle on the quarter. No portraits.

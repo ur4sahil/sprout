@@ -307,11 +307,18 @@ describe('time, money, measuring and shapes', () => {
     }
   });
 
-  it('C.5 level 2 shows a thing, not an unmarked ruler, and its steps end on the side the question asks', () => {
+  it('C.5 level 2 shows the thing on an inch ruler and a centimeter ruler, never an unmarked ruler, and its steps end on the side the question asks', () => {
     for (const question of all('M-2-C5', 2)) {
       const asked = /bigger\?$/.test(question.prompt.text) ? 'bigger' : 'smaller';
-      expect(question.stimulus?.kind).toBe('emojiGroup');
+      // The same line measured both ways (the owner's choice, Nov 22, 2026): both rulers print their unit.
+      const picture = question.stimulus;
+      if (picture?.kind !== 'twoRulers') throw new Error('not measured on two rulers');
+      expect(question.prompt.text.startsWith(`The ${picture.object} is measured in inches and in centimeters. `)).toBe(true);
+      // It ends close to a whole centimeter, so the centimeter ruler can be read.
+      const cm = Math.round(picture.inches * 2.54);
+      expect(Math.abs(picture.inches * 2.54 - cm)).toBeLessThan(0.3);
       expect(question.explanation.steps[0]).toBe('An inch is longer than a centimeter.');
+      expect(question.explanation.steps).toContain(`The ${picture.object} is ${picture.inches} inches long, and about ${cm} centimeters long.`);
       expect(question.explanation.steps.at(-1)).toBe(asked === 'bigger' ? 'The centimeters number is bigger.' : 'The inches number is smaller.');
     }
   });

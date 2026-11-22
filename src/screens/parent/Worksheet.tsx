@@ -247,6 +247,11 @@ function Answer({ question }: { question: SheetItem['question'] }) {
       return (
         <>
           <p className={styles.how}>Colour the boxes to make each bar{question.scale && question.scale > 1 ? `. Each box is ${question.scale}` : ''}.</p>
+          {question.title && (
+            <p className={styles.barTitle} data-title="">
+              {question.title}
+            </p>
+          )}
           <div className={styles.bars}>
             {question.categories.map((category) => (
               <div key={category.label} className={styles.option}>

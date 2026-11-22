@@ -40,6 +40,9 @@ export type ShapeName =
   | 'pentagon'
   | 'trapezoid';
 export type SolidName = 'cube' | 'sphere' | 'cone' | 'cylinder';
+export type RulerUnit = 'cm' | 'in';
+export type LengthUnit = 'cm' | 'm' | 'in' | 'ft';
+export type ClipObject = 'pencil' | 'crayon' | 'spoon';
 export type CoinName = 'penny' | 'nickel' | 'dime' | 'quarter';
 export type Blank = 'blank';
 
@@ -60,6 +63,8 @@ export type Visual = VisualBase &
         numbered?: boolean; // a small count under each object, used in explanations
         emoji2?: string;
         count2?: number;
+        // Words printed under the picture, for a picture that stands for something done: "eat breakfast".
+        caption?: string;
       }
     | { kind: 'text'; value: string; size: 'm' | 'l' | 'xl' }
     | {
@@ -82,13 +87,28 @@ export type Visual = VisualBase &
     | { kind: 'clock'; hour: number; minute: number; noHands?: true } // noHands: a face to draw on, for paper
     | { kind: 'coins'; coins: CoinName[] }
     // `scale`: each picture, or each step on a bar graph's scale, stands for this many (1 when left out).
-    | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number }
+    // `title`: the heading over the graph, which says what was counted: "Our favorite things".
+    | { kind: 'graph'; type: 'picture' | 'bar'; categories: { label: string; emoji: string; value: number }[]; scale?: number; title?: string }
     // X marks above a number line counted in halves or fourths: counts[i] marks above min + i / denominator.
     | { kind: 'linePlot'; min: number; max: number; denominator: 1 | 2 | 4; counts: number[]; unit: string }
     // A shape made of pieces (src/engine/figures.ts): the whole shape, the whole with the lines where it is cut,
     // or the pieces pulled a little apart, so a child sees they fit.
     | { kind: 'figure'; figure: FigureId; show: 'whole' | 'cut' | 'pieces' }
-    | { kind: 'ruler'; lengthUnits: number; startUnit: number; object: 'pencil' | 'crayon' | 'ribbon' }
+    // `unit`: the unit printed at the end of the ruler, "cm" or "in".
+    | { kind: 'ruler'; lengthUnits: number; startUnit: number; object: 'pencil' | 'crayon' | 'ribbon'; unit?: RulerUnit }
+    // One thing measured both ways (the owner's choice, Nov 22, 2026): an inch ruler above it and a centimeter ruler
+    // below it, both from 0 at its left end, drawn to true scale. It is `inches` long, and about inches × 2.54 cm.
+    | { kind: 'twoRulers'; object: 'pencil' | 'crayon' | 'ribbon'; inches: number }
+    // A rectangle drawn to its sides, each labelled with its length: "6 cm" along the top, "4 cm" down the side.
+    // `unknown` is the side shown as "?". `allSides` labels the bottom and the other side too, for perimeter.
+    | { kind: 'measuredRect'; length: number; width: number; unit: LengthUnit; unknown?: 'length' | 'width'; allSides?: true }
+    // Plates or baskets to share things onto: `count` of them, empty, or each holding `filled.each` of `filled.emoji`.
+    | { kind: 'holders'; holder: 'plate' | 'basket'; count: number; filled?: { emoji: string; each: number } }
+    // Paper clips laid under a drawn thing that is `length` clips long. `clips` are where the clips lie, counted in
+    // clip lengths from the thing's left end. `bent` drops every other clip, so the row is not straight.
+    | { kind: 'clipRow'; object: ClipObject; length: number; clips: number[]; bent?: true }
+    // A measuring cup with its lines and some water in it, drawn by the app: there is no emoji for one.
+    | { kind: 'measuringCup' }
     | { kind: 'fraction'; shape: 'circle' | 'rectangle'; parts: number; shaded: number; equal: boolean }
     | { kind: 'row'; children: Visual[] }
     | { kind: 'bar'; length: number; color: string; orientation: 'horizontal' | 'vertical' }
@@ -155,8 +175,9 @@ export type Question =
   | (QuestionBase & { type: 'numberLineTap'; line: { min: number; max: number; step: number; denominator?: number }; answer: number })
   // Turn the hands to a time. The hands start at `start` and move by `minuteStep` minutes.
   | (QuestionBase & { type: 'setClock'; start: ClockTime; minuteStep: 1 | 5 | 15 | 30; answer: ClockTime })
-  // Raise each bar to its value, in steps of `scale` (1 when left out), up to `max`.
-  | (QuestionBase & { type: 'buildBar'; categories: { label: string; emoji: string }[]; max: number; scale?: number; answer: number[] })
+  // Raise each bar to its value, in steps of `scale` (1 when left out), up to `max`. `title` heads the graph, as on
+  // a graph picture.
+  | (QuestionBase & { type: 'buildBar'; categories: { label: string; emoji: string }[]; max: number; scale?: number; title?: string; answer: number[] })
   // A sum written in columns: the child fills the answer digit by digit, with boxes for carried and borrowed ones.
   | (QuestionBase & { type: 'columnSum'; top: number; bottom: number; op: '+' | '-'; answer: number })
   // Move a word or number into the gap: before + [gap] + after. Each option is a text picture.

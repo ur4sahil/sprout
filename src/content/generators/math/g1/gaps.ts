@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { ClipObject, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import { figureFor } from '../../../../engine/figures';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
@@ -154,24 +154,25 @@ export const countOnGenerator: SkillGenerator = {
 // Levels: count the clips / which is measured the right way / how many clips longer, typed. Oracles: count,
 // lineUp, subtract.
 
-const CLIP = '📎';
-const clips = (count: number): Visual => ({ kind: 'emojiGroup', emoji: CLIP, count, layout: 'row' });
-const measured = (emoji: string, count: number): Visual => ({ kind: 'row', children: [{ kind: 'emojiGroup', emoji, count: 1, layout: 'row' }, clips(count)] });
-// Clips along one row of the 5 by 4 grid, with a gap at `gap`, or none.
-const spaced = (count: number, gap: number | null): Visual => ({ kind: 'emojiGroup', emoji: CLIP, count, layout: 'scatter', slots: Array.from({ length: count }, (_, i) => (gap !== null && i >= gap ? i + 1 : i)) });
-// Clips that touch but go up and down, not along a straight line: every other clip is one row lower.
-const bent = (count: number): Visual => ({ kind: 'emojiGroup', emoji: CLIP, count, layout: 'scatter', slots: Array.from({ length: count }, (_, i) => (i % 2 === 0 ? i : i + 5)) });
+// The clips lie under a drawn thing (the owner's choice, Nov 22, 2026), so lining them up is measuring something:
+// they start at its end, touch, and reach its other end. `at` lists where each clip lies, in clip lengths from
+// the thing's left end.
+const clipsUnder = (object: ClipObject, length: number, at: number[], bent = false): Visual => ({ kind: 'clipRow', object, length, clips: at, ...(bent ? { bent: true as const } : {}) });
+const endToEnd = (count: number): number[] => Array.from({ length: count }, (_, i) => i);
+const measured = (object: ClipObject, count: number): Visual => clipsUnder(object, count, endToEnd(count));
 
 function paperClips(level: Level, rng: Rng): QuestionDraft {
   if (level === 2) {
-    // Lined up the right way: in a straight line, each clip touching the next. With nothing to measure in the
-    // picture, a row that starts late could be argued for, so the wrong rows have a gap, or are not straight.
+    // Lined up the right way: from the end of the pencil or crayon above, in a straight line, each clip touching
+    // the next. The wrong rows have a gap between two clips (so they hold one clip fewer), or are not straight.
     const count = rng.int(3, 4);
-    const gap = rng.int(1, count - 1);
+    const gap = rng.int(1, count - 2);
     const shapes = rng.shuffle(['lined', 'gap', 'bent'] as const);
-    const draw = (kind: (typeof shapes)[number]): Visual => (kind === 'lined' ? spaced(count, null) : kind === 'gap' ? spaced(count, gap) : bent(count));
-    const prompt = 'Which paper clips are lined up the right way?';
-    const lines = ['The clips must go in a straight line.', 'Each clip must touch the next one, with no gaps.', 'Only one row does both.'];
+    const object = rng.pick(['pencil', 'crayon'] as const);
+    const draw = (kind: (typeof shapes)[number]): Visual =>
+      kind === 'lined' ? measured(object, count) : kind === 'gap' ? clipsUnder(object, count, endToEnd(count).filter((at) => at !== gap)) : clipsUnder(object, count, endToEnd(count), true);
+    const prompt = `Which paper clips measure the ${object} the right way?`;
+    const lines = [`The clips must start at the end of the ${object}.`, 'They must go in a straight line.', 'Each clip must touch the next one, with no gaps.', 'Only one row does all three.'];
     return {
       type: 'choice',
       mode: 'look',
@@ -179,10 +180,10 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: prompt, speak: [prompt] },
       options: shapes.map(draw),
       answerIndex: shapes.indexOf('lined'),
-      explanation: explain(lines, spaced(count, null), { text: 'Look for clips in a straight line, with no gaps.' }),
+      explanation: explain(lines, measured(object, count), { text: 'Look for clips in a straight line, with no gaps.' }),
     };
   }
-  const thing = rng.pick([{ emoji: '✏️', name: 'pencil' }, { emoji: '🖍️', name: 'crayon' }, { emoji: '🥄', name: 'spoon' }]);
+  const thing = rng.pick([{ object: 'pencil', name: 'pencil' }, { object: 'crayon', name: 'crayon' }, { object: 'spoon', name: 'spoon' }] as const);
   if (level === 3) {
     const [long, short] = [rng.int(5, 9), rng.int(2, 4)];
     const prompt = { text: `The ${thing.name} is ${long} paper clips long. A key is ${short} paper clips long. How many clips longer is the ${thing.name}?`, speak: [`The ${thing.name} is`, { number: long }, 'paper clips long. A key is', { number: short }, `paper clips long. How many clips longer is the ${thing.name}?`] as Say };
@@ -205,10 +206,10 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
     mode: 'look',
     facts: { n: count, oracle: 'count', options: values },
     prompt: { text: prompt, speak: [prompt] },
-    stimulus: measured(thing.emoji, count),
+    stimulus: measured(thing.object, count),
     options: values.map((value) => numeral(value)),
     answerIndex: values.indexOf(count),
-    explanation: explain(['Count the clips from one end to the other.', `The ${thing.name} is ${count} paper clips long.`], measured(thing.emoji, count), { text: 'Count the clips, one by one.' }),
+    explanation: explain(['Count the clips from one end to the other.', `The ${thing.name} is ${count} paper clips long.`], measured(thing.object, count), { text: 'Count the clips, one by one.' }),
   };
 }
 
@@ -222,10 +223,10 @@ export const paperClipsGenerator: SkillGenerator = {
   exampleSeed: 654,
   example: () => paperClips(1, makeRng(654)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'Measure by lining up the same things end to end, with no gaps.', speak: ['Measure by lining up the same things end to end, with no gaps.'], visual: measured('✏️', 5) },
-    { beat: 'watch', text: 'The pencil is 5 paper clips long.', speak: ['The pencil is five paper clips long.'], visual: measured('✏️', 5) },
-    { beat: 'try', text: 'How many paper clips long is the spoon?', speak: ['How many paper clips long is the spoon?'], visual: measured('🥄', 3), reveal: { text: 'Count them: 3 paper clips.', speak: ['Count them: three paper clips.'], visual: measured('🥄', 3) } },
-    { beat: 'remember', text: 'Start at the end. No gaps.', speak: ['Start at the end. No gaps.'], visual: spaced(4, null) },
+    { beat: 'see', text: 'Measure by lining up the same things end to end, with no gaps.', speak: ['Measure by lining up the same things end to end, with no gaps.'], visual: measured('pencil', 5) },
+    { beat: 'watch', text: 'The pencil is 5 paper clips long.', speak: ['The pencil is five paper clips long.'], visual: measured('pencil', 5) },
+    { beat: 'try', text: 'How many paper clips long is the spoon?', speak: ['How many paper clips long is the spoon?'], visual: measured('spoon', 3), reveal: { text: 'Count them: 3 paper clips.', speak: ['Count them: three paper clips.'], visual: measured('spoon', 3) } },
+    { beat: 'remember', text: 'Start at the end. No gaps.', speak: ['Start at the end. No gaps.'], visual: measured('crayon', 4) },
   ],
   oracle: 'lineUp',
 };

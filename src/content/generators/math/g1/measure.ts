@@ -179,7 +179,10 @@ interface Chart {
   things: Countable[];
   values: number[];
 }
-const chartVisual = (chart: Chart, type: 'picture' | 'bar' = 'picture'): Visual => ({ kind: 'graph', type, categories: chart.things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: chart.values[i] as number })) });
+// Every graph says what was counted (the owner's choice, Nov 22, 2026). These are the children's favorite things,
+// in grade 1 (C.3) and grade 2 (C.4, C.11).
+export const FAVORITES = 'Our favorite things';
+const chartVisual = (chart: Chart, type: 'picture' | 'bar' = 'picture'): Visual => ({ kind: 'graph', type, title: FAVORITES, categories: chart.things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: chart.values[i] as number })) });
 
 // Three things with three different values, so there is one most and one least.
 function newChart(rng: Rng, most: number): Chart {
@@ -202,6 +205,7 @@ export function graphQuestion(level: Level, rng: Rng, type: 'picture' | 'bar', m
       prompt: { text: prompt, speak: [prompt] },
       stimulus: tallies,
       categories: chart.things.map((thing) => ({ label: thing.many, emoji: thing.emoji })),
+      title: FAVORITES,
       max: most,
       answer: chart.values,
       explanation: {

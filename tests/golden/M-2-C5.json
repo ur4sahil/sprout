@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-C5",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -890,27 +890,24 @@
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "moreUnits",
-     "thing": "phone",
+     "ask": "fewerUnits",
+     "thing": "crayon",
+     "inches": 2,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A phone is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The crayon is measured in inches and in centimeters. Which number is smaller?",
      "speak": [
-      "A phone is measured in inches and in centimeters. Which number is bigger?"
+      "The crayon is measured in inches and in centimeters. Which number is smaller?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "📱",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "phone"
-     ]
+     "kind": "twoRulers",
+     "object": "crayon",
+     "inches": 2
     },
     "options": [
      {
@@ -930,26 +927,32 @@
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the phone.",
-      "The centimeters number is bigger."
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
+      "The inches number is smaller."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the phone.",
-      "The centimeters number is bigger."
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is 2 inches long, and about 5 centimeters long.",
+      "The inches number is smaller."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "📱",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "phone"
-      ]
+      "kind": "twoRulers",
+      "object": "crayon",
+      "inches": 2
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -958,7 +961,7 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 1,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"phone\"}"
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"inches\":2,\"thing\":\"crayon\"}"
    },
    {
     "type": "choice",
@@ -966,26 +969,23 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
-     "thing": "spoon",
+     "thing": "ribbon",
+     "inches": 2,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The ribbon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A spoon is measured in inches and in centimeters. Which number is bigger?"
+      "The ribbon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🥄",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "spoon"
-     ]
+     "kind": "twoRulers",
+     "object": "ribbon",
+     "inches": 2
     },
     "options": [
      {
@@ -1009,22 +1009,28 @@
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
       "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is 2 inches long, and about 5 centimeters long.",
       "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥄",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "spoon"
-      ]
+      "kind": "twoRulers",
+      "object": "ribbon",
+      "inches": 2
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1033,7 +1039,7 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 2,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":2,\"thing\":\"ribbon\"}"
    },
    {
     "type": "choice",
@@ -1041,26 +1047,23 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
-     "thing": "spoon",
+     "thing": "ribbon",
+     "inches": 2,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The ribbon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A spoon is measured in inches and in centimeters. Which number is bigger?"
+      "The ribbon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🥄",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "spoon"
-     ]
+     "kind": "twoRulers",
+     "object": "ribbon",
+     "inches": 2
     },
     "options": [
      {
@@ -1084,22 +1087,28 @@
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
       "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is 2 inches long, and about 5 centimeters long.",
       "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥄",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "spoon"
-      ]
+      "kind": "twoRulers",
+      "object": "ribbon",
+      "inches": 2
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1108,7 +1117,7 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 3,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":2,\"thing\":\"ribbon\"}"
    },
    {
     "type": "choice",
@@ -1116,26 +1125,23 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
-     "thing": "spoon",
+     "thing": "ribbon",
+     "inches": 2,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The ribbon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A spoon is measured in inches and in centimeters. Which number is bigger?"
+      "The ribbon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🥄",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "spoon"
-     ]
+     "kind": "twoRulers",
+     "object": "ribbon",
+     "inches": 2
     },
     "options": [
      {
@@ -1159,22 +1165,28 @@
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
       "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the spoon.",
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is 2 inches long, and about 5 centimeters long.",
       "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥄",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "spoon"
-      ]
+      "kind": "twoRulers",
+      "object": "ribbon",
+      "inches": 2
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1183,34 +1195,31 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 4,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":2,\"thing\":\"ribbon\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "fewerUnits",
-     "thing": "spoon",
+     "ask": "moreUnits",
+     "thing": "ribbon",
+     "inches": 6,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A spoon is measured in inches and in centimeters. Which number is smaller?",
+     "text": "The ribbon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A spoon is measured in inches and in centimeters. Which number is smaller?"
+      "The ribbon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🥄",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "spoon"
-     ]
+     "kind": "twoRulers",
+     "object": "ribbon",
+     "inches": 6
     },
     "options": [
      {
@@ -1230,26 +1239,32 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the spoon.",
-      "The inches number is smaller."
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is",
+      {
+       "number": 6
+      },
+      "inches long, and about",
+      {
+       "number": 15
+      },
+      "centimeters long.",
+      "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the spoon.",
-      "The inches number is smaller."
+      "So more centimeters than inches fit along the ribbon.",
+      "The ribbon is 6 inches long, and about 15 centimeters long.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥄",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "spoon"
-      ]
+      "kind": "twoRulers",
+      "object": "ribbon",
+      "inches": 6
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1258,34 +1273,31 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 5,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"spoon\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":6,\"thing\":\"ribbon\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "moreUnits",
-     "thing": "phone",
+     "ask": "fewerUnits",
+     "thing": "crayon",
+     "inches": 2,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A phone is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The crayon is measured in inches and in centimeters. Which number is smaller?",
      "speak": [
-      "A phone is measured in inches and in centimeters. Which number is bigger?"
+      "The crayon is measured in inches and in centimeters. Which number is smaller?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "📱",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "phone"
-     ]
+     "kind": "twoRulers",
+     "object": "crayon",
+     "inches": 2
     },
     "options": [
      {
@@ -1305,26 +1317,32 @@
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the phone.",
-      "The centimeters number is bigger."
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
+      "The inches number is smaller."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So more centimeters than inches fit along the phone.",
-      "The centimeters number is bigger."
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is 2 inches long, and about 5 centimeters long.",
+      "The inches number is smaller."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "📱",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "phone"
-      ]
+      "kind": "twoRulers",
+      "object": "crayon",
+      "inches": 2
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1333,7 +1351,85 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 6,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"phone\"}"
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"inches\":2,\"thing\":\"crayon\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "fewerUnits",
+     "thing": "pencil",
+     "inches": 2,
+     "options": [
+      "the inches",
+      "the centimeters"
+     ]
+    },
+    "prompt": {
+     "text": "The pencil is measured in inches and in centimeters. Which number is smaller?",
+     "speak": [
+      "The pencil is measured in inches and in centimeters. Which number is smaller?"
+     ]
+    },
+    "stimulus": {
+     "kind": "twoRulers",
+     "object": "pencil",
+     "inches": 2
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "the inches",
+      "size": "l",
+      "speak": [
+       "the inches"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "the centimeters",
+      "size": "l",
+      "speak": [
+       "the centimeters"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The pencil is",
+      {
+       "number": 2
+      },
+      "inches long, and about",
+      {
+       "number": 5
+      },
+      "centimeters long.",
+      "The inches number is smaller."
+     ],
+     "steps": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The pencil is 2 inches long, and about 5 centimeters long.",
+      "The inches number is smaller."
+     ],
+     "visual": {
+      "kind": "twoRulers",
+      "object": "pencil",
+      "inches": 2
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
+     }
+    },
+    "skillId": "M-2-C5",
+    "level": 2,
+    "seed": 7,
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"inches\":2,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -1342,25 +1438,22 @@
     "facts": {
      "ask": "moreUnits",
      "thing": "pencil",
+     "inches": 4,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A pencil is measured in inches and in centimeters. Which number is bigger?",
+     "text": "The pencil is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A pencil is measured in inches and in centimeters. Which number is bigger?"
+      "The pencil is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "✏️",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "pencil"
-     ]
+     "kind": "twoRulers",
+     "object": "pencil",
+     "inches": 4
     },
     "options": [
      {
@@ -1385,96 +1478,27 @@
      "speak": [
       "An inch is longer than a centimeter.",
       "So more centimeters than inches fit along the pencil.",
+      "The pencil is",
+      {
+       "number": 4
+      },
+      "inches long, and about",
+      {
+       "number": 10
+      },
+      "centimeters long.",
       "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
       "So more centimeters than inches fit along the pencil.",
+      "The pencil is 4 inches long, and about 10 centimeters long.",
       "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "✏️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "pencil"
-      ]
-     },
-     "hint": {
-      "text": "Which is longer: an inch or a centimeter?"
-     }
-    },
-    "skillId": "M-2-C5",
-    "level": 2,
-    "seed": 7,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"pencil\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "fixedOrder": true,
-    "facts": {
-     "ask": "fewerUnits",
-     "thing": "pencil",
-     "options": [
-      "the inches",
-      "the centimeters"
-     ]
-    },
-    "prompt": {
-     "text": "A pencil is measured in inches and in centimeters. Which number is smaller?",
-     "speak": [
-      "A pencil is measured in inches and in centimeters. Which number is smaller?"
-     ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "✏️",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "pencil"
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "the inches",
-      "size": "l",
-      "speak": [
-       "the inches"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the centimeters",
-      "size": "l",
-      "speak": [
-       "the centimeters"
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the pencil.",
-      "The inches number is smaller."
-     ],
-     "steps": [
-      "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the pencil.",
-      "The inches number is smaller."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "✏️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "pencil"
-      ]
+      "kind": "twoRulers",
+      "object": "pencil",
+      "inches": 4
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1483,34 +1507,31 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 8,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"pencil\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":4,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "fewerUnits",
+     "ask": "moreUnits",
      "thing": "pencil",
+     "inches": 6,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A pencil is measured in inches and in centimeters. Which number is smaller?",
+     "text": "The pencil is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A pencil is measured in inches and in centimeters. Which number is smaller?"
+      "The pencil is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "✏️",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "pencil"
-     ]
+     "kind": "twoRulers",
+     "object": "pencil",
+     "inches": 6
     },
     "options": [
      {
@@ -1530,26 +1551,32 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the pencil.",
-      "The inches number is smaller."
+      "So more centimeters than inches fit along the pencil.",
+      "The pencil is",
+      {
+       "number": 6
+      },
+      "inches long, and about",
+      {
+       "number": 15
+      },
+      "centimeters long.",
+      "The centimeters number is bigger."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the pencil.",
-      "The inches number is smaller."
+      "So more centimeters than inches fit along the pencil.",
+      "The pencil is 6 inches long, and about 15 centimeters long.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "✏️",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "pencil"
-      ]
+      "kind": "twoRulers",
+      "object": "pencil",
+      "inches": 6
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1558,7 +1585,7 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 9,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"pencil\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"inches\":6,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -1566,26 +1593,23 @@
     "fixedOrder": true,
     "facts": {
      "ask": "fewerUnits",
-     "thing": "phone",
+     "thing": "crayon",
+     "inches": 6,
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A phone is measured in inches and in centimeters. Which number is smaller?",
+     "text": "The crayon is measured in inches and in centimeters. Which number is smaller?",
      "speak": [
-      "A phone is measured in inches and in centimeters. Which number is smaller?"
+      "The crayon is measured in inches and in centimeters. Which number is smaller?"
      ]
     },
     "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "📱",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      "phone"
-     ]
+     "kind": "twoRulers",
+     "object": "crayon",
+     "inches": 6
     },
     "options": [
      {
@@ -1609,22 +1633,28 @@
     "explanation": {
      "speak": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the phone.",
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is",
+      {
+       "number": 6
+      },
+      "inches long, and about",
+      {
+       "number": 15
+      },
+      "centimeters long.",
       "The inches number is smaller."
      ],
      "steps": [
       "An inch is longer than a centimeter.",
-      "So fewer inches than centimeters fit along the phone.",
+      "So fewer inches than centimeters fit along the crayon.",
+      "The crayon is 6 inches long, and about 15 centimeters long.",
       "The inches number is smaller."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "📱",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       "phone"
-      ]
+      "kind": "twoRulers",
+      "object": "crayon",
+      "inches": 6
      },
      "hint": {
       "text": "Which is longer: an inch or a centimeter?"
@@ -1633,7 +1663,7 @@
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 10,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"phone\"}"
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"inches\":6,\"thing\":\"crayon\"}"
    }
   ],
   "3": [
