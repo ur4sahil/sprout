@@ -22,6 +22,10 @@ describe('the words of a page', () => {
     expect(words[5]?.say).toEqual([{ number: 1 }]);
     expect(words[10]?.say).toEqual([{ letter: 'c' }]);
     expect(storyText(line('Pip has [17] spots.'))).toBe('Pip has 17 spots.');
+    // A letter sound is printed between slashes, and said alone on a tap.
+    const sound = storyWords(['Bat starts with ', { sound: 'b' }, '.']);
+    expect(sound.map((word) => word.shown)).toEqual(['Bat', 'starts', 'with', '/b/.']);
+    expect(sound[3]?.say).toEqual([{ sound: 'b' }]);
   });
 
   it('says a tapped word alone, without its punctuation', () => {

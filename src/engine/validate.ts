@@ -1,5 +1,9 @@
+import { stepSay } from '../audio/stepSay';
 import { canonicalJson, canonicalVisual, questionKey } from './canonical';
+import { sayText } from './describe';
 import { FIGURES } from './figures';
+import { givesAway } from './giveaway';
+import { isSoundKey } from './letterSounds';
 import type { OracleId, Question, Say, SkillGrade, Visual } from './types';
 import { ORACLE_FACTS } from './types';
 
@@ -41,6 +45,8 @@ function checkSay(say: Say, where: string, problems: string[]): void {
       }
     } else if ('cents' in part) {
       if (!Number.isInteger(part.cents) || part.cents < 0) problems.push(`1: ${where} has a cents part that is not a whole amount`);
+    } else if ('sound' in part) {
+      if (!isSoundKey(part.sound)) problems.push(`1: ${where} has a sound part that is not in the list of letter sounds`);
     } else {
       problems.push(`1: ${where} has a part of an unknown kind`);
     }
@@ -367,6 +373,27 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
   if (singles.has('I') && (singles.has('l') || singles.has('1'))) problems.push('16: capital I sits beside lowercase l or the digit 1');
   if (singles.has('l') && singles.has('1')) problems.push('16: lowercase l sits beside the digit 1');
   if ((singles.has('O') || singles.has('o')) && singles.has('0')) problems.push('16: the letter O sits beside the digit 0');
+
+  // 18: every step is said (by its own entry in stepsSay, or read by stepSay), and the hint is said and gives
+  // nothing away
+  const { stepsSay, hint } = q.explanation ?? {};
+  if (stepsSay !== undefined) {
+    if (stepsSay.length !== steps.length) problems.push('18: explanation.stepsSay needs one entry for each step');
+    stepsSay.forEach((say, i) => {
+      if (say !== null) checkSay(say, `explanation.stepsSay[${i}]`, problems);
+    });
+  }
+  steps.forEach((step, i) => {
+    if ((stepsSay?.[i] ?? null) === null && stepSay(step) === null) problems.push(`18: step ${i + 1} cannot be read aloud, so it needs explanation.stepsSay[${i}]: "${step}"`);
+  });
+  if (hint !== undefined) {
+    if (typeof hint.text !== 'string' || hint.text.trim().length === 0) problems.push('18: explanation.hint.text is empty');
+    else {
+      if (hint.say !== undefined) checkSay(hint.say, 'explanation.hint.say', problems);
+      else if (stepSay(hint.text) === null) problems.push(`18: the hint cannot be read aloud, so it needs hint.say: "${hint.text}"`);
+      if (givesAway(q, hint.text, hint.say ? sayText(hint.say) : null)) problems.push(`18: the hint gives the answer away: "${hint.text}"`);
+    }
+  }
 
   return problems;
 }

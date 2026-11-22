@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { HINTS_PER_PART, HINT_REFILL_EVERY, canHint, exampleFor, hintId, hintWindow, hintsLeft, nudgeFor, takeHint } from '../../src/app/hints';
+import { givesAway, names } from '../../src/engine/giveaway';
 import type { HintBook } from '../../src/app/hints';
 import { generateQuestion } from '../../src/content/registry';
 import { CATALOGUE } from '../../src/content/catalogue';
@@ -8,7 +9,7 @@ import { flawless } from '../../src/engine/fastTrack';
 import { recount } from '../../src/engine/merge';
 import { reviewRight } from '../../src/engine/review';
 import { applyAnswer, applyPractice, hintedGain } from '../../src/engine/skillscore';
-import type { Question } from '../../src/engine/types';
+import type { Question, Say } from '../../src/engine/types';
 import type { Attempt, SkillState } from '../../src/storage/schema';
 import { newSkillState } from '../../src/storage/schema';
 
@@ -87,9 +88,10 @@ function question(skillId: string, level: number, seed: number): Question {
 }
 
 describe('the nudge', () => {
-  it('is the first step, and only when there are at least 3, so it cannot be the answer', () => {
+  it('is the first step, only when there are at least 3, never from a sort, order or match, and never one that names the answer', () => {
     let nudged = 0;
     let withheld = 0;
+    let guarded = 0;
     for (const skill of CATALOGUE) {
       for (let seed = 1; seed <= 3; seed += 1) {
         let q: Question;
@@ -100,19 +102,26 @@ describe('the nudge', () => {
         }
         const nudge = nudgeFor(q);
         const steps = q.explanation.steps;
-        if (steps.length < 3) {
-          expect(nudge, `${skill.id} has ${steps.length} steps`).toBeNull();
+        const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
+        if (steps.length < 3 || listsAnswer) {
+          expect(nudge, `${skill.id} has ${steps.length} steps and is a ${q.type}`).toBeNull();
           withheld += 1;
+        } else if (givesAway(q, steps[0] ?? '', null)) {
+          expect(nudge, `${skill.id}: "${steps[0]}" names the answer`).toBeNull();
+          guarded += 1;
         } else {
           expect(nudge?.text).toBe(steps[0]);
           // The step that gives the answer is always a later one.
           expect(nudge?.text).not.toBe(steps[steps.length - 1]);
           nudged += 1;
         }
+        // Whatever is offered, it never names the answer.
+        if (nudge) expect(givesAway(q, nudge.text, null), `${skill.id}: ${nudge.text}`).toBe(false);
       }
     }
     expect(nudged).toBeGreaterThan(100);
     expect(withheld).toBeGreaterThan(100);
+    expect(guarded).toBeGreaterThan(10);
   });
 
   it('is said when it can be read safely, and only shown when it cannot', () => {
@@ -120,6 +129,105 @@ describe('the nudge', () => {
     expect(nudgeFor(counting)).toEqual({ text: 'Start at 9.', say: expect.any(Array) });
     const rhyme = question('E-K-B6', 2, 7); // two steps: the first gives the odd one out away
     expect(nudgeFor(rhyme)).toBeNull();
+  });
+
+  it("is the generator's own hint when it gives one, said through stepSay unless it has its own speech", () => {
+    const q = question('M-1-B1', 2, 7);
+    const hinted = (hint: Question['explanation']['hint']): Question => ({ ...q, explanation: { ...q.explanation, hint } });
+    expect(nudgeFor(hinted({ text: 'Count on from the bigger number.' }))).toEqual({ text: 'Count on from the bigger number.', say: ['Count on from the bigger number.'] });
+    expect(nudgeFor(hinted({ text: 'Start at 9 and count on.' }))?.say).toEqual(['Start at', { number: 9 }, 'and count on.']);
+    const say: Say = ['Count up from', { number: 9 }, ', one number at a time.'];
+    expect(nudgeFor(hinted({ text: 'Count up from 9.', say }))).toEqual({ text: 'Count up from 9.', say });
+    // A hint is offered even where no step could be: a sort, an order, or one with too few steps.
+    const sort = question('M-PK-D6', 3, 1);
+    expect(nudgeFor(sort)).toBeNull();
+    expect(nudgeFor({ ...sort, explanation: { ...sort.explanation, hint: { text: 'Look at each picture. What is it?' } } })?.text).toBe('Look at each picture. What is it?');
+  });
+
+  it('a step with its own speech in stepsSay is said that way as the nudge', () => {
+    const q = question('M-1-B1', 2, 7);
+    const own: Say = ['Put', { number: 9 }, 'in your head.'];
+    expect(nudgeFor({ ...q, explanation: { ...q.explanation, stepsSay: [own, null, null] } })).toEqual({ text: 'Start at 9.', say: own });
+  });
+
+  it('never comes from the steps of a sort, an order or a match, which list the answer', () => {
+    expect(question('M-PK-D6', 3, 1).explanation.steps[0]).toBe('Clothes: shoe, shirt.');
+    expect(nudgeFor(question('M-PK-D6', 3, 1))).toBeNull(); // sort
+    expect(question('M-K-B3', 1, 1).explanation.steps[0]).toBe('2 is the smallest.');
+    expect(nudgeFor(question('M-K-B3', 1, 1))).toBeNull(); // order
+    expect(nudgeFor(question('E-2-D3', 1, 1))).toBeNull(); // order: "1. The turtle wanted to see the sea."
+  });
+
+  it('never offers a step that names the right option, the number, the word or the sign', () => {
+    // Each of these first steps was offered as a nudge before (the wording audit, Nov 21, 2026).
+    const cases: [string, number, number, string][] = [
+      ['M-1-C4', 1, 1, 'This is a dime.'],
+      ['M-1-C4', 3, 1, 'A quarter is worth 25 cents.'],
+      ['M-2-C12', 1, 1, 'A bed is big: meters.'],
+      ['E-K-E4', 1, 1, 'Wheat grows in a field.'],
+      ['M-3-C11', 1, 1, 'An even number times any number is even.'],
+      ['M-3-C6', 1, 3, 'Count by 2s to 8: 2, 4, 6, 8.'],
+      // Read questions: the words to read are never said before the child answers.
+      ['M-2-A7', 2, 1, 'Six hundred nine is 6 hundreds, 0 tens and 9 ones.'],
+      ['M-3-A2', 3, 1, 'six thousand thirty-nine'],
+    ];
+    for (const [skillId, level, seed, first] of cases) {
+      const q = question(skillId, level, seed);
+      expect(q.explanation.steps[0], skillId).toBe(first);
+      expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
+      expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();
+    }
+  });
+});
+
+describe('what gives an answer away', () => {
+  const find = (prompt: string, right: string, wrong: string[], change: Partial<Question> = {}): Question =>
+    ({
+      skillId: 'T-1', level: 1, seed: 1, key: 'k', mode: 'look', type: 'choice', answerIndex: 0,
+      facts: { options: [right, ...wrong] },
+      prompt: { text: prompt, speak: [prompt] },
+      options: [right, ...wrong].map((value) => ({ kind: 'text', value, size: 'l' })),
+      explanation: { speak: ['x'], steps: ['x'] },
+      ...change,
+    }) as Question;
+
+  it('a whole word or number, never part of a longer one', () => {
+    expect(names('This is a dime.', 'dime')).toBe(true);
+    expect(names('Dimes are small.', 'dime')).toBe(false);
+    expect(names('Count to 16.', '6')).toBe(false);
+    expect(names('It is 6/8.', '6')).toBe(false);
+    expect(names('It is 4,306.', '306')).toBe(false);
+    expect(names('So it is 6.', '6')).toBe(true);
+    expect(names('So it is 1/2.', '1/2')).toBe(true);
+    expect(names('Catch it.', 'cat')).toBe(false);
+  });
+
+  it('a target the question names is no giveaway, unless the question names the wrong answers too', () => {
+    expect(givesAway(find('Find the square.', 'square', ['circle', 'oval']), 'A square has 4 equal sides.', null)).toBe(false);
+    expect(givesAway(find('Is 6 × 10 even or odd?', 'even', ['odd']), 'An even number times any number is even.', null)).toBe(true);
+    expect(givesAway(find('Which one is round?', 'ball', ['box', 'book']), 'A ball is round.', null)).toBe(true);
+  });
+
+  it('a number in words or digits, and a sign by its name', () => {
+    const typed = { ...find('Which words?', 'x', []), type: 'numberPad', answer: 609, maxDigits: 3 } as Question;
+    expect(givesAway(typed, 'Six hundred nine is 6 hundreds.', null)).toBe(true);
+    expect(givesAway(typed, 'It is 609.', null)).toBe(true);
+    expect(givesAway(typed, 'Find the hundreds word first.', null)).toBe(false);
+    const sign = find('Which sign goes between 54 and 68?', '<', ['>', '=']);
+    expect(givesAway(sign, '54 is less than 68.', null)).toBe(true);
+    expect(givesAway(sign, '54 < 68', null)).toBe(true);
+    expect(givesAway(sign, 'Look at the tens first.', null)).toBe(false);
+    // Its own speech is checked too.
+    expect(givesAway(sign, 'Look at this.', 'It is less than.')).toBe(true);
+  });
+
+  it('a listen question never shows its target, and a read question never says the words to read', () => {
+    const listen = find('Listen. Tap the word.', 'cat', ['dog'], { mode: 'listen', facts: { target: 'cat', options: ['cat', 'dog'] } });
+    expect(givesAway(listen, 'Cat starts with c.', null)).toBe(true);
+    const read = find('Read the word. Which picture?', 'bed', ['cup'], { mode: 'read', facts: { read: ['big red bus'], options: ['bed', 'cup'] } });
+    expect(givesAway(read, 'Read it: big red bus.', null)).toBe(true);
+    expect(givesAway(read, 'Look at the first word: big.', null)).toBe(false);
+    expect(givesAway(read, 'Look at it.', 'It says big red bus.')).toBe(true);
   });
 });
 

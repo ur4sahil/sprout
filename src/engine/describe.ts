@@ -1,4 +1,5 @@
 import { FIGURES } from './figures';
+import { soundOf } from './letterSounds';
 import type { Question, Response, Say, SayPart, Visual } from './types';
 
 // Plain-text descriptions. Used for aria-labels, the question log snapshot and the review sheet.
@@ -13,6 +14,7 @@ function partText(part: SayPart): string {
   if ('word' in part) return part.word;
   if ('number' in part) return String(part.number);
   if ('time' in part) return `${part.time.hour}:${String(part.time.minute).padStart(2, '0')}`;
+  if ('sound' in part) return soundOf(part.sound).shown;
   return `${part.cents}¢`;
 }
 

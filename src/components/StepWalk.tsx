@@ -15,13 +15,15 @@ interface Props {
 
 // The steps of a worked answer, one at a time, each said aloud as it appears.
 // "Hear again" repeats the step on show. The last step's button is "Got it".
+// A step that cannot be said safely is shown in silence, with no "Hear again"; the steps around it are still said.
 export default function StepWalk({ question, onDone, onSpeak }: Props) {
   const [shown, setShown] = useState(1);
   const steps = question.explanation.steps;
   const spoken = spokenSteps(question);
   const last = shown >= steps.length;
+  const onShow = spoken[Math.min(shown, steps.length) - 1] ?? null;
   const next = (): void => {
-    const said = spoken?.[shown];
+    const said = spoken[shown];
     if (said) onSpeak(said);
     setShown(shown + 1);
   };
@@ -36,9 +38,11 @@ export default function StepWalk({ question, onDone, onSpeak }: Props) {
         <StepList steps={steps.slice(0, shown)} />
       </div>
       <CenterRow>
-        <BigButton size="kid" tone="quiet" onClick={() => onSpeak(spoken?.[Math.min(shown, steps.length) - 1] ?? question.explanation.speak)}>
-          <Icon name="speaker" />Hear again
-        </BigButton>
+        {onShow && (
+          <BigButton size="kid" tone="quiet" onClick={() => onSpeak(onShow)}>
+            <Icon name="speaker" />Hear again
+          </BigButton>
+        )}
         {last ? (
           <BigButton size="kid" onClick={onDone}>
             <Icon name="thumb" />Got it

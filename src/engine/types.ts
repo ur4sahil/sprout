@@ -1,4 +1,5 @@
 import type { FigureId } from './figures';
+import type { SoundKey } from './letterSounds';
 import { FACTS as H1_FACTS } from './oracleFacts/h1';
 import { FACTS as H2_FACTS } from './oracleFacts/h2';
 import { FACTS as H3_FACTS } from './oracleFacts/h3';
@@ -17,7 +18,10 @@ export type SayPart =
   | { word: string } // a word said as a word: 'a', 'I', 'read'
   | { number: number }
   | { time: { hour: number; minute: number } }
-  | { cents: number };
+  | { cents: number }
+  // A letter sound, from the one list in letterSounds.ts. Shown as /b/; said from its recording, or by its letters
+  // until the recordings exist ("the sound of B"). Write it where "/b/" reads naturally: "Bat starts with /b/."
+  | { sound: SoundKey };
 export type Say = SayPart[];
 
 export type ShapeName =
@@ -113,11 +117,23 @@ export interface QuestionBase {
   mode: Mode;
   prompt: { text: string; speak: Say };
   stimulus?: Visual;
-  explanation: {
-    speak: Say; // one or two short sentences
-    steps: string[]; // 1 to 4 short lines shown on screen
-    visual?: Visual; // the picture that shows why
-  };
+  explanation: Explanation;
+}
+
+// A hint offered before the child answers (src/app/hints.ts). It must not give the answer away (validation rule 18).
+export interface Hint {
+  text: string; // shown
+  say?: Say; // said; left out, the text is read by stepSay
+}
+
+export interface Explanation {
+  speak: Say; // one or two short sentences
+  steps: string[]; // 1 to 4 short lines shown on screen
+  visual?: Visual; // the picture that shows why
+  // The hint's nudge. Left out, the nudge is the first step when that is safe (nudgeFor).
+  hint?: Hint;
+  // How each step is said, one entry for each step. null, or left out, reads the step's text with stepSay.
+  stepsSay?: (Say | null)[];
 }
 
 export interface SortBin {

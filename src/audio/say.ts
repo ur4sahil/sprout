@@ -1,3 +1,5 @@
+import { soundOf } from '../engine/letterSounds';
+import type { SoundKey } from '../engine/letterSounds';
 import type { Say, SayPart } from '../engine/types';
 
 // Turns Say parts into things a voice reads correctly (plan section 9).
@@ -52,13 +54,35 @@ export function letterName(letter: string): string {
   return LETTER_NAMES[letter.toLowerCase()] ?? letter;
 }
 
-function segmentOf(part: SayPart): Segment {
+// Letter sounds (the owner's choice, Nov 21, 2026; the list is src/engine/letterSounds.ts). A sound's recording
+// is said once inside a sentence and three times when the sound is all there is to say.
+export function soundClipKey(key: SoundKey, alone: boolean): string {
+  return `sound:${key}:${alone ? 'three' : 'once'}`;
+}
+
+// What a sound is said as while it has no recording: its letters by name. "the sound of B", "the sound of S, H",
+// "the sound of long A". This is the one place that decides it, so the recorded sounds can replace it.
+export function soundFallback(key: SoundKey): Say {
+  const sound = soundOf(key);
+  const letters = [...sound.letters].flatMap((letter, i): Say => (i === 0 ? [{ letter }] : [',', { letter }]));
+  return [sound.long ? 'the sound of long' : 'the sound of', ...letters];
+}
+
+// The sound a Say is made of when it is all there is to say (a tapped letter saying its sound), or null.
+export function loneSound(say: Say): SoundKey | null {
+  const said = say.filter((part) => typeof part !== 'string' || /[A-Za-z0-9]/.test(part));
+  const only = said[0];
+  return said.length === 1 && typeof only === 'object' && 'sound' in only ? only.sound : null;
+}
+
+function segmentOf(part: SayPart, alone: boolean): Segment {
   if (typeof part === 'string') return { kind: 'voice', text: part };
   // Uppercase and lowercase use the same name.
   if ('letter' in part) return { kind: 'clip', key: `letter:${part.letter.toLowerCase()}`, fallback: letterName(part.letter) };
   if ('word' in part) return { kind: 'voice', text: part.word };
   if ('number' in part) return { kind: 'clip', key: `number:${part.number}`, fallback: numberWords(part.number) };
   if ('time' in part) return { kind: 'voice', text: timeWords(part.time.hour, part.time.minute) };
+  if ('sound' in part) return { kind: 'clip', key: soundClipKey(part.sound, alone), fallback: sayWords(soundFallback(part.sound)) };
   return { kind: 'voice', text: centsWords(part.cents) };
 }
 
@@ -67,8 +91,9 @@ function segmentOf(part: SayPart): Segment {
 // a part with no clip is spoken by the device voice, joined with the words around it.
 export function saySegments(say: Say, hasClip: (key: string) => boolean = () => false): Segment[] {
   const out: Segment[] = [];
+  const alone = loneSound(say) !== null;
   for (const part of say) {
-    let segment = segmentOf(part);
+    let segment = segmentOf(part, alone);
     if (segment.kind === 'clip' && !hasClip(segment.key)) segment = { kind: 'voice', text: segment.fallback };
     const last = out[out.length - 1];
     if (segment.kind === 'voice' && last && last.kind === 'voice') {

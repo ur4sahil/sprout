@@ -1,9 +1,10 @@
 import type { Say } from '../engine/types';
 import { playBytes, stopClip } from './clips';
 import type { Pace, Who } from './voice';
-import { readyVoice, voicePieces } from './voice';
+import { readyVoice, soundClipOf, voicePieces } from './voice';
 import { isMuted } from './mute';
-import { saySegments } from './say';
+import { loneSound, saySegments } from './say';
+import { soundClipBytes } from './soundClips';
 import { setSpeaking } from './speaking';
 
 // The only way the app speaks.
@@ -109,13 +110,29 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
     if (mine !== generation) return false;
     // The recorded voice, piece by piece (a long story is one piece for each sentence).
     // The device's own voice says a piece only when its recording cannot come.
+    // A letter sound with a recording is played from it, in its place in the sentence, with no lesson pause around it.
     let spoke = false;
+    let afterSound = false;
+    const alone = loneSound(say) !== null;
     for (const piece of voicePieces(say, pace)) {
       if (mine !== generation) return false;
-      if (spoke && pace === 'lesson') {
+      const sound = soundClipOf(piece, alone);
+      // Words after a sound go straight on, unless they start a new sentence ("Bat starts with /b/. Say it.").
+      const newSentence = !afterSound || (typeof piece[0] === 'string' && /^["“]?[A-Z]/.test(piece[0]));
+      if (spoke && pace === 'lesson' && sound === null && newSentence) {
         await wait(LESSON_PAUSE_MS);
         if (mine !== generation) return false;
       }
+      afterSound = sound !== null;
+      if (sound !== null) {
+        const bytes = await soundClipBytes(sound);
+        if (mine !== generation) return false;
+        if (bytes && (await playBytes(bytes))) {
+          spoke = true;
+          continue;
+        }
+      }
+      if (mine !== generation) return false;
       const recorded = await readyVoice(piece, RECORDED_WAIT_MS, pace, who);
       if (mine !== generation) return false;
       if (recorded && (await playBytes(recorded, rate / DEFAULT_RATE))) {

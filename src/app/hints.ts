@@ -1,13 +1,16 @@
-import { stepSay } from '../audio/stepSay';
+import { spokenSteps, stepSay } from '../audio/stepSay';
 import { generateQuestion } from '../content/registry';
+import { sayText } from '../engine/describe';
+import { givesAway } from '../engine/giveaway';
 import type { Question, Say } from '../engine/types';
 
 // Hints (the owner's choice, Nov 21, 2026). Pure rules; `useHintBook` keeps the count on screen.
-// A hint first nudges with the opening step of this question's own working, but only when that step cannot give
-// the answer away; otherwise, or on a second tap, it shows a worked example of a different question of the same
-// skill. A child has 3 hints in one part (a Play pick, a part of today's plan, a Mixed bag, a review); practice
-// opened by itself has no parts, so it gets 3 again every 10 answers. Opening the hint again on the same question
-// is free. A right answer after a hint counts for half (`applyPractice`, `reviewRight`).
+// A hint first nudges: with the question's own `explanation.hint` when its generator gives one, otherwise with the
+// opening step of its working, but only when that step cannot give the answer away; otherwise, or on a second tap,
+// it shows a worked example of a different question of the same skill. A child has 3 hints in one part (a Play
+// pick, a part of today's plan, a Mixed bag, a review); practice opened by itself has no parts, so it gets 3 again
+// every 10 answers. Opening the hint again on the same question is free. A right answer after a hint counts for
+// half (`applyPractice`, `reviewRight`).
 
 export const HINTS_PER_PART = 3;
 export const HINT_REFILL_EVERY = 10;
@@ -18,14 +21,22 @@ export const NUDGE_MIN_STEPS = 3;
 
 export interface Nudge {
   text: string;
-  say: Say | null; // null when the step cannot be read aloud safely (times, money, big numbers): it is shown only
+  say: Say | null; // null when the line cannot be read aloud safely: it is shown only
 }
 
+// The nudge: the generator's own hint first. Otherwise the first step, but never from the steps of a sort, an
+// order or a match (they list the answer), never with fewer than 3 steps, and never a step that names the answer
+// (`givesAway`: the right option, the number, the word or the sign). Null: the hint goes straight to the example.
 export function nudgeFor(question: Question): Nudge | null {
+  const hint = question.explanation.hint;
+  if (hint) return { text: hint.text, say: hint.say ?? stepSay(hint.text) };
+  if (question.type === 'sort' || question.type === 'order' || question.type === 'match') return null;
   const steps = question.explanation.steps;
   const first = steps[0];
   if (steps.length < NUDGE_MIN_STEPS || first === undefined) return null;
-  return { text: first, say: stepSay(first) };
+  const say = spokenSteps(question)[0] ?? null;
+  const own = question.explanation.stepsSay?.[0];
+  return givesAway(question, first, own ? sayText(own) : null) ? null : { text: first, say };
 }
 
 const EXAMPLE_TRIES = 24;

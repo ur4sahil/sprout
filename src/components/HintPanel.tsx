@@ -36,7 +36,7 @@ export default function HintPanel({ question, onClose, onSpeak }: Props) {
       if (nudge?.say) onSpeak([...LINES.hintNudge, ' ', ...nudge.say]);
       return;
     }
-    if (example) onSpeak([...LINES.hintExample, ' ', ...example.prompt.speak, ' ', ...(spokenSteps(example)?.[0] ?? [])]);
+    if (example) onSpeak([...LINES.hintExample, ' ', ...example.prompt.speak, ' ', ...(spokenSteps(example)[0] ?? [])]);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- once as each stage opens
   }, [stage]);
 

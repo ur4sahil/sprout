@@ -24,7 +24,7 @@ for (const grade of grades) {
           continue;
         }
         // The same things the app asks for when a question appears (warmQuestion).
-        const says = [question.prompt.speak, openingWords(question), ...(spokenSteps(question)?.slice(1) ?? [question.explanation.speak])];
+        const says = [question.prompt.speak, openingWords(question), ...spokenSteps(question).slice(1).filter((step) => step !== null)];
         for (const say of says) {
           const text = voiceText(say);
           if (text) seen.add(text);

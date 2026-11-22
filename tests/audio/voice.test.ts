@@ -1,7 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { readyVoice, resetVoice, setVoiceOn, voicePieces, voiceText, warm, warmAll, warmQuestion } from '../../src/audio/voice';
+import { readyVoice, resetVoice, setVoiceOn, soundClipOf, voicePieces, voiceText, warm, warmAll, warmQuestion } from '../../src/audio/voice';
 import { generateQuestion } from '../../src/content/registry';
 import { sayWords } from '../../src/audio/say';
+import { setSoundClips } from '../../src/audio/soundClips';
+import type { Question } from '../../src/engine/types';
 
 // The recorded voice on the device: ask once for each sentence, wait for it, fall back quietly only when it cannot come.
 
@@ -23,6 +25,7 @@ beforeEach(() => {
 afterEach(() => {
   vi.unstubAllGlobals();
   resetVoice();
+  setSoundClips(null);
 });
 
 describe('the recorded voice', () => {
@@ -143,6 +146,15 @@ describe('the recorded voice', () => {
     expect(asked).toEqual(['One.', 'Two.', 'Now.', 'Three.', 'Four.']);
   });
 
+  it('warms only the steps that are said: one that cannot be read is skipped, never replaced by the summary', async () => {
+    setVoiceOn(true);
+    const base = generateQuestion('M-1-B1', 1, 7);
+    const question: Question = { ...base, explanation: { ...base.explanation, steps: ['Start at 9.', 'It is 50% more.', 'So it is 11.'] } };
+    warmQuestion(question);
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(asked).toEqual([voiceText(question.prompt.speak), 'Not quite. Start at nine.', 'So it is eleven.']);
+  });
+
   it('warms everything a question may say: its prompt, "Not quite" with the first step, and the later steps', async () => {
     setVoiceOn(true);
     const question = generateQuestion('M-1-B1', 1, 7);
@@ -151,5 +163,35 @@ describe('the recorded voice', () => {
     expect(asked[0]).toBe(voiceText(question.prompt.speak));
     expect(asked[1]?.startsWith('Not quite.')).toBe(true);
     expect(asked).toHaveLength(1 + question.explanation.steps.length);
+  });
+});
+
+describe('letter sounds in the recorded voice', () => {
+  it('with no recording, a sound stays in its sentence and is said by its letters', () => {
+    expect(voicePieces(['Bat starts with', { sound: 'b' }, '.'])).toEqual([['Bat starts with', { sound: 'b' }, '.']]);
+    expect(voiceText(['Bat starts with', { sound: 'b' }, '.'])).toBe('Bat starts with the sound of B.');
+    expect(voiceText([{ sound: 'sh' }])).toBe('the sound of S, H');
+    expect(voiceText(['Cake has', { sound: 'long-a' }, 'in the middle.'])).toBe('Cake has the sound of long A in the middle.');
+    expect(soundClipOf([{ sound: 'b' }], false)).toBeNull();
+  });
+
+  it('with a recording, the sound is a piece of its own, and the words around it are recorded as before', async () => {
+    setSoundClips({ has: (key) => key.startsWith('sound:b:'), get: async () => new ArrayBuffer(4) });
+    expect(voicePieces(['Bat starts with', { sound: 'b' }, '. Ball does too.'])).toEqual([['Bat starts with'], [{ sound: 'b' }], ['Ball does too.']]);
+    // A sound with no recording stays in the words; a stop left on its own is not a piece.
+    expect(voicePieces(['Bat and', { sound: 'sh' }, 'and', { sound: 'b' }, '.'])).toEqual([['Bat and', { sound: 'sh' }, 'and'], [{ sound: 'b' }]]);
+    // A lesson is still said a sentence at a time.
+    expect(voicePieces(['Listen. Bat starts with', { sound: 'b' }, '. Say it.'], 'lesson')).toEqual([['Listen.'], ['Bat starts with'], [{ sound: 'b' }], ['Say it.']]);
+    // Once inside a sentence, three times when it is all there is to say.
+    expect(soundClipOf([{ sound: 'b' }], false)).toBe('sound:b:once');
+    expect(soundClipOf([{ sound: 'b' }], true)).toBe('sound:b:three');
+    expect(soundClipOf([{ sound: 'sh' }], false)).toBeNull();
+    expect(soundClipOf(['Bat'], false)).toBeNull();
+    // The words are fetched early as before; the sound itself never is.
+    setVoiceOn(true);
+    warm(['Bat starts with', { sound: 'b' }, '.']);
+    warm([{ sound: 'b' }]);
+    await new Promise((resolve) => setTimeout(resolve, 10));
+    expect(asked).toEqual(['Bat starts with']);
   });
 });

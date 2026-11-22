@@ -1,5 +1,6 @@
 import type { Question, Say } from '../engine/types';
-import { sayWords } from './say';
+import { loneSound, sayWords, soundClipKey, soundFallback } from './say';
+import { hasSoundClip } from './soundClips';
 import { openingWords, spokenSteps } from './stepSay';
 
 // The recorded voice. A sentence is asked for from the server, which keeps every sentence it has ever made.
@@ -40,9 +41,20 @@ export function resetVoice(): void {
 
 // The words as the recorded voice reads them. A letter is sent as its capital ("the letter A"): the voice
 // reads a capital as the letter's name, while it misreads some spelled names ("ay" as "aye", "eff" as "ee-eff-eff").
-// The device voice keeps the spelled names (sayWords), which it reads correctly.
+// The device voice keeps the spelled names (sayWords), which it reads correctly. A letter sound that reaches the
+// voice has no recording to play (voicePieces splits out those that do), so its letters are said instead.
 function recordedWords(say: Say): string {
-  return sayWords(say.map((part) => (typeof part === 'object' && 'letter' in part ? part.letter.toUpperCase() : part)));
+  const plain = say.flatMap((part) => (typeof part === 'object' && 'sound' in part ? soundFallback(part.sound) : [part]));
+  return sayWords(plain.map((part) => (typeof part === 'object' && 'letter' in part ? part.letter.toUpperCase() : part)));
+}
+
+// The recording to play for a piece that is one letter sound with a recording on hand, or null. `alone`: the
+// sound is all the speech says, so it is said three times, not once.
+export function soundClipOf(piece: Say, alone: boolean): string | null {
+  const only = piece.length === 1 ? piece[0] : undefined;
+  if (typeof only !== 'object' || !('sound' in only)) return null;
+  const key = soundClipKey(only.sound, alone);
+  return hasSoundClip(key) ? key : null;
 }
 
 // The sentence as the voice machine is given it, or null when it cannot be sent.
@@ -79,7 +91,44 @@ async function send(text: string, pace: Pace, who: Who): Promise<ArrayBuffer | n
 // played one after another. A piece the voice cannot take is still returned; it is said by the device voice.
 // A lesson is always one piece for each sentence, so the app can pause between them.
 // The split is made between parts, so letters, sounds and numbers stay typed parts: the device voice can still say them.
+// A letter sound with a recording on hand is a piece of its own, played from its recording, and the words around
+// it are recorded as before. One with no recording stays inside its sentence, said by its letters.
 export function voicePieces(say: Say, pace: Pace = 'normal'): Say[] {
+  const alone = loneSound(say) !== null;
+  const runs: Say[] = [];
+  let run: Say = [];
+  for (const part of say) {
+    if (soundClipOf([part], alone) === null) {
+      run.push(part);
+      continue;
+    }
+    runs.push(run, [part]);
+    run = [];
+  }
+  if (runs.length === 0) return sentencePieces(say, pace);
+  runs.push(run);
+  return runs.flatMap((each, i) => {
+    if (soundClipOf(each, alone) !== null) return [each];
+    // Words straight after a sound start without its stop ("Bat starts with /b/. Then..." goes on with "Then...").
+    const words = i > 0 ? trimStart(each) : each;
+    return words.some((part) => typeof part !== 'string' || /[A-Za-z0-9]/.test(part)) ? sentencePieces(words, pace) : [];
+  });
+}
+
+function trimStart(say: Say): Say {
+  const out = [...say];
+  while (typeof out[0] === 'string') {
+    const rest = out[0].replace(/^[\s.,;:!?]+/, '');
+    if (rest.length > 0) {
+      out[0] = rest;
+      break;
+    }
+    out.shift();
+  }
+  return out;
+}
+
+function sentencePieces(say: Say, pace: Pace): Say[] {
   const words = recordedWords(say).replace(/\s+/g, ' ').trim();
   if (pace === 'normal' && (voiceText(say) !== null || words.length <= MAX_TEXT)) return [say];
   const pieces: Say[] = [];
@@ -124,9 +173,10 @@ function fetchVoice(say: Say, pace: Pace, urgent: boolean, who: Who = 'sprout'):
   return asked;
 }
 
-// Starts fetching a sentence, so it is ready by the time it is wanted.
+// Starts fetching a sentence, so it is ready by the time it is wanted. A letter sound with a recording is not fetched.
 export function warm(say: Say, pace: Pace = 'normal', who: Who = 'sprout'): void {
-  for (const piece of voicePieces(say, pace)) void fetchVoice(piece, pace, false, who);
+  const alone = loneSound(say) !== null;
+  for (const piece of voicePieces(say, pace)) if (soundClipOf(piece, alone) === null) void fetchVoice(piece, pace, false, who);
 }
 
 // Starts fetching several sentences, in order.
@@ -135,14 +185,12 @@ export function warmAll(says: readonly Say[], pace: Pace = 'normal'): void {
   for (const say of says) warm(say, pace);
 }
 
-// Everything a question may say: its prompt, "Not quite" with the first step, and each later step.
+// Everything a question may say: its prompt, "Not quite" with the first step, and each later step that is said.
 export function warmQuestion(question: Question): void {
   if (!on || gone) return;
   warm(question.prompt.speak);
   warm(openingWords(question));
-  const steps = spokenSteps(question);
-  if (steps) for (const step of steps.slice(1)) warm(step);
-  else warm(question.explanation.speak);
+  for (const step of spokenSteps(question).slice(1)) if (step) warm(step);
 }
 
 // The recorded sentence if it arrives within `waitMs`, otherwise null (and it keeps arriving in the background).

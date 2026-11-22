@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { PRAISE, centsWords, letterName, numberWords, saySegments, sayWords, timeWords } from '../../src/audio/say';
+import { PRAISE, centsWords, letterName, loneSound, numberWords, saySegments, sayWords, soundClipKey, soundFallback, timeWords } from '../../src/audio/say';
+import { SOUNDS, SOUND_KEYS, isSoundKey } from '../../src/engine/letterSounds';
 import { validateQuestion } from '../../src/engine/validate';
 
 describe('numberWords', () => {
@@ -90,6 +91,7 @@ describe('saySegments', () => {
     expect(sayWords([{ number: 47 }])).toBe('forty-seven');
     expect(sayWords([{ time: { hour: 3, minute: 30 } }])).toBe('half past three');
     expect(sayWords([{ cents: 25 }])).toBe('twenty-five cents');
+    expect(sayWords([{ sound: 'm' }])).toBe('the sound of em');
   });
 
   it('with no voice pack on the device, every part uses the device voice, joined into smooth sentences', () => {
@@ -120,6 +122,53 @@ describe('saySegments', () => {
   it('never gives the voice a digit or a symbol', () => {
     const everything = sayWords([{ number: 1000 }, { number: 0 }, { time: { hour: 12, minute: 5 } }, { cents: 99 }, { letter: 'q' }]);
     expect(everything).not.toMatch(/[0-9+=<>_]/);
+  });
+});
+
+describe('letter sounds', () => {
+  it('has the sounds the owner chose, in one list, each shown between slashes', () => {
+    const short = ['a', 'e', 'i', 'o', 'u'];
+    const consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+    const twoLetters = ['sh', 'ch', 'th', 'wh', 'ng', 'ck'];
+    const long = ['long-a', 'long-e', 'long-i', 'long-o', 'long-u'];
+    const teams = ['ai', 'ay', 'ee', 'ea', 'oa', 'ie', 'igh', 'oi', 'oy', 'ou', 'ow', 'ar', 'er', 'ir', 'ur', 'or'];
+    expect(SOUND_KEYS).toEqual([...short, ...consonants, ...twoLetters, ...long, ...teams]);
+    for (const key of SOUND_KEYS) {
+      expect(SOUNDS[key].shown, key).toMatch(/^\/[a-zāēīōū]+\/$/);
+      expect(SOUNDS[key].letters, key).toMatch(/^[a-z]{1,3}$/);
+      expect(SOUNDS[key].as.length, key).toBeGreaterThan(1);
+    }
+    expect(SOUNDS.b.shown).toBe('/b/');
+    expect(SOUNDS['long-a'].shown).toBe('/ā/');
+    expect(isSoundKey('sh')).toBe(true);
+    expect(isSoundKey('zz')).toBe(false);
+    expect(isSoundKey('toString')).toBe(false);
+  });
+
+  it('until the recordings exist, a sound is said by its letters, from one function', () => {
+    expect(sayWords(soundFallback('b'))).toBe('the sound of bee');
+    expect(sayWords(soundFallback('sh'))).toBe('the sound of ess, aitch');
+    expect(sayWords(soundFallback('long-a'))).toBe('the sound of long ay');
+    expect(sayWords(soundFallback('igh'))).toBe('the sound of eye, jee, aitch');
+    expect(sayWords(['Bat starts with', { sound: 'b' }, '.'])).toBe('Bat starts with the sound of bee.');
+  });
+
+  it('is played from its recording once inside a sentence, and three times when it is all there is to say', () => {
+    expect(soundClipKey('b', false)).toBe('sound:b:once');
+    expect(soundClipKey('long-a', true)).toBe('sound:long-a:three');
+    expect(loneSound([{ sound: 'b' }])).toBe('b');
+    expect(loneSound(['', { sound: 'sh' }, '.'])).toBe('sh');
+    expect(loneSound(['Bat starts with', { sound: 'b' }])).toBeNull();
+    expect(loneSound([{ sound: 'b' }, { sound: 'a' }])).toBeNull();
+    const have = new Set(['sound:b:once', 'sound:b:three']);
+    expect(saySegments(['Bat starts with', { sound: 'b' }, '.'], (key) => have.has(key))).toEqual([
+      { kind: 'voice', text: 'Bat starts with' },
+      { kind: 'clip', key: 'sound:b:once', fallback: 'the sound of bee' },
+      { kind: 'voice', text: '.' },
+    ]);
+    expect(saySegments([{ sound: 'b' }], (key) => have.has(key))).toEqual([{ kind: 'clip', key: 'sound:b:three', fallback: 'the sound of bee' }]);
+    // With no recording, it is words in the sentence.
+    expect(saySegments(['Bat starts with', { sound: 'b' }, '.'])).toEqual([{ kind: 'voice', text: 'Bat starts with the sound of bee.' }]);
   });
 });
 

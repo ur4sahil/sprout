@@ -1,5 +1,6 @@
 import { DEFAULT_RATE, LESSON_PAUSE_MS } from '../audio/speech';
 import { sayWords } from '../audio/say';
+import { soundOf } from '../engine/letterSounds';
 import type { Say, SayPart } from '../engine/types';
 import type { Episode } from './types';
 
@@ -26,6 +27,7 @@ function shownPart(part: Exclude<SayPart, string>): string {
   if ('letter' in part) return part.letter.toUpperCase();
   if ('word' in part) return part.word;
   if ('time' in part) return part.time.minute === 0 ? `${part.time.hour}${KEEP_TOGETHER}o'clock` : `${part.time.hour}:${String(part.time.minute).padStart(2, '0')}`;
+  if ('sound' in part) return soundOf(part.sound).shown;
   return `${part.cents}${KEEP_TOGETHER}cents`;
 }
 

@@ -8,6 +8,10 @@ describe('sayText', () => {
     expect(sayText(['Start at', { number: 4 }, '. Count on', { number: 2 }, 'more.'])).toBe('Start at 4. Count on 2 more.');
     expect(sayText(['Find the letter', { letter: 'B' }])).toBe('Find the letter B');
     expect(sayText([{ word: 'cat' }, 'and', { time: { hour: 3, minute: 5 } }, 'and', { cents: 25 }])).toBe('cat and 3:05 and 25¢');
+    // A letter sound is written between slashes.
+    expect(sayText(['Bat starts with', { sound: 'b' }, '.'])).toBe('Bat starts with /b/.');
+    expect(sayText(['Cake has', { sound: 'long-a' }, ', and cat has', { sound: 'a' }, '.'])).toBe('Cake has /ā/, and cat has /a/.');
+    expect(describeVisual({ kind: 'text', value: 'b', size: 'l', speak: [{ sound: 'b' }] })).toBe('b');
   });
 });
 

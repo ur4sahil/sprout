@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { questionKey } from '../../src/engine/canonical';
-import type { Question, QuestionBase, Visual } from '../../src/engine/types';
+import type { Hint, Question, QuestionBase, Say, SayPart, Visual } from '../../src/engine/types';
 import { validateQuestion, validateRepeatable, validateSeries } from '../../src/engine/validate';
 
 const t = (value: string, speak = false): Visual =>
@@ -85,6 +85,13 @@ describe('validateQuestion', () => {
     expect(broken(choice({ options: [{ kind: 'text', value: '2', size: 'l', speak: ['2'] }, t('3'), t('4')] }))).toContain('1');
     // Hyphens inside words and typed parts are fine.
     expect(broken(choice({ prompt: { text: 'x', speak: ['forty-seven take away', { number: 3 }, { letter: 'a' }, { word: 'a' }, { cents: 25 }] } }))).toEqual([]);
+  });
+
+  it('1: a sound part names a sound from the list of letter sounds', () => {
+    expect(broken(choice({ prompt: { text: 'Which one starts with /b/?', speak: ['Which one starts with', { sound: 'b' }, '?'] } }))).toEqual([]);
+    expect(broken(choice({ prompt: { text: 'x', speak: [{ sound: 'long-a' }, { sound: 'sh' }, { sound: 'igh' }] } }))).toEqual([]);
+    expect(broken(choice({ prompt: { text: 'x', speak: [{ sound: 'zz' } as unknown as SayPart] } }))).toContain('1');
+    expect(broken(choice({ options: [{ kind: 'text', value: 'b', size: 'l', speak: [{ sound: 'q' } as unknown as SayPart] }, t('3'), t('4')] }))).toContain('1');
   });
 
   it('2: rejects undefined, NaN and empty arrays anywhere', () => {
@@ -280,6 +287,40 @@ describe('validateQuestion', () => {
     expect(broken(read({ prompt: { text: 'Which picture matches this word?', speak: ['Which picture matches', { word: 'cat' }] } }))).toContain('15');
     expect(broken(read({ prompt: { text: 'x', speak: ['Find the cat.'] } }))).toContain('15');
     expect(broken(read({ facts: { target: 'cat', options: ['cat', 'dog'] } }))).toContain('15');
+  });
+
+  it('18: every step is said, stepsSay has one valid entry for each step, and a hint is said and gives nothing away', () => {
+    const steps = (list: string[], stepsSay?: (Say | null)[]): Question => choice({ explanation: { speak: ['There are', { number: 3 }, '.'], steps: list, ...(stepsSay ? { stepsSay } : {}) } });
+    expect(broken(steps(['Count them.', 'There are 3.'], [null, ['There are', { number: 3 }, '.']]))).toEqual([]);
+    expect(broken(steps(['Count them.', 'There are 3.'], [null]))).toContain('18');
+    expect(broken(steps(['Count them.'], [['There are 3.']]))).toContain('1');
+    // A step stepSay cannot read needs its own speech.
+    expect(broken(steps(['Jet ends in /et/.']))).toContain('18');
+    expect(broken(steps(['Jet ends in /et/.'], [['Jet ends with', { letter: 'e' }, ',', { letter: 't' }, '.']]))).toEqual([]);
+
+    const hinted = (hint: Hint, change: Partial<Extract<Question, { type: 'choice' }>> = {}): Question => choice({ explanation: { speak: ['Yes.'], steps: ['Count them.'], hint }, ...change });
+    expect(broken(hinted({ text: 'Count them one at a time.' }))).toEqual([]);
+    expect(broken(hinted({ text: 'Count from 1.', say: ['Count from', { number: 1 }, '.'] }))).toEqual([]);
+    expect(broken(hinted({ text: ' ' }))).toContain('18');
+    expect(broken(hinted({ text: ' ', say: ['Count them one at a time.'] }))).toContain('18');
+    expect(broken(hinted({ text: 'Count them.', say: ['Count all 3.'] }))).toContain('1');
+    // Said: a hint stepSay cannot read needs its own speech.
+    expect(broken(hinted({ text: 'It is 50% of them.' }))).toContain('18');
+    expect(broken(hinted({ text: 'It is 50% of them.', say: ['It is half of them.'] }))).toEqual([]);
+    // Nothing given away: not the number, in digits or words, and not in its speech either.
+    expect(broken(hinted({ text: 'There are 3.' }))).toContain('18');
+    expect(broken(hinted({ text: 'There are three.' }))).toContain('18');
+    expect(broken(hinted({ text: 'Count them.', say: ['There are', { number: 3 }, '.'] }))).toContain('18');
+    // A listen hint never shows the target; a read hint never says the words to read.
+    const listen = { mode: 'listen' as const, facts: { target: 'B', options: ['B', 'M'] }, prompt: { text: 'Find the letter.', speak: ['Find the letter', { letter: 'b' }] }, options: [t('B'), t('M')], answerIndex: 0 };
+    expect(broken(hinted({ text: 'Listen for the first sound.' }, listen))).toEqual([]);
+    expect(broken(hinted({ text: 'It is a B.' }, listen))).toContain('18');
+    const heard = { mode: 'listen' as const, facts: { target: 'ball', options: ['⚽', '🐶'] }, prompt: { text: 'Listen. Which picture?', speak: ['Listen. Which picture is', { word: 'ball' }, '?'] }, options: [t('⚽'), t('🐶')], answerIndex: 0 };
+    expect(broken(hinted({ text: 'Listen for the first sound.' }, heard))).toEqual([]);
+    expect(broken(hinted({ text: 'Ball starts with b.' }, heard))).toContain('18');
+    const read = { mode: 'read' as const, facts: { target: 'cat', read: ['cat'], options: ['cat', 'dog'] }, prompt: { text: 'Which picture matches this word?', speak: ['Which picture matches this word?'] }, stimulus: t('cat'), options: [t('🐱', true), t('🐶', true)], answerIndex: 0 };
+    expect(broken(hinted({ text: 'Say each sound, then blend them.' }, read))).toEqual([]);
+    expect(broken(hinted({ text: 'Sound it out: cat.' }, read))).toContain('18');
   });
 
   it('16: rejects look-alike characters in one question', () => {

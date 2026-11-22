@@ -4,6 +4,7 @@ import { setMuted } from '../../src/audio/mute';
 import { audioContext, wakeAudioOnTaps } from '../../src/audio/context';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
 import { LESSON_PAUSE_MS, isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
+import { setSoundClips } from '../../src/audio/soundClips';
 import { openRepo } from '../../src/storage/index';
 
 // A stand-in for the browser's speech and audio, recording everything in one timeline.
@@ -61,9 +62,10 @@ function installAudio(): void {
     async decodeAudioData(bytes: ArrayBuffer): Promise<{ duration: number; size: number }> {
       return { duration: 0.01, size: bytes.byteLength };
     }
-    createBufferSource(): { buffer: unknown; connect: () => void; start: () => void; stop: () => void; onended: (() => void) | null } {
+    createBufferSource(): { buffer: unknown; playbackRate: { value: number }; connect: () => void; start: () => void; stop: () => void; onended: (() => void) | null } {
       const source = {
         buffer: null as { size: number } | null,
+        playbackRate: { value: 1 },
         onended: null as (() => void) | null,
         connect: () => undefined,
         stop: () => undefined,
@@ -103,7 +105,13 @@ beforeEach(() => {
 afterEach(() => {
   Reflect.deleteProperty(window, 'speechSynthesis');
   Reflect.deleteProperty(window, 'AudioContext');
+  setSoundClips(null);
 });
+
+// Recorded letter sounds, as a source would hand them over: each recording's size tells which one played.
+function soundRecordings(sizes: Record<string, number>): void {
+  setSoundClips({ has: (key) => key in sizes, get: async (key) => (sizes[key] === undefined ? null : new ArrayBuffer(sizes[key])) });
+}
 
 describe('speak', () => {
   it('cancels anything playing, then waits at least 60 ms before speaking', async () => {
@@ -144,6 +152,47 @@ describe('speak', () => {
     await speak(['Count the dots. Then say the number.'], 0.85, 'lesson');
     expect(events).toEqual(['cancel', 'say:Count the dots.', 'say:Then say the number.']);
     expect((spokeAt[1] as number) - (spokeAt[0] as number)).toBeGreaterThanOrEqual(LESSON_PAUSE_MS - 5);
+  });
+
+  it('says a letter sound by its letters while there is no recording of it', async () => {
+    installSpeech();
+    installAudio();
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with the sound of bee.']);
+  });
+
+  it('plays a recorded letter sound in its place: once inside a sentence, three times on its own', async () => {
+    installSpeech();
+    installAudio();
+    soundRecordings({ 'sound:b:once': 11, 'sound:b:three': 33 });
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'clip:11']);
+    events = [];
+    await speak([{ sound: 'b' }]);
+    expect(events).toEqual(['cancel', 'clip:33']);
+  });
+
+  it('a recording that cannot be had falls back to the letters', async () => {
+    installSpeech();
+    installAudio();
+    setSoundClips({ has: () => true, get: async () => null });
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'say:the sound of bee']);
+  });
+
+  it('in a lesson, a recorded sound is said with no pause around it, and a new sentence after it still gets one', async () => {
+    installSpeech();
+    installAudio();
+    soundRecordings({ 'sound:b:once': 11 });
+    let start = Date.now();
+    await speak(['Bat starts with', { sound: 'b' }, ', as in ball.'], 0.85, 'lesson');
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'clip:11', 'say:as in ball.']);
+    expect(Date.now() - start).toBeLessThan(LESSON_PAUSE_MS);
+    events = [];
+    start = Date.now();
+    await speak(['Bat starts with', { sound: 'b' }, '. Say it.'], 0.85, 'lesson');
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'clip:11', 'say:Say it.']);
+    expect(Date.now() - start).toBeGreaterThanOrEqual(LESSON_PAUSE_MS - 5);
   });
 
   it('never plays an old voice-pack clip, even one still on the device', async () => {
