@@ -48,7 +48,10 @@ export default function Gate({ onPass, onCancel }: Props) {
     const result = await tryPin(family, pin);
     setBusy(false);
     if (result === 'ok') onPass();
-    else if (result === 'locked') setMessage(`Too many tries. Wait ${Math.ceil(lockedFor() / 1000)} seconds, then try again.`);
+    else if (result === 'locked') {
+      const seconds = Math.ceil(lockedFor() / 1000);
+      setMessage(`Too many tries. Wait ${seconds} ${seconds === 1 ? 'second' : 'seconds'}, then try again.`);
+    }
     else setMessage('That PIN is not right.');
   }
 

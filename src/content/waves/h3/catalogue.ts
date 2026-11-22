@@ -17,7 +17,7 @@ const CATEGORIES: Record<string, Record<string, string>> = {
 // one with the wording audit, round 2 (hints, letter sounds in the steps, clearer prompts).
 const VERSIONS: Record<string, number> = {
   'E-PK-A6': 2, 'E-PK-A7': 2, 'E-PK-B4': 2, 'E-PK-B5': 2, 'E-PK-B6': 2, 'E-PK-C3': 2, 'E-PK-C4': 2, 'E-PK-C5': 2, 'E-PK-C6': 3, 'E-PK-C7': 2, 'E-PK-D1': 2, 'E-PK-D2': 2,
-  'E-K-A3': 3, 'E-K-A4': 2, 'E-K-A5': 3, 'E-K-B8': 3, 'E-K-B9': 3, 'E-K-B10': 2, 'E-K-B11': 3, 'E-K-B12': 2, 'E-K-B13': 3,
+  'E-K-A3': 4, 'E-K-A4': 2, 'E-K-A5': 3, 'E-K-B8': 3, 'E-K-B9': 3, 'E-K-B10': 3, 'E-K-B11': 3, 'E-K-B12': 3, 'E-K-B13': 3,
   'E-K-C4': 2, 'E-K-D4': 2, 'E-K-D5': 2, 'E-K-D6': 2, 'E-K-D7': 3, 'E-K-E4': 2, 'E-K-E5': 2, 'E-K-E6': 2, 'E-K-E7': 2,
 };
 

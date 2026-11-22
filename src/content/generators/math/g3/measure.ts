@@ -29,14 +29,17 @@ function threeTimes(right: Time, slips: Time[], rng: Rng): Time[] {
 }
 
 // ---- F.1 Time to the minute ----
-// Levels: read the clock / match a time to its clock / quarter past and quarter to. Oracle: time.
+// Levels: read the clock / match a time to its clock / 15 or 30 minutes after an hour, or 15 before the next. Oracle: time.
+
+// 1 minute, never "1 minutes".
+const minuteWord = (n: number): string => (n === 1 ? 'minute' : 'minutes');
 
 function minuteExplanation(time: Time): Explanation {
   const fives = Math.floor(time.minute / 5) * 5;
   const more = time.minute - fives;
-  const count = fives === 0 ? `The long hand is the minute hand. It is ${more} minutes past the 12.` : `The long hand is the minute hand. Count by fives to ${fives}${more > 0 ? `, then ${more} more: ${time.minute}` : ''}.`;
+  const count = fives === 0 ? `The long hand is the minute hand. It is ${more} ${minuteWord(more)} past the 12.` : `The long hand is the minute hand. Count by fives to ${fives}${more > 0 ? `, then ${more} more: ${time.minute}` : ''}.`;
   return {
-    speak: ['The short hand is the hour hand. It has passed the', { number: time.hour }, ', so the hour is', { number: time.hour }, '. The long hand shows', { number: time.minute }, 'minutes. It is', { time }, '.'],
+    speak: ['The short hand is the hour hand. It has passed the', { number: time.hour }, ', so the hour is', { number: time.hour }, '. The long hand shows', { number: time.minute }, `${minuteWord(time.minute)}. It is`, { time }, '.'],
     steps: [`The short hand is the hour hand. It has passed the ${time.hour}, so the hour is ${time.hour}.`, count, `It is ${written(time)}.`],
     visual: clock(time),
     // The first step reads the hour for the child: the hint says where to look instead.
@@ -44,11 +47,15 @@ function minuteExplanation(time: Time): Explanation {
   };
 }
 
-function quarterWords(time: Time): { text: string; speak: Say } {
-  if (time.minute === 15) return { text: `quarter past ${time.hour}`, speak: ['quarter past', { number: time.hour }] };
-  if (time.minute === 30) return { text: `half past ${time.hour}`, speak: ['half past', { number: time.hour }] };
-  const next = later(time, 15).hour;
-  return { text: `quarter to ${next}`, speak: ['quarter to', { number: next }] };
+// Level 3 asks for a quarter hour from the hour it is next to. Times are said as a digital clock is read (the owner's
+// choice, Nov 22, 2026), never "quarter past" or "quarter to", so the question says the minutes: 15 or 30 minutes
+// after an hour, or 15 minutes before the next one. The steps start at that hour and move the long hand.
+function quarterAsk(time: Time): { text: string; speak: Say; from: number; after: boolean } {
+  if (time.minute === 45) {
+    const next = later(time, 15).hour;
+    return { text: `15 minutes before ${next} o'clock`, speak: [{ number: 15 }, 'minutes before', { number: next }, "o'clock"], from: next, after: false };
+  }
+  return { text: `${time.minute} minutes after ${time.hour} o'clock`, speak: [{ number: time.minute }, 'minutes after', { number: time.hour }, "o'clock"], from: time.hour, after: true };
 }
 
 function timeToMinute(level: Level, rng: Rng): QuestionDraft {
@@ -56,20 +63,24 @@ function timeToMinute(level: Level, rng: Rng): QuestionDraft {
     const hour = rng.int(1, 12);
     const minute = rng.pick([15, 30, 45]);
     const time = { hour, minute };
-    const words = quarterWords(time);
-    // The slips: the quarter on the wrong side of the hour, or the hour of the words with the wrong minutes.
+    const ask = quarterAsk(time);
+    const points = minute / 5;
+    const move = ask.after ? `${minute} minutes after it, the long hand points to ${points}.` : `15 minutes before it, the long hand points to ${points}. That is ${minute} minutes after ${hour} o'clock.`;
+    const moveSay: Say = ask.after ? [{ number: minute }, 'minutes after it, the long hand points to', { number: points }, '.'] : [{ number: 15 }, 'minutes before it, the long hand points to', { number: points }, '. That is', { number: minute }, 'minutes after', { number: hour }, "o'clock."];
+    // The slips: the minutes on the wrong side of the hour, or the hour the question names with the wrong minutes.
     const choices = threeTimes(time, [later(time, 30), later(time, -30), { hour: later(time, 15).hour, minute: 45 }, { hour, minute: 15 === minute ? 45 : 15 }], rng);
     return {
       type: 'choice',
       mode: 'look',
       facts: { hour, minute, options: choices.map(written) },
-      prompt: { text: `What time is ${words.text}?`, speak: ['What time is', ...words.speak, '?'] },
+      prompt: { text: `What time is ${ask.text}?`, speak: ['What time is', ...ask.speak, '?'] },
       options: choices.map(timeText),
       answerIndex: choices.findIndex((each) => same(each, time)),
       explanation: {
-        speak: [...words.speak, 'is', { number: minute }, 'minutes past', { number: hour }, '. It is', { time }, '.'],
-        steps: [`A quarter of an hour is 15 minutes. Half an hour is 30.`, `${words.text[0]?.toUpperCase()}${words.text.slice(1)} is ${minute} minutes past ${hour}.`, `It is ${written(time)}.`],
+        speak: ['Start at', { number: ask.from }, "o'clock.", ...moveSay, 'It is', { time }, '.'],
+        steps: [`Start at ${ask.from} o'clock.`, move, `It is ${written(time)}.`],
         visual: clock(time),
+        hint: { text: 'Start at the hour the question names. Then move the long hand on, or back, by the minutes.' },
       },
     };
   }
@@ -144,8 +155,11 @@ const hoursAndMinutes = (minutes: number): string => {
 };
 
 // How many minutes from one time to a later one, both in minutes after 12 o'clock and in fives. Inside one hour, count
-// on in fives; past the next o'clock, stop there first: "6:35 to 7:00 is 25 minutes. 7:00 to 7:20 is 20 minutes."
+// on in fives; past the next hour, stop there first: "6:35 to 7:00 is 25 minutes. 7:00 to 7:20 is 20 minutes."
 // `label` ends the last line: "That is 35 minutes long."
+// The hint says how to count the minutes, and names no time: the times are on screen, and the count is the answer.
+const SPAN_HINT: Hint = { text: 'Count on in fives from the start time to the end time. If you pass the hour, stop at the hour first.' };
+
 export function spanExplanation(from: number, to: number, label: string): Explanation {
   const minutes = to - from;
   const toHour = Math.ceil((from + 1) / 60) * 60;
@@ -156,6 +170,7 @@ export function spanExplanation(from: number, to: number, label: string): Explan
       speak: ['Count on in fives from', { time: start }, 'to', { time: end }, '. That is', { number: minutes }, `minutes ${label}.`],
       steps: [`Count on in fives from ${written(start)} to ${written(end)}.`, `That is ${minutes} minutes ${label}.`],
       visual,
+      hint: SPAN_HINT,
     };
   }
   const [first, rest] = [toHour - from, to - toHour];
@@ -167,6 +182,7 @@ export function spanExplanation(from: number, to: number, label: string): Explan
       `${first} + ${rest} = ${minutes} minutes ${label}.`,
     ],
     visual,
+    hint: SPAN_HINT,
   };
 }
 
@@ -343,6 +359,8 @@ function massVolume(level: Level, rng: Rng): QuestionDraft {
         speak: kind === 'volume' ? ['Liters measure how much a container holds.'] : grams < 1000 ? ['Grams are for light things. A paper clip is about one gram.'] : ['Kilograms are for heavy things. A big bag of flour is about one kilogram.'],
         steps: kind === 'volume' ? ['Liters measure how much a container holds.', `Use liters for ${thing.name}.`] : grams < 1000 ? ['Grams are for light things.', `${thing.name[0]?.toUpperCase()}${thing.name.slice(1)} is light, so use grams.`] : ['Kilograms are for heavy things.', `${thing.name[0]?.toUpperCase()}${thing.name.slice(1)} is heavy, so use kilograms.`],
         visual: { kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row' },
+        // Names no unit: is it how heavy, or how much it holds, and is it light or heavy?
+        hint: { text: 'Is the question about how heavy it is, or how much it holds? If it is how heavy, is it light or heavy?' },
       },
     };
   }
@@ -364,7 +382,7 @@ function massVolume(level: Level, rng: Rng): QuestionDraft {
       stimulus: { kind: 'scale', left: ['blank'], right: [a, b] },
       options: values.map((value) => numeral(value, 'l')),
       answerIndex: values.indexOf(total),
-      explanation: { speak: ['The scale is level, so the box weighs the same as the two weights.', { number: a }, 'plus', { number: b }, 'is', { number: total }, 'kilograms.'], steps: ['The scale is level.', 'The box weighs the same as the two weights together.', `${a} + ${b} = ${total} kilograms.`], visual: { kind: 'scale', left: [total], right: [a, b] } },
+      explanation: { speak: ['The scale is level, so the box weighs the same as the two weights.', { number: a }, 'plus', { number: b }, 'is', { number: total }, 'kilograms.'], steps: ['The scale is level.', 'The box weighs the same as the two weights together.', `${a} + ${b} = ${total} kilograms.`], visual: { kind: 'scale', left: [total], right: [a, b] }, hint: { text: 'The scale is level, so both sides weigh the same. Add up the weights.' } },
     };
   }
   const liters = rng.bool();
@@ -387,6 +405,8 @@ function massVolume(level: Level, rng: Rng): QuestionDraft {
       speak: ['To find how many more, subtract the smaller amount from the bigger one.', { number: big }, 'minus', { number: small }, 'is', { number: answer }, `${unit(answer)}.`],
       steps: ['To find how many more, subtract the smaller amount from the bigger one.', `${big} − ${small} = ${answer}.`, more],
       visual: { kind: 'equation', parts: [big, '-', small, '=', answer] },
+      // No number word: the answer can be 1.
+      hint: { text: 'To find how many more, subtract the smaller amount from the bigger amount.' },
     },
   };
 }
@@ -439,7 +459,7 @@ function scaledGraph(level: Level, rng: Rng): QuestionDraft {
       stimulus: shown,
       answer,
       maxDigits: 2,
-      explanation: { speak: ['There are', { number: values[more] as number }, categories[more]!.label, 'and', { number: values[less] as number }, `${categories[less]!.label}.`, { number: values[more] as number }, 'minus', { number: values[less] as number }, 'is', { number: answer }, '.'], steps: [key, `${capital(categories[more]!.label)}: ${values[more]}. ${capital(categories[less]!.label)}: ${values[less]}.`, `${values[more]} − ${values[less]} = ${answer}.`], visual: shown },
+      explanation: { speak: ['There are', { number: values[more] as number }, categories[more]!.label, 'and', { number: values[less] as number }, `${categories[less]!.label}.`, { number: values[more] as number }, 'minus', { number: values[less] as number }, 'is', { number: answer }, '.'], steps: [key, `${capital(categories[more]!.label)}: ${values[more]}. ${capital(categories[less]!.label)}: ${values[less]}.`, `${values[more]} − ${values[less]} = ${answer}.`], visual: shown, hint: { text: 'Read how many there are of each. Then subtract the smaller from the bigger.' } },
     };
   }
   const index = rng.int(0, 2);
@@ -455,7 +475,8 @@ function scaledGraph(level: Level, rng: Rng): QuestionDraft {
     stimulus: shown,
     options: options.map((value) => numeral(value, 'l')),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [...eachSay, 'So there are', { number: answer }, `${categories[index]!.label}.`], steps: [each, level === 1 ? `There are ${steps[index]} pictures: ${Array.from({ length: steps[index] as number }, (_, i) => (i + 1) * scale).join(', ')}.` : `The bar ends at ${answer}.`, `So there are ${answer} ${categories[index]!.label}.`], visual: shown },
+    // The key is the answer when there is one picture, so the hint says what to do with it, not what it is.
+    explanation: { speak: [...eachSay, 'So there are', { number: answer }, `${categories[index]!.label}.`], steps: [each, level === 1 ? `${steps[index] === 1 ? 'There is 1 picture' : `There are ${steps[index]} pictures`}: ${Array.from({ length: steps[index] as number }, (_, i) => (i + 1) * scale).join(', ')}.` : `The bar ends at ${answer}.`, `So there are ${answer} ${categories[index]!.label}.`], visual: shown, hint: { text: level === 1 ? 'Read the key: what does each picture stand for? Count on by that for every picture.' : 'Find where the bar ends. Read the number on the scale beside it.' } },
   };
 }
 
@@ -519,7 +540,7 @@ function linePlot(level: Level, rng: Rng): QuestionDraft {
       stimulus: visual,
       options: offered.map((i): Visual => ({ kind: 'text', value: label(i), size: 'l', speak: [...labelSay(min + i, denominator), 'inches'] })),
       answerIndex: offered.indexOf(top),
-      explanation: { speak: ['The tallest stack of X marks is at', ...labelSay(min + top, denominator), 'inches. It has', { number: 5 }, 'pencils.'], steps: ['Look for the tallest stack of X marks.', `It is at ${label(top)} inches, with 5 pencils.`], visual },
+      explanation: { speak: ['The tallest stack of X marks is at', ...labelSay(min + top, denominator), 'inches. It has', { number: 5 }, 'pencils.'], steps: ['Look for the tallest stack of X marks.', `It is at ${label(top)} inches, with 5 pencils.`], visual, hint: { text: 'Find the tallest stack of X marks. Which length is under it?' } },
     };
   }
   const index = rng.int(0, ticks - 1);
@@ -533,7 +554,8 @@ function linePlot(level: Level, rng: Rng): QuestionDraft {
     stimulus: visual,
     options: options.map((value) => numeral(value, 'l')),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: ['Find', ...labelSay(min + index, denominator), 'inches on the line. Count the X marks above it:', { number: answer }, '.'], steps: [`Find ${label(index)} on the line.`, `Count the X marks above it: ${answer}.`], visual },
+    // The hint names no length: a length can be the same number as the count.
+    explanation: { speak: ['Find', ...labelSay(min + index, denominator), 'inches on the line. Count the X marks above it:', { number: answer }, '.'], steps: [`Find ${label(index)} on the line.`, `Count the X marks above it: ${answer}.`], visual, hint: { text: 'Find that length on the line. Then count the X marks above it.' } },
   };
 }
 

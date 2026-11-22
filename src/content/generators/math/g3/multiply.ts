@@ -93,11 +93,18 @@ export const equalGroupsGenerator: SkillGenerator = {
 // ---- C.2 Arrays ----
 // Levels: array to rows times columns / product, typed / 3 × 4 is the same as 4 × 3. Oracle: multiply.
 
-function arrayExplanation(rows: number, cols: number, emoji: string): Explanation {
+// The hint never names the rows or the number in each: counting them is the question.
+const ARRAY_HINTS: Record<'sentence' | 'total', Hint> = {
+  sentence: { text: 'Count the rows. Then count how many are in each row.' },
+  total: { text: 'Count the rows and how many are in each row. Then multiply, or count on by the number in each row.' },
+};
+
+function arrayExplanation(rows: number, cols: number, emoji: string, hint: Hint = ARRAY_HINTS.sentence): Explanation {
   return {
     speak: ['There are', { number: rows }, 'rows with', { number: cols }, 'in each row.', ...times(rows, cols), 'is', { number: rows * cols }, '.'],
     steps: [`There are ${rows} rows with ${cols} in each row.`, `${rows} × ${cols} = ${rows * cols}.`],
     visual: array(rows, cols, emoji),
+    hint,
   };
 }
 
@@ -107,7 +114,7 @@ function arrays(level: Level, rng: Rng): QuestionDraft {
   const stimulus = array(rows, cols, emoji);
   if (level === 2) {
     const prompt = 'How many are there in all?';
-    return { type: 'numberPad', mode: 'look', facts: { rows, cols, ask: 'total' }, prompt: { text: prompt, speak: [prompt] }, stimulus, answer: rows * cols, maxDigits: 2, explanation: arrayExplanation(rows, cols, emoji) };
+    return { type: 'numberPad', mode: 'look', facts: { rows, cols, ask: 'total' }, prompt: { text: prompt, speak: [prompt] }, stimulus, answer: rows * cols, maxDigits: 2, explanation: arrayExplanation(rows, cols, emoji, ARRAY_HINTS.total) };
   }
   if (level === 3) {
     // Turning an array round gives the same total: 3 × 4 is the same as 4 × 3.
@@ -191,7 +198,15 @@ function tableExplanation(a: number, b: number, order: [number, number] = [a, b]
     10: () => ({ steps: [`${b} tens make ${p}.`], speak: [{ number: b }, 'tens make', { number: p }, '.'] }),
   };
   const way = (table[a] as () => { steps: string[]; speak: Say })();
-  return { speak: [...way.speak, ...endSay], steps: [...way.steps, end], visual: equation(x, '×', y, '=', p) };
+  // Times 2, 5 and 10 have one or two steps, or a first step that can name the answer (2 × 5 is half of times 10, which
+  // is 10), so they have a hint of their own: how to count it out, with the other number, never the product.
+  const hints: Record<number, Hint> = {
+    2: { text: `Times 2 is a double: add ${b} to itself.` },
+    5: { text: `Count by fives. Say ${b} numbers.` },
+    10: { text: `Count by tens. Say ${b} numbers.` },
+  };
+  const hint = hints[a];
+  return { speak: [...way.speak, ...endSay], steps: [...way.steps, end], visual: equation(x, '×', y, '=', p), ...(hint ? { hint } : {}) };
 }
 
 function tablesSkill(easy: number[], hard: number[]): (level: Level, rng: Rng) => QuestionDraft {
@@ -391,6 +406,8 @@ function divideExplanation(t: number, d: number): Explanation {
     speak: ['Think:', { number: d }, 'times what is', { number: t }, '?', ...times(d, q), 'is', { number: t }, '. So', { number: t }, 'divided by', { number: d }, 'is', { number: q }, '.'],
     steps: [`Think: ${d} times what is ${t}?`, `${d} × ${q} = ${t}.`, `So ${t} ÷ ${d} = ${q}.`],
     visual: equation(t, '÷', d, '=', q),
+    // The times question, but when the answer is the divisor too (25 ÷ 5), it is asked without naming it.
+    hint: { text: q === d ? `Think: which number times itself makes ${t}?` : `Think: ${d} times what is ${t}?` },
   };
 }
 

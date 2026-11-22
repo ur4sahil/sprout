@@ -272,10 +272,19 @@ describe('E. Fractions', () => {
 });
 
 describe('F. Measurement and data', () => {
-  it('F.1 reads minutes that are not fives, then matches clocks, then quarter past and quarter to', () => {
+  it('F.1 reads minutes that are not fives, then matches clocks, then 15 or 30 minutes after an hour or 15 before the next', () => {
     for (const q of all('M-3-F1', 1)) expect(n(q, 'minute') % 5).not.toBe(0);
     for (const q of all('M-3-F1', 2)) if (q.type === 'choice') expect(q.options[0]?.kind).toBe('clock');
     expect(set(all('M-3-F1', 3), (q) => n(q, 'minute'))).toEqual([15, 30, 45]);
+    // The quarter hours are asked in minutes (the owner's choice, Nov 22, 2026: never "quarter past" or "quarter to"),
+    // from the hour named: "What time is 15 minutes before 4 o'clock?" is 3:45.
+    for (const q of all('M-3-F1', 3)) {
+      const [hour, minute] = [n(q, 'hour'), n(q, 'minute')];
+      const asked = minute === 45 ? `What time is 15 minutes before ${(hour % 12) + 1} o'clock?` : `What time is ${minute} minutes after ${hour} o'clock?`;
+      expect(q.prompt.text).toBe(asked);
+      expect(q.explanation.steps[0]).toBe(`Start at ${minute === 45 ? (hour % 12) + 1 : hour} o'clock.`);
+      expect(q.explanation.steps[2]).toBe(`It is ${hour}:${minute}.`);
+    }
   });
 
   it('F.2 adds whole hours, then half hours, then counts minutes, typed', () => {

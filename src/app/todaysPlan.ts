@@ -3,6 +3,7 @@ import { LADDERS } from '../content/ladders';
 import type { Skill } from '../content/catalogue';
 import type { TodayPick } from '../engine/recommend';
 import type { Attempt, Child, Session, SkillState } from '../storage/schema';
+import { offeredTo } from '../engine/grades';
 import { REVIEW_QUESTIONS } from '../engine/review';
 import { inProgress, mixedBagOrder } from './mixedBag';
 
@@ -43,7 +44,7 @@ export function todaysPlan(input: {
   const masteredToday = (skillId: string): boolean => (stateOf(skillId)?.masteredAt ?? '').length > 0 && todays.some((attempt) => attempt.skillId === skillId);
   const usable = (skillId: string): boolean => {
     const skill = skillById(skillId);
-    return !!skill && !skill.retired;
+    return !!skill && !skill.retired && offeredTo(skill, child.grade);
   };
   const parts: PlanPart[] = [];
 

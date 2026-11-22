@@ -187,7 +187,7 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
     const [long, short] = [rng.int(5, 9), rng.int(2, 4)];
     const prompt = { text: `The ${thing.name} is ${long} paper clips long. A key is ${short} paper clips long. How many clips longer is the ${thing.name}?`, speak: [`The ${thing.name} is`, { number: long }, 'paper clips long. A key is', { number: short }, `paper clips long. How many clips longer is the ${thing.name}?`] as Say };
-    const lines = [`The ${thing.name} is ${long} clips. The key is ${short} clips.`, `${long} − ${short} = ${long - short}.`, `The ${thing.name} is ${long - short} clips longer.`];
+    const lines = [`The ${thing.name} is ${long} clips. The key is ${short} clips.`, `${long} − ${short} = ${long - short}.`, `The ${thing.name} is ${long - short} ${long - short === 1 ? 'clip' : 'clips'} longer.`];
     return {
       type: 'numberPad',
       mode: 'look',

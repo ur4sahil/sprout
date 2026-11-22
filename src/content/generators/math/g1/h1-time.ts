@@ -42,23 +42,25 @@ function matchClocks(level: Level, rng: Rng): QuestionDraft {
 }
 
 // The rule for the hands, then one step for each clock, in the order they stand, so the pair a child mixed up is
-// always explained. A clock's time is said once ("The first clock shows half past 5."), and shown in both forms.
+// always explained. A clock's time is said once, as a digital clock is read (the owner's choice, Nov 22, 2026: "five
+// thirty", never "half past five"). On the hour it is shown in both forms ("The first clock shows 5 o'clock: 5:00."); on
+// the half hour it is written as it is said ("The first clock shows 5:30.").
 const ORDER = ['first', 'second', 'third'];
 const RULES: Record<number, string> = {
   1: "The long hand on 12 means o'clock. The short hand shows the hour.",
-  2: 'The long hand on 6 means half past. The short hand has just passed the hour.',
-  3: "The long hand shows o'clock or half past. The short hand shows the hour.",
+  2: 'The long hand on 6 means 30 minutes. The short hand has just passed the hour.',
+  3: "The long hand on 12 means o'clock. On 6 it means 30 minutes. The short hand shows the hour.",
 };
 const HINTS: Record<number, string> = {
   1: "The long hand on 12 means o'clock. Then read the short hand.",
-  2: 'The long hand on 6 means half past. Then read the hour the short hand has just passed.',
-  3: "Look at the long hand first: on 12 it is o'clock, on 6 it is half past.",
+  2: 'The long hand on 6 means 30 minutes. Then read the hour the short hand has just passed.',
+  3: "Look at the long hand first: on 12 it is o'clock, on 6 it is 30 minutes.",
 };
 
 function matchExplanation(times: readonly Time[], level: Level): Explanation {
   const clocks = times.map((time, i): Line => {
-    const words = time.minute === 0 ? `${time.hour} o'clock` : `half past ${time.hour}`;
-    return { text: `The ${ORDER[i] as string} clock shows ${words}: ${written(time)}.`, say: [`The ${ORDER[i] as string} clock shows`, { time }, '.'] };
+    const shows = time.minute === 0 ? `${time.hour} o'clock: ${written(time)}` : written(time);
+    return { text: `The ${ORDER[i] as string} clock shows ${shows}.`, say: [`The ${ORDER[i] as string} clock shows`, { time }, '.'] };
   });
   return explain([RULES[level] as string, ...clocks], { kind: 'row', children: times.map(clock) }, { text: HINTS[level] as string });
 }
@@ -70,7 +72,7 @@ export const matchClocksGenerator: SkillGenerator = h1Skill({
   oracle: 'matchEqual',
   exampleSeed: 931,
   generate: matchClocks,
-  lesson: (make) => lessonOf('A clock with hands and a time written in numbers can show the same time.', { kind: 'row', children: [clock({ hour: 3, minute: 0 }), { kind: 'text', value: '3:00', size: 'l' }] }, make(1, 931), make(2, 932), "Short hand: the hour. Long hand on 12: o'clock. On 6: half past."),
+  lesson: (make) => lessonOf('A clock with hands and a time written in numbers can show the same time.', { kind: 'row', children: [clock({ hour: 3, minute: 0 }), { kind: 'text', value: '3:00', size: 'l' }] }, make(1, 931), make(2, 932), "Short hand: the hour. Long hand on 12: o'clock. On 6: 30 minutes."),
 });
 
 // ---- C.7 and C.8 Days of the week, months of the year ----

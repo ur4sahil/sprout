@@ -53,8 +53,8 @@ switch back.
    Kokoro file is ever served for a Piper sentence.
 3. **App: who speaks.** Every speech call inside a subject names the subject's friend (`castFor(skill.subject)`):
    practice, review, Mixed bag, hints, the step walk, the check-in's questions, lessons and examples. Sprout for the rest.
-4. **Letter sounds.** On the home Mac: 53 sounds (the keys in `src/engine/letterSounds.ts`) in two forms, about 106
-   clips with Chatterbox. A listening page for the owner; any sound he does not like is made again. Uploaded to R2 as
+4. **Letter sounds.** On the home Mac: 55 sounds (the keys in `src/engine/letterSounds.ts`; /oo/ and /air/ were added on
+   Nov 22, 2026) in two forms, about 110 clips with Chatterbox. A listening page for the owner; any sound he does not like is made again. Uploaded to R2 as
    `sound/<key>/once` and `sound/<key>/three`, and wired into `src/audio/soundClips.ts` (round 1 of the wording audit
    built the plumbing and the fallback).
 5. **Tests.** Worker voice routes with the in-memory store; who speaks on each screen; sound clips in and around a

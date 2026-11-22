@@ -1,6 +1,6 @@
 {
  "skillId": "M-3-F1",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -831,7 +831,7 @@
       {
        "number": 1
       },
-      "minutes. It is",
+      "minute. It is",
       {
        "time": {
         "hour": 1,
@@ -842,7 +842,7 @@
      ],
      "steps": [
       "The short hand is the hour hand. It has passed the 1, so the hour is 1.",
-      "The long hand is the minute hand. It is 1 minutes past the 12.",
+      "The long hand is the minute hand. It is 1 minute past the 12.",
       "It is 1:01."
      ],
      "visual": {
@@ -1847,7 +1847,7 @@
       {
        "number": 1
       },
-      "minutes. It is",
+      "minute. It is",
       {
        "time": {
         "hour": 1,
@@ -1858,7 +1858,7 @@
      ],
      "steps": [
       "The short hand is the hour hand. It has passed the 1, so the hour is 1.",
-      "The long hand is the minute hand. It is 1 minutes past the 12.",
+      "The long hand is the minute hand. It is 1 minute past the 12.",
       "It is 1:01."
      ],
      "visual": {
@@ -2187,13 +2187,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 8?",
+     "text": "What time is 15 minutes after 8 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 8
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2241,19 +2245,20 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 8
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 8
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 8,
@@ -2263,14 +2268,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 8 is 15 minutes past 8.",
+      "Start at 8 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 8:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 8,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2291,13 +2299,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 9?",
+     "text": "What time is 15 minutes after 9 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 9
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2345,19 +2357,20 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 9
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 9
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 9,
@@ -2367,14 +2380,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 9 is 15 minutes past 9.",
+      "Start at 9 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 9:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2395,13 +2411,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 9?",
+     "text": "What time is 15 minutes after 9 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 9
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2449,19 +2469,20 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 9
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 9
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 9,
@@ -2471,14 +2492,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 9 is 15 minutes past 9.",
+      "Start at 9 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 9:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2499,13 +2523,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 12?",
+     "text": "What time is 15 minutes after 12 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 12
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2553,19 +2581,20 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 12
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 12
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 12,
@@ -2575,14 +2604,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 12 is 15 minutes past 12.",
+      "Start at 12 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 12:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 12,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2603,13 +2635,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter to 10?",
+     "text": "What time is 15 minutes before 10 o'clock?",
      "speak": [
       "What time is",
-      "quarter to",
+      {
+       "number": 15
+      },
+      "minutes before",
       {
        "number": 10
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2657,19 +2693,28 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "quarter to",
+      "Start at",
       {
        "number": 10
       },
-      "is",
+      "o'clock.",
       {
-       "number": 45
+       "number": 15
       },
-      "minutes past",
+      "minutes before it, the long hand points to",
       {
        "number": 9
       },
-      ". It is",
+      ". That is",
+      {
+       "number": 45
+      },
+      "minutes after",
+      {
+       "number": 9
+      },
+      "o'clock.",
+      "It is",
       {
        "time": {
         "hour": 9,
@@ -2679,14 +2724,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter to 10 is 45 minutes past 9.",
+      "Start at 10 o'clock.",
+      "15 minutes before it, the long hand points to 9. That is 45 minutes after 9 o'clock.",
       "It is 9:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 9,
       "minute": 45
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2707,13 +2755,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 7?",
+     "text": "What time is 15 minutes after 7 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 7
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2761,19 +2813,20 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 7
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 7
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 7,
@@ -2783,14 +2836,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 7 is 15 minutes past 7.",
+      "Start at 7 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 7:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 7,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2811,13 +2867,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter past 1?",
+     "text": "What time is 15 minutes after 1 o'clock?",
      "speak": [
       "What time is",
-      "quarter past",
+      {
+       "number": 15
+      },
+      "minutes after",
       {
        "number": 1
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2865,19 +2925,20 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "quarter past",
+      "Start at",
       {
        "number": 1
       },
-      "is",
+      "o'clock.",
       {
        "number": 15
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 1
+       "number": 3
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 1,
@@ -2887,14 +2948,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter past 1 is 15 minutes past 1.",
+      "Start at 1 o'clock.",
+      "15 minutes after it, the long hand points to 3.",
       "It is 1:15."
      ],
      "visual": {
       "kind": "clock",
       "hour": 1,
       "minute": 15
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -2915,13 +2979,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is half past 2?",
+     "text": "What time is 30 minutes after 2 o'clock?",
      "speak": [
       "What time is",
-      "half past",
+      {
+       "number": 30
+      },
+      "minutes after",
       {
        "number": 2
       },
+      "o'clock",
       "?"
      ]
     },
@@ -2969,19 +3037,20 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "half past",
+      "Start at",
       {
        "number": 2
       },
-      "is",
+      "o'clock.",
       {
        "number": 30
       },
-      "minutes past",
+      "minutes after it, the long hand points to",
       {
-       "number": 2
+       "number": 6
       },
-      ". It is",
+      ".",
+      "It is",
       {
        "time": {
         "hour": 2,
@@ -2991,14 +3060,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Half past 2 is 30 minutes past 2.",
+      "Start at 2 o'clock.",
+      "30 minutes after it, the long hand points to 6.",
       "It is 2:30."
      ],
      "visual": {
       "kind": "clock",
       "hour": 2,
       "minute": 30
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -3019,13 +3091,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter to 4?",
+     "text": "What time is 15 minutes before 4 o'clock?",
      "speak": [
       "What time is",
-      "quarter to",
+      {
+       "number": 15
+      },
+      "minutes before",
       {
        "number": 4
       },
+      "o'clock",
       "?"
      ]
     },
@@ -3073,19 +3149,28 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "quarter to",
+      "Start at",
       {
        "number": 4
       },
-      "is",
+      "o'clock.",
+      {
+       "number": 15
+      },
+      "minutes before it, the long hand points to",
+      {
+       "number": 9
+      },
+      ". That is",
       {
        "number": 45
       },
-      "minutes past",
+      "minutes after",
       {
        "number": 3
       },
-      ". It is",
+      "o'clock.",
+      "It is",
       {
        "time": {
         "hour": 3,
@@ -3095,14 +3180,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter to 4 is 45 minutes past 3.",
+      "Start at 4 o'clock.",
+      "15 minutes before it, the long hand points to 9. That is 45 minutes after 3 o'clock.",
       "It is 3:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 3,
       "minute": 45
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",
@@ -3123,13 +3211,17 @@
      ]
     },
     "prompt": {
-     "text": "What time is quarter to 8?",
+     "text": "What time is 15 minutes before 8 o'clock?",
      "speak": [
       "What time is",
-      "quarter to",
+      {
+       "number": 15
+      },
+      "minutes before",
       {
        "number": 8
       },
+      "o'clock",
       "?"
      ]
     },
@@ -3177,19 +3269,28 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "quarter to",
+      "Start at",
       {
        "number": 8
       },
-      "is",
+      "o'clock.",
+      {
+       "number": 15
+      },
+      "minutes before it, the long hand points to",
+      {
+       "number": 9
+      },
+      ". That is",
       {
        "number": 45
       },
-      "minutes past",
+      "minutes after",
       {
        "number": 7
       },
-      ". It is",
+      "o'clock.",
+      "It is",
       {
        "time": {
         "hour": 7,
@@ -3199,14 +3300,17 @@
       "."
      ],
      "steps": [
-      "A quarter of an hour is 15 minutes. Half an hour is 30.",
-      "Quarter to 8 is 45 minutes past 7.",
+      "Start at 8 o'clock.",
+      "15 minutes before it, the long hand points to 9. That is 45 minutes after 7 o'clock.",
       "It is 7:45."
      ],
      "visual": {
       "kind": "clock",
       "hour": 7,
       "minute": 45
+     },
+     "hint": {
+      "text": "Start at the hour the question names. Then move the long hand on, or back, by the minutes."
      }
     },
     "skillId": "M-3-F1",

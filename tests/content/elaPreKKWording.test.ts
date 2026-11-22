@@ -190,9 +190,12 @@ describe('phonics steps say the sound first, then the letter', () => {
     for (const entry of SOUND_SPLITS) {
       expect(entry.keys).toHaveLength(entry.sounds.length);
       for (const key of entry.keys) expect(isSoundKey(key), `${entry.word}: ${key}`).toBe(true);
-      // /oo/ has no recorded sound.
-      expect(entry.sounds).not.toContain('oo');
     }
+    // /oo/ became a letter sound on Nov 22, 2026, so moon, spoon and shoe are counted again, each /oo/ said as one.
+    const keysOf = (word: string): readonly string[] | undefined => SOUND_SPLITS.find((each) => each.word === word)?.keys;
+    expect(keysOf('moon')).toEqual(['m', 'oo', 'n']);
+    expect(keysOf('spoon')).toEqual(['s', 'p', 'oo', 'n']);
+    expect(keysOf('shoe')).toEqual(['sh', 'oo']);
     for (const question of everyQuestion('E-K-B10')) {
       const entry = SOUND_SPLITS.find((each) => each.word === s(question, 'target'));
       expect(sounds(said(question)[0])).toEqual(entry?.keys);

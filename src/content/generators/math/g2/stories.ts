@@ -2,7 +2,6 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { COUNTABLES, STORY_COUNTABLES } from '../../../data/countables';
-import { PRONOUN } from '../../../data/h2-stories';
 import type { StoryKind } from '../../../data/storyProblems';
 import { STORY_NAMES } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
@@ -15,38 +14,8 @@ import { borrows, carries, equation, line, together } from './addSubtract';
 
 // Math grade 2 B.8, B.9 and B.10: arrays and repeated addition, and word problems in one and two steps.
 
-// A story with one person in it names them once, then says "he" or "she" (the wording audit, Nov 22, 2026):
-// "Sam has 24 apples. He gets 15 more." The stories come from the shared templates, so the name is swapped here.
-export function withPronoun(story: { text: string; speak: Say }, name: string): { text: string; speak: Say } {
-  const pronoun = PRONOUN[name];
-  if (pronoun === undefined) return story;
-  const swapper = (): ((text: string, atStart: boolean) => string) => {
-    let seen = false;
-    return (text, atStart) =>
-      text.replace(new RegExp(`\\b${name}\\b`, 'g'), (match: string, offset: number) => {
-        if (!seen) {
-          seen = true;
-          return match;
-        }
-        const before = text.slice(0, offset);
-        const start = before.trim() === '' ? atStart : /[.?!]\s*$/.test(before);
-        return start ? `${pronoun.charAt(0).toUpperCase()}${pronoun.slice(1)}` : pronoun;
-      });
-  };
-  const inText = swapper();
-  const inSpeech = swapper();
-  let atStart = true;
-  const speak = story.speak.map((part) => {
-    if (typeof part !== 'string') {
-      atStart = false;
-      return part;
-    }
-    const swapped = inSpeech(part, atStart);
-    atStart = /[.?!]\s*$/.test(part);
-    return swapped;
-  });
-  return { text: inText(story.text, true), speak };
-}
+// A story with one person in it names them once, then says "he" or "she" (the owner's choice, Nov 22, 2026): "Sam has
+// 24 apples. He gets 15 more." The shared templates (storyProblems.ts) say the pronoun themselves.
 
 // ---- B.8 Arrays and repeated addition ----
 // Levels: count an array to 3 by 3 / match array to 3 plus 3 plus 3 / to 5 by 5, typed. Oracle: multiply.
@@ -159,7 +128,7 @@ function wordProblem(level: Level, rng: Rng): QuestionDraft {
   const named = kind !== 'table';
   const facts: QuestionDraft['facts'] = { a, b, thing: thing.one, story: kind, oracle: plus ? 'add' : 'subtract', ...(named ? { name } : {}), ...(level === 3 ? { name2 } : {}) };
   // A compare story has two people, so both keep their names.
-  const story = kind === 'compare' ? tellStory(told) : withPronoun(tellStory(told), name);
+  const story = tellStory(told);
   const base = { mode: 'look' as const, prompt: story, explanation: storyExplanation(a, b, plus, WHY[kind] as string) };
   if (level === 3) return { ...base, type: 'numberPad', facts, answer, maxDigits: 2 };
   // The slips: the other operation, ten out, or one off.
@@ -173,7 +142,7 @@ export const wordProblems100Generator: SkillGenerator = {
   skillId: 'M-2-B9',
   maxLevel: 3,
   itemTypes: ['choice', 'numberPad'],
-  lists: ['countables', 'storyProblems', 'h2-stories'],
+  lists: ['countables', 'storyProblems'],
   generate: wordProblem,
   exampleSeed: 219,
   example: () => wordProblem(1, makeRng(219)),
@@ -214,7 +183,7 @@ function twoStepProblem(level: Level, rng: Rng): QuestionDraft {
     type: 'numberPad',
     mode: 'look',
     facts: { a, op1: '+', b, op2: plus ? '+' : '-', c, name: told.name, thing: told.thing.one, story: told.kind },
-    prompt: withPronoun(tellStory(told), told.name),
+    prompt: tellStory(told),
     answer,
     maxDigits: 2,
     explanation: twoStepExplanation(a, b, c, plus),
@@ -225,7 +194,7 @@ export const twoStepGenerator: SkillGenerator = {
   skillId: 'M-2-B10',
   maxLevel: 2,
   itemTypes: ['numberPad'],
-  lists: ['countables', 'storyProblems', 'h2-stories'],
+  lists: ['countables', 'storyProblems'],
   generate: twoStepProblem,
   exampleSeed: 220,
   example: () => twoStepProblem(1, makeRng(220)),

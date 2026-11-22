@@ -7,6 +7,7 @@ import LinkButton from '../../components/LinkButton';
 import Notice from '../../components/Notice';
 import Tabs from '../../components/Tabs';
 import { videoFor, VIDEOS_ENABLED } from '../../content/videos';
+import { offeredTo } from '../../engine/grades';
 import { localDayOf, now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
@@ -67,6 +68,9 @@ export default function Scores() {
   }, [child]);
 
   const shown = rows ? sortRows(rows, sort) : [];
+  // Every skill is listed, but a group is finished, for its certificate, when the skills this child is offered are
+  // mastered (offeredTo: a pre-K or kindergarten child is never offered the word puzzles).
+  const offered = rows && child ? rows.filter((row) => offeredTo(row.skill, child.grade)) : null;
   const groupOf = (row: ScoreRow): string => `${SUBJECTS.find((subject) => subject.id === row.skill.subject)?.label ?? ''}, ${GRADE_NAME[row.skill.grade] ?? row.skill.grade}, ${row.skill.category}`;
   return (
     <ParentArea page="scores" title="Scores">
@@ -89,7 +93,7 @@ export default function Scores() {
               </thead>
               <tbody>
                 {shown.map((row, index) => (
-                  <ScoreLine key={row.skill.id} row={row} onCertificate={rows && categoryComplete(rows, row.skill) ? () => void navigate(`/parent/certificate/${child.id}/${row.skill.id}`, { replace: true }) : null} videos={VIDEOS_ENABLED} video={videoFor(row.skill.id, removed)?.title ?? null} onRemoveVideo={() => void removeVideo(row.skill.id).catch(logError)} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
+                  <ScoreLine key={row.skill.id} row={row} onCertificate={offered && categoryComplete(offered, row.skill) ? () => void navigate(`/parent/certificate/${child.id}/${row.skill.id}`, { replace: true }) : null} videos={VIDEOS_ENABLED} video={videoFor(row.skill.id, removed)?.title ?? null} onRemoveVideo={() => void removeVideo(row.skill.id).catch(logError)} group={sort === 'skill' && (index === 0 || groupOf(shown[index - 1] as ScoreRow) !== groupOf(row)) ? groupOf(row) : null} />
                 ))}
               </tbody>
             </table>

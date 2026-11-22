@@ -70,6 +70,29 @@ describe('the certificate', () => {
     expect(screen.queryByRole('button', { name: /Print/ })).toBeNull();
   });
 
+  it('for Reasoning, a kindergarten child needs only the puzzles offered to them; a grade 1 child needs the word puzzles too', async () => {
+    // R-A15 and R-A16 are words only and start at grade 1 (the owner's choice, Nov 22, 2026).
+    const reasoning = CATALOGUE.filter((skill) => skill.subject === 'reasoning' && !skill.retired);
+    const offered = reasoning.filter((skill) => !['R-A15', 'R-A16'].includes(skill.id));
+    const kid = await setUp('K');
+    await master(kid, offered.map((skill) => skill.id));
+    openApp(`/parent/certificate/${kid.id}/R-A1`);
+    const certificate = await screen.findByRole('article', { name: 'Certificate' });
+    expect(certificate.textContent).toContain(`${offered.length} skills`);
+    // The scores page still lists both word puzzles, and links the finished group.
+    openApp('/parent/scores');
+    await waitFor(() => expect(document.querySelector('[data-skill-row="R-A15"]')).not.toBeNull());
+    await waitFor(() => expect(document.querySelector('[data-certificate-link]')).not.toBeNull());
+  });
+
+  it('for Reasoning, a grade 1 child has not finished the group without the word puzzles', async () => {
+    const reasoning = CATALOGUE.filter((skill) => skill.subject === 'reasoning' && !skill.retired);
+    const child = await setUp('1');
+    await master(child, reasoning.filter((skill) => !['R-A15', 'R-A16'].includes(skill.id)).map((skill) => skill.id));
+    openApp(`/parent/certificate/${child.id}/R-A1`);
+    expect((await screen.findByRole('status')).textContent).toContain('This group is not finished yet.');
+  });
+
   it('is behind the grown-ups gate', async () => {
     const child = await setUp('PK', {}, { gate: 'closed' });
     await master(child, COMPARING.map((skill) => skill.id));

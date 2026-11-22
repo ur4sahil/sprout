@@ -3,6 +3,7 @@ import { skillById } from '../content/catalogue';
 import type { Ladder } from '../content/ladders';
 import { gradeOfSkillId } from '../content/ladders';
 import { allGenerators, nextQuestion } from '../content/registry';
+import { offeredTo } from '../engine/grades';
 import { seedFor } from '../engine/seed';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
 import type { Question } from '../engine/types';
@@ -35,6 +36,12 @@ const withinGrade = (skillId: string, grade: Grade): boolean => {
   const own = gradeOfSkillId(skillId);
   return own === 'all' || (GRADE_RANK[own] ?? 99) <= (GRADE_RANK[grade] ?? -1);
 };
+// A skill the child's grade is not offered (offeredTo: the word puzzles before grade 1) is left out of the bag as if
+// it were not on its ladder: never asked, and never taken as started.
+const offeredAt = (skillId: string, grade: Grade): boolean => {
+  const skill = skillById(skillId);
+  return !!skill && offeredTo(skill, grade);
+};
 
 // The order of skills for one Mixed bag: up to 4 topics (the most recently practised first), 5 turns each, dealt round
 // the topics so two turns in a row are never from the same topic. In a topic the child has practised, the skills in
@@ -45,9 +52,9 @@ export function mixedBagOrder(states: readonly SkillState[], ladders: readonly L
   const stateOf = new Map(states.map((state) => [state.skillId, state]));
   const touched = (skillId: string): boolean => {
     const state = stateOf.get(skillId);
-    return !!state && (state.attempts > 0 || state.placedOut);
+    return !!state && (state.attempts > 0 || state.placedOut) && offeredAt(skillId, grade);
   };
-  const canAsk = (skillId: string): boolean => mixable(stateOf.get(skillId) ?? { ...BLANK, skillId }) && withinGrade(skillId, grade);
+  const canAsk = (skillId: string): boolean => mixable(stateOf.get(skillId) ?? { ...BLANK, skillId }) && withinGrade(skillId, grade) && offeredAt(skillId, grade);
   const lastPractised = (skillId: string): string => stateOf.get(skillId)?.lastPracticedAt ?? '';
   const topics: { ladder: string; skills: string[]; latest: string }[] = [];
   const untouched: { ladder: string; skills: string[]; latest: string }[] = [];

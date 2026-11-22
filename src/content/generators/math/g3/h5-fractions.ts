@@ -26,6 +26,7 @@ function oneWholeExplanation(d: number, shape: 'circle' | 'rectangle'): Explanat
     speak: ['The whole is cut into', { number: d }, 'equal parts, and all', { number: d }, 'are shaded.', ...fractionSay(d, d), 'is one whole.'],
     steps: [`The whole is cut into ${d} equal parts.`, `All ${d} parts are shaded: ${d}/${d}.`, `${d}/${d} = 1 whole.`],
     visual: picture(d, d, shape),
+    hint: { text: 'Count all the parts, then the shaded parts. The shaded parts go on top, all the parts on the bottom.' },
   };
 }
 
@@ -74,7 +75,9 @@ function wholes(level: Level, rng: Rng): QuestionDraft {
     const ask = { text: `Which whole number is the same as ${n}/${d}?`, speak: ['Which whole number is the same as', ...fractionSay(n, d), '?'] as Say };
     // The slips: the bottom number, the top number, or a whole taken for nothing.
     const slips = overOne ? [1, n + 1, n - 1] : [n, 0, 2];
-    return numberAnswer({ prompt: ask, stimulus: fractionOption(n, d), explanation: wholeExplanation(n, d) }, { expr: fractionText(n, d), ask: 'value' }, answer, slips, false, rng, [0, 12]);
+    // No number word in the hint: the answer can be 1.
+    const hint = { text: 'The bottom number says how many parts make a whole. How many wholes do the top parts make?' };
+    return numberAnswer({ prompt: ask, stimulus: fractionOption(n, d), explanation: { ...wholeExplanation(n, d), hint } }, { expr: fractionText(n, d), ask: 'value' }, answer, slips, false, rng, [0, 12]);
   }
   const [w, d] = [rng.int(2, 4), rng.int(2, 4)];
   const right = fractionText(w * d, d);
@@ -92,7 +95,7 @@ function wholes(level: Level, rng: Rng): QuestionDraft {
     prompt: ask,
     options: options.map((option) => fractionOption(...parse(option))),
     answerIndex: options.indexOf(right),
-    explanation: wholeExplanation(w * d, d),
+    explanation: { ...wholeExplanation(w * d, d), hint: { text: `Find the fraction whose top number is ${w} times its bottom number.` } },
   };
 }
 
@@ -123,6 +126,7 @@ function setExplanation(n: number, d: number, total: number, emoji: string): Exp
   return {
     speak: ['Split', { number: total }, 'into', { number: d }, 'equal groups of', { number: k }, '.', ...fractionSay(n, d), 'is', { number: n }, n === 1 ? 'group:' : 'groups:', { number: answer }, '.'],
     steps: [`Split ${total} into ${d} equal groups: ${total} ÷ ${d} = ${k}.`, n === 1 ? `1/${d} is one group: ${k}.` : `${n}/${d} is ${n} groups: ${n} × ${k} = ${answer}.`],
+    hint: { text: 'Split them into as many equal groups as the bottom number says. Then count the groups the top number says.' },
     visual: k <= 6 && d <= 6 ? { kind: 'row', children: Array.from({ length: d }, (): Visual => ({ kind: 'emojiGroup', emoji, count: k, layout: 'dice' })) } : { kind: 'equation', parts: [total, '÷', d, '=', k] },
   };
 }

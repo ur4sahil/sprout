@@ -22,11 +22,14 @@ const practice = (subject: Skill['subject'], skillId: string, change: Partial<Pl
 const squaresOverlap = (a: PlantPlace, b: PlantPlace): boolean => Math.abs(a.x - b.x) < SLOT - 1e-9 && Math.abs(a.y - b.y) < SLOT - 1e-9;
 
 describe('the garden layout: which skills are plants', () => {
-  it('a new kindergarten child sees every kindergarten skill and all of Reasoning, and nothing else', () => {
+  it('a new kindergarten child sees every kindergarten skill and all of Reasoning but the word puzzles, and nothing else', () => {
     const layout = layoutGarden(input());
     const shown = plants(layout).map((plant) => plant.skillId);
-    const expected = CATALOGUE.filter((skill) => !skill.retired && (skill.grade === 'K' || skill.grade === 'all')).map((skill) => skill.id);
+    // R-A15 and R-A16 are words only, so they start at grade 1 (the owner's choice, Nov 22, 2026).
+    const expected = CATALOGUE.filter((skill) => !skill.retired && (skill.grade === 'K' || skill.grade === 'all') && !['R-A15', 'R-A16'].includes(skill.id)).map((skill) => skill.id);
     expect([...shown].sort()).toEqual([...expected].sort());
+    expect(shown).not.toContain('R-A15');
+    expect(plants(layoutGarden(input({ grade: '1' }))).map((plant) => plant.skillId)).toEqual(expect.arrayContaining(['R-A15', 'R-A16']));
     expect(new Set(shown).size).toBe(shown.length);
     expect(shown.length).toBeGreaterThan(80);
     // Every one is a seed packet: nothing is started.

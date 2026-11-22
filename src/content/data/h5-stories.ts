@@ -1,6 +1,8 @@
 // Story templates for wave H5 (Math grade 3). A template is filled by `fill` in
-// generators/math/g3/h5-parts.ts: {name} and {name2} are names from STORY_NAMES, {a} and {b} numbers,
-// {things} and {thing} a story countable, {box} and {boxes} a container, {f} a fraction, {start} a time.
+// generators/math/g3/h5-parts.ts: {name} and {name2} are names from STORY_NAMES, {she} and {him} the pronoun of {name}
+// (STORY_PRONOUNS), {a} and {b} numbers, {things} and {thing} a story countable, {box} and {boxes} a container, {f} a
+// fraction, {start} a time. A story names a person once, then says "he" or "she" (the owner's choice, Nov 22, 2026);
+// with two people a name is said again wherever a pronoun could mean either of them.
 
 export interface Container {
   one: string;
@@ -19,7 +21,7 @@ export type StoryKind = 'join' | 'separate' | 'compare' | 'groups' | 'array' | '
 // In every story {a} is the first number told and {b} the second. In share and groupsOf, {a} is the total.
 export const STORIES: Record<StoryKind, readonly string[]> = {
   join: [
-    '{name} has {a} {things}. {name2} gives {name} {b} more. How many {things} does {name} have now?',
+    '{name} has {a} {things}. {name2} gives {him} {b} more. How many {things} does {name} have now?',
     '{name} picks {a} {things} in the morning and {b} more after lunch. How many {things} is that in all?',
   ],
   separate: [
@@ -43,7 +45,7 @@ export const STORIES: Record<StoryKind, readonly string[]> = {
     '{name} puts {a} {things} into {b} {boxes}, the same number in each. How many {things} go in each {box}?',
   ],
   groupsOf: [
-    '{name} has {a} {things} and puts {b} in each {box}. How many {boxes} does {name} fill?',
+    '{name} has {a} {things} and puts {b} in each {box}. How many {boxes} does {she} fill?',
     '{name} lines up {a} {things} in rows of {b}. How many rows are there?',
   ],
 };
@@ -57,7 +59,7 @@ export const FINDS: Record<StoryKind, readonly string[]> = {
   groups: ['how many {things} there are in all', 'how many {things} that is in all'],
   array: ['how many {things} there are', 'how many {things} are on the shelf'],
   share: ['how many {things} each friend gets', 'how many {things} go in each {box}'],
-  groupsOf: ['how many {boxes} {name} fills', 'how many rows there are'],
+  groupsOf: ['how many {boxes} {she} fills', 'how many rows there are'],
 };
 
 // Comparing parts of two things the same size. {f} is a fraction. `more` and `less` ask about two people, `most` and

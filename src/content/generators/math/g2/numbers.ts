@@ -330,7 +330,8 @@ function parityExplanation(n: number, visual: Visual, shown: 'pictures' | 'numer
   if (shown === 'numeral') {
     const evens = Array.from({ length: Math.ceil(n / 2) }, (_, i) => 2 * (i + 1));
     const count = { text: `Count by 2s: ${listText(evens)}.`, speak: ['Count by twos:', ...evens.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }])), '.'] as Say };
-    return together([count, line(n, odd ? 'is not in the count.' : 'is in the count.'), kind], visual, { text: `Draw ${n} dots in pairs. Is one left over?` });
+    // 1 is one dot with no partner: "Draw 1 dots in pairs" would take a plural.
+    return together([count, line(n, odd ? 'is not in the count.' : 'is in the count.'), kind], visual, { text: n === 1 ? 'Draw 1 dot. Does it have a partner?' : `Draw ${n} dots in pairs. Is one left over?` });
   }
   const middle = odd ? 'One is left over.' : 'Every one has a partner.';
   return together([line('Make pairs.'), line(middle), kind], visual, { text: 'Look at the pairs. Is one left over?' });

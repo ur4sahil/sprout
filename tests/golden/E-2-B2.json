@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-B2",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -9,8 +9,8 @@
    "relation": "suffixMeaning",
    "options": [
     "not fast",
-    "the most fast of all",
-    "more fast than another"
+    "the most fast of all of them",
+    "more fast"
    ]
   },
   "prompt": {
@@ -35,24 +35,25 @@
    },
    {
     "kind": "text",
-    "value": "the most fast of all",
+    "value": "the most fast of all of them",
     "size": "l",
     "speak": [
-     "the most fast of all"
+     "the most fast of all of them"
     ]
    },
    {
     "kind": "text",
-    "value": "more fast than another",
+    "value": "more fast",
     "size": "l",
     "speak": [
-     "more fast than another"
+     "more fast"
     ]
    }
   ],
   "answerIndex": 1,
   "explanation": {
    "speak": [
+    "Fastest means the most fast of all of them.",
     "The ending",
     {
      "letter": "e"
@@ -66,14 +67,14 @@
      "letter": "t"
     },
     "means",
-    "the most, when you compare more than two.",
-    "Fastest means the most fast of all."
+    "the most, when you compare more than two."
    ],
    "steps": [
-    "The ending est means the most, when you compare more than two.",
-    "Fastest means the most fast of all."
+    "Fastest means the most fast of all of them.",
+    "The ending est means the most, when you compare more than two."
    ],
    "stepsSay": [
+    null,
     [
      "The ending",
      {
@@ -89,8 +90,7 @@
      },
      "means",
      "the most, when you compare more than two."
-    ],
-    null
+    ]
    ],
    "visual": {
     "kind": "text",
@@ -116,8 +116,8 @@
      "relation": "suffixMeaning",
      "options": [
       "not fast",
-      "the most fast of all",
-      "more fast than another"
+      "the most fast of all of them",
+      "more fast"
      ]
     },
     "prompt": {
@@ -142,24 +142,25 @@
      },
      {
       "kind": "text",
-      "value": "the most fast of all",
+      "value": "the most fast of all of them",
       "size": "l",
       "speak": [
-       "the most fast of all"
+       "the most fast of all of them"
       ]
      },
      {
       "kind": "text",
-      "value": "more fast than another",
+      "value": "more fast",
       "size": "l",
       "speak": [
-       "more fast than another"
+       "more fast"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Faster means more fast.",
       "The ending",
       {
        "letter": "e"
@@ -169,14 +170,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Faster means more fast than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Faster means more fast than another."
+      "Faster means more fast.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -188,8 +189,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -212,9 +212,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "the most small of all",
+      "the most small of all of them",
       "not small",
-      "more small than another"
+      "more small"
      ]
     },
     "prompt": {
@@ -231,10 +231,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      },
      {
@@ -247,16 +247,17 @@
      },
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -266,14 +267,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -285,8 +286,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -309,9 +309,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "the most small of all",
+      "the most small of all of them",
       "not small",
-      "more small than another"
+      "more small"
      ]
     },
     "prompt": {
@@ -328,10 +328,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      },
      {
@@ -344,16 +344,17 @@
      },
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -363,14 +364,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -382,8 +383,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -406,9 +406,9 @@
      "target": "smallest",
      "relation": "suffixMeaning",
      "options": [
-      "more small than another",
+      "more small",
       "not small",
-      "the most small of all"
+      "the most small of all of them"
      ]
     },
     "prompt": {
@@ -425,10 +425,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      },
      {
@@ -441,16 +441,17 @@
      },
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smallest means the most small of all of them.",
       "The ending",
       {
        "letter": "e"
@@ -464,14 +465,14 @@
        "letter": "t"
       },
       "means",
-      "the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "the most, when you compare more than two."
      ],
      "steps": [
-      "The ending est means the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "Smallest means the most small of all of them.",
+      "The ending est means the most, when you compare more than two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -487,8 +488,7 @@
        },
        "means",
        "the most, when you compare more than two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -511,8 +511,8 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "the most small of all",
-      "more small than another",
+      "the most small of all of them",
+      "more small",
       "not small"
      ]
     },
@@ -530,18 +530,18 @@
     "options": [
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      },
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      },
      {
@@ -556,6 +556,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -565,14 +566,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -584,8 +585,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -609,8 +609,8 @@
      "relation": "suffixMeaning",
      "options": [
       "not tall",
-      "the most tall of all",
-      "more tall than another"
+      "the most tall of all of them",
+      "more tall"
      ]
     },
     "prompt": {
@@ -635,24 +635,25 @@
      },
      {
       "kind": "text",
-      "value": "the most tall of all",
+      "value": "the most tall of all of them",
       "size": "l",
       "speak": [
-       "the most tall of all"
+       "the most tall of all of them"
       ]
      },
      {
       "kind": "text",
-      "value": "more tall than another",
+      "value": "more tall",
       "size": "l",
       "speak": [
-       "more tall than another"
+       "more tall"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -662,14 +663,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -681,8 +682,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -750,6 +750,7 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Helpful means full of help.",
       "The ending",
       {
        "letter": "f"
@@ -763,14 +764,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Helpful means full of help."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Helpful means full of help."
+      "Helpful means full of help.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -786,8 +787,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -855,6 +855,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Careful means full of care.",
       "The ending",
       {
        "letter": "f"
@@ -868,14 +869,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Careful means full of care."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Careful means full of care."
+      "Careful means full of care.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -891,8 +892,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -960,6 +960,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Playful means full of play.",
       "The ending",
       {
        "letter": "f"
@@ -973,14 +974,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Playful means full of play."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Playful means full of play."
+      "Playful means full of play.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -996,8 +997,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1020,8 +1020,8 @@
      "target": "taller",
      "relation": "suffixMeaning",
      "options": [
-      "more tall than another",
-      "the most tall of all",
+      "more tall",
+      "the most tall of all of them",
       "not tall"
      ]
     },
@@ -1039,18 +1039,18 @@
     "options": [
      {
       "kind": "text",
-      "value": "more tall than another",
+      "value": "more tall",
       "size": "l",
       "speak": [
-       "more tall than another"
+       "more tall"
       ]
      },
      {
       "kind": "text",
-      "value": "the most tall of all",
+      "value": "the most tall of all of them",
       "size": "l",
       "speak": [
-       "the most tall of all"
+       "the most tall of all of them"
       ]
      },
      {
@@ -1065,6 +1065,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -1074,14 +1075,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1093,8 +1094,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1168,6 +1168,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Faster means more fast.",
       "The ending",
       {
        "letter": "e"
@@ -1177,14 +1178,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Faster means more fast than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Faster means more fast than another."
+      "Faster means more fast.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1196,8 +1197,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1269,6 +1269,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -1278,14 +1279,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1297,8 +1298,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1370,6 +1370,7 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -1379,14 +1380,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1398,8 +1399,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1471,6 +1471,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Smallest means the most small of all of them.",
       "The ending",
       {
        "letter": "e"
@@ -1484,14 +1485,14 @@
        "letter": "t"
       },
       "means",
-      "the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "the most, when you compare more than two."
      ],
      "steps": [
-      "The ending est means the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "Smallest means the most small of all of them.",
+      "The ending est means the most, when you compare more than two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1507,8 +1508,7 @@
        },
        "means",
        "the most, when you compare more than two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1580,6 +1580,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -1589,14 +1590,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1608,8 +1609,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1681,6 +1681,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -1690,14 +1691,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1709,8 +1710,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1782,6 +1782,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Helpful means full of help.",
       "The ending",
       {
        "letter": "f"
@@ -1795,14 +1796,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Helpful means full of help."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Helpful means full of help."
+      "Helpful means full of help.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1818,8 +1819,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -1891,6 +1891,7 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Careful means full of care.",
       "The ending",
       {
        "letter": "f"
@@ -1904,14 +1905,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Careful means full of care."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Careful means full of care."
+      "Careful means full of care.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -1927,8 +1928,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2000,6 +2000,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Playful means full of play.",
       "The ending",
       {
        "letter": "f"
@@ -2013,14 +2014,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Playful means full of play."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Playful means full of play."
+      "Playful means full of play.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2036,8 +2037,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2109,6 +2109,7 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -2118,14 +2119,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2137,8 +2138,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2163,9 +2163,9 @@
      "target": "faster",
      "relation": "suffixMeaning",
      "options": [
-      "more fast than another",
+      "more fast",
       "not fast",
-      "the most fast of all"
+      "the most fast of all of them"
      ]
     },
     "prompt": {
@@ -2182,10 +2182,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "more fast than another",
+      "value": "more fast",
       "size": "l",
       "speak": [
-       "more fast than another"
+       "more fast"
       ]
      },
      {
@@ -2198,16 +2198,17 @@
      },
      {
       "kind": "text",
-      "value": "the most fast of all",
+      "value": "the most fast of all of them",
       "size": "l",
       "speak": [
-       "the most fast of all"
+       "the most fast of all of them"
       ]
      }
     ],
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Faster means more fast.",
       "The ending",
       {
        "letter": "e"
@@ -2217,14 +2218,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Faster means more fast than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Faster means more fast than another."
+      "Faster means more fast.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2236,8 +2237,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2261,8 +2261,8 @@
      "relation": "suffixMeaning",
      "options": [
       "not small",
-      "the most small of all",
-      "more small than another"
+      "the most small of all of them",
+      "more small"
      ]
     },
     "prompt": {
@@ -2287,24 +2287,25 @@
      },
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      },
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -2314,14 +2315,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2333,8 +2334,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2358,8 +2358,8 @@
      "relation": "suffixMeaning",
      "options": [
       "not small",
-      "more small than another",
-      "the most small of all"
+      "more small",
+      "the most small of all of them"
      ]
     },
     "prompt": {
@@ -2384,24 +2384,25 @@
      },
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      },
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -2411,14 +2412,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2430,8 +2431,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2454,9 +2454,9 @@
      "target": "smallest",
      "relation": "suffixMeaning",
      "options": [
-      "more small than another",
+      "more small",
       "not small",
-      "the most small of all"
+      "the most small of all of them"
      ]
     },
     "prompt": {
@@ -2473,10 +2473,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "more small than another",
+      "value": "more small",
       "size": "l",
       "speak": [
-       "more small than another"
+       "more small"
       ]
      },
      {
@@ -2489,16 +2489,17 @@
      },
      {
       "kind": "text",
-      "value": "the most small of all",
+      "value": "the most small of all of them",
       "size": "l",
       "speak": [
-       "the most small of all"
+       "the most small of all of them"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smallest means the most small of all of them.",
       "The ending",
       {
        "letter": "e"
@@ -2512,14 +2513,14 @@
        "letter": "t"
       },
       "means",
-      "the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "the most, when you compare more than two."
      ],
      "steps": [
-      "The ending est means the most, when you compare more than two.",
-      "Smallest means the most small of all."
+      "Smallest means the most small of all of them.",
+      "The ending est means the most, when you compare more than two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2535,8 +2536,7 @@
        },
        "means",
        "the most, when you compare more than two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2608,6 +2608,7 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Smaller means more small.",
       "The ending",
       {
        "letter": "e"
@@ -2617,14 +2618,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Smaller means more small than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Smaller means more small than another."
+      "Smaller means more small.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2636,8 +2637,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2661,8 +2661,8 @@
      "relation": "suffixMeaning",
      "options": [
       "not tall",
-      "more tall than another",
-      "the most tall of all"
+      "more tall",
+      "the most tall of all of them"
      ]
     },
     "prompt": {
@@ -2687,24 +2687,25 @@
      },
      {
       "kind": "text",
-      "value": "more tall than another",
+      "value": "more tall",
       "size": "l",
       "speak": [
-       "more tall than another"
+       "more tall"
       ]
      },
      {
       "kind": "text",
-      "value": "the most tall of all",
+      "value": "the most tall of all of them",
       "size": "l",
       "speak": [
-       "the most tall of all"
+       "the most tall of all of them"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -2714,14 +2715,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2733,8 +2734,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2802,6 +2802,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Helpful means full of help.",
       "The ending",
       {
        "letter": "f"
@@ -2815,14 +2816,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Helpful means full of help."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Helpful means full of help."
+      "Helpful means full of help.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2838,8 +2839,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -2911,6 +2911,7 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Careful means full of care.",
       "The ending",
       {
        "letter": "f"
@@ -2924,14 +2925,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Careful means full of care."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Careful means full of care."
+      "Careful means full of care.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -2947,8 +2948,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -3020,6 +3020,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Playful means full of play.",
       "The ending",
       {
        "letter": "f"
@@ -3033,14 +3034,14 @@
        "letter": "l"
       },
       "means",
-      "full of.",
-      "Playful means full of play."
+      "full of."
      ],
      "steps": [
-      "The ending ful means full of.",
-      "Playful means full of play."
+      "Playful means full of play.",
+      "The ending ful means full of."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -3056,8 +3057,7 @@
        },
        "means",
        "full of."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",
@@ -3129,6 +3129,7 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Taller means more tall.",
       "The ending",
       {
        "letter": "e"
@@ -3138,14 +3139,14 @@
        "letter": "r"
       },
       "means",
-      "more, when you compare two.",
-      "Taller means more tall than another."
+      "more, when you compare two."
      ],
      "steps": [
-      "The ending er means more, when you compare two.",
-      "Taller means more tall than another."
+      "Taller means more tall.",
+      "The ending er means more, when you compare two."
      ],
      "stepsSay": [
+      null,
       [
        "The ending",
        {
@@ -3157,8 +3158,7 @@
        },
        "means",
        "more, when you compare two."
-      ],
-      null
+      ]
      ],
      "visual": {
       "kind": "text",

@@ -65,7 +65,10 @@ describe('GET /api/sound/<key>/<form>', () => {
 
   it("knows exactly the app's sound keys, in two forms", () => {
     expect(SOUND_KEYS).toEqual(APP_SOUND_KEYS);
-    expect(SOUND_KEYS).toHaveLength(53);
+    // 53, then oo and air (Nov 22, 2026).
+    expect(SOUND_KEYS).toHaveLength(55);
+    expect(SOUND_KEYS).toContain('oo');
+    expect(SOUND_KEYS).toContain('air');
     expect(SOUND_FORMS).toEqual(['once', 'three']);
   });
 });

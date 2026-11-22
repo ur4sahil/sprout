@@ -196,10 +196,11 @@ describe('C.1 Tell time', () => {
     }
   });
 
-  it('half past twelve is halfway between 12 and 1', () => {
+  it('twelve thirty is halfway between 12 and 1', () => {
     const half = all('M-1-C1', 2).find((question) => n(question, 'hour') === 12);
-    // The last step joins the time in words to the written time the options show.
-    expect(half?.explanation.steps).toEqual(['The long hand points to 6.', 'The short hand is halfway between 12 and 1.', 'It is half past 12. We write 12:30.']);
+    // A time is read as on a digital clock (the owner's choice, Nov 22, 2026): "twelve thirty", never "half past 12".
+    expect(half?.explanation.steps).toEqual(['The long hand points to 6. That means 30 minutes.', 'The short hand is halfway between 12 and 1, so the hour is 12.', 'It is 12:30.']);
+    // On the hour, the last step joins the time in words to the written time the options show.
     const hour = all('M-1-C1', 1).find((question) => n(question, 'hour') === 3);
     expect(hour?.explanation.steps).toEqual(['The long hand points to 12.', 'The short hand points to 3.', "It is 3 o'clock. We write 3:00."]);
   });

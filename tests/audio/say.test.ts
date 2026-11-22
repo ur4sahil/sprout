@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { PRAISE, centsWords, letterName, loneSound, numberWords, saySegments, sayWords, soundClipKey, soundFallback, timeWords } from '../../src/audio/say';
+import { stepSay } from '../../src/audio/stepSay';
 import { SOUNDS, SOUND_KEYS, isSoundKey } from '../../src/engine/letterSounds';
 import { validateQuestion } from '../../src/engine/validate';
 
@@ -29,13 +30,28 @@ describe('numberWords', () => {
 });
 
 describe('times and money', () => {
-  it('says times the way a child hears them', () => {
-    expect(timeWords(3, 0)).toBe("three o'clock");
-    expect(timeWords(3, 30)).toBe('half past three');
-    expect(timeWords(3, 15)).toBe('three fifteen');
-    expect(timeWords(3, 5)).toBe('three oh five');
+  it('says times as a digital clock is read (the owner\'s choice, Nov 22, 2026), never "half past"', () => {
+    expect(timeWords(8, 0)).toBe("eight o'clock");
+    expect(timeWords(8, 5)).toBe('eight oh five');
+    expect(timeWords(8, 15)).toBe('eight fifteen');
+    expect(timeWords(8, 30)).toBe('eight thirty');
+    expect(timeWords(8, 45)).toBe('eight forty-five');
+    expect(timeWords(3, 30)).toBe('three thirty');
     expect(timeWords(12, 45)).toBe('twelve forty-five');
     expect(timeWords(10, 10)).toBe('ten ten');
+    expect(sayWords(['It is', { time: { hour: 8, minute: 30 } }, '.'])).toBe('It is eight thirty.');
+  });
+
+  it('says a time part and the same time written in a step with the same words, for every time on a clock', () => {
+    for (let hour = 1; hour <= 12; hour += 1) {
+      for (let minute = 0; minute < 60; minute += 1) {
+        const written = `${hour}:${String(minute).padStart(2, '0')}`;
+        const part = sayWords(['It is', { time: { hour, minute } }, '.']);
+        expect(sayWords(stepSay(`It is ${written}.`) ?? []), written).toBe(part);
+        expect(part, written).toBe(`It is ${timeWords(hour, minute)}.`);
+        expect(part, written).not.toMatch(/half|quarter|past|\bto\b/);
+      }
+    }
   });
 
   it('says cents, with one cent in the singular', () => {
@@ -89,7 +105,7 @@ describe('saySegments', () => {
     expect(sayWords([{ letter: 'B' }])).toBe('bee');
     expect(sayWords([{ word: 'read' }])).toBe('read');
     expect(sayWords([{ number: 47 }])).toBe('forty-seven');
-    expect(sayWords([{ time: { hour: 3, minute: 30 } }])).toBe('half past three');
+    expect(sayWords([{ time: { hour: 3, minute: 30 } }])).toBe('three thirty');
     expect(sayWords([{ cents: 25 }])).toBe('twenty-five cents');
     expect(sayWords([{ sound: 'm' }])).toBe('the sound of em');
   });
@@ -131,7 +147,8 @@ describe('letter sounds', () => {
     const consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
     const twoLetters = ['sh', 'ch', 'th', 'wh', 'ng', 'ck'];
     const long = ['long-a', 'long-e', 'long-i', 'long-o', 'long-u'];
-    const teams = ['ai', 'ay', 'ee', 'ea', 'oa', 'ie', 'igh', 'oi', 'oy', 'ou', 'ow', 'ar', 'er', 'ir', 'ur', 'or'];
+    // oo (as in moon) and air (as in chair) were added on Nov 22, 2026.
+    const teams = ['ai', 'ay', 'ee', 'ea', 'oa', 'ie', 'igh', 'oi', 'oy', 'ou', 'ow', 'oo', 'ar', 'er', 'ir', 'ur', 'or', 'air'];
     expect(SOUND_KEYS).toEqual([...short, ...consonants, ...twoLetters, ...long, ...teams]);
     for (const key of SOUND_KEYS) {
       expect(SOUNDS[key].shown, key).toMatch(/^\/[a-zāēīōū]+\/$/);
@@ -150,6 +167,8 @@ describe('letter sounds', () => {
     expect(sayWords(soundFallback('sh'))).toBe('the sound of ess, aitch');
     expect(sayWords(soundFallback('long-a'))).toBe('the sound of long ay');
     expect(sayWords(soundFallback('igh'))).toBe('the sound of eye, jee, aitch');
+    expect(sayWords(soundFallback('oo'))).toBe('the sound of oh, oh');
+    expect(sayWords(soundFallback('air'))).toBe('the sound of ay, eye, are');
     expect(sayWords(['Bat starts with', { sound: 'b' }, '.'])).toBe('Bat starts with the sound of bee.');
   });
 

@@ -6,6 +6,7 @@ import { CATALOGUE } from '../content/catalogue';
 import { LADDERS } from '../content/ladders';
 import { allGenerators, generateQuestion } from '../content/registry';
 import type { TodayPick } from '../engine/recommend';
+import { offeredTo } from '../engine/grades';
 import { rankCandidates, recommend } from '../engine/recommend';
 import { dueForReview } from '../engine/review';
 import { seedFor } from '../engine/seed';
@@ -88,9 +89,14 @@ export function summariseDay(input: {
 
   // Minutes are the sum of the day's answer times. Each is already capped at two minutes.
   const minutesToday = todays.reduce((sum, attempt) => sum + attempt.ms, 0) / 60_000;
+  // A skill the child's grade is not offered (offeredTo) is never reviewed either.
+  const offered = (skillId: string): boolean => {
+    const skill = skills.find((row) => row.id === skillId);
+    return skill !== undefined && offeredTo(skill, child.grade);
+  };
   const reviewsDue = dueForReview(states, nowIso)
     .map((state) => state.skillId)
-    .filter((skillId) => ready.has(skillId));
+    .filter((skillId) => ready.has(skillId) && offered(skillId));
   return {
     states,
     picks,

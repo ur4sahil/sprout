@@ -4,7 +4,7 @@ import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../
 import type { Countable } from '../../../data/countables';
 import { STORY_COUNTABLES } from '../../../data/countables';
 import type { StoryKind } from '../../../data/storyProblems';
-import { STORY_NAMES, STORY_TEMPLATES } from '../../../data/storyProblems';
+import { STORY_NAMES, STORY_PRONOUNS, STORY_TEMPLATES } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { tidyGroup } from '../pk/parts';
@@ -27,10 +27,14 @@ export interface Told {
 
 const isAre = (n: number): string => (n === 1 ? 'is' : 'are');
 
-// Fills a story template (plan section 9). Numbers become number parts, so they are said as numbers.
+// Fills a story template (plan section 9). Numbers become number parts, so they are said as numbers. After the name,
+// the story says "he" or "she" (STORY_PRONOUNS); a name with no pronoun listed is said again.
 export function tellStory(told: Told): { text: string; speak: Say } {
+  const pronoun = STORY_PRONOUNS[told.name];
   const words: Record<string, string> = {
     name: told.name,
+    she: pronoun ?? told.name,
+    She: pronoun === undefined ? told.name : `${pronoun.charAt(0).toUpperCase()}${pronoun.slice(1)}`,
     things: told.thing.many,
     thingsA: told.a === 1 ? told.thing.one : told.thing.many,
     areA: isAre(told.a),

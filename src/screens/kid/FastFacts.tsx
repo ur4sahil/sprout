@@ -71,7 +71,7 @@ export default function FastFacts() {
                   {fluent} of {set.facts.length}
                 </span>
               </div>
-              <div className={styles.grid} role="img" aria-label={`${fluent} of ${set.facts.length} facts are fast. ${Math.round(fluentShare(set, records) * 100)}%`}>
+              <div className={styles.grid} role="img" aria-label={`${fluent} of ${set.facts.length} facts ${fluent === 1 ? 'is' : 'are'} fast. ${Math.round(fluentShare(set, records) * 100)}%`}>
                 {set.facts.map((fact) => (
                   <span key={fact.id} className={`${styles.cell} ${isFluent(records.get(fact.id), fact.op) ? styles.fast : ''}`} data-fact={fact.id} />
                 ))}
