@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, SortBin, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, SortBin, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
@@ -11,16 +11,27 @@ import { cap, shape, twoClearColors } from './parts';
 
 const SHAPES: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 
-function explain(groups: [string, string], sample: Visual): { speak: Say; steps: string[]; visual: Visual } {
-  return {
-    speak: [`These ones are ${groups[0]}. These ones are ${groups[1]}.`],
-    steps: [`These ones are ${groups[0]}.`, `These ones are ${groups[1]}.`],
-    visual: sample,
-  };
+// What each group holds, said with the group's name, never "these ones" (the wording audit, Nov 21, 2026):
+// "The red ones go in the red group.", "The hearts go in the hearts group.".
+export function sortedLine(by: string, group: string): string {
+  return by === 'shape' ? `The ${group} go in the ${group} group.` : `The ${group} ones go in the ${group} group.`;
+}
+
+// A sort is answered by tapping a shape, then its group. The prompt says so.
+export const SORT_SHAPES = 'Tap a shape, then tap its group.';
+
+// The hint names what to look at, never which group a shape goes in.
+export function sortHint(by: string): Hint {
+  return { text: by === 'colour' ? 'Look at the color of each shape.' : by === 'shape' ? 'Look at the shape of each one.' : 'Is each one big or small?' };
+}
+
+function explain(by: string, groups: [string, string], sample: Visual): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
+  const steps = [sortedLine(by, groups[0]), sortedLine(by, groups[1])];
+  return { speak: [steps.join(' ')], steps, visual: sample, hint: sortHint(by) };
 }
 
 function build(by: string, items: Visual[], attrs: string[], binAttrs: [string, string], bins: SortBin[], groups: [string, string]): QuestionDraft {
-  const prompt = 'Put each one in its group.';
+  const prompt = SORT_SHAPES;
   return {
     type: 'sort',
     mode: 'look',
@@ -29,7 +40,7 @@ function build(by: string, items: Visual[], attrs: string[], binAttrs: [string, 
     items,
     bins,
     answerBin: attrs.map((attr) => binAttrs.indexOf(attr)),
-    explanation: explain(groups, { kind: 'row', children: items.filter((_, i) => attrs[i] === binAttrs[0]) }),
+    explanation: explain(by, groups, { kind: 'row', children: items.filter((_, i) => attrs[i] === binAttrs[0]) }),
   };
 }
 
@@ -70,7 +81,7 @@ function lesson(): LessonStep[] {
   const blues: Visual = { kind: 'row', children: [shape('square', 'blue'), shape('heart', 'blue')] };
   return [
     { beat: 'see', text: 'Sorting puts things that are alike together.', speak: ['Sorting puts things that are alike together.'], visual: mixed },
-    { beat: 'watch', text: 'These ones are red. These ones are blue.', speak: explain(['red', 'blue'], reds).speak, visual: reds },
+    { beat: 'watch', text: explain('colour', ['red', 'blue'], reds).steps.join(' '), speak: explain('colour', ['red', 'blue'], reds).speak, visual: reds },
     {
       beat: 'try',
       text: 'Which group does the blue square go in?',

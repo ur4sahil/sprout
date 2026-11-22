@@ -1,12 +1,14 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { shape, twoClearColors } from '../pk/parts';
-import type { Explanation } from './h1-parts';
 import { h1Skill, lessonOf, picture } from './h1-parts';
+
+// An explanation with the hint and spoken steps the generator gives (h1-parts' type has neither).
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 
 // Math kindergarten, plan section 15 wave H1: F.6 how were they sorted, G.2 same pattern, new pictures.
 
@@ -55,7 +57,7 @@ function sortRule(level: Level, rng: Rng): QuestionDraft {
     if (found.length !== 1 || found[0] !== rule || !mixed) continue;
     const options = rules.map((each) => `by ${SAID[each]}`);
     const line = rule === 'colour' ? 'Each group is all one color.' : rule === 'shape' ? 'Each group is all one shape.' : 'One group is all small. The other is all big.';
-    const explanation: Explanation = { speak: [`${line} They were sorted by ${SAID[rule]}.`], steps: [line, `They were sorted by ${SAID[rule]}.`], visual: { kind: 'row', children: groups.map(box) } };
+    const explanation: Explanation = { speak: [`${line} They were sorted by ${SAID[rule]}.`], steps: [line, `They were sorted by ${SAID[rule]}.`], visual: { kind: 'row', children: groups.map(box) }, hint: { text: 'Find what is the same inside each group.' } };
     const prompt = 'How were the shapes sorted?';
     return {
       type: 'choice',
@@ -98,10 +100,10 @@ type Unit = (typeof UNITS)[number];
 const TARGETS: Record<Level, Unit[]> = { 1: ['AB', 'AAB'], 2: ['ABB', 'AAB', 'ABC'], 3: ['AABB', 'ABC', 'ABB'], 4: ['AABB'] };
 const repeatOf = (unit: Unit): string[] => [...unit, ...unit].slice(0, unit.length <= 2 ? 4 : unit.length * 2).map(String);
 
-function patternExplanation(unit: Unit, visual: Visual): Explanation {
-  const said = unit.split('').join(' ');
-  const line = unit.length === 2 ? 'One, then another, over and over.' : unit === 'AAB' ? 'Two the same, then one different, over and over.' : unit === 'ABB' ? 'One, then two the same, over and over.' : unit === 'ABC' ? 'Three different ones, over and over.' : 'Two of one, then two of another, over and over.';
-  return { speak: [`Both rows repeat the same way. ${line}`], steps: [`Both repeat ${said}, ${said}.`, line], visual };
+function patternExplanation(unit: Unit, shapes: string, pictures: string, visual: Visual): Explanation {
+  const way = unit.length === 2 ? 'one, then another, over and over.' : unit === 'AAB' ? 'two the same, then one different, over and over.' : unit === 'ABB' ? 'one, then two the same, over and over.' : unit === 'ABC' ? 'three different ones, over and over.' : 'two of one, then two of another, over and over.';
+  const steps = [`The shapes go ${shapes}.`, `The pictures go ${pictures}.`, `Both rows repeat the same way: ${way}`];
+  return { speak: [steps.join(' ')], steps, visual, hint: { text: 'Say the shapes out loud. Then say each row of pictures. Which row goes the same way?' } };
 }
 
 function samePattern(level: Level, rng: Rng): QuestionDraft {
@@ -126,7 +128,7 @@ function samePattern(level: Level, rng: Rng): QuestionDraft {
     stimulus: target,
     options: units.map(row),
     answerIndex: units.indexOf(unit),
-    explanation: patternExplanation(unit, row(unit)),
+    explanation: patternExplanation(unit, letters.map(formOf).join(', '), repeatOf(unit).map((letter) => thingOf(letter).one).join(', '), row(unit)),
   };
 }
 

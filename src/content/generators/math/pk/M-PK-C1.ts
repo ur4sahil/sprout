@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
@@ -15,13 +15,17 @@ const ALL: ShapeName[] = [...FIRST, 'rectangle', 'star', 'heart'];
 const SIZES = ['s', 'm', 'l'] as const;
 const TURNS = [0, 15, 30, 330, 345]; // small turns: a square never stands on its corner
 
-function explain(target: ShapeName, color: ColorName): { speak: Say; steps: string[]; visual: Visual } {
+function explain(target: ShapeName, color: ColorName): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   return {
     speak: [`This is ${a(target)}.`, SHAPE_FACT[target] ?? ''],
     steps: [`This is ${a(target)}.`, SHAPE_FACT_TEXT[target] ?? ''],
     visual: shape(target, color),
+    hint: { text: 'Count the sides and corners of each shape.' },
   };
 }
+
+// A square is a rectangle too, so the two never sit in one question (as in M-PK-C5 and M-PK-C6).
+const bothRectangles = (names: ShapeName[]): boolean => names.includes('square') && names.includes('rectangle');
 
 function build(target: ShapeName, options: Visual[], names: ShapeName[], color: ColorName, extra: QuestionDraft['facts']): QuestionDraft {
   const prompt = `Find the ${target}.`;
@@ -37,7 +41,9 @@ function build(target: ShapeName, options: Visual[], names: ShapeName[], color: 
 }
 
 function generate(level: Level, rng: Rng): QuestionDraft {
-  const names = rng.sample(level === 1 ? FIRST : ALL, 3);
+  let names: ShapeName[];
+  do names = rng.sample(level === 1 ? FIRST : ALL, 3);
+  while (bothRectangles(names));
   const color = rng.pick(COLOR_NAMES);
   const target = rng.pick(names);
   if (level < 3) return build(target, names.map((name) => shape(name, color)), names, color, {});
@@ -61,7 +67,7 @@ function lesson(): LessonStep[] {
       text: 'Find the square.',
       speak: ['Find the square.'],
       visual: row(['circle', 'square', 'triangle']),
-      reveal: { text: 'This is a square. A square has 4 equal sides.', speak: explain('square', 'blue').speak, visual: shape('square', 'blue') },
+      reveal: { text: `This is a square. ${SHAPE_FACT_TEXT.square ?? ''}`, speak: explain('square', 'blue').speak, visual: shape('square', 'blue') },
     },
     { beat: 'remember', text: 'Count the sides and corners.', speak: ['Count the sides and corners.'], visual: row(['triangle', 'square']) },
   ];

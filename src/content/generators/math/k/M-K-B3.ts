@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 
@@ -21,7 +21,7 @@ function row(values: number[]): Visual {
   return { kind: 'row', children: values.map((value) => numeral(value, 'l')) };
 }
 
-function explain(sorted: number[]): { speak: Say; steps: string[]; visual: Visual } {
+function explain(sorted: number[]): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const [first, ...rest] = sorted;
   const speak: Say = [{ number: first as number }, 'is the smallest.'];
   for (const value of rest) speak.push('Then', { number: value }, '.');
@@ -29,12 +29,17 @@ function explain(sorted: number[]): { speak: Say; steps: string[]; visual: Visua
     speak,
     steps: [`${first} is the smallest.`, `Then ${rest.join('. Then ')}.`, `In order: ${listText(sorted)}.`],
     visual: row(sorted),
+    // The steps list the answer, so they are never a nudge: the hint says how to start.
+    hint: { text: 'Find the smallest number first. Then find the next one.' },
   };
 }
 
+// An order is answered by tapping, first to last. The prompt says so.
+const PROMPT = 'Tap the numbers from smallest to biggest.';
+
 function build(values: number[]): QuestionDraft {
   const sorted = values.slice().sort((a, b) => a - b);
-  const prompt = 'Put the numbers in order, smallest first.';
+  const prompt = PROMPT;
   return {
     type: 'order',
     mode: 'look',
@@ -72,8 +77,8 @@ function lesson(): LessonStep[] {
     },
     {
       beat: 'try',
-      text: 'Put 5, 3 and 4 in order, smallest first.',
-      speak: ['Put', { number: 5 }, ',', { number: 3 }, 'and', { number: 4 }, 'in order, smallest first.'],
+      text: 'Tap 5, 3 and 4 from smallest to biggest.',
+      speak: ['Tap', { number: 5 }, ',', { number: 3 }, 'and', { number: 4 }, 'from smallest to biggest.'],
       visual: row([5, 3, 4]),
       reveal: {
         text: '3 is the smallest. Then 4. Then 5.',

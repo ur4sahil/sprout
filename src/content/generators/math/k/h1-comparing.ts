@@ -1,5 +1,5 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { EnoughPair } from '../../../data/h1-things';
@@ -7,9 +7,11 @@ import { ENOUGH_PAIRS } from '../../../data/h1-things';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { tidyGroup } from '../pk/parts';
-import type { Explanation } from './h1-parts';
 import { YES_NO, h1Skill, lessonOf, numberChoice, spoken, yesNoOptions } from './h1-parts';
 import { numeralChoices } from './numerals';
+
+// An explanation with the hint and spoken steps the generator gives (h1-parts' type has neither).
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 
 // Math kindergarten, plan section 15 wave H1: B.4 are there enough, B.5 compare a group and a number.
 
@@ -28,13 +30,14 @@ const noun = (n: number, one: string, many: string): string => (n === 1 ? one : 
 function enoughExplanation(pair: EnoughPair, need: number, have: number): Explanation {
   const visual = rows(pair, need, have);
   const match = `Match each ${pair.one} with one ${pair.want}.`;
+  const hint: Hint = { text: `Match each ${pair.one} with a ${pair.want}. Is any ${pair.one} left without a ${pair.want}?` };
   if (have >= need) {
     const line = `Every ${pair.one} gets one. There are enough.`;
-    return { speak: [match, line], steps: [match, line], visual };
+    return { speak: [match, line], steps: [match, line], visual, hint };
   }
   const short = need - have;
   const line = `${short} ${noun(short, pair.one, pair.many)} ${short === 1 ? 'has' : 'have'} none. We need ${short} more ${noun(short, pair.want, pair.wants)}.`;
-  return { speak: [match, ...spoken(line)], steps: [match, line], visual };
+  return { speak: [match, ...spoken(line)], steps: [match, line], visual, hint };
 }
 
 function enough(level: Level, rng: Rng): QuestionDraft {
@@ -100,8 +103,11 @@ function groupVsNumber(level: Level, rng: Rng): QuestionDraft {
   const prompt = `Which shows ${word}: the ${thing.many} or the number?`;
   const bigger = Math.max(group, number);
   const smaller = Math.min(group, number);
-  const compared = ask === 'most' ? `${bigger} is more than ${smaller}.` : `${smaller} is fewer than ${bigger}.`;
-  const line = `Count the ${thing.many}: ${group}. ${compared}`;
+  // Numbers are more or less; things are more or fewer (the wording audit, Nov 21, 2026).
+  const compared = ask === 'most' ? `${bigger} is more than ${smaller}.` : `${smaller} is less than ${bigger}.`;
+  const winner = (ask === 'most' ? bigger : smaller) === group ? `the ${thing.many} show` : 'the number shows';
+  const so = `So ${winner} ${word}.`;
+  const steps = [`Count the ${thing.many}: ${group}.`, compared, so];
   return {
     type: 'choice',
     mode: 'look',
@@ -109,7 +115,12 @@ function groupVsNumber(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options,
     answerIndex: values.indexOf(ask === 'most' ? bigger : smaller),
-    explanation: { speak: spoken(line), steps: [`Count the ${thing.many}: ${group}.`, compared], visual: { kind: 'emojiGroup', emoji: thing.emoji, count: group, layout: group <= 5 ? 'row' : 'grid5', numbered: true } },
+    explanation: {
+      speak: spoken(steps.join(' ')),
+      steps,
+      visual: { kind: 'emojiGroup', emoji: thing.emoji, count: group, layout: group <= 5 ? 'row' : 'grid5', numbered: true },
+      hint: { text: `Count the ${thing.many}. Then look at the number. Which is ${ask === 'most' ? 'more' : 'less'}?` },
+    },
   };
 }
 

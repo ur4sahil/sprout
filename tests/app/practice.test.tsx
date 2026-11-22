@@ -3,6 +3,7 @@ import { screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useAppStore } from '../../src/app/store';
 import { setTimingForTests } from '../../src/app/timing';
+import { skillById } from '../../src/content/catalogue';
 import { advanceClock, localDay } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
 import { openRepo } from '../../src/storage/index';
@@ -77,8 +78,8 @@ describe('a new child masters a skill', () => {
       expect(a.day).toBe('2026-03-09');
       expect(a.kind).toBe('practice');
       expect(a.correct).toBe(true);
-      expect(a.contentVersion).toBe(1);
-      expect(a.snapshot.prompt).toMatch(/^\d+ plus \d+ equals what\? \[.*□.*\]$/);
+      expect(a.contentVersion).toBe(skillById('M-K-C4')?.version);
+      expect(a.snapshot.prompt).toMatch(/^What (is|number equals) \d+ plus \d+\? \[.*□.*\]$/);
       expect(a.snapshot.correct).toMatch(/^\d+$/);
       expect(a.snapshot.given).toBe(a.snapshot.correct);
       expect(a.itemType).toBe(a.level <= 2 ? 'choice' : 'numberPad');
@@ -120,7 +121,7 @@ describe('a wrong answer', () => {
     expect(screen.getByText('Correct answer')).toBeTruthy();
     // It says so, keeps the question in view, and shows one step to begin with.
     expect(panel.querySelector('[data-verdict]')?.textContent).toContain('Not quite');
-    expect(panel.querySelector('[data-asked]')?.textContent).toContain('equals what?');
+    expect(panel.querySelector('[data-asked]')?.textContent).toMatch(/What is \d+ plus \d+\?/);
     expect(panel.querySelectorAll('ol li')).toHaveLength(1);
     expect(screen.queryByRole('button', { name: /Got it/ })).toBeNull();
     // 10 with a loss of 2 is 8, and the streak is gone.
@@ -312,7 +313,7 @@ describe('the answer flow', () => {
     await setUp('1');
     const user = openApp();
     await openSkill(user, 'Add to 10');
-    await waitFor(() => expect(JSON.stringify(spoken.said)).toContain('equals what?'));
+    await waitFor(() => expect(JSON.stringify(spoken.said)).toContain('What is'));
     const before = spoken.said.length;
     await answer(user, sumOnScreen());
     await settled();
@@ -322,7 +323,7 @@ describe('the answer flow', () => {
     await waitFor(() => expect(spoken.said.length).toBe(before + 3));
     expect(spoken.said[before]).toEqual([{ number: expect.any(Number) }]);
     expect(PRAISE.map((p) => p.say)).toContainEqual(spoken.said[before + 1]);
-    expect(JSON.stringify(spoken.said[before + 2])).toContain('equals what?');
+    expect(JSON.stringify(spoken.said[before + 2])).toContain('What is');
     await new Promise((r) => setTimeout(r, 150));
     expect(spoken.said.length).toBe(before + 3);
   });
@@ -331,10 +332,10 @@ describe('the answer flow', () => {
     await setUp('2'); // off by default above grade 1
     const user = openApp();
     await openSkill(user, 'Add to 10');
-    expect(spoken.said.filter((say) => JSON.stringify(say).includes('equals what?'))).toEqual([]);
+    expect(spoken.said.filter((say) => JSON.stringify(say).includes('What is'))).toEqual([]);
     // The speaker button still reads it.
     await user.click(screen.getByRole('button', { name: 'Hear the question' }));
-    expect(JSON.stringify(spoken.said.at(-1))).toContain('equals what?');
+    expect(JSON.stringify(spoken.said.at(-1))).toContain('What is');
   });
 
   it('Submit is off until there is an answer, and inputs lock once it is tapped', async () => {

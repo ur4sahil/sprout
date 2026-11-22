@@ -1,29 +1,44 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
-import { apple, star, tidyGroup } from './parts';
+import { apple, star, thingsWord, tidyGroup } from './parts';
 
 // Family: More or fewer. Two groups of the same thing. Groups never tie.
 // Levels: a gap of 3 or more / a gap of 2 / a gap of 1, up to 10.
 
 type Ask = 'most' | 'least';
-const WORD: Record<Ask, { prompt: string; than: string; remember: string }> = {
-  most: { prompt: 'Which group has more?', than: 'is more than', remember: 'More means a bigger count.' },
-  least: { prompt: 'Which group has fewer?', than: 'is fewer than', remember: 'Fewer means a smaller count.' },
+const WORD: Record<Ask, { prompt: string; than: string; remember: string; hint: string }> = {
+  most: { prompt: 'Which group has more?', than: 'more than', remember: 'More means a bigger count.', hint: 'Count each group. Which count is bigger?' },
+  least: { prompt: 'Which group has fewer?', than: 'fewer than', remember: 'Fewer means a smaller count.', hint: 'Count each group. Which count is smaller?' },
 };
 
-function explain(thing: Countable, values: number[], ask: Ask): { speak: Say; steps: string[]; visual: Visual } {
+// "1 frog", "3 frogs".
+const some = (thing: Countable, n: number): string => `${n} ${thingsWord(thing, n)}`;
+
+// The steps name each group by its count, never "this group": after a miss the panel shows the child's pick and
+// the right group, so a pointing word could sit under the wrong one. Fewer is said of things, never of numbers:
+// "3 frogs are fewer than 5 frogs", not "3 is fewer than 5" (the wording audit, Nov 21, 2026).
+export function compareGroupsLines(thing: Countable, values: readonly number[], ask: Ask): { lines: string[]; speak: Say } {
   const [left, right] = values as [number, number];
   const answer = ask === 'most' ? Math.max(left, right) : Math.min(left, right);
   const other = left + right - answer;
+  const verb = answer === 1 ? 'is' : 'are';
   return {
-    speak: ['This group has', { number: left }, '. This group has', { number: right }, '.', { number: answer }, WORD[ask].than, { number: other }, '.'],
-    steps: [`This group has ${left}.`, `This group has ${right}.`, `${answer} ${WORD[ask].than} ${other}.`],
-    visual: tidyGroup(thing, answer),
+    lines: [`One group has ${some(thing, left)}.`, `The other group has ${some(thing, right)}.`, `${some(thing, answer)} ${verb} ${WORD[ask].than} ${some(thing, other)}.`],
+    speak: [
+      'One group has', { number: left }, `${thingsWord(thing, left)}. The other group has`, { number: right }, `${thingsWord(thing, right)}.`,
+      { number: answer }, `${thingsWord(thing, answer)} ${verb} ${WORD[ask].than}`, { number: other }, `${thingsWord(thing, other)}.`,
+    ],
   };
+}
+
+function explain(thing: Countable, values: number[], ask: Ask): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
+  const answer = ask === 'most' ? Math.max(...values) : Math.min(...values);
+  const { lines, speak } = compareGroupsLines(thing, values, ask);
+  return { speak, steps: lines, visual: tidyGroup(thing, answer), hint: { text: WORD[ask].hint } };
 }
 
 function build(thing: Countable, values: [number, number], ask: Ask): QuestionDraft {

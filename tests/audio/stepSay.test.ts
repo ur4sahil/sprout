@@ -196,7 +196,8 @@ describe('spokenSteps: one line for each step', () => {
               if (typeof part === 'object' && 'number' in part && typeof after === 'string') expect(after, where).not.toMatch(/^s\b/);
             });
             const signs = (step.match(/[+−×÷=<>]/g) ?? []).length;
-            const words = (sayWords(said).match(/\b(plus|minus|times|divided by|equals|less than|greater than)\b/g) ?? []).length;
+            // Pre-K and kindergarten say "take away" for the minus sign (the owner's choice, Nov 22, 2026).
+            const words = (sayWords(said).match(/\b(plus|minus|take away|times|divided by|equals|less than|greater than)\b/g) ?? []).length;
             expect(words, where).toBeGreaterThanOrEqual(signs);
           });
         }

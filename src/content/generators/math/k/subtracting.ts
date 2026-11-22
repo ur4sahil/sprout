@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
@@ -11,7 +11,7 @@ import { numeralChoices } from './numerals';
 
 // Math K C.5 to C.7. Family: Subtract. Oracle: subtract.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
 
 // A group with the last few crossed out.
 export function crossedGroup(emoji: string, a: number, b: number): Visual {
@@ -60,7 +60,7 @@ function picturesQuestion(thing: Countable, a: number, b: number, rng: Rng, weig
     stimulus: crossedGroup(thing.emoji, a, b),
     options: values.map((value) => numeral(value)),
     answerIndex: values.indexOf(a - b),
-    explanation: takeAwayExplanation(a, b, crossedGroup(thing.emoji, a, b)),
+    explanation: { ...takeAwayExplanation(a, b, crossedGroup(thing.emoji, a, b)), hint: { text: 'Count the ones that are not crossed out.' } },
   };
 }
 
@@ -108,9 +108,13 @@ export const subtractPicturesTo5Generator: SkillGenerator = {
 
 const DOT = '⚫';
 
+// Asked the natural way (the owner's choice, Nov 22, 2026), and with "take away" in kindergarten.
 function minusPrompt(a: number, b: number): { text: string; speak: Say } {
-  return { text: `${a} take away ${b} equals what?`, speak: [{ number: a }, 'take away', { number: b }, 'equals what?'] };
+  return { text: `What is ${a} take away ${b}?`, speak: ['What is', { number: a }, 'take away', { number: b }, '?'] };
 }
+
+// Fingers show any take away within 10, zero included.
+const FINGERS: Hint = { text: 'Hold up fingers for the first number. Put down fingers for the second number. Count the fingers still up.' };
 
 function minusQuestion(a: number, b: number, typed: boolean, rng: Rng, weights: PlaceWeights): QuestionDraft {
   const left = a - b;
@@ -118,7 +122,7 @@ function minusQuestion(a: number, b: number, typed: boolean, rng: Rng, weights: 
     mode: 'look' as const,
     prompt: minusPrompt(a, b),
     stimulus: { kind: 'equation', parts: [a, '-', b, '=', 'blank'] } as Visual,
-    explanation: takeAwayExplanation(a, b, crossedGroup(DOT, a, b)),
+    explanation: { ...takeAwayExplanation(a, b, crossedGroup(DOT, a, b)), hint: FINGERS },
   };
   if (typed) return { ...base, type: 'numberPad', facts: { a, b }, answer: left, maxDigits: 2 };
   // The slips: one off, the adding answer, or a number from the question said again.

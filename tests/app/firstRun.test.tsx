@@ -284,7 +284,7 @@ describe('the saved record of an answer', () => {
     const session = newSession(child, skill.id, NOW);
     const outcome = recordAnswer({ child, skill, state: newSkillState('kid-1', skill.id, NOW.toISOString()), session, question, response: { index: wrong }, shownAt: NOW, answeredAt: new Date(NOW.getTime() + 4200) });
     expect(outcome.correct).toBe(false);
-    expect(outcome.attempt).toMatchObject({ childId: 'kid-1', skillId: 'M-K-C4', sessionId: session.id, level: 1, seed: 77, itemType: 'choice', response: { index: wrong }, contentVersion: 1, correct: false, hinted: false, ms: 4200, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day: '2026-03-09' });
+    expect(outcome.attempt).toMatchObject({ childId: 'kid-1', skillId: 'M-K-C4', sessionId: session.id, level: 1, seed: 77, itemType: 'choice', response: { index: wrong }, contentVersion: skill.version, correct: false, hinted: false, ms: 4200, scoreBefore: 0, scoreAfter: 0, kind: 'practice', day: '2026-03-09' });
     expect(outcome.attempt.snapshot.correct).toBe(describeAnswer(question));
     expect(outcome.attempt.snapshot.given).toBe(describeResponse(question, { index: wrong }));
     expect(outcome.attempt.snapshot.given).not.toBe(outcome.attempt.snapshot.correct);

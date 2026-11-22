@@ -1,5 +1,5 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import { LINE_ANIMALS } from '../../../data/h1-things';
@@ -8,9 +8,11 @@ import type { SkillGenerator } from '../../../generator';
 import { countAloud, listText, numeral } from '../../../generator';
 import { findNumberQuestion } from '../pk/findNumber';
 import { SCATTER_SLOTS, silentNumeral } from '../pk/parts';
-import type { Explanation } from './h1-parts';
 import { h1Skill, lessonOf, numberChoice, picture, shuffled } from './h1-parts';
 import { numeralChoices } from './numerals';
+
+// An explanation with the hint and spoken steps the generator gives (h1-parts' type has neither).
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 
 // Math kindergarten, plan section 15 wave H1: A.8 count one kind, A.9 find the number to 20,
 // A.10 number words to ten, A.11 first to fifth, A.12 count back, A.13 tally marks.
@@ -25,6 +27,7 @@ function countOneExplanation(thing: Countable, n: number): Explanation {
     speak: [`Count only the ${thing.many}.`, ...countAloud(n), '. There are', { number: n }, `${thing.many}.`],
     steps: [`Count only the ${thing.many}: ${listText(upTo(n))}.`, `There are ${n} ${thing.many}.`],
     visual: { kind: 'emojiGroup', emoji: thing.emoji, count: n, layout: n <= 5 ? 'row' : 'grid5', numbered: true },
+    hint: { text: `Touch only the ${thing.many}. Say a number for each.` },
   };
 }
 
@@ -67,15 +70,18 @@ function farApart(n: number, rng: Rng): number[] {
 
 const reversed = (n: number): number => Number(String(n).split('').reverse().join(''));
 
+const DIGITS_HINT: Hint = { text: 'Listen again. Then look at both digits of each number.' };
+const withHint = (question: QuestionDraft, hint: Hint): QuestionDraft => ({ ...question, explanation: { ...question.explanation, hint } });
+
 function findTo20(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
     const n = rng.int(12, 19);
-    return findNumberQuestion(n, numeralChoices(n, [reversed(n)], 10, 99, rng));
+    return withHint(findNumberQuestion(n, numeralChoices(n, [reversed(n)], 10, 99, rng)), DIGITS_HINT);
   }
   const n = rng.int(11, 20);
-  if (level === 1) return findNumberQuestion(n, farApart(n, rng));
+  if (level === 1) return withHint(findNumberQuestion(n, farApart(n, rng)), DIGITS_HINT);
   const start = rng.pick([n - 2, n - 1, n].filter((first) => first >= 10 && first + 2 <= 20));
-  return findNumberQuestion(n, [start, start + 1, start + 2]);
+  return withHint(findNumberQuestion(n, [start, start + 1, start + 2]), DIGITS_HINT);
 }
 
 export const findTo20Generator: SkillGenerator = h1Skill({
@@ -96,7 +102,19 @@ function wordExplanation(n: number): Explanation {
   return { speak: ['This word says', { number: n }, '.'], steps: [`The word ${numberWord(n)} is ${n}.`], visual: { kind: 'row', children: [{ kind: 'text', value: numberWord(n), size: 'l' }, numeral(n)] } };
 }
 
-export function numberWordQuestion(n: number, values: number[]): { word: QuestionDraft; numeralAsk: QuestionDraft } {
+// Kindergarten's steps work spoken as well as on screen (the wording audit, Nov 21, 2026). The hints never say a
+// word the child must read.
+function kWordExplanation(n: number, ask: 'numeral' | 'words'): Explanation {
+  const steps = [`This word says ${numberWord(n)}.`, `It goes with the number ${n}.`];
+  return {
+    speak: ['This word says', { number: n }, '. It goes with the number', { number: n }, '.'],
+    steps,
+    visual: { kind: 'row', children: [{ kind: 'text', value: numberWord(n), size: 'l' }, numeral(n)] },
+    hint: { text: ask === 'numeral' ? 'Look at the first letter of the word. What sound does it make?' : 'Say the number. Then look at the first letter of each word.' },
+  };
+}
+
+export function numberWordQuestion(n: number, values: number[], explain: (n: number, ask: 'numeral' | 'words') => Explanation = wordExplanation): { word: QuestionDraft; numeralAsk: QuestionDraft } {
   const word = numberWord(n);
   const words = values.map(numberWord);
   const toNumeral: QuestionDraft = {
@@ -107,7 +125,7 @@ export function numberWordQuestion(n: number, values: number[]): { word: Questio
     stimulus: { kind: 'text', value: word, size: 'xl' },
     options: values.map((value) => silentNumeral(value)),
     answerIndex: values.indexOf(n),
-    explanation: wordExplanation(n),
+    explanation: explain(n, 'numeral'),
   };
   const toWord: QuestionDraft = {
     type: 'choice',
@@ -117,14 +135,14 @@ export function numberWordQuestion(n: number, values: number[]): { word: Questio
     stimulus: silentNumeral(n),
     options: words.map((each): Visual => ({ kind: 'text', value: each, size: 'l' })),
     answerIndex: words.indexOf(word),
-    explanation: wordExplanation(n),
+    explanation: explain(n, 'words'),
   };
   return { word: toNumeral, numeralAsk: toWord };
 }
 
 function numberWordsTo10(level: Level, rng: Rng): QuestionDraft {
   const n = rng.int(1, level === 1 ? 5 : 10);
-  const made = numberWordQuestion(n, numeralChoices(n, [n + 2, n - 2], 1, 10, rng, level === 1 ? [1, 2, 4] : [1, 1, 1]));
+  const made = numberWordQuestion(n, numeralChoices(n, [n + 2, n - 2], 1, 10, rng, level === 1 ? [1, 2, 4] : [1, 1, 1]), kWordExplanation);
   return level === 3 ? made.numeralAsk : made.word;
 }
 
@@ -137,7 +155,7 @@ export const numberWordsTo10Generator: SkillGenerator = h1Skill({
   lists: ['h1-numberWords'],
   pool: { 1: 5 },
   generate: numberWordsTo10,
-  lesson: (make) => lessonOf('Every number has a word. The word three means 3.', wordExplanation(3).visual, make(1, 805), make(2, 806), 'Read the word, then find its number.', wordExplanation(5).visual),
+  lesson: (make) => lessonOf('Every number has a word. The word three means 3.', kWordExplanation(3, 'numeral').visual, make(1, 805), make(2, 806), 'Read the word, then find its number.', kWordExplanation(5, 'numeral').visual),
 });
 
 // ---- A.11 First to fifth ----
@@ -156,6 +174,7 @@ function ordinalExplanation(animals: readonly Animal[], place: number): Explanat
     speak: [`Start at the flag and count: ${counted}. The ${animal.name} is ${ORDINALS[place - 1] as string}.`],
     steps: [`Start at the flag: ${counted}.`, `The ${animal.name} is ${ORDINALS[place - 1] as string}.`],
     visual: lineOf(animals),
+    hint: { text: 'Start at the flag. Touch each animal and say its place.' },
   };
 }
 
@@ -217,6 +236,7 @@ function countBackExplanation(row: number[], answer: number): Explanation {
     speak: ['Counting back goes down by one.', ...row.map((value) => ({ number: value })), '. The missing number is', { number: answer }, '.'],
     steps: ['Counting back goes down by one.', `${listText(row)}.`, `The missing number is ${answer}.`],
     visual: { kind: 'sequence', items: row.map((value) => numeral(value, 'l')) },
+    hint: { text: 'Count back. Say the numbers going down.' },
   };
 }
 
@@ -256,16 +276,18 @@ export const countBackGenerator: SkillGenerator = h1Skill({
 function tallyExplanation(n: number): Explanation {
   const visual: Visual = { kind: 'tally', count: n };
   if (n <= 5) {
-    const say: Say = n === 5 ? ['Four marks and one across make', { number: 5 }, '.'] : ['Count each mark:', ...countAloud(n), '.'];
-    return { speak: say, steps: [n === 5 ? '4 marks and 1 across make 5.' : `Count each mark: ${listText(upTo(n))}.`], visual };
+    const say: Say = n === 5 ? ['Four marks and one mark across them make', { number: 5 }, '.'] : ['Count each mark:', ...countAloud(n), '.'];
+    return { speak: say, steps: [n === 5 ? '4 marks and 1 mark across them make 5.' : `Count each mark: ${listText(upTo(n))}.`], visual, hint: { text: 'Touch each mark as you count. Say a number for each.' } };
   }
   const fives = Array.from({ length: Math.floor(n / 5) }, (_, i) => (i + 1) * 5);
   const rest = Array.from({ length: n % 5 }, (_, i) => (fives[fives.length - 1] as number) + i + 1);
   const counted = [...fives, ...rest];
+  const how = rest.length > 0 ? 'Count by fives, then by ones' : 'Count by fives';
   return {
-    speak: ['Each bundle is', { number: 5 }, '. Count by fives, then by ones:', ...counted.map((value) => ({ number: value })), '.'],
-    steps: ['Each bundle is 5.', `Count by fives, then by ones: ${listText(counted)}.`, `There are ${n} marks.`],
+    speak: ['Each group of tally marks is', { number: 5 }, `. ${how}:`, ...counted.map((value) => ({ number: value })), '.'],
+    steps: ['Each group of tally marks is 5.', `${how}: ${listText(counted)}.`, `There are ${n} marks.`],
     visual,
+    hint: { text: 'Each group of tally marks is 5. Count by fives.' },
   };
 }
 
@@ -286,5 +308,5 @@ export const tallyMarksGenerator: SkillGenerator = h1Skill({
   exampleSeed: 811,
   pool: { 1: 5, 2: 5 },
   generate: tallyMarks,
-  lesson: (make) => lessonOf('A tally mark is one line for each thing. The fifth mark goes across the other four.', { kind: 'tally', count: 5 }, make(1, 811), make(2, 812), 'Count the bundles by fives, then count on by ones.', { kind: 'tally', count: 7 }),
+  lesson: (make) => lessonOf('A tally mark is one line for each thing. The fifth mark goes across the other four.', { kind: 'tally', count: 5 }, make(1, 811), make(2, 812), 'Count the groups of five by fives, then count on by ones.', { kind: 'tally', count: 7 }),
 });

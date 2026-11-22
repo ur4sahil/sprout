@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
@@ -16,11 +16,12 @@ const SHAPE: { from: number; to: number; shown: number }[] = [
   { from: 4, to: 8, shown: 10 },
 ];
 
-function explain(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual } {
+function explain(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   return {
     speak: ['Count as you tap.', ...countAloud(n), 'Stop at', { number: n }, '.'],
     steps: [`Count as you tap: ${listText(Array.from({ length: n }, (_, i) => i + 1))}.`, `Stop at ${n}.`],
     visual: { kind: 'emojiGroup', emoji: thing.emoji, count: n, layout: n <= 5 ? 'row' : 'grid5', numbered: true },
+    hint: { text: 'Count as you tap. Say a number for each tap. Stop at the number you heard.' },
   };
 }
 

@@ -1,10 +1,12 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Tiered } from '../../../data/h1-things';
 import { HOLD_THINGS, WEIGHT_THINGS } from '../../../data/h1-things';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from './h1-parts';
 import { a, h1Skill, lessonOf, picture } from './h1-parts';
+
+// An explanation with the hint and spoken steps the generator gives (h1-parts' type has neither).
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint; stepsSay?: (Say | null)[] };
 
 // Math kindergarten, plan section 15 wave H1: F.4 heavier and lighter, F.5 holds more and holds less.
 // Things are only compared with things of another tier (data/h1-things.ts), so the answer is plain.
@@ -24,17 +26,28 @@ function pickThings(things: readonly Tiered[], count: number, apart: number, rng
   }
 }
 
+// The steps use the word the question asks about: "A leaf is lighter than a horse." for "Which one is lighter?"
+// (the wording audit, Nov 21, 2026).
+const HINT: Record<Kind, Record<'more' | 'less' | 'most' | 'least', string>> = {
+  weight: { more: 'Think: which one would be harder to lift?', less: 'Think: which one would be easier to lift?', most: 'Think: which one would be hardest to lift?', least: 'Think: which one would be easiest to lift?' },
+  holds: { more: 'Think: which one has more room inside?', less: 'Think: which one has less room inside?', most: 'Think: which one has the most room inside?', least: 'Think: which one has the least room inside?' },
+};
+
 function orderExplanation(kind: Kind, things: Tiered[], ask: 'most' | 'least'): Explanation {
   const sorted = [...things].sort((x, y) => y.tier - x.tier);
   const top = sorted[0] as Tiered;
   const bottom = sorted[sorted.length - 1] as Tiered;
   const verb = kind === 'weight' ? 'is' : '';
+  const than = (more: boolean): string => (kind === 'weight' ? (more ? 'is heavier than' : 'is lighter than') : more ? 'holds more than' : 'holds less than');
   const lines =
     things.length === 2
-      ? [`${a(top.name).replace(/^a/, 'A')} ${kind === 'weight' ? 'is heavier than' : 'holds more than'} ${a(bottom.name)}.`]
+      ? ask === 'most'
+        ? [`${a(top.name).replace(/^a/, 'A')} ${than(true)} ${a(bottom.name)}.`]
+        : [`${a(bottom.name).replace(/^a/, 'A')} ${than(false)} ${a(top.name)}.`]
       : [`${a(top.name).replace(/^a/, 'A')} ${verb ? `${verb} ${WORDS[kind].most}` : WORDS[kind].most}.`, `${a(bottom.name).replace(/^a/, 'A')} ${verb ? `${verb} ${WORDS[kind].least}` : WORDS[kind].least}.`];
   const picked = ask === 'most' ? top : bottom;
-  return { speak: [lines.join(' ')], steps: lines, visual: picture(picked.emoji) };
+  const hint = HINT[kind][things.length === 2 ? (ask === 'most' ? 'more' : 'less') : ask];
+  return { speak: [lines.join(' ')], steps: lines, visual: picture(picked.emoji), hint: { text: hint } };
 }
 
 function compareThings(kind: Kind) {

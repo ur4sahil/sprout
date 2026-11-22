@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { Countable } from '../../../data/countables';
@@ -51,12 +51,17 @@ export function tidyGroup(thing: Countable, n: number): Visual {
   return { kind: 'emojiGroup', emoji: thing.emoji, count: n, layout: n <= 5 ? 'row' : 'grid5' };
 }
 
-export function countExplanation(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual } {
+// The hint every "Count objects" question gives: the family's own rule (plan section 8).
+// It says no number word: "one" would name an answer of 1 (validation rule 18).
+export const COUNT_HINT: Hint = { text: 'Touch each picture as you count. Say a number for each.' };
+
+export function countExplanation(thing: Countable, n: number): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const there = n === 1 ? 'There is' : 'There are';
   return {
     speak: ["Let's count.", ...countAloud(n), `${there}`, { number: n }, `${thingsWord(thing, n)}.`],
     steps: [`Let's count: ${listText(Array.from({ length: n }, (_, i) => i + 1))}.`, `${there} ${n} ${thingsWord(thing, n)}.`],
     visual: { kind: 'emojiGroup', emoji: thing.emoji, count: n, layout: n <= 5 ? 'row' : 'grid5', numbered: true },
+    hint: COUNT_HINT,
   };
 }
 
@@ -143,9 +148,10 @@ export function countSkill(skillId: string, levels: CountLevel[], optionsLo: num
 
 // ---- Shapes and colours ----
 
+// Pre-K words: "4 sides that are all the same", not "4 equal sides" (the wording audit, Nov 21, 2026).
 export const SHAPE_FACT: Partial<Record<ShapeName, string>> = {
   circle: 'A circle is round with no corners.',
-  square: 'A square has four equal sides.',
+  square: 'A square has four sides that are all the same.',
   triangle: 'A triangle has three sides.',
   rectangle: 'A rectangle has two long sides and two short sides.',
   star: 'A star has five points.',
@@ -155,7 +161,7 @@ export const SHAPE_FACT: Partial<Record<ShapeName, string>> = {
 // The same facts for the screen, with numerals.
 export const SHAPE_FACT_TEXT: Partial<Record<ShapeName, string>> = {
   circle: 'A circle is round with no corners.',
-  square: 'A square has 4 equal sides.',
+  square: 'A square has 4 sides that are all the same.',
   triangle: 'A triangle has 3 sides.',
   rectangle: 'A rectangle has 2 long sides and 2 short sides.',
   star: 'A star has 5 points.',

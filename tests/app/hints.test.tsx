@@ -37,8 +37,8 @@ describe('a hint in practice', () => {
     expect(hintButton().getAttribute('aria-label')).toBe('Hint, 3 left');
     await user.click(hintButton());
     const dialog = await screen.findByRole('dialog', { name: 'Hint' });
-    // "Add to 10" works its answer in three steps, so the first ("Start at ...") is the nudge.
-    expect(dialog.querySelector('[data-nudge]')?.textContent).toMatch(/^Start at \d+\.$/);
+    // "Add to 10" gives its own nudge: start at the bigger number and count on.
+    expect(dialog.querySelector('[data-nudge]')?.textContent).toMatch(/^Start at (the bigger number|one of the numbers)\. Then count on\.$/);
     await user.click(screen.getByRole('button', { name: /Show me an example/ }));
     expect(dialog.getAttribute('data-hint')).toBe('example');
     expect(dialog.querySelector('[data-example-answer]')?.textContent).toMatch(/\d/);

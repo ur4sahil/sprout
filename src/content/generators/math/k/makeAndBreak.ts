@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import type { PlaceWeights } from './numerals';
@@ -9,7 +9,7 @@ import { numeralChoices } from './numerals';
 // Math K C.8 and C.9. Families: Make 10, and Break apart. Oracle: missing.
 // Both ask for the second part: a and what make the total.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint: Hint };
 
 // ---- C.8 Make 10 ----
 // Levels: ten frame with 5 to 9 filled / 1 to 9 filled / equation only, typed.
@@ -24,7 +24,14 @@ function makeTenExplanation(a: number): Explanation {
     speak: [{ number: a }, full, { number: b }, empty, { number: a }, 'and', { number: b }, 'make', { number: 10 }, '.'],
     steps: [`${a} ${full}`, `${b} ${empty}`, `${a} and ${b} make 10.`],
     visual: frame(a),
+    hint: { text: 'Count the empty boxes.' },
   };
+}
+
+// The equation level shows no ten frame before the answer, so its hint counts up from the number it shows. The
+// start is named unless it is the answer itself (5 and 5). The steps after a miss draw the frame.
+function countUpHint(a: number): Hint {
+  return { text: a === 10 - a ? 'Count up from the first number to 10.' : `Start at ${a}. Count up to 10.` };
 }
 
 const HOW_MANY_MORE: { text: string; speak: Say } = { text: 'How many more to make 10?', speak: ['How many more to make', { number: 10 }, '?'] };
@@ -41,7 +48,7 @@ function makeTenQuestion(a: number, level: Level, rng: Rng): QuestionDraft {
       stimulus: { kind: 'equation', parts: [a, '+', 'blank', '=', 10] },
       answer: b,
       maxDigits: 2,
-      explanation: makeTenExplanation(a),
+      explanation: { ...makeTenExplanation(a), hint: countUpHint(a) },
     };
   }
   // The slips: one off, or counting the full boxes instead of the empty ones.
@@ -104,11 +111,18 @@ function twoColours(a: number, b: number): Visual {
 
 function breakExplanation(total: number, a: number): Explanation {
   const b = total - a;
-  return { speak: [{ number: a }, 'and', { number: b }, 'make', { number: total }, '.'], steps: [`${a} and ${b} make ${total}.`], visual: twoColours(a, b) };
+  return {
+    speak: [{ number: a }, 'and', { number: b }, 'make', { number: total }, '.'],
+    steps: [`${a} and ${b} make ${total}.`],
+    visual: twoColours(a, b),
+    // The start is named unless it is the answer itself (4 is 2 and 2).
+    hint: { text: a === b ? 'Count up from the first number to the whole.' : `Start at ${a}. Count up to ${total}.` },
+  };
 }
 
+// The parts first, as the steps say them: "1 and what make 4?" (the wording audit, Nov 21, 2026).
 function breakPrompt(total: number, a: number): { text: string; speak: Say } {
-  return { text: `${total} is ${a} and what?`, speak: [{ number: total }, 'is', { number: a }, 'and what?'] };
+  return { text: `${a} and what make ${total}?`, speak: [{ number: a }, 'and what make', { number: total }, '?'] };
 }
 
 function breakQuestion(total: number, a: number, rng: Rng, weights: PlaceWeights): QuestionDraft {

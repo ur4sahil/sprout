@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
@@ -14,7 +14,7 @@ function pairLine(thing: Countable, n: number): string {
   return `${n} goes with ${n} ${thingsWord(thing, n)}.`;
 }
 
-function explain(thing: Countable, numbers: number[]): { speak: Say; steps: string[]; visual: Visual } {
+function explain(thing: Countable, numbers: number[]): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const speak: Say = ['Count each group.'];
   for (const n of numbers) speak.push({ number: n }, 'goes with', { number: n }, `${thingsWord(thing, n)}.`);
   const first = numbers[0] as number;
@@ -22,12 +22,16 @@ function explain(thing: Countable, numbers: number[]): { speak: Say; steps: stri
     speak,
     steps: ['Count each group.', ...numbers.map((n) => pairLine(thing, n))],
     visual: { kind: 'row', children: [numeral(first), tidyGroup(thing, first)] },
+    hint: { text: 'Count a group. Then find the number that says how many.' },
   };
 }
 
+// The question says how to answer: a match is made by tapping, never by dragging.
+const PROMPT = 'Tap a number, then tap the group with that many.';
+
 // `numbers` is the left column, top to bottom. `groups` is the right column: the same counts in another order.
 function build(thing: Countable, numbers: number[], groups: number[]): QuestionDraft {
-  const prompt = 'Match each number to its group.';
+  const prompt = PROMPT;
   return {
     type: 'match',
     mode: 'look',

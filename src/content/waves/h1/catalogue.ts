@@ -22,7 +22,7 @@ const G1 = {
 const pic = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1, layout: 'row' });
 
 // Skills whose questions have changed since the wave shipped, and the version each is on now.
-const VERSIONS: Record<string, number> = { 'M-K-F6': 2, 'M-1-C9': 2 };
+const VERSIONS: Record<string, number> = { 'M-K-F6': 3, 'M-1-C9': 2, 'M-K-A8': 2, 'M-K-A9': 2, 'M-K-A10': 2, 'M-K-A11': 2, 'M-K-A12': 2, 'M-K-A13': 2, 'M-K-B4': 2, 'M-K-B5': 2, 'M-K-C12': 2, 'M-K-C13': 2, 'M-K-C14': 2, 'M-K-C15': 2, 'M-K-C16': 2, 'M-K-C17': 2, 'M-K-E6': 2, 'M-K-E7': 2, 'M-K-F4': 2, 'M-K-F5': 2, 'M-K-G2': 2 };
 
 function row(id: string, category: string, name: string, strand: string, ladder: string, icon: Visual, itemTypes: ItemType[], ccss?: string, speakName?: Say): Skill {
   const [, grade, code] = id.split('-') as [string, string, string];

@@ -87,6 +87,7 @@ function storyQuestion(told: Told, level: Level, rng: Rng): QuestionDraft {
     speak: [{ number: a }, adding ? 'plus' : 'take away', { number: b }, 'is', { number: answer }, '.'] as Say,
     steps: [`${a} ${adding ? 'plus' : 'take away'} ${b} is ${answer}.`],
     visual: { kind: 'equation', parts: [a, adding ? '+' : '-', b, '=', answer] } as Visual,
+    hint: { text: adding ? 'Listen again. Put the groups together, then count them all.' : 'Listen again. Start with the first number, take some away, then count what is left.' },
   };
   const prompt = tellStory(told);
   if (level === 3) return { type: 'numberPad', mode: 'look', facts, prompt, answer, maxDigits: 2, explanation };

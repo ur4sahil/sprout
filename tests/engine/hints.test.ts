@@ -1,6 +1,8 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { HINTS_PER_PART, HINT_REFILL_EVERY, canHint, exampleFor, hintId, hintWindow, hintsLeft, nudgeFor, takeHint } from '../../src/app/hints';
+import { stepSay } from '../../src/audio/stepSay';
+import { sayText } from '../../src/engine/describe';
 import { givesAway, names } from '../../src/engine/giveaway';
 import type { HintBook } from '../../src/app/hints';
 import { generateQuestion } from '../../src/content/registry';
@@ -87,6 +89,13 @@ function question(skillId: string, level: number, seed: number): Question {
   return generateQuestion(skillId, level, seed);
 }
 
+// The question as if its generator gave no hint of its own, to check the rules for a nudge taken from the steps.
+function withoutHint(q: Question): Question {
+  const explanation = { ...q.explanation };
+  delete explanation.hint;
+  return { ...q, explanation };
+}
+
 describe('the nudge', () => {
   it('is the first step, only when there are at least 3, never from a sort, order or match, and never one that names the answer', () => {
     let nudged = 0;
@@ -100,13 +109,19 @@ describe('the nudge', () => {
         } catch {
           continue;
         }
-        const nudge = nudgeFor(q);
+        // A generator's own hint comes first, whatever its steps, said as its own speech or through stepSay, and it
+        // never names the answer either.
+        const own = q.explanation.hint;
+        if (own) {
+          expect(nudgeFor(q), `${skill.id} gives its own hint`).toEqual({ text: own.text, say: own.say ?? stepSay(own.text) });
+          expect(givesAway(q, own.text, own.say ? sayText(own.say) : null), `${skill.id}: ${own.text}`).toBe(false);
+        }
+        // The rules for a nudge taken from the steps, the fallback when a generator gives no hint, are checked with
+        // the generator's own hint left out.
+        const nudge = nudgeFor(withoutHint(q));
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
-        if (q.explanation.hint) {
-          // A generator's own hint comes first, whatever its steps.
-          expect(nudge?.text, skill.id).toBe(q.explanation.hint.text);
-        } else if (steps.length < 3 || listsAnswer) {
+        if (steps.length < 3 || listsAnswer) {
           expect(nudge, `${skill.id} has ${steps.length} steps and is a ${q.type}`).toBeNull();
           withheld += 1;
         } else if (givesAway(q, steps[0] ?? '', null)) {
@@ -142,9 +157,11 @@ describe('the nudge', () => {
     const say: Say = ['Count up from', { number: 9 }, ', one number at a time.'];
     expect(nudgeFor(hinted({ text: 'Count up from 9.', say }))).toEqual({ text: 'Count up from 9.', say });
     // A hint is offered even where no step could be: a sort, an order, or one with too few steps.
-    const sort = question('M-PK-D6', 3, 1);
+    const sort = withoutHint(question('M-PK-D6', 3, 1));
     expect(nudgeFor(sort)).toBeNull();
     expect(nudgeFor({ ...sort, explanation: { ...sort.explanation, hint: { text: 'Look at each picture. What is it?' } } })?.text).toBe('Look at each picture. What is it?');
+    // As M-PK-D6 does itself (the wording audit, Nov 22, 2026).
+    expect(nudgeFor(question('M-PK-D6', 3, 1))?.text).toBe('Look at each picture. Is it something to wear, a food or an animal?');
   });
 
   it('a step with its own speech in stepsSay is said that way as the nudge', () => {
@@ -155,9 +172,12 @@ describe('the nudge', () => {
 
   it('never comes from the steps of a sort, an order or a match, which list the answer', () => {
     expect(question('M-PK-D6', 3, 1).explanation.steps[0]).toBe('Clothes: shoe, shirt.');
-    expect(nudgeFor(question('M-PK-D6', 3, 1))).toBeNull(); // sort
+    expect(nudgeFor(withoutHint(question('M-PK-D6', 3, 1)))).toBeNull(); // sort
     expect(question('M-K-B3', 1, 1).explanation.steps[0]).toBe('2 is the smallest.');
-    expect(nudgeFor(question('M-K-B3', 1, 1))).toBeNull(); // order
+    expect(nudgeFor(withoutHint(question('M-K-B3', 1, 1)))).toBeNull(); // order
+    // Their own hints say how to start, never a step.
+    expect(nudgeFor(question('M-PK-D6', 3, 1))?.text).not.toBe('Clothes: shoe, shirt.');
+    expect(nudgeFor(question('M-K-B3', 1, 1))?.text).toBe('Find the smallest number first. Then find the next one.');
     expect(nudgeFor(question('E-2-D3', 1, 1))).toBeNull(); // order: "1. The turtle wanted to see the sea."
   });
 

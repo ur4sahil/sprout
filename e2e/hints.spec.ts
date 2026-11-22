@@ -21,7 +21,7 @@ test.describe('hints', () => {
     await checkScreen(page, 'practice with the hint key', 64);
     await key.click();
     const dialog = page.getByRole('dialog', { name: 'Hint' });
-    await expect(dialog.locator('[data-nudge]')).toHaveText(/^Start at \d+\.$/);
+    await expect(dialog.locator('[data-nudge]')).toHaveText(/^Start at (the bigger number|one of the numbers)\. Then count on\.$/);
     await checkScreen(page, 'hint nudge', 64);
     await page.getByRole('button', { name: /Show me an example/ }).click();
     await expect(dialog).toHaveAttribute('data-hint', 'example');

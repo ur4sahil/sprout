@@ -1,5 +1,5 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, ShapeName, SolidName, Visual } from '../../../../engine/types';
+import type { Hint, Level, QuestionDraft, ShapeName, SolidName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import { COLOURED, SHAPED, SOLID_THINGS } from '../../../data/h2-world';
@@ -12,7 +12,9 @@ import { a, cap, shape } from './parts';
 // C.8 ball, box or can, C.9 order by size.
 
 const picture = (thing: Thing): Visual => ({ kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row', speak: [thing.name] });
-const plural = (name: string): boolean => name.endsWith('s');
+// Names that mean more than one thing. A cactus is one thing, though it ends in s.
+const PLURAL_NAMES = new Set(['cherries', 'grapes']);
+const plural = (name: string): boolean => PLURAL_NAMES.has(name);
 const the = (name: string): string => `the ${name}`;
 
 // One thing for each of the offered properties, in a shuffled order. `pick` gives the things that have a property.
@@ -25,6 +27,11 @@ function oneEach<T extends Thing>(props: readonly string[], pick: (prop: string)
 // A square and a rectangle never sit in one question: a square is a rectangle too. Oracle: h2World.
 
 type Flat = (typeof SHAPED)[number]['shape'];
+// What a thing is called in a shapes question: the 🍕 is a slice, which is a triangle; a whole pizza is round.
+// The facts keep the list's name, which the answer check reads.
+const SHAPE_NAMES: Record<string, string> = { pizza: 'pizza slice' };
+const shapedThing = (thing: Thing): Thing => ({ ...thing, name: SHAPE_NAMES[thing.name] ?? thing.name });
+const SHAPE_HINT = 'Look at the outside edge of each thing.';
 function threeShapes(target: Flat, rng: Rng): Flat[] {
   const others = (['circle', 'triangle', 'square', 'rectangle'] as Flat[]).filter((each) => each !== target);
   for (;;) {
@@ -38,31 +45,34 @@ function shapesAround(level: Level, rng: Rng): QuestionDraft {
   const outline = (form: Flat): Visual => ({ ...shape(form as ShapeName, 'blue'), speak: [form] });
   if (level === 3) {
     const thing = rng.pick(SHAPED.filter((each) => each.shape === target));
+    const called = shapedThing(thing);
     const forms = rng.shuffle(threeShapes(target, rng));
-    const prompt = `What shape is ${the(thing.name)}?`;
+    const prompt = `What shape is ${the(called.name)}?`;
+    const line = `${cap(the(called.name))} is shaped like ${a(target)}.`;
     return {
       type: 'choice',
       mode: 'look',
       facts: { ask: 'shape', thing: thing.name, set: [...forms].sort(), options: forms },
       prompt: { text: prompt, speak: [prompt] },
-      stimulus: picture(thing),
+      stimulus: picture(called),
       options: forms.map(outline),
       answerIndex: forms.indexOf(target),
-      explanation: { speak: [`${cap(the(thing.name))} is shaped like ${a(target)}.`], steps: [`${cap(the(thing.name))} is shaped like ${a(target)}.`], visual: { kind: 'row', children: [picture(thing), outline(target)] } },
+      explanation: { speak: [line], steps: [line], visual: { kind: 'row', children: [picture(called), outline(target)] }, hint: { text: `Look at the outside edge of ${the(called.name)}.` } },
     };
   }
   const things = oneEach(threeShapes(target, rng), (form) => SHAPED.filter((each) => each.shape === form), rng);
   const answer = things.find((each) => each.shape === target) as (typeof things)[number];
   const prompt = level === 1 ? `Which one is shaped like ${a(target)}?` : 'Which one has this shape?';
+  const line = `${cap(the(shapedThing(answer).name))} is shaped like ${a(target)}.`;
   return {
     type: 'choice',
     mode: 'look',
     facts: { ask: 'shape', want: target, set: things.map((each) => each.name).sort(), options: things.map((each) => each.name) },
     prompt: { text: prompt, speak: [prompt] },
     ...(level === 2 ? { stimulus: outline(target) } : {}),
-    options: things.map(picture),
+    options: things.map((each) => picture(shapedThing(each))),
     answerIndex: things.indexOf(answer),
-    explanation: { speak: [`${cap(the(answer.name))} is shaped like ${a(target)}.`], steps: [`${cap(the(answer.name))} is shaped like ${a(target)}.`], visual: { kind: 'row', children: [picture(answer), outline(target)] } },
+    explanation: { speak: [line], steps: [line], visual: { kind: 'row', children: [picture(shapedThing(answer)), outline(target)] }, hint: { text: SHAPE_HINT } },
   };
 }
 
@@ -92,8 +102,9 @@ function sameShape(level: Level, rng: Rng): QuestionDraft {
   const size = (): 's' | 'm' | 'l' => (level === 1 ? 'm' : rng.pick(['s', 'm', 'l'] as const));
   const turn = (): number => (level === 3 ? rng.pick([90, 180, 270]) : 0);
   const options = offered.map((form) => shape(form, colors[1] as ColorName, size(), turn()));
-  const prompt = 'Which one is the same shape?';
-  const why = level === 3 ? 'It is turned, but it is still the same shape.' : 'The color and size do not matter.';
+  const prompt = 'Which one is the same shape as this one?';
+  const why = level === 3 ? `It is turned, but it is still ${a(target)}.` : 'The color and size do not matter.';
+  const steps = [`The shape at the top is ${a(target)}.`, `Find the other ${target}. ${why}`];
   return {
     type: 'choice',
     mode: 'look',
@@ -102,7 +113,7 @@ function sameShape(level: Level, rng: Rng): QuestionDraft {
     stimulus: shape(target, colors[0] as ColorName),
     options,
     answerIndex: offered.indexOf(target),
-    explanation: { speak: [`This one is ${a(target)} too.`, why], steps: [`This one is ${a(target)} too.`, why], visual: options[offered.indexOf(target)] as Visual },
+    explanation: { speak: [steps.join(' ')], steps, visual: options[offered.indexOf(target)] as Visual, hint: { text: 'Look at the sides and corners, not the color.' } },
   };
 }
 
@@ -145,7 +156,7 @@ function coloursAround(level: Level, rng: Rng): QuestionDraft {
       stimulus: picture(thing),
       options: offered.map(swatch),
       answerIndex: offered.indexOf(target),
-      explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(thing), swatch(target)] } },
+      explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(thing), swatch(target)] }, hint: { text: `Find the circle that is the same color as ${the(thing.name)}.` } },
     };
   }
   const things = oneEach(hues, (hue) => COLOURED.filter((each) => each.colour === hue), rng);
@@ -159,7 +170,7 @@ function coloursAround(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: things.map(picture),
     answerIndex: things.indexOf(answer),
-    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(answer), swatch(target)] } },
+    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(answer), swatch(target)] }, hint: { text: 'Look at each picture and say its color.' } },
   };
 }
 
@@ -181,6 +192,7 @@ export const coloursAroundGenerator: SkillGenerator = skill({
 type Round = (typeof SOLID_THINGS)[number]['solid'];
 const LIKE: Record<Round, string> = { sphere: 'a ball', cube: 'a box', cylinder: 'a can' };
 const SOLIDS: Round[] = ['sphere', 'cube', 'cylinder'];
+const SOLID_HINT: Hint = { text: 'A ball rolls. A box has flat sides. A can has round ends.' };
 
 function ballBoxCan(level: Level, rng: Rng): QuestionDraft {
   const target = rng.pick(SOLIDS);
@@ -188,7 +200,7 @@ function ballBoxCan(level: Level, rng: Rng): QuestionDraft {
   if (level === 3) {
     const thing = rng.pick(SOLID_THINGS.filter((each) => each.solid === target));
     const offered = rng.shuffle(SOLIDS);
-    const prompt = `Which shape is ${the(thing.name)}?`;
+    const prompt = `What shape is ${the(thing.name)}?`;
     const said = `${cap(the(thing.name))} is a ${target}, shaped like ${LIKE[target]}.`;
     return {
       type: 'choice',
@@ -198,7 +210,7 @@ function ballBoxCan(level: Level, rng: Rng): QuestionDraft {
       stimulus: picture(thing),
       options: offered.map(solid),
       answerIndex: offered.indexOf(target),
-      explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(thing), solid(target)] } },
+      explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(thing), solid(target)] }, hint: SOLID_HINT },
     };
   }
   const things = oneEach(SOLIDS, (name) => SOLID_THINGS.filter((each) => each.solid === name), rng);
@@ -213,7 +225,7 @@ function ballBoxCan(level: Level, rng: Rng): QuestionDraft {
     ...(level === 1 ? { stimulus: solid(target) } : {}),
     options: things.map(picture),
     answerIndex: things.indexOf(answer),
-    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(answer), solid(target)] } },
+    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: [picture(answer), solid(target)] }, hint: SOLID_HINT },
   };
 }
 
@@ -243,7 +255,8 @@ function orderSize(level: Level, rng: Rng): QuestionDraft {
   const form = rng.pick(FORMS);
   const item = (value: number): Visual => (level === 3 ? { kind: 'bar', length: value, color, orientation: 'vertical' } : shape(form, color, (['s', 'm', 'l'] as const)[value - 1]));
   const words = level === 3 ? (dir === 'up' ? ['shortest', 'tallest'] : ['tallest', 'shortest']) : dir === 'up' ? ['smallest', 'biggest'] : ['biggest', 'smallest'];
-  const prompt = `Put them in order, ${words[0]} first.`;
+  // An order is answered by tapping, first to last. The prompt says so.
+  const prompt = `Tap them from ${words[0]} to ${words[1]}.`;
   const sorted = [...values].sort((x, y) => (dir === 'up' ? x - y : y - x));
   const said = `First the ${words[0]}, then the middle one, then the ${words[1]}.`;
   return {
@@ -253,7 +266,7 @@ function orderSize(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     items: values.map(item),
     answerOrder: sorted.map((value) => values.indexOf(value)),
-    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: sorted.map(item) } },
+    explanation: { speak: [said], steps: [said], visual: { kind: 'row', children: sorted.map(item) }, hint: { text: `Find the ${words[0]} one first. Then the next one.` } },
   };
 }
 

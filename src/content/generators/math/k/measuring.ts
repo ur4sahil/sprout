@@ -1,12 +1,15 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, SortBin, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, SortBin, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { Countable } from '../../../data/countables';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
-import { cap, easyToTellApart, shape, tidyGroup, twoClearColors } from '../pk/parts';
+import { PATTERN_HINT } from '../pk/M-PK-D2';
+import { SORT_SHAPES, sortHint, sortedLine } from '../pk/M-PK-D3';
+import { EMPTY_SPOT } from '../pk/h2-patterns';
+import { a, cap, easyToTellApart, shape, tidyGroup, twoClearColors } from '../pk/parts';
 
 // Math K F.1, F.2 and G.1. Families: Order by length, Sorting, Patterns.
 
@@ -30,7 +33,7 @@ function lengthQuestion(word: string, ask: Ask, values: number[], color: ColorNa
     prompt: { text: prompt, speak: [prompt] },
     options: values.map((length) => bar(length, color, orientation)),
     answerIndex,
-    explanation: { speak: [`This one is ${word}.`], steps: ['Line up one end, then look at the other.', `This one is ${word}.`], visual: bar(wanted, color, orientation) },
+    explanation: { speak: [`This one is ${word}.`], steps: ['Line up one end, then look at the other.', `This one is ${word}.`], visual: bar(wanted, color, orientation), hint: { text: 'Line up the starting ends. Then look at the other ends.' } },
   };
 }
 
@@ -89,10 +92,16 @@ function sides(count: number, rng: Rng): number[] {
   return rng.shuffle(Array.from({ length: count }, (_, i) => (i < first ? 0 : 1)));
 }
 
+// What each group holds, said with the group's name (as in pre-K D.3), never "these ones".
+function sortExplanation(by: string, groups: readonly string[], visual: Visual): QuestionDraft['explanation'] {
+  const steps = groups.map((group) => sortedLine(by, group));
+  return { speak: [steps.join(' ')], steps, visual, hint: sortHint(by) };
+}
+
 function sortQuestion(count: number, rng: Rng): QuestionDraft {
   const byColour = rng.int(0, 1) === 0;
   const where = sides(count, rng);
-  const prompt = 'Put each one in its group.';
+  const prompt = SORT_SHAPES;
   if (byColour) {
     const colors = twoClearColors(rng);
     const attrs = where.map((s) => colors[s] as ColorName);
@@ -106,7 +115,7 @@ function sortQuestion(count: number, rng: Rng): QuestionDraft {
       items,
       bins,
       answerBin: attrs.map((attr) => colors.indexOf(attr)),
-      explanation: { speak: [`These ones are ${colors[0]}. These ones are ${colors[1]}.`], steps: [`These ones are ${colors[0]}.`, `These ones are ${colors[1]}.`], visual: { kind: 'row', children: items.filter((_, i) => attrs[i] === colors[0]) } },
+      explanation: sortExplanation('colour', colors, { kind: 'row', children: items.filter((_, i) => attrs[i] === colors[0]) }),
     };
   }
   const forms = rng.sample(SHAPES, 2) as [ShapeName, ShapeName];
@@ -121,7 +130,7 @@ function sortQuestion(count: number, rng: Rng): QuestionDraft {
     items,
     bins,
     answerBin: attrs.map((attr) => forms.indexOf(attr)),
-    explanation: { speak: [`These ones are ${forms[0]}s. These ones are ${forms[1]}s.`], steps: [`These ones are ${forms[0]}s.`, `These ones are ${forms[1]}s.`], visual: { kind: 'row', children: items.filter((_, i) => attrs[i] === forms[0]) } },
+    explanation: sortExplanation('shape', [`${forms[0]}s`, `${forms[1]}s`], { kind: 'row', children: items.filter((_, i) => attrs[i] === forms[0]) }),
   };
 }
 
@@ -135,7 +144,7 @@ function whichHasMore(rng: Rng): QuestionDraft {
   const answerIndex = a > b ? 0 : 1;
   const more = things[answerIndex] as Countable;
   const prompt = 'Which group has more?';
-  const said: Say = ['There are', { number: a }, `${a === 1 ? things[0].one : things[0].many}`, 'and', { number: b }, `${b === 1 ? things[1].one : things[1].many}.`, { number: Math.max(a, b) }, 'is more than', { number: Math.min(a, b) }, '.'];
+  const said: Say = ['I see', { number: a }, `${a === 1 ? things[0].one : things[0].many}`, 'and', { number: b }, `${b === 1 ? things[1].one : things[1].many}.`, { number: Math.max(a, b) }, 'is more than', { number: Math.min(a, b) }, '.'];
   return {
     type: 'choice',
     mode: 'look',
@@ -145,8 +154,9 @@ function whichHasMore(rng: Rng): QuestionDraft {
     answerIndex,
     explanation: {
       speak: said,
-      steps: [`There are ${a} ${a === 1 ? things[0].one : things[0].many} and ${b} ${b === 1 ? things[1].one : things[1].many}.`, `${Math.max(a, b)} is more than ${Math.min(a, b)}.`],
+      steps: [`I see ${a} ${a === 1 ? things[0].one : things[0].many} and ${b} ${b === 1 ? things[1].one : things[1].many}.`, `${Math.max(a, b)} is more than ${Math.min(a, b)}.`],
       visual: tidyGroup(more, Math.max(a, b)),
+      hint: { text: 'Count each group. Which count is bigger?' },
     },
   };
 }
@@ -166,13 +176,13 @@ export const sortAndCountGenerator: SkillGenerator = {
     const blues: Visual = { kind: 'row', children: [shape('square', 'blue'), shape('triangle', 'blue')] };
     return [
       { beat: 'see', text: 'First sort. Then count each group.', speak: ['First sort. Then count each group.'], visual: { kind: 'row', children: [shape('circle', 'red'), shape('square', 'blue'), shape('star', 'red')] } },
-      { beat: 'watch', text: 'These ones are red. These ones are blue.', speak: ['These ones are red. These ones are blue.'], visual: reds },
+      { beat: 'watch', text: sortExplanation('colour', ['red', 'blue'], reds).steps.join(' '), speak: sortExplanation('colour', ['red', 'blue'], reds).speak, visual: reds },
       {
         beat: 'try',
         text: 'Which group has more?',
         speak: ['Which group has more?'],
         visual: { kind: 'row', children: [reds, blues] },
-        reveal: { text: 'There are 3 red and 2 blue. 3 is more than 2.', speak: ['There are', { number: 3 }, 'red and', { number: 2 }, 'blue.', { number: 3 }, 'is more than', { number: 2 }, '.'], visual: reds },
+        reveal: { text: 'I see 3 red and 2 blue. 3 is more than 2.', speak: ['I see', { number: 3 }, 'red and', { number: 2 }, 'blue.', { number: 3 }, 'is more than', { number: 2 }, '.'], visual: reds },
       },
       { beat: 'remember', text: 'Things in a group share something.', speak: ['Things in a group share something.'], visual: reds },
     ];
@@ -187,6 +197,22 @@ interface Part {
   picture: Visual;
 }
 
+// A shape is said with "a" ("a square"); a colour on its own ("red"). Several of one: "two squares", "two reds".
+const called = (part: Part, by: string): string => (by === 'shape' ? a(part.name) : part.name);
+
+// What comes next, as a rule that is always true of the pattern (the wording audit, Nov 21, 2026). With a part that
+// comes once in the unit, the part before the gap is enough: "After a circle comes a square." With a part that
+// comes twice (AAB, ABB), it is not: in square, square, circle the first square is followed by a square. So say
+// how many came before: "After two squares comes a circle." or "After one square comes a second square."
+export function nextRule(unit: Part[], order: number[], blankAt: number, by: string): string {
+  const at = (i: number): number => order[((i % order.length) + order.length) % order.length] as number;
+  const before = unit[at(blankAt - 1)] as Part;
+  const answer = unit[at(blankAt)] as Part;
+  if (order.filter((i) => i === at(blankAt - 1)).length === 1) return `After ${called(before, by)} comes ${called(answer, by)}.`;
+  if (at(blankAt - 2) === at(blankAt - 1)) return `After two ${before.name}s comes ${called(answer, by)}.`;
+  return `After one ${before.name} comes a second ${before.name}.`;
+}
+
 // Two or three colours, each easy to tell from the others.
 function clearColors(count: 2 | 3, rng: Rng): ColorName[] {
   const [one, two] = twoClearColors(rng);
@@ -197,15 +223,17 @@ function clearColors(count: 2 | 3, rng: Rng): ColorName[] {
   }
 }
 
-function patternExplanation(unit: Part[], order: number[], blankAt: number, total: number): { speak: Say; steps: string[]; visual: Visual } {
+function patternExplanation(unit: Part[], order: number[], blankAt: number, total: number, by: string): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const at = (i: number): Part => unit[order[i % order.length] as number] as Part;
   const names = order.map((i) => (unit[i] as Part).name).join(', ');
   const answer = at(blankAt);
-  const ending = blankAt === total - 1 ? `After ${at(blankAt - 1).name} comes ${answer.name}.` : `The missing one is ${answer.name}.`;
+  const last = blankAt === total - 1;
+  const ending = last ? nextRule(unit, order, blankAt, by) : `${cap(called(answer, by))} goes in the empty spot.`;
   return {
     speak: [`The pattern is ${names}, and it repeats. ${ending}`],
     steps: [`The pattern is ${names}, and it repeats.`, ending],
     visual: { kind: 'sequence', items: Array.from({ length: total }, (_, i) => at(i).picture) },
+    hint: last ? PATTERN_HINT : { text: 'Say the pattern out loud. What fits in the empty spot?' },
   };
 }
 
@@ -213,7 +241,8 @@ function patternQuestion(unit: Part[], order: number[], blankAt: number, total: 
   const at = (i: number): Part => unit[order[i % order.length] as number] as Part;
   const offered = rng.shuffle(unit);
   const answer = at(blankAt);
-  const prompt = blankAt === total - 1 ? 'What comes next?' : 'Which one is missing?';
+  // A blank inside the pattern is asked the same way as in pre-K D.4.
+  const prompt = blankAt === total - 1 ? 'What comes next?' : EMPTY_SPOT;
   return {
     type: 'choice',
     mode: 'look',
@@ -222,7 +251,7 @@ function patternQuestion(unit: Part[], order: number[], blankAt: number, total: 
     stimulus: { kind: 'sequence', items: Array.from({ length: total }, (_, i) => (i === blankAt ? 'blank' : at(i).picture)) },
     options: offered.map((part) => part.picture),
     answerIndex: offered.indexOf(answer),
-    explanation: patternExplanation(unit, order, blankAt, total),
+    explanation: patternExplanation(unit, order, blankAt, total, by),
   };
 }
 
@@ -259,8 +288,8 @@ export const patternsGenerator: SkillGenerator = {
     const red: Part = { name: 'red', picture: shape('circle', 'red', 's') };
     const blue: Part = { name: 'blue', picture: shape('circle', 'blue', 's') };
     const yellow: Part = { name: 'yellow', picture: shape('circle', 'yellow', 's') };
-    const abb = patternExplanation([red, blue], [0, 1, 1], 6, 7);
-    const abc = patternExplanation([red, blue, yellow], [0, 1, 2], 7, 8);
+    const abb = patternExplanation([red, blue], [0, 1, 1], 6, 7, 'colour');
+    const abc = patternExplanation([red, blue, yellow], [0, 1, 2], 7, 8, 'colour');
     return [
       { beat: 'see', text: 'A pattern has a part that repeats: red, blue, blue.', speak: ['A pattern has a part that repeats: red, blue, blue.'], visual: { kind: 'sequence', items: [red.picture, blue.picture, blue.picture, red.picture, blue.picture, blue.picture] } },
       { beat: 'watch', text: abb.steps.join(' '), speak: abb.speak, visual: abb.visual },

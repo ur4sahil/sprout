@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { FigureId } from '../../../../engine/figures';
 import { figureFor } from '../../../../engine/figures';
 import type { SkillGenerator } from '../../../generator';
@@ -9,7 +9,7 @@ import { shape } from '../pk/parts';
 // Kindergarten skills added by the Nov 17, 2026 curriculum check (plan section 8): E.4 position words,
 // E.5 shapes made from shapes, F.3 what can be measured.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint: Hint };
 // Words with numbers in them, said with each number as a number.
 const spoken = (words: string): Say => words.split(/(\d+)/).filter((part) => part.length > 0).map((part) => (/^\d+$/.test(part) ? { number: Number(part) } : part));
 const say = (value: string): Visual => ({ kind: 'text', value, size: 'l', speak: [value] });
@@ -37,10 +37,15 @@ function placed(where: Where, rng: Rng): [number, number] {
 
 const scene = (emoji: string, thing: number, box: number): Visual => ({ kind: 'emojiGroup', emoji, count: 1, emoji2: BOX.emoji, count2: 1, layout: 'scatter', slots: [thing, box] });
 
-function positionExplanation(name: string, where: Where, visual: Visual): Explanation {
-  const line = `The ${name} is ${where === 'beside' ? 'beside, next to,' : where} the box.`;
-  return { speak: [line], steps: [line], visual };
+// "next to", the words the options show, never "beside, next to," (the wording audit, Nov 21, 2026).
+function positionExplanation(name: string, where: Where, visual: Visual, hint: Hint): Explanation {
+  const line = `The ${name} is ${where === 'beside' ? 'next to' : where} the box.`;
+  return { speak: [line], steps: [line], visual, hint };
 }
+
+// What the words mean. Level 1 asks only above or below.
+const ABOVE_BELOW: Hint = { text: 'Above means higher up. Below means lower down.' };
+const THREE_WORDS: Hint = { text: 'Above means higher up. Below means lower down. Next to means at the side.' };
 
 function positions(level: Level, rng: Rng): QuestionDraft {
   const thing = rng.pick(THINGS);
@@ -56,7 +61,7 @@ function positions(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: prompt, speak: [prompt] },
       options: slots.map(([a, b]) => scene(thing.emoji, a, b)),
       answerIndex: order.indexOf(want),
-      explanation: positionExplanation(thing.name, want, scene(thing.emoji, ...(slots[order.indexOf(want)] as [number, number]))),
+      explanation: positionExplanation(thing.name, want, scene(thing.emoji, ...(slots[order.indexOf(want)] as [number, number])), THREE_WORDS),
     };
   }
   const words: Where[] = level === 1 ? ['above', 'below'] : ['above', 'below', 'beside'];
@@ -73,7 +78,7 @@ function positions(level: Level, rng: Rng): QuestionDraft {
     stimulus: visual,
     options: words.map((word) => say(`${word === 'beside' ? 'next to' : word} the box`)),
     answerIndex: words.indexOf(where),
-    explanation: positionExplanation(thing.name, where, visual),
+    explanation: positionExplanation(thing.name, where, visual, level === 1 ? ABOVE_BELOW : THREE_WORDS),
   };
 }
 
@@ -114,10 +119,12 @@ function figureOf(piece: ShapeName, count: number, makes: ShapeName): FigureId {
 }
 const pieces = (piece: ShapeName, count: number, makes: ShapeName): Visual => ({ kind: 'figure', figure: figureOf(piece, count, makes), show: 'pieces' });
 
-function composeExplanation(entry: (typeof MADE)[number]): Explanation {
+function composeExplanation(entry: (typeof MADE)[number], hint: Hint): Explanation {
   const line = `${entry.count} ${entry.piece}s put together make a ${entry.makes === 'square' && entry.piece === 'square' ? 'bigger square' : entry.makes}.`;
-  return { speak: spoken(line), steps: [line], visual: { kind: 'figure', figure: figureOf(entry.piece, entry.count, entry.makes), show: 'cut' } };
+  return { speak: spoken(line), steps: [line], visual: { kind: 'figure', figure: figureOf(entry.piece, entry.count, entry.makes), show: 'cut' }, hint };
 }
+
+const PIECES_HINT: Hint = { text: 'Picture the pieces pushed together. Look at the outside edge.' };
 
 function composeShapes(level: Level, rng: Rng): QuestionDraft {
   const pool = level === 1 ? MADE.filter((each) => each.count === 2) : MADE;
@@ -126,7 +133,9 @@ function composeShapes(level: Level, rng: Rng): QuestionDraft {
     // Which pieces make this shape? The other piece sets make something else.
     const others = MADE.filter((each) => each.makes !== entry.makes);
     const choices = rng.shuffle([entry, ...rng.sample(others, 2)]);
-    const prompt = `Which pieces can make a ${entry.makes}?`;
+    // "this rectangle", the one drawn, never "a rectangle": 4 squares in a row, or the square 2 triangles make, are
+    // rectangles too, so only the drawn shape makes one choice right (the wording audit, Nov 21, 2026).
+    const prompt = `Which pieces make this ${entry.makes}?`;
     return {
       type: 'choice',
       mode: 'look',
@@ -135,20 +144,21 @@ function composeShapes(level: Level, rng: Rng): QuestionDraft {
       stimulus: shape(entry.makes, 'orange', 'l'),
       options: choices.map((each) => pieces(each.piece, each.count, each.makes)),
       answerIndex: choices.indexOf(entry),
-      explanation: composeExplanation(entry),
+      explanation: composeExplanation(entry, { text: 'Picture each set of pieces pushed together. Which set makes this shape?' }),
     };
   }
   const choices = rng.shuffle([entry.makes, ...rng.sample(CANNOT, 2)]);
-  const prompt = `Put the ${entry.piece}s together. Which shape can they make?`;
+  // The pieces cannot be moved: it is a tap-one question (the wording audit, Nov 21, 2026).
+  const prompt = `These ${entry.count} ${entry.piece}s fit together. Which shape do they make?`;
   return {
     type: 'choice',
     mode: 'look',
     facts: { ask: 'makes', piece: entry.piece, count: entry.count, options: choices },
-    prompt: { text: prompt, speak: [prompt] },
+    prompt: { text: prompt, speak: spoken(prompt) },
     stimulus: pieces(entry.piece, entry.count, entry.makes),
     options: choices.map((each) => ({ ...shape(each, 'orange', 'm'), speak: [each] }) as Visual),
     answerIndex: choices.indexOf(entry.makes),
-    explanation: composeExplanation(entry),
+    explanation: composeExplanation(entry, PIECES_HINT),
   };
 }
 
@@ -164,7 +174,7 @@ export const composeShapesGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Small shapes can be put together to make bigger shapes.', speak: ['Small shapes can be put together to make bigger shapes.'], visual: pieces('square', 2, 'rectangle') },
     { beat: 'watch', text: '2 squares side by side make a rectangle.', speak: ['Two squares side by side make a rectangle.'], visual: shape('rectangle', 'blue', 'l') },
-    { beat: 'try', text: 'Put the triangles together. Which shape can they make?', speak: ['Put the triangles together. Which shape can they make?'], visual: pieces('triangle', 2, 'square'), reveal: { text: '2 triangles make a square.', speak: ['Two triangles make a square.'], visual: { kind: 'figure', figure: 'square-2tri', show: 'cut' } } },
+    { beat: 'try', text: 'These 2 triangles fit together. Which shape do they make?', speak: ['These two triangles fit together. Which shape do they make?'], visual: pieces('triangle', 2, 'square'), reveal: { text: '2 triangles make a square.', speak: ['Two triangles make a square.'], visual: { kind: 'figure', figure: 'square-2tri', show: 'cut' } } },
     { beat: 'remember', text: 'Shapes fit together to make new shapes.', speak: ['Shapes fit together to make new shapes.'], visual: pieces('trapezoid', 2, 'hexagon') },
   ],
   oracle: 'composeShape',
@@ -173,18 +183,23 @@ export const composeShapesGenerator: SkillGenerator = {
 // ---- F.3 What can be measured ----
 // Levels: what a ruler or a scale tells / and a measuring cup / which tool to use. Oracle: measureTool.
 
+// What each tool tells. `tells` is the short answer on an option, which the answer check and the lesson read;
+// `says` is the whole phrase for the question and the steps: "What do you use to find out how heavy something is?",
+// never "to find how heavy" (the wording audit, Nov 21, 2026).
 const TOOLS = [
-  { emoji: '📏', name: 'a ruler', tells: 'how long' },
-  { emoji: '⚖️', name: 'a scale', tells: 'how heavy' },
-  { emoji: '🥛', name: 'a measuring cup', tells: 'how much it holds' },
+  { emoji: '📏', name: 'a ruler', tells: 'how long', says: 'how long something is' },
+  { emoji: '⚖️', name: 'a scale', tells: 'how heavy', says: 'how heavy something is' },
+  { emoji: '🥛', name: 'a measuring cup', tells: 'how much it holds', says: 'how much something holds' },
 ] as const;
 
 function measurable(level: Level, rng: Rng): QuestionDraft {
   const tools = level === 1 ? TOOLS.slice(0, 2) : TOOLS;
   const tool = rng.pick(tools);
-  const why: Explanation = { speak: [`${tool.name} tells ${tool.tells}.`], steps: [`${tool.name.replace(/^a/, 'A')} tells ${tool.tells}.`], visual: { kind: 'emojiGroup', emoji: tool.emoji, count: 1, layout: 'row' } };
+  const line = `${tool.name.replace(/^a/, 'A')} tells you ${tool.says}.`;
+  const hint: Hint = { text: level === 3 ? 'Think about each tool. What do you do with it?' : `Think: what do you do with ${tool.name}?` };
+  const why: Explanation = { speak: [line], steps: [line], visual: { kind: 'emojiGroup', emoji: tool.emoji, count: 1, layout: 'row' }, hint };
   if (level === 3) {
-    const prompt = `What do you use to find ${tool.tells}?`;
+    const prompt = `What do you use to find out ${tool.says}?`;
     return {
       type: 'choice',
       mode: 'look',
@@ -220,9 +235,9 @@ export const measurableGenerator: SkillGenerator = {
   exampleSeed: 643,
   example: () => measurable(1, makeRng(643)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'We can measure how long, how heavy, and how much something holds.', speak: ['We can measure how long, how heavy, and how much something holds.'], visual: { kind: 'row', children: TOOLS.map((each): Visual => ({ kind: 'emojiGroup', emoji: each.emoji, count: 1, layout: 'row' })) } },
-    { beat: 'watch', text: 'A ruler tells how long.', speak: ['A ruler tells how long.'], visual: { kind: 'emojiGroup', emoji: '📏', count: 1, layout: 'row' } },
-    { beat: 'try', text: 'What can a scale tell you?', speak: ['What can a scale tell you?'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' }, reveal: { text: 'A scale tells how heavy.', speak: ['A scale tells how heavy.'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' } } },
+    { beat: 'see', text: 'We can measure how long something is, how heavy it is, and how much it holds.', speak: ['We can measure how long something is, how heavy it is, and how much it holds.'], visual: { kind: 'row', children: TOOLS.map((each): Visual => ({ kind: 'emojiGroup', emoji: each.emoji, count: 1, layout: 'row' })) } },
+    { beat: 'watch', text: 'A ruler tells you how long something is.', speak: ['A ruler tells you how long something is.'], visual: { kind: 'emojiGroup', emoji: '📏', count: 1, layout: 'row' } },
+    { beat: 'try', text: 'What can a scale tell you?', speak: ['What can a scale tell you?'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' }, reveal: { text: 'A scale tells you how heavy something is.', speak: ['A scale tells you how heavy something is.'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' } } },
     { beat: 'remember', text: 'Ruler: long. Scale: heavy. Cup: holds.', speak: ['Ruler: long. Scale: heavy. Cup: holds.'], visual: { kind: 'emojiGroup', emoji: '🥛', count: 1, layout: 'row' } },
   ],
   oracle: 'measureTool',

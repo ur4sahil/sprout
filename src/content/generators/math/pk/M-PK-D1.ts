@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
@@ -12,12 +12,11 @@ import { a, shape, twoClearColors } from './parts';
 const SHAPES: ShapeName[] = ['circle', 'square', 'triangle', 'star', 'heart'];
 const SIZE_WORD = { s: 'small', l: 'big' } as const;
 
-function explain(same: string, different: string, odd: Visual): { speak: Say; steps: string[]; visual: Visual } {
-  return {
-    speak: [`These two are both ${same}. This one is ${different}.`],
-    steps: [`These two are both ${same}.`, `This one is ${different}.`],
-    visual: odd,
-  };
+// The steps say what two of them share and what the odd one is, never "these two": after a miss only the child's
+// pick and the right answer are on screen (the wording audit, Nov 21, 2026).
+function explain(same: string, different: string, odd: Visual): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
+  const steps = [`Two of them are ${same}.`, `One is ${different}. It is different.`];
+  return { speak: [steps.join(' ')], steps, visual: odd, hint: { text: 'Look for the one that does not match the others.' } };
 }
 
 // `attrs` has the odd one's attribute at `oddAt` and the shared attribute everywhere else.
@@ -63,7 +62,7 @@ function lesson(): LessonStep[] {
     { beat: 'see', text: 'Some things match. One of these does not.', speak: ['Some things match. One of these does not.'], visual: three(['red', 'red', 'blue']) },
     {
       beat: 'watch',
-      text: 'These two are both red. This one is blue.',
+      text: explain('red', 'blue', shape('circle', 'blue')).steps.join(' '),
       speak: explain('red', 'blue', shape('circle', 'blue')).speak,
       visual: three(['red', 'red', 'blue']),
     },
@@ -72,7 +71,7 @@ function lesson(): LessonStep[] {
       text: 'Which one is different?',
       speak: ['Which one is different?'],
       visual: three(['green', 'yellow', 'green']),
-      reveal: { text: 'These two are both green. This one is yellow.', speak: explain('green', 'yellow', shape('circle', 'yellow')).speak, visual: shape('circle', 'yellow') },
+      reveal: { text: explain('green', 'yellow', shape('circle', 'yellow')).steps.join(' '), speak: explain('green', 'yellow', shape('circle', 'yellow')).speak, visual: shape('circle', 'yellow') },
     },
     { beat: 'remember', text: 'Look for what does not match.', speak: ['Look for what does not match.'], visual: three(['green', 'yellow', 'green']) },
   ];

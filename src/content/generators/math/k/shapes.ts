@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, SolidName, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, SolidName, Visual } from '../../../../engine/types';
 import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
@@ -23,9 +23,9 @@ const FACT: Record<string, { say: string; text: string }> = {
   cylinder: { say: 'A cylinder has two round ends.', text: 'A cylinder has 2 round ends.' },
 };
 
-function nameExplanation(name: string, picture: Visual): { speak: Say; steps: string[]; visual: Visual } {
+function nameExplanation(name: string, picture: Visual, hint: Hint): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const fact = FACT[name] as { say: string; text: string };
-  return { speak: [`This is ${a(name)}.`, fact.say], steps: [`This is ${a(name)}.`, fact.text], visual: picture };
+  return { speak: [`This is ${a(name)}.`, fact.say], steps: [`This is ${a(name)}.`, fact.text], visual: picture, hint };
 }
 
 // ---- E.1 Name flat shapes ----
@@ -36,9 +36,18 @@ const MORE: ShapeName[] = [...BASIC, 'hexagon', 'oval', 'diamond'];
 // Turned: no diamond, because a turned diamond and a turned square are the same picture. No circle: a turn does not show.
 const TURNED: ShapeName[] = ['square', 'triangle', 'rectangle', 'hexagon', 'oval'];
 const TURNS = [15, 30, 330, 345];
+// Shapes that never sit together, or a careful child could argue for two: a diamond is drawn as a square standing
+// on its corner (the wording audit, Nov 21, 2026). A turned square and a turned rectangle do sit together at level
+// 3: the kindergarten lesson teaches telling them apart (2 long sides and 2 short sides, or all 4 the same).
+const CLASHES: [ShapeName, ShapeName][] = [['square', 'diamond']];
+const clash = (names: ShapeName[]): boolean => CLASHES.some(([one, two]) => names.includes(one) && names.includes(two));
+// A listen question's hint never names the shape asked for.
+const LISTEN_HINT: Hint = { text: 'Listen again. Then count the sides and corners of each shape.' };
 
 function nameFlat(level: Level, rng: Rng): QuestionDraft {
-  const names = rng.sample(level === 1 ? BASIC : level === 2 ? MORE : TURNED, 3);
+  let names: ShapeName[];
+  do names = rng.sample(level === 1 ? BASIC : level === 2 ? MORE : TURNED, 3);
+  while (clash(names));
   const color = rng.pick(COLOR_NAMES);
   const target = rng.pick(names);
   const turns = level === 3 ? names.map(() => rng.pick(TURNS)) : names.map(() => 0);
@@ -51,7 +60,7 @@ function nameFlat(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: 'Find the shape.', speak: [`Find the ${target}.`] },
     options: names.map((name, i) => shape(name, color, 'm', turns[i])),
     answerIndex: names.indexOf(target),
-    explanation: nameExplanation(target, shape(target, color)),
+    explanation: nameExplanation(target, shape(target, color), LISTEN_HINT),
   };
 }
 
@@ -67,13 +76,13 @@ export const nameFlatGenerator: SkillGenerator = {
     const row = (names: ShapeName[]): Visual => ({ kind: 'row', children: names.map((name) => shape(name, 'green')) });
     return [
       { beat: 'see', text: 'Flat shapes have names. This is a hexagon.', speak: ['Flat shapes have names. This is a hexagon.'], visual: shape('hexagon', 'green') },
-      { beat: 'watch', text: 'Find the oval. This is an oval. An oval is a stretched circle.', speak: ['Find the oval.', ...nameExplanation('oval', shape('oval', 'green')).speak], visual: row(['circle', 'oval']) },
+      { beat: 'watch', text: 'Find the oval. This is an oval. An oval is a stretched circle.', speak: ['Find the oval.', ...nameExplanation('oval', shape('oval', 'green'), LISTEN_HINT).speak], visual: row(['circle', 'oval']) },
       {
         beat: 'try',
         text: 'Find the triangle.',
         speak: ['Find the triangle.'],
         visual: row(['square', 'triangle', 'hexagon']),
-        reveal: { text: 'This is a triangle. A triangle has 3 sides.', speak: nameExplanation('triangle', shape('triangle', 'green')).speak, visual: shape('triangle', 'green') },
+        reveal: { text: 'This is a triangle. A triangle has 3 sides.', speak: nameExplanation('triangle', shape('triangle', 'green'), LISTEN_HINT).speak, visual: shape('triangle', 'green') },
       },
       { beat: 'remember', text: 'Count the sides and corners.', speak: ['Count the sides and corners.'], visual: row(['triangle', 'square', 'hexagon']) },
     ];
@@ -86,6 +95,8 @@ export const nameFlatGenerator: SkillGenerator = {
 const SOLIDS: SolidName[] = ['cube', 'sphere', 'cone', 'cylinder'];
 const FLAT_FOR_SOLID: ShapeName[] = ['circle', 'square', 'triangle', 'rectangle'];
 const solid = (name: SolidName): Visual => ({ kind: 'solid', solid: name });
+const SOLID_HINT: Hint = { text: 'Look for flat faces, curved sides and points.' };
+const FLAT_OR_SOLID: Hint = { text: 'A flat shape is like a drawing on paper. A solid shape is like a toy you can hold.' };
 
 function nameSolid(level: Level, rng: Rng): QuestionDraft {
   if (level < 3) {
@@ -99,7 +110,7 @@ function nameSolid(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: prompt, speak: [prompt] },
       options: names.map((name) => solid(name)),
       answerIndex: names.indexOf(target),
-      explanation: nameExplanation(target, solid(target)),
+      explanation: nameExplanation(target, solid(target), SOLID_HINT),
     };
   }
   // Two of one kind and one of the other. The child finds the one that is solid, or the one that is flat.
@@ -124,7 +135,7 @@ function nameSolid(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: shown.map((item) => item.picture),
     answerIndex,
-    explanation: { speak: [said], steps: [said], visual: answer.picture },
+    explanation: { speak: [said], steps: [said], visual: answer.picture, hint: FLAT_OR_SOLID },
   };
 }
 
@@ -139,13 +150,13 @@ export const nameSolidGenerator: SkillGenerator = {
   example: () => nameSolid(1, makeRng(42)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Solid shapes are not flat. This is a cube.', speak: ['Solid shapes are not flat. This is a cube.'], visual: solid('cube') },
-    { beat: 'watch', text: 'Find the sphere. This is a sphere. A sphere is round like a ball.', speak: ['Find the sphere.', ...nameExplanation('sphere', solid('sphere')).speak], visual: { kind: 'row', children: [solid('cube'), solid('sphere')] } },
+    { beat: 'watch', text: 'Find the sphere. This is a sphere. A sphere is round like a ball.', speak: ['Find the sphere.', ...nameExplanation('sphere', solid('sphere'), SOLID_HINT).speak], visual: { kind: 'row', children: [solid('cube'), solid('sphere')] } },
     {
       beat: 'try',
       text: 'Find the cone.',
       speak: ['Find the cone.'],
       visual: { kind: 'row', children: [solid('cylinder'), solid('cone'), solid('cube')] },
-      reveal: { text: 'This is a cone. A cone has a point and a round base.', speak: nameExplanation('cone', solid('cone')).speak, visual: solid('cone') },
+      reveal: { text: 'This is a cone. A cone has a point and a round base.', speak: nameExplanation('cone', solid('cone'), SOLID_HINT).speak, visual: solid('cone') },
     },
     { beat: 'remember', text: 'Solid shapes are not flat.', speak: ['Solid shapes are not flat.'], visual: { kind: 'row', children: [solid('cube'), solid('sphere'), solid('cone'), solid('cylinder')] } },
   ],
@@ -156,13 +167,14 @@ export const nameSolidGenerator: SkillGenerator = {
 // Levels: count the sides of a triangle or square / adds rectangle, hexagon / count corners, typed.
 const SIDES: Partial<Record<ShapeName, number>> = { triangle: 3, square: 4, rectangle: 4, hexagon: 6 };
 
-function sidesExplanation(name: ShapeName, color: ColorName, ask: 'sides' | 'corners'): { speak: Say; steps: string[]; visual: Visual } {
+function sidesExplanation(name: ShapeName, color: ColorName, ask: 'sides' | 'corners'): { speak: Say; steps: string[]; visual: Visual; hint: Hint } {
   const n = SIDES[name] as number;
   const one = ask === 'sides' ? 'side' : 'corner';
   return {
     speak: [`Count each ${one} once.`, { number: n }, '.'],
     steps: [`Count each ${one} once.`, `${a(name).charAt(0).toUpperCase()}${a(name).slice(1)} has ${n} ${ask}.`],
     visual: shape(name, color, 'l'),
+    hint: { text: `Touch each ${one} once as you count.` },
   };
 }
 
