@@ -11,11 +11,17 @@ const BAR = PALETTE.bars;
 
 // A simple picture graph or bar graph, one row for each category.
 // With a scale, a picture stands for that many, and a bar graph's scale counts up in that step.
+// With a title, the graph says what was counted above its rows, as a graph in a book does.
 export default function GraphVisual({ visual }: Props) {
   const scale = visual.scale ?? 1;
   const most = Math.max(1, ...visual.categories.map((category) => Math.ceil(category.value / scale)));
   return (
     <div className={styles.graph} role="img" aria-label={describeVisual(visual)} data-visual="graph">
+      {visual.title && (
+        <span className={styles.graphTitle} aria-hidden="true" data-title="">
+          {visual.title}
+        </span>
+      )}
       {visual.categories.map((category, row) => (
         <div key={category.label} style={{ display: 'contents' }}>
           <span className={styles.graphLabel} aria-hidden="true">

@@ -186,18 +186,23 @@ export const composeShapesGenerator: SkillGenerator = {
 // What each tool tells. `tells` is the short answer on an option, which the answer check and the lesson read;
 // `says` is the whole phrase for the question and the steps: "What do you use to find out how heavy something is?",
 // never "to find how heavy" (the wording audit, Nov 21, 2026).
+// The measuring cup is drawn by the app (the owner's choice, Nov 22, 2026): there is no emoji for one, and the
+// glass of milk is the glass of F.5. `picture` is each tool as it is drawn.
+const one = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1, layout: 'row' });
 const TOOLS = [
-  { emoji: '📏', name: 'a ruler', tells: 'how long', says: 'how long something is' },
-  { emoji: '⚖️', name: 'a scale', tells: 'how heavy', says: 'how heavy something is' },
-  { emoji: '🥛', name: 'a measuring cup', tells: 'how much it holds', says: 'how much something holds' },
+  { picture: one('📏'), name: 'a ruler', tells: 'how long', says: 'how long something is' },
+  { picture: one('⚖️'), name: 'a scale', tells: 'how heavy', says: 'how heavy something is' },
+  { picture: { kind: 'measuringCup' } as Visual, name: 'a measuring cup', tells: 'how much it holds', says: 'how much something holds' },
 ] as const;
+// A tool's picture that says its name on a tap.
+const named = (tool: (typeof TOOLS)[number]): Visual => ({ ...tool.picture, speak: [tool.name] });
 
 function measurable(level: Level, rng: Rng): QuestionDraft {
   const tools = level === 1 ? TOOLS.slice(0, 2) : TOOLS;
   const tool = rng.pick(tools);
   const line = `${tool.name.replace(/^a/, 'A')} tells you ${tool.says}.`;
   const hint: Hint = { text: level === 3 ? 'Think about each tool. What do you do with it?' : `Think: what do you do with ${tool.name}?` };
-  const why: Explanation = { speak: [line], steps: [line], visual: { kind: 'emojiGroup', emoji: tool.emoji, count: 1, layout: 'row' }, hint };
+  const why: Explanation = { speak: [line], steps: [line], visual: tool.picture, hint };
   if (level === 3) {
     const prompt = `What do you use to find out ${tool.says}?`;
     return {
@@ -206,7 +211,7 @@ function measurable(level: Level, rng: Rng): QuestionDraft {
       fixedOrder: true,
       facts: { ask: 'tool', want: tool.tells, options: TOOLS.map((each) => each.name) },
       prompt: { text: prompt, speak: [prompt] },
-      options: TOOLS.map((each): Visual => ({ kind: 'emojiGroup', emoji: each.emoji, count: 1, layout: 'row', speak: [each.name] })),
+      options: TOOLS.map(named),
       answerIndex: TOOLS.indexOf(tool),
       explanation: why,
     };
@@ -218,7 +223,7 @@ function measurable(level: Level, rng: Rng): QuestionDraft {
     fixedOrder: true,
     facts: { ask: 'tells', tool: tool.name, options: tools.map((each) => each.tells) },
     prompt: { text: prompt, speak: [prompt] },
-    stimulus: { kind: 'emojiGroup', emoji: tool.emoji, count: 1, layout: 'row', speak: [tool.name] },
+    stimulus: named(tool),
     options: tools.map((each) => say(each.tells)),
     answerIndex: tools.indexOf(tool),
     explanation: why,
@@ -235,10 +240,10 @@ export const measurableGenerator: SkillGenerator = {
   exampleSeed: 643,
   example: () => measurable(1, makeRng(643)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'We can measure how long something is, how heavy it is, and how much it holds.', speak: ['We can measure how long something is, how heavy it is, and how much it holds.'], visual: { kind: 'row', children: TOOLS.map((each): Visual => ({ kind: 'emojiGroup', emoji: each.emoji, count: 1, layout: 'row' })) } },
+    { beat: 'see', text: 'We can measure how long something is, how heavy it is, and how much it holds.', speak: ['We can measure how long something is, how heavy it is, and how much it holds.'], visual: { kind: 'row', children: TOOLS.map((each) => each.picture) } },
     { beat: 'watch', text: 'A ruler tells you how long something is.', speak: ['A ruler tells you how long something is.'], visual: { kind: 'emojiGroup', emoji: '📏', count: 1, layout: 'row' } },
     { beat: 'try', text: 'What can a scale tell you?', speak: ['What can a scale tell you?'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' }, reveal: { text: 'A scale tells you how heavy something is.', speak: ['A scale tells you how heavy something is.'], visual: { kind: 'emojiGroup', emoji: '⚖️', count: 1, layout: 'row' } } },
-    { beat: 'remember', text: 'Ruler: long. Scale: heavy. Cup: holds.', speak: ['Ruler: long. Scale: heavy. Cup: holds.'], visual: { kind: 'emojiGroup', emoji: '🥛', count: 1, layout: 'row' } },
+    { beat: 'remember', text: 'Ruler: long. Scale: heavy. Cup: holds.', speak: ['Ruler: long. Scale: heavy. Cup: holds.'], visual: { kind: 'measuringCup' } },
   ],
   oracle: 'measureTool',
 };

@@ -4,7 +4,7 @@ import type { CoinName, LessonStep, Level, QuestionDraft, Say, Visual } from '..
 import { STORY_COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
-import { graphQuestion } from '../g1/measure';
+import { FAVORITES, graphQuestion } from '../g1/measure';
 import { numeralChoices } from '../k/numerals';
 import { line, together } from './addSubtract';
 import type { Explanation } from './addSubtract';
@@ -180,9 +180,10 @@ export const countCoinsGenerator: SkillGenerator = {
 
 type Thing = 'pencil' | 'crayon' | 'ribbon';
 const THINGS: Thing[] = ['pencil', 'crayon', 'ribbon'];
-const ruler = (object: Thing, startUnit: number, lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit, lengthUnits });
+// The ruler counts centimeters, as in C.6, and says so at its end (the owner's choice, Nov 22, 2026).
+const ruler = (object: Thing, startUnit: number, lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit, lengthUnits, unit: 'cm' });
 
-// The ruler counts centimeters, as in C.6. The spaces are counted one by one from where the thing starts.
+// The spaces are counted one by one from where the thing starts.
 function rulerExplanation(object: Thing, start: number, length: number): Explanation {
   const end = start + length;
   const spaces = Array.from({ length }, (_, i) => i + 1);
@@ -255,7 +256,7 @@ export const barGraphsGenerator: SkillGenerator = {
   exampleSeed: 234,
   example: () => barGraph(1, makeRng(234)),
   lesson: (): LessonStep[] => {
-    const chart: Visual = { kind: 'graph', type: 'bar', categories: [{ label: 'apples', emoji: '🍎', value: 7 }, { label: 'cookies', emoji: '🍪', value: 4 }, { label: 'balls', emoji: '⚽', value: 9 }] };
+    const chart: Visual = { kind: 'graph', type: 'bar', title: FAVORITES, categories: [{ label: 'apples', emoji: '🍎', value: 7 }, { label: 'cookies', emoji: '🍪', value: 4 }, { label: 'balls', emoji: '⚽', value: 9 }] };
     return [
       { beat: 'see', text: 'A bar graph shows how many with bars. A longer bar means more.', speak: ['A bar graph shows how many with bars. A longer bar means more.'], visual: chart },
       { beat: 'watch', text: 'How many kids picked apples? Find apples. Read the end of its bar: 7.', speak: ['How many kids picked apples? Find apples. Read the end of its bar.', { number: 7 }, '.'], visual: chart },

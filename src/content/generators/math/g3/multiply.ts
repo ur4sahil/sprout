@@ -1,6 +1,7 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Countable } from '../../../data/countables';
 import { COUNTABLES, STORY_COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
@@ -312,12 +313,38 @@ export const missingFactorGenerator: SkillGenerator = {
 // ---- D.1 Share equally ----
 // Levels: share a picture group into 2 or 3 / into up to 5 / typed. Oracle: multiply (quotient).
 
-function shareExplanation(total: number, groups: number, emoji: string): Explanation {
-  const each = total / groups;
+// The things are shared onto empty plates drawn beside them, or into baskets (the owner's choice, Nov 22, 2026:
+// "Share 12 apples onto 3 plates"). Things to eat go on plates; the rest go in baskets.
+const ON_PLATES: readonly string[] = ['apple', 'cookie', 'strawberry', 'banana'];
+type Holder = { holder: 'plate' | 'basket'; one: string; many: string; onto: string; on: string };
+const PLATE: Holder = { holder: 'plate', one: 'plate', many: 'plates', onto: 'onto', on: 'on' };
+const BASKET: Holder = { holder: 'basket', one: 'basket', many: 'baskets', onto: 'into', on: 'in' };
+const holderFor = (thing: Countable): Holder => (ON_PLATES.includes(thing.one) ? PLATE : BASKET);
+const countable = (one: string): Countable => STORY_COUNTABLES.find((thing) => thing.one === one) ?? { emoji: '🍎', one: 'apple', many: 'apples' };
+// The things to share beside the empty plates or baskets.
+const toShare = (total: number, groups: number, thing: Countable): Visual => ({
+  kind: 'row',
+  children: [
+    { kind: 'emojiGroup', emoji: thing.emoji, count: total, layout: 'grid5' },
+    { kind: 'holders', holder: holderFor(thing).holder, count: groups },
+  ],
+});
+const sharePrompt = (total: number, groups: number, thing: Countable): { text: string; speak: Say } => {
+  const h = holderFor(thing);
   return {
-    speak: ['Give one to each group, and keep going until none are left. Each group gets', { number: each }, '.'],
-    steps: ['Give one to each group, and keep going until none are left.', `Each group gets ${each}.`, `${groups} × ${each} = ${total}, so ${total} ÷ ${groups} = ${each}.`],
-    visual: groupsPicture(groups, each, emoji),
+    text: `Share ${total} ${thing.many} equally ${h.onto} ${groups} ${h.many}. How many go ${h.on} each ${h.one}?`,
+    speak: ['Share', { number: total }, `${thing.many} equally ${h.onto}`, { number: groups }, `${h.many}. How many go ${h.on} each ${h.one}?`],
+  };
+};
+
+function shareExplanation(total: number, groups: number, thing: Countable): Explanation {
+  const each = total / groups;
+  const h = holderFor(thing);
+  const deal = `Put one ${h.on} each ${h.one}, and keep going until none are left.`;
+  return {
+    speak: [`${deal} Each ${h.one} gets`, { number: each }, '.'],
+    steps: [deal, `Each ${h.one} gets ${each}.`, `${groups} × ${each} = ${total}, so ${total} ÷ ${groups} = ${each}.`],
+    visual: { kind: 'holders', holder: h.holder, count: groups, filled: { emoji: thing.emoji, each } },
   };
 }
 
@@ -326,8 +353,7 @@ function share(level: Level, rng: Rng): QuestionDraft {
   const each = rng.int(2, level === 1 ? 5 : 6);
   const total = groups * each;
   const thing = rng.pick(STORY_COUNTABLES);
-  const prompt = { text: `Put ${total} ${thing.many} into ${groups} equal groups. How many go in each group?`, speak: ['Put', { number: total }, `${thing.many} into`, { number: groups }, 'equal groups. How many go in each group?'] as Say };
-  const base = { mode: 'look' as const, prompt, stimulus: { kind: 'emojiGroup', emoji: thing.emoji, count: total, layout: 'grid5' } as Visual, explanation: shareExplanation(total, groups, thing.emoji) };
+  const base = { mode: 'look' as const, prompt: sharePrompt(total, groups, thing), stimulus: toShare(total, groups, thing), explanation: shareExplanation(total, groups, thing) };
   const facts = { rows: groups, cols: each, total, by: groups, ask: 'quotient' };
   if (level === 3) return { ...base, type: 'numberPad', facts, answer: each, maxDigits: 2 };
   const values = numeralChoices(each, [groups, each + 1, each - 1], 1, 30, rng);
@@ -342,12 +368,15 @@ export const shareEquallyGenerator: SkillGenerator = {
   generate: share,
   exampleSeed: 331,
   example: () => share(1, makeRng(331)),
-  lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'Sharing equally means every group gets the same.', speak: ['Sharing equally means every group gets the same.'], visual: { kind: 'emojiGroup', emoji: '🍪', count: 12, layout: 'grid5' } },
-    { beat: 'watch', text: shareExplanation(12, 3, '🍪').steps.join(' '), speak: shareExplanation(12, 3, '🍪').speak, visual: shareExplanation(12, 3, '🍪').visual },
-    { beat: 'try', text: 'Put 10 apples into 2 equal groups. How many go in each group?', speak: ['Put', { number: 10 }, 'apples into', { number: 2 }, 'equal groups. How many go in each group?'], visual: { kind: 'emojiGroup', emoji: '🍎', count: 10, layout: 'grid5' }, reveal: { text: shareExplanation(10, 2, '🍎').steps.join(' '), speak: shareExplanation(10, 2, '🍎').speak, visual: shareExplanation(10, 2, '🍎').visual } },
-    { beat: 'remember', text: 'Dividing is sharing equally.', speak: ['Dividing is sharing equally.'], visual: equation(12, '÷', 3, '=', 4) },
-  ],
+  lesson: (): LessonStep[] => {
+    const [cookie, apple] = [countable('cookie'), countable('apple')];
+    return [
+      { beat: 'see', text: 'Sharing equally means every plate gets the same.', speak: ['Sharing equally means every plate gets the same.'], visual: toShare(12, 3, cookie) },
+      { beat: 'watch', text: shareExplanation(12, 3, cookie).steps.join(' '), speak: shareExplanation(12, 3, cookie).speak, visual: shareExplanation(12, 3, cookie).visual },
+      { beat: 'try', text: sharePrompt(10, 2, apple).text, speak: sharePrompt(10, 2, apple).speak, visual: toShare(10, 2, apple), reveal: { text: shareExplanation(10, 2, apple).steps.join(' '), speak: shareExplanation(10, 2, apple).speak, visual: shareExplanation(10, 2, apple).visual } },
+      { beat: 'remember', text: 'Dividing is sharing equally.', speak: ['Dividing is sharing equally.'], visual: equation(12, '÷', 3, '=', 4) },
+    ];
+  },
   oracle: 'multiply',
 };
 

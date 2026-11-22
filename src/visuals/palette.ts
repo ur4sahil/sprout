@@ -25,6 +25,19 @@ export const PALETTE = {
   crayonTip: '#c62828',
   ribbon: COLORS.purple,
   ruler: '#f4e3b1',
+  // --- the pictures added on Nov 22, 2026 (the owner's choice; plan section 5, More visuals) ---
+  rulerInch: '#d9ecf7', // an inch ruler, so it is never mistaken for the centimeter ruler beside it
+  spoon: '#c4c8cc',
+  spoonShade: '#8f99a5',
+  clip: '#7d8794', // the wire of a paper clip
+  rectFill: '#dcecfb', // a rectangle drawn to its sides
+  plate: '#ffffff',
+  plateWell: '#eef1f5', // the flat middle of a plate
+  basket: '#d9a05f',
+  basketWeave: '#94602f',
+  cupGlass: '#eef7fd', // a measuring cup, which you can see through
+  water: '#8fd0f5',
+  // --- end of the Nov 22 pictures ---
   foldPaper: '#fff8e1',
   copper: '#b8733a',
   silver: '#c4c8cc',

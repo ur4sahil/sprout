@@ -26,8 +26,10 @@ describe('the wave', () => {
     for (const row of ROWS) {
       // Version 1 as shipped; 2 for the two whose wording changed (color, American spelling); one more for every
       // pre-K skill after the wording audit (Nov 22, 2026), and 2 for every grade 2 row, reworded in the same audit.
+      // C.8 and C.11 are on 3: their pictures changed the same day (words under C.8's choices, a title on C.11's graph).
       const preK = ['M-PK-C6', 'M-PK-C7'].includes(row.id) ? 3 : 2;
-      expect(row.version).toBe(row.grade === 'PK' ? preK : 2);
+      const grade2 = ['M-2-C8', 'M-2-C11'].includes(row.id) ? 3 : 2;
+      expect(row.version).toBe(row.grade === 'PK' ? preK : grade2);
       expect(row.maxLevel).toBe(3);
       expect(CATALOGUE.filter((skill) => skill.id === row.id)).toHaveLength(1);
       if (row.grade === '2') expect(row.ccss, row.id).toMatch(/^2\./);

@@ -247,6 +247,10 @@ function perimeterExplanation(length: number, width: number, unit: string): Expl
   };
 }
 
+// A rectangle drawn to its sides, "7 cm" along the top and "2 cm" down the side (the owner's choice, Nov 22, 2026).
+// Its working shows every side, so the four numbers added can be seen.
+const measured = (length: number, width: number, allSides = false): Visual => ({ kind: 'measuredRect', length, width, unit: 'cm', ...(allSides ? { allSides: true as const } : {}) });
+
 function rectSlips(right: number, length: number, width: number, area: boolean): number[] {
   return area ? [2 * (length + width), length + width, right + length, right - width] : [length * width, length + width, 2 * length + width, right + 2];
 }
@@ -259,14 +263,17 @@ function rectangleSkill(area: boolean): (level: Level, rng: Rng) => QuestionDraf
     const right = area ? length * width : 2 * (length + width);
     const unit = level === 1 ? 'units' : 'centimeters';
     const ask = area ? 'area' : 'perimeter';
-    const explanation = area ? areaExplanation(length, width) : perimeterExplanation(length, width, area ? 'square units' : unit);
+    const found = area ? areaExplanation(length, width) : perimeterExplanation(length, width, area ? 'square units' : unit);
+    // F.4 level 2 is told in centimeters: its picture is the rectangle drawn to its sides, and so is its working.
+    const drawn = !area && level === 2;
+    const explanation = drawn ? { ...found, visual: measured(length, width, true) } : found;
     const prompt =
       level === 1
         ? { text: area ? 'What is the area? Each square is one square unit.' : 'What is the perimeter? Each side of a square is one unit.', speak: [area ? 'What is the area? Each square is one square unit.' : 'What is the perimeter? Each side of a square is one unit.'] as Say }
         : area
           ? { text: `A rectangle is ${length} squares long and ${width} squares wide. What is its area?`, speak: ['A rectangle is', { number: length }, 'squares long and', { number: width }, 'squares wide. What is its area?'] as Say }
           : { text: `A rectangle is ${length} centimeters long and ${width} centimeters wide. What is its perimeter?`, speak: ['A rectangle is', { number: length }, 'centimeters long and', { number: width }, 'centimeters wide. What is its perimeter?'] as Say };
-    const stimulus: Visual | undefined = level === 3 ? undefined : level === 1 || area ? grid(length, width) : { kind: 'shape', shape: 'rectangle', color: 'blue', size: 'l', rotation: 0 };
+    const stimulus: Visual | undefined = level === 3 ? undefined : drawn ? measured(length, width) : grid(length, width);
     const base = { mode: 'look' as const, prompt, ...(stimulus ? { stimulus } : {}), explanation };
     const facts = { length, width, ask };
     if (level === 3) return { ...base, type: 'numberPad', facts, answer: right, maxDigits: 3 };
@@ -305,7 +312,7 @@ export const perimeterGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Perimeter is the distance all the way around a shape.', speak: ['Perimeter is the distance all the way around a shape.'], visual: grid(4, 3) },
     { beat: 'watch', text: perimeterExplanation(4, 3, 'units').steps.join(' '), speak: perimeterExplanation(4, 3, 'units').speak, visual: perimeterExplanation(4, 3, 'units').visual },
-    { beat: 'try', text: 'A rectangle is 6 centimeters long and 2 centimeters wide. What is its perimeter?', speak: ['A rectangle is', { number: 6 }, 'centimeters long and', { number: 2 }, 'centimeters wide. What is its perimeter?'], visual: grid(6, 2), reveal: { text: perimeterExplanation(6, 2, 'centimeters').steps.join(' '), speak: perimeterExplanation(6, 2, 'centimeters').speak, visual: perimeterExplanation(6, 2, 'centimeters').visual } },
+    { beat: 'try', text: 'A rectangle is 6 centimeters long and 2 centimeters wide. What is its perimeter?', speak: ['A rectangle is', { number: 6 }, 'centimeters long and', { number: 2 }, 'centimeters wide. What is its perimeter?'], visual: measured(6, 2), reveal: { text: perimeterExplanation(6, 2, 'centimeters').steps.join(' '), speak: perimeterExplanation(6, 2, 'centimeters').speak, visual: measured(6, 2, true) } },
     { beat: 'remember', text: 'Add all four sides.', speak: ['Add all four sides.'], visual: grid(4, 3) },
   ],
   oracle: 'rect',
@@ -404,6 +411,9 @@ export const massVolumeGenerator: SkillGenerator = {
 // ---- F.6 Scaled graphs ----
 // Levels: picture graph, one picture is 2 / bar graph with steps of 5 / how many more, typed. Oracle: graph.
 
+// Every graph says what was counted (the owner's choice, Nov 22, 2026).
+const COUNTED = 'Things we counted';
+
 function scaledGraph(level: Level, rng: Rng): QuestionDraft {
   const things = rng.sample(COUNTABLES, 3);
   const scale = level === 1 ? 2 : 5;
@@ -412,7 +422,7 @@ function scaledGraph(level: Level, rng: Rng): QuestionDraft {
   const values = steps.map((step) => step * scale);
   const categories = things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: values[i] as number }));
   const pictureFits = Math.max(...steps) <= 6;
-  const visual: Visual = { kind: 'graph', type: level === 1 ? 'picture' : rng.pick(pictureFits ? (['picture', 'bar'] as const) : (['bar'] as const)), categories, scale };
+  const visual: Visual = { kind: 'graph', type: level === 1 ? 'picture' : rng.pick(pictureFits ? (['picture', 'bar'] as const) : (['bar'] as const)), categories, scale, title: COUNTED };
   const shown: Visual = level === 1 ? { ...visual, type: 'picture' } : level === 2 ? { ...visual, type: 'bar' } : visual;
   const capital = (words: string): string => `${words[0]?.toUpperCase() ?? ''}${words.slice(1)}`;
   if (level === 3) {
@@ -458,7 +468,7 @@ export const scaledGraphsGenerator: SkillGenerator = {
   exampleSeed: 356,
   example: () => scaledGraph(1, makeRng(356)),
   lesson: (): LessonStep[] => {
-    const sample: Visual = { kind: 'graph', type: 'picture', scale: 2, categories: [{ label: 'apples', emoji: '🍎', value: 6 }, { label: 'stars', emoji: '⭐', value: 10 }, { label: 'ducks', emoji: '🦆', value: 4 }] };
+    const sample: Visual = { kind: 'graph', type: 'picture', scale: 2, title: COUNTED, categories: [{ label: 'apples', emoji: '🍎', value: 6 }, { label: 'stars', emoji: '⭐', value: 10 }, { label: 'ducks', emoji: '🦆', value: 4 }] };
     return [
       { beat: 'see', text: 'On some graphs, one picture stands for more than one thing.', speak: ['On some graphs, one picture stands for more than one thing.'], visual: sample },
       { beat: 'watch', text: 'Each picture stands for 2. There are 3 apple pictures: 2, 4, 6. So there are 6 apples.', speak: ['Each picture stands for two. There are three apple pictures: two, four, six. So there are six apples.'], visual: sample },

@@ -10,10 +10,16 @@ export function artKey(emoji: string): string {
     .join('-');
 }
 
+// Where the app's own drawn picture for this emoji is, or null when it has none.
+export function artSrc(emoji: string): string | null {
+  const key = artKey(emoji);
+  return ART.has(key) ? `/art/${key}.svg` : null;
+}
+
 // One picture: the app's own drawn picture for this emoji, the same on every device.
 // An emoji with no drawn picture is shown as it is. The picture is as tall as the text around it.
 export default function Art({ emoji }: { emoji: string }) {
-  const key = artKey(emoji);
-  if (!ART.has(key)) return <>{emoji}</>;
-  return <img className={styles.art} src={`/art/${key}.svg`} alt="" draggable={false} data-emoji={emoji} />;
+  const src = artSrc(emoji);
+  if (!src) return <>{emoji}</>;
+  return <img className={styles.art} src={src} alt="" draggable={false} data-emoji={emoji} />;
 }

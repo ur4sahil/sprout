@@ -102,6 +102,14 @@ function answerVisuals(question: Question): Visual[] {
   return all;
 }
 
+// Words a picture prints for the child to read: a text picture's value, the caption under a picture, a graph's title.
+function printedWords(visual: Visual): string | undefined {
+  if (visual.kind === 'text') return visual.value;
+  if (visual.kind === 'emojiGroup') return visual.caption;
+  if (visual.kind === 'graph') return visual.title;
+  return undefined;
+}
+
 function sameForm(a: Visual, b: Visual): boolean {
   return canonicalJson(canonicalVisual(a)) === canonicalJson(canonicalVisual(b));
 }
@@ -338,6 +346,11 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
       const word = String(target).toLowerCase();
       const pattern = new RegExp(`(^|[^a-z0-9])${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z0-9]|$)`);
       if (pattern.test(shown)) problems.push('14: the on-screen prompt of a listen question shows the target');
+      // Words printed under a picture, or over a graph, are on screen too.
+      for (const visual of seen) {
+        const printed = visual.kind === 'text' ? undefined : printedWords(visual);
+        if (printed !== undefined && pattern.test(printed.toLowerCase())) problems.push(`14: a picture's printed words show the target of a listen question: "${printed}"`);
+      }
     }
     if (seen.some((visual) => visual.speak !== undefined)) problems.push('14: a listen question has a visual with a spoken label');
     if (q.type === 'sort' && q.bins.some((bin) => bin.icon?.speak !== undefined)) problems.push('14: a listen question has a bin icon with a spoken label');
@@ -349,10 +362,12 @@ export function validateQuestion(question: Question, options: ValidateOptions = 
     if (toRead.length === 0) problems.push('15: a read question needs facts.read');
     const readWords = new Set(toRead.flatMap((text) => text.split(/[^a-z']+/).filter((word) => word.length > 0)));
     for (const visual of seen) {
-      if (visual.kind !== 'text' || visual.speak === undefined) continue;
-      const shown = visual.value.toLowerCase();
+      // A text picture, or a picture with words printed under it, that speaks on tap.
+      const printed = printedWords(visual);
+      if (printed === undefined || visual.kind === 'graph' || visual.speak === undefined) continue;
+      const shown = printed.toLowerCase();
       if (toRead.includes(shown) || shown.split(/[^a-z']+/).some((word) => readWords.has(word))) {
-        problems.push(`15: the words to read are spoken on tap: "${visual.value}"`);
+        problems.push(`15: the words to read are spoken on tap: "${printed}"`);
       }
     }
     const spoken = sayWords(q.prompt.speak);

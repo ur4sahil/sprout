@@ -82,6 +82,11 @@ function samePerimeterExplanation(rects: [number, number][], ask: 'most' | 'leas
   };
 }
 
+// A rectangle drawn to its sides (the owner's choice, Nov 22, 2026): "6 cm" along the top and "?" down the side to
+// be found. Its working shows every side, the one found too, for a perimeter; an area keeps its squares.
+const sideToFind = (length: number, other: number): Visual => ({ kind: 'measuredRect', length, width: other, unit: 'cm', unknown: 'width' });
+const everySide = (length: number, other: number): Visual => ({ kind: 'measuredRect', length, width: other, unit: 'cm', allSides: true });
+
 function sideExplanation(length: number, other: number, from: 'perimeter' | 'area'): Explanation {
   if (from === 'area') {
     const area = length * other;
@@ -96,7 +101,7 @@ function sideExplanation(length: number, other: number, from: 'perimeter' | 'are
   return {
     speak: ['Two sides are', { number: length }, 'long, which makes', { number: 2 * length }, '. That leaves', { number: p - 2 * length }, 'for the other two sides, so each is', { number: other }, '.'],
     steps: [`The two ${length} centimeter sides make ${2 * length}.`, `${p} − ${2 * length} = ${p - 2 * length} for the other two sides.`, `${p - 2 * length} ÷ 2 = ${other} centimeters.`],
-    visual: grid(length, other),
+    visual: everySide(length, other),
   };
 }
 
@@ -125,12 +130,12 @@ function perimeterArea(level: Level, rng: Rng): QuestionDraft {
   if (from === 'area') {
     const area = length * other;
     const prompt: Prompt = { text: `A rectangle has an area of ${area} square centimeters. One side is ${length} centimeters long. How long is the other side?`, speak: ['A rectangle has an area of', { number: area }, 'square centimeters. One side is', { number: length }, 'centimeters long. How long is the other side?'] };
-    return numberAnswer({ prompt, explanation: sideExplanation(length, other, 'area') }, { expr: `${length} × □ = ${area}`, ask: 'missing' }, other, [], true, rng, [1, 100], 2);
+    return numberAnswer({ prompt, stimulus: sideToFind(length, other), explanation: sideExplanation(length, other, 'area') }, { expr: `${length} × □ = ${area}`, ask: 'missing' }, other, [], true, rng, [1, 100], 2);
   }
   const p = 2 * (length + other);
   const prompt: Prompt = { text: `A rectangle has a perimeter of ${p} centimeters. One side is ${length} centimeters long. How long is the side next to it?`, speak: ['A rectangle has a perimeter of', { number: p }, 'centimeters. One side is', { number: length }, 'centimeters long. How long is the side next to it?'] };
   // The slips: the perimeter less one side, less two sides but not halved, or the side given.
-  return numberAnswer({ prompt, stimulus: { kind: 'shape', shape: 'rectangle', color: 'blue', size: 'l', rotation: 0 }, explanation: sideExplanation(length, other, 'perimeter') }, { expr: `${length} + □ + ${length} + □ = ${p}`, ask: 'missing' }, other, [p - length, p - 2 * length, length, other + 2].filter((slip) => slip !== other), level === 3, rng, [1, 40], 2);
+  return numberAnswer({ prompt, stimulus: sideToFind(length, other), explanation: sideExplanation(length, other, 'perimeter') }, { expr: `${length} + □ + ${length} + □ = ${p}`, ask: 'missing' }, other, [p - length, p - 2 * length, length, other + 2].filter((slip) => slip !== other), level === 3, rng, [1, 40], 2);
 }
 
 export const perimeterAreaGenerator: SkillGenerator = {
@@ -144,7 +149,7 @@ export const perimeterAreaGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Rectangles with the same perimeter can have different areas.', speak: ['Rectangles with the same perimeter can have different areas.'], visual: { kind: 'row', children: [grid(5, 1), grid(3, 3)] } },
     { beat: 'watch', text: samePerimeterExplanation([[5, 1], [3, 3]], 'most').steps.join(' '), speak: samePerimeterExplanation([[5, 1], [3, 3]], 'most').speak, visual: samePerimeterExplanation([[5, 1], [3, 3]], 'most').visual },
-    { beat: 'try', text: 'A rectangle has a perimeter of 18 centimeters. One side is 6 centimeters long. How long is the side next to it?', speak: ['A rectangle has a perimeter of', { number: 18 }, 'centimeters. One side is', { number: 6 }, 'centimeters long. How long is the side next to it?'], visual: grid(6, 3), reveal: { text: sideExplanation(6, 3, 'perimeter').steps.join(' '), speak: sideExplanation(6, 3, 'perimeter').speak, visual: sideExplanation(6, 3, 'perimeter').visual } },
+    { beat: 'try', text: 'A rectangle has a perimeter of 18 centimeters. One side is 6 centimeters long. How long is the side next to it?', speak: ['A rectangle has a perimeter of', { number: 18 }, 'centimeters. One side is', { number: 6 }, 'centimeters long. How long is the side next to it?'], visual: sideToFind(6, 3), reveal: { text: sideExplanation(6, 3, 'perimeter').steps.join(' '), speak: sideExplanation(6, 3, 'perimeter').speak, visual: sideExplanation(6, 3, 'perimeter').visual } },
     { beat: 'remember', text: 'Perimeter goes around the outside. Area covers the inside.', speak: ['Perimeter goes around the outside. Area covers the inside.'], visual: grid(4, 2) },
   ],
   oracle: 'expression3',

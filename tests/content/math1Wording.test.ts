@@ -282,17 +282,30 @@ describe('time, measuring and money, C', () => {
     }
   });
 
-  it('C.5 level 2 has one row lined up the right way: the others have a gap, or are not straight', () => {
-    const cells = (visual: Visual): number[] => (visual.kind === 'emojiGroup' ? (visual.slots ?? []) : []);
+  it('C.5 level 2 has one row lined up the right way under a pencil or crayon: the others have a gap, or are not straight', () => {
+    const rows = (visuals: Visual[]): Extract<Visual, { kind: 'clipRow' }>[] => visuals.flatMap((visual) => (visual.kind === 'clipRow' ? [visual] : []));
     for (const q of all('M-1-C5', 2)) {
       if (q.type !== 'choice') throw new Error('not a choice');
-      expect(q.prompt.text).toBe('Which paper clips are lined up the right way?');
-      // Lined up: every clip in one row of the grid, each touching the next. A row that starts a space late is
-      // lined up too, and could be argued for, so none may be offered beside the right one.
-      const lined = q.options.map((option) => cells(option)).map((slots) => slots.every((slot) => Math.floor(slot / 5) === Math.floor((slots[0] ?? 0) / 5)) && slots.every((slot, i) => i === 0 || slot === (slots[i - 1] as number) + 1));
+      // Every row lies under the same drawn thing, which the question names (the owner's choice, Nov 22, 2026).
+      const drawn = rows(q.options);
+      expect(drawn).toHaveLength(q.options.length);
+      const object = drawn[0]?.object ?? '';
+      expect(['pencil', 'crayon']).toContain(object);
+      expect(q.prompt.text).toBe(`Which paper clips measure the ${object} the right way?`);
+      // Lined up: straight, each clip touching the next, from one end of the thing to the other. Every row starts at
+      // the thing's end: a row that starts late is a third kind of mistake, and none is offered.
+      const lined = drawn.map((row) => row.object === object && !row.bent && row.clips.length === row.length && row.clips.every((at, i) => at === i));
       expect(lined.filter(Boolean)).toHaveLength(1);
       expect(lined[q.answerIndex]).toBe(true);
+      for (const [i, row] of drawn.entries()) {
+        expect(row.object).toBe(object);
+        expect(row.clips[0]).toBe(0);
+        if (i === q.answerIndex) continue;
+        const gap = row.clips.some((at, k) => k > 0 && at !== (row.clips[k - 1] as number) + 1);
+        expect(gap || row.bent === true, `row ${i}`).toBe(true);
+      }
       expect(q.explanation.steps.join(' ')).not.toMatch(/very end|from the start/);
+      expect(q.explanation.steps[0]).toBe(`The clips must start at the end of the ${object}.`);
     }
   });
 

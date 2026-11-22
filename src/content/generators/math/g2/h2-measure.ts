@@ -6,6 +6,7 @@ import { DAY_THINGS, METRIC_THINGS } from '../../../data/h2-world';
 import { PRONOUN, SHOP, STORY_NAMES } from '../../../data/h2-stories';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
+import { FAVORITES } from '../g1/measure';
 import { numeralChoices } from '../k/numerals';
 import { skill } from '../pk/h2-lesson';
 import { line, together } from './addSubtract';
@@ -55,7 +56,9 @@ function amPm(level: Level, rng: Rng): QuestionDraft {
       mode: 'look',
       facts: { ask: 'which', want: halfText(want), set: offered.map((thing) => thing.name).sort(), options: offered.map((thing) => thing.name) },
       prompt: { text: `Which one do you do in the ${halfText(want)}?`, speak: ['Which one do you do in the', ...halfSay(want), '?'] },
-      options: offered.map((thing) => ({ ...picture(thing), speak: [doing(thing.verb)] })),
+      // Each picture has what you do printed under it, and says it on a tap (the owner's choice, Nov 22, 2026):
+      // a bed alone could be getting up or going to bed.
+      options: offered.map((thing) => ({ ...picture(thing), caption: doing(thing.verb), speak: [doing(thing.verb)] })),
       answerIndex: offered.indexOf(right),
       explanation: halfExplanation('A child', right, want === 'am' ? 'Think about what you do in the morning.' : 'Think about what you do in the afternoon or at night.'),
     };
@@ -235,7 +238,7 @@ function graphProblems(level: Level, rng: Rng): QuestionDraft {
   const count = level === 3 ? 4 : 3;
   const things = rng.sample(STORY_COUNTABLES, count) as Countable[];
   const values = rng.sample([1, 2, 3, 4, 5, 6], count);
-  const stimulus: Visual = { kind: 'graph', type: 'picture', categories: things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: values[i] as number })) };
+  const stimulus: Visual = { kind: 'graph', type: 'picture', title: FAVORITES, categories: things.map((thing, i) => ({ label: thing.many, emoji: thing.emoji, value: values[i] as number })) };
   const ask = level === 2 ? 'total' : level === 1 ? 'difference' : rng.pick(['total', 'difference'] as const);
   let facts: QuestionDraft['facts'];
   let text: string;

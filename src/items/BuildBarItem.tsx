@@ -7,6 +7,7 @@ import type { ItemProps } from './itemProps';
 import styles from './items.module.css';
 
 // Make a bar graph: one row for each thing, with buttons to raise or lower its bar by one step of the scale.
+// With a title, the graph says what was counted above its rows, as a graph picture does.
 // A bar rises with a pop that climbs in pitch as it grows. When the answer is right the bars wave one after
 // another, the tallest last.
 export default function BuildBarItem({ question, disabled, onChange, right }: ItemProps<'buildBar'>) {
@@ -23,7 +24,12 @@ export default function BuildBarItem({ question, disabled, onChange, right }: It
 
   return (
     <div className={styles.column}>
-      <div className={styles.barRows} role="group" aria-label="Bar graph">
+      {question.title && (
+        <p className={styles.barTitle} data-title="">
+          {question.title}
+        </p>
+      )}
+      <div className={styles.barRows} role="group" aria-label={question.title ? `Bar graph: ${question.title}` : 'Bar graph'}>
         {question.categories.map((category, index) => {
           const value = values[index] ?? 0;
           // This bar's turn in the wave: how many bars are shorter, with earlier rows first among equals.

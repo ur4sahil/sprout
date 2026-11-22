@@ -2,6 +2,7 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
+import { aboutCentimeters } from '../../../../engine/units';
 import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 import { line, together } from './addSubtract';
@@ -13,7 +14,10 @@ import type { Explanation } from './addSubtract';
 // Words with numbers in them, said with each number as a number.
 const spoken = (words: string): Say => words.split(/(\d+)/).filter((part) => part.length > 0).map((part) => (/^\d+$/.test(part) ? { number: Number(part) } : part));
 const say = (value: string): Visual => ({ kind: 'text', value, size: 'l', speak: spoken(value) });
-const ruler = (object: 'pencil' | 'crayon' | 'ribbon', lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit: 0, lengthUnits });
+// C.6's rulers count centimeters and say so at their end (the owner's choice, Nov 22, 2026).
+const ruler = (object: 'pencil' | 'crayon' | 'ribbon', lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit: 0, lengthUnits, unit: 'cm' });
+// One thing measured both ways: an inch ruler above it, a centimeter ruler below it.
+const bothWays = (object: 'pencil' | 'crayon' | 'ribbon', inches: number): Visual => ({ kind: 'twoRulers', object, inches });
 const cap = (text: string): string => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 // A count said number by number: "Count them: 1, 2, 3."
 const counted = (lead: string, upTo: number): { text: string; speak: Say } => {
@@ -78,33 +82,38 @@ const OBJECTS = [
   { emoji: '🚗', name: 'a car', unit: 'feet', inches: 168, way: 'long' },
 ] as const;
 type MeasuredThing = (typeof OBJECTS)[number];
-const SMALL_OBJECTS = OBJECTS.filter((each) => each.unit === 'inches');
+// The things drawn on the two rulers of level 2.
+const BOTH_WAYS = ['pencil', 'crayon', 'ribbon'] as const;
 const pictureOf = (thing: MeasuredThing): Visual => ({ kind: 'emojiGroup', emoji: thing.emoji, count: 1, layout: 'row', speak: [thing.name.slice(2)] });
 // Whether it fits in one hand is the question a child can answer: small things are measured in inches.
 const sizeLine = (thing: MeasuredThing): ReturnType<typeof line> => line(`${cap(thing.name)} is ${thing.unit === 'inches' ? 'small' : 'big'}, so we measure it in ${thing.unit}.`);
 
 function units(level: Level, rng: Rng): QuestionDraft {
   if (level === 2) {
-    // Something small, measured both ways. The steps end on the side the question asks about.
-    const thing = rng.pick(SMALL_OBJECTS);
-    const the = `the ${thing.name.slice(2)}`;
+    // One thing measured both ways (the owner's choice, Nov 22, 2026): it lies between an inch ruler and a
+    // centimeter ruler, so both numbers can be read and compared. 2, 4 or 6 inches end close to 5, 10 or 15
+    // centimeters. The steps end on the side the question asks about.
+    const object = rng.pick(BOTH_WAYS);
+    const inches = rng.pick([2, 4, 6]);
+    const the = `the ${object}`;
     const more = rng.bool();
-    const prompt = `${cap(thing.name)} is measured in inches and in centimeters. Which number is ${more ? 'bigger' : 'smaller'}?`;
+    const prompt = `${cap(the)} is measured in inches and in centimeters. Which number is ${more ? 'bigger' : 'smaller'}?`;
     const steps = [
       line('An inch is longer than a centimeter.'),
       line(more ? `So more centimeters than inches fit along ${the}.` : `So fewer inches than centimeters fit along ${the}.`),
+      line(`${cap(the)} is`, inches, 'inches long, and about', aboutCentimeters(inches), 'centimeters long.'),
       line(more ? 'The centimeters number is bigger.' : 'The inches number is smaller.'),
     ];
     return {
       type: 'choice',
       mode: 'look',
       fixedOrder: true,
-      facts: { ask: more ? 'moreUnits' : 'fewerUnits', thing: thing.name.slice(2), options: ['the inches', 'the centimeters'] },
+      facts: { ask: more ? 'moreUnits' : 'fewerUnits', thing: object, inches, options: ['the inches', 'the centimeters'] },
       prompt: { text: prompt, speak: [prompt] },
-      stimulus: pictureOf(thing),
+      stimulus: bothWays(object, inches),
       options: ['the inches', 'the centimeters'].map(say),
       answerIndex: more ? 1 : 0,
-      explanation: together(steps, pictureOf(thing), { text: 'Which is longer: an inch or a centimeter?' }),
+      explanation: together(steps, bothWays(object, inches), { text: 'Which is longer: an inch or a centimeter?' }),
     };
   }
   const thing = rng.pick(OBJECTS);
@@ -144,15 +153,16 @@ export const unitsGenerator: SkillGenerator = {
   maxLevel: 3,
   itemTypes: ['choice'],
   lists: [],
-  pool: { 1: 6, 2: 6, 3: 6 },
+  // Level 2 has a thing, its length and the side asked: 18 questions.
+  pool: { 1: 6, 3: 6 },
   generate: units,
   exampleSeed: 662,
   example: () => units(1, makeRng(662)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: 'We measure length in inches, feet or centimeters. A foot is 12 inches.', speak: ['We measure length in inches, feet or centimeters. A foot is twelve inches.'], visual: ruler('pencil', 6) },
+    { beat: 'see', text: 'We measure length in inches, feet or centimeters. A foot is 12 inches.', speak: ['We measure length in inches, feet or centimeters. A foot is twelve inches.'], visual: bothWays('pencil', 6) },
     { beat: 'watch', text: 'A pencil is small: about 7 inches. A door is big: about 7 feet.', speak: ['A pencil is small: about seven inches. A door is big: about seven feet.'], visual: { kind: 'row', children: [{ kind: 'emojiGroup', emoji: '✏️', count: 1, layout: 'row' }, { kind: 'emojiGroup', emoji: '🚪', count: 1, layout: 'row' }] } },
     { beat: 'try', text: 'Would you measure a bed in inches or in feet?', speak: ['Would you measure a bed in inches or in feet?'], visual: { kind: 'emojiGroup', emoji: '🛏️', count: 1, layout: 'row' }, reveal: { text: 'A bed is big: feet.', speak: ['A bed is big: feet.'], visual: { kind: 'emojiGroup', emoji: '🛏️', count: 1, layout: 'row' } } },
-    { beat: 'remember', text: 'Small unit, bigger number.', speak: ['Small unit, bigger number.'], visual: ruler('ribbon', 5) },
+    { beat: 'remember', text: 'Small unit, bigger number.', speak: ['Small unit, bigger number.'], visual: bothWays('ribbon', 4) },
   ],
   oracle: 'unitChoice',
 };

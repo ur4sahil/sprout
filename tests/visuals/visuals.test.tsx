@@ -10,6 +10,7 @@ import { COIN_MM, DICE_CELLS, SHAPES, clockAngles, partShares, shapeTransform, u
 const KINDS = [
   'emojiGroup', 'text', 'shape', 'solid', 'tenFrame', 'baseTen', 'numberLine', 'equation', 'sequence', 'matrix', 'clock',
   'coins', 'graph', 'ruler', 'fraction', 'row', 'bar', 'array', 'tally', 'scale', 'foldPunch', 'linePlot', 'figure',
+  'twoRulers', 'measuredRect', 'holders', 'clipRow', 'measuringCup',
 ];
 
 function draw(visual: Visual): HTMLElement {
