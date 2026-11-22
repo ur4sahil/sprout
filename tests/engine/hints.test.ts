@@ -192,8 +192,12 @@ describe('the nudge', () => {
       ['M-2-A7', 2, 1, 'Six hundred nine is 6 hundreds, 0 tens and 9 ones.'],
       ['M-3-A2', 3, 1, 'six thousand thirty-nine'],
     ];
+    // Where the content has since been reworded (M-2-C12 and M-2-A7, Nov 22, 2026), the old line is put back as
+    // the first of three steps, with no hint of the generator's own, so the guard is still tested on it.
+    const reworded = new Set(['M-2-C12', 'M-2-A7']);
     for (const [skillId, level, seed, first] of cases) {
-      const q = question(skillId, level, seed);
+      const now = question(skillId, level, seed);
+      const q: Question = reworded.has(skillId) ? { ...now, explanation: { speak: now.explanation.speak, steps: [first, 'Look again.', 'That is it.'] } } : now;
       expect(q.explanation.steps[0], skillId).toBe(first);
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
       expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();

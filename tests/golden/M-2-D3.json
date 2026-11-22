@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-D3",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "facts": {
@@ -31,15 +31,15 @@
     {
      "number": 2
     },
-    "rows of",
+    "rows, with",
     {
      "number": 3
     },
-    "squares.",
+    "squares in each row.",
     {
-     "number": 2
+     "number": 3
     },
-    "times",
+    "plus",
     {
      "number": 3
     },
@@ -47,17 +47,26 @@
     {
      "number": 6
     },
-    "."
+    ".",
+    "There are",
+    {
+     "number": 6
+    },
+    "squares."
    ],
    "steps": [
-    "2 rows of 3 squares.",
-    "2 × 3 = 6 squares."
+    "There are 2 rows, with 3 squares in each row.",
+    "3 + 3 = 6.",
+    "There are 6 squares."
    ],
    "visual": {
     "kind": "array",
     "rows": 2,
     "cols": 3,
     "emoji": "🟩"
+   },
+   "hint": {
+    "text": "Count the squares in one row. Then add one row at a time."
    }
   },
   "type": "choice",
@@ -131,15 +140,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -147,17 +164,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -229,15 +255,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 3
       },
-      "times",
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
       {
        "number": 3
       },
@@ -245,17 +279,26 @@
       {
        "number": 12
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 12
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 3 squares.",
-      "4 × 3 = 12 squares."
+      "There are 4 rows, with 3 squares in each row.",
+      "3 + 3 + 3 + 3 = 12.",
+      "There are 12 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -327,15 +370,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -343,17 +394,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -425,15 +485,27 @@
       {
        "number": 5
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 5
+       "number": 3
       },
-      "times",
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
       {
        "number": 3
       },
@@ -441,17 +513,26 @@
       {
        "number": 15
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 15
+      },
+      "squares."
      ],
      "steps": [
-      "5 rows of 3 squares.",
-      "5 × 3 = 15 squares."
+      "There are 5 rows, with 3 squares in each row.",
+      "3 + 3 + 3 + 3 + 3 = 15.",
+      "There are 15 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 5,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -523,15 +604,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 5
       },
-      "times",
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 5
       },
@@ -539,17 +628,26 @@
       {
        "number": 20
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 20
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "There are 4 rows, with 5 squares in each row.",
+      "5 + 5 + 5 + 5 = 20.",
+      "There are 20 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -621,15 +719,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -637,17 +743,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -719,15 +834,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 3
       },
-      "times",
+      "plus",
       {
        "number": 3
       },
@@ -735,17 +850,26 @@
       {
        "number": 6
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 6
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 3 squares.",
-      "2 × 3 = 6 squares."
+      "There are 2 rows, with 3 squares in each row.",
+      "3 + 3 = 6.",
+      "There are 6 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -817,15 +941,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 4
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 4
       },
-      "times",
+      "plus",
       {
        "number": 4
       },
@@ -833,17 +957,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 4 squares.",
-      "2 × 4 = 8 squares."
+      "There are 2 rows, with 4 squares in each row.",
+      "4 + 4 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -915,15 +1048,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 5
       },
-      "times",
+      "plus",
       {
        "number": 5
       },
@@ -931,17 +1064,26 @@
       {
        "number": 10
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 10
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 5 squares.",
-      "2 × 5 = 10 squares."
+      "There are 2 rows, with 5 squares in each row.",
+      "5 + 5 = 10.",
+      "There are 10 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -1013,15 +1155,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 5
       },
-      "times",
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 5
       },
@@ -1029,17 +1179,26 @@
       {
        "number": 20
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 20
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "There are 4 rows, with 5 squares in each row.",
+      "5 + 5 + 5 + 5 = 20.",
+      "There are 20 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "choice",
@@ -1144,37 +1303,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Columns go up and down.",
+      "Count along the top, one column at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
-       "number": 4
-      },
-      "rows of",
-      {
        "number": 2
       },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 2
-      },
-      "is",
-      {
-       "number": 8
-      },
-      "."
+      "columns."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "Columns go up and down.",
+      "Count along the top, one column at a time: 1, 2.",
+      "There are 2 columns."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares along the top row."
      }
     },
     "skillId": "M-2-D3",
@@ -1243,37 +1400,43 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 4
       },
-      "rows of",
-      {
-       "number": 3
-      },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 3
-      },
-      "is",
-      {
-       "number": 12
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "4 rows of 3 squares.",
-      "4 × 3 = 12 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2, 3, 4.",
+      "There are 4 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -1342,37 +1505,43 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 4
       },
-      "rows of",
-      {
-       "number": 2
-      },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 2
-      },
-      "is",
-      {
-       "number": 8
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2, 3, 4.",
+      "There are 4 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -1441,37 +1610,47 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ".",
       "There are",
       {
        "number": 5
       },
-      "rows of",
-      {
-       "number": 3
-      },
-      "squares.",
-      {
-       "number": 5
-      },
-      "times",
-      {
-       "number": 3
-      },
-      "is",
-      {
-       "number": 15
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "5 rows of 3 squares.",
-      "5 × 3 = 15 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2, 3, 4, 5.",
+      "There are 5 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 5,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -1540,37 +1719,43 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ".",
       "There are",
       {
        "number": 4
       },
-      "rows of",
-      {
-       "number": 5
-      },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 5
-      },
-      "is",
-      {
-       "number": 20
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2, 3, 4.",
+      "There are 4 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -1639,37 +1824,35 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "Columns go up and down.",
+      "Count along the top, one column at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
-       "number": 4
-      },
-      "rows of",
-      {
        "number": 2
       },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 2
-      },
-      "is",
-      {
-       "number": 8
-      },
-      "."
+      "columns."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "Columns go up and down.",
+      "Count along the top, one column at a time: 1, 2.",
+      "There are 2 columns."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares along the top row."
      }
     },
     "skillId": "M-2-D3",
@@ -1738,37 +1921,39 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Columns go up and down.",
+      "Count along the top, one column at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ".",
       "There are",
       {
-       "number": 2
-      },
-      "rows of",
-      {
        "number": 3
       },
-      "squares.",
-      {
-       "number": 2
-      },
-      "times",
-      {
-       "number": 3
-      },
-      "is",
-      {
-       "number": 6
-      },
-      "."
+      "columns."
      ],
      "steps": [
-      "2 rows of 3 squares.",
-      "2 × 3 = 6 squares."
+      "Columns go up and down.",
+      "Count along the top, one column at a time: 1, 2, 3.",
+      "There are 3 columns."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares along the top row."
      }
     },
     "skillId": "M-2-D3",
@@ -1837,37 +2022,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows of",
-      {
-       "number": 4
-      },
-      "squares.",
-      {
-       "number": 2
-      },
-      "times",
-      {
-       "number": 4
-      },
-      "is",
-      {
-       "number": 8
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "2 rows of 4 squares.",
-      "2 × 4 = 8 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2.",
+      "There are 2 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -1936,37 +2119,35 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "Rows go across.",
+      "Count down one side, one row at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ".",
       "There are",
       {
        "number": 2
       },
-      "rows of",
-      {
-       "number": 5
-      },
-      "squares.",
-      {
-       "number": 2
-      },
-      "times",
-      {
-       "number": 5
-      },
-      "is",
-      {
-       "number": 10
-      },
-      "."
+      "rows."
      ],
      "steps": [
-      "2 rows of 5 squares.",
-      "2 × 5 = 10 squares."
+      "Rows go across.",
+      "Count down one side, one row at a time: 1, 2.",
+      "There are 2 rows."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares down one side."
      }
     },
     "skillId": "M-2-D3",
@@ -2035,37 +2216,47 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "Columns go up and down.",
+      "Count along the top, one column at a time:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ".",
       "There are",
       {
-       "number": 4
-      },
-      "rows of",
-      {
        "number": 5
       },
-      "squares.",
-      {
-       "number": 4
-      },
-      "times",
-      {
-       "number": 5
-      },
-      "is",
-      {
-       "number": 20
-      },
-      "."
+      "columns."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "Columns go up and down.",
+      "Count along the top, one column at a time: 1, 2, 3, 4, 5.",
+      "There are 5 columns."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares along the top row."
      }
     },
     "skillId": "M-2-D3",
@@ -2100,15 +2291,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -2116,17 +2315,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2162,15 +2370,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 3
       },
-      "times",
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
       {
        "number": 3
       },
@@ -2178,17 +2394,26 @@
       {
        "number": 12
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 12
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 3 squares.",
-      "4 × 3 = 12 squares."
+      "There are 4 rows, with 3 squares in each row.",
+      "3 + 3 + 3 + 3 = 12.",
+      "There are 12 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2224,15 +2449,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -2240,17 +2473,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2286,15 +2528,27 @@
       {
        "number": 5
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 5
+       "number": 3
       },
-      "times",
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "plus",
       {
        "number": 3
       },
@@ -2302,17 +2556,26 @@
       {
        "number": 15
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 15
+      },
+      "squares."
      ],
      "steps": [
-      "5 rows of 3 squares.",
-      "5 × 3 = 15 squares."
+      "There are 5 rows, with 3 squares in each row.",
+      "3 + 3 + 3 + 3 + 3 = 15.",
+      "There are 15 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 5,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2348,15 +2611,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 5
       },
-      "times",
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 5
       },
@@ -2364,17 +2635,26 @@
       {
        "number": 20
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 20
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "There are 4 rows, with 5 squares in each row.",
+      "5 + 5 + 5 + 5 = 20.",
+      "There are 20 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2410,15 +2690,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 2
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 2
       },
-      "times",
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
+      {
+       "number": 2
+      },
+      "plus",
       {
        "number": 2
       },
@@ -2426,17 +2714,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 2 squares.",
-      "4 × 2 = 8 squares."
+      "There are 4 rows, with 2 squares in each row.",
+      "2 + 2 + 2 + 2 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 2,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2472,15 +2769,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 3
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 3
       },
-      "times",
+      "plus",
       {
        "number": 3
       },
@@ -2488,17 +2785,26 @@
       {
        "number": 6
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 6
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 3 squares.",
-      "2 × 3 = 6 squares."
+      "There are 2 rows, with 3 squares in each row.",
+      "3 + 3 = 6.",
+      "There are 6 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 3,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2534,15 +2840,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 4
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 4
       },
-      "times",
+      "plus",
       {
        "number": 4
       },
@@ -2550,17 +2856,26 @@
       {
        "number": 8
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 8
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 4 squares.",
-      "2 × 4 = 8 squares."
+      "There are 2 rows, with 4 squares in each row.",
+      "4 + 4 = 8.",
+      "There are 8 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 4,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2596,15 +2911,15 @@
       {
        "number": 2
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 2
+       "number": 5
       },
-      "times",
+      "plus",
       {
        "number": 5
       },
@@ -2612,17 +2927,26 @@
       {
        "number": 10
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 10
+      },
+      "squares."
      ],
      "steps": [
-      "2 rows of 5 squares.",
-      "2 × 5 = 10 squares."
+      "There are 2 rows, with 5 squares in each row.",
+      "5 + 5 = 10.",
+      "There are 10 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 2,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",
@@ -2658,15 +2982,23 @@
       {
        "number": 4
       },
-      "rows of",
+      "rows, with",
       {
        "number": 5
       },
-      "squares.",
+      "squares in each row.",
       {
-       "number": 4
+       "number": 5
       },
-      "times",
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 5
       },
@@ -2674,17 +3006,26 @@
       {
        "number": 20
       },
-      "."
+      ".",
+      "There are",
+      {
+       "number": 20
+      },
+      "squares."
      ],
      "steps": [
-      "4 rows of 5 squares.",
-      "4 × 5 = 20 squares."
+      "There are 4 rows, with 5 squares in each row.",
+      "5 + 5 + 5 + 5 = 20.",
+      "There are 20 squares."
      ],
      "visual": {
       "kind": "array",
       "rows": 4,
       "cols": 5,
       "emoji": "🟩"
+     },
+     "hint": {
+      "text": "Count the squares in one row. Then add one row at a time."
      }
     },
     "type": "numberPad",

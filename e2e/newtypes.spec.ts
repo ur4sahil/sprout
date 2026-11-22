@@ -64,7 +64,7 @@ test.describe('the new question types', () => {
     // Column sum: type the digits, ones first.
     await openFromMath(page, 'Add within 1,000, regrouping');
     await checkScreen(page, 'columnSum', 64);
-    const [, a, b] = /(\d+) plus (\d+) equals what/.exec(await prompt(page)) ?? [];
+    const [, a, b] = /(\d+) plus (\d+)/.exec(await prompt(page)) ?? [];
     const sum = String(Number(a) + Number(b));
     for (const digit of sum.split('').reverse()) await page.getByRole('group', { name: 'Number pad' }).getByRole('button', { name: digit, exact: true }).click();
     await rightAnswerAccepted(page, 'columnSum');

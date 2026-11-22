@@ -1,14 +1,18 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { CoinName, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import { STORY_COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
-import { numeral } from '../../../generator';
+import { listText, numeral } from '../../../generator';
 import { graphQuestion } from '../g1/measure';
 import { numeralChoices } from '../k/numerals';
+import { line, together } from './addSubtract';
+import type { Explanation } from './addSubtract';
 
 // Math grade 2 C.1 to C.4: time to five minutes, counting coins, measuring with a ruler, bar graphs.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+// A list of numbers said one by one: "25, 30, 35".
+const sayList = (values: number[]): Say => values.flatMap((value, i): Say => (i === 0 ? [{ number: value }] : [',', { number: value }]));
 
 // ---- C.1 Time to five minutes ----
 // Levels: quarter hours / five-minute marks / match clock to time. Family: Time. Oracle: time.
@@ -23,22 +27,23 @@ const timeText = (time: Time): Visual => ({ kind: 'text', value: written(time), 
 const nextHour = (hour: number): number => (hour % 12) + 1;
 const hourBefore = (hour: number): number => ((hour + 10) % 12) + 1;
 
-function timeExplanation(time: Time): Explanation {
+// The minutes first, from the long hand, then the hour from the short hand, which has passed the hour but not
+// reached the next one. Reading the short hand first gave the answer away at quarter hours ("halfway" is half
+// past). Setting the clock says what to move: the long hand, and the short hand follows by itself.
+function timeExplanation(time: Time, setting = false): Explanation {
   const points = time.minute / 5;
   const next = nextHour(time.hour);
-  // Where the short hand sits: just past the hour, halfway to the next, or getting close to it.
-  const short: Say =
-    time.minute < 30
-      ? ['The short hand is just past', { number: time.hour }, '.']
-      : time.minute === 30
-        ? ['The short hand is halfway between', { number: time.hour }, 'and', { number: next }, '.']
-        : ['The short hand is past', { number: time.hour }, 'and getting close to', { number: next }, '.'];
-  const shortText = time.minute < 30 ? `The short hand is just past ${time.hour}.` : time.minute === 30 ? `The short hand is halfway between ${time.hour} and ${next}.` : `The short hand is past ${time.hour} and getting close to ${next}.`;
-  return {
-    speak: [...short, 'The long hand points to', { number: points }, '. Count by fives to', { number: time.minute }, '. It is', { time }, '.'],
-    steps: [shortText, `The long hand points to ${points}.`, `Count by fives to ${time.minute}.`, `It is ${written(time)}.`],
-    visual: clock(time),
-  };
+  const where =
+    time.minute < 30 ? line('just past', time.hour) : time.minute === 30 ? line('halfway between', time.hour, 'and', next) : line('past', time.hour, 'but not yet at', next);
+  const answer = { text: `It is ${written(time)}.`, speak: ['It is', { time }, '.'] as Say };
+  if (setting) {
+    const move = points === 1 ? line('Move the long hand to', 1, ': that is', 5, 'minutes.') : line('Move the long hand to', points, ': count by fives to', time.minute, '.');
+    const follows = { text: `The short hand moves by itself, to ${where.text}.`, speak: ['The short hand moves by itself, to', ...where.speak, '.'] as Say };
+    return together([move, follows, answer], clock(time), { text: 'Move the long hand first. Count by fives.' });
+  }
+  const minutes = points === 1 ? line('The', 1, 'means', 5, 'minutes.') : line('Count by fives up to the', points, ':', time.minute, 'minutes.');
+  const hour = { text: `The short hand is ${where.text}, so the hour is ${time.hour}.`, speak: ['The short hand is', ...where.speak, ', so the hour is', { number: time.hour }, '.'] as Say };
+  return together([line('The long hand points to', points, '.'), minutes, hour, answer], clock(time), { text: 'The long hand shows the minutes. Count by fives.' });
 }
 
 // The times offered beside the right one: an hour out, minutes out, and the long hand's number read as the minutes.
@@ -69,7 +74,7 @@ function timeToFive(level: Level, rng: Rng): QuestionDraft {
       start: { hour: 12, minute: 0 },
       minuteStep: 5,
       answer: time,
-      explanation: timeExplanation(time),
+      explanation: timeExplanation(time, true),
     };
   }
   // Never on the hour: that is grade 1.
@@ -109,14 +114,29 @@ const HOW_MUCH = 'How much money is this?';
 const centsText = (value: number): Visual => ({ kind: 'text', value: `${value}¢`, size: 'l', speak: [{ cents: value }] });
 const total = (coins: CoinName[]): number => coins.reduce((sum, coin) => sum + CENTS[coin], 0);
 
-function coinsExplanation(coins: CoinName[]): Explanation {
-  // The running total, counted on from the biggest coin.
+// What one coin is worth: "A dime is 10 cents."
+export function coinWorth(coin: CoinName): ReturnType<typeof line> {
+  return line(`A ${coin} is`, CENTS[coin], CENTS[coin] === 1 ? 'cent.' : 'cents.');
+}
+
+// Coins are counted on from the one worth the most (C.2 and C.10 say it the same way). A handful of one kind is
+// counted by that coin's worth.
+export const COUNT_ON = 'Start with the coin worth the most, then count on';
+const BY_WORD: Record<CoinName, string> = { penny: 'ones', nickel: 'fives', dime: 'tens', quarter: 'twenty-fives' };
+const COINS_WORD: Record<CoinName, string> = { penny: 'pennies', nickel: 'nickels', dime: 'dimes', quarter: 'quarters' };
+export function coinsExplanation(coins: CoinName[]): Explanation {
   const running = coins.map((_, i) => total(coins.slice(0, i + 1)));
-  return {
-    speak: ['Start with the biggest coin and count on.', ...running.map((value): { number: number } => ({ number: value })), '.', { cents: total(coins) }, '.'],
-    steps: ['Start with the biggest coin and count on.', `${running.join(', ')}.`, `${total(coins)} cents.`],
-    visual: { kind: 'coins', coins },
-  };
+  const kinds = BIGGEST_FIRST.filter((coin) => coins.includes(coin));
+  const that = line('That is', total(coins), 'cents.');
+  const visual: Visual = { kind: 'coins', coins };
+  const only = kinds.length === 1 ? kinds[0] : undefined;
+  if (only) {
+    const count = { text: `Count by ${CENTS[only]}s: ${listText(running)}.`, speak: [`Count by ${BY_WORD[only]}:`, ...sayList(running), '.'] as Say };
+    return together([coinWorth(only), count, that], visual, { text: `All the coins are ${COINS_WORD[only]}. Count by what one ${only} is worth.` });
+  }
+  const worth = kinds.map(coinWorth);
+  const values = { text: worth.map((each) => each.text).join(' '), speak: worth.flatMap((each) => each.speak) };
+  return together([values, { text: `${COUNT_ON}: ${listText(running)}.`, speak: [`${COUNT_ON}:`, ...sayList(running), '.'] }, that], visual, { text: `${COUNT_ON}.` });
 }
 
 // A handful of coins of `kinds` different kinds, biggest first, worth less than a dollar.
@@ -162,12 +182,15 @@ type Thing = 'pencil' | 'crayon' | 'ribbon';
 const THINGS: Thing[] = ['pencil', 'crayon', 'ribbon'];
 const ruler = (object: Thing, startUnit: number, lengthUnits: number): Visual => ({ kind: 'ruler', object, startUnit, lengthUnits });
 
+// The ruler counts centimeters, as in C.6. The spaces are counted one by one from where the thing starts.
 function rulerExplanation(object: Thing, start: number, length: number): Explanation {
-  return {
-    speak: ['It starts at', { number: start }, 'and ends at', { number: start + length }, '. Count the spaces between.', { number: length }, '.'],
-    steps: [`It starts at ${start} and ends at ${start + length}.`, `Count the spaces between: ${length}.`],
-    visual: ruler(object, start, length),
-  };
+  const end = start + length;
+  const spaces = Array.from({ length }, (_, i) => i + 1);
+  return together(
+    [line(`The ${object} starts at`, start, 'and ends at', end, '.'), { text: `Count the spaces from ${start} to ${end}: ${listText(spaces)}.`, speak: ['Count the spaces from', { number: start }, 'to', { number: end }, ':', ...sayList(spaces), '.'] }, line(`The ${object} is`, length, 'centimeters long.')],
+    ruler(object, start, length),
+    { text: 'Count the spaces, not the marks.' },
+  );
 }
 
 function measure(level: Level, rng: Rng): QuestionDraft {
@@ -175,7 +198,7 @@ function measure(level: Level, rng: Rng): QuestionDraft {
   // At level 3 the object starts part-way along the ruler.
   const start = level === 3 ? rng.int(1, 4) : 0;
   const length = level === 3 ? rng.int(2, 6) : rng.int(2, 9);
-  const prompt = `How long is the ${object}?`;
+  const prompt = `How many centimeters long is the ${object}?`;
   const base = { mode: 'look' as const, prompt: { text: prompt, speak: [prompt] as Say }, stimulus: ruler(object, start, length), explanation: rulerExplanation(object, start, length) };
   if (level === 2) return { ...base, type: 'numberPad', facts: { startUnit: start, lengthUnits: length, object }, answer: length, maxDigits: 2 };
   // The slips: the mark where it ends, the mark where it starts, or the marks counted instead of the spaces.
@@ -194,7 +217,7 @@ export const rulerGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'A ruler measures how long something is. Line one end up with zero.', speak: ['A ruler measures how long something is. Line one end up with zero.'], visual: ruler('pencil', 0, 5) },
     { beat: 'watch', text: rulerExplanation('pencil', 0, 5).steps.join(' '), speak: rulerExplanation('pencil', 0, 5).speak, visual: ruler('pencil', 0, 5) },
-    { beat: 'try', text: 'How long is the crayon?', speak: ['How long is the crayon?'], visual: ruler('crayon', 2, 3), reveal: { text: rulerExplanation('crayon', 2, 3).steps.join(' '), speak: rulerExplanation('crayon', 2, 3).speak, visual: ruler('crayon', 2, 3) } },
+    { beat: 'try', text: 'How many centimeters long is the crayon?', speak: ['How many centimeters long is the crayon?'], visual: ruler('crayon', 2, 3), reveal: { text: rulerExplanation('crayon', 2, 3).steps.join(' '), speak: rulerExplanation('crayon', 2, 3).speak, visual: ruler('crayon', 2, 3) } },
     { beat: 'remember', text: 'Count the spaces, not the marks.', speak: ['Count the spaces, not the marks.'], visual: ruler('pencil', 0, 5) },
   ],
   oracle: 'measure',
@@ -204,7 +227,24 @@ export const rulerGenerator: SkillGenerator = {
 // Levels: read a bar / most and least / how many more, typed / make the graph from tally marks (buildBar).
 // Family: Graphs. Oracle: graph.
 
-const barGraph = (level: Level, rng: Rng): QuestionDraft => graphQuestion(level, rng, 'bar', 10);
+// The graph is grade 1's (g1/measure.ts). Grade 2 says who chose: kids picked a favorite (as C.11 does), and each
+// question has its hint. Only the prompt and the hint are grade 2's own.
+export const PICKED = 'Kids picked their favorite thing.';
+const pluralOf = (one: string): string => STORY_COUNTABLES.find((thing) => thing.one === one)?.many ?? one;
+function barGraph(level: Level, rng: Rng): QuestionDraft {
+  const question = graphQuestion(level, rng, 'bar', 10);
+  if (level === 4) return { ...question, explanation: { ...question.explanation, hint: { text: 'Count each set of tally marks. A bundle is 5.' } } };
+  const things = (question.facts.things as string[]).map(pluralOf);
+  const thing = (key: string): string => things[question.facts[key] as number] ?? '';
+  const asked = level === 1 ? `How many kids picked ${thing('index')}?` : level === 2 ? `Which one did the ${question.facts.ask === 'most' ? 'most' : 'fewest'} kids pick?` : `How many more kids picked ${thing('index')} than ${thing('other')}?`;
+  const hint = level === 1 ? 'Find its bar. Read the number where the bar ends.' : level === 2 ? `Look for the ${question.facts.ask === 'most' ? 'longest' : 'shortest'} bar.` : 'Read both bars, then subtract.';
+  const text = `${PICKED} ${asked}`;
+  // Grade 2 writes a number sentence with its signs, as in every other grade 2 step.
+  const values = question.facts.values as number[];
+  const [a, b] = [values[question.facts.index as number] ?? 0, values[question.facts.other as number] ?? 0];
+  const steps = level === 3 ? [...question.explanation.steps.slice(0, -1), `${a} − ${b} = ${a - b}.`] : question.explanation.steps;
+  return { ...question, prompt: { text, speak: [text] }, explanation: { ...question.explanation, steps, hint: { text: hint } } };
+}
 
 export const barGraphsGenerator: SkillGenerator = {
   skillId: 'M-2-C4',
@@ -218,8 +258,8 @@ export const barGraphsGenerator: SkillGenerator = {
     const chart: Visual = { kind: 'graph', type: 'bar', categories: [{ label: 'apples', emoji: '🍎', value: 7 }, { label: 'cookies', emoji: '🍪', value: 4 }, { label: 'balls', emoji: '⚽', value: 9 }] };
     return [
       { beat: 'see', text: 'A bar graph shows how many with bars. A longer bar means more.', speak: ['A bar graph shows how many with bars. A longer bar means more.'], visual: chart },
-      { beat: 'watch', text: 'How many chose apples? Find apples. Read the end of its bar: 7.', speak: ['How many chose apples? Find apples. Read the end of its bar.', { number: 7 }, '.'], visual: chart },
-      { beat: 'try', text: 'How many chose balls?', speak: ['How many chose balls?'], visual: chart, reveal: { text: 'Find balls. Read the end of its bar: 9.', speak: ['Find balls. Read the end of its bar.', { number: 9 }, '.'] } },
+      { beat: 'watch', text: 'How many kids picked apples? Find apples. Read the end of its bar: 7.', speak: ['How many kids picked apples? Find apples. Read the end of its bar.', { number: 7 }, '.'], visual: chart },
+      { beat: 'try', text: 'How many kids picked balls?', speak: ['How many kids picked balls?'], visual: chart, reveal: { text: 'Find balls. Read the end of its bar: 9.', speak: ['Find balls. Read the end of its bar.', { number: 9 }, '.'] } },
       { beat: 'remember', text: 'Read one row at a time.', speak: ['Read one row at a time.'], visual: chart },
     ];
   },

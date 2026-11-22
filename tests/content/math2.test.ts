@@ -38,10 +38,10 @@ describe('A.1 Hundreds, tens, ones and A.2 Expanded form', () => {
     expect(places).toEqual(new Set(['hundredsValue', 'tensValue', 'onesValue']));
   });
 
-  it('A.1 says "1 hundred" and leaves out a place with nothing in it', () => {
+  it('A.1 names each kind of block with its worth, and says a 0 holds a place with no blocks', () => {
     const lines = new Set([...all('M-2-A1', 1), ...all('M-2-A1', 2)].map((question) => question.explanation.steps.join(' ')));
-    expect(lines).toContain('1 hundred is 100. 6 tens is 60. 3 ones. That makes 163.');
-    expect([...lines].some((line) => /^\d hundreds is \d00\. \d ones?\. That makes \d0\d\.$/.test(line))).toBe(true);
+    expect(lines).toContain('1 big square is 100. 6 long blocks are 60. 3 small blocks are 3. That makes 163.');
+    expect([...lines].some((line) => /^\d big squares are \d00\. There are no long blocks, so a 0 holds the tens place\. \d small blocks? (is|are) \d\. That makes \d0\d\.$/.test(line))).toBe(true);
   });
 
   it('A.2: parts to numeral, numeral to parts, then one zero, typed', () => {
@@ -49,7 +49,7 @@ describe('A.1 Hundreds, tens, ones and A.2 Expanded form', () => {
       const [h, t, o] = [n(question, 'hundreds'), n(question, 'tens'), n(question, 'ones')];
       expect(Math.min(h, t, o)).toBeGreaterThanOrEqual(1);
       expect(question.stimulus).toEqual({ kind: 'equation', parts: [h * 100, '+', t * 10, '+', o, '=', 'blank'] });
-      expect(question.prompt.text).toBe(`${h * 100} plus ${t * 10} plus ${o} is what number?`);
+      expect(question.prompt.text).toBe(`What is ${h * 100} plus ${t * 10} plus ${o}?`);
     }
     for (const question of all('M-2-A2', 2)) {
       if (question.type !== 'choice') throw new Error('not a choice');
@@ -88,7 +88,7 @@ describe('A.3 to A.6', () => {
     expect(equal).toBeGreaterThan(SEEDS * 0.1);
     expect(equal).toBeLessThan(SEEDS * 0.3);
     const lines = new Set(all('M-2-A3', 2).map((question) => question.explanation.steps[0]));
-    expect(lines).toEqual(new Set(['The hundreds are the same. Look at the tens.', 'The hundreds and tens are the same. Look at the ones.']));
+    expect(lines).toEqual(new Set(['The hundreds are the same. Compare the tens.', 'The hundreds and tens are the same. Compare the ones.']));
   });
 
   it('A.4: by 100s from any ten, by 10s from any number, by 5s typed', () => {
@@ -173,13 +173,11 @@ describe('C.1 to C.4', () => {
     }
   });
 
-  it('C.1 says where the short hand sits: just past, halfway, or getting close to the next hour', () => {
-    const line = (hour: number, minute: number): string | undefined => all('M-2-C1', 2).find((question) => n(question, 'hour') === hour && n(question, 'minute') === minute)?.explanation.steps[0];
-    const lines = new Set(all('M-2-C1', 2).map((question) => (n(question, 'minute') < 30 ? 'past' : n(question, 'minute') === 30 ? 'half' : 'close') + '|' + (question.explanation.steps[0] ?? '').replace(/\d+/g, '#')));
-    expect(lines).toEqual(new Set(['past|The short hand is just past #.', 'half|The short hand is halfway between # and #.', 'close|The short hand is past # and getting close to #.']));
-    void line;
+  it('C.1 says where the short hand sits, after the minutes: just past, halfway, or not yet at the next hour', () => {
+    const lines = new Set(all('M-2-C1', 2).map((question) => (n(question, 'minute') < 30 ? 'past' : n(question, 'minute') === 30 ? 'half' : 'close') + '|' + (question.explanation.steps[2] ?? '').replace(/\d+/g, '#')));
+    expect(lines).toEqual(new Set(['past|The short hand is just past #, so the hour is #.', 'half|The short hand is halfway between # and #, so the hour is #.', 'close|The short hand is past # but not yet at #, so the hour is #.']));
     // After 12 comes 1.
-    expect(all('M-2-C1', 2).some((question) => question.explanation.steps[0] === 'The short hand is past 12 and getting close to 1.')).toBe(true);
+    expect(all('M-2-C1', 2).some((question) => question.explanation.steps[2] === 'The short hand is past 12 but not yet at 1, so the hour is 12.')).toBe(true);
   });
 
   it('C.2: one kind of coin, then two kinds, then three kinds typed, biggest first and under a dollar', () => {
@@ -196,7 +194,7 @@ describe('C.1 to C.4', () => {
         expect(question.stimulus).toEqual({ kind: 'coins', coins });
         if (question.type === 'numberPad') expect(question.answer).toBe(total);
         else if (question.type === 'choice') expect((question.facts.options as number[])[question.answerIndex]).toBe(total);
-        expect(question.explanation.steps.at(-1)).toBe(`${total} cents.`);
+        expect(question.explanation.steps.at(-1)).toBe(`That is ${total} cents.`);
       }
     }
     expect(types(all('M-2-C2', 3))).toEqual(['numberPad']);
@@ -212,7 +210,7 @@ describe('C.1 to C.4', () => {
       expect(start).toBeGreaterThanOrEqual(1);
       expect((question.facts.options as number[])[question.answerIndex]).toBe(length);
       if ((question.facts.options as number[]).includes(start + length)) endOffered += 1;
-      expect(question.explanation.steps[0]).toBe(`It starts at ${start} and ends at ${start + length}.`);
+      expect(question.explanation.steps[0]).toBe(`The ${question.facts.object as string} starts at ${start} and ends at ${start + length}.`);
     }
     expect(endOffered).toBeGreaterThan(SEEDS * 0.5);
   });

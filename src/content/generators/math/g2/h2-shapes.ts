@@ -23,6 +23,8 @@ const ABOUT_SAID: Record<SolidName, string> = {
   cylinder: 'A cylinder has two flat round faces, one at each end, and no corners.',
   cone: 'A cone has one flat round face, its base, and a point at the top.',
 };
+// How to count, never how many.
+const HINT: Record<'faces' | 'corners' | 'edges', string> = { faces: 'Count only the flat faces. A curved side is not flat.', corners: 'Touch each corner once as you count.', edges: 'Touch each edge once as you count.' };
 const solid = (name: SolidName, speak = true): Visual => (speak ? { kind: 'solid', solid: name, speak: [name] } : { kind: 'solid', solid: name });
 // The corners and edges that are agreed: a cube's, and none on a sphere or a cylinder.
 const ASKS: { solid: SolidName; ask: 'corners' | 'edges'; answer: number }[] = [
@@ -46,7 +48,7 @@ function solidParts(level: Level, rng: Rng): QuestionDraft {
       prompt: { text, speak: want === 0 ? [text] : ['Which shape has', { number: want }, `flat ${want === 1 ? 'face' : 'faces'}?`] },
       options: offered.map((name) => solid(name)),
       answerIndex: offered.indexOf(target),
-      explanation: { speak: [ABOUT_SAID[target]], steps: [ABOUT[target]], visual: solid(target) },
+      explanation: { speak: [ABOUT_SAID[target]], steps: [ABOUT[target]], visual: solid(target), hint: { text: 'Look at each shape. Which faces are flat?' } },
     };
   }
   const { solid: name, ask, answer } = level === 1 ? (() => {
@@ -65,7 +67,7 @@ function solidParts(level: Level, rng: Rng): QuestionDraft {
     stimulus: solid(name, false),
     options: values.map((value) => numeral(value)),
     answerIndex: values.indexOf(answer),
-    explanation: { speak: [ABOUT_SAID[name]], steps: [ABOUT[name]], visual: solid(name) },
+    explanation: { speak: [ABOUT_SAID[name]], steps: [ABOUT[name]], visual: solid(name), hint: { text: HINT[ask] } },
   };
 }
 

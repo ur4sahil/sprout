@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-C5",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -8,6 +8,7 @@
   "facts": {
    "ask": "unit",
    "inches": 7,
+   "thing": "pencil",
    "options": [
     "inches",
     "feet"
@@ -49,10 +50,17 @@
   "answerIndex": 0,
   "explanation": {
    "speak": [
-    "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+    "Inches are for small things. Feet are for big things.",
+    "A pencil is small, so we measure it in inches.",
+    "A foot is",
+    {
+     "number": 12
+    },
+    "inches."
    ],
    "steps": [
-    "Small things: inches. Big things: feet.",
+    "Inches are for small things. Feet are for big things.",
+    "A pencil is small, so we measure it in inches.",
     "A foot is 12 inches."
    ],
    "visual": {
@@ -63,12 +71,15 @@
     "speak": [
      "pencil"
     ]
+   },
+   "hint": {
+    "text": "Could you hold it in one hand?"
    }
   },
   "skillId": "M-2-C5",
   "level": 1,
   "seed": 662,
-  "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7}"
+  "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7,\"thing\":\"pencil\"}"
  },
  "levels": {
   "1": [
@@ -79,6 +90,7 @@
     "facts": {
      "ask": "unit",
      "inches": 84,
+     "thing": "door",
      "options": [
       "inches",
       "feet"
@@ -120,10 +132,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -134,12 +153,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 1,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84,\"thing\":\"door\"}"
    },
    {
     "type": "choice",
@@ -148,6 +170,7 @@
     "facts": {
      "ask": "unit",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "inches",
       "feet"
@@ -189,10 +212,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -203,12 +233,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 2,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -217,6 +250,7 @@
     "facts": {
      "ask": "unit",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "inches",
       "feet"
@@ -258,10 +292,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -272,12 +313,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 3,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -286,6 +330,7 @@
     "facts": {
      "ask": "unit",
      "inches": 168,
+     "thing": "car",
      "options": [
       "inches",
       "feet"
@@ -327,10 +372,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A car is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A car is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -341,12 +393,15 @@
       "speak": [
        "car"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 4,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":168}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":168,\"thing\":\"car\"}"
    },
    {
     "type": "choice",
@@ -355,6 +410,7 @@
     "facts": {
      "ask": "unit",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "inches",
       "feet"
@@ -396,10 +452,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A bed is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -410,12 +473,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 5,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -424,6 +490,7 @@
     "facts": {
      "ask": "unit",
      "inches": 84,
+     "thing": "door",
      "options": [
       "inches",
       "feet"
@@ -465,10 +532,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -479,12 +553,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 6,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84,\"thing\":\"door\"}"
    },
    {
     "type": "choice",
@@ -493,6 +570,7 @@
     "facts": {
      "ask": "unit",
      "inches": 7,
+     "thing": "pencil",
      "options": [
       "inches",
       "feet"
@@ -534,10 +612,17 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A pencil is small, so we measure it in inches.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A pencil is small, so we measure it in inches.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -548,12 +633,15 @@
       "speak": [
        "pencil"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 7,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -562,6 +650,7 @@
     "facts": {
      "ask": "unit",
      "inches": 7,
+     "thing": "pencil",
      "options": [
       "inches",
       "feet"
@@ -603,10 +692,17 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A pencil is small, so we measure it in inches.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A pencil is small, so we measure it in inches.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -617,12 +713,15 @@
       "speak": [
        "pencil"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 8,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":7,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -631,6 +730,7 @@
     "facts": {
      "ask": "unit",
      "inches": 6,
+     "thing": "phone",
      "options": [
       "inches",
       "feet"
@@ -672,10 +772,17 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A phone is small, so we measure it in inches.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A phone is small, so we measure it in inches.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -686,12 +793,15 @@
       "speak": [
        "phone"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 9,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":6}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":6,\"thing\":\"phone\"}"
    },
    {
     "type": "choice",
@@ -700,6 +810,7 @@
     "facts": {
      "ask": "unit",
      "inches": 84,
+     "thing": "door",
      "options": [
       "inches",
       "feet"
@@ -741,10 +852,17 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Small things are measured in inches. Big things are measured in feet. A foot is twelve inches."
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
+      "A foot is",
+      {
+       "number": 12
+      },
+      "inches."
      ],
      "steps": [
-      "Small things: inches. Big things: feet.",
+      "Inches are for small things. Feet are for big things.",
+      "A door is big, so we measure it in feet.",
       "A foot is 12 inches."
      ],
      "visual": {
@@ -755,12 +873,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Could you hold it in one hand?"
      }
     },
     "skillId": "M-2-C5",
     "level": 1,
     "seed": 10,
-    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84}"
+    "key": "M-2-C5|1|{\"ask\":\"unit\",\"inches\":84,\"thing\":\"door\"}"
    }
   ],
   "2": [
@@ -769,23 +890,27 @@
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "fewerUnits",
+     "ask": "moreUnits",
+     "thing": "phone",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is smaller?",
+     "text": "A phone is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is smaller?"
+      "A phone is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 3
+     "kind": "emojiGroup",
+     "emoji": "📱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "phone"
+     ]
     },
     "options": [
      {
@@ -805,27 +930,35 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the phone.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the phone.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 3
+      "kind": "emojiGroup",
+      "emoji": "📱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "phone"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 1,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"phone\"}"
    },
    {
     "type": "choice",
@@ -833,22 +966,26 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
+     "thing": "spoon",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
+      "A spoon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 5
+     "kind": "emojiGroup",
+     "emoji": "🥄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "spoon"
+     ]
     },
     "options": [
      {
@@ -871,24 +1008,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 5
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "spoon"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 2,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
    },
    {
     "type": "choice",
@@ -896,22 +1041,26 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
+     "thing": "spoon",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
+      "A spoon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 3
+     "kind": "emojiGroup",
+     "emoji": "🥄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "spoon"
+     ]
     },
     "options": [
      {
@@ -934,24 +1083,32 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 3
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "spoon"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 3,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
    },
    {
     "type": "choice",
@@ -959,22 +1116,26 @@
     "fixedOrder": true,
     "facts": {
      "ask": "moreUnits",
+     "thing": "spoon",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "A spoon is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
+      "A spoon is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 5
+     "kind": "emojiGroup",
+     "emoji": "🥄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "spoon"
+     ]
     },
     "options": [
      {
@@ -997,47 +1158,59 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the spoon.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 5
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "spoon"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 4,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"spoon\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "moreUnits",
+     "ask": "fewerUnits",
+     "thing": "spoon",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
+     "text": "A spoon is measured in inches and in centimeters. Which number is smaller?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
+      "A spoon is measured in inches and in centimeters. Which number is smaller?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 8
+     "kind": "emojiGroup",
+     "emoji": "🥄",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "spoon"
+     ]
     },
     "options": [
      {
@@ -1057,50 +1230,62 @@
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the spoon.",
+      "The inches number is smaller."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the spoon.",
+      "The inches number is smaller."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 8
+      "kind": "emojiGroup",
+      "emoji": "🥄",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "spoon"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 5,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"spoon\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "fewerUnits",
+     "ask": "moreUnits",
+     "thing": "phone",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is smaller?",
+     "text": "A phone is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is smaller?"
+      "A phone is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 3
+     "kind": "emojiGroup",
+     "emoji": "📱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "phone"
+     ]
     },
     "options": [
      {
@@ -1120,50 +1305,62 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the phone.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the phone.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 3
+      "kind": "emojiGroup",
+      "emoji": "📱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "phone"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 6,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"phone\"}"
    },
    {
     "type": "choice",
     "mode": "look",
     "fixedOrder": true,
     "facts": {
-     "ask": "fewerUnits",
+     "ask": "moreUnits",
+     "thing": "pencil",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is smaller?",
+     "text": "A pencil is measured in inches and in centimeters. Which number is bigger?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is smaller?"
+      "A pencil is measured in inches and in centimeters. Which number is bigger?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 3
+     "kind": "emojiGroup",
+     "emoji": "✏️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "pencil"
+     ]
     },
     "options": [
      {
@@ -1183,153 +1380,35 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the pencil.",
+      "The centimeters number is bigger."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So more centimeters than inches fit along the pencil.",
+      "The centimeters number is bigger."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 3
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pencil"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 7,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "fixedOrder": true,
-    "facts": {
-     "ask": "moreUnits",
-     "options": [
-      "the inches",
-      "the centimeters"
-     ]
-    },
-    "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
-     "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
-     ]
-    },
-    "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 7
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "the inches",
-      "size": "l",
-      "speak": [
-       "the inches"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the centimeters",
-      "size": "l",
-      "speak": [
-       "the centimeters"
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
-     ],
-     "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
-     ],
-     "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 7
-     }
-    },
-    "skillId": "M-2-C5",
-    "level": 2,
-    "seed": 8,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "fixedOrder": true,
-    "facts": {
-     "ask": "moreUnits",
-     "options": [
-      "the inches",
-      "the centimeters"
-     ]
-    },
-    "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is bigger?",
-     "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is bigger?"
-     ]
-    },
-    "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 8
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "the inches",
-      "size": "l",
-      "speak": [
-       "the inches"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the centimeters",
-      "size": "l",
-      "speak": [
-       "the centimeters"
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "explanation": {
-     "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
-     ],
-     "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
-     ],
-     "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 8
-     }
-    },
-    "skillId": "M-2-C5",
-    "level": 2,
-    "seed": 9,
-    "key": "M-2-C5|2|{\"ask\":\"moreUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"moreUnits\",\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -1337,22 +1416,26 @@
     "fixedOrder": true,
     "facts": {
      "ask": "fewerUnits",
+     "thing": "pencil",
      "options": [
       "the inches",
       "the centimeters"
      ]
     },
     "prompt": {
-     "text": "A ribbon is measured in inches and in centimeters. Which number is smaller?",
+     "text": "A pencil is measured in inches and in centimeters. Which number is smaller?",
      "speak": [
-      "A ribbon is measured in inches and in centimeters. Which number is smaller?"
+      "A pencil is measured in inches and in centimeters. Which number is smaller?"
      ]
     },
     "stimulus": {
-     "kind": "ruler",
-     "object": "ribbon",
-     "startUnit": 0,
-     "lengthUnits": 9
+     "kind": "emojiGroup",
+     "emoji": "✏️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "pencil"
+     ]
     },
     "options": [
      {
@@ -1375,24 +1458,182 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "A centimeter is smaller than an inch. Smaller units fit more times, so the number of centimeters is bigger."
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The inches number is smaller."
      ],
      "steps": [
-      "A centimeter is smaller than an inch.",
-      "Smaller units fit more times.",
-      "So the centimeters number is bigger."
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The inches number is smaller."
      ],
      "visual": {
-      "kind": "ruler",
-      "object": "ribbon",
-      "startUnit": 0,
-      "lengthUnits": 9
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pencil"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
+     }
+    },
+    "skillId": "M-2-C5",
+    "level": 2,
+    "seed": 8,
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"pencil\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "fewerUnits",
+     "thing": "pencil",
+     "options": [
+      "the inches",
+      "the centimeters"
+     ]
+    },
+    "prompt": {
+     "text": "A pencil is measured in inches and in centimeters. Which number is smaller?",
+     "speak": [
+      "A pencil is measured in inches and in centimeters. Which number is smaller?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "✏️",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "pencil"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "the inches",
+      "size": "l",
+      "speak": [
+       "the inches"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "the centimeters",
+      "size": "l",
+      "speak": [
+       "the centimeters"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The inches number is smaller."
+     ],
+     "steps": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the pencil.",
+      "The inches number is smaller."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "✏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "pencil"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
+     }
+    },
+    "skillId": "M-2-C5",
+    "level": 2,
+    "seed": 9,
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"pencil\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "fixedOrder": true,
+    "facts": {
+     "ask": "fewerUnits",
+     "thing": "phone",
+     "options": [
+      "the inches",
+      "the centimeters"
+     ]
+    },
+    "prompt": {
+     "text": "A phone is measured in inches and in centimeters. Which number is smaller?",
+     "speak": [
+      "A phone is measured in inches and in centimeters. Which number is smaller?"
+     ]
+    },
+    "stimulus": {
+     "kind": "emojiGroup",
+     "emoji": "📱",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      "phone"
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "the inches",
+      "size": "l",
+      "speak": [
+       "the inches"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "the centimeters",
+      "size": "l",
+      "speak": [
+       "the centimeters"
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the phone.",
+      "The inches number is smaller."
+     ],
+     "steps": [
+      "An inch is longer than a centimeter.",
+      "So fewer inches than centimeters fit along the phone.",
+      "The inches number is smaller."
+     ],
+     "visual": {
+      "kind": "emojiGroup",
+      "emoji": "📱",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       "phone"
+      ]
+     },
+     "hint": {
+      "text": "Which is longer: an inch or a centimeter?"
      }
     },
     "skillId": "M-2-C5",
     "level": 2,
     "seed": 10,
-    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\"}"
+    "key": "M-2-C5|2|{\"ask\":\"fewerUnits\",\"thing\":\"phone\"}"
    }
   ],
   "3": [
@@ -1402,6 +1643,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 84,
+     "thing": "door",
      "options": [
       "7 inches",
       "70 feet",
@@ -1409,9 +1651,9 @@
      ]
     },
     "prompt": {
-     "text": "About how long is a door?",
+     "text": "About how tall is a door?",
      "speak": [
-      "About how long is a door?"
+      "About how tall is a door?"
      ]
     },
     "stimulus": {
@@ -1461,14 +1703,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a door is about ",
+      "A door is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 7
       },
-      " feet long."
+      "feet tall."
      ],
      "steps": [
-      "A door is about 7 feet long."
+      "A door is big, so we measure it in feet.",
+      "It is about 7 feet tall."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1478,12 +1722,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 1,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84,\"thing\":\"door\"}"
    },
    {
     "type": "choice",
@@ -1491,6 +1738,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "60 feet",
       "6 inches",
@@ -1550,14 +1798,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a bed is about ",
+      "A bed is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 6
       },
-      " feet long."
+      "feet long."
      ],
      "steps": [
-      "A bed is about 6 feet long."
+      "A bed is big, so we measure it in feet.",
+      "It is about 6 feet long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1567,12 +1817,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 2,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -1580,6 +1833,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "60 feet",
       "6 inches",
@@ -1639,14 +1893,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a bed is about ",
+      "A bed is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 6
       },
-      " feet long."
+      "feet long."
      ],
      "steps": [
-      "A bed is about 6 feet long."
+      "A bed is big, so we measure it in feet.",
+      "It is about 6 feet long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1656,12 +1912,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 3,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -1669,6 +1928,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 168,
+     "thing": "car",
      "options": [
       "140 feet",
       "14 inches",
@@ -1728,14 +1988,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a car is about ",
+      "A car is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 14
       },
-      " feet long."
+      "feet long."
      ],
      "steps": [
-      "A car is about 14 feet long."
+      "A car is big, so we measure it in feet.",
+      "It is about 14 feet long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1745,12 +2007,15 @@
       "speak": [
        "car"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 4,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":168}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":168,\"thing\":\"car\"}"
    },
    {
     "type": "choice",
@@ -1758,6 +2023,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 72,
+     "thing": "bed",
      "options": [
       "60 feet",
       "6 feet",
@@ -1817,14 +2083,16 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "a bed is about ",
+      "A bed is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 6
       },
-      " feet long."
+      "feet long."
      ],
      "steps": [
-      "A bed is about 6 feet long."
+      "A bed is big, so we measure it in feet.",
+      "It is about 6 feet long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1834,12 +2102,15 @@
       "speak": [
        "bed"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 5,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":72,\"thing\":\"bed\"}"
    },
    {
     "type": "choice",
@@ -1847,6 +2118,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 84,
+     "thing": "door",
      "options": [
       "7 inches",
       "70 feet",
@@ -1854,9 +2126,9 @@
      ]
     },
     "prompt": {
-     "text": "About how long is a door?",
+     "text": "About how tall is a door?",
      "speak": [
-      "About how long is a door?"
+      "About how tall is a door?"
      ]
     },
     "stimulus": {
@@ -1906,14 +2178,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a door is about ",
+      "A door is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 7
       },
-      " feet long."
+      "feet tall."
      ],
      "steps": [
-      "A door is about 7 feet long."
+      "A door is big, so we measure it in feet.",
+      "It is about 7 feet tall."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -1923,12 +2197,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 6,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84,\"thing\":\"door\"}"
    },
    {
     "type": "choice",
@@ -1936,6 +2213,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 7,
+     "thing": "pencil",
      "options": [
       "7 feet",
       "70 inches",
@@ -1995,14 +2273,16 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "a pencil is about ",
+      "A pencil is small, so we measure it in inches.",
+      "It is about",
       {
        "number": 7
       },
-      " inches long."
+      "inches long."
      ],
      "steps": [
-      "A pencil is about 7 inches long."
+      "A pencil is small, so we measure it in inches.",
+      "It is about 7 inches long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -2012,12 +2292,15 @@
       "speak": [
        "pencil"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 7,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":7}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":7,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -2025,6 +2308,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 7,
+     "thing": "pencil",
      "options": [
       "7 feet",
       "7 inches",
@@ -2084,14 +2368,16 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "a pencil is about ",
+      "A pencil is small, so we measure it in inches.",
+      "It is about",
       {
        "number": 7
       },
-      " inches long."
+      "inches long."
      ],
      "steps": [
-      "A pencil is about 7 inches long."
+      "A pencil is small, so we measure it in inches.",
+      "It is about 7 inches long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -2101,12 +2387,15 @@
       "speak": [
        "pencil"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 8,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":7}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":7,\"thing\":\"pencil\"}"
    },
    {
     "type": "choice",
@@ -2114,6 +2403,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 6,
+     "thing": "phone",
      "options": [
       "60 inches",
       "6 inches",
@@ -2173,14 +2463,16 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "a phone is about ",
+      "A phone is small, so we measure it in inches.",
+      "It is about",
       {
        "number": 6
       },
-      " inches long."
+      "inches long."
      ],
      "steps": [
-      "A phone is about 6 inches long."
+      "A phone is small, so we measure it in inches.",
+      "It is about 6 inches long."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -2190,12 +2482,15 @@
       "speak": [
        "phone"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 9,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":6}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":6,\"thing\":\"phone\"}"
    },
    {
     "type": "choice",
@@ -2203,6 +2498,7 @@
     "facts": {
      "ask": "estimate",
      "inches": 84,
+     "thing": "door",
      "options": [
       "7 feet",
       "70 feet",
@@ -2210,9 +2506,9 @@
      ]
     },
     "prompt": {
-     "text": "About how long is a door?",
+     "text": "About how tall is a door?",
      "speak": [
-      "About how long is a door?"
+      "About how tall is a door?"
      ]
     },
     "stimulus": {
@@ -2262,14 +2558,16 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "a door is about ",
+      "A door is big, so we measure it in feet.",
+      "It is about",
       {
        "number": 7
       },
-      " feet long."
+      "feet tall."
      ],
      "steps": [
-      "A door is about 7 feet long."
+      "A door is big, so we measure it in feet.",
+      "It is about 7 feet tall."
      ],
      "visual": {
       "kind": "emojiGroup",
@@ -2279,12 +2577,15 @@
       "speak": [
        "door"
       ]
+     },
+     "hint": {
+      "text": "Pick the unit first: inches or feet? Then pick the number."
      }
     },
     "skillId": "M-2-C5",
     "level": 3,
     "seed": 10,
-    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84}"
+    "key": "M-2-C5|3|{\"ask\":\"estimate\",\"inches\":84,\"thing\":\"door\"}"
    }
   ]
  }

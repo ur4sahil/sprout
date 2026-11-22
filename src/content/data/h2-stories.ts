@@ -3,6 +3,10 @@
 
 export const STORY_NAMES: readonly string[] = ['Mia', 'Leo', 'Ava', 'Sam', 'Zoe', 'Max', 'Lily', 'Ben', 'Nora', 'Eli'];
 
+// After the first mention, a story with one person in it says "he" or "she", never the name again. These cover
+// every name here and every name in storyProblems.ts.
+export const PRONOUN: Readonly<Record<string, 'he' | 'she'>> = { Mia: 'she', Leo: 'he', Ava: 'she', Sam: 'he', Zoe: 'she', Max: 'he', Lily: 'she', Ben: 'he', Nora: 'she', Eli: 'he' };
+
 export const COLLECTED: readonly string[] = ['stickers', 'marbles', 'shells', 'cards', 'crayons', 'blocks', 'beads', 'rocks'];
 
 // Things to buy with coins, with a price in cents.

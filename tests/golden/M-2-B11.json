@@ -1,6 +1,6 @@
 {
  "skillId": "M-2-B11",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "facts": {
@@ -16,8 +16,9 @@
    ]
   },
   "prompt": {
-   "text": "1 + 2 + 4 equals what?",
+   "text": "What is 1 plus 2 plus 4?",
    "speak": [
+    "What is",
     {
      "number": 1
     },
@@ -29,7 +30,7 @@
     {
      "number": 4
     },
-    "equals what?"
+    "?"
    ]
   },
   "stimulus": {
@@ -46,13 +47,20 @@
   },
   "explanation": {
    "speak": [
-    "Add two at a time.",
     {
      "number": 1
     },
     "plus",
     {
      "number": 2
+    },
+    "is",
+    {
+     "number": 3
+    },
+    ".",
+    {
+     "number": 3
     },
     "plus",
     {
@@ -62,11 +70,16 @@
     {
      "number": 7
     },
+    ".",
+    "The total is",
+    {
+     "number": 7
+    },
     "."
    ],
    "steps": [
-    "Add two at a time.",
-    "1 + 2 = 3, 3 + 4 = 7",
+    "1 + 2 = 3.",
+    "3 + 4 = 7.",
     "The total is 7."
    ],
    "visual": {
@@ -80,6 +93,9 @@
      "=",
      7
     ]
+   },
+   "hint": {
+    "text": "Add two numbers at a time."
    }
   },
   "type": "choice",
@@ -138,8 +154,9 @@
      ]
     },
     "prompt": {
-     "text": "6 + 1 + 5 equals what?",
+     "text": "What is 6 plus 1 plus 5?",
      "speak": [
+      "What is",
       {
        "number": 6
       },
@@ -151,7 +168,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -168,13 +185,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 6
       },
       "plus",
       {
        "number": 1
+      },
+      "is",
+      {
+       "number": 7
+      },
+      ".",
+      {
+       "number": 7
       },
       "plus",
       {
@@ -184,11 +208,16 @@
       {
        "number": 12
       },
+      ".",
+      "The total is",
+      {
+       "number": 12
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "6 + 1 = 7, 7 + 5 = 12",
+      "6 + 1 = 7.",
+      "7 + 5 = 12.",
       "The total is 12."
      ],
      "visual": {
@@ -202,6 +231,9 @@
        "=",
        12
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -258,8 +290,9 @@
      ]
     },
     "prompt": {
-     "text": "7 + 3 + 3 equals what?",
+     "text": "What is 7 plus 3 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 7
       },
@@ -271,7 +304,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -288,13 +321,21 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
+      "Make a ten first:",
       {
        "number": 7
       },
       "plus",
       {
        "number": 3
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 10
       },
       "plus",
       {
@@ -304,11 +345,16 @@
       {
        "number": 13
       },
+      ".",
+      "The total is",
+      {
+       "number": 13
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "7 + 3 = 10, 10 + 3 = 13",
+      "Make a ten first: 7 + 3 = 10.",
+      "10 + 3 = 13.",
       "The total is 13."
      ],
      "visual": {
@@ -322,6 +368,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Look for two numbers that make a ten. Add those first."
      }
     },
     "type": "choice",
@@ -378,8 +427,9 @@
      ]
     },
     "prompt": {
-     "text": "7 + 1 + 5 equals what?",
+     "text": "What is 7 plus 1 plus 5?",
      "speak": [
+      "What is",
       {
        "number": 7
       },
@@ -391,7 +441,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -408,13 +458,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 7
       },
       "plus",
       {
        "number": 1
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      {
+       "number": 8
       },
       "plus",
       {
@@ -424,11 +481,16 @@
       {
        "number": 13
       },
+      ".",
+      "The total is",
+      {
+       "number": 13
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "7 + 1 = 8, 8 + 5 = 13",
+      "7 + 1 = 8.",
+      "8 + 5 = 13.",
       "The total is 13."
      ],
      "visual": {
@@ -442,6 +504,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -498,8 +563,9 @@
      ]
     },
     "prompt": {
-     "text": "9 + 3 + 2 equals what?",
+     "text": "What is 9 plus 3 plus 2?",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -511,7 +577,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -528,13 +594,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 9
       },
       "plus",
       {
        "number": 3
+      },
+      "is",
+      {
+       "number": 12
+      },
+      ".",
+      {
+       "number": 12
       },
       "plus",
       {
@@ -544,11 +617,16 @@
       {
        "number": 14
       },
+      ".",
+      "The total is",
+      {
+       "number": 14
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "9 + 3 = 12, 12 + 2 = 14",
+      "9 + 3 = 12.",
+      "12 + 2 = 14.",
       "The total is 14."
      ],
      "visual": {
@@ -562,6 +640,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -618,8 +699,9 @@
      ]
     },
     "prompt": {
-     "text": "7 + 7 + 2 equals what?",
+     "text": "What is 7 plus 7 plus 2?",
      "speak": [
+      "What is",
       {
        "number": 7
       },
@@ -631,7 +713,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -648,13 +730,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 7
       },
       "plus",
       {
        "number": 7
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 14
       },
       "plus",
       {
@@ -664,11 +753,16 @@
       {
        "number": 16
       },
+      ".",
+      "The total is",
+      {
+       "number": 16
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "7 + 7 = 14, 14 + 2 = 16",
+      "7 + 7 = 14.",
+      "14 + 2 = 16.",
       "The total is 16."
      ],
      "visual": {
@@ -682,6 +776,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -738,8 +835,9 @@
      ]
     },
     "prompt": {
-     "text": "5 + 1 + 6 equals what?",
+     "text": "What is 5 plus 1 plus 6?",
      "speak": [
+      "What is",
       {
        "number": 5
       },
@@ -751,7 +849,7 @@
       {
        "number": 6
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -768,13 +866,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 5
       },
       "plus",
       {
        "number": 1
+      },
+      "is",
+      {
+       "number": 6
+      },
+      ".",
+      {
+       "number": 6
       },
       "plus",
       {
@@ -784,11 +889,16 @@
       {
        "number": 12
       },
+      ".",
+      "The total is",
+      {
+       "number": 12
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "5 + 1 = 6, 6 + 6 = 12",
+      "5 + 1 = 6.",
+      "6 + 6 = 12.",
       "The total is 12."
      ],
      "visual": {
@@ -802,6 +912,9 @@
        "=",
        12
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -858,8 +971,9 @@
      ]
     },
     "prompt": {
-     "text": "1 + 1 + 9 equals what?",
+     "text": "What is 1 plus 1 plus 9?",
      "speak": [
+      "What is",
       {
        "number": 1
       },
@@ -871,7 +985,7 @@
       {
        "number": 9
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -888,11 +1002,7 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
-      {
-       "number": 1
-      },
-      "plus",
+      "Make a ten first:",
       {
        "number": 1
       },
@@ -902,13 +1012,30 @@
       },
       "is",
       {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 10
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "is",
+      {
+       "number": 11
+      },
+      ".",
+      "The total is",
+      {
        "number": 11
       },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "1 + 1 = 2, 2 + 9 = 11",
+      "Make a ten first: 1 + 9 = 10.",
+      "10 + 1 = 11.",
       "The total is 11."
      ],
      "visual": {
@@ -922,6 +1049,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Look for two numbers that make a ten. Add those first."
      }
     },
     "type": "choice",
@@ -978,8 +1108,9 @@
      ]
     },
     "prompt": {
-     "text": "2 + 6 + 3 equals what?",
+     "text": "What is 2 plus 6 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 2
       },
@@ -991,7 +1122,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1008,13 +1139,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 2
       },
       "plus",
       {
        "number": 6
+      },
+      "is",
+      {
+       "number": 8
+      },
+      ".",
+      {
+       "number": 8
       },
       "plus",
       {
@@ -1024,11 +1162,16 @@
       {
        "number": 11
       },
+      ".",
+      "The total is",
+      {
+       "number": 11
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "2 + 6 = 8, 8 + 3 = 11",
+      "2 + 6 = 8.",
+      "8 + 3 = 11.",
       "The total is 11."
      ],
      "visual": {
@@ -1042,6 +1185,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1098,8 +1244,9 @@
      ]
     },
     "prompt": {
-     "text": "2 + 8 + 2 equals what?",
+     "text": "What is 2 plus 8 plus 2?",
      "speak": [
+      "What is",
       {
        "number": 2
       },
@@ -1111,7 +1258,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1128,13 +1275,21 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
+      "Make a ten first:",
       {
        "number": 2
       },
       "plus",
       {
        "number": 8
+      },
+      "is",
+      {
+       "number": 10
+      },
+      ".",
+      {
+       "number": 10
       },
       "plus",
       {
@@ -1144,11 +1299,16 @@
       {
        "number": 12
       },
+      ".",
+      "The total is",
+      {
+       "number": 12
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "2 + 8 = 10, 10 + 2 = 12",
+      "Make a ten first: 2 + 8 = 10.",
+      "10 + 2 = 12.",
       "The total is 12."
      ],
      "visual": {
@@ -1162,6 +1322,9 @@
        "=",
        12
       ]
+     },
+     "hint": {
+      "text": "Look for two numbers that make a ten. Add those first."
      }
     },
     "type": "choice",
@@ -1218,8 +1381,9 @@
      ]
     },
     "prompt": {
-     "text": "5 + 9 + 7 equals what?",
+     "text": "What is 5 plus 9 plus 7?",
      "speak": [
+      "What is",
       {
        "number": 5
       },
@@ -1231,7 +1395,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1248,13 +1412,20 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 5
       },
       "plus",
       {
        "number": 9
+      },
+      "is",
+      {
+       "number": 14
+      },
+      ".",
+      {
+       "number": 14
       },
       "plus",
       {
@@ -1264,11 +1435,16 @@
       {
        "number": 21
       },
+      ".",
+      "The total is",
+      {
+       "number": 21
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "5 + 9 = 14, 14 + 7 = 21",
+      "5 + 9 = 14.",
+      "14 + 7 = 21.",
       "The total is 21."
      ],
      "visual": {
@@ -1282,6 +1458,9 @@
        "=",
        21
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1341,8 +1520,9 @@
      ]
     },
     "prompt": {
-     "text": "26 + 10 + 23 + 35 equals what?",
+     "text": "What is 26 plus 10 plus 23 plus 35?",
      "speak": [
+      "What is",
       {
        "number": 26
       },
@@ -1358,7 +1538,7 @@
       {
        "number": 35
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1377,7 +1557,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 26
       },
@@ -1385,9 +1564,25 @@
       {
        "number": 10
       },
+      "is",
+      {
+       "number": 36
+      },
+      ".",
+      {
+       "number": 36
+      },
       "plus",
       {
        "number": 23
+      },
+      "is",
+      {
+       "number": 59
+      },
+      ".",
+      {
+       "number": 59
       },
       "plus",
       {
@@ -1397,11 +1592,17 @@
       {
        "number": 94
       },
+      ".",
+      "The total is",
+      {
+       "number": 94
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "26 + 10 = 36, 36 + 23 = 59, 59 + 35 = 94",
+      "26 + 10 = 36.",
+      "36 + 23 = 59.",
+      "59 + 35 = 94.",
       "The total is 94."
      ],
      "visual": {
@@ -1417,6 +1618,9 @@
        "=",
        94
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1474,8 +1678,9 @@
      ]
     },
     "prompt": {
-     "text": "29 + 18 + 17 + 23 equals what?",
+     "text": "What is 29 plus 18 plus 17 plus 23?",
      "speak": [
+      "What is",
       {
        "number": 29
       },
@@ -1491,7 +1696,7 @@
       {
        "number": 23
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1510,7 +1715,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 29
       },
@@ -1518,9 +1722,25 @@
       {
        "number": 18
       },
+      "is",
+      {
+       "number": 47
+      },
+      ".",
+      {
+       "number": 47
+      },
       "plus",
       {
        "number": 17
+      },
+      "is",
+      {
+       "number": 64
+      },
+      ".",
+      {
+       "number": 64
       },
       "plus",
       {
@@ -1530,11 +1750,17 @@
       {
        "number": 87
       },
+      ".",
+      "The total is",
+      {
+       "number": 87
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "29 + 18 = 47, 47 + 17 = 64, 64 + 23 = 87",
+      "29 + 18 = 47.",
+      "47 + 17 = 64.",
+      "64 + 23 = 87.",
       "The total is 87."
      ],
      "visual": {
@@ -1550,6 +1776,9 @@
        "=",
        87
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1607,8 +1836,9 @@
      ]
     },
     "prompt": {
-     "text": "28 + 11 + 21 + 11 equals what?",
+     "text": "What is 28 plus 11 plus 21 plus 11?",
      "speak": [
+      "What is",
       {
        "number": 28
       },
@@ -1624,7 +1854,7 @@
       {
        "number": 11
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1643,7 +1873,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 28
       },
@@ -1651,9 +1880,25 @@
       {
        "number": 11
       },
+      "is",
+      {
+       "number": 39
+      },
+      ".",
+      {
+       "number": 39
+      },
       "plus",
       {
        "number": 21
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -1663,11 +1908,17 @@
       {
        "number": 71
       },
+      ".",
+      "The total is",
+      {
+       "number": 71
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "28 + 11 = 39, 39 + 21 = 60, 60 + 11 = 71",
+      "28 + 11 = 39.",
+      "39 + 21 = 60.",
+      "60 + 11 = 71.",
       "The total is 71."
      ],
      "visual": {
@@ -1683,6 +1934,9 @@
        "=",
        71
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1740,8 +1994,9 @@
      ]
     },
     "prompt": {
-     "text": "34 + 18 + 15 + 12 equals what?",
+     "text": "What is 34 plus 18 plus 15 plus 12?",
      "speak": [
+      "What is",
       {
        "number": 34
       },
@@ -1757,7 +2012,7 @@
       {
        "number": 12
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1776,7 +2031,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 34
       },
@@ -1784,9 +2038,25 @@
       {
        "number": 18
       },
+      "is",
+      {
+       "number": 52
+      },
+      ".",
+      {
+       "number": 52
+      },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 67
+      },
+      ".",
+      {
+       "number": 67
       },
       "plus",
       {
@@ -1796,11 +2066,17 @@
       {
        "number": 79
       },
+      ".",
+      "The total is",
+      {
+       "number": 79
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "34 + 18 = 52, 52 + 15 = 67, 67 + 12 = 79",
+      "34 + 18 = 52.",
+      "52 + 15 = 67.",
+      "67 + 12 = 79.",
       "The total is 79."
      ],
      "visual": {
@@ -1816,6 +2092,9 @@
        "=",
        79
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -1873,8 +2152,9 @@
      ]
     },
     "prompt": {
-     "text": "27 + 30 + 15 + 26 equals what?",
+     "text": "What is 27 plus 30 plus 15 plus 26?",
      "speak": [
+      "What is",
       {
        "number": 27
       },
@@ -1890,7 +2170,7 @@
       {
        "number": 26
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1909,7 +2189,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 27
       },
@@ -1917,9 +2196,25 @@
       {
        "number": 30
       },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
+      },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 72
+      },
+      ".",
+      {
+       "number": 72
       },
       "plus",
       {
@@ -1929,11 +2224,17 @@
       {
        "number": 98
       },
+      ".",
+      "The total is",
+      {
+       "number": 98
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "27 + 30 = 57, 57 + 15 = 72, 72 + 26 = 98",
+      "27 + 30 = 57.",
+      "57 + 15 = 72.",
+      "72 + 26 = 98.",
       "The total is 98."
      ],
      "visual": {
@@ -1949,6 +2250,9 @@
        "=",
        98
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2006,8 +2310,9 @@
      ]
     },
     "prompt": {
-     "text": "23 + 10 + 27 + 15 equals what?",
+     "text": "What is 23 plus 10 plus 27 plus 15?",
      "speak": [
+      "What is",
       {
        "number": 23
       },
@@ -2023,7 +2328,7 @@
       {
        "number": 15
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2042,7 +2347,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 23
       },
@@ -2050,9 +2354,25 @@
       {
        "number": 10
       },
+      "is",
+      {
+       "number": 33
+      },
+      ".",
+      {
+       "number": 33
+      },
       "plus",
       {
        "number": 27
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -2062,11 +2382,17 @@
       {
        "number": 75
       },
+      ".",
+      "The total is",
+      {
+       "number": 75
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "23 + 10 = 33, 33 + 27 = 60, 60 + 15 = 75",
+      "23 + 10 = 33.",
+      "33 + 27 = 60.",
+      "60 + 15 = 75.",
       "The total is 75."
      ],
      "visual": {
@@ -2082,6 +2408,9 @@
        "=",
        75
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2139,8 +2468,9 @@
      ]
     },
     "prompt": {
-     "text": "10 + 11 + 35 + 28 equals what?",
+     "text": "What is 10 plus 11 plus 35 plus 28?",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -2156,7 +2486,7 @@
       {
        "number": 28
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2175,7 +2505,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 10
       },
@@ -2183,9 +2512,25 @@
       {
        "number": 11
       },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 21
+      },
       "plus",
       {
        "number": 35
+      },
+      "is",
+      {
+       "number": 56
+      },
+      ".",
+      {
+       "number": 56
       },
       "plus",
       {
@@ -2195,11 +2540,17 @@
       {
        "number": 84
       },
+      ".",
+      "The total is",
+      {
+       "number": 84
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "10 + 11 = 21, 21 + 35 = 56, 56 + 28 = 84",
+      "10 + 11 = 21.",
+      "21 + 35 = 56.",
+      "56 + 28 = 84.",
       "The total is 84."
      ],
      "visual": {
@@ -2215,6 +2566,9 @@
        "=",
        84
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2272,8 +2626,9 @@
      ]
     },
     "prompt": {
-     "text": "14 + 26 + 17 + 28 equals what?",
+     "text": "What is 14 plus 26 plus 17 plus 28?",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -2289,7 +2644,7 @@
       {
        "number": 28
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2308,7 +2663,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 14
       },
@@ -2316,9 +2670,25 @@
       {
        "number": 26
       },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 40
+      },
       "plus",
       {
        "number": 17
+      },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
       },
       "plus",
       {
@@ -2328,11 +2698,17 @@
       {
        "number": 85
       },
+      ".",
+      "The total is",
+      {
+       "number": 85
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "14 + 26 = 40, 40 + 17 = 57, 57 + 28 = 85",
+      "14 + 26 = 40.",
+      "40 + 17 = 57.",
+      "57 + 28 = 85.",
       "The total is 85."
      ],
      "visual": {
@@ -2348,6 +2724,9 @@
        "=",
        85
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2405,8 +2784,9 @@
      ]
     },
     "prompt": {
-     "text": "15 + 32 + 13 + 31 equals what?",
+     "text": "What is 15 plus 32 plus 13 plus 31?",
      "speak": [
+      "What is",
       {
        "number": 15
       },
@@ -2422,7 +2802,7 @@
       {
        "number": 31
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2441,7 +2821,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 15
       },
@@ -2449,9 +2828,25 @@
       {
        "number": 32
       },
+      "is",
+      {
+       "number": 47
+      },
+      ".",
+      {
+       "number": 47
+      },
       "plus",
       {
        "number": 13
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -2461,11 +2856,17 @@
       {
        "number": 91
       },
+      ".",
+      "The total is",
+      {
+       "number": 91
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "15 + 32 = 47, 47 + 13 = 60, 60 + 31 = 91",
+      "15 + 32 = 47.",
+      "47 + 13 = 60.",
+      "60 + 31 = 91.",
       "The total is 91."
      ],
      "visual": {
@@ -2481,6 +2882,9 @@
        "=",
        91
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2538,8 +2942,9 @@
      ]
     },
     "prompt": {
-     "text": "21 + 21 + 15 + 12 equals what?",
+     "text": "What is 21 plus 21 plus 15 plus 12?",
      "speak": [
+      "What is",
       {
        "number": 21
       },
@@ -2555,7 +2960,7 @@
       {
        "number": 12
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2574,17 +2979,32 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 21
       },
       "plus",
       {
        "number": 21
+      },
+      "is",
+      {
+       "number": 42
+      },
+      ".",
+      {
+       "number": 42
       },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
       },
       "plus",
       {
@@ -2594,11 +3014,17 @@
       {
        "number": 69
       },
+      ".",
+      "The total is",
+      {
+       "number": 69
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "21 + 21 = 42, 42 + 15 = 57, 57 + 12 = 69",
+      "21 + 21 = 42.",
+      "42 + 15 = 57.",
+      "57 + 12 = 69.",
       "The total is 69."
      ],
      "visual": {
@@ -2614,6 +3040,9 @@
        "=",
        69
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "choice",
@@ -2668,8 +3097,9 @@
      ]
     },
     "prompt": {
-     "text": "26 + 10 + 23 + 35 equals what?",
+     "text": "What is 26 plus 10 plus 23 plus 35?",
      "speak": [
+      "What is",
       {
        "number": 26
       },
@@ -2685,7 +3115,7 @@
       {
        "number": 35
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2704,7 +3134,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 26
       },
@@ -2712,9 +3141,25 @@
       {
        "number": 10
       },
+      "is",
+      {
+       "number": 36
+      },
+      ".",
+      {
+       "number": 36
+      },
       "plus",
       {
        "number": 23
+      },
+      "is",
+      {
+       "number": 59
+      },
+      ".",
+      {
+       "number": 59
       },
       "plus",
       {
@@ -2724,11 +3169,17 @@
       {
        "number": 94
       },
+      ".",
+      "The total is",
+      {
+       "number": 94
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "26 + 10 = 36, 36 + 23 = 59, 59 + 35 = 94",
+      "26 + 10 = 36.",
+      "36 + 23 = 59.",
+      "59 + 35 = 94.",
       "The total is 94."
      ],
      "visual": {
@@ -2744,6 +3195,9 @@
        "=",
        94
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -2765,8 +3219,9 @@
      ]
     },
     "prompt": {
-     "text": "29 + 18 + 17 + 23 equals what?",
+     "text": "What is 29 plus 18 plus 17 plus 23?",
      "speak": [
+      "What is",
       {
        "number": 29
       },
@@ -2782,7 +3237,7 @@
       {
        "number": 23
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2801,7 +3256,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 29
       },
@@ -2809,9 +3263,25 @@
       {
        "number": 18
       },
+      "is",
+      {
+       "number": 47
+      },
+      ".",
+      {
+       "number": 47
+      },
       "plus",
       {
        "number": 17
+      },
+      "is",
+      {
+       "number": 64
+      },
+      ".",
+      {
+       "number": 64
       },
       "plus",
       {
@@ -2821,11 +3291,17 @@
       {
        "number": 87
       },
+      ".",
+      "The total is",
+      {
+       "number": 87
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "29 + 18 = 47, 47 + 17 = 64, 64 + 23 = 87",
+      "29 + 18 = 47.",
+      "47 + 17 = 64.",
+      "64 + 23 = 87.",
       "The total is 87."
      ],
      "visual": {
@@ -2841,6 +3317,9 @@
        "=",
        87
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -2862,8 +3341,9 @@
      ]
     },
     "prompt": {
-     "text": "28 + 11 + 21 + 11 equals what?",
+     "text": "What is 28 plus 11 plus 21 plus 11?",
      "speak": [
+      "What is",
       {
        "number": 28
       },
@@ -2879,7 +3359,7 @@
       {
        "number": 11
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2898,7 +3378,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 28
       },
@@ -2906,9 +3385,25 @@
       {
        "number": 11
       },
+      "is",
+      {
+       "number": 39
+      },
+      ".",
+      {
+       "number": 39
+      },
       "plus",
       {
        "number": 21
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -2918,11 +3413,17 @@
       {
        "number": 71
       },
+      ".",
+      "The total is",
+      {
+       "number": 71
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "28 + 11 = 39, 39 + 21 = 60, 60 + 11 = 71",
+      "28 + 11 = 39.",
+      "39 + 21 = 60.",
+      "60 + 11 = 71.",
       "The total is 71."
      ],
      "visual": {
@@ -2938,6 +3439,9 @@
        "=",
        71
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -2959,8 +3463,9 @@
      ]
     },
     "prompt": {
-     "text": "34 + 18 + 15 + 12 equals what?",
+     "text": "What is 34 plus 18 plus 15 plus 12?",
      "speak": [
+      "What is",
       {
        "number": 34
       },
@@ -2976,7 +3481,7 @@
       {
        "number": 12
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2995,7 +3500,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 34
       },
@@ -3003,9 +3507,25 @@
       {
        "number": 18
       },
+      "is",
+      {
+       "number": 52
+      },
+      ".",
+      {
+       "number": 52
+      },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 67
+      },
+      ".",
+      {
+       "number": 67
       },
       "plus",
       {
@@ -3015,11 +3535,17 @@
       {
        "number": 79
       },
+      ".",
+      "The total is",
+      {
+       "number": 79
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "34 + 18 = 52, 52 + 15 = 67, 67 + 12 = 79",
+      "34 + 18 = 52.",
+      "52 + 15 = 67.",
+      "67 + 12 = 79.",
       "The total is 79."
      ],
      "visual": {
@@ -3035,6 +3561,9 @@
        "=",
        79
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3056,8 +3585,9 @@
      ]
     },
     "prompt": {
-     "text": "27 + 30 + 15 + 26 equals what?",
+     "text": "What is 27 plus 30 plus 15 plus 26?",
      "speak": [
+      "What is",
       {
        "number": 27
       },
@@ -3073,7 +3603,7 @@
       {
        "number": 26
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3092,7 +3622,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 27
       },
@@ -3100,9 +3629,25 @@
       {
        "number": 30
       },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
+      },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 72
+      },
+      ".",
+      {
+       "number": 72
       },
       "plus",
       {
@@ -3112,11 +3657,17 @@
       {
        "number": 98
       },
+      ".",
+      "The total is",
+      {
+       "number": 98
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "27 + 30 = 57, 57 + 15 = 72, 72 + 26 = 98",
+      "27 + 30 = 57.",
+      "57 + 15 = 72.",
+      "72 + 26 = 98.",
       "The total is 98."
      ],
      "visual": {
@@ -3132,6 +3683,9 @@
        "=",
        98
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3153,8 +3707,9 @@
      ]
     },
     "prompt": {
-     "text": "23 + 10 + 27 + 15 equals what?",
+     "text": "What is 23 plus 10 plus 27 plus 15?",
      "speak": [
+      "What is",
       {
        "number": 23
       },
@@ -3170,7 +3725,7 @@
       {
        "number": 15
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3189,7 +3744,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 23
       },
@@ -3197,9 +3751,25 @@
       {
        "number": 10
       },
+      "is",
+      {
+       "number": 33
+      },
+      ".",
+      {
+       "number": 33
+      },
       "plus",
       {
        "number": 27
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -3209,11 +3779,17 @@
       {
        "number": 75
       },
+      ".",
+      "The total is",
+      {
+       "number": 75
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "23 + 10 = 33, 33 + 27 = 60, 60 + 15 = 75",
+      "23 + 10 = 33.",
+      "33 + 27 = 60.",
+      "60 + 15 = 75.",
       "The total is 75."
      ],
      "visual": {
@@ -3229,6 +3805,9 @@
        "=",
        75
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3250,8 +3829,9 @@
      ]
     },
     "prompt": {
-     "text": "10 + 11 + 35 + 28 equals what?",
+     "text": "What is 10 plus 11 plus 35 plus 28?",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -3267,7 +3847,7 @@
       {
        "number": 28
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3286,7 +3866,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 10
       },
@@ -3294,9 +3873,25 @@
       {
        "number": 11
       },
+      "is",
+      {
+       "number": 21
+      },
+      ".",
+      {
+       "number": 21
+      },
       "plus",
       {
        "number": 35
+      },
+      "is",
+      {
+       "number": 56
+      },
+      ".",
+      {
+       "number": 56
       },
       "plus",
       {
@@ -3306,11 +3901,17 @@
       {
        "number": 84
       },
+      ".",
+      "The total is",
+      {
+       "number": 84
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "10 + 11 = 21, 21 + 35 = 56, 56 + 28 = 84",
+      "10 + 11 = 21.",
+      "21 + 35 = 56.",
+      "56 + 28 = 84.",
       "The total is 84."
      ],
      "visual": {
@@ -3326,6 +3927,9 @@
        "=",
        84
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3347,8 +3951,9 @@
      ]
     },
     "prompt": {
-     "text": "14 + 26 + 17 + 28 equals what?",
+     "text": "What is 14 plus 26 plus 17 plus 28?",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -3364,7 +3969,7 @@
       {
        "number": 28
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3383,7 +3988,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 14
       },
@@ -3391,9 +3995,25 @@
       {
        "number": 26
       },
+      "is",
+      {
+       "number": 40
+      },
+      ".",
+      {
+       "number": 40
+      },
       "plus",
       {
        "number": 17
+      },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
       },
       "plus",
       {
@@ -3403,11 +4023,17 @@
       {
        "number": 85
       },
+      ".",
+      "The total is",
+      {
+       "number": 85
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "14 + 26 = 40, 40 + 17 = 57, 57 + 28 = 85",
+      "14 + 26 = 40.",
+      "40 + 17 = 57.",
+      "57 + 28 = 85.",
       "The total is 85."
      ],
      "visual": {
@@ -3423,6 +4049,9 @@
        "=",
        85
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3444,8 +4073,9 @@
      ]
     },
     "prompt": {
-     "text": "15 + 32 + 13 + 31 equals what?",
+     "text": "What is 15 plus 32 plus 13 plus 31?",
      "speak": [
+      "What is",
       {
        "number": 15
       },
@@ -3461,7 +4091,7 @@
       {
        "number": 31
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3480,7 +4110,6 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 15
       },
@@ -3488,9 +4117,25 @@
       {
        "number": 32
       },
+      "is",
+      {
+       "number": 47
+      },
+      ".",
+      {
+       "number": 47
+      },
       "plus",
       {
        "number": 13
+      },
+      "is",
+      {
+       "number": 60
+      },
+      ".",
+      {
+       "number": 60
       },
       "plus",
       {
@@ -3500,11 +4145,17 @@
       {
        "number": 91
       },
+      ".",
+      "The total is",
+      {
+       "number": 91
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "15 + 32 = 47, 47 + 13 = 60, 60 + 31 = 91",
+      "15 + 32 = 47.",
+      "47 + 13 = 60.",
+      "60 + 31 = 91.",
       "The total is 91."
      ],
      "visual": {
@@ -3520,6 +4171,9 @@
        "=",
        91
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
@@ -3541,8 +4195,9 @@
      ]
     },
     "prompt": {
-     "text": "21 + 21 + 15 + 12 equals what?",
+     "text": "What is 21 plus 21 plus 15 plus 12?",
      "speak": [
+      "What is",
       {
        "number": 21
       },
@@ -3558,7 +4213,7 @@
       {
        "number": 12
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3577,17 +4232,32 @@
     },
     "explanation": {
      "speak": [
-      "Add two at a time.",
       {
        "number": 21
       },
       "plus",
       {
        "number": 21
+      },
+      "is",
+      {
+       "number": 42
+      },
+      ".",
+      {
+       "number": 42
       },
       "plus",
       {
        "number": 15
+      },
+      "is",
+      {
+       "number": 57
+      },
+      ".",
+      {
+       "number": 57
       },
       "plus",
       {
@@ -3597,11 +4267,17 @@
       {
        "number": 69
       },
+      ".",
+      "The total is",
+      {
+       "number": 69
+      },
       "."
      ],
      "steps": [
-      "Add two at a time.",
-      "21 + 21 = 42, 42 + 15 = 57, 57 + 12 = 69",
+      "21 + 21 = 42.",
+      "42 + 15 = 57.",
+      "57 + 12 = 69.",
       "The total is 69."
      ],
      "visual": {
@@ -3617,6 +4293,9 @@
        "=",
        69
       ]
+     },
+     "hint": {
+      "text": "Add two numbers at a time."
      }
     },
     "type": "numberPad",
