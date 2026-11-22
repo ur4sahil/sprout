@@ -41,18 +41,20 @@ const asShape = (visual: Visual | undefined): Shape => {
 
 describe('option counts', () => {
   it('reasoning uses 3 options at levels 1 and 2, and 4 above that, except riddles with 2 pictures', () => {
-    // The levels answered by choosing; A.8, A.10 and A.11 are typed from level 3.
-    const maxLevel: Record<string, Level> = { 'R-A1': 4, 'R-A2': 3, 'R-A3': 3, 'R-A4': 4, 'R-A5': 4, 'R-A6': 4, 'R-A7': 3, 'R-A8': 2, 'R-A9': 3, 'R-A10': 2, 'R-A11': 2, 'R-A12': 4, 'R-A13': 4, 'R-A14': 3 };
+    // The levels answered by choosing; A.10 and A.11 are typed from level 3, A.8 at level 4 only (the owner's choice,
+    // Nov 22, 2026), and its level 3 is picked from three, like its counting levels.
+    const maxLevel: Record<string, Level> = { 'R-A1': 4, 'R-A2': 3, 'R-A3': 3, 'R-A4': 4, 'R-A5': 4, 'R-A6': 4, 'R-A7': 3, 'R-A8': 3, 'R-A9': 3, 'R-A10': 2, 'R-A11': 2, 'R-A12': 4, 'R-A13': 4, 'R-A14': 3 };
     for (const [skillId, top] of Object.entries(maxLevel)) {
       for (let level = 1 as Level; level <= top; level = (level + 1) as Level) {
-        const wanted = skillId === 'R-A14' && level === 1 ? 2 : level <= 2 ? 3 : 4;
+        const wanted = skillId === 'R-A14' && level === 1 ? 2 : level <= 2 || skillId === 'R-A8' ? 3 : 4;
         for (const question of choices(skillId, level)) expect(question.options.length, `${skillId} level ${level}`).toBe(wanted);
       }
     }
   });
 
   it('the typed levels are typed', () => {
-    for (const skillId of ['R-A8', 'R-A10', 'R-A11']) {
+    expect(new Set(all('R-A8', 4).map((question) => question.type))).toEqual(new Set(['numberPad']));
+    for (const skillId of ['R-A10', 'R-A11']) {
       for (const level of [3, 4] as Level[]) expect(new Set(all(skillId, level).map((question) => question.type))).toEqual(new Set(['numberPad']));
     }
   });
@@ -278,9 +280,12 @@ describe('A.7 Two-rule patterns', () => {
 });
 
 describe('A.8, A.10 and A.11: numbers', () => {
-  it('A.8: two examples with different starts, plus n at level 1 and double at level 2', () => {
+  // The ramp (the owner's choice, Nov 22, 2026): up by 1 with dots; up by 1 or 2 with dots; up or down by 1 to 5 or
+  // doubles, picked, no dots; then the typed level.
+  it('A.8: two examples with different starts, then the ramp: up by 1, up by 1 or 2, then up, down or doubles', () => {
     for (const level of [1, 2, 3] as Level[]) {
       const kinds = new Set<string>();
+      const steps = new Set<number>();
       for (const question of all('R-A8', level)) {
         const examples = question.facts.examples as [number, number][];
         const base = question.facts.base as number;
@@ -289,14 +294,48 @@ describe('A.8, A.10 and A.11: numbers', () => {
         const [[a, b], [c, d]] = examples as [[number, number], [number, number]];
         const kind = b === a * 2 && d === c * 2 ? 'double' : b - a === d - c ? (b > a ? 'plus' : 'minus') : 'none';
         kinds.add(kind);
+        if (kind !== 'double') steps.add(Math.abs(b - a));
         expect(Math.min(b, d)).toBeGreaterThanOrEqual(1);
+        // Every level below the typed one is picked from three numbers.
+        if (question.type !== 'choice') throw new Error(`level ${level} is not picked`);
+        expect(question.options).toHaveLength(3);
+        const answer = (question.facts.options as number[])[question.answerIndex] as number;
+        if (level <= 2) {
+          // Every number in the picture, and the answer, is 10 or less: a young child counts the dots.
+          expect(Math.max(a, b, c, d, base, answer), `level ${level}`).toBeLessThanOrEqual(10);
+          expect(answer).toBe(base + (b - a));
+        }
       }
-      if (level === 1) expect(kinds).toEqual(new Set(['plus']));
-      if (level === 2) expect(kinds).toEqual(new Set(['double']));
-      if (level === 3) expect(kinds).toEqual(new Set(['plus', 'minus', 'double']));
+      if (level === 1) {
+        expect(kinds).toEqual(new Set(['plus']));
+        expect(steps).toEqual(new Set([1]));
+      }
+      if (level === 2) {
+        expect(kinds).toEqual(new Set(['plus']));
+        expect(steps).toEqual(new Set([1, 2]));
+      }
+      if (level === 3) {
+        expect(kinds).toEqual(new Set(['plus', 'minus', 'double']));
+        expect(steps).toEqual(new Set([1, 2, 3, 4, 5]));
+      }
     }
   });
 
+  it('A.8: every picture stacks the pairs, dots under every number at levels 1 and 2 only, never under the blank', () => {
+    for (const level of [1, 2, 3, 4] as Level[]) {
+      for (const question of all('R-A8', level)) {
+        const examples = question.facts.examples as [number, number][];
+        const base = question.facts.base as number;
+        const dots = level <= 2 ? { dots: true } : {};
+        expect(question.stimulus).toEqual({ kind: 'pairs', pairs: [...examples.map(([from, to]) => ({ from, to })), { from: base, to: 'blank' }], ...dots });
+        const visual = question.explanation.visual;
+        if (visual?.kind !== 'pairs') throw new Error('the explanation does not show the pair');
+        expect(visual.pairs).toHaveLength(1);
+        expect(visual.pairs[0]?.from).toBe(base);
+        expect(visual.dots === true).toBe(level <= 2);
+      }
+    }
+  });
   it('A.10: plus 1 or 2, then plus 5, plus 10 or minus 1, then two steps that take turns', () => {
     const stepsAt = (level: Level): Set<string> => new Set(all('R-A10', level).map((question) => (question.facts.steps as number[]).join(',')));
     expect(stepsAt(1)).toEqual(new Set(['1', '2']));

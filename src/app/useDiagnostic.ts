@@ -99,7 +99,7 @@ export function useDiagnostic(child: Child, subject: DiagnosticSubject): Diagnos
       try {
         const { repo } = await openRepo();
         const at = now();
-        self.ladders = diagnosticLadders(subject);
+        self.ladders = diagnosticLadders(subject, child.grade);
         let progress = await repo.getDiagnosticProgress(child.id, subject);
         if (!progress) {
           // Saved straight away, so home knows the first check-in has been opened.

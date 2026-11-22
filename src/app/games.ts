@@ -2,7 +2,7 @@ import type { Skill } from '../content/catalogue';
 import { skillById } from '../content/catalogue';
 import { ALPHABET } from '../content/data/letters';
 import { allGenerators, nextQuestion } from '../content/registry';
-import { offeredTo } from '../engine/grades';
+import { maxLevelFor, offeredTo } from '../engine/grades';
 import type { Rng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
@@ -28,7 +28,7 @@ export function popTurn(child: Child, state: SkillState, recentKeys: readonly st
   if (!skill || skill.retired || !offeredTo(skill, child.grade) || !allGenerators().some((generator) => generator.skillId === skill.id)) return null;
   // In progress: started, and not yet mastered or placed out.
   if (state.attempts === 0 || state.score >= 100 || state.placedOut) return null;
-  const level = levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
+  const level = levelToAsk(state.score, lastWasMiss(state), maxLevelFor(skill, child.grade));
   const question = nextQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state.attempts), recentKeys);
   return question.type === 'choice' ? { skill, state, question } : null;
 }

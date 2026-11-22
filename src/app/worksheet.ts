@@ -1,9 +1,10 @@
 import type { Skill } from '../content/catalogue';
 import { generateQuestion } from '../content/registry';
 import { describeAnswer, describeVisual } from '../engine/describe';
+import { maxLevelFor } from '../engine/grades';
 import { levelToAsk } from '../engine/skillscore';
 import type { Level, Question } from '../engine/types';
-import type { SkillState } from '../storage/schema';
+import type { Grade, SkillState } from '../storage/schema';
 
 // Printable worksheets (plan section 15.6). The questions come from the same generators with fixed seeds,
 // so a sheet and its answer key always match, and the same seed prints the same sheet again.
@@ -14,6 +15,7 @@ export interface SheetRequest {
   count: number; // 10 or 20
   shift: Shift;
   seed: number; // printed on the sheet
+  grade: Grade; // the child's grade, which can cap a skill's levels (maxLevelFor)
 }
 export interface SheetItem {
   number: number;
@@ -70,8 +72,10 @@ export function buildSheet(skills: readonly Skill[], states: readonly SkillState
   const usable: Skill[] = [];
   const left: Sheet['left'] = [];
   const levelOf = (skill: Skill): Level => {
-    const base = levelToAsk(byId.get(skill.id)?.score ?? 0, false, skill.maxLevel as Level);
-    return Math.min(Math.max(base + request.shift, 1), skill.maxLevel) as Level;
+    // One harder never goes past what this child is asked (a young child's ceiling, when the skill has one).
+    const top = maxLevelFor(skill, request.grade);
+    const base = levelToAsk(byId.get(skill.id)?.score ?? 0, false, top);
+    return Math.min(Math.max(base + request.shift, 1), top) as Level;
   };
   // A skill whose every try at this level is a listen question cannot go on paper.
   for (const skill of skills) {

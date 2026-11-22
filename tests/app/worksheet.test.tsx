@@ -12,7 +12,7 @@ const skills = (...ids: string[]) => ids.map((id) => skillById(id)!);
 // Printable worksheets (plan section 15.6).
 describe('a worksheet', () => {
   it('has the number of questions asked for, taken in turn from each skill, the same for the same seed', () => {
-    const request = { skillIds: ['M-1-B1', 'M-2-A1'], count: 10, shift: 0 as const, seed: 4242 };
+    const request = { skillIds: ['M-1-B1', 'M-2-A1'], count: 10, shift: 0 as const, seed: 4242, grade: '1' as const };
     const sheet = buildSheet(skills('M-1-B1', 'M-2-A1'), [], request);
     expect(sheet.items).toHaveLength(10);
     expect(sheet.items.map((item) => item.skill.id).slice(0, 4)).toEqual(['M-1-B1', 'M-2-A1', 'M-1-B1', 'M-2-A1']);
@@ -22,7 +22,7 @@ describe('a worksheet', () => {
 
   it('asks at the child\'s level, or one easier or harder', () => {
     const state = { childId: 'kid-1', skillId: 'M-1-B1', score: 75, bestScore: 75, streak: 0, attempts: 10, correct: 8, hintedRight: 0, recent: [], masteredAt: null, placedOut: false, reviewBox: 0, reviewDueAt: null, lastPracticedAt: null, updatedAt: '2026-03-08T10:00:00.000Z' };
-    const at = (shift: -1 | 0 | 1) => buildSheet(skills('M-1-B1'), [state], { skillIds: ['M-1-B1'], count: 4, shift, seed: 7 }).items.map((item) => item.question.level);
+    const at = (shift: -1 | 0 | 1) => buildSheet(skills('M-1-B1'), [state], { skillIds: ['M-1-B1'], count: 4, shift, seed: 7, grade: '1' }).items.map((item) => item.question.level);
     expect(at(0)).toEqual([3, 3, 3, 3]);
     expect(at(-1)).toEqual([2, 2, 2, 2]);
   });
@@ -30,7 +30,7 @@ describe('a worksheet', () => {
   it('leaves off listen questions, and names a skill that is only heard', () => {
     const listenOnly = CATALOGUE.find((skill) => skill.id === 'E-PK-A1')!;
     expect(onPaper(generateQuestion('E-PK-A1', 1, 1))).toBe(false);
-    const sheet = buildSheet([listenOnly, skillById('M-K-B2')!], [], { skillIds: [], count: 6, shift: 0, seed: 1 });
+    const sheet = buildSheet([listenOnly, skillById('M-K-B2')!], [], { skillIds: [], count: 6, shift: 0, seed: 1, grade: 'K' });
     expect(sheet.left.map((each) => each.skill.id)).toEqual(['E-PK-A1']);
     expect(sheet.items.every((item) => onPaper(item.question))).toBe(true);
     expect(sheet.items).toHaveLength(6);
@@ -70,7 +70,7 @@ describe('the worksheet pages', () => {
     const sheet = await screen.findByRole('article', { name: 'Worksheet' });
     expect(sheet.getAttribute('data-sheet-seed')).toBe('31337');
     expect(sheet.textContent).toContain('Sheet 31337');
-    const expected = buildSheet(skills('M-1-B1', 'M-1-A1'), [], { skillIds: [], count: 10, shift: 0, seed: 31337 });
+    const expected = buildSheet(skills('M-1-B1', 'M-1-A1'), [], { skillIds: [], count: 10, shift: 0, seed: 31337, grade: '1' });
     const answers = [...screen.getByRole('article', { name: 'Answer key' }).querySelectorAll('[data-answer]')].map((li) => li.textContent?.split(' (')[0]);
     expect(answers).toEqual(expected.items.map((item) => item.answer));
   });

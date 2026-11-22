@@ -273,6 +273,35 @@ describe('numbers (A.8, A.10, A.11)', () => {
     }
   });
 
+  it('A.8 levels 1 and 2 count: "Each number goes up by 1. 7 goes up to 8.", said with number parts', () => {
+    for (const level of [1, 2] as Level[]) {
+      for (const question of all('R-A8', level)) {
+        const [[a, b]] = question.facts.examples as [[number, number]];
+        const base = question.facts.base as number;
+        const n = b - a;
+        expect(question.explanation.steps).toEqual([`Each number goes up by ${n}.`, `${base} goes up to ${base + n}.`]);
+        expect(question.explanation.speak).toEqual(['Each number goes up by', { number: n }, '.', { number: base }, 'goes up to', { number: base + n }, '.']);
+        expect(question.prompt.speak).toEqual(['Each number changes the same way. What does', { number: base }, 'change to?']);
+      }
+    }
+  });
+
+  it('A.8 levels 1 to 3: the hint asks about an example pair, and names neither the answer nor the rule', () => {
+    for (const level of [1, 2, 3] as Level[]) {
+      for (const question of all('R-A8', level)) {
+        if (question.type !== 'choice') throw new Error('not picked');
+        const hint = question.explanation.hint?.text ?? '';
+        const examples = question.facts.examples as [number, number][];
+        const match = /^How does (\d+) change into (\d+)\?$/.exec(hint);
+        expect(match, hint).not.toBeNull();
+        const [from, to] = [Number(match?.[1]), Number(match?.[2])];
+        expect(examples.some(([x, y]) => x === from && y === to), hint).toBe(true);
+        const answer = (question.facts.options as number[])[question.answerIndex];
+        expect([from, to], hint).not.toContain(answer);
+      }
+    }
+  });
+
   it('A.8 level 4: the hint points at a first move and leaves the rule to find, with numbers from one example only', () => {
     for (const question of all('R-A8', 4)) {
       const hint = question.explanation.hint?.text ?? '';

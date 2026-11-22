@@ -55,6 +55,23 @@ export const text = (value: string): PieceLook => ({ kind: 'text', text: value }
 export const numeral = (value: number): PieceLook => ({ kind: 'numeral', value });
 export const picture = (visual: Visual): PieceLook => ({ kind: 'visual', visual });
 
+// Number pairs stacked one a line, each in its own light box, as the questions draw them (Reasoning A.8, the owner's
+// choice, Nov 22, 2026). Ids, for pair i: `${p}p${i}` the box, `${p}f${i}` the first number, `${p}a${i}` the arrow,
+// `${p}t${i}` the second number (an empty answer box when it is null). The stack is 3.6 squares wide and 1.9 squares
+// a pair tall, from (left, top); the room between boxes holds a badge on the arrow.
+export const PAIR_STEP = 1.9;
+export function pairStack(p: string, pairs: readonly (readonly [number, number | null])[], left: number, top: number): Piece[] {
+  return pairs.flatMap(([from, to], i): Piece[] => {
+    const y = top + i * PAIR_STEP;
+    return [
+      { id: `${p}p${i}`, look: { kind: 'panel' }, x: left, y, w: 3.6, h: 1.5 },
+      { id: `${p}f${i}`, look: numeral(from), x: left + 0.2, y: y + 0.2, w: 1.1, h: 1.1 },
+      { id: `${p}a${i}`, look: text('→'), x: left + 1.4, y: y + 0.2, w: 0.8, h: 1.1 },
+      { id: `${p}t${i}`, look: to === null ? { kind: 'box' } : numeral(to), x: left + 2.3, y: y + 0.2, w: 1.1, h: 1.1 },
+    ];
+  });
+}
+
 // Counting out loud: one moment for each piece, each lit in turn with its number above it, and the hand on it.
 // The pieces already counted stay lit. Starts the count at `from` + 1.
 export function countAlong(start: Scene, pieceIds: readonly string[], from = 0): { moments: Moment[]; end: Scene } {

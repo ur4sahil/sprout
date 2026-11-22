@@ -11,6 +11,7 @@ export type PieceLook =
   | { kind: 'rod' } // a ten: a stick of ten small squares
   | { kind: 'cube' } // a one
   | { kind: 'box' } // an empty answer box
+  | { kind: 'panel' } // a light box behind a few pieces that belong together, such as one number pair
   | { kind: 'hand' } // a pointing hand
   // Any picture a question can show (a clock, a coin, a shape, a solid, a bar ...), drawn as the questions draw it.
   | { kind: 'visual'; visual: Visual };

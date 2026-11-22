@@ -35,6 +35,16 @@ describe('questionKey', () => {
 });
 
 describe('samePicture', () => {
+  it('number pairs are the same picture only with the same pairs in the same order, dots and all', () => {
+    const pairs = (list: [number, number | 'blank'][], dots?: true): Visual => ({ kind: 'pairs', pairs: list.map(([from, to]) => ({ from, to })), ...(dots ? { dots } : {}) });
+    expect(samePicture(pairs([[6, 9], [5, 'blank']]), pairs([[6, 9], [5, 'blank']]))).toBe(true);
+    expect(samePicture(pairs([[6, 9], [5, 'blank']]), pairs([[5, 'blank'], [6, 9]]))).toBe(false);
+    expect(samePicture(pairs([[6, 9], [5, 'blank']]), pairs([[6, 9], [5, 8]]))).toBe(false);
+    expect(samePicture(pairs([[6, 7]], true), pairs([[6, 7]]))).toBe(false);
+    // A spoken label is not part of the picture.
+    expect(samePicture({ ...pairs([[6, 7]]), speak: ['six'] }, pairs([[6, 7]]))).toBe(true);
+  });
+
   it('a turned circle is still a circle', () => {
     expect(samePicture(shape('circle', 0), shape('circle', 137))).toBe(true);
   });

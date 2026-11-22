@@ -48,6 +48,8 @@ function look(piece: Piece): ReactNode {
       return <span className={styles.cell} />;
     case 'box':
       return <span className={styles.box} />;
+    case 'panel':
+      return <span className={styles.panel} />;
     case 'visual':
       return (
         <span className={styles.visual}>

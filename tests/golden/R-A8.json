@@ -1,99 +1,66 @@
 {
  "skillId": "R-A8",
- "version": 3,
+ "version": 4,
  "example": {
+  "type": "choice",
   "mode": "look",
   "prompt": {
-   "text": "Each number changes the same way. What does 2 change to?",
+   "text": "Each number changes the same way. What does 5 change to?",
    "speak": [
     "Each number changes the same way. What does",
     {
-     "number": 2
+     "number": 5
     },
     "change to?"
    ]
   },
   "stimulus": {
-   "kind": "row",
-   "children": [
+   "kind": "pairs",
+   "pairs": [
     {
-     "kind": "equation",
-     "parts": [
-      8,
-      "→",
-      13
-     ]
+     "from": 9,
+     "to": 10
     },
     {
-     "kind": "equation",
-     "parts": [
-      5,
-      "→",
-      10
-     ]
+     "from": 4,
+     "to": 5
     },
     {
-     "kind": "equation",
-     "parts": [
-      2,
-      "→",
-      "blank"
-     ]
+     "from": 5,
+     "to": "blank"
     }
-   ]
-  },
-  "explanation": {
-   "speak": [
-    "Each number goes up by",
-    {
-     "number": 5
-    },
-    ".",
-    {
-     "number": 2
-    },
-    "goes up to",
-    {
-     "number": 7
-    },
-    "."
    ],
-   "steps": [
-    "Each number goes up by 5.",
-    "2 goes up to 7."
-   ],
-   "visual": {
-    "kind": "equation",
-    "parts": [
-     2,
-     "→",
-     7
-    ]
-   },
-   "hint": {
-    "text": "How does 8 change into 13?"
-   }
+   "dots": true
   },
-  "type": "choice",
   "facts": {
    "examples": [
     [
-     8,
-     13
+     9,
+     10
     ],
     [
-     5,
-     10
+     4,
+     5
     ]
    ],
-   "base": 2,
+   "base": 5,
    "options": [
+    6,
     7,
-    8,
-    10
+    8
    ]
   },
   "options": [
+   {
+    "kind": "text",
+    "value": "6",
+    "size": "xl",
+    "speak": [
+     {
+      "number": 6
+     }
+    ]
+   },
    {
     "kind": "text",
     "value": "7",
@@ -113,27 +80,657 @@
       "number": 8
      }
     ]
-   },
-   {
-    "kind": "text",
-    "value": "10",
-    "size": "xl",
-    "speak": [
-     {
-      "number": 10
-     }
-    ]
    }
   ],
   "answerIndex": 0,
+  "explanation": {
+   "speak": [
+    "Each number goes up by",
+    {
+     "number": 1
+    },
+    ".",
+    {
+     "number": 5
+    },
+    "goes up to",
+    {
+     "number": 6
+    },
+    "."
+   ],
+   "steps": [
+    "Each number goes up by 1.",
+    "5 goes up to 6."
+   ],
+   "visual": {
+    "kind": "pairs",
+    "pairs": [
+     {
+      "from": 5,
+      "to": 6
+     }
+    ],
+    "dots": true
+   },
+   "hint": {
+    "text": "How does 9 change into 10?"
+   }
+  },
   "skillId": "R-A8",
   "level": 1,
   "seed": 88,
-  "key": "R-A8|1|{\"base\":2,\"examples\":[[8,13],[5,10]]}"
+  "key": "R-A8|1|{\"base\":5,\"examples\":[[9,10],[4,5]]}"
  },
  "levels": {
   "1": [
    {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 7 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 7
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 8,
+       "to": 9
+      },
+      {
+       "from": 3,
+       "to": 4
+      },
+      {
+       "from": 7,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       8,
+       9
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "base": 7,
+     "options": [
+      7,
+      8,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "goes up to",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "7 goes up to 8."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 8
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 3 change into 4?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 1,
+    "key": "R-A8|1|{\"base\":7,\"examples\":[[8,9],[3,4]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 9 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 9
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 6,
+       "to": 7
+      },
+      {
+       "from": 1,
+       "to": 2
+      },
+      {
+       "from": 9,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       6,
+       7
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "base": 9,
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 9
+      },
+      "goes up to",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "9 goes up to 10."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 9,
+        "to": 10
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 6 change into 7?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A8|1|{\"base\":9,\"examples\":[[6,7],[1,2]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 5 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 5
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 3,
+       "to": 4
+      },
+      {
+       "from": 6,
+       "to": 7
+      },
+      {
+       "from": 5,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       3,
+       4
+      ],
+      [
+       6,
+       7
+      ]
+     ],
+     "base": 5,
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "goes up to",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "5 goes up to 6."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 5,
+        "to": 6
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 3 change into 4?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 3,
+    "key": "R-A8|1|{\"base\":5,\"examples\":[[3,4],[6,7]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 6 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 6
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 4,
+       "to": 5
+      },
+      {
+       "from": 5,
+       "to": 6
+      },
+      {
+       "from": 6,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       4,
+       5
+      ],
+      [
+       5,
+       6
+      ]
+     ],
+     "base": 6,
+     "options": [
+      6,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "goes up to",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "6 goes up to 7."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 6,
+        "to": 7
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 4 change into 5?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 4,
+    "key": "R-A8|1|{\"base\":6,\"examples\":[[4,5],[5,6]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 6 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 6
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 8,
+       "to": 9
+      },
+      {
+       "from": 5,
+       "to": 6
+      },
+      {
+       "from": 6,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       8,
+       9
+      ],
+      [
+       5,
+       6
+      ]
+     ],
+     "base": 6,
+     "options": [
+      5,
+      6,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "goes up to",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "6 goes up to 7."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 6,
+        "to": 7
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 8 change into 9?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 5,
+    "key": "R-A8|1|{\"base\":6,\"examples\":[[8,9],[5,6]]}"
+   },
+   {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 4 change to?",
@@ -146,43 +743,1053 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        12
-       ]
+       "from": 7,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        13
-       ]
+       "from": 6,
+       "to": 7
       },
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        "blank"
-       ]
+       "from": 4,
+       "to": "blank"
       }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       7,
+       8
+      ],
+      [
+       6,
+       7
+      ]
+     ],
+     "base": 4,
+     "options": [
+      3,
+      4,
+      5
      ]
     },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number goes up by",
       {
-       "number": 4
+       "number": 1
       },
       ".",
       {
        "number": 4
+      },
+      "goes up to",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "4 goes up to 5."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 4,
+        "to": 5
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 7 change into 8?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 6,
+    "key": "R-A8|1|{\"base\":4,\"examples\":[[7,8],[6,7]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 4 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 4
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 6,
+       "to": 7
+      },
+      {
+       "from": 8,
+       "to": 9
+      },
+      {
+       "from": 4,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       6,
+       7
+      ],
+      [
+       8,
+       9
+      ]
+     ],
+     "base": 4,
+     "options": [
+      4,
+      5,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "goes up to",
+      {
+       "number": 5
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "4 goes up to 5."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 4,
+        "to": 5
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 6 change into 7?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 7,
+    "key": "R-A8|1|{\"base\":4,\"examples\":[[6,7],[8,9]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 8 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 8
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 4,
+       "to": 5
+      },
+      {
+       "from": 1,
+       "to": 2
+      },
+      {
+       "from": 8,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       4,
+       5
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "base": 8,
+     "options": [
+      7,
+      9,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "goes up to",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "8 goes up to 9."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 8,
+        "to": 9
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 4 change into 5?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 8,
+    "key": "R-A8|1|{\"base\":8,\"examples\":[[4,5],[1,2]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 8 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 8
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 6,
+       "to": 7
+      },
+      {
+       "from": 9,
+       "to": 10
+      },
+      {
+       "from": 8,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       6,
+       7
+      ],
+      [
+       9,
+       10
+      ]
+     ],
+     "base": 8,
+     "options": [
+      9,
+      10,
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "goes up to",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "8 goes up to 9."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 8,
+        "to": 9
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 6 change into 7?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 9,
+    "key": "R-A8|1|{\"base\":8,\"examples\":[[6,7],[9,10]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 1 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 1
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 4,
+       "to": 5
+      },
+      {
+       "from": 6,
+       "to": 7
+      },
+      {
+       "from": 1,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       4,
+       5
+      ],
+      [
+       6,
+       7
+      ]
+     ],
+     "base": 1,
+     "options": [
+      2,
+      3,
+      4
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "goes up to",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "1 goes up to 2."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 1,
+        "to": 2
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 4 change into 5?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 1,
+    "seed": 10,
+    "key": "R-A8|1|{\"base\":1,\"examples\":[[4,5],[6,7]]}"
+   }
+  ],
+  "2": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 7 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 7
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 8,
+       "to": 10
+      },
+      {
+       "from": 3,
+       "to": 5
+      },
+      {
+       "from": 7,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       8,
+       10
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "base": 7,
+     "options": [
+      8,
+      9,
+      11
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "11",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 11
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "goes up to",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "7 goes up to 9."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 9
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 8 change into 10?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A8|2|{\"base\":7,\"examples\":[[8,10],[3,5]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 7 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 7
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 6,
+       "to": 8
+      },
+      {
+       "from": 1,
+       "to": 3
+      },
+      {
+       "from": 7,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       6,
+       8
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     "base": 7,
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "goes up to",
+      {
+       "number": 9
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "7 goes up to 9."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 9
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 6 change into 8?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 2,
+    "key": "R-A8|2|{\"base\":7,\"examples\":[[6,8],[1,3]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 5 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 5
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 3,
+       "to": 5
+      },
+      {
+       "from": 6,
+       "to": 8
+      },
+      {
+       "from": 5,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       3,
+       5
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "base": 5,
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 5
+      },
+      "goes up to",
+      {
+       "number": 7
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "5 goes up to 7."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 5,
+        "to": 7
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 3 change into 5?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 3,
+    "key": "R-A8|2|{\"base\":5,\"examples\":[[3,5],[6,8]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 6 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 6
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 4,
+       "to": 6
+      },
+      {
+       "from": 5,
+       "to": 7
+      },
+      {
+       "from": 6,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       4,
+       6
+      ],
+      [
+       5,
+       7
+      ]
+     ],
+     "base": 6,
+     "options": [
+      7,
+      8,
+      9
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 6
       },
       "goes up to",
       {
@@ -191,34 +1798,71 @@
       "."
      ],
      "steps": [
-      "Each number goes up by 4.",
-      "4 goes up to 8."
+      "Each number goes up by 2.",
+      "6 goes up to 8."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       4,
-       "→",
-       8
-      ]
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 6,
+        "to": 8
+       }
+      ],
+      "dots": true
      },
      "hint": {
-      "text": "How does 9 change into 13?"
+      "text": "How does 4 change into 6?"
      }
     },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 4,
+    "key": "R-A8|2|{\"base\":6,\"examples\":[[4,6],[5,7]]}"
+   },
+   {
     "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 6 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 6
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 8,
+       "to": 10
+      },
+      {
+       "from": 5,
+       "to": 7
+      },
+      {
+       "from": 6,
+       "to": "blank"
+      }
+     ],
+     "dots": true
+    },
     "facts": {
      "examples": [
       [
        8,
-       12
+       10
       ],
       [
-       9,
-       13
+       5,
+       7
       ]
      ],
-     "base": 4,
+     "base": 6,
      "options": [
       6,
       7,
@@ -258,357 +1902,209 @@
      }
     ],
     "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "goes up to",
+      {
+       "number": 8
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "6 goes up to 8."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 6,
+        "to": 8
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 5 change into 7?"
+     }
+    },
     "skillId": "R-A8",
-    "level": 1,
-    "seed": 1,
-    "key": "R-A8|1|{\"base\":4,\"examples\":[[8,12],[9,13]]}"
+    "level": 2,
+    "seed": 5,
+    "key": "R-A8|2|{\"base\":6,\"examples\":[[8,10],[5,7]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
-     "text": "Each number changes the same way. What does 5 change to?",
+     "text": "Each number changes the same way. What does 4 change to?",
      "speak": [
       "Each number changes the same way. What does",
       {
-       "number": 5
+       "number": 4
       },
       "change to?"
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        5
-       ]
+       "from": 7,
+       "to": 9
       },
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        12
-       ]
+       "from": 6,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
+       "from": 4,
+       "to": "blank"
       }
+     ],
+     "dots": true
+    },
+    "facts": {
+     "examples": [
+      [
+       7,
+       9
+      ],
+      [
+       6,
+       8
+      ]
+     ],
+     "base": 4,
+     "options": [
+      4,
+      5,
+      6
      ]
     },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number goes up by",
       {
-       "number": 4
+       "number": 2
       },
       ".",
       {
-       "number": 5
+       "number": 4
       },
       "goes up to",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "4 goes up to 6."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 4,
+        "to": 6
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 7 change into 9?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 6,
+    "key": "R-A8|2|{\"base\":4,\"examples\":[[7,9],[6,8]]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 9 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
       {
        "number": 9
       },
-      "."
-     ],
-     "steps": [
-      "Each number goes up by 4.",
-      "5 goes up to 9."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       9
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 12?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       1,
-       5
-      ],
-      [
-       8,
-       12
-      ]
-     ],
-     "base": 5,
-     "options": [
-      9,
-      10,
-      12
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "9",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 9
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 1,
-    "seed": 2,
-    "key": "R-A8|1|{\"base\":5,\"examples\":[[1,5],[8,12]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 7 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 7
-      },
       "change to?"
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        12
-       ]
+       "from": 7,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        10
-       ]
+       "from": 6,
+       "to": 7
       },
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        "blank"
-       ]
+       "from": 9,
+       "to": "blank"
       }
-     ]
+     ],
+     "dots": true
     },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 4
-      },
-      ".",
-      {
-       "number": 7
-      },
-      "goes up to",
-      {
-       "number": 11
-      },
-      "."
-     ],
-     "steps": [
-      "Each number goes up by 4.",
-      "7 goes up to 11."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
+    "facts": {
+     "examples": [
+      [
        7,
-       "→",
-       11
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 12?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       8,
-       12
+       8
       ],
       [
        6,
-       10
+       7
       ]
      ],
-     "base": 7,
-     "options": [
-      9,
-      11,
-      14
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "9",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 9
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "11",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 11
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "14",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 14
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "skillId": "R-A8",
-    "level": 1,
-    "seed": 3,
-    "key": "R-A8|1|{\"base\":7,\"examples\":[[8,12],[6,10]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 5 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 5
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        9
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        11
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 5
-      },
-      ".",
-      {
-       "number": 5
-      },
-      "goes up to",
-      {
-       "number": 10
-      },
-      "."
-     ],
-     "steps": [
-      "Each number goes up by 5.",
-      "5 goes up to 10."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       10
-      ]
-     },
-     "hint": {
-      "text": "How does 4 change into 9?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       4,
-       9
-      ],
-      [
-       6,
-       11
-      ]
-     ],
-     "base": 5,
+     "base": 9,
      "options": [
       8,
       9,
@@ -648,312 +2144,6 @@
      }
     ],
     "answerIndex": 2,
-    "skillId": "R-A8",
-    "level": 1,
-    "seed": 4,
-    "key": "R-A8|1|{\"base\":5,\"examples\":[[4,9],[6,11]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 8 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 8
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        10
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 4
-      },
-      ".",
-      {
-       "number": 8
-      },
-      "goes up to",
-      {
-       "number": 12
-      },
-      "."
-     ],
-     "steps": [
-      "Each number goes up by 4.",
-      "8 goes up to 12."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       8,
-       "→",
-       12
-      ]
-     },
-     "hint": {
-      "text": "How does 6 change into 10?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       6,
-       10
-      ],
-      [
-       4,
-       8
-      ]
-     ],
-     "base": 8,
-     "options": [
-      12,
-      13,
-      16
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "13",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 13
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "16",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 16
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 1,
-    "seed": 5,
-    "key": "R-A8|1|{\"base\":8,\"examples\":[[6,10],[4,8]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 3 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 3
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        11
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        10
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 3
-      },
-      ".",
-      {
-       "number": 3
-      },
-      "goes up to",
-      {
-       "number": 6
-      },
-      "."
-     ],
-     "steps": [
-      "Each number goes up by 3.",
-      "3 goes up to 6."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       3,
-       "→",
-       6
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 11?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       8,
-       11
-      ],
-      [
-       7,
-       10
-      ]
-     ],
-     "base": 3,
-     "options": [
-      6,
-      7,
-      10
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 1,
-    "seed": 6,
-    "key": "R-A8|1|{\"base\":3,\"examples\":[[8,11],[7,10]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 9 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 9
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        7
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
     "explanation": {
      "speak": [
       "Each number goes up by",
@@ -975,75 +2165,26 @@
       "9 goes up to 10."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       9,
-       "→",
-       10
-      ]
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 9,
+        "to": 10
+       }
+      ],
+      "dots": true
      },
      "hint": {
       "text": "How does 7 change into 8?"
      }
     },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       7,
-       8
-      ],
-      [
-       6,
-       7
-      ]
-     ],
-     "base": 9,
-     "options": [
-      7,
-      9,
-      10
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "9",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 9
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
     "skillId": "R-A8",
-    "level": 1,
+    "level": 2,
     "seed": 7,
-    "key": "R-A8|1|{\"base\":9,\"examples\":[[7,8],[6,7]]}"
+    "key": "R-A8|2|{\"base\":9,\"examples\":[[7,8],[6,7]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 1 change to?",
@@ -1056,67 +2197,23 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        8
-       ]
+       "from": 7,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        3
-       ]
+       "from": 2,
+       "to": 3
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        "blank"
-       ]
+       "from": 1,
+       "to": "blank"
       }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 1
-      },
-      ".",
-      {
-       "number": 1
-      },
-      "goes up to",
-      {
-       "number": 2
-      },
-      "."
      ],
-     "steps": [
-      "Each number goes up by 1.",
-      "1 goes up to 2."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       1,
-       "→",
-       2
-      ]
-     },
-     "hint": {
-      "text": "How does 7 change into 8?"
-     }
+     "dots": true
     },
-    "type": "choice",
     "facts": {
      "examples": [
       [
@@ -1168,12 +2265,47 @@
      }
     ],
     "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "goes up to",
+      {
+       "number": 2
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "1 goes up to 2."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 1,
+        "to": 2
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 7 change into 8?"
+     }
+    },
     "skillId": "R-A8",
-    "level": 1,
+    "level": 2,
     "seed": 8,
-    "key": "R-A8|1|{\"base\":1,\"examples\":[[7,8],[2,3]]}"
+    "key": "R-A8|2|{\"base\":1,\"examples\":[[7,8],[2,3]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 3 change to?",
@@ -1186,67 +2318,23 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        8
-       ]
+       "from": 7,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        2
-       ]
+       "from": 1,
+       "to": 2
       },
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        "blank"
-       ]
+       "from": 3,
+       "to": "blank"
       }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 1
-      },
-      ".",
-      {
-       "number": 3
-      },
-      "goes up to",
-      {
-       "number": 4
-      },
-      "."
      ],
-     "steps": [
-      "Each number goes up by 1.",
-      "3 goes up to 4."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       3,
-       "→",
-       4
-      ]
-     },
-     "hint": {
-      "text": "How does 7 change into 8?"
-     }
+     "dots": true
     },
-    "type": "choice",
     "facts": {
      "examples": [
       [
@@ -1298,104 +2386,115 @@
      }
     ],
     "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 3
+      },
+      "goes up to",
+      {
+       "number": 4
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 1.",
+      "3 goes up to 4."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 3,
+        "to": 4
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 7 change into 8?"
+     }
+    },
     "skillId": "R-A8",
-    "level": 1,
+    "level": 2,
     "seed": 9,
-    "key": "R-A8|1|{\"base\":3,\"examples\":[[7,8],[1,2]]}"
+    "key": "R-A8|2|{\"base\":3,\"examples\":[[7,8],[1,2]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
-     "text": "Each number changes the same way. What does 4 change to?",
+     "text": "Each number changes the same way. What does 1 change to?",
      "speak": [
       "Each number changes the same way. What does",
       {
-       "number": 4
+       "number": 1
       },
       "change to?"
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        5
-       ]
+       "from": 4,
+       "to": 6
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        8
-       ]
+       "from": 6,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        "blank"
-       ]
+       "from": 1,
+       "to": "blank"
       }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes up by",
-      {
-       "number": 3
-      },
-      ".",
-      {
-       "number": 4
-      },
-      "goes up to",
-      {
-       "number": 7
-      },
-      "."
      ],
-     "steps": [
-      "Each number goes up by 3.",
-      "4 goes up to 7."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       4,
-       "→",
-       7
-      ]
-     },
-     "hint": {
-      "text": "How does 2 change into 5?"
-     }
+     "dots": true
     },
-    "type": "choice",
     "facts": {
      "examples": [
       [
-       2,
-       5
+       4,
+       6
       ],
       [
-       5,
+       6,
        8
       ]
      ],
-     "base": 4,
+     "base": 1,
      "options": [
-      5,
-      6,
-      7
+      3,
+      4,
+      5
      ]
     },
     "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
      {
       "kind": "text",
       "value": "5",
@@ -1403,6 +2502,108 @@
       "speak": [
        {
         "number": 5
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number goes up by",
+      {
+       "number": 2
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "goes up to",
+      {
+       "number": 3
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes up by 2.",
+      "1 goes up to 3."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 1,
+        "to": 3
+       }
+      ],
+      "dots": true
+     },
+     "hint": {
+      "text": "How does 4 change into 6?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 2,
+    "seed": 10,
+    "key": "R-A8|2|{\"base\":1,\"examples\":[[4,6],[6,8]]}"
+   }
+  ],
+  "3": [
+   {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 7 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 7
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 2,
+       "to": 1
+      },
+      {
+       "from": 10,
+       "to": 9
+      },
+      {
+       "from": 7,
+       "to": "blank"
+      }
+     ]
+    },
+    "facts": {
+     "examples": [
+      [
+       2,
+       1
+      ],
+      [
+       10,
+       9
+      ]
+     ],
+     "base": 7,
+     "options": [
+      4,
+      6,
+      14
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
        }
       ]
      },
@@ -1418,24 +2619,171 @@
      },
      {
       "kind": "text",
-      "value": "7",
+      "value": "14",
       "size": "xl",
       "speak": [
        {
-        "number": 7
+        "number": 14
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "Each number goes down by",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "goes down to",
+      {
+       "number": 6
+      },
+      "."
+     ],
+     "steps": [
+      "Each number goes down by 1.",
+      "7 goes down to 6."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 6
+       }
+      ]
+     },
+     "hint": {
+      "text": "How does 2 change into 1?"
+     }
+    },
     "skillId": "R-A8",
-    "level": 1,
-    "seed": 10,
-    "key": "R-A8|1|{\"base\":4,\"examples\":[[2,5],[5,8]]}"
-   }
-  ],
-  "2": [
+    "level": 3,
+    "seed": 1,
+    "key": "R-A8|3|{\"base\":7,\"examples\":[[2,1],[10,9]]}"
+   },
    {
+    "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 5 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 5
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 1,
+       "to": 2
+      },
+      {
+       "from": 8,
+       "to": 16
+      },
+      {
+       "from": 5,
+       "to": "blank"
+      }
+     ]
+    },
+    "facts": {
+     "examples": [
+      [
+       1,
+       2
+      ],
+      [
+       8,
+       16
+      ]
+     ],
+     "base": 5,
+     "options": [
+      10,
+      13,
+      16
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "13",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 13
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "16",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 16
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
+    "explanation": {
+     "speak": [
+      "Each number doubles.",
+      {
+       "number": 5
+      },
+      "doubles to",
+      {
+       "number": 10
+      },
+      "."
+     ],
+     "steps": [
+      "Each number doubles.",
+      "5 doubles to 10."
+     ],
+     "visual": {
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 5,
+        "to": 10
+       }
+      ]
+     },
+     "hint": {
+      "text": "How does 8 change into 16?"
+     }
+    },
+    "skillId": "R-A8",
+    "level": 3,
+    "seed": 2,
+    "key": "R-A8|3|{\"base\":5,\"examples\":[[1,2],[8,16]]}"
+   },
+   {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 7 change to?",
@@ -1448,63 +2796,22 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        16
-       ]
+       "from": 8,
+       "to": 16
       },
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        6
-       ]
+       "from": 6,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        "blank"
-       ]
+       "from": 7,
+       "to": "blank"
       }
      ]
     },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 7
-      },
-      "doubles to",
-      {
-       "number": 14
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "7 doubles to 14."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       7,
-       "→",
-       14
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 16?"
-     }
-    },
-    "type": "choice",
     "facts": {
      "examples": [
       [
@@ -1512,13 +2819,13 @@
        16
       ],
       [
-       3,
-       6
+       6,
+       12
       ]
      ],
      "base": 7,
      "options": [
-      10,
+      12,
       14,
       16
      ]
@@ -1526,11 +2833,11 @@
     "options": [
      {
       "kind": "text",
-      "value": "10",
+      "value": "12",
       "size": "xl",
       "speak": [
        {
-        "number": 10
+        "number": 12
        }
       ]
      },
@@ -1556,138 +2863,42 @@
      }
     ],
     "answerIndex": 1,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 1,
-    "key": "R-A8|2|{\"base\":7,\"examples\":[[8,16],[3,6]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 9 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 9
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        2
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
     "explanation": {
      "speak": [
       "Each number doubles.",
       {
-       "number": 9
+       "number": 7
       },
       "doubles to",
       {
-       "number": 18
+       "number": 14
       },
       "."
      ],
      "steps": [
       "Each number doubles.",
-      "9 doubles to 18."
+      "7 doubles to 14."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       9,
-       "→",
-       18
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 14
+       }
       ]
      },
      "hint": {
-      "text": "How does 6 change into 12?"
+      "text": "How does 8 change into 16?"
      }
     },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       6,
-       12
-      ],
-      [
-       1,
-       2
-      ]
-     ],
-     "base": 9,
-     "options": [
-      2,
-      10,
-      18
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "18",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 18
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
     "skillId": "R-A8",
-    "level": 2,
-    "seed": 2,
-    "key": "R-A8|2|{\"base\":9,\"examples\":[[6,12],[1,2]]}"
+    "level": 3,
+    "seed": 3,
+    "key": "R-A8|3|{\"base\":7,\"examples\":[[8,16],[6,12]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 5 change to?",
@@ -1700,34 +2911,73 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        6
-       ]
+       "from": 4,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
+       "from": 6,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
+       "from": 5,
+       "to": "blank"
       }
      ]
     },
+    "facts": {
+     "examples": [
+      [
+       4,
+       8
+      ],
+      [
+       6,
+       12
+      ]
+     ],
+     "base": 5,
+     "options": [
+      8,
+      9,
+      10
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "9",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 9
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "10",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 10
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number doubles.",
@@ -1745,579 +2995,25 @@
       "5 doubles to 10."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       10
-      ]
-     },
-     "hint": {
-      "text": "How does 3 change into 6?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       3,
-       6
-      ],
-      [
-       6,
-       12
-      ]
-     ],
-     "base": 5,
-     "options": [
-      10,
-      11,
-      12
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
+      "kind": "pairs",
+      "pairs": [
        {
-        "number": 10
+        "from": 5,
+        "to": 10
        }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "11",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 11
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 3,
-    "key": "R-A8|2|{\"base\":5,\"examples\":[[3,6],[6,12]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 6 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 6
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        10
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 6
-      },
-      "doubles to",
-      {
-       "number": 12
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "6 doubles to 12."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       6,
-       "→",
-       12
       ]
      },
      "hint": {
       "text": "How does 4 change into 8?"
      }
     },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       4,
-       8
-      ],
-      [
-       5,
-       10
-      ]
-     ],
-     "base": 6,
-     "options": [
-      11,
-      12,
-      13
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "11",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 11
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "13",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 13
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
     "skillId": "R-A8",
-    "level": 2,
+    "level": 3,
     "seed": 4,
-    "key": "R-A8|2|{\"base\":6,\"examples\":[[4,8],[5,10]]}"
+    "key": "R-A8|3|{\"base\":5,\"examples\":[[4,8],[6,12]]}"
    },
    {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 6 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 6
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        16
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        10
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 6
-      },
-      "doubles to",
-      {
-       "number": 12
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "6 doubles to 12."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       6,
-       "→",
-       12
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 16?"
-     }
-    },
     "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       8,
-       16
-      ],
-      [
-       5,
-       10
-      ]
-     ],
-     "base": 6,
-     "options": [
-      10,
-      11,
-      12
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "10",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 10
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "11",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 11
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 5,
-    "key": "R-A8|2|{\"base\":6,\"examples\":[[8,16],[5,10]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 4 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 4
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        14
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 4
-      },
-      "doubles to",
-      {
-       "number": 8
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "4 doubles to 8."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       4,
-       "→",
-       8
-      ]
-     },
-     "hint": {
-      "text": "How does 7 change into 14?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       7,
-       14
-      ],
-      [
-       6,
-       12
-      ]
-     ],
-     "base": 4,
-     "options": [
-      6,
-      7,
-      8
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "6",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 6
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     }
-    ],
-    "answerIndex": 2,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 6,
-    "key": "R-A8|2|{\"base\":4,\"examples\":[[7,14],[6,12]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 4 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 4
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        16
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 4
-      },
-      "doubles to",
-      {
-       "number": 8
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "4 doubles to 8."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       4,
-       "→",
-       8
-      ]
-     },
-     "hint": {
-      "text": "How does 6 change into 12?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       6,
-       12
-      ],
-      [
-       8,
-       16
-      ]
-     ],
-     "base": 4,
-     "options": [
-      7,
-      8,
-      12
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "8",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 8
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "12",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 12
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 7,
-    "key": "R-A8|2|{\"base\":4,\"examples\":[[6,12],[8,16]]}"
-   },
-   {
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 8 change to?",
@@ -2330,189 +3026,22 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
+       "from": 6,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        2
-       ]
+       "from": 4,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        "blank"
-       ]
+       "from": 8,
+       "to": "blank"
       }
      ]
     },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 8
-      },
-      "doubles to",
-      {
-       "number": 16
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "8 doubles to 16."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       8,
-       "→",
-       16
-      ]
-     },
-     "hint": {
-      "text": "How does 4 change into 8?"
-     }
-    },
-    "type": "choice",
-    "facts": {
-     "examples": [
-      [
-       4,
-       8
-      ],
-      [
-       1,
-       2
-      ]
-     ],
-     "base": 8,
-     "options": [
-      2,
-      16,
-      18
-     ]
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "2",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 2
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "16",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 16
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "18",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 18
-       }
-      ]
-     }
-    ],
-    "answerIndex": 1,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 8,
-    "key": "R-A8|2|{\"base\":8,\"examples\":[[4,8],[1,2]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 8 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 8
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        18
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 8
-      },
-      "doubles to",
-      {
-       "number": 16
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "8 doubles to 16."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       8,
-       "→",
-       16
-      ]
-     },
-     "hint": {
-      "text": "How does 6 change into 12?"
-     }
-    },
-    "type": "choice",
     "facts": {
      "examples": [
       [
@@ -2520,8 +3049,8 @@
        12
       ],
       [
-       9,
-       18
+       4,
+       8
       ]
      ],
      "base": 8,
@@ -2564,100 +3093,99 @@
      }
     ],
     "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 9,
-    "key": "R-A8|2|{\"base\":8,\"examples\":[[6,12],[9,18]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 1 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 1
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
     "explanation": {
      "speak": [
       "Each number doubles.",
       {
-       "number": 1
+       "number": 8
       },
       "doubles to",
       {
-       "number": 2
+       "number": 16
       },
       "."
      ],
      "steps": [
       "Each number doubles.",
-      "1 doubles to 2."
+      "8 doubles to 16."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       1,
-       "→",
-       2
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 8,
+        "to": 16
+       }
       ]
      },
      "hint": {
-      "text": "How does 4 change into 8?"
+      "text": "How does 6 change into 12?"
      }
     },
+    "skillId": "R-A8",
+    "level": 3,
+    "seed": 5,
+    "key": "R-A8|3|{\"base\":8,\"examples\":[[6,12],[4,8]]}"
+   },
+   {
     "type": "choice",
+    "mode": "look",
+    "prompt": {
+     "text": "Each number changes the same way. What does 4 change to?",
+     "speak": [
+      "Each number changes the same way. What does",
+      {
+       "number": 4
+      },
+      "change to?"
+     ]
+    },
+    "stimulus": {
+     "kind": "pairs",
+     "pairs": [
+      {
+       "from": 9,
+       "to": 8
+      },
+      {
+       "from": 6,
+       "to": 5
+      },
+      {
+       "from": 4,
+       "to": "blank"
+      }
+     ]
+    },
     "facts": {
      "examples": [
       [
-       4,
+       9,
        8
       ],
       [
        6,
-       12
+       5
       ]
      ],
-     "base": 1,
+     "base": 4,
      "options": [
+      1,
       2,
-      3,
-      7
+      3
      ]
     },
     "options": [
+     {
+      "kind": "text",
+      "value": "1",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 1
+       }
+      ]
+     },
      {
       "kind": "text",
       "value": "2",
@@ -2677,521 +3205,9 @@
         "number": 3
        }
       ]
-     },
-     {
-      "kind": "text",
-      "value": "7",
-      "size": "xl",
-      "speak": [
-       {
-        "number": 7
-       }
-      ]
      }
     ],
-    "answerIndex": 0,
-    "skillId": "R-A8",
-    "level": 2,
-    "seed": 10,
-    "key": "R-A8|2|{\"base\":1,\"examples\":[[4,8],[6,12]]}"
-   }
-  ],
-  "3": [
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 7 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 7
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        1
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        10,
-        "→",
-        9
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number goes down by",
-      {
-       "number": 1
-      },
-      ".",
-      {
-       "number": 7
-      },
-      "goes down to",
-      {
-       "number": 6
-      },
-      "."
-     ],
-     "steps": [
-      "Each number goes down by 1.",
-      "7 goes down to 6."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       7,
-       "→",
-       6
-      ]
-     },
-     "hint": {
-      "text": "How does 2 change into 1?"
-     }
-    },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       2,
-       1
-      ],
-      [
-       10,
-       9
-      ]
-     ],
-     "base": 7
-    },
-    "answer": 6,
-    "maxDigits": 2,
-    "skillId": "R-A8",
-    "level": 3,
-    "seed": 1,
-    "key": "R-A8|3|{\"base\":7,\"examples\":[[2,1],[10,9]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 5 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 5
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        2
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        16
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 5
-      },
-      "doubles to",
-      {
-       "number": 10
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "5 doubles to 10."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       10
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 16?"
-     }
-    },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       1,
-       2
-      ],
-      [
-       8,
-       16
-      ]
-     ],
-     "base": 5
-    },
-    "answer": 10,
-    "maxDigits": 2,
-    "skillId": "R-A8",
-    "level": 3,
-    "seed": 2,
-    "key": "R-A8|3|{\"base\":5,\"examples\":[[1,2],[8,16]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 7 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 7
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        16
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 7
-      },
-      "doubles to",
-      {
-       "number": 14
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "7 doubles to 14."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       7,
-       "→",
-       14
-      ]
-     },
-     "hint": {
-      "text": "How does 8 change into 16?"
-     }
-    },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       8,
-       16
-      ],
-      [
-       6,
-       12
-      ]
-     ],
-     "base": 7
-    },
-    "answer": 14,
-    "maxDigits": 2,
-    "skillId": "R-A8",
-    "level": 3,
-    "seed": 3,
-    "key": "R-A8|3|{\"base\":7,\"examples\":[[8,16],[6,12]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 5 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 5
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 5
-      },
-      "doubles to",
-      {
-       "number": 10
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "5 doubles to 10."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       10
-      ]
-     },
-     "hint": {
-      "text": "How does 4 change into 8?"
-     }
-    },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       4,
-       8
-      ],
-      [
-       6,
-       12
-      ]
-     ],
-     "base": 5
-    },
-    "answer": 10,
-    "maxDigits": 2,
-    "skillId": "R-A8",
-    "level": 3,
-    "seed": 4,
-    "key": "R-A8|3|{\"base\":5,\"examples\":[[4,8],[6,12]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 8 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 8
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        12
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
-    "explanation": {
-     "speak": [
-      "Each number doubles.",
-      {
-       "number": 8
-      },
-      "doubles to",
-      {
-       "number": 16
-      },
-      "."
-     ],
-     "steps": [
-      "Each number doubles.",
-      "8 doubles to 16."
-     ],
-     "visual": {
-      "kind": "equation",
-      "parts": [
-       8,
-       "→",
-       16
-      ]
-     },
-     "hint": {
-      "text": "How does 6 change into 12?"
-     }
-    },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       6,
-       12
-      ],
-      [
-       4,
-       8
-      ]
-     ],
-     "base": 8
-    },
-    "answer": 16,
-    "maxDigits": 2,
-    "skillId": "R-A8",
-    "level": 3,
-    "seed": 5,
-    "key": "R-A8|3|{\"base\":8,\"examples\":[[6,12],[4,8]]}"
-   },
-   {
-    "mode": "look",
-    "prompt": {
-     "text": "Each number changes the same way. What does 4 change to?",
-     "speak": [
-      "Each number changes the same way. What does",
-      {
-       "number": 4
-      },
-      "change to?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        8
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        5
-       ]
-      },
-      {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        "blank"
-       ]
-      }
-     ]
-    },
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number goes down by",
@@ -3213,39 +3229,25 @@
       "4 goes down to 3."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       4,
-       "→",
-       3
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 4,
+        "to": 3
+       }
       ]
      },
      "hint": {
       "text": "How does 9 change into 8?"
      }
     },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       9,
-       8
-      ],
-      [
-       6,
-       5
-      ]
-     ],
-     "base": 4
-    },
-    "answer": 3,
-    "maxDigits": 2,
     "skillId": "R-A8",
     "level": 3,
     "seed": 6,
     "key": "R-A8|3|{\"base\":4,\"examples\":[[9,8],[6,5]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 2 change to?",
@@ -3258,34 +3260,73 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        8
-       ]
+       "from": 7,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        6
-       ]
+       "from": 5,
+       "to": 6
       },
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        "blank"
-       ]
+       "from": 2,
+       "to": "blank"
       }
      ]
     },
+    "facts": {
+     "examples": [
+      [
+       7,
+       8
+      ],
+      [
+       5,
+       6
+      ]
+     ],
+     "base": 2,
+     "options": [
+      3,
+      4,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "3",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 3
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 0,
     "explanation": {
      "speak": [
       "Each number goes up by",
@@ -3307,39 +3348,25 @@
       "2 goes up to 3."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       2,
-       "→",
-       3
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 2,
+        "to": 3
+       }
       ]
      },
      "hint": {
       "text": "How does 7 change into 8?"
      }
     },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       7,
-       8
-      ],
-      [
-       5,
-       6
-      ]
-     ],
-     "base": 2
-    },
-    "answer": 3,
-    "maxDigits": 2,
     "skillId": "R-A8",
     "level": 3,
     "seed": 7,
     "key": "R-A8|3|{\"base\":2,\"examples\":[[7,8],[5,6]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 2 change to?",
@@ -3352,34 +3379,73 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        12
-       ]
+       "from": 8,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        8
-       ]
+       "from": 4,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        "blank"
-       ]
+       "from": 2,
+       "to": "blank"
       }
      ]
     },
+    "facts": {
+     "examples": [
+      [
+       8,
+       12
+      ],
+      [
+       4,
+       8
+      ]
+     ],
+     "base": 2,
+     "options": [
+      4,
+      6,
+      7
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "4",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 4
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
     "explanation": {
      "speak": [
       "Each number goes up by",
@@ -3401,39 +3467,25 @@
       "2 goes up to 6."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       2,
-       "→",
-       6
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 2,
+        "to": 6
+       }
       ]
      },
      "hint": {
       "text": "How does 8 change into 12?"
      }
     },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       8,
-       12
-      ],
-      [
-       4,
-       8
-      ]
-     ],
-     "base": 2
-    },
-    "answer": 6,
-    "maxDigits": 2,
     "skillId": "R-A8",
     "level": 3,
     "seed": 8,
     "key": "R-A8|3|{\"base\":2,\"examples\":[[8,12],[4,8]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 1 change to?",
@@ -3446,34 +3498,73 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        8
-       ]
+       "from": 3,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        13
-       ]
+       "from": 8,
+       "to": 13
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        "blank"
-       ]
+       "from": 1,
+       "to": "blank"
       }
      ]
     },
+    "facts": {
+     "examples": [
+      [
+       3,
+       8
+      ],
+      [
+       8,
+       13
+      ]
+     ],
+     "base": 1,
+     "options": [
+      2,
+      5,
+      6
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "2",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 2
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "6",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 6
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number goes up by",
@@ -3495,39 +3586,25 @@
       "1 goes up to 6."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       1,
-       "→",
-       6
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 1,
+        "to": 6
+       }
       ]
      },
      "hint": {
       "text": "How does 3 change into 8?"
      }
     },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       3,
-       8
-      ],
-      [
-       8,
-       13
-      ]
-     ],
-     "base": 1
-    },
-    "answer": 6,
-    "maxDigits": 2,
     "skillId": "R-A8",
     "level": 3,
     "seed": 9,
     "key": "R-A8|3|{\"base\":1,\"examples\":[[3,8],[8,13]]}"
    },
    {
+    "type": "choice",
     "mode": "look",
     "prompt": {
      "text": "Each number changes the same way. What does 13 change to?",
@@ -3540,34 +3617,73 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        11,
-        "→",
-        6
-       ]
+       "from": 11,
+       "to": 6
       },
       {
-       "kind": "equation",
-       "parts": [
-        10,
-        "→",
-        5
-       ]
+       "from": 10,
+       "to": 5
       },
       {
-       "kind": "equation",
-       "parts": [
-        13,
-        "→",
-        "blank"
-       ]
+       "from": 13,
+       "to": "blank"
       }
      ]
     },
+    "facts": {
+     "examples": [
+      [
+       11,
+       6
+      ],
+      [
+       10,
+       5
+      ]
+     ],
+     "base": 13,
+     "options": [
+      5,
+      7,
+      8
+     ]
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "5",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 5
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "7",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 7
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "8",
+      "size": "xl",
+      "speak": [
+       {
+        "number": 8
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
     "explanation": {
      "speak": [
       "Each number goes down by",
@@ -3589,33 +3705,18 @@
       "13 goes down to 8."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       13,
-       "→",
-       8
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 13,
+        "to": 8
+       }
       ]
      },
      "hint": {
       "text": "How does 11 change into 6?"
      }
     },
-    "type": "numberPad",
-    "facts": {
-     "examples": [
-      [
-       11,
-       6
-      ],
-      [
-       10,
-       5
-      ]
-     ],
-     "base": 13
-    },
-    "answer": 8,
-    "maxDigits": 2,
     "skillId": "R-A8",
     "level": 3,
     "seed": 10,
@@ -3650,31 +3751,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        5
-       ]
+       "from": 4,
+       "to": 5
       },
       {
-       "kind": "equation",
-       "parts": [
-        12,
-        "→",
-        21
-       ]
+       "from": 12,
+       "to": 21
       },
       {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        "blank"
-       ]
+       "from": 9,
+       "to": "blank"
       }
      ]
     },
@@ -3714,11 +3803,12 @@
       "18 minus 3 is 15."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       9,
-       "→",
-       15
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 9,
+        "to": 15
+       }
       ]
      },
      "hint": {
@@ -3757,31 +3847,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        14
-       ]
+       "from": 8,
+       "to": 14
       },
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        4
-       ]
+       "from": 3,
+       "to": 4
       },
       {
-       "kind": "equation",
-       "parts": [
-        10,
-        "→",
-        "blank"
-       ]
+       "from": 10,
+       "to": "blank"
       }
      ]
     },
@@ -3821,11 +3899,12 @@
       "20 minus 2 is 18."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       10,
-       "→",
-       18
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 10,
+        "to": 18
+       }
       ]
      },
      "hint": {
@@ -3864,31 +3943,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        12,
-        "→",
-        21
-       ]
+       "from": 12,
+       "to": 21
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        7
-       ]
+       "from": 5,
+       "to": 7
       },
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        "blank"
-       ]
+       "from": 7,
+       "to": "blank"
       }
      ]
     },
@@ -3928,11 +3995,12 @@
       "14 minus 3 is 11."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       7,
-       "→",
-       11
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 7,
+        "to": 11
+       }
       ]
      },
      "hint": {
@@ -3971,31 +4039,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        12
-       ]
+       "from": 7,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        8
-       ]
+       "from": 5,
+       "to": 8
       },
       {
-       "kind": "equation",
-       "parts": [
-        9,
-        "→",
-        "blank"
-       ]
+       "from": 9,
+       "to": "blank"
       }
      ]
     },
@@ -4035,11 +4091,12 @@
       "18 minus 2 is 16."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       9,
-       "→",
-       16
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 9,
+        "to": 16
+       }
       ]
      },
      "hint": {
@@ -4078,31 +4135,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        18
-       ]
+       "from": 8,
+       "to": 18
       },
       {
-       "kind": "equation",
-       "parts": [
-        7,
-        "→",
-        16
-       ]
+       "from": 7,
+       "to": 16
       },
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        "blank"
-       ]
+       "from": 3,
+       "to": "blank"
       }
      ]
     },
@@ -4142,11 +4187,12 @@
       "6 plus 2 is 8."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       3,
-       "→",
-       8
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 3,
+        "to": 8
+       }
       ]
      },
      "hint": {
@@ -4185,31 +4231,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        11,
-        "→",
-        19
-       ]
+       "from": 11,
+       "to": 19
       },
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        13
-       ]
+       "from": 8,
+       "to": 13
       },
       {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        "blank"
-       ]
+       "from": 6,
+       "to": "blank"
       }
      ]
     },
@@ -4249,11 +4283,12 @@
       "12 minus 3 is 9."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       6,
-       "→",
-       9
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 6,
+        "to": 9
+       }
       ]
      },
      "hint": {
@@ -4292,31 +4327,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        12
-       ]
+       "from": 4,
+       "to": 12
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        3
-       ]
+       "from": 1,
+       "to": 3
       },
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        "blank"
-       ]
+       "from": 2,
+       "to": "blank"
       }
      ]
     },
@@ -4347,11 +4370,12 @@
       "2 times 3 is 6."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       2,
-       "→",
-       6
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 2,
+        "to": 6
+       }
       ]
      },
      "hint": {
@@ -4390,31 +4414,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        4,
-        "→",
-        16
-       ]
+       "from": 4,
+       "to": 16
       },
       {
-       "kind": "equation",
-       "parts": [
-        1,
-        "→",
-        4
-       ]
+       "from": 1,
+       "to": 4
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        "blank"
-       ]
+       "from": 5,
+       "to": "blank"
       }
      ]
     },
@@ -4445,11 +4457,12 @@
       "5 times 4 is 20."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       5,
-       "→",
-       20
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 5,
+        "to": 20
+       }
       ]
      },
      "hint": {
@@ -4488,31 +4501,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        25
-       ]
+       "from": 5,
+       "to": 25
       },
       {
-       "kind": "equation",
-       "parts": [
-        2,
-        "→",
-        10
-       ]
+       "from": 2,
+       "to": 10
       },
       {
-       "kind": "equation",
-       "parts": [
-        3,
-        "→",
-        "blank"
-       ]
+       "from": 3,
+       "to": "blank"
       }
      ]
     },
@@ -4543,11 +4544,12 @@
       "3 times 5 is 15."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       3,
-       "→",
-       15
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 3,
+        "to": 15
+       }
       ]
      },
      "hint": {
@@ -4586,31 +4588,19 @@
      ]
     },
     "stimulus": {
-     "kind": "row",
-     "children": [
+     "kind": "pairs",
+     "pairs": [
       {
-       "kind": "equation",
-       "parts": [
-        6,
-        "→",
-        15
-       ]
+       "from": 6,
+       "to": 15
       },
       {
-       "kind": "equation",
-       "parts": [
-        5,
-        "→",
-        13
-       ]
+       "from": 5,
+       "to": 13
       },
       {
-       "kind": "equation",
-       "parts": [
-        8,
-        "→",
-        "blank"
-       ]
+       "from": 8,
+       "to": "blank"
       }
      ]
     },
@@ -4650,11 +4640,12 @@
       "16 plus 3 is 19."
      ],
      "visual": {
-      "kind": "equation",
-      "parts": [
-       8,
-       "→",
-       19
+      "kind": "pairs",
+      "pairs": [
+       {
+        "from": 8,
+        "to": 19
+       }
       ]
      },
      "hint": {

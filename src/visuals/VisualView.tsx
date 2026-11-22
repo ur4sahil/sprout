@@ -17,6 +17,7 @@ import MatrixVisual from './MatrixVisual';
 import MeasuredRectVisual from './MeasuredRectVisual';
 import MeasuringCupVisual from './MeasuringCupVisual';
 import NumberLineVisual from './NumberLineVisual';
+import PairsVisual from './PairsVisual';
 import RowVisual from './RowVisual';
 import RulerVisual from './RulerVisual';
 import ScaleVisual from './ScaleVisual';
@@ -47,6 +48,8 @@ export default function VisualView({ visual }: { visual: Visual }) {
       return <NumberLineVisual visual={visual} />;
     case 'equation':
       return <EquationVisual visual={visual} />;
+    case 'pairs':
+      return <PairsVisual visual={visual} />;
     case 'sequence':
       return <SequenceVisual visual={visual} />;
     case 'matrix':

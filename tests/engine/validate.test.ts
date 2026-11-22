@@ -289,6 +289,20 @@ describe('validateQuestion', () => {
     expect(broken(read({ facts: { target: 'cat', options: ['cat', 'dog'] } }))).toContain('15');
   });
 
+  it('19: a pairs picture has pairs of whole numbers, a blank only at the very end, and dots only on numbers to 10', () => {
+    const pairs = (list: [number, number | 'blank'][], dots?: true): Visual => ({ kind: 'pairs', pairs: list.map(([from, to]) => ({ from, to })), ...(dots ? { dots } : {}) });
+    const asked = (stimulus: Visual, visual?: Visual): Question => choice({ stimulus, ...(visual ? { explanation: { speak: ['There are', { number: 3 }, '.'], steps: ['There are 3.'], visual } } : {}) });
+    expect(broken(asked(pairs([[2, 3], [6, 7], [9, 'blank']], true), pairs([[9, 10]], true)))).toEqual([]);
+    expect(broken(asked(pairs([[12, 24], [5, 'blank']])))).toEqual([]);
+    expect(broken(asked(pairs([])))).toContain('19');
+    expect(broken(asked(pairs([[2, 'blank'], [6, 7]])))).toContain('19');
+    expect(broken(asked(pairs([[2, 2.5], [6, 'blank']])))).toContain('19');
+    expect(broken(asked(pairs([[2, -1], [6, 'blank']])))).toContain('19');
+    // Dots under a number too big to count, in the question or in the picture after a miss.
+    expect(broken(asked(pairs([[9, 11], [4, 'blank']], true)))).toContain('19');
+    expect(broken(asked(pairs([[2, 3], [4, 'blank']], true), pairs([[10, 11]], true)))).toContain('19');
+  });
+
   it('18: every step is said, stepsSay has one valid entry for each step, and a hint is said and gives nothing away', () => {
     const steps = (list: string[], stepsSay?: (Say | null)[]): Question => choice({ explanation: { speak: ['There are', { number: 3 }, '.'], steps: list, ...(stepsSay ? { stepsSay } : {}) } });
     expect(broken(steps(['Count them.', 'There are 3.'], [null, ['There are', { number: 3 }, '.']]))).toEqual([]);

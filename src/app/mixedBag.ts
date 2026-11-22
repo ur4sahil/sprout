@@ -3,7 +3,7 @@ import { skillById } from '../content/catalogue';
 import type { Ladder } from '../content/ladders';
 import { gradeOfSkillId } from '../content/ladders';
 import { allGenerators, nextQuestion } from '../content/registry';
-import { offeredTo } from '../engine/grades';
+import { maxLevelFor, offeredTo } from '../engine/grades';
 import { seedFor } from '../engine/seed';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
 import type { Question } from '../engine/types';
@@ -92,6 +92,6 @@ export function mixedBagOrder(states: readonly SkillState[], ladders: readonly L
 
 // The question a skill would ask next in practice, at its level, avoiding the questions just asked.
 export function mixedTurn(child: Child, skill: Skill, state: SkillState, recentKeys: readonly string[]): Question {
-  const level = levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
+  const level = levelToAsk(state.score, lastWasMiss(state), maxLevelFor(skill, child.grade));
   return nextQuestion(skill.id, level, seedFor(child.id, skill.id, 'practice', state.attempts), recentKeys);
 }

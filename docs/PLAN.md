@@ -676,6 +676,7 @@ A `Visual` is a small description of a picture. One React component draws each k
 | `baseTen` | hundreds, tens, ones | Place-value blocks |
 | `numberLine` | min, max, step, marked\[\], hidden\[\] | Number line with a point or blanks |
 | `equation` | parts: (number, operator or `blank`)\[\] | `3 + □ = 7`, horizontal |
+| `pairs` | pairs: { from, to: number or `blank` }\[\], dots? | Number pairs for a rule puzzle (Reasoning A.8, the owner's choice, Nov 22, 2026): one pair a line, each in its own light box, `6 → 9`, then `4 → 7`, then `5 → □`. With `dots`, countable dots under every number shown (never under the blank) |
 | `sequence` | items: (Visual or `blank`)\[\] | A row with a missing slot, for patterns |
 | `matrix` | cells: (Visual or `blank`)\[4\] | 2 by 2 reasoning grid |
 | `clock` | hour, minute | Analog clock face. The hour hand sits at hour plus minute/60, so at half past it is halfway to the next number |
@@ -803,11 +804,12 @@ interface SkillGenerator {
 9. Same skill, level and seed always produce a deeply equal question.
 10. Across 300 seeds each level yields at least 8 distinct `key` values. A level with a declared `pool` must yield at least the smaller of 8 and the pool, and never more keys than the pool.
 11. The position of the correct option is spread out. For a question with n options, over 300 seeds no index holds more than 1/n plus 15% of the answers: 65% for 2 options, 48% for 3, 40% for 4. A `fixedOrder` question is checked the other way round: each option is the right answer in at least 10% of seeds.
-12. Option counts by the skill's grade: pre-K and kindergarten use at most 3. Grade 1 and above use up to 4. Reasoning (`all`) uses 3 at levels 1 and 2 and 4 at levels 3 and 4.
+12. Option counts by the skill's grade: pre-K and kindergarten use at most 3. Grade 1 and above use up to 4. Reasoning (`all`) uses 3 at levels 1 and 2 and up to 4 at levels 3 and 4 (A.8 level 3 uses 3).
 13. `facts` is present, holds every key its oracle needs, and `key` matches the facts.
 14. `listen`: `prompt.text` does not contain the target named in `facts.target`, and no option or stimulus carries a `speak` label.
 15. `read`: no visual that shows the words in `facts.read` carries a `speak` label, and `prompt.speak` does not contain those words.
 16. Look-alikes that a screen font cannot tell apart never share a question: capital I with lowercase l or the digit 1, and the letter O with the digit 0.
+19. A `pairs` picture holds at least one pair of whole numbers 0 to 1,000, a blank only as the last pair's second number, and dots only when every number is 10 or less.
 
 Whether exactly one option is right is the oracle test's job, not `validateQuestion`'s.
 
@@ -1473,7 +1475,7 @@ These follow the figure-based style of gifted-screening tests. All share the str
 | A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn / a quarter turn and a change of colour each step. Colour and starting turn vary |
 | A.6 | Mirror images | choice | Pick the mirror of a flag / of an L shape / the wrong options are turned copies / two pieces in two colours: they swap and each flips |
 | A.7 | Two-rule patterns | choice | Colour and size alternate on different beats / colour and shape / colour, size and a cycle of three shapes |
-| A.8 | Number analogies | choice, numberPad | Two example pairs, then a third to finish: plus n / double / typed / times 3 to 5, or double then add or take away, typed |
+| A.8 | Number analogies | choice, numberPad | Two example pairs, then a third to finish, drawn as stacked pairs (the owner's choice, Nov 22, 2026): goes up by 1, every number 10 or less, dots under each number / goes up by 1 or 2, numbers to 10, dots / up or down by 1 to 5, or doubles, no dots, picked from 3 / times 3 to 5, or double then add or take away, typed. A pre-K or kindergarten child is never asked above level 1 (`youngMaxLevel`) |
 
 ### Adding skills later
 

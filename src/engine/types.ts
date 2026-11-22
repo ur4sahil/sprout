@@ -82,6 +82,10 @@ export type Visual = VisualBase &
     // With `denominator`, the numbers are counted in parts of one: min 0, max 4, denominator 4 is 0, 1/4, 2/4, 3/4, 1.
     | { kind: 'numberLine'; min: number; max: number; step: number; marked?: number[]; hidden?: number[]; denominator?: number }
     | { kind: 'equation'; parts: (number | string)[] } // numbers, operators and 'blank'
+    // Number pairs for a rule puzzle (Reasoning A.8, the owner's choice, Nov 22, 2026): one pair a line, each in its
+    // own light box, read "6 → 9", then "4 → 7", then "5 → □". `dots`: countable dots under every number shown (never
+    // under the blank), for the easy levels a young child counts.
+    | { kind: 'pairs'; pairs: { from: number; to: number | 'blank' }[]; dots?: true }
     | { kind: 'sequence'; items: (Visual | Blank)[] }
     | { kind: 'matrix'; cells: (Visual | Blank)[] } // 4 or 9 cells
     | { kind: 'clock'; hour: number; minute: number; noHands?: true } // noHands: a face to draw on, for paper

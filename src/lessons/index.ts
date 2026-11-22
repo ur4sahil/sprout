@@ -3,6 +3,8 @@ import { firstLetterLesson, middleVowelLesson } from './kEla';
 import { addPicturesLesson, countLesson, teenLesson } from './kMath';
 import type { Say } from '../engine/types';
 import { CATALOGUE } from '../content/catalogue';
+import { maxLevelFor } from '../engine/grades';
+import type { Grade } from '../storage/schema';
 import { backdropFor } from './backdrops';
 import { rich } from './build';
 import { LESSONS as kCount } from './more/kCount';
@@ -65,7 +67,11 @@ export const PART2_AT_SCORE = 50; // the score from which part 2 is put forward
 
 const madePart2 = new Map<string, Lesson>();
 
-export function teachingPart2For(skillId: string): Lesson | null {
+// A child whose levels stop below the skill's top (a pre-K or kindergarten child on number analogies, maxLevelFor) is
+// never offered the second lesson: it teaches the levels that child is not asked.
+export function teachingPart2For(skillId: string, grade: Grade): Lesson | null {
+  const skill = SKILLS.get(skillId);
+  if (skill && maxLevelFor(skill, grade) < skill.maxLevel) return null;
   const make = LESSONS_PART2[skillId];
   if (!make) return null;
   const known = madePart2.get(skillId);
