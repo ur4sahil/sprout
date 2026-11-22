@@ -5,6 +5,7 @@ import { givesAway, names } from '../../src/engine/giveaway';
 import type { HintBook } from '../../src/app/hints';
 import { generateQuestion } from '../../src/content/registry';
 import { CATALOGUE } from '../../src/content/catalogue';
+import { sayText } from '../../src/engine/describe';
 import { flawless } from '../../src/engine/fastTrack';
 import { recount } from '../../src/engine/merge';
 import { reviewRight } from '../../src/engine/review';
@@ -94,12 +95,20 @@ describe('the nudge', () => {
     let guarded = 0;
     for (const skill of CATALOGUE) {
       for (let seed = 1; seed <= 3; seed += 1) {
-        let q: Question;
+        let generated: Question;
         try {
-          q = question(skill.id, 1, seed);
+          generated = question(skill.id, 1, seed);
         } catch {
           continue;
         }
+        // A generator's own hint is offered first, and it never names the answer either.
+        const own = generated.explanation.hint;
+        if (own) {
+          expect(nudgeFor(generated)?.text, skill.id).toBe(own.text);
+          expect(givesAway(generated, own.text, own.say ? sayText(own.say) : null), `${skill.id}: ${own.text}`).toBe(false);
+        }
+        // The rules for a nudge taken from the steps, tested with the generator's own hint left out.
+        const q: Question = { ...generated, explanation: { ...generated.explanation, hint: undefined } };
         const nudge = nudgeFor(q);
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
@@ -161,8 +170,6 @@ describe('the nudge', () => {
   it('never offers a step that names the right option, the number, the word or the sign', () => {
     // Each of these first steps was offered as a nudge before (the wording audit, Nov 21, 2026).
     const cases: [string, number, number, string][] = [
-      ['M-1-C4', 1, 1, 'This is a dime.'],
-      ['M-1-C4', 3, 1, 'A quarter is worth 25 cents.'],
       ['M-2-C12', 1, 1, 'A bed is big: meters.'],
       ['E-K-E4', 1, 1, 'Wheat grows in a field.'],
       ['M-3-C11', 1, 1, 'An even number times any number is even.'],
@@ -177,6 +184,15 @@ describe('the nudge', () => {
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
       expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();
     }
+    // M-1-C4 now names the coin only in its last step and gives its own hint (round 2). Its old steps, which named
+    // the coin first, are put back here, so the guard is still tested on them.
+    const oldSteps = (q: Question, steps: string[]): Question => ({ ...q, explanation: { ...q.explanation, steps, hint: undefined, stepsSay: undefined } });
+    const dime = question('M-1-C4', 1, 1);
+    expect(dime.stimulus).toEqual({ kind: 'coins', coins: ['dime'] });
+    expect(nudgeFor(oldSteps(dime, ['This is a dime.', 'It is worth 10 cents.', 'Look at its size, its color and its picture.']))).toBeNull();
+    const worthMore = question('M-1-C4', 3, 1);
+    expect(worthMore.facts.coins).toEqual(['quarter', 'nickel']);
+    expect(nudgeFor(oldSteps(worthMore, ['A quarter is worth 25 cents.', 'A nickel is worth 5 cents.', 'The quarter is worth more.']))).toBeNull();
   });
 });
 

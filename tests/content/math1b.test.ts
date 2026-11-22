@@ -1,5 +1,6 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
+import { STORY_COUNTABLES } from '../../src/content/data/countables';
 import { generateQuestion } from '../../src/content/registry';
 import type { Level, Question } from '../../src/engine/types';
 
@@ -22,7 +23,8 @@ describe('B.1 to B.3: facts within 20', () => {
     expect(types(all('M-1-B1', 3))).toEqual(['numberPad']);
     for (const question of [...all('M-1-B1', 1), ...all('M-1-B1', 2)]) {
       expect(Math.max(n(question, 'a'), n(question, 'b'))).toBeLessThanOrEqual(10);
-      expect(question.prompt.text).toBe(`${n(question, 'a')} plus ${n(question, 'b')} equals what?`);
+      // A sum is asked naturally (the owner's choice, Nov 22, 2026), never "2 plus 9 equals what?".
+      expect(question.prompt.text).toBe(`What is ${n(question, 'a')} plus ${n(question, 'b')}?`);
       expect(question.explanation.steps[0]).toBe(`Start at ${Math.max(n(question, 'a'), n(question, 'b'))}.`);
     }
   });
@@ -34,7 +36,7 @@ describe('B.1 to B.3: facts within 20', () => {
     for (const level of [1, 2, 3] as Level[]) {
       for (const question of all('M-1-B2', level)) {
         expect(n(question, 'a') - n(question, 'b')).toBeGreaterThanOrEqual(1);
-        expect(question.prompt.text).toBe(`${n(question, 'a')} minus ${n(question, 'b')} equals what?`);
+        expect(question.prompt.text).toBe(`What is ${n(question, 'a')} minus ${n(question, 'b')}?`);
         expect(question.prompt.text).not.toContain('take away');
       }
     }
@@ -46,7 +48,8 @@ describe('B.1 to B.3: facts within 20', () => {
       expect(range(questions, (q) => n(q, 'a'))).toEqual([lo, hi]);
       for (const question of questions) {
         expect(n(question, 'a')).toBe(n(question, 'b'));
-        expect(question.explanation.steps).toEqual([`Two groups of ${n(question, 'a')} make ${sum(question)}.`]);
+        // Doubles are said as doubles, never "two groups of", which is times-table talk.
+        expect(question.explanation.steps).toEqual([`${n(question, 'a')} + ${n(question, 'a')} is a double: two ${n(question, 'a')}s.`, `Double ${n(question, 'a')} is ${sum(question)}.`]);
       }
     }
     const near = all('M-1-B3', 3);
@@ -54,7 +57,8 @@ describe('B.1 to B.3: facts within 20', () => {
     for (const question of near) {
       expect(Math.abs(n(question, 'a') - n(question, 'b'))).toBe(1);
       const small = Math.min(n(question, 'a'), n(question, 'b'));
-      expect(question.explanation.steps).toEqual([`Two groups of ${small} make ${small * 2}.`, `One more is ${sum(question)}.`]);
+      // A near double first says how the bigger number is the smaller one and 1 more.
+      expect(question.explanation.steps).toEqual([`${small + 1} is ${small} and 1 more.`, `Double ${small} is ${small * 2}.`, `1 more is ${sum(question)}.`]);
     }
     // Either number may come first.
     expect(near.some((question) => n(question, 'a') > n(question, 'b')) && near.some((question) => n(question, 'a') < n(question, 'b'))).toBe(true);
@@ -121,7 +125,8 @@ describe('B.6 True or false equations', () => {
         expect(question.answerIndex).toBe(same ? 0 : 1);
         expect(question.fixedOrder).toBe(true);
         expect(question.stimulus).toEqual({ kind: 'equation', parts: [...left, '=', ...right] });
-        expect(question.explanation.steps).toEqual([`The left side is ${worth(left)}.`, `The right side is ${worth(right)}.`, same ? 'They are the same.' : 'They are not the same.']);
+        // The last step answers what was asked: true or false.
+        expect(question.explanation.steps).toEqual([`The left side is ${worth(left)}.`, `The right side is ${worth(right)}.`, same ? `Both sides are ${worth(left)}, so it is true.` : `${worth(left)} and ${worth(right)} are not the same, so it is false.`]);
         const numbers = [...left, ...right].filter((part): part is number => typeof part === 'number');
         expect(Math.min(...numbers)).toBeGreaterThanOrEqual(0);
         expect(Math.max(...numbers)).toBeLessThanOrEqual(level === 3 ? 20 : 10);
@@ -161,7 +166,11 @@ describe('B.8 to B.10: bigger numbers and stories', () => {
         expect(a).toBeGreaterThanOrEqual(11);
         expect(b).toBeLessThanOrEqual(9);
         expect((a % 10) + b >= 10).toBe(carries);
-        expect(question.explanation.steps[1]).toBe(carries ? `That is 1 ten and ${(a % 10) + b - 10} ${(a % 10) + b - 10 === 1 ? 'one' : 'ones'}.` : 'The tens stay the same.');
+        // A new ten, never "1 ten and 1 one", which is said "one one".
+        const over = (a % 10) + b - 10;
+        const tens = Math.floor(a / 10);
+        expect(question.explanation.steps[1]).toBe(carries ? (over === 0 ? 'That makes a new ten.' : `That makes a new ten, with ${over} left over.`) : `The tens stay the same: ${tens} ${tens === 1 ? 'ten' : 'tens'}.`);
+        expect(question.explanation.hint?.text).toBe('Add the ones first.');
       }
     }
     const typed = all('M-1-B8', 3);
@@ -208,7 +217,9 @@ describe('B.8 to B.10: bigger numbers and stories', () => {
       expect(question.prompt.text).toContain(`How many more does ${question.facts.name as string} have?`);
       expect(question.prompt.text).toContain(`${question.facts.name2 as string} has ${n(question, 'b')}.`);
       expect(question.answer).toBe(n(question, 'a') - n(question, 'b'));
-      expect(question.explanation.steps).toEqual([`${n(question, 'a')} minus ${n(question, 'b')} is ${question.answer}.`]);
+      // The story's words say which way to go, then the sum, then the answer in the story's words.
+      const things = STORY_COUNTABLES.find((thing) => thing.one === question.facts.thing)?.many;
+      expect(question.explanation.steps).toEqual(['To find how many more, we subtract.', `${n(question, 'a')} − ${n(question, 'b')} = ${question.answer}.`, `${question.facts.name as string} has ${question.answer} more ${things as string} than ${question.facts.name2 as string}.`]);
     }
     for (const level of [1, 2, 3] as Level[]) for (const question of all('M-1-B10', level)) expect(Math.max(n(question, 'a'), n(question, 'b'))).toBeLessThanOrEqual(20);
   });

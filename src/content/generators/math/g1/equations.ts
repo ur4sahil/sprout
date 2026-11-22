@@ -4,10 +4,11 @@ import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import type { Shown as Explanation } from './wording';
+import { explain, hintFor } from './wording';
 
 // Math grade 1 B.4, B.5 and B.6: make ten to add, missing numbers, and true or false equations.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 
 // ---- B.4 Make ten to add ----
@@ -20,17 +21,13 @@ function makeTenExplanation(a: number, b: number): Explanation {
   const move = 10 - a;
   const left = b - move;
   // With a double there is no telling "the 8" from "the 8", so it says one and the other.
-  const moved: Say = a === b ? ['Move', { number: move }, 'from one', { number: a }, 'to the other.'] : ['Move', { number: move }, 'from the', { number: b }, 'to the', { number: a }, '.'];
   const movedText = a === b ? `Move ${move} from one ${a} to the other.` : `Move ${move} from the ${b} to the ${a}.`;
-  return {
-    speak: [...moved, 'Now it is', { number: 10 }, 'and', { number: left }, '.', { number: 10 }, 'plus', { number: left }, 'is', { number: a + b }, '.'],
-    steps: [movedText, `Now it is 10 and ${left}.`, `10 plus ${left} is ${a + b}.`],
-    visual: twoFrames(10, left),
-  };
+  return explain([movedText, `Now it is 10 and ${left}.`, `10 plus ${left} is ${a + b}.`], twoFrames(10, left));
 }
 
+// "The same" is said in full: the same answer as the sum asked about (the same words as B.11 and B.19).
 function makeTenPrompt(a: number, b: number): { text: string; speak: Say } {
-  return { text: `${a} plus ${b}. Make a ten first. Which one is the same?`, speak: [{ number: a }, 'plus', { number: b }, '. Make a ten first. Which one is the same?'] };
+  return { text: `Make a ten first. Which one has the same answer as ${a} + ${b}?`, speak: ['Make a ten first. Which one has the same answer as', { number: a }, 'plus', { number: b }, '?'] };
 }
 
 function makeTen(level: Level, rng: Rng): QuestionDraft {
@@ -77,13 +74,18 @@ export const makeTenToAddGenerator: SkillGenerator = {
 // ---- B.5 Missing number in an equation ----
 // Levels: 3 plus blank equals 7, to 10 / to 20 / subtraction blanks, typed. Family: Missing part. Oracle: missing.
 
-function countUpExplanation(from: number, to: number, visual: Visual): Explanation {
+// Counting up from the part shown to the total, then the whole number sentence: "So 1 + 7 = 8."
+function countUpExplanation(from: number, to: number, sentence: string, visual: Visual): Explanation {
   const more = to - from;
-  return {
-    speak: ['Start at', { number: from }, '. Count up to', { number: to }, '. That is', { number: more }, 'more.'],
-    steps: [`Start at ${from}.`, `Count up to ${to}.`, `That is ${more} more.`],
-    visual,
-  };
+  const hint = hintFor(more, `Start at ${from} and count up to ${to}.`, 'Count up from the smaller number to the bigger one.');
+  return explain([`Start at ${from}.`, `Count up to ${to}.`, `That is ${more} more.`, `So ${sentence}.`], visual, hint);
+}
+
+// A minus question with a missing part is thought of as adding (the same words as B.12): "Think: 1 plus what makes 15?"
+function thinkAddExplanation(whole: number, left: number, visual: Visual): Explanation {
+  const taken = whole - left;
+  const hint = hintFor(taken, `Think: ${left} plus what makes ${whole}?`, 'Count up from the smaller number to the bigger one.');
+  return explain([`Think: ${left} plus what makes ${whole}?`, `${left} + ${taken} = ${whole}.`, `So ${whole} − ${taken} = ${left}.`], visual, hint);
 }
 
 function missingNumber(level: Level, rng: Rng): QuestionDraft {
@@ -96,16 +98,19 @@ function missingNumber(level: Level, rng: Rng): QuestionDraft {
     const shownPart = first ? b : a;
     const missing = first ? a : b;
     const values = numeralChoices(missing, [missing + 1, missing - 1, total, shownPart], 0, 30, rng);
+    // The sentence is read aloud first, as at the other levels, then what to do. The gap is a box, as everywhere.
+    const sentence: Say = first ? ['What plus', { number: b }, 'equals', { number: total }, '?'] : [{ number: a }, 'plus what equals', { number: total }, '?'];
+    const prompt = 'Drag the number that goes in the box.';
     return {
       type: 'dragWord',
       mode: 'look',
       facts: { a, b, total, blank: first ? 'a' : 'b', options: values },
-      prompt: { text: 'Move the number that makes it true into the gap.', speak: ['Move the number that makes it true into the gap.'] },
+      prompt: { text: prompt, speak: [...sentence, prompt] },
       before: first ? '' : `${a} +`,
       after: first ? `+ ${b} = ${total}` : `= ${total}`,
       options: values.map((value) => numeral(value)),
       answerIndex: values.indexOf(missing),
-      explanation: countUpExplanation(shownPart, total, equation(a, '+', b, '=', total)),
+      explanation: countUpExplanation(shownPart, total, `${a} + ${b} = ${total}`, equation(a, '+', b, '=', total)),
     };
   }
   if (level === 3) {
@@ -121,7 +126,7 @@ function missingNumber(level: Level, rng: Rng): QuestionDraft {
       stimulus: equation(whole, '-', 'blank', '=', left),
       answer: taken,
       maxDigits: 2,
-      explanation: countUpExplanation(left, whole, equation(whole, '-', taken, '=', left)),
+      explanation: thinkAddExplanation(whole, left, equation(whole, '-', taken, '=', left)),
     };
   }
   const total = level === 1 ? rng.int(5, 10) : rng.int(11, 20);
@@ -137,7 +142,7 @@ function missingNumber(level: Level, rng: Rng): QuestionDraft {
     stimulus: equation(a, '+', 'blank', '=', total),
     options: values.map((value) => numeral(value)),
     answerIndex: values.indexOf(b),
-    explanation: countUpExplanation(a, total, equation(a, '+', b, '=', total)),
+    explanation: countUpExplanation(a, total, `${a} + ${b} = ${total}`, equation(a, '+', b, '=', total)),
   };
 }
 
@@ -151,8 +156,8 @@ export const missingInEquationGenerator: SkillGenerator = {
   example: () => missingNumber(1, makeRng(115)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'An empty box stands for a number we do not know yet.', speak: ['An empty box stands for a number we do not know yet.'], visual: equation(3, '+', 'blank', '=', 7) },
-    { beat: 'watch', text: `3 plus what equals 7? ${countUpExplanation(3, 7, equation(3, '+', 4, '=', 7)).steps.join(' ')}`, speak: [{ number: 3 }, 'plus what equals', { number: 7 }, '?', ...countUpExplanation(3, 7, equation(3, '+', 4, '=', 7)).speak], visual: equation(3, '+', 4, '=', 7) },
-    { beat: 'try', text: '6 plus what equals 9?', speak: [{ number: 6 }, 'plus what equals', { number: 9 }, '?'], visual: equation(6, '+', 'blank', '=', 9), reveal: { text: countUpExplanation(6, 9, equation(6, '+', 3, '=', 9)).steps.join(' '), speak: countUpExplanation(6, 9, equation(6, '+', 3, '=', 9)).speak, visual: equation(6, '+', 3, '=', 9) } },
+    { beat: 'watch', text: `3 plus what equals 7? ${countUpExplanation(3, 7, '3 + 4 = 7', equation(3, '+', 4, '=', 7)).steps.join(' ')}`, speak: [{ number: 3 }, 'plus what equals', { number: 7 }, '?', ...countUpExplanation(3, 7, '3 + 4 = 7', equation(3, '+', 4, '=', 7)).speak], visual: equation(3, '+', 4, '=', 7) },
+    { beat: 'try', text: '6 plus what equals 9?', speak: [{ number: 6 }, 'plus what equals', { number: 9 }, '?'], visual: equation(6, '+', 'blank', '=', 9), reveal: { text: countUpExplanation(6, 9, '6 + 3 = 9', equation(6, '+', 3, '=', 9)).steps.join(' '), speak: countUpExplanation(6, 9, '6 + 3 = 9', equation(6, '+', 3, '=', 9)).speak, visual: equation(6, '+', 3, '=', 9) } },
     { beat: 'remember', text: 'Count up to find the missing part.', speak: ['Count up to find the missing part.'], visual: equation(3, '+', 4, '=', 7) },
   ],
   oracle: 'missing',
@@ -170,14 +175,12 @@ const TRUE_FALSE = (): Visual[] => [
 ];
 const IS_TRUE = 'Is this true?';
 
+// Each side is worked out, then the last step answers what was asked: true or false.
 function truthExplanation(left: Side, right: Side): Explanation {
   const [x, y] = [worth(left), worth(right)];
   const same = x === y;
-  return {
-    speak: ['The left side is', { number: x }, '. The right side is', { number: y }, same ? '. They are the same.' : '. They are not the same.'],
-    steps: [`The left side is ${x}.`, `The right side is ${y}.`, same ? 'They are the same.' : 'They are not the same.'],
-    visual: equation(...left, same ? '=' : '≠', ...right),
-  };
+  const last = same ? `Both sides are ${x}, so it is true.` : `${x} and ${y} are not the same, so it is false.`;
+  return explain([`The left side is ${x}.`, `The right side is ${y}.`, last], equation(...left, same ? '=' : '≠', ...right), { text: 'Work out the left side, then the right side. Are they the same?' });
 }
 
 function truthQuestion(left: Side, right: Side): QuestionDraft {
@@ -240,8 +243,8 @@ export const trueOrFalseGenerator: SkillGenerator = {
   example: () => trueOrFalse(1, makeRng(116)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'The equals sign means both sides are the same amount.', speak: ['The equals sign means both sides are the same amount.'], visual: equation(4, '+', 1, '=', 5) },
-    { beat: 'watch', text: `4 plus 1 equals 5. ${truthExplanation([4, '+', 1], [5]).steps.join(' ')} It is true.`, speak: [{ number: 4 }, 'plus', { number: 1 }, 'equals', { number: 5 }, '.', ...truthExplanation([4, '+', 1], [5]).speak, 'It is true.'], visual: equation(4, '+', 1, '=', 5) },
-    { beat: 'try', text: IS_TRUE, speak: [IS_TRUE], visual: equation(3, '+', 2, '=', 6), reveal: { text: `${truthExplanation([3, '+', 2], [6]).steps.join(' ')} It is false.`, speak: [...truthExplanation([3, '+', 2], [6]).speak, 'It is false.'], visual: truthExplanation([3, '+', 2], [6]).visual } },
+    { beat: 'watch', text: `4 plus 1 equals 5. ${truthExplanation([4, '+', 1], [5]).steps.join(' ')}`, speak: [{ number: 4 }, 'plus', { number: 1 }, 'equals', { number: 5 }, '.', ...truthExplanation([4, '+', 1], [5]).speak], visual: equation(4, '+', 1, '=', 5) },
+    { beat: 'try', text: IS_TRUE, speak: [IS_TRUE], visual: equation(3, '+', 2, '=', 6), reveal: { text: truthExplanation([3, '+', 2], [6]).steps.join(' '), speak: truthExplanation([3, '+', 2], [6]).speak, visual: truthExplanation([3, '+', 2], [6]).visual } },
     { beat: 'remember', text: 'Both sides must be the same amount.', speak: ['Both sides must be the same amount.'], visual: equation(3, '+', 2, '=', 2, '+', 3) },
   ],
   oracle: 'truth',

@@ -37,7 +37,7 @@ function row(id: string, category: string, name: string, strand: string, ladder:
     ladder,
     icon,
     speakName: speakName ?? [name],
-    version: VERSIONS[id] ?? 1,
+    version: GRADE1_VERSIONS[id] ?? VERSIONS[id] ?? 1,
     itemTypes,
     maxLevel: 3,
     prereqs: [],
@@ -48,6 +48,15 @@ function row(id: string, category: string, name: string, strand: string, ladder:
 
 const CHOICE: ItemType[] = ['choice'];
 const TYPED: ItemType[] = ['choice', 'numberPad'];
+
+// The grade 1 rows whose questions the wording audit changed (round 2, Nov 22, 2026), and the version each is on
+// now. Read before VERSIONS, so M-1-C9 is on 3. Kept apart from the kindergarten rows' versions.
+const GRADE1_VERSIONS: Record<string, number> = {
+  'M-1-A6': 2, 'M-1-A7': 2, 'M-1-A8': 2, 'M-1-A9': 2, 'M-1-A10': 2,
+  'M-1-B14': 2, 'M-1-B15': 2, 'M-1-B16': 2, 'M-1-B18': 2, 'M-1-B19': 2,
+  'M-1-C6': 2, 'M-1-C7': 2, 'M-1-C8': 2, 'M-1-C9': 3, 'M-1-C10': 2, 'M-1-C11': 2, 'M-1-C12': 2,
+  'M-1-D4': 2, 'M-1-D5': 2,
+};
 
 export const ROWS: readonly Skill[] = [
   row('M-K-A8', K.A, 'Count one kind', 'CC', 'counting', { kind: 'emojiGroup', emoji: '🦆', count: 3, emoji2: '🐸', count2: 2, layout: 'scatter', slots: [0, 6, 13, 3, 9] }, TYPED, 'K.CC.B.5'),

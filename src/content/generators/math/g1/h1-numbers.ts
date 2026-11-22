@@ -1,13 +1,15 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
+import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import { numberWord } from '../../../data/h1-numberWords';
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { numberWordQuestion } from '../k/h1-counting';
-import type { Explanation } from '../k/h1-parts';
 import { h1Skill, lessonOf, numberChoice, spoken } from '../k/h1-parts';
 import { numeralChoices } from '../k/numerals';
 import { findNumberQuestion } from '../pk/findNumber';
 import { silentNumeral } from '../pk/parts';
+import type { Line, Shown as Explanation } from './wording';
+import { aDigit, explain, hintFor } from './wording';
 
 // Math grade 1, plan section 15 wave H1: A.6 hear and find numbers to 120, A.7 show tens and ones,
 // A.8 order numbers to 120, A.9 hundred chart puzzles, A.10 number words to 100.
@@ -33,7 +35,10 @@ function hearNumber(level: Level, rng: Rng): QuestionDraft {
   const places = [0, 1, 2, 3].filter((place) => below.length >= place && above.length >= 3 - place);
   const place = rng.pick(places);
   const values = [...rng.sample(below, place), n, ...rng.sample(above, 3 - place)].sort((x, y) => x - y);
-  return findNumberQuestion(n, values);
+  const question = findNumberQuestion(n, values);
+  // A listen question's hint never shows the number: it says what to listen for.
+  const hint = level === 1 ? 'Listen for the tens, then the ones.' : level === 2 ? 'Listen for the hundred first, then the rest.' : 'Listen for the hundreds, the tens and the ones.';
+  return { ...question, explanation: { ...question.explanation, hint: { text: hint } } };
 }
 
 export const hearNumberGenerator: SkillGenerator = h1Skill({
@@ -52,13 +57,18 @@ export const hearNumberGenerator: SkillGenerator = h1Skill({
 
 const blocks = (tens: number, ones: number): Visual => ({ kind: 'baseTen', hundreds: 0, tens, ones });
 const tensOnesText = (tens: number, ones: number): string => `${tens} ${tens === 1 ? 'ten' : 'tens'} and ${ones} ${ones === 1 ? 'one' : 'ones'}`;
+// "1 one" is shown as written, and said "a single one", never "one one". Every other option is said as before:
+// the A.7 lesson says the right option with these same parts.
+const tensOnesSay = (tens: number, ones: number): Say => (ones === 1 ? [...spoken(`${tens} ${tens === 1 ? 'ten' : 'tens'} and`), 'a single one'] : spoken(tensOnesText(tens, ones)));
 
 function tensOnesExplanation(n: number, trade: boolean): Explanation {
   const t = Math.floor(n / 10);
   const o = n % 10;
-  const lines = [`${n} is ${tensOnesText(t, o)}.`];
+  const first: Line = o === 1 ? { text: `${n} is ${tensOnesText(t, o)}.`, say: [{ number: n }, 'is', ...tensOnesSay(t, o), '.'] } : `${n} is ${tensOnesText(t, o)}.`;
+  const lines: Line[] = [first];
   if (trade) lines.push(`Trade 1 ten for 10 ones: ${tensOnesText(t - 1, o + 10)} is also ${n}.`);
-  return { speak: lines.flatMap(spoken), steps: lines, visual: blocks(t, o) };
+  const hint = trade ? 'Break one ten into 10 ones.' : 'The first digit tells the tens. The last digit tells the ones.';
+  return explain(lines, blocks(t, o), { text: hint });
 }
 
 function showTensOnes(level: Level, rng: Rng): QuestionDraft {
@@ -76,7 +86,7 @@ function showTensOnes(level: Level, rng: Rng): QuestionDraft {
       facts: { n, options },
       prompt: { text: prompt, speak: spoken(prompt) },
       stimulus: blocks(t, o),
-      options: options.map(([x, y]): Visual => ({ kind: 'text', value: tensOnesText(x, y), size: 'm', speak: spoken(tensOnesText(x, y)) })),
+      options: options.map(([x, y]): Visual => ({ kind: 'text', value: tensOnesText(x, y), size: 'm', speak: tensOnesSay(x, y) })),
       answerIndex: options.indexOf(right),
       explanation: tensOnesExplanation(n, true),
     };
@@ -114,13 +124,13 @@ export const showTensOnesGenerator: SkillGenerator = h1Skill({
 // Levels: 3 numbers to 50 with different tens / 4 numbers to 99, two with the same tens / 4 numbers to 120.
 // Oracle: order.
 
+// With a number over 100, the steps first say that 3 digits beat 2, before the tens and ones.
 function orderExplanation(values: number[]): Explanation {
   const sorted = [...values].sort((x, y) => x - y);
-  return {
-    speak: ['Smallest first:', ...sorted.map((value) => ({ number: value })), '.'],
-    steps: ['Compare the tens first, then the ones.', `Smallest first: ${listText(sorted)}.`],
-    visual: { kind: 'row', children: sorted.map((value) => numeral(value, 'l')) },
-  };
+  const big = values.some((value) => value >= 100);
+  const lines = [...(big ? ['A number with 3 digits is bigger than a number with 2 digits.'] : []), 'Compare the tens first, then the ones.', `Smallest first: ${listText(sorted)}.`];
+  const hint = big ? 'Numbers with 3 digits are the biggest. Find the smallest number first.' : 'Find the smallest number first. Look at the tens.';
+  return explain(lines, { kind: 'row', children: sorted.map((value) => numeral(value, 'l')) }, { text: hint });
 }
 
 function orderTo120(level: Level, rng: Rng): QuestionDraft {
@@ -167,10 +177,12 @@ function chartPiece(topLeft: number, blank: number | null): Visual {
   return { kind: 'matrix', cells: Array.from({ length: 9 }, (_, i) => (i === blank ? 'blank' : numeral(topLeft + Math.floor(i / 3) * 10 + (i % 3), 'm'))) };
 }
 
+// The rule, then the box worked out from a number beside it or above it.
 function chartExplanation(topLeft: number, blank: number): Explanation {
   const answer = topLeft + Math.floor(blank / 3) * 10 + (blank % 3);
-  const lines = ['Across, the numbers go up by 1.', 'Down, they go up by 10.', `The box needs ${answer}.`];
-  return { speak: lines.flatMap(spoken), steps: lines, visual: chartPiece(topLeft, null) };
+  const near = blank % 3 > 0 ? `Before the box is ${answer - 1}, and 1 more is ${answer}.` : blank >= 3 ? `Above the box is ${answer - 10}, and 10 more is ${answer}.` : `After the box is ${answer + 1}, and 1 less is ${answer}.`;
+  const lines = ['Across, the numbers go up by 1. Down, they go up by 10.', near, `The box needs ${answer}.`];
+  return explain(lines, chartPiece(topLeft, null), hintFor(answer, 'Across, the numbers go up by 1. Down, they go up by 10.', 'Look at the numbers around the box.'));
 }
 
 function hundredChart(level: Level, rng: Rng): QuestionDraft {
@@ -199,15 +211,41 @@ export const hundredChartGenerator: SkillGenerator = h1Skill({
 // Levels: teen words (fourteen, not forty) / twenty-one to ninety-nine / the numeral, pick its words.
 // Read: nothing that shows the words, or the numeral, says them. Oracle: numberName.
 
+// How a number word is read, part by part, ending on how it is written. Never "The word seventeen is 17.", which is
+// said as the same word twice. A read question's hint never says the words to read.
+const capital = (word: string): string => `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+
+function wordToNumeral(n: number): Explanation {
+  const word = numberWord(n);
+  const [t, o] = [Math.floor(n / 10), n % 10];
+  const written = `We write it with ${aDigit(t)} and ${aDigit(o)}.`;
+  const visual: Visual = { kind: 'row', children: [{ kind: 'text', value: word, size: 'l' }, numeral(n)] };
+  if (n < 20) return explain([`${capital(word)} ends in teen. Teen means 1 ten.`, `${capital(word)} is 1 ten and ${o} ones.`, written], visual, { text: 'A word that ends in teen is 1 ten and some ones.' });
+  const tens = numberWord(t * 10);
+  const hint = { text: 'The first part tells the tens. The last part tells the ones.' };
+  if (o === 0) return explain([`${capital(word)} means ${t} tens.`, 'There are no ones.', written], visual, hint);
+  const onesPart = o === 1 ? 'Then one: 1 more.' : `Then ${numberWord(o)}: ${o} ones.`;
+  return explain([`${capital(word)} starts with ${tens}: ${t} tens.`, onesPart, written], visual, hint);
+}
+
+function numeralToWord(n: number): Explanation {
+  const word = numberWord(n);
+  const [t, o] = [Math.floor(n / 10), n % 10];
+  const ones = o === 0 ? 'no ones' : o === 1 ? '1 more' : `${o} ones`;
+  const visual: Visual = { kind: 'row', children: [numeral(n), { kind: 'text', value: word, size: 'l' }] };
+  return explain([`${n} has ${t} tens and ${ones}.`, `${t} tens is ${numberWord(t * 10)}.`, `So we write ${word}.`], visual, { text: 'Say the tens first, then the ones.' });
+}
+
 function numberWordsTo100(level: Level, rng: Rng): QuestionDraft {
   if (level === 1) {
     const n = rng.int(13, 19);
-    return numberWordQuestion(n, numeralChoices(n, [(n % 10) * 10], 1, 99, rng)).word;
+    const question = numberWordQuestion(n, numeralChoices(n, [(n % 10) * 10], 1, 99, rng)).word;
+    return { ...question, explanation: wordToNumeral(n) };
   }
   const n = rng.int(21, 99);
   const values = numeralChoices(n, [reversed(n), n + 10, n - 10].filter((value) => value >= 1 && value <= 99 && value !== n), 1, 99, rng);
   const made = numberWordQuestion(n, values);
-  return level === 3 ? made.numeralAsk : made.word;
+  return level === 3 ? { ...made.numeralAsk, explanation: numeralToWord(n) } : { ...made.word, explanation: wordToNumeral(n) };
 }
 
 export const numberWordsTo100Generator: SkillGenerator = h1Skill({
@@ -219,5 +257,5 @@ export const numberWordsTo100Generator: SkillGenerator = h1Skill({
   lists: ['h1-numberWords'],
   pool: { 1: 7 },
   generate: numberWordsTo100,
-  lesson: (make) => lessonOf('A number word is read in parts. Forty-seven is forty and seven: 47.', numeral(47), make(1, 909), make(2, 910), 'Teen words end in teen. Tens words end in ty.'),
+  lesson: (make) => lessonOf('A number word is read in parts. Forty-seven is forty and seven: 47.', numeral(47), make(1, 909), make(2, 910), 'A teen word is 1 ten and some ones. A word like forty tells the tens.'),
 });

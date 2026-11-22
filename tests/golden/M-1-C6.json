@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-C6",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "match",
   "mode": "look",
@@ -96,25 +96,97 @@
   ],
   "explanation": {
    "speak": [
-    "The short hand shows the hour.",
-    "The long hand on twelve means o clock.",
-    "This clock shows",
+    "The long hand on",
+    {
+     "number": 12
+    },
+    "means o'clock. The short hand shows the hour.",
+    "The first clock shows",
     {
      "time": {
       "hour": 7,
       "minute": 0
      }
     },
+    ".",
+    "The second clock shows",
+    {
+     "time": {
+      "hour": 11,
+      "minute": 0
+     }
+    },
+    ".",
+    "The third clock shows",
+    {
+     "time": {
+      "hour": 12,
+      "minute": 0
+     }
+    },
     "."
    ],
    "steps": [
-    "The short hand shows the hour.",
-    "The long hand on 12 means o'clock. This clock shows 7:00."
+    "The long hand on 12 means o'clock. The short hand shows the hour.",
+    "The first clock shows 7 o'clock: 7:00.",
+    "The second clock shows 11 o'clock: 11:00.",
+    "The third clock shows 12 o'clock: 12:00."
    ],
    "visual": {
-    "kind": "clock",
-    "hour": 7,
-    "minute": 0
+    "kind": "row",
+    "children": [
+     {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 0
+     },
+     {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 0
+     },
+     {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 0
+     }
+    ]
+   },
+   "stepsSay": [
+    null,
+    [
+     "The first clock shows",
+     {
+      "time": {
+       "hour": 7,
+       "minute": 0
+      }
+     },
+     "."
+    ],
+    [
+     "The second clock shows",
+     {
+      "time": {
+       "hour": 11,
+       "minute": 0
+      }
+     },
+     "."
+    ],
+    [
+     "The third clock shows",
+     {
+      "time": {
+       "hour": 12,
+       "minute": 0
+      }
+     },
+     "."
+    ]
+   ],
+   "hint": {
+    "text": "The long hand on 12 means o'clock. Then read the short hand."
    }
   },
   "skillId": "M-1-C6",
@@ -219,25 +291,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 5,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 5:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 5 o'clock: 5:00.",
+      "The second clock shows 11 o'clock: 11:00.",
+      "The third clock shows 3 o'clock: 3:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 5,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 5,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 5,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -340,25 +484,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 7 o'clock: 7:00.",
+      "The third clock shows 1 o'clock: 1:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 1,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -461,25 +677,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 10 o'clock: 10:00.",
+      "The third clock shows 8 o'clock: 8:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -582,25 +870,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 8 o'clock: 8:00.",
+      "The third clock shows 7 o'clock: 7:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -703,25 +1063,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 11,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 11:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 11 o'clock: 11:00.",
+      "The second clock shows 2 o'clock: 2:00.",
+      "The third clock shows 8 o'clock: 8:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 11,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 2,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 2,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -824,25 +1256,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 3,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 3:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 3 o'clock: 3:00.",
+      "The second clock shows 9 o'clock: 9:00.",
+      "The third clock shows 6 o'clock: 6:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 3,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -945,25 +1449,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 8,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 8:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 8 o'clock: 8:00.",
+      "The second clock shows 11 o'clock: 11:00.",
+      "The third clock shows 4 o'clock: 4:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 8,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -1066,25 +1642,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 9,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 9:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 9 o'clock: 9:00.",
+      "The second clock shows 6 o'clock: 6:00.",
+      "The third clock shows 1 o'clock: 1:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 9,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 1,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -1187,25 +1835,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 4,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 4:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 4 o'clock: 4:00.",
+      "The second clock shows 12 o'clock: 12:00.",
+      "The third clock shows 9 o'clock: 9:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 4,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 12,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -1308,25 +2028,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 12
+      },
+      "means o'clock. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 10,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 10:00."
+      "The long hand on 12 means o'clock. The short hand shows the hour.",
+      "The first clock shows 10 o'clock: 10:00.",
+      "The second clock shows 6 o'clock: 6:00.",
+      "The third clock shows 3 o'clock: 3:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 10,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 12 means o'clock. Then read the short hand."
      }
     },
     "skillId": "M-1-C6",
@@ -1431,25 +2223,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 5,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 5:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 5: 5:30.",
+      "The second clock shows half past 11: 11:30.",
+      "The third clock shows half past 3: 3:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 5,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 5,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 5,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -1552,25 +2416,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 6:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 6: 6:30.",
+      "The second clock shows half past 7: 7:30.",
+      "The third clock shows half past 1: 1:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 7,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -1673,25 +2609,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 6:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 6: 6:30.",
+      "The second clock shows half past 10: 10:30.",
+      "The third clock shows half past 8: 8:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -1794,25 +2802,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 6:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 6: 6:30.",
+      "The second clock shows half past 8: 8:30.",
+      "The third clock shows half past 7: 7:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 7,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -1915,25 +2995,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 11,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 2,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 11:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 11: 11:30.",
+      "The second clock shows half past 2: 2:30.",
+      "The third clock shows half past 8: 8:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 11,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 2,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 2,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2036,25 +3188,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 3,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 3:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 3: 3:30.",
+      "The second clock shows half past 9: 9:30.",
+      "The third clock shows half past 6: 6:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 3,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2157,25 +3381,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 8,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 8:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 8: 8:30.",
+      "The second clock shows half past 11: 11:30.",
+      "The third clock shows half past 4: 4:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 8,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2278,25 +3574,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 9,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 1,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 9:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 9: 9:30.",
+      "The second clock shows half past 6: 6:30.",
+      "The third clock shows half past 1: 1:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 9,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 1,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 1,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2399,25 +3767,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 4,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 12,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 4:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 4: 4:30.",
+      "The second clock shows half past 12: 12:30.",
+      "The third clock shows half past 9: 9:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 4,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 12,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2520,25 +3960,97 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand on",
+      {
+       "number": 6
+      },
+      "means half past. The short hand has just passed the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 10,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 10:30."
+      "The long hand on 6 means half past. The short hand has just passed the hour.",
+      "The first clock shows half past 10: 10:30.",
+      "The second clock shows half past 6: 6:30.",
+      "The third clock shows half past 3: 3:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 10,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "The long hand on 6 means half past. Then read the hour the short hand has just passed."
      }
     },
     "skillId": "M-1-C6",
@@ -2643,25 +4155,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 5,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 5,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 5:30."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows half past 5: 5:30.",
+      "The second clock shows 11 o'clock: 11:00.",
+      "The third clock shows 5 o'clock: 5:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 5,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 5,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 5,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 5,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 5,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -2764,25 +4344,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 7,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 7 o'clock: 7:00.",
+      "The third clock shows half past 6: 6:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 7,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 7,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -2885,25 +4533,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 6:30."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows half past 6: 6:30.",
+      "The second clock shows 6 o'clock: 6:00.",
+      "The third clock shows 10 o'clock: 10:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3006,25 +4722,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 6,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows half past 6: 6:30.",
+      "The third clock shows 8 o'clock: 8:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3127,25 +4911,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 2,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 2:30."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows half past 2: 2:30.",
+      "The second clock shows 11 o'clock: 11:00.",
+      "The third clock shows half past 11: 11:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 2,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 2,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 2,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3248,25 +5100,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 3,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 3,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 3:30."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows half past 3: 3:30.",
+      "The second clock shows 9 o'clock: 9:00.",
+      "The third clock shows 3 o'clock: 3:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 3,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 3,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 3,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3369,25 +5289,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 8,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 8,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 11,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 8:00."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows 8 o'clock: 8:00.",
+      "The second clock shows half past 8: 8:30.",
+      "The third clock shows 11 o'clock: 11:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 8,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 8,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 11,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 8,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 11,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3490,25 +5478,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 9,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 9 o'clock: 9:00.",
+      "The third clock shows half past 9: 9:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 9,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 9,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3611,25 +5667,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on six means half past.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 12,
         "minute": 30
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 30
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 4,
+        "minute": 0
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 6 means half past. This clock shows 12:30."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows half past 12: 12:30.",
+      "The second clock shows half past 4: 4:30.",
+      "The third clock shows 4 o'clock: 4:00."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 12,
-      "minute": 30
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 12,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 30
+       },
+       {
+        "kind": "clock",
+        "hour": 4,
+        "minute": 0
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 12,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 30
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 4,
+         "minute": 0
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",
@@ -3732,25 +5856,93 @@
     ],
     "explanation": {
      "speak": [
-      "The short hand shows the hour.",
-      "The long hand on twelve means o clock.",
-      "This clock shows",
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows",
       {
        "time": {
         "hour": 6,
         "minute": 0
        }
       },
+      ".",
+      "The second clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 0
+       }
+      },
+      ".",
+      "The third clock shows",
+      {
+       "time": {
+        "hour": 10,
+        "minute": 30
+       }
+      },
       "."
      ],
      "steps": [
-      "The short hand shows the hour.",
-      "The long hand on 12 means o'clock. This clock shows 6:00."
+      "The long hand shows o'clock or half past. The short hand shows the hour.",
+      "The first clock shows 6 o'clock: 6:00.",
+      "The second clock shows 10 o'clock: 10:00.",
+      "The third clock shows half past 10: 10:30."
      ],
      "visual": {
-      "kind": "clock",
-      "hour": 6,
-      "minute": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "clock",
+        "hour": 6,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 0
+       },
+       {
+        "kind": "clock",
+        "hour": 10,
+        "minute": 30
+       }
+      ]
+     },
+     "stepsSay": [
+      null,
+      [
+       "The first clock shows",
+       {
+        "time": {
+         "hour": 6,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The second clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 0
+        }
+       },
+       "."
+      ],
+      [
+       "The third clock shows",
+       {
+        "time": {
+         "hour": 10,
+         "minute": 30
+        }
+       },
+       "."
+      ]
+     ],
+     "hint": {
+      "text": "Look at the long hand first: on 12 it is o'clock, on 6 it is half past."
      }
     },
     "skillId": "M-1-C6",

@@ -1,11 +1,12 @@
 {
  "skillId": "M-1-B2",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
-   "text": "10 minus 7 equals what?",
+   "text": "What is 10 minus 7?",
    "speak": [
+    "What is",
     {
      "number": 10
     },
@@ -13,7 +14,7 @@
     {
      "number": 7
     },
-    "equals what?"
+    "?"
    ]
   },
   "stimulus": {
@@ -28,24 +29,45 @@
   },
   "explanation": {
    "speak": [
-    "Start with",
-    {
-     "number": 10
-    },
-    ". Take away",
+    "Think:",
     {
      "number": 7
     },
-    ".",
+    "plus what makes",
+    {
+     "number": 10
+    },
+    "?",
+    {
+     "number": 7
+    },
+    "plus",
     {
      "number": 3
     },
-    "are left."
+    "equals",
+    {
+     "number": 10
+    },
+    ".",
+    "So",
+    {
+     "number": 10
+    },
+    "minus",
+    {
+     "number": 7
+    },
+    "equals",
+    {
+     "number": 3
+    },
+    "."
    ],
    "steps": [
-    "Start with 10.",
-    "Take away 7.",
-    "3 are left."
+    "Think: 7 plus what makes 10?",
+    "7 + 3 = 10.",
+    "So 10 − 7 = 3."
    ],
    "visual": {
     "kind": "equation",
@@ -56,6 +78,9 @@
      "=",
      3
     ]
+   },
+   "hint": {
+    "text": "Think: 7 plus what makes 10?"
    }
   },
   "type": "choice",
@@ -111,8 +136,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "10 minus 2 equals what?",
+     "text": "What is 10 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -120,7 +146,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -135,24 +161,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 10
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 9
+      },
+      ",",
       {
        "number": 8
       },
-      "are left."
+      ".",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "."
      ],
      "steps": [
-      "Start with 10.",
-      "Take away 2.",
-      "8 are left."
+      "Start at 10.",
+      "Count back 2: 9, 8.",
+      "10 − 2 = 8."
      ],
      "visual": {
       "kind": "equation",
@@ -163,6 +206,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Start at 10 and count back 2."
      }
     },
     "type": "choice",
@@ -216,8 +262,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "11 minus 4 equals what?",
+     "text": "What is 11 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 11
       },
@@ -225,7 +272,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -240,24 +287,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 11
       },
-      ". Take away",
+      ".",
+      "Take away",
       {
-       "number": 4
+       "number": 1
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 11
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 10
       },
       ".",
+      "Take away",
+      {
+       "number": 3
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 7
       },
-      "are left."
+      ".",
+      "So",
+      {
+       "number": 11
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "."
      ],
      "steps": [
-      "Start with 11.",
-      "Take away 4.",
-      "7 are left."
+      "Start at 11.",
+      "Take away 1 to get to 10: 11 − 1 = 10.",
+      "Take away 3 more: 10 − 3 = 7.",
+      "So 11 − 4 = 7."
      ],
      "visual": {
       "kind": "equation",
@@ -268,6 +359,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Take away 1 first to get to 10."
      }
     },
     "type": "choice",
@@ -321,8 +415,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "11 minus 2 equals what?",
+     "text": "What is 11 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 11
       },
@@ -330,7 +425,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -345,24 +440,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 11
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 10
+      },
+      ",",
       {
        "number": 9
       },
-      "are left."
+      ".",
+      {
+       "number": 11
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 9
+      },
+      "."
      ],
      "steps": [
-      "Start with 11.",
-      "Take away 2.",
-      "9 are left."
+      "Start at 11.",
+      "Count back 2: 10, 9.",
+      "11 − 2 = 9."
      ],
      "visual": {
       "kind": "equation",
@@ -373,6 +485,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Start at 11 and count back 2."
      }
     },
     "type": "choice",
@@ -426,8 +541,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "12 minus 4 equals what?",
+     "text": "What is 12 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 12
       },
@@ -435,7 +551,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -450,24 +566,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 12
       },
-      ". Take away",
+      ".",
+      "Take away",
       {
-       "number": 4
+       "number": 2
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 10
       },
       ".",
+      "Take away",
+      {
+       "number": 2
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
       {
        "number": 8
       },
-      "are left."
+      ".",
+      "So",
+      {
+       "number": 12
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 8
+      },
+      "."
      ],
      "steps": [
-      "Start with 12.",
-      "Take away 4.",
-      "8 are left."
+      "Start at 12.",
+      "Take away 2 to get to 10: 12 − 2 = 10.",
+      "Take away 2 more: 10 − 2 = 8.",
+      "So 12 − 4 = 8."
      ],
      "visual": {
       "kind": "equation",
@@ -478,6 +638,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Take away 2 first to get to 10."
      }
     },
     "type": "choice",
@@ -531,8 +694,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "10 minus 8 equals what?",
+     "text": "What is 10 minus 8?",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -540,7 +704,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -555,24 +719,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 10
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 8
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 10
+      },
+      "?",
+      {
+       "number": 8
+      },
+      "plus",
       {
        "number": 2
       },
-      "are left."
+      "equals",
+      {
+       "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
      ],
      "steps": [
-      "Start with 10.",
-      "Take away 8.",
-      "2 are left."
+      "Think: 8 plus what makes 10?",
+      "8 + 2 = 10.",
+      "So 10 − 8 = 2."
      ],
      "visual": {
       "kind": "equation",
@@ -583,6 +768,9 @@
        "=",
        2
       ]
+     },
+     "hint": {
+      "text": "Think: 8 plus what makes 10?"
      }
     },
     "type": "choice",
@@ -636,8 +824,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "9 minus 2 equals what?",
+     "text": "What is 9 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -645,7 +834,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -660,24 +849,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 9
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 8
+      },
+      ",",
       {
        "number": 7
       },
-      "are left."
+      ".",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "."
      ],
      "steps": [
-      "Start with 9.",
-      "Take away 2.",
-      "7 are left."
+      "Start at 9.",
+      "Count back 2: 8, 7.",
+      "9 − 2 = 7."
      ],
      "visual": {
       "kind": "equation",
@@ -688,6 +894,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Start at 9 and count back 2."
      }
     },
     "type": "choice",
@@ -741,8 +950,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 minus 2 equals what?",
+     "text": "What is 6 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 6
       },
@@ -750,7 +960,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -765,24 +975,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 6
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 5
+      },
+      ",",
       {
        "number": 4
       },
-      "are left."
+      ".",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "Start with 6.",
-      "Take away 2.",
-      "4 are left."
+      "Start at 6.",
+      "Count back 2: 5, 4.",
+      "6 − 2 = 4."
      ],
      "visual": {
       "kind": "equation",
@@ -793,6 +1020,9 @@
        "=",
        4
       ]
+     },
+     "hint": {
+      "text": "Start at 6 and count back 2."
      }
     },
     "type": "choice",
@@ -846,8 +1076,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 minus 5 equals what?",
+     "text": "What is 7 minus 5?",
      "speak": [
+      "What is",
       {
        "number": 7
       },
@@ -855,7 +1086,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -870,24 +1101,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 7
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 5
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 7
+      },
+      "?",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 2
       },
-      "are left."
+      "equals",
+      {
+       "number": 7
+      },
+      ".",
+      "So",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 2
+      },
+      "."
      ],
      "steps": [
-      "Start with 7.",
-      "Take away 5.",
-      "2 are left."
+      "Think: 5 plus what makes 7?",
+      "5 + 2 = 7.",
+      "So 7 − 5 = 2."
      ],
      "visual": {
       "kind": "equation",
@@ -898,6 +1150,9 @@
        "=",
        2
       ]
+     },
+     "hint": {
+      "text": "Think: 5 plus what makes 7?"
      }
     },
     "type": "choice",
@@ -951,8 +1206,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 minus 6 equals what?",
+     "text": "What is 7 minus 6?",
      "speak": [
+      "What is",
       {
        "number": 7
       },
@@ -960,7 +1216,7 @@
       {
        "number": 6
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -975,24 +1231,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 7
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 6
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 7
+      },
+      "?",
+      {
+       "number": 6
+      },
+      "plus",
       {
        "number": 1
       },
-      "is left."
+      "equals",
+      {
+       "number": 7
+      },
+      ".",
+      "So",
+      {
+       "number": 7
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
      ],
      "steps": [
-      "Start with 7.",
-      "Take away 6.",
-      "1 is left."
+      "Think: 6 plus what makes 7?",
+      "6 + 1 = 7.",
+      "So 7 − 6 = 1."
      ],
      "visual": {
       "kind": "equation",
@@ -1003,6 +1280,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Think: 6 plus what makes 7?"
      }
     },
     "type": "choice",
@@ -1056,8 +1336,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "9 minus 8 equals what?",
+     "text": "What is 9 minus 8?",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -1065,7 +1346,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1080,24 +1361,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 9
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 8
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 9
+      },
+      "?",
+      {
+       "number": 8
+      },
+      "plus",
       {
        "number": 1
       },
-      "is left."
+      "equals",
+      {
+       "number": 9
+      },
+      ".",
+      "So",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
      ],
      "steps": [
-      "Start with 9.",
-      "Take away 8.",
-      "1 is left."
+      "Think: 8 plus what makes 9?",
+      "8 + 1 = 9.",
+      "So 9 − 8 = 1."
      ],
      "visual": {
       "kind": "equation",
@@ -1108,6 +1410,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Think: 8 plus what makes 9?"
      }
     },
     "type": "choice",
@@ -1163,8 +1468,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "18 minus 2 equals what?",
+     "text": "What is 18 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 18
       },
@@ -1172,7 +1478,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1187,24 +1493,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 18
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 17
+      },
+      ",",
       {
        "number": 16
       },
-      "are left."
+      ".",
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      "."
      ],
      "steps": [
-      "Start with 18.",
-      "Take away 2.",
-      "16 are left."
+      "Start at 18.",
+      "Count back 2: 17, 16.",
+      "18 − 2 = 16."
      ],
      "visual": {
       "kind": "equation",
@@ -1215,6 +1538,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Start at 18 and count back 2."
      }
     },
     "type": "choice",
@@ -1268,8 +1594,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "18 minus 4 equals what?",
+     "text": "What is 18 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 18
       },
@@ -1277,7 +1604,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1292,24 +1619,52 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
       {
        "number": 18
       },
-      ". Take away",
+      "is",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 8
+      },
+      ".",
+      "Take away from the",
+      {
+       "number": 8
+      },
+      ":",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
       {
        "number": 4
       },
       ".",
       {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 4
+      },
+      "make",
+      {
        "number": 14
       },
-      "are left."
+      "."
      ],
      "steps": [
-      "Start with 18.",
-      "Take away 4.",
-      "14 are left."
+      "18 is 10 and 8.",
+      "Take away from the 8: 8 − 4 = 4.",
+      "10 and 4 make 14."
      ],
      "visual": {
       "kind": "equation",
@@ -1320,6 +1675,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Take away from the ones. The 10 stays."
      }
     },
     "type": "choice",
@@ -1373,8 +1731,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "18 minus 2 equals what?",
+     "text": "What is 18 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 18
       },
@@ -1382,7 +1741,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1397,24 +1756,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 18
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 17
+      },
+      ",",
       {
        "number": 16
       },
-      "are left."
+      ".",
+      {
+       "number": 18
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 16
+      },
+      "."
      ],
      "steps": [
-      "Start with 18.",
-      "Take away 2.",
-      "16 are left."
+      "Start at 18.",
+      "Count back 2: 17, 16.",
+      "18 − 2 = 16."
      ],
      "visual": {
       "kind": "equation",
@@ -1425,6 +1801,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Start at 18 and count back 2."
      }
     },
     "type": "choice",
@@ -1478,8 +1857,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "20 minus 4 equals what?",
+     "text": "What is 20 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 20
       },
@@ -1487,7 +1867,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1502,24 +1882,52 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
       {
        "number": 20
       },
-      ". Take away",
+      "is",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 10
+      },
+      ".",
+      "Take away from the",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 10
+      },
+      "minus",
       {
        "number": 4
       },
+      "equals",
+      {
+       "number": 6
+      },
       ".",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 6
+      },
+      "make",
       {
        "number": 16
       },
-      "are left."
+      "."
      ],
      "steps": [
-      "Start with 20.",
-      "Take away 4.",
-      "16 are left."
+      "20 is 10 and 10.",
+      "Take away from the 10: 10 − 4 = 6.",
+      "10 and 6 make 16."
      ],
      "visual": {
       "kind": "equation",
@@ -1530,6 +1938,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Take away from the ones. The 10 stays."
      }
     },
     "type": "choice",
@@ -1583,8 +1994,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "18 minus 8 equals what?",
+     "text": "What is 18 minus 8?",
      "speak": [
+      "What is",
       {
        "number": 18
       },
@@ -1592,7 +2004,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1607,24 +2019,52 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
       {
        "number": 18
       },
-      ". Take away",
+      "is",
+      {
+       "number": 10
+      },
+      "and",
       {
        "number": 8
+      },
+      ".",
+      "Take away from the",
+      {
+       "number": 8
+      },
+      ":",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 0
       },
       ".",
       {
        "number": 10
       },
-      "are left."
+      "and",
+      {
+       "number": 0
+      },
+      "make",
+      {
+       "number": 10
+      },
+      "."
      ],
      "steps": [
-      "Start with 18.",
-      "Take away 8.",
-      "10 are left."
+      "18 is 10 and 8.",
+      "Take away from the 8: 8 − 8 = 0.",
+      "10 and 0 make 10."
      ],
      "visual": {
       "kind": "equation",
@@ -1635,6 +2075,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Take away from the ones first."
      }
     },
     "type": "choice",
@@ -1688,8 +2131,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "17 minus 2 equals what?",
+     "text": "What is 17 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -1697,7 +2141,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1712,24 +2156,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 17
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 16
+      },
+      ",",
       {
        "number": 15
       },
-      "are left."
+      ".",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 15
+      },
+      "."
      ],
      "steps": [
-      "Start with 17.",
-      "Take away 2.",
-      "15 are left."
+      "Start at 17.",
+      "Count back 2: 16, 15.",
+      "17 − 2 = 15."
      ],
      "visual": {
       "kind": "equation",
@@ -1740,6 +2201,9 @@
        "=",
        15
       ]
+     },
+     "hint": {
+      "text": "Start at 17 and count back 2."
      }
     },
     "type": "choice",
@@ -1793,8 +2257,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "13 minus 2 equals what?",
+     "text": "What is 13 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 13
       },
@@ -1802,7 +2267,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1817,24 +2282,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 13
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 12
+      },
+      ",",
       {
        "number": 11
       },
-      "are left."
+      ".",
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 11
+      },
+      "."
      ],
      "steps": [
-      "Start with 13.",
-      "Take away 2.",
-      "11 are left."
+      "Start at 13.",
+      "Count back 2: 12, 11.",
+      "13 − 2 = 11."
      ],
      "visual": {
       "kind": "equation",
@@ -1845,6 +2327,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Start at 13 and count back 2."
      }
     },
     "type": "choice",
@@ -1898,8 +2383,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "14 minus 7 equals what?",
+     "text": "What is 14 minus 7?",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -1907,7 +2393,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1922,24 +2408,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 14
       },
-      ". Take away",
+      ".",
+      "Take away",
+      {
+       "number": 4
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ".",
+      "Take away",
+      {
+       "number": 3
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 7
       },
       ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
       {
        "number": 7
       },
-      "are left."
+      "equals",
+      {
+       "number": 7
+      },
+      "."
      ],
      "steps": [
-      "Start with 14.",
-      "Take away 7.",
-      "7 are left."
+      "Start at 14.",
+      "Take away 4 to get to 10: 14 − 4 = 10.",
+      "Take away 3 more: 10 − 3 = 7.",
+      "So 14 − 7 = 7."
      ],
      "visual": {
       "kind": "equation",
@@ -1950,6 +2480,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Take away 4 first to get to 10."
      }
     },
     "type": "choice",
@@ -2003,8 +2536,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "14 minus 9 equals what?",
+     "text": "What is 14 minus 9?",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -2012,7 +2546,7 @@
       {
        "number": 9
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2027,24 +2561,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 14
       },
-      ". Take away",
+      ".",
+      "Take away",
       {
-       "number": 9
+       "number": 4
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
       },
       ".",
+      "Take away",
       {
        "number": 5
       },
-      "are left."
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 5
+      },
+      ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 9
+      },
+      "equals",
+      {
+       "number": 5
+      },
+      "."
      ],
      "steps": [
-      "Start with 14.",
-      "Take away 9.",
-      "5 are left."
+      "Start at 14.",
+      "Take away 4 to get to 10: 14 − 4 = 10.",
+      "Take away 5 more: 10 − 5 = 5.",
+      "So 14 − 9 = 5."
      ],
      "visual": {
       "kind": "equation",
@@ -2055,6 +2633,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Take away 4 first to get to 10."
      }
     },
     "type": "choice",
@@ -2108,8 +2689,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "17 minus 10 equals what?",
+     "text": "What is 17 minus 10?",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -2117,7 +2699,7 @@
       {
        "number": 10
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2132,24 +2714,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 17
       },
-      ". Take away",
+      ".",
+      "Take away",
+      {
+       "number": 7
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
       {
        "number": 10
       },
       ".",
+      "Take away",
+      {
+       "number": 3
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 7
       },
-      "are left."
+      ".",
+      "So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals",
+      {
+       "number": 7
+      },
+      "."
      ],
      "steps": [
-      "Start with 17.",
-      "Take away 10.",
-      "7 are left."
+      "Start at 17.",
+      "Take away 7 to get to 10: 17 − 7 = 10.",
+      "Take away 3 more: 10 − 3 = 7.",
+      "So 17 − 10 = 7."
      ],
      "visual": {
       "kind": "equation",
@@ -2160,6 +2786,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Take away just enough to get to 10 first."
      }
     },
     "type": "choice",
@@ -2215,8 +2844,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "15 minus 2 equals what?",
+     "text": "What is 15 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 15
       },
@@ -2224,7 +2854,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2239,24 +2869,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 15
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 14
+      },
+      ",",
       {
        "number": 13
       },
-      "are left."
+      ".",
+      {
+       "number": 15
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 13
+      },
+      "."
      ],
      "steps": [
-      "Start with 15.",
-      "Take away 2.",
-      "13 are left."
+      "Start at 15.",
+      "Count back 2: 14, 13.",
+      "15 − 2 = 13."
      ],
      "visual": {
       "kind": "equation",
@@ -2267,6 +2914,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Start at 15 and count back 2."
      }
     },
     "type": "numberPad",
@@ -2284,8 +2934,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "17 minus 4 equals what?",
+     "text": "What is 17 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -2293,7 +2944,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2308,24 +2959,52 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
       {
        "number": 17
       },
-      ". Take away",
+      "is",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 7
+      },
+      ".",
+      "Take away from the",
+      {
+       "number": 7
+      },
+      ":",
+      {
+       "number": 7
+      },
+      "minus",
       {
        "number": 4
       },
+      "equals",
+      {
+       "number": 3
+      },
       ".",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 3
+      },
+      "make",
       {
        "number": 13
       },
-      "are left."
+      "."
      ],
      "steps": [
-      "Start with 17.",
-      "Take away 4.",
-      "13 are left."
+      "17 is 10 and 7.",
+      "Take away from the 7: 7 − 4 = 3.",
+      "10 and 3 make 13."
      ],
      "visual": {
       "kind": "equation",
@@ -2336,6 +3015,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Take away from the ones. The 10 stays."
      }
     },
     "type": "numberPad",
@@ -2353,8 +3035,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "16 minus 2 equals what?",
+     "text": "What is 16 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -2362,7 +3045,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2377,24 +3060,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 16
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 15
+      },
+      ",",
       {
        "number": 14
       },
-      "are left."
+      ".",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 14
+      },
+      "."
      ],
      "steps": [
-      "Start with 16.",
-      "Take away 2.",
-      "14 are left."
+      "Start at 16.",
+      "Count back 2: 15, 14.",
+      "16 − 2 = 14."
      ],
      "visual": {
       "kind": "equation",
@@ -2405,6 +3105,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Start at 16 and count back 2."
      }
     },
     "type": "numberPad",
@@ -2422,8 +3125,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "19 minus 4 equals what?",
+     "text": "What is 19 minus 4?",
      "speak": [
+      "What is",
       {
        "number": 19
       },
@@ -2431,7 +3135,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2446,24 +3150,52 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
       {
        "number": 19
       },
-      ". Take away",
+      "is",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 9
+      },
+      ".",
+      "Take away from the",
+      {
+       "number": 9
+      },
+      ":",
+      {
+       "number": 9
+      },
+      "minus",
       {
        "number": 4
       },
+      "equals",
+      {
+       "number": 5
+      },
       ".",
+      {
+       "number": 10
+      },
+      "and",
+      {
+       "number": 5
+      },
+      "make",
       {
        "number": 15
       },
-      "are left."
+      "."
      ],
      "steps": [
-      "Start with 19.",
-      "Take away 4.",
-      "15 are left."
+      "19 is 10 and 9.",
+      "Take away from the 9: 9 − 4 = 5.",
+      "10 and 5 make 15."
      ],
      "visual": {
       "kind": "equation",
@@ -2474,6 +3206,9 @@
        "=",
        15
       ]
+     },
+     "hint": {
+      "text": "Take away from the ones. The 10 stays."
      }
     },
     "type": "numberPad",
@@ -2491,8 +3226,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "16 minus 8 equals what?",
+     "text": "What is 16 minus 8?",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -2500,7 +3236,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2515,24 +3251,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 16
       },
-      ". Take away",
+      ".",
+      "Take away",
+      {
+       "number": 6
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 10
+      },
+      ".",
+      "Take away",
+      {
+       "number": 2
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
       {
        "number": 8
       },
       ".",
+      "So",
+      {
+       "number": 16
+      },
+      "minus",
       {
        "number": 8
       },
-      "are left."
+      "equals",
+      {
+       "number": 8
+      },
+      "."
      ],
      "steps": [
-      "Start with 16.",
-      "Take away 8.",
-      "8 are left."
+      "Start at 16.",
+      "Take away 6 to get to 10: 16 − 6 = 10.",
+      "Take away 2 more: 10 − 2 = 8.",
+      "So 16 − 8 = 8."
      ],
      "visual": {
       "kind": "equation",
@@ -2543,6 +3323,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Take away 6 first to get to 10."
      }
     },
     "type": "numberPad",
@@ -2560,8 +3343,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "13 minus 2 equals what?",
+     "text": "What is 13 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 13
       },
@@ -2569,7 +3353,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2584,24 +3368,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 13
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 12
+      },
+      ",",
       {
        "number": 11
       },
-      "are left."
+      ".",
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 11
+      },
+      "."
      ],
      "steps": [
-      "Start with 13.",
-      "Take away 2.",
-      "11 are left."
+      "Start at 13.",
+      "Count back 2: 12, 11.",
+      "13 − 2 = 11."
      ],
      "visual": {
       "kind": "equation",
@@ -2612,6 +3413,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Start at 13 and count back 2."
      }
     },
     "type": "numberPad",
@@ -2629,8 +3433,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 minus 2 equals what?",
+     "text": "What is 6 minus 2?",
      "speak": [
+      "What is",
       {
        "number": 6
       },
@@ -2638,7 +3443,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2653,24 +3458,41 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 6
       },
-      ". Take away",
+      ".",
+      "Count back",
       {
        "number": 2
       },
-      ".",
+      ":",
+      {
+       "number": 5
+      },
+      ",",
       {
        "number": 4
       },
-      "are left."
+      ".",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
+      {
+       "number": 4
+      },
+      "."
      ],
      "steps": [
-      "Start with 6.",
-      "Take away 2.",
-      "4 are left."
+      "Start at 6.",
+      "Count back 2: 5, 4.",
+      "6 − 2 = 4."
      ],
      "visual": {
       "kind": "equation",
@@ -2681,6 +3503,9 @@
        "=",
        4
       ]
+     },
+     "hint": {
+      "text": "Start at 6 and count back 2."
      }
     },
     "type": "numberPad",
@@ -2698,8 +3523,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "8 minus 5 equals what?",
+     "text": "What is 8 minus 5?",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -2707,7 +3533,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2722,24 +3548,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 8
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 5
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 5
+      },
+      "plus",
       {
        "number": 3
       },
-      "are left."
+      "equals",
+      {
+       "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
      ],
      "steps": [
-      "Start with 8.",
-      "Take away 5.",
-      "3 are left."
+      "Think: 5 plus what makes 8?",
+      "5 + 3 = 8.",
+      "So 8 − 5 = 3."
      ],
      "visual": {
       "kind": "equation",
@@ -2750,6 +3597,9 @@
        "=",
        3
       ]
+     },
+     "hint": {
+      "text": "Think: 5 plus what makes 8?"
      }
     },
     "type": "numberPad",
@@ -2767,8 +3617,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "8 minus 7 equals what?",
+     "text": "What is 8 minus 7?",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -2776,7 +3627,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2791,24 +3642,45 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
-      {
-       "number": 8
-      },
-      ". Take away",
+      "Think:",
       {
        "number": 7
       },
-      ".",
+      "plus what makes",
+      {
+       "number": 8
+      },
+      "?",
+      {
+       "number": 7
+      },
+      "plus",
       {
        "number": 1
       },
-      "is left."
+      "equals",
+      {
+       "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
+      },
+      "."
      ],
      "steps": [
-      "Start with 8.",
-      "Take away 7.",
-      "1 is left."
+      "Think: 7 plus what makes 8?",
+      "7 + 1 = 8.",
+      "So 8 − 7 = 1."
      ],
      "visual": {
       "kind": "equation",
@@ -2819,6 +3691,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Think: 7 plus what makes 8?"
      }
     },
     "type": "numberPad",
@@ -2836,8 +3711,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "13 minus 10 equals what?",
+     "text": "What is 13 minus 10?",
      "speak": [
+      "What is",
       {
        "number": 13
       },
@@ -2845,7 +3721,7 @@
       {
        "number": 10
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2860,24 +3736,68 @@
     },
     "explanation": {
      "speak": [
-      "Start with",
+      "Start at",
       {
        "number": 13
       },
-      ". Take away",
+      ".",
+      "Take away",
+      {
+       "number": 3
+      },
+      "to get to",
+      {
+       "number": 10
+      },
+      ":",
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 10
       },
       ".",
+      "Take away",
+      {
+       "number": 7
+      },
+      "more:",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
       {
        "number": 3
       },
-      "are left."
+      ".",
+      "So",
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals",
+      {
+       "number": 3
+      },
+      "."
      ],
      "steps": [
-      "Start with 13.",
-      "Take away 10.",
-      "3 are left."
+      "Start at 13.",
+      "Take away 3 to get to 10: 13 − 3 = 10.",
+      "Take away 7 more: 10 − 7 = 3.",
+      "So 13 − 10 = 3."
      ],
      "visual": {
       "kind": "equation",
@@ -2888,6 +3808,9 @@
        "=",
        3
       ]
+     },
+     "hint": {
+      "text": "Take away just enough to get to 10 first."
      }
     },
     "type": "numberPad",

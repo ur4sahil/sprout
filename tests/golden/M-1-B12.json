@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-B12",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "facts": {
@@ -13,8 +13,9 @@
    ]
   },
   "prompt": {
-   "text": "8 − 5 = ?  Think: 5 + ? = 8.",
+   "text": "What is 8 − 5? Think: 5 + ? = 8.",
    "speak": [
+    "What is",
     {
      "number": 8
     },
@@ -22,7 +23,7 @@
     {
      "number": 5
     },
-    "equals what? Think:",
+    "? Think:",
     {
      "number": 5
     },
@@ -43,15 +44,7 @@
   },
   "explanation": {
    "speak": [
-    "To find",
-    {
-     "number": 8
-    },
-    "minus",
-    {
-     "number": 5
-    },
-    ", think:",
+    "Think:",
     {
      "number": 5
     },
@@ -67,14 +60,27 @@
     {
      "number": 3
     },
-    "is",
+    "equals",
     {
      "number": 8
+    },
+    ".",
+    "So",
+    {
+     "number": 8
+    },
+    "minus",
+    {
+     "number": 5
+    },
+    "equals",
+    {
+     "number": 3
     },
     "."
    ],
    "steps": [
-    "Think: 5 + ? = 8.",
+    "Think: 5 plus what makes 8?",
     "5 + 3 = 8.",
     "So 8 − 5 = 3."
    ],
@@ -87,6 +93,9 @@
      "=",
      8
     ]
+   },
+   "hint": {
+    "text": "Count up from 5 to 8."
    }
   },
   "type": "choice",
@@ -142,8 +151,9 @@
      ]
     },
     "prompt": {
-     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "text": "What is 8 − 1? Think: 1 + ? = 8.",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -151,7 +161,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -172,15 +182,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 8
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -196,14 +198,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 8.",
+      "Think: 1 plus what makes 8?",
       "1 + 7 = 8.",
       "So 8 − 1 = 7."
      ],
@@ -216,6 +231,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 8."
      }
     },
     "type": "choice",
@@ -269,8 +287,9 @@
      ]
     },
     "prompt": {
-     "text": "9 − 3 = ?  Think: 3 + ? = 9.",
+     "text": "What is 9 − 3? Think: 3 + ? = 9.",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -278,7 +297,7 @@
       {
        "number": 3
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 3
       },
@@ -299,15 +318,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 9
-      },
-      "minus",
-      {
-       "number": 3
-      },
-      ", think:",
+      "Think:",
       {
        "number": 3
       },
@@ -323,14 +334,27 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 9
+      },
+      ".",
+      "So",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 6
       },
       "."
      ],
      "steps": [
-      "Think: 3 + ? = 9.",
+      "Think: 3 plus what makes 9?",
       "3 + 6 = 9.",
       "So 9 − 3 = 6."
      ],
@@ -343,6 +367,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Count up from 3 to 9."
      }
     },
     "type": "choice",
@@ -396,8 +423,9 @@
      ]
     },
     "prompt": {
-     "text": "9 − 1 = ?  Think: 1 + ? = 9.",
+     "text": "What is 9 − 1? Think: 1 + ? = 9.",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -405,7 +433,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -426,15 +454,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 9
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -450,14 +470,27 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 9
+      },
+      ".",
+      "So",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 8
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 9.",
+      "Think: 1 plus what makes 9?",
       "1 + 8 = 9.",
       "So 9 − 1 = 8."
      ],
@@ -470,6 +503,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 9."
      }
     },
     "type": "choice",
@@ -523,8 +559,9 @@
      ]
     },
     "prompt": {
-     "text": "10 − 3 = ?  Think: 3 + ? = 10.",
+     "text": "What is 10 − 3? Think: 3 + ? = 10.",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -532,7 +569,7 @@
       {
        "number": 3
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 3
       },
@@ -553,15 +590,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 10
-      },
-      "minus",
-      {
-       "number": 3
-      },
-      ", think:",
+      "Think:",
       {
        "number": 3
       },
@@ -577,14 +606,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 3 + ? = 10.",
+      "Think: 3 plus what makes 10?",
       "3 + 7 = 10.",
       "So 10 − 3 = 7."
      ],
@@ -597,6 +639,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Count up from 3 to 10."
      }
     },
     "type": "choice",
@@ -650,8 +695,9 @@
      ]
     },
     "prompt": {
-     "text": "9 − 7 = ?  Think: 7 + ? = 9.",
+     "text": "What is 9 − 7? Think: 7 + ? = 9.",
      "speak": [
+      "What is",
       {
        "number": 9
       },
@@ -659,7 +705,7 @@
       {
        "number": 7
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 7
       },
@@ -680,15 +726,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 9
-      },
-      "minus",
-      {
-       "number": 7
-      },
-      ", think:",
+      "Think:",
       {
        "number": 7
       },
@@ -704,14 +742,27 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 9
+      },
+      ".",
+      "So",
+      {
+       "number": 9
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "Think: 7 + ? = 9.",
+      "Think: 7 plus what makes 9?",
       "7 + 2 = 9.",
       "So 9 − 7 = 2."
      ],
@@ -724,6 +775,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Count up from 7 to 9."
      }
     },
     "type": "choice",
@@ -777,8 +831,9 @@
      ]
     },
     "prompt": {
-     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "text": "What is 8 − 1? Think: 1 + ? = 8.",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -786,7 +841,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -807,15 +862,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 8
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -831,14 +878,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 8.",
+      "Think: 1 plus what makes 8?",
       "1 + 7 = 8.",
       "So 8 − 1 = 7."
      ],
@@ -851,6 +911,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 8."
      }
     },
     "type": "choice",
@@ -904,8 +967,9 @@
      ]
     },
     "prompt": {
-     "text": "5 − 1 = ?  Think: 1 + ? = 5.",
+     "text": "What is 5 − 1? Think: 1 + ? = 5.",
      "speak": [
+      "What is",
       {
        "number": 5
       },
@@ -913,7 +977,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -934,15 +998,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 5
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -958,14 +1014,27 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 5
+      },
+      ".",
+      "So",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 4
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 5.",
+      "Think: 1 plus what makes 5?",
       "1 + 4 = 5.",
       "So 5 − 1 = 4."
      ],
@@ -978,6 +1047,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 5."
      }
     },
     "type": "choice",
@@ -1031,8 +1103,9 @@
      ]
     },
     "prompt": {
-     "text": "5 − 3 = ?  Think: 3 + ? = 5.",
+     "text": "What is 5 − 3? Think: 3 + ? = 5.",
      "speak": [
+      "What is",
       {
        "number": 5
       },
@@ -1040,7 +1113,7 @@
       {
        "number": 3
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 3
       },
@@ -1061,15 +1134,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 5
-      },
-      "minus",
-      {
-       "number": 3
-      },
-      ", think:",
+      "Think:",
       {
        "number": 3
       },
@@ -1085,14 +1150,27 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 5
+      },
+      ".",
+      "So",
+      {
+       "number": 5
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
+      {
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "Think: 3 + ? = 5.",
+      "Think: 3 plus what makes 5?",
       "3 + 2 = 5.",
       "So 5 − 3 = 2."
      ],
@@ -1105,6 +1183,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Count up from 3 to 5."
      }
     },
     "type": "choice",
@@ -1158,8 +1239,9 @@
      ]
     },
     "prompt": {
-     "text": "6 − 5 = ?  Think: 5 + ? = 6.",
+     "text": "What is 6 − 5? Think: 5 + ? = 6.",
      "speak": [
+      "What is",
       {
        "number": 6
       },
@@ -1167,7 +1249,7 @@
       {
        "number": 5
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 5
       },
@@ -1188,15 +1270,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 6
-      },
-      "minus",
-      {
-       "number": 5
-      },
-      ", think:",
+      "Think:",
       {
        "number": 5
       },
@@ -1212,14 +1286,27 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 6
+      },
+      ".",
+      "So",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
+      {
+       "number": 1
       },
       "."
      ],
      "steps": [
-      "Think: 5 + ? = 6.",
+      "Think: 5 plus what makes 6?",
       "5 + 1 = 6.",
       "So 6 − 5 = 1."
      ],
@@ -1232,6 +1319,9 @@
        "=",
        6
       ]
+     },
+     "hint": {
+      "text": "Count up from 5 to 6."
      }
     },
     "type": "choice",
@@ -1285,8 +1375,9 @@
      ]
     },
     "prompt": {
-     "text": "8 − 7 = ?  Think: 7 + ? = 8.",
+     "text": "What is 8 − 7? Think: 7 + ? = 8.",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -1294,7 +1385,7 @@
       {
        "number": 7
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 7
       },
@@ -1315,15 +1406,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 8
-      },
-      "minus",
-      {
-       "number": 7
-      },
-      ", think:",
+      "Think:",
       {
        "number": 7
       },
@@ -1339,14 +1422,27 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 1
       },
       "."
      ],
      "steps": [
-      "Think: 7 + ? = 8.",
+      "Think: 7 plus what makes 8?",
       "7 + 1 = 8.",
       "So 8 − 7 = 1."
      ],
@@ -1359,6 +1455,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Count up from 7 to 8."
      }
     },
     "type": "choice",
@@ -1414,8 +1513,9 @@
      ]
     },
     "prompt": {
-     "text": "16 − 6 = ?  Think: 6 + ? = 16.",
+     "text": "What is 16 − 6? Think: 6 + ? = 16.",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -1423,7 +1523,7 @@
       {
        "number": 6
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 6
       },
@@ -1446,15 +1546,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 16
-      },
-      "minus",
-      {
-       "number": 6
-      },
-      ", think:",
+      "Think:",
       {
        "number": 6
       },
@@ -1470,14 +1562,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 16
+      },
+      ".",
+      "So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 6 + ? = 16.",
+      "Think: 6 plus what makes 16?",
       "6 + 10 = 16.",
       "So 16 − 6 = 10."
      ],
@@ -1490,6 +1595,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Count up from 6 to 16."
      }
     },
     "type": "choice",
@@ -1543,8 +1651,9 @@
      ]
     },
     "prompt": {
-     "text": "17 − 10 = ?  Think: 10 + ? = 17.",
+     "text": "What is 17 − 10? Think: 10 + ? = 17.",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -1552,7 +1661,7 @@
       {
        "number": 10
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 10
       },
@@ -1575,15 +1684,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 17
-      },
-      "minus",
-      {
-       "number": 10
-      },
-      ", think:",
+      "Think:",
       {
        "number": 10
       },
@@ -1599,14 +1700,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 17
+      },
+      ".",
+      "So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 10 + ? = 17.",
+      "Think: 10 plus what makes 17?",
       "10 + 7 = 17.",
       "So 17 − 10 = 7."
      ],
@@ -1619,6 +1733,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Count up from 10 to 17."
      }
     },
     "type": "choice",
@@ -1672,8 +1789,9 @@
      ]
     },
     "prompt": {
-     "text": "17 − 7 = ?  Think: 7 + ? = 17.",
+     "text": "What is 17 − 7? Think: 7 + ? = 17.",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -1681,7 +1799,7 @@
       {
        "number": 7
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 7
       },
@@ -1704,15 +1822,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 17
-      },
-      "minus",
-      {
-       "number": 7
-      },
-      ", think:",
+      "Think:",
       {
        "number": 7
       },
@@ -1728,14 +1838,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 17
+      },
+      ".",
+      "So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 7 + ? = 17.",
+      "Think: 7 plus what makes 17?",
       "7 + 10 = 17.",
       "So 17 − 7 = 10."
      ],
@@ -1748,6 +1871,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Count up from 7 to 17."
      }
     },
     "type": "choice",
@@ -1801,8 +1927,9 @@
      ]
     },
     "prompt": {
-     "text": "20 − 13 = ?  Think: 13 + ? = 20.",
+     "text": "What is 20 − 13? Think: 13 + ? = 20.",
      "speak": [
+      "What is",
       {
        "number": 20
       },
@@ -1810,7 +1937,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -1833,15 +1960,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 20
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -1857,14 +1976,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 20
+      },
+      ".",
+      "So",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 20.",
+      "Think: 13 plus what makes 20?",
       "13 + 7 = 20.",
       "So 20 − 13 = 7."
      ],
@@ -1877,6 +2009,9 @@
        "=",
        20
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 20."
      }
     },
     "type": "choice",
@@ -1930,8 +2065,9 @@
      ]
     },
     "prompt": {
-     "text": "16 − 13 = ?  Think: 13 + ? = 16.",
+     "text": "What is 16 − 13? Think: 13 + ? = 16.",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -1939,7 +2075,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -1962,15 +2098,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 16
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -1986,14 +2114,27 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 16
+      },
+      ".",
+      "So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 3
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 16.",
+      "Think: 13 plus what makes 16?",
       "13 + 3 = 16.",
       "So 16 − 13 = 3."
      ],
@@ -2006,6 +2147,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 16."
      }
     },
     "type": "choice",
@@ -2059,8 +2203,9 @@
      ]
     },
     "prompt": {
-     "text": "14 − 4 = ?  Think: 4 + ? = 14.",
+     "text": "What is 14 − 4? Think: 4 + ? = 14.",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -2068,7 +2213,7 @@
       {
        "number": 4
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 4
       },
@@ -2091,15 +2236,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 14
-      },
-      "minus",
-      {
-       "number": 4
-      },
-      ", think:",
+      "Think:",
       {
        "number": 4
       },
@@ -2115,14 +2252,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 14
+      },
+      ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 4 + ? = 14.",
+      "Think: 4 plus what makes 14?",
       "4 + 10 = 14.",
       "So 14 − 4 = 10."
      ],
@@ -2135,6 +2285,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Count up from 4 to 14."
      }
     },
     "type": "choice",
@@ -2188,8 +2341,9 @@
      ]
     },
     "prompt": {
-     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "text": "What is 8 − 1? Think: 1 + ? = 8.",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -2197,7 +2351,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -2220,15 +2374,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 8
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -2244,14 +2390,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 8.",
+      "Think: 1 plus what makes 8?",
       "1 + 7 = 8.",
       "So 8 − 1 = 7."
      ],
@@ -2264,6 +2423,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 8."
      }
     },
     "type": "choice",
@@ -2317,8 +2479,9 @@
      ]
     },
     "prompt": {
-     "text": "10 − 6 = ?  Think: 6 + ? = 10.",
+     "text": "What is 10 − 6? Think: 6 + ? = 10.",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -2326,7 +2489,7 @@
       {
        "number": 6
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 6
       },
@@ -2349,15 +2512,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 10
-      },
-      "minus",
-      {
-       "number": 6
-      },
-      ", think:",
+      "Think:",
       {
        "number": 6
       },
@@ -2373,14 +2528,27 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 4
       },
       "."
      ],
      "steps": [
-      "Think: 6 + ? = 10.",
+      "Think: 6 plus what makes 10?",
       "6 + 4 = 10.",
       "So 10 − 6 = 4."
      ],
@@ -2393,6 +2561,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Count up from 6 to 10."
      }
     },
     "type": "choice",
@@ -2446,8 +2617,9 @@
      ]
     },
     "prompt": {
-     "text": "10 − 8 = ?  Think: 8 + ? = 10.",
+     "text": "What is 10 − 8? Think: 8 + ? = 10.",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -2455,7 +2627,7 @@
       {
        "number": 8
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 8
       },
@@ -2478,15 +2650,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 10
-      },
-      "minus",
-      {
-       "number": 8
-      },
-      ", think:",
+      "Think:",
       {
        "number": 8
       },
@@ -2502,14 +2666,27 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "Think: 8 + ? = 10.",
+      "Think: 8 plus what makes 10?",
       "8 + 2 = 10.",
       "So 10 − 8 = 2."
      ],
@@ -2522,6 +2699,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Count up from 8 to 10."
      }
     },
     "type": "choice",
@@ -2575,8 +2755,9 @@
      ]
     },
     "prompt": {
-     "text": "14 − 13 = ?  Think: 13 + ? = 14.",
+     "text": "What is 14 − 13? Think: 13 + ? = 14.",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -2584,7 +2765,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -2607,15 +2788,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 14
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -2631,14 +2804,27 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 14
+      },
+      ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 1
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 14.",
+      "Think: 13 plus what makes 14?",
       "13 + 1 = 14.",
       "So 14 − 13 = 1."
      ],
@@ -2651,6 +2837,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 14."
      }
     },
     "type": "choice",
@@ -2701,8 +2890,9 @@
      "b": 6
     },
     "prompt": {
-     "text": "16 − 6 = ?  Think: 6 + ? = 16.",
+     "text": "What is 16 − 6? Think: 6 + ? = 16.",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -2710,7 +2900,7 @@
       {
        "number": 6
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 6
       },
@@ -2733,15 +2923,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 16
-      },
-      "minus",
-      {
-       "number": 6
-      },
-      ", think:",
+      "Think:",
       {
        "number": 6
       },
@@ -2757,14 +2939,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 16
+      },
+      ".",
+      "So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 6 + ? = 16.",
+      "Think: 6 plus what makes 16?",
       "6 + 10 = 16.",
       "So 16 − 6 = 10."
      ],
@@ -2777,6 +2972,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Count up from 6 to 16."
      }
     },
     "type": "numberPad",
@@ -2794,8 +2992,9 @@
      "b": 10
     },
     "prompt": {
-     "text": "17 − 10 = ?  Think: 10 + ? = 17.",
+     "text": "What is 17 − 10? Think: 10 + ? = 17.",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -2803,7 +3002,7 @@
       {
        "number": 10
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 10
       },
@@ -2826,15 +3025,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 17
-      },
-      "minus",
-      {
-       "number": 10
-      },
-      ", think:",
+      "Think:",
       {
        "number": 10
       },
@@ -2850,14 +3041,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 17
+      },
+      ".",
+      "So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 10
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 10 + ? = 17.",
+      "Think: 10 plus what makes 17?",
       "10 + 7 = 17.",
       "So 17 − 10 = 7."
      ],
@@ -2870,6 +3074,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Count up from 10 to 17."
      }
     },
     "type": "numberPad",
@@ -2887,8 +3094,9 @@
      "b": 7
     },
     "prompt": {
-     "text": "17 − 7 = ?  Think: 7 + ? = 17.",
+     "text": "What is 17 − 7? Think: 7 + ? = 17.",
      "speak": [
+      "What is",
       {
        "number": 17
       },
@@ -2896,7 +3104,7 @@
       {
        "number": 7
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 7
       },
@@ -2919,15 +3127,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 17
-      },
-      "minus",
-      {
-       "number": 7
-      },
-      ", think:",
+      "Think:",
       {
        "number": 7
       },
@@ -2943,14 +3143,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 17
+      },
+      ".",
+      "So",
+      {
+       "number": 17
+      },
+      "minus",
+      {
+       "number": 7
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 7 + ? = 17.",
+      "Think: 7 plus what makes 17?",
       "7 + 10 = 17.",
       "So 17 − 7 = 10."
      ],
@@ -2963,6 +3176,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Count up from 7 to 17."
      }
     },
     "type": "numberPad",
@@ -2980,8 +3196,9 @@
      "b": 13
     },
     "prompt": {
-     "text": "20 − 13 = ?  Think: 13 + ? = 20.",
+     "text": "What is 20 − 13? Think: 13 + ? = 20.",
      "speak": [
+      "What is",
       {
        "number": 20
       },
@@ -2989,7 +3206,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -3012,15 +3229,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 20
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -3036,14 +3245,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 20
+      },
+      ".",
+      "So",
+      {
+       "number": 20
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 20.",
+      "Think: 13 plus what makes 20?",
       "13 + 7 = 20.",
       "So 20 − 13 = 7."
      ],
@@ -3056,6 +3278,9 @@
        "=",
        20
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 20."
      }
     },
     "type": "numberPad",
@@ -3073,8 +3298,9 @@
      "b": 13
     },
     "prompt": {
-     "text": "16 − 13 = ?  Think: 13 + ? = 16.",
+     "text": "What is 16 − 13? Think: 13 + ? = 16.",
      "speak": [
+      "What is",
       {
        "number": 16
       },
@@ -3082,7 +3308,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -3105,15 +3331,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 16
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -3129,14 +3347,27 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 16
+      },
+      ".",
+      "So",
+      {
+       "number": 16
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 3
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 16.",
+      "Think: 13 plus what makes 16?",
       "13 + 3 = 16.",
       "So 16 − 13 = 3."
      ],
@@ -3149,6 +3380,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 16."
      }
     },
     "type": "numberPad",
@@ -3166,8 +3400,9 @@
      "b": 4
     },
     "prompt": {
-     "text": "14 − 4 = ?  Think: 4 + ? = 14.",
+     "text": "What is 14 − 4? Think: 4 + ? = 14.",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -3175,7 +3410,7 @@
       {
        "number": 4
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 4
       },
@@ -3198,15 +3433,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 14
-      },
-      "minus",
-      {
-       "number": 4
-      },
-      ", think:",
+      "Think:",
       {
        "number": 4
       },
@@ -3222,14 +3449,27 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 14
+      },
+      ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 4
+      },
+      "equals",
+      {
+       "number": 10
       },
       "."
      ],
      "steps": [
-      "Think: 4 + ? = 14.",
+      "Think: 4 plus what makes 14?",
       "4 + 10 = 14.",
       "So 14 − 4 = 10."
      ],
@@ -3242,6 +3482,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Count up from 4 to 14."
      }
     },
     "type": "numberPad",
@@ -3259,8 +3502,9 @@
      "b": 1
     },
     "prompt": {
-     "text": "8 − 1 = ?  Think: 1 + ? = 8.",
+     "text": "What is 8 − 1? Think: 1 + ? = 8.",
      "speak": [
+      "What is",
       {
        "number": 8
       },
@@ -3268,7 +3512,7 @@
       {
        "number": 1
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 1
       },
@@ -3291,15 +3535,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 8
-      },
-      "minus",
-      {
-       "number": 1
-      },
-      ", think:",
+      "Think:",
       {
        "number": 1
       },
@@ -3315,14 +3551,27 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 8
+      },
+      ".",
+      "So",
+      {
+       "number": 8
+      },
+      "minus",
+      {
+       "number": 1
+      },
+      "equals",
+      {
+       "number": 7
       },
       "."
      ],
      "steps": [
-      "Think: 1 + ? = 8.",
+      "Think: 1 plus what makes 8?",
       "1 + 7 = 8.",
       "So 8 − 1 = 7."
      ],
@@ -3335,6 +3584,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Count up from 1 to 8."
      }
     },
     "type": "numberPad",
@@ -3352,8 +3604,9 @@
      "b": 6
     },
     "prompt": {
-     "text": "10 − 6 = ?  Think: 6 + ? = 10.",
+     "text": "What is 10 − 6? Think: 6 + ? = 10.",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -3361,7 +3614,7 @@
       {
        "number": 6
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 6
       },
@@ -3384,15 +3637,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 10
-      },
-      "minus",
-      {
-       "number": 6
-      },
-      ", think:",
+      "Think:",
       {
        "number": 6
       },
@@ -3408,14 +3653,27 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 6
+      },
+      "equals",
+      {
+       "number": 4
       },
       "."
      ],
      "steps": [
-      "Think: 6 + ? = 10.",
+      "Think: 6 plus what makes 10?",
       "6 + 4 = 10.",
       "So 10 − 6 = 4."
      ],
@@ -3428,6 +3686,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Count up from 6 to 10."
      }
     },
     "type": "numberPad",
@@ -3445,8 +3706,9 @@
      "b": 8
     },
     "prompt": {
-     "text": "10 − 8 = ?  Think: 8 + ? = 10.",
+     "text": "What is 10 − 8? Think: 8 + ? = 10.",
      "speak": [
+      "What is",
       {
        "number": 10
       },
@@ -3454,7 +3716,7 @@
       {
        "number": 8
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 8
       },
@@ -3477,15 +3739,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 10
-      },
-      "minus",
-      {
-       "number": 8
-      },
-      ", think:",
+      "Think:",
       {
        "number": 8
       },
@@ -3501,14 +3755,27 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 10
+      },
+      ".",
+      "So",
+      {
+       "number": 10
+      },
+      "minus",
+      {
+       "number": 8
+      },
+      "equals",
+      {
+       "number": 2
       },
       "."
      ],
      "steps": [
-      "Think: 8 + ? = 10.",
+      "Think: 8 plus what makes 10?",
       "8 + 2 = 10.",
       "So 10 − 8 = 2."
      ],
@@ -3521,6 +3788,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Count up from 8 to 10."
      }
     },
     "type": "numberPad",
@@ -3538,8 +3808,9 @@
      "b": 13
     },
     "prompt": {
-     "text": "14 − 13 = ?  Think: 13 + ? = 14.",
+     "text": "What is 14 − 13? Think: 13 + ? = 14.",
      "speak": [
+      "What is",
       {
        "number": 14
       },
@@ -3547,7 +3818,7 @@
       {
        "number": 13
       },
-      "equals what? Think:",
+      "? Think:",
       {
        "number": 13
       },
@@ -3570,15 +3841,7 @@
     },
     "explanation": {
      "speak": [
-      "To find",
-      {
-       "number": 14
-      },
-      "minus",
-      {
-       "number": 13
-      },
-      ", think:",
+      "Think:",
       {
        "number": 13
       },
@@ -3594,14 +3857,27 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 14
+      },
+      ".",
+      "So",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 13
+      },
+      "equals",
+      {
+       "number": 1
       },
       "."
      ],
      "steps": [
-      "Think: 13 + ? = 14.",
+      "Think: 13 plus what makes 14?",
       "13 + 1 = 14.",
       "So 14 − 13 = 1."
      ],
@@ -3614,6 +3890,9 @@
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Count up from 13 to 14."
      }
     },
     "type": "numberPad",

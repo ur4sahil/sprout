@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-A4",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -46,11 +46,15 @@
   "answerIndex": 0,
   "explanation": {
    "speak": [
-    "Look at the biggest place first.",
+    "Look at the tens first.",
     {
      "number": 75
     },
-    "has more tens.",
+    "has more tens than",
+    {
+     "number": 30
+    },
+    ".",
     {
      "number": 75
     },
@@ -61,8 +65,8 @@
     "."
    ],
    "steps": [
-    "Look at the biggest place first.",
-    "75 has more tens.",
+    "Look at the tens first.",
+    "75 has more tens than 30.",
     "75 is greater than 30."
    ],
    "visual": {
@@ -72,6 +76,9 @@
      ">",
      30
     ]
+   },
+   "hint": {
+    "text": "Look at the tens first. The number with more tens is greater."
    }
   },
   "skillId": "M-1-A4",
@@ -126,11 +133,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 66
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 10
       },
@@ -141,8 +152,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "66 has more tens.",
+      "Look at the tens first.",
+      "66 has more tens than 10.",
       "10 is less than 66."
      ],
      "visual": {
@@ -152,6 +163,9 @@
        ">",
        10
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with fewer tens is less."
      }
     },
     "skillId": "M-1-A4",
@@ -204,11 +218,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 76
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 39
+      },
+      ".",
       {
        "number": 76
       },
@@ -219,8 +237,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "76 has more tens.",
+      "Look at the tens first.",
+      "76 has more tens than 39.",
       "76 is greater than 39."
      ],
      "visual": {
@@ -230,6 +248,9 @@
        ">",
        39
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -282,11 +303,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 74
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 13
+      },
+      ".",
       {
        "number": 74
       },
@@ -297,8 +322,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "74 has more tens.",
+      "Look at the tens first.",
+      "74 has more tens than 13.",
       "74 is greater than 13."
      ],
      "visual": {
@@ -308,6 +333,9 @@
        ">",
        13
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -360,11 +388,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 93
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 39
+      },
+      ".",
       {
        "number": 93
       },
@@ -375,8 +407,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "93 has more tens.",
+      "Look at the tens first.",
+      "93 has more tens than 39.",
       "93 is greater than 39."
      ],
      "visual": {
@@ -386,6 +418,9 @@
        ">",
        39
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -438,11 +473,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
+      {
+       "number": 29
+      },
+      "has fewer tens than",
       {
        "number": 66
       },
-      "has more tens.",
+      ".",
       {
        "number": 66
       },
@@ -453,8 +492,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "66 has more tens.",
+      "Look at the tens first.",
+      "29 has fewer tens than 66.",
       "66 is greater than 29."
      ],
      "visual": {
@@ -464,6 +503,9 @@
        "<",
        66
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -516,11 +558,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 57
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 10
       },
@@ -531,8 +577,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "57 has more tens.",
+      "Look at the tens first.",
+      "57 has more tens than 10.",
       "10 is less than 57."
      ],
      "visual": {
@@ -542,6 +588,9 @@
        ">",
        10
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with fewer tens is less."
      }
     },
     "skillId": "M-1-A4",
@@ -594,11 +643,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 97
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 72
+      },
+      ".",
       {
        "number": 72
       },
@@ -609,8 +662,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "97 has more tens.",
+      "Look at the tens first.",
+      "97 has more tens than 72.",
       "72 is less than 97."
      ],
      "visual": {
@@ -620,6 +673,9 @@
        ">",
        72
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with fewer tens is less."
      }
     },
     "skillId": "M-1-A4",
@@ -672,11 +728,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
+      {
+       "number": 24
+      },
+      "has fewer tens than",
       {
        "number": 66
       },
-      "has more tens.",
+      ".",
       {
        "number": 66
       },
@@ -687,8 +747,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "66 has more tens.",
+      "Look at the tens first.",
+      "24 has fewer tens than 66.",
       "66 is greater than 24."
      ],
      "visual": {
@@ -698,6 +758,9 @@
        "<",
        66
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -750,11 +813,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
+      {
+       "number": 27
+      },
+      "has fewer tens than",
       {
        "number": 86
       },
-      "has more tens.",
+      ".",
       {
        "number": 86
       },
@@ -765,8 +832,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "86 has more tens.",
+      "Look at the tens first.",
+      "27 has fewer tens than 86.",
       "86 is greater than 27."
      ],
      "visual": {
@@ -776,6 +843,9 @@
        "<",
        86
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with more tens is greater."
      }
     },
     "skillId": "M-1-A4",
@@ -828,11 +898,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
+      {
+       "number": 55
+      },
+      "has fewer tens than",
       {
        "number": 92
       },
-      "has more tens.",
+      ".",
       {
        "number": 55
       },
@@ -843,8 +917,8 @@
       "."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "92 has more tens.",
+      "Look at the tens first.",
+      "55 has fewer tens than 92.",
       "55 is less than 92."
      ],
      "visual": {
@@ -854,6 +928,9 @@
        "<",
        92
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. The number with fewer tens is less."
      }
     },
     "skillId": "M-1-A4",
@@ -908,11 +985,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 66
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 60
+      },
+      ".",
       {
        "number": 60
       },
@@ -923,8 +1004,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "66 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "66 has more ones than 60.",
       "60 is less than 66."
      ],
      "visual": {
@@ -934,6 +1015,9 @@
        ">",
        60
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -986,11 +1070,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 76
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 73
+      },
+      ".",
       {
        "number": 76
       },
@@ -1001,8 +1089,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "76 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "76 has more ones than 73.",
       "76 is greater than 73."
      ],
      "visual": {
@@ -1012,6 +1100,9 @@
        ">",
        73
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1064,11 +1155,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 74
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 70
+      },
+      ".",
       {
        "number": 74
       },
@@ -1079,8 +1174,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "74 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "74 has more ones than 70.",
       "74 is greater than 70."
      ],
      "visual": {
@@ -1090,6 +1185,9 @@
        ">",
        70
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1142,11 +1240,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 29
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 20
+      },
+      ".",
       {
        "number": 29
       },
@@ -1157,8 +1259,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "29 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "29 has more ones than 20.",
       "29 is greater than 20."
      ],
      "visual": {
@@ -1168,6 +1270,9 @@
        ">",
        20
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1220,11 +1325,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
+      {
+       "number": 72
+      },
+      "has fewer ones than",
       {
        "number": 77
       },
-      "has more ones.",
+      ".",
       {
        "number": 77
       },
@@ -1235,8 +1344,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "77 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "72 has fewer ones than 77.",
       "77 is greater than 72."
      ],
      "visual": {
@@ -1246,6 +1355,9 @@
        "<",
        77
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1298,11 +1410,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 57
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 50
+      },
+      ".",
       {
        "number": 50
       },
@@ -1313,8 +1429,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "57 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "57 has more ones than 50.",
       "50 is less than 57."
      ],
      "visual": {
@@ -1324,6 +1440,9 @@
        ">",
        50
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1376,11 +1495,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
       {
        "number": 11
       },
-      "has more ones.",
+      "has more ones than",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 10
       },
@@ -1391,8 +1514,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "11 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "11 has more ones than 10.",
       "10 is less than 11."
      ],
      "visual": {
@@ -1402,6 +1525,9 @@
        ">",
        10
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1454,11 +1580,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
+      {
+       "number": 24
+      },
+      "has fewer ones than",
       {
        "number": 26
       },
-      "has more ones.",
+      ".",
       {
        "number": 26
       },
@@ -1469,8 +1599,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "26 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "24 has fewer ones than 26.",
       "26 is greater than 24."
      ],
      "visual": {
@@ -1480,6 +1610,9 @@
        "<",
        26
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1532,11 +1665,15 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
+      {
+       "number": 27
+      },
+      "has fewer ones than",
       {
        "number": 28
       },
-      "has more ones.",
+      ".",
       {
        "number": 28
       },
@@ -1547,8 +1684,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "28 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "27 has fewer ones than 28.",
       "28 is greater than 27."
      ],
      "visual": {
@@ -1558,6 +1695,9 @@
        "<",
        28
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1610,11 +1750,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
+      "The tens are the same, so look at the ones.",
+      {
+       "number": 55
+      },
+      "has fewer ones than",
       {
        "number": 59
       },
-      "has more ones.",
+      ".",
       {
        "number": 55
       },
@@ -1625,8 +1769,8 @@
       "."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "59 has more ones.",
+      "The tens are the same, so look at the ones.",
+      "55 has fewer ones than 59.",
       "55 is less than 59."
      ],
      "visual": {
@@ -1636,6 +1780,9 @@
        "<",
        59
       ]
+     },
+     "hint": {
+      "text": "The tens are the same, so look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1712,11 +1859,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 66
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 66
       },
@@ -1724,12 +1875,12 @@
       {
        "number": 10
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "66 has more tens.",
-      "66 is greater than 10."
+      "Look at the tens first.",
+      "66 has more tens than 10.",
+      "66 is greater than 10, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -1738,6 +1889,9 @@
        ">",
        10
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1812,11 +1966,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 76
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 39
+      },
+      ".",
       {
        "number": 76
       },
@@ -1824,12 +1982,12 @@
       {
        "number": 39
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "76 has more tens.",
-      "76 is greater than 39."
+      "Look at the tens first.",
+      "76 has more tens than 39.",
+      "76 is greater than 39, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -1838,6 +1996,9 @@
        ">",
        39
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -1912,11 +2073,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 74
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 13
+      },
+      ".",
       {
        "number": 74
       },
@@ -1924,12 +2089,12 @@
       {
        "number": 13
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "74 has more tens.",
-      "74 is greater than 13."
+      "Look at the tens first.",
+      "74 has more tens than 13.",
+      "74 is greater than 13, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -1938,6 +2103,9 @@
        ">",
        13
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2012,11 +2180,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 93
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 39
+      },
+      ".",
       {
        "number": 93
       },
@@ -2024,12 +2196,12 @@
       {
        "number": 39
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "93 has more tens.",
-      "93 is greater than 39."
+      "Look at the tens first.",
+      "93 has more tens than 39.",
+      "93 is greater than 39, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2038,6 +2210,9 @@
        ">",
        39
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2112,24 +2287,28 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
-      {
-       "number": 79
-      },
-      "has more ones.",
-      {
-       "number": 79
-      },
-      "is greater than",
+      "The tens are the same, so look at the ones.",
       {
        "number": 72
       },
-      "."
+      "has fewer ones than",
+      {
+       "number": 79
+      },
+      ".",
+      {
+       "number": 72
+      },
+      "is less than",
+      {
+       "number": 79
+      },
+      ", so the sign is less than."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "79 has more ones.",
-      "79 is greater than 72."
+      "The tens are the same, so look at the ones.",
+      "72 has fewer ones than 79.",
+      "72 is less than 79, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2138,6 +2317,9 @@
        "<",
        79
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2212,11 +2394,15 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
+      "Look at the tens first.",
       {
        "number": 57
       },
-      "has more tens.",
+      "has more tens than",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 57
       },
@@ -2224,12 +2410,12 @@
       {
        "number": 10
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "57 has more tens.",
-      "57 is greater than 10."
+      "Look at the tens first.",
+      "57 has more tens than 10.",
+      "57 is greater than 10, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2238,6 +2424,9 @@
        ">",
        10
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2312,24 +2501,28 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The tens are the same. Look at the ones.",
-      {
-       "number": 15
-      },
-      "has more ones.",
-      {
-       "number": 15
-      },
-      "is greater than",
+      "The tens are the same, so look at the ones.",
       {
        "number": 11
       },
-      "."
+      "has fewer ones than",
+      {
+       "number": 15
+      },
+      ".",
+      {
+       "number": 11
+      },
+      "is less than",
+      {
+       "number": 15
+      },
+      ", so the sign is less than."
      ],
      "steps": [
-      "The tens are the same. Look at the ones.",
-      "15 has more ones.",
-      "15 is greater than 11."
+      "The tens are the same, so look at the ones.",
+      "11 has fewer ones than 15.",
+      "11 is less than 15, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2338,6 +2531,9 @@
        "<",
        15
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2412,24 +2608,28 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
-      {
-       "number": 66
-      },
-      "has more tens.",
-      {
-       "number": 66
-      },
-      "is greater than",
+      "Look at the tens first.",
       {
        "number": 24
       },
-      "."
+      "has fewer tens than",
+      {
+       "number": 66
+      },
+      ".",
+      {
+       "number": 24
+      },
+      "is less than",
+      {
+       "number": 66
+      },
+      ", so the sign is less than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "66 has more tens.",
-      "66 is greater than 24."
+      "Look at the tens first.",
+      "24 has fewer tens than 66.",
+      "24 is less than 66, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2438,6 +2638,9 @@
        "<",
        66
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2519,11 +2722,12 @@
       {
        "number": 27
       },
-      "are the same number. They are equal."
+      "are the same number.",
+      "So the sign is equals."
      ],
      "steps": [
       "27 and 27 are the same number.",
-      "They are equal."
+      "So the sign is =."
      ],
      "visual": {
       "kind": "equation",
@@ -2532,6 +2736,9 @@
        "=",
        27
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",
@@ -2606,24 +2813,28 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Look at the biggest place first.",
-      {
-       "number": 92
-      },
-      "has more tens.",
-      {
-       "number": 92
-      },
-      "is greater than",
+      "Look at the tens first.",
       {
        "number": 55
       },
-      "."
+      "has fewer tens than",
+      {
+       "number": 92
+      },
+      ".",
+      {
+       "number": 55
+      },
+      "is less than",
+      {
+       "number": 92
+      },
+      ", so the sign is less than."
      ],
      "steps": [
-      "Look at the biggest place first.",
-      "92 has more tens.",
-      "92 is greater than 55."
+      "Look at the tens first.",
+      "55 has fewer tens than 92.",
+      "55 is less than 92, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2632,6 +2843,9 @@
        "<",
        92
       ]
+     },
+     "hint": {
+      "text": "Look at the tens first. If they are the same, look at the ones."
      }
     },
     "skillId": "M-1-A4",

@@ -5,6 +5,7 @@ import type { ColorName } from '../../../data/colors';
 import { COLOR_NAMES } from '../../../data/colors';
 import type { SkillGenerator } from '../../../generator';
 import { a, shape } from '../pk/parts';
+import { explain, joinAnd } from './wording';
 
 // Math grade 1 D.1 and D.2: halves and fourths, and shape attributes.
 
@@ -29,7 +30,7 @@ function shares(level: Level, rng: Rng): QuestionDraft {
     const parts = rng.pick([2, 4]);
     const equal = rng.bool();
     const prompt = 'Are the parts equal?';
-    const line = equal ? 'Equal parts are the same size. These parts are equal.' : 'Equal parts are the same size. These parts are not the same size.';
+    const lines = ['Equal parts are the same size.', equal ? 'These parts are the same size, so they are equal.' : 'These parts are not the same size, so they are not equal.'];
     return {
       type: 'choice',
       mode: 'look',
@@ -39,7 +40,7 @@ function shares(level: Level, rng: Rng): QuestionDraft {
       stimulus: cut(whole, parts, equal),
       options: yesNo(),
       answerIndex: equal ? 0 : 1,
-      explanation: { speak: [line], steps: line.split('. ').map((part, i, list) => (i < list.length - 1 ? `${part}.` : part)), visual: cut(whole, parts, true) },
+      explanation: explain(lines, cut(whole, parts, true), { text: 'Look at each part. Are they all the same size?' }),
     };
   }
   const parts = level === 2 ? 2 : rng.pick([2, 4]);
@@ -59,7 +60,7 @@ function shares(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: options.map((option) => option.picture),
     answerIndex: options.findIndex((option) => option.code === NAME[parts]),
-    explanation: { speak: [equalLine(parts)], steps: [equalText(parts)], visual: cut(whole, parts, true) },
+    explanation: explain([equalText(parts), `This shape has ${parts} parts, all the same size.`], cut(whole, parts, true), { text: 'Count the parts in each shape. Are they the same size?' }),
   };
 }
 
@@ -112,7 +113,7 @@ function shapeAttributes(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: prompt, speak: ['Which shape has', { number: sidesOf(answer) }, 'sides?'] },
       options: options.map((form) => shape(form, color)),
       answerIndex: options.indexOf(answer),
-      explanation: { speak: [attributeSpoken(answer, 'sides')], steps: [attributeLine(answer, 'sides')], visual: shape(answer, color, 'l') },
+      explanation: explain(['Count the sides of each shape.', attributeLine(answer, 'sides')], shape(answer, color, 'l'), { text: 'Count the sides of each shape.' }),
     };
   }
   if (level === 2) {
@@ -124,6 +125,10 @@ function shapeAttributes(level: Level, rng: Rng): QuestionDraft {
     const wrongForms = rng.sample(FORMS.filter((form) => sidesOf(form) !== sidesOf(answer)), 4 - right.length);
     const all = rng.shuffle([...right.map((picture) => ({ picture, corners: sidesOf(answer) })), ...wrongForms.map((form) => ({ picture: shape(form, color), corners: sidesOf(form) }))]);
     const prompt = `Pick all the shapes with ${sidesOf(answer)} corners.`;
+    // Every right shape is named: two triangles, or a square with a rectangle.
+    const forms = right.flatMap((picture) => (picture.kind === 'shape' ? [picture.shape] : []));
+    const kinds = [...new Set(forms)];
+    const named = kinds.length > 1 ? `The ${joinAnd(kinds)} have` : forms.length > 1 ? `Both ${kinds[0] as string}s have` : `The ${kinds[0] as string} has`;
     return {
       type: 'multiSelect',
       mode: 'look',
@@ -131,14 +136,14 @@ function shapeAttributes(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: prompt, speak: ['Pick all the shapes with', { number: sidesOf(answer) }, 'corners.'] },
       options: all.map((option) => option.picture),
       answerIndexes: all.flatMap((option, index) => (option.corners === sidesOf(answer) ? [index] : [])),
-      explanation: { speak: [attributeSpoken(answer, 'corners')], steps: [attributeLine(answer, 'corners')], visual: shape(answer, color, 'l') },
+      explanation: explain(['Count the corners of each shape.', `${named} ${sidesOf(answer)} corners.`], shape(answer, color, 'l'), { text: 'Count the corners of each shape.' }),
     };
   }
   const form = rng.pick<ShapeName>(['triangle', 'square', 'rectangle', 'pentagon', 'hexagon', 'circle']);
   const open = rng.bool();
   const prompt = 'Is this shape closed or open?';
   const drawn: Visual = open ? { kind: 'shape', shape: form, color, size: 'l', rotation: 0, open: true } : shape(form, color, 'l');
-  const line = open ? 'This shape has a gap. It is open.' : 'This shape has no gap. It is closed.';
+  const lines = ['Trace around the shape with your finger.', open ? 'There is a gap, so it is open.' : 'There is no gap, so it is closed.'];
   const facts: QuestionDraft['facts'] = open ? { shape: form, ask: 'closed', open: true, color, options: [true, false] } : { shape: form, ask: 'closed', color, options: [true, false] };
   return {
     type: 'choice',
@@ -152,7 +157,7 @@ function shapeAttributes(level: Level, rng: Rng): QuestionDraft {
       { kind: 'text', value: 'Open', size: 'l', speak: ['Open'] },
     ],
     answerIndex: open ? 1 : 0,
-    explanation: { speak: [line], steps: [line], visual: drawn },
+    explanation: explain(lines, drawn, { text: 'Trace around the shape. Is there a gap?' }),
   };
 }
 

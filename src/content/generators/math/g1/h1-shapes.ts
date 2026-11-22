@@ -2,8 +2,9 @@ import type { Rng } from '../../../../engine/rng';
 import type { Level, QuestionDraft, ShapeName, SolidName, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { shape } from '../pk/parts';
-import type { Explanation } from '../k/h1-parts';
-import { h1Skill, lessonOf, picture, shuffled, spoken } from '../k/h1-parts';
+import { h1Skill, lessonOf, picture, shuffled } from '../k/h1-parts';
+import type { Shown as Explanation } from './wording';
+import { explain } from './wording';
 
 // Math grade 1, plan section 15 wave H1: D.4 faces of solid shapes, D.5 halves are bigger than fourths.
 
@@ -16,11 +17,13 @@ const FACES: Record<SolidName, number> = { cube: 6, sphere: 0, cone: 1, cylinder
 const FACE: Record<SolidName, ShapeName | null> = { cube: 'square', sphere: null, cone: 'circle', cylinder: 'circle' };
 const solid = (name: SolidName, speak = true): Visual => (speak ? { kind: 'solid', solid: name, speak: [name] } : { kind: 'solid', solid: name });
 
-function faceExplanation(name: SolidName): Explanation {
+// The hint says how to find a face, never which shape it is or how many there are.
+function faceExplanation(name: SolidName, hint: string): Explanation {
   const face = FACE[name];
-  const line = face === null ? 'A sphere is round all over. It has no flat faces.' : `A ${name} has ${FACES[name]} flat ${FACES[name] === 1 ? 'face' : 'faces'}. ${FACES[name] === 1 ? 'It is a' : 'Each is a'} ${face}.`;
-  return { speak: spoken(line), steps: [line], visual: face === null ? solid(name, false) : { kind: 'row', children: [solid(name, false), shape(face, 'blue', 'm')] } };
+  const lines = face === null ? ['A sphere is round all over.', 'It has no flat faces.'] : [`A ${name} has ${FACES[name]} flat ${FACES[name] === 1 ? 'face' : 'faces'}.`, `${FACES[name] === 1 ? 'It is a' : 'Each one is a'} ${face}.`];
+  return explain(lines, face === null ? solid(name, false) : { kind: 'row', children: [solid(name, false), shape(face, 'blue', 'm')] }, { text: hint });
 }
+const COUNT_FACES = 'Count the flat sides. Curved sides do not count.';
 
 const WANTS = {
   none: { solid: 'sphere', prompt: 'Which shape has no flat faces?' },
@@ -41,17 +44,18 @@ function faces(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: WANTS[want].prompt, speak: [WANTS[want].prompt] },
       options: items.map((each) => solid(each)),
       answerIndex,
-      explanation: faceExplanation(right),
+      explanation: faceExplanation(right, 'Count the flat sides of each shape. Curved sides do not count.'),
     };
   }
   if (level === 3) {
     const name = rng.pick(SOLIDS);
     const prompt = `How many flat faces does a ${name} have?`;
-    return { type: 'numberPad', mode: 'look', facts: { ask: 'faces', solid: name }, prompt: { text: prompt, speak: [prompt] }, stimulus: solid(name), answer: FACES[name], maxDigits: 1, explanation: faceExplanation(name) };
+    return { type: 'numberPad', mode: 'look', facts: { ask: 'faces', solid: name }, prompt: { text: prompt, speak: [prompt] }, stimulus: solid(name), answer: FACES[name], maxDigits: 1, explanation: faceExplanation(name, COUNT_FACES) };
   }
   const name = rng.pick(['cube', 'cone', 'cylinder'] as SolidName[]);
   const forms = rng.shuffle(['circle', 'square', 'triangle'] as ShapeName[]);
-  const prompt = `What shape is a flat face of a ${name}?`;
+  // A cone has one flat face: "the" flat face. A cube and a cylinder have more: "a" flat face.
+  const prompt = `What shape is ${name === 'cone' ? 'the' : 'a'} flat face of a ${name}?`;
   return {
     type: 'choice',
     mode: 'look',
@@ -60,7 +64,7 @@ function faces(level: Level, rng: Rng): QuestionDraft {
     stimulus: solid(name),
     options: forms.map((form): Visual => ({ ...shape(form, 'blue', 'm'), speak: [form] }) as Visual),
     answerIndex: forms.indexOf(FACE[name] as ShapeName),
-    explanation: faceExplanation(name),
+    explanation: faceExplanation(name, 'Find a flat side. Trace around its edge.'),
   };
 }
 
@@ -88,9 +92,10 @@ const FOODS = [
 
 const cut = (form: 'circle' | 'rectangle', parts: number): Visual => ({ kind: 'fraction', shape: form, parts, shaded: 1, equal: true });
 
-function shareExplanation(form: 'circle' | 'rectangle'): Explanation {
-  const lines = ['Halves are 2 equal parts. Fourths are 4 equal parts.', 'Cut into more parts, each part is smaller.', 'One half is bigger than one fourth.'];
-  return { speak: lines.flatMap(spoken), steps: lines, visual: { kind: 'row', children: [cut(form, 2), cut(form, 4)] } };
+// The last step answers what was asked: "So one fourth is smaller." when it asks for the smaller part.
+function shareExplanation(form: 'circle' | 'rectangle', ask: 'bigger' | 'smaller'): Explanation {
+  const lines = ['Halves are 2 equal parts. Fourths are 4 equal parts.', 'The more parts you cut, the smaller each part is.', ask === 'bigger' ? 'So one half is bigger than one fourth.' : 'So one fourth is smaller than one half.'];
+  return explain(lines, { kind: 'row', children: [cut(form, 2), cut(form, 4)] }, { text: 'The more parts you cut, the smaller each part is.' });
 }
 
 function shareSize(level: Level, rng: Rng): QuestionDraft {
@@ -107,7 +112,7 @@ function shareSize(level: Level, rng: Rng): QuestionDraft {
       stimulus: picture(food.emoji, food.name),
       options: ['one half', 'one fourth'].map((words): Visual => ({ kind: 'text', value: words, size: 'l', speak: [words] })),
       answerIndex: ask === 'bigger' ? 0 : 1,
-      explanation: shareExplanation('circle'),
+      explanation: shareExplanation('circle', ask),
     };
   }
   const form = rng.pick(['circle', 'rectangle'] as const);
@@ -120,7 +125,7 @@ function shareSize(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: parts.map((count) => cut(form, count)),
     answerIndex: parts.indexOf(ask === 'bigger' ? 2 : 4),
-    explanation: shareExplanation(form),
+    explanation: shareExplanation(form, ask),
   };
 }
 

@@ -6,12 +6,12 @@ import { COLOR_NAMES } from '../../../data/colors';
 import type { Countable } from '../../../data/countables';
 import { STORY_COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
-import { numeral } from '../../../generator';
+import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import type { Shown as Explanation } from './wording';
+import { explain } from './wording';
 
 // Math grade 1 C.1 to C.4: telling time, ordering by length, picture graphs and coins.
-
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 
 // ---- C.1 Tell time: hour and half hour ----
 // Levels: hours / half hours / match a clock to a written time. Family: Time. Oracle: time.
@@ -26,19 +26,16 @@ const timeText = (time: Time): Visual => ({ kind: 'text', value: written(time), 
 const nextHour = (hour: number): number => (hour % 12) + 1;
 const hourBefore = (hour: number): number => ((hour + 10) % 12) + 1;
 
+// The last step joins the time in words to the written time the options show: "It is half past 8. We write 8:30."
+// (said "eight thirty", as a child reads it). "8:00" would be said "eight o'clock" twice, so it is said by its digits.
 function timeExplanation(time: Time): Explanation {
   if (time.minute === 0) {
-    return {
-      speak: ['The long hand points to', { number: 12 }, '. The short hand points to', { number: time.hour }, '. It is', { time }, '.'],
-      steps: ['The long hand points to 12.', `The short hand points to ${time.hour}.`, `It is ${time.hour} o'clock.`],
-      visual: clock(time),
-    };
+    return explain(
+      ['The long hand points to 12.', `The short hand points to ${time.hour}.`, { text: `It is ${time.hour} o'clock. We write ${written(time)}.`, say: ['It is', { number: time.hour }, "o'clock. We write", { number: time.hour }, ', then two zeros.'] }],
+      clock(time),
+    );
   }
-  return {
-    speak: ['The long hand points to', { number: 6 }, '. The short hand is halfway between', { number: time.hour }, 'and', { number: nextHour(time.hour) }, '. It is', { time }, '.'],
-    steps: ['The long hand points to 6.', `The short hand is halfway between ${time.hour} and ${nextHour(time.hour)}.`, `It is half past ${time.hour}.`],
-    visual: clock(time),
-  };
+  return explain(['The long hand points to 6.', `The short hand is halfway between ${time.hour} and ${nextHour(time.hour)}.`, `It is half past ${time.hour}. We write ${written(time)}.`], clock(time));
 }
 
 // The times offered beside the right one: the hour before or after, and the same hour at the other half.
@@ -117,10 +114,16 @@ export const tellTimeGenerator: SkillGenerator = {
 // Levels: 3 bars / 4 bars / 4 bars with close lengths. Family: Order by length. Oracle: order.
 
 const bar = (length: number, color: ColorName): Visual => ({ kind: 'bar', length, color, orientation: 'horizontal' });
-const SHORTEST_FIRST = 'Put them in order, shortest first.';
+const SHORTEST_FIRST = 'Put the bars in order, shortest first.';
+
+// Every bar has a place in the steps, and the picture shows them all in order. The bars are one colour, so the
+// steps name them by where they go, never "this one".
+function orderLines(count: number): string[] {
+  return ['Find the shortest bar. It goes first.', count === 3 ? 'The middle bar comes next.' : 'Then find the next shortest, and the next.', 'The longest bar goes last.'];
+}
 
 function orderExplanation(sorted: number[], color: ColorName): Explanation {
-  return { speak: ['This one is the shortest. This one is the longest.'], steps: ['This one is the shortest.', 'This one is the longest.'], visual: { kind: 'row', children: [bar(sorted[0] as number, color), bar(sorted[sorted.length - 1] as number, color)] } };
+  return explain(orderLines(sorted.length), { kind: 'row', children: sorted.map((length) => bar(length, color)) }, { text: 'Find the shortest bar first.' });
 }
 
 // Lengths that differ by at least `gap`, from 1 to 10, not already in order.
@@ -162,8 +165,8 @@ export const orderByLengthGenerator: SkillGenerator = {
   example: () => orderByLength(1, makeRng(132)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Some things are longer than others. Line them up at one end to see.', speak: ['Some things are longer than others. Line them up at one end to see.'], visual: { kind: 'row', children: [bar(6, 'blue'), bar(3, 'blue')] } },
-    { beat: 'watch', text: 'This one is the shortest. This one is the longest.', speak: ['This one is the shortest. This one is the longest.'], visual: { kind: 'row', children: [bar(2, 'green'), bar(5, 'green'), bar(8, 'green')] } },
-    { beat: 'try', text: SHORTEST_FIRST, speak: [SHORTEST_FIRST], visual: { kind: 'row', children: [bar(7, 'orange'), bar(2, 'orange'), bar(4, 'orange')] }, reveal: { text: 'This one is the shortest. This one is the longest.', speak: ['This one is the shortest. This one is the longest.'], visual: { kind: 'row', children: [bar(2, 'orange'), bar(4, 'orange'), bar(7, 'orange')] } } },
+    { beat: 'watch', text: orderLines(3).join(' '), speak: [orderLines(3).join(' ')], visual: { kind: 'row', children: [bar(2, 'green'), bar(5, 'green'), bar(8, 'green')] } },
+    { beat: 'try', text: SHORTEST_FIRST, speak: [SHORTEST_FIRST], visual: { kind: 'row', children: [bar(7, 'orange'), bar(2, 'orange'), bar(4, 'orange')] }, reveal: { text: orderLines(3).join(' '), speak: [orderLines(3).join(' ')], visual: { kind: 'row', children: [bar(2, 'orange'), bar(4, 'orange'), bar(7, 'orange')] } } },
     { beat: 'remember', text: 'Line up one end, then look at the other.', speak: ['Line up one end, then look at the other.'], visual: { kind: 'row', children: [bar(2, 'green'), bar(5, 'green'), bar(8, 'green')] } },
   ],
   oracle: 'order',
@@ -267,7 +270,39 @@ export function graphQuestion(level: Level, rng: Rng, type: 'picture' | 'bar', m
   };
 }
 
-const pictureGraph = (level: Level, rng: Rng): QuestionDraft => graphQuestion(level, rng, 'picture', 6);
+// Grade 1 picture graphs (the wording audit, Nov 22, 2026): the prompt first says who chose and what, the steps
+// name each row ("Find the balloons row."), and a hint gives the move. The bar graphs of grade 2 keep
+// graphQuestion's own words.
+const GRAPH_LEAD = 'Children chose their favorite thing.';
+const manyOf = (one: string): string => STORY_COUNTABLES.find((thing) => thing.one === one)?.many ?? one;
+const ledBy = (words: string): { text: string; speak: Say } => ({ text: `${GRAPH_LEAD} ${words}`, speak: [`${GRAPH_LEAD} ${words}`] });
+
+function pictureGraph(level: Level, rng: Rng): QuestionDraft {
+  const question = graphQuestion(level, rng, 'picture', 6);
+  const values = question.facts.values as number[];
+  const names = (question.facts.things as string[]).map(manyOf);
+  const visual = question.explanation.visual ?? chartVisual({ things: [], values: [] });
+  const ask = question.facts.ask;
+  if (ask === 'value') {
+    const index = question.facts.index as number;
+    const [name, value] = [names[index] as string, values[index] as number];
+    const counted = Array.from({ length: value }, (_, i) => i + 1);
+    const lines = [`Find the ${name} row.`, `Count its pictures: ${listText(counted)}.`, `${value} chose ${name}.`];
+    return { ...question, prompt: ledBy(`How many chose ${name}?`), explanation: explain(lines, visual, { text: `Find the ${name} row. Count its pictures.` }) };
+  }
+  if (ask === 'most' || ask === 'least') {
+    const wanted = ask === 'most' ? Math.max(...values) : Math.min(...values);
+    const name = names[values.indexOf(wanted)] as string;
+    const [row, most] = ask === 'most' ? ['longest', 'most'] : ['shortest', 'fewest'];
+    const lines = [`The ${name} row is the ${row}.`, `So the ${name} row has the ${most}: ${wanted}.`];
+    return { ...question, prompt: ledBy(`Which one has the ${most}?`), explanation: explain(lines, visual, { text: `Find the ${row} row.` }) };
+  }
+  const [index, other] = [question.facts.index as number, question.facts.other as number];
+  const [a, b] = [values[index] as number, values[other] as number];
+  const [name, otherName] = [names[index] as string, names[other] as string];
+  const lines = [`The ${name} row has ${a}.`, `The ${otherName} row has ${b}.`, `${a} − ${b} = ${a - b}, so ${a - b} more chose ${name}.`];
+  return { ...question, prompt: ledBy(`How many more chose ${name} than ${otherName}?`), explanation: explain(lines, visual, { text: 'Count both rows. Then take the smaller number away from the bigger number.' }) };
+}
 
 export const pictureGraphsGenerator: SkillGenerator = {
   skillId: 'M-1-C3',
@@ -282,8 +317,8 @@ export const pictureGraphsGenerator: SkillGenerator = {
     const names = chart.things.map((thing) => thing.many);
     return [
       { beat: 'see', text: 'A picture graph shows how many. Each picture stands for one.', speak: ['A picture graph shows how many. Each picture stands for one.'], visual: chartVisual(chart) },
-      { beat: 'watch', text: `How many chose ${names[0]}? Find ${names[0]}. Count its row: 4.`, speak: [`How many chose ${names[0]}? Find ${names[0]}. Count its row.`, { number: 4 }, '.'], visual: chartVisual(chart) },
-      { beat: 'try', text: `How many chose ${names[2]}?`, speak: [`How many chose ${names[2]}?`], visual: chartVisual(chart), reveal: { text: `Find ${names[2]}. Count its row: 5.`, speak: [`Find ${names[2]}. Count its row.`, { number: 5 }, '.'] } },
+      { beat: 'watch', text: `How many chose ${names[0]}? Find the ${names[0]} row. Count its pictures: 4.`, speak: [`How many chose ${names[0]}? Find the ${names[0]} row. Count its pictures.`, { number: 4 }, '.'], visual: chartVisual(chart) },
+      { beat: 'try', text: `How many chose ${names[2]}?`, speak: [`How many chose ${names[2]}?`], visual: chartVisual(chart), reveal: { text: `Find the ${names[2]} row. Count its pictures: 5.`, speak: [`Find the ${names[2]} row. Count its pictures.`, { number: 5 }, '.'] } },
       { beat: 'remember', text: 'Read one row at a time.', speak: ['Read one row at a time.'], visual: chartVisual(chart) },
     ];
   },
@@ -297,14 +332,19 @@ const COINS: CoinName[] = ['penny', 'nickel', 'dime', 'quarter'];
 const CENTS: Record<CoinName, number> = { penny: 1, nickel: 5, dime: 10, quarter: 25 };
 const coin = (name: CoinName): Visual => ({ kind: 'coins', coins: [name] });
 const an = (name: CoinName): string => `a ${name}`;
+const centsText = (cents: number): string => `${cents} ${cents === 1 ? 'cent' : 'cents'}`;
 
-function coinExplanation(name: CoinName): Explanation {
-  const cents = CENTS[name];
-  return {
-    speak: [`This is ${an(name)}. It is worth`, { cents }, '. Look at its size, its color and its picture.'],
-    steps: [`This is ${an(name)}.`, `It is worth ${cents} ${cents === 1 ? 'cent' : 'cents'}.`, 'Look at its size, its color and its picture.'],
-    visual: coin(name),
-  };
+// What tells each coin apart, as the coins are drawn (CoinsVisual: true sizes and colours, an emblem on each face).
+const LOOKS: Record<CoinName, string> = {
+  penny: 'It is the only brown coin, with a shield on it.',
+  nickel: 'It is silver, with a smooth edge and a building on it.',
+  dime: 'It is the smallest coin. It is silver, with a torch on it.',
+  quarter: 'It is the biggest coin. It is silver, with an eagle on it.',
+};
+
+// Looking comes first and the name last, so no step before the last one names the coin.
+function coinExplanation(name: CoinName, hint: string): Explanation {
+  return explain(['Look at its color, its size and its picture.', LOOKS[name], `This is ${an(name)}. It is worth ${centsText(CENTS[name])}.`], coin(name), { text: hint });
 }
 
 const WHICH_COIN = 'Which coin is this?';
@@ -321,7 +361,7 @@ function coins(level: Level, rng: Rng): QuestionDraft {
       stimulus: coin(name),
       options: COINS.map((each): Visual => ({ kind: 'text', value: each, size: 'l', speak: [each] })),
       answerIndex: COINS.indexOf(name),
-      explanation: coinExplanation(name),
+      explanation: coinExplanation(name, 'Look at its color, its size and the picture on it.'),
     };
   }
   if (level === 2) {
@@ -337,7 +377,7 @@ function coins(level: Level, rng: Rng): QuestionDraft {
       stimulus: coin(name),
       options: COINS.map((each): Visual => ({ kind: 'text', value: `${CENTS[each]}¢`, size: 'l', speak: [{ cents: CENTS[each] }] })),
       answerIndex: COINS.indexOf(name),
-      explanation: coinExplanation(name),
+      explanation: coinExplanation(name, 'Name the coin first. Then think how many cents it is worth.'),
     };
   }
   const pair = rng.sample(COINS, 2) as [CoinName, CoinName];
@@ -351,11 +391,12 @@ function coins(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: prompt, speak: [prompt] },
     options: pair.map(coin),
     answerIndex: pair.indexOf(more),
-    explanation: {
-      speak: [`${an(more).charAt(0).toUpperCase()}${an(more).slice(1)} is worth`, { cents: CENTS[more] }, `. ${an(less).charAt(0).toUpperCase()}${an(less).slice(1)} is worth`, { cents: CENTS[less] }, `. The ${more} is worth more.`],
-      steps: [`${an(more).charAt(0).toUpperCase()}${an(more).slice(1)} is worth ${CENTS[more]} cents.`, `${an(less).charAt(0).toUpperCase()}${an(less).slice(1)} is worth ${CENTS[less]} ${CENTS[less] === 1 ? 'cent' : 'cents'}.`, `The ${more} is worth more.`],
-      visual: coin(more),
-    },
+    // The coins in the order they are shown, then the one worth more: never the answer first.
+    explanation: explain(
+      [`The first coin is ${an(pair[0])}, worth ${centsText(CENTS[pair[0]])}.`, `The second coin is ${an(pair[1])}, worth ${centsText(CENTS[pair[1]])}.`, `${centsText(CENTS[more])} is more than ${centsText(CENTS[less])}, so the ${more} is worth more.`],
+      coin(more),
+      { text: 'Name each coin. Then think how many cents each one is worth.' },
+    ),
   };
 }
 
@@ -370,8 +411,8 @@ export const coinsGenerator: SkillGenerator = {
   example: () => coins(1, makeRng(134)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'There are four coins: penny, nickel, dime and quarter.', speak: ['There are four coins: penny, nickel, dime and quarter.'], visual: { kind: 'coins', coins: [...COINS] } },
-    { beat: 'watch', text: coinExplanation('penny').steps.join(' '), speak: coinExplanation('penny').speak, visual: coin('penny') },
-    { beat: 'try', text: WHICH_COIN, speak: [WHICH_COIN], visual: coin('quarter'), reveal: { text: coinExplanation('quarter').steps.join(' '), speak: coinExplanation('quarter').speak, visual: coin('quarter') } },
+    { beat: 'watch', text: coinExplanation('penny', WHICH_COIN).steps.join(' '), speak: coinExplanation('penny', WHICH_COIN).speak, visual: coin('penny') },
+    { beat: 'try', text: WHICH_COIN, speak: [WHICH_COIN], visual: coin('quarter'), reveal: { text: coinExplanation('quarter', WHICH_COIN).steps.join(' '), speak: coinExplanation('quarter', WHICH_COIN).speak, visual: coin('quarter') } },
     { beat: 'remember', text: 'Each coin has its own size and value.', speak: ['Each coin has its own size and value.'], visual: { kind: 'coins', coins: [...COINS] } },
   ],
   oracle: 'money',

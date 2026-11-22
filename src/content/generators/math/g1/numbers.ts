@@ -5,10 +5,10 @@ import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 import { nearbyNumbers } from '../pk/parts';
+import type { Shown as Explanation } from './wording';
+import { explain, tensOf } from './wording';
 
 // Math grade 1 A.1, A.2, A.5 and E.1: counting on, skip counting, ten more and less, number patterns.
-
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 
 // ---- A.1 Count to 120 ----
 // Levels: next number to 50 / to 100 / across 100, typed / before and after to 120, typed.
@@ -19,11 +19,8 @@ type Side = 'after' | 'before';
 function sideExplanation(n: number, side: Side): Explanation {
   const answer = side === 'after' ? n + 1 : n - 1;
   const three = [n - 1, n, n + 1];
-  return {
-    speak: ['Count', ...three.map((value): { number: number } => ({ number: value })), '.', { number: answer }, `comes ${side}`, { number: n }, '.'],
-    steps: [`Count ${listText(three)}.`, `${answer} comes ${side} ${n}.`],
-    visual: { kind: 'sequence', items: three.map((value) => numeral(value, 'l')) },
-  };
+  const hint = side === 'after' ? `Count on one from ${n}.` : `Count back one from ${n}.`;
+  return explain([`Count ${listText(three)}.`, `${answer} comes ${side} ${n}.`], { kind: 'sequence', items: three.map((value) => numeral(value, 'l')) }, { text: hint });
 }
 
 function sideQuestion(n: number, side: Side, typed: boolean, rng: Rng): QuestionDraft {
@@ -89,31 +86,30 @@ function rowVisual(row: Row, filled: boolean): Visual {
   return { kind: 'sequence', items };
 }
 
-const STEP_WORD: Record<number, string> = { 2: 'twos', 5: 'fives', 10: 'tens' };
 const NEXT = 'What comes next?';
 const MISSING = 'Which number is missing?';
 
-// Family: Skip counting, and Missing number in a row.
+// The hint for every row of numbers: find the jump, then make it (the same words in A.2 and E.1).
+const JUMP_NEXT = 'Find the jump from each number to the next. Then make that jump again.';
+const JUMP_BOX = 'Find the jump from each number to the next. Then fill the box.';
+
+// Family: Skip counting, and Missing number in a row. Said as E.1 says it: "The numbers go up by 10."
 function skipExplanation(row: Row): Explanation {
   const values = allValues(row);
   const answer = valueAt(row, row.blankIndex);
   const last = row.blankIndex === row.length - 1;
-  return {
-    speak: [`We are counting by ${STEP_WORD[row.step] ?? 'the same step'}.`, ...values.map((value): { number: number } => ({ number: value })), last ? 'Next is' : 'The missing number is', { number: answer }, '.'],
-    steps: [`We are counting by ${row.step}s.`, `${listText(values)}.`, last ? `Next is ${answer}.` : `The missing number is ${answer}.`],
-    visual: rowVisual(row, true),
-  };
+  const lines = [`The numbers go up by ${row.step}.`, `Count by ${row.step}s: ${listText(values)}.`, last ? `Next is ${answer}.` : `The missing number is ${answer}.`];
+  return explain(lines, rowVisual(row, true), { text: last ? JUMP_NEXT : JUMP_BOX });
 }
 
-// Family: Number series. "The numbers go up by n. Next is the answer."
+// Family: Number series. "The numbers go up by n. 7 + 2 = 9. Next is 9."
 function patternExplanation(row: Row): Explanation {
   const answer = valueAt(row, row.blankIndex);
-  const way = row.step > 0 ? 'up' : 'down';
-  return {
-    speak: [`The numbers go ${way} by`, { number: Math.abs(row.step) }, '. Next is', { number: answer }, '.'],
-    steps: [`The numbers go ${way} by ${Math.abs(row.step)}.`, `Next is ${answer}.`],
-    visual: rowVisual(row, true),
-  };
+  const up = row.step > 0;
+  const jump = Math.abs(row.step);
+  const before = valueAt(row, row.blankIndex - 1);
+  const lines = [`The numbers go ${up ? 'up' : 'down'} by ${jump}.`, `${before} ${up ? '+' : '−'} ${jump} = ${answer}.`, `Next is ${answer}.`];
+  return explain(lines, rowVisual(row, true), { text: JUMP_NEXT });
 }
 
 function rowQuestion(row: Row, prompt: string, typed: boolean, explanation: Explanation, rng: Rng): QuestionDraft {
@@ -195,13 +191,18 @@ export const numberPatternsGenerator: SkillGenerator = {
 
 type TenWay = 'more' | 'less';
 
+// Which way the tens go and by how much, then the answer: "56 has 5 tens." "10 more makes 6 tens. The ones stay 6."
 function tenExplanation(n: number, way: TenWay): Explanation {
   const answer = way === 'more' ? n + 10 : n - 10;
-  return {
-    speak: ['Only the tens digit changes.', { number: answer }, '.'],
-    steps: ['Only the tens digit changes.', `10 ${way} than ${n} is ${answer}.`],
-    visual: { kind: 'baseTen', hundreds: Math.floor(answer / 100), tens: Math.floor((answer % 100) / 10), ones: answer % 10 },
-  };
+  const ones = n % 10;
+  const lines = [
+    `${n} has ${tensOf(Math.floor(n / 10))}.`,
+    `10 ${way} ${way === 'more' ? 'makes' : 'leaves'} ${tensOf(Math.floor(answer / 10))}. ${ones === 0 ? 'There are still no ones.' : `The ones stay ${ones}.`}`,
+    `10 ${way} than ${n} is ${answer}.`,
+  ];
+  // The same words as B.9: "Only the tens change."
+  const hint = way === 'more' ? 'Only the tens change. The tens digit goes up.' : 'Only the tens change. The tens digit goes down.';
+  return explain(lines, { kind: 'baseTen', hundreds: Math.floor(answer / 100), tens: Math.floor((answer % 100) / 10), ones: answer % 10 }, { text: hint });
 }
 
 function tenPrompt(n: number, way: TenWay): { text: string; speak: Say } {

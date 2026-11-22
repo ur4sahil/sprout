@@ -4,28 +4,26 @@ import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../
 import type { SkillGenerator } from '../../../generator';
 import { listText, numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import type { Line, Shown as Explanation } from './wording';
+import { explain, hintFor } from './wording';
 
 // Math grade 1 B.1, B.2, B.3 and B.7: adding and subtracting within 20, doubles, and three numbers.
-// From grade 1 the word is "minus", not "take away".
+// From grade 1 the word is "minus", not "take away". A sum is asked "What is 9 plus 7?".
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 
 // ---- B.1 Add within 20 ----
 // Levels: sums to 12 / to 20 / typed. Family: Add. Oracle: add.
 
+// Its first step, "Start at 9.", is the hint: a real move, and never the answer.
 export function countOnExplanation(a: number, b: number): Explanation {
   const [bigger, smaller] = [Math.max(a, b), Math.min(a, b)];
   const counted = Array.from({ length: smaller }, (_, i) => bigger + i + 1);
-  return {
-    speak: ['Start at', { number: bigger }, '. Count on', { number: smaller }, 'more.', { number: a + b }, '.'],
-    steps: [`Start at ${bigger}.`, `Count on ${smaller} more: ${listText(counted)}.`, `${a} + ${b} = ${a + b}`],
-    visual: equation(a, '+', b, '=', a + b),
-  };
+  return explain([`Start at ${bigger}.`, `Count on ${smaller} more: ${listText(counted)}.`, `${a} + ${b} = ${a + b}.`], equation(a, '+', b, '=', a + b));
 }
 
 export function plusPrompt(a: number, b: number): { text: string; speak: Say } {
-  return { text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] };
+  return { text: `What is ${a} plus ${b}?`, speak: ['What is', { number: a }, 'plus', { number: b }, '?'] };
 }
 
 function addQuestion(a: number, b: number, typed: boolean, explanation: Explanation, rng: Rng): QuestionDraft {
@@ -72,17 +70,34 @@ export const addWithin20Generator: SkillGenerator = {
 // ---- B.2 Subtract within 20 ----
 // Levels: from 12 or less / from 20 or less / typed. Family: Subtract. Oracle: subtract.
 
+// The steps show a way to take away, by what the numbers allow: count back a small number; go down to 10 when
+// the ones run out; take from the ones when they do not; think of adding when both are 10 or less.
 export function minusExplanation(a: number, b: number): Explanation {
   const left = a - b;
-  return {
-    speak: ['Start with', { number: a }, '. Take away', { number: b }, '.', { number: left }, left === 1 ? 'is left.' : 'are left.'],
-    steps: [`Start with ${a}.`, `Take away ${b}.`, `${left} ${left === 1 ? 'is' : 'are'} left.`],
-    visual: equation(a, '-', b, '=', left),
-  };
+  const visual = equation(a, '-', b, '=', left);
+  const ones = a - 10; // the ones of a number from 11 to 20 (20 is 10 and 10)
+  let lines: Line[];
+  let hint: { text: string };
+  if (b <= 3) {
+    const back = Array.from({ length: b }, (_, i) => a - i - 1);
+    lines = [`Start at ${a}.`, `Count back ${b}: ${listText(back)}.`, `${a} − ${b} = ${left}.`];
+    hint = hintFor(left, `Start at ${a} and count back ${b}.`, `Start at ${a} and count back.`);
+  } else if (a > 10 && b > ones) {
+    const rest = b - ones;
+    lines = [`Start at ${a}.`, `Take away ${ones} to get to 10: ${a} − ${ones} = 10.`, `Take away ${rest} more: 10 − ${rest} = ${left}.`, `So ${a} − ${b} = ${left}.`];
+    hint = hintFor(left, `Take away ${ones} first to get to 10.`, 'Take away just enough to get to 10 first.');
+  } else if (a > 10) {
+    lines = [`${a} is 10 and ${ones}.`, `Take away from the ${ones}: ${ones} − ${b} = ${ones - b}.`, `10 and ${ones - b} make ${left}.`];
+    hint = hintFor(left, 'Take away from the ones. The 10 stays.', 'Take away from the ones first.');
+  } else {
+    lines = [`Think: ${b} plus what makes ${a}?`, `${b} + ${left} = ${a}.`, `So ${a} − ${b} = ${left}.`];
+    hint = hintFor(left, `Think: ${b} plus what makes ${a}?`, 'Count up from the number you take away to the first number.');
+  }
+  return explain(lines, visual, hint);
 }
 
 export function minusPrompt(a: number, b: number): { text: string; speak: Say } {
-  return { text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] };
+  return { text: `What is ${a} minus ${b}?`, speak: ['What is', { number: a }, 'minus', { number: b }, '?'] };
 }
 
 function subtractWithin20(level: Level, rng: Rng): QuestionDraft {
@@ -117,15 +132,13 @@ export const subtractWithin20Generator: SkillGenerator = {
 // ---- B.3 Doubles and near doubles ----
 // Levels: doubles to 5 plus 5 / to 10 plus 10 / near doubles, typed. Family: Doubles. Oracle: add.
 
+// Said as doubles ("Double 7 is 14."), never "two groups of", which is times-table talk. A near double first says
+// how its bigger number is the smaller one and 1 more.
 function doublesExplanation(a: number, b: number): Explanation {
-  const small = Math.min(a, b);
+  const [small, big] = [Math.min(a, b), Math.max(a, b)];
   const visual = equation(a, '+', b, '=', a + b);
-  if (a === b) return { speak: ['Two groups of', { number: a }, 'make', { number: a + b }, '.'], steps: [`Two groups of ${a} make ${a + b}.`], visual };
-  return {
-    speak: ['Two groups of', { number: small }, 'make', { number: small * 2 }, '. One more is', { number: a + b }, '.'],
-    steps: [`Two groups of ${small} make ${small * 2}.`, `One more is ${a + b}.`],
-    visual,
-  };
+  if (a === b) return explain([`${a} + ${a} is a double: two ${a}s.`, `Double ${a} is ${a * 2}.`], visual, { text: `It is a double. Start at ${a} and count on ${a}.` });
+  return explain([`${big} is ${small} and 1 more.`, `Double ${small} is ${small * 2}.`, `1 more is ${a + b}.`], visual, { text: `Find the double inside: ${small} + ${small}.` });
 }
 
 function doubles(level: Level, rng: Rng): QuestionDraft {
@@ -187,7 +200,7 @@ function threeExplanation(numbers: [number, number, number]): Explanation {
 }
 
 function threePrompt([a, b, c]: [number, number, number]): { text: string; speak: Say } {
-  return { text: `${a} plus ${b} plus ${c} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'plus', { number: c }, 'equals what?'] };
+  return { text: `What is ${a} plus ${b} plus ${c}?`, speak: ['What is', { number: a }, 'plus', { number: b }, 'plus', { number: c }, '?'] };
 }
 
 function threeNumbers(level: Level, rng: Rng): [number, number, number] {
