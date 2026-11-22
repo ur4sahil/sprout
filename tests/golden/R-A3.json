@@ -1,6 +1,6 @@
 {
  "skillId": "R-A3",
- "version": 3,
+ "version": 4,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -27,9 +27,9 @@
    ]
   },
   "prompt": {
-   "text": "Look at the first pair. Which one finishes the second pair the same way?",
+   "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
    "speak": [
-    "Look at the first pair. Which one finishes the second pair the same way?"
+    "The top shape changes. Change the bottom shape the same way. Which one is it?"
    ]
   },
   "stimulus": {
@@ -85,18 +85,48 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "The first pair changes shape from star to square. Do the same here."
+    "the shape changes from star to square.",
+    "so the small yellow star becomes a small yellow square."
    ],
    "steps": [
-    "The first pair changes shape from star to square.",
-    "Do the same here."
+    "The shape changes from star to square.",
+    "So the small yellow star becomes a small yellow square."
    ],
    "visual": {
-    "kind": "shape",
-    "shape": "square",
-    "color": "yellow",
-    "size": "s",
-    "rotation": 0
+    "kind": "matrix",
+    "cells": [
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "yellow",
+      "size": "l",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "star",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     },
+     {
+      "kind": "shape",
+      "shape": "square",
+      "color": "yellow",
+      "size": "s",
+      "rotation": 0
+     }
+    ]
+   },
+   "hint": {
+    "text": "Look at what changes on top: the shape, the color or the size."
    }
   },
   "skillId": "R-A3",
@@ -132,9 +162,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -190,18 +220,48 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to square. Do the same here."
+      "the shape changes from star to square.",
+      "so the small purple star becomes a small purple square."
      ],
      "steps": [
-      "The first pair changes shape from star to square.",
-      "Do the same here."
+      "The shape changes from star to square.",
+      "So the small purple star becomes a small purple square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -235,9 +295,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -293,18 +353,48 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to triangle. Do the same here."
+      "the shape changes from star to triangle.",
+      "so the big yellow star becomes a big yellow triangle."
      ],
      "steps": [
-      "The first pair changes shape from star to triangle.",
-      "Do the same here."
+      "The shape changes from star to triangle.",
+      "So the big yellow star becomes a big yellow triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "yellow",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "yellow",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -338,9 +428,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -396,18 +486,48 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes size from small to big. Do the same here."
+      "the size changes from small to big.",
+      "so the small blue star becomes a big blue star."
      ],
      "steps": [
-      "The first pair changes size from small to big.",
-      "Do the same here."
+      "The size changes from small to big.",
+      "So the small blue star becomes a big blue star."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "blue",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -441,9 +561,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -499,18 +619,48 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes color from yellow to purple. Do the same here."
+      "the color changes from yellow to purple.",
+      "so the small yellow triangle becomes a small purple triangle."
      ],
      "steps": [
-      "The first pair changes color from yellow to purple.",
-      "Do the same here."
+      "The color changes from yellow to purple.",
+      "So the small yellow triangle becomes a small purple triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -544,9 +694,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -602,18 +752,48 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes size from small to big. Do the same here."
+      "the size changes from small to big.",
+      "so the small black square becomes a big black square."
      ],
      "steps": [
-      "The first pair changes size from small to big.",
-      "Do the same here."
+      "The size changes from small to big.",
+      "So the small black square becomes a big black square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "black",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -647,9 +827,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -705,18 +885,48 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes size from big to small. Do the same here."
+      "the size changes from big to small.",
+      "so the big black triangle becomes a small black triangle."
      ],
      "steps": [
-      "The first pair changes size from big to small.",
-      "Do the same here."
+      "The size changes from big to small.",
+      "So the big black triangle becomes a small black triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "black",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -750,9 +960,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -808,18 +1018,48 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle. Do the same here."
+      "the shape changes from circle to triangle.",
+      "so the small red circle becomes a small red triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle.",
-      "Do the same here."
+      "The shape changes from circle to triangle.",
+      "So the small red circle becomes a small red triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "red",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -853,9 +1093,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -911,18 +1151,48 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle. Do the same here."
+      "the shape changes from circle to triangle.",
+      "so the big orange circle becomes a big orange triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle.",
-      "Do the same here."
+      "The shape changes from circle to triangle.",
+      "So the big orange circle becomes a big orange triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "orange",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "orange",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -956,9 +1226,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1014,18 +1284,48 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to star. Do the same here."
+      "the shape changes from circle to star.",
+      "so the small red circle becomes a small red star."
      ],
      "steps": [
-      "The first pair changes shape from circle to star.",
-      "Do the same here."
+      "The shape changes from circle to star.",
+      "So the small red circle becomes a small red star."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "red",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1059,9 +1359,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1117,18 +1417,48 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes color from black to green. Do the same here."
+      "the color changes from black to green.",
+      "so the small black triangle becomes a small green triangle."
      ],
      "steps": [
-      "The first pair changes color from black to green.",
-      "Do the same here."
+      "The color changes from black to green.",
+      "So the small black triangle becomes a small green triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "green",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1164,9 +1494,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1222,18 +1552,50 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to square, and color from red to brown. Do the same here."
+      "the shape changes from star to square.",
+      "the color changes from red to brown.",
+      "so the small red star becomes a small brown square."
      ],
      "steps": [
-      "The first pair changes shape from star to square, and color from red to brown.",
-      "Do the same here."
+      "The shape changes from star to square.",
+      "The color changes from red to brown.",
+      "So the small red star becomes a small brown square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "brown",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1267,9 +1629,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1325,18 +1687,50 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to triangle, and size from small to big. Do the same here."
+      "the shape changes from star to triangle.",
+      "the size changes from small to big.",
+      "so the small purple star becomes a big purple triangle."
      ],
      "steps": [
-      "The first pair changes shape from star to triangle, and size from small to big.",
-      "Do the same here."
+      "The shape changes from star to triangle.",
+      "The size changes from small to big.",
+      "So the small purple star becomes a big purple triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "purple",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "yellow",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1370,9 +1764,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1428,18 +1822,50 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes color from red to purple, and size from small to big. Do the same here."
+      "the color changes from red to purple.",
+      "the size changes from small to big.",
+      "so the small red square becomes a big purple square."
      ],
      "steps": [
-      "The first pair changes color from red to purple, and size from small to big.",
-      "Do the same here."
+      "The color changes from red to purple.",
+      "The size changes from small to big.",
+      "So the small red square becomes a big purple square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "purple",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1473,9 +1899,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1531,18 +1957,50 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes color from yellow to purple, and size from small to big. Do the same here."
+      "the color changes from yellow to purple.",
+      "the size changes from small to big.",
+      "so the small yellow circle becomes a big purple circle."
      ],
      "steps": [
-      "The first pair changes color from yellow to purple, and size from small to big.",
-      "Do the same here."
+      "The color changes from yellow to purple.",
+      "The size changes from small to big.",
+      "So the small yellow circle becomes a big purple circle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "purple",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1576,9 +2034,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1634,18 +2092,50 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to triangle, and size from small to big. Do the same here."
+      "the shape changes from star to triangle.",
+      "the size changes from small to big.",
+      "so the small brown star becomes a big brown triangle."
      ],
      "steps": [
-      "The first pair changes shape from star to triangle, and size from small to big.",
-      "Do the same here."
+      "The shape changes from star to triangle.",
+      "The size changes from small to big.",
+      "So the small brown star becomes a big brown triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "brown",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "pink",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1679,9 +2169,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1737,18 +2227,50 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes color from red to blue, and size from big to small. Do the same here."
+      "the color changes from red to blue.",
+      "the size changes from big to small.",
+      "so the big red circle becomes a small blue circle."
      ],
      "steps": [
-      "The first pair changes color from red to blue, and size from big to small.",
-      "Do the same here."
+      "The color changes from red to blue.",
+      "The size changes from big to small.",
+      "So the big red circle becomes a small blue circle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "blue",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1782,9 +2304,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1840,18 +2362,50 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle, and color from red to purple. Do the same here."
+      "the shape changes from circle to triangle.",
+      "the color changes from red to purple.",
+      "so the small red circle becomes a small purple triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle, and color from red to purple.",
-      "Do the same here."
+      "The shape changes from circle to triangle.",
+      "The color changes from red to purple.",
+      "So the small red circle becomes a small purple triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1885,9 +2439,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -1943,18 +2497,50 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle, and color from purple to brown. Do the same here."
+      "the shape changes from circle to triangle.",
+      "the color changes from purple to brown.",
+      "so the big purple circle becomes a big brown triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle, and color from purple to brown.",
-      "Do the same here."
+      "The shape changes from circle to triangle.",
+      "The color changes from purple to brown.",
+      "So the big purple circle becomes a big brown triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "brown",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -1988,9 +2574,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2046,18 +2632,50 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to star, and color from brown to blue. Do the same here."
+      "the shape changes from circle to star.",
+      "the color changes from brown to blue.",
+      "so the big brown circle becomes a big blue star."
      ],
      "steps": [
-      "The first pair changes shape from circle to star, and color from brown to blue.",
-      "Do the same here."
+      "The shape changes from circle to star.",
+      "The color changes from brown to blue.",
+      "So the big brown circle becomes a big blue star."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "blue",
-      "size": "l",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -2091,9 +2709,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top shape changes. Change the bottom shape the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top shape changes. Change the bottom shape the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2149,18 +2767,50 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes shape from triangle to circle, and color from black to green. Do the same here."
+      "the shape changes from triangle to circle.",
+      "the color changes from black to green.",
+      "so the small black triangle becomes a small green circle."
      ],
      "steps": [
-      "The first pair changes shape from triangle to circle, and color from black to green.",
-      "Do the same here."
+      "The shape changes from triangle to circle.",
+      "The color changes from black to green.",
+      "So the small black triangle becomes a small green circle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "green",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "green",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "green",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color or the size."
      }
     },
     "skillId": "R-A3",
@@ -2200,9 +2850,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2289,18 +2939,76 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to square, color from red to brown, and size from big to small. Do all three here."
+      "the shape changes from star to square.",
+      "the color changes from red to brown.",
+      "the size changes from big to small.",
+      "so the big red star becomes a small brown square."
      ],
      "steps": [
-      "The first pair changes shape from star to square, color from red to brown, and size from big to small.",
-      "Do all three here."
+      "The shape changes from star to square.",
+      "The color changes from red to brown.",
+      "The size changes from big to small.",
+      "So the big red star becomes a small brown square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "brown",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "red",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "red",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "square",
+          "color": "brown",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "square",
+          "color": "brown",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -2338,9 +3046,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2427,18 +3135,76 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to triangle, color from yellow to purple, and size from small to big. Do all three here."
+      "the shape changes from star to triangle.",
+      "the color changes from yellow to purple.",
+      "the size changes from small to big.",
+      "so the small yellow star becomes a big purple triangle."
      ],
      "steps": [
-      "The first pair changes shape from star to triangle, color from yellow to purple, and size from small to big.",
-      "Do all three here."
+      "The shape changes from star to triangle.",
+      "The color changes from yellow to purple.",
+      "The size changes from small to big.",
+      "So the small yellow star becomes a big purple triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "purple",
-      "size": "m",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "yellow",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "yellow",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -2476,9 +3242,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2601,20 +3367,25 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The first pair changes shape from star to square, color from red to purple, and size from small to big. Do all three here."
+      "the shape changes from star to square.",
+      "the color changes from red to purple.",
+      "the size changes from small to big.",
+      "so the two small red stars become two big purple squares."
      ],
      "steps": [
-      "The first pair changes shape from star to square, color from red to purple, and size from small to big.",
-      "Do all three here."
+      "The shape changes from star to square.",
+      "The color changes from red to purple.",
+      "The size changes from small to big.",
+      "So the two small red stars become two big purple squares."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
+      "kind": "matrix",
+      "cells": [
        {
         "kind": "shape",
-        "shape": "square",
-        "color": "purple",
-        "size": "m",
+        "shape": "star",
+        "color": "red",
+        "size": "s",
         "rotation": 0
        },
        {
@@ -2623,8 +3394,49 @@
         "color": "purple",
         "size": "m",
         "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "red",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "red",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "square",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "square",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -2662,9 +3474,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2775,30 +3587,76 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The first pair changes color from yellow to purple, size from small to big, and number of shapes from one to two. Do all three here."
+      "the color changes from yellow to purple.",
+      "the size changes from small to big.",
+      "the number of shapes changes from one to two.",
+      "so the small yellow circle becomes two big purple circles."
      ],
      "steps": [
-      "The first pair changes color from yellow to purple, size from small to big, and number of shapes from one to two.",
-      "Do all three here."
+      "The color changes from yellow to purple.",
+      "The size changes from small to big.",
+      "The number of shapes changes from one to two.",
+      "So the small yellow circle becomes two big purple circles."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
+      "kind": "matrix",
+      "cells": [
        {
         "kind": "shape",
-        "shape": "circle",
-        "color": "purple",
-        "size": "m",
+        "shape": "heart",
+        "color": "yellow",
+        "size": "s",
         "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "heart",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "heart",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
        },
        {
         "kind": "shape",
         "shape": "circle",
-        "color": "purple",
-        "size": "m",
+        "color": "yellow",
+        "size": "s",
         "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -2836,9 +3694,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -2937,18 +3795,76 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes color from pink to orange, size from small to big, and number of shapes from two to one. Do all three here."
+      "the color changes from pink to orange.",
+      "the size changes from small to big.",
+      "the number of shapes changes from two to one.",
+      "so the two small pink triangles become a big orange triangle."
      ],
      "steps": [
-      "The first pair changes color from pink to orange, size from small to big, and number of shapes from two to one.",
-      "Do all three here."
+      "The color changes from pink to orange.",
+      "The size changes from small to big.",
+      "The number of shapes changes from two to one.",
+      "So the two small pink triangles become a big orange triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "orange",
-      "size": "m",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "pink",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "star",
+          "color": "pink",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "pink",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "pink",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -2986,9 +3902,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -3099,30 +4015,76 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The first pair changes shape from triangle to circle, color from red to blue, and number of shapes from one to two. Do all three here."
+      "the shape changes from triangle to circle.",
+      "the color changes from red to blue.",
+      "the number of shapes changes from one to two.",
+      "so the small red triangle becomes two small blue circles."
      ],
      "steps": [
-      "The first pair changes shape from triangle to circle, color from red to blue, and number of shapes from one to two.",
-      "Do all three here."
+      "The shape changes from triangle to circle.",
+      "The color changes from red to blue.",
+      "The number of shapes changes from one to two.",
+      "So the small red triangle becomes two small blue circles."
      ],
      "visual": {
-      "kind": "row",
-      "children": [
+      "kind": "matrix",
+      "cells": [
        {
         "kind": "shape",
-        "shape": "circle",
-        "color": "blue",
+        "shape": "triangle",
+        "color": "red",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "blue",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "blue",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
         "size": "s",
         "rotation": 0
        },
        {
-        "kind": "shape",
-        "shape": "circle",
-        "color": "blue",
-        "size": "s",
-        "rotation": 0
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "blue",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "blue",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -3160,9 +4122,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -3261,18 +4223,76 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle, color from red to purple, and number of shapes from two to one. Do all three here."
+      "the shape changes from circle to triangle.",
+      "the color changes from red to purple.",
+      "the number of shapes changes from two to one.",
+      "so the two small red circles become a small purple triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle, color from red to purple, and number of shapes from two to one.",
-      "Do all three here."
+      "The shape changes from circle to triangle.",
+      "The color changes from red to purple.",
+      "The number of shapes changes from two to one.",
+      "So the two small red circles become a small purple triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "red",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "red",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "red",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "red",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -3310,9 +4330,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -3411,18 +4431,76 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to triangle, color from purple to brown, and number of shapes from two to one. Do all three here."
+      "the shape changes from circle to triangle.",
+      "the color changes from purple to brown.",
+      "the number of shapes changes from two to one.",
+      "so the two big purple circles become a big brown triangle."
      ],
      "steps": [
-      "The first pair changes shape from circle to triangle, color from purple to brown, and number of shapes from two to one.",
-      "Do all three here."
+      "The shape changes from circle to triangle.",
+      "The color changes from purple to brown.",
+      "The number of shapes changes from two to one.",
+      "So the two big purple circles become a big brown triangle."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "brown",
-      "size": "m",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "purple",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -3460,9 +4538,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -3561,18 +4639,76 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The first pair changes shape from circle to star, color from brown to blue, and number of shapes from two to one. Do all three here."
+      "the shape changes from circle to star.",
+      "the color changes from brown to blue.",
+      "the number of shapes changes from two to one.",
+      "so the two big brown circles become a big blue star."
      ],
      "steps": [
-      "The first pair changes shape from circle to star, color from brown to blue, and number of shapes from two to one.",
-      "Do all three here."
+      "The shape changes from circle to star.",
+      "The color changes from brown to blue.",
+      "The number of shapes changes from two to one.",
+      "So the two big brown circles become a big blue star."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "blue",
-      "size": "m",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "brown",
+          "size": "s",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "brown",
+          "size": "s",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "brown",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "circle",
+          "color": "brown",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",
@@ -3610,9 +4746,9 @@
      ]
     },
     "prompt": {
-     "text": "Look at the first pair. Which one finishes the second pair the same way?",
+     "text": "The top picture changes. Change the bottom picture the same way. Which one is it?",
      "speak": [
-      "Look at the first pair. Which one finishes the second pair the same way?"
+      "The top picture changes. Change the bottom picture the same way. Which one is it?"
      ]
     },
     "stimulus": {
@@ -3711,18 +4847,76 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The first pair changes shape from triangle to square, size from big to small, and number of shapes from two to one. Do all three here."
+      "the shape changes from triangle to square.",
+      "the size changes from big to small.",
+      "the number of shapes changes from two to one.",
+      "so the two big blue triangles become a small blue square."
      ],
      "steps": [
-      "The first pair changes shape from triangle to square, size from big to small, and number of shapes from two to one.",
-      "Do all three here."
+      "The shape changes from triangle to square.",
+      "The size changes from big to small.",
+      "The number of shapes changes from two to one.",
+      "So the two big blue triangles become a small blue square."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "blue",
-      "size": "s",
-      "rotation": 0
+      "kind": "matrix",
+      "cells": [
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "black",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "black",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "row",
+        "children": [
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "blue",
+          "size": "m",
+          "rotation": 0
+         },
+         {
+          "kind": "shape",
+          "shape": "triangle",
+          "color": "blue",
+          "size": "m",
+          "rotation": 0
+         }
+        ]
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at what changes on top: the shape, the color, the size or how many."
      }
     },
     "skillId": "R-A3",

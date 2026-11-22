@@ -25,6 +25,11 @@ function choices(skillId: string, level: Level): Choice[] {
 }
 
 const options = <T,>(question: Question): T[] => question.facts.options as T[];
+// A.9 says each picture with its article, and a word for two things takes "go" and "are": "Glasses go with eyes."
+const UNCOUNTED = ['water', 'honey', 'milk', 'soup', 'paper'];
+const MANY = ['glasses', 'eyes'];
+const withA = (word: string): string => (UNCOUNTED.includes(word) || MANY.includes(word) ? word : `${/^[aeiou]/.test(word) ? 'an' : 'a'} ${word}`);
+const capital = (text: string): string => `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
 const groupOf = (word: string): string => GROUP_WORDS.find((entry) => entry.word === word)?.group ?? '?';
 const CLOSE = [['animals', 'people'], ['animals', 'plants'], ['vehicles', 'things'], ['clothes', 'things']];
 const close = (one: string, two: string): boolean => CLOSE.some(([x, y]) => (x === one && y === two) || (x === two && y === one));
@@ -72,7 +77,13 @@ describe('A.1 Odd one out and A.2 Which belongs', () => {
         expect(close(odd, shared[0] as string)).toBe(level === 2);
         expect(groups.includes('plants') && groups.includes('food')).toBe(false);
         expect(options<string>(question).includes('fish') && groups.includes('food')).toBe(false);
-        expect(question.explanation.steps[0]).toBe(`These are both ${shared[0]}.`);
+        // After a miss the options are gone, so the steps name the two that go together, then the odd one:
+        // "A dress and a scarf are clothes." "Cheese is not." Vehicles are things that take us places.
+        const words = options<string>(question);
+        const [one, two] = words.filter((_, i) => i !== question.answerIndex) as [string, string];
+        const said = shared[0] === 'vehicles' ? 'take us places' : `are ${shared[0]}`;
+        expect(question.explanation.steps[0]).toMatch(new RegExp(`^(An? )?${one} and (an? )?${two} ${said}\\.$`, 'i'));
+        expect(question.explanation.steps[1]).toMatch(new RegExp(`^(An? )?${words[question.answerIndex]} (is|are|does|do) not\\.$`, 'i'));
       }
     }
   });
@@ -132,7 +143,12 @@ describe('A.3 Figure analogies', () => {
 
 describe('A.4 Figure matrices and A.13 Pattern completion', () => {
   it('A.4: the grid follows its rows and columns at every level, with the empty box anywhere', () => {
-    const names: Record<number, [string, string]> = { 1: ['shape', 'color'], 2: ['number of shapes', 'size'], 3: ['color', 'turn'] };
+    // The steps read across each row, then down each column, in a child's words.
+    const names: Record<number, [string, string]> = {
+      1: ['Across each row, the shape is the same.', 'Down each column, the color is the same.'],
+      2: ['Across each row, the number of shapes is the same.', 'Down each column, the size is the same.'],
+      3: ['Across each row, the color is the same.', 'Down each column, the arrows point the same way.'],
+    };
     for (const level of [1, 2, 3] as Level[]) {
       const blanks = new Set<number>();
       for (const question of choices('R-A4', level)) {
@@ -145,8 +161,7 @@ describe('A.4 Figure matrices and A.13 Pattern completion', () => {
         // Putting the answer in the empty box gives four different pictures.
         const filled = cells.map((cell) => (cell === 'blank' ? (question.options[question.answerIndex] as Visual) : cell));
         for (let i = 0; i < 4; i += 1) for (let j = i + 1; j < 4; j += 1) expect(samePicture(filled[i] as Visual, filled[j] as Visual)).toBe(false);
-        const [rowName, colName] = names[level] as [string, string];
-        expect(question.explanation.steps.slice(0, 2)).toEqual([`Each row has the same ${rowName}.`, `Each column has the same ${colName}.`]);
+        expect(question.explanation.steps.slice(0, 2)).toEqual(names[level]);
         // The two cells beside the empty box are offered as wrong answers.
         const [r, c] = [Math.floor(blank / 2), blank % 2];
         for (const neighbour of [r * 2 + (1 - c), (1 - r) * 2 + c]) {
@@ -202,8 +217,17 @@ describe('A.5 Turning shapes and A.6 Mirror images', () => {
         const step = level === 3 ? 180 : 90;
         expect(((shown[1] as Shape).rotation - (shown[0] as Shape).rotation + 360) % 360).toBe(step);
         expect(((shown[2] as Shape).rotation - (shown[1] as Shape).rotation + 360) % 360).toBe(step);
-        expect(asShape(question.options[question.answerIndex]).rotation).toBe(((shown[2] as Shape).rotation + step) % 360);
-        expect(question.explanation.steps).toEqual([level === 3 ? 'It makes a half turn each step.' : 'It makes a quarter turn each step.']);
+        const answer = asShape(question.options[question.answerIndex]);
+        expect(answer.rotation).toBe(((shown[2] as Shape).rotation + step) % 360);
+        // The steps name which way the shape points, as it is drawn: an arrow's tip points up, the foot of an L
+        // points right, and both turn clockwise. Never "a quarter turn" or "each step".
+        const ways: Record<string, string[]> = { arrow: ['up', 'right', 'down', 'left'], lShape: ['right', 'down', 'left', 'up'] };
+        const way = (visual: Shape): string => ways[visual.shape]?.[visual.rotation / 90] ?? '?';
+        const subject = shown[0]?.shape === 'arrow' ? 'The arrow' : 'The foot of the L';
+        expect(question.explanation.steps).toEqual([
+          `${subject} points ${shown.map(way).join(', then ')}.`,
+          `It turns ${level === 3 ? 'upside down' : 'the same way'} each time, so next it points ${way(answer)}.`,
+        ]);
         starts.add(question.facts.startTurn as number);
       }
       expect(starts).toEqual(new Set([0, 1, 2, 3]));
@@ -330,7 +354,8 @@ describe('A.9 Picture analogies and A.14 Picture riddles', () => {
         for (const word of wrong) expect(relationOf(word) === target!.relation).toBe(level === 2);
         if (level === 2) expect(wrong).toContain(example[1]);
         for (const [first, second] of ANALOGY_CLASHES) expect(target!.first.word === first && words.includes(second)).toBe(false);
-        expect(question.prompt.text).toBe(`${example[0].charAt(0).toUpperCase()}${example[0].slice(1)} goes with ${example[1]}. ${target!.first.word.charAt(0).toUpperCase()}${target!.first.word.slice(1)} goes with what?`);
+        const goes = (word: string): string => (MANY.includes(word) ? 'go' : 'goes');
+        expect(question.prompt.text).toBe(`${capital(withA(example[0]))} ${goes(example[0])} with ${withA(example[1])}. ${capital(withA(target!.first.word))} ${goes(target!.first.word)} with what?`);
       }
     }
   });
@@ -356,7 +381,10 @@ describe('A.9 Picture analogies and A.14 Picture riddles', () => {
         expect(words[question.answerIndex]).toBe(riddle!.word);
         for (const word of words) expect(RIDDLES.some((candidate) => candidate.word === word)).toBe(true);
         expect(new Set(words).size).toBe(words.length);
-        expect(question.explanation.steps).toEqual([`The ${riddle!.word} is the one that ${riddle!.fact}.`]);
+        // The step gives a reason that names the answer, not the riddle again with the answer added.
+        expect(question.explanation.steps).toEqual([riddle!.why]);
+        expect(riddle!.why.toLowerCase()).toContain(riddle!.word);
+        expect(riddle!.why).not.toContain(riddle!.fact);
       }
       expect(asked.size).toBe(12);
     }
@@ -562,8 +590,8 @@ describe('the harder top levels', () => {
       const example = question.facts.example as [string, string];
       expect(words).toContain(example[1]);
       for (const [first, second] of ANALOGY_CLASHES) expect(second === target!.second.word && words.includes(first)).toBe(false);
-      const cap = (word: string): string => `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
-      expect(question.prompt.text).toBe(`${cap(example[0])} is to ${example[1]} as ${target!.second.word} is to what?`);
+      const is = (word: string): string => (MANY.includes(word) ? 'are' : 'is');
+      expect(question.prompt.text).toBe(`${capital(withA(example[0]))} ${is(example[0])} to ${withA(example[1])} as ${withA(target!.second.word)} ${is(target!.second.word)} to what?`);
     }
   });
 

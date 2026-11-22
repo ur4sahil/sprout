@@ -1,6 +1,6 @@
 {
  "skillId": "R-A2",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -8,14 +8,14 @@
    "target": "people",
    "relation": "category",
    "examples": [
-    "man",
-    "girl"
+    "girl",
+    "man"
    ],
    "answer": "boy",
    "options": [
-    "rocket",
     "boy",
-    "bread"
+    "box",
+    "flower"
    ]
   },
   "prompt": {
@@ -29,17 +29,6 @@
    "children": [
     {
      "kind": "emojiGroup",
-     "emoji": "👨",
-     "count": 1,
-     "layout": "row",
-     "speak": [
-      {
-       "word": "man"
-      }
-     ]
-    },
-    {
-     "kind": "emojiGroup",
      "emoji": "👧",
      "count": 1,
      "layout": "row",
@@ -48,23 +37,23 @@
        "word": "girl"
       }
      ]
+    },
+    {
+     "kind": "emojiGroup",
+     "emoji": "👨",
+     "count": 1,
+     "layout": "row",
+     "speak": [
+      {
+       "word": "man"
+      }
+     ]
     }
    ]
   },
   "options": [
    {
     "kind": "emojiGroup",
-    "emoji": "🚀",
-    "count": 1,
-    "layout": "row",
-    "speak": [
-     {
-      "word": "rocket"
-     }
-    ]
-   },
-   {
-    "kind": "emojiGroup",
     "emoji": "👦",
     "count": 1,
     "layout": "row",
@@ -76,45 +65,95 @@
    },
    {
     "kind": "emojiGroup",
-    "emoji": "🍞",
+    "emoji": "📦",
     "count": 1,
     "layout": "row",
     "speak": [
      {
-      "word": "bread"
+      "word": "box"
+     }
+    ]
+   },
+   {
+    "kind": "emojiGroup",
+    "emoji": "🌸",
+    "count": 1,
+    "layout": "row",
+    "speak": [
+     {
+      "word": "flower"
      }
     ]
    }
   ],
-  "answerIndex": 1,
+  "answerIndex": 0,
   "explanation": {
    "speak": [
-    "These are both people. So is this one.",
+    "a",
+    {
+     "word": "girl"
+    },
+    "and a",
+    {
+     "word": "man"
+    },
+    "are people.",
+    "so is a",
     {
      "word": "boy"
     },
     "."
    ],
    "steps": [
-    "These are both people.",
-    "So is this one: boy."
+    "A girl and a man are people.",
+    "So is a boy."
    ],
    "visual": {
-    "kind": "emojiGroup",
-    "emoji": "👦",
-    "count": 1,
-    "layout": "row",
-    "speak": [
+    "kind": "row",
+    "children": [
      {
-      "word": "boy"
+      "kind": "emojiGroup",
+      "emoji": "👧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boy"
+       }
+      ]
      }
     ]
+   },
+   "hint": {
+    "text": "Say what kind of things these are. Then find one more."
    }
   },
   "skillId": "R-A2",
   "level": 1,
   "seed": 82,
-  "key": "R-A2|1|{\"answer\":\"boy\",\"examples\":[\"man\",\"girl\"],\"relation\":\"category\",\"target\":\"people\"}"
+  "key": "R-A2|1|{\"answer\":\"boy\",\"examples\":[\"girl\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
  },
  "levels": {
   "1": [
@@ -130,9 +169,9 @@
      ],
      "answer": "glove",
      "options": [
-      "glove",
-      "baby",
-      "boat"
+      "carrot",
+      "boat",
+      "glove"
      ]
     },
     "prompt": {
@@ -171,23 +210,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🧤",
+      "emoji": "🥕",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "glove"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "baby"
+        "word": "carrot"
        }
       ]
      },
@@ -201,22 +229,8 @@
         "word": "boat"
        }
       ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "These are both clothes. So is this one.",
-      {
-       "word": "glove"
-      },
-      "."
-     ],
-     "steps": [
-      "These are both clothes.",
-      "So is this one: glove."
-     ],
-     "visual": {
+     },
+     {
       "kind": "emojiGroup",
       "emoji": "🧤",
       "count": 1,
@@ -226,6 +240,70 @@
         "word": "glove"
        }
       ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "a",
+      {
+       "word": "scarf"
+      },
+      "and a",
+      {
+       "word": "dress"
+      },
+      "are clothes.",
+      "so is a",
+      {
+       "word": "glove"
+      },
+      "."
+     ],
+     "steps": [
+      "A scarf and a dress are clothes.",
+      "So is a glove."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glove"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -241,13 +319,13 @@
      "relation": "category",
      "examples": [
       "girl",
-      "woman"
+      "baby"
      ],
      "answer": "man",
      "options": [
-      "man",
-      "shoe",
-      "bike"
+      "hat",
+      "plane",
+      "man"
      ]
     },
     "prompt": {
@@ -272,127 +350,12 @@
       },
       {
        "kind": "emojiGroup",
-       "emoji": "👩",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "woman"
-        }
-       ]
-      }
-     ]
-    },
-    "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "👨",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "man"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👟",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "shoe"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🚲",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "bike"
-       }
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "These are both people. So is this one.",
-      {
-       "word": "man"
-      },
-      "."
-     ],
-     "steps": [
-      "These are both people.",
-      "So is this one: man."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👨",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "man"
-       }
-      ]
-     }
-    },
-    "skillId": "R-A2",
-    "level": 1,
-    "seed": 2,
-    "key": "R-A2|1|{\"answer\":\"man\",\"examples\":[\"girl\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "target": "people",
-     "relation": "category",
-     "examples": [
-      "boy",
-      "man"
-     ],
-     "answer": "woman",
-     "options": [
-      "hat",
-      "woman",
-      "train"
-     ]
-    },
-    "prompt": {
-     "text": "Which one belongs with these?",
-     "speak": [
-      "Which one belongs with these?"
-     ]
-    },
-    "stimulus": {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "emojiGroup",
-       "emoji": "👦",
-       "count": 1,
-       "layout": "row",
-       "speak": [
-        {
-         "word": "boy"
-        }
-       ]
-      },
-      {
-       "kind": "emojiGroup",
-       "emoji": "👨",
-       "count": 1,
-       "layout": "row",
-       "speak": [
-        {
-         "word": "man"
+         "word": "baby"
         }
        ]
       }
@@ -412,6 +375,149 @@
      },
      {
       "kind": "emojiGroup",
+      "emoji": "✈️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "plane"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👨",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "man"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 2,
+    "explanation": {
+     "speak": [
+      "a",
+      {
+       "word": "girl"
+      },
+      "and a",
+      {
+       "word": "baby"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "man"
+      },
+      "."
+     ],
+     "steps": [
+      "A girl and a baby are people.",
+      "So is a man."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
+     }
+    },
+    "skillId": "R-A2",
+    "level": 1,
+    "seed": 2,
+    "key": "R-A2|1|{\"answer\":\"man\",\"examples\":[\"girl\",\"baby\"],\"relation\":\"category\",\"target\":\"people\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "people",
+     "relation": "category",
+     "examples": [
+      "baby",
+      "man"
+     ],
+     "answer": "woman",
+     "options": [
+      "woman",
+      "clover",
+      "cup"
+     ]
+    },
+    "prompt": {
+     "text": "Which one belongs with these?",
+     "speak": [
+      "Which one belongs with these?"
+     ]
+    },
+    "stimulus": {
+     "kind": "row",
+     "children": [
+      {
+       "kind": "emojiGroup",
+       "emoji": "👶",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "baby"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
+       "emoji": "👨",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "man"
+        }
+       ]
+      }
+     ]
+    },
+    "options": [
+     {
+      "kind": "emojiGroup",
       "emoji": "👩",
       "count": 1,
       "layout": "row",
@@ -423,45 +529,95 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚂",
+      "emoji": "🍀",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "train"
+        "word": "clover"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
+      {
+       "word": "baby"
+      },
+      "and a",
+      {
+       "word": "man"
+      },
+      "are people.",
+      "so is a",
       {
        "word": "woman"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: woman."
+      "A baby and a man are people.",
+      "So is a woman."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "woman"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 1,
     "seed": 3,
-    "key": "R-A2|1|{\"answer\":\"woman\",\"examples\":[\"boy\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|1|{\"answer\":\"woman\",\"examples\":[\"baby\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -475,9 +631,9 @@
      ],
      "answer": "tree",
      "options": [
-      "boat",
-      "box",
-      "tree"
+      "pants",
+      "tree",
+      "train"
      ]
     },
     "prompt": {
@@ -516,23 +672,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⛵",
+      "emoji": "👖",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "boat"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "📦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "box"
+        "word": "pants"
        }
       ]
      },
@@ -546,31 +691,81 @@
         "word": "tree"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚂",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "train"
+       }
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are both plants. So is this one.",
+      "a",
+      {
+       "word": "clover"
+      },
+      "and a",
+      {
+       "word": "cactus"
+      },
+      "are plants.",
+      "so is a",
       {
        "word": "tree"
       },
       "."
      ],
      "steps": [
-      "These are both plants.",
-      "So is this one: tree."
+      "A clover and a cactus are plants.",
+      "So is a tree."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🌳",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "tree"
+        "kind": "emojiGroup",
+        "emoji": "🍀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "clover"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cactus"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -585,13 +780,13 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "man",
-      "king"
+      "baby",
+      "woman"
      ],
-     "answer": "girl",
+     "answer": "boy",
      "options": [
-      "girl",
-      "hat",
+      "boy",
+      "shirt",
       "plane"
      ]
     },
@@ -606,23 +801,23 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "👨",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "man"
+         "word": "baby"
         }
        ]
       },
       {
        "kind": "emojiGroup",
-       "emoji": "🤴",
+       "emoji": "👩",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "king"
+         "word": "woman"
         }
        ]
       }
@@ -631,23 +826,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👧",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "girl"
+        "word": "boy"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🎩",
+      "emoji": "👕",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "hat"
+        "word": "shirt"
        }
       ]
      },
@@ -666,32 +861,71 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
       {
-       "word": "girl"
+       "word": "baby"
+      },
+      "and a",
+      {
+       "word": "woman"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "boy"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: girl."
+      "A baby and a woman are people.",
+      "So is a boy."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👧",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "girl"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 1,
     "seed": 5,
-    "key": "R-A2|1|{\"answer\":\"girl\",\"examples\":[\"man\",\"king\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|1|{\"answer\":\"boy\",\"examples\":[\"baby\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -705,9 +939,9 @@
      ],
      "answer": "sock",
      "options": [
-      "cactus",
       "sock",
-      "man"
+      "baby",
+      "boat"
      ]
     },
     "prompt": {
@@ -746,17 +980,6 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🌵",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "cactus"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "🧦",
       "count": 1,
       "layout": "row",
@@ -768,39 +991,89 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👨",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "man"
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⛵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "boat"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. So is this one.",
+      "a",
+      {
+       "word": "glove"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "so is a",
       {
        "word": "sock"
       },
       "."
      ],
      "steps": [
-      "These are both clothes.",
-      "So is this one: sock."
+      "A glove and a shoe are clothes.",
+      "So is a sock."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🧦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "sock"
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glove"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -896,26 +1169,65 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both animals. So is this one.",
+      "a",
+      {
+       "word": "lion"
+      },
+      "and a",
+      {
+       "word": "duck"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "dog"
       },
       "."
      ],
      "steps": [
-      "These are both animals.",
-      "So is this one: dog."
+      "A lion and a duck are animals.",
+      "So is a dog."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "dog"
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1011,26 +1323,65 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both animals. So is this one.",
+      "an",
+      {
+       "word": "elephant"
+      },
+      "and a",
+      {
+       "word": "frog"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "dog"
       },
       "."
      ],
      "steps": [
-      "These are both animals.",
-      "So is this one: dog."
+      "An elephant and a frog are animals.",
+      "So is a dog."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "dog"
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1050,9 +1401,9 @@
      ],
      "answer": "grapes",
      "options": [
-      "grapes",
-      "elephant",
-      "boy"
+      "hat",
+      "rocket",
+      "grapes"
      ]
     },
     "prompt": {
@@ -1091,6 +1442,28 @@
     "options": [
      {
       "kind": "emojiGroup",
+      "emoji": "🎩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "hat"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🚀",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "rocket"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
       "emoji": "🍇",
       "count": 1,
       "layout": "row",
@@ -1099,53 +1472,69 @@
         "word": "grapes"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐘",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "elephant"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "boy"
-       }
-      ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both food. So is this one.",
+      {
+       "word": "cheese"
+      },
+      "and a",
+      {
+       "word": "banana"
+      },
+      "are food.",
+      "so are",
       {
        "word": "grapes"
       },
       "."
      ],
      "steps": [
-      "These are both food.",
-      "So is this one: grapes."
+      "Cheese and a banana are food.",
+      "So are grapes."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🍇",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "grapes"
+        "kind": "emojiGroup",
+        "emoji": "🧀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cheese"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍌",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "banana"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🍇",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "grapes"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1165,9 +1554,9 @@
      ],
      "answer": "shirt",
      "options": [
-      "carrot",
       "shirt",
-      "bus"
+      "rocket",
+      "cookie"
      ]
     },
     "prompt": {
@@ -1206,17 +1595,6 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🥕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "carrot"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "👕",
       "count": 1,
       "layout": "row",
@@ -1228,39 +1606,89 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚌",
+      "emoji": "🚀",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "bus"
+        "word": "rocket"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🍪",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cookie"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. So is this one.",
+      "a",
+      {
+       "word": "sock"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "so is a",
       {
        "word": "shirt"
       },
       "."
      ],
      "steps": [
-      "These are both clothes.",
-      "So is this one: shirt."
+      "A sock and a shoe are clothes.",
+      "So is a shirt."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "shirt"
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1277,14 +1705,14 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "boy",
-      "king"
+      "woman",
+      "boy"
      ],
-     "answer": "woman",
+     "answer": "man",
      "options": [
+      "frog",
       "duck",
-      "elephant",
-      "woman"
+      "man"
      ]
     },
     "prompt": {
@@ -1298,6 +1726,17 @@
      "children": [
       {
        "kind": "emojiGroup",
+       "emoji": "👩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "woman"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
        "emoji": "👦",
        "count": 1,
        "layout": "row",
@@ -1306,21 +1745,21 @@
          "word": "boy"
         }
        ]
-      },
-      {
-       "kind": "emojiGroup",
-       "emoji": "🤴",
-       "count": 1,
-       "layout": "row",
-       "speak": [
-        {
-         "word": "king"
-        }
-       ]
       }
      ]
     },
     "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "frog"
+       }
+      ]
+     },
      {
       "kind": "emojiGroup",
       "emoji": "🦆",
@@ -1334,23 +1773,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🐘",
+      "emoji": "👨",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "elephant"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "woman"
+        "word": "man"
        }
       ]
      }
@@ -1358,32 +1786,71 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
       {
        "word": "woman"
+      },
+      "and a",
+      {
+       "word": "boy"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "man"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: woman."
+      "A woman and a boy are people.",
+      "So is a man."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "woman"
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 2,
     "seed": 1,
-    "key": "R-A2|2|{\"answer\":\"woman\",\"examples\":[\"boy\",\"king\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|2|{\"answer\":\"man\",\"examples\":[\"woman\",\"boy\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -1393,13 +1860,13 @@
      "relation": "category",
      "examples": [
       "girl",
-      "woman"
+      "baby"
      ],
      "answer": "man",
      "options": [
-      "monkey",
       "elephant",
-      "man"
+      "man",
+      "monkey"
      ]
     },
     "prompt": {
@@ -1424,29 +1891,18 @@
       },
       {
        "kind": "emojiGroup",
-       "emoji": "👩",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "woman"
+         "word": "baby"
         }
        ]
       }
      ]
     },
     "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐵",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "monkey"
-       }
-      ]
-     },
      {
       "kind": "emojiGroup",
       "emoji": "🐘",
@@ -1468,37 +1924,87 @@
         "word": "man"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
+      {
+       "word": "girl"
+      },
+      "and a",
+      {
+       "word": "baby"
+      },
+      "are people.",
+      "so is a",
       {
        "word": "man"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: man."
+      "A girl and a baby are people.",
+      "So is a man."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👨",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "man"
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 2,
     "seed": 2,
-    "key": "R-A2|2|{\"answer\":\"man\",\"examples\":[\"girl\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|2|{\"answer\":\"man\",\"examples\":[\"girl\",\"baby\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -1507,14 +2013,14 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "boy",
+      "baby",
       "man"
      ],
      "answer": "woman",
      "options": [
-      "rabbit",
       "woman",
-      "lion"
+      "lion",
+      "pig"
      ]
     },
     "prompt": {
@@ -1528,12 +2034,12 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "👦",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "boy"
+         "word": "baby"
         }
        ]
       },
@@ -1551,17 +2057,6 @@
      ]
     },
     "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐰",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "rabbit"
-       }
-      ]
-     },
      {
       "kind": "emojiGroup",
       "emoji": "👩",
@@ -1583,37 +2078,87 @@
         "word": "lion"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
+       }
+      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
+      {
+       "word": "baby"
+      },
+      "and a",
+      {
+       "word": "man"
+      },
+      "are people.",
+      "so is a",
       {
        "word": "woman"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: woman."
+      "A baby and a man are people.",
+      "So is a woman."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "woman"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 2,
     "seed": 3,
-    "key": "R-A2|2|{\"answer\":\"woman\",\"examples\":[\"boy\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|2|{\"answer\":\"woman\",\"examples\":[\"baby\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -1703,26 +2248,65 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both plants. So is this one.",
+      "a",
+      {
+       "word": "clover"
+      },
+      "and a",
+      {
+       "word": "cactus"
+      },
+      "are plants.",
+      "so is a",
       {
        "word": "tree"
       },
       "."
      ],
      "steps": [
-      "These are both plants.",
-      "So is this one: tree."
+      "A clover and a cactus are plants.",
+      "So is a tree."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🌳",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "tree"
+        "kind": "emojiGroup",
+        "emoji": "🍀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "clover"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cactus"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1737,14 +2321,14 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "man",
-      "king"
+      "baby",
+      "woman"
      ],
-     "answer": "girl",
+     "answer": "boy",
      "options": [
-      "pig",
-      "lion",
-      "girl"
+      "cat",
+      "boy",
+      "duck"
      ]
     },
     "prompt": {
@@ -1758,23 +2342,23 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "👨",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "man"
+         "word": "baby"
         }
        ]
       },
       {
        "kind": "emojiGroup",
-       "emoji": "🤴",
+       "emoji": "👩",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "king"
+         "word": "woman"
         }
        ]
       }
@@ -1783,67 +2367,106 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🐷",
+      "emoji": "🐱",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "pig"
+        "word": "cat"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🦁",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lion"
+        "word": "boy"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👧",
+      "emoji": "🦆",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "girl"
+        "word": "duck"
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are both people. So is this one.",
+      "a",
       {
-       "word": "girl"
+       "word": "baby"
+      },
+      "and a",
+      {
+       "word": "woman"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "boy"
       },
       "."
      ],
      "steps": [
-      "These are both people.",
-      "So is this one: girl."
+      "A baby and a woman are people.",
+      "So is a boy."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👧",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "girl"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 2,
     "seed": 5,
-    "key": "R-A2|2|{\"answer\":\"girl\",\"examples\":[\"man\",\"king\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|2|{\"answer\":\"boy\",\"examples\":[\"baby\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -1933,26 +2556,65 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. So is this one.",
+      "a",
+      {
+       "word": "glove"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "so is a",
       {
        "word": "sock"
       },
       "."
      ],
      "steps": [
-      "These are both clothes.",
-      "So is this one: sock."
+      "A glove and a shoe are clothes.",
+      "So is a sock."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🧦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "sock"
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glove"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -1972,9 +2634,9 @@
      ],
      "answer": "dog",
      "options": [
-      "king",
-      "dog",
-      "tree"
+      "baby",
+      "woman",
+      "dog"
      ]
     },
     "prompt": {
@@ -2013,12 +2675,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🤴",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "king"
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
        }
       ]
      },
@@ -2032,42 +2705,70 @@
         "word": "dog"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🌳",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "tree"
-       }
-      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both animals. So is this one.",
+      "a",
+      {
+       "word": "lion"
+      },
+      "and a",
+      {
+       "word": "duck"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "dog"
       },
       "."
      ],
      "steps": [
-      "These are both animals.",
-      "So is this one: dog."
+      "A lion and a duck are animals.",
+      "So is a dog."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "dog"
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -2087,8 +2788,8 @@
      ],
      "answer": "dog",
      "options": [
-      "clover",
-      "baby",
+      "boy",
+      "woman",
       "dog"
      ]
     },
@@ -2128,23 +2829,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🍀",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "clover"
+        "word": "boy"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👶",
+      "emoji": "👩",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "baby"
+        "word": "woman"
        }
       ]
      },
@@ -2163,26 +2864,65 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both animals. So is this one.",
+      "an",
+      {
+       "word": "elephant"
+      },
+      "and a",
+      {
+       "word": "frog"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "dog"
       },
       "."
      ],
      "steps": [
-      "These are both animals.",
-      "So is this one: dog."
+      "An elephant and a frog are animals.",
+      "So is a dog."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "dog"
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -2204,7 +2944,7 @@
      "options": [
       "cat",
       "tree",
-      "girl"
+      "clover"
      ]
     },
     "prompt": {
@@ -2265,12 +3005,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👧",
+      "emoji": "🍀",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "girl"
+        "word": "clover"
        }
       ]
      }
@@ -2278,26 +3018,65 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. So is this one.",
+      "a",
+      {
+       "word": "fish"
+      },
+      "and an",
+      {
+       "word": "elephant"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "cat"
       },
       "."
      ],
      "steps": [
-      "These are both animals.",
-      "So is this one: cat."
+      "A fish and an elephant are animals.",
+      "So is a cat."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐱",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cat"
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -2393,26 +3172,65 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are both clothes. So is this one.",
+      "a",
+      {
+       "word": "sock"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "so is a",
       {
        "word": "shirt"
       },
       "."
      ],
      "steps": [
-      "These are both clothes.",
-      "So is this one: shirt."
+      "A sock and a shoe are clothes.",
+      "So is a shirt."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "shirt"
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -2429,16 +3247,16 @@
      "target": "people",
      "relation": "category",
      "examples": [
+      "woman",
       "boy",
-      "king",
-      "woman"
-     ],
-     "answer": "man",
-     "options": [
-      "clover",
-      "duck",
-      "elephant",
       "man"
+     ],
+     "answer": "baby",
+     "options": [
+      "duck",
+      "frog",
+      "baby",
+      "bed"
      ]
     },
     "prompt": {
@@ -2452,6 +3270,17 @@
      "children": [
       {
        "kind": "emojiGroup",
+       "emoji": "👩",
+       "count": 1,
+       "layout": "row",
+       "speak": [
+        {
+         "word": "woman"
+        }
+       ]
+      },
+      {
+       "kind": "emojiGroup",
        "emoji": "👦",
        "count": 1,
        "layout": "row",
@@ -2463,40 +3292,18 @@
       },
       {
        "kind": "emojiGroup",
-       "emoji": "🤴",
+       "emoji": "👨",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "king"
-        }
-       ]
-      },
-      {
-       "kind": "emojiGroup",
-       "emoji": "👩",
-       "count": 1,
-       "layout": "row",
-       "speak": [
-        {
-         "word": "woman"
+         "word": "man"
         }
        ]
       }
      ]
     },
     "options": [
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍀",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "clover"
-       }
-      ]
-     },
      {
       "kind": "emojiGroup",
       "emoji": "🦆",
@@ -2510,56 +3317,121 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🐘",
+      "emoji": "🐸",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "elephant"
+        "word": "frog"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👨",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "man"
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🛏️",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "bed"
        }
       ]
      }
     ],
-    "answerIndex": 3,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are all people. So is this one.",
+      "a",
+      {
+       "word": "woman"
+      },
+      ", a",
+      {
+       "word": "boy"
+      },
+      "and a",
       {
        "word": "man"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "baby"
       },
       "."
      ],
      "steps": [
-      "These are all people.",
-      "So is this one: man."
+      "A woman, a boy and a man are people.",
+      "So is a baby."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👨",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "man"
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 3,
     "seed": 1,
-    "key": "R-A2|3|{\"answer\":\"man\",\"examples\":[\"boy\",\"king\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|3|{\"answer\":\"baby\",\"examples\":[\"woman\",\"boy\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -2569,15 +3441,15 @@
      "relation": "category",
      "examples": [
       "girl",
-      "woman",
+      "baby",
       "man"
      ],
-     "answer": "baby",
+     "answer": "woman",
      "options": [
-      "monkey",
+      "cactus",
+      "woman",
       "elephant",
-      "baby",
-      "grapes"
+      "monkey"
      ]
     },
     "prompt": {
@@ -2602,12 +3474,12 @@
       },
       {
        "kind": "emojiGroup",
-       "emoji": "👩",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "woman"
+         "word": "baby"
         }
        ]
       },
@@ -2627,12 +3499,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🐵",
+      "emoji": "🌵",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "monkey"
+        "word": "cactus"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👩",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "woman"
        }
       ]
      },
@@ -2649,56 +3532,99 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👶",
+      "emoji": "🐵",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "baby"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍇",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "grapes"
+        "word": "monkey"
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are all people. So is this one.",
+      "a",
+      {
+       "word": "girl"
+      },
+      ", a",
       {
        "word": "baby"
+      },
+      "and a",
+      {
+       "word": "man"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "woman"
       },
       "."
      ],
      "steps": [
-      "These are all people.",
-      "So is this one: baby."
+      "A girl, a baby and a man are people.",
+      "So is a woman."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "baby"
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 3,
     "seed": 2,
-    "key": "R-A2|3|{\"answer\":\"baby\",\"examples\":[\"girl\",\"woman\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|3|{\"answer\":\"woman\",\"examples\":[\"girl\",\"baby\",\"man\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -2707,16 +3633,16 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "boy",
+      "baby",
       "man",
       "woman"
      ],
-     "answer": "king",
+     "answer": "boy",
      "options": [
-      "king",
-      "rabbit",
+      "boy",
       "lion",
-      "rocket"
+      "dress",
+      "pig"
      ]
     },
     "prompt": {
@@ -2730,12 +3656,12 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "👦",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "boy"
+         "word": "baby"
         }
        ]
       },
@@ -2766,23 +3692,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🤴",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "king"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐰",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "rabbit"
+        "word": "boy"
        }
       ]
      },
@@ -2799,12 +3714,23 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚀",
+      "emoji": "👗",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "rocket"
+        "word": "dress"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐷",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pig"
        }
       ]
      }
@@ -2812,32 +3738,86 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are all people. So is this one.",
+      "a",
       {
-       "word": "king"
+       "word": "baby"
+      },
+      ", a",
+      {
+       "word": "man"
+      },
+      "and a",
+      {
+       "word": "woman"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "boy"
       },
       "."
      ],
      "steps": [
-      "These are all people.",
-      "So is this one: king."
+      "A baby, a man and a woman are people.",
+      "So is a boy."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🤴",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "king"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 3,
     "seed": 3,
-    "key": "R-A2|3|{\"answer\":\"king\",\"examples\":[\"boy\",\"man\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|3|{\"answer\":\"boy\",\"examples\":[\"baby\",\"man\",\"woman\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -2852,10 +3832,10 @@
      ],
      "answer": "flower",
      "options": [
-      "man",
+      "box",
       "elephant",
-      "rabbit",
-      "flower"
+      "flower",
+      "rabbit"
      ]
     },
     "prompt": {
@@ -2905,12 +3885,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👨",
+      "emoji": "📦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "man"
+        "word": "box"
        }
       ]
      },
@@ -2927,6 +3907,17 @@
      },
      {
       "kind": "emojiGroup",
+      "emoji": "🌸",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "flower"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
       "emoji": "🐰",
       "count": 1,
       "layout": "row",
@@ -2935,42 +3926,85 @@
         "word": "rabbit"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🌸",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "flower"
-       }
-      ]
      }
     ],
-    "answerIndex": 3,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are all plants. So is this one.",
+      "a",
+      {
+       "word": "clover"
+      },
+      ", a",
+      {
+       "word": "cactus"
+      },
+      "and a",
+      {
+       "word": "tree"
+      },
+      "are plants.",
+      "so is a",
       {
        "word": "flower"
       },
       "."
      ],
      "steps": [
-      "These are all plants.",
-      "So is this one: flower."
+      "A clover, a cactus and a tree are plants.",
+      "So is a flower."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🌸",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "flower"
+        "kind": "emojiGroup",
+        "emoji": "🍀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "clover"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cactus"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌳",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "tree"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "flower"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -2985,16 +4019,16 @@
      "target": "people",
      "relation": "category",
      "examples": [
-      "man",
-      "king",
-      "girl"
-     ],
-     "answer": "baby",
-     "options": [
-      "pig",
       "baby",
-      "lion",
-      "pizza"
+      "woman",
+      "boy"
+     ],
+     "answer": "girl",
+     "options": [
+      "duck",
+      "dress",
+      "cat",
+      "girl"
      ]
     },
     "prompt": {
@@ -3008,34 +4042,34 @@
      "children": [
       {
        "kind": "emojiGroup",
-       "emoji": "👨",
+       "emoji": "👶",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "man"
+         "word": "baby"
         }
        ]
       },
       {
        "kind": "emojiGroup",
-       "emoji": "🤴",
+       "emoji": "👩",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "king"
+         "word": "woman"
         }
        ]
       },
       {
        "kind": "emojiGroup",
-       "emoji": "👧",
+       "emoji": "👦",
        "count": 1,
        "layout": "row",
        "speak": [
         {
-         "word": "girl"
+         "word": "boy"
         }
        ]
       }
@@ -3044,78 +4078,132 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🐷",
+      "emoji": "🦆",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "pig"
+        "word": "duck"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👶",
+      "emoji": "👗",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "baby"
+        "word": "dress"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🦁",
+      "emoji": "🐱",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "lion"
+        "word": "cat"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🍕",
+      "emoji": "👧",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "pizza"
+        "word": "girl"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 3,
     "explanation": {
      "speak": [
-      "These are all people. So is this one.",
+      "a",
       {
        "word": "baby"
+      },
+      ", a",
+      {
+       "word": "woman"
+      },
+      "and a",
+      {
+       "word": "boy"
+      },
+      "are people.",
+      "so is a",
+      {
+       "word": "girl"
       },
       "."
      ],
      "steps": [
-      "These are all people.",
-      "So is this one: baby."
+      "A baby, a woman and a boy are people.",
+      "So is a girl."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "baby"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
     "level": 3,
     "seed": 5,
-    "key": "R-A2|3|{\"answer\":\"baby\",\"examples\":[\"man\",\"king\",\"girl\"],\"relation\":\"category\",\"target\":\"people\"}"
+    "key": "R-A2|3|{\"answer\":\"girl\",\"examples\":[\"baby\",\"woman\",\"boy\"],\"relation\":\"category\",\"target\":\"people\"}"
    },
    {
     "type": "choice",
@@ -3130,10 +4218,10 @@
      ],
      "answer": "scarf",
      "options": [
-      "ball",
-      "fish",
+      "box",
       "scarf",
-      "box"
+      "monkey",
+      "ball"
      ]
     },
     "prompt": {
@@ -3183,39 +4271,6 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⚽",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "ball"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🐟",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "fish"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🧣",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "scarf"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "📦",
       "count": 1,
       "layout": "row",
@@ -3224,22 +4279,8 @@
         "word": "box"
        }
       ]
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "These are all clothes. So is this one.",
-      {
-       "word": "scarf"
-      },
-      "."
-     ],
-     "steps": [
-      "These are all clothes.",
-      "So is this one: scarf."
-     ],
-     "visual": {
+     },
+     {
       "kind": "emojiGroup",
       "emoji": "🧣",
       "count": 1,
@@ -3249,6 +4290,107 @@
         "word": "scarf"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐵",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "monkey"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "⚽",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "ball"
+       }
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "a",
+      {
+       "word": "glove"
+      },
+      ", a",
+      {
+       "word": "shoe"
+      },
+      "and a",
+      {
+       "word": "sock"
+      },
+      "are clothes.",
+      "so is a",
+      {
+       "word": "scarf"
+      },
+      "."
+     ],
+     "steps": [
+      "A glove, a shoe and a sock are clothes.",
+      "So is a scarf."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glove"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
+       }
+      ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -3269,10 +4411,10 @@
      ],
      "answer": "rabbit",
      "options": [
-      "tree",
+      "woman",
+      "cup",
       "rabbit",
-      "car",
-      "king"
+      "baby"
      ]
     },
     "prompt": {
@@ -3322,12 +4464,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🌳",
+      "emoji": "👩",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "tree"
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🥤",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "cup"
        }
       ]
      },
@@ -3344,50 +4497,93 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🚗",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "car"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🤴",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "king"
+        "word": "baby"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are all animals. So is this one.",
+      "a",
+      {
+       "word": "lion"
+      },
+      ", a",
+      {
+       "word": "duck"
+      },
+      "and a",
+      {
+       "word": "dog"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "rabbit"
       },
       "."
      ],
      "steps": [
-      "These are all animals.",
-      "So is this one: rabbit."
+      "A lion, a duck and a dog are animals.",
+      "So is a rabbit."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐰",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "rabbit"
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐰",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rabbit"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -3408,10 +4604,10 @@
      ],
      "answer": "cat",
      "options": [
-      "baby",
-      "dress",
-      "clover",
-      "cat"
+      "woman",
+      "boy",
+      "cat",
+      "pants"
      ]
     },
     "prompt": {
@@ -3461,34 +4657,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👶",
+      "emoji": "👩",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "baby"
+        "word": "woman"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👗",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "dress"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍀",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "clover"
+        "word": "boy"
        }
       ]
      },
@@ -3502,31 +4687,96 @@
         "word": "cat"
        }
       ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pants"
+       }
+      ]
      }
     ],
-    "answerIndex": 3,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are all animals. So is this one.",
+      "an",
+      {
+       "word": "elephant"
+      },
+      ", a",
+      {
+       "word": "frog"
+      },
+      "and a",
+      {
+       "word": "dog"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "cat"
       },
       "."
      ],
      "steps": [
-      "These are all animals.",
-      "So is this one: cat."
+      "An elephant, a frog and a dog are animals.",
+      "So is a cat."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐱",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cat"
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -3547,10 +4797,10 @@
      ],
      "answer": "frog",
      "options": [
-      "door",
       "tree",
       "frog",
-      "girl"
+      "clover",
+      "box"
      ]
     },
     "prompt": {
@@ -3600,17 +4850,6 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🚪",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "door"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
       "emoji": "🌳",
       "count": 1,
       "layout": "row",
@@ -3633,39 +4872,104 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👧",
+      "emoji": "🍀",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "girl"
+        "word": "clover"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "📦",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "box"
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are all animals. So is this one.",
+      "a",
+      {
+       "word": "fish"
+      },
+      ", an",
+      {
+       "word": "elephant"
+      },
+      "and a",
+      {
+       "word": "cat"
+      },
+      "are animals.",
+      "so is a",
       {
        "word": "frog"
       },
       "."
      ],
      "steps": [
-      "These are all animals.",
-      "So is this one: frog."
+      "A fish, an elephant and a cat are animals.",
+      "So is a frog."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐸",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "frog"
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐱",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",
@@ -3686,10 +4990,10 @@
      ],
      "answer": "pants",
      "options": [
-      "boat",
-      "box",
+      "ball",
       "pants",
-      "ball"
+      "box",
+      "girl"
      ]
     },
     "prompt": {
@@ -3739,12 +5043,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "⛵",
+      "emoji": "⚽",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "boat"
+        "word": "ball"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👖",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "pants"
        }
       ]
      },
@@ -3761,50 +5076,93 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "👖",
+      "emoji": "👧",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "pants"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "⚽",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "ball"
+        "word": "girl"
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "These are all clothes. So is this one.",
+      "a",
+      {
+       "word": "sock"
+      },
+      ", a",
+      {
+       "word": "shoe"
+      },
+      "and a",
+      {
+       "word": "shirt"
+      },
+      "are clothes.",
+      "so are",
       {
        "word": "pants"
       },
       "."
      ],
      "steps": [
-      "These are all clothes.",
-      "So is this one: pants."
+      "A sock, a shoe and a shirt are clothes.",
+      "So are pants."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👖",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "pants"
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👖",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "pants"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Say what kind of things these are. Then find one more."
      }
     },
     "skillId": "R-A2",

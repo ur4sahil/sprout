@@ -103,7 +103,10 @@ describe('the nudge', () => {
         const nudge = nudgeFor(q);
         const steps = q.explanation.steps;
         const listsAnswer = q.type === 'sort' || q.type === 'order' || q.type === 'match';
-        if (steps.length < 3 || listsAnswer) {
+        if (q.explanation.hint) {
+          // A generator's own hint comes first, whatever its steps.
+          expect(nudge?.text, skill.id).toBe(q.explanation.hint.text);
+        } else if (steps.length < 3 || listsAnswer) {
           expect(nudge, `${skill.id} has ${steps.length} steps and is a ${q.type}`).toBeNull();
           withheld += 1;
         } else if (givesAway(q, steps[0] ?? '', null)) {

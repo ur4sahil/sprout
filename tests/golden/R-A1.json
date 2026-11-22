@@ -1,6 +1,6 @@
 {
  "skillId": "R-A1",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -8,17 +8,17 @@
    "optionAttrs": [
     "people",
     "people",
-    "things"
+    "food"
    ],
-   "odd": "book",
+   "odd": "grapes",
    "pair": [
-    "man",
-    "woman"
+    "baby",
+    "girl"
    ],
    "options": [
-    "man",
-    "woman",
-    "book"
+    "baby",
+    "girl",
+    "grapes"
    ]
   },
   "prompt": {
@@ -30,34 +30,34 @@
   "options": [
    {
     "kind": "emojiGroup",
-    "emoji": "👨",
+    "emoji": "👶",
     "count": 1,
     "layout": "row",
     "speak": [
      {
-      "word": "man"
+      "word": "baby"
      }
     ]
    },
    {
     "kind": "emojiGroup",
-    "emoji": "👩",
+    "emoji": "👧",
     "count": 1,
     "layout": "row",
     "speak": [
      {
-      "word": "woman"
+      "word": "girl"
      }
     ]
    },
    {
     "kind": "emojiGroup",
-    "emoji": "📖",
+    "emoji": "🍇",
     "count": 1,
     "layout": "row",
     "speak": [
      {
-      "word": "book"
+      "word": "grapes"
      }
     ]
    }
@@ -65,32 +65,59 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "These are both people. This one is not.",
+    "a",
     {
-     "word": "book"
+     "word": "baby"
     },
-    "."
+    "and a",
+    {
+     "word": "girl"
+    },
+    "are people.",
+    {
+     "word": "grapes"
+    },
+    "are not."
    ],
    "steps": [
-    "These are both people.",
-    "This one is not: book."
+    "A baby and a girl are people.",
+    "Grapes are not."
    ],
    "visual": {
-    "kind": "emojiGroup",
-    "emoji": "📖",
-    "count": 1,
-    "layout": "row",
-    "speak": [
+    "kind": "row",
+    "children": [
      {
-      "word": "book"
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👧",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "girl"
+       }
+      ]
      }
     ]
+   },
+   "hint": {
+    "text": "Find two that go together."
    }
   },
   "skillId": "R-A1",
   "level": 1,
   "seed": 81,
-  "key": "R-A1|1|{\"odd\":\"book\",\"optionAttrs\":[\"people\",\"people\",\"things\"],\"pair\":[\"man\",\"woman\"]}"
+  "key": "R-A1|1|{\"odd\":\"grapes\",\"optionAttrs\":[\"people\",\"people\",\"food\"],\"pair\":[\"baby\",\"girl\"]}"
  },
  "levels": {
   "1": [
@@ -103,7 +130,7 @@
       "clothes",
       "food"
      ],
-     "odd": "cheese",
+     "odd": "bread",
      "pair": [
       "dress",
       "scarf"
@@ -111,7 +138,7 @@
      "options": [
       "dress",
       "scarf",
-      "cheese"
+      "bread"
      ]
     },
     "prompt": {
@@ -145,12 +172,12 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🧀",
+      "emoji": "🍞",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "cheese"
+        "word": "bread"
        }
       ]
      }
@@ -158,32 +185,59 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
       {
-       "word": "cheese"
+       "word": "dress"
       },
-      "."
+      "and a",
+      {
+       "word": "scarf"
+      },
+      "are clothes.",
+      {
+       "word": "bread"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: cheese."
+      "A dress and a scarf are clothes.",
+      "Bread is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🧀",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cheese"
+        "kind": "emojiGroup",
+        "emoji": "👗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 1,
     "seed": 1,
-    "key": "R-A1|1|{\"odd\":\"cheese\",\"optionAttrs\":[\"clothes\",\"clothes\",\"food\"],\"pair\":[\"dress\",\"scarf\"]}"
+    "key": "R-A1|1|{\"odd\":\"bread\",\"optionAttrs\":[\"clothes\",\"clothes\",\"food\"],\"pair\":[\"dress\",\"scarf\"]}"
    },
    {
     "type": "choice",
@@ -194,13 +248,13 @@
       "clothes",
       "clothes"
      ],
-     "odd": "cactus",
+     "odd": "flower",
      "pair": [
       "shirt",
       "shoe"
      ],
      "options": [
-      "cactus",
+      "flower",
       "shirt",
       "shoe"
      ]
@@ -214,12 +268,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🌵",
+      "emoji": "🌸",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "cactus"
+        "word": "flower"
        }
       ]
      },
@@ -249,32 +303,60 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
       {
-       "word": "cactus"
+       "word": "shirt"
       },
-      "."
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "a",
+      {
+       "word": "flower"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: cactus."
+      "A shirt and a shoe are clothes.",
+      "A flower is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🌵",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cactus"
+        "kind": "emojiGroup",
+        "emoji": "👕",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 1,
     "seed": 2,
-    "key": "R-A1|1|{\"odd\":\"cactus\",\"optionAttrs\":[\"plants\",\"clothes\",\"clothes\"],\"pair\":[\"shirt\",\"shoe\"]}"
+    "key": "R-A1|1|{\"odd\":\"flower\",\"optionAttrs\":[\"plants\",\"clothes\",\"clothes\"],\"pair\":[\"shirt\",\"shoe\"]}"
    },
    {
     "type": "choice",
@@ -340,26 +422,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
+      {
+       "word": "dress"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "rabbit"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: rabbit."
+      "A dress and a shoe are clothes.",
+      "A rabbit is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐰",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "rabbit"
+        "kind": "emojiGroup",
+        "emoji": "👗",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -372,19 +482,19 @@
     "mode": "look",
     "facts": {
      "optionAttrs": [
+      "clothes",
       "people",
-      "people",
-      "food"
+      "people"
      ],
-     "odd": "pizza",
+     "odd": "dress",
      "pair": [
       "baby",
       "woman"
      ],
      "options": [
+      "dress",
       "baby",
-      "woman",
-      "pizza"
+      "woman"
      ]
     },
     "prompt": {
@@ -394,6 +504,17 @@
      ]
     },
     "options": [
+     {
+      "kind": "emojiGroup",
+      "emoji": "👗",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "dress"
+       }
+      ]
+     },
      {
       "kind": "emojiGroup",
       "emoji": "👶",
@@ -415,48 +536,65 @@
         "word": "woman"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🍕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "pizza"
-       }
-      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. This one is not.",
+      "a",
       {
-       "word": "pizza"
+       "word": "baby"
       },
-      "."
+      "and a",
+      {
+       "word": "woman"
+      },
+      "are people.",
+      "a",
+      {
+       "word": "dress"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both people.",
-      "This one is not: pizza."
+      "A baby and a woman are people.",
+      "A dress is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🍕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "pizza"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 1,
     "seed": 4,
-    "key": "R-A1|1|{\"odd\":\"pizza\",\"optionAttrs\":[\"people\",\"people\",\"food\"],\"pair\":[\"baby\",\"woman\"]}"
+    "key": "R-A1|1|{\"odd\":\"dress\",\"optionAttrs\":[\"clothes\",\"people\",\"people\"],\"pair\":[\"baby\",\"woman\"]}"
    },
    {
     "type": "choice",
@@ -467,13 +605,13 @@
       "clothes",
       "clothes"
      ],
-     "odd": "baby",
+     "odd": "boy",
      "pair": [
       "hat",
       "scarf"
      ],
      "options": [
-      "baby",
+      "boy",
       "hat",
       "scarf"
      ]
@@ -487,12 +625,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👶",
+      "emoji": "👦",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "baby"
+        "word": "boy"
        }
       ]
      },
@@ -522,32 +660,60 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
       {
-       "word": "baby"
+       "word": "hat"
       },
-      "."
+      "and a",
+      {
+       "word": "scarf"
+      },
+      "are clothes.",
+      "a",
+      {
+       "word": "boy"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: baby."
+      "A hat and a scarf are clothes.",
+      "A boy is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "baby"
+        "kind": "emojiGroup",
+        "emoji": "🎩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧣",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 1,
     "seed": 5,
-    "key": "R-A1|1|{\"odd\":\"baby\",\"optionAttrs\":[\"people\",\"clothes\",\"clothes\"],\"pair\":[\"hat\",\"scarf\"]}"
+    "key": "R-A1|1|{\"odd\":\"boy\",\"optionAttrs\":[\"people\",\"clothes\",\"clothes\"],\"pair\":[\"hat\",\"scarf\"]}"
    },
    {
     "type": "choice",
@@ -558,13 +724,13 @@
       "vehicles",
       "vehicles"
      ],
-     "odd": "woman",
+     "odd": "man",
      "pair": [
       "boat",
       "rocket"
      ],
      "options": [
-      "woman",
+      "man",
       "boat",
       "rocket"
      ]
@@ -578,12 +744,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👩",
+      "emoji": "👨",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "woman"
+        "word": "man"
        }
       ]
      },
@@ -613,32 +779,60 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both vehicles. This one is not.",
+      "a",
       {
-       "word": "woman"
+       "word": "boat"
       },
-      "."
+      "and a",
+      {
+       "word": "rocket"
+      },
+      "take us places.",
+      "a",
+      {
+       "word": "man"
+      },
+      "does not."
      ],
      "steps": [
-      "These are both vehicles.",
-      "This one is not: woman."
+      "A boat and a rocket take us places.",
+      "A man does not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "woman"
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🚀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "rocket"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 1,
     "seed": 6,
-    "key": "R-A1|1|{\"odd\":\"woman\",\"optionAttrs\":[\"people\",\"vehicles\",\"vehicles\"],\"pair\":[\"boat\",\"rocket\"]}"
+    "key": "R-A1|1|{\"odd\":\"man\",\"optionAttrs\":[\"people\",\"vehicles\",\"vehicles\"],\"pair\":[\"boat\",\"rocket\"]}"
    },
    {
     "type": "choice",
@@ -704,26 +898,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
+      {
+       "word": "duck"
+      },
+      "and a",
+      {
+       "word": "lion"
+      },
+      "are animals.",
+      "a",
       {
        "word": "car"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: car."
+      "A duck and a lion are animals.",
+      "A car is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🚗",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "car"
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -795,26 +1017,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
+      {
+       "word": "frog"
+      },
+      "and an",
+      {
+       "word": "elephant"
+      },
+      "are animals.",
+      "a",
       {
        "word": "shirt"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: shirt."
+      "A frog and an elephant are animals.",
+      "A shirt is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👕",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "shirt"
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -886,26 +1136,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
+      {
+       "word": "fish"
+      },
+      "and an",
+      {
+       "word": "elephant"
+      },
+      "are animals.",
+      "a",
       {
        "word": "cup"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: cup."
+      "A fish and an elephant are animals.",
+      "A cup is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥤",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cup"
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -977,26 +1255,54 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both vehicles. This one is not.",
+      "a",
+      {
+       "word": "plane"
+      },
+      "and a",
+      {
+       "word": "boat"
+      },
+      "take us places.",
+      "a",
       {
        "word": "dog"
       },
-      "."
+      "does not."
      ],
      "steps": [
-      "These are both vehicles.",
-      "This one is not: dog."
+      "A plane and a boat take us places.",
+      "A dog does not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "dog"
+        "kind": "emojiGroup",
+        "emoji": "✈️",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "plane"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "⛵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1012,18 +1318,18 @@
     "facts": {
      "optionAttrs": [
       "people",
-      "people",
-      "animals"
+      "animals",
+      "people"
      ],
-     "odd": "lion",
+     "odd": "fish",
      "pair": [
       "boy",
-      "king"
+      "woman"
      ],
      "options": [
-      "king",
-      "boy",
-      "lion"
+      "woman",
+      "fish",
+      "boy"
      ]
     },
     "prompt": {
@@ -1035,12 +1341,23 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "🤴",
+      "emoji": "👩",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "king"
+        "word": "woman"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "🐟",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "fish"
        }
       ]
      },
@@ -1054,7 +1371,93 @@
         "word": "boy"
        }
       ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "a",
+      {
+       "word": "woman"
+      },
+      "and a",
+      {
+       "word": "boy"
+      },
+      "are people.",
+      "a",
+      {
+       "word": "fish"
+      },
+      "is not."
+     ],
+     "steps": [
+      "A woman and a boy are people.",
+      "A fish is not."
+     ],
+     "visual": {
+      "kind": "row",
+      "children": [
+       {
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "boy"
+         }
+        ]
+       }
+      ]
      },
+     "hint": {
+      "text": "Find two that go together."
+     }
+    },
+    "skillId": "R-A1",
+    "level": 2,
+    "seed": 1,
+    "key": "R-A1|2|{\"odd\":\"fish\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"boy\",\"woman\"]}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "optionAttrs": [
+      "animals",
+      "people",
+      "people"
+     ],
+     "odd": "lion",
+     "pair": [
+      "baby",
+      "girl"
+     ],
+     "options": [
+      "lion",
+      "girl",
+      "baby"
+     ]
+    },
+    "prompt": {
+     "text": "Which one does not belong?",
+     "speak": [
+      "Which one does not belong?"
+     ]
+    },
+    "options": [
      {
       "kind": "emojiGroup",
       "emoji": "🦁",
@@ -1065,65 +1468,7 @@
         "word": "lion"
        }
       ]
-     }
-    ],
-    "answerIndex": 2,
-    "explanation": {
-     "speak": [
-      "These are both people. This one is not.",
-      {
-       "word": "lion"
-      },
-      "."
-     ],
-     "steps": [
-      "These are both people.",
-      "This one is not: lion."
-     ],
-     "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🦁",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "lion"
-       }
-      ]
-     }
-    },
-    "skillId": "R-A1",
-    "level": 2,
-    "seed": 1,
-    "key": "R-A1|2|{\"odd\":\"lion\",\"optionAttrs\":[\"people\",\"people\",\"animals\"],\"pair\":[\"boy\",\"king\"]}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "optionAttrs": [
-      "people",
-      "animals",
-      "people"
-     ],
-     "odd": "duck",
-     "pair": [
-      "girl",
-      "woman"
-     ],
-     "options": [
-      "girl",
-      "duck",
-      "woman"
-     ]
-    },
-    "prompt": {
-     "text": "Which one does not belong?",
-     "speak": [
-      "Which one does not belong?"
-     ]
-    },
-    "options": [
+     },
      {
       "kind": "emojiGroup",
       "emoji": "👧",
@@ -1137,75 +1482,92 @@
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🦆",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "duck"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👩",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "woman"
+        "word": "baby"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. This one is not.",
+      "a",
       {
-       "word": "duck"
+       "word": "girl"
       },
-      "."
+      "and a",
+      {
+       "word": "baby"
+      },
+      "are people.",
+      "a",
+      {
+       "word": "lion"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both people.",
-      "This one is not: duck."
+      "A girl and a baby are people.",
+      "A lion is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🦆",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "duck"
+        "kind": "emojiGroup",
+        "emoji": "👧",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "girl"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 2,
     "seed": 2,
-    "key": "R-A1|2|{\"odd\":\"duck\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"girl\",\"woman\"]}"
+    "key": "R-A1|2|{\"odd\":\"lion\",\"optionAttrs\":[\"animals\",\"people\",\"people\"],\"pair\":[\"baby\",\"girl\"]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "optionAttrs": [
-      "people",
       "animals",
+      "people",
       "people"
      ],
      "odd": "duck",
      "pair": [
-      "boy",
+      "baby",
       "man"
      ],
      "options": [
-      "man",
       "duck",
-      "boy"
+      "baby",
+      "man"
      ]
     },
     "prompt": {
@@ -1217,6 +1579,28 @@
     "options": [
      {
       "kind": "emojiGroup",
+      "emoji": "🦆",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "duck"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
+      "emoji": "👶",
+      "count": 1,
+      "layout": "row",
+      "speak": [
+       {
+        "word": "baby"
+       }
+      ]
+     },
+     {
+      "kind": "emojiGroup",
       "emoji": "👨",
       "count": 1,
       "layout": "row",
@@ -1225,59 +1609,65 @@
         "word": "man"
        }
       ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "🦆",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "duck"
-       }
-      ]
-     },
-     {
-      "kind": "emojiGroup",
-      "emoji": "👦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
-       {
-        "word": "boy"
-       }
-      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both people. This one is not.",
+      "a",
+      {
+       "word": "baby"
+      },
+      "and a",
+      {
+       "word": "man"
+      },
+      "are people.",
+      "a",
       {
        "word": "duck"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both people.",
-      "This one is not: duck."
+      "A baby and a man are people.",
+      "A duck is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🦆",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "duck"
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👨",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "man"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 2,
     "seed": 3,
-    "key": "R-A1|2|{\"odd\":\"duck\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"boy\",\"man\"]}"
+    "key": "R-A1|2|{\"odd\":\"duck\",\"optionAttrs\":[\"animals\",\"people\",\"people\"],\"pair\":[\"baby\",\"man\"]}"
    },
    {
     "type": "choice",
@@ -1343,26 +1733,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both plants. This one is not.",
+      "a",
+      {
+       "word": "clover"
+      },
+      "and a",
+      {
+       "word": "cactus"
+      },
+      "are plants.",
+      "a",
       {
        "word": "fish"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both plants.",
-      "This one is not: fish."
+      "A clover and a cactus are plants.",
+      "A fish is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐟",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "fish"
+        "kind": "emojiGroup",
+        "emoji": "🍀",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "clover"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🌵",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "cactus"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1376,18 +1794,18 @@
     "facts": {
      "optionAttrs": [
       "people",
-      "animals",
-      "people"
+      "people",
+      "animals"
      ],
-     "odd": "elephant",
+     "odd": "pig",
      "pair": [
-      "king",
-      "man"
+      "baby",
+      "woman"
      ],
      "options": [
-      "man",
-      "elephant",
-      "king"
+      "woman",
+      "baby",
+      "pig"
      ]
     },
     "prompt": {
@@ -1399,67 +1817,95 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👨",
+      "emoji": "👩",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "man"
+        "word": "woman"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🐘",
+      "emoji": "👶",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "elephant"
+        "word": "baby"
        }
       ]
      },
      {
       "kind": "emojiGroup",
-      "emoji": "🤴",
+      "emoji": "🐷",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "king"
+        "word": "pig"
        }
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both people. This one is not.",
+      "a",
       {
-       "word": "elephant"
+       "word": "woman"
       },
-      "."
+      "and a",
+      {
+       "word": "baby"
+      },
+      "are people.",
+      "a",
+      {
+       "word": "pig"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both people.",
-      "This one is not: elephant."
+      "A woman and a baby are people.",
+      "A pig is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🐘",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "elephant"
+        "kind": "emojiGroup",
+        "emoji": "👩",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "woman"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👶",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "baby"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 2,
     "seed": 5,
-    "key": "R-A1|2|{\"odd\":\"elephant\",\"optionAttrs\":[\"people\",\"animals\",\"people\"],\"pair\":[\"king\",\"man\"]}"
+    "key": "R-A1|2|{\"odd\":\"pig\",\"optionAttrs\":[\"people\",\"people\",\"animals\"],\"pair\":[\"baby\",\"woman\"]}"
    },
    {
     "type": "choice",
@@ -1525,26 +1971,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
+      {
+       "word": "shoe"
+      },
+      "and a",
+      {
+       "word": "glove"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "door"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: door."
+      "A shoe and a glove are clothes.",
+      "A door is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🚪",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "door"
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🧤",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "glove"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1616,26 +2090,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
+      {
+       "word": "duck"
+      },
+      "and a",
+      {
+       "word": "lion"
+      },
+      "are animals.",
+      "a",
       {
        "word": "cactus"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: cactus."
+      "A duck and a lion are animals.",
+      "A cactus is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🌵",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cactus"
+        "kind": "emojiGroup",
+        "emoji": "🦆",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "duck"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🦁",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "lion"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1652,13 +2154,13 @@
       "animals",
       "animals"
      ],
-     "odd": "boy",
+     "odd": "girl",
      "pair": [
       "elephant",
       "frog"
      ],
      "options": [
-      "boy",
+      "girl",
       "frog",
       "elephant"
      ]
@@ -1672,12 +2174,12 @@
     "options": [
      {
       "kind": "emojiGroup",
-      "emoji": "👦",
+      "emoji": "👧",
       "count": 1,
       "layout": "row",
       "speak": [
        {
-        "word": "boy"
+        "word": "girl"
        }
       ]
      },
@@ -1707,32 +2209,60 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
       {
-       "word": "boy"
+       "word": "frog"
       },
-      "."
+      "and an",
+      {
+       "word": "elephant"
+      },
+      "are animals.",
+      "a",
+      {
+       "word": "girl"
+      },
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: boy."
+      "A frog and an elephant are animals.",
+      "A girl is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👦",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "boy"
+        "kind": "emojiGroup",
+        "emoji": "🐸",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "frog"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
     "level": 2,
     "seed": 8,
-    "key": "R-A1|2|{\"odd\":\"boy\",\"optionAttrs\":[\"people\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"frog\"]}"
+    "key": "R-A1|2|{\"odd\":\"girl\",\"optionAttrs\":[\"people\",\"animals\",\"animals\"],\"pair\":[\"elephant\",\"frog\"]}"
    },
    {
     "type": "choice",
@@ -1798,26 +2328,54 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These are both animals. This one is not.",
+      "a",
+      {
+       "word": "fish"
+      },
+      "and an",
+      {
+       "word": "elephant"
+      },
+      "are animals.",
+      "a",
       {
        "word": "baby"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both animals.",
-      "This one is not: baby."
+      "A fish and an elephant are animals.",
+      "A baby is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "👶",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "baby"
+        "kind": "emojiGroup",
+        "emoji": "🐟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "fish"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "🐘",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "elephant"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1889,26 +2447,54 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These are both clothes. This one is not.",
+      "a",
+      {
+       "word": "sock"
+      },
+      "and a",
+      {
+       "word": "shoe"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "cup"
       },
-      "."
+      "is not."
      ],
      "steps": [
-      "These are both clothes.",
-      "This one is not: cup."
+      "A sock and a shoe are clothes.",
+      "A cup is not."
      ],
      "visual": {
-      "kind": "emojiGroup",
-      "emoji": "🥤",
-      "count": 1,
-      "layout": "row",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "cup"
+        "kind": "emojiGroup",
+        "emoji": "🧦",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "emojiGroup",
+        "emoji": "👟",
+        "count": 1,
+        "layout": "row",
+        "speak": [
+         {
+          "word": "shoe"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find two that go together."
      }
     },
     "skillId": "R-A1",
@@ -1977,18 +2563,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all purple. This one is red."
+      "three of them are purple triangles.",
+      "the red triangle does not belong."
      ],
      "steps": [
-      "These three are all purple.",
-      "This one is red."
+      "Three of them are purple triangles.",
+      "The red triangle does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "red",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "purple",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2055,18 +2664,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all blue. This one is orange."
+      "three of them are blue squares.",
+      "the orange square does not belong."
      ],
      "steps": [
-      "These three are all blue.",
-      "This one is orange."
+      "Three of them are blue squares.",
+      "The orange square does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "orange",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2133,18 +2765,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all orange. This one is black."
+      "three of them are orange triangles.",
+      "the black triangle does not belong."
      ],
      "steps": [
-      "These three are all orange.",
-      "This one is black."
+      "Three of them are orange triangles.",
+      "The black triangle does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "triangle",
-      "color": "black",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2211,18 +2866,41 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "These three are all blue. This one is pink."
+      "three of them are blue squares.",
+      "the pink square does not belong."
      ],
      "steps": [
-      "These three are all blue.",
-      "This one is pink."
+      "Three of them are blue squares.",
+      "The pink square does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "pink",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2290,18 +2968,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all big. This one is small."
+      "three of them are big squares.",
+      "the small square does not belong."
      ],
      "steps": [
-      "These three are all big.",
-      "This one is small."
+      "Three of them are big squares.",
+      "The small square does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2368,18 +3069,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all blue. This one is green."
+      "three of them are blue stars.",
+      "the green star does not belong."
      ],
      "steps": [
-      "These three are all blue.",
-      "This one is green."
+      "Three of them are blue stars.",
+      "The green star does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "green",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "blue",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2446,18 +3170,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all orange. This one is black."
+      "three of them are orange hearts.",
+      "the black heart does not belong."
      ],
      "steps": [
-      "These three are all orange.",
-      "This one is black."
+      "Three of them are orange hearts.",
+      "The black heart does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "heart",
-      "color": "black",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "heart",
+        "color": "orange",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2524,18 +3271,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all stars. This one is a circle."
+      "three of them are stars.",
+      "the circle does not belong."
      ],
      "steps": [
-      "These three are all stars.",
-      "This one is a circle."
+      "Three of them are stars.",
+      "The circle does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "pink",
-      "size": "m",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "m",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2603,18 +3373,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all small. This one is big."
+      "three of them are small circles.",
+      "the big circle does not belong."
      ],
      "steps": [
-      "These three are all small.",
-      "This one is big."
+      "Three of them are small circles.",
+      "The big circle does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "brown",
-      "size": "l",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "circle",
+        "color": "brown",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2682,18 +3475,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all big. This one is small."
+      "three of them are big stars.",
+      "the small star does not belong."
      ],
      "steps": [
-      "These three are all big.",
-      "This one is small."
+      "Three of them are big stars.",
+      "The small star does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "star",
-      "color": "brown",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Look at the color, the shape and the size of each one."
      }
     },
     "skillId": "R-A1",
@@ -2760,18 +3576,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the oval is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The oval is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "oval",
-      "color": "green",
-      "size": "l",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "hexagon",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -2836,18 +3675,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the circle is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The circle is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "purple",
-      "size": "l",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -2912,18 +3774,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the oval is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The oval is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "oval",
-      "color": "pink",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "hexagon",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "orange",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -2988,18 +3873,41 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the oval is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The oval is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "oval",
-      "color": "purple",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "hexagon",
+        "color": "red",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "brown",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "yellow",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3064,18 +3972,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all squares. This one is a hexagon."
+      "three of them are squares.",
+      "the hexagon does not belong."
      ],
      "steps": [
-      "These three are all squares.",
-      "This one is a hexagon."
+      "Three of them are squares.",
+      "The hexagon does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "hexagon",
-      "color": "orange",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "pink",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "blue",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3140,18 +4071,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the circle is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The circle is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "circle",
-      "color": "blue",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "hexagon",
+        "color": "orange",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "green",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "pink",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3216,18 +4170,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all shapes with corners. This one is round."
+      "three of them have corners.",
+      "the oval is round, so it does not belong."
      ],
      "steps": [
-      "These three are all shapes with corners.",
-      "This one is round."
+      "Three of them have corners.",
+      "The oval is round, so it does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "oval",
-      "color": "pink",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "hexagon",
+        "color": "green",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "orange",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3292,18 +4269,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all purple. This one is brown."
+      "three of them are purple.",
+      "the brown hexagon does not belong."
      ],
      "steps": [
-      "These three are all purple.",
-      "This one is brown."
+      "Three of them are purple.",
+      "The brown hexagon does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "hexagon",
-      "color": "brown",
-      "size": "s",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "star",
+        "color": "purple",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "square",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3368,18 +4368,41 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "These three are all rectangles. This one is a square."
+      "three of them are rectangles.",
+      "the square does not belong."
      ],
      "steps": [
-      "These three are all rectangles.",
-      "This one is a square."
+      "Three of them are rectangles.",
+      "The square does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "square",
-      "color": "green",
-      "size": "l",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "orange",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "black",
+        "size": "l",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "rectangle",
+        "color": "purple",
+        "size": "s",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
@@ -3444,18 +4467,41 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "These three are all triangles. This one is a rectangle."
+      "three of them are triangles.",
+      "the rectangle does not belong."
      ],
      "steps": [
-      "These three are all triangles.",
-      "This one is a rectangle."
+      "Three of them are triangles.",
+      "The rectangle does not belong."
      ],
      "visual": {
-      "kind": "shape",
-      "shape": "rectangle",
-      "color": "blue",
-      "size": "l",
-      "rotation": 0
+      "kind": "row",
+      "children": [
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "yellow",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "black",
+        "size": "s",
+        "rotation": 0
+       },
+       {
+        "kind": "shape",
+        "shape": "triangle",
+        "color": "red",
+        "size": "l",
+        "rotation": 0
+       }
+      ]
+     },
+     "hint": {
+      "text": "Three of them share one thing: a color, a shape, or having corners."
      }
     },
     "skillId": "R-A1",
