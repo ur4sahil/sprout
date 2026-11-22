@@ -1,4 +1,5 @@
 import { isSoundKey } from '../engine/letterSounds';
+import { newVoicesOn } from './engine';
 
 // Recorded letter sounds (the owner's choice, Nov 21, 2026): each sound is recorded once, as "sound:<key>:once"
 // (said inside a sentence) and "sound:<key>:three" (said three times, on its own). The app sets a source at launch
@@ -43,6 +44,8 @@ const online = (): boolean => typeof navigator === 'undefined' || navigator.onLi
 // in memory while the app is open: nothing is kept on the device (the owner's choice, Nov 22, 2026). A sound the
 // server does not have (404) is not asked for again until the app next opens, so its sentences stay whole and say it
 // by its letters. One that cannot be fetched now (offline, a server error) is asked for again the next time.
+// They are part of the new voices: until the server speaks with them (src/audio/engine.ts), no sound is counted on
+// or fetched, and every sound is said by its letters, as before the switch.
 export function serverSoundClips(): SoundClipSource {
   const arrived = new Map<string, ArrayBuffer>();
   const asking = new Map<string, Promise<ArrayBuffer | null>>();
@@ -61,8 +64,9 @@ export function serverSoundClips(): SoundClipSource {
   }
 
   return {
-    has: (key) => arrived.has(key) || (!missing.has(key) && soundAddress(key) !== null && online()),
+    has: (key) => newVoicesOn() && (arrived.has(key) || (!missing.has(key) && soundAddress(key) !== null && online())),
     get: (key) => {
+      if (!newVoicesOn()) return Promise.resolve(null);
       const bytes = arrived.get(key);
       if (bytes) return Promise.resolve(bytes);
       const address = soundAddress(key);

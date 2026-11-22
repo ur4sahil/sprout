@@ -33,11 +33,13 @@ describe('wrangler.jsonc', () => {
     expect(readConfig().vars.VOICE_URL).toBe('https://sprout-voice.logstocks.com');
   });
 
-  it('serves the app for deep links and sends /api to the Worker first', () => {
-    const config = readConfig();
-    expect(config.assets.directory).toBe('./dist/');
-    expect(config.assets.not_found_handling).toBe('single-page-application');
-    expect(config.assets.run_worker_first).toEqual(['/api', '/api/*']);
+  it('serves the app for deep links and sends /api to the Worker first, and the build file, which says the voice', () => {
+    for (const file of ['wrangler.jsonc', 'wrangler.staging.jsonc']) {
+      const config = readConfig(file);
+      expect(config.assets.directory, file).toBe('./dist/');
+      expect(config.assets.not_found_handling, file).toBe('single-page-application');
+      expect(config.assets.run_worker_first, file).toEqual(['/api', '/api/*', '/build.json']);
+    }
   });
 
   it('is reachable only at the app address', () => {

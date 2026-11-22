@@ -17,7 +17,7 @@ import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
 import ReviewPot from '../../components/ReviewPot';
 import { plantKindFor } from '../../components/plantKind';
-import { castFor } from '../../cast';
+import { castFor, voiceFor } from '../../cast';
 import { REVIEW_QUESTIONS } from '../../engine/review';
 import type { Skill } from '../../content/catalogue';
 import type { Say } from '../../engine/types';
@@ -37,18 +37,19 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
   const review = useReview(child, skills);
   const { phase, question } = review;
   const rate = child.settings.speechRate;
-  // Each question, its steps and hints are said by its skill's subject friend (plan section 20); the end card by Sprout.
-  const friend = review.skill ? castFor(review.skill.subject) : 'sprout';
-  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
+  // Each question, its steps and hints are said by its skill's subject friend once the server speaks with the new
+  // voices, by Sprout until then (plan section 20); the end card by Sprout.
+  const voice = review.skill ? voiceFor(review.skill.subject) : 'sprout';
+  const say = (text: Say): void => void speak(text, rate, 'normal', voice);
   useWakeLock();
 
   const questionId = question ? `${question.key}|${question.seed}` : null;
   useEffect(() => {
     if (!question) return;
     // What this question may say is fetched now, so the recorded voice is ready when it is wanted.
-    warmQuestion(question, friend);
+    warmQuestion(question, voice);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate, 'normal', friend);
+    void speak(question.prompt.speak, rate, 'normal', voice);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -127,7 +128,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           onSpeak={say}
         />
       )}
-      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={voice} onClose={closeHint} onSpeak={say} />}
       {phase === 'done' && (
         <FullScreenCard
           emoji={kept === review.results.length && kept > 0 ? '🏅' : '🌱'}

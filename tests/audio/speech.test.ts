@@ -3,7 +3,8 @@ import { removeOldClips, resetClips } from '../../src/audio/clips';
 import { setMuted } from '../../src/audio/mute';
 import { audioContext, wakeAudioOnTaps } from '../../src/audio/context';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
-import { LESSON_PAUSE_MS, isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
+import { LESSON_PAUSE_MS, ONE_PACE_PAUSE_MS, isSpeechAvailable, lessonPauseMs, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
+import { setVoiceEngine } from '../../src/audio/engine';
 import { serverSoundClips, setSoundClips } from '../../src/audio/soundClips';
 import { openRepo } from '../../src/storage/index';
 
@@ -269,6 +270,20 @@ describe('recorded letter sounds from the server', () => {
       return new Response(new ArrayBuffer(url.endsWith('/three') ? 33 : 11), { status: 200, headers: { 'Content-Type': 'audio/mpeg' } });
     });
     setSoundClips(serverSoundClips());
+    setVoiceEngine('piper');
+  });
+
+  it('before the switch to the new voices, a sound is said by its letters inside its sentence, as before, and nothing is fetched', async () => {
+    installSpeech();
+    installAudio();
+    setVoiceEngine('kokoro');
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with the sound of bee.']);
+    events = [];
+    setVoiceEngine(undefined);
+    await speak([{ sound: 'b' }]);
+    expect(events).toEqual(['cancel', 'say:the sound of bee']);
+    expect(asked).toEqual([]);
   });
 
   it('plays the server\'s recording in its place: once inside a sentence, three times on its own, each fetched once', async () => {
@@ -312,8 +327,26 @@ describe('recorded letter sounds from the server', () => {
 });
 
 describe('the lesson pace', () => {
-  it('pauses 0.7 seconds between sentences, the owner\'s one slow pace', () => {
-    expect(LESSON_PAUSE_MS).toBe(700);
+  it('pauses a second between sentences, as before, until the server speaks with the new voices', async () => {
+    for (const said of [undefined, 'kokoro', 'Piper']) {
+      setVoiceEngine(said);
+      expect(lessonPauseMs(), String(said)).toBe(1000);
+    }
+    expect(LESSON_PAUSE_MS).toBe(1000);
+    installSpeech();
+    await speak(['Count the dots. Then say the number.'], 0.85, 'lesson');
+    expect((spokeAt[1] as number) - (spokeAt[0] as number)).toBeGreaterThanOrEqual(995);
+  });
+
+  it('then pauses 0.7 seconds, the owner\'s one slow pace', async () => {
+    setVoiceEngine('piper');
+    expect(lessonPauseMs()).toBe(700);
+    expect(ONE_PACE_PAUSE_MS).toBe(700);
+    installSpeech();
+    await speak(['Count the dots. Then say the number.'], 0.85, 'lesson');
+    const gap = (spokeAt[1] as number) - (spokeAt[0] as number);
+    expect(gap).toBeGreaterThanOrEqual(695);
+    expect(gap).toBeLessThan(990);
   });
 });
 

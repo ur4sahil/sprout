@@ -14,7 +14,7 @@ import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
 import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
-import { castFor } from '../../cast';
+import { castFor, voiceFor } from '../../cast';
 import { PALETTE } from '../../visuals/palette';
 import type { Say } from '../../engine/types';
 import type { Child } from '../../storage/schema';
@@ -26,17 +26,18 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
   const bag = useMixedBag(child);
   const { phase, question } = bag;
   const rate = child.settings.speechRate;
-  // Each question, its steps and hints are said by its skill's subject friend (plan section 20); the end card by Sprout.
-  const friend = bag.skill ? castFor(bag.skill.subject) : 'sprout';
-  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
+  // Each question, its steps and hints are said by its skill's subject friend once the server speaks with the new
+  // voices, by Sprout until then (plan section 20); the end card by Sprout.
+  const voice = bag.skill ? voiceFor(bag.skill.subject) : 'sprout';
+  const say = (text: Say): void => void speak(text, rate, 'normal', voice);
   useWakeLock();
 
   const questionId = question ? `${question.key}|${question.seed}` : null;
   useEffect(() => {
     if (!question) return;
-    warmQuestion(question, friend);
+    warmQuestion(question, voice);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate, 'normal', friend);
+    void speak(question.prompt.speak, rate, 'normal', voice);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -105,7 +106,7 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
           />
         </div>
       )}
-      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={voice} onClose={closeHint} onSpeak={say} />}
       {(phase === 'done' || phase === 'none') && (
         <FullScreenCard
           emoji={phase === 'done' ? '🎒' : '🌱'}

@@ -1,3 +1,4 @@
+import { newVoicesOn } from '../audio/engine';
 import type { Skill } from '../content/catalogue';
 import type { Who } from './types';
 
@@ -18,6 +19,12 @@ const FRIENDS: Record<Skill['subject'], Who> = { math: 'pip', ela: 'olive', reas
 // for Reasoning.
 export function castFor(subject: Skill['subject']): Who {
   return FRIENDS[subject];
+}
+
+// Who says the words inside a subject (plan section 20): its friend, once the server speaks with the new voices;
+// until then Sprout, as before the switch (src/audio/engine.ts). The friend drawn on screen is castFor either way.
+export function voiceFor(subject: Skill['subject']): Who {
+  return newVoicesOn() ? castFor(subject) : 'sprout';
 }
 
 // The name a child knows each friend by.

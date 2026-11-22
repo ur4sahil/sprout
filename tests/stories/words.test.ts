@@ -1,6 +1,7 @@
 // @vitest-environment node
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_RATE, LESSON_PAUSE_MS } from '../../src/audio/speech';
+import { setVoiceEngine } from '../../src/audio/engine';
+import { DEFAULT_RATE, LESSON_PAUSE_MS, ONE_PACE_PAUSE_MS } from '../../src/audio/speech';
 import { EPISODES } from '../../src/stories/episodes';
 import { line } from '../../src/stories/episodes/build';
 import { WORDS_PER_SECOND, readingPlan, replySay, sentencesOf, storyText, storyWords, wordAt } from '../../src/stories/words';
@@ -60,6 +61,13 @@ describe('when each word lights up', () => {
     expect(wordAt(plan, 2 * PER_WORD + LESSON_PAUSE_MS / 2)).toBe(1);
     // No pause after the very last sentence.
     expect(plan.total).toBeCloseTo(4 * PER_WORD + LESSON_PAUSE_MS);
+  });
+
+  it('keeps the word lit for the pause the voice makes now: 0.7 seconds once the server speaks with the new voices', () => {
+    setVoiceEngine('piper');
+    const plan = readingPlan(storyWords(line('Pip sat. Finn hopped.')));
+    expect(plan.starts[2]).toBeCloseTo(2 * PER_WORD + ONE_PACE_PAUSE_MS);
+    expect(plan.total).toBeCloseTo(4 * PER_WORD + ONE_PACE_PAUSE_MS);
   });
 
   it('runs faster for a faster speech rate', () => {

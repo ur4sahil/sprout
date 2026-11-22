@@ -1,9 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { setVoiceEngine } from '../../src/audio/engine';
 import { hasSoundClip, serverSoundClips, setSoundClips, soundAddress, soundClipBytes } from '../../src/audio/soundClips';
 import { SOUND_KEYS } from '../../src/engine/letterSounds';
 
 // Recorded letter sounds come from the server (GET /api/sound/<key>/<form>), are held in memory while the app is
-// open, and are never kept on the device (the owner's choice, Nov 22, 2026).
+// open, and are never kept on the device (the owner's choice, Nov 22, 2026). They are part of the new voices: only a
+// server that speaks with them (its /build.json says piper) has them played.
+
 
 let asked: string[];
 let reply: (url: string) => Promise<Response>;
@@ -24,6 +27,7 @@ beforeEach(() => {
     return reply(url);
   });
   setSoundClips(serverSoundClips());
+  setVoiceEngine('piper');
 });
 afterEach(() => setSoundClips(null));
 
@@ -103,5 +107,26 @@ describe('recorded sounds from the server', () => {
     setSoundClips(serverSoundClips());
     await soundClipBytes('sound:t:once');
     expect(asked).toEqual(['/api/sound/t/once same-origin', '/api/sound/t/once same-origin']);
+  });
+});
+
+describe('before the switch to the new voices', () => {
+  it('no sound is counted on or fetched: every sound is said by its letters, as before', async () => {
+    for (const said of [undefined, 'kokoro', 'something else']) {
+      setVoiceEngine(said);
+      expect(hasSoundClip('sound:b:once'), String(said)).toBe(false);
+      expect(await soundClipBytes('sound:b:once'), String(said)).toBeNull();
+    }
+    expect(asked).toEqual([]);
+  });
+
+  it('one held from before the server stopped saying so is not played either', async () => {
+    expect(text(await soundClipBytes('sound:d:once'))).toBe('mp3:/api/sound/d/once');
+    setVoiceEngine('kokoro');
+    expect(hasSoundClip('sound:d:once')).toBe(false);
+    expect(await soundClipBytes('sound:d:once')).toBeNull();
+    setVoiceEngine('piper');
+    expect(text(await soundClipBytes('sound:d:once'))).toBe('mp3:/api/sound/d/once');
+    expect(asked).toHaveLength(1);
   });
 });

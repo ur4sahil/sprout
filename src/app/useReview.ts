@@ -16,7 +16,7 @@ import { TIMING } from './timing';
 import { hintId } from './hints';
 import type { HintAllowance } from './useHintBook';
 import { useHintBook } from './useHintBook';
-import { castFor } from '../cast';
+import { castFor, voiceFor } from '../cast';
 import { praiseFor } from './usePractice';
 
 // A review session: 3 questions on each due skill. 3 right moves it up a box, 2 keeps it,
@@ -223,14 +223,14 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
         self.results = [...self.results, { skill: current, right, passed: reviewed.passed }];
         setResults(self.results);
       }
-      // The question's subject friend says what follows it (plan section 20).
-      const who = castFor(current.subject);
+      // What follows the question is said by its subject friend once the server speaks with the new voices,
+      // by Sprout until then (plan section 20). The friend may cheer in its own words either way.
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(openingWords(q), child.settings.speechRate, 'normal', who);
+        void speak(openingWords(q), child.settings.speechRate, 'normal', voiceFor(current.subject));
         return;
       }
-      const praise = praiseFor(q, self.rightInAll, who, self.cheer);
+      const praise = praiseFor(q, self.rightInAll, castFor(current.subject), self.cheer);
       self.rightInAll += 1;
       setPhase('correct');
       playSfx('chime');

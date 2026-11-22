@@ -20,10 +20,14 @@ export async function openLesson(page: Page, skillId: string): Promise<void> {
   await tile.click();
   await expect(page.getByRole('region', { name: 'Question' })).toBeVisible();
   await page.getByRole('button', { name: 'Learn this skill' }).click();
-  await pickHelp(page, 'Lesson with Sprout');
+  await pickHelp(page, 'Lesson');
 }
 
-// The bulb opens on a choice: a video (when the skill has one), a lesson with Sprout, or an example.
-export async function pickHelp(page: Page, which: 'Watch a video' | 'Lesson with Sprout' | 'Example'): Promise<void> {
-  await page.getByRole('button', { name: new RegExp(which) }).click();
+// The lesson button names who tells the lesson: Sprout until the server speaks with the new voices, the subject's
+// friend after that (plan section 20). Tests find it either way.
+export const LESSON_BUTTON = /Lesson with (Sprout|Pip|Olive|Finn)/;
+
+// The bulb opens on a choice: a video (when the skill has one), a lesson, or an example.
+export async function pickHelp(page: Page, which: 'Watch a video' | 'Lesson' | 'Example'): Promise<void> {
+  await page.getByRole('button', { name: which === 'Lesson' ? LESSON_BUTTON : new RegExp(which) }).click();
 }

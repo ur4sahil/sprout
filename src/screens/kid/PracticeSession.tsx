@@ -31,7 +31,7 @@ import { now } from '../../lib/clock';
 import { logError } from '../../lib/errorLog';
 import { openRepo } from '../../storage/index';
 import type { Child } from '../../storage/schema';
-import { castFor } from '../../cast';
+import { castFor, voiceFor } from '../../cast';
 import { growthStage } from '../../worlds';
 import { GRADE_NAME, SUBJECTS } from './Home';
 import styles from './PracticeSession.module.css';
@@ -57,9 +57,11 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   };
   // At the end of a sitting (a skill mastered, or known already), a plan run goes on to its next part.
   const finish = play ? play.onNext : run ? run.onDone : goHome;
-  // The subject's friend says everything here: the question, its steps, hints and praise (plan section 20).
+  // The skill's subject friend, drawn beside the question; and the voice that says everything here (the question, its
+  // steps and hints): the same friend once the server speaks with the new voices, Sprout until then (plan section 20).
   const friend = castFor(skill.subject);
-  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
+  const voice = voiceFor(skill.subject);
+  const say = (text: Say): void => void speak(text, rate, 'normal', voice);
   useWakeLock();
 
   // The prompt is read aloud when the question appears. Keyed on the question, and cancelled
@@ -68,9 +70,9 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   useEffect(() => {
     if (!question) return;
     // What this question may say is fetched now, so the recorded voice is ready when it is wanted.
-    warmQuestion(question, friend);
+    warmQuestion(question, voice);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate, 'normal', friend);
+    void speak(question.prompt.speak, rate, 'normal', voice);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -224,7 +226,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
       )}
       {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} growth={growth} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
-      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={voice} onClose={closeHint} onSpeak={say} />}
     </KidScreen>
   );
 }

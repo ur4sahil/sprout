@@ -1,8 +1,9 @@
-import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, screen, waitFor } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { POP_ROUND, popTurn } from '../../src/app/games';
 import { useAppStore } from '../../src/app/store';
-import { LINES } from '../../src/audio/lines';
+import { setVoiceEngine } from '../../src/audio/engine';
+import { LINES, chooseLine } from '../../src/audio/lines';
 import { PRAISE } from '../../src/audio/say';
 import { resetVoice, setVoiceOn, voiceText } from '../../src/audio/voice';
 import { generatorFor } from '../../src/content/registry';
@@ -14,11 +15,12 @@ import type { Child, SkillState } from '../../src/storage/schema';
 import { newSkillState } from '../../src/storage/schema';
 import { NOW, answer, gotIt, openApp, setUp, settled, sumOnScreen, wrongValue } from './practiceHelpers';
 
-// Who speaks (plan section 20, the owner's rule): inside a subject, the subject's friend says everything (the
-// question, "Not quite" and each step, hints and their worked example, praise, the check-in's questions, lessons
-// and their examples, fast facts). Sprout says everything outside: home, the garden, menus, today's plan, stickers,
-// the check-in's closing lines, Pop. Every line is also fetched early in the voice that will say it, or the early
-// fetch is wasted.
+// Who speaks (plan section 20, the owner's rule): once the server speaks with the new voices, inside a subject the
+// subject's friend says everything (the question, "Not quite" and each step, hints and their worked example, praise,
+// the check-in's questions, lessons and their examples, fast facts), and the lesson button names that friend. Sprout
+// says everything outside: home, the garden, menus, today's plan, stickers, the check-in's closing lines, Pop. Every
+// line is also fetched early in the voice that will say it, or the early fetch is wasted. Until the server says so
+// (the live app on Kokoro), everything is said as before: the last describe below.
 
 const heard = vi.hoisted(() => ({ said: [] as { say: unknown; pace: string; who: string }[] }));
 vi.mock('../../src/audio/speech', async (original) => ({
@@ -50,6 +52,8 @@ beforeEach(() => {
   fetched = [];
   resetVoice();
   setVoiceOn(true);
+  // The server speaks with the new voices, as the test copy does. The last describe turns this back.
+  setVoiceEngine('piper');
   vi.stubGlobal('fetch', async (url: string, init?: RequestInit) => {
     if (url !== '/api/voice') throw new TypeError('Failed to fetch');
     const body = JSON.parse(String(init?.body)) as { text: string; pace?: string; who?: string };
@@ -214,12 +218,14 @@ describe('the Mixed bag', () => {
 });
 
 describe('lessons', () => {
-  it('a lesson that teaches is said by the subject\'s friend at the lesson pace; the choice screen\'s line by Sprout', async () => {
+  it('a lesson that teaches is said by the subject\'s friend at the lesson pace; the choice screen names Pip, and Sprout says it', async () => {
     const child = await setUp('K');
     await choose(child);
     const user = openApp('/skill/M-K-C4/learn');
-    expect(await whoSaid(/^Pick a /)).toBe('sprout');
-    await user.click(await screen.findByRole('button', { name: /Lesson with Sprout/ }));
+    // M-K-C4 has a video, so the line offers it first.
+    expect(await whoSaid(words(chooseLine('Pip', true)))).toBe('sprout');
+    expect(screen.queryByRole('button', { name: /Lesson with Sprout/ })).toBeNull();
+    await user.click(await screen.findByRole('button', { name: /Lesson with Pip/ }));
     await waitFor(() => expect(said().filter((each) => each.pace === 'lesson').length).toBeGreaterThan(1));
     const lesson = said().filter((each) => each.pace === 'lesson');
     expect(new Set(lesson.map((each) => each.who))).toEqual(new Set(['pip']));
@@ -235,7 +241,7 @@ describe('lessons', () => {
     const child = await setUp('K');
     await choose(child);
     const user = openApp('/skill/E-K-A1/learn');
-    await user.click(await screen.findByRole('button', { name: /Lesson with Sprout/ }));
+    await user.click(await screen.findByRole('button', { name: /Lesson with Olive/ }));
     await screen.findByRole('button', { name: /Practise/ });
     const beats = generatorFor('E-K-A1')
       .lesson()
@@ -337,6 +343,113 @@ describe('outside the subjects', () => {
     const balloons = [...document.querySelectorAll<HTMLButtonElement>('[data-balloon]')];
     fireEvent.click(balloons.find((_, index) => index !== right) as HTMLElement);
     expect(await whoSaid(/^Not quite\. /)).toBe('sprout');
+    expect(speakers()).toEqual(new Set(['sprout']));
+    expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
+  });
+});
+
+describe('before the switch to the new voices (the live app on Kokoro)', () => {
+  for (const server of ['kokoro', 'not said'] as const) {
+    it(`Math practice is all Sprout's, as before, with Pip still drawn beside it (server ${server})`, async () => {
+      setVoiceEngine(server === 'kokoro' ? 'kokoro' : undefined);
+      const child = await setUp('K');
+      await choose(child, [started(child, 'M-K-C4', 20)]);
+      const user = openApp('/skill/M-K-C4');
+      await screen.findByRole('region', { name: 'Question' });
+      expect(document.querySelector('[data-character="pip"]')).not.toBeNull();
+      await waitFor(() => expect(said().length).toBeGreaterThan(0));
+      await user.click(hintButton());
+      expect(await whoSaid(/^Here is a hint\. /)).toBe('sprout');
+      await user.click(screen.getByRole('button', { name: /Show me an example/ }));
+      expect(await whoSaid(/^Here is one like it, worked out\. /)).toBe('sprout');
+      await user.click(screen.getByRole('button', { name: /Back to my question/ }));
+      await answer(user, wrongValue());
+      expect(await whoSaid(/^Not quite\. /)).toBe('sprout');
+      await user.click(screen.getByRole('button', { name: /Next step/ }));
+      await gotIt(user);
+      await screen.findByRole('region', { name: 'Question' });
+      await answer(user, sumOnScreen());
+      await settled();
+      const praise = PRAISE.map((each) => words(each.say));
+      await waitFor(() => expect(said().some((each) => praise.includes(each.words))).toBe(true));
+      expect(speakers()).toEqual(new Set(['sprout']));
+      expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
+    });
+  }
+
+  it('the lesson button and its line say Sprout, and Sprout tells the lesson', async () => {
+    setVoiceEngine('kokoro');
+    const child = await setUp('K');
+    await choose(child);
+    const user = openApp('/skill/M-K-C4/learn');
+    expect(await whoSaid(words(LINES.chooseWithVideo))).toBe('sprout');
+    expect(chooseLine('Sprout', false)).toEqual(LINES.choose);
+    expect(chooseLine('Sprout', true)).toEqual(LINES.chooseWithVideo);
+    expect(screen.queryByRole('button', { name: /Lesson with Pip/ })).toBeNull();
+    await user.click(await screen.findByRole('button', { name: /Lesson with Sprout/ }));
+    await waitFor(() => expect(said().filter((each) => each.pace === 'lesson').length).toBeGreaterThan(1));
+    expect(speakers()).toEqual(new Set(['sprout']));
+    expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
+  });
+
+  it('review is Sprout\'s, as before: the questions, Not quite and its steps, the praise, the end card', async () => {
+    setVoiceEngine('kokoro');
+    const child = await setUp('K');
+    const at = new Date(NOW.getTime() - 3 * 86_400_000).toISOString();
+    const due = new Date(NOW.getTime() - 86_400_000).toISOString();
+    await choose(child, [{ ...newSkillState(child.id, 'M-K-C4', at), score: 100, bestScore: 100, streak: 6, attempts: 20, correct: 19, recent: Array.from({ length: 10 }, () => true), masteredAt: at, reviewDueAt: due, lastPracticedAt: at }]);
+    const user = openApp('/review');
+    await screen.findByRole('region', { name: 'Question' });
+    await answer(user, wrongValue());
+    expect(await whoSaid(/^Not quite\. /)).toBe('sprout');
+    await gotIt(user);
+    for (let i = 0; i < 2; i += 1) {
+      await screen.findByRole('region', { name: 'Question' });
+      await answer(user, sumOnScreen());
+      await settled();
+    }
+    await screen.findByRole('dialog', { name: 'Review done' });
+    expect(await whoSaid(words(LINES.reviewDone))).toBe('sprout');
+    expect(said().length).toBeGreaterThanOrEqual(6);
+    expect(speakers()).toEqual(new Set(['sprout']));
+    expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
+  });
+
+  it('the Mixed bag is Sprout\'s, misses included, with each subject\'s friend still drawn', async () => {
+    setVoiceEngine('kokoro');
+    const child = await setUp('K');
+    await choose(child, [started(child, 'M-K-C1', 30), started(child, 'E-K-A1', 30)]);
+    const user = openApp('/mixed');
+    const drawn = new Set<string>();
+    for (let turn = 0; turn < 10 && !said().some((each) => each.words.startsWith('Not quite. ')); turn += 1) {
+      await screen.findByRole('region', { name: 'Question' });
+      const subject = document.querySelector('[data-subject]')?.getAttribute('data-subject');
+      if (subject) drawn.add(document.querySelector(`[data-character="${subject === 'ela' ? 'olive' : 'pip'}"]`) ? subject : 'none');
+      await answerFirst(user);
+    }
+    expect(await whoSaid(/^Not quite\. /)).toBe('sprout');
+    expect(drawn.has('none')).toBe(false);
+    expect(speakers()).toEqual(new Set(['sprout']));
+    expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
+  });
+
+  it('the check-in, the Mixed bag and fast facts are Sprout\'s too', async () => {
+    setVoiceEngine('kokoro');
+    const child = await setUp('1', {}, { checkIn: 'new' });
+    await choose(child, [started(child, 'M-K-C1', 30), started(child, 'E-K-A1', 30)]);
+    openApp('/diagnostic?subject=ela');
+    await screen.findByRole('region', { name: 'Question' });
+    await waitFor(() => expect(said().length).toBeGreaterThan(0));
+    cleanup();
+    openApp('/mixed');
+    await screen.findByRole('region', { name: 'Question' });
+    await waitFor(() => expect(said().length).toBeGreaterThan(1));
+    cleanup();
+    openApp('/facts/add10');
+    await screen.findByRole('region', { name: 'Question' });
+    fireEvent.click(screen.getByRole('button', { name: 'Hear the fact' }));
+    await waitFor(() => expect(said().length).toBeGreaterThan(2));
+    await waitFor(() => expect(fetched.length).toBeGreaterThan(10));
     expect(speakers()).toEqual(new Set(['sprout']));
     expect(new Set(fetched.map((each) => each.who))).toEqual(new Set(['sprout']));
   });

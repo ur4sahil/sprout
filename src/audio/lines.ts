@@ -15,13 +15,19 @@ export const LINES = {
   // Home: Sprout over today's plan cards. "Next up!" is followed by the next card's own words.
   nextUp: ['Next up!'],
   planDone: ['Plan done! Great work.'],
-  // The bulb's choice screen: what it offers.
+  // The bulb's choice screen: what it offers, while Sprout tells the lessons (chooseLine, below, for any teller).
   choose: ['Pick a lesson with Sprout, or an example.'],
   chooseWithVideo: ['Pick a video, a lesson with Sprout, or an example.'],
   // A hint (the owner's choice, Nov 21, 2026): the nudge is followed by the step itself, the example by its question.
   hintNudge: ['Here is a hint.'],
   hintExample: ['Here is one like it, worked out.'],
 } as const satisfies Record<string, Say>;
+
+// The bulb's choice line, naming who tells the lesson: Sprout until the server speaks with the new voices, the
+// subject's friend after that ("Pick a lesson with Pip, or an example."). Sprout says it either way.
+export function chooseLine(teacher: string, video: boolean): Say {
+  return [video ? `Pick a video, a lesson with ${teacher}, or an example.` : `Pick a lesson with ${teacher}, or an example.`];
+}
 
 // The words and picture of each milestone card, shown and said.
 export const MILESTONE_WORDS: Record<number, { emoji: string; title: string; line: string }> = {

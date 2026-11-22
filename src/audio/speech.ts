@@ -1,5 +1,6 @@
 import type { Say } from '../engine/types';
 import { playBytes, stopClip } from './clips';
+import { newVoicesOn } from './engine';
 import type { Pace, Who } from './voice';
 import { readyVoice, soundClipOf, voicePieces } from './voice';
 import { isMuted } from './mute';
@@ -17,8 +18,13 @@ const VOICE_WAIT_MS = 1000;
 // The recorded voice is waited for, even while the voice machine makes a new sentence (the owner's choice,
 // Nov 17, 2026). This is only a safety limit, so a child is never left in silence if the machine hangs.
 export const RECORDED_WAIT_MS = 20_000;
-// In a lesson, the pause between one sentence and the next: 0.7 s, the owner's one slow pace (plan section 20).
-export const LESSON_PAUSE_MS = 700;
+// In a lesson, the pause between one sentence and the next: a second, as before the switch to the new voices, and
+// 0.7 s, the owner's one slow pace, once the server speaks with them (plan section 20, src/audio/engine.ts).
+export const LESSON_PAUSE_MS = 1000;
+export const ONE_PACE_PAUSE_MS = 700;
+export function lessonPauseMs(): number {
+  return newVoicesOn() ? ONE_PACE_PAUSE_MS : LESSON_PAUSE_MS;
+}
 const UTTERANCE_LIMIT_MS = 12_000; // long utterances cut off on some phones
 const PREFERRED = ['Samantha', 'Ava', 'Allison'];
 
@@ -120,7 +126,7 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
       // Words after a sound go straight on, unless they start a new sentence ("Bat starts with /b/. Say it.").
       const newSentence = !afterSound || (typeof piece[0] === 'string' && /^["“]?[A-Z]/.test(piece[0]));
       if (spoke && pace === 'lesson' && sound === null && newSentence) {
-        await wait(LESSON_PAUSE_MS);
+        await wait(lessonPauseMs());
         if (mine !== generation) return false;
       }
       afterSound = sound !== null;

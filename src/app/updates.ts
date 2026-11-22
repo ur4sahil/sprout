@@ -1,3 +1,4 @@
+import { setVoiceEngine } from '../audio/engine';
 import { now } from '../lib/clock';
 import { logError } from '../lib/errorLog';
 import { useAppStore } from './store';
@@ -65,7 +66,9 @@ async function askServer(): Promise<string | null> {
     // The service worker never keeps /build.json, and `no-store` keeps the browser from keeping it.
     const reply = await fetch('/build.json', { cache: 'no-store' });
     if (!reply.ok) return null;
-    const body = (await reply.json()) as { id?: unknown };
+    const body = (await reply.json()) as { id?: unknown; voice?: unknown };
+    // The file also says which voice machine the server speaks with: the switch for the new voices (audio/engine.ts).
+    setVoiceEngine(body.voice);
     return typeof body.id === 'string' ? body.id : null;
   } catch {
     // Offline, or the server is away: try again next time.

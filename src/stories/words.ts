@@ -1,4 +1,4 @@
-import { DEFAULT_RATE, LESSON_PAUSE_MS } from '../audio/speech';
+import { DEFAULT_RATE, lessonPauseMs } from '../audio/speech';
 import { sayWords } from '../audio/say';
 import { soundOf } from '../engine/letterSounds';
 import type { Say, SayPart } from '../engine/types';
@@ -105,7 +105,8 @@ export interface ReadingPlan {
 // The audio does not tell the app when each word is said, so the line's reading time is shared out evenly:
 // each word gets time for the words the voice says for it, and the voice's pause after a sentence (lesson pace)
 // keeps the last word of the sentence lit. `rate` is the child's speech rate: a faster voice, shorter times.
-export function readingPlan(words: readonly StoryWord[], rate: number = DEFAULT_RATE): ReadingPlan {
+// `pauseMs` is that pause, the one the voice makes now (speech.ts).
+export function readingPlan(words: readonly StoryWord[], rate: number = DEFAULT_RATE, pauseMs: number = lessonPauseMs()): ReadingPlan {
   const perWord = 1000 / (WORDS_PER_SECOND * (rate / DEFAULT_RATE));
   const starts: number[] = [];
   const ends: number[] = [];
@@ -114,7 +115,7 @@ export function readingPlan(words: readonly StoryWord[], rate: number = DEFAULT_
     starts.push(at);
     at += word.spoken * perWord;
     ends.push(at);
-    if (i < words.length - 1 && endsSentence(word.shown)) at += LESSON_PAUSE_MS;
+    if (i < words.length - 1 && endsSentence(word.shown)) at += pauseMs;
   });
   return { starts, ends, total: at };
 }

@@ -17,7 +17,7 @@ import { TIMING } from './timing';
 import { hintId } from './hints';
 import type { HintAllowance } from './useHintBook';
 import { useHintBook } from './useHintBook';
-import { castFor } from '../cast';
+import { castFor, voiceFor } from '../cast';
 import { praiseFor } from './usePractice';
 
 // Runs one Mixed bag (plan section 17). Every answer is saved as ordinary practice on its skill, so its Skill Score
@@ -171,14 +171,14 @@ export function useMixedBag(child: Child): MixedBag {
       self.states.set(current.id, outcome.state);
       self.keys.set(current.id, [...(self.keys.get(current.id) ?? []), q.key].slice(-6));
       setAsked((n) => n + 1);
-      // The friend in the corner is the one for this question's subject, so it is the one who says what follows.
-      const who = castFor(current.subject);
+      // The friend in the corner is the one for this question's subject, so it is the one who may cheer, and once the
+      // server speaks with the new voices it says what follows the question too (Sprout until then).
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(openingWords(q), child.settings.speechRate, 'normal', who);
+        void speak(openingWords(q), child.settings.speechRate, 'normal', voiceFor(current.subject));
         return;
       }
-      const praise = praiseFor(q, self.right, who, self.cheer);
+      const praise = praiseFor(q, self.right, castFor(current.subject), self.cheer);
       self.right += 1;
       setRight((n) => n + 1);
       setPhase('correct');

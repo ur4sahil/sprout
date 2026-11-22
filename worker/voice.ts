@@ -13,6 +13,25 @@ export function voiceEngine(setting: string | undefined): VoiceEngine {
   return setting === 'piper' ? 'piper' : 'kokoro';
 }
 
+// /build.json, which the app asks for at launch, on its way back to the front and every quarter of an hour, also
+// says which voice machine this server speaks with ("voice"). It is the app's one switch for the new voices
+// (src/audio/engine.ts), so it flips with VOICE_ENGINE and nothing else. Anything that is not the build file as
+// expected is passed on untouched.
+export async function buildWithEngine(reply: Response, engine: VoiceEngine): Promise<Response> {
+  if (!reply.ok) return reply;
+  let body: unknown;
+  try {
+    body = await reply.clone().json();
+  } catch {
+    return reply;
+  }
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) return reply;
+  return new Response(JSON.stringify({ ...body, voice: engine }), {
+    status: 200,
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
+  });
+}
+
 // ---- Kokoro ----
 
 // The voice and its speed. A different voice or speed is a different set of saved files.

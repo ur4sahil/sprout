@@ -1,6 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { FRIEND_PRAISE_AFTER, praiseFor } from '../../src/app/usePractice';
+import { setVoiceEngine } from '../../src/audio/engine';
 import { PRAISE } from '../../src/audio/say';
 import { LINES as CAST_LINES } from '../../src/cast';
 import Celebration from '../../src/components/Celebration';
@@ -94,8 +95,7 @@ describe('the friend says the praise sometimes', () => {
       for (let before = 0; before < FRIEND_PRAISE_AFTER; before += 1) {
         const said = praiseFor(question(seed), before, 'pip', { index: null });
         expect(generic.has(JSON.stringify(said.say))).toBe(true);
-        // Inside a subject its friend says the praise too (plan section 20).
-        expect(said.who).toBe('pip');
+        expect(said.who).toBe('sprout');
       }
     }
   });
@@ -106,8 +106,8 @@ describe('the friend says the praise sometimes', () => {
       const praise = praiseFor(question(seed), 5, 'pip', { index: null });
       const said = JSON.stringify(praise.say);
       expect(generic.has(said) !== cheers.has(said)).toBe(true);
-      // The friend's own words and the usual praise are both said in the friend's own voice (plan section 20).
-      expect(praise.who).toBe('pip');
+      // A friend's own words are said in the friend's own voice; the usual praise in Sprout's.
+      expect(praise.who).toBe(cheers.has(said) ? 'pip' : 'sprout');
       if (cheers.has(said)) friend += 1;
     }
     expect(friend).toBeGreaterThan(150);
@@ -120,6 +120,21 @@ describe('the friend says the praise sometimes', () => {
       const b = praiseFor(question(seed), 4, 'finn', { index: null });
       expect(a).toEqual(b);
       if (generic.has(JSON.stringify(a.say))) expect(PRAISE.map((p) => p.say)).toContainEqual(a.say);
+    }
+  });
+
+  it('once the server speaks with the new voices, the friend says the usual praise too (plan section 20)', () => {
+    setVoiceEngine('piper');
+    for (let seed = 1; seed <= 300; seed += 1) {
+      const early = praiseFor(question(seed), 0, 'olive', { index: null });
+      expect(generic.has(JSON.stringify(early.say))).toBe(true);
+      expect(early.who).toBe('olive');
+      expect(praiseFor(question(seed), 5, 'pip', { index: null }).who).toBe('pip');
+    }
+    // A server still on the old voices, or one that has not said, keeps the usual praise Sprout's.
+    for (const said of ['kokoro', undefined, 'Piper']) {
+      setVoiceEngine(said);
+      expect(praiseFor(question(7), 0, 'finn', { index: null }).who).toBe('sprout');
     }
   });
 

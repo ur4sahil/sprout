@@ -131,7 +131,7 @@ test.describe('kid navigation', () => {
     await addChild(page, 'Robin', 'Grade 2');
     await openSkill(page, 'Robin', 'Hundreds, tens, ones');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
-    await pickHelp(page, 'Lesson with Sprout');
+    await pickHelp(page, 'Lesson');
     const lesson = page.getByRole('region', { name: 'Lesson' });
     await expect(lesson).toHaveAttribute('data-beat', 'see');
     await checkScreen(page, 'lesson', 64);

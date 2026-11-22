@@ -1,6 +1,7 @@
 import { cleanup, configure } from '@testing-library/react';
 import { afterEach, beforeEach, vi } from 'vitest';
 import { useAppStore } from '../src/app/store';
+import { resetVoiceEngine } from '../src/audio/engine';
 import { clearErrors } from '../src/lib/errorLog';
 import { unfreezeClock } from '../src/lib/clock';
 import { setDataApiForTests, setRepoForTests } from '../src/storage/index';
@@ -18,6 +19,8 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   clearErrors();
+  // As at launch: the server has not said it speaks with the new voices.
+  resetVoiceEngine();
   unfreezeClock();
   vi.unstubAllGlobals();
   useAppStore.getState().setAccount({ status: 'checking' });

@@ -1,8 +1,9 @@
 import { LINES, MILESTONE_WORDS } from '../audio/lines';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { PRAISE } from '../audio/say';
-import { castFor, pickLine } from '../cast';
+import { castFor, pickLine, voiceFor } from '../cast';
 import type { Who } from '../cast';
+import { newVoicesOn } from '../audio/engine';
 import { playSfx } from '../audio/sfx';
 import { speak, stop } from '../audio/speech';
 import { openingWords } from '../audio/stepSay';
@@ -63,10 +64,11 @@ export const FRIEND_PRAISE_AFTER = 3;
 // right answer of a sitting, about one time in three, a cheer in the subject friend's own words instead. Never
 // both. Everything is chosen from the question's seed, so the same question always gets the same words.
 // `last` remembers the friend's last cheer, so it never says the same one twice running.
-// The words, and whose voice says them: the subject's friend says both (plan section 20, Nov 22, 2026: inside a
-// subject its friend says everything; until then the usual praise was Sprout's).
+// The words, and whose voice says them: a friend's own cheer is in that friend's voice; the usual praise is the
+// friend's too once the server speaks with the new voices (plan section 20: inside a subject its friend says
+// everything), and Sprout's until then, as before the switch.
 export function praiseFor(q: Question, rightBefore: number, who: Who, last: { index: number | null }): { say: Say; who: Who } {
-  const praise = { say: makeRng(q.seed).pick(PRAISE).say, who };
+  const praise = { say: makeRng(q.seed).pick(PRAISE).say, who: newVoicesOn() ? who : ('sprout' as Who) };
   if (rightBefore < FRIEND_PRAISE_AFTER) return praise;
   const roll = makeRng((q.seed ^ 0x2f6b1d) >>> 0);
   if (roll.int(0, 2) !== 0) return praise;
@@ -87,8 +89,10 @@ function pickQuestion(child: Child, skill: Skill, state: SkillState, keys: reado
 // `stopAfter` is set when practice is one part of a run through today's plan: after that many answers it calls
 // `onStop` (the run goes on to the next part) instead of asking another question.
 export function usePractice(child: Child, skill: Skill, options: { sessions?: boolean; stopAfter?: number; onStop?: () => void } = {}): Practice {
-  // Everything said here is said by the skill's subject friend (plan section 20).
-  const who = castFor(skill.subject);
+  // The skill's subject friend, who may cheer in its own words; and the voice that says everything else here: the
+  // same friend once the server speaks with the new voices, Sprout until then (plan section 20).
+  const friend = castFor(skill.subject);
+  const voice = voiceFor(skill.subject);
   const sessions = options.sessions === true;
   const stopAfter = options.stopAfter;
   const onStop = options.onStop;
@@ -196,11 +200,11 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     }
     if (sessions && self.answered > 0 && self.answered % child.settings.sessionLength === 0) {
       setPhase('break');
-      void speak(LINES.nextOne, child.settings.speechRate, 'normal', who);
+      void speak(LINES.nextOne, child.settings.speechRate, 'normal', voice);
       return;
     }
     show(self.state, self.keys);
-  }, [child, show, sessions, stopAfter, onStop, who]);
+  }, [child, show, sessions, stopAfter, onStop, voice]);
 
   const afterAnswer = useCallback((): void => {
     const self = live.current;
@@ -214,8 +218,8 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
     setPhase('celebrating');
     if (top === 100) playSfx('fanfare');
     const words = MILESTONE_WORDS[top];
-    if (words) void speak([words.title, words.line], child.settings.speechRate, 'normal', who);
-  }, [advance, child, who]);
+    if (words) void speak([words.title, words.line], child.settings.speechRate, 'normal', voice);
+  }, [advance, child, voice]);
 
   const submit = useCallback(
     (given?: Response): void => {
@@ -261,7 +265,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
           runSoFar.current = 0;
           setRun(0);
           setPhase('wrong');
-          void speak(openingWords(q), child.settings.speechRate, 'normal', who);
+          void speak(openingWords(q), child.settings.speechRate, 'normal', voice);
           return;
         }
         // The short test: every answer right and the skill is passed without practising it.
@@ -279,7 +283,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
               setState(passed);
               playSfx('fanfare');
               setPhase('skipped');
-              void speak(LINES.knownAlready, child.settings.speechRate, 'normal', who);
+              void speak(LINES.knownAlready, child.settings.speechRate, 'normal', voice);
               return;
             } catch (error) {
               // It could not be saved: the child simply carries on practising, with the two answers counted.
@@ -291,7 +295,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         playSfx('chime', runSoFar.current);
         runSoFar.current += 1;
         setRun(runSoFar.current);
-        const praise = praiseFor(q, self.right, who, self.cheer);
+        const praise = praiseFor(q, self.right, friend, self.cheer);
         self.right += 1;
         setRight(self.right);
         setPhase('correct');
@@ -301,7 +305,7 @@ export function usePractice(child: Child, skill: Skill, options: { sessions?: bo
         if (self.alive) afterAnswer();
       })();
     },
-    [afterAnswer, child, phase, response, skill, usedHint, who],
+    [afterAnswer, child, phase, response, skill, usedHint, friend, voice],
   );
 
   const gotIt = useCallback((): void => {

@@ -29,7 +29,7 @@ import { voicePack } from './voicePack';
 import { memoryVoiceStore, r2VoiceStore } from './store';
 import { SOUND_ROUTE, sound } from './sound';
 import type { PiperMaker, VoiceEngine, VoiceMaker, VoiceStore } from './voice';
-import { piperVoice, remotePiperMaker, remoteVoiceMaker, voice, voiceEngine } from './voice';
+import { buildWithEngine, piperVoice, remotePiperMaker, remoteVoiceMaker, voice, voiceEngine } from './voice';
 // Routes /api. Everything else is the built app.
 
 export interface Env {
@@ -194,6 +194,8 @@ export default {
       }
       return handleApi(request, deps);
     }
+    // The build file also says which voice machine this server speaks with: the app's switch for the new voices.
+    if (path === '/build.json') return buildWithEngine(await env.ASSETS.fetch(request), voiceEngine(env.VOICE_ENGINE));
     return env.ASSETS.fetch(request);
   },
 };

@@ -5,7 +5,7 @@ import { TIMING } from "../../app/timing";
 import { useWakeLock } from "../../app/useWakeLock";
 import { speak, stop } from "../../audio/speech";
 import { warmAll } from "../../audio/voice";
-import { LINES } from "../../audio/lines";
+import { chooseLine } from "../../audio/lines";
 import TeachLesson from "../../components/TeachLesson";
 import { teachingFor, teachingPart2For } from "../../lessons";
 import BigButton from "../../components/BigButton";
@@ -25,7 +25,7 @@ import { logError } from "../../lib/errorLog";
 import { openRepo } from "../../storage/index";
 import type { Child } from "../../storage/schema";
 import VisualView from "../../visuals/VisualView";
-import { castFor } from "../../cast";
+import { CAST_NAMES, voiceFor } from "../../cast";
 import styles from "./LessonPlayer.module.css";
 
 interface Props {
@@ -54,13 +54,14 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
   const teaching = useMemo(() => teachingFor(skill.id), [skill]);
   // Part 2: a second short lesson for the skill's harder levels, where one is written.
   const teaching2 = useMemo(() => teachingPart2For(skill.id), [skill]);
-  // The lessons and the example are said by the subject's friend; the choice screen's own line by Sprout (plan section 20).
-  const friend = castFor(skill.subject);
+  // Who tells the lessons and the example: the subject's friend once the server speaks with the new voices, Sprout
+  // until then (plan section 20). The choice screen names that teller, and Sprout says its line.
+  const teacher = voiceFor(skill.subject);
   // Everything the lesson and its example say is asked for as the lesson opens, so each line is ready in time.
   useEffect(() => {
     if (teaching) return;
-    warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson", friend);
-  }, [beats, example, teaching, friend]);
+    warmAll([...beats.flatMap((each) => (each.reveal ? [each.speak, each.reveal.speak] : [each.speak])), example.prompt.speak, example.explanation.speak], "lesson", teacher);
+  }, [beats, example, teaching, teacher]);
   // The bulb opens on a choice (the owner's choice, Nov 18, 2026): nothing starts until a kind of help is tapped.
   const [mode, setMode] = useState<"choose" | "lesson" | "lesson2" | "example">(startOnPart2 && teaching2 ? "lesson2" : "choose");
   const [index, setIndex] = useState(0);
@@ -110,7 +111,7 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
   // The choice screen says what it offers, once, as it opens.
   useEffect(() => {
     if (mode !== "choose" || !decided) return;
-    void speak(video ? LINES.chooseWithVideo : LINES.choose, rate);
+    void speak(chooseLine(CAST_NAMES[teacher], video !== null), rate);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- once, when the choice is first shown
   }, [decided]);
@@ -122,13 +123,13 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
     if (teaching || !decided || watching || mode !== "lesson" || !playing || !beat) return;
     let cancelled = false;
     void (async () => {
-      await speak(beat.speak, rate, "lesson", friend);
+      await speak(beat.speak, rate, "lesson", teacher);
       if (cancelled) return;
       if (beat.reveal) {
         await wait(TIMING.tryPauseMs);
         if (cancelled) return;
         setRevealed(true);
-        await speak(beat.reveal.speak, rate, "lesson", friend);
+        await speak(beat.reveal.speak, rate, "lesson", teacher);
         if (cancelled) return;
       }
       await wait(TIMING.beatGapMs);
@@ -145,7 +146,7 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
       cancelled = true;
       stop();
     };
-  }, [teaching, decided, watching, mode, playing, index, beat, beats.length, rate, friend]);
+  }, [teaching, decided, watching, mode, playing, index, beat, beats.length, rate, teacher]);
 
   // The example: its question is read first, then each step as it is shown.
   useEffect(() => {
@@ -154,7 +155,7 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
       stepsShown === 0 ? example.prompt.speak : example.explanation.speak,
       rate,
       "lesson",
-      friend,
+      teacher,
     );
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- once when the example opens and once when its answer is shown
@@ -195,7 +196,7 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
             )}
             <BigButton size="kid" tone={video ? "quiet" : "main"} onClick={() => pick("lesson")}>
               <Icon name="film" />
-              Lesson with Sprout
+              Lesson with {CAST_NAMES[teacher]}
             </BigButton>
             {teaching2 && (
               <BigButton size="kid" tone="quiet" onClick={() => pick("lesson2")}>
@@ -224,11 +225,11 @@ export default function LessonPlayer({ child, skill, startOnPart2 = false, run }
       )}
 
       {mode === "lesson" && teaching && decided && !watching && (
-        <TeachLesson key={skill.id} lesson={teaching} rate={rate} who={friend} onPractise={practise} />
+        <TeachLesson key={skill.id} lesson={teaching} rate={rate} who={teacher} onPractise={practise} />
       )}
 
       {mode === "lesson2" && teaching2 && decided && !watching && (
-        <TeachLesson key={`${skill.id}|2`} lesson={teaching2} rate={rate} who={friend} onPractise={practise} />
+        <TeachLesson key={`${skill.id}|2`} lesson={teaching2} rate={rate} who={teacher} onPractise={practise} />
       )}
 
       {mode === "lesson" && !teaching && beat && (

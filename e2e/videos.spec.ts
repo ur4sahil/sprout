@@ -1,6 +1,7 @@
 import { expect, signUp, test } from './support/fixtures';
 import { addChild } from './support/kid';
 import { checkScreen } from './support/layout';
+import { LESSON_BUTTON } from './support/lesson';
 import { openFromMath } from './support/sweep';
 
 // Concept videos (step 21). YouTube itself is not loaded in these checks: a blank page stands in
@@ -32,7 +33,7 @@ test.describe('a video in a lesson', () => {
     await checkScreen(page, 'video player', 64);
     await page.getByRole('button', { name: /Close/ }).click();
     await expect(player).toBeHidden();
-    await expect(page.getByRole('button', { name: /Lesson with Sprout/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: LESSON_BUTTON })).toBeVisible();
   });
 
   test('a skill with no video offers no video', async ({ page }) => {
@@ -41,7 +42,7 @@ test.describe('a video in a lesson', () => {
     await page.getByRole('button', { name: 'Robin', exact: true }).click();
     await openFromMath(page, 'Same shape', 'Pre-K');
     await page.getByRole('button', { name: 'Learn this skill' }).click();
-    await expect(page.getByRole('button', { name: /Lesson with Sprout/ })).toBeVisible();
+    await expect(page.getByRole('button', { name: LESSON_BUTTON })).toBeVisible();
     await expect(page.getByRole('button', { name: /Watch a video/ })).toHaveCount(0);
     await expect(page.locator('[data-video]')).toHaveCount(0);
   });

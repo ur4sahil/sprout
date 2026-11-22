@@ -1,7 +1,7 @@
 import type { D1Database, R2Bucket, SendEmail } from '@cloudflare/workers-types';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import type { Env } from '../../worker/index';
-import { buildDeps } from '../../worker/index';
+import worker, { buildDeps } from '../../worker/index';
 import { r2VoiceStore } from '../../worker/store';
 import type { PiperVoice, Who } from '../../worker/voice';
 import { PIPER_VOICE, cleanTiming, piperKey, remotePiperMaker, timingKey, voiceKey } from '../../worker/voice';
@@ -332,5 +332,44 @@ describe('the VOICE_ENGINE setting', () => {
       expect(deps?.voiceMaker).toBeNull();
       expect(deps?.piperMaker).toBeNull();
     }
+  });
+});
+
+describe('the build file says which voice machine the server speaks with', () => {
+  const ctx = { waitUntil: () => undefined };
+  const env = (vars: Partial<Env>, assets: (request: Request) => Promise<Response>): Env => ({
+    DB: {} as unknown as D1Database,
+    MAIL: {} as unknown as SendEmail,
+    BACKUPS: {} as unknown as R2Bucket,
+    ASSETS: { fetch: assets },
+    ENVIRONMENT: 'dev',
+    APP_ORIGIN: 'https://sprout.test',
+    AUTH_PEPPER: 'test-pepper-0123456789abcdef0123456789abcdef',
+    ...vars,
+  });
+  const buildFile = async (): Promise<Response> => new Response('{"id":"mwrayaz5"}', { headers: { 'Content-Type': 'application/json', 'Content-Encoding': 'gzip', 'Content-Length': '17', ETag: '"abc"' } });
+
+  it('adds the engine to /build.json: piper where VOICE_ENGINE says so, kokoro otherwise', async () => {
+    for (const [setting, said] of [['piper', 'piper'], ['kokoro', 'kokoro'], [undefined, 'kokoro'], ['Piper', 'kokoro']] as const) {
+      const reply = await worker.fetch(new Request('https://sprout.test/build.json?t=1'), env({ VOICE_ENGINE: setting }, buildFile), ctx);
+      expect(reply.status).toBe(200);
+      expect(await reply.json(), String(setting)).toEqual({ id: 'mwrayaz5', voice: said });
+      expect(reply.headers.get('Content-Type')).toBe('application/json');
+      expect(reply.headers.get('Cache-Control')).toBe('no-store');
+      // The new body is plain and of its own length: nothing of the old file's encoding is kept.
+      expect(reply.headers.has('Content-Encoding')).toBe(false);
+      expect(reply.headers.has('ETag')).toBe(false);
+    }
+  });
+
+  it('passes on untouched anything that is not the build file as expected, and every other file', async () => {
+    const replies = [new Response('not here', { status: 404 }), new Response('<html>', { status: 200 }), new Response('[1,2]', { status: 200 }), new Response('null', { status: 200 })];
+    for (const original of replies) {
+      const reply = await worker.fetch(new Request('https://sprout.test/build.json'), env({ VOICE_ENGINE: 'piper' }, async () => original), ctx);
+      expect(reply).toBe(original);
+    }
+    const page = new Response('{"id":"not the build file"}', { status: 200 });
+    const reply = await worker.fetch(new Request('https://sprout.test/index.html'), env({ VOICE_ENGINE: 'piper' }, async () => page), ctx);
+    expect(reply).toBe(page);
   });
 });
