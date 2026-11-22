@@ -37,10 +37,16 @@ export interface MixedBag {
   lastResponse: Response | null;
   saveError: string | null;
   hints: HintAllowance; // 3 for the whole bag
+  skipsLeft: number; // MIXED_SKIPS for the whole bag
   setResponse: (response: Response | null) => void;
   submit: () => void;
   gotIt: () => void;
+  skip: () => void;
 }
+
+// Skips in one bag (the owner's choice, Nov 22, 2026). A skipped question is left out: nothing is saved, no score moves,
+// and its turn comes again at the end of the bag with another question, so the bag still asks as many.
+export const MIXED_SKIPS = 3;
 
 const wait = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -55,6 +61,7 @@ export function useMixedBag(child: Child): MixedBag {
   const [lastResponse, setLastResponse] = useState<Response | null>(null);
   const [saveError, setSaveError] = useState<string | null>(null);
   const hints = useHintBook(asked);
+  const [skipsLeft, setSkipsLeft] = useState(MIXED_SKIPS);
   const usedHint = hints.usedOn;
 
   const live = useRef<{
@@ -195,5 +202,18 @@ export function useMixedBag(child: Child): MixedBag {
     next();
   }, [next, phase]);
 
-  return { phase, question, skill, asked, right, total, response, lastResponse, saveError, hints, setResponse, submit, gotIt };
+  const skip = useCallback((): void => {
+    const self = live.current;
+    const q = self.question;
+    const current = self.skill;
+    if (phase !== 'asking' || skipsLeft <= 0 || !q || !current || self.pending) return;
+    stop();
+    setSkipsLeft((n) => n - 1);
+    // The skipped question is not asked again soon; its turn goes to the end of the bag.
+    self.keys.set(current.id, [...(self.keys.get(current.id) ?? []), q.key].slice(-6));
+    self.order.push(current.id);
+    next();
+  }, [next, phase, skipsLeft]);
+
+  return { phase, question, skill, asked, right, total, response, lastResponse, saveError, hints, skipsLeft, setResponse, submit, gotIt, skip };
 }

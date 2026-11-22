@@ -8,6 +8,7 @@ import BigButton from '../../components/BigButton';
 import FullScreenCard from '../../components/FullScreenCard';
 import HintButton from '../../components/HintButton';
 import HintPanel from '../../components/HintPanel';
+import SkipButton from '../../components/SkipButton';
 import HoldButton from '../../components/HoldButton';
 import Icon from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
@@ -69,7 +70,10 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
           </h1>
           <span className={styles.spacer} />
           {question && questionId !== null && asking && (
-            <HintButton left={bag.hints.left} open={bag.hints.opened(questionId)} disabled={phase !== 'asking' || !bag.hints.canOpen(questionId)} onOpen={openHint} />
+            <>
+              <HintButton left={bag.hints.left} open={bag.hints.opened(questionId)} disabled={phase !== 'asking' || !bag.hints.canOpen(questionId)} onOpen={openHint} />
+              <SkipButton left={bag.skipsLeft} disabled={phase !== 'asking'} onSkip={bag.skip} />
+            </>
           )}
         </>
       }

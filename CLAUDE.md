@@ -297,6 +297,7 @@
 - The shared story templates name a person once, then say "he" or "she" (`STORY_PRONOUNS` and `PRONOUN_FORMS` in `data/storyProblems.ts`; `{She}`, `{she}`, `{him}` in a template); two people keep their names wherever a pronoun could mean either. Every name has one pronoun in every list (tested).
 - Letter sounds /oo/ (moon) and /air/ (chair): 55 keys, the Worker's copy too. Their recordings are uploaded separately as `sound/oo/<once|three>.mp3` and `sound/air/<once|three>.mp3`.
 - The medal's button (Skill Score 100) says where it goes: "Next one" in a run through today's plan while another part comes after this skill (`moreAfter` in `src/app/todaysPlan.ts`, the same parts `nextPart` would go to), "All done" on the plan's last part and when practice was opened by itself. The review card already did this. Tested in `tests/app/practice.test.tsx`.
+- The Mixed bag has a Skip button beside Hint (`SkipButton`, `MIXED_SKIPS` = 3 a bag, `skip` in `useMixedBag`): a skipped question saves nothing and moves no score, and its turn goes to the end of the bag with another question, so the bag still asks as many. Tested in `tests/app/mixedBagScreen.test.tsx`.
 - A count of 1 never takes a plural ("1 row of 7"); grade 2 B.2 gives a real word first ("Taller means more tall."), then its ending's rule; every grade 3 question offers a nudge; fast facts ask "What is 6 plus 7?". The content rules are in `tests/content/ownerChoices.test.ts`.
 
 ## Voices, phase 1: the voice switch (plan section 20, `docs/VOICES_AND_LESSONS.md`, Nov 22, 2026)
