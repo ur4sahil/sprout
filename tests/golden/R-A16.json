@@ -1,6 +1,6 @@
 {
  "skillId": "R-A16",
- "version": 2,
+ "version": 3,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -19,6 +19,18 @@
   "prompt": {
    "text": "Which word does not belong?",
    "speak": [
+    {
+     "word": "blue"
+    },
+    ",",
+    {
+     "word": "purple"
+    },
+    ",",
+    {
+     "word": "bear"
+    },
+    ".",
     "Which word does not belong?"
    ]
   },
@@ -57,25 +69,51 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "The others are colors.",
+    {
+     "word": "blue"
+    },
+    "and",
+    {
+     "word": "purple"
+    },
+    "are colors.",
+    "a",
     {
      "word": "bear"
     },
     "is not."
    ],
    "steps": [
-    "blue, purple: colors.",
-    "Bear is not one of them."
+    "Blue and purple are colors.",
+    "A bear is not."
    ],
    "visual": {
-    "kind": "text",
-    "value": "bear",
-    "size": "l",
-    "speak": [
+    "kind": "row",
+    "children": [
      {
-      "word": "bear"
+      "kind": "text",
+      "value": "blue",
+      "size": "l",
+      "speak": [
+       {
+        "word": "blue"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "purple",
+      "size": "l",
+      "speak": [
+       {
+        "word": "purple"
+       }
+      ]
      }
     ]
+   },
+   "hint": {
+    "text": "Find the group most of the words belong to."
    }
   },
   "skillId": "R-A16",
@@ -103,6 +141,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "bed"
+      },
+      ",",
+      {
+       "word": "star"
+      },
+      ",",
+      {
+       "word": "sofa"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -141,25 +191,52 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The others are furniture.",
+      "a",
+      {
+       "word": "bed"
+      },
+      "and a",
+      {
+       "word": "sofa"
+      },
+      "are furniture.",
+      "a",
       {
        "word": "star"
       },
       "is not."
      ],
      "steps": [
-      "sofa, bed: furniture.",
-      "Star is not one of them."
+      "A bed and a sofa are furniture.",
+      "A star is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "star",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "star"
+        "kind": "text",
+        "value": "bed",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sofa",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sofa"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -172,82 +249,121 @@
     "mode": "look",
     "facts": {
      "options": [
-      "raft",
-      "boat",
-      "apple"
+      "pear",
+      "canoe",
+      "sailboat"
      ],
      "words": [
-      "raft",
-      "boat",
-      "apple"
+      "pear",
+      "canoe",
+      "sailboat"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "pear"
+      },
+      ",",
+      {
+       "word": "canoe"
+      },
+      ",",
+      {
+       "word": "sailboat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "raft",
+      "value": "pear",
       "size": "l",
       "speak": [
        {
-        "word": "raft"
+        "word": "pear"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "boat",
+      "value": "canoe",
       "size": "l",
       "speak": [
        {
-        "word": "boat"
+        "word": "canoe"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "apple",
+      "value": "sailboat",
       "size": "l",
       "speak": [
        {
-        "word": "apple"
+        "word": "sailboat"
        }
       ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are things that go on water.",
+      "a",
       {
-       "word": "apple"
+       "word": "canoe"
       },
-      "is not."
+      "and a",
+      {
+       "word": "sailboat"
+      },
+      "go on water.",
+      "a",
+      {
+       "word": "pear"
+      },
+      "does not."
      ],
      "steps": [
-      "boat, raft: things that go on water.",
-      "Apple is not one of them."
+      "A canoe and a sailboat go on water.",
+      "A pear does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "apple",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "apple"
+        "kind": "text",
+        "value": "canoe",
+        "size": "l",
+        "speak": [
+         {
+          "word": "canoe"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sailboat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sailboat"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 1,
     "seed": 2,
-    "key": "R-A16|1|{\"words\":[\"raft\",\"boat\",\"apple\"]}"
+    "key": "R-A16|1|{\"words\":[\"pear\",\"canoe\",\"sailboat\"]}"
    },
    {
     "type": "choice",
@@ -267,6 +383,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "corn"
+      },
+      ",",
+      {
+       "word": "yellow"
+      },
+      ",",
+      {
+       "word": "pink"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -305,25 +433,50 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are colors.",
+      {
+       "word": "yellow"
+      },
+      "and",
+      {
+       "word": "pink"
+      },
+      "are colors.",
       {
        "word": "corn"
       },
       "is not."
      ],
      "steps": [
-      "pink, yellow: colors.",
-      "Corn is not one of them."
+      "Yellow and pink are colors.",
+      "Corn is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "corn",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "corn"
+        "kind": "text",
+        "value": "yellow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "yellow"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pink",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pink"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -349,6 +502,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "hen"
+      },
+      ",",
+      {
+       "word": "car"
+      },
+      ",",
+      {
+       "word": "van"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -387,25 +552,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are things that go on land.",
+      "a",
+      {
+       "word": "car"
+      },
+      "and a",
+      {
+       "word": "van"
+      },
+      "have wheels.",
+      "a",
       {
        "word": "hen"
       },
-      "is not."
+      "does not."
      ],
      "steps": [
-      "car, van: things that go on land.",
-      "Hen is not one of them."
+      "A car and a van have wheels.",
+      "A hen does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "hen",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "hen"
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "van",
+        "size": "l",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -431,6 +623,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "heart"
+      },
+      ",",
+      {
+       "word": "square"
+      },
+      ",",
+      {
+       "word": "sock"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -469,25 +673,52 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are shapes.",
+      "a",
+      {
+       "word": "heart"
+      },
+      "and a",
+      {
+       "word": "square"
+      },
+      "are shapes.",
+      "a",
       {
        "word": "sock"
       },
       "is not."
      ],
      "steps": [
-      "square, heart: shapes.",
-      "Sock is not one of them."
+      "A heart and a square are shapes.",
+      "A sock is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "sock",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "sock"
+        "kind": "text",
+        "value": "heart",
+        "size": "l",
+        "speak": [
+         {
+          "word": "heart"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "square",
+        "size": "l",
+        "speak": [
+         {
+          "word": "square"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -513,6 +744,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "train"
+      },
+      ",",
+      {
+       "word": "desk"
+      },
+      ",",
+      {
+       "word": "bed"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -551,25 +794,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are furniture.",
+      "a",
+      {
+       "word": "desk"
+      },
+      "and a",
+      {
+       "word": "bed"
+      },
+      "are furniture.",
+      "a",
       {
        "word": "train"
       },
       "is not."
      ],
      "steps": [
-      "desk, bed: furniture.",
-      "Train is not one of them."
+      "A desk and a bed are furniture.",
+      "A train is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "train",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "train"
+        "kind": "text",
+        "value": "desk",
+        "size": "l",
+        "speak": [
+         {
+          "word": "desk"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -595,6 +865,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "truck"
+      },
+      ",",
+      {
+       "word": "scarf"
+      },
+      ",",
+      {
+       "word": "hat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -633,25 +915,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "scarf"
+      },
+      "and a",
+      {
+       "word": "hat"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "truck"
       },
       "is not."
      ],
      "steps": [
-      "hat, scarf: clothes.",
-      "Truck is not one of them."
+      "A scarf and a hat are clothes.",
+      "A truck is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "truck",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "truck"
+        "kind": "text",
+        "value": "scarf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -677,6 +986,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "shelf"
+      },
+      ",",
+      {
+       "word": "table"
+      },
+      ",",
+      {
+       "word": "fox"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -715,25 +1036,52 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are furniture.",
+      "a",
+      {
+       "word": "shelf"
+      },
+      "and a",
+      {
+       "word": "table"
+      },
+      "are furniture.",
+      "a",
       {
        "word": "fox"
       },
       "is not."
      ],
      "steps": [
-      "table, shelf: furniture.",
-      "Fox is not one of them."
+      "A shelf and a table are furniture.",
+      "A fox is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "fox",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "fox"
+        "kind": "text",
+        "value": "shelf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shelf"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "table",
+        "size": "l",
+        "speak": [
+         {
+          "word": "table"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -746,122 +1094,162 @@
     "mode": "look",
     "facts": {
      "options": [
-      "desk",
-      "fog",
-      "rain"
+      "sunshine",
+      "snow",
+      "table"
      ],
      "words": [
-      "desk",
-      "fog",
-      "rain"
+      "sunshine",
+      "snow",
+      "table"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "sunshine"
+      },
+      ",",
+      {
+       "word": "snow"
+      },
+      ",",
+      {
+       "word": "table"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "desk",
+      "value": "sunshine",
       "size": "l",
       "speak": [
        {
-        "word": "desk"
+        "word": "sunshine"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "fog",
+      "value": "snow",
       "size": "l",
       "speak": [
        {
-        "word": "fog"
+        "word": "snow"
        }
       ]
      },
      {
       "kind": "text",
-      "value": "rain",
+      "value": "table",
       "size": "l",
       "speak": [
        {
-        "word": "rain"
+        "word": "table"
        }
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are kinds of weather.",
       {
-       "word": "desk"
+       "word": "sunshine"
+      },
+      "and",
+      {
+       "word": "snow"
+      },
+      "are kinds of weather.",
+      "a",
+      {
+       "word": "table"
       },
       "is not."
      ],
      "steps": [
-      "fog, rain: kinds of weather.",
-      "Desk is not one of them."
+      "Sunshine and snow are kinds of weather.",
+      "A table is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "desk",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "desk"
+        "kind": "text",
+        "value": "sunshine",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sunshine"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "snow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "snow"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 1,
     "seed": 9,
-    "key": "R-A16|1|{\"words\":[\"desk\",\"fog\",\"rain\"]}"
+    "key": "R-A16|1|{\"words\":[\"sunshine\",\"snow\",\"table\"]}"
    },
    {
     "type": "choice",
     "mode": "look",
     "facts": {
      "options": [
-      "van",
-      "hail",
-      "wind"
+      "storm",
+      "wind",
+      "truck"
      ],
      "words": [
-      "van",
-      "hail",
-      "wind"
+      "storm",
+      "wind",
+      "truck"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "storm"
+      },
+      ",",
+      {
+       "word": "wind"
+      },
+      ",",
+      {
+       "word": "truck"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "van",
+      "value": "storm",
       "size": "l",
       "speak": [
        {
-        "word": "van"
-       }
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "hail",
-      "size": "l",
-      "speak": [
-       {
-        "word": "hail"
+        "word": "storm"
        }
       ]
      },
@@ -874,36 +1262,73 @@
         "word": "wind"
        }
       ]
+     },
+     {
+      "kind": "text",
+      "value": "truck",
+      "size": "l",
+      "speak": [
+       {
+        "word": "truck"
+       }
+      ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are kinds of weather.",
+      "a",
       {
-       "word": "van"
+       "word": "storm"
+      },
+      "and",
+      {
+       "word": "wind"
+      },
+      "are kinds of weather.",
+      "a",
+      {
+       "word": "truck"
       },
       "is not."
      ],
      "steps": [
-      "wind, hail: kinds of weather.",
-      "Van is not one of them."
+      "A storm and wind are kinds of weather.",
+      "A truck is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "van",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "van"
+        "kind": "text",
+        "value": "storm",
+        "size": "l",
+        "speak": [
+         {
+          "word": "storm"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "wind",
+        "size": "l",
+        "speak": [
+         {
+          "word": "wind"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 1,
     "seed": 10,
-    "key": "R-A16|1|{\"words\":[\"van\",\"hail\",\"wind\"]}"
+    "key": "R-A16|1|{\"words\":[\"storm\",\"wind\",\"truck\"]}"
    }
   ],
   "2": [
@@ -925,6 +1350,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "hat"
+      },
+      ",",
+      {
+       "word": "desk"
+      },
+      ",",
+      {
+       "word": "sock"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -963,25 +1400,52 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "hat"
+      },
+      "and a",
+      {
+       "word": "sock"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "desk"
       },
       "is not."
      ],
      "steps": [
-      "hat, sock: clothes.",
-      "Desk is not one of them."
+      "A hat and a sock are clothes.",
+      "A desk is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "desk",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "desk"
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sock",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1007,6 +1471,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "shirt"
+      },
+      ",",
+      {
+       "word": "scarf"
+      },
+      ",",
+      {
+       "word": "bed"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1045,25 +1521,52 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "shirt"
+      },
+      "and a",
+      {
+       "word": "scarf"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "bed"
       },
       "is not."
      ],
      "steps": [
-      "scarf, shirt: clothes.",
-      "Bed is not one of them."
+      "A shirt and a scarf are clothes.",
+      "A bed is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "bed",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "bed"
+        "kind": "text",
+        "value": "shirt",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "scarf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1089,6 +1592,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "chair"
+      },
+      ",",
+      {
+       "word": "scarf"
+      },
+      ",",
+      {
+       "word": "dress"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1127,25 +1642,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "scarf"
+      },
+      "and a",
+      {
+       "word": "dress"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "chair"
       },
       "is not."
      ],
      "steps": [
-      "dress, scarf: clothes.",
-      "Chair is not one of them."
+      "A scarf and a dress are clothes.",
+      "A chair is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "chair",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "chair"
+        "kind": "text",
+        "value": "scarf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dress",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1171,6 +1713,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "green"
+      },
+      ",",
+      {
+       "word": "heart"
+      },
+      ",",
+      {
+       "word": "yellow"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1209,25 +1763,51 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The others are colors.",
+      {
+       "word": "green"
+      },
+      "and",
+      {
+       "word": "yellow"
+      },
+      "are colors.",
+      "a",
       {
        "word": "heart"
       },
       "is not."
      ],
      "steps": [
-      "green, yellow: colors.",
-      "Heart is not one of them."
+      "Green and yellow are colors.",
+      "A heart is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "heart",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "heart"
+        "kind": "text",
+        "value": "green",
+        "size": "l",
+        "speak": [
+         {
+          "word": "green"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "yellow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "yellow"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1253,6 +1833,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "bed"
+      },
+      ",",
+      {
+       "word": "desk"
+      },
+      ",",
+      {
+       "word": "hat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1291,25 +1883,52 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are furniture.",
+      "a",
+      {
+       "word": "bed"
+      },
+      "and a",
+      {
+       "word": "desk"
+      },
+      "are furniture.",
+      "a",
       {
        "word": "hat"
       },
       "is not."
      ],
      "steps": [
-      "desk, bed: furniture.",
-      "Hat is not one of them."
+      "A bed and a desk are furniture.",
+      "A hat is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "hat",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "hat"
+        "kind": "text",
+        "value": "bed",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "desk",
+        "size": "l",
+        "speak": [
+         {
+          "word": "desk"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1324,17 +1943,29 @@
      "options": [
       "van",
       "train",
-      "ferry"
+      "sailboat"
      ],
      "words": [
       "van",
       "train",
-      "ferry"
+      "sailboat"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "van"
+      },
+      ",",
+      {
+       "word": "train"
+      },
+      ",",
+      {
+       "word": "sailboat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1361,11 +1992,11 @@
      },
      {
       "kind": "text",
-      "value": "ferry",
+      "value": "sailboat",
       "size": "l",
       "speak": [
        {
-        "word": "ferry"
+        "word": "sailboat"
        }
       ]
      }
@@ -1373,31 +2004,58 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are things that go on land.",
+      "a",
       {
-       "word": "ferry"
+       "word": "van"
       },
-      "is not."
+      "and a",
+      {
+       "word": "train"
+      },
+      "have wheels.",
+      "a",
+      {
+       "word": "sailboat"
+      },
+      "does not."
      ],
      "steps": [
-      "train, van: things that go on land.",
-      "Ferry is not one of them."
+      "A van and a train have wheels.",
+      "A sailboat does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "ferry",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "ferry"
+        "kind": "text",
+        "value": "van",
+        "size": "l",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 2,
     "seed": 6,
-    "key": "R-A16|2|{\"words\":[\"van\",\"train\",\"ferry\"]}"
+    "key": "R-A16|2|{\"words\":[\"van\",\"train\",\"sailboat\"]}"
    },
    {
     "type": "choice",
@@ -1417,6 +2075,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "peach"
+      },
+      ",",
+      {
+       "word": "pea"
+      },
+      ",",
+      {
+       "word": "apple"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1455,25 +2125,52 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The others are fruits.",
+      "a",
+      {
+       "word": "peach"
+      },
+      "and an",
+      {
+       "word": "apple"
+      },
+      "are fruits.",
+      "a",
       {
        "word": "pea"
       },
       "is not."
      ],
      "steps": [
-      "peach, apple: fruits.",
-      "Pea is not one of them."
+      "A peach and an apple are fruits.",
+      "A pea is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "pea",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "pea"
+        "kind": "text",
+        "value": "peach",
+        "size": "l",
+        "speak": [
+         {
+          "word": "peach"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "apple",
+        "size": "l",
+        "speak": [
+         {
+          "word": "apple"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1499,6 +2196,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "banana"
+      },
+      ",",
+      {
+       "word": "carrot"
+      },
+      ",",
+      {
+       "word": "bean"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1537,25 +2246,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are vegetables.",
+      "a",
+      {
+       "word": "carrot"
+      },
+      "and a",
+      {
+       "word": "bean"
+      },
+      "are vegetables.",
+      "a",
       {
        "word": "banana"
       },
       "is not."
      ],
      "steps": [
-      "carrot, bean: vegetables.",
-      "Banana is not one of them."
+      "A carrot and a bean are vegetables.",
+      "A banana is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "banana",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "banana"
+        "kind": "text",
+        "value": "carrot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "carrot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bean",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bean"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1581,6 +2317,18 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "plum"
+      },
+      ",",
+      {
+       "word": "corn"
+      },
+      ",",
+      {
+       "word": "pea"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1619,25 +2367,51 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are vegetables.",
+      {
+       "word": "corn"
+      },
+      "and a",
+      {
+       "word": "pea"
+      },
+      "are vegetables.",
+      "a",
       {
        "word": "plum"
       },
       "is not."
      ],
      "steps": [
-      "pea, corn: vegetables.",
-      "Plum is not one of them."
+      "Corn and a pea are vegetables.",
+      "A plum is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "plum",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "plum"
+        "kind": "text",
+        "value": "corn",
+        "size": "l",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pea",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pea"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1650,33 +2424,35 @@
     "mode": "look",
     "facts": {
      "options": [
-      "car",
       "boat",
+      "bus",
       "canoe"
      ],
      "words": [
-      "car",
       "boat",
+      "bus",
       "canoe"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "boat"
+      },
+      ",",
+      {
+       "word": "bus"
+      },
+      ",",
+      {
+       "word": "canoe"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
     "options": [
-     {
-      "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
-       {
-        "word": "car"
-       }
-      ]
-     },
      {
       "kind": "text",
       "value": "boat",
@@ -1684,6 +2460,16 @@
       "speak": [
        {
         "word": "boat"
+       }
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "bus",
+      "size": "l",
+      "speak": [
+       {
+        "word": "bus"
        }
       ]
      },
@@ -1698,34 +2484,61 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The others are things that go on water.",
+      "a",
       {
-       "word": "car"
+       "word": "boat"
       },
-      "is not."
+      "and a",
+      {
+       "word": "canoe"
+      },
+      "go on water.",
+      "a",
+      {
+       "word": "bus"
+      },
+      "does not."
      ],
      "steps": [
-      "canoe, boat: things that go on water.",
-      "Car is not one of them."
+      "A boat and a canoe go on water.",
+      "A bus does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "car"
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "canoe",
+        "size": "l",
+        "speak": [
+         {
+          "word": "canoe"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 2,
     "seed": 10,
-    "key": "R-A16|2|{\"words\":[\"car\",\"boat\",\"canoe\"]}"
+    "key": "R-A16|2|{\"words\":[\"boat\",\"bus\",\"canoe\"]}"
    }
   ],
   "3": [
@@ -1749,6 +2562,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "desk"
+      },
+      ",",
+      {
+       "word": "hat"
+      },
+      ",",
+      {
+       "word": "shirt"
+      },
+      ",",
+      {
+       "word": "sock"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1797,25 +2626,66 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "hat"
+      },
+      ", a",
+      {
+       "word": "shirt"
+      },
+      "and a",
+      {
+       "word": "sock"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "desk"
       },
       "is not."
      ],
      "steps": [
-      "hat, sock, shirt: clothes.",
-      "Desk is not one of them."
+      "A hat, a shirt and a sock are clothes.",
+      "A desk is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "desk",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "desk"
+        "kind": "text",
+        "value": "hat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "hat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "shirt",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "sock",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1843,6 +2713,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "dress"
+      },
+      ",",
+      {
+       "word": "shirt"
+      },
+      ",",
+      {
+       "word": "scarf"
+      },
+      ",",
+      {
+       "word": "bed"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1891,25 +2777,66 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "dress"
+      },
+      ", a",
+      {
+       "word": "shirt"
+      },
+      "and a",
+      {
+       "word": "scarf"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "bed"
       },
       "is not."
      ],
      "steps": [
-      "scarf, shirt, dress: clothes.",
-      "Bed is not one of them."
+      "A dress, a shirt and a scarf are clothes.",
+      "A bed is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "bed",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "bed"
+        "kind": "text",
+        "value": "dress",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "shirt",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shirt"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "scarf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -1937,6 +2864,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "sock"
+      },
+      ",",
+      {
+       "word": "dress"
+      },
+      ",",
+      {
+       "word": "chair"
+      },
+      ",",
+      {
+       "word": "scarf"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -1985,25 +2928,66 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are clothes.",
+      "a",
+      {
+       "word": "sock"
+      },
+      ", a",
+      {
+       "word": "dress"
+      },
+      "and a",
+      {
+       "word": "scarf"
+      },
+      "are clothes.",
+      "a",
       {
        "word": "chair"
       },
       "is not."
      ],
      "steps": [
-      "dress, scarf, sock: clothes.",
-      "Chair is not one of them."
+      "A sock, a dress and a scarf are clothes.",
+      "A chair is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "chair",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "chair"
+        "kind": "text",
+        "value": "sock",
+        "size": "l",
+        "speak": [
+         {
+          "word": "sock"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "dress",
+        "size": "l",
+        "speak": [
+         {
+          "word": "dress"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "scarf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "scarf"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2031,6 +3015,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "green"
+      },
+      ",",
+      {
+       "word": "yellow"
+      },
+      ",",
+      {
+       "word": "heart"
+      },
+      ",",
+      {
+       "word": "purple"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2079,25 +3079,65 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are colors.",
+      {
+       "word": "green"
+      },
+      ",",
+      {
+       "word": "yellow"
+      },
+      "and",
+      {
+       "word": "purple"
+      },
+      "are colors.",
+      "a",
       {
        "word": "heart"
       },
       "is not."
      ],
      "steps": [
-      "green, yellow, purple: colors.",
-      "Heart is not one of them."
+      "Green, yellow and purple are colors.",
+      "A heart is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "heart",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "heart"
+        "kind": "text",
+        "value": "green",
+        "size": "l",
+        "speak": [
+         {
+          "word": "green"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "yellow",
+        "size": "l",
+        "speak": [
+         {
+          "word": "yellow"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "purple",
+        "size": "l",
+        "speak": [
+         {
+          "word": "purple"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2125,6 +3165,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "shelf"
+      },
+      ",",
+      {
+       "word": "bed"
+      },
+      ",",
+      {
+       "word": "desk"
+      },
+      ",",
+      {
+       "word": "hat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2173,25 +3229,66 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The others are furniture.",
+      "a",
+      {
+       "word": "shelf"
+      },
+      ", a",
+      {
+       "word": "bed"
+      },
+      "and a",
+      {
+       "word": "desk"
+      },
+      "are furniture.",
+      "a",
       {
        "word": "hat"
       },
       "is not."
      ],
      "steps": [
-      "desk, bed, shelf: furniture.",
-      "Hat is not one of them."
+      "A shelf, a bed and a desk are furniture.",
+      "A hat is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "hat",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "hat"
+        "kind": "text",
+        "value": "shelf",
+        "size": "l",
+        "speak": [
+         {
+          "word": "shelf"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "bed",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bed"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "desk",
+        "size": "l",
+        "speak": [
+         {
+          "word": "desk"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2207,18 +3304,34 @@
       "car",
       "van",
       "train",
-      "ferry"
+      "sailboat"
      ],
      "words": [
       "car",
       "van",
       "train",
-      "ferry"
+      "sailboat"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "car"
+      },
+      ",",
+      {
+       "word": "van"
+      },
+      ",",
+      {
+       "word": "train"
+      },
+      ",",
+      {
+       "word": "sailboat"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2255,11 +3368,11 @@
      },
      {
       "kind": "text",
-      "value": "ferry",
+      "value": "sailboat",
       "size": "l",
       "speak": [
        {
-        "word": "ferry"
+        "word": "sailboat"
        }
       ]
      }
@@ -2267,31 +3380,72 @@
     "answerIndex": 3,
     "explanation": {
      "speak": [
-      "The others are things that go on land.",
+      "a",
       {
-       "word": "ferry"
+       "word": "car"
       },
-      "is not."
+      ", a",
+      {
+       "word": "van"
+      },
+      "and a",
+      {
+       "word": "train"
+      },
+      "have wheels.",
+      "a",
+      {
+       "word": "sailboat"
+      },
+      "does not."
      ],
      "steps": [
-      "train, van, car: things that go on land.",
-      "Ferry is not one of them."
+      "A car, a van and a train have wheels.",
+      "A sailboat does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "ferry",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "ferry"
+        "kind": "text",
+        "value": "car",
+        "size": "l",
+        "speak": [
+         {
+          "word": "car"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "van",
+        "size": "l",
+        "speak": [
+         {
+          "word": "van"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "train",
+        "size": "l",
+        "speak": [
+         {
+          "word": "train"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 3,
     "seed": 6,
-    "key": "R-A16|3|{\"words\":[\"car\",\"van\",\"train\",\"ferry\"]}"
+    "key": "R-A16|3|{\"words\":[\"car\",\"van\",\"train\",\"sailboat\"]}"
    },
    {
     "type": "choice",
@@ -2313,6 +3467,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "apple"
+      },
+      ",",
+      {
+       "word": "peach"
+      },
+      ",",
+      {
+       "word": "pea"
+      },
+      ",",
+      {
+       "word": "banana"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2361,25 +3531,66 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are fruits.",
+      "an",
+      {
+       "word": "apple"
+      },
+      ", a",
+      {
+       "word": "peach"
+      },
+      "and a",
+      {
+       "word": "banana"
+      },
+      "are fruits.",
+      "a",
       {
        "word": "pea"
       },
       "is not."
      ],
      "steps": [
-      "peach, apple, banana: fruits.",
-      "Pea is not one of them."
+      "An apple, a peach and a banana are fruits.",
+      "A pea is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "pea",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "pea"
+        "kind": "text",
+        "value": "apple",
+        "size": "l",
+        "speak": [
+         {
+          "word": "apple"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "peach",
+        "size": "l",
+        "speak": [
+         {
+          "word": "peach"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "banana",
+        "size": "l",
+        "speak": [
+         {
+          "word": "banana"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2407,6 +3618,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "banana"
+      },
+      ",",
+      {
+       "word": "bean"
+      },
+      ",",
+      {
+       "word": "carrot"
+      },
+      ",",
+      {
+       "word": "corn"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2455,25 +3682,66 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are vegetables.",
+      "a",
+      {
+       "word": "bean"
+      },
+      ", a",
+      {
+       "word": "carrot"
+      },
+      "and",
+      {
+       "word": "corn"
+      },
+      "are vegetables.",
+      "a",
       {
        "word": "banana"
       },
       "is not."
      ],
      "steps": [
-      "carrot, bean, corn: vegetables.",
-      "Banana is not one of them."
+      "A bean, a carrot and corn are vegetables.",
+      "A banana is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "banana",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "banana"
+        "kind": "text",
+        "value": "bean",
+        "size": "l",
+        "speak": [
+         {
+          "word": "bean"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "carrot",
+        "size": "l",
+        "speak": [
+         {
+          "word": "carrot"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "corn",
+        "size": "l",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2501,6 +3769,22 @@
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "plum"
+      },
+      ",",
+      {
+       "word": "potato"
+      },
+      ",",
+      {
+       "word": "corn"
+      },
+      ",",
+      {
+       "word": "pea"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
@@ -2549,25 +3833,66 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The others are vegetables.",
+      "a",
+      {
+       "word": "potato"
+      },
+      ",",
+      {
+       "word": "corn"
+      },
+      "and a",
+      {
+       "word": "pea"
+      },
+      "are vegetables.",
+      "a",
       {
        "word": "plum"
       },
       "is not."
      ],
      "steps": [
-      "pea, corn, potato: vegetables.",
-      "Plum is not one of them."
+      "A potato, corn and a pea are vegetables.",
+      "A plum is not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "plum",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "plum"
+        "kind": "text",
+        "value": "potato",
+        "size": "l",
+        "speak": [
+         {
+          "word": "potato"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "corn",
+        "size": "l",
+        "speak": [
+         {
+          "word": "corn"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "pea",
+        "size": "l",
+        "speak": [
+         {
+          "word": "pea"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
@@ -2580,32 +3905,48 @@
     "mode": "look",
     "facts": {
      "options": [
-      "car",
+      "ship",
       "boat",
-      "raft",
+      "bus",
       "canoe"
      ],
      "words": [
-      "car",
+      "ship",
       "boat",
-      "raft",
+      "bus",
       "canoe"
      ]
     },
     "prompt": {
      "text": "Which word does not belong?",
      "speak": [
+      {
+       "word": "ship"
+      },
+      ",",
+      {
+       "word": "boat"
+      },
+      ",",
+      {
+       "word": "bus"
+      },
+      ",",
+      {
+       "word": "canoe"
+      },
+      ".",
       "Which word does not belong?"
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "car",
+      "value": "ship",
       "size": "l",
       "speak": [
        {
-        "word": "car"
+        "word": "ship"
        }
       ]
      },
@@ -2621,11 +3962,11 @@
      },
      {
       "kind": "text",
-      "value": "raft",
+      "value": "bus",
       "size": "l",
       "speak": [
        {
-        "word": "raft"
+        "word": "bus"
        }
       ]
      },
@@ -2640,34 +3981,75 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The others are things that go on water.",
+      "a",
       {
-       "word": "car"
+       "word": "ship"
       },
-      "is not."
+      ", a",
+      {
+       "word": "boat"
+      },
+      "and a",
+      {
+       "word": "canoe"
+      },
+      "go on water.",
+      "a",
+      {
+       "word": "bus"
+      },
+      "does not."
      ],
      "steps": [
-      "canoe, boat, raft: things that go on water.",
-      "Car is not one of them."
+      "A ship, a boat and a canoe go on water.",
+      "A bus does not."
      ],
      "visual": {
-      "kind": "text",
-      "value": "car",
-      "size": "l",
-      "speak": [
+      "kind": "row",
+      "children": [
        {
-        "word": "car"
+        "kind": "text",
+        "value": "ship",
+        "size": "l",
+        "speak": [
+         {
+          "word": "ship"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "boat",
+        "size": "l",
+        "speak": [
+         {
+          "word": "boat"
+         }
+        ]
+       },
+       {
+        "kind": "text",
+        "value": "canoe",
+        "size": "l",
+        "speak": [
+         {
+          "word": "canoe"
+         }
+        ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the group most of the words belong to."
      }
     },
     "skillId": "R-A16",
     "level": 3,
     "seed": 10,
-    "key": "R-A16|3|{\"words\":[\"car\",\"boat\",\"raft\",\"canoe\"]}"
+    "key": "R-A16|3|{\"words\":[\"ship\",\"boat\",\"bus\",\"canoe\"]}"
    }
   ]
  }

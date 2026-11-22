@@ -1,6 +1,6 @@
 import type { Rng } from '../../../engine/rng';
 import { makeRng } from '../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../engine/types';
+import type { Explanation, LessonStep, Level, QuestionDraft, ShapeName, Visual } from '../../../engine/types';
 import type { AnalogyPair } from '../../data/analogies';
 import { ANALOGY_CLASHES, ANALOGY_PAIRS } from '../../data/analogies';
 import type { GroupWord, WordGroup } from '../../data/categories';
@@ -9,12 +9,15 @@ import { COLOR_NAMES } from '../../data/colors';
 import type { Riddle } from '../../data/riddles';
 import { RIDDLES } from '../../data/riddles';
 import type { SkillGenerator } from '../../generator';
-import type { Explanation } from '../ela/pk/parts';
-import { cap, pickApart, picture, row } from '../ela/pk/parts';
-import { a, easyToTellApart, shape, twoClearColors } from '../math/pk/parts';
+import { pickApart, picture, row } from '../ela/pk/parts';
+import { easyToTellApart, shape, twoClearColors } from '../math/pk/parts';
 import type { ColorName } from '../../data/colors';
+import type { Line, Piece } from './parts';
+import { explained, line } from './parts';
 
 // Reasoning A.1, A.2, A.9 and A.14: questions about pictures and what they have in common.
+// After a wrong answer the screen shows only the child's answer and the right one, so a step names the pictures it
+// talks about ("A dress and a scarf are clothes."), and the explanation picture shows the ones that go together.
 
 // Groups that sit close together, so telling them apart takes more thought.
 const CLOSE: [WordGroup, WordGroup][] = [
@@ -25,6 +28,9 @@ const CLOSE: [WordGroup, WordGroup][] = [
 ];
 const isClose = (one: WordGroup, two: WordGroup): boolean => CLOSE.some(([x, y]) => (x === one && y === two) || (x === two && y === one));
 
+// The pictures these puzzles use. The king is left out: his picture is a young prince, so it does not match his name.
+const PICTURES: readonly GroupWord[] = GROUP_WORDS.filter((entry) => entry.word !== 'king');
+
 // May a word from one group sit in a question about another group?
 function mayMeet(entry: GroupWord, group: WordGroup, beside: readonly GroupWord[]): boolean {
   if (entry.group === group || groupsClash(entry.group, group) || wordClashesWithGroup(entry.word, group)) return false;
@@ -32,7 +38,52 @@ function mayMeet(entry: GroupWord, group: WordGroup, beside: readonly GroupWord[
 }
 
 const groupPicture = (entry: { word: string; emoji: string }): Visual => picture(entry.word, entry.emoji);
-const inGroup = (group: WordGroup): GroupWord[] => GROUP_WORDS.filter((entry) => entry.group === group);
+const inGroup = (group: WordGroup): GroupWord[] => PICTURES.filter((entry) => entry.group === group);
+
+// Names said whole, with no "a" before them: food and drink that are not counted, and things that come as a pair.
+const UNCOUNTED = new Set(['cheese', 'bread', 'water', 'honey', 'milk', 'soup', 'paper']);
+const MANY = new Set(['pants', 'grapes', 'glasses', 'eyes']);
+
+// A picture's name with its article, as pieces of a sentence: "a dog", "an apple", "cheese", "pants".
+function named(name: string): Piece[] {
+  if (UNCOUNTED.has(name) || MANY.has(name)) return [{ word: name }];
+  return [/^[aeiou]/.test(name) ? 'an' : 'a', { word: name }];
+}
+
+// "a dress and a scarf", "a boy, a girl and a woman"
+function listed(names: readonly string[]): Piece[] {
+  return names.flatMap((name, i): Piece[] => [...(i === 0 ? [] : i === names.length - 1 ? ['and'] : [',']), ...named(name)]);
+}
+
+// What a group's pictures are, in a young child's words. Vehicles are said by what they do: a dog goes too, but it
+// does not take us places.
+const GROUP_SAYS: Record<WordGroup, { are: string } | { verb: string }> = {
+  animals: { are: 'animals' },
+  food: { are: 'food' },
+  vehicles: { verb: 'take us places' },
+  clothes: { are: 'clothes' },
+  plants: { are: 'plants' },
+  people: { are: 'people' },
+  things: { are: 'things' },
+};
+
+// "A dress and a scarf are clothes." / "A car and a bus take us places."
+function shared(names: readonly string[], group: WordGroup): Line {
+  const says = GROUP_SAYS[group];
+  return 'are' in says ? line(...listed(names), 'are', `${says.are}.`) : line(...listed(names), `${says.verb}.`);
+}
+
+// "Cheese is not." / "Pants are not." / "A cactus does not."
+function notOne(name: string, group: WordGroup): Line {
+  const many = MANY.has(name);
+  return line(...named(name), 'are' in GROUP_SAYS[group] ? (many ? 'are not.' : 'is not.') : many ? 'do not.' : 'does not.');
+}
+
+// "So is a glove." / "So are pants." / "So does a train."
+function soIs(name: string, group: WordGroup): Line {
+  const many = MANY.has(name);
+  return line('so', 'are' in GROUP_SAYS[group] ? (many ? 'are' : 'is') : many ? 'do' : 'does', ...named(name), '.');
+}
 
 // ---- A.1 Odd one out ----
 // Levels: 3 pictures, one from another group / 3 pictures from closer groups /
@@ -40,6 +91,7 @@ const inGroup = (group: WordGroup): GroupWord[] => GROUP_WORDS.filter((entry) =>
 // 4 shapes that all look different, and a hidden rule three of them share: corners, colour or shape.
 
 const ODD = 'Which one does not belong?';
+const ODD_HINT = 'Find two that go together.';
 // "Things" is never the group the others share: everything is a thing.
 const SHARED_FAR: WordGroup[] = ['animals', 'food', 'vehicles', 'clothes', 'people'];
 const SHARED_CLOSE: WordGroup[] = ['animals', 'vehicles', 'clothes', 'people', 'plants'];
@@ -47,8 +99,10 @@ const SHARED_CLOSE: WordGroup[] = ['animals', 'vehicles', 'clothes', 'people', '
 function oddPictures(level: Level, rng: Rng): QuestionDraft {
   const group = rng.pick(level === 1 ? SHARED_FAR : SHARED_CLOSE);
   const pair = rng.sample(inGroup(group), 2);
-  const odd = rng.pick(GROUP_WORDS.filter((entry) => mayMeet(entry, group, pair) && isClose(entry.group, group) === (level === 2)));
+  const odd = rng.pick(PICTURES.filter((entry) => mayMeet(entry, group, pair) && isClose(entry.group, group) === (level === 2)));
   const options = rng.shuffle([...pair, odd]);
+  // The two that go together, in the order they were shown.
+  const together = options.filter((entry) => entry !== odd);
   return {
     type: 'choice',
     mode: 'look',
@@ -56,11 +110,7 @@ function oddPictures(level: Level, rng: Rng): QuestionDraft {
     prompt: { text: ODD, speak: [ODD] },
     options: options.map(groupPicture),
     answerIndex: options.indexOf(odd),
-    explanation: {
-      speak: [`These are both ${group}. This one is not.`, { word: odd.word }, '.'],
-      steps: [`These are both ${group}.`, `This one is not: ${odd.word}.`],
-      visual: groupPicture(odd),
-    },
+    explanation: explained([shared(together.map((entry) => entry.word), group), notOne(odd.word, group)], row(...together.map(groupPicture)), ODD_HINT),
   };
 }
 
@@ -76,24 +126,26 @@ function oddShape(rng: Rng): QuestionDraft {
   const color = rng.pick(COLOR_NAMES);
   let attrs: string[];
   let options: Visual[];
-  let same: string;
-  let different: string;
+  let lines: Line[];
   let extra: Record<string, string>;
   if (by === 'colour') {
     const [one, two] = twoClearColors(rng);
     attrs = place(one, two);
     options = attrs.map((each) => shape(form, each as typeof one));
-    [same, different, extra] = [one, two, { shape: form }];
+    lines = [line(`three of them are ${one} ${form}s.`), line(`the ${two} ${form} does not belong.`)];
+    extra = { shape: form };
   } else if (by === 'shape') {
     const [one, two] = rng.sample(ODD_SHAPES, 2) as [ShapeName, ShapeName];
     attrs = place(one, two);
     options = attrs.map((each) => shape(each as ShapeName, color));
-    [same, different, extra] = [`${one}s`, a(two), { color }];
+    lines = [line(`three of them are ${one}s.`), line(`the ${two} does not belong.`)];
+    extra = { color };
   } else {
     const [one, two] = rng.shuffle(['s', 'l'] as const) as ['s' | 'l', 's' | 'l'];
     attrs = place(SIZE_WORD[one], SIZE_WORD[two]);
     options = place(one, two).map((each) => shape(form, color, each));
-    [same, different, extra] = [SIZE_WORD[one], SIZE_WORD[two], { shape: form, color }];
+    lines = [line(`three of them are ${SIZE_WORD[one]} ${form}s.`), line(`the ${SIZE_WORD[two]} ${form} does not belong.`)];
+    extra = { shape: form, color };
   }
   return {
     type: 'choice',
@@ -103,7 +155,7 @@ function oddShape(rng: Rng): QuestionDraft {
     prompt: { text: ODD, speak: [ODD] },
     options,
     answerIndex: oddAt,
-    explanation: { speak: [`These three are all ${same}. This one is ${different}.`], steps: [`These three are all ${same}.`, `This one is ${different}.`], visual: options[oddAt] as Visual },
+    explanation: explained(lines, row(...options.filter((_, i) => i !== oddAt)), 'Look at the color, the shape and the size of each one.'),
   };
 }
 
@@ -127,8 +179,7 @@ function oddByRule(rng: Rng): QuestionDraft {
   let forms: ShapeName[];
   let colors: ColorName[];
   let attrs: string[];
-  let same: string;
-  let different: string;
+  let lines: Line[];
   if (by === 'round') {
     // Three shapes with corners and one round one, every colour different.
     const cornered = rng.sample(CORNERED, 3);
@@ -136,24 +187,23 @@ function oddByRule(rng: Rng): QuestionDraft {
     forms = [0, 1, 2, 3].map((i) => (i === oddAt ? round : (cornered[i < oddAt ? i : i - 1] as ShapeName)));
     colors = fourClearColors(rng);
     attrs = place('corners', 'round');
-    [same, different] = ['shapes with corners', 'round'];
+    lines = [line('three of them have corners.'), line(`the ${round} is round, so it does not belong.`)];
   } else if (by === 'colour') {
     // Three of one colour and one of another, four different shapes that all have corners.
     const [one, two] = twoClearColors(rng);
     forms = rng.sample(CORNERED, 4);
     colors = place(one, two);
     attrs = colors;
-    [same, different] = [one, two];
+    lines = [line(`three of them are ${one}.`), line(`the ${two} ${forms[oddAt] as string} does not belong.`)];
   } else {
     // Three of one shape and one of another, every colour different.
     const [one, two] = rng.sample(CORNERED, 2) as [ShapeName, ShapeName];
     forms = place(one, two);
     colors = fourClearColors(rng);
     attrs = forms;
-    [same, different] = [`${one}s`, a(two)];
+    lines = [line(`three of them are ${one}s.`), line(`the ${two} does not belong.`)];
   }
   const options = forms.map((form, i) => shape(form, colors[i] as ColorName, sizes[i]));
-  const lines = [`These three are all ${same}.`, `This one is ${different}.`];
   return {
     type: 'choice',
     mode: 'look',
@@ -161,7 +211,7 @@ function oddByRule(rng: Rng): QuestionDraft {
     prompt: { text: ODD, speak: [ODD] },
     options,
     answerIndex: oddAt,
-    explanation: { speak: [lines.join(' ')], steps: lines, visual: options[oddAt] as Visual },
+    explanation: explained(lines, row(...options.filter((_, i) => i !== oddAt)), 'Three of them share one thing: a color, a shape, or having corners.'),
   };
 }
 
@@ -170,20 +220,17 @@ const oddOneOut = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? oddB
 const word = (name: string): GroupWord => GROUP_WORDS.find((entry) => entry.word === name) as GroupWord;
 
 function oddLesson(): LessonStep[] {
+  const animals = [shared(['cat', 'dog'], 'animals'), notOne('car', 'animals')];
+  const food = [shared(['apple', 'banana'], 'food'), notOne('shoe', 'food')];
   return [
     { beat: 'see', text: 'Some things belong together. One may not belong.', speak: ['Some things belong together. One may not belong.'], visual: row(groupPicture(word('cat')), groupPicture(word('dog')), groupPicture(word('car'))) },
-    {
-      beat: 'watch',
-      text: `${ODD} These are both animals. This one is not: car.`,
-      speak: [ODD, 'These are both animals. This one is not.', { word: 'car' }, '.'],
-      visual: groupPicture(word('car')),
-    },
+    { beat: 'watch', text: `${ODD} ${animals.map((each) => each.text).join(' ')}`, speak: [ODD, ...animals.flatMap((each) => each.speak)], visual: row(groupPicture(word('cat')), groupPicture(word('dog'))) },
     {
       beat: 'try',
       text: ODD,
       speak: [ODD],
       visual: row(groupPicture(word('apple')), groupPicture(word('shoe')), groupPicture(word('banana'))),
-      reveal: { text: 'These are both food. This one is not: shoe.', speak: ['These are both food. This one is not.', { word: 'shoe' }, '.'], visual: groupPicture(word('shoe')) },
+      reveal: { text: food.map((each) => each.text).join(' '), speak: food.flatMap((each) => each.speak), visual: row(groupPicture(word('apple')), groupPicture(word('banana'))) },
     },
     { beat: 'remember', text: 'Find what the others share.', speak: ['Find what the others share.'], visual: row(groupPicture(word('cat')), groupPicture(word('dog'))) },
   ];
@@ -207,19 +254,16 @@ export const oddOneOutGenerator: SkillGenerator = {
 
 const BELONGS = 'Which one belongs with these?';
 
-function belongsExplanation(group: WordGroup, answer: GroupWord): Explanation {
-  return {
-    speak: [`These are both ${group}. So is this one.`, { word: answer.word }, '.'],
-    steps: [`These are both ${group}.`, `So is this one: ${answer.word}.`],
-    visual: groupPicture(answer),
-  };
+// The examples and the answer make the group whole: the explanation picture shows all of them.
+function belongsExplanation(examples: readonly GroupWord[], group: WordGroup, answer: GroupWord): Explanation {
+  return explained([shared(examples.map((entry) => entry.word), group), soIs(answer.word, group)], row(...[...examples, answer].map(groupPicture)), 'Say what kind of things these are. Then find one more.');
 }
 
 function whichBelongs(level: Level, rng: Rng): QuestionDraft {
   const group = rng.pick(level === 1 ? [...SHARED_FAR, 'plants' as WordGroup] : SHARED_CLOSE);
   const [one, two, answer] = rng.sample(inGroup(group), 3) as [GroupWord, GroupWord, GroupWord];
   const members = [one, two, answer];
-  const allowed = GROUP_WORDS.filter((entry) => mayMeet(entry, group, members) && isClose(entry.group, group) === (level === 2));
+  const allowed = PICTURES.filter((entry) => mayMeet(entry, group, members) && isClose(entry.group, group) === (level === 2));
   // Far wrong options come from two different groups. Close ones may share a group: there are few close groups.
   const wrong = pickApart(allowed, 2, rng, (entry, picked) => picked.every((taken) => (level === 2 || taken.group !== entry.group) && !groupsClash(taken.group, entry.group) && !wordClashesWithGroup(taken.word, entry.group) && !wordClashesWithGroup(entry.word, taken.group)));
   const options = rng.shuffle([answer, ...wrong]);
@@ -231,7 +275,7 @@ function whichBelongs(level: Level, rng: Rng): QuestionDraft {
     stimulus: row(groupPicture(one), groupPicture(two)),
     options: options.map(groupPicture),
     answerIndex: options.indexOf(answer),
-    explanation: belongsExplanation(group, answer),
+    explanation: belongsExplanation([one, two], group, answer),
   };
 }
 
@@ -241,11 +285,10 @@ function belongsHarder(rng: Rng): QuestionDraft {
   const group = rng.pick(SHARED_CLOSE);
   const members = rng.sample(inGroup(group), 4) as [GroupWord, GroupWord, GroupWord, GroupWord];
   const [one, two, three, answer] = members;
-  const allowed = (close: boolean): GroupWord[] => GROUP_WORDS.filter((entry) => mayMeet(entry, group, members) && isClose(entry.group, group) === close);
+  const allowed = (close: boolean): GroupWord[] => PICTURES.filter((entry) => mayMeet(entry, group, members) && isClose(entry.group, group) === close);
   const near = pickApart(allowed(true), 2, rng, (entry, picked) => picked.every((taken) => !avoid(taken, entry)));
   const far = pickApart(allowed(false), 1, rng, (entry) => near.every((taken) => !avoid(taken, entry)));
   const options = rng.shuffle([answer, ...near, ...far]);
-  const lines = [`These are all ${group}.`, `So is this one: ${answer.word}.`];
   return {
     type: 'choice',
     mode: 'look',
@@ -254,24 +297,24 @@ function belongsHarder(rng: Rng): QuestionDraft {
     stimulus: row(groupPicture(one), groupPicture(two), groupPicture(three)),
     options: options.map(groupPicture),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [`These are all ${group}. So is this one.`, { word: answer.word }, '.'], steps: lines, visual: groupPicture(answer) },
+    explanation: belongsExplanation([one, two, three], group, answer),
   };
 }
 
 const belongs = (level: Level, rng: Rng): QuestionDraft => (level === 3 ? belongsHarder(rng) : whichBelongs(level, rng));
 
 function belongsLesson(): LessonStep[] {
-  const shown = belongsExplanation('vehicles', word('train'));
-  const revealed = belongsExplanation('clothes', word('hat'));
+  const shown = belongsExplanation([word('car'), word('bus')], 'vehicles', word('train'));
+  const revealed = belongsExplanation([word('shirt'), word('sock')], 'clothes', word('hat'));
   return [
-    { beat: 'see', text: 'Things in a group share something. A car and a bus are both vehicles.', speak: ['Things in a group share something. A', { word: 'car' }, 'and a', { word: 'bus' }, 'are both vehicles.'], visual: row(groupPicture(word('car')), groupPicture(word('bus'))) },
+    { beat: 'see', text: 'Things in a group share something. A car and a bus both take us places.', speak: ['Things in a group share something. A', { word: 'car' }, 'and a', { word: 'bus' }, 'both take us places.'], visual: row(groupPicture(word('car')), groupPicture(word('bus'))) },
     { beat: 'watch', text: `${BELONGS} ${shown.steps.join(' ')}`, speak: [BELONGS, ...shown.speak], visual: row(groupPicture(word('car')), groupPicture(word('bus')), groupPicture(word('train'))) },
     {
       beat: 'try',
       text: 'A shirt and a sock. Which one belongs with these?',
       speak: ['A', { word: 'shirt' }, 'and a', { word: 'sock' }, '.', BELONGS],
       visual: row(groupPicture(word('hat')), groupPicture(word('apple'))),
-      reveal: { text: revealed.steps.join(' '), speak: revealed.speak, visual: revealed.visual },
+      reveal: { text: revealed.steps.join(' '), speak: revealed.speak, visual: revealed.visual ?? groupPicture(word('hat')) },
     },
     { beat: 'remember', text: 'Find what they share.', speak: ['Find what they share.'], visual: row(groupPicture(word('car')), groupPicture(word('bus'))) },
   ];
@@ -290,29 +333,34 @@ export const whichBelongsGenerator: SkillGenerator = {
 };
 
 // ---- A.9 Picture analogies ----
-// Levels: "Sock goes with foot. Glove goes with what?": wrong options from other relations / from the same relation.
-// Level 3 runs the other way, "Foot is to sock as hand is to what?", with four options: the other first halves
-// of the same relation and one from another relation.
-// A wrong option from another relation is never one that could be argued for, such as an egg for a bird.
+// Levels: "A sock goes with a foot. A glove goes with what?": wrong options from other relations / from the same
+// relation. Level 3 runs the other way, "A foot is to a sock as a hand is to what?", with four options: the other
+// first halves of the same relation and one from another relation.
+// No option is ever one that could be argued for, such as an egg for a bird (ANALOGY_CLASHES).
 
-function analogyPrompt(example: AnalogyPair, target: AnalogyPair): { text: string; speak: Say } {
-  return {
-    text: `${cap(example.first.word)} goes with ${example.second.word}. ${cap(target.first.word)} goes with what?`,
-    speak: [{ word: example.first.word }, 'goes with', { word: example.second.word }, '.', { word: target.first.word }, 'goes with what?'],
-  };
+const goesWith = (name: string): string => (MANY.has(name) ? 'go with' : 'goes with');
+const isTo = (name: string): string => (MANY.has(name) ? 'are to' : 'is to');
+
+function analogyPrompt(example: AnalogyPair, target: AnalogyPair): Line {
+  return line(...named(example.first.word), goesWith(example.first.word), ...named(example.second.word), '.', ...named(target.first.word), goesWith(target.first.word), 'what?');
 }
 
-function analogyExplanation(example: AnalogyPair, target: AnalogyPair): Explanation {
-  return { speak: [example.why, target.why], steps: [example.why, target.why], visual: row(groupPicture(target.first), groupPicture(target.second)) };
+const ANALOGY_HINT = 'How do the first two pictures go together?';
+
+function analogyExplanation(example: AnalogyPair, target: AnalogyPair, visual: Visual): Explanation {
+  return explained([line(example.why), line(target.why)], visual, ANALOGY_HINT);
 }
+
+// A first word and a second word that must never meet in one question.
+const clash = (first: string, second: string): boolean => ANALOGY_CLASHES.some(([one, two]) => one === first && two === second);
 
 function pictureAnalogy(level: Level, rng: Rng): QuestionDraft {
   const target = rng.pick(ANALOGY_PAIRS);
   const sameRelation = ANALOGY_PAIRS.filter((pair) => pair.relation === target.relation && pair !== target);
   const example = rng.pick(sameRelation);
   // Level 2: the other second halves of the same relation, the example's among them.
-  const clashes = (pair: AnalogyPair): boolean => ANALOGY_CLASHES.some(([first, second]) => first === target.first.word && second === pair.second.word);
-  const wrong = level === 1 ? rng.sample(ANALOGY_PAIRS.filter((pair) => pair.relation !== target.relation && !clashes(pair)), 2) : sameRelation;
+  const fits = (pair: AnalogyPair): boolean => !clash(target.first.word, pair.second.word);
+  const wrong = level === 1 ? rng.sample(ANALOGY_PAIRS.filter((pair) => pair.relation !== target.relation && fits(pair)), 2) : sameRelation.filter(fits);
   const options = rng.shuffle([target, ...wrong]);
   return {
     type: 'choice',
@@ -322,29 +370,27 @@ function pictureAnalogy(level: Level, rng: Rng): QuestionDraft {
     stimulus: { kind: 'matrix', cells: [groupPicture(example.first), groupPicture(example.second), groupPicture(target.first), 'blank'] },
     options: options.map((pair) => groupPicture(pair.second)),
     answerIndex: options.indexOf(target),
-    explanation: analogyExplanation(example, target),
+    explanation: analogyExplanation(example, target, row(groupPicture(target.first), groupPicture(target.second))),
   };
 }
 
 function backAnalogy(rng: Rng): QuestionDraft {
   const target = rng.pick(ANALOGY_PAIRS);
+  const fits = (pair: AnalogyPair): boolean => !clash(pair.first.word, target.second.word);
   const sameRelation = ANALOGY_PAIRS.filter((pair) => pair.relation === target.relation && pair !== target);
   const example = rng.pick(sameRelation);
-  const clashes = (pair: AnalogyPair): boolean => ANALOGY_CLASHES.some(([first, second]) => first === pair.first.word && second === target.second.word);
-  const other = rng.pick(ANALOGY_PAIRS.filter((pair) => pair.relation !== target.relation && !clashes(pair)));
-  const options = rng.shuffle([target, ...sameRelation, other]);
+  const other = rng.pick(ANALOGY_PAIRS.filter((pair) => pair.relation !== target.relation && fits(pair)));
+  const options = rng.shuffle([target, ...sameRelation.filter(fits), other]);
+  const prompt = line(...named(example.second.word), isTo(example.second.word), ...named(example.first.word), 'as', ...named(target.second.word), isTo(target.second.word), 'what?');
   return {
     type: 'choice',
     mode: 'look',
     facts: { target: target.second.word, relation: 'analogyBack', example: [example.second.word, example.first.word], options: options.map((pair) => pair.first.word) },
-    prompt: {
-      text: `${cap(example.second.word)} is to ${example.first.word} as ${target.second.word} is to what?`,
-      speak: [{ word: example.second.word }, 'is to', { word: example.first.word }, 'as', { word: target.second.word }, 'is to what?'],
-    },
+    prompt,
     stimulus: { kind: 'matrix', cells: [groupPicture(example.second), groupPicture(example.first), groupPicture(target.second), 'blank'] },
     options: options.map((pair) => groupPicture(pair.first)),
     answerIndex: options.indexOf(target),
-    explanation: { ...analogyExplanation(example, target), visual: row(groupPicture(target.second), groupPicture(target.first)) },
+    explanation: analogyExplanation(example, target, row(groupPicture(target.second), groupPicture(target.first))),
   };
 }
 
@@ -354,12 +400,14 @@ const pairOf = (first: string): AnalogyPair => ANALOGY_PAIRS.find((pair) => pair
 
 function analogyLesson(): LessonStep[] {
   const [sock, glove, bee, cow] = [pairOf('sock'), pairOf('glove'), pairOf('bee'), pairOf('cow')];
+  const socks = analogyExplanation(sock, glove, row(groupPicture(glove.first), groupPicture(glove.second)));
+  const milk = analogyExplanation(bee, cow, row(groupPicture(cow.first), groupPicture(cow.second)));
   return [
     { beat: 'see', text: 'Some things go together. A sock goes on a foot.', speak: ['Some things go together.', sock.why], visual: row(groupPicture(sock.first), groupPicture(sock.second)) },
     {
       beat: 'watch',
-      text: `${analogyPrompt(sock, glove).text} ${analogyExplanation(sock, glove).steps.join(' ')}`,
-      speak: [...analogyPrompt(sock, glove).speak, ...analogyExplanation(sock, glove).speak],
+      text: `${analogyPrompt(sock, glove).text} ${socks.steps.join(' ')}`,
+      speak: [...analogyPrompt(sock, glove).speak, ...socks.speak],
       visual: { kind: 'matrix', cells: [groupPicture(sock.first), groupPicture(sock.second), groupPicture(glove.first), groupPicture(glove.second)] },
     },
     {
@@ -367,7 +415,7 @@ function analogyLesson(): LessonStep[] {
       text: analogyPrompt(bee, cow).text,
       speak: analogyPrompt(bee, cow).speak,
       visual: { kind: 'matrix', cells: [groupPicture(bee.first), groupPicture(bee.second), groupPicture(cow.first), 'blank'] },
-      reveal: { text: analogyExplanation(bee, cow).steps.join(' '), speak: analogyExplanation(bee, cow).speak, visual: analogyExplanation(bee, cow).visual },
+      reveal: { text: milk.steps.join(' '), speak: milk.speak, visual: milk.visual ?? groupPicture(cow.second) },
     },
     { beat: 'remember', text: 'Find how the first two go together.', speak: ['Find how the first two go together.'], visual: row(groupPicture(sock.first), groupPicture(sock.second)) },
   ];
@@ -387,13 +435,10 @@ export const pictureAnalogiesGenerator: SkillGenerator = {
 
 // ---- A.14 Picture riddles ----
 // Levels: spoken riddle with 2 pictures / 3 pictures / 4 pictures.
+// The step gives the reason ("An umbrella keeps the rain off your head."), not the riddle again.
 
 function riddleExplanation(riddle: Riddle): Explanation {
-  return {
-    speak: ['The', { word: riddle.word }, `is the one that ${riddle.fact}.`],
-    steps: [`The ${riddle.word} is the one that ${riddle.fact}.`],
-    visual: groupPicture(riddle),
-  };
+  return explained([line(riddle.why)], groupPicture(riddle), 'Listen to the whole riddle. Then check each picture.');
 }
 
 function pictureRiddle(level: Level, rng: Rng): QuestionDraft {

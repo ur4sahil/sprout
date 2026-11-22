@@ -4,11 +4,14 @@ import type { LessonStep, Level, QuestionDraft, ShapeName, Visual } from '../../
 import type { ColorName } from '../../data/colors';
 import { COLOR_NAMES } from '../../data/colors';
 import type { SkillGenerator } from '../../generator';
-import type { Explanation } from '../ela/pk/parts';
 import { row } from '../ela/pk/parts';
-import { twoClearColors } from '../math/pk/parts';
+import { a, twoClearColors } from '../math/pk/parts';
+import type { Line, Turning } from './parts';
+import { POINTS, explained, line, pointer } from './parts';
 
 // Reasoning A.5, A.6 and A.12: turning shapes, mirror images and paper folding.
+// The steps name which way a shape points ("The arrow points up, then right, then down."), never "a quarter turn":
+// fraction talk a young child does not have yet.
 
 // Where a shape stands: quarter turns clockwise, and whether it is flipped.
 // The oracle writes the same thing as "2" or "3f".
@@ -30,12 +33,14 @@ function posed(form: ShapeName, color: ColorName, pose: Pose): Visual {
 const NEXT = 'What comes next?';
 const SHOWN = 3;
 
-function turnLine(step: number): string {
-  return step === 1 ? 'It makes a quarter turn each step.' : 'It makes a half turn each step.';
+// "The arrow points up, then right, then down." / "The foot of the L points right, then down, then left."
+function pointsLine(form: Turning, turns: readonly number[]): Line {
+  const ways = turns.map((turn) => POINTS[form][turn] as string);
+  return line(...pointer(form), 'points', ways.map((way, i) => (i === 0 ? way : `then ${way}`)).join(', '), '.');
 }
 
 function turning(level: Level, rng: Rng): QuestionDraft {
-  const form: ShapeName = level === 1 ? 'arrow' : level === 2 ? 'lShape' : rng.pick<ShapeName>(['arrow', 'lShape']);
+  const form: Turning = level === 1 ? 'arrow' : level === 2 ? 'lShape' : rng.pick<Turning>(['arrow', 'lShape']);
   const color = rng.pick(COLOR_NAMES);
   const startTurn = rng.int(0, 3);
   const step = level === 3 ? 2 : 1;
@@ -45,6 +50,10 @@ function turning(level: Level, rng: Rng): QuestionDraft {
   // Three options at the first two levels, all four turns at the third.
   const options = rng.shuffle([answer, ...others.slice(0, level === 3 ? 3 : 2)]);
   const shown = Array.from({ length: SHOWN }, (_, i) => posed(form, color, at(i)));
+  const lines = [
+    pointsLine(form, [0, 1, 2].map((i) => at(i).turn)),
+    line(step === 2 ? 'it turns upside down each time, so next it points' : 'it turns the same way each time, so next it points', `${POINTS[form][answer.turn] as string}.`),
+  ];
   return {
     type: 'choice',
     mode: 'look',
@@ -53,13 +62,13 @@ function turning(level: Level, rng: Rng): QuestionDraft {
     stimulus: { kind: 'sequence', items: [...shown, 'blank'] },
     options: options.map((pose) => posed(form, color, pose)),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [turnLine(step)], steps: [turnLine(step)], visual: { kind: 'sequence', items: [...shown, posed(form, color, answer)] } },
+    explanation: explained(lines, { kind: 'sequence', items: [...shown, posed(form, color, answer)] }, 'Watch which way it points each time.'),
   };
 }
 
 // Level 4: two things to follow. The oracle reads the colours and how many steps are shown.
 function turningColours(rng: Rng): QuestionDraft {
-  const form = rng.pick<ShapeName>(['arrow', 'lShape']);
+  const form = rng.pick<Turning>(['arrow', 'lShape']);
   const colors = twoClearColors(rng);
   const startTurn = rng.int(0, 3);
   const at = (i: number): Pose => ({ turn: (startTurn + i) % 4, flip: false });
@@ -77,7 +86,12 @@ function turningColours(rng: Rng): QuestionDraft {
   ];
   const options = rng.shuffle(offered);
   const shown = Array.from({ length: SHOWN }, (_, i) => posed(form, colourAt(i), at(i)));
-  const lines = [turnLine(1), `The color goes ${colors[0]}, ${colors[1]}, ${colors[0]}, ${colors[1]}.`];
+  const way = POINTS[form][answer.turn] as string;
+  const lines = [
+    pointsLine(form, [0, 1, 2].map((i) => at(i).turn)),
+    line(`the color goes ${colourAt(0)}, ${colourAt(1)}, ${colourAt(2)}.`),
+    form === 'arrow' ? line(`so next is ${a(right)} arrow pointing ${way}.`) : line(`so next is ${a(right)}`, { letter: 'l' }, `with its foot pointing ${way}.`),
+  ];
   return {
     type: 'choice',
     mode: 'look',
@@ -86,7 +100,7 @@ function turningColours(rng: Rng): QuestionDraft {
     stimulus: { kind: 'sequence', items: [...shown, 'blank'] },
     options: options.map(([pose, color]) => posed(form, color, pose)),
     answerIndex: options.indexOf(offered[0] as [Pose, ColorName]),
-    explanation: { speak: [lines.join(' ')], steps: lines, visual: { kind: 'sequence', items: [...shown, posed(form, right, answer)] } },
+    explanation: explained(lines, { kind: 'sequence', items: [...shown, posed(form, right, answer)] }, 'Watch which way it points, and watch the color.'),
   };
 }
 
@@ -94,15 +108,17 @@ const turningOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? turn
 
 function turningLesson(): LessonStep[] {
   const arrow = (turn: number): Visual => posed('arrow', 'blue', { turn, flip: false });
+  const watch = [pointsLine('arrow', [0, 1, 2]), line('it turns the same way each time, so next it points left.')];
+  const reveal = [pointsLine('arrow', [1, 2, 3]), line('it turns the same way each time, so next it points up.')];
   return [
-    { beat: 'see', text: 'A shape can turn. This arrow turns a little each step.', speak: ['A shape can turn. This arrow turns a little each step.'], visual: { kind: 'sequence', items: [arrow(0), arrow(1)] } },
-    { beat: 'watch', text: 'It makes a quarter turn each step. The next turn points it down.', speak: ['It makes a quarter turn each step. The next turn points it down.'], visual: { kind: 'sequence', items: [arrow(0), arrow(1), arrow(2)] } },
+    { beat: 'see', text: 'A shape can turn. This arrow turns a little each time.', speak: ['A shape can turn. This arrow turns a little each time.'], visual: { kind: 'sequence', items: [arrow(0), arrow(1)] } },
+    { beat: 'watch', text: watch.map((each) => each.text).join(' '), speak: watch.flatMap((each) => each.speak), visual: { kind: 'sequence', items: [arrow(0), arrow(1), arrow(2), arrow(3)] } },
     {
       beat: 'try',
       text: NEXT,
       speak: [NEXT],
       visual: { kind: 'sequence', items: [arrow(1), arrow(2), arrow(3), 'blank'] },
-      reveal: { text: turnLine(1), speak: [turnLine(1)], visual: { kind: 'sequence', items: [arrow(1), arrow(2), arrow(3), arrow(0)] } },
+      reveal: { text: reveal.map((each) => each.text).join(' '), speak: reveal.flatMap((each) => each.speak), visual: { kind: 'sequence', items: [arrow(1), arrow(2), arrow(3), arrow(0)] } },
     },
     { beat: 'remember', text: 'Follow the turn.', speak: ['Follow the turn.'], visual: { kind: 'sequence', items: [arrow(0), arrow(1), arrow(2), arrow(3)] } },
   ];
@@ -125,15 +141,30 @@ export const turningShapesGenerator: SkillGenerator = {
 // a picture of two pieces in two colours: the mirror swaps the pieces and flips each one.
 // Only the flag and the L shape are used: every other shape is its own mirror image, or looks like a turn of itself.
 
-const MIRROR = 'Which one is the mirror picture?';
+const MIRROR = 'Which one shows this picture in a mirror?';
 const MIRROR_LINE = 'A mirror flips left and right.';
+const MIRROR_HINT = 'Think of a mirror: left and right swap.';
 
 // A mirror swaps left and right of the whole picture. The app draws a flip before the turn, so the turn runs the other way.
 const mirrored = (pose: Pose): Pose => ({ turn: (4 - pose.turn) % 4, flip: !pose.flip });
 const turned = (pose: Pose, by: number): Pose => ({ turn: (pose.turn + by) % 4, flip: pose.flip });
 
+// Which way the flag's cloth and the foot of the L point at each quarter turn, and from which side when that is up
+// or down: in a mirror, up and down stay, and left and right swap.
+const FACING: Record<'flag' | 'lShape', readonly [string, string, string, string]> = {
+  flag: ['right', 'down at the right', 'left', 'up at the left'],
+  lShape: ['right', 'down at the left', 'left', 'up at the right'],
+};
+const swapSides = (way: string): string => way.replace(/left|right/g, (side) => (side === 'left' ? 'right' : 'left'));
+
+// "The flag points right, so in a mirror it points left."
+function mirrorLine(form: 'flag' | 'lShape', start: Pose): Line {
+  const way = FACING[form][start.turn] as string;
+  return line(...pointer(form), `points ${way}, so in a mirror it points ${swapSides(way)}.`);
+}
+
 function mirror(level: Level, rng: Rng): QuestionDraft {
-  const form: ShapeName = level === 1 ? 'flag' : level === 2 ? 'lShape' : rng.pick<ShapeName>(['flag', 'lShape']);
+  const form: 'flag' | 'lShape' = level === 1 ? 'flag' : level === 2 ? 'lShape' : rng.pick<'flag' | 'lShape'>(['flag', 'lShape']);
   const color = rng.pick(COLOR_NAMES);
   // The first two levels start upright. The third starts at any turn.
   const start: Pose = { turn: level === 3 ? rng.int(0, 3) : 0, flip: false };
@@ -149,7 +180,7 @@ function mirror(level: Level, rng: Rng): QuestionDraft {
     stimulus: posed(form, color, start),
     options: options.map((pose) => posed(form, color, pose)),
     answerIndex: options.indexOf(answer),
-    explanation: { speak: [MIRROR_LINE], steps: [MIRROR_LINE], visual: row(posed(form, color, start), posed(form, color, answer)) },
+    explanation: explained([line(MIRROR_LINE), mirrorLine(form, start)], row(posed(form, color, start), posed(form, color, answer)), MIRROR_HINT),
   };
 }
 
@@ -174,7 +205,8 @@ function mirrorPair(rng: Rng): QuestionDraft {
     swapped.map((piece) => ({ ...piece, pose: turned(piece.pose, 2) })),
   ];
   const options = rng.shuffle(sets);
-  const lines = [MIRROR_LINE, 'The two pieces swap places, and each one flips.'];
+  const [left, right] = start as [Piece, Piece];
+  const lines = [line(MIRROR_LINE), line(`so the ${left.color} piece and the ${right.color} piece swap places.`), line('and each piece flips left to right.')];
   return {
     type: 'choice',
     mode: 'look',
@@ -183,7 +215,7 @@ function mirrorPair(rng: Rng): QuestionDraft {
     stimulus: pieces(start),
     options: options.map(pieces),
     answerIndex: options.indexOf(sets[0] as Piece[]),
-    explanation: { speak: [lines.join(' ')], steps: lines, visual: pieces(sets[0] as Piece[]) },
+    explanation: explained(lines, pieces(sets[0] as Piece[]), MIRROR_HINT),
   };
 }
 
@@ -192,15 +224,16 @@ const mirrorOf = (level: Level, rng: Rng): QuestionDraft => (level === 4 ? mirro
 function mirrorLesson(): LessonStep[] {
   const flag = (pose: Pose): Visual => posed('flag', 'red', pose);
   const up: Pose = { turn: 0, flip: false };
+  const reveal = [line(MIRROR_LINE), mirrorLine('lShape', up)];
   return [
     { beat: 'see', text: 'A mirror shows a picture the other way round.', speak: ['A mirror shows a picture the other way round.'], visual: row(flag(up), flag(mirrored(up))) },
-    { beat: 'watch', text: 'A mirror flips left and right. The flag pointed one way. In the mirror it points the other way.', speak: ['A mirror flips left and right. The flag pointed one way. In the mirror it points the other way.'], visual: row(flag(up), flag(mirrored(up))) },
+    { beat: 'watch', text: 'A mirror flips left and right. The flag points right. In the mirror it points left.', speak: ['A mirror flips left and right. The flag points right. In the mirror it points left.'], visual: row(flag(up), flag(mirrored(up))) },
     {
       beat: 'try',
       text: MIRROR,
       speak: [MIRROR],
       visual: posed('lShape', 'green', up),
-      reveal: { text: MIRROR_LINE, speak: [MIRROR_LINE], visual: row(posed('lShape', 'green', up), posed('lShape', 'green', mirrored(up))) },
+      reveal: { text: reveal.map((each) => each.text).join(' '), speak: reveal.flatMap((each) => each.speak), visual: row(posed('lShape', 'green', up), posed('lShape', 'green', mirrored(up))) },
     },
     { beat: 'remember', text: 'Left becomes right.', speak: ['Left becomes right.'], visual: row(flag(up), flag(mirrored(up))) },
   ];
@@ -221,6 +254,7 @@ export const mirrorImagesGenerator: SkillGenerator = {
 // ---- A.12 Paper folding ----
 // Levels: one fold, one hole at an outer corner / one hole next to the fold / two holes / three holes.
 // The paper is a 4 by 4 grid. A vertical fold shows columns 0 and 1; a horizontal fold shows rows 0 and 1.
+// The words are a child's: "We fold the paper and make a hole", the two halves of the paper, opened up.
 
 type Fold = 'vertical' | 'horizontal';
 interface Hole {
@@ -228,8 +262,21 @@ interface Hole {
   row: number;
 }
 
-const FOLDING = 'The paper is folded and punched. How does it look unfolded?';
-const FOLD_LINES = ['One punch goes through both layers.', 'The holes sit the same distance from the fold.'];
+// "We fold the paper and make a hole. Which one shows it opened up?" with the number of holes said.
+function foldingPrompt(holes: number): Line {
+  return holes === 1 ? line('We fold the paper and make a hole. Which one shows it opened up?') : line('We fold the paper and make', holes, 'holes. Which one shows it opened up?');
+}
+
+// Why the paper opens up as it does: each hole goes through both halves, so there are twice as many, one on each
+// side of the fold, and each new hole is just as far from the fold (the wrong options slide it or put it on the
+// same side).
+function foldLines(holes: number): Line[] {
+  return holes === 1
+    ? [line('The hole goes through both halves of the paper.'), line('Opened up, there are', 2, 'holes, one on each side of the fold.'), line('The new hole is just as far from the fold.')]
+    : [line('Each hole goes through both halves of the paper.'), line('Opened up, there are', 2 * holes, 'holes,', holes, 'on each side of the fold.'), line('Each new hole is just as far from the fold.')];
+}
+
+const foldHint = (holes: number): string => (holes === 1 ? 'Think: how many halves of the paper does the hole go through?' : 'Think: how many halves of the paper does each hole go through?');
 
 // A hole on the folded paper: `along` runs beside the fold (0 to 3), `away` is 0 at the outer edge and 1 next to the fold.
 const holeAt = (fold: Fold, away: number, along: number): Hole => (fold === 'vertical' ? { col: away, row: along } : { col: along, row: away });
@@ -240,10 +287,6 @@ const slid = (fold: Fold, hole: Hole): Hole => (fold === 'vertical' ? { col: hol
 
 const holesCode = (holes: Hole[]): string => [...new Set(holes.map((hole) => `${hole.col},${hole.row}`))].sort().join(' ');
 const unfolded = (fold: Fold, holes: Hole[]): Visual => ({ kind: 'foldPunch', fold, state: 'unfolded', holes });
-
-function foldExplanation(fold: Fold, holes: Hole[]): Explanation {
-  return { speak: [FOLD_LINES.join(' ')], steps: FOLD_LINES, visual: unfolded(fold, [...holes, ...holes.map((hole) => across(fold, hole))]) };
-}
 
 function folding(level: Level, rng: Rng): QuestionDraft {
   for (;;) {
@@ -264,15 +307,16 @@ function folding(level: Level, rng: Rng): QuestionDraft {
     // Two holes side by side slide and flip to the same places. Such a set is thrown away.
     if (new Set(sets.map(holesCode)).size !== sets.length) continue;
     const options = rng.shuffle(sets);
+    const prompt = foldingPrompt(holes.length);
     return {
       type: 'choice',
       mode: 'look',
       facts: { fold, holes: holes.map((hole) => ({ col: hole.col, row: hole.row })), options: options.map(holesCode) },
-      prompt: { text: FOLDING, speak: [FOLDING] },
+      prompt: { text: prompt.text, speak: prompt.speak },
       stimulus: { kind: 'foldPunch', fold, state: 'folded', holes },
       options: options.map((set) => unfolded(fold, set)),
       answerIndex: options.indexOf(sets[0] as Hole[]),
-      explanation: foldExplanation(fold, holes),
+      explanation: explained(foldLines(holes.length), unfolded(fold, sets[0] as Hole[]), foldHint(holes.length)),
     };
   }
 }
@@ -280,17 +324,19 @@ function folding(level: Level, rng: Rng): QuestionDraft {
 function foldingLesson(): LessonStep[] {
   const hole: Hole = { col: 0, row: 0 };
   const near: Hole = { col: 1, row: 2 };
+  const told = foldLines(1);
+  const both = (one: Hole): Visual => unfolded('vertical', [one, across('vertical', one)]);
   return [
-    { beat: 'see', text: 'This paper is folded in half. A hole is punched through it.', speak: ['This paper is folded in half. A hole is punched through it.'], visual: { kind: 'foldPunch', fold: 'vertical', state: 'folded', holes: [hole] } },
-    { beat: 'watch', text: `${FOLD_LINES.join(' ')} Unfolded, there are two holes.`, speak: [`${FOLD_LINES.join(' ')} Unfolded, there are two holes.`], visual: foldExplanation('vertical', [hole]).visual },
+    { beat: 'see', text: 'This paper is folded in half. We make a hole in it.', speak: ['This paper is folded in half. We make a hole in it.'], visual: { kind: 'foldPunch', fold: 'vertical', state: 'folded', holes: [hole] } },
+    { beat: 'watch', text: told.map((each) => each.text).join(' '), speak: told.flatMap((each) => each.speak), visual: both(hole) },
     {
       beat: 'try',
-      text: 'How does it look unfolded?',
-      speak: ['How does it look unfolded?'],
+      text: 'Which one shows it opened up?',
+      speak: ['Which one shows it opened up?'],
       visual: { kind: 'foldPunch', fold: 'vertical', state: 'folded', holes: [near] },
-      reveal: { text: FOLD_LINES.join(' '), speak: [FOLD_LINES.join(' ')], visual: foldExplanation('vertical', [near]).visual },
+      reveal: { text: told.map((each) => each.text).join(' '), speak: told.flatMap((each) => each.speak), visual: both(near) },
     },
-    { beat: 'remember', text: 'Each layer gets a hole.', speak: ['Each layer gets a hole.'], visual: foldExplanation('vertical', [hole]).visual },
+    { beat: 'remember', text: 'Each half gets a hole.', speak: ['Each half gets a hole.'], visual: both(hole) },
   ];
 }
 
