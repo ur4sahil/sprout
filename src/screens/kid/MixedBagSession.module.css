@@ -31,13 +31,13 @@
 }
 
 /* The question card (and the steps after a miss) wear the subject's colour along the top. */
-.bag > [data-arrive] {
+.bag [data-arrive] {
   border-top: var(--border-thick) solid var(--bag-colour);
 }
 
 /* A new question flies up out of the basket and grows to full size, in place of the usual slide from the side.
    Calm mode and Reduce Motion fade it in instead (below). */
-.bag > [data-phase][data-arrive] {
+.bag [data-phase][data-arrive] {
   transform-origin: 50% 0;
   animation: fly-out var(--payoff-fly) var(--ease-settle) both;
 }
@@ -74,7 +74,7 @@
 }
 
 /* Calm mode: the card fades in where it stands. */
-:global(:root[data-calm]) .bag > [data-phase][data-arrive] {
+:global(:root[data-calm]) .bag [data-phase][data-arrive] {
   animation-name: fade-in;
 }
 
@@ -92,7 +92,7 @@
     animation: none;
   }
 
-  .bag > [data-phase][data-arrive] {
+  .bag [data-phase][data-arrive] {
     animation: fade-in var(--t-calm) linear both;
   }
 }

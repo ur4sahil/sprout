@@ -76,6 +76,20 @@ part they mean. That comes skill by skill, Math first, after the lessons.
 
 Done when: the owner tries practice, review and Mixed bag on the iPad (test copy).
 
+**Status (Nov 22, 2026): built, waiting for the owner's try on the iPad.** `QuestionStage` takes `friend={{ who, voice }}`
+and draws `PracticeFriend` in the question card's top corner, beside the question line (and beside "Not quite" after a
+miss), 64 px wide on a phone and 96 px from tablet width; the line leaves room for it, so it covers nothing. Practice,
+review and the Mixed bag pass it (the Mixed bag's changes with each question's subject); the side panel no longer holds
+it. The mouth: `speak` names its voice in `speaking.ts` (`speakingAs()`); `playing.ts` tells listeners when a recording
+starts and stops (with its sound node) and when the device's voice speaks; `useVoiceMouth` follows the playing
+recording's timing (`shapeAt`, read each frame from the audio clock, a redraw of the friend only when the shape
+changes), its loudness when it has no timing (`useLoudness`), and the talk loop for the device's voice. Reactions as in
+the demo: Pip a loop, Olive flaps, Finn (and Sprout) jump, with sparkles; a kind nod on a miss. A tap on the friend says
+the question again ("Pip: hear the question again"). While it waits: a glance at the picture, a little bounce, a tilt, a
+look about, one every 5.2 s in a fixed round. It points and looks at the picture while its voice reads, and looks at the
+answers while it waits. Calm mode and Reduce Motion: still poses, mouth only; a slow device (`data-lowfx`): no loop,
+flap, jump or sparkles. Not built: Olive's hoot (there is no hoot sound in the app's set; she flaps in silence).
+
 ## Phase 3: the lesson engine, grown to the prototype
 
 The engine already has spoken moments over a scene, pieces that keep their identity and move, ten-frame cells,

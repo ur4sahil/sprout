@@ -13,7 +13,6 @@ import HoldButton from '../../components/HoldButton';
 import Icon from '../../components/Icon';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
-import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
 import { castFor, voiceFor } from '../../cast';
 import { PALETTE } from '../../visuals/palette';
@@ -78,13 +77,9 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
         </>
       }
       side={
-        <>
-          <p className={styles.count} data-mixed-count="">
-            {bag.asked} of {bag.total}
-          </p>
-          {/* The friend in the corner is the one for this question's subject, so it changes as the subjects do. */}
-          {bag.skill && <PracticeFriend who={castFor(bag.skill.subject)} questionKey={questionId} phase={phase} />}
-        </>
+        <p className={styles.count} data-mixed-count="">
+          {bag.asked} of {bag.total}
+        </p>
       }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
@@ -107,6 +102,8 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
             onSubmit={bag.submit}
             onGotIt={bag.gotIt}
             onSpeak={say}
+            // The friend beside the question is the one for this question's subject, so it changes as the subjects do.
+            friend={{ who: castFor(bag.skill.subject), voice }}
           />
         </div>
       )}

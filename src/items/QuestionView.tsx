@@ -17,8 +17,8 @@ interface Props {
 export default function QuestionView({ question, disabled, onChange, onSpeak, right = false }: Props) {
   const listen = question.mode === 'listen';
   return (
-    <section className={styles.question} aria-label="Question" data-mode={question.mode} data-type={question.type} data-right={right ? '' : undefined}>
-      <div className={styles.prompt}>
+    <section className={styles.question} aria-label="Question" data-friend-answers="" data-mode={question.mode} data-type={question.type} data-right={right ? '' : undefined}>
+      <div className={styles.prompt} data-friend-line="">
         <p className={styles.promptText}>{question.prompt.text}</p>
         {!listen && (
           <button type="button" className={styles.speaker} aria-label="Hear the question" onClick={() => onSpeak(question.prompt.speak)}>
@@ -32,7 +32,7 @@ export default function QuestionView({ question, disabled, onChange, onSpeak, ri
         </button>
       )}
       {question.stimulus && (
-        <div className={styles.stimulus}>
+        <div className={styles.stimulus} data-friend-target="picture">
           <VisualView visual={question.stimulus} />
         </div>
       )}

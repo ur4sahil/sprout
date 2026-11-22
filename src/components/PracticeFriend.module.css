@@ -1,16 +1,244 @@
-/* The friend in the corner. Left out on a phone, where the side panel is a thin strip above the question. */
-.corner {
-  display: none;
+/* The friend beside the question line (plan section 20, phase 2), on every device: a phone gets the smaller size.
+   QuestionStage places it in the top corner of the question card and keeps the question line clear of it. */
+.friend {
+  position: relative;
+  width: var(--friend-question);
+}
+
+@media (min-width: 48em) {
+  .friend {
+    width: var(--friend-question-wide);
+  }
+}
+
+/* The tap that says the question again: the friend itself, with no box of its own. */
+.tap {
+  display: block;
+  width: 100%;
+  min-width: var(--tap-min);
+  min-height: var(--tap-min);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-m);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tap:active .habit {
+  transform: scale(var(--press-scale));
+}
+
+.react,
+.habit {
+  position: relative;
+  transform-origin: 50% 90%;
+}
+
+.habit {
+  transition: transform var(--t-move) var(--ease-settle);
+}
+
+/* Habits while it waits: a little bounce, a tilt of the head. A glance moves only the eyes. */
+.habit[data-habit='bounce'] {
+  animation: friend-bounce var(--friend-habit) var(--ease-settle) 1;
+}
+
+.habit[data-habit='tilt'] {
+  transform: rotate(var(--friend-tilt));
+}
+
+/* A right answer: each friend's own cheer, as in the approved demo. */
+.react[data-react='loop'] {
+  animation: friend-loop var(--friend-loop) cubic-bezier(0.45, 0, 0.3, 1) 1;
+}
+
+.react[data-react='jump'] {
+  animation: friend-jump var(--friend-jump) ease-in-out 1;
+}
+
+.react[data-react='flap'] {
+  animation: friend-lift var(--friend-flap-lift) ease-in-out 1;
+}
+
+.react[data-react='flap'] svg[data-character] {
+  animation: friend-flap var(--friend-flap) ease-in-out 6 alternate;
+}
+
+/* A miss: a kind nod, never a slump. */
+.react[data-react='nod'] {
+  animation: friend-nod var(--friend-nod) ease-in-out 1;
+}
+
+.sparkles {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 0;
+  height: 0;
   pointer-events: none;
 }
 
-/* From tablet width up it stands at the foot of the side panel, below the status cards: the lower corner. */
-@media (min-width: 48em) {
-  .corner {
-    display: block;
-    flex: none;
-    width: var(--payoff-friend);
-    margin-top: auto;
-    align-self: flex-end;
+.sparkles i {
+  position: absolute;
+  left: calc(var(--friend-spark) / -2);
+  top: calc(var(--friend-spark) / -2);
+  width: var(--friend-spark);
+  height: var(--friend-spark);
+  border-radius: var(--radius-pill);
+  background: var(--color-star);
+  animation: friend-burst var(--friend-burst) ease-out var(--set-delay) both;
+}
+
+.sparkles i:nth-child(3n) {
+  background: var(--color-petal);
+}
+
+.sparkles i:nth-child(3n + 1) {
+  background: var(--color-sky);
+}
+
+@property --set-arm-left {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@property --set-arm-right {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes friend-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-7%) scale(0.98, 1.03);
+  }
+  75% {
+    transform: translateY(0) scale(1.03, 0.97);
+  }
+}
+
+/* The loop stays low, so the card's top edge does not cut it off. */
+@keyframes friend-loop {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(22%, -30%) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, -50%) rotate(180deg);
+  }
+  75% {
+    transform: translate(-22%, -30%) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes friend-jump {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  12% {
+    transform: translateY(0) scale(1.12, 0.8);
+  }
+  45% {
+    transform: translateY(-45%) scale(0.92, 1.1);
+  }
+  55% {
+    transform: translateY(-48%) scale(1) rotate(-6deg);
+  }
+  85% {
+    transform: translateY(0) scale(1.1, 0.86);
+  }
+}
+
+@keyframes friend-lift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  70% {
+    transform: translateY(-14%);
+  }
+}
+
+@keyframes friend-flap {
+  0% {
+    --set-arm-left: 20deg;
+    --set-arm-right: -20deg;
+  }
+  100% {
+    --set-arm-left: 150deg;
+    --set-arm-right: -150deg;
+  }
+}
+
+@keyframes friend-nod {
+  0%,
+  45%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20%,
+  65% {
+    transform: rotate(-5deg) translateY(2%);
+  }
+}
+
+@keyframes friend-burst {
+  0% {
+    transform: rotate(var(--set-turn)) translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--set-turn)) translateY(calc(var(--friend-question) * -0.9)) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* A slow device gets the light version: the friend's own small hop only, no loop, flap, jump or sparkles. */
+:global(:root[data-lowfx]) .react,
+:global(:root[data-lowfx]) .react svg[data-character] {
+  animation: none;
+}
+
+:global(:root[data-lowfx]) .sparkles {
+  display: none;
+}
+
+/* Calm mode and Reduce Motion: still poses, only the mouth moves. */
+:global(:root[data-calm]) .react,
+:global(:root[data-calm]) .react svg[data-character],
+:global(:root[data-calm]) .habit {
+  animation: none;
+  transform: none;
+}
+
+:global(:root[data-calm]) .sparkles {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .react,
+  .react svg[data-character],
+  .habit {
+    animation: none;
+    transform: none;
+  }
+
+  .sparkles {
+    display: none;
   }
 }

@@ -74,3 +74,43 @@
     transform: translateX(3%);
   }
 }
+
+/* The question with its friend (plan section 20, phase 2). The friend stands in the card's top corner, beside
+   the question line, on every device; the line (and, after a miss, the "Not quite" line) leaves room for it, so it
+   never covers the question, its picture, the answers or a button. */
+.stage {
+  --friend-room: var(--friend-question);
+  position: relative;
+  width: 100%;
+  max-width: var(--width-question);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 48em) {
+  .stage {
+    --friend-room: var(--friend-question-wide);
+  }
+}
+
+.friendSpot {
+  position: absolute;
+  z-index: 1;
+  top: var(--space-3);
+  left: var(--space-3);
+}
+
+/* The friend is drawn 1.2 times as tall as it is wide. */
+.stage[data-friend-stage] [data-friend-line] {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: calc(var(--friend-room) * 1.2);
+  padding-inline-start: calc(var(--friend-room) + var(--space-2));
+}
+
+/* After a miss the "Not quite" pill keeps its own size, beside the friend, and what follows starts below it. */
+.stage[data-friend-stage] [data-verdict] {
+  margin-inline-start: calc(var(--friend-room) + var(--space-2));
+  margin-bottom: calc(var(--friend-room) * 0.4);
+}

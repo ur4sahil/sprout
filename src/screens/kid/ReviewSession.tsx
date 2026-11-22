@@ -13,7 +13,6 @@ import HintPanel from '../../components/HintPanel';
 import HoldButton from '../../components/HoldButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
-import PracticeFriend from '../../components/PracticeFriend';
 import QuestionStage from '../../components/QuestionStage';
 import ReviewPot from '../../components/ReviewPot';
 import { plantKindFor } from '../../components/plantKind';
@@ -98,12 +97,9 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
         </>
       }
       side={
-        <>
-          <p className={styles.count} data-review-count="">
-            {review.asked} of {review.total}
-          </p>
-          {review.skill && <PracticeFriend who={castFor(review.skill.subject)} questionKey={questionId} phase={phase} />}
-        </>
+        <p className={styles.count} data-review-count="">
+          {review.asked} of {review.total}
+        </p>
       }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
@@ -126,6 +122,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           onSubmit={review.submit}
           onGotIt={review.gotIt}
           onSpeak={say}
+          friend={review.skill ? { who: castFor(review.skill.subject), voice } : undefined}
         />
       )}
       {hinting && question && <HintPanel question={question} who={voice} onClose={closeHint} onSpeak={say} />}
