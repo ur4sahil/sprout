@@ -31,7 +31,7 @@ export async function playBytes(bytes: ArrayBuffer, speed = 1): Promise<boolean>
       };
       active = source;
       source.start();
-      over = startPlaying({ bytes, clock: ctx, startedAt: ctx.currentTime, speed });
+      over = startPlaying({ bytes, clock: ctx, startedAt: ctx.currentTime, speed, node: source });
     });
   } catch (error) {
     logError(error);

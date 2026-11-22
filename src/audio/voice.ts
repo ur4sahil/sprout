@@ -68,6 +68,11 @@ export function parseTiming(header: string | null): SpokenTiming | null {
   return { duration: d, shapes };
 }
 
+// Keeps a timing with the recording it came with.
+export function keepTiming(bytes: ArrayBuffer, timing: SpokenTiming): void {
+  timings.set(bytes, timing);
+}
+
 // The timing that came with a recording, or null.
 export function timingOf(bytes: ArrayBuffer): SpokenTiming | null {
   return timings.get(bytes) ?? null;
@@ -151,7 +156,7 @@ async function send(text: string, pace: Pace, who: Who): Promise<ArrayBuffer | n
     const body = await reply.arrayBuffer();
     if (body.byteLength === 0) return null;
     const timing = parseTiming(reply.headers.get('X-Timing'));
-    if (timing) timings.set(body, timing);
+    if (timing) keepTiming(body, timing);
     return body;
   } catch {
     return null;

@@ -6,6 +6,7 @@ import { readyVoice, soundClipOf, voicePieces } from './voice';
 import { isMuted } from './mute';
 import { loneSound, saySegments } from './say';
 import { soundClipBytes } from './soundClips';
+import { setDeviceTalking } from './playing';
 import { setSpeaking } from './speaking';
 
 // The only way the app speaks.
@@ -110,7 +111,7 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
   // The music listens to this, and dips while the voice speaks.
   setSpeaking(false);
   if (isMuted() || say.length === 0) return false;
-  setSpeaking(true);
+  setSpeaking(true, who);
   try {
     await wait(CANCEL_WAIT_MS);
     if (mine !== generation) return false;
@@ -150,7 +151,13 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
       const chosen = await chooseVoice(engine);
       for (const segment of saySegments(piece)) {
         if (mine !== generation) return false;
-        await utter(engine, segment.kind === 'clip' ? segment.fallback : segment.text, rate, chosen);
+        // The device's voice cannot be measured, so the friend's mouth runs its talk loop while it speaks.
+        setDeviceTalking(true);
+        try {
+          await utter(engine, segment.kind === 'clip' ? segment.fallback : segment.text, rate, chosen);
+        } finally {
+          setDeviceTalking(false);
+        }
         spoke = true;
       }
     }
@@ -166,6 +173,7 @@ export async function speak(say: Say, rate: number = DEFAULT_RATE, pace: Pace = 
 export function stop(): void {
   generation += 1;
   setSpeaking(false);
+  setDeviceTalking(false);
   stopClip();
   try {
     synth()?.cancel();

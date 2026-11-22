@@ -19,7 +19,6 @@ import HoldButton from '../../components/HoldButton';
 import IconButton from '../../components/IconButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
-import PracticeFriend from '../../components/PracticeFriend';
 import { plantKindFor } from '../../components/plantKind';
 import QuestionStage from '../../components/QuestionStage';
 import Scratchpad from '../../components/Scratchpad';
@@ -179,12 +178,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
         </>
       }
       side={
-        state && (
-          <>
-            <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} plant={kind ? { kind, stage } : null} />
-            <PracticeFriend who={friend} questionKey={questionId} phase={phase} />
-          </>
-        )
+        state && <StatusPanel answered={practice.answered} score={state.score} attempts={state.attempts} placedOut={state.placedOut} seconds={child.settings.showTimer ? seconds : null} plant={kind ? { kind, stage } : null} />
       }
     >
       {phase === 'loading' && <p className={styles.wait} aria-busy="true" aria-label="Getting ready" />}
@@ -208,6 +202,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
           onSubmit={() => practice.submit()}
           onGotIt={practice.gotIt}
           onSpeak={say}
+          friend={{ who: friend, voice }}
         />
       )}
       {phase === 'celebrating' && practice.milestone !== null && (

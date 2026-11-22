@@ -22,8 +22,10 @@ export interface CharacterProps {
   // where the mood sends them.
   lookAt?: { x: number; y: number } | null;
   // True: the mouth runs its own talk loop. A number from 0 to 1: how open the mouth is right now, for a caller
-  // that follows the loudness of the voice (see useLoudness). Left out: the mood decides.
-  talking?: boolean | number;
+  // that follows the loudness of the voice (see useLoudness). A mouth shape: the shape the voice is making now, for a
+  // caller that follows a recording's timing (see useVoiceMouth); it is drawn as given, in Calm mode too, since the
+  // mouth is the one part that moves there. Left out: the mood decides.
+  talking?: boolean | number | MouthShape;
   size?: number; // how wide to draw, in screen points. Left out: as wide as the box it is put in
   flip?: boolean; // mirrored, to face (and lean, point and peek) the other way
   label?: string; // a name for screen readers. Left out: the friend is decoration and is hidden from them
@@ -61,10 +63,11 @@ export default function Character({ who, mood = 'idle', lookAt = null, talking, 
 
   // The mouth. Talking by itself is a loop the styles run; with movement off it is one open shape, held.
   const says = talking ?? pose.talks;
-  const speaking = typeof says === 'number' ? says > 0.08 : says;
+  const speaking = typeof says === 'number' ? says > 0.08 : says !== false;
   const talkLoop = says === true && !still;
   let mouth: MouthShape = pose.mouth;
-  if (speaking && still) mouth = 'small';
+  if (typeof says === 'string') mouth = says;
+  else if (speaking && still) mouth = 'small';
   else if (speaking && typeof says === 'number') mouth = mouthFor(says);
 
   const arms = armAngles(who, mood);
