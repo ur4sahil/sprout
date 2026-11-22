@@ -1,14 +1,14 @@
 import readingStories from '../../../banks/readingStories.json' with { type: 'json' };
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, SortBin, Visual } from '../../../../engine/types';
+import type { Explanation, LessonStep, Level, QuestionDraft, Say, SortBin, Visual } from '../../../../engine/types';
 import type { DescribingSentence } from '../../../data/describing';
 import { DESCRIBING_SENTENCES } from '../../../data/describing';
 import { DESCRIBING_PICTURES, NOUNS, VERBS } from '../../../data/phonics1';
 import { ASKING, SHOUTING, TELLING } from '../../../data/sentences';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../pk/parts';
 import { cap, pickApart, row } from '../pk/parts';
+import { hint } from './wording';
 
 // Language Arts grade 1 C.1 to C.3 and D.1.
 
@@ -25,11 +25,13 @@ const WORD_BINS: SortBin[] = [
 ];
 const KINDS = ['noun', 'verb'];
 const GROUP = 'Put each word in its group.';
+// The words say themselves when tapped, so a word with two ways to say it is left out: read can sound like red.
+const HEARD_VERBS = VERBS.filter((verb) => verb !== 'read');
 
 function nounsAndVerbs(level: Level, rng: Rng): QuestionDraft {
   const each = level === 1 ? 2 : 3;
   const nouns = rng.sample(NOUNS, each);
-  const verbs = rng.sample(VERBS, each);
+  const verbs = rng.sample(HEARD_VERBS, each);
   const words = rng.shuffle([...nouns, ...verbs]);
   const itemAttrs = words.map((value) => (nouns.includes(value) ? 'noun' : 'verb'));
   const [noun, verb] = [nouns[0] as string, verbs[0] as string];
@@ -41,7 +43,7 @@ function nounsAndVerbs(level: Level, rng: Rng): QuestionDraft {
     items: words.map((value) => wordSaid(value)),
     bins: WORD_BINS,
     answerBin: itemAttrs.map((attr) => KINDS.indexOf(attr)),
-    explanation: { speak: [{ word: noun }, 'names something.', { word: verb }, 'is something you do.'], steps: [`${cap(noun)} names something.`, `${cap(verb)} is something you do.`], visual: row(wordSaid(noun), wordSaid(verb)) },
+    explanation: { speak: [{ word: cap(noun) }, 'names something.', { word: cap(verb) }, 'is something you do.'], steps: [`${cap(noun)} names something.`, `${cap(verb)} is something you do.`], visual: row(wordSaid(noun), wordSaid(verb)), hint: hint('Ask: is it something you can do? Or is it a person, an animal or a thing?') },
   };
 }
 
@@ -72,7 +74,7 @@ const FITS = 'Which word fits the picture?';
 const sentenceSaid = (sentence: string): Visual => ({ kind: 'text', value: sentence, size: 'l', speak: [sentence] });
 
 function describingExplanation(entry: DescribingSentence): Explanation {
-  return { speak: [{ word: entry.describing }, 'tells what the', { word: entry.naming }, 'is like.'], steps: [`${cap(entry.describing)} tells what the ${entry.naming} is like.`], visual: sentenceSaid(entry.sentence) };
+  return { speak: [{ word: cap(entry.describing) }, 'tells what the', { word: entry.naming }, 'is like.'], steps: [`${cap(entry.describing)} tells what the ${entry.naming} is like.`], visual: sentenceSaid(entry.sentence), hint: hint('Find the naming word first. Which word tells about it?') };
 }
 
 function describing(level: Level, rng: Rng): QuestionDraft {
@@ -104,7 +106,7 @@ function describing(level: Level, rng: Rng): QuestionDraft {
     stimulus: silent(entry.emoji),
     options: options.map((each) => wordSaid(each)),
     answerIndex: options.indexOf(entry.word),
-    explanation: { speak: ['This picture shows something', { word: entry.word }, '.'], steps: [`This picture shows something ${entry.word}.`], visual: row(silent(entry.emoji), wordSaid(entry.word)) },
+    explanation: { speak: ['This picture shows something', { word: entry.word }, '.'], steps: [`This picture shows something ${entry.word}.`], visual: row(silent(entry.emoji), wordSaid(entry.word)), hint: hint('Look at the picture. Tap each word to hear it. Which one tells what the picture is like?') },
   };
 }
 
@@ -137,6 +139,9 @@ const MARKS = ['.', '?', '!'] as const;
 const MARK_NAME: Record<string, string> = { '.': 'period', '?': 'question mark', '!': 'exclamation mark' };
 const MARK_RULE: Record<string, string> = { '.': 'A telling sentence ends with a period.', '?': 'An asking sentence ends with a question mark.', '!': 'A shout ends with an exclamation mark.' };
 const WHICH_MARK = 'Which mark goes at the end?';
+// The answer is a mark, so a hint may hold only the marks its question shows already (validation rule 18).
+const MARK_HINT = hint('Does it tell, ask or shout?');
+const MOVE_HINT = hint('Read the sentence. Think about whether it tells, asks or shouts.');
 const mark = (value: string): Visual => ({ kind: 'text', value, size: 'xl', speak: [MARK_NAME[value] as string] });
 // The sentence is read aloud when tapped: how it sounds is the clue.
 const unmarked = (sentence: string): Visual => ({ kind: 'text', value: sentence.slice(0, -1), size: 'l', speak: [sentence] });
@@ -158,7 +163,7 @@ function endMarks(level: Level, rng: Rng): QuestionDraft {
       after: '',
       options: values.map(mark),
       answerIndex: values.indexOf(answer as (typeof MARKS)[number]),
-      explanation: { speak: [MARK_RULE[answer] as string], steps: [MARK_RULE[answer] as string], visual: text(sentence, 'l') },
+      explanation: { speak: [MARK_RULE[answer] as string], steps: [MARK_RULE[answer] as string], visual: text(sentence, 'l'), hint: MOVE_HINT },
     };
   }
   return {
@@ -170,7 +175,7 @@ function endMarks(level: Level, rng: Rng): QuestionDraft {
     stimulus: unmarked(sentence),
     options: values.map(mark),
     answerIndex: values.indexOf(answer as (typeof MARKS)[number]),
-    explanation: { speak: [MARK_RULE[answer] as string], steps: [MARK_RULE[answer] as string], visual: text(sentence, 'l') },
+    explanation: { speak: [MARK_RULE[answer] as string], steps: [MARK_RULE[answer] as string], visual: text(sentence, 'l'), hint: MARK_HINT },
   };
 }
 
@@ -199,12 +204,15 @@ export const endMarksGenerator: SkillGenerator = {
 type Authored = QuestionDraft & { level: number };
 const STORIES = readingStories as unknown as Authored[];
 
+const STORY_HINT = hint('Look back at the story. Find the sentence that answers the question.');
+
 function readStory(level: Level, rng: Rng): QuestionDraft {
   // A copy of the banked question, without the two fields the registry stamps on itself.
   const draft = structuredClone(rng.pick(STORIES.filter((each) => each.level === level))) as Partial<Authored> & { skillId?: string };
   delete draft.level;
   delete draft.skillId;
-  return draft as QuestionDraft;
+  const question = draft as QuestionDraft;
+  return { ...question, explanation: { ...question.explanation, hint: STORY_HINT } };
 }
 
 const firstStory = STORIES[0] as Authored;

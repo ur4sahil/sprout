@@ -1,16 +1,17 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
-import { COMPLETE, FRAGMENTS, HOW_GAPS, HOW_SENTENCES, REFLEXIVE_ACTIONS, REFLEXIVE_SUBJECTS, REFLEXIVES } from '../../../data/h4-grammar';
+import { COMPLETE, COMPLETE_PARTS, FRAGMENT_MISSING, FRAGMENTS, HOW_GAPS, HOW_SENTENCES, REFLEXIVE_ACTIONS, REFLEXIVE_SUBJECTS, REFLEXIVES } from '../../../data/h4-grammar';
 import { COLLECTIVES } from '../../../data/h4-words';
 import type { SkillGenerator } from '../../../generator';
-import { blankSay, choice, explain, lesson, plain, said, withOthers } from '../g1/h4-parts';
+import { choice, explain, lesson, plain, said, withOthers } from '../g1/h4-parts';
+import { gapSay, hint, line, spell } from '../g1/wording';
 import { cap } from '../pk/parts';
 
 // Language Arts grade 2 C.5 to C.8 (plan section 15 wave H4). Oracle: h4ela.
 
 const FITS = 'Which word fits the sentence?';
-const gapShown = (sentence: string): Visual => ({ ...plain(sentence), speak: [blankSay(sentence)] });
+const gapShown = (sentence: string): Visual => ({ ...plain(sentence), speak: [gapSay(sentence)] });
 const many = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 5, layout: 'row' });
 
 // ---- C.5 Group names ----
@@ -19,22 +20,24 @@ const many = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 5, 
 function collectives(level: Level, rng: Rng): QuestionDraft {
   const entry = rng.pick(COLLECTIVES);
   const groups = COLLECTIVES.map((each) => each.group);
-  const why = explain([`A group of ${entry.things} is called a ${entry.group}.`], many(entry.emoji));
+  const named = hint('Some groups have their own name. Which name goes with these?');
+  const why = explain([`A group of ${entry.things} is called a ${entry.group}.`], many(entry.emoji), undefined, named);
   if (level === 2) {
+    // "What comes in a school?" invites children; the question asks which of these the group is made of.
     return choice({
-      prompt: `What comes in a ${entry.group}?`,
+      prompt: `A ${entry.group} is a group of which of these?`,
       options: withOthers(rng, entry.things, COLLECTIVES.map((each) => each.things)),
       right: entry.things,
       spoken: true,
       facts: { relation: 'collectiveThings', target: entry.group },
-      why,
+      why: { ...why, hint: hint('Think: what do you call a group of each of these?') },
     });
   }
   if (level === 3) {
     const sentence = `We saw a ___ of ${entry.things}.`;
     return choice({
       prompt: FITS,
-      speak: [FITS, blankSay(sentence)],
+      speak: [FITS, gapSay(sentence)],
       options: withOthers(rng, entry.group, groups, 3),
       right: entry.group,
       spoken: true,
@@ -87,13 +90,13 @@ function reflexives(level: Level, rng: Rng): QuestionDraft {
   const who = ['He', 'She', 'We', 'They', 'You'].includes(entry.subject) ? entry.subject.toLowerCase() : entry.subject.replace(/^The /, 'the ');
   return choice({
     prompt: FITS,
-    speak: [FITS, blankSay(sentence)],
+    speak: [FITS, gapSay(sentence)],
     options,
     right: entry.reflexive,
     spoken: true,
     stimulus: gapShown(sentence),
     facts: { relation: 'reflexive', target: sentence, subject: entry.subject },
-    why: explain([`${cap(entry.reflexive)} goes with ${who}.`, done], said(done), [`${entry.reflexive} goes with ${who}.`, done]),
+    why: explain([`Use ${entry.reflexive} with ${who}.`, done], said(done), undefined, hint('Who did it? The word points back to them.')),
   });
 }
 
@@ -107,7 +110,7 @@ export const reflexivesGenerator: SkillGenerator = {
   example: () => reflexives(1, makeRng(1522)),
   lesson: lesson(
     ['Words like myself and herself point back to who did it.', plain('I → myself')],
-    ['Kim built a fort by herself. Herself points back to Kim.', plain('Kim built a fort by herself.')],
+    ['Mom built a fort by herself. Herself points back to Mom.', plain('Mom built a fort by herself.')],
     ['We made lunch all by ___. Which word fits?', plain('We made lunch all by ___.'), 'Ourselves. It goes with we.', plain('We made lunch all by ourselves.')],
     ['I: myself. He: himself. She: herself. We: ourselves. They: themselves.', plain('myself  himself  herself')],
   ),
@@ -118,23 +121,26 @@ export const reflexivesGenerator: SkillGenerator = {
 // Levels: which word tells how / the describing word or the how word in a gap / which word tells how, from four.
 
 const HOW_RULE = 'A word that tells how something is done often ends in ly.';
+const howRule = line(HOW_RULE, ['A word that tells how something is done often ends in', ...spell('ly'), '.']);
+const HOW_HINT = hint('Look for a word that tells how it was done. It often ends in ly.', ['Look for a word that tells how it was done. It often ends in', ...spell('ly'), '.']);
 
 function adverbs(level: Level, rng: Rng): QuestionDraft {
   if (level === 2) {
     const entry = rng.pick(HOW_GAPS);
-    const afterBe = /\b(is|was|are|were) ___/.test(entry.sentence);
-    const right = afterBe ? entry.adjective : entry.adverb;
+    const be = /\b(is|was|are|were) ___/.exec(entry.sentence)?.[1];
+    const right = be ? entry.adjective : entry.adverb;
     const done = entry.sentence.replace('___', right);
-    const rule = afterBe ? 'After is, was or are, use a describing word.' : 'To tell how it was done, use the word that ends in ly.';
+    // The rule names this sentence's own word, as a word: "After the word was, use a describing word."
+    const rule = be ? `After the word ${be}, use a describing word.` : line('To tell how it was done, use the word that ends in ly.', ['To tell how it was done, use the word that ends in', ...spell('ly'), '.']);
     return choice({
       prompt: FITS,
-      speak: [FITS, blankSay(entry.sentence)],
+      speak: [FITS, gapSay(entry.sentence)],
       options: rng.shuffle([entry.adjective, entry.adverb]),
       right,
       spoken: true,
       stimulus: gapShown(entry.sentence),
       facts: { relation: 'adverbGap', target: entry.sentence },
-      why: explain([rule, done], said(done), [rule, done]),
+      why: explain([rule, done], said(done), undefined, hint('Look at the word just before the gap.')),
     });
   }
   const entry = rng.pick(HOW_SENTENCES);
@@ -147,7 +153,7 @@ function adverbs(level: Level, rng: Rng): QuestionDraft {
     spoken: true,
     stimulus: said(entry.sentence),
     facts: { relation: 'adverb', target: entry.sentence },
-    why: explain([HOW_RULE, `${cap(entry.adverb)} tells how the ${entry.noun} ${entry.verb}.`], said(entry.sentence)),
+    why: explain([howRule, `${cap(entry.adverb)} tells how the ${entry.noun} ${entry.verb}.`], said(entry.sentence), undefined, HOW_HINT),
   });
 }
 
@@ -172,6 +178,9 @@ export const adverbsGenerator: SkillGenerator = {
 // Levels: is this a complete sentence / pick the complete one from 3 / from 4. Read, never spoken.
 
 const COMPLETE_RULE = 'A complete sentence tells who or what, and what they do or are.';
+const COMPLETE_HINT = hint('Does it tell who or what? Does it tell what they do or are?');
+// What a sentence tells, or the part it leaves out.
+const partsOf = (sentence: string): string => COMPLETE_PARTS[sentence] ?? FRAGMENT_MISSING[sentence] ?? COMPLETE_RULE;
 
 function complete(level: Level, rng: Rng): QuestionDraft {
   if (level === 1) {
@@ -186,7 +195,7 @@ function complete(level: Level, rng: Rng): QuestionDraft {
       size: 'xl',
       stimulus: plain(sentence),
       facts: { relation: 'complete', target: sentence, read: [sentence] },
-      why: explain([COMPLETE_RULE, yes ? 'This one has both parts.' : 'This one is missing a part.'], plain(sentence), [COMPLETE_RULE, yes ? 'This one has both parts.' : 'This one is missing a part.']),
+      why: explain([COMPLETE_RULE, partsOf(sentence)], plain(sentence), undefined, COMPLETE_HINT),
     });
   }
   const right = rng.pick(COMPLETE);
@@ -198,7 +207,7 @@ function complete(level: Level, rng: Rng): QuestionDraft {
     right,
     size: 'm',
     facts: { relation: 'completeChoice', target: 'complete', read: options },
-    why: explain([COMPLETE_RULE, right], plain(right), [COMPLETE_RULE]),
+    why: explain([COMPLETE_RULE, right, partsOf(right)], plain(right), [COMPLETE_RULE], COMPLETE_HINT),
   });
 }
 

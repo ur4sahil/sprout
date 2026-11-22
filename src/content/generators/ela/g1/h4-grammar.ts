@@ -1,16 +1,17 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, SortBin } from '../../../../engine/types';
+import type { Explanation, Level, QuestionDraft, SortBin } from '../../../../engine/types';
 import type { PronounEntry } from '../../../data/h4-grammar';
 import { ACTIONS, BE_HAVE, CAPITAL_WORD_SENTENCES, COMMON_NOUNS, DAY_SENTENCES, DAYS, JOINING, JOINING_WORDS, MONTH_SENTENCES, MONTHS, PRONOUN_ENTRIES, PROPER_NOUNS, QUESTION_WORDS, QUESTIONS, SUBJECTS_MORE, SUBJECTS_ONE, WE_ENTRIES } from '../../../data/h4-grammar';
 import type { SkillGenerator } from '../../../generator';
 import { cap } from '../pk/parts';
-import { blankSay, choice, explain, lesson, plain, said, sort, withOthers } from './h4-parts';
+import { choice, explain, lesson, plain, said, sort, withOthers } from './h4-parts';
+import { gapSay, hint } from './wording';
 
 // Language Arts grade 1 C.4 to C.9 (plan section 15 wave H4). Oracle: h4ela.
 
 const FITS = 'Which word fits the sentence?';
-const sentenceShown = (sentence: string) => ({ ...plain(sentence), speak: [blankSay(sentence)] });
+const sentenceShown = (sentence: string) => ({ ...plain(sentence), speak: [gapSay(sentence)] });
 // "The dog" reads "the dog" in the middle of a sentence; a name keeps its capital.
 const inSentence = (noun: string): string => (/^(The|My) /.test(noun) ? noun.charAt(0).toLowerCase() + noun.slice(1) : noun);
 
@@ -18,17 +19,21 @@ const inSentence = (noun: string): string => (/^(The|My) /.test(noun) ? noun.cha
 // Levels: the word for a naming part (he, she, it, they) / in a second sentence / with we too.
 
 const PRONOUNS = ['he', 'she', 'it', 'they'];
+// A hint never holds a word that is offered: "it" is not in "who is the naming part".
+const PRONOUN_HINT = hint('Ask: who is the naming part, and how many are there?');
+const WE_HINT = hint('Ask: who is the naming part, how many are there, and am I one of them?');
+const placeOf = (entry: PronounEntry): string => `Which word can take the place of ${inSentence(entry.noun)}?`;
 
-function pronounWhy(entry: PronounEntry): ReturnType<typeof explain> {
+function pronounWhy(entry: PronounEntry, nudge = PRONOUN_HINT): Explanation {
   const done = `${entry.first} ${cap(entry.pronoun)} ${entry.then}`;
-  return explain([`${cap(entry.pronoun)} can take the place of ${inSentence(entry.noun)}.`, done], plain(done));
+  return explain([`The word ${entry.pronoun} can take the place of ${inSentence(entry.noun)}.`, done], plain(done), undefined, nudge);
 }
 
 function pronouns(level: Level, rng: Rng): QuestionDraft {
   if (level === 1) {
     const entry = rng.pick(PRONOUN_ENTRIES);
     return choice({
-      prompt: `Which word can take the place of ${inSentence(entry.noun)}?`,
+      prompt: placeOf(entry),
       options: withOthers(rng, entry.pronoun, PRONOUNS),
       right: entry.pronoun,
       spoken: true,
@@ -41,15 +46,17 @@ function pronouns(level: Level, rng: Rng): QuestionDraft {
   const sentence = `${entry.first} ___ ${entry.then}`;
   const all = level === 2 ? PRONOUNS : [...PRONOUNS, 'we'];
   const options = (level === 2 ? rng.shuffle(all) : withOthers(rng, entry.pronoun, all, 3)).map(cap);
+  // The question names the words to take the place of: "They saw a big lion" fits after "The kids went to the
+  // zoo" with a new they or we, so only the naming part makes one word right.
   return choice({
-    prompt: FITS,
-    speak: [FITS, blankSay(sentence)],
+    prompt: placeOf(entry),
+    speak: [placeOf(entry), gapSay(sentence)],
     options,
     right: cap(entry.pronoun),
     spoken: true,
     stimulus: sentenceShown(sentence),
     facts: { relation: 'pronoun', target: entry.noun, capital: true },
-    why: pronounWhy(entry),
+    why: pronounWhy(entry, level === 3 ? WE_HINT : PRONOUN_HINT),
   });
 }
 
@@ -73,6 +80,15 @@ export const pronounsGenerator: SkillGenerator = {
 // ---- C.5 One or more: runs or run ----
 // Levels: action words / is, are, has, have, was, were / mixed.
 
+// How many the naming part is, with the word in question named as a word: "The word he means one person".
+function howMany(subject: string, one: boolean): string {
+  const pronoun = ['He', 'She', 'We', 'They'].includes(subject);
+  if (pronoun) return `The word ${subject.toLowerCase()} means ${one ? 'one person' : 'more than one'}`;
+  if (!subject.startsWith('The ')) return `${subject} is one person`;
+  const thing = subject.slice(4);
+  return one ? `There is one ${thing}` : `There is more than one ${thing.replace(/s$/, '')}`;
+}
+
 function agree(level: Level, rng: Rng): QuestionDraft {
   const one = rng.bool();
   const subject = rng.pick(one ? SUBJECTS_ONE : SUBJECTS_MORE);
@@ -81,16 +97,17 @@ function agree(level: Level, rng: Rng): QuestionDraft {
   const sentence = `${subject} ___ ${end}`;
   const right = one ? single : more;
   const done = sentence.replace('___', right);
-  const rule = one ? `${subject} means one, so use ${single}.` : `${subject} means more than one, so use ${more}.`;
+  const rule = `${howMany(subject, one)}, so use ${right}.`;
   return choice({
     prompt: FITS,
-    speak: [FITS, blankSay(sentence)],
+    speak: [FITS, gapSay(sentence)],
     options: rng.shuffle([single, more]),
     right,
     spoken: true,
     stimulus: sentenceShown(sentence),
     facts: { relation: 'agree', target: sentence, subject },
-    why: explain([rule, done], said(done), [rule, done]),
+    // No action word and no is, are, has, have, was or were in the hint: each one is offered.
+    why: explain([rule, done], said(done), [rule, done], hint('Look at the naming part. One, or more than one?')),
   });
 }
 
@@ -131,7 +148,7 @@ function capitals(level: Level, rng: Rng): QuestionDraft {
       spoken: true,
       stimulus: said(shown),
       facts: { relation: 'capitalWord', target: shown },
-      why: explain([CAPITAL_RULE, done], plain(done)),
+      why: explain([CAPITAL_RULE, done], plain(done), undefined, hint('Find the name of a day or a month.')),
     });
   }
   const when = rng.pick(level === 1 ? DAYS : MONTHS);
@@ -143,7 +160,7 @@ function capitals(level: Level, rng: Rng): QuestionDraft {
     options,
     right,
     facts: { relation: 'capitalRight', target: right },
-    why: explain([CAPITAL_RULE, 'A sentence starts with a capital letter too.'], plain(right)),
+    why: explain([CAPITAL_RULE, 'A sentence starts with a capital letter too.'], plain(right), undefined, hint(`Check the first letter of the sentence, and of the ${level === 1 ? 'day' : 'month'}.`)),
   });
 }
 
@@ -172,30 +189,31 @@ const NOUN_BINS: SortBin[] = [
   { label: 'Proper nouns', speak: ['Proper nouns'] },
 ];
 const PROPER_RULE = 'A proper noun names one special person, place or pet. It starts with a capital letter.';
+const PROPER_HINT = hint('A proper noun is the name of one special person, place or pet.');
 
 function properNouns(level: Level, rng: Rng): QuestionDraft {
   if (level === 1) {
     const right = rng.pick(PROPER_NOUNS);
     return choice({
-      prompt: 'Which one is a proper noun?',
+      prompt: 'Which word is a proper noun?',
       options: rng.shuffle([right, ...rng.sample(COMMON_NOUNS, 2)]),
       right,
       spoken: true,
       facts: { relation: 'properNoun', target: right },
-      why: explain([PROPER_RULE, `${right} is a special name.`], plain(right, 'xl')),
+      why: explain([PROPER_RULE, `${right} is a special name.`], plain(right, 'xl'), undefined, PROPER_HINT),
     });
   }
   const each = level === 2 ? 2 : 3;
   const proper = rng.sample(PROPER_NOUNS, each);
   const items = rng.shuffle([...rng.sample(COMMON_NOUNS, each), ...proper]);
   return sort({
-    prompt: 'Put each noun in its group.',
+    prompt: 'Put each word in its group.',
     mode: 'look',
     items,
     bins: NOUN_BINS,
     answerBin: items.map((word) => (proper.includes(word) ? 1 : 0)),
     facts: { relation: 'nounSort', target: 'noun', bins: ['common', 'proper'] },
-    why: explain([PROPER_RULE, 'A common noun names any person, place or thing.'], plain('dog   Rex')),
+    why: explain([PROPER_RULE, 'A common noun names any person, place or thing.'], plain('dog   Rex'), undefined, PROPER_HINT),
   });
 }
 
@@ -220,11 +238,11 @@ export const properNounsGenerator: SkillGenerator = {
 // Levels: who, what, where / with when / with why. The answer under the question shows which word fits.
 
 const ASK_RULE: Record<string, string> = {
-  Who: 'Who asks about a person.',
-  What: 'What asks about a thing.',
-  Where: 'Where asks about a place.',
-  When: 'When asks about a time.',
-  Why: 'Why asks for a reason.',
+  Who: 'The word who asks about a person.',
+  What: 'The word what asks about a thing.',
+  Where: 'The word where asks about a place.',
+  When: 'The word when asks about a time.',
+  Why: 'The word why asks for a reason.',
 };
 
 function questionWords(level: Level, rng: Rng): QuestionDraft {
@@ -234,13 +252,14 @@ function questionWords(level: Level, rng: Rng): QuestionDraft {
   const done = entry.question.replace('___', entry.word);
   return choice({
     prompt: 'Which word starts the question?',
-    speak: ['Which word starts the question?', blankSay(shown)],
+    // One string: the gap starts the question, and its pause must not run into the question mark before it.
+    speak: [`Which word starts the question? ${gapSay(shown)}`],
     options: level === 3 ? withOthers(rng, entry.word, words, 3) : rng.shuffle(words),
     right: entry.word,
     spoken: true,
     stimulus: sentenceShown(shown),
     facts: { relation: 'questionWord', target: entry.question },
-    why: explain([ASK_RULE[entry.word] as string, `${done} ${entry.answer}`], plain(`${done} ${entry.answer}`)),
+    why: explain([ASK_RULE[entry.word] as string, `${done} ${entry.answer}`], plain(`${done} ${entry.answer}`), undefined, hint('Read the answer under the question. Is it about a person, a thing, a place, a time or a reason?')),
   });
 }
 
@@ -265,10 +284,12 @@ export const questionWordsGenerator: SkillGenerator = {
 // Levels: and or but / and, but or or.
 
 const JOIN_RULE: Record<string, string> = {
-  and: 'And joins things that go together.',
-  but: 'But joins two ideas that are different.',
-  or: 'Or gives a choice.',
+  and: 'The word and joins things that go together.',
+  but: 'The word but joins two ideas that are different.',
+  or: 'The word or gives a choice.',
 };
+// No joining word in the hint: each one is offered.
+const JOIN_HINT = ['Do the two parts go together? Are they different?', 'Do the two parts go together? Are they different? Is it a choice?'];
 
 function joining(level: Level, rng: Rng): QuestionDraft {
   const shown = level === 1 ? JOINING_WORDS.slice(0, 2) : JOINING_WORDS;
@@ -278,14 +299,14 @@ function joining(level: Level, rng: Rng): QuestionDraft {
   const done = entry.sentence.replace('___', word);
   return choice({
     prompt: FITS,
-    speak: [FITS, blankSay(entry.sentence)],
+    speak: [FITS, gapSay(entry.sentence)],
     fixedOrder: true,
     options: shown,
     right: word,
     spoken: true,
     stimulus: sentenceShown(entry.sentence),
     facts: { relation: 'joining', target: entry.sentence },
-    why: explain([JOIN_RULE[word] as string, done], said(done), [JOIN_RULE[word] as string, done]),
+    why: explain([JOIN_RULE[word] as string, done], said(done), [JOIN_RULE[word] as string, done], hint(JOIN_HINT[level === 1 ? 0 : 1] as string)),
   });
 }
 

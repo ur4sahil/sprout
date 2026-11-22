@@ -101,6 +101,7 @@ describe('the nudge', () => {
     let nudged = 0;
     let withheld = 0;
     let guarded = 0;
+    let hinted = 0;
     for (const skill of CATALOGUE) {
       for (let seed = 1; seed <= 3; seed += 1) {
         let q: Question;
@@ -115,6 +116,7 @@ describe('the nudge', () => {
         if (own) {
           expect(nudgeFor(q), `${skill.id} gives its own hint`).toEqual({ text: own.text, say: own.say ?? stepSay(own.text) });
           expect(givesAway(q, own.text, own.say ? sayText(own.say) : null), `${skill.id}: ${own.text}`).toBe(false);
+          hinted += 1;
         }
         // The rules for a nudge taken from the steps, the fallback when a generator gives no hint, are checked with
         // the generator's own hint left out.
@@ -140,6 +142,7 @@ describe('the nudge', () => {
     expect(nudged).toBeGreaterThan(100);
     expect(withheld).toBeGreaterThan(100);
     expect(guarded).toBeGreaterThan(10);
+    expect(hinted).toBeGreaterThan(100);
   });
 
   it('is said when it can be read safely, and only shown when it cannot', () => {
@@ -178,7 +181,12 @@ describe('the nudge', () => {
     // Their own hints say how to start, never a step.
     expect(nudgeFor(question('M-PK-D6', 3, 1))?.text).not.toBe('Clothes: shoe, shirt.');
     expect(nudgeFor(question('M-K-B3', 1, 1))?.text).toBe('Find the smallest number first. Then find the next one.');
-    expect(nudgeFor(question('E-2-D3', 1, 1))).toBeNull(); // order: "1. The turtle wanted to see the sea."
+    // An order with its own hint offers the hint, never its first step ("1. The turtle wanted to see the sea.").
+    const story = question('E-2-D3', 1, 1);
+    expect(story.type).toBe('order');
+    expect(nudgeFor(withoutHint(story))).toBeNull(); // order
+    expect(nudgeFor(story)?.text).toBe(story.explanation.hint?.text);
+    expect(nudgeFor(story)?.text).not.toBe(story.explanation.steps[0]);
   });
 
   it('never offers a step that names the right option, the number, the word or the sign', () => {

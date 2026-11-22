@@ -8,15 +8,17 @@ export interface TeamWord {
 }
 const teams = (list: [string, string, string][]): readonly TeamWord[] => list.map(([word, team, emoji]) => ({ word, team, emoji }));
 
-// A.1 More vowel teams. Level 1 and 2: ai, ay, ee, ea, oa, ow. Level 3: igh and ie.
+// A.1 More vowel teams. Level 1 and 2: ai, ay, ee, ea, oa, ow. Level 3: igh and ie. At level 1 the picture is
+// not named, so every picture is one a child names one way: a plate is not a tray, a game pad is not play, one
+// foot is not feet, and a shield is not a knight.
 export const TEAMS_2: readonly string[] = ['ai', 'ay', 'ee', 'ea', 'oa', 'ow'];
 export const TEAM_WORDS_2 = teams([
-  ['rain', 'ai', '🌧️'], ['snail', 'ai', '🐌'], ['train', 'ai', '🚂'], ['tray', 'ay', '🍽️'], ['hay', 'ay', '🌾'], ['play', 'ay', '🎮'],
-  ['tree', 'ee', '🌳'], ['bee', 'ee', '🐝'], ['feet', 'ee', '🦶'], ['leaf', 'ea', '🍃'], ['peach', 'ea', '🍑'], ['seal', 'ea', '🦭'],
+  ['rain', 'ai', '🌧️'], ['snail', 'ai', '🐌'], ['train', 'ai', '🚂'], ['crayon', 'ay', '🖍️'], ['hay', 'ay', '🌾'],
+  ['tree', 'ee', '🌳'], ['bee', 'ee', '🐝'], ['sheep', 'ee', '🐑'], ['leaf', 'ea', '🍃'], ['peach', 'ea', '🍑'], ['seal', 'ea', '🦭'],
   ['boat', 'oa', '⛵'], ['goat', 'oa', '🐐'], ['soap', 'oa', '🧼'], ['bow', 'ow', '🎀'], ['snow', 'ow', '❄️'], ['bowl', 'ow', '🥣'],
 ]);
 export const TEAMS_LONG_I: readonly string[] = ['igh', 'ie'];
-export const LONG_I_WORDS = teams([['light', 'igh', '💡'], ['night', 'igh', '🌙'], ['knight', 'igh', '🛡️'], ['pie', 'ie', '🥧'], ['tie', 'ie', '👔'], ['fries', 'ie', '🍟']]);
+export const LONG_I_WORDS = teams([['light', 'igh', '💡'], ['night', 'igh', '🌙'], ['pie', 'ie', '🥧'], ['tie', 'ie', '👔'], ['fries', 'ie', '🍟']]);
 
 // A.2 Bossy r. ar and or sound different; er, ir and ur all sound the same, so the spelling is learned.
 export const R_TEAMS: readonly string[] = ['ar', 'or', 'er', 'ir', 'ur'];
@@ -51,20 +53,22 @@ export const PREFIXED: readonly { word: string; prefix: 'un' | 're'; base: strin
   { word: 'replay', prefix: 're', base: 'play', meaning: 'play again' },
 ];
 
-// B.2 Suffixes, with what the word means and a sentence it fits.
-export const SUFFIXED: readonly { word: string; suffix: 'ful' | 'less' | 'er' | 'est'; meaning: string; sentence: string }[] = [
-  { word: 'helpful', suffix: 'ful', meaning: 'full of help', sentence: 'She is ___ and carries my bag.' },
-  { word: 'careful', suffix: 'ful', meaning: 'full of care', sentence: 'Be ___ with the hot cup.' },
-  { word: 'playful', suffix: 'ful', meaning: 'full of play', sentence: 'The ___ puppy runs after the ball.' },
-  { word: 'careless', suffix: 'less', meaning: 'without care', sentence: 'He was ___ and dropped the eggs.' },
-  { word: 'fearless', suffix: 'less', meaning: 'without fear', sentence: 'The ___ girl climbs the tall tree.' },
-  { word: 'endless', suffix: 'less', meaning: 'without an end', sentence: 'The road looks ___ in the desert.' },
-  { word: 'taller', suffix: 'er', meaning: 'more tall', sentence: 'My brother is ___ than me.' },
-  { word: 'faster', suffix: 'er', meaning: 'more fast', sentence: 'A car is ___ than a bike.' },
-  { word: 'smaller', suffix: 'er', meaning: 'more small', sentence: 'A mouse is ___ than a cat.' },
-  { word: 'tallest', suffix: 'est', meaning: 'most tall', sentence: 'The giraffe is the ___ animal in the zoo.' },
-  { word: 'fastest', suffix: 'est', meaning: 'most fast', sentence: 'She is the ___ runner in the class.' },
-  { word: 'smallest', suffix: 'est', meaning: 'most small', sentence: 'The ___ kitten sleeps in the box.' },
+// B.2 Suffixes, with the base word, what the word means and a sentence it fits. Each meaning is the base word
+// with the meaning of its ending: ful "full of", less "without", er "more ... than another", est "the most ... of
+// all". A noun takes ful and less, a describing word takes er and est.
+export const SUFFIXED: readonly { word: string; suffix: 'ful' | 'less' | 'er' | 'est'; base: string; meaning: string; sentence: string }[] = [
+  { word: 'helpful', suffix: 'ful', base: 'help', meaning: 'full of help', sentence: 'She is ___ and carries my bag.' },
+  { word: 'careful', suffix: 'ful', base: 'care', meaning: 'full of care', sentence: 'Be ___ with the hot cup.' },
+  { word: 'playful', suffix: 'ful', base: 'play', meaning: 'full of play', sentence: 'The ___ puppy runs after the ball.' },
+  { word: 'careless', suffix: 'less', base: 'care', meaning: 'without care', sentence: 'He was ___ and dropped the eggs.' },
+  { word: 'fearless', suffix: 'less', base: 'fear', meaning: 'without fear', sentence: 'The ___ girl climbs the tall tree.' },
+  { word: 'useless', suffix: 'less', base: 'use', meaning: 'without use', sentence: 'A pen with no ink is ___.' },
+  { word: 'taller', suffix: 'er', base: 'tall', meaning: 'more tall than another', sentence: 'My brother is ___ than me.' },
+  { word: 'faster', suffix: 'er', base: 'fast', meaning: 'more fast than another', sentence: 'A car is ___ than a bike.' },
+  { word: 'smaller', suffix: 'er', base: 'small', meaning: 'more small than another', sentence: 'A mouse is ___ than a cat.' },
+  { word: 'tallest', suffix: 'est', base: 'tall', meaning: 'the most tall of all', sentence: 'The giraffe is the ___ animal in the zoo.' },
+  { word: 'fastest', suffix: 'est', base: 'fast', meaning: 'the most fast of all', sentence: 'She is the ___ runner in the class.' },
+  { word: 'smallest', suffix: 'est', base: 'small', meaning: 'the most small of all', sentence: 'The ___ kitten sleeps in the box.' },
 ];
 
 // B.3 Contractions.
@@ -82,7 +86,8 @@ export const CONTRACTIONS: readonly { short: string; long: string; sentence: str
 ];
 
 // B.4 Synonyms and antonyms. Level 3 uses the harder words.
-export const SYNONYMS: readonly (readonly [string, string])[] = [['big', 'large'], ['small', 'little'], ['happy', 'glad'], ['quick', 'fast'], ['shout', 'yell'], ['begin', 'start'], ['sick', 'ill'], ['shut', 'close']];
+// Shut goes with closed, not close: close can also be said to mean near, and these words are heard.
+export const SYNONYMS: readonly (readonly [string, string])[] = [['big', 'large'], ['small', 'little'], ['happy', 'glad'], ['quick', 'fast'], ['shout', 'yell'], ['begin', 'start'], ['sick', 'ill'], ['shut', 'closed']];
 export const ANTONYMS: readonly (readonly [string, string])[] = [['hot', 'cold'], ['up', 'down'], ['full', 'empty'], ['early', 'late'], ['push', 'pull'], ['wet', 'dry'], ['loud', 'quiet'], ['win', 'lose']];
 export const SYNONYMS_HARD: readonly (readonly [string, string])[] = [['huge', 'giant'], ['tiny', 'small'], ['angry', 'mad'], ['easy', 'simple'], ['scared', 'afraid'], ['smart', 'clever']];
 export const ANTONYMS_HARD: readonly (readonly [string, string])[] = [['brave', 'scared'], ['never', 'always'], ['shallow', 'deep'], ['noisy', 'silent'], ['rough', 'smooth'], ['asleep', 'awake']];
@@ -116,19 +121,21 @@ export const PLURALS_ODD: readonly (readonly [string, string])[] = [['mouse', 'm
 // C.3 Past tense.
 export const PAST_ED: readonly (readonly [string, string])[] = [['jump', 'jumped'], ['play', 'played'], ['walk', 'walked'], ['help', 'helped'], ['look', 'looked'], ['call', 'called'], ['pull', 'pulled'], ['kick', 'kicked']];
 export const PAST_ODD: readonly (readonly [string, string])[] = [['run', 'ran'], ['see', 'saw'], ['go', 'went'], ['eat', 'ate'], ['sit', 'sat'], ['swim', 'swam'], ['make', 'made'], ['come', 'came']];
-// A sentence that needs the past: "Yesterday we ___ to the park." with the verb it needs.
-export const PAST_SENTENCES: readonly { verb: string; sentence: string }[] = [
-  { verb: 'go', sentence: 'Yesterday we ___ to the park.' },
-  { verb: 'eat', sentence: 'Last night I ___ a big dinner.' },
-  { verb: 'jump', sentence: 'Yesterday the frog ___ into the pond.' },
-  { verb: 'see', sentence: 'Last week I ___ a rainbow.' },
-  { verb: 'play', sentence: 'Yesterday we ___ tag at recess.' },
-  { verb: 'run', sentence: 'This morning Sam ___ to the bus.' },
-  { verb: 'swim', sentence: 'Last summer we ___ in the lake.' },
-  { verb: 'help', sentence: 'Yesterday I ___ Mom bake a cake.' },
+// A sentence that needs the past: "Yesterday we ___ to the park." with the verb it needs, and the words that
+// tell it already happened (each sentence starts with them).
+export const PAST_SENTENCES: readonly { verb: string; sentence: string; clue: string }[] = [
+  { verb: 'go', sentence: 'Yesterday we ___ to the park.', clue: 'Yesterday' },
+  { verb: 'eat', sentence: 'Last night I ___ a big dinner.', clue: 'Last night' },
+  { verb: 'jump', sentence: 'Yesterday the frog ___ into the pond.', clue: 'Yesterday' },
+  { verb: 'see', sentence: 'Last week I ___ a rainbow.', clue: 'Last week' },
+  { verb: 'play', sentence: 'Yesterday we ___ tag at recess.', clue: 'Yesterday' },
+  { verb: 'run', sentence: 'Yesterday Sam ___ to the bus.', clue: 'Yesterday' },
+  { verb: 'swim', sentence: 'Last summer we ___ in the lake.', clue: 'Last summer' },
+  { verb: 'help', sentence: 'Yesterday I ___ Mom bake a cake.', clue: 'Yesterday' },
 ];
 
-// C.4 Punctuation. Each item: the sentence written right, and the wrong ways it is offered beside it.
+// C.4 Punctuation. Each item: the sentence written right, and the wrong ways it is offered beside it. An owner is
+// a name, never a word like dog that could mean more than one, so "The dogs' bone" can never be right too.
 export const PUNCTUATION: readonly { kind: 'capital' | 'comma' | 'apostrophe'; right: string; wrong: readonly string[] }[] = [
   { kind: 'capital', right: 'My friend Maya lives in Ohio.', wrong: ['My friend maya lives in Ohio.', 'My friend Maya lives in ohio.'] },
   { kind: 'capital', right: 'We went to see Grandpa Joe.', wrong: ['We went to see grandpa joe.', 'We went to see Grandpa joe.'] },
@@ -139,7 +146,7 @@ export const PUNCTUATION: readonly { kind: 'capital' | 'comma' | 'apostrophe'; r
   { kind: 'comma', right: 'She has a cat, a dog, and a fish.', wrong: ['She has a cat a dog and a fish.', 'She has, a cat a dog, and a fish.'] },
   { kind: 'comma', right: 'Red, blue, and green are colors.', wrong: ['Red blue and green are colors.', 'Red, blue and, green are colors.'] },
   { kind: 'apostrophe', right: "That is Tom's hat.", wrong: ['That is Toms hat.', "That is Toms' hat."] },
-  { kind: 'apostrophe', right: "The dog's bone is big.", wrong: ['The dogs bone is big.', "The dogs' bone is big."] },
+  { kind: 'apostrophe', right: "Ben's kite is red.", wrong: ['Bens kite is red.', "Bens' kite is red."] },
   { kind: 'apostrophe', right: "I sat on Mia's bike.", wrong: ['I sat on Mias bike.', "I sat on Mias' bike."] },
-  { kind: 'apostrophe', right: "The cat's tail is long.", wrong: ['The cats tail is long.', "The cats' tail is long."] },
+  { kind: 'apostrophe', right: "Dad's car is blue.", wrong: ['Dads car is blue.', "Dads' car is blue."] },
 ];

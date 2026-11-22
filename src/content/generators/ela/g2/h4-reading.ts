@@ -4,6 +4,7 @@ import type { Level, QuestionDraft } from '../../../../engine/types';
 import { FEATURE_USE, FEATURE_WHAT, FEATURES, POEMS, PURPOSE_TEXTS, PURPOSES, STORY_PAIRS } from '../../../data/h4-reading';
 import type { SkillGenerator } from '../../../generator';
 import { choice, explain, lesson, plain, withOthers } from '../g1/h4-parts';
+import { hint } from '../g1/wording';
 import { cap } from '../pk/parts';
 
 // Language Arts grade 2 D.7 to D.10 (plan section 15 wave H4). Poems, story pairs and purpose texts are read,
@@ -33,7 +34,7 @@ function features(level: Level, rng: Rng): QuestionDraft {
     spoken: true,
     size: 'm',
     facts: { relation: 'feature', target: entry.ask },
-    why: explain([FEATURE_RULE[entry.feature] as string], plain(entry.feature)),
+    why: explain([FEATURE_RULE[entry.feature] as string], plain(entry.feature), undefined, hint('Think about where each part is in a book, and what it does.')),
   });
 }
 
@@ -75,7 +76,7 @@ function poems(level: Level, rng: Rng): QuestionDraft {
       size: 'xl',
       stimulus: text(shown),
       facts: { relation: 'poemRhyme', target: word, id: poem.id, read: [shown, ...options] },
-      why: explain([`${cap(word)} and ${partner} rhyme. They end with the same sound.`], text(`${poem.lines[1]} / ${poem.lines[2]}`), ['Rhyming words end with the same sound.']),
+      why: explain([`${cap(word)} and ${partner} rhyme. They end with the same sound.`], text(`${poem.lines[1]} / ${poem.lines[2]}`), ['Rhyming words end with the same sound.'], hint('Rhyming words end with the same sound. Look at the ends of the lines.')),
     });
   }
   const options = rng.shuffle(poem.lines.slice(0, 3).map(lineOf));
@@ -88,7 +89,7 @@ function poems(level: Level, rng: Rng): QuestionDraft {
     size: 'm',
     stimulus: text(shown),
     facts: { relation: 'poemRepeat', target: poem.id, read: [shown, ...options] },
-    why: explain(['The poem starts and ends with the same line.', right], text(right), ['The poem starts and ends with the same line.']),
+    why: explain(['The poem starts and ends with the same line.', right], text(right), ['The poem starts and ends with the same line.'], hint('Read the poem to the end. Which line do you see again?')),
   });
 }
 
@@ -125,7 +126,7 @@ function compareStories(level: Level, rng: Rng): QuestionDraft {
     size: 'm',
     stimulus: text(shown),
     facts: { relation: level === 1 ? 'sameInBoth' : 'differ', target: pair.id, read: [shown, ...options] },
-    why: explain(['Read both stories, then check each answer against both.', answers[0]], text(answers[0]), ['Read both stories, then check each answer against both.']),
+    why: explain(['Read both stories, then check each answer against both.', answers[0]], text(answers[0]), ['Read both stories, then check each answer against both.'], hint(level === 1 ? 'Check each answer: is it true for both stories?' : 'Check each answer: is it true for one story but not the other?')),
   });
 }
 
@@ -170,7 +171,7 @@ function purpose(level: Level, rng: Rng): QuestionDraft {
     size: 'm',
     stimulus: text(entry.text),
     facts: { relation: 'purpose', target: entry.id, read: [entry.text] },
-    why: explain([PURPOSE_RULE[why] as string], text(entry.text), [PURPOSE_RULE[why] as string]),
+    why: explain([PURPOSE_RULE[why] as string], text(entry.text), [PURPOSE_RULE[why] as string], hint('Ask: what does the author want you to do or learn?')),
   });
 }
 

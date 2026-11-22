@@ -25,7 +25,38 @@ const SPOKEN: Record<string, Say> = {
 };
 
 // Skills whose questions have changed since the wave shipped, and the version each is on now.
-const VERSIONS: Record<string, number> = { 'E-1-C8': 2 };
+const VERSIONS: Record<string, number> = {
+  'E-1-A6': 2,
+  'E-1-A7': 2,
+  'E-1-A8': 2,
+  'E-1-B4': 2,
+  'E-1-B5': 2,
+  'E-1-B6': 2,
+  'E-1-C4': 2,
+  'E-1-C5': 2,
+  'E-1-C6': 2,
+  'E-1-C7': 2,
+  'E-1-C8': 3,
+  'E-1-C9': 2,
+  'E-1-D6': 2,
+  'E-1-D7': 2,
+  'E-1-D8': 2,
+  'E-2-A4': 2,
+  'E-2-A5': 2,
+  'E-2-A6': 2,
+  'E-2-B6': 2,
+  'E-2-B7': 2,
+  'E-2-B8': 2,
+  'E-2-B9': 2,
+  'E-2-C5': 2,
+  'E-2-C6': 2,
+  'E-2-C7': 2,
+  'E-2-C8': 2,
+  'E-2-D7': 2,
+  'E-2-D8': 2,
+  'E-2-D9': 2,
+  'E-2-D10': 2,
+};
 
 function skill(id: string, name: string, icon: Visual, itemTypes: ItemType[], maxLevel: Level, ccss: string, ladder?: string): Skill {
   const [, grade, code] = id.split('-') as [string, '1' | '2', string];

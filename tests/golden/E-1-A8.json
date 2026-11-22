@@ -1,6 +1,6 @@
 {
  "skillId": "E-1-A8",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "sort",
   "mode": "read",
@@ -25,9 +25,13 @@
    ]
   },
   "prompt": {
-   "text": "Read each word. How does its y sound?",
+   "text": "Read each word. Put it with the sound its y makes.",
    "speak": [
-    "Read each word. How does its y sound?"
+    "Read each word. Put it with the sound its",
+    {
+     "letter": "y"
+    },
+    "makes."
    ]
   },
   "items": [
@@ -54,26 +58,26 @@
   ],
   "bins": [
    {
-    "label": "y sounds like e",
+    "label": "y says /ē/",
     "speak": [
      {
       "letter": "y"
      },
-     "sounds like",
+     "says",
      {
-      "letter": "e"
+      "sound": "long-e"
      }
     ]
    },
    {
-    "label": "y sounds like i",
+    "label": "y says /ī/",
     "speak": [
      {
       "letter": "y"
      },
-     "sounds like",
+     "says",
      {
-      "letter": "i"
+      "sound": "long-i"
      }
     ]
    }
@@ -86,39 +90,68 @@
   ],
   "explanation": {
    "speak": [
+    "When",
+    {
+     "letter": "y"
+    },
+    "is the only vowel, as in",
     {
      "word": "my"
     },
-    "has",
+    ", it says",
     {
-     "letter": "y"
-    },
-    "sounding like",
-    {
-     "letter": "i"
+     "sound": "long-i"
     },
     ".",
+    "When another vowel comes before it, as in",
     {
      "word": "happy"
     },
-    "has",
+    ", it says",
     {
-     "letter": "y"
-    },
-    "sounding like",
-    {
-     "letter": "e"
+     "sound": "long-e"
     },
     "."
    ],
    "steps": [
-    "In a short word like my, y sounds like i.",
-    "At the end of a longer word like happy, y sounds like e."
+    "When y is the only vowel, as in my, it says /ī/.",
+    "When another vowel comes before it, as in happy, it says /ē/."
+   ],
+   "stepsSay": [
+    [
+     "When",
+     {
+      "letter": "y"
+     },
+     "is the only vowel, as in",
+     {
+      "word": "my"
+     },
+     ", it says",
+     {
+      "sound": "long-i"
+     },
+     "."
+    ],
+    [
+     "When another vowel comes before it, as in",
+     {
+      "word": "happy"
+     },
+     ", it says",
+     {
+      "sound": "long-e"
+     },
+     "."
+    ]
    ],
    "visual": {
     "kind": "text",
     "value": "my   happy",
     "size": "xl"
+   },
+   "hint": {
+    "text": "Look for another vowel before the y."
    }
   },
   "skillId": "E-1-A8",
@@ -152,9 +185,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -181,26 +218,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -213,39 +250,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -277,9 +343,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -306,26 +376,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -338,39 +408,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -402,9 +501,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -431,26 +534,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -463,39 +566,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -527,9 +659,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -556,26 +692,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -588,39 +724,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -652,9 +817,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -681,26 +850,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -713,39 +882,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -777,9 +975,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -806,26 +1008,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -838,39 +1040,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -902,9 +1133,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -931,26 +1166,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -963,39 +1198,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1027,9 +1291,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1056,26 +1324,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1088,39 +1356,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1152,9 +1449,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1181,26 +1482,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1213,39 +1514,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1277,9 +1607,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1306,26 +1640,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1338,39 +1672,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1408,9 +1771,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1447,26 +1814,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1481,39 +1848,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1549,9 +1945,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1588,26 +1988,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1622,39 +2022,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1690,9 +2119,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1729,26 +2162,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1763,39 +2196,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1831,9 +2293,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -1870,26 +2336,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -1904,39 +2370,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -1972,9 +2467,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2011,26 +2510,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2045,39 +2544,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2113,9 +2641,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2152,26 +2684,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2186,39 +2718,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2254,9 +2815,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2293,26 +2858,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2327,39 +2892,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2395,9 +2989,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2434,26 +3032,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2468,39 +3066,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2536,9 +3163,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2575,26 +3206,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2609,39 +3240,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2677,9 +3337,13 @@
      ]
     },
     "prompt": {
-     "text": "Read each word. How does its y sound?",
+     "text": "Read each word. Put it with the sound its y makes.",
      "speak": [
-      "Read each word. How does its y sound?"
+      "Read each word. Put it with the sound its",
+      {
+       "letter": "y"
+      },
+      "makes."
      ]
     },
     "items": [
@@ -2716,26 +3380,26 @@
     ],
     "bins": [
      {
-      "label": "y sounds like e",
+      "label": "y says /ē/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "e"
+        "sound": "long-e"
        }
       ]
      },
      {
-      "label": "y sounds like i",
+      "label": "y says /ī/",
       "speak": [
        {
         "letter": "y"
        },
-       "sounds like",
+       "says",
        {
-        "letter": "i"
+        "sound": "long-i"
        }
       ]
      }
@@ -2750,39 +3414,68 @@
     ],
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2810,15 +3503,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -2843,39 +3536,68 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2901,15 +3623,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -2934,39 +3656,68 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -2992,15 +3743,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -3025,39 +3776,68 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3083,15 +3863,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -3116,39 +3896,68 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3174,15 +3983,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -3207,39 +4016,68 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3265,15 +4103,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -3298,39 +4136,68 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3356,15 +4223,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like e?",
+     "text": "In which word does y say /ē/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "e"
+       "sound": "long-e"
       },
       "?"
      ]
@@ -3389,39 +4256,68 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3447,15 +4343,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like e?",
+     "text": "In which word does y say /ē/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "e"
+       "sound": "long-e"
       },
       "?"
      ]
@@ -3480,39 +4376,68 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3538,15 +4463,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like e?",
+     "text": "In which word does y say /ē/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "e"
+       "sound": "long-e"
       },
       "?"
      ]
@@ -3571,39 +4496,68 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",
@@ -3629,15 +4583,15 @@
      ]
     },
     "prompt": {
-     "text": "In which word does y sound like i?",
+     "text": "In which word does y say /ī/?",
      "speak": [
       "In which word does",
       {
        "letter": "y"
       },
-      "sound like",
+      "say",
       {
-       "letter": "i"
+       "sound": "long-i"
       },
       "?"
      ]
@@ -3662,39 +4616,68 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
+      "When",
+      {
+       "letter": "y"
+      },
+      "is the only vowel, as in",
       {
        "word": "my"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "i"
+       "sound": "long-i"
       },
       ".",
+      "When another vowel comes before it, as in",
       {
        "word": "happy"
       },
-      "has",
+      ", it says",
       {
-       "letter": "y"
-      },
-      "sounding like",
-      {
-       "letter": "e"
+       "sound": "long-e"
       },
       "."
      ],
      "steps": [
-      "In a short word like my, y sounds like i.",
-      "At the end of a longer word like happy, y sounds like e."
+      "When y is the only vowel, as in my, it says /ī/.",
+      "When another vowel comes before it, as in happy, it says /ē/."
+     ],
+     "stepsSay": [
+      [
+       "When",
+       {
+        "letter": "y"
+       },
+       "is the only vowel, as in",
+       {
+        "word": "my"
+       },
+       ", it says",
+       {
+        "sound": "long-i"
+       },
+       "."
+      ],
+      [
+       "When another vowel comes before it, as in",
+       {
+        "word": "happy"
+       },
+       ", it says",
+       {
+        "sound": "long-e"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "my   happy",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Look for another vowel before the y."
      }
     },
     "skillId": "E-1-A8",

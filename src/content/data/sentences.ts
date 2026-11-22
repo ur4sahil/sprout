@@ -19,4 +19,5 @@ export const TELLING: readonly string[] = [
 
 export const ASKING: readonly string[] = ['Can you see the cat?', 'Where is my hat?', 'Is the sun hot?', 'Who has the cup?', 'Do you like the dog?', 'What is in the box?', 'Can we go?', 'Is it a bug?'];
 
-export const SHOUTING: readonly string[] = ['Look out!', 'Stop!', 'Help!', 'Oh no!', 'Wow!', 'We did it!'];
+// Only shouts: "Stop" and "We did it" are right with a period too, so they are not here.
+export const SHOUTING: readonly string[] = ['Look out!', 'Hooray!', 'Help!', 'Oh no!', 'Wow!', 'Ouch!'];

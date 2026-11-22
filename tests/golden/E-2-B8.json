@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-B8",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -48,17 +48,73 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "They all start with m, so look at the second letter.",
+    "Look at the second letter of each word.",
     "In ABC order: map, men, moon."
    ],
    "steps": [
-    "They all start with m, so look at the second letter.",
-    "In ABC order: map, men, moon."
+    "They all start with M, so look at the second letter.",
+    "Men has E, moon has O, map has A.",
+    "A comes first, then E, then O.",
+    "So map comes first."
+   ],
+   "stepsSay": [
+    [
+     "They all start with",
+     {
+      "letter": "M"
+     },
+     ", so look at the second letter."
+    ],
+    [
+     {
+      "word": "Men"
+     },
+     "has",
+     {
+      "letter": "E"
+     },
+     ",",
+     {
+      "word": "moon"
+     },
+     "has",
+     {
+      "letter": "O"
+     },
+     ",",
+     {
+      "word": "map"
+     },
+     "has",
+     {
+      "letter": "A"
+     },
+     "."
+    ],
+    [
+     {
+      "letter": "A"
+     },
+     "comes first",
+     ", then",
+     {
+      "letter": "E"
+     },
+     ", then",
+     {
+      "letter": "O"
+     },
+     "."
+    ],
+    null
    ],
    "visual": {
     "kind": "text",
     "value": "map, men, moon",
     "size": "l"
+   },
+   "hint": {
+    "text": "They all start with the same letter. Look at the second letter of each word."
    }
   },
   "skillId": "E-2-B8",
@@ -115,17 +171,73 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
-      "In ABC order: men, moon, mud."
+      "They all start with M, so look at the second letter.",
+      "Moon has O, men has E, mud has U.",
+      "E comes first, then O, then U.",
+      "So men comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -180,17 +292,73 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, plum, pot."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
-      "In ABC order: pan, plum, pot."
+      "They all start with P, so look at the second letter.",
+      "Plum has L, pan has A, pot has O.",
+      "A comes first, then L, then O.",
+      "So pan comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       ",",
+       {
+        "word": "pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, plum, pot",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -245,17 +413,73 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pen, plum, pot."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
-      "In ABC order: pen, plum, pot."
+      "They all start with P, so look at the second letter.",
+      "Pot has O, pen has E, plum has L.",
+      "E comes first, then L, then O.",
+      "So pen comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "pen"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pen, plum, pot",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -310,17 +534,73 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "They all start with c, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: coat, crab, cup."
      ],
      "steps": [
-      "They all start with c, so look at the second letter.",
-      "In ABC order: coat, crab, cup."
+      "They all start with C, so look at the second letter.",
+      "Crab has R, cup has U, coat has O.",
+      "O comes first, then R, then U.",
+      "So coat comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "C"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Crab"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       ",",
+       {
+        "word": "cup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "coat"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "O"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "coat, crab, cup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -375,17 +655,73 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, plum, pup."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
-      "In ABC order: pan, plum, pup."
+      "They all start with P, so look at the second letter.",
+      "Pup has U, plum has L, pan has A.",
+      "A comes first, then L, then U.",
+      "So pan comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, plum, pup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -440,17 +776,73 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
-      "In ABC order: men, moon, mud."
+      "They all start with M, so look at the second letter.",
+      "Men has E, mud has U, moon has O.",
+      "E comes first, then O, then U.",
+      "So men comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -505,17 +897,73 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bed, box, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
-      "In ABC order: bed, box, bus."
+      "They all start with B, so look at the second letter.",
+      "Bed has E, bus has U, box has O.",
+      "E comes first, then O, then U.",
+      "So bed comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Bed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "box"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bed, box, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -570,17 +1018,73 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bag, brown, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
-      "In ABC order: bag, brown, bus."
+      "They all start with B, so look at the second letter.",
+      "Brown has R, bus has U, bag has A.",
+      "A comes first, then R, then U.",
+      "So bag comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Brown"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "bag"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bag, brown, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -635,17 +1139,73 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "They all start with s, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: seed, sock, sun."
      ],
      "steps": [
-      "They all start with s, so look at the second letter.",
-      "In ABC order: seed, sock, sun."
+      "They all start with S, so look at the second letter.",
+      "Sun has U, seed has E, sock has O.",
+      "E comes first, then O, then U.",
+      "So seed comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "S"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Sun"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "seed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "sock"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "seed, sock, sun",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -700,17 +1260,73 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: map, men, moon."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
-      "In ABC order: map, men, moon."
+      "They all start with M, so look at the second letter.",
+      "Moon has O, men has E, map has A.",
+      "A comes first, then E, then O.",
+      "So map comes first."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "map"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "E"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "map, men, moon",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -771,17 +1387,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Moon has O, men has E, mud has U.",
+      "E comes first, then O, then U.",
       "In ABC order: men, moon, mud."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -840,17 +1512,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, plum, pot."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Plum has L, pan has A, pot has O.",
+      "A comes first, then L, then O.",
       "In ABC order: pan, plum, pot."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       ",",
+       {
+        "word": "pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, plum, pot",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -909,17 +1637,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pen, plum, pot."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Pot has O, pen has E, plum has L.",
+      "E comes first, then L, then O.",
       "In ABC order: pen, plum, pot."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "pen"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pen, plum, pot",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -978,17 +1762,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with c, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: coat, crab, cup."
      ],
      "steps": [
-      "They all start with c, so look at the second letter.",
+      "They all start with C, so look at the second letter.",
+      "Crab has R, cup has U, coat has O.",
+      "O comes first, then R, then U.",
       "In ABC order: coat, crab, cup."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "C"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Crab"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       ",",
+       {
+        "word": "cup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "coat"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "O"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "coat, crab, cup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1047,17 +1887,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, plum, pup."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Pup has U, plum has L, pan has A.",
+      "A comes first, then L, then U.",
       "In ABC order: pan, plum, pup."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, plum, pup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1116,17 +2012,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Men has E, mud has U, moon has O.",
+      "E comes first, then O, then U.",
       "In ABC order: men, moon, mud."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1185,17 +2137,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bed, box, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
+      "They all start with B, so look at the second letter.",
+      "Bed has E, bus has U, box has O.",
+      "E comes first, then O, then U.",
       "In ABC order: bed, box, bus."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Bed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "box"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bed, box, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1254,17 +2262,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bag, brown, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
+      "They all start with B, so look at the second letter.",
+      "Brown has R, bus has U, bag has A.",
+      "A comes first, then R, then U.",
       "In ABC order: bag, brown, bus."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Brown"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "bag"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bag, brown, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1323,17 +2387,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with s, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: seed, sock, sun."
      ],
      "steps": [
-      "They all start with s, so look at the second letter.",
+      "They all start with S, so look at the second letter.",
+      "Sun has U, seed has E, sock has O.",
+      "E comes first, then O, then U.",
       "In ABC order: seed, sock, sun."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "S"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Sun"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "seed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "sock"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "seed, sock, sun",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1392,17 +2512,73 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: map, men, moon."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Moon has O, men has E, map has A.",
+      "A comes first, then E, then O.",
       "In ABC order: map, men, moon."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "map"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "E"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "map, men, moon",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1473,17 +2649,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, milk, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Mud has U, moon has O, milk has I, men has E.",
+      "E comes first, then I, then O, then U.",
       "In ABC order: men, milk, moon, mud."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "milk"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, milk, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1552,17 +2796,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, pig, plum, pot."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Pan has A, plum has L, pig has I, pot has O.",
+      "A comes first, then I, then L, then O.",
       "In ABC order: pan, pig, plum, pot."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pig"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, pig, plum, pot",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1631,17 +2943,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pen, plum, pot, pup."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Pup has U, pot has O, pen has E, plum has L.",
+      "E comes first, then L, then O, then U.",
       "In ABC order: pen, plum, pot, pup."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Pup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "pot"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "pen"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pen, plum, pot, pup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1710,17 +3090,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with c, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: cake, coat, crab, cup."
      ],
      "steps": [
-      "They all start with c, so look at the second letter.",
+      "They all start with C, so look at the second letter.",
+      "Cake has A, coat has O, cup has U, crab has R.",
+      "A comes first, then O, then R, then U.",
       "In ABC order: cake, coat, crab, cup."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "C"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Cake"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       ",",
+       {
+        "word": "coat"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "cup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "crab"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "cake, coat, crab, cup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1789,17 +3237,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with p, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: pan, pig, plum, pup."
      ],
      "steps": [
-      "They all start with p, so look at the second letter.",
+      "They all start with P, so look at the second letter.",
+      "Plum has L, pig has I, pup has U, pan has A.",
+      "A comes first, then I, then L, then U.",
       "In ABC order: pan, pig, plum, pup."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "P"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Plum"
+       },
+       "has",
+       {
+        "letter": "L"
+       },
+       ",",
+       {
+        "word": "pig"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "pup"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "pan"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "L"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "pan, pig, plum, pup",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1868,17 +3384,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: men, milk, moon, mud."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Mud has U, men has E, milk has I, moon has O.",
+      "E comes first, then I, then O, then U.",
       "In ABC order: men, milk, moon, mud."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Mud"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "milk"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "men, milk, moon, mud",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -1947,17 +3531,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bed, bird, box, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
+      "They all start with B, so look at the second letter.",
+      "Bird has I, bed has E, bus has U, box has O.",
+      "E comes first, then I, then O, then U.",
       "In ABC order: bed, bird, box, bus."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Bird"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "bed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "box"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bed, bird, box, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -2026,17 +3678,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with b, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: bag, bird, brown, bus."
      ],
      "steps": [
-      "They all start with b, so look at the second letter.",
+      "They all start with B, so look at the second letter.",
+      "Brown has R, bird has I, bus has U, bag has A.",
+      "A comes first, then I, then R, then U.",
       "In ABC order: bag, bird, brown, bus."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "B"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Brown"
+       },
+       "has",
+       {
+        "letter": "R"
+       },
+       ",",
+       {
+        "word": "bird"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "bus"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "bag"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "R"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "bag, bird, brown, bus",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -2105,17 +3825,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with s, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: seed, ship, sock, sun."
      ],
      "steps": [
-      "They all start with s, so look at the second letter.",
+      "They all start with S, so look at the second letter.",
+      "Ship has H, sun has U, seed has E, sock has O.",
+      "E comes first, then H, then O, then U.",
       "In ABC order: seed, ship, sock, sun."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "S"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Ship"
+       },
+       "has",
+       {
+        "letter": "H"
+       },
+       ",",
+       {
+        "word": "sun"
+       },
+       "has",
+       {
+        "letter": "U"
+       },
+       ",",
+       {
+        "word": "seed"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "sock"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "E"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "H"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       ", then",
+       {
+        "letter": "U"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "seed, ship, sock, sun",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",
@@ -2184,17 +3972,85 @@
     ],
     "explanation": {
      "speak": [
-      "They all start with m, so look at the second letter.",
+      "Look at the second letter of each word.",
       "In ABC order: map, men, milk, moon."
      ],
      "steps": [
-      "They all start with m, so look at the second letter.",
+      "They all start with M, so look at the second letter.",
+      "Milk has I, moon has O, men has E, map has A.",
+      "A comes first, then E, then I, then O.",
       "In ABC order: map, men, milk, moon."
+     ],
+     "stepsSay": [
+      [
+       "They all start with",
+       {
+        "letter": "M"
+       },
+       ", so look at the second letter."
+      ],
+      [
+       {
+        "word": "Milk"
+       },
+       "has",
+       {
+        "letter": "I"
+       },
+       ",",
+       {
+        "word": "moon"
+       },
+       "has",
+       {
+        "letter": "O"
+       },
+       ",",
+       {
+        "word": "men"
+       },
+       "has",
+       {
+        "letter": "E"
+       },
+       ",",
+       {
+        "word": "map"
+       },
+       "has",
+       {
+        "letter": "A"
+       },
+       "."
+      ],
+      [
+       {
+        "letter": "A"
+       },
+       "comes first",
+       ", then",
+       {
+        "letter": "E"
+       },
+       ", then",
+       {
+        "letter": "I"
+       },
+       ", then",
+       {
+        "letter": "O"
+       },
+       "."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "map, men, milk, moon",
       "size": "l"
+     },
+     "hint": {
+      "text": "They all start with the same letter. Look at the second letter of each word."
      }
     },
     "skillId": "E-2-B8",

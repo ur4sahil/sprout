@@ -47,6 +47,7 @@ export const SHADES: readonly (readonly [string, string, string])[] = [
 ];
 
 // ---- Grade 2 B.7 Words with two meanings. Each sentence uses the meaning in the same place. ----
+// An action meaning has no "to" in front, so "uses fly to mean move through the air" reads right.
 export interface TwoMeanings {
   word: string;
   meanings: readonly [string, string];
@@ -55,11 +56,11 @@ export interface TwoMeanings {
 export const TWO_MEANINGS: readonly TwoMeanings[] = [
   { word: 'bat', meanings: ['an animal that flies at night', 'a stick for hitting a ball'], sentences: ['The bat flew out of the cave.', 'She hit the ball with the bat.'] },
   { word: 'bark', meanings: ['the sound a dog makes', 'the outside of a tree'], sentences: ['The dog let out a loud bark.', 'The bark on the old tree is rough.'] },
-  { word: 'ring', meanings: ['a band worn on a finger', 'to make a bell sound'], sentences: ['Mom wears a gold ring.', 'The bell will ring at noon.'] },
-  { word: 'fly', meanings: ['a small bug with wings', 'to move through the air'], sentences: ['A fly sat on my cake.', 'Birds can fly up high.'] },
-  { word: 'duck', meanings: ['a bird that swims', 'to bend down fast'], sentences: ['A duck swam in the pond.', 'Duck under the low branch!'] },
-  { word: 'park', meanings: ['a place with grass to play', 'to stop a car and leave it'], sentences: ['We had a picnic at the park.', 'Dad will park the car here.'] },
-  { word: 'watch', meanings: ['a small clock worn on the wrist', 'to look at something'], sentences: ['My new watch tells the time.', 'We like to watch the birds.'] },
+  { word: 'ring', meanings: ['a band worn on a finger', 'make a bell sound'], sentences: ['Mom wears a gold ring.', 'The bell will ring at noon.'] },
+  { word: 'fly', meanings: ['a small bug with wings', 'move through the air'], sentences: ['A fly sat on my cake.', 'Birds can fly up high.'] },
+  { word: 'duck', meanings: ['a bird that swims', 'bend down fast'], sentences: ['A duck swam in the pond.', 'Duck under the low branch!'] },
+  { word: 'park', meanings: ['a place with grass to play', 'stop a car and leave it'], sentences: ['We had a picnic at the park.', 'Dad will park the car here.'] },
+  { word: 'watch', meanings: ['a small clock worn on the wrist', 'look at something'], sentences: ['My new watch tells the time.', 'We like to watch the birds.'] },
   { word: 'top', meanings: ['a toy that spins', 'the highest part'], sentences: ['The top spun round and round.', 'We climbed to the top of the hill.'] },
 ];
 

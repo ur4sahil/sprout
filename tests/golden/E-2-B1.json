@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-B1",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -8,9 +8,9 @@
    "target": "unkind",
    "relation": "prefixMeaning",
    "options": [
-    "not safe",
-    "not kind",
-    "kind again"
+    "very kind",
+    "kind again",
+    "not kind"
    ]
   },
   "prompt": {
@@ -27,18 +27,10 @@
   "options": [
    {
     "kind": "text",
-    "value": "not safe",
+    "value": "very kind",
     "size": "l",
     "speak": [
-     "not safe"
-    ]
-   },
-   {
-    "kind": "text",
-    "value": "not kind",
-    "size": "l",
-    "speak": [
-     "not kind"
+     "very kind"
     ]
    },
    {
@@ -48,22 +40,57 @@
     "speak": [
      "kind again"
     ]
+   },
+   {
+    "kind": "text",
+    "value": "not kind",
+    "size": "l",
+    "speak": [
+     "not kind"
+    ]
    }
   ],
-  "answerIndex": 1,
+  "answerIndex": 2,
   "explanation": {
    "speak": [
-    "un at the start means not, or the opposite. re at the start means again.",
-    "unkind means not kind."
+    "The letters",
+    {
+     "letter": "u"
+    },
+    ",",
+    {
+     "letter": "n"
+    },
+    "at the start mean",
+    "not.",
+    "Unkind means not kind."
    ],
    "steps": [
-    "un at the start means not, or the opposite. re at the start means again.",
+    "The letters un at the start mean not.",
     "Unkind means not kind."
+   ],
+   "stepsSay": [
+    [
+     "The letters",
+     {
+      "letter": "u"
+     },
+     ",",
+     {
+      "letter": "n"
+     },
+     "at the start mean",
+     "not."
+    ],
+    null
    ],
    "visual": {
     "kind": "text",
     "value": "un + kind = unkind",
     "size": "l"
+   },
+   "hint": {
+    "text": "Find the base word. What do the letters at the start add?"
    }
   },
   "skillId": "E-2-B1",
@@ -80,9 +107,9 @@
      "target": "untie",
      "relation": "prefixMeaning",
      "options": [
-      "the opposite of tie",
-      "not happy",
-      "tie again"
+      "tie slowly",
+      "tie again",
+      "the opposite of tie"
      ]
     },
     "prompt": {
@@ -99,18 +126,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "the opposite of tie",
+      "value": "tie slowly",
       "size": "l",
       "speak": [
-       "the opposite of tie"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "not happy",
-      "size": "l",
-      "speak": [
-       "not happy"
+       "tie slowly"
       ]
      },
      {
@@ -120,22 +139,57 @@
       "speak": [
        "tie again"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "the opposite of tie",
+      "size": "l",
+      "speak": [
+       "the opposite of tie"
+      ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "untie means the opposite of tie."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Untie means the opposite of tie."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Untie means the opposite of tie."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + tie = untie",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -150,8 +204,8 @@
      "target": "unsafe",
      "relation": "prefixMeaning",
      "options": [
-      "the opposite of tie",
       "safe again",
+      "very safe",
       "not safe"
      ]
     },
@@ -169,18 +223,18 @@
     "options": [
      {
       "kind": "text",
-      "value": "the opposite of tie",
-      "size": "l",
-      "speak": [
-       "the opposite of tie"
-      ]
-     },
-     {
-      "kind": "text",
       "value": "safe again",
       "size": "l",
       "speak": [
        "safe again"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "very safe",
+      "size": "l",
+      "speak": [
+       "very safe"
       ]
      },
      {
@@ -195,17 +249,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unsafe means not safe."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unsafe means not safe."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unsafe means not safe."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + safe = unsafe",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -220,9 +301,9 @@
      "target": "unsafe",
      "relation": "prefixMeaning",
      "options": [
-      "not happy",
-      "not safe",
-      "safe again"
+      "safe again",
+      "very safe",
+      "not safe"
      ]
     },
     "prompt": {
@@ -239,10 +320,18 @@
     "options": [
      {
       "kind": "text",
-      "value": "not happy",
+      "value": "safe again",
       "size": "l",
       "speak": [
-       "not happy"
+       "safe again"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "very safe",
+      "size": "l",
+      "speak": [
+       "very safe"
       ]
      },
      {
@@ -252,30 +341,49 @@
       "speak": [
        "not safe"
       ]
-     },
-     {
-      "kind": "text",
-      "value": "safe again",
-      "size": "l",
-      "speak": [
-       "safe again"
-      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unsafe means not safe."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unsafe means not safe."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unsafe means not safe."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + safe = unsafe",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -291,7 +399,7 @@
      "relation": "prefixMeaning",
      "options": [
       "pack again",
-      "the opposite of tie",
+      "pack slowly",
       "the opposite of pack"
      ]
     },
@@ -317,10 +425,10 @@
      },
      {
       "kind": "text",
-      "value": "the opposite of tie",
+      "value": "pack slowly",
       "size": "l",
       "speak": [
-       "the opposite of tie"
+       "pack slowly"
       ]
      },
      {
@@ -335,17 +443,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unpack means the opposite of pack."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Unpack means the opposite of pack."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Unpack means the opposite of pack."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + pack = unpack",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -360,9 +495,9 @@
      "target": "unsafe",
      "relation": "prefixMeaning",
      "options": [
-      "tell again",
       "safe again",
-      "not safe"
+      "not safe",
+      "very safe"
      ]
     },
     "prompt": {
@@ -379,14 +514,6 @@
     "options": [
      {
       "kind": "text",
-      "value": "tell again",
-      "size": "l",
-      "speak": [
-       "tell again"
-      ]
-     },
-     {
-      "kind": "text",
       "value": "safe again",
       "size": "l",
       "speak": [
@@ -400,22 +527,57 @@
       "speak": [
        "not safe"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "very safe",
+      "size": "l",
+      "speak": [
+       "very safe"
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unsafe means not safe."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unsafe means not safe."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unsafe means not safe."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + safe = unsafe",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -430,9 +592,9 @@
      "target": "untie",
      "relation": "prefixMeaning",
      "options": [
-      "not happy",
-      "the opposite of tie",
-      "tie again"
+      "tie slowly",
+      "tie again",
+      "the opposite of tie"
      ]
     },
     "prompt": {
@@ -449,18 +611,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "not happy",
+      "value": "tie slowly",
       "size": "l",
       "speak": [
-       "not happy"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the opposite of tie",
-      "size": "l",
-      "speak": [
-       "the opposite of tie"
+       "tie slowly"
       ]
      },
      {
@@ -470,22 +624,57 @@
       "speak": [
        "tie again"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "the opposite of tie",
+      "size": "l",
+      "speak": [
+       "the opposite of tie"
+      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "untie means the opposite of tie."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Untie means the opposite of tie."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Untie means the opposite of tie."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + tie = untie",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -500,77 +689,7 @@
      "target": "unhappy",
      "relation": "prefixMeaning",
      "options": [
-      "not happy",
-      "happy again",
-      "the opposite of lock"
-     ]
-    },
-    "prompt": {
-     "text": "What does unhappy mean?",
-     "speak": [
-      "What does unhappy mean?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "unhappy",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "not happy",
-      "size": "l",
-      "speak": [
-       "not happy"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "happy again",
-      "size": "l",
-      "speak": [
-       "happy again"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the opposite of lock",
-      "size": "l",
-      "speak": [
-       "the opposite of lock"
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unhappy means not happy."
-     ],
-     "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "Unhappy means not happy."
-     ],
-     "visual": {
-      "kind": "text",
-      "value": "un + happy = unhappy",
-      "size": "l"
-     }
-    },
-    "skillId": "E-2-B1",
-    "level": 1,
-    "seed": 7,
-    "key": "E-2-B1|1|{\"relation\":\"prefixMeaning\",\"target\":\"unhappy\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "target": "unhappy",
-     "relation": "prefixMeaning",
-     "options": [
-      "read again",
+      "very happy",
       "happy again",
       "not happy"
      ]
@@ -589,10 +708,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "read again",
+      "value": "very happy",
       "size": "l",
       "speak": [
-       "read again"
+       "very happy"
       ]
      },
      {
@@ -615,17 +734,141 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unhappy means not happy."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unhappy means not happy."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unhappy means not happy."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + happy = unhappy",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
+     }
+    },
+    "skillId": "E-2-B1",
+    "level": 1,
+    "seed": 7,
+    "key": "E-2-B1|1|{\"relation\":\"prefixMeaning\",\"target\":\"unhappy\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "unhappy",
+     "relation": "prefixMeaning",
+     "options": [
+      "very happy",
+      "not happy",
+      "happy again"
+     ]
+    },
+    "prompt": {
+     "text": "What does unhappy mean?",
+     "speak": [
+      "What does unhappy mean?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "unhappy",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "very happy",
+      "size": "l",
+      "speak": [
+       "very happy"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "not happy",
+      "size": "l",
+      "speak": [
+       "not happy"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "happy again",
+      "size": "l",
+      "speak": [
+       "happy again"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unhappy means not happy."
+     ],
+     "steps": [
+      "The letters un at the start mean not.",
+      "Unhappy means not happy."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "un + happy = unhappy",
+      "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -640,9 +883,9 @@
      "target": "unlock",
      "relation": "prefixMeaning",
      "options": [
-      "build again",
       "lock again",
-      "the opposite of lock"
+      "the opposite of lock",
+      "lock slowly"
      ]
     },
     "prompt": {
@@ -659,14 +902,6 @@
     "options": [
      {
       "kind": "text",
-      "value": "build again",
-      "size": "l",
-      "speak": [
-       "build again"
-      ]
-     },
-     {
-      "kind": "text",
       "value": "lock again",
       "size": "l",
       "speak": [
@@ -680,22 +915,57 @@
       "speak": [
        "the opposite of lock"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "lock slowly",
+      "size": "l",
+      "speak": [
+       "lock slowly"
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unlock means the opposite of lock."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Unlock means the opposite of lock."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Unlock means the opposite of lock."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + lock = unlock",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -712,7 +982,7 @@
      "options": [
       "the opposite of tie",
       "tie again",
-      "play again"
+      "tie slowly"
      ]
     },
     "prompt": {
@@ -745,27 +1015,54 @@
      },
      {
       "kind": "text",
-      "value": "play again",
+      "value": "tie slowly",
       "size": "l",
       "speak": [
-       "play again"
+       "tie slowly"
       ]
      }
     ],
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "untie means the opposite of tie."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Untie means the opposite of tie."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Untie means the opposite of tie."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + tie = untie",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -822,17 +1119,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "retell means tell again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Retell means tell again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Retell means tell again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + tell = retell",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -887,17 +1211,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "rebuild means build again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Rebuild means build again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Rebuild means build again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + build = rebuild",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -952,17 +1303,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "rebuild means build again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Rebuild means build again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Rebuild means build again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + build = rebuild",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1017,17 +1395,44 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "replay means play again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Replay means play again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Replay means play again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + play = replay",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1082,17 +1487,44 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "rebuild means build again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Rebuild means build again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Rebuild means build again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + build = rebuild",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1147,17 +1579,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "retell means tell again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Retell means tell again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Retell means tell again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + tell = retell",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1212,17 +1671,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "redo means do again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Redo means do again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Redo means do again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + do = redo",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1277,17 +1763,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "redo means do again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Redo means do again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Redo means do again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + do = redo",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1342,17 +1855,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "reread means read again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Reread means read again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Reread means read again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + read = reread",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1407,17 +1947,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "retell means tell again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Retell means tell again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Retell means tell again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + tell = retell",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1435,8 +2002,8 @@
      "relation": "prefixMeaning",
      "options": [
       "read again",
-      "not read",
-      "the opposite of pack"
+      "read slowly",
+      "not read"
      ]
     },
     "prompt": {
@@ -1461,35 +2028,62 @@
      },
      {
       "kind": "text",
-      "value": "not read",
+      "value": "read slowly",
       "size": "l",
       "speak": [
-       "not read"
+       "read slowly"
       ]
      },
      {
       "kind": "text",
-      "value": "the opposite of pack",
+      "value": "not read",
       "size": "l",
       "speak": [
-       "the opposite of pack"
+       "not read"
       ]
      }
     ],
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "reread means read again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Reread means read again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Reread means read again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + read = reread",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1504,77 +2098,7 @@
      "target": "refill",
      "relation": "prefixMeaning",
      "options": [
-      "fill again",
-      "the opposite of tie",
-      "not fill"
-     ]
-    },
-    "prompt": {
-     "text": "What does refill mean?",
-     "speak": [
-      "What does refill mean?"
-     ]
-    },
-    "stimulus": {
-     "kind": "text",
-     "value": "refill",
-     "size": "xl"
-    },
-    "options": [
-     {
-      "kind": "text",
-      "value": "fill again",
-      "size": "l",
-      "speak": [
-       "fill again"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "the opposite of tie",
-      "size": "l",
-      "speak": [
-       "the opposite of tie"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "not fill",
-      "size": "l",
-      "speak": [
-       "not fill"
-      ]
-     }
-    ],
-    "answerIndex": 0,
-    "explanation": {
-     "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "refill means fill again."
-     ],
-     "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "Refill means fill again."
-     ],
-     "visual": {
-      "kind": "text",
-      "value": "re + fill = refill",
-      "size": "l"
-     }
-    },
-    "skillId": "E-2-B1",
-    "level": 3,
-    "seed": 2,
-    "key": "E-2-B1|3|{\"relation\":\"prefixMeaning\",\"target\":\"refill\"}"
-   },
-   {
-    "type": "choice",
-    "mode": "look",
-    "facts": {
-     "target": "refill",
-     "relation": "prefixMeaning",
-     "options": [
-      "the opposite of pack",
+      "fill slowly",
       "not fill",
       "fill again"
      ]
@@ -1593,10 +2117,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "the opposite of pack",
+      "value": "fill slowly",
       "size": "l",
       "speak": [
-       "the opposite of pack"
+       "fill slowly"
       ]
      },
      {
@@ -1619,17 +2143,141 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "refill means fill again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Refill means fill again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Refill means fill again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + fill = refill",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
+     }
+    },
+    "skillId": "E-2-B1",
+    "level": 3,
+    "seed": 2,
+    "key": "E-2-B1|3|{\"relation\":\"prefixMeaning\",\"target\":\"refill\"}"
+   },
+   {
+    "type": "choice",
+    "mode": "look",
+    "facts": {
+     "target": "refill",
+     "relation": "prefixMeaning",
+     "options": [
+      "fill slowly",
+      "fill again",
+      "not fill"
+     ]
+    },
+    "prompt": {
+     "text": "What does refill mean?",
+     "speak": [
+      "What does refill mean?"
+     ]
+    },
+    "stimulus": {
+     "kind": "text",
+     "value": "refill",
+     "size": "xl"
+    },
+    "options": [
+     {
+      "kind": "text",
+      "value": "fill slowly",
+      "size": "l",
+      "speak": [
+       "fill slowly"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "fill again",
+      "size": "l",
+      "speak": [
+       "fill again"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "not fill",
+      "size": "l",
+      "speak": [
+       "not fill"
+      ]
+     }
+    ],
+    "answerIndex": 1,
+    "explanation": {
+     "speak": [
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Refill means fill again."
+     ],
+     "steps": [
+      "The letters re at the start mean again.",
+      "Refill means fill again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
+     ],
+     "visual": {
+      "kind": "text",
+      "value": "re + fill = refill",
+      "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1645,7 +2293,7 @@
      "relation": "prefixMeaning",
      "options": [
       "not play",
-      "not kind",
+      "play slowly",
       "play again"
      ]
     },
@@ -1671,10 +2319,10 @@
      },
      {
       "kind": "text",
-      "value": "not kind",
+      "value": "play slowly",
       "size": "l",
       "speak": [
-       "not kind"
+       "play slowly"
       ]
      },
      {
@@ -1689,17 +2337,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "replay means play again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Replay means play again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Replay means play again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + play = replay",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1754,17 +2429,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "refill means fill again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Refill means fill again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Refill means fill again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + fill = refill",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1779,9 +2481,9 @@
      "target": "redo",
      "relation": "prefixMeaning",
      "options": [
-      "fill again",
-      "not do",
-      "do again"
+      "do slowly",
+      "do again",
+      "not do"
      ]
     },
     "prompt": {
@@ -1798,18 +2500,10 @@
     "options": [
      {
       "kind": "text",
-      "value": "fill again",
+      "value": "do slowly",
       "size": "l",
       "speak": [
-       "fill again"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "not do",
-      "size": "l",
-      "speak": [
-       "not do"
+       "do slowly"
       ]
      },
      {
@@ -1819,22 +2513,57 @@
       "speak": [
        "do again"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "not do",
+      "size": "l",
+      "speak": [
+       "not do"
+      ]
      }
     ],
-    "answerIndex": 2,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "redo means do again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Redo means do again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Redo means do again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + do = redo",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1851,7 +2580,7 @@
      "options": [
       "not happy",
       "happy again",
-      "play again"
+      "very happy"
      ]
     },
     "prompt": {
@@ -1884,27 +2613,54 @@
      },
      {
       "kind": "text",
-      "value": "play again",
+      "value": "very happy",
       "size": "l",
       "speak": [
-       "play again"
+       "very happy"
       ]
      }
     ],
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unhappy means not happy."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unhappy means not happy."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unhappy means not happy."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + happy = unhappy",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -1959,17 +2715,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unlock means the opposite of lock."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "the opposite.",
+      "Unlock means the opposite of lock."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean the opposite.",
       "Unlock means the opposite of lock."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "the opposite."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + lock = unlock",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -2024,17 +2807,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "unkind means not kind."
+      "The letters",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "n"
+      },
+      "at the start mean",
+      "not.",
+      "Unkind means not kind."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters un at the start mean not.",
       "Unkind means not kind."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "n"
+       },
+       "at the start mean",
+       "not."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "un + kind = unkind",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",
@@ -2089,17 +2899,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "un at the start means not, or the opposite. re at the start means again.",
-      "redo means do again."
+      "The letters",
+      {
+       "letter": "r"
+      },
+      ",",
+      {
+       "letter": "e"
+      },
+      "at the start mean",
+      "again.",
+      "Redo means do again."
      ],
      "steps": [
-      "un at the start means not, or the opposite. re at the start means again.",
+      "The letters re at the start mean again.",
       "Redo means do again."
+     ],
+     "stepsSay": [
+      [
+       "The letters",
+       {
+        "letter": "r"
+       },
+       ",",
+       {
+        "letter": "e"
+       },
+       "at the start mean",
+       "again."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "re + do = redo",
       "size": "l"
+     },
+     "hint": {
+      "text": "Find the base word. What do the letters at the start add?"
      }
     },
     "skillId": "E-2-B1",

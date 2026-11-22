@@ -81,14 +81,16 @@ export const FEELING_TEXTS: readonly { id: string; text: string; who: string; fe
 ];
 
 // ---- Grade 2 D.7 Text features ----
+// The clue comes first in each question ("Which part at the back of a book..."), and each question has one
+// answer: what a book is about could be in its table of contents too, so the title question asks for its name.
 export const FEATURES: readonly string[] = ['title', 'heading', 'caption', 'label', 'glossary', 'table of contents', 'bold word'];
 export const FEATURE_WHAT: readonly { feature: string; ask: string }[] = [
   { feature: 'title', ask: 'Which part gives the name of the whole book?' },
   { feature: 'heading', ask: 'Which part tells what one part of the page is about?' },
-  { feature: 'caption', ask: 'Which part tells about a picture, in a sentence under it?' },
+  { feature: 'caption', ask: 'Which part is a sentence under a picture that tells about it?' },
   { feature: 'label', ask: 'Which part names the parts of a picture?' },
-  { feature: 'glossary', ask: 'Which part tells what hard words mean, at the back of the book?' },
-  { feature: 'table of contents', ask: 'Which part lists the topics and their pages, at the front?' },
+  { feature: 'glossary', ask: 'Which part at the back of a book tells what hard words mean?' },
+  { feature: 'table of contents', ask: 'Which part at the front of a book lists the topics and their pages?' },
   { feature: 'bold word', ask: 'Which part is a word printed dark and thick, so you notice it?' },
 ];
 export const FEATURE_USE: readonly { feature: string; ask: string }[] = [
@@ -96,7 +98,7 @@ export const FEATURE_USE: readonly { feature: string; ask: string }[] = [
   { feature: 'table of contents', ask: 'You want the page about what frogs eat. Where do you look first?' },
   { feature: 'caption', ask: 'You want to know what a photo of a frog shows. Where do you look?' },
   { feature: 'label', ask: 'You want to know which part of the frog is its webbed foot. Where do you look?' },
-  { feature: 'title', ask: 'You want to know what the whole book is about. Where do you look?' },
+  { feature: 'title', ask: 'You want to know the name of the book. Where do you look?' },
   { feature: 'heading', ask: 'You want to find the part of the page about frog eggs. What do you look for?' },
 ];
 

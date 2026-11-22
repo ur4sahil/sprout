@@ -9,6 +9,8 @@ import { ASKING, SHOUTING, TELLING } from '../../src/content/data/sentences';
 import { ALL_SIGHT_WORDS, SIGHT_WORDS, SOUND_ALIKE } from '../../src/content/data/sightWords';
 import { STORY_NAMES } from '../../src/content/data/storyProblems';
 import { generateQuestion } from '../../src/content/registry';
+import type { SoundKey } from '../../src/engine/letterSounds';
+import { soundOf } from '../../src/engine/letterSounds';
 import type { Level, Question, Visual } from '../../src/engine/types';
 import { validateQuestion } from '../../src/engine/validate';
 
@@ -111,7 +113,7 @@ describe('A.1 to A.5 phonics', () => {
       targets.add(s(question, 'target'));
       expect(question.mode).toBe('listen');
       expect([...opts(question)].sort()).toEqual([...pairOf(s(question, 'target'))].sort());
-      expect(question.prompt.text).toBe('Find the word.');
+      expect(question.prompt.text).toBe('Listen. Tap the word.');
       expect(question.options.some(spoken)).toBe(false);
     }
     expect(targets.size).toBe(18);
@@ -129,8 +131,15 @@ describe('A.1 to A.5 phonics', () => {
         }
       }
     }
-    const explained = new Set(all('E-1-A3', 1).map((question) => question.explanation.steps[0]?.replace(/ [aiou] /, ' # ')));
-    expect(explained).toEqual(new Set(['The e at the end makes the # say its name.', 'There is no e at the end, so the # is short.']));
+    // The first step gives the rule for the word and says the vowel's sound: its name when an e ends the word,
+    // its short sound (with a word that has it) when none does.
+    for (const question of all('E-1-A3', 1)) {
+      const target = s(question, 'target');
+      const vowel = target.charAt(1);
+      const long = soundOf(`long-${vowel}` as SoundKey).shown;
+      const short = soundOf(vowel as SoundKey);
+      expect(question.explanation.steps[0]).toBe(target.endsWith('e') ? `The e at the end makes the ${vowel} say its name: ${long}.` : `There is no e at the end, so the ${vowel} is short: ${short.shown}, as in ${short.as}.`);
+    }
   });
 
   it('A.4 level 1: a vowel team word is read and matched to its picture', () => {
@@ -187,7 +196,7 @@ describe('B.1 to B.3 words', () => {
         expect(question.bank).toContain(entry.second);
         expect(question.facts.parts).toEqual([entry.first, entry.second]);
         expect(question.mode).toBe('listen');
-        expect(question.prompt.text).toBe('Build the word.');
+        expect(question.prompt.text).toBe('Listen. Tap the two words that make the word.');
         expect(spoken(question.stimulus)).toBe(false);
       }
     }

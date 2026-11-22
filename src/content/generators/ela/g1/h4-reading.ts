@@ -5,6 +5,7 @@ import { FACT_SENTENCES, FACT_TEXTS, FEELING_TEXTS, FEELINGS, STORY_SENTENCES, S
 import type { SkillGenerator } from '../../../generator';
 import { pickApart } from '../pk/parts';
 import { choice, explain, lesson, plain, withOthers } from './h4-parts';
+import { hint } from './wording';
 
 // Language Arts grade 1 D.6 to D.8 (plan section 15 wave H4). The texts are read, never spoken, and their
 // answers do not speak. Oracle: h4ela.
@@ -29,7 +30,7 @@ function storyOrFacts(level: Level, rng: Rng): QuestionDraft {
       right,
       size: 'm',
       facts: { relation: 'factSentence', target: 'fact', read: options },
-      why: explain([FACT_RULE, right], text(right)),
+      why: explain([FACT_RULE, right], text(right), undefined, hint('Which sentence tells something true about the world?')),
     });
   }
   const story = rng.bool();
@@ -43,7 +44,7 @@ function storyOrFacts(level: Level, rng: Rng): QuestionDraft {
     size: 'm',
     stimulus: text(entry.text),
     facts: { relation: 'storyOrFact', target: entry.id, read: [entry.text] },
-    why: explain([story ? STORY_RULE : FACT_RULE], text(entry.text), [story ? STORY_RULE : FACT_RULE]),
+    why: explain([story ? STORY_RULE : FACT_RULE], text(entry.text), [story ? STORY_RULE : FACT_RULE], hint('Look for characters. Do things happen to them?')),
   });
 }
 
@@ -79,7 +80,7 @@ function teller(level: Level, rng: Rng): QuestionDraft {
       size: 'l',
       stimulus: text(entry.text),
       facts: { relation: 'teller', target: entry.id, read: [entry.text, ...entry.teller] },
-      why: explain(['The one telling the story says I.', `Here, I is ${entry.teller[0]}.`], text(entry.text), ['The one telling the story says I. Look back at who I is.']),
+      why: explain(['The one telling the story says I.', `Here, the word I means ${entry.teller[0]}.`], text(entry.text), undefined, hint('Look for the word I. Who is saying it?')),
     });
   }
   const inside = rng.bool();
@@ -94,7 +95,7 @@ function teller(level: Level, rng: Rng): QuestionDraft {
     size: 'm',
     stimulus: text(entry.text),
     facts: { relation: 'tellerKind', target: entry.id, read: [entry.text] },
-    why: explain([rule], text(entry.text), [rule]),
+    why: explain([rule], text(entry.text), [rule], hint('Does the story use the word I, me or my?')),
   });
 }
 
@@ -129,7 +130,7 @@ function feelings(level: Level, rng: Rng): QuestionDraft {
       right: entry.feeling,
       stimulus: text(entry.text),
       facts: { relation: 'feeling', target: entry.id, read: [entry.text, ...options] },
-      why: explain([`${entry.clue}`, `That shows ${entry.who} is ${entry.feeling}.`], text(entry.clue), ['Look for what the character does.', `That shows ${entry.who} is ${entry.feeling}.`]),
+      why: explain([`${entry.clue}`, `That shows ${entry.who} is ${entry.feeling}.`], text(entry.clue), ['Look for what the character does.', `That shows ${entry.who} is ${entry.feeling}.`], hint('Look at what the character does. What does that show?')),
     });
   }
   const feeling = rng.pick(FEELINGS);
@@ -143,7 +144,7 @@ function feelings(level: Level, rng: Rng): QuestionDraft {
     right: entry.clue,
     size: 'm',
     facts: { relation: 'feelingClue', target: feeling, read: options },
-    why: explain([`${entry.clue}`, `That is what someone does when they are ${feeling}.`], text(entry.clue), [`Think about what someone does when they are ${feeling}.`]),
+    why: explain([`${entry.clue}`, `That is what someone does when they are ${feeling}.`], text(entry.clue), [`Think about what someone does when they are ${feeling}.`], hint('Think about what someone does when they feel that way.')),
   });
 }
 

@@ -1,17 +1,15 @@
 import type { Rng } from '../../../../engine/rng';
-import type { FactValue, LessonStep, Say, SortBin, Visual } from '../../../../engine/types';
+import type { Explanation, FactValue, Hint, LessonStep, Say, SortBin, Visual } from '../../../../engine/types';
 import type { QuestionDraft } from '../../../../engine/types';
-import type { Explanation } from '../pk/parts';
+import type { Line } from './wording';
+import { gapSay, stepsOf } from './wording';
 
 // Pieces the wave H4 generators (Language Arts grades 1 and 2, plan section 15) share. Every question
 // names the h4ela oracle's relation and target in its facts.
 
 export const plain = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size });
-export const said = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size, speak: [value] });
+export const said = (value: string, size: 'm' | 'l' | 'xl' = 'l'): Visual => ({ kind: 'text', value, size, speak: [gapSay(value)] });
 export const pic = (emoji: string): Visual => ({ kind: 'emojiGroup', emoji, count: 1, layout: 'row' });
-// A gap is said "blank", never shown as underscores in speech.
-export const blankSay = (text: string): string => text.replace(/_+/g, 'blank');
-export const letters = (text: string): Say => text.split('').map((letter) => ({ letter }));
 
 type Facts = Record<string, FactValue>;
 
@@ -52,6 +50,7 @@ export function withOthers(rng: Rng, right: string, pool: readonly string[], cou
 
 export interface SortSpec {
   prompt: string;
+  speak?: Say; // the spoken prompt, when it is not the prompt itself (a letter is a typed part)
   mode: 'look' | 'read';
   items: readonly string[];
   bins: SortBin[];
@@ -66,7 +65,7 @@ export function sort(spec: SortSpec): QuestionDraft {
     type: 'sort',
     mode: spec.mode,
     facts: { ...spec.facts, items: [...spec.items] },
-    prompt: { text: spec.prompt, speak: [spec.prompt] },
+    prompt: { text: spec.prompt, speak: spec.speak ?? [spec.prompt] },
     ...(spec.stimulus ? { stimulus: spec.stimulus } : {}),
     items: spec.items.map((each) => (spec.mode === 'look' ? said(each) : plain(each))),
     bins: spec.bins,
@@ -89,16 +88,23 @@ export function order(prompt: string, mode: 'look' | 'read', items: readonly str
   };
 }
 
-export function explain(steps: string[], visual: Visual, speak?: Say): Explanation {
-  return { speak: speak ?? steps.map(blankSay), steps, visual };
+// The steps (each with its own speech when it shows a letter group or a sound), the picture, what is said
+// as the explanation opens (every step, unless given), and the hint's nudge.
+export function explain(lines: readonly Line[], visual: Visual, speak?: Say, nudge?: Hint): Explanation {
+  return {
+    speak: speak ?? lines.flatMap((each): Say => (typeof each === 'string' ? [gapSay(each)] : each.say)),
+    ...stepsOf(lines),
+    visual,
+    ...(nudge ? { hint: nudge } : {}),
+  };
 }
 
 // Four beats: see, watch, try (with its answer), remember. Each has a picture.
 export function lesson(see: [string, Visual], watch: [string, Visual], tryIt: [string, Visual, string, Visual], remember: [string, Visual]): () => LessonStep[] {
   return () => [
-    { beat: 'see', text: see[0], speak: [blankSay(see[0])], visual: see[1] },
-    { beat: 'watch', text: watch[0], speak: [blankSay(watch[0])], visual: watch[1] },
-    { beat: 'try', text: tryIt[0], speak: [blankSay(tryIt[0])], visual: tryIt[1], reveal: { text: tryIt[2], speak: [blankSay(tryIt[2])], visual: tryIt[3] } },
-    { beat: 'remember', text: remember[0], speak: [blankSay(remember[0])], visual: remember[1] },
+    { beat: 'see', text: see[0], speak: [gapSay(see[0])], visual: see[1] },
+    { beat: 'watch', text: watch[0], speak: [gapSay(watch[0])], visual: watch[1] },
+    { beat: 'try', text: tryIt[0], speak: [gapSay(tryIt[0])], visual: tryIt[1], reveal: { text: tryIt[2], speak: [gapSay(tryIt[2])], visual: tryIt[3] } },
+    { beat: 'remember', text: remember[0], speak: [gapSay(remember[0])], visual: remember[1] },
   ];
 }

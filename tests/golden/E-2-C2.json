@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-C2",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -14,13 +14,14 @@
    ]
   },
   "prompt": {
-   "text": "One bus, two of them. Which is right?",
+   "text": "One bus, two ___. Which word is spelled right?",
    "speak": [
     "One",
     {
      "word": "bus"
     },
-    ", two of them. Which word is spelled right?"
+    ", two ...",
+    "Which word is spelled right?"
    ]
   },
   "options": [
@@ -43,15 +44,86 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "Words that end in s, x, sh or ch add es: buses."
+    {
+     "word": "Bus"
+    },
+    "ends in",
+    {
+     "letter": "s"
+    },
+    ", so add",
+    {
+     "letter": "e"
+    },
+    ",",
+    {
+     "letter": "s"
+    },
+    ":",
+    {
+     "word": "buses"
+    },
+    "."
    ],
    "steps": [
-    "Words that end in s, x, sh or ch add es: buses."
+    "Bus ends in s, so add es: buses."
+   ],
+   "stepsSay": [
+    [
+     {
+      "word": "Bus"
+     },
+     "ends in",
+     {
+      "letter": "s"
+     },
+     ", so add",
+     {
+      "letter": "e"
+     },
+     ",",
+     {
+      "letter": "s"
+     },
+     ":",
+     {
+      "word": "buses"
+     },
+     "."
+    ]
    ],
    "visual": {
     "kind": "text",
     "value": "one bus, two buses",
     "size": "l"
+   },
+   "hint": {
+    "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+    "say": [
+     "Look at the end of the word. Does it end in",
+     {
+      "letter": "s"
+     },
+     ",",
+     {
+      "letter": "x"
+     },
+     ",",
+     {
+      "letter": "s"
+     },
+     {
+      "letter": "h"
+     },
+     ", or",
+     {
+      "letter": "c"
+     },
+     {
+      "letter": "h"
+     },
+     "?"
+    ]
    }
   },
   "skillId": "E-2-C2",
@@ -74,13 +146,14 @@
      ]
     },
     "prompt": {
-     "text": "One dish, two of them. Which is right?",
+     "text": "One dish, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "dish"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -103,15 +176,94 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: dishes."
+      {
+       "word": "Dish"
+      },
+      "ends in",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "dishes"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: dishes."
+      "Dish ends in sh, so add es: dishes."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Dish"
+       },
+       "ends in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "dishes"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one dish, two dishes",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -132,13 +284,14 @@
      ]
     },
     "prompt": {
-     "text": "One fox, two of them. Which is right?",
+     "text": "One fox, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "fox"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -161,15 +314,86 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: foxes."
+      {
+       "word": "Fox"
+      },
+      "ends in",
+      {
+       "letter": "x"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "foxes"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: foxes."
+      "Fox ends in x, so add es: foxes."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Fox"
+       },
+       "ends in",
+       {
+        "letter": "x"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "foxes"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one fox, two foxes",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -190,13 +414,14 @@
      ]
     },
     "prompt": {
-     "text": "One fox, two of them. Which is right?",
+     "text": "One fox, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "fox"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -219,15 +444,86 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: foxes."
+      {
+       "word": "Fox"
+      },
+      "ends in",
+      {
+       "letter": "x"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "foxes"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: foxes."
+      "Fox ends in x, so add es: foxes."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Fox"
+       },
+       "ends in",
+       {
+        "letter": "x"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "foxes"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one fox, two foxes",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -248,13 +544,14 @@
      ]
     },
     "prompt": {
-     "text": "One glass, two of them. Which is right?",
+     "text": "One glass, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "glass"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -277,15 +574,94 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: glasses."
+      {
+       "word": "Glass"
+      },
+      "ends in",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "glasses"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: glasses."
+      "Glass ends in ss, so add es: glasses."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Glass"
+       },
+       "ends in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "glasses"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one glass, two glasses",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -306,13 +682,14 @@
      ]
     },
     "prompt": {
-     "text": "One dish, two of them. Which is right?",
+     "text": "One dish, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "dish"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -335,15 +712,94 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: dishes."
+      {
+       "word": "Dish"
+      },
+      "ends in",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "h"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "dishes"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: dishes."
+      "Dish ends in sh, so add es: dishes."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Dish"
+       },
+       "ends in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "h"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "dishes"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one dish, two dishes",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -364,13 +820,14 @@
      ]
     },
     "prompt": {
-     "text": "One bus, two of them. Which is right?",
+     "text": "One bus, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "bus"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -393,15 +850,86 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: buses."
+      {
+       "word": "Bus"
+      },
+      "ends in",
+      {
+       "letter": "s"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "buses"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: buses."
+      "Bus ends in s, so add es: buses."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Bus"
+       },
+       "ends in",
+       {
+        "letter": "s"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "buses"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one bus, two buses",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -422,13 +950,14 @@
      ]
     },
     "prompt": {
-     "text": "One cat, two of them. Which is right?",
+     "text": "One cat, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "cat"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -451,15 +980,70 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Add s: cats."
+      {
+       "word": "Cat"
+      },
+      "just adds",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "cats"
+      },
+      "."
      ],
      "steps": [
-      "Add s: cats."
+      "Cat just adds s: cats."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Cat"
+       },
+       "just adds",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "cats"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one cat, two cats",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -480,13 +1064,14 @@
      ]
     },
     "prompt": {
-     "text": "One book, two of them. Which is right?",
+     "text": "One book, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "book"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -509,15 +1094,70 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Add s: books."
+      {
+       "word": "Book"
+      },
+      "just adds",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "books"
+      },
+      "."
      ],
      "steps": [
-      "Add s: books."
+      "Book just adds s: books."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Book"
+       },
+       "just adds",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "books"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one book, two books",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -538,13 +1178,14 @@
      ]
     },
     "prompt": {
-     "text": "One book, two of them. Which is right?",
+     "text": "One book, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "book"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -567,15 +1208,70 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Add s: books."
+      {
+       "word": "Book"
+      },
+      "just adds",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "books"
+      },
+      "."
      ],
      "steps": [
-      "Add s: books."
+      "Book just adds s: books."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Book"
+       },
+       "just adds",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "books"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one book, two books",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -596,13 +1292,14 @@
      ]
     },
     "prompt": {
-     "text": "One bus, two of them. Which is right?",
+     "text": "One bus, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "bus"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -625,15 +1322,86 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Words that end in s, x, sh or ch add es: buses."
+      {
+       "word": "Bus"
+      },
+      "ends in",
+      {
+       "letter": "s"
+      },
+      ", so add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "buses"
+      },
+      "."
      ],
      "steps": [
-      "Words that end in s, x, sh or ch add es: buses."
+      "Bus ends in s, so add es: buses."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Bus"
+       },
+       "ends in",
+       {
+        "letter": "s"
+       },
+       ", so add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "buses"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one bus, two buses",
       "size": "l"
+     },
+     "hint": {
+      "text": "Look at the end of the word. Does it end in s, x, sh or ch?",
+      "say": [
+       "Look at the end of the word. Does it end in",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "x"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       {
+        "letter": "h"
+       },
+       ", or",
+       {
+        "letter": "c"
+       },
+       {
+        "letter": "h"
+       },
+       "?"
+      ]
      }
     },
     "skillId": "E-2-C2",
@@ -656,13 +1424,14 @@
      ]
     },
     "prompt": {
-     "text": "One city, two of them. Which is right?",
+     "text": "One city, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "city"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -685,15 +1454,77 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: cities."
+      {
+       "word": "City"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "cities"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: cities."
+      "City ends in y. Change the y to i and add es: cities."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "City"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "cities"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one city, two cities",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -714,13 +1545,14 @@
      ]
     },
     "prompt": {
-     "text": "One story, two of them. Which is right?",
+     "text": "One story, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "story"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -743,15 +1575,77 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: stories."
+      {
+       "word": "Story"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "stories"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: stories."
+      "Story ends in y. Change the y to i and add es: stories."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Story"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "stories"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one story, two stories",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -772,13 +1666,14 @@
      ]
     },
     "prompt": {
-     "text": "One story, two of them. Which is right?",
+     "text": "One story, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "story"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -801,15 +1696,77 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: stories."
+      {
+       "word": "Story"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "stories"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: stories."
+      "Story ends in y. Change the y to i and add es: stories."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Story"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "stories"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one story, two stories",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -830,13 +1787,14 @@
      ]
     },
     "prompt": {
-     "text": "One party, two of them. Which is right?",
+     "text": "One party, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "party"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -859,15 +1817,77 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: parties."
+      {
+       "word": "Party"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "parties"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: parties."
+      "Party ends in y. Change the y to i and add es: parties."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Party"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "parties"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one party, two parties",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -888,13 +1908,14 @@
      ]
     },
     "prompt": {
-     "text": "One city, two of them. Which is right?",
+     "text": "One city, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "city"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -917,15 +1938,77 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: cities."
+      {
+       "word": "City"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "cities"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: cities."
+      "City ends in y. Change the y to i and add es: cities."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "City"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "cities"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one city, two cities",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -946,13 +2029,14 @@
      ]
     },
     "prompt": {
-     "text": "One puppy, two of them. Which is right?",
+     "text": "One puppy, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "puppy"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -975,15 +2059,77 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: puppies."
+      {
+       "word": "Puppy"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "puppies"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: puppies."
+      "Puppy ends in y. Change the y to i and add es: puppies."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Puppy"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "puppies"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one puppy, two puppies",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -1004,13 +2150,14 @@
      ]
     },
     "prompt": {
-     "text": "One baby, two of them. Which is right?",
+     "text": "One baby, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "baby"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1033,15 +2180,77 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: babies."
+      {
+       "word": "Baby"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "babies"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: babies."
+      "Baby ends in y. Change the y to i and add es: babies."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Baby"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "babies"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one baby, two babies",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -1062,13 +2271,14 @@
      ]
     },
     "prompt": {
-     "text": "One pony, two of them. Which is right?",
+     "text": "One pony, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "pony"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1091,15 +2301,77 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: ponies."
+      {
+       "word": "Pony"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "ponies"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: ponies."
+      "Pony ends in y. Change the y to i and add es: ponies."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Pony"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "ponies"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one pony, two ponies",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -1120,13 +2392,14 @@
      ]
     },
     "prompt": {
-     "text": "One pony, two of them. Which is right?",
+     "text": "One pony, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "pony"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1149,15 +2422,77 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: ponies."
+      {
+       "word": "Pony"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "ponies"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: ponies."
+      "Pony ends in y. Change the y to i and add es: ponies."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Pony"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "ponies"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one pony, two ponies",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -1178,13 +2513,14 @@
      ]
     },
     "prompt": {
-     "text": "One puppy, two of them. Which is right?",
+     "text": "One puppy, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "puppy"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1207,15 +2543,77 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Change the y to i and add es: puppies."
+      {
+       "word": "Puppy"
+      },
+      "ends in",
+      {
+       "letter": "y"
+      },
+      ". Change the",
+      {
+       "letter": "y"
+      },
+      "to",
+      {
+       "letter": "i"
+      },
+      "and add",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ":",
+      {
+       "word": "puppies"
+      },
+      "."
      ],
      "steps": [
-      "Change the y to i and add es: puppies."
+      "Puppy ends in y. Change the y to i and add es: puppies."
+     ],
+     "stepsSay": [
+      [
+       {
+        "word": "Puppy"
+       },
+       "ends in",
+       {
+        "letter": "y"
+       },
+       ". Change the",
+       {
+        "letter": "y"
+       },
+       "to",
+       {
+        "letter": "i"
+       },
+       "and add",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ":",
+       {
+        "word": "puppies"
+       },
+       "."
+      ]
      ],
      "visual": {
       "kind": "text",
       "value": "one puppy, two puppies",
       "size": "l"
+     },
+     "hint": {
+      "text": "The word ends in y. What happens to the y?"
      }
     },
     "skillId": "E-2-C2",
@@ -1238,13 +2636,14 @@
      ]
     },
     "prompt": {
-     "text": "One man, two of them. Which is right?",
+     "text": "One man, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "man"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1276,6 +2675,9 @@
       "kind": "text",
       "value": "one man, two men",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1296,13 +2698,14 @@
      ]
     },
     "prompt": {
-     "text": "One goose, two of them. Which is right?",
+     "text": "One goose, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "goose"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1334,6 +2737,9 @@
       "kind": "text",
       "value": "one goose, two geese",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1354,13 +2760,14 @@
      ]
     },
     "prompt": {
-     "text": "One goose, two of them. Which is right?",
+     "text": "One goose, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "goose"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1392,6 +2799,9 @@
       "kind": "text",
       "value": "one goose, two geese",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1412,13 +2822,14 @@
      ]
     },
     "prompt": {
-     "text": "One woman, two of them. Which is right?",
+     "text": "One woman, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "woman"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1450,6 +2861,9 @@
       "kind": "text",
       "value": "one woman, two women",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1470,13 +2884,14 @@
      ]
     },
     "prompt": {
-     "text": "One man, two of them. Which is right?",
+     "text": "One man, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "man"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1508,6 +2923,9 @@
       "kind": "text",
       "value": "one man, two men",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1528,13 +2946,14 @@
      ]
     },
     "prompt": {
-     "text": "One tooth, two of them. Which is right?",
+     "text": "One tooth, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "tooth"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1566,6 +2985,9 @@
       "kind": "text",
       "value": "one tooth, two teeth",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1586,13 +3008,14 @@
      ]
     },
     "prompt": {
-     "text": "One mouse, two of them. Which is right?",
+     "text": "One mouse, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "mouse"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1624,6 +3047,9 @@
       "kind": "text",
       "value": "one mouse, two mice",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1644,13 +3070,14 @@
      ]
     },
     "prompt": {
-     "text": "One foot, two of them. Which is right?",
+     "text": "One foot, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "foot"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1682,6 +3109,9 @@
       "kind": "text",
       "value": "one foot, two feet",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1702,13 +3132,14 @@
      ]
     },
     "prompt": {
-     "text": "One foot, two of them. Which is right?",
+     "text": "One foot, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "foot"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1740,6 +3171,9 @@
       "kind": "text",
       "value": "one foot, two feet",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",
@@ -1760,13 +3194,14 @@
      ]
     },
     "prompt": {
-     "text": "One tooth, two of them. Which is right?",
+     "text": "One tooth, two ___. Which word is spelled right?",
      "speak": [
       "One",
       {
        "word": "tooth"
       },
-      ", two of them. Which word is spelled right?"
+      ", two ...",
+      "Which word is spelled right?"
      ]
     },
     "options": [
@@ -1798,6 +3233,9 @@
       "kind": "text",
       "value": "one tooth, two teeth",
       "size": "l"
+     },
+     "hint": {
+      "text": "Some words change to a new word for more than one."
      }
     },
     "skillId": "E-2-C2",

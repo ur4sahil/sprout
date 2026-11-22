@@ -1,6 +1,6 @@
 {
  "skillId": "E-2-B2",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -8,9 +8,9 @@
    "target": "fastest",
    "relation": "suffixMeaning",
    "options": [
-    "more fast",
-    "most fast",
-    "full of fast"
+    "not fast",
+    "the most fast of all",
+    "more fast than another"
    ]
   },
   "prompt": {
@@ -27,43 +27,78 @@
   "options": [
    {
     "kind": "text",
-    "value": "more fast",
+    "value": "not fast",
     "size": "l",
     "speak": [
-     "more fast"
+     "not fast"
     ]
    },
    {
     "kind": "text",
-    "value": "most fast",
+    "value": "the most fast of all",
     "size": "l",
     "speak": [
-     "most fast"
+     "the most fast of all"
     ]
    },
    {
     "kind": "text",
-    "value": "full of fast",
+    "value": "more fast than another",
     "size": "l",
     "speak": [
-     "full of fast"
+     "more fast than another"
     ]
    }
   ],
   "answerIndex": 1,
   "explanation": {
    "speak": [
-    "ful means full of. less means without. er means more. est means the most.",
-    "fastest means most fast."
+    "The ending",
+    {
+     "letter": "e"
+    },
+    ",",
+    {
+     "letter": "s"
+    },
+    ",",
+    {
+     "letter": "t"
+    },
+    "means",
+    "the most, when you compare more than two.",
+    "Fastest means the most fast of all."
    ],
    "steps": [
-    "ful means full of. less means without. er means more. est means the most.",
-    "Fastest means most fast."
+    "The ending est means the most, when you compare more than two.",
+    "Fastest means the most fast of all."
+   ],
+   "stepsSay": [
+    [
+     "The ending",
+     {
+      "letter": "e"
+     },
+     ",",
+     {
+      "letter": "s"
+     },
+     ",",
+     {
+      "letter": "t"
+     },
+     "means",
+     "the most, when you compare more than two."
+    ],
+    null
    ],
    "visual": {
     "kind": "text",
     "value": "fastest",
     "size": "xl"
+   },
+   "hint": {
+    "text": "Find the base word. What does the ending add?"
    }
   },
   "skillId": "E-2-B2",
@@ -80,9 +115,9 @@
      "target": "faster",
      "relation": "suffixMeaning",
      "options": [
-      "more fast",
-      "most fast",
-      "without fast"
+      "not fast",
+      "the most fast of all",
+      "more fast than another"
      ]
     },
     "prompt": {
@@ -99,43 +134,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "more fast",
+      "value": "not fast",
       "size": "l",
       "speak": [
-       "more fast"
+       "not fast"
       ]
      },
      {
       "kind": "text",
-      "value": "most fast",
+      "value": "the most fast of all",
       "size": "l",
       "speak": [
-       "most fast"
+       "the most fast of all"
       ]
      },
      {
       "kind": "text",
-      "value": "without fast",
+      "value": "more fast than another",
       "size": "l",
       "speak": [
-       "without fast"
+       "more fast than another"
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "faster means more fast."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Faster means more fast than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Faster means more fast."
+      "The ending er means more, when you compare two.",
+      "Faster means more fast than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "faster",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -150,9 +212,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "more small",
-      "most small",
-      "without small"
+      "the most small of all",
+      "not small",
+      "more small than another"
      ]
     },
     "prompt": {
@@ -169,43 +231,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "more small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "more small"
+       "the most small of all"
       ]
      },
      {
       "kind": "text",
-      "value": "most small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "most small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "without small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "without small"
+       "more small than another"
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smaller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -220,9 +309,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "most small",
-      "without small",
-      "more small"
+      "the most small of all",
+      "not small",
+      "more small than another"
      ]
     },
     "prompt": {
@@ -239,43 +328,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "most small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "most small"
+       "the most small of all"
       ]
      },
      {
       "kind": "text",
-      "value": "without small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "without small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "more small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "more small"
+       "more small than another"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smaller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -290,9 +406,9 @@
      "target": "smallest",
      "relation": "suffixMeaning",
      "options": [
-      "without small",
-      "more small",
-      "most small"
+      "more small than another",
+      "not small",
+      "the most small of all"
      ]
     },
     "prompt": {
@@ -309,43 +425,78 @@
     "options": [
      {
       "kind": "text",
-      "value": "without small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "without small"
+       "more small than another"
       ]
      },
      {
       "kind": "text",
-      "value": "more small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "more small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "most small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "most small"
+       "the most small of all"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smallest means most small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "t"
+      },
+      "means",
+      "the most, when you compare more than two.",
+      "Smallest means the most small of all."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smallest means most small."
+      "The ending est means the most, when you compare more than two.",
+      "Smallest means the most small of all."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "t"
+       },
+       "means",
+       "the most, when you compare more than two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smallest",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -360,9 +511,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "full of small",
-      "more small",
-      "without small"
+      "the most small of all",
+      "more small than another",
+      "not small"
      ]
     },
     "prompt": {
@@ -379,43 +530,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "full of small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "full of small"
+       "the most small of all"
       ]
      },
      {
       "kind": "text",
-      "value": "more small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "more small"
+       "more small than another"
       ]
      },
      {
       "kind": "text",
-      "value": "without small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "without small"
+       "not small"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smaller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -430,9 +608,9 @@
      "target": "taller",
      "relation": "suffixMeaning",
      "options": [
-      "without tall",
-      "most tall",
-      "more tall"
+      "not tall",
+      "the most tall of all",
+      "more tall than another"
      ]
     },
     "prompt": {
@@ -449,43 +627,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "without tall",
+      "value": "not tall",
       "size": "l",
       "speak": [
-       "without tall"
+       "not tall"
       ]
      },
      {
       "kind": "text",
-      "value": "most tall",
+      "value": "the most tall of all",
       "size": "l",
       "speak": [
-       "most tall"
+       "the most tall of all"
       ]
      },
      {
       "kind": "text",
-      "value": "more tall",
+      "value": "more tall than another",
       "size": "l",
       "speak": [
-       "more tall"
+       "more tall than another"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "taller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -500,9 +705,9 @@
      "target": "helpful",
      "relation": "suffixMeaning",
      "options": [
-      "full of help",
-      "most help",
-      "more help"
+      "a little help",
+      "without help",
+      "full of help"
      ]
     },
     "prompt": {
@@ -519,43 +724,78 @@
     "options": [
      {
       "kind": "text",
+      "value": "a little help",
+      "size": "l",
+      "speak": [
+       "a little help"
+      ]
+     },
+     {
+      "kind": "text",
+      "value": "without help",
+      "size": "l",
+      "speak": [
+       "without help"
+      ]
+     },
+     {
+      "kind": "text",
       "value": "full of help",
       "size": "l",
       "speak": [
        "full of help"
       ]
-     },
-     {
-      "kind": "text",
-      "value": "most help",
-      "size": "l",
-      "speak": [
-       "most help"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "more help",
-      "size": "l",
-      "speak": [
-       "more help"
-      ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "helpful means full of help."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Helpful means full of help."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Helpful means full of help."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "helpful",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -570,8 +810,8 @@
      "target": "careful",
      "relation": "suffixMeaning",
      "options": [
+      "a little care",
       "full of care",
-      "most care",
       "without care"
      ]
     },
@@ -589,18 +829,18 @@
     "options": [
      {
       "kind": "text",
-      "value": "full of care",
+      "value": "a little care",
       "size": "l",
       "speak": [
-       "full of care"
+       "a little care"
       ]
      },
      {
       "kind": "text",
-      "value": "most care",
+      "value": "full of care",
       "size": "l",
       "speak": [
-       "most care"
+       "full of care"
       ]
      },
      {
@@ -612,20 +852,55 @@
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "careful means full of care."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Careful means full of care."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Careful means full of care."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "careful",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -640,9 +915,9 @@
      "target": "playful",
      "relation": "suffixMeaning",
      "options": [
+      "without play",
       "full of play",
-      "more play",
-      "without play"
+      "a little play"
      ]
     },
     "prompt": {
@@ -659,6 +934,14 @@
     "options": [
      {
       "kind": "text",
+      "value": "without play",
+      "size": "l",
+      "speak": [
+       "without play"
+      ]
+     },
+     {
+      "kind": "text",
       "value": "full of play",
       "size": "l",
       "speak": [
@@ -667,35 +950,62 @@
      },
      {
       "kind": "text",
-      "value": "more play",
+      "value": "a little play",
       "size": "l",
       "speak": [
-       "more play"
-      ]
-     },
-     {
-      "kind": "text",
-      "value": "without play",
-      "size": "l",
-      "speak": [
-       "without play"
+       "a little play"
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "playful means full of play."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Playful means full of play."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Playful means full of play."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "playful",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -710,9 +1020,9 @@
      "target": "taller",
      "relation": "suffixMeaning",
      "options": [
-      "full of tall",
-      "more tall",
-      "without tall"
+      "more tall than another",
+      "the most tall of all",
+      "not tall"
      ]
     },
     "prompt": {
@@ -729,43 +1039,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "full of tall",
+      "value": "more tall than another",
       "size": "l",
       "speak": [
-       "full of tall"
+       "more tall than another"
       ]
      },
      {
       "kind": "text",
-      "value": "more tall",
+      "value": "the most tall of all",
       "size": "l",
       "speak": [
-       "more tall"
+       "the most tall of all"
       ]
      },
      {
       "kind": "text",
-      "value": "without tall",
+      "value": "not tall",
       "size": "l",
       "speak": [
-       "without tall"
+       "not tall"
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "taller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -790,7 +1127,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "A car is ... than a bike."
      ]
     },
     "stimulus": {
@@ -798,7 +1136,7 @@
      "value": "A car is ___ than a bike.",
      "size": "l",
      "speak": [
-      "A car is blank than a bike."
+      "A car is ... than a bike."
      ]
     },
     "options": [
@@ -830,17 +1168,44 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "faster means more fast."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Faster means more fast than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Faster means more fast."
+      "The ending er means more, when you compare two.",
+      "Faster means more fast than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "A car is faster than a bike.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -855,7 +1220,7 @@
      "target": "A mouse is ___ than a cat.",
      "relation": "suffixSentence",
      "options": [
-      "endless",
+      "useless",
       "smaller",
       "helpful"
      ]
@@ -863,7 +1228,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "A mouse is ... than a cat."
      ]
     },
     "stimulus": {
@@ -871,16 +1237,16 @@
      "value": "A mouse is ___ than a cat.",
      "size": "l",
      "speak": [
-      "A mouse is blank than a cat."
+      "A mouse is ... than a cat."
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -903,17 +1269,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "A mouse is smaller than a cat.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -928,7 +1321,7 @@
      "target": "A mouse is ___ than a cat.",
      "relation": "suffixSentence",
      "options": [
-      "endless",
+      "useless",
       "playful",
       "smaller"
      ]
@@ -936,7 +1329,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "A mouse is ... than a cat."
      ]
     },
     "stimulus": {
@@ -944,16 +1338,16 @@
      "value": "A mouse is ___ than a cat.",
      "size": "l",
      "speak": [
-      "A mouse is blank than a cat."
+      "A mouse is ... than a cat."
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -976,17 +1370,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "A mouse is smaller than a cat.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1009,7 +1430,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "The ... kitten sleeps in the box."
      ]
     },
     "stimulus": {
@@ -1017,7 +1439,7 @@
      "value": "The ___ kitten sleeps in the box.",
      "size": "l",
      "speak": [
-      "The blank kitten sleeps in the box."
+      "The ... kitten sleeps in the box."
      ]
     },
     "options": [
@@ -1049,17 +1471,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smallest means most small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "t"
+      },
+      "means",
+      "the most, when you compare more than two.",
+      "Smallest means the most small of all."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smallest means most small."
+      "The ending est means the most, when you compare more than two.",
+      "Smallest means the most small of all."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "t"
+       },
+       "means",
+       "the most, when you compare more than two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "The smallest kitten sleeps in the box.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1082,7 +1539,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "A mouse is ... than a cat."
      ]
     },
     "stimulus": {
@@ -1090,7 +1548,7 @@
      "value": "A mouse is ___ than a cat.",
      "size": "l",
      "speak": [
-      "A mouse is blank than a cat."
+      "A mouse is ... than a cat."
      ]
     },
     "options": [
@@ -1122,17 +1580,44 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "A mouse is smaller than a cat.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1149,13 +1634,14 @@
      "options": [
       "fastest",
       "taller",
-      "endless"
+      "useless"
      ]
     },
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "My brother is ... than me."
      ]
     },
     "stimulus": {
@@ -1163,7 +1649,7 @@
      "value": "My brother is ___ than me.",
      "size": "l",
      "speak": [
-      "My brother is blank than me."
+      "My brother is ... than me."
      ]
     },
     "options": [
@@ -1185,27 +1671,54 @@
      },
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "My brother is taller than me.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1228,7 +1741,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "She is ... and carries my bag."
      ]
     },
     "stimulus": {
@@ -1236,7 +1750,7 @@
      "value": "She is ___ and carries my bag.",
      "size": "l",
      "speak": [
-      "She is blank and carries my bag."
+      "She is ... and carries my bag."
      ]
     },
     "options": [
@@ -1268,17 +1782,52 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "helpful means full of help."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Helpful means full of help."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Helpful means full of help."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "She is helpful and carries my bag.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1301,7 +1850,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "Be ... with the hot cup."
      ]
     },
     "stimulus": {
@@ -1309,7 +1859,7 @@
      "value": "Be ___ with the hot cup.",
      "size": "l",
      "speak": [
-      "Be blank with the hot cup."
+      "Be ... with the hot cup."
      ]
     },
     "options": [
@@ -1341,17 +1891,52 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "careful means full of care."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Careful means full of care."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Careful means full of care."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "Be careful with the hot cup.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1374,7 +1959,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "The ... puppy runs after the ball."
      ]
     },
     "stimulus": {
@@ -1382,7 +1968,7 @@
      "value": "The ___ puppy runs after the ball.",
      "size": "l",
      "speak": [
-      "The blank puppy runs after the ball."
+      "The ... puppy runs after the ball."
      ]
     },
     "options": [
@@ -1414,17 +2000,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "playful means full of play."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Playful means full of play."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Playful means full of play."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "The playful puppy runs after the ball.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1439,7 +2060,7 @@
      "target": "My brother is ___ than me.",
      "relation": "suffixSentence",
      "options": [
-      "endless",
+      "useless",
       "careless",
       "taller"
      ]
@@ -1447,7 +2068,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "My brother is ... than me."
      ]
     },
     "stimulus": {
@@ -1455,16 +2077,16 @@
      "value": "My brother is ___ than me.",
      "size": "l",
      "speak": [
-      "My brother is blank than me."
+      "My brother is ... than me."
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -1487,17 +2109,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "My brother is taller than me.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1514,9 +2163,9 @@
      "target": "faster",
      "relation": "suffixMeaning",
      "options": [
-      "full of fast",
-      "more fast",
-      "most fast"
+      "more fast than another",
+      "not fast",
+      "the most fast of all"
      ]
     },
     "prompt": {
@@ -1533,43 +2182,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "full of fast",
+      "value": "more fast than another",
       "size": "l",
       "speak": [
-       "full of fast"
+       "more fast than another"
       ]
      },
      {
       "kind": "text",
-      "value": "more fast",
+      "value": "not fast",
       "size": "l",
       "speak": [
-       "more fast"
+       "not fast"
       ]
      },
      {
       "kind": "text",
-      "value": "most fast",
+      "value": "the most fast of all",
       "size": "l",
       "speak": [
-       "most fast"
+       "the most fast of all"
       ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "faster means more fast."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Faster means more fast than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Faster means more fast."
+      "The ending er means more, when you compare two.",
+      "Faster means more fast than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "faster",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -1584,9 +2260,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "more small",
-      "most small",
-      "without small"
+      "not small",
+      "the most small of all",
+      "more small than another"
      ]
     },
     "prompt": {
@@ -1603,43 +2279,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "more small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "more small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "most small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "most small"
+       "the most small of all"
       ]
      },
      {
       "kind": "text",
-      "value": "without small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "without small"
+       "more small than another"
       ]
      }
     ],
-    "answerIndex": 0,
+    "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smaller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -1654,9 +2357,9 @@
      "target": "smaller",
      "relation": "suffixMeaning",
      "options": [
-      "most small",
-      "more small",
-      "full of small"
+      "not small",
+      "more small than another",
+      "the most small of all"
      ]
     },
     "prompt": {
@@ -1673,43 +2376,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "most small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "most small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "more small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "more small"
+       "more small than another"
       ]
      },
      {
       "kind": "text",
-      "value": "full of small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "full of small"
+       "the most small of all"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smaller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -1724,9 +2454,9 @@
      "target": "smallest",
      "relation": "suffixMeaning",
      "options": [
-      "more small",
-      "without small",
-      "most small"
+      "more small than another",
+      "not small",
+      "the most small of all"
      ]
     },
     "prompt": {
@@ -1743,43 +2473,78 @@
     "options": [
      {
       "kind": "text",
-      "value": "more small",
+      "value": "more small than another",
       "size": "l",
       "speak": [
-       "more small"
+       "more small than another"
       ]
      },
      {
       "kind": "text",
-      "value": "without small",
+      "value": "not small",
       "size": "l",
       "speak": [
-       "without small"
+       "not small"
       ]
      },
      {
       "kind": "text",
-      "value": "most small",
+      "value": "the most small of all",
       "size": "l",
       "speak": [
-       "most small"
+       "the most small of all"
       ]
      }
     ],
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smallest means most small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "s"
+      },
+      ",",
+      {
+       "letter": "t"
+      },
+      "means",
+      "the most, when you compare more than two.",
+      "Smallest means the most small of all."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smallest means most small."
+      "The ending est means the most, when you compare more than two.",
+      "Smallest means the most small of all."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "s"
+       },
+       ",",
+       {
+        "letter": "t"
+       },
+       "means",
+       "the most, when you compare more than two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "smallest",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -1795,14 +2560,15 @@
      "relation": "suffixSentence",
      "options": [
       "careless",
-      "endless",
+      "useless",
       "smaller"
      ]
     },
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "A mouse is ... than a cat."
      ]
     },
     "stimulus": {
@@ -1810,7 +2576,7 @@
      "value": "A mouse is ___ than a cat.",
      "size": "l",
      "speak": [
-      "A mouse is blank than a cat."
+      "A mouse is ... than a cat."
      ]
     },
     "options": [
@@ -1824,10 +2590,10 @@
      },
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -1842,17 +2608,44 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "smaller means more small."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Smaller means more small than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Smaller means more small."
+      "The ending er means more, when you compare two.",
+      "Smaller means more small than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "A mouse is smaller than a cat.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -1867,9 +2660,9 @@
      "target": "taller",
      "relation": "suffixMeaning",
      "options": [
-      "full of tall",
-      "more tall",
-      "most tall"
+      "not tall",
+      "more tall than another",
+      "the most tall of all"
      ]
     },
     "prompt": {
@@ -1886,43 +2679,70 @@
     "options": [
      {
       "kind": "text",
-      "value": "full of tall",
+      "value": "not tall",
       "size": "l",
       "speak": [
-       "full of tall"
+       "not tall"
       ]
      },
      {
       "kind": "text",
-      "value": "more tall",
+      "value": "more tall than another",
       "size": "l",
       "speak": [
-       "more tall"
+       "more tall than another"
       ]
      },
      {
       "kind": "text",
-      "value": "most tall",
+      "value": "the most tall of all",
       "size": "l",
       "speak": [
-       "most tall"
+       "the most tall of all"
       ]
      }
     ],
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "taller",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -1937,9 +2757,9 @@
      "target": "helpful",
      "relation": "suffixMeaning",
      "options": [
-      "more help",
       "full of help",
-      "without help"
+      "without help",
+      "a little help"
      ]
     },
     "prompt": {
@@ -1956,14 +2776,6 @@
     "options": [
      {
       "kind": "text",
-      "value": "more help",
-      "size": "l",
-      "speak": [
-       "more help"
-      ]
-     },
-     {
-      "kind": "text",
       "value": "full of help",
       "size": "l",
       "speak": [
@@ -1977,22 +2789,65 @@
       "speak": [
        "without help"
       ]
+     },
+     {
+      "kind": "text",
+      "value": "a little help",
+      "size": "l",
+      "speak": [
+       "a little help"
+      ]
      }
     ],
-    "answerIndex": 1,
+    "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "helpful means full of help."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Helpful means full of help."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Helpful means full of help."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "helpful",
       "size": "xl"
+     },
+     "hint": {
+      "text": "Find the base word. What does the ending add?"
      }
     },
     "skillId": "E-2-B2",
@@ -2007,7 +2862,7 @@
      "target": "Be ___ with the hot cup.",
      "relation": "suffixSentence",
      "options": [
-      "endless",
+      "useless",
       "fastest",
       "careful"
      ]
@@ -2015,7 +2870,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "Be ... with the hot cup."
      ]
     },
     "stimulus": {
@@ -2023,16 +2879,16 @@
      "value": "Be ___ with the hot cup.",
      "size": "l",
      "speak": [
-      "Be blank with the hot cup."
+      "Be ... with the hot cup."
      ]
     },
     "options": [
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -2055,17 +2911,52 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "careful means full of care."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Careful means full of care."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Careful means full of care."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "Be careful with the hot cup.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -2081,14 +2972,15 @@
      "relation": "suffixSentence",
      "options": [
       "playful",
-      "endless",
+      "useless",
       "fastest"
      ]
     },
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "The ... puppy runs after the ball."
      ]
     },
     "stimulus": {
@@ -2096,7 +2988,7 @@
      "value": "The ___ puppy runs after the ball.",
      "size": "l",
      "speak": [
-      "The blank puppy runs after the ball."
+      "The ... puppy runs after the ball."
      ]
     },
     "options": [
@@ -2110,10 +3002,10 @@
      },
      {
       "kind": "text",
-      "value": "endless",
+      "value": "useless",
       "size": "l",
       "speak": [
-       "endless"
+       "useless"
       ]
      },
      {
@@ -2128,17 +3020,52 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "playful means full of play."
+      "The ending",
+      {
+       "letter": "f"
+      },
+      ",",
+      {
+       "letter": "u"
+      },
+      ",",
+      {
+       "letter": "l"
+      },
+      "means",
+      "full of.",
+      "Playful means full of play."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
+      "The ending ful means full of.",
       "Playful means full of play."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "f"
+       },
+       ",",
+       {
+        "letter": "u"
+       },
+       ",",
+       {
+        "letter": "l"
+       },
+       "means",
+       "full of."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "The playful puppy runs after the ball.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
@@ -2161,7 +3088,8 @@
     "prompt": {
      "text": "Which word fits the sentence?",
      "speak": [
-      "Which word fits the sentence?"
+      "Which word fits the sentence?",
+      "My brother is ... than me."
      ]
     },
     "stimulus": {
@@ -2169,7 +3097,7 @@
      "value": "My brother is ___ than me.",
      "size": "l",
      "speak": [
-      "My brother is blank than me."
+      "My brother is ... than me."
      ]
     },
     "options": [
@@ -2201,17 +3129,44 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "taller means more tall."
+      "The ending",
+      {
+       "letter": "e"
+      },
+      ",",
+      {
+       "letter": "r"
+      },
+      "means",
+      "more, when you compare two.",
+      "Taller means more tall than another."
      ],
      "steps": [
-      "ful means full of. less means without. er means more. est means the most.",
-      "Taller means more tall."
+      "The ending er means more, when you compare two.",
+      "Taller means more tall than another."
+     ],
+     "stepsSay": [
+      [
+       "The ending",
+       {
+        "letter": "e"
+       },
+       ",",
+       {
+        "letter": "r"
+       },
+       "means",
+       "more, when you compare two."
+      ],
+      null
      ],
      "visual": {
       "kind": "text",
       "value": "My brother is taller than me.",
       "size": "l"
+     },
+     "hint": {
+      "text": "Try each word in the gap. Which one makes sense?"
      }
     },
     "skillId": "E-2-B2",
