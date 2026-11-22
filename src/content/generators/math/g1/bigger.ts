@@ -9,33 +9,29 @@ import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
 import type { Told } from '../k/stories';
 import { tellStory } from '../k/stories';
+import type { Shown as Explanation } from './wording';
+import { explain, hintFor, tensOf } from './wording';
 
 // Math grade 1 B.8, B.9 and B.10: two-digit plus one-digit, adding and subtracting tens, and word problems.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
-const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} plus ${b} equals what?`, speak: [{ number: a }, 'plus', { number: b }, 'equals what?'] });
-const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `${a} minus ${b} equals what?`, speak: [{ number: a }, 'minus', { number: b }, 'equals what?'] });
+const plusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `What is ${a} plus ${b}?`, speak: ['What is', { number: a }, 'plus', { number: b }, '?'] });
+const minusPrompt = (a: number, b: number): { text: string; speak: Say } => ({ text: `What is ${a} minus ${b}?`, speak: ['What is', { number: a }, 'minus', { number: b }, '?'] });
 
 // ---- B.8 Add two-digit and one-digit ----
 // Levels: no regrouping / regrouping / typed. Families: Add, no regrouping and Add, regrouping. Oracle: add.
 
+// The hint is the move, never its result: "Add the ones first." A new ten is "a new ten, with 1 left over",
+// never "1 ten and 1 one", which is said "one one".
 function placeExplanation(a: number, b: number): Explanation {
-  const [x, sum] = [a % 10, a + b];
+  const [x, sum, tens] = [a % 10, a + b, Math.floor(a / 10)];
   const ones = x + b;
   const visual = equation(a, '+', b, '=', sum);
-  if (ones < 10) {
-    return {
-      speak: ['Add the ones:', { number: x }, 'plus', { number: b }, 'is', { number: ones }, '. The tens stay the same. The answer is', { number: sum }, '.'],
-      steps: [`Add the ones: ${x} plus ${b} is ${ones}.`, 'The tens stay the same.', `The answer is ${sum}.`],
-      visual,
-    };
-  }
-  return {
-    speak: ['Add the ones:', { number: x }, 'plus', { number: b }, 'is', { number: ones }, '. That is one ten and', { number: ones - 10 }, ones - 10 === 1 ? 'one.' : 'ones.', 'Add the extra ten to the tens.', { number: sum }, '.'],
-    steps: [`Add the ones: ${x} plus ${b} is ${ones}.`, `That is 1 ten and ${ones - 10} ${ones - 10 === 1 ? 'one' : 'ones'}.`, `Add the extra ten to the tens: ${sum}.`],
-    visual,
-  };
+  const hint = { text: 'Add the ones first.' };
+  if (ones < 10) return explain([`Add the ones: ${x} + ${b} = ${ones}.`, `The tens stay the same: ${tensOf(tens)}.`, `So ${a} + ${b} = ${sum}.`], visual, hint);
+  const over = ones - 10;
+  const made = over === 0 ? 'That makes a new ten.' : `That makes a new ten, with ${over} left over.`;
+  return explain([`Add the ones: ${x} + ${b} = ${ones}.`, made, `${tensOf(tens)} and the new ten make ${tensOf(tens + 1)}: ${sum}.`], visual, hint);
 }
 
 function twoDigitPlusOne(level: Level, rng: Rng): QuestionDraft {
@@ -80,11 +76,11 @@ function tensExplanation(a: number, b: number, plus: boolean): Explanation {
   const tens = plus ? ta + tb : ta - tb;
   const word = plus ? 'plus' : 'minus';
   const tensWord = (n: number): string => (n === 1 ? 'ten' : 'tens');
-  const first: Say = [{ number: ta }, `${tensWord(ta)} ${word}`, { number: tb }, `${tensWord(tb)} is`, { number: tens }, `${tensWord(tens)}.`];
   const firstText = `${ta} ${tensWord(ta)} ${word} ${tb} ${tensWord(tb)} is ${tens} ${tensWord(tens)}.`;
   const visual = equation(a, plus ? '+' : '-', b, '=', answer);
-  if (a % 10 === 0) return { speak: [...first, { number: answer }, '.'], steps: [firstText, `${answer}.`], visual };
-  return { speak: ['Only the tens change.', ...first, 'The ones stay the same.', { number: answer }, '.'], steps: ['Only the tens change.', firstText, `The ones stay the same: ${answer}.`], visual };
+  // A whole step that is only a number ("70.") becomes a sentence: "7 tens is 70."
+  if (a % 10 === 0) return explain([firstText, `${tens} ${tensWord(tens)} is ${answer}.`], visual, hintFor(answer, `Think: ${ta} ${tensWord(ta)} ${word} ${tb} ${tensWord(tb)}.`, 'Think of the tens as ones.'));
+  return explain(['Only the tens change.', firstText, `The ones stay the same, so ${a} ${plus ? '+' : '−'} ${b} = ${answer}.`], visual, { text: 'Only the tens change. The ones stay the same.' });
 }
 
 function tensQuestion(a: number, b: number, plus: boolean, typed: boolean, rng: Rng): QuestionDraft {
@@ -132,10 +128,27 @@ export const addSubtractTensGenerator: SkillGenerator = {
 // ---- B.10 Word problems within 20 ----
 // Levels: add to / take from / compare, typed. Family: Stories. Oracles: add, subtract.
 
-function storyExplanation(a: number, b: number, plus: boolean): Explanation {
+// The story's own words say which way to go ("gets more", "in all", "gives away", "how many more"), then the
+// number sentence, then the answer in the story's words. The hint names the clue in the story, never the number.
+function storyExplanation(told: Told): Explanation {
+  const { kind, name, a, b } = told;
+  const things = told.thing.many;
+  const plus = kind === 'gets' || kind === 'table';
   const answer = plus ? a + b : a - b;
-  const word = plus ? 'plus' : 'minus';
-  return { speak: [{ number: a }, word, { number: b }, 'is', { number: answer }, '.'], steps: [`${a} ${word} ${b} is ${answer}.`], visual: equation(a, plus ? '+' : '-', b, '=', answer) };
+  const sentence = `${a} ${plus ? '+' : '−'} ${b} = ${answer}.`;
+  const visual = equation(a, plus ? '+' : '-', b, '=', answer);
+  switch (kind) {
+    case 'gets':
+      return explain([`${name} gets more, so we add.`, sentence, `${name} has ${answer} ${things} now.`], visual, { text: 'Getting more means adding.' });
+    case 'table':
+      return explain(['In all means put them together, so we add.', sentence, `There are ${answer} ${things} in all.`], visual, { text: 'In all means put them together.' });
+    case 'givesAway':
+      return explain([`${name} gives some away, so we subtract.`, sentence, `${answer} ${things} are left.`], visual, { text: 'Giving some away leaves fewer.' });
+    case 'takes':
+      return explain([`${name} takes some, so we subtract.`, sentence, `${answer} ${things} are left.`], visual, { text: 'Taking some away leaves fewer.' });
+    default:
+      return explain(['To find how many more, we subtract.', sentence, told.name2 === undefined ? `${name} has ${answer} more ${things}.` : `${name} has ${answer} more ${things} than ${told.name2}.`], visual, { text: 'How many more? Count up from the smaller number to the bigger one.' });
+  }
 }
 
 function wordProblem(level: Level, rng: Rng): QuestionDraft {
@@ -159,7 +172,7 @@ function wordProblem(level: Level, rng: Rng): QuestionDraft {
   const story = tellStory(told);
   const named = kind !== 'table';
   const facts: QuestionDraft['facts'] = { a, b, thing: thing.one, story: kind, oracle: plus ? 'add' : 'subtract', ...(named ? { name } : {}), ...(level === 3 ? { name2 } : {}) };
-  const base = { mode: 'look' as const, prompt: story, explanation: storyExplanation(a, b, plus) };
+  const base = { mode: 'look' as const, prompt: story, explanation: storyExplanation(told) };
   if (level === 3) return { ...base, type: 'numberPad', facts, answer, maxDigits: 2 };
   // The slips: one off, the other operation, or a number from the story said again.
   const values = numeralChoices(answer, [plus ? Math.abs(a - b) : a + b, a, b], 0, 40, rng);
@@ -181,8 +194,8 @@ export const wordProblemsGenerator: SkillGenerator = {
     const take: Told = { kind: 'givesAway', name: 'Mia', thing: APPLE, a: 12, b: 4 };
     return [
       { beat: 'see', text: 'A story tells us what to do. Getting more means plus. Giving away means minus.', speak: ['A story tells us what to do. Getting more means plus. Giving away means minus.'], visual: equation(8, '+', 5) },
-      { beat: 'watch', text: `${tellStory(add).text} ${storyExplanation(8, 5, true).steps.join(' ')}`, speak: [...tellStory(add).speak, ...storyExplanation(8, 5, true).speak], visual: equation(8, '+', 5, '=', 13) },
-      { beat: 'try', text: tellStory(take).text, speak: tellStory(take).speak, visual: equation(12, '-', 4, '=', 'blank'), reveal: { text: storyExplanation(12, 4, false).steps.join(' '), speak: storyExplanation(12, 4, false).speak, visual: equation(12, '-', 4, '=', 8) } },
+      { beat: 'watch', text: `${tellStory(add).text} ${storyExplanation(add).steps.join(' ')}`, speak: [...tellStory(add).speak, ...storyExplanation(add).speak], visual: equation(8, '+', 5, '=', 13) },
+      { beat: 'try', text: tellStory(take).text, speak: tellStory(take).speak, visual: equation(12, '-', 4, '=', 'blank'), reveal: { text: storyExplanation(take).steps.join(' '), speak: storyExplanation(take).speak, visual: equation(12, '-', 4, '=', 8) } },
       { beat: 'remember', text: 'Listen for joining or taking away.', speak: ['Listen for joining or taking away.'], visual: equation(12, '-', 4, '=', 8) },
     ];
   },

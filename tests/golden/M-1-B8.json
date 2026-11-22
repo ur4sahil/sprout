@@ -1,11 +1,12 @@
 {
  "skillId": "M-1-B8",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
-   "text": "15 plus 4 equals what?",
+   "text": "What is 15 plus 4?",
    "speak": [
+    "What is",
     {
      "number": 15
     },
@@ -13,7 +14,7 @@
     {
      "number": 4
     },
-    "equals what?"
+    "?"
    ]
   },
   "stimulus": {
@@ -36,20 +37,34 @@
     {
      "number": 4
     },
-    "is",
+    "equals",
     {
      "number": 9
     },
-    ". The tens stay the same. The answer is",
+    ".",
+    "The tens stay the same:",
+    {
+     "number": 1
+    },
+    "ten.",
+    "So",
+    {
+     "number": 15
+    },
+    "plus",
+    {
+     "number": 4
+    },
+    "equals",
     {
      "number": 19
     },
     "."
    ],
    "steps": [
-    "Add the ones: 5 plus 4 is 9.",
-    "The tens stay the same.",
-    "The answer is 19."
+    "Add the ones: 5 + 4 = 9.",
+    "The tens stay the same: 1 ten.",
+    "So 15 + 4 = 19."
    ],
    "visual": {
     "kind": "equation",
@@ -60,6 +75,9 @@
      "=",
      19
     ]
+   },
+   "hint": {
+    "text": "Add the ones first."
    }
   },
   "type": "choice",
@@ -115,8 +133,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "21 plus 4 equals what?",
+     "text": "What is 21 plus 4?",
      "speak": [
+      "What is",
       {
        "number": 21
       },
@@ -124,7 +143,7 @@
       {
        "number": 4
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -147,20 +166,34 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 5
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 2
+      },
+      "tens.",
+      "So",
+      {
+       "number": 21
+      },
+      "plus",
+      {
+       "number": 4
+      },
+      "equals",
       {
        "number": 25
       },
       "."
      ],
      "steps": [
-      "Add the ones: 1 plus 4 is 5.",
-      "The tens stay the same.",
-      "The answer is 25."
+      "Add the ones: 1 + 4 = 5.",
+      "The tens stay the same: 2 tens.",
+      "So 21 + 4 = 25."
      ],
      "visual": {
       "kind": "equation",
@@ -171,6 +204,9 @@
        "=",
        25
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -224,8 +260,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "33 plus 5 equals what?",
+     "text": "What is 33 plus 5?",
      "speak": [
+      "What is",
       {
        "number": 33
       },
@@ -233,7 +270,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -256,20 +293,34 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 3
+      },
+      "tens.",
+      "So",
+      {
+       "number": 33
+      },
+      "plus",
+      {
+       "number": 5
+      },
+      "equals",
       {
        "number": 38
       },
       "."
      ],
      "steps": [
-      "Add the ones: 3 plus 5 is 8.",
-      "The tens stay the same.",
-      "The answer is 38."
+      "Add the ones: 3 + 5 = 8.",
+      "The tens stay the same: 3 tens.",
+      "So 33 + 5 = 38."
      ],
      "visual": {
       "kind": "equation",
@@ -280,6 +331,9 @@
        "=",
        38
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -333,8 +387,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "67 plus 1 equals what?",
+     "text": "What is 67 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 67
       },
@@ -342,7 +397,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -365,20 +420,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 6
+      },
+      "tens.",
+      "So",
+      {
+       "number": 67
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 68
       },
       "."
      ],
      "steps": [
-      "Add the ones: 7 plus 1 is 8.",
-      "The tens stay the same.",
-      "The answer is 68."
+      "Add the ones: 7 + 1 = 8.",
+      "The tens stay the same: 6 tens.",
+      "So 67 + 1 = 68."
      ],
      "visual": {
       "kind": "equation",
@@ -389,6 +458,9 @@
        "=",
        68
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -442,8 +514,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "83 plus 3 equals what?",
+     "text": "What is 83 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 83
       },
@@ -451,7 +524,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -474,20 +547,34 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 6
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 8
+      },
+      "tens.",
+      "So",
+      {
+       "number": 83
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 86
       },
       "."
      ],
      "steps": [
-      "Add the ones: 3 plus 3 is 6.",
-      "The tens stay the same.",
-      "The answer is 86."
+      "Add the ones: 3 + 3 = 6.",
+      "The tens stay the same: 8 tens.",
+      "So 83 + 3 = 86."
      ],
      "visual": {
       "kind": "equation",
@@ -498,6 +585,9 @@
        "=",
        86
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -551,8 +641,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "82 plus 3 equals what?",
+     "text": "What is 82 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 82
       },
@@ -560,7 +651,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -583,20 +674,34 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 5
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 8
+      },
+      "tens.",
+      "So",
+      {
+       "number": 82
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 85
       },
       "."
      ],
      "steps": [
-      "Add the ones: 2 plus 3 is 5.",
-      "The tens stay the same.",
-      "The answer is 85."
+      "Add the ones: 2 + 3 = 5.",
+      "The tens stay the same: 8 tens.",
+      "So 82 + 3 = 85."
      ],
      "visual": {
       "kind": "equation",
@@ -607,6 +712,9 @@
        "=",
        85
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -660,8 +768,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "52 plus 1 equals what?",
+     "text": "What is 52 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 52
       },
@@ -669,7 +778,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -692,20 +801,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 3
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 5
+      },
+      "tens.",
+      "So",
+      {
+       "number": 52
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 53
       },
       "."
      ],
      "steps": [
-      "Add the ones: 2 plus 1 is 3.",
-      "The tens stay the same.",
-      "The answer is 53."
+      "Add the ones: 2 + 1 = 3.",
+      "The tens stay the same: 5 tens.",
+      "So 52 + 1 = 53."
      ],
      "visual": {
       "kind": "equation",
@@ -716,6 +839,9 @@
        "=",
        53
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -769,8 +895,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "11 plus 1 equals what?",
+     "text": "What is 11 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 11
       },
@@ -778,7 +905,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -801,20 +928,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 2
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 1
+      },
+      "ten.",
+      "So",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 12
       },
       "."
      ],
      "steps": [
-      "Add the ones: 1 plus 1 is 2.",
-      "The tens stay the same.",
-      "The answer is 12."
+      "Add the ones: 1 + 1 = 2.",
+      "The tens stay the same: 1 ten.",
+      "So 11 + 1 = 12."
      ],
      "visual": {
       "kind": "equation",
@@ -825,6 +966,9 @@
        "=",
        12
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -878,8 +1022,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "23 plus 6 equals what?",
+     "text": "What is 23 plus 6?",
      "speak": [
+      "What is",
       {
        "number": 23
       },
@@ -887,7 +1032,7 @@
       {
        "number": 6
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -910,20 +1055,34 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 2
+      },
+      "tens.",
+      "So",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
       {
        "number": 29
       },
       "."
      ],
      "steps": [
-      "Add the ones: 3 plus 6 is 9.",
-      "The tens stay the same.",
-      "The answer is 29."
+      "Add the ones: 3 + 6 = 9.",
+      "The tens stay the same: 2 tens.",
+      "So 23 + 6 = 29."
      ],
      "visual": {
       "kind": "equation",
@@ -934,6 +1093,9 @@
        "=",
        29
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -987,8 +1149,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "21 plus 6 equals what?",
+     "text": "What is 21 plus 6?",
      "speak": [
+      "What is",
       {
        "number": 21
       },
@@ -996,7 +1159,7 @@
       {
        "number": 6
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1019,20 +1182,34 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 2
+      },
+      "tens.",
+      "So",
+      {
+       "number": 21
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
       {
        "number": 27
       },
       "."
      ],
      "steps": [
-      "Add the ones: 1 plus 6 is 7.",
-      "The tens stay the same.",
-      "The answer is 27."
+      "Add the ones: 1 + 6 = 7.",
+      "The tens stay the same: 2 tens.",
+      "So 21 + 6 = 27."
      ],
      "visual": {
       "kind": "equation",
@@ -1043,6 +1220,9 @@
        "=",
        27
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1096,8 +1276,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "26 plus 1 equals what?",
+     "text": "What is 26 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 26
       },
@@ -1105,7 +1286,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1128,20 +1309,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 2
+      },
+      "tens.",
+      "So",
+      {
+       "number": 26
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 27
       },
       "."
      ],
      "steps": [
-      "Add the ones: 6 plus 1 is 7.",
-      "The tens stay the same.",
-      "The answer is 27."
+      "Add the ones: 6 + 1 = 7.",
+      "The tens stay the same: 2 tens.",
+      "So 26 + 1 = 27."
      ],
      "visual": {
       "kind": "equation",
@@ -1152,6 +1347,9 @@
        "=",
        27
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1207,8 +1405,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "52 plus 9 equals what?",
+     "text": "What is 52 plus 9?",
      "speak": [
+      "What is",
       {
        "number": 52
       },
@@ -1216,7 +1415,7 @@
       {
        "number": 9
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1239,25 +1438,33 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 1
       },
-      "one.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 5
+      },
+      "tens and the new ten make",
+      {
+       "number": 6
+      },
+      "tens:",
       {
        "number": 61
       },
       "."
      ],
      "steps": [
-      "Add the ones: 2 plus 9 is 11.",
-      "That is 1 ten and 1 one.",
-      "Add the extra ten to the tens: 61."
+      "Add the ones: 2 + 9 = 11.",
+      "That makes a new ten, with 1 left over.",
+      "5 tens and the new ten make 6 tens: 61."
      ],
      "visual": {
       "kind": "equation",
@@ -1268,6 +1475,9 @@
        "=",
        61
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1321,8 +1531,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "69 plus 3 equals what?",
+     "text": "What is 69 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 69
       },
@@ -1330,7 +1541,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1353,25 +1564,33 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 12
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 2
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 72
       },
       "."
      ],
      "steps": [
-      "Add the ones: 9 plus 3 is 12.",
-      "That is 1 ten and 2 ones.",
-      "Add the extra ten to the tens: 72."
+      "Add the ones: 9 + 3 = 12.",
+      "That makes a new ten, with 2 left over.",
+      "6 tens and the new ten make 7 tens: 72."
      ],
      "visual": {
       "kind": "equation",
@@ -1382,6 +1601,9 @@
        "=",
        72
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1435,8 +1657,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "49 plus 2 equals what?",
+     "text": "What is 49 plus 2?",
      "speak": [
+      "What is",
       {
        "number": 49
       },
@@ -1444,7 +1667,7 @@
       {
        "number": 2
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1467,25 +1690,33 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 1
       },
-      "one.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 4
+      },
+      "tens and the new ten make",
+      {
+       "number": 5
+      },
+      "tens:",
       {
        "number": 51
       },
       "."
      ],
      "steps": [
-      "Add the ones: 9 plus 2 is 11.",
-      "That is 1 ten and 1 one.",
-      "Add the extra ten to the tens: 51."
+      "Add the ones: 9 + 2 = 11.",
+      "That makes a new ten, with 1 left over.",
+      "4 tens and the new ten make 5 tens: 51."
      ],
      "visual": {
       "kind": "equation",
@@ -1496,6 +1727,9 @@
        "=",
        51
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1549,8 +1783,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "29 plus 5 equals what?",
+     "text": "What is 29 plus 5?",
      "speak": [
+      "What is",
       {
        "number": 29
       },
@@ -1558,7 +1793,7 @@
       {
        "number": 5
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1581,25 +1816,33 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 14
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 4
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 2
+      },
+      "tens and the new ten make",
+      {
+       "number": 3
+      },
+      "tens:",
       {
        "number": 34
       },
       "."
      ],
      "steps": [
-      "Add the ones: 9 plus 5 is 14.",
-      "That is 1 ten and 4 ones.",
-      "Add the extra ten to the tens: 34."
+      "Add the ones: 9 + 5 = 14.",
+      "That makes a new ten, with 4 left over.",
+      "2 tens and the new ten make 3 tens: 34."
      ],
      "visual": {
       "kind": "equation",
@@ -1610,6 +1853,9 @@
        "=",
        34
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1663,8 +1909,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "65 plus 7 equals what?",
+     "text": "What is 65 plus 7?",
      "speak": [
+      "What is",
       {
        "number": 65
       },
@@ -1672,7 +1919,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1695,25 +1942,33 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 12
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 2
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 72
       },
       "."
      ],
      "steps": [
-      "Add the ones: 5 plus 7 is 12.",
-      "That is 1 ten and 2 ones.",
-      "Add the extra ten to the tens: 72."
+      "Add the ones: 5 + 7 = 12.",
+      "That makes a new ten, with 2 left over.",
+      "6 tens and the new ten make 7 tens: 72."
      ],
      "visual": {
       "kind": "equation",
@@ -1724,6 +1979,9 @@
        "=",
        72
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1777,8 +2035,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "11 plus 9 equals what?",
+     "text": "What is 11 plus 9?",
      "speak": [
+      "What is",
       {
        "number": 11
       },
@@ -1786,7 +2045,7 @@
       {
        "number": 9
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1809,25 +2068,29 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten.",
       {
-       "number": 0
+       "number": 1
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "ten and the new ten make",
+      {
+       "number": 2
+      },
+      "tens:",
       {
        "number": 20
       },
       "."
      ],
      "steps": [
-      "Add the ones: 1 plus 9 is 10.",
-      "That is 1 ten and 0 ones.",
-      "Add the extra ten to the tens: 20."
+      "Add the ones: 1 + 9 = 10.",
+      "That makes a new ten.",
+      "1 ten and the new ten make 2 tens: 20."
      ],
      "visual": {
       "kind": "equation",
@@ -1838,6 +2101,9 @@
        "=",
        20
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -1891,8 +2157,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "88 plus 7 equals what?",
+     "text": "What is 88 plus 7?",
      "speak": [
+      "What is",
       {
        "number": 88
       },
@@ -1900,7 +2167,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -1923,25 +2190,33 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 15
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 5
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 8
+      },
+      "tens and the new ten make",
+      {
+       "number": 9
+      },
+      "tens:",
       {
        "number": 95
       },
       "."
      ],
      "steps": [
-      "Add the ones: 8 plus 7 is 15.",
-      "That is 1 ten and 5 ones.",
-      "Add the extra ten to the tens: 95."
+      "Add the ones: 8 + 7 = 15.",
+      "That makes a new ten, with 5 left over.",
+      "8 tens and the new ten make 9 tens: 95."
      ],
      "visual": {
       "kind": "equation",
@@ -1952,6 +2227,9 @@
        "=",
        95
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -2005,8 +2283,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "34 plus 7 equals what?",
+     "text": "What is 34 plus 7?",
      "speak": [
+      "What is",
       {
        "number": 34
       },
@@ -2014,7 +2293,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2037,25 +2316,33 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 1
       },
-      "one.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 3
+      },
+      "tens and the new ten make",
+      {
+       "number": 4
+      },
+      "tens:",
       {
        "number": 41
       },
       "."
      ],
      "steps": [
-      "Add the ones: 4 plus 7 is 11.",
-      "That is 1 ten and 1 one.",
-      "Add the extra ten to the tens: 41."
+      "Add the ones: 4 + 7 = 11.",
+      "That makes a new ten, with 1 left over.",
+      "3 tens and the new ten make 4 tens: 41."
      ],
      "visual": {
       "kind": "equation",
@@ -2066,6 +2353,9 @@
        "=",
        41
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -2119,8 +2409,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "26 plus 8 equals what?",
+     "text": "What is 26 plus 8?",
      "speak": [
+      "What is",
       {
        "number": 26
       },
@@ -2128,7 +2419,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2151,25 +2442,33 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 14
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 4
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 2
+      },
+      "tens and the new ten make",
+      {
+       "number": 3
+      },
+      "tens:",
       {
        "number": 34
       },
       "."
      ],
      "steps": [
-      "Add the ones: 6 plus 8 is 14.",
-      "That is 1 ten and 4 ones.",
-      "Add the extra ten to the tens: 34."
+      "Add the ones: 6 + 8 = 14.",
+      "That makes a new ten, with 4 left over.",
+      "2 tens and the new ten make 3 tens: 34."
      ],
      "visual": {
       "kind": "equation",
@@ -2180,6 +2479,9 @@
        "=",
        34
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -2233,8 +2535,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "65 plus 8 equals what?",
+     "text": "What is 65 plus 8?",
      "speak": [
+      "What is",
       {
        "number": 65
       },
@@ -2242,7 +2545,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2265,25 +2568,33 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 13
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 3
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 73
       },
       "."
      ],
      "steps": [
-      "Add the ones: 5 plus 8 is 13.",
-      "That is 1 ten and 3 ones.",
-      "Add the extra ten to the tens: 73."
+      "Add the ones: 5 + 8 = 13.",
+      "That makes a new ten, with 3 left over.",
+      "6 tens and the new ten make 7 tens: 73."
      ],
      "visual": {
       "kind": "equation",
@@ -2294,6 +2605,9 @@
        "=",
        73
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "choice",
@@ -2349,8 +2663,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "52 plus 9 equals what?",
+     "text": "What is 52 plus 9?",
      "speak": [
+      "What is",
       {
        "number": 52
       },
@@ -2358,7 +2673,7 @@
       {
        "number": 9
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2381,25 +2696,33 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 1
       },
-      "one.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 5
+      },
+      "tens and the new ten make",
+      {
+       "number": 6
+      },
+      "tens:",
       {
        "number": 61
       },
       "."
      ],
      "steps": [
-      "Add the ones: 2 plus 9 is 11.",
-      "That is 1 ten and 1 one.",
-      "Add the extra ten to the tens: 61."
+      "Add the ones: 2 + 9 = 11.",
+      "That makes a new ten, with 1 left over.",
+      "5 tens and the new ten make 6 tens: 61."
      ],
      "visual": {
       "kind": "equation",
@@ -2410,6 +2733,9 @@
        "=",
        61
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2427,8 +2753,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "69 plus 3 equals what?",
+     "text": "What is 69 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 69
       },
@@ -2436,7 +2763,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2459,25 +2786,33 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 12
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 2
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 72
       },
       "."
      ],
      "steps": [
-      "Add the ones: 9 plus 3 is 12.",
-      "That is 1 ten and 2 ones.",
-      "Add the extra ten to the tens: 72."
+      "Add the ones: 9 + 3 = 12.",
+      "That makes a new ten, with 2 left over.",
+      "6 tens and the new ten make 7 tens: 72."
      ],
      "visual": {
       "kind": "equation",
@@ -2488,6 +2823,9 @@
        "=",
        72
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2505,8 +2843,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "67 plus 1 equals what?",
+     "text": "What is 67 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 67
       },
@@ -2514,7 +2853,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2537,20 +2876,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 6
+      },
+      "tens.",
+      "So",
+      {
+       "number": 67
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 68
       },
       "."
      ],
      "steps": [
-      "Add the ones: 7 plus 1 is 8.",
-      "The tens stay the same.",
-      "The answer is 68."
+      "Add the ones: 7 + 1 = 8.",
+      "The tens stay the same: 6 tens.",
+      "So 67 + 1 = 68."
      ],
      "visual": {
       "kind": "equation",
@@ -2561,6 +2914,9 @@
        "=",
        68
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2578,8 +2934,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "83 plus 3 equals what?",
+     "text": "What is 83 plus 3?",
      "speak": [
+      "What is",
       {
        "number": 83
       },
@@ -2587,7 +2944,7 @@
       {
        "number": 3
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2610,20 +2967,34 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 6
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 8
+      },
+      "tens.",
+      "So",
+      {
+       "number": 83
+      },
+      "plus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 86
       },
       "."
      ],
      "steps": [
-      "Add the ones: 3 plus 3 is 6.",
-      "The tens stay the same.",
-      "The answer is 86."
+      "Add the ones: 3 + 3 = 6.",
+      "The tens stay the same: 8 tens.",
+      "So 83 + 3 = 86."
      ],
      "visual": {
       "kind": "equation",
@@ -2634,6 +3005,9 @@
        "=",
        86
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2651,8 +3025,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "65 plus 7 equals what?",
+     "text": "What is 65 plus 7?",
      "speak": [
+      "What is",
       {
        "number": 65
       },
@@ -2660,7 +3035,7 @@
       {
        "number": 7
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2683,25 +3058,33 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 12
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 2
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 72
       },
       "."
      ],
      "steps": [
-      "Add the ones: 5 plus 7 is 12.",
-      "That is 1 ten and 2 ones.",
-      "Add the extra ten to the tens: 72."
+      "Add the ones: 5 + 7 = 12.",
+      "That makes a new ten, with 2 left over.",
+      "6 tens and the new ten make 7 tens: 72."
      ],
      "visual": {
       "kind": "equation",
@@ -2712,6 +3095,9 @@
        "=",
        72
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2729,8 +3115,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "52 plus 1 equals what?",
+     "text": "What is 52 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 52
       },
@@ -2738,7 +3125,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2761,20 +3148,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 3
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 5
+      },
+      "tens.",
+      "So",
+      {
+       "number": 52
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 53
       },
       "."
      ],
      "steps": [
-      "Add the ones: 2 plus 1 is 3.",
-      "The tens stay the same.",
-      "The answer is 53."
+      "Add the ones: 2 + 1 = 3.",
+      "The tens stay the same: 5 tens.",
+      "So 52 + 1 = 53."
      ],
      "visual": {
       "kind": "equation",
@@ -2785,6 +3186,9 @@
        "=",
        53
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2802,8 +3206,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "11 plus 1 equals what?",
+     "text": "What is 11 plus 1?",
      "speak": [
+      "What is",
       {
        "number": 11
       },
@@ -2811,7 +3216,7 @@
       {
        "number": 1
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2834,20 +3239,34 @@
       {
        "number": 1
       },
-      "is",
+      "equals",
       {
        "number": 2
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 1
+      },
+      "ten.",
+      "So",
+      {
+       "number": 11
+      },
+      "plus",
+      {
+       "number": 1
+      },
+      "equals",
       {
        "number": 12
       },
       "."
      ],
      "steps": [
-      "Add the ones: 1 plus 1 is 2.",
-      "The tens stay the same.",
-      "The answer is 12."
+      "Add the ones: 1 + 1 = 2.",
+      "The tens stay the same: 1 ten.",
+      "So 11 + 1 = 12."
      ],
      "visual": {
       "kind": "equation",
@@ -2858,6 +3277,9 @@
        "=",
        12
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2875,8 +3297,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "23 plus 6 equals what?",
+     "text": "What is 23 plus 6?",
      "speak": [
+      "What is",
       {
        "number": 23
       },
@@ -2884,7 +3307,7 @@
       {
        "number": 6
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2907,20 +3330,34 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      ". The tens stay the same. The answer is",
+      ".",
+      "The tens stay the same:",
+      {
+       "number": 2
+      },
+      "tens.",
+      "So",
+      {
+       "number": 23
+      },
+      "plus",
+      {
+       "number": 6
+      },
+      "equals",
       {
        "number": 29
       },
       "."
      ],
      "steps": [
-      "Add the ones: 3 plus 6 is 9.",
-      "The tens stay the same.",
-      "The answer is 29."
+      "Add the ones: 3 + 6 = 9.",
+      "The tens stay the same: 2 tens.",
+      "So 23 + 6 = 29."
      ],
      "visual": {
       "kind": "equation",
@@ -2931,6 +3368,9 @@
        "=",
        29
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -2948,8 +3388,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "26 plus 8 equals what?",
+     "text": "What is 26 plus 8?",
      "speak": [
+      "What is",
       {
        "number": 26
       },
@@ -2957,7 +3398,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -2980,25 +3421,33 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 14
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 4
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 2
+      },
+      "tens and the new ten make",
+      {
+       "number": 3
+      },
+      "tens:",
       {
        "number": 34
       },
       "."
      ],
      "steps": [
-      "Add the ones: 6 plus 8 is 14.",
-      "That is 1 ten and 4 ones.",
-      "Add the extra ten to the tens: 34."
+      "Add the ones: 6 + 8 = 14.",
+      "That makes a new ten, with 4 left over.",
+      "2 tens and the new ten make 3 tens: 34."
      ],
      "visual": {
       "kind": "equation",
@@ -3009,6 +3458,9 @@
        "=",
        34
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",
@@ -3026,8 +3478,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "65 plus 8 equals what?",
+     "text": "What is 65 plus 8?",
      "speak": [
+      "What is",
       {
        "number": 65
       },
@@ -3035,7 +3488,7 @@
       {
        "number": 8
       },
-      "equals what?"
+      "?"
      ]
     },
     "stimulus": {
@@ -3058,25 +3511,33 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 13
       },
-      ". That is one ten and",
+      ".",
+      "That makes a new ten, with",
       {
        "number": 3
       },
-      "ones.",
-      "Add the extra ten to the tens.",
+      "left over.",
+      {
+       "number": 6
+      },
+      "tens and the new ten make",
+      {
+       "number": 7
+      },
+      "tens:",
       {
        "number": 73
       },
       "."
      ],
      "steps": [
-      "Add the ones: 5 plus 8 is 13.",
-      "That is 1 ten and 3 ones.",
-      "Add the extra ten to the tens: 73."
+      "Add the ones: 5 + 8 = 13.",
+      "That makes a new ten, with 3 left over.",
+      "6 tens and the new ten make 7 tens: 73."
      ],
      "visual": {
       "kind": "equation",
@@ -3087,6 +3548,9 @@
        "=",
        73
       ]
+     },
+     "hint": {
+      "text": "Add the ones first."
      }
     },
     "type": "numberPad",

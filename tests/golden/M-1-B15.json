@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-B15",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "facts": {
@@ -16,7 +16,7 @@
    ]
   },
   "prompt": {
-   "text": "Ben reads 2 books on Monday, 4 books on Tuesday and 3 books on Wednesday. How many books does Ben read in all?",
+   "text": "Ben reads 2 books on Monday, 4 books on Tuesday and 3 books on Wednesday. How many books does he read in all?",
    "speak": [
     "Ben reads ",
     {
@@ -30,7 +30,7 @@
     {
      "number": 3
     },
-    " books on Wednesday. How many books does Ben read in all?"
+    " books on Wednesday. How many books does he read in all?"
    ]
   },
   "explanation": {
@@ -42,11 +42,11 @@
     {
      "number": 4
     },
-    "is",
+    "equals",
     {
      "number": 6
     },
-    ". Then",
+    ".",
     {
      "number": 6
     },
@@ -54,21 +54,21 @@
     {
      "number": 3
     },
-    "is",
+    "equals",
     {
      "number": 9
     },
     ".",
-    "There are ",
+    "There are",
     {
      "number": 9
     },
-    " books in all."
+    "books in all."
    ],
    "steps": [
     "2 + 4 = 6.",
     "6 + 3 = 9.",
-    "9 books in all."
+    "There are 9 books in all."
    ],
    "visual": {
     "kind": "equation",
@@ -81,6 +81,9 @@
      "=",
      9
     ]
+   },
+   "hint": {
+    "text": "Add two of the numbers first. Then add the third."
    }
   },
   "type": "choice",
@@ -188,11 +191,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -200,21 +203,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 9
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "4 + 3 = 7.",
       "7 + 2 = 9.",
-      "9 bugs in all."
+      "There are 9 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -227,6 +230,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -332,11 +338,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". Then",
+      ".",
       {
        "number": 8
       },
@@ -344,21 +350,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 10
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "2 + 6 = 8.",
       "8 + 2 = 10.",
-      "10 pieces of fruit in all."
+      "There are 10 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -371,6 +377,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -476,11 +485,11 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -488,21 +497,21 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 10
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "2 + 5 = 7.",
       "7 + 3 = 10.",
-      "10 pieces of fruit in all."
+      "There are 10 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -515,6 +524,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -594,7 +606,7 @@
      ]
     },
     "prompt": {
-     "text": "Ava has 3 toy cars, 2 toy trucks and 3 toy boats. How many toys does Ava have in all?",
+     "text": "Ava has 3 toy cars, 2 toy trucks and 3 toy boats. How many toys does she have in all?",
      "speak": [
       "Ava has ",
       {
@@ -608,7 +620,7 @@
       {
        "number": 3
       },
-      " toy boats. How many toys does Ava have in all?"
+      " toy boats. How many toys does she have in all?"
      ]
     },
     "explanation": {
@@ -620,11 +632,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 5
       },
-      ". Then",
+      ".",
       {
        "number": 5
       },
@@ -632,21 +644,21 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 8
       },
-      " toys in all."
+      "toys in all."
      ],
      "steps": [
       "3 + 2 = 5.",
       "5 + 3 = 8.",
-      "8 toys in all."
+      "There are 8 toys in all."
      ],
      "visual": {
       "kind": "equation",
@@ -659,6 +671,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -764,11 +779,11 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -776,21 +791,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 9
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "3 + 4 = 7.",
       "7 + 2 = 9.",
-      "9 pieces of fruit in all."
+      "There are 9 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -803,6 +818,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -908,11 +926,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -920,21 +938,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 9
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "5 + 2 = 7.",
       "7 + 2 = 9.",
-      "9 bugs in all."
+      "There are 9 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -947,6 +965,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1026,7 +1047,7 @@
      ]
     },
     "prompt": {
-     "text": "Mia has 3 red balloons, 3 blue balloons and 4 green balloons. How many balloons does Mia have in all?",
+     "text": "Mia has 3 red balloons, 3 blue balloons and 4 green balloons. How many balloons does she have in all?",
      "speak": [
       "Mia has ",
       {
@@ -1040,7 +1061,7 @@
       {
        "number": 4
       },
-      " green balloons. How many balloons does Mia have in all?"
+      " green balloons. How many balloons does she have in all?"
      ]
     },
     "explanation": {
@@ -1052,11 +1073,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 6
       },
-      ". Then",
+      ".",
       {
        "number": 6
       },
@@ -1064,21 +1085,21 @@
       {
        "number": 4
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 10
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "3 + 3 = 6.",
       "6 + 4 = 10.",
-      "10 balloons in all."
+      "There are 10 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1091,6 +1112,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1170,7 +1194,7 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 2 red balloons, 3 blue balloons and 2 green balloons. How many balloons does Ben have in all?",
+     "text": "Ben has 2 red balloons, 3 blue balloons and 2 green balloons. How many balloons does he have in all?",
      "speak": [
       "Ben has ",
       {
@@ -1184,7 +1208,7 @@
       {
        "number": 2
       },
-      " green balloons. How many balloons does Ben have in all?"
+      " green balloons. How many balloons does he have in all?"
      ]
     },
     "explanation": {
@@ -1196,11 +1220,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 5
       },
-      ". Then",
+      ".",
       {
        "number": 5
       },
@@ -1208,21 +1232,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 7
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "2 + 3 = 5.",
       "5 + 2 = 7.",
-      "7 balloons in all."
+      "There are 7 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1235,6 +1259,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1340,11 +1367,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -1352,21 +1379,21 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 10
       },
-      " ducks in all."
+      "ducks in all."
      ],
      "steps": [
       "5 + 2 = 7.",
       "7 + 3 = 10.",
-      "10 ducks in all."
+      "There are 10 ducks in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1379,6 +1406,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1484,11 +1514,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". Then",
+      ".",
       {
        "number": 8
       },
@@ -1496,21 +1526,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 10
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "5 + 3 = 8.",
       "8 + 2 = 10.",
-      "10 bugs in all."
+      "There are 10 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1523,6 +1553,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1630,11 +1663,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -1642,21 +1675,21 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "4 + 6 = 10.",
       "10 + 7 = 17.",
-      "17 bugs in all."
+      "There are 17 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1669,6 +1702,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1751,11 +1787,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -1763,21 +1799,21 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 19
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 19
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "4 + 6 = 10.",
       "10 + 9 = 19.",
-      "19 pieces of fruit in all."
+      "There are 19 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1790,6 +1826,9 @@
        "=",
        19
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1872,11 +1911,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -1884,21 +1923,21 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 15
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 15
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "5 + 2 = 7.",
       "7 + 8 = 15.",
-      "15 pieces of fruit in all."
+      "There are 15 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -1911,6 +1950,9 @@
        "=",
        15
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -1967,7 +2009,7 @@
      ]
     },
     "prompt": {
-     "text": "Ava has 6 toy cars, 2 toy trucks and 9 toy boats. How many toys does Ava have in all?",
+     "text": "Ava has 6 toy cars, 2 toy trucks and 9 toy boats. How many toys does she have in all?",
      "speak": [
       "Ava has ",
       {
@@ -1981,7 +2023,7 @@
       {
        "number": 9
       },
-      " toy boats. How many toys does Ava have in all?"
+      " toy boats. How many toys does she have in all?"
      ]
     },
     "explanation": {
@@ -1993,11 +2035,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". Then",
+      ".",
       {
        "number": 8
       },
@@ -2005,21 +2047,21 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " toys in all."
+      "toys in all."
      ],
      "steps": [
       "6 + 2 = 8.",
       "8 + 9 = 17.",
-      "17 toys in all."
+      "There are 17 toys in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2032,6 +2074,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2114,11 +2159,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      ". Then",
+      ".",
       {
        "number": 9
       },
@@ -2126,21 +2171,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 11
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "3 + 6 = 9.",
       "9 + 2 = 11.",
-      "11 pieces of fruit in all."
+      "There are 11 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2153,6 +2198,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2235,11 +2283,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -2247,21 +2295,21 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 16
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 16
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "7 + 3 = 10.",
       "10 + 6 = 16.",
-      "16 bugs in all."
+      "There are 16 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2274,6 +2322,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2330,7 +2381,7 @@
      ]
     },
     "prompt": {
-     "text": "Mia has 5 red balloons, 5 blue balloons and 3 green balloons. How many balloons does Mia have in all?",
+     "text": "Mia has 5 red balloons, 5 blue balloons and 3 green balloons. How many balloons does she have in all?",
      "speak": [
       "Mia has ",
       {
@@ -2344,7 +2395,7 @@
       {
        "number": 3
       },
-      " green balloons. How many balloons does Mia have in all?"
+      " green balloons. How many balloons does she have in all?"
      ]
     },
     "explanation": {
@@ -2356,11 +2407,11 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -2368,21 +2419,21 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 13
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 13
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "5 + 5 = 10.",
       "10 + 3 = 13.",
-      "13 balloons in all."
+      "There are 13 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2395,6 +2446,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2451,7 +2505,7 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 4 red balloons, 7 blue balloons and 6 green balloons. How many balloons does Ben have in all?",
+     "text": "Ben has 4 red balloons, 7 blue balloons and 6 green balloons. How many balloons does he have in all?",
      "speak": [
       "Ben has ",
       {
@@ -2465,7 +2519,7 @@
       {
        "number": 6
       },
-      " green balloons. How many balloons does Ben have in all?"
+      " green balloons. How many balloons does he have in all?"
      ]
     },
     "explanation": {
@@ -2477,11 +2531,11 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". Then",
+      ".",
       {
        "number": 11
       },
@@ -2489,21 +2543,21 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "4 + 7 = 11.",
       "11 + 6 = 17.",
-      "17 balloons in all."
+      "There are 17 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2516,6 +2570,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2598,11 +2655,11 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". Then",
+      ".",
       {
        "number": 11
       },
@@ -2610,21 +2667,21 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 18
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 18
       },
-      " ducks in all."
+      "ducks in all."
      ],
      "steps": [
       "3 + 8 = 11.",
       "11 + 7 = 18.",
-      "18 ducks in all."
+      "There are 18 ducks in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2637,6 +2694,9 @@
        "=",
        18
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2719,11 +2779,11 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 15
       },
-      ". Then",
+      ".",
       {
        "number": 15
       },
@@ -2731,21 +2791,21 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 20
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 20
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "7 + 8 = 15.",
       "15 + 5 = 20.",
-      "20 bugs in all."
+      "There are 20 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2758,6 +2818,9 @@
        "=",
        20
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "choice",
@@ -2837,11 +2900,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -2849,21 +2912,21 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "4 + 6 = 10.",
       "10 + 7 = 17.",
-      "17 bugs in all."
+      "There are 17 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2876,6 +2939,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -2922,11 +2988,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -2934,21 +3000,21 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 19
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 19
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "4 + 6 = 10.",
       "10 + 9 = 19.",
-      "19 pieces of fruit in all."
+      "There are 19 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -2961,6 +3027,9 @@
        "=",
        19
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3007,11 +3076,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      ". Then",
+      ".",
       {
        "number": 7
       },
@@ -3019,21 +3088,21 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 15
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 15
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "5 + 2 = 7.",
       "7 + 8 = 15.",
-      "15 pieces of fruit in all."
+      "There are 15 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3046,6 +3115,9 @@
        "=",
        15
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3066,7 +3138,7 @@
      "name": "Ava"
     },
     "prompt": {
-     "text": "Ava has 6 toy cars, 2 toy trucks and 9 toy boats. How many toys does Ava have in all?",
+     "text": "Ava has 6 toy cars, 2 toy trucks and 9 toy boats. How many toys does she have in all?",
      "speak": [
       "Ava has ",
       {
@@ -3080,7 +3152,7 @@
       {
        "number": 9
       },
-      " toy boats. How many toys does Ava have in all?"
+      " toy boats. How many toys does she have in all?"
      ]
     },
     "explanation": {
@@ -3092,11 +3164,11 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 8
       },
-      ". Then",
+      ".",
       {
        "number": 8
       },
@@ -3104,21 +3176,21 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " toys in all."
+      "toys in all."
      ],
      "steps": [
       "6 + 2 = 8.",
       "8 + 9 = 17.",
-      "17 toys in all."
+      "There are 17 toys in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3131,6 +3203,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3177,11 +3252,11 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      ". Then",
+      ".",
       {
        "number": 9
       },
@@ -3189,21 +3264,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 11
       },
-      " pieces of fruit in all."
+      "pieces of fruit in all."
      ],
      "steps": [
       "3 + 6 = 9.",
       "9 + 2 = 11.",
-      "11 pieces of fruit in all."
+      "There are 11 pieces of fruit in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3216,6 +3291,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3262,11 +3340,11 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -3274,21 +3352,21 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 16
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 16
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "7 + 3 = 10.",
       "10 + 6 = 16.",
-      "16 bugs in all."
+      "There are 16 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3301,6 +3379,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3321,7 +3402,7 @@
      "name": "Mia"
     },
     "prompt": {
-     "text": "Mia has 5 red balloons, 5 blue balloons and 3 green balloons. How many balloons does Mia have in all?",
+     "text": "Mia has 5 red balloons, 5 blue balloons and 3 green balloons. How many balloons does she have in all?",
      "speak": [
       "Mia has ",
       {
@@ -3335,7 +3416,7 @@
       {
        "number": 3
       },
-      " green balloons. How many balloons does Mia have in all?"
+      " green balloons. How many balloons does she have in all?"
      ]
     },
     "explanation": {
@@ -3347,11 +3428,11 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 10
       },
-      ". Then",
+      ".",
       {
        "number": 10
       },
@@ -3359,21 +3440,21 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 13
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 13
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "5 + 5 = 10.",
       "10 + 3 = 13.",
-      "13 balloons in all."
+      "There are 13 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3386,6 +3467,9 @@
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3406,7 +3490,7 @@
      "name": "Ben"
     },
     "prompt": {
-     "text": "Ben has 4 red balloons, 7 blue balloons and 6 green balloons. How many balloons does Ben have in all?",
+     "text": "Ben has 4 red balloons, 7 blue balloons and 6 green balloons. How many balloons does he have in all?",
      "speak": [
       "Ben has ",
       {
@@ -3420,7 +3504,7 @@
       {
        "number": 6
       },
-      " green balloons. How many balloons does Ben have in all?"
+      " green balloons. How many balloons does he have in all?"
      ]
     },
     "explanation": {
@@ -3432,11 +3516,11 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". Then",
+      ".",
       {
        "number": 11
       },
@@ -3444,21 +3528,21 @@
       {
        "number": 6
       },
-      "is",
+      "equals",
       {
        "number": 17
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 17
       },
-      " balloons in all."
+      "balloons in all."
      ],
      "steps": [
       "4 + 7 = 11.",
       "11 + 6 = 17.",
-      "17 balloons in all."
+      "There are 17 balloons in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3471,6 +3555,9 @@
        "=",
        17
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3517,11 +3604,11 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      ". Then",
+      ".",
       {
        "number": 11
       },
@@ -3529,21 +3616,21 @@
       {
        "number": 7
       },
-      "is",
+      "equals",
       {
        "number": 18
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 18
       },
-      " ducks in all."
+      "ducks in all."
      ],
      "steps": [
       "3 + 8 = 11.",
       "11 + 7 = 18.",
-      "18 ducks in all."
+      "There are 18 ducks in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3556,6 +3643,9 @@
        "=",
        18
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",
@@ -3602,11 +3692,11 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 15
       },
-      ". Then",
+      ".",
       {
        "number": 15
       },
@@ -3614,21 +3704,21 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 20
       },
       ".",
-      "There are ",
+      "There are",
       {
        "number": 20
       },
-      " bugs in all."
+      "bugs in all."
      ],
      "steps": [
       "7 + 8 = 15.",
       "15 + 5 = 20.",
-      "20 bugs in all."
+      "There are 20 bugs in all."
      ],
      "visual": {
       "kind": "equation",
@@ -3641,6 +3731,9 @@
        "=",
        20
       ]
+     },
+     "hint": {
+      "text": "Add two of the numbers first. Then add the third."
      }
     },
     "type": "numberPad",

@@ -5,11 +5,12 @@ import { figureFor } from '../../../../engine/figures';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import type { Shown } from './wording';
+import { explain, hintFor } from './wording';
 
 // Grade 1 skills added by the Nov 17, 2026 curriculum check: B.11 order does not matter, B.12 subtract by
 // thinking of adding, B.13 count on to add, C.5 measure with paper clips, D.3 how many pieces make a shape.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const equation = (...parts: (number | string)[]): Visual => ({ kind: 'equation', parts });
 // Words with numbers in them, said with each number as a number.
 const spoken = (words: string): Say => words.split(/(\d+)/).filter((part) => part.length > 0).map((part) => (/^\d+$/.test(part) ? { number: Number(part) } : part));
@@ -18,12 +19,9 @@ const text = (value: string, speak: Say): Visual => ({ kind: 'text', value, size
 // ---- B.11 Order does not matter ----
 // Levels: 3 + 5 = 5 + ? / which is the same as 4 + 7 / typed, to 20. Oracle: turnaround.
 
-function turnExplanation(a: number, b: number): Explanation {
-  return {
-    speak: ['Adding in any order gives the same total.', { number: a }, 'plus', { number: b }, 'and', { number: b }, 'plus', { number: a }, 'both make', { number: a + b }, '.'],
-    steps: ['Adding in any order gives the same total.', `${a} + ${b} = ${b} + ${a} = ${a + b}.`],
-    visual: equation(a, '+', b, '=', b, '+', a),
-  };
+// "4 + 1 and 1 + 4 both make 5.", never a chain of "equals ... equals", which is hard to follow by ear.
+function turnExplanation(a: number, b: number): Shown {
+  return explain(['Adding in any order gives the same total.', `${a} + ${b} and ${b} + ${a} both make ${a + b}.`], equation(a, '+', b, '=', b, '+', a), { text: 'Adding the same numbers in any order makes the same total.' });
 }
 
 function turnaround(level: Level, rng: Rng): QuestionDraft {
@@ -32,12 +30,13 @@ function turnaround(level: Level, rng: Rng): QuestionDraft {
   if (b === a) b = a === 1 ? 2 : a - 1;
   if (level === 2) {
     const options = rng.shuffle([`${b} + ${a}`, `${a} + ${b + 1}`, `${a} + ${a}`].filter((each, i, all) => all.indexOf(each) === i));
-    const prompt = `Which is the same as ${a} + ${b}?`;
+    // "The same" is said in full, as in B.4 and B.19.
+    const prompt = `Which one has the same answer as ${a} + ${b}?`;
     return {
       type: 'choice',
       mode: 'look',
       facts: { a, b, ask: 'same', options },
-      prompt: { text: prompt, speak: ['Which is the same as', { number: a }, 'plus', { number: b }, '?'] },
+      prompt: { text: prompt, speak: ['Which one has the same answer as', { number: a }, 'plus', { number: b }, '?'] },
       options: options.map((each) => {
         const [x = '0', , y = '0'] = each.split(' ');
         return text(each, [{ number: Number(x) }, 'plus', { number: Number(y) }]);
@@ -73,19 +72,18 @@ export const turnaroundGenerator: SkillGenerator = {
 // ---- B.12 Subtract by adding ----
 // Levels: 9 − 4 as 4 + ? = 9 with a picture / without / typed, to 20. Oracle: subtract.
 
-function thinkAddExplanation(whole: number, part: number): Explanation {
-  return {
-    speak: ['To find', { number: whole }, 'minus', { number: part }, ', think:', { number: part }, 'plus what makes', { number: whole }, '?', { number: part }, 'plus', { number: whole - part }, 'is', { number: whole }, '.'],
-    steps: [`Think: ${part} + ? = ${whole}.`, `${part} + ${whole - part} = ${whole}.`, `So ${whole} − ${part} = ${whole - part}.`],
-    visual: equation(part, '+', whole - part, '=', whole),
-  };
+// The same words as B.5: "Think: 1 plus what makes 8?" The hint is a new move, never the question again.
+function thinkAddExplanation(whole: number, part: number): Shown {
+  const answer = whole - part;
+  const hint = hintFor(answer, `Count up from ${part} to ${whole}.`, 'Count up from the number you take away to the first number.');
+  return explain([`Think: ${part} plus what makes ${whole}?`, `${part} + ${answer} = ${whole}.`, `So ${whole} − ${part} = ${answer}.`], equation(part, '+', answer, '=', whole), hint);
 }
 
 function subtractByAdding(level: Level, rng: Rng): QuestionDraft {
   const whole = rng.int(level === 1 ? 5 : 8, level === 1 ? 10 : 20);
   const part = rng.int(Math.max(1, whole - 10), whole - 1);
   const answer = whole - part;
-  const prompt = { text: `${whole} − ${part} = ?  Think: ${part} + ? = ${whole}.`, speak: [{ number: whole }, 'minus', { number: part }, 'equals what? Think:', { number: part }, 'plus what equals', { number: whole }, '?'] as Say };
+  const prompt = { text: `What is ${whole} − ${part}? Think: ${part} + ? = ${whole}.`, speak: ['What is', { number: whole }, 'minus', { number: part }, '? Think:', { number: part }, 'plus what equals', { number: whole }, '?'] as Say };
   const stimulus: Visual = level === 1 ? { kind: 'emojiGroup', emoji: '🔴', count: part, emoji2: '⚪', count2: answer, layout: whole > 10 ? 'grid5' : 'row' } : equation(part, '+', 'blank', '=', whole);
   const base = { mode: 'look' as const, facts: { a: whole, b: part }, prompt, stimulus, explanation: thinkAddExplanation(whole, part) };
   if (level === 3) return { ...base, type: 'numberPad', answer, maxDigits: 2 };
@@ -104,7 +102,7 @@ export const subtractByAddingGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Taking away is the same as finding the missing part.', speak: ['Taking away is the same as finding the missing part.'], visual: equation(4, '+', 'blank', '=', 9) },
     { beat: 'watch', text: thinkAddExplanation(9, 4).steps.join(' '), speak: thinkAddExplanation(9, 4).speak, visual: thinkAddExplanation(9, 4).visual },
-    { beat: 'try', text: '12 − 5 = ?  Think: 5 + ? = 12.', speak: [{ number: 12 }, 'minus', { number: 5 }, 'equals what? Think:', { number: 5 }, 'plus what equals', { number: 12 }, '?'], visual: equation(5, '+', 'blank', '=', 12), reveal: { text: thinkAddExplanation(12, 5).steps.join(' '), speak: thinkAddExplanation(12, 5).speak, visual: thinkAddExplanation(12, 5).visual } },
+    { beat: 'try', text: 'What is 12 − 5? Think: 5 + ? = 12.', speak: ['What is', { number: 12 }, 'minus', { number: 5 }, '? Think:', { number: 5 }, 'plus what equals', { number: 12 }, '?'], visual: equation(5, '+', 'blank', '=', 12), reveal: { text: thinkAddExplanation(12, 5).steps.join(' '), speak: thinkAddExplanation(12, 5).speak, visual: thinkAddExplanation(12, 5).visual } },
     { beat: 'remember', text: 'Minus? Think plus.', speak: ['Minus? Think plus.'], visual: equation(4, '+', 5, '=', 9) },
   ],
   oracle: 'subtract',
@@ -113,22 +111,23 @@ export const subtractByAddingGenerator: SkillGenerator = {
 // ---- B.13 Count on to add ----
 // Levels: count on 1 or 2 on a number line / count on 3 / typed, to 20. Oracle: add.
 
-function countOnExplanation(start: number, more: number): Explanation {
+// The hint is a new move, never the question again: "Put your finger on 3. Hop 2 times."
+function countOnExplanation(start: number, more: number, line: boolean): Shown {
   const steps = Array.from({ length: more }, (_, i) => start + i + 1);
-  return {
-    speak: ['Start at', { number: start }, '. Count on', { number: more }, ':', ...steps.flatMap((n) => [{ number: n }]), '.'],
-    steps: [`Start at ${start}.`, `Count on ${more}: ${steps.join(', ')}.`, `${start} + ${more} = ${start + more}.`],
-    visual: { kind: 'numberLine', min: start - 1, max: start + more + 1, step: 1, marked: [start, start + more] },
-  };
+  const hops = more === 1 ? 'Hop once.' : `Hop ${more} times.`;
+  const hint = line ? `Put your finger on ${start}. ${hops}` : `Say ${start}, then count on ${more} more.`;
+  return explain([`Start at ${start}.`, `Count on ${more}: ${steps.join(', ')}.`, `${start} + ${more} = ${start + more}.`], { kind: 'numberLine', min: start - 1, max: start + more + 1, step: 1, marked: [start, start + more] }, { text: hint });
 }
 
 function countOn(level: Level, rng: Rng): QuestionDraft {
   const more = level === 1 ? rng.int(1, 2) : rng.int(2, 3);
   const start = rng.int(level === 1 ? 3 : 5, level === 1 ? 9 : 17);
   const answer = start + more;
-  const prompt = { text: `Start at ${start}. Count on ${more}. Where do you land?`, speak: ['Start at', { number: start }, '. Count on', { number: more }, '. Where do you land?'] as Say };
+  // With no number line to land on (level 3), the question asks for the number reached.
+  const ask = level === 3 ? 'What number do you get to?' : 'Where do you land?';
+  const prompt = { text: `Start at ${start}. Count on ${more}. ${ask}`, speak: ['Start at', { number: start }, '. Count on', { number: more }, `. ${ask}`] as Say };
   const stimulus: Visual = level === 3 ? equation(start, '+', more, '=', 'blank') : { kind: 'numberLine', min: start - 2, max: start + 6, step: 1, marked: [start] };
-  const base = { mode: 'look' as const, facts: { a: start, b: more }, prompt, stimulus, explanation: countOnExplanation(start, more) };
+  const base = { mode: 'look' as const, facts: { a: start, b: more }, prompt, stimulus, explanation: countOnExplanation(start, more, level !== 3) };
   if (level === 3) return { ...base, type: 'numberPad', answer, maxDigits: 2 };
   const values = numeralChoices(answer, [answer - 1, answer + 1, start + more + 2], 0, 25, rng);
   return { ...base, type: 'choice', facts: { ...base.facts, options: values }, options: values.map((value) => numeral(value)), answerIndex: values.indexOf(answer) };
@@ -144,8 +143,8 @@ export const countOnGenerator: SkillGenerator = {
   example: () => countOn(1, makeRng(653)),
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'To add a small number, start at the big number and count on.', speak: ['To add a small number, start at the big number and count on.'], visual: { kind: 'numberLine', min: 6, max: 12, step: 1, marked: [8] } },
-    { beat: 'watch', text: countOnExplanation(8, 3).steps.join(' '), speak: countOnExplanation(8, 3).speak, visual: countOnExplanation(8, 3).visual },
-    { beat: 'try', text: 'Start at 6. Count on 2. Where do you land?', speak: ['Start at', { number: 6 }, '. Count on', { number: 2 }, '. Where do you land?'], visual: { kind: 'numberLine', min: 4, max: 12, step: 1, marked: [6] }, reveal: { text: countOnExplanation(6, 2).steps.join(' '), speak: countOnExplanation(6, 2).speak, visual: countOnExplanation(6, 2).visual } },
+    { beat: 'watch', text: countOnExplanation(8, 3, true).steps.join(' '), speak: countOnExplanation(8, 3, true).speak, visual: countOnExplanation(8, 3, true).visual },
+    { beat: 'try', text: 'Start at 6. Count on 2. Where do you land?', speak: ['Start at', { number: 6 }, '. Count on', { number: 2 }, '. Where do you land?'], visual: { kind: 'numberLine', min: 4, max: 12, step: 1, marked: [6] }, reveal: { text: countOnExplanation(6, 2, true).steps.join(' '), speak: countOnExplanation(6, 2, true).speak, visual: countOnExplanation(6, 2, true).visual } },
     { beat: 'remember', text: 'Start big, count on small.', speak: ['Start big, count on small.'], visual: { kind: 'numberLine', min: 6, max: 12, step: 1, marked: [8, 11] } },
   ],
   oracle: 'add',
@@ -160,28 +159,34 @@ const clips = (count: number): Visual => ({ kind: 'emojiGroup', emoji: CLIP, cou
 const measured = (emoji: string, count: number): Visual => ({ kind: 'row', children: [{ kind: 'emojiGroup', emoji, count: 1, layout: 'row' }, clips(count)] });
 // Clips along one row of the 5 by 4 grid, with a gap at `gap`, or none.
 const spaced = (count: number, gap: number | null): Visual => ({ kind: 'emojiGroup', emoji: CLIP, count, layout: 'scatter', slots: Array.from({ length: count }, (_, i) => (gap !== null && i >= gap ? i + 1 : i)) });
+// Clips that touch but go up and down, not along a straight line: every other clip is one row lower.
+const bent = (count: number): Visual => ({ kind: 'emojiGroup', emoji: CLIP, count, layout: 'scatter', slots: Array.from({ length: count }, (_, i) => (i % 2 === 0 ? i : i + 5)) });
 
 function paperClips(level: Level, rng: Rng): QuestionDraft {
   if (level === 2) {
+    // Lined up the right way: in a straight line, each clip touching the next. With nothing to measure in the
+    // picture, a row that starts late could be argued for, so the wrong rows have a gap, or are not straight.
     const count = rng.int(3, 4);
     const gap = rng.int(1, count - 1);
-    const shapes = rng.shuffle(['lined', 'gap', 'start'] as const);
-    const draw = (kind: (typeof shapes)[number]): Visual => (kind === 'lined' ? spaced(count, null) : kind === 'gap' ? spaced(count, gap) : { kind: 'emojiGroup', emoji: CLIP, count, layout: 'scatter', slots: Array.from({ length: count }, (_, i) => i + 1) });
-    const prompt = 'Which row of paper clips is lined up the right way, from the start with no gaps?';
+    const shapes = rng.shuffle(['lined', 'gap', 'bent'] as const);
+    const draw = (kind: (typeof shapes)[number]): Visual => (kind === 'lined' ? spaced(count, null) : kind === 'gap' ? spaced(count, gap) : bent(count));
+    const prompt = 'Which paper clips are lined up the right way?';
+    const lines = ['The clips must go in a straight line.', 'Each clip must touch the next one, with no gaps.', 'Only one row does both.'];
     return {
       type: 'choice',
       mode: 'look',
-      facts: { ask: 'lined', rows: shapes.map((kind) => (kind === 'lined' ? 'start,nogap' : kind === 'gap' ? 'start,gap' : 'late,nogap')), options: [...shapes] },
+      facts: { ask: 'lined', rows: shapes.map((kind) => (kind === 'lined' ? 'start,nogap' : kind === 'gap' ? 'start,gap' : 'bent,nogap')), options: [...shapes] },
       prompt: { text: prompt, speak: [prompt] },
       options: shapes.map(draw),
       answerIndex: shapes.indexOf('lined'),
-      explanation: { speak: ['Start at the very end and leave no gaps between the clips.'], steps: ['Start at the very end.', 'Leave no gaps.'], visual: spaced(count, null) },
+      explanation: explain(lines, spaced(count, null), { text: 'Look for clips in a straight line, with no gaps.' }),
     };
   }
   const thing = rng.pick([{ emoji: '✏️', name: 'pencil' }, { emoji: '🖍️', name: 'crayon' }, { emoji: '🥄', name: 'spoon' }]);
   if (level === 3) {
     const [long, short] = [rng.int(5, 9), rng.int(2, 4)];
     const prompt = { text: `The ${thing.name} is ${long} paper clips long. A key is ${short} paper clips long. How many clips longer is the ${thing.name}?`, speak: [`The ${thing.name} is`, { number: long }, 'paper clips long. A key is', { number: short }, `paper clips long. How many clips longer is the ${thing.name}?`] as Say };
+    const lines = [`The ${thing.name} is ${long} clips. The key is ${short} clips.`, `${long} − ${short} = ${long - short}.`, `The ${thing.name} is ${long - short} clips longer.`];
     return {
       type: 'numberPad',
       mode: 'look',
@@ -189,7 +194,7 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
       prompt,
       answer: long - short,
       maxDigits: 1,
-      explanation: { speak: [{ number: long }, 'minus', { number: short }, 'is', { number: long - short }, '.'], steps: [`${long} − ${short} = ${long - short}.`, `The ${thing.name} is ${long - short} clips longer.`], visual: equation(long, '-', short, '=', long - short) },
+      explanation: explain(lines, equation(long, '-', short, '=', long - short), { text: `Count up from the key's clips to the ${thing.name}'s clips.` }),
     };
   }
   const count = rng.int(2, 8);
@@ -203,7 +208,7 @@ function paperClips(level: Level, rng: Rng): QuestionDraft {
     stimulus: measured(thing.emoji, count),
     options: values.map((value) => numeral(value)),
     answerIndex: values.indexOf(count),
-    explanation: { speak: ['Count the clips from end to end:', { number: count }, '.'], steps: [`Count the clips from end to end: ${count}.`], visual: measured(thing.emoji, count) },
+    explanation: explain(['Count the clips from one end to the other.', `The ${thing.name} is ${count} paper clips long.`], measured(thing.emoji, count), { text: 'Count the clips, one by one.' }),
   };
 }
 
@@ -245,6 +250,7 @@ function howManyPieces(level: Level, rng: Rng): QuestionDraft {
   const whole = entry.makes === entry.piece ? `big ${entry.makes}` : entry.makes;
   const prompt = `Fill the ${whole} with ${entry.piece}s. How many does it take?`;
   const line = `${entry.count} ${entry.piece}s fit together to make the ${whole}.`;
+  const first = level === 3 ? 'One piece in the tray does not fit. Leave it out.' : `Fit the ${entry.piece}s in, with no gaps.`;
   return {
     type: 'fillShape',
     mode: 'look',
@@ -253,7 +259,7 @@ function howManyPieces(level: Level, rng: Rng): QuestionDraft {
     answer: entry.count,
     facts: { ask: 'count', piece: entry.piece, makes: entry.makes },
     prompt: { text: prompt, speak: spoken(prompt) },
-    explanation: { speak: spoken(line), steps: [line], visual: { kind: 'figure', figure, show: 'cut' } },
+    explanation: explain([first, line], { kind: 'figure', figure, show: 'cut' }, { text: 'Put the pieces in one at a time. Count them as you go.' }),
   };
 }
 

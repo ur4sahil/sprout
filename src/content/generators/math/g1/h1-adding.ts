@@ -1,13 +1,13 @@
 import type { Rng } from '../../../../engine/rng';
-import type { Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Explanation, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import type { PartStory, ThreeStory } from '../../../data/h1-stories';
-import { PART_STORIES, THREE_STORIES } from '../../../data/h1-stories';
+import { PART_STORIES, STORY_PRONOUNS, THREE_STORIES } from '../../../data/h1-stories';
 import { STORY_NAMES } from '../../../data/h1-things';
 import type { SkillGenerator } from '../../../generator';
 import { listText } from '../../../generator';
-import type { Explanation } from '../k/h1-parts';
 import { equation, h1Skill, lessonOf, mathText, numberChoice, sayMath, shown, spoken } from '../k/h1-parts';
 import { numeralChoices } from '../k/numerals';
+import { explain, hintFor } from './wording';
 
 // Math grade 1, plan section 15 wave H1: B.14 fact families, B.15 three-number stories, B.16 stories
 // with a missing part, B.17 make both sides equal, B.18 count back to subtract, B.19 go down to ten.
@@ -21,14 +21,18 @@ const familyOf = (a: number, b: number): string[] => {
   return [`${a} + ${b} = ${c}`, `${b} + ${a} = ${c}`, `${c} - ${a} = ${b}`, `${c} - ${b} = ${a}`];
 };
 
-function familyExplanation(a: number, b: number): Explanation {
+// The family's rule, its four facts, then the fact the question is about: why it is in the family, or not.
+// `last` is that line. The hint never lists the numbers when the answer is one of them (the typed level).
+function familyExplanation(a: number, b: number, last: string): Explanation {
   const facts = familyOf(a, b);
-  return {
-    speak: [...spoken(`The family of ${a}, ${b} and ${a + b} has four facts:`), ...facts.flatMap((fact, i) => [...sayMath(fact), i === facts.length - 1 ? '.' : ','])],
-    steps: [`The family of ${a}, ${b} and ${a + b}:`, `${shown(facts[0] as string)} and ${shown(facts[1] as string)}.`, `${shown(facts[2] as string)} and ${shown(facts[3] as string)}.`],
-    visual: { kind: 'text', value: `${a}, ${b}, ${a + b}`, size: 'l', speak: spoken(`${a}, ${b}, ${a + b}`) },
-  };
+  const c = a + b;
+  const lines = [`Family facts use only ${a}, ${b} and ${c}.`, `${shown(facts[0] as string)} and ${shown(facts[1] as string)}.`, `${shown(facts[2] as string)} and ${shown(facts[3] as string)}.`, last];
+  return explain(lines, { kind: 'text', value: `${a}, ${b}, ${c}`, size: 'l', speak: spoken(`${a}, ${b}, ${c}`) }, { text: `Family facts use only ${a}, ${b} and ${c}.` });
 }
+
+// The numbers a fact written "a + b = c" uses.
+const numbersIn = (fact: string): number[] => fact.split(' ').filter((part) => /^\d+$/.test(part)).map(Number);
+
 
 function factFamily(level: Level, rng: Rng): QuestionDraft {
   const c = rng.int(level === 1 ? 3 : 8, level === 1 ? 10 : 20);
@@ -45,11 +49,11 @@ function factFamily(level: Level, rng: Rng): QuestionDraft {
       type: 'numberPad',
       mode: 'look',
       facts: { a: c, b: ask, numbers, oracle: 'subtract' },
-      prompt: { text: `${shown(given)}. So ${c} − ${ask} = ?`, speak: [...sayMath(given), '. So', { number: c }, 'minus', { number: ask }, 'equals what?'] },
+      prompt: { text: `${shown(given)}. So what is ${c} − ${ask}?`, speak: [...sayMath(given), '. So what is', { number: c }, 'minus', { number: ask }, '?'] },
       stimulus: mathText(given),
       answer: other,
       maxDigits: 2,
-      explanation: familyExplanation(a, b),
+      explanation: { ...familyExplanation(a, b, `So ${c} − ${ask} = ${other}.`), hint: { text: 'A minus fact uses the same numbers as the plus fact.' } },
     };
   }
   // Wrong facts: false with the same numbers, or true with a number from outside the family.
@@ -58,7 +62,10 @@ function factFamily(level: Level, rng: Rng): QuestionDraft {
   const picked = ask === 'in' ? [rng.pick(family), ...rng.sample(wrong, 2)] : [rng.pick(wrong), ...rng.sample(family, 3)];
   const options = rng.shuffle(picked);
   const right = picked[0] as string;
-  const prompt = ask === 'in' ? `Which fact is in the family of ${a}, ${b} and ${c}?` : `Which fact is not in the family of ${a}, ${b} and ${c}?`;
+  // "not" is the last word asked, where it is heard, after three facts that are in the family.
+  const prompt = ask === 'in' ? `Which fact is in the family of ${a}, ${b} and ${c}?` : `Three facts are in the family of ${a}, ${b} and ${c}. Which one is not?`;
+  const outside = numbersIn(right).find((value) => !numbers.includes(value));
+  const last = ask === 'in' ? `So ${shown(right)} is in the family.` : outside === undefined ? `${shown(right)} is not true, so it is not in the family.` : `${shown(right)} uses ${outside}, so it is not in the family.`;
   return {
     type: 'choice',
     mode: 'look',
@@ -67,7 +74,7 @@ function factFamily(level: Level, rng: Rng): QuestionDraft {
     stimulus,
     options: options.map((option) => mathText(option, 'minus', 'm')),
     answerIndex: options.indexOf(right),
-    explanation: familyExplanation(a, b),
+    explanation: familyExplanation(a, b, last),
   };
 }
 
@@ -88,16 +95,19 @@ function tell(text: string, values: Record<string, number | string>): { text: st
   return { text: filled, speak: spoken(filled) };
 }
 
+// The name once, then "she" or "he". A name with no pronoun listed is said again.
+function who(name: string): { name: string; she: string; She: string } {
+  const pronoun = STORY_PRONOUNS[name];
+  return pronoun === undefined ? { name, she: name, She: name } : { name, she: pronoun, She: `${pronoun.charAt(0).toUpperCase()}${pronoun.slice(1)}` };
+}
+
 // ---- B.15 Three-number stories ----
 // Levels: sums to 10 with a picture / to 20 / to 20, typed. Oracle: add.
 
+// The hint is the move, never the first sum: "Add two of the numbers first."
 function threeExplanation(a: number, b: number, c: number, things: string): Explanation {
   const first = a + b;
-  return {
-    speak: [{ number: a }, 'plus', { number: b }, 'is', { number: first }, '. Then', { number: first }, 'plus', { number: c }, 'is', { number: first + c }, '.', ...spoken(`There are ${first + c} ${things} in all.`)],
-    steps: [`${a} + ${b} = ${first}.`, `${first} + ${c} = ${first + c}.`, `${first + c} ${things} in all.`],
-    visual: equation(a, '+', b, '+', c, '=', first + c),
-  };
+  return explain([`${a} + ${b} = ${first}.`, `${first} + ${c} = ${first + c}.`, `There are ${first + c} ${things} in all.`], equation(a, '+', b, '+', c, '=', first + c), { text: 'Add two of the numbers first. Then add the third.' });
 }
 
 function threeStories(level: Level, rng: Rng): QuestionDraft {
@@ -109,7 +119,7 @@ function threeStories(level: Level, rng: Rng): QuestionDraft {
     [a, b, c] = [rng.int(2, 9), rng.int(2, 9), rng.int(2, 9)];
   } while (a + b + c > most || (level > 1 && a + b + c < 11));
   const sum = a + b + c;
-  const prompt = tell(story.text, { name, a, b, c });
+  const prompt = tell(story.text, { ...who(name), a, b, c });
   const picture: Visual = { kind: 'row', children: [a, b, c].map((count, i): Visual => ({ kind: 'emojiGroup', emoji: story.emoji[i] as string, count, layout: count <= 5 ? 'row' : 'grid5' })) };
   const base = { mode: 'look' as const, facts: { a, b, c, story: story.id, name }, prompt, explanation: threeExplanation(a, b, c, story.things) };
   if (level === 3) return { ...base, type: 'numberPad', answer: sum, maxDigits: 2 };
@@ -133,6 +143,13 @@ export const threeStoriesGenerator: SkillGenerator = h1Skill({
 // Levels: some more came, how many, to 10 / some went away, how many, to 20 / any kind, or how many at
 // the start, typed. Oracles: missing (added and start), subtract (taken).
 
+// The answer said in the story's words: "She got 3 stickers.", "1 bird came."
+function partAnswer(story: PartStory, n: number, name: string): string {
+  return tell(story.answer, { ...who(name), n, things: n === 1 ? story.thing : story.things, were: n === 1 ? 'was' : 'were' }).text;
+}
+
+// The story is told with no picture: a picture of one sticker was counted as 1, whatever the story's numbers.
+// The steps link the story to its sum, then give the answer in the story's words; the hint is the move.
 function partStory(level: Level, rng: Rng): QuestionDraft {
   const kinds: PartStory['kind'][] = level === 1 ? ['added'] : level === 2 ? ['taken'] : ['added', 'taken', 'start'];
   const kind = rng.pick(kinds);
@@ -148,21 +165,27 @@ function partStory(level: Level, rng: Rng): QuestionDraft {
   if (kind === 'added' || kind === 'start') {
     const known = rng.int(2, t - 1);
     answer = t - known;
-    const lines = kind === 'added' ? [`Start at ${known}. Count up to ${t}.`, `That is ${answer} more.`, `${known} + ${answer} = ${t}.`] : [`${t} − ${known} = ${answer}.`, `At the start there were ${answer} ${story.things}.`, `Check: ${answer} + ${known} = ${t}.`];
-    explanation = { speak: lines.flatMap((line) => spoken(line.replace(' − ', ' minus ').replace(' + ', ' plus ').replace(' = ', ' equals '))), steps: lines, visual: kind === 'added' ? equation(known, '+', answer, '=', t) : equation('blank', '+', known, '=', t) };
+    if (kind === 'added') {
+      const lines = [`Start at ${known}. Count up to ${t}.`, `That is ${answer} more: ${known} + ${answer} = ${t}.`, partAnswer(story, answer, name)];
+      explanation = explain(lines, equation(known, '+', answer, '=', t), hintFor(answer, `Start at ${known} and count up to ${t}.`, 'Count up from the first number to the last number.'));
+    } else {
+      // How many at the start: take away the ones that were added.
+      const lines = [`${known} more were added, and now there are ${t}.`, `Take away the ${known}: ${t} − ${known} = ${answer}.`, partAnswer(story, answer, name)];
+      explanation = explain(lines, equation(answer, '+', known, '=', t), hintFor(answer, `Take the ${known} that were added away from ${t}.`, 'Take away the ones that were added.'));
+    }
     facts = kind === 'added' ? { a: known, b: answer, total: t, blank: 'b' } : { a: answer, b: known, total: t, blank: 'a' };
-    prompt = tell(story.text, kind === 'added' ? { name, a: known, t } : { name, b: known, t });
+    prompt = tell(story.text, kind === 'added' ? { ...who(name), a: known, t } : { ...who(name), b: known, t });
     slips = [t + known, t, known];
   } else {
     const r = rng.int(2, t - 1);
     answer = t - r;
-    const lines = [`${t} − ${r} = ${answer}.`, `The answer is ${answer}.`];
-    explanation = { speak: [{ number: t }, 'minus', { number: r }, 'is', { number: answer }, '.'], steps: lines, visual: equation(t, '-', r, '=', answer) };
+    const lines = [`There were ${t}. Now there are ${r}.`, `${t} − ${r} = ${answer}.`, partAnswer(story, answer, name)];
+    explanation = explain(lines, equation(t, '-', r, '=', answer), hintFor(answer, `Count back from ${t} to ${r}.`, 'Count back from the first number to the last number.'));
     facts = { a: t, b: r, oracle: 'subtract' };
-    prompt = tell(story.text, { name, t, r });
+    prompt = tell(story.text, { ...who(name), t, r });
     slips = [t + r, r];
   }
-  const base = { mode: 'look' as const, facts: { ...facts, story: story.id, name }, prompt, stimulus: { kind: 'emojiGroup', emoji: story.emoji, count: 1, layout: 'row' } as Visual, explanation };
+  const base = { mode: 'look' as const, facts: { ...facts, story: story.id, name }, prompt, explanation };
   if (level === 3) return { ...base, type: 'numberPad', answer, maxDigits: 2 };
   const values = numeralChoices(answer, slips, 0, 40, rng);
   return { ...base, facts: { ...base.facts, options: values }, ...numberChoice(answer, values) };
@@ -255,22 +278,24 @@ export const makeEqualGenerator: SkillGenerator = h1Skill({
 // Levels: count back 1 or 2 from 10 or less, on a number line / count back 3 from 20 or less / typed.
 // Oracle: subtract.
 
+// The summary is said from the steps, so the numbers counted back keep their pauses.
 function backExplanation(start: number, back: number): Explanation {
   const steps = Array.from({ length: back }, (_, i) => start - i - 1);
-  return {
-    speak: ['Start at', { number: start }, '. Count back', { number: back }, ':', ...steps.map((n) => ({ number: n })), '. You land on', { number: start - back }, '.'],
-    steps: [`Start at ${start}.`, `Count back ${back}: ${listText(steps)}.`, `${start} − ${back} = ${start - back}.`],
-    visual: { kind: 'numberLine', min: start - back - 1, max: start + 1, step: 1, marked: [start, start - back] },
-  };
+  return explain([`Start at ${start}.`, `Count back ${back}: ${listText(steps)}.`, `${start} − ${back} = ${start - back}.`], { kind: 'numberLine', min: start - back - 1, max: start + 1, step: 1, marked: [start, start - back] });
 }
 
 function countBack(level: Level, rng: Rng): QuestionDraft {
   const back = level === 1 ? rng.int(1, 2) : rng.int(2, 3);
   const start = rng.int(level === 1 ? 4 : 8, level === 1 ? 10 : 20);
   const answer = start - back;
-  const prompt = { text: `${start} − ${back}. Start at ${start}. Count back ${back}. Where do you land?`, speak: [{ number: start }, 'minus', { number: back }, '. Start at', { number: start }, '. Count back', { number: back }, '. Where do you land?'] as Say };
+  // With no number line to land on (level 3), the question asks for the number reached.
+  const ask = level === 3 ? 'What number do you get to?' : 'Where do you land?';
+  const prompt = { text: `${start} − ${back}. Start at ${start}. Count back ${back}. ${ask}`, speak: [{ number: start }, 'minus', { number: back }, '. Start at', { number: start }, '. Count back', { number: back }, `. ${ask}`] as Say };
   const stimulus: Visual = level === 3 ? equation(start, '-', back, '=', 'blank') : { kind: 'numberLine', min: Math.max(0, start - 6), max: start + 2, step: 1, marked: [start] };
-  const base = { mode: 'look' as const, facts: { a: start, b: back }, prompt, stimulus, explanation: backExplanation(start, back) };
+  // The hint is a new move, never the question again.
+  const hops = back === 1 ? 'Hop back once.' : `Hop back ${back} times.`;
+  const hint = level === 3 ? hintFor(answer, `Say ${start}, then count back ${back} numbers.`, `Say ${start}, then count back.`) : hintFor(answer, `Put your finger on ${start}. ${hops}`, `Put your finger on ${start}. Hop back one number at a time.`);
+  const base = { mode: 'look' as const, facts: { a: start, b: back }, prompt, stimulus, explanation: { ...backExplanation(start, back), hint } };
   if (level === 3) return { ...base, type: 'numberPad', answer, maxDigits: 2 };
   // Counting the start as the first step lands one too high.
   const values = numeralChoices(answer, [answer + 1, answer - 1, start + back], 0, 25, rng);
@@ -307,17 +332,20 @@ function downToTen(level: Level, rng: Rng): QuestionDraft {
   const ones = a - 10;
   const b = rng.int(ones + 1, 9);
   const rest = b - ones;
-  const prompt = { text: `${a} − ${b}. Take away ${ones} first to get to 10. Which one is the same?`, speak: [{ number: a }, 'minus', { number: b }, '. Take away', { number: ones }, 'first to get to', { number: 10 }, '. Which one is the same?'] as Say };
+  // "The same" is said in full: the same answer as the sum (the same words as B.4 and B.11).
+  const prompt = { text: `Take away ${ones} first to get to 10. Which one has the same answer as ${a} − ${b}?`, speak: ['Take away', { number: ones }, 'first to get to', { number: 10 }, '. Which one has the same answer as', { number: a }, 'minus', { number: b }, '?'] as Say };
+  // The hint splits the number taken away, a move the question has not said yet.
+  const split = `Split ${b} into ${ones} and the rest.`;
   if (level === 3) {
     return {
       type: 'numberPad',
       mode: 'look',
       facts: { a, b, oracle: 'subtract' },
-      prompt: { text: `${a} − ${b} = ?  Go down to 10 first.`, speak: [{ number: a }, 'minus', { number: b }, 'equals what? Go down to', { number: 10 }, 'first.'] },
+      prompt: { text: `What is ${a} − ${b}? Go down to 10 first.`, speak: ['What is', { number: a }, 'minus', { number: b }, '? Go down to', { number: 10 }, 'first.'] },
       stimulus: equation(a, '-', b, '=', 'blank'),
       answer: a - b,
       maxDigits: 1,
-      explanation: downExplanation(a, b),
+      explanation: { ...downExplanation(a, b), hint: hintFor(a - b, `${split} Take away ${ones} first.`, 'Split the number you take away: first get to 10, then take away the rest.') },
     };
   }
   const right = `10 - ${rest}`;
@@ -331,7 +359,7 @@ function downToTen(level: Level, rng: Rng): QuestionDraft {
     stimulus: { kind: 'tenFrame', filled: a, frames: 2 },
     options: options.map((option) => mathText(option)),
     answerIndex: options.indexOf(right),
-    explanation: downExplanation(a, b),
+    explanation: { ...downExplanation(a, b), hint: { text: split } },
   };
 }
 

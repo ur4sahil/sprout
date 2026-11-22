@@ -48,7 +48,9 @@ describe('A.2 Skip counting and E.1 Number patterns', () => {
         expect(row).toHaveLength(5);
         expect(row[4]).toBeNull();
         expect(question.prompt.text).toBe('What comes next?');
-        expect(question.explanation.steps[0]).toBe(`We are counting by ${step}s.`);
+        // The same words as E.1 for the same idea, then the count itself.
+        expect(question.explanation.steps[0]).toBe(`The numbers go up by ${step}.`);
+        expect(question.explanation.steps[1]).toMatch(new RegExp(`^Count by ${step}s: `));
       }
     }
     const top = all('M-1-A2', 4);
@@ -108,11 +110,12 @@ describe('A.3 Tens and ones', () => {
     expect(swapped.length).toBeGreaterThan(30);
   });
 
-  it('says "1 ten" and "no ones" where that is what the blocks show', () => {
+  it('says "1 ten" and "no ones" where that is what the blocks show, and never "1 more one"', () => {
     const lines = new Set([...all('M-1-A3', 1), ...all('M-1-A3', 2)].map((question) => question.explanation.steps.join(' ')));
-    expect(lines).toContain('1 ten is 10. 4 more ones makes 14.');
-    expect(lines).toContain('2 tens is 20. There are no ones.');
-    expect(lines).toContain('2 tens is 20. 1 more one makes 21.');
+    expect(lines).toContain('1 ten makes 10. 10 and 4 more is 14.');
+    expect(lines).toContain('2 tens make 20. There are no ones, so it is 20.');
+    expect(lines).toContain('2 tens make 20. 20 and 1 more is 21.');
+    for (const line of lines) expect(line).not.toMatch(/1 more one\b/);
   });
 });
 
@@ -128,7 +131,7 @@ describe('A.4 Compare two-digit numbers', () => {
       const [a, b] = question.facts.values as [number, number];
       expect(tens(a)).toBe(tens(b));
       expect(a).not.toBe(b);
-      expect(question.explanation.steps[0]).toBe('The tens are the same. Look at the ones.');
+      expect(question.explanation.steps[0]).toBe('The tens are the same, so look at the ones.');
     }
     const signs = all('M-1-A4', 3);
     let equal = 0;
@@ -195,9 +198,10 @@ describe('C.1 Tell time', () => {
 
   it('half past twelve is halfway between 12 and 1', () => {
     const half = all('M-1-C1', 2).find((question) => n(question, 'hour') === 12);
-    expect(half?.explanation.steps).toEqual(['The long hand points to 6.', 'The short hand is halfway between 12 and 1.', 'It is half past 12.']);
+    // The last step joins the time in words to the written time the options show.
+    expect(half?.explanation.steps).toEqual(['The long hand points to 6.', 'The short hand is halfway between 12 and 1.', 'It is half past 12. We write 12:30.']);
     const hour = all('M-1-C1', 1).find((question) => n(question, 'hour') === 3);
-    expect(hour?.explanation.steps).toEqual(['The long hand points to 12.', 'The short hand points to 3.', "It is 3 o'clock."]);
+    expect(hour?.explanation.steps).toEqual(['The long hand points to 12.', 'The short hand points to 3.', "It is 3 o'clock. We write 3:00."]);
   });
 });
 
@@ -232,7 +236,7 @@ describe('C.3 Picture graphs', () => {
         if (level === 2 && question.type === 'choice') {
           const wanted = question.facts.ask === 'most' ? Math.max(...values) : Math.min(...values);
           expect(values[question.answerIndex]).toBe(wanted);
-          expect(question.prompt.text).toBe(`Which one has the ${question.facts.ask === 'most' ? 'most' : 'fewest'}?`);
+          expect(question.prompt.text).toBe(`Children chose their favorite thing. Which one has the ${question.facts.ask === 'most' ? 'most' : 'fewest'}?`);
         }
         if (level === 3) {
           if (question.type !== 'numberPad') throw new Error('not typed');

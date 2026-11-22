@@ -2,8 +2,9 @@ import type { Rng } from '../../../../engine/rng';
 import type { Level, QuestionDraft, Visual } from '../../../../engine/types';
 import { DAYS, MONTHS } from '../../../data/h1-things';
 import type { SkillGenerator } from '../../../generator';
-import type { Explanation } from '../k/h1-parts';
 import { h1Skill, lessonOf, wordText } from '../k/h1-parts';
+import type { Line, Shown as Explanation } from './wording';
+import { explain } from './wording';
 
 // Math grade 1, plan section 15 wave H1: C.6 match clocks to times, C.7 days of the week,
 // C.8 months of the year.
@@ -28,13 +29,6 @@ function matchClocks(level: Level, rng: Rng): QuestionDraft {
     times = rng.sample(Array.from({ length: 12 }, (_, i) => i + 1), 3).map((hour) => ({ hour, minute: level === 1 ? 0 : 30 }));
   }
   const right = rng.shuffle(times);
-  const first = times[0] as Time;
-  const line = first.minute === 0 ? `The long hand on 12 means o'clock. This clock shows ${written(first)}.` : `The long hand on 6 means half past. This clock shows ${written(first)}.`;
-  const explanation: Explanation = {
-    speak: ['The short hand shows the hour.', first.minute === 0 ? 'The long hand on twelve means o clock.' : 'The long hand on six means half past.', 'This clock shows', { time: first }, '.'],
-    steps: ['The short hand shows the hour.', line],
-    visual: clock(first),
-  };
   return {
     type: 'match',
     mode: 'look',
@@ -43,8 +37,30 @@ function matchClocks(level: Level, rng: Rng): QuestionDraft {
     left: times.map(clock),
     right: right.map((time): Visual => ({ kind: 'text', value: written(time), size: 'l', speak: [{ time }] })),
     answerPairs: times.map((time, i): [number, number] => [i, right.indexOf(time)]),
-    explanation,
+    explanation: matchExplanation(times, level),
   };
+}
+
+// The rule for the hands, then one step for each clock, in the order they stand, so the pair a child mixed up is
+// always explained. A clock's time is said once ("The first clock shows half past 5."), and shown in both forms.
+const ORDER = ['first', 'second', 'third'];
+const RULES: Record<number, string> = {
+  1: "The long hand on 12 means o'clock. The short hand shows the hour.",
+  2: 'The long hand on 6 means half past. The short hand has just passed the hour.',
+  3: "The long hand shows o'clock or half past. The short hand shows the hour.",
+};
+const HINTS: Record<number, string> = {
+  1: "The long hand on 12 means o'clock. Then read the short hand.",
+  2: 'The long hand on 6 means half past. Then read the hour the short hand has just passed.',
+  3: "Look at the long hand first: on 12 it is o'clock, on 6 it is half past.",
+};
+
+function matchExplanation(times: readonly Time[], level: Level): Explanation {
+  const clocks = times.map((time, i): Line => {
+    const words = time.minute === 0 ? `${time.hour} o'clock` : `half past ${time.hour}`;
+    return { text: `The ${ORDER[i] as string} clock shows ${words}: ${written(time)}.`, say: [`The ${ORDER[i] as string} clock shows`, { time }, '.'] };
+  });
+  return explain([RULES[level] as string, ...clocks], { kind: 'row', children: times.map(clock) }, { text: HINTS[level] as string });
 }
 
 export const matchClocksGenerator: SkillGenerator = h1Skill({
@@ -54,7 +70,7 @@ export const matchClocksGenerator: SkillGenerator = h1Skill({
   oracle: 'matchEqual',
   exampleSeed: 931,
   generate: matchClocks,
-  lesson: (make) => lessonOf('A clock with hands and a time written in numbers can show the same time.', { kind: 'row', children: [clock({ hour: 3, minute: 0 }), { kind: 'text', value: '3:00', size: 'l' }] }, make(1, 931), make(2, 932), 'Short hand: the hour. Long hand on 12: o clock. On 6: half past.'),
+  lesson: (make) => lessonOf('A clock with hands and a time written in numbers can show the same time.', { kind: 'row', children: [clock({ hour: 3, minute: 0 }), { kind: 'text', value: '3:00', size: 'l' }] }, make(1, 931), make(2, 932), "Short hand: the hour. Long hand on 12: o'clock. On 6: half past."),
 });
 
 // ---- C.7 and C.8 Days of the week, months of the year ----
@@ -63,14 +79,33 @@ export const matchClocksGenerator: SkillGenerator = h1Skill({
 
 type Kind = 'day' | 'month';
 
-function calendarExplanation(kind: Kind, start: string, shift: number): Explanation {
+// Only the part of the list that matters is said: the name before, the start, and the name after. A list that
+// starts again (after Saturday, before January) says so. Two away is counted on or back one name at a time.
+function calendarExplanation(kind: Kind, start: string, shift: number, level: Level): Explanation {
   const list: readonly string[] = kind === 'day' ? DAYS : MONTHS;
   const at = list.indexOf(start);
-  const answer = list[(at + shift + list.length * 2) % list.length] as string;
-  const path = Array.from({ length: Math.abs(shift) + 1 }, (_, i) => list[(at + Math.sign(shift) * i + list.length * 2) % list.length] as string);
-  const counted = `${shift > 0 ? 'Count on' : 'Count back'}: ${path.join(', ')}.`;
-  const whole = kind === 'day' ? `The days go ${DAYS.join(', ')}, then start again.` : `The months go ${MONTHS.join(', ')}, then start again.`;
-  return { speak: [counted, `The answer is ${answer}.`], steps: [whole, counted, `The answer is ${answer}.`], visual: wordText(answer) };
+  const name = (by: number): string => list[(at + by + list.length * 2) % list.length] as string;
+  const answer = name(shift);
+  const units = kind === 'day' ? 'days' : 'months';
+  const whole = kind === 'day' ? 'week' : 'year';
+  const inOrder = `Say the ${units} in order: ${name(-1)}, ${start}, ${name(1)}.`;
+  const visual = wordText(answer);
+  if (level === 3 && kind === 'day' && Math.abs(shift) === 1) {
+    const lines = shift === 1 ? ['Tomorrow is the day after today.', `The day after ${start} is ${answer}.`, `Tomorrow is ${answer}.`] : ['Yesterday was the day before today.', `The day before ${start} is ${answer}.`, `Yesterday was ${answer}.`];
+    return explain(lines, visual, { text: shift === 1 ? 'Tomorrow is the day after today.' : 'Yesterday was the day before today.' });
+  }
+  if (Math.abs(shift) === 2) {
+    const path = [name(Math.sign(shift)), name(shift)];
+    const way = shift > 0 ? 'on' : 'back';
+    const last = kind === 'day' ? (shift > 0 ? `In 2 days it will be ${answer}.` : `2 days ago it was ${answer}.`) : `2 months ${shift > 0 ? 'after' : 'before'} ${start} is ${answer}.`;
+    return explain([`Count ${way} 2 ${units} from ${start}.`, `${path.join(', ')}.`, last], visual, { text: `Count ${way} 2 ${units} from ${start}.` });
+  }
+  if (shift === 1) {
+    const last = at === list.length - 1 ? `After ${start}, the ${whole} starts again with ${answer}.` : `${answer} comes after ${start}.`;
+    return explain([inOrder, last], visual, { text: `Say the ${units} in order, starting at ${start}.` });
+  }
+  const last = at === 0 ? `Before ${start} comes ${answer}, at the end of the ${whole} before.` : `${answer} comes before ${start}.`;
+  return explain([inOrder, last], visual, { text: `Say the ${units} in order. Stop just before ${start}.` });
 }
 
 function calendar(kind: Kind) {
@@ -97,7 +132,7 @@ function calendar(kind: Kind) {
       stimulus: wordText(start),
       options: options.map((each) => wordText(each)),
       answerIndex: options.indexOf(name(shift)),
-      explanation: calendarExplanation(kind, start, shift),
+      explanation: calendarExplanation(kind, start, shift, level),
     };
   };
 }

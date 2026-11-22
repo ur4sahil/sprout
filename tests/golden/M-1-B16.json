@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-B16",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "facts": {
@@ -29,45 +29,43 @@
     " birds. How many birds came?"
    ]
   },
-  "stimulus": {
-   "kind": "emojiGroup",
-   "emoji": "🐦",
-   "count": 1,
-   "layout": "row"
-  },
   "explanation": {
    "speak": [
-    "Start at ",
+    "Start at",
     {
      "number": 6
     },
-    ". Count up to ",
+    ". Count up to",
     {
      "number": 10
     },
     ".",
-    "That is ",
+    "That is",
     {
      "number": 4
     },
-    " more.",
+    "more:",
     {
      "number": 6
     },
-    " plus ",
+    "plus",
     {
      "number": 4
     },
-    " equals ",
+    "equals",
     {
      "number": 10
     },
-    "."
+    ".",
+    {
+     "number": 4
+    },
+    "birds came."
    ],
    "steps": [
     "Start at 6. Count up to 10.",
-    "That is 4 more.",
-    "6 + 4 = 10."
+    "That is 4 more: 6 + 4 = 10.",
+    "4 birds came."
    ],
    "visual": {
     "kind": "equation",
@@ -78,6 +76,9 @@
      "=",
      10
     ]
+   },
+   "hint": {
+    "text": "Start at 6 and count up to 10."
    }
   },
   "type": "choice",
@@ -137,58 +138,57 @@
      ]
     },
     "prompt": {
-     "text": "Zoe has 9 stickers. Zoe gets some more. Now Zoe has 10 stickers. How many stickers did Zoe get?",
+     "text": "Zoe has 9 stickers. She gets some more. Now she has 10 stickers. How many stickers did she get?",
      "speak": [
       "Zoe has ",
       {
        "number": 9
       },
-      " stickers. Zoe gets some more. Now Zoe has ",
+      " stickers. She gets some more. Now she has ",
       {
        "number": 10
       },
-      " stickers. How many stickers did Zoe get?"
+      " stickers. How many stickers did she get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 9
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 10
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 1
       },
-      " more.",
+      "more:",
       {
        "number": 9
       },
-      " plus ",
+      "plus",
       {
        "number": 1
       },
-      " equals ",
+      "equals",
       {
        "number": 10
       },
-      "."
+      ".",
+      "She got",
+      {
+       "number": 1
+      },
+      "sticker."
      ],
      "steps": [
       "Start at 9. Count up to 10.",
-      "That is 1 more.",
-      "9 + 1 = 10."
+      "That is 1 more: 9 + 1 = 10.",
+      "She got 1 sticker."
      ],
      "visual": {
       "kind": "equation",
@@ -199,6 +199,9 @@
        "=",
        10
       ]
+     },
+     "hint": {
+      "text": "Start at 9 and count up to 10."
      }
     },
     "type": "choice",
@@ -256,58 +259,57 @@
      ]
     },
     "prompt": {
-     "text": "Ava has 7 stickers. Ava gets some more. Now Ava has 8 stickers. How many stickers did Ava get?",
+     "text": "Ava has 7 stickers. She gets some more. Now she has 8 stickers. How many stickers did she get?",
      "speak": [
       "Ava has ",
       {
        "number": 7
       },
-      " stickers. Ava gets some more. Now Ava has ",
+      " stickers. She gets some more. Now she has ",
       {
        "number": 8
       },
-      " stickers. How many stickers did Ava get?"
+      " stickers. How many stickers did she get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 7
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 8
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 1
       },
-      " more.",
+      "more:",
       {
        "number": 7
       },
-      " plus ",
+      "plus",
       {
        "number": 1
       },
-      " equals ",
+      "equals",
       {
        "number": 8
       },
-      "."
+      ".",
+      "She got",
+      {
+       "number": 1
+      },
+      "sticker."
      ],
      "steps": [
       "Start at 7. Count up to 8.",
-      "That is 1 more.",
-      "7 + 1 = 8."
+      "That is 1 more: 7 + 1 = 8.",
+      "She got 1 sticker."
      ],
      "visual": {
       "kind": "equation",
@@ -318,6 +320,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Start at 7 and count up to 8."
      }
     },
     "type": "choice",
@@ -375,58 +380,57 @@
      ]
     },
     "prompt": {
-     "text": "Sam has 4 stickers. Sam gets some more. Now Sam has 5 stickers. How many stickers did Sam get?",
+     "text": "Sam has 4 stickers. He gets some more. Now he has 5 stickers. How many stickers did he get?",
      "speak": [
       "Sam has ",
       {
        "number": 4
       },
-      " stickers. Sam gets some more. Now Sam has ",
+      " stickers. He gets some more. Now he has ",
       {
        "number": 5
       },
-      " stickers. How many stickers did Sam get?"
+      " stickers. How many stickers did he get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 4
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 5
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 1
       },
-      " more.",
+      "more:",
       {
        "number": 4
       },
-      " plus ",
+      "plus",
       {
        "number": 1
       },
-      " equals ",
+      "equals",
       {
        "number": 5
       },
-      "."
+      ".",
+      "He got",
+      {
+       "number": 1
+      },
+      "sticker."
      ],
      "steps": [
       "Start at 4. Count up to 5.",
-      "That is 1 more.",
-      "4 + 1 = 5."
+      "That is 1 more: 4 + 1 = 5.",
+      "He got 1 sticker."
      ],
      "visual": {
       "kind": "equation",
@@ -437,6 +441,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Start at 4 and count up to 5."
      }
     },
     "type": "choice",
@@ -494,58 +501,57 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 2 stickers. Leo gets some more. Now Leo has 5 stickers. How many stickers did Leo get?",
+     "text": "Leo has 2 stickers. He gets some more. Now he has 5 stickers. How many stickers did he get?",
      "speak": [
       "Leo has ",
       {
        "number": 2
       },
-      " stickers. Leo gets some more. Now Leo has ",
+      " stickers. He gets some more. Now he has ",
       {
        "number": 5
       },
-      " stickers. How many stickers did Leo get?"
+      " stickers. How many stickers did he get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 2
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 5
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 3
       },
-      " more.",
+      "more:",
       {
        "number": 2
       },
-      " plus ",
+      "plus",
       {
        "number": 3
       },
-      " equals ",
+      "equals",
       {
        "number": 5
       },
-      "."
+      ".",
+      "He got",
+      {
+       "number": 3
+      },
+      "stickers."
      ],
      "steps": [
       "Start at 2. Count up to 5.",
-      "That is 3 more.",
-      "2 + 3 = 5."
+      "That is 3 more: 2 + 3 = 5.",
+      "He got 3 stickers."
      ],
      "visual": {
       "kind": "equation",
@@ -556,6 +562,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Start at 2 and count up to 5."
      }
     },
     "type": "choice",
@@ -613,58 +622,57 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 2 shells. Leo finds some more at the beach. Now Leo has 8 shells. How many shells did Leo find?",
+     "text": "Leo has 2 shells. He finds some more at the beach. Now he has 8 shells. How many shells did he find?",
      "speak": [
       "Leo has ",
       {
        "number": 2
       },
-      " shells. Leo finds some more at the beach. Now Leo has ",
+      " shells. He finds some more at the beach. Now he has ",
       {
        "number": 8
       },
-      " shells. How many shells did Leo find?"
+      " shells. How many shells did he find?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐚",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 2
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 8
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 6
       },
-      " more.",
+      "more:",
       {
        "number": 2
       },
-      " plus ",
+      "plus",
       {
        "number": 6
       },
-      " equals ",
+      "equals",
       {
        "number": 8
       },
-      "."
+      ".",
+      "He found",
+      {
+       "number": 6
+      },
+      "shells."
      ],
      "steps": [
       "Start at 2. Count up to 8.",
-      "That is 6 more.",
-      "2 + 6 = 8."
+      "That is 6 more: 2 + 6 = 8.",
+      "He found 6 shells."
      ],
      "visual": {
       "kind": "equation",
@@ -675,6 +683,9 @@
        "=",
        8
       ]
+     },
+     "hint": {
+      "text": "Start at 2 and count up to 8."
      }
     },
     "type": "choice",
@@ -732,58 +743,57 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 4 stickers. Ben gets some more. Now Ben has 6 stickers. How many stickers did Ben get?",
+     "text": "Ben has 4 stickers. He gets some more. Now he has 6 stickers. How many stickers did he get?",
      "speak": [
       "Ben has ",
       {
        "number": 4
       },
-      " stickers. Ben gets some more. Now Ben has ",
+      " stickers. He gets some more. Now he has ",
       {
        "number": 6
       },
-      " stickers. How many stickers did Ben get?"
+      " stickers. How many stickers did he get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 4
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 6
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 2
       },
-      " more.",
+      "more:",
       {
        "number": 4
       },
-      " plus ",
+      "plus",
       {
        "number": 2
       },
-      " equals ",
+      "equals",
       {
        "number": 6
       },
-      "."
+      ".",
+      "He got",
+      {
+       "number": 2
+      },
+      "stickers."
      ],
      "steps": [
       "Start at 4. Count up to 6.",
-      "That is 2 more.",
-      "4 + 2 = 6."
+      "That is 2 more: 4 + 2 = 6.",
+      "He got 2 stickers."
      ],
      "visual": {
       "kind": "equation",
@@ -794,6 +804,9 @@
        "=",
        6
       ]
+     },
+     "hint": {
+      "text": "Start at 4 and count up to 6."
      }
     },
     "type": "choice",
@@ -851,58 +864,57 @@
      ]
     },
     "prompt": {
-     "text": "Max has 5 stickers. Max gets some more. Now Max has 9 stickers. How many stickers did Max get?",
+     "text": "Max has 5 stickers. He gets some more. Now he has 9 stickers. How many stickers did he get?",
      "speak": [
       "Max has ",
       {
        "number": 5
       },
-      " stickers. Max gets some more. Now Max has ",
+      " stickers. He gets some more. Now he has ",
       {
        "number": 9
       },
-      " stickers. How many stickers did Max get?"
+      " stickers. How many stickers did he get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 5
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 9
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 4
       },
-      " more.",
+      "more:",
       {
        "number": 5
       },
-      " plus ",
+      "plus",
       {
        "number": 4
       },
-      " equals ",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      "He got",
+      {
+       "number": 4
+      },
+      "stickers."
      ],
      "steps": [
       "Start at 5. Count up to 9.",
-      "That is 4 more.",
-      "5 + 4 = 9."
+      "That is 4 more: 5 + 4 = 9.",
+      "He got 4 stickers."
      ],
      "visual": {
       "kind": "equation",
@@ -913,6 +925,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Start at 5 and count up to 9."
      }
     },
     "type": "choice",
@@ -982,45 +997,43 @@
       " birds. How many birds came?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐦",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 6
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 9
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 3
       },
-      " more.",
+      "more:",
       {
        "number": 6
       },
-      " plus ",
+      "plus",
       {
        "number": 3
       },
-      " equals ",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      {
+       "number": 3
+      },
+      "birds came."
      ],
      "steps": [
       "Start at 6. Count up to 9.",
-      "That is 3 more.",
-      "6 + 3 = 9."
+      "That is 3 more: 6 + 3 = 9.",
+      "3 birds came."
      ],
      "visual": {
       "kind": "equation",
@@ -1031,6 +1044,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Start at 6 and count up to 9."
      }
     },
     "type": "choice",
@@ -1088,58 +1104,57 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 7 shells. Leo finds some more at the beach. Now Leo has 9 shells. How many shells did Leo find?",
+     "text": "Leo has 7 shells. He finds some more at the beach. Now he has 9 shells. How many shells did he find?",
      "speak": [
       "Leo has ",
       {
        "number": 7
       },
-      " shells. Leo finds some more at the beach. Now Leo has ",
+      " shells. He finds some more at the beach. Now he has ",
       {
        "number": 9
       },
-      " shells. How many shells did Leo find?"
+      " shells. How many shells did he find?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐚",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 7
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 9
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 2
       },
-      " more.",
+      "more:",
       {
        "number": 7
       },
-      " plus ",
+      "plus",
       {
        "number": 2
       },
-      " equals ",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      "He found",
+      {
+       "number": 2
+      },
+      "shells."
      ],
      "steps": [
       "Start at 7. Count up to 9.",
-      "That is 2 more.",
-      "7 + 2 = 9."
+      "That is 2 more: 7 + 2 = 9.",
+      "He found 2 shells."
      ],
      "visual": {
       "kind": "equation",
@@ -1150,6 +1165,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Start at 7 and count up to 9."
      }
     },
     "type": "choice",
@@ -1207,58 +1225,57 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 5 shells. Ben finds some more at the beach. Now Ben has 9 shells. How many shells did Ben find?",
+     "text": "Ben has 5 shells. He finds some more at the beach. Now he has 9 shells. How many shells did he find?",
      "speak": [
       "Ben has ",
       {
        "number": 5
       },
-      " shells. Ben finds some more at the beach. Now Ben has ",
+      " shells. He finds some more at the beach. Now he has ",
       {
        "number": 9
       },
-      " shells. How many shells did Ben find?"
+      " shells. How many shells did he find?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐚",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 5
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 9
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 4
       },
-      " more.",
+      "more:",
       {
        "number": 5
       },
-      " plus ",
+      "plus",
       {
        "number": 4
       },
-      " equals ",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      "He found",
+      {
+       "number": 4
+      },
+      "shells."
      ],
      "steps": [
       "Start at 5. Count up to 9.",
-      "That is 4 more.",
-      "5 + 4 = 9."
+      "That is 4 more: 5 + 4 = 9.",
+      "He found 4 shells."
      ],
      "visual": {
       "kind": "equation",
@@ -1269,6 +1286,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Start at 5 and count up to 9."
      }
     },
     "type": "choice",
@@ -1327,27 +1347,30 @@
      ]
     },
     "prompt": {
-     "text": "Zoe has 20 cookies. Zoe gives some away. Now Zoe has 19 cookies. How many cookies did Zoe give away?",
+     "text": "Zoe has 20 cookies. She gives some away. Now she has 19 cookies. How many cookies did she give away?",
      "speak": [
       "Zoe has ",
       {
        "number": 20
       },
-      " cookies. Zoe gives some away. Now Zoe has ",
+      " cookies. She gives some away. Now she has ",
       {
        "number": 19
       },
-      " cookies. How many cookies did Zoe give away?"
+      " cookies. How many cookies did she give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 20
+      },
+      ". Now there are",
+      {
+       "number": 19
+      },
+      ".",
       {
        "number": 20
       },
@@ -1355,15 +1378,21 @@
       {
        "number": 19
       },
-      "is",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      "She gave away",
+      {
+       "number": 1
+      },
+      "cookie."
      ],
      "steps": [
+      "There were 20. Now there are 19.",
       "20 − 19 = 1.",
-      "The answer is 1."
+      "She gave away 1 cookie."
      ],
      "visual": {
       "kind": "equation",
@@ -1374,6 +1403,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Count back from 20 to 19."
      }
     },
     "type": "choice",
@@ -1430,27 +1462,30 @@
      ]
     },
     "prompt": {
-     "text": "Ava has 13 cookies. Ava gives some away. Now Ava has 11 cookies. How many cookies did Ava give away?",
+     "text": "Ava has 13 cookies. She gives some away. Now she has 11 cookies. How many cookies did she give away?",
      "speak": [
       "Ava has ",
       {
        "number": 13
       },
-      " cookies. Ava gives some away. Now Ava has ",
+      " cookies. She gives some away. Now she has ",
       {
        "number": 11
       },
-      " cookies. How many cookies did Ava give away?"
+      " cookies. How many cookies did she give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 13
+      },
+      ". Now there are",
+      {
+       "number": 11
+      },
+      ".",
       {
        "number": 13
       },
@@ -1458,15 +1493,21 @@
       {
        "number": 11
       },
-      "is",
+      "equals",
       {
        "number": 2
       },
-      "."
+      ".",
+      "She gave away",
+      {
+       "number": 2
+      },
+      "cookies."
      ],
      "steps": [
+      "There were 13. Now there are 11.",
       "13 − 11 = 2.",
-      "The answer is 2."
+      "She gave away 2 cookies."
      ],
      "visual": {
       "kind": "equation",
@@ -1477,6 +1518,9 @@
        "=",
        2
       ]
+     },
+     "hint": {
+      "text": "Count back from 13 to 11."
      }
     },
     "type": "choice",
@@ -1533,27 +1577,30 @@
      ]
     },
     "prompt": {
-     "text": "Sam has 6 cookies. Sam gives some away. Now Sam has 5 cookies. How many cookies did Sam give away?",
+     "text": "Sam has 6 cookies. He gives some away. Now he has 5 cookies. How many cookies did he give away?",
      "speak": [
       "Sam has ",
       {
        "number": 6
       },
-      " cookies. Sam gives some away. Now Sam has ",
+      " cookies. He gives some away. Now he has ",
       {
        "number": 5
       },
-      " cookies. How many cookies did Sam give away?"
+      " cookies. How many cookies did he give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 6
+      },
+      ". Now there are",
+      {
+       "number": 5
+      },
+      ".",
       {
        "number": 6
       },
@@ -1561,15 +1608,21 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      "He gave away",
+      {
+       "number": 1
+      },
+      "cookie."
      ],
      "steps": [
+      "There were 6. Now there are 5.",
       "6 − 5 = 1.",
-      "The answer is 1."
+      "He gave away 1 cookie."
      ],
      "visual": {
       "kind": "equation",
@@ -1580,6 +1633,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Count back from 6 to 5."
      }
     },
     "type": "choice",
@@ -1636,27 +1692,30 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 6 cookies. Leo gives some away. Now Leo has 2 cookies. How many cookies did Leo give away?",
+     "text": "Leo has 6 cookies. He gives some away. Now he has 2 cookies. How many cookies did he give away?",
      "speak": [
       "Leo has ",
       {
        "number": 6
       },
-      " cookies. Leo gives some away. Now Leo has ",
+      " cookies. He gives some away. Now he has ",
       {
        "number": 2
       },
-      " cookies. How many cookies did Leo give away?"
+      " cookies. How many cookies did he give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 6
+      },
+      ". Now there are",
+      {
+       "number": 2
+      },
+      ".",
       {
        "number": 6
       },
@@ -1664,15 +1723,21 @@
       {
        "number": 2
       },
-      "is",
+      "equals",
       {
        "number": 4
       },
-      "."
+      ".",
+      "He gave away",
+      {
+       "number": 4
+      },
+      "cookies."
      ],
      "steps": [
+      "There were 6. Now there are 2.",
       "6 − 2 = 4.",
-      "The answer is 4."
+      "He gave away 4 cookies."
      ],
      "visual": {
       "kind": "equation",
@@ -1683,6 +1748,9 @@
        "=",
        4
       ]
+     },
+     "hint": {
+      "text": "Count back from 6 to 2."
      }
     },
     "type": "choice",
@@ -1739,27 +1807,30 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 14 balloons. Some balloons float away. Now Leo has 3 balloons. How many balloons floated away?",
+     "text": "Leo has 14 balloons. Some balloons float away. Now he has 3 balloons. How many balloons floated away?",
      "speak": [
       "Leo has ",
       {
        "number": 14
       },
-      " balloons. Some balloons float away. Now Leo has ",
+      " balloons. Some balloons float away. Now he has ",
       {
        "number": 3
       },
       " balloons. How many balloons floated away?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 14
+      },
+      ". Now there are",
+      {
+       "number": 3
+      },
+      ".",
       {
        "number": 14
       },
@@ -1767,15 +1838,20 @@
       {
        "number": 3
       },
-      "is",
+      "equals",
       {
        "number": 11
       },
-      "."
+      ".",
+      {
+       "number": 11
+      },
+      "balloons floated away."
      ],
      "steps": [
+      "There were 14. Now there are 3.",
       "14 − 3 = 11.",
-      "The answer is 11."
+      "11 balloons floated away."
      ],
      "visual": {
       "kind": "equation",
@@ -1786,6 +1862,9 @@
        "=",
        11
       ]
+     },
+     "hint": {
+      "text": "Count back from 14 to 3."
      }
     },
     "type": "choice",
@@ -1842,27 +1921,30 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 8 cookies. Ben gives some away. Now Ben has 5 cookies. How many cookies did Ben give away?",
+     "text": "Ben has 8 cookies. He gives some away. Now he has 5 cookies. How many cookies did he give away?",
      "speak": [
       "Ben has ",
       {
        "number": 8
       },
-      " cookies. Ben gives some away. Now Ben has ",
+      " cookies. He gives some away. Now he has ",
       {
        "number": 5
       },
-      " cookies. How many cookies did Ben give away?"
+      " cookies. How many cookies did he give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 8
+      },
+      ". Now there are",
+      {
+       "number": 5
+      },
+      ".",
       {
        "number": 8
       },
@@ -1870,15 +1952,21 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 3
       },
-      "."
+      ".",
+      "He gave away",
+      {
+       "number": 3
+      },
+      "cookies."
      ],
      "steps": [
+      "There were 8. Now there are 5.",
       "8 − 5 = 3.",
-      "The answer is 3."
+      "He gave away 3 cookies."
      ],
      "visual": {
       "kind": "equation",
@@ -1889,6 +1977,9 @@
        "=",
        3
       ]
+     },
+     "hint": {
+      "text": "Count back from 8 to 5."
      }
     },
     "type": "choice",
@@ -1945,27 +2036,30 @@
      ]
     },
     "prompt": {
-     "text": "Max has 16 cookies. Max gives some away. Now Max has 9 cookies. How many cookies did Max give away?",
+     "text": "Max has 16 cookies. He gives some away. Now he has 9 cookies. How many cookies did he give away?",
      "speak": [
       "Max has ",
       {
        "number": 16
       },
-      " cookies. Max gives some away. Now Max has ",
+      " cookies. He gives some away. Now he has ",
       {
        "number": 9
       },
-      " cookies. How many cookies did Max give away?"
+      " cookies. How many cookies did he give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 16
+      },
+      ". Now there are",
+      {
+       "number": 9
+      },
+      ".",
       {
        "number": 16
       },
@@ -1973,15 +2067,21 @@
       {
        "number": 9
       },
-      "is",
+      "equals",
       {
        "number": 7
       },
-      "."
+      ".",
+      "He gave away",
+      {
+       "number": 7
+      },
+      "cookies."
      ],
      "steps": [
+      "There were 16. Now there are 9.",
       "16 − 9 = 7.",
-      "The answer is 7."
+      "He gave away 7 cookies."
      ],
      "visual": {
       "kind": "equation",
@@ -1992,6 +2092,9 @@
        "=",
        7
       ]
+     },
+     "hint": {
+      "text": "Count back from 16 to 9."
      }
     },
     "type": "choice",
@@ -2060,14 +2163,17 @@
       " frogs are on the log. How many frogs jumped?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐸",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 16
+      },
+      ". Now there are",
+      {
+       "number": 10
+      },
+      ".",
       {
        "number": 16
       },
@@ -2075,15 +2181,20 @@
       {
        "number": 10
       },
-      "is",
+      "equals",
       {
        "number": 6
       },
-      "."
+      ".",
+      {
+       "number": 6
+      },
+      "frogs jumped."
      ],
      "steps": [
+      "There were 16. Now there are 10.",
       "16 − 10 = 6.",
-      "The answer is 6."
+      "6 frogs jumped."
      ],
      "visual": {
       "kind": "equation",
@@ -2094,6 +2205,9 @@
        "=",
        6
       ]
+     },
+     "hint": {
+      "text": "Count back from 16 to 10."
      }
     },
     "type": "choice",
@@ -2150,27 +2264,30 @@
      ]
     },
     "prompt": {
-     "text": "Leo has 18 balloons. Some balloons float away. Now Leo has 13 balloons. How many balloons floated away?",
+     "text": "Leo has 18 balloons. Some balloons float away. Now he has 13 balloons. How many balloons floated away?",
      "speak": [
       "Leo has ",
       {
        "number": 18
       },
-      " balloons. Some balloons float away. Now Leo has ",
+      " balloons. Some balloons float away. Now he has ",
       {
        "number": 13
       },
       " balloons. How many balloons floated away?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 18
+      },
+      ". Now there are",
+      {
+       "number": 13
+      },
+      ".",
       {
        "number": 18
       },
@@ -2178,15 +2295,20 @@
       {
        "number": 13
       },
-      "is",
+      "equals",
       {
        "number": 5
       },
-      "."
+      ".",
+      {
+       "number": 5
+      },
+      "balloons floated away."
      ],
      "steps": [
+      "There were 18. Now there are 13.",
       "18 − 13 = 5.",
-      "The answer is 5."
+      "5 balloons floated away."
      ],
      "visual": {
       "kind": "equation",
@@ -2197,6 +2319,9 @@
        "=",
        5
       ]
+     },
+     "hint": {
+      "text": "Count back from 18 to 13."
      }
     },
     "type": "choice",
@@ -2253,27 +2378,30 @@
      ]
     },
     "prompt": {
-     "text": "Ben has 17 balloons. Some balloons float away. Now Ben has 8 balloons. How many balloons floated away?",
+     "text": "Ben has 17 balloons. Some balloons float away. Now he has 8 balloons. How many balloons floated away?",
      "speak": [
       "Ben has ",
       {
        "number": 17
       },
-      " balloons. Some balloons float away. Now Ben has ",
+      " balloons. Some balloons float away. Now he has ",
       {
        "number": 8
       },
       " balloons. How many balloons floated away?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 17
+      },
+      ". Now there are",
+      {
+       "number": 8
+      },
+      ".",
       {
        "number": 17
       },
@@ -2281,15 +2409,20 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      {
+       "number": 9
+      },
+      "balloons floated away."
      ],
      "steps": [
+      "There were 17. Now there are 8.",
       "17 − 8 = 9.",
-      "The answer is 9."
+      "9 balloons floated away."
      ],
      "visual": {
       "kind": "equation",
@@ -2300,6 +2433,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Count back from 17 to 8."
      }
     },
     "type": "choice",
@@ -2353,27 +2489,30 @@
      "name": "Zoe"
     },
     "prompt": {
-     "text": "Zoe has 20 cookies. Zoe gives some away. Now Zoe has 19 cookies. How many cookies did Zoe give away?",
+     "text": "Zoe has 20 cookies. She gives some away. Now she has 19 cookies. How many cookies did she give away?",
      "speak": [
       "Zoe has ",
       {
        "number": 20
       },
-      " cookies. Zoe gives some away. Now Zoe has ",
+      " cookies. She gives some away. Now she has ",
       {
        "number": 19
       },
-      " cookies. How many cookies did Zoe give away?"
+      " cookies. How many cookies did she give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 20
+      },
+      ". Now there are",
+      {
+       "number": 19
+      },
+      ".",
       {
        "number": 20
       },
@@ -2381,15 +2520,21 @@
       {
        "number": 19
       },
-      "is",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      "She gave away",
+      {
+       "number": 1
+      },
+      "cookie."
      ],
      "steps": [
+      "There were 20. Now there are 19.",
       "20 − 19 = 1.",
-      "The answer is 1."
+      "She gave away 1 cookie."
      ],
      "visual": {
       "kind": "equation",
@@ -2400,6 +2545,9 @@
        "=",
        1
       ]
+     },
+     "hint": {
+      "text": "Count back from 20 to 19."
      }
     },
     "type": "numberPad",
@@ -2421,72 +2569,69 @@
      "name": "Ava"
     },
     "prompt": {
-     "text": "Ava has some marbles. Ava gets 11 more. Now Ava has 13 marbles. How many marbles did Ava have at the start?",
+     "text": "Ava has some marbles. She gets 11 more. Now she has 13 marbles. How many marbles did she have at the start?",
      "speak": [
-      "Ava has some marbles. Ava gets ",
+      "Ava has some marbles. She gets ",
       {
        "number": 11
       },
-      " more. Now Ava has ",
+      " more. Now she has ",
       {
        "number": 13
       },
-      " marbles. How many marbles did Ava have at the start?"
+      " marbles. How many marbles did she have at the start?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
       {
+       "number": 11
+      },
+      "more were added, and now there are",
+      {
        "number": 13
       },
-      " minus ",
+      ".",
+      "Take away the",
       {
        "number": 11
       },
-      " equals ",
+      ":",
+      {
+       "number": 13
+      },
+      "minus",
+      {
+       "number": 11
+      },
+      "equals",
       {
        "number": 2
       },
       ".",
-      "At the start there were ",
+      "She had",
       {
        "number": 2
       },
-      " marbles.",
-      "Check: ",
-      {
-       "number": 2
-      },
-      " plus ",
-      {
-       "number": 11
-      },
-      " equals ",
-      {
-       "number": 13
-      },
-      "."
+      "marbles at the start."
      ],
      "steps": [
-      "13 − 11 = 2.",
-      "At the start there were 2 marbles.",
-      "Check: 2 + 11 = 13."
+      "11 more were added, and now there are 13.",
+      "Take away the 11: 13 − 11 = 2.",
+      "She had 2 marbles at the start."
      ],
      "visual": {
       "kind": "equation",
       "parts": [
-       "blank",
+       2,
        "+",
        11,
        "=",
        13
       ]
+     },
+     "hint": {
+      "text": "Take the 11 that were added away from 13."
      }
     },
     "type": "numberPad",
@@ -2508,72 +2653,69 @@
      "name": "Sam"
     },
     "prompt": {
-     "text": "Sam has some marbles. Sam gets 5 more. Now Sam has 6 marbles. How many marbles did Sam have at the start?",
+     "text": "Sam has some marbles. He gets 5 more. Now he has 6 marbles. How many marbles did he have at the start?",
      "speak": [
-      "Sam has some marbles. Sam gets ",
+      "Sam has some marbles. He gets ",
       {
        "number": 5
       },
-      " more. Now Sam has ",
+      " more. Now he has ",
       {
        "number": 6
       },
-      " marbles. How many marbles did Sam have at the start?"
+      " marbles. How many marbles did he have at the start?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
       {
+       "number": 5
+      },
+      "more were added, and now there are",
+      {
        "number": 6
       },
-      " minus ",
+      ".",
+      "Take away the",
       {
        "number": 5
       },
-      " equals ",
+      ":",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 5
+      },
+      "equals",
       {
        "number": 1
       },
       ".",
-      "At the start there were ",
+      "He had",
       {
        "number": 1
       },
-      " marbles.",
-      "Check: ",
-      {
-       "number": 1
-      },
-      " plus ",
-      {
-       "number": 5
-      },
-      " equals ",
-      {
-       "number": 6
-      },
-      "."
+      "marble at the start."
      ],
      "steps": [
-      "6 − 5 = 1.",
-      "At the start there were 1 marbles.",
-      "Check: 1 + 5 = 6."
+      "5 more were added, and now there are 6.",
+      "Take away the 5: 6 − 5 = 1.",
+      "He had 1 marble at the start."
      ],
      "visual": {
       "kind": "equation",
       "parts": [
-       "blank",
+       1,
        "+",
        5,
        "=",
        6
       ]
+     },
+     "hint": {
+      "text": "Take the 5 that were added away from 6."
      }
     },
     "type": "numberPad",
@@ -2595,72 +2737,69 @@
      "name": "Leo"
     },
     "prompt": {
-     "text": "Leo has some marbles. Leo gets 2 more. Now Leo has 6 marbles. How many marbles did Leo have at the start?",
+     "text": "Leo has some marbles. He gets 2 more. Now he has 6 marbles. How many marbles did he have at the start?",
      "speak": [
-      "Leo has some marbles. Leo gets ",
+      "Leo has some marbles. He gets ",
       {
        "number": 2
       },
-      " more. Now Leo has ",
+      " more. Now he has ",
       {
        "number": 6
       },
-      " marbles. How many marbles did Leo have at the start?"
+      " marbles. How many marbles did he have at the start?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⚪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
       {
+       "number": 2
+      },
+      "more were added, and now there are",
+      {
        "number": 6
       },
-      " minus ",
+      ".",
+      "Take away the",
       {
        "number": 2
       },
-      " equals ",
+      ":",
+      {
+       "number": 6
+      },
+      "minus",
+      {
+       "number": 2
+      },
+      "equals",
       {
        "number": 4
       },
       ".",
-      "At the start there were ",
+      "He had",
       {
        "number": 4
       },
-      " marbles.",
-      "Check: ",
-      {
-       "number": 4
-      },
-      " plus ",
-      {
-       "number": 2
-      },
-      " equals ",
-      {
-       "number": 6
-      },
-      "."
+      "marbles at the start."
      ],
      "steps": [
-      "6 − 2 = 4.",
-      "At the start there were 4 marbles.",
-      "Check: 4 + 2 = 6."
+      "2 more were added, and now there are 6.",
+      "Take away the 2: 6 − 2 = 4.",
+      "He had 4 marbles at the start."
      ],
      "visual": {
       "kind": "equation",
       "parts": [
-       "blank",
+       4,
        "+",
        2,
        "=",
        6
       ]
+     },
+     "hint": {
+      "text": "Take the 2 that were added away from 6."
      }
     },
     "type": "numberPad",
@@ -2695,59 +2834,56 @@
       " apples. How many apples were in the basket at the start?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍎",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
       {
+       "number": 3
+      },
+      "more were added, and now there are",
+      {
        "number": 14
       },
-      " minus ",
+      ".",
+      "Take away the",
       {
        "number": 3
       },
-      " equals ",
+      ":",
+      {
+       "number": 14
+      },
+      "minus",
+      {
+       "number": 3
+      },
+      "equals",
       {
        "number": 11
       },
       ".",
-      "At the start there were ",
+      "There were",
       {
        "number": 11
       },
-      " apples.",
-      "Check: ",
-      {
-       "number": 11
-      },
-      " plus ",
-      {
-       "number": 3
-      },
-      " equals ",
-      {
-       "number": 14
-      },
-      "."
+      "apples in the basket at the start."
      ],
      "steps": [
-      "14 − 3 = 11.",
-      "At the start there were 11 apples.",
-      "Check: 11 + 3 = 14."
+      "3 more were added, and now there are 14.",
+      "Take away the 3: 14 − 3 = 11.",
+      "There were 11 apples in the basket at the start."
      ],
      "visual": {
       "kind": "equation",
       "parts": [
-       "blank",
+       11,
        "+",
        3,
        "=",
        14
       ]
+     },
+     "hint": {
+      "text": "Take the 3 that were added away from 14."
      }
     },
     "type": "numberPad",
@@ -2768,27 +2904,30 @@
      "name": "Ben"
     },
     "prompt": {
-     "text": "Ben has 8 cookies. Ben gives some away. Now Ben has 5 cookies. How many cookies did Ben give away?",
+     "text": "Ben has 8 cookies. He gives some away. Now he has 5 cookies. How many cookies did he give away?",
      "speak": [
       "Ben has ",
       {
        "number": 8
       },
-      " cookies. Ben gives some away. Now Ben has ",
+      " cookies. He gives some away. Now he has ",
       {
        "number": 5
       },
-      " cookies. How many cookies did Ben give away?"
+      " cookies. How many cookies did he give away?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🍪",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 8
+      },
+      ". Now there are",
+      {
+       "number": 5
+      },
+      ".",
       {
        "number": 8
       },
@@ -2796,15 +2935,21 @@
       {
        "number": 5
       },
-      "is",
+      "equals",
       {
        "number": 3
       },
-      "."
+      ".",
+      "He gave away",
+      {
+       "number": 3
+      },
+      "cookies."
      ],
      "steps": [
+      "There were 8. Now there are 5.",
       "8 − 5 = 3.",
-      "The answer is 3."
+      "He gave away 3 cookies."
      ],
      "visual": {
       "kind": "equation",
@@ -2815,6 +2960,9 @@
        "=",
        3
       ]
+     },
+     "hint": {
+      "text": "Count back from 8 to 5."
      }
     },
     "type": "numberPad",
@@ -2836,58 +2984,57 @@
      "name": "Max"
     },
     "prompt": {
-     "text": "Max has 9 stickers. Max gets some more. Now Max has 16 stickers. How many stickers did Max get?",
+     "text": "Max has 9 stickers. He gets some more. Now he has 16 stickers. How many stickers did he get?",
      "speak": [
       "Max has ",
       {
        "number": 9
       },
-      " stickers. Max gets some more. Now Max has ",
+      " stickers. He gets some more. Now he has ",
       {
        "number": 16
       },
-      " stickers. How many stickers did Max get?"
+      " stickers. How many stickers did he get?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "⭐",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 9
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 16
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 7
       },
-      " more.",
+      "more:",
       {
        "number": 9
       },
-      " plus ",
+      "plus",
       {
        "number": 7
       },
-      " equals ",
+      "equals",
       {
        "number": 16
       },
-      "."
+      ".",
+      "He got",
+      {
+       "number": 7
+      },
+      "stickers."
      ],
      "steps": [
       "Start at 9. Count up to 16.",
-      "That is 7 more.",
-      "9 + 7 = 16."
+      "That is 7 more: 9 + 7 = 16.",
+      "He got 7 stickers."
      ],
      "visual": {
       "kind": "equation",
@@ -2898,6 +3045,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Start at 9 and count up to 16."
      }
     },
     "type": "numberPad",
@@ -2931,45 +3081,43 @@
       " birds. How many birds came?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐦",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 10
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 16
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 6
       },
-      " more.",
+      "more:",
       {
        "number": 10
       },
-      " plus ",
+      "plus",
       {
        "number": 6
       },
-      " equals ",
+      "equals",
       {
        "number": 16
       },
-      "."
+      ".",
+      {
+       "number": 6
+      },
+      "birds came."
      ],
      "steps": [
       "Start at 10. Count up to 16.",
-      "That is 6 more.",
-      "10 + 6 = 16."
+      "That is 6 more: 10 + 6 = 16.",
+      "6 birds came."
      ],
      "visual": {
       "kind": "equation",
@@ -2980,6 +3128,9 @@
        "=",
        16
       ]
+     },
+     "hint": {
+      "text": "Start at 10 and count up to 16."
      }
     },
     "type": "numberPad",
@@ -3001,58 +3152,57 @@
      "name": "Leo"
     },
     "prompt": {
-     "text": "Leo has 13 shells. Leo finds some more at the beach. Now Leo has 18 shells. How many shells did Leo find?",
+     "text": "Leo has 13 shells. He finds some more at the beach. Now he has 18 shells. How many shells did he find?",
      "speak": [
       "Leo has ",
       {
        "number": 13
       },
-      " shells. Leo finds some more at the beach. Now Leo has ",
+      " shells. He finds some more at the beach. Now he has ",
       {
        "number": 18
       },
-      " shells. How many shells did Leo find?"
+      " shells. How many shells did he find?"
      ]
-    },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🐚",
-     "count": 1,
-     "layout": "row"
     },
     "explanation": {
      "speak": [
-      "Start at ",
+      "Start at",
       {
        "number": 13
       },
-      ". Count up to ",
+      ". Count up to",
       {
        "number": 18
       },
       ".",
-      "That is ",
+      "That is",
       {
        "number": 5
       },
-      " more.",
+      "more:",
       {
        "number": 13
       },
-      " plus ",
+      "plus",
       {
        "number": 5
       },
-      " equals ",
+      "equals",
       {
        "number": 18
       },
-      "."
+      ".",
+      "He found",
+      {
+       "number": 5
+      },
+      "shells."
      ],
      "steps": [
       "Start at 13. Count up to 18.",
-      "That is 5 more.",
-      "13 + 5 = 18."
+      "That is 5 more: 13 + 5 = 18.",
+      "He found 5 shells."
      ],
      "visual": {
       "kind": "equation",
@@ -3063,6 +3213,9 @@
        "=",
        18
       ]
+     },
+     "hint": {
+      "text": "Start at 13 and count up to 18."
      }
     },
     "type": "numberPad",
@@ -3083,27 +3236,30 @@
      "name": "Ben"
     },
     "prompt": {
-     "text": "Ben has 17 balloons. Some balloons float away. Now Ben has 8 balloons. How many balloons floated away?",
+     "text": "Ben has 17 balloons. Some balloons float away. Now he has 8 balloons. How many balloons floated away?",
      "speak": [
       "Ben has ",
       {
        "number": 17
       },
-      " balloons. Some balloons float away. Now Ben has ",
+      " balloons. Some balloons float away. Now he has ",
       {
        "number": 8
       },
       " balloons. How many balloons floated away?"
      ]
     },
-    "stimulus": {
-     "kind": "emojiGroup",
-     "emoji": "🎈",
-     "count": 1,
-     "layout": "row"
-    },
     "explanation": {
      "speak": [
+      "There were",
+      {
+       "number": 17
+      },
+      ". Now there are",
+      {
+       "number": 8
+      },
+      ".",
       {
        "number": 17
       },
@@ -3111,15 +3267,20 @@
       {
        "number": 8
       },
-      "is",
+      "equals",
       {
        "number": 9
       },
-      "."
+      ".",
+      {
+       "number": 9
+      },
+      "balloons floated away."
      ],
      "steps": [
+      "There were 17. Now there are 8.",
       "17 − 8 = 9.",
-      "The answer is 9."
+      "9 balloons floated away."
      ],
      "visual": {
       "kind": "equation",
@@ -3130,6 +3291,9 @@
        "=",
        9
       ]
+     },
+     "hint": {
+      "text": "Count back from 17 to 8."
      }
     },
     "type": "numberPad",

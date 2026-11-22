@@ -4,10 +4,10 @@ import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
+import type { Line, Shown as Explanation } from './wording';
+import { explain } from './wording';
 
 // Math grade 1 A.3 and A.4: tens and ones, and comparing two-digit numbers.
-
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
 
 // ---- A.3 Tens and ones ----
 // Levels: blocks to numeral, to 30 / to 99 / typed / "how many tens in 47", typed. Oracle: place.
@@ -15,13 +15,21 @@ type Explanation = { speak: Say; steps: string[]; visual: Visual };
 const blocks = (n: number): Visual => ({ kind: 'baseTen', hundreds: 0, tens: Math.floor(n / 10), ones: n % 10 });
 const tensWord = (tens: number): string => (tens === 1 ? 'ten' : 'tens');
 
+// "2 tens make 20." "20 and 3 more is 23." Never "1 more one", which is said "one more one".
+const BLOCKS_HINT = 'Count the long blocks by 10s. Then count on the small blocks.';
+
 function blocksExplanation(n: number): Explanation {
   const [tens, ones] = [Math.floor(n / 10), n % 10];
-  const first: Say = [{ number: tens }, `${tensWord(tens)} is`, { number: tens * 10 }, '.'];
-  const firstText = `${tens} ${tensWord(tens)} is ${tens * 10}.`;
-  if (ones === 0) return { speak: [...first, 'There are no ones.'], steps: [firstText, 'There are no ones.'], visual: blocks(n) };
-  const more = ones === 1 ? 'more one makes' : 'more ones makes';
-  return { speak: [...first, { number: ones }, more, { number: n }, '.'], steps: [firstText, `${ones} ${more} ${n}.`], visual: blocks(n) };
+  const first = `${tens} ${tensWord(tens)} ${tens === 1 ? 'makes' : 'make'} ${tens * 10}.`;
+  const second = ones === 0 ? `There are no ones, so it is ${n}.` : `${tens * 10} and ${ones} more is ${n}.`;
+  return explain([first, second], blocks(n), { text: BLOCKS_HINT });
+}
+
+// "61 is 6 tens and 1 one." is said "6 tens and a single one", never "one one".
+function placeLine(n: number): Line {
+  const [tens, ones] = [Math.floor(n / 10), n % 10];
+  const text = `${n} is ${tens} ${tensWord(tens)} and ${ones} ${ones === 1 ? 'one' : 'ones'}.`;
+  return ones === 1 ? { text, say: [{ number: n }, 'is', { number: tens }, `${tensWord(tens)} and a single one.`] } : text;
 }
 
 const WHAT_NUMBER = 'What number is this?';
@@ -39,11 +47,7 @@ function tensAndOnes(level: Level, rng: Rng): QuestionDraft {
       stimulus: numeral(n),
       answer: tens,
       maxDigits: 1,
-      explanation: {
-        speak: [{ number: n }, 'is', { number: tens }, `${tensWord(tens)} and`, { number: ones }, ones === 1 ? 'one.' : 'ones.'],
-        steps: [`${n} is ${tens} ${tensWord(tens)} and ${ones} ${ones === 1 ? 'one' : 'ones'}.`],
-        visual: blocks(n),
-      },
+      explanation: explain([`The first digit of ${n} tells the tens.`, placeLine(n)], blocks(n), { text: 'The first digit tells how many tens.' }),
     };
   }
   const base = { mode: 'look' as const, prompt: { text: WHAT_NUMBER, speak: [WHAT_NUMBER] as Say }, stimulus: blocks(n), explanation: blocksExplanation(n) };
@@ -77,17 +81,19 @@ type Ask = 'most' | 'least';
 const SIGNS = ['>', '<', '='] as const;
 const SIGN_WORDS: Record<string, string> = { '>': 'is greater than', '<': 'is less than', '=': 'is equal to' };
 
-function compareExplanation(a: number, b: number, ask: Ask = 'most'): Explanation {
+// The steps read the two numbers in the order they are shown. Asked for a sign, the last step names it in that
+// order ("54 is less than 68, so the sign is <."); asked for a number, it names the one asked for.
+function compareExplanation(a: number, b: number, ask: Ask | 'sign' = 'most'): Explanation {
   const visual: Visual = { kind: 'equation', parts: [a, a > b ? '>' : a < b ? '<' : '=', b] };
-  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal.'], steps: [`${a} and ${b} are the same number.`, 'They are equal.'], visual };
-  const [big, small] = a > b ? [a, b] : [b, a];
   const sameTens = Math.floor(a / 10) === Math.floor(b / 10);
-  const look = sameTens ? 'The tens are the same. Look at the ones.' : 'Look at the biggest place first.';
+  // At the sign level the hint is the same whatever the two numbers are, so it tells nothing about them.
+  const hint = ask === 'sign' ? 'Look at the tens first. If they are the same, look at the ones.' : sameTens ? 'The tens are the same, so look at the ones.' : ask === 'most' ? 'Look at the tens first. The number with more tens is greater.' : 'Look at the tens first. The number with fewer tens is less.';
+  if (a === b) return explain([`${a} and ${b} are the same number.`, 'So the sign is =.'], visual, { text: hint });
+  const [big, small] = a > b ? [a, b] : [b, a];
+  const look = sameTens ? 'The tens are the same, so look at the ones.' : 'Look at the tens first.';
   const place = sameTens ? 'ones' : 'tens';
-  // Asked for the smaller number, the last line names it.
-  const last: Say = ask === 'most' ? [{ number: big }, 'is greater than', { number: small }, '.'] : [{ number: small }, 'is less than', { number: big }, '.'];
-  const lastText = ask === 'most' ? `${big} is greater than ${small}.` : `${small} is less than ${big}.`;
-  return { speak: [look, { number: big }, `has more ${place}.`, ...last], steps: [look, `${big} has more ${place}.`, lastText], visual };
+  const last = ask === 'sign' ? (a > b ? `${a} is greater than ${b}, so the sign is >.` : `${a} is less than ${b}, so the sign is <.`) : ask === 'most' ? `${big} is greater than ${small}.` : `${small} is less than ${big}.`;
+  return explain([look, `${a} has ${a > b ? 'more' : 'fewer'} ${place} than ${b}.`, last], visual, { text: hint });
 }
 
 function twoDigit(level: Level, rng: Rng): [number, number] {
@@ -116,7 +122,7 @@ function compareTwoDigit(level: Level, rng: Rng): QuestionDraft {
       stimulus: { kind: 'equation', parts: [a, 'blank', b] },
       options: SIGNS.map((sign): Visual => ({ kind: 'text', value: sign, size: 'xl', speak: [SIGN_WORDS[sign] as string] })),
       answerIndex: SIGNS.indexOf(answer),
-      explanation: compareExplanation(a, b),
+      explanation: compareExplanation(a, b, 'sign'),
     };
   }
   const values = twoDigit(level, rng);
@@ -152,7 +158,7 @@ export const compareTwoDigitGenerator: SkillGenerator = {
       visual: { kind: 'row', children: [numeral(64), numeral(67)] },
       reveal: { text: compareExplanation(64, 67).steps.join(' '), speak: compareExplanation(64, 67).speak, visual: compareExplanation(64, 67).visual },
     },
-    { beat: 'remember', text: 'Compare the biggest place first.', speak: ['Compare the biggest place first.'], visual: compareExplanation(52, 38).visual },
+    { beat: 'remember', text: 'Look at the tens first.', speak: ['Look at the tens first.'], visual: compareExplanation(52, 38).visual },
   ],
   oracle: 'compare',
 };

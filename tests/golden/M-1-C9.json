@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-C9",
- "version": 2,
+ "version": 3,
  "example": {
   "mode": "look",
   "facts": {
@@ -85,19 +85,40 @@
   },
   "explanation": {
    "speak": [
-    "Find bananas. Count the marks: ",
+    "Find the bananas row.",
+    "A bundle of marks is",
+    {
+     "number": 5
+    },
+    ". Count on:",
+    {
+     "number": 6
+    },
+    ",",
+    {
+     "number": 7
+    },
+    ",",
     {
      "number": 8
     },
-    "."
+    ".",
+    {
+     "number": 8
+    },
+    "chose bananas."
    ],
    "steps": [
-    "Find bananas.",
-    "Count the marks: 8."
+    "Find the bananas row.",
+    "A bundle of marks is 5. Count on: 6, 7, 8.",
+    "8 chose bananas."
    ],
    "visual": {
     "kind": "tally",
     "count": 8
+   },
+   "hint": {
+    "text": "Find the bananas row. Count its marks. A bundle is 5."
    }
   },
   "type": "choice",
@@ -225,19 +246,40 @@
     },
     "explanation": {
      "speak": [
-      "Find grapes. Count the marks: ",
+      "Find the grapes row.",
+      "Count the marks:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
       {
        "number": 4
       },
-      "."
+      ".",
+      {
+       "number": 4
+      },
+      "chose grapes."
      ],
      "steps": [
-      "Find grapes.",
-      "Count the marks: 4."
+      "Find the grapes row.",
+      "Count the marks: 1, 2, 3, 4.",
+      "4 chose grapes."
      ],
      "visual": {
       "kind": "tally",
       "count": 4
+     },
+     "hint": {
+      "text": "Find the grapes row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -363,19 +405,28 @@
     },
     "explanation": {
      "speak": [
-      "Find car. Count the marks: ",
+      "Find the car row.",
+      "Count the marks:",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "came by car."
      ],
      "steps": [
-      "Find car.",
-      "Count the marks: 1."
+      "Find the car row.",
+      "Count the marks: 1.",
+      "1 came by car."
      ],
      "visual": {
       "kind": "tally",
       "count": 1
+     },
+     "hint": {
+      "text": "Find the car row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -501,19 +552,32 @@
     },
     "explanation": {
      "speak": [
-      "Find bus. Count the marks: ",
+      "Find the bus row.",
+      "A bundle of marks is",
+      {
+       "number": 5
+      },
+      ". Count on:",
       {
        "number": 6
       },
-      "."
+      ".",
+      {
+       "number": 6
+      },
+      "came by bus."
      ],
      "steps": [
-      "Find bus.",
-      "Count the marks: 6."
+      "Find the bus row.",
+      "A bundle of marks is 5. Count on: 6.",
+      "6 came by bus."
      ],
      "visual": {
       "kind": "tally",
       "count": 6
+     },
+     "hint": {
+      "text": "Find the bus row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -639,19 +703,28 @@
     },
     "explanation": {
      "speak": [
-      "Find bike. Count the marks: ",
+      "Find the bike row.",
+      "A bundle of marks is",
       {
        "number": 5
       },
-      "."
+      ".",
+      {
+       "number": 5
+      },
+      "came by bike."
      ],
      "steps": [
-      "Find bike.",
-      "Count the marks: 5."
+      "Find the bike row.",
+      "A bundle of marks is 5.",
+      "5 came by bike."
      ],
      "visual": {
       "kind": "tally",
       "count": 5
+     },
+     "hint": {
+      "text": "Find the bike row. Count its marks."
      }
     },
     "type": "choice",
@@ -777,19 +850,32 @@
     },
     "explanation": {
      "speak": [
-      "Find car. Count the marks: ",
+      "Find the car row.",
+      "A bundle of marks is",
+      {
+       "number": 5
+      },
+      ". Count on:",
       {
        "number": 6
       },
-      "."
+      ".",
+      {
+       "number": 6
+      },
+      "came by car."
      ],
      "steps": [
-      "Find car.",
-      "Count the marks: 6."
+      "Find the car row.",
+      "A bundle of marks is 5. Count on: 6.",
+      "6 came by car."
      ],
      "visual": {
       "kind": "tally",
       "count": 6
+     },
+     "hint": {
+      "text": "Find the car row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -915,19 +1001,40 @@
     },
     "explanation": {
      "speak": [
-      "Find apples. Count the marks: ",
+      "Find the apples row.",
+      "A bundle of marks is",
+      {
+       "number": 5
+      },
+      ". Count on:",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ",",
       {
        "number": 8
       },
-      "."
+      ".",
+      {
+       "number": 8
+      },
+      "chose apples."
      ],
      "steps": [
-      "Find apples.",
-      "Count the marks: 8."
+      "Find the apples row.",
+      "A bundle of marks is 5. Count on: 6, 7, 8.",
+      "8 chose apples."
      ],
      "visual": {
       "kind": "tally",
       "count": 8
+     },
+     "hint": {
+      "text": "Find the apples row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -1053,19 +1160,44 @@
     },
     "explanation": {
      "speak": [
-      "Find fish. Count the marks: ",
+      "Find the fish row.",
+      "A bundle of marks is",
+      {
+       "number": 5
+      },
+      ". Count on:",
+      {
+       "number": 6
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ",",
+      {
+       "number": 8
+      },
+      ",",
       {
        "number": 9
       },
-      "."
+      ".",
+      {
+       "number": 9
+      },
+      "chose fish."
      ],
      "steps": [
-      "Find fish.",
-      "Count the marks: 9."
+      "Find the fish row.",
+      "A bundle of marks is 5. Count on: 6, 7, 8, 9.",
+      "9 chose fish."
      ],
      "visual": {
       "kind": "tally",
       "count": 9
+     },
+     "hint": {
+      "text": "Find the fish row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -1191,19 +1323,36 @@
     },
     "explanation": {
      "speak": [
-      "Find dogs. Count the marks: ",
+      "Find the dogs row.",
+      "A bundle of marks is",
+      {
+       "number": 5
+      },
+      ". Count on:",
+      {
+       "number": 6
+      },
+      ",",
       {
        "number": 7
       },
-      "."
+      ".",
+      {
+       "number": 7
+      },
+      "chose dogs."
      ],
      "steps": [
-      "Find dogs.",
-      "Count the marks: 7."
+      "Find the dogs row.",
+      "A bundle of marks is 5. Count on: 6, 7.",
+      "7 chose dogs."
      ],
      "visual": {
       "kind": "tally",
       "count": 7
+     },
+     "hint": {
+      "text": "Find the dogs row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -1329,19 +1478,28 @@
     },
     "explanation": {
      "speak": [
-      "Find cats. Count the marks: ",
+      "Find the cats row.",
+      "Count the marks:",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "chose cats."
      ],
      "steps": [
-      "Find cats.",
-      "Count the marks: 1."
+      "Find the cats row.",
+      "Count the marks: 1.",
+      "1 chose cats."
      ],
      "visual": {
       "kind": "tally",
       "count": 1
+     },
+     "hint": {
+      "text": "Find the cats row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -1467,19 +1625,40 @@
     },
     "explanation": {
      "speak": [
-      "Find grapes. Count the marks: ",
+      "Find the grapes row.",
+      "Count the marks:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 2
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
       {
        "number": 4
       },
-      "."
+      ".",
+      {
+       "number": 4
+      },
+      "chose grapes."
      ],
      "steps": [
-      "Find grapes.",
-      "Count the marks: 4."
+      "Find the grapes row.",
+      "Count the marks: 1, 2, 3, 4.",
+      "4 chose grapes."
      ],
      "visual": {
       "kind": "tally",
       "count": 4
+     },
+     "hint": {
+      "text": "Find the grapes row. Count its marks. A bundle is 5."
      }
     },
     "type": "choice",
@@ -1637,16 +1816,29 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Grapes has ",
+      "Count each row: apples",
+      {
+       "number": 8
+      },
+      ", bananas",
+      {
+       "number": 9
+      },
+      ", grapes",
       {
        "number": 4
       },
-      " marks. That is the fewest."
+      ".",
+      {
+       "number": 4
+      },
+      "is the fewest.",
+      "So grapes got the fewest votes."
      ],
      "steps": [
-      "Apples: 8.",
-      "Bananas: 9.",
-      "Grapes: 4."
+      "Count each row: apples 8, bananas 9, grapes 4.",
+      "4 is the fewest.",
+      "So grapes got the fewest votes."
      ],
      "visual": {
       "kind": "row",
@@ -1706,6 +1898,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -1731,9 +1926,9 @@
      ]
     },
     "prompt": {
-     "text": "Children told how they came to school. Which got the most votes?",
+     "text": "Children told how they came to school. Which way did the most children come?",
      "speak": [
-      "Children told how they came to school. Which got the most votes?"
+      "Children told how they came to school. Which way did the most children come?"
      ]
     },
     "stimulus": {
@@ -1827,16 +2022,29 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Bus has ",
+      "Count each row: car",
+      {
+       "number": 1
+      },
+      ", bus",
       {
        "number": 8
       },
-      " marks. That is the most."
+      ", bike",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "is the most.",
+      "So the most children came by bus."
      ],
      "steps": [
-      "Car: 1.",
-      "Bus: 8.",
-      "Bike: 5."
+      "Count each row: car 1, bus 8, bike 5.",
+      "8 is the most.",
+      "So the most children came by bus."
      ],
      "visual": {
       "kind": "row",
@@ -1896,6 +2104,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the most marks."
      }
     },
     "skillId": "M-1-C9",
@@ -1921,9 +2132,9 @@
      ]
     },
     "prompt": {
-     "text": "Children told how they came to school. Which got the fewest votes?",
+     "text": "Children told how they came to school. Which way did the fewest children come?",
      "speak": [
-      "Children told how they came to school. Which got the fewest votes?"
+      "Children told how they came to school. Which way did the fewest children come?"
      ]
     },
     "stimulus": {
@@ -2017,16 +2228,29 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Bus has ",
+      "Count each row: car",
+      {
+       "number": 8
+      },
+      ", bus",
       {
        "number": 6
       },
-      " marks. That is the fewest."
+      ", bike",
+      {
+       "number": 7
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "is the fewest.",
+      "So the fewest children came by bus."
      ],
      "steps": [
-      "Car: 8.",
-      "Bus: 6.",
-      "Bike: 7."
+      "Count each row: car 8, bus 6, bike 7.",
+      "6 is the fewest.",
+      "So the fewest children came by bus."
      ],
      "visual": {
       "kind": "row",
@@ -2086,6 +2310,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -2111,9 +2338,9 @@
      ]
     },
     "prompt": {
-     "text": "Children told how they came to school. Which got the fewest votes?",
+     "text": "Children told how they came to school. Which way did the fewest children come?",
      "speak": [
-      "Children told how they came to school. Which got the fewest votes?"
+      "Children told how they came to school. Which way did the fewest children come?"
      ]
     },
     "stimulus": {
@@ -2207,16 +2434,29 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Car has ",
+      "Count each row: car",
       {
        "number": 4
       },
-      " marks. That is the fewest."
+      ", bus",
+      {
+       "number": 6
+      },
+      ", bike",
+      {
+       "number": 5
+      },
+      ".",
+      {
+       "number": 4
+      },
+      "is the fewest.",
+      "So the fewest children came by car."
      ],
      "steps": [
-      "Car: 4.",
-      "Bus: 6.",
-      "Bike: 5."
+      "Count each row: car 4, bus 6, bike 5.",
+      "4 is the fewest.",
+      "So the fewest children came by car."
      ],
      "visual": {
       "kind": "row",
@@ -2276,6 +2516,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -2301,9 +2544,9 @@
      ]
     },
     "prompt": {
-     "text": "Children told how they came to school. Which got the most votes?",
+     "text": "Children told how they came to school. Which way did the most children come?",
      "speak": [
-      "Children told how they came to school. Which got the most votes?"
+      "Children told how they came to school. Which way did the most children come?"
      ]
     },
     "stimulus": {
@@ -2397,16 +2640,29 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "Bike has ",
+      "Count each row: car",
+      {
+       "number": 6
+      },
+      ", bus",
+      {
+       "number": 4
+      },
+      ", bike",
       {
        "number": 8
       },
-      " marks. That is the most."
+      ".",
+      {
+       "number": 8
+      },
+      "is the most.",
+      "So the most children came by bike."
      ],
      "steps": [
-      "Car: 6.",
-      "Bus: 4.",
-      "Bike: 8."
+      "Count each row: car 6, bus 4, bike 8.",
+      "8 is the most.",
+      "So the most children came by bike."
      ],
      "visual": {
       "kind": "row",
@@ -2466,6 +2722,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the most marks."
      }
     },
     "skillId": "M-1-C9",
@@ -2587,16 +2846,29 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Apples has ",
+      "Count each row: apples",
       {
        "number": 8
       },
-      " marks. That is the most."
+      ", bananas",
+      {
+       "number": 7
+      },
+      ", grapes",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 8
+      },
+      "is the most.",
+      "So apples got the most votes."
      ],
      "steps": [
-      "Apples: 8.",
-      "Bananas: 7.",
-      "Grapes: 3."
+      "Count each row: apples 8, bananas 7, grapes 3.",
+      "8 is the most.",
+      "So apples got the most votes."
      ],
      "visual": {
       "kind": "row",
@@ -2656,6 +2928,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the most marks."
      }
     },
     "skillId": "M-1-C9",
@@ -2777,16 +3052,29 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Cats has ",
+      "Count each row: dogs",
+      {
+       "number": 7
+      },
+      ", cats",
       {
        "number": 6
       },
-      " marks. That is the fewest."
+      ", fish",
+      {
+       "number": 9
+      },
+      ".",
+      {
+       "number": 6
+      },
+      "is the fewest.",
+      "So cats got the fewest votes."
      ],
      "steps": [
-      "Dogs: 7.",
-      "Cats: 6.",
-      "Fish: 9."
+      "Count each row: dogs 7, cats 6, fish 9.",
+      "6 is the fewest.",
+      "So cats got the fewest votes."
      ],
      "visual": {
       "kind": "row",
@@ -2846,6 +3134,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -2967,16 +3258,29 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Dogs has ",
+      "Count each row: dogs",
       {
        "number": 7
       },
-      " marks. That is the most."
+      ", cats",
+      {
+       "number": 2
+      },
+      ", fish",
+      {
+       "number": 1
+      },
+      ".",
+      {
+       "number": 7
+      },
+      "is the most.",
+      "So dogs got the most votes."
      ],
      "steps": [
-      "Dogs: 7.",
-      "Cats: 2.",
-      "Fish: 1."
+      "Count each row: dogs 7, cats 2, fish 1.",
+      "7 is the most.",
+      "So dogs got the most votes."
      ],
      "visual": {
       "kind": "row",
@@ -3036,6 +3340,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the most marks."
      }
     },
     "skillId": "M-1-C9",
@@ -3157,16 +3464,29 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "Cats has ",
+      "Count each row: dogs",
+      {
+       "number": 7
+      },
+      ", cats",
       {
        "number": 1
       },
-      " marks. That is the fewest."
+      ", fish",
+      {
+       "number": 3
+      },
+      ".",
+      {
+       "number": 1
+      },
+      "is the fewest.",
+      "So cats got the fewest votes."
      ],
      "steps": [
-      "Dogs: 7.",
-      "Cats: 1.",
-      "Fish: 3."
+      "Count each row: dogs 7, cats 1, fish 3.",
+      "1 is the fewest.",
+      "So cats got the fewest votes."
      ],
      "visual": {
       "kind": "row",
@@ -3226,6 +3546,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -3347,16 +3670,29 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "Apples has ",
+      "Count each row: apples",
       {
        "number": 2
       },
-      " marks. That is the fewest."
+      ", bananas",
+      {
+       "number": 5
+      },
+      ", grapes",
+      {
+       "number": 4
+      },
+      ".",
+      {
+       "number": 2
+      },
+      "is the fewest.",
+      "So apples got the fewest votes."
      ],
      "steps": [
-      "Apples: 2.",
-      "Bananas: 5.",
-      "Grapes: 4."
+      "Count each row: apples 2, bananas 5, grapes 4.",
+      "2 is the fewest.",
+      "So apples got the fewest votes."
      ],
      "visual": {
       "kind": "row",
@@ -3416,6 +3752,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Find the row with the fewest marks."
      }
     },
     "skillId": "M-1-C9",
@@ -3508,31 +3847,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bananas has ",
       {
        "number": 9
       },
-      ". Apples has ",
+      "chose bananas.",
       {
        "number": 8
       },
-      ". ",
+      "chose apples.",
       {
        "number": 9
       },
-      " minus ",
+      "minus",
       {
        "number": 8
       },
-      " is ",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "more chose bananas."
      ],
      "steps": [
-      "Bananas: 9. Apples: 8.",
-      "9 − 8 = 1."
+      "9 chose bananas. 8 chose apples.",
+      "9 − 8 = 1.",
+      "1 more chose bananas."
      ],
      "visual": {
       "kind": "row",
@@ -3592,6 +3935,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -3614,9 +3960,9 @@
      "vote": "Children told how they came to school."
     },
     "prompt": {
-     "text": "Children told how they came to school. How many more came by bus than bike?",
+     "text": "Children told how they came to school. How many more came by bus than by bike?",
      "speak": [
-      "Children told how they came to school. How many more came by bus than bike?"
+      "Children told how they came to school. How many more came by bus than by bike?"
      ]
     },
     "stimulus": {
@@ -3682,31 +4028,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bus has ",
       {
        "number": 8
       },
-      ". Bike has ",
+      "came by bus.",
       {
        "number": 5
       },
-      ". ",
+      "came by bike.",
       {
        "number": 8
       },
-      " minus ",
+      "minus",
       {
        "number": 5
       },
-      " is ",
+      "equals",
       {
        "number": 3
       },
-      "."
+      ".",
+      {
+       "number": 3
+      },
+      "more came by bus."
      ],
      "steps": [
-      "Bus: 8. Bike: 5.",
-      "8 − 5 = 3."
+      "8 came by bus. 5 came by bike.",
+      "8 − 5 = 3.",
+      "3 more came by bus."
      ],
      "visual": {
       "kind": "row",
@@ -3766,6 +4116,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -3788,9 +4141,9 @@
      "vote": "Children told how they came to school."
     },
     "prompt": {
-     "text": "Children told how they came to school. How many more came by car than bike?",
+     "text": "Children told how they came to school. How many more came by car than by bike?",
      "speak": [
-      "Children told how they came to school. How many more came by car than bike?"
+      "Children told how they came to school. How many more came by car than by bike?"
      ]
     },
     "stimulus": {
@@ -3856,31 +4209,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Car has ",
       {
        "number": 8
       },
-      ". Bike has ",
+      "came by car.",
       {
        "number": 7
       },
-      ". ",
+      "came by bike.",
       {
        "number": 8
       },
-      " minus ",
+      "minus",
       {
        "number": 7
       },
-      " is ",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "more came by car."
      ],
      "steps": [
-      "Car: 8. Bike: 7.",
-      "8 − 7 = 1."
+      "8 came by car. 7 came by bike.",
+      "8 − 7 = 1.",
+      "1 more came by car."
      ],
      "visual": {
       "kind": "row",
@@ -3940,6 +4297,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -3962,9 +4322,9 @@
      "vote": "Children told how they came to school."
     },
     "prompt": {
-     "text": "Children told how they came to school. How many more came by bus than car?",
+     "text": "Children told how they came to school. How many more came by bus than by car?",
      "speak": [
-      "Children told how they came to school. How many more came by bus than car?"
+      "Children told how they came to school. How many more came by bus than by car?"
      ]
     },
     "stimulus": {
@@ -4030,31 +4390,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bus has ",
       {
        "number": 6
       },
-      ". Car has ",
+      "came by bus.",
       {
        "number": 4
       },
-      ". ",
+      "came by car.",
       {
        "number": 6
       },
-      " minus ",
+      "minus",
       {
        "number": 4
       },
-      " is ",
+      "equals",
       {
        "number": 2
       },
-      "."
+      ".",
+      {
+       "number": 2
+      },
+      "more came by bus."
      ],
      "steps": [
-      "Bus: 6. Car: 4.",
-      "6 − 4 = 2."
+      "6 came by bus. 4 came by car.",
+      "6 − 4 = 2.",
+      "2 more came by bus."
      ],
      "visual": {
       "kind": "row",
@@ -4114,6 +4478,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -4136,9 +4503,9 @@
      "vote": "Children told how they came to school."
     },
     "prompt": {
-     "text": "Children told how they came to school. How many more came by bike than bus?",
+     "text": "Children told how they came to school. How many more came by bike than by bus?",
      "speak": [
-      "Children told how they came to school. How many more came by bike than bus?"
+      "Children told how they came to school. How many more came by bike than by bus?"
      ]
     },
     "stimulus": {
@@ -4204,31 +4571,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bike has ",
       {
        "number": 8
       },
-      ". Bus has ",
+      "came by bike.",
       {
        "number": 4
       },
-      ". ",
+      "came by bus.",
       {
        "number": 8
       },
-      " minus ",
+      "minus",
       {
        "number": 4
       },
-      " is ",
+      "equals",
       {
        "number": 4
       },
-      "."
+      ".",
+      {
+       "number": 4
+      },
+      "more came by bike."
      ],
      "steps": [
-      "Bike: 8. Bus: 4.",
-      "8 − 4 = 4."
+      "8 came by bike. 4 came by bus.",
+      "8 − 4 = 4.",
+      "4 more came by bike."
      ],
      "visual": {
       "kind": "row",
@@ -4288,6 +4659,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -4378,31 +4752,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bananas has ",
       {
        "number": 7
       },
-      ". Grapes has ",
+      "chose bananas.",
       {
        "number": 3
       },
-      ". ",
+      "chose grapes.",
       {
        "number": 7
       },
-      " minus ",
+      "minus",
       {
        "number": 3
       },
-      " is ",
+      "equals",
       {
        "number": 4
       },
-      "."
+      ".",
+      {
+       "number": 4
+      },
+      "more chose bananas."
      ],
      "steps": [
-      "Bananas: 7. Grapes: 3.",
-      "7 − 3 = 4."
+      "7 chose bananas. 3 chose grapes.",
+      "7 − 3 = 4.",
+      "4 more chose bananas."
      ],
      "visual": {
       "kind": "row",
@@ -4462,6 +4840,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -4552,31 +4933,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Dogs has ",
       {
        "number": 7
       },
-      ". Cats has ",
+      "chose dogs.",
       {
        "number": 6
       },
-      ". ",
+      "chose cats.",
       {
        "number": 7
       },
-      " minus ",
+      "minus",
       {
        "number": 6
       },
-      " is ",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "more chose dogs."
      ],
      "steps": [
-      "Dogs: 7. Cats: 6.",
-      "7 − 6 = 1."
+      "7 chose dogs. 6 chose cats.",
+      "7 − 6 = 1.",
+      "1 more chose dogs."
      ],
      "visual": {
       "kind": "row",
@@ -4636,6 +5021,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -4726,31 +5114,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Cats has ",
       {
        "number": 2
       },
-      ". Fish has ",
+      "chose cats.",
       {
        "number": 1
       },
-      ". ",
+      "chose fish.",
       {
        "number": 2
       },
-      " minus ",
+      "minus",
       {
        "number": 1
       },
-      " is ",
+      "equals",
       {
        "number": 1
       },
-      "."
+      ".",
+      {
+       "number": 1
+      },
+      "more chose cats."
      ],
      "steps": [
-      "Cats: 2. Fish: 1.",
-      "2 − 1 = 1."
+      "2 chose cats. 1 chose fish.",
+      "2 − 1 = 1.",
+      "1 more chose cats."
      ],
      "visual": {
       "kind": "row",
@@ -4810,6 +5202,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -4900,31 +5295,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Dogs has ",
       {
        "number": 7
       },
-      ". Fish has ",
+      "chose dogs.",
       {
        "number": 3
       },
-      ". ",
+      "chose fish.",
       {
        "number": 7
       },
-      " minus ",
+      "minus",
       {
        "number": 3
       },
-      " is ",
+      "equals",
       {
        "number": 4
       },
-      "."
+      ".",
+      {
+       "number": 4
+      },
+      "more chose dogs."
      ],
      "steps": [
-      "Dogs: 7. Fish: 3.",
-      "7 − 3 = 4."
+      "7 chose dogs. 3 chose fish.",
+      "7 − 3 = 4.",
+      "4 more chose dogs."
      ],
      "visual": {
       "kind": "row",
@@ -4984,6 +5383,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",
@@ -5074,31 +5476,35 @@
     "maxDigits": 1,
     "explanation": {
      "speak": [
-      "Bananas has ",
       {
        "number": 5
       },
-      ". Apples has ",
+      "chose bananas.",
       {
        "number": 2
       },
-      ". ",
+      "chose apples.",
       {
        "number": 5
       },
-      " minus ",
+      "minus",
       {
        "number": 2
       },
-      " is ",
+      "equals",
       {
        "number": 3
       },
-      "."
+      ".",
+      {
+       "number": 3
+      },
+      "more chose bananas."
      ],
      "steps": [
-      "Bananas: 5. Apples: 2.",
-      "5 − 2 = 3."
+      "5 chose bananas. 2 chose apples.",
+      "5 − 2 = 3.",
+      "3 more chose bananas."
      ],
      "visual": {
       "kind": "row",
@@ -5158,6 +5564,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "Count both rows. Then take the smaller number away from the bigger number."
      }
     },
     "skillId": "M-1-C9",

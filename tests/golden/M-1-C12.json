@@ -1,6 +1,6 @@
 {
  "skillId": "M-1-C12",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -57,11 +57,14 @@
   "answerIndex": 2,
   "explanation": {
    "speak": [
-    "The blue tower is taller than the pink tower, and the pink tower is taller than the green tower. So the blue tower is the tallest."
+    "The blue tower is taller than the pink tower.",
+    "The pink tower is taller than the green tower.",
+    "So the blue tower is the tallest of all."
    ],
    "steps": [
-    "The blue tower is taller than the pink tower, and the pink tower is taller than the green tower.",
-    "So the blue tower is the tallest."
+    "The blue tower is taller than the pink tower.",
+    "The pink tower is taller than the green tower.",
+    "So the blue tower is the tallest of all."
    ],
    "visual": {
     "kind": "row",
@@ -85,44 +88,31 @@
       "orientation": "vertical"
      }
     ]
+   },
+   "hint": {
+    "text": "Find the tower that is in both clues. It is in the middle."
    }
   },
   "stimulus": {
    "kind": "row",
    "children": [
     {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "bar",
-       "length": 7,
-       "color": "blue",
-       "orientation": "vertical"
-      },
-      {
-       "kind": "bar",
-       "length": 5,
-       "color": "pink",
-       "orientation": "vertical"
-      }
-     ]
+     "kind": "bar",
+     "length": 3,
+     "color": "green",
+     "orientation": "vertical"
     },
     {
-     "kind": "row",
-     "children": [
-      {
-       "kind": "bar",
-       "length": 5,
-       "color": "pink",
-       "orientation": "vertical"
-      },
-      {
-       "kind": "bar",
-       "length": 3,
-       "color": "green",
-       "orientation": "vertical"
-      }
-     ]
+     "kind": "bar",
+     "length": 5,
+     "color": "pink",
+     "orientation": "vertical"
+    },
+    {
+     "kind": "bar",
+     "length": 7,
+     "color": "blue",
+     "orientation": "vertical"
     }
    ]
   },
@@ -189,11 +179,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the purple tower is the tallest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the purple tower is the tallest of all."
      ],
      "steps": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the purple tower is the tallest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the purple tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -217,44 +210,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "purple",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "purple",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -319,11 +299,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -347,44 +330,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -449,11 +419,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -477,44 +450,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -579,11 +539,14 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the blue tower is the tallest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -607,44 +570,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -709,11 +659,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the green tower is the tallest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the green tower is the tallest of all."
      ],
      "steps": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
-      "So the green tower is the tallest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the green tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -737,44 +690,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "blue",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "green",
+       "orientation": "vertical"
       }
      ]
     },
@@ -839,11 +779,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -867,44 +810,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "yellow",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "yellow",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -969,11 +899,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the red tower is the tallest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the red tower is the tallest of all."
      ],
      "steps": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
-      "So the red tower is the tallest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the red tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -997,44 +930,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "red",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "yellow",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "yellow",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "yellow",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "blue",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "red",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1099,11 +1019,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the orange tower is the tallest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the orange tower is the tallest of all."
      ],
      "steps": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
-      "So the orange tower is the tallest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the orange tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1127,44 +1050,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "orange",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1229,11 +1139,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the orange tower is the tallest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the orange tower is the tallest of all."
      ],
      "steps": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
-      "So the orange tower is the tallest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the orange tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1257,44 +1170,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "orange",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "orange",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "green",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1359,11 +1259,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the yellow tower is the tallest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest of all."
      ],
      "steps": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
-      "So the yellow tower is the tallest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1387,44 +1290,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "red",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "red",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "yellow",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "red",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "blue",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "yellow",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1491,11 +1381,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1519,44 +1412,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "purple",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "purple",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1621,11 +1501,14 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1649,44 +1532,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1751,11 +1621,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1779,44 +1652,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -1881,11 +1741,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the orange tower is the shortest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -1909,44 +1772,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "orange",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2011,11 +1861,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the pink tower is the shortest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "steps": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
-      "So the pink tower is the shortest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2039,44 +1892,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "blue",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "green",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2141,11 +1981,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the yellow tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the yellow tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
-      "So the yellow tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the yellow tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2169,44 +2012,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "yellow",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "blue",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "yellow",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "blue",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2271,11 +2101,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the blue tower is the shortest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "steps": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
-      "So the blue tower is the shortest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2299,44 +2132,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "red",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "yellow",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "yellow",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "yellow",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "blue",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "red",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2401,11 +2221,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the pink tower is the shortest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "steps": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
-      "So the pink tower is the shortest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2429,44 +2252,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "orange",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "green",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "green",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "pink",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "orange",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2531,11 +2341,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the green tower is the shortest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the green tower is the shortest of all."
      ],
      "steps": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
-      "So the green tower is the shortest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the green tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2559,44 +2372,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "green",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "pink",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "orange",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "pink",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 7,
+       "color": "orange",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 3,
+       "color": "green",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2661,11 +2461,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the blue tower is the shortest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "steps": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
-      "So the blue tower is the shortest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2689,44 +2492,31 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "stimulus": {
      "kind": "row",
      "children": [
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "red",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 3,
-         "color": "blue",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 5,
+       "color": "red",
+       "orientation": "vertical"
       },
       {
-       "kind": "row",
-       "children": [
-        {
-         "kind": "bar",
-         "length": 7,
-         "color": "yellow",
-         "orientation": "vertical"
-        },
-        {
-         "kind": "bar",
-         "length": 5,
-         "color": "red",
-         "orientation": "vertical"
-        }
-       ]
+       "kind": "bar",
+       "length": 3,
+       "color": "blue",
+       "orientation": "vertical"
+      },
+      {
+       "kind": "bar",
+       "length": 7,
+       "color": "yellow",
+       "orientation": "vertical"
       }
      ]
     },
@@ -2793,11 +2583,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower. So the purple tower is the tallest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the purple tower is the tallest of all."
      ],
      "steps": [
-      "The purple tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the purple tower is the tallest."
+      "The purple tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the purple tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2821,6 +2614,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -2884,11 +2680,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -2912,6 +2711,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -2975,11 +2777,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower. So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the orange tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the orange tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3003,6 +2808,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3066,11 +2874,14 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower. So the orange tower is the shortest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "steps": [
-      "The blue tower is taller than the pink tower, and the pink tower is taller than the orange tower.",
-      "So the orange tower is the shortest."
+      "The blue tower is taller than the pink tower.",
+      "The pink tower is taller than the orange tower.",
+      "So the orange tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3094,6 +2905,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3157,11 +2971,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower. So the pink tower is the shortest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "steps": [
-      "The green tower is taller than the blue tower, and the blue tower is taller than the pink tower.",
-      "So the pink tower is the shortest."
+      "The green tower is taller than the blue tower.",
+      "The blue tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3185,6 +3002,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3248,11 +3068,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower. So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest of all."
      ],
      "steps": [
-      "The blue tower is taller than the green tower, and the green tower is taller than the yellow tower.",
-      "So the blue tower is the tallest."
+      "The blue tower is taller than the green tower.",
+      "The green tower is taller than the yellow tower.",
+      "So the blue tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3276,6 +3099,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3339,11 +3165,14 @@
     "answerIndex": 0,
     "explanation": {
      "speak": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower. So the blue tower is the shortest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "steps": [
-      "The red tower is taller than the yellow tower, and the yellow tower is taller than the blue tower.",
-      "So the blue tower is the shortest."
+      "The red tower is taller than the yellow tower.",
+      "The yellow tower is taller than the blue tower.",
+      "So the blue tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3367,6 +3196,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3430,11 +3262,14 @@
     "answerIndex": 2,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower. So the pink tower is the shortest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "steps": [
-      "The orange tower is taller than the green tower, and the green tower is taller than the pink tower.",
-      "So the pink tower is the shortest."
+      "The orange tower is taller than the green tower.",
+      "The green tower is taller than the pink tower.",
+      "So the pink tower is the shortest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3458,6 +3293,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3521,11 +3359,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower. So the orange tower is the tallest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the orange tower is the tallest of all."
      ],
      "steps": [
-      "The orange tower is taller than the pink tower, and the pink tower is taller than the green tower.",
-      "So the orange tower is the tallest."
+      "The orange tower is taller than the pink tower.",
+      "The pink tower is taller than the green tower.",
+      "So the orange tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3549,6 +3390,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
@@ -3612,11 +3456,14 @@
     "answerIndex": 1,
     "explanation": {
      "speak": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower. So the yellow tower is the tallest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest of all."
      ],
      "steps": [
-      "The yellow tower is taller than the red tower, and the red tower is taller than the blue tower.",
-      "So the yellow tower is the tallest."
+      "The yellow tower is taller than the red tower.",
+      "The red tower is taller than the blue tower.",
+      "So the yellow tower is the tallest of all."
      ],
      "visual": {
       "kind": "row",
@@ -3640,6 +3487,9 @@
         "orientation": "vertical"
        }
       ]
+     },
+     "hint": {
+      "text": "Find the tower that is in both clues. It is in the middle."
      }
     },
     "skillId": "M-1-C12",
