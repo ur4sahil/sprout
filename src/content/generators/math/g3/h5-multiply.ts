@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { STORY_COUNTABLES } from '../../../data/countables';
 import { ESTIMATE_STORIES } from '../../../data/h5-stories';
 import { STORY_NAMES } from '../../../data/storyProblems';
@@ -18,7 +18,14 @@ import { equation, fill, find, numberAnswer, sentenceOption, sentencePicture, se
 const times = (a: number, b: number): Say => [{ number: a }, 'times', { number: b }];
 const array = (rows: number, cols: number, emoji: string): Visual => ({ kind: 'array', rows, cols, emoji });
 const groupsPicture = (groups: number, each: number, emoji: string): Visual => ({ kind: 'row', children: Array.from({ length: groups }, (): Visual => ({ kind: 'emojiGroup', emoji, count: each, layout: 'dice' })) });
-const blankAsk = (sentence: string): Prompt => ({ text: `${sentence}. What number goes in the blank?`, speak: [...sentenceSay(sentence), '. What number goes in the blank?'] });
+// The missing number of a sentence is asked about as the box it is drawn in. A sentence whose brackets group times
+// signs ("(2 × 3) × 4") is not said: heard, the grouping is lost, so the voice points at the picture instead.
+const LOOK = 'Look at the number sentence.';
+const groupsTimes = (sentence: string): boolean => /[×÷]\s*\(|\)\s*[×÷]/.test(sentence);
+const blankAsk = (sentence: string): Prompt => ({
+  text: `${sentence}. What number goes in the box?`,
+  speak: groupsTimes(sentence) ? [`${LOOK} What number goes in the box?`] : [...sentenceSay(sentence), '. What number goes in the box?'],
+});
 
 // ---- C.8 Properties of multiplication ----
 // Levels: times 1 and times 0 / grouping three factors either way / the missing number in a property, typed.
@@ -51,7 +58,7 @@ function properties(level: Level, rng: Rng): QuestionDraft {
       type: 'choice',
       mode: 'look',
       facts: { expr: sentence, ask: 'value', options: values },
-      prompt: { text: `${sentence} equals what?`, speak: [...sentenceSay(sentence), 'equals what?'] },
+      prompt: { text: `What is ${sentence}?`, speak: ['What is', ...sentenceSay(sentence), '?'] },
       stimulus: sentencePicture(`${sentence} = □`),
       options: values.map((value) => numeral(value, 'l')),
       answerIndex: values.indexOf(answer),
@@ -71,7 +78,7 @@ function properties(level: Level, rng: Rng): QuestionDraft {
       type: 'choice',
       mode: 'look',
       facts: { expr: shown, ask: 'equal', options: choices },
-      prompt: { text: `${shown} is the same as which?`, speak: [...sentenceSay(shown), ', is the same as which?'] },
+      prompt: { text: `Which is the same as ${shown}?`, speak: [`${LOOK} Which one is the same?`] },
       stimulus: sentencePicture(shown),
       options: choices.map((choice) => sentenceOption(choice)),
       answerIndex: choices.indexOf(right),
@@ -85,9 +92,9 @@ function properties(level: Level, rng: Rng): QuestionDraft {
   const answer = form === 'order' ? b : form === 'group' ? c : form === 'one' ? 1 : 0;
   const explanation: Explanation =
     form === 'order'
-      ? { speak: ['Turning the factors round does not change the product.', ...times(b, a), 'is the same as', ...times(a, b), '.'], steps: ['Turning the factors round does not change the product.', `${b} × ${a} = ${a} × ${b}.`, `The blank is ${b}.`], visual: equation(b, '×', a, '=', a, '×', b) }
+      ? { speak: ['Changing the order of the factors does not change the product.', ...times(b, a), 'is the same as', ...times(a, b), '.'], steps: ['Changing the order of the factors does not change the product.', `${b} × ${a} = ${a} × ${b}.`, `The missing number is ${b}.`], visual: equation(b, '×', a, '=', a, '×', b) }
       : form === 'group'
-        ? { speak: ['Grouping the factors another way does not change the product. The same three factors are on both sides, so the blank is', { number: c }, '.'], steps: ['Grouping the factors another way does not change the product.', `Both sides use ${a}, ${c} and ${b}.`, `The blank is ${c}.`], visual: sentencePicture(`(${a} × ${c}) × ${b} = ${a} × (${c} × ${b})`) }
+        ? { speak: ['Grouping the factors another way does not change the product. The same three factors are on both sides, so the missing number is', { number: c }, '.'], steps: ['Grouping the factors another way does not change the product.', `Both sides use ${a}, ${c} and ${b}.`, `The missing number is ${c}.`], visual: sentencePicture(`(${a} × ${c}) × ${b} = ${a} × (${c} × ${b})`) }
         : onesZerosExplanation(a, form === 'one' ? 1 : 0);
   return { type: 'numberPad', mode: 'look', facts: { expr: sentence, ask: 'missing' }, prompt: blankAsk(sentence), stimulus: sentencePicture(sentence), answer, maxDigits: 2, explanation };
 }
@@ -103,7 +110,7 @@ export const propertiesGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'Times 1 keeps a number the same. Times 0 makes 0. Grouping factors another way keeps the product the same.', speak: ['Times one keeps a number the same. Times zero makes zero. Grouping factors another way keeps the product the same.'], visual: equation(7, '×', 1, '=', 7) },
     { beat: 'watch', text: groupingExplanation(2, 3, 4).steps.join(' '), speak: groupingExplanation(2, 3, 4).speak, visual: groupingExplanation(2, 3, 4).visual },
-    { beat: 'try', text: '0 × 8 equals what?', speak: [...times(0, 8), 'equals what?'], visual: equation(0, '×', 8, '=', 'blank'), reveal: { text: onesZerosExplanation(8, 0).steps.join(' '), speak: onesZerosExplanation(8, 0).speak, visual: onesZerosExplanation(8, 0).visual } },
+    { beat: 'try', text: 'What is 0 × 8?', speak: ['What is', ...times(0, 8), '?'], visual: equation(0, '×', 8, '=', 'blank'), reveal: { text: onesZerosExplanation(8, 0).steps.join(' '), speak: onesZerosExplanation(8, 0).speak, visual: onesZerosExplanation(8, 0).visual } },
     { beat: 'remember', text: 'The order and the grouping of factors do not change the product.', speak: ['The order and the grouping of factors do not change the product.'], visual: equation(3, '×', 5, '=', 5, '×', 3) },
   ],
   oracle: 'expression3',
@@ -130,6 +137,25 @@ function splitFactorExplanation(a: number, b: number): Explanation {
   };
 }
 
+// The missing part of a split, "7 × 8 = (7 × 5) + (7 × □)": the two parts add up to the number split.
+function splitPartExplanation(a: number, b: number, answer: number): Explanation {
+  return {
+    speak: ['Split', { number: b }, 'into', { number: 5 }, 'and', { number: b - 5 }, '.', ...times(a, 5), 'is', { number: a * 5 }, 'and', ...times(a, b - 5), 'is', { number: a * (b - 5) }, '. Together they make', { number: a * b }, '. The missing number is', { number: answer }, '.'],
+    steps: [`Split ${b} into 5 and ${b - 5}: 5 + ${b - 5} = ${b}.`, `${a} × 5 = ${a * 5} and ${a} × ${b - 5} = ${a * (b - 5)}. Together they make ${a * b}.`, `The missing number is ${answer}.`],
+    visual: sentencePicture(`${a} × ${b} = (${a} × 5) + (${a} × ${b - 5})`),
+  };
+}
+
+// The missing product, "7 × 6 = 35 + □": 35 is the 7 × 5 part, so the box is the other part, 7 × 1.
+function splitProductExplanation(a: number, b: number): Explanation {
+  const part = a * (b - 5);
+  return {
+    speak: ['Split', { number: b }, 'into', { number: 5 }, 'and', { number: b - 5 }, '.', ...times(a, 5), 'is', { number: a * 5 }, ', so the box is', ...times(a, b - 5), ', which is', { number: part }, '.'],
+    steps: [`Split ${b} into 5 and ${b - 5}.`, `${a} × 5 = ${a * 5}, so the box is ${a} × ${b - 5}.`, `${a} × ${b - 5} = ${part}. The missing number is ${part}.`],
+    visual: sentencePicture(`${a} × ${b} = (${a} × 5) + (${a} × ${b - 5})`),
+  };
+}
+
 function distributive(level: Level, rng: Rng): QuestionDraft {
   if (level === 1) {
     const [rows, cols] = [rng.int(6, 9), rng.int(2, 5)];
@@ -148,7 +174,8 @@ function distributive(level: Level, rng: Rng): QuestionDraft {
       stimulus: array(rows, cols, emoji),
       options: choices.map((choice) => sentenceOption(choice, 'm')),
       answerIndex: choices.indexOf(right),
-      explanation: splitExplanation(rows, cols, emoji),
+      // The first step only repeats the question: the hint says what each part must be.
+      explanation: { ...splitExplanation(rows, cols, emoji), hint: { text: 'Each part is a times fact: its rows times the number in each row.' } },
     };
   }
   const [a, b] = [rng.int(3, 9), rng.int(6, 9)];
@@ -157,11 +184,14 @@ function distributive(level: Level, rng: Rng): QuestionDraft {
     const firstMissing = rng.bool();
     const sentence = firstMissing ? `${a} × ${b} = (${a} × □) + (${a} × ${b - 5})` : `${a} × ${b} = (${a} × 5) + (${a} × □)`;
     const answer = firstMissing ? 5 : b - 5;
-    return numberAnswer({ prompt: blankAsk(sentence), stimulus: sentencePicture(sentence), explanation: splitFactorExplanation(a, b) }, { expr: sentence, ask: 'missing' }, answer, [b, answer + 1, answer - 1, a, b - answer], false, rng, [1, 12]);
+    // The first step names both parts, one of them the answer: the hint gives the rule they follow.
+    // No number word in it: "two parts" would name an answer of 2.
+    return numberAnswer({ prompt: blankAsk(sentence), stimulus: sentencePicture(sentence), explanation: { ...splitPartExplanation(a, b, answer), hint: { text: `The parts of the split add up to ${b}.` } } }, { expr: sentence, ask: 'missing' }, answer, [b, answer + 1, answer - 1, a, b - answer], false, rng, [1, 12]);
   }
+  // The sentence with its box is in the question, so the child knows which number is wanted.
   const sentence = `${a} × ${b} = ${a * 5} + □`;
-  const prompt = { text: `${a} × ${b} is ${a} × 5 plus ${a} × ${b - 5}, and ${a} × 5 = ${a * 5}. What number goes in the blank?`, speak: [...times(a, b), 'is', ...times(a, 5), 'plus', ...times(a, b - 5), ', and', ...times(a, 5), 'is', { number: a * 5 }, '. What number goes in the blank?'] as Say };
-  return { type: 'numberPad', mode: 'look', facts: { expr: sentence, ask: 'missing' }, prompt, stimulus: sentencePicture(sentence), answer: a * (b - 5), maxDigits: 2, explanation: splitFactorExplanation(a, b) };
+  const prompt = { text: `${sentence}. ${a} × ${b} is ${a} × 5 plus ${a} × ${b - 5}. What number goes in the box?`, speak: [...sentenceSay(sentence), '.', ...times(a, b), 'is', ...times(a, 5), 'plus', ...times(a, b - 5), '. What number goes in the box?'] as Say };
+  return { type: 'numberPad', mode: 'look', facts: { expr: sentence, ask: 'missing' }, prompt, stimulus: sentencePicture(sentence), answer: a * (b - 5), maxDigits: 2, explanation: { ...splitProductExplanation(a, b), hint: { text: 'The first part of the split is done for you. Work out the other part.' } } };
 }
 
 export const distributiveGenerator: SkillGenerator = {
@@ -332,6 +362,15 @@ function estimateExplanation(a: number, b: number): Explanation {
   };
 }
 
+// Three round numbers to choose from: an estimate is a round number, so 349 is no slip for 350 (and a number one away
+// can be nearer the exact product than the estimate is). The answer's place is picked first, as numeralChoices does.
+function estimateChoices(answer: number, slips: number[], rng: Rng): number[] {
+  const below = [...new Set(slips)].filter((value) => value > 0 && value < answer);
+  const above = [...new Set(slips)].filter((value) => value > answer);
+  const place = rng.pick([0, 1, 2].filter((each) => below.length >= each && above.length >= 2 - each));
+  return [...rng.sample(below, place), answer, ...rng.sample(above, 2 - place)].sort((x, y) => x - y);
+}
+
 function estimateProducts(level: Level, rng: Rng): QuestionDraft {
   const a = rng.int(2, 9);
   // Never a number ending in 5 (halfway) or 0 (nothing to round).
@@ -340,13 +379,24 @@ function estimateProducts(level: Level, rng: Rng): QuestionDraft {
   const facts: QuestionDraft['facts'] = { a, b, to: 10, ask: 'roundTimes' };
   let prompt: Prompt = { text: `Round ${b} to the nearest ten, then multiply. About how much is ${a} × ${b}?`, speak: ['Round', { number: b }, 'to the nearest ten, then multiply. About how much is', ...times(a, b), '?'] };
   if (level === 2) {
+    // The story says how to estimate, between what it tells and what it asks.
     const template = rng.int(0, ESTIMATE_STORIES.length - 1);
-    prompt = fill(ESTIMATE_STORIES[template] as string, { a, b, name: rng.pick(STORY_NAMES) });
+    const story = ESTIMATE_STORIES[template] as { setup: string; ask: string };
+    prompt = fill(`${story.setup} Round {b} to the nearest ten, then multiply. ${story.ask}`, { a, b, name: rng.pick(STORY_NAMES) });
     facts.template = template;
     facts.story = prompt.text;
   }
   const r = nearestTen(b);
-  return numberAnswer({ prompt, ...(level === 2 ? {} : { stimulus: equation(a, '×', b) }), explanation: estimateExplanation(a, b) }, facts, answer, [a * (r - 10), a * (r + 10), (a + 1) * r, a + r].filter((slip) => slip > 0), level === 3, rng, [1, 1000], 3);
+  // The first step does the rounding: the hint asks for it.
+  const explanation = { ...estimateExplanation(a, b), hint: { text: `Round ${b} first: which ten is it nearer to?` } };
+  const common = { mode: 'look' as const, prompt, ...(level === 2 ? {} : { stimulus: equation(a, '×', b) }), explanation };
+  if (level === 3) return { ...common, type: 'numberPad', facts, answer, maxDigits: 3 };
+  // No wrong option is nearer the exact product than the estimate, so a child who works it out exactly is never
+  // pulled to another option (7 × 11 is 77: 80 is left out, 70 is the estimate). Every a and b keeps room for three.
+  const exact = a * b;
+  const slips = [a * (r - 10), a * (r + 10), (a + 1) * r, a + r].filter((slip) => Math.abs(slip - exact) > Math.abs(answer - exact));
+  const values = estimateChoices(answer, slips, rng);
+  return { ...common, type: 'choice', facts: { ...facts, options: values }, options: values.map((value) => numeral(value, 'l')), answerIndex: values.indexOf(answer) };
 }
 
 export const estimateProductsGenerator: SkillGenerator = {
@@ -369,13 +419,20 @@ export const estimateProductsGenerator: SkillGenerator = {
 // ---- D.4 Division word problems ----
 // Levels: share equally, with a picture / how many groups, facts to 81 ÷ 9 / either, typed. Oracle: multiply (quotient).
 
+// The times fact to think of, never naming the answer: "Think: 4 times what is 8?", or for a square number, where the
+// answer is the other factor too, "Think: which number times itself makes 16?".
+const timesFactHint = (known: number, total: number, answer: number, knownFirst: boolean): Hint =>
+  known === answer ? { text: `Think: which number times itself makes ${total}?` } : { text: knownFirst ? `Think: ${known} times what is ${total}?` : `Think: what times ${known} is ${total}?` };
+
 function storyDivideExplanation(kind: 'share' | 'groupsOf', total: number, by: number, emoji: string): Explanation {
   const q = total / by;
-  const first: Say = kind === 'share' ? ['Share', { number: total }, 'into', { number: by }, 'equal groups.'] : ['Make groups of', { number: by }, 'from', { number: total }, '.'];
+  const first: Say = kind === 'share' ? ['Put', { number: total }, 'into', { number: by }, 'equal groups.'] : ['Make groups of', { number: by }, 'from', { number: total }, '.'];
   return {
     speak: [...first, ...times(by, q), 'is', { number: total }, ', so', { number: total }, 'divided by', { number: by }, 'is', { number: q }, '.'],
-    steps: [kind === 'share' ? `Share ${total} into ${by} equal groups.` : `Make groups of ${by} from ${total}.`, `${by} × ${q} = ${total}.`, `So ${total} ÷ ${by} = ${q}.`],
+    steps: [kind === 'share' ? `Put ${total} into ${by} equal groups.` : `Make groups of ${by} from ${total}.`, `${by} × ${q} = ${total}.`, `So ${total} ÷ ${by} = ${q}.`],
     visual: q <= 6 && by <= 6 ? groupsPicture(kind === 'share' ? by : q, kind === 'share' ? q : by, emoji) : equation(total, '÷', by, '=', q),
+    // The first step only repeats the story: the hint points at the times fact.
+    hint: kind === 'share' ? timesFactHint(by, total, q, true) : timesFactHint(by, total, q, false),
   };
 }
 
@@ -412,9 +469,11 @@ export const divideStoriesGenerator: SkillGenerator = {
 function divisionBlankExplanation(total: number, by: number, q: number, blank: 'total' | 'by'): Explanation {
   const wanted = blank === 'total' ? total : by;
   return {
-    speak: ['Think of the times fact.', ...times(by, q), 'is', { number: total }, '. So the blank is', { number: wanted }, '.'],
-    steps: ['Think of the times fact.', `${by} × ${q} = ${total}.`, `So ${total} ÷ ${by} = ${q}. The blank is ${wanted}.`],
+    speak: ['Think of the times fact.', ...times(by, q), 'is', { number: total }, '. So the missing number is', { number: wanted }, '.'],
+    steps: ['Think of the times fact.', `${by} × ${q} = ${total}.`, `So ${total} ÷ ${by} = ${q}. The missing number is ${wanted}.`],
     visual: equation(total, '÷', by, '=', q),
+    // "Think of the times fact." is too vague to act on: the hint asks that fact.
+    hint: blank === 'total' ? { text: `Think: ${by} times ${q} is what number?` } : timesFactHint(q, total, by, false),
   };
 }
 

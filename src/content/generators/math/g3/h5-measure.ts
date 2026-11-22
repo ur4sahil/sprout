@@ -5,6 +5,7 @@ import { ACTIVITIES, TWO_RECTANGLES } from '../../../data/h5-stories';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation, Prompt } from './h5-parts';
 import { equation, find, numberAnswer } from './h5-parts';
+import { clockAt, spanExplanation } from './measure';
 
 // Math grade 3, wave H5: F.8 area of two rectangles together, F.9 perimeter and area problems,
 // F.10 time problems and schedules.
@@ -40,9 +41,10 @@ function twoAreas(level: Level, rng: Rng): QuestionDraft {
     return numberAnswer({ prompt: { text: prompt, speak: [prompt] }, stimulus: { kind: 'row', children: [grid(l1, w1), grid(l2, w2)] }, explanation: twoAreasExplanation(l1, w1, l2, w2, 'square units') }, { expr, ask: 'value' }, answer, slips, false, rng, [1, 200]);
   }
   const place = rng.pick(TWO_RECTANGLES);
+  // Sides are told as F.3 and F.4 tell them, "long and wide", one sentence for each rectangle.
   const prompt: Prompt = {
-    text: `A ${place.place} is made of two rectangles. One is ${l1} ${place.unit} by ${w1} ${place.unit}. The other is ${l2} ${place.unit} by ${w2} ${place.unit}. What is the area of the ${place.place}, in square ${place.unit}?`,
-    speak: [`A ${place.place} is made of two rectangles. One is`, { number: l1 }, `${place.unit} by`, { number: w1 }, `${place.unit}. The other is`, { number: l2 }, `${place.unit} by`, { number: w2 }, `${place.unit}. What is the area of the ${place.place}, in square ${place.unit}?`],
+    text: `A ${place.place} is made of two rectangles. One is ${l1} ${place.unit} long and ${w1} ${place.unit} wide. The other is ${l2} ${place.unit} long and ${w2} ${place.unit} wide. How many square ${place.unit} is the ${place.place}?`,
+    speak: [`A ${place.place} is made of two rectangles. One is`, { number: l1 }, `${place.unit} long and`, { number: w1 }, `${place.unit} wide. The other is`, { number: l2 }, `${place.unit} long and`, { number: w2 }, `${place.unit} wide. How many square ${place.unit} is the ${place.place}?`],
   };
   return numberAnswer({ prompt, explanation: twoAreasExplanation(l1, w1, l2, w2, `square ${place.unit}`) }, { expr, ask: 'value', place: place.place }, answer, slips, level === 3, rng, [1, 200], 3);
 }
@@ -83,7 +85,12 @@ function samePerimeterExplanation(rects: [number, number][], ask: 'most' | 'leas
 function sideExplanation(length: number, other: number, from: 'perimeter' | 'area'): Explanation {
   if (from === 'area') {
     const area = length * other;
-    return { speak: ['The area is', { number: area }, '.', ...times(length, other), 'is', { number: area }, ', so the other side is', { number: other }, '.'], steps: [`Area = side × side.`, `${length} × ${other} = ${area}.`, `The other side is ${other} centimeters.`], visual: grid(length, other) };
+    // Which two sides: one side and the side next to it, never "side × side", which is a square's rule.
+    return {
+      speak: ['The area is one side times the side next to it.', { number: length }, 'times blank is', { number: area }, ', and', ...times(length, other), 'is', { number: area }, '. So the other side is', { number: other }, 'centimeters.'],
+      steps: ['The area is one side times the side next to it.', `${length} × □ = ${area}, and ${length} × ${other} = ${area}.`, `The other side is ${other} centimeters.`],
+      visual: grid(length, other),
+    };
   }
   const p = 2 * (length + other);
   return {
@@ -109,7 +116,8 @@ function perimeterArea(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: question, speak: ['Both rectangles have a perimeter of', { number: 2 * half }, `units. Which one has ${ask === 'most' ? 'more' : 'less'} area?`] },
       options: rects.map(([l, w]) => ({ ...grid(l, w), speak: [{ number: l }, 'by', { number: w }] })),
       answerIndex: rects.findIndex(([l, w]) => l * w === (ask === 'most' ? Math.max : Math.min)(...rects.map(([x, y]) => x * y))),
-      explanation: samePerimeterExplanation(rects, ask),
+      // The first step only repeats the question: the hint says what to find.
+      explanation: { ...samePerimeterExplanation(rects, ask), hint: { text: 'Find the area of each rectangle: count its squares, or multiply its sides.' } },
     };
   }
   const from = level === 2 ? 'perimeter' : rng.pick(['perimeter', 'area'] as const);
@@ -148,11 +156,7 @@ export const perimeterAreaGenerator: SkillGenerator = {
 
 type Time = { hour: number; minute: number };
 const written = (time: Time): string => `${time.hour}:${String(time.minute).padStart(2, '0')}`;
-const at = (minutes: number): Time => {
-  const total = ((minutes % 720) + 720) % 720;
-  const hour = Math.floor(total / 60);
-  return { hour: hour === 0 ? 12 : hour, minute: total % 60 };
-};
+const at = clockAt;
 const timeText = (time: Time): Visual => ({ kind: 'text', value: written(time), size: 'l', speak: [{ time }] });
 
 interface Slot {
@@ -182,18 +186,32 @@ function scheduleVisual(slots: Slot[]): Visual {
   };
 }
 
-function spanExplanation(from: number, to: number, label: string): Explanation {
-  const minutes = to - from;
-  const toHour = Math.ceil((from + 1) / 60) * 60;
-  const crosses = toHour < to;
+// When something ends: add the minutes to the start; past the next o'clock, stop there first. The last line, said
+// last, is the end time the question asks for: "Math ends at 8:35."
+function endExplanation(start: number, plus: number, name: string): Explanation {
+  const end = start + plus;
+  const toHour = Math.ceil((start + 1) / 60) * 60;
+  const [s, hour, e] = [at(start), at(toHour), at(end)];
+  const visual: Visual = { kind: 'row', children: [{ kind: 'clock', ...s }, { kind: 'clock', ...e }] };
+  const last = `${name} ends at ${written(e)}.`;
+  const lastSay: Say = [`${name} ends at`, { time: e }, '.'];
+  if (end === toHour || (end < toHour && s.minute === 0)) {
+    return { speak: [{ number: plus }, 'minutes after', { time: s }, 'is', { time: e }, '.', ...lastSay], steps: [`${plus} minutes after ${written(s)} is ${written(e)}.`, last], visual };
+  }
+  if (end < toHour) {
+    const past = s.minute + plus;
+    return {
+      speak: ['Add the minutes:', { number: s.minute }, 'plus', { number: plus }, 'is', { number: past }, '.', { number: past }, 'minutes past', { number: s.hour }, 'is', { time: e }, '.', ...lastSay],
+      steps: [`Add the minutes: ${s.minute} + ${plus} = ${past}.`, `${past} minutes past ${s.hour} is ${written(e)}.`, last],
+      visual,
+    };
+  }
+  const first = toHour - start;
+  const rest = plus - first;
   return {
-    speak: crosses
-      ? ['From', { time: at(from) }, 'to', { time: at(toHour) }, 'is', { number: toHour - from }, 'minutes. Then', { number: to - toHour }, 'more minutes to', { time: at(to) }, '. That is', { number: minutes }, 'minutes.']
-      : ['Count on from', { time: at(from) }, 'to', { time: at(to) }, '. That is', { number: minutes }, 'minutes.'],
-    steps: crosses
-      ? [`${written(at(from))} to ${written(at(toHour))} is ${toHour - from} minutes.`, `${written(at(toHour))} to ${written(at(to))} is ${to - toHour} minutes.`, `${toHour - from} + ${to - toHour} = ${minutes} minutes ${label}.`]
-      : [`Count on from ${written(at(from))} to ${written(at(to))}.`, `That is ${minutes} minutes ${label}.`],
-    visual: { kind: 'row', children: [{ kind: 'clock', ...at(from) }, { kind: 'clock', ...at(to) }] },
+    speak: ['From', { time: s }, 'to', { time: hour }, 'is', { number: first }, 'minutes.', { number: rest }, 'more minutes after', { time: hour }, 'is', { time: e }, '.', ...lastSay],
+    steps: [`${written(s)} to ${written(hour)} is ${first} minutes.`, `${plus} − ${first} = ${rest}, so count ${rest} more minutes from ${written(hour)}: ${written(e)}.`, last],
+    visual,
   };
 }
 
@@ -214,7 +232,7 @@ function timeProblems(level: Level, rng: Rng): QuestionDraft {
       stimulus: { kind: 'clock', ...startTime },
       options: choices.map(timeText),
       answerIndex: choices.findIndex((time) => written(time) === written(at(end))),
-      explanation: { ...spanExplanation(start, end, 'later'), steps: [...spanExplanation(start, end, 'later').steps.slice(0, -1), `${name} ends at ${written(at(end))}.`] },
+      explanation: { ...endExplanation(start, plus, name), hint: { text: "Add the minutes to the start time. If you pass the next hour, count to the o'clock first." } },
     };
   }
   const slots = schedule(rng);

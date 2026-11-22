@@ -33,7 +33,7 @@ describe('A.1 Thousands, hundreds, tens, ones', () => {
     for (const question of all('M-3-A1', 1)) expect(question.stimulus?.kind).toBe('baseTen');
     for (const question of all("M-3-A1", 2)) expect(question.stimulus).toBeUndefined();
     expect(range(all('M-3-A1', 2), value)[0]).toBeGreaterThanOrEqual(2001);
-    for (const question of all('M-3-A1', 2)) expect(question.prompt.text).toMatch(/^\d thousands?, \d hundreds?, \d tens?, \d ones?\. What number is this\?$/);
+    for (const question of all('M-3-A1', 2)) expect(question.prompt.text).toMatch(/^What number has \d thousands?, \d hundreds?, \d tens? and \d ones?\?$/);
     expect(types(all('M-3-A1', 3))).toEqual(['numberPad']);
     const places = new Set<string>();
     for (const question of all('M-3-A1', 4)) {
@@ -157,11 +157,13 @@ describe('B.4 Two-step word problems', () => {
 });
 
 describe('C. Multiplication', () => {
-  it('C.1 equal groups: words, then the times sign, then how many in all; never a square, so the swap is wrong', () => {
+  it('C.1 equal groups: words, then the times sign, then how many in all; never a square, so the swapped words are wrong', () => {
     for (const level of [1, 2, 3] as Level[]) for (const question of all('M-3-C1', level)) expect(n(question, 'rows')).not.toBe(n(question, 'cols'));
     expect(new Set(all('M-3-C1', 1).map((question) => question.facts.ask))).toEqual(new Set(['groupsOf']));
     expect(new Set(all('M-3-C1', 2).map((question) => question.facts.ask))).toEqual(new Set(['sentence']));
     expect(types(all('M-3-C1', 3))).toEqual(['numberPad']);
+    // As a times sentence the swap is right too (2 × 4 is 8 as well), so it is never offered as a wrong one.
+    for (const question of all('M-3-C1', 2)) expect(question.facts.options).not.toContain(`${n(question, 'cols')} × ${n(question, 'rows')}`);
   });
 
   it('C.3 to C.5 use only their own tables, the table number on either side, and level 3 mixes them, typed', () => {

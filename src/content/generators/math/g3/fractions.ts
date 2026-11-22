@@ -1,23 +1,27 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
+import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { COUNTABLES } from '../../../data/countables';
 import type { SkillGenerator } from '../../../generator';
 
 // Math grade 3 E.1 to E.4: naming fractions, fractions on a number line, comparing, equal fractions.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
-const ONE: Record<number, string> = { 1: 'whole', 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 12: 'twelfth', 16: 'sixteenth' };
-const MANY: Record<number, string> = { 1: 'wholes', 2: 'halves', 3: 'thirds', 4: 'fourths', 5: 'fifths', 6: 'sixths', 7: 'sevenths', 8: 'eighths', 9: 'ninths', 10: 'tenths', 12: 'twelfths', 16: 'sixteenths' };
-const partName = (n: number, d: number): string => {
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
+const ONE: Record<number, string> = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 12: 'twelfth', 16: 'sixteenth' };
+const MANY: Record<number, string> = { 2: 'halves', 3: 'thirds', 4: 'fourths', 5: 'fifths', 6: 'sixths', 7: 'sevenths', 8: 'eighths', 9: 'ninths', 10: 'tenths', 12: 'twelfths', 16: 'sixteenths' };
+// The name of n parts of d: 1 third, 2 thirds.
+export const partName = (n: number, d: number): string => {
   const name = (n === 1 ? ONE : MANY)[d];
   if (!name) throw new Error(`no name for parts of ${d}`);
   return name;
 };
 
 export const fractionText = (n: number, d: number): string => `${n}/${d}`;
-// 3/4 is said "three fourths", 1/2 "one half".
-export const fractionSay = (n: number, d: number): Say => [{ number: n }, partName(n, d)];
+// 3/4 is said "three fourths", 1/2 "one half". A fraction over 1 is said "seven over one", as it is written: saying
+// "seven wholes" would answer "7/1 is the same as which whole number?" for the child.
+export const fractionSay = (n: number, d: number): Say => (d === 1 ? [{ number: n }, 'over', { number: 1 }] : [{ number: n }, partName(n, d)]);
+// "a flower", "an apple".
+const withArticle = (word: string): string => `${/^[aeiou]/.test(word) ? 'an' : 'a'} ${word}`;
 const fractionOption = (n: number, d: number): Visual => ({ kind: 'text', value: fractionText(n, d), size: 'l', speak: fractionSay(n, d) });
 const picture = (n: number, d: number, shape: 'circle' | 'rectangle' = 'rectangle'): Visual => ({ kind: 'fraction', shape, parts: d, shaded: n, equal: true });
 const line = (d: number, marked: number, hide: boolean): Visual => ({ kind: 'numberLine', min: 0, max: d, step: 1, denominator: d, marked: [marked], ...(hide ? { hidden: [marked] } : {}) });
@@ -62,9 +66,12 @@ function nameFractions(level: Level, rng: Rng): QuestionDraft {
       options: choices.map(([x, y]) => fractionOption(x, y)),
       answerIndex: choices.findIndex(([x, y]) => x === n && y === d),
       explanation: {
-        speak: ['There are', { number: d }, 'things in all.', { number: n }, n === 1 ? `is ${thing.one === 'fish' ? 'a fish' : `a ${thing.one}`}.` : `are ${thing.many}.`, 'So', ...fractionSay(n, d), `are ${thing.many}.`],
-        steps: [`There are ${d} things in all. That is the bottom number.`, `${n} ${n === 1 ? 'is' : 'are'} ${n === 1 ? thing.one : thing.many}. That is the top number.`, `So ${fractionText(n, d)} are ${thing.many}.`],
+        speak: ['There are', { number: d }, 'things in all.', { number: n }, n === 1 ? `is ${withArticle(thing.one)}.` : `are ${thing.many}.`, 'So', ...fractionSay(n, d), `of the group are ${thing.many}.`],
+        steps: [`There are ${d} things in all. That is the bottom number.`, `${n} ${n === 1 ? `is ${withArticle(thing.one)}` : `are ${thing.many}`}. That is the top number.`, `So ${fractionText(n, d)} of the group are ${thing.many}.`],
         visual: stimulus,
+        // The first step says how many in all, and only one option may have that bottom number: the hint says what
+        // to count instead.
+        hint: { text: `Count all the things for the bottom number. Then count the ${thing.many} for the top number.` },
       },
     };
   }
@@ -78,7 +85,7 @@ function nameFractions(level: Level, rng: Rng): QuestionDraft {
     stimulus,
     options: choices.map(([x, y]) => fractionOption(x, y)),
     answerIndex: choices.findIndex(([x, y]) => x === n && y === d),
-    explanation: nameExplanation(n, d, stimulus),
+    explanation: { ...nameExplanation(n, d, stimulus), hint: { text: 'Count all the equal parts for the bottom number. Then count the shaded parts for the top number.' } },
   };
 }
 
@@ -104,10 +111,16 @@ export const nameFractionsGenerator: SkillGenerator = {
 // ---- E.2 Fractions on a number line ----
 // Levels: halves and fourths / thirds and sixths / eighths / put the dot on a fraction (numberLineTap). Oracle: fractionValue.
 
-function lineExplanation(n: number, d: number): Explanation {
+// Reading the dot (place = false), or putting it there (place = true, level 4).
+function lineExplanation(n: number, d: number, place = false): Explanation {
+  const parts = n === 1 ? 'part' : 'parts';
   return {
-    speak: ['From', { number: 0 }, 'to', { number: 1 }, 'is cut into', { number: d }, 'equal parts. The dot is', { number: n }, n === 1 ? 'part' : 'parts', `from zero. So it is`, ...fractionSay(n, d), '.'],
-    steps: [`From 0 to 1 is cut into ${d} equal parts.`, `The dot is ${n} ${n === 1 ? 'part' : 'parts'} from 0.`, `So it is ${fractionText(n, d)}.`],
+    speak: place
+      ? ['The line from', { number: 0 }, 'to', { number: 1 }, 'is cut into', { number: d }, 'equal parts. Count', { number: n }, parts, 'from zero, and put the dot there. That is', ...fractionSay(n, d), '.']
+      : ['The line from', { number: 0 }, 'to', { number: 1 }, 'is cut into', { number: d }, 'equal parts. The dot is', { number: n }, parts, 'from zero. So it is', ...fractionSay(n, d), '.'],
+    steps: place
+      ? [`The line from 0 to 1 is cut into ${d} equal parts.`, `Count ${n} ${parts} from 0, and put the dot there.`, `That is ${fractionText(n, d)}.`]
+      : [`The line from 0 to 1 is cut into ${d} equal parts.`, `The dot is ${n} ${parts} from 0.`, `So it is ${fractionText(n, d)}.`],
     visual: line(d, n, false),
   };
 }
@@ -120,10 +133,10 @@ function onALine(level: Level, rng: Rng): QuestionDraft {
       type: 'numberLineTap',
       mode: 'look',
       facts: { n, d, ask: 'value', oracle: 'fractionValue' },
-      prompt: { text: `Put the dot on ${fractionText(n, d)}.`, speak: ['Put the dot on', ...fractionSay(n, d), '.'] },
+      prompt: { text: `Tap the line to put the dot on ${fractionText(n, d)}.`, speak: ['Tap the line to put the dot on', ...fractionSay(n, d), '.'] },
       line: { min: 0, max: d, step: 1, denominator: d },
       answer: n,
-      explanation: lineExplanation(n, d),
+      explanation: lineExplanation(n, d, true),
     };
   }
   const d = rng.pick(level === 1 ? [2, 4] : level === 2 ? [3, 6] : [8]);
@@ -138,7 +151,8 @@ function onALine(level: Level, rng: Rng): QuestionDraft {
     stimulus: line(d, n, true),
     options: choices.map(([x, y]) => fractionOption(x, y)),
     answerIndex: choices.findIndex(([x, y]) => x === n && y === d),
-    explanation: lineExplanation(n, d),
+    // The first step says how many parts, and only one option may have that bottom number: the hint says what to count.
+    explanation: { ...lineExplanation(n, d), hint: { text: 'Count the equal parts from 0 to 1 for the bottom number. Then count the parts from 0 to the dot for the top number.' } },
   };
 }
 
@@ -167,7 +181,9 @@ export const fractionLineGenerator: SkillGenerator = {
 const SIGNS = ['>', '<', '='] as const;
 const SIGN_WORDS: Record<string, string> = { '>': 'greater than', '<': 'less than', '=': 'equal to' };
 
-function compareExplanation(a: [number, number], b: [number, number]): Explanation {
+// The last step answers what was asked: which fraction is greater, which is less, or the sign, read in the
+// question's order (a, then b) and named: "2/6 is less than 4/6, so the sign is <."
+function compareExplanation(a: [number, number], b: [number, number], ask: 'most' | 'least' | 'sign' = 'most'): Explanation {
   const [an, ad] = a;
   const [bn, bd] = b;
   const va = an / ad;
@@ -177,18 +193,25 @@ function compareExplanation(a: [number, number], b: [number, number]): Explanati
   const speak: Say = [];
   const parts = (count: number): string => `${count} ${count === 1 ? 'part' : 'parts'}`;
   if (ad === bd) {
-    lines.push(`Both are cut into ${ad} equal parts.`, `${parts(Math.max(an, bn))} shaded is more than ${parts(Math.min(an, bn))}.`);
+    lines.push(`Both are cut into ${ad} equal parts.`, `${Math.max(an, bn)} shaded parts are more than ${Math.min(an, bn)}.`);
     speak.push('Both are cut into', { number: ad }, 'equal parts. More shaded parts means more.');
   } else if (an === bn) {
     const [big, small] = [MANY[Math.min(ad, bd)] as string, MANY[Math.max(ad, bd)] as string];
     lines.push(`Both have ${parts(an)} shaded.`, `${big[0]?.toUpperCase()}${big.slice(1)} are bigger than ${small}.`);
     speak.push('Both have', { number: an }, an === 1 ? 'part shaded.' : 'parts shaded.', `${big[0]?.toUpperCase()}${big.slice(1)} are bigger than ${small}.`);
   } else {
-    lines.push('Look at how much of each whole is shaded.');
-    speak.push('Look at how much of each whole is shaded.');
+    lines.push('Look at how much of each whole is shaded.', 'The same amount is shaded.');
+    speak.push('Look at how much of each whole is shaded. The same amount is shaded.');
   }
-  lines.push(`So ${fractionText(an, ad)} ${sign} ${fractionText(bn, bd)}.`);
-  speak.push('So', ...fractionSay(an, ad), `is ${SIGN_WORDS[sign]}`, ...fractionSay(bn, bd), '.');
+  const [more, less] = va > vb ? [a, b] : [b, a];
+  if (ask === 'sign') {
+    lines.push(`${fractionText(an, ad)} is ${SIGN_WORDS[sign]} ${fractionText(bn, bd)}, so the sign is ${sign}.`);
+    speak.push(...fractionSay(an, ad), `is ${SIGN_WORDS[sign]}`, ...fractionSay(bn, bd), `, so the sign is ${sign === '=' ? 'equals' : SIGN_WORDS[sign]}.`);
+  } else {
+    const [pick, word] = ask === 'most' ? [more, 'greater'] : [less, 'less'];
+    lines.push(`So ${fractionText(...pick)} is ${word}.`);
+    speak.push('So', ...fractionSay(...pick), `is ${word}.`);
+  }
   return { speak, steps: lines, visual: { kind: 'row', children: [picture(an, ad), picture(bn, bd)] } };
 }
 
@@ -228,7 +251,7 @@ function compareFractions(level: Level, rng: Rng): QuestionDraft {
       stimulus,
       options: SIGNS.map((each): Visual => ({ kind: 'text', value: each, size: 'xl', speak: [SIGN_WORDS[each] as string] })),
       answerIndex: SIGNS.indexOf(sign),
-      explanation: compareExplanation(a, b),
+      explanation: compareExplanation(a, b, 'sign'),
     };
   }
   const ask = rng.pick<'most' | 'least'>(['most', 'least']);
@@ -241,7 +264,7 @@ function compareFractions(level: Level, rng: Rng): QuestionDraft {
     stimulus,
     options: [fractionOption(...a), fractionOption(...b)],
     answerIndex: ask === 'most' ? (values[0]! > values[1]! ? 0 : 1) : values[0]! < values[1]! ? 0 : 1,
-    explanation: compareExplanation(a, b),
+    explanation: compareExplanation(a, b, ask),
   };
 }
 
@@ -265,11 +288,14 @@ export const compareFractionsGenerator: SkillGenerator = {
 // ---- E.4 Equal fractions ----
 // Levels: pictures side by side / on number lines / pick the equal one. Oracle: fractionValue.
 
+// Cutting each part into smaller equal pieces: "Cut each third into 2 equal pieces. Now there are 6 pieces, and 2
+// are shaded: 2/6."
 function equalExplanation(a: [number, number], b: [number, number]): Explanation {
   const k = b[1] / a[1];
+  const each = partName(1, a[1]);
   return {
-    speak: ['Cut each part of', ...fractionSay(...a), 'into', { number: k }, '. You get', ...fractionSay(...b), '. The same amount is shaded, so they are equal.'],
-    steps: [`Cut each part of ${fractionText(...a)} into ${k}.`, `${a[0]} × ${k} = ${b[0]} and ${a[1]} × ${k} = ${b[1]}.`, `So ${fractionText(...a)} = ${fractionText(...b)}.`],
+    speak: ['Cut each', each, 'into', { number: k }, 'equal pieces. Now there are', { number: b[1] }, 'pieces, and', { number: b[0] }, 'are shaded. That is', ...fractionSay(...b), '. The same amount is shaded, so they are equal.'],
+    steps: [`Cut each ${each} into ${k} equal pieces.`, `Now there are ${b[1]} pieces, and ${b[0]} are shaded: ${fractionText(...b)}.`, `So ${fractionText(...a)} = ${fractionText(...b)}.`],
     visual: { kind: 'row', children: [picture(...a), picture(...b)] },
   };
 }
@@ -283,7 +309,11 @@ function equalFractions(level: Level, rng: Rng): QuestionDraft {
   // The others have the same bottom number as the equal one, so only the top number tells them apart.
   const others = [n * k - 1, n * k + 1, n * k + 2].filter((top) => top >= 1 && top < d * k).map((top): [number, number] => [top, d * k]);
   const choices = rng.shuffle([equal, ...rng.sample(others, 2)]);
-  const prompt = { text: `Which fraction is equal to ${fractionText(...target)}?`, speak: ['Which fraction is equal to', ...fractionSay(...target), '?'] as Say };
+  // At level 1 the options are pictures, so the question asks for a picture.
+  const prompt =
+    level === 1
+      ? { text: `Which picture shows the same amount as ${fractionText(...target)}?`, speak: ['Which picture shows the same amount as', ...fractionSay(...target), '?'] as Say }
+      : { text: `Which fraction is equal to ${fractionText(...target)}?`, speak: ['Which fraction is equal to', ...fractionSay(...target), '?'] as Say };
   const options = level === 1 ? choices.map(([x, y]) => ({ ...picture(x, y), speak: fractionSay(x, y) }) as Visual) : choices.map(([x, y]) => fractionOption(x, y));
   const stimulus: Visual = level === 1 ? picture(...target) : level === 2 ? { kind: 'row', children: [line(d, n, false), line(d * k, n * k, true)] } : { kind: 'text', value: fractionText(...target), size: 'xl', speak: fractionSay(...target) };
   return {

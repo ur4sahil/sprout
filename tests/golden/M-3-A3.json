@@ -1,6 +1,6 @@
 {
  "skillId": "M-3-A3",
- "version": 1,
+ "version": 2,
  "example": {
   "type": "choice",
   "mode": "look",
@@ -1718,18 +1718,18 @@
       },
       "has more thousands.",
       {
-       "number": 5747
-      },
-      "is greater than",
-      {
        "number": 1024
       },
-      "."
+      "is less than",
+      {
+       "number": 5747
+      },
+      ", so the sign is less than."
      ],
      "steps": [
       "Look at the thousands first.",
       "5,747 has more thousands.",
-      "5,747 is greater than 1,024."
+      "1,024 is less than 5,747, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -1818,18 +1818,18 @@
       },
       "has more thousands.",
       {
-       "number": 8877
-      },
-      "is greater than",
-      {
        "number": 5841
       },
-      "."
+      "is less than",
+      {
+       "number": 8877
+      },
+      ", so the sign is less than."
      ],
      "steps": [
       "Look at the thousands first.",
       "8,877 has more thousands.",
-      "8,877 is greater than 5,841."
+      "5,841 is less than 8,877, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -1919,11 +1919,11 @@
       {
        "number": 1347
       },
-      "are the same number. They are equal."
+      "are the same number. They are equal, so the sign is equals."
      ],
      "steps": [
       "1,347 and 1,347 are the same number.",
-      "They are equal."
+      "They are equal, so the sign is =."
      ],
      "visual": {
       "kind": "equation",
@@ -2013,11 +2013,11 @@
       {
        "number": 3997
       },
-      "are the same number. They are equal."
+      "are the same number. They are equal, so the sign is equals."
      ],
      "steps": [
       "3,997 and 3,997 are the same number.",
-      "They are equal."
+      "They are equal, so the sign is =."
      ],
      "visual": {
       "kind": "equation",
@@ -2112,12 +2112,12 @@
       {
        "number": 2977
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
       "Look at the thousands first.",
       "7,954 has more thousands.",
-      "7,954 is greater than 2,977."
+      "7,954 is greater than 2,977, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2206,18 +2206,18 @@
       },
       "has more thousands.",
       {
-       "number": 6968
-      },
-      "is greater than",
-      {
        "number": 1021
       },
-      "."
+      "is less than",
+      {
+       "number": 6968
+      },
+      ", so the sign is less than."
      ],
      "steps": [
       "Look at the thousands first.",
       "6,968 has more thousands.",
-      "6,968 is greater than 1,021."
+      "1,021 is less than 6,968, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2306,18 +2306,18 @@
       },
       "has more hundreds.",
       {
-       "number": 1976
-      },
-      "is greater than",
-      {
        "number": 1557
       },
-      "."
+      "is less than",
+      {
+       "number": 1976
+      },
+      ", so the sign is less than."
      ],
      "steps": [
       "The thousands are the same. Look at the hundreds.",
       "1,976 has more hundreds.",
-      "1,976 is greater than 1,557."
+      "1,557 is less than 1,976, so the sign is <."
      ],
      "visual": {
       "kind": "equation",
@@ -2412,12 +2412,12 @@
       {
        "number": 6300
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
       "The thousands are the same. Look at the hundreds.",
       "6,626 has more hundreds.",
-      "6,626 is greater than 6,300."
+      "6,626 is greater than 6,300, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2512,12 +2512,12 @@
       {
        "number": 8141
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
       "The thousands are the same. Look at the hundreds.",
       "8,660 has more hundreds.",
-      "8,660 is greater than 8,141."
+      "8,660 is greater than 8,141, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2612,12 +2612,12 @@
       {
        "number": 7221
       },
-      "."
+      ", so the sign is greater than."
      ],
      "steps": [
       "Look at the thousands first.",
       "9,257 has more thousands.",
-      "9,257 is greater than 7,221."
+      "9,257 is greater than 7,221, so the sign is >."
      ],
      "visual": {
       "kind": "equation",
@@ -2647,9 +2647,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -2744,6 +2744,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -2763,9 +2766,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -2860,6 +2863,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -2879,9 +2885,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -2976,6 +2982,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -2995,9 +3004,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3092,6 +3101,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3111,9 +3123,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3208,6 +3220,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3227,9 +3242,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3324,6 +3339,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3343,9 +3361,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3440,6 +3458,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3459,9 +3480,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3556,6 +3577,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3575,9 +3599,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3672,6 +3696,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",
@@ -3691,9 +3718,9 @@
      "oracle": "order"
     },
     "prompt": {
-     "text": "Put the numbers in order, smallest first.",
+     "text": "Put the numbers in order. Tap the smallest first.",
      "speak": [
-      "Put the numbers in order, smallest first."
+      "Put the numbers in order. Tap the smallest first."
      ]
     },
     "items": [
@@ -3788,6 +3815,9 @@
         ]
        }
       ]
+     },
+     "hint": {
+      "text": "The thousands are all the same. Compare the hundreds first, then the tens."
      }
     },
     "skillId": "M-3-A3",

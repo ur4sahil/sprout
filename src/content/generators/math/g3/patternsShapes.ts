@@ -73,12 +73,16 @@ export const patterns3Generator: SkillGenerator = {
 
 function tensExplanation(a: number, tens: number): Explanation {
   const b = tens * 10;
+  const ten = tens === 1 ? 'ten' : 'tens'; // "10 is 1 ten", "20 is 2 tens"
   return {
-    speak: [{ number: a }, 'times', { number: b }, 'is', { number: a }, 'times', { number: tens }, 'tens.', { number: a }, 'times', { number: tens }, 'is', { number: a * tens }, ', so it is', { number: a * tens }, 'tens, or', { number: a * b }, '.'],
-    steps: [`${b} is ${tens} tens.`, `${a} × ${tens} = ${a * tens}, so ${a} × ${b} is ${a * tens} tens.`, `${a} × ${b} = ${written(a * b)}.`],
+    speak: [{ number: a }, 'times', { number: b }, 'is', { number: a }, 'times', { number: tens }, `${ten}.`, { number: a }, 'times', { number: tens }, 'is', { number: a * tens }, ', so it is', { number: a * tens }, 'tens, or', { number: a * b }, '.'],
+    steps: [`${b} is ${tens} ${ten}.`, `${a} × ${tens} = ${a * tens}, so ${a} × ${b} is ${a * tens} tens.`, `${a} × ${b} = ${written(a * b)}.`],
     visual: { kind: 'equation', parts: [a, '×', b, '=', a * b] },
   };
 }
+
+// A sum is asked as it is said: "What is 3 × 20?".
+const timesAsk = (a: number, b: number): { text: string; speak: Say } => ({ text: `What is ${a} × ${b}?`, speak: ['What is', { number: a }, 'times', { number: b }, '?'] });
 
 function timesTens(level: Level, rng: Rng): QuestionDraft {
   const a = rng.int(2, level === 1 ? 5 : 9);
@@ -86,7 +90,7 @@ function timesTens(level: Level, rng: Rng): QuestionDraft {
   const b = tens * 10;
   const answer = a * b;
   const facts = { rows: a, cols: b, ask: 'total' };
-  const prompt = { text: `${a} × ${b} equals what?`, speak: [{ number: a }, 'times', { number: b }, 'equals what?'] as Say };
+  const prompt = timesAsk(a, b);
   const stimulus: Visual = level === 1 ? { kind: 'row', children: Array.from({ length: a }, (): Visual => ({ kind: 'baseTen', hundreds: 0, tens, ones: 0 })) } : { kind: 'equation', parts: [a, '×', b, '=', 'blank'] };
   const base = { mode: 'look' as const, prompt, stimulus, explanation: tensExplanation(a, tens) };
   if (level === 3) return { ...base, type: 'numberPad', facts, answer, maxDigits: 3 };
@@ -106,7 +110,7 @@ export const timesTensGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: '30 is 3 tens. So 4 × 30 is 4 × 3 tens.', speak: ['Thirty is three tens. So four times thirty is four times three tens.'], visual: { kind: 'row', children: Array.from({ length: 4 }, (): Visual => ({ kind: 'baseTen', hundreds: 0, tens: 3, ones: 0 })) } },
     { beat: 'watch', text: tensExplanation(4, 3).steps.join(' '), speak: tensExplanation(4, 3).speak, visual: tensExplanation(4, 3).visual },
-    { beat: 'try', text: '6 × 50 equals what?', speak: [{ number: 6 }, 'times', { number: 50 }, 'equals what?'], visual: { kind: 'equation', parts: [6, '×', 50, '=', 'blank'] }, reveal: { text: tensExplanation(6, 5).steps.join(' '), speak: tensExplanation(6, 5).speak, visual: tensExplanation(6, 5).visual } },
+    { beat: 'try', text: timesAsk(6, 50).text, speak: timesAsk(6, 50).speak, visual: { kind: 'equation', parts: [6, '×', 50, '=', 'blank'] }, reveal: { text: tensExplanation(6, 5).steps.join(' '), speak: tensExplanation(6, 5).speak, visual: tensExplanation(6, 5).visual } },
     { beat: 'remember', text: 'Multiply the tens, then write a zero.', speak: ['Multiply the tens, then write a zero.'], visual: tensExplanation(4, 3).visual },
   ],
   oracle: 'multiply',
@@ -120,10 +124,30 @@ const OTHER: ShapeName[] = ['triangle', 'pentagon', 'hexagon', 'circle'];
 // Level 3 leaves out the diamond: the app draws it as a square on its corner, so its corners are square too.
 const CLUED = ['square', 'rectangle', 'trapezoid'] as const;
 type Clued = (typeof CLUED)[number];
-const CLUES: Record<Clued, { text: string; speak: string; equalSides: boolean; squareCorners: boolean }> = {
-  square: { text: '4 equal sides and 4 square corners', speak: 'four equal sides and four square corners', equalSides: true, squareCorners: true },
-  rectangle: { text: '4 square corners, and 2 sides longer than the other 2', speak: 'four square corners, and two sides longer than the other two', equalSides: false, squareCorners: true },
-  trapezoid: { text: 'only 2 sides that run side by side, and they are not the same length', speak: 'only two sides that run side by side, and they are not the same length', equalSides: false, squareCorners: false },
+// A square is a rectangle too, so the question asks for the best name, and the steps say why the other names do not
+// fit as well. A trapezoid's "parallel" sides are told as sides that point the same way and never meet.
+const CLUES: Record<Clued, { text: string; equalSides: boolean; squareCorners: boolean; steps: [string, string]; speak: string }> = {
+  square: {
+    text: '4 equal sides and 4 square corners',
+    equalSides: true,
+    squareCorners: true,
+    steps: ['A square has 4 equal sides and 4 square corners.', 'A square is a rectangle too, but square is its best name.'],
+    speak: 'A square has four equal sides and four square corners. A square is a rectangle too, but square is its best name.',
+  },
+  rectangle: {
+    text: '4 square corners, and it is longer than it is wide',
+    equalSides: false,
+    squareCorners: true,
+    steps: ['A rectangle has 4 square corners.', 'This one is longer than it is wide, so it is not a square.'],
+    speak: 'A rectangle has four square corners. This one is longer than it is wide, so it is not a square.',
+  },
+  trapezoid: {
+    text: 'only 2 sides that point the same way and never meet',
+    equalSides: false,
+    squareCorners: false,
+    steps: ['A trapezoid has only 2 sides that point the same way and never meet.', 'A square and a rectangle each have 2 pairs of sides like that.'],
+    speak: 'A trapezoid has only two sides that point the same way and never meet. A square and a rectangle each have two pairs of sides like that.',
+  },
 };
 
 function quadrilaterals(level: Level, rng: Rng): QuestionDraft {
@@ -136,10 +160,10 @@ function quadrilaterals(level: Level, rng: Rng): QuestionDraft {
       type: 'choice',
       mode: 'read',
       facts: { ask: 'clue', equalSides: clue.equalSides, squareCorners: clue.squareCorners, options: [...choices], read: clue.text },
-      prompt: { text: `A shape has ${clue.text}. Which shape is it?`, speak: ['Read the clue. Which shape is it?'] },
+      prompt: { text: `A shape has ${clue.text}. What is the best name for it?`, speak: ['Read the clue. What is the best name for the shape?'] },
       options: choices.map((each): Visual => ({ kind: 'text', value: each, size: 'l' })),
       answerIndex: choices.indexOf(right),
-      explanation: { speak: [`A ${right} has ${clue.speak}.`], steps: [`A ${right} has ${clue.text}.`], visual: shape(right, color, 'l') },
+      explanation: { speak: [clue.speak], steps: [...clue.steps], visual: shape(right, color, 'l') },
     };
   }
   const not = level === 2;

@@ -1,12 +1,12 @@
 {
  "skillId": "M-3-A1",
- "version": 1,
+ "version": 2,
  "example": {
   "mode": "look",
   "prompt": {
-   "text": "What number is this?",
+   "text": "What number do the blocks show?",
    "speak": [
-    "What number is this?"
+    "What number do the blocks show?"
    ]
   },
   "stimulus": {
@@ -17,35 +17,42 @@
    "ones": 8
   },
   "explanation": {
+   "steps": [
+    "Count each kind of block: 1 thousand, 3 hundreds, 2 tens, 8 ones.",
+    "Write the counts as digits, thousands first: 1, 3, 2, 8.",
+    "That makes 1,328."
+   ],
    "speak": [
+    "Count each kind of block:",
     {
      "number": 1
     },
-    "thousand is",
-    {
-     "number": 1000
-    },
-    ".",
+    "thousand,",
     {
      "number": 3
     },
-    "hundreds is",
-    {
-     "number": 300
-    },
-    ".",
+    "hundreds,",
     {
      "number": 2
     },
-    "tens is",
-    {
-     "number": 20
-    },
-    ".",
+    "tens,",
     {
      "number": 8
     },
-    "ones is",
+    "ones.",
+    "Write the counts as digits, thousands first:",
+    {
+     "number": 1
+    },
+    ",",
+    {
+     "number": 3
+    },
+    ",",
+    {
+     "number": 2
+    },
+    ",",
     {
      "number": 8
     },
@@ -56,16 +63,15 @@
     },
     "."
    ],
-   "steps": [
-    "1 thousand is 1,000. 3 hundreds is 300. 2 tens is 20. 8 ones is 8.",
-    "That makes 1,328."
-   ],
    "visual": {
     "kind": "baseTen",
     "thousands": 1,
     "hundreds": 3,
     "tens": 2,
     "ones": 8
+   },
+   "hint": {
+    "text": "Count each kind of block. Then write the counts as digits, thousands first."
    }
   },
   "type": "choice",
@@ -124,9 +130,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -137,40 +143,57 @@
      "ones": 5
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 4 hundreds, 0 tens, 5 ones.",
+      "Write the counts as digits, thousands first: 1, 4, 0, 5.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 1,405."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 4
       },
-      "hundreds is",
+      "hundreds,",
       {
-       "number": 400
+       "number": 0
       },
-      ".",
-      {
-       "number": 5
-      },
-      "ones is",
+      "tens,",
       {
        "number": 5
       },
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 0
+      },
+      ",",
+      {
+       "number": 5
+      },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 1405
       },
       "."
-     ],
-     "steps": [
-      "1 thousand is 1,000. 4 hundreds is 400. 5 ones is 5.",
-      "That makes 1,405."
      ],
      "visual": {
       "kind": "baseTen",
@@ -178,6 +201,9 @@
       "hundreds": 4,
       "tens": 0,
       "ones": 5
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -234,9 +260,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -247,35 +273,42 @@
      "ones": 3
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 4 hundreds, 3 tens, 3 ones.",
+      "Write the counts as digits, thousands first: 1, 4, 3, 3.",
+      "That makes 1,433."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 4
       },
-      "hundreds is",
-      {
-       "number": 400
-      },
-      ".",
+      "hundreds,",
       {
        "number": 3
       },
-      "tens is",
-      {
-       "number": 30
-      },
-      ".",
+      "tens,",
       {
        "number": 3
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
       {
        "number": 3
       },
@@ -286,16 +319,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 4 hundreds is 400. 3 tens is 30. 3 ones is 3.",
-      "That makes 1,433."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 4,
       "tens": 3,
       "ones": 3
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -352,9 +384,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -365,40 +397,57 @@
      "ones": 5
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 4 hundreds, 0 tens, 5 ones.",
+      "Write the counts as digits, thousands first: 1, 4, 0, 5.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 1,405."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 4
       },
-      "hundreds is",
+      "hundreds,",
       {
-       "number": 400
+       "number": 0
       },
-      ".",
-      {
-       "number": 5
-      },
-      "ones is",
+      "tens,",
       {
        "number": 5
       },
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 0
+      },
+      ",",
+      {
+       "number": 5
+      },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 1405
       },
       "."
-     ],
-     "steps": [
-      "1 thousand is 1,000. 4 hundreds is 400. 5 ones is 5.",
-      "That makes 1,405."
      ],
      "visual": {
       "kind": "baseTen",
@@ -406,6 +455,9 @@
       "hundreds": 4,
       "tens": 0,
       "ones": 5
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -462,9 +514,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -475,35 +527,42 @@
      "ones": 2
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 5 hundreds, 3 tens, 2 ones.",
+      "Write the counts as digits, thousands first: 1, 5, 3, 2.",
+      "That makes 1,532."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 5
       },
-      "hundreds is",
-      {
-       "number": 500
-      },
-      ".",
+      "hundreds,",
       {
        "number": 3
       },
-      "tens is",
-      {
-       "number": 30
-      },
-      ".",
+      "tens,",
       {
        "number": 2
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 5
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
       {
        "number": 2
       },
@@ -514,16 +573,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 5 hundreds is 500. 3 tens is 30. 2 ones is 2.",
-      "That makes 1,532."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 5,
       "tens": 3,
       "ones": 2
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -580,9 +638,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -593,35 +651,42 @@
      "ones": 2
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 4 hundreds, 7 tens, 2 ones.",
+      "Write the counts as digits, thousands first: 1, 4, 7, 2.",
+      "That makes 1,472."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 4
       },
-      "hundreds is",
-      {
-       "number": 400
-      },
-      ".",
+      "hundreds,",
       {
        "number": 7
       },
-      "tens is",
-      {
-       "number": 70
-      },
-      ".",
+      "tens,",
       {
        "number": 2
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 4
+      },
+      ",",
+      {
+       "number": 7
+      },
+      ",",
       {
        "number": 2
       },
@@ -632,16 +697,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 4 hundreds is 400. 7 tens is 70. 2 ones is 2.",
-      "That makes 1,472."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 4,
       "tens": 7,
       "ones": 2
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -698,9 +762,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -711,40 +775,57 @@
      "ones": 6
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 3 hundreds, 0 tens, 6 ones.",
+      "Write the counts as digits, thousands first: 1, 3, 0, 6.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 1,306."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 3
       },
-      "hundreds is",
+      "hundreds,",
       {
-       "number": 300
+       "number": 0
       },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      "tens,",
       {
        "number": 6
       },
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 0
+      },
+      ",",
+      {
+       "number": 6
+      },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 1306
       },
       "."
-     ],
-     "steps": [
-      "1 thousand is 1,000. 3 hundreds is 300. 6 ones is 6.",
-      "That makes 1,306."
      ],
      "visual": {
       "kind": "baseTen",
@@ -752,6 +833,9 @@
       "hundreds": 3,
       "tens": 0,
       "ones": 6
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -808,9 +892,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -821,40 +905,57 @@
      "ones": 9
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 1 hundred, 0 tens, 9 ones.",
+      "Write the counts as digits, thousands first: 1, 1, 0, 9.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 1,109."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 1
       },
-      "hundred is",
+      "hundred,",
       {
-       "number": 100
+       "number": 0
       },
-      ".",
-      {
-       "number": 9
-      },
-      "ones is",
+      "tens,",
       {
        "number": 9
       },
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 0
+      },
+      ",",
+      {
+       "number": 9
+      },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 1109
       },
       "."
-     ],
-     "steps": [
-      "1 thousand is 1,000. 1 hundred is 100. 9 ones is 9.",
-      "That makes 1,109."
      ],
      "visual": {
       "kind": "baseTen",
@@ -862,6 +963,9 @@
       "hundreds": 1,
       "tens": 0,
       "ones": 9
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -918,9 +1022,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -931,35 +1035,42 @@
      "ones": 3
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 1 hundred, 6 tens, 3 ones.",
+      "Write the counts as digits, thousands first: 1, 1, 6, 3.",
+      "That makes 1,163."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 1
       },
-      "hundred is",
-      {
-       "number": 100
-      },
-      ".",
+      "hundred,",
       {
        "number": 6
       },
-      "tens is",
-      {
-       "number": 60
-      },
-      ".",
+      "tens,",
       {
        "number": 3
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 6
+      },
+      ",",
       {
        "number": 3
       },
@@ -970,16 +1081,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 1 hundred is 100. 6 tens is 60. 3 ones is 3.",
-      "That makes 1,163."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 1,
       "tens": 6,
       "ones": 3
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -1036,9 +1146,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -1049,35 +1159,42 @@
      "ones": 2
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 1 hundred, 8 tens, 2 ones.",
+      "Write the counts as digits, thousands first: 1, 1, 8, 2.",
+      "That makes 1,182."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 1
       },
-      "hundred is",
-      {
-       "number": 100
-      },
-      ".",
+      "hundred,",
       {
        "number": 8
       },
-      "tens is",
-      {
-       "number": 80
-      },
-      ".",
+      "tens,",
       {
        "number": 2
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 8
+      },
+      ",",
       {
        "number": 2
       },
@@ -1088,16 +1205,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 1 hundred is 100. 8 tens is 80. 2 ones is 2.",
-      "That makes 1,182."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 1,
       "tens": 8,
       "ones": 2
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -1154,9 +1270,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "What number is this?",
+     "text": "What number do the blocks show?",
      "speak": [
-      "What number is this?"
+      "What number do the blocks show?"
      ]
     },
     "stimulus": {
@@ -1167,35 +1283,42 @@
      "ones": 7
     },
     "explanation": {
+     "steps": [
+      "Count each kind of block: 1 thousand, 3 hundreds, 9 tens, 7 ones.",
+      "Write the counts as digits, thousands first: 1, 3, 9, 7.",
+      "That makes 1,397."
+     ],
      "speak": [
+      "Count each kind of block:",
       {
        "number": 1
       },
-      "thousand is",
-      {
-       "number": 1000
-      },
-      ".",
+      "thousand,",
       {
        "number": 3
       },
-      "hundreds is",
-      {
-       "number": 300
-      },
-      ".",
+      "hundreds,",
       {
        "number": 9
       },
-      "tens is",
-      {
-       "number": 90
-      },
-      ".",
+      "tens,",
       {
        "number": 7
       },
-      "ones is",
+      "ones.",
+      "Write the counts as digits, thousands first:",
+      {
+       "number": 1
+      },
+      ",",
+      {
+       "number": 3
+      },
+      ",",
+      {
+       "number": 9
+      },
+      ",",
       {
        "number": 7
       },
@@ -1206,16 +1329,15 @@
       },
       "."
      ],
-     "steps": [
-      "1 thousand is 1,000. 3 hundreds is 300. 9 tens is 90. 7 ones is 7.",
-      "That makes 1,397."
-     ],
      "visual": {
       "kind": "baseTen",
       "thousands": 1,
       "hundreds": 3,
       "tens": 9,
       "ones": 7
+     },
+     "hint": {
+      "text": "Count each kind of block. Then write the counts as digits, thousands first."
      }
     },
     "type": "choice",
@@ -1274,8 +1396,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 0 hundreds, 1 ten, 6 ones. What number is this?",
+     "text": "What number has 7 thousands, 0 hundreds, 1 ten and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -1287,49 +1410,49 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 0, 1, 6.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 7,016."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
+      ",",
       {
-       "number": 7000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 7016
       },
       "."
-     ],
-     "steps": [
-      "7 thousands is 7,000. 1 ten is 10. 6 ones is 6.",
-      "That makes 7,016."
      ],
      "visual": {
       "kind": "text",
@@ -1340,6 +1463,9 @@
         "number": 7016
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -1396,8 +1522,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 8 hundreds, 7 tens, 4 ones. What number is this?",
+     "text": "What number has 7 thousands, 8 hundreds, 7 tens and 4 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -1409,44 +1536,34 @@
       {
        "number": 7
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 4
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 8, 7, 4.",
+      "That makes 7,874."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 8
       },
-      "hundreds is",
-      {
-       "number": 800
-      },
-      ".",
+      ",",
       {
        "number": 7
       },
-      "tens is",
-      {
-       "number": 70
-      },
-      ".",
-      {
-       "number": 4
-      },
-      "ones is",
+      ",",
       {
        "number": 4
       },
@@ -1457,10 +1574,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 8 hundreds is 800. 7 tens is 70. 4 ones is 4.",
-      "That makes 7,874."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,874",
@@ -1470,6 +1583,9 @@
         "number": 7874
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -1526,8 +1642,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 7 hundreds, 6 tens, 2 ones. What number is this?",
+     "text": "What number has 7 thousands, 7 hundreds, 6 tens and 2 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -1539,44 +1656,34 @@
       {
        "number": 6
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 2
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 7, 6, 2.",
+      "That makes 7,762."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 7
       },
-      "hundreds is",
-      {
-       "number": 700
-      },
-      ".",
+      ",",
       {
        "number": 6
       },
-      "tens is",
-      {
-       "number": 60
-      },
-      ".",
-      {
-       "number": 2
-      },
-      "ones is",
+      ",",
       {
        "number": 2
       },
@@ -1587,10 +1694,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 7 hundreds is 700. 6 tens is 60. 2 ones is 2.",
-      "That makes 7,762."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,762",
@@ -1600,6 +1703,9 @@
         "number": 7762
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -1656,8 +1762,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "9 thousands, 3 hundreds, 8 tens, 9 ones. What number is this?",
+     "text": "What number has 9 thousands, 3 hundreds, 8 tens and 9 ones?",
      "speak": [
+      "What number has",
       {
        "number": 9
       },
@@ -1669,44 +1776,34 @@
       {
        "number": 8
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 9
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 9, 3, 8, 9.",
+      "That makes 9,389."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 9
       },
-      "thousands is",
-      {
-       "number": 9000
-      },
-      ".",
+      ",",
       {
        "number": 3
       },
-      "hundreds is",
-      {
-       "number": 300
-      },
-      ".",
+      ",",
       {
        "number": 8
       },
-      "tens is",
-      {
-       "number": 80
-      },
-      ".",
-      {
-       "number": 9
-      },
-      "ones is",
+      ",",
       {
        "number": 9
       },
@@ -1717,10 +1814,6 @@
       },
       "."
      ],
-     "steps": [
-      "9 thousands is 9,000. 3 hundreds is 300. 8 tens is 80. 9 ones is 9.",
-      "That makes 9,389."
-     ],
      "visual": {
       "kind": "text",
       "value": "9,389",
@@ -1730,6 +1823,9 @@
         "number": 9389
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -1786,8 +1882,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 5 hundreds, 1 ten, 8 ones. What number is this?",
+     "text": "What number has 7 thousands, 5 hundreds, 1 ten and 8 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -1799,44 +1896,34 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 8
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 5, 1, 8.",
+      "That makes 7,518."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "hundreds is",
-      {
-       "number": 500
-      },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 8
-      },
-      "ones is",
+      ",",
       {
        "number": 8
       },
@@ -1847,10 +1934,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 5 hundreds is 500. 1 ten is 10. 8 ones is 8.",
-      "That makes 7,518."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,518",
@@ -1860,6 +1943,9 @@
         "number": 7518
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -1916,8 +2002,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 thousands, 2 hundreds, 0 tens, 6 ones. What number is this?",
+     "text": "What number has 6 thousands, 2 hundreds, 0 tens and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 6
       },
@@ -1929,49 +2016,49 @@
       {
        "number": 0
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 6, 2, 0, 6.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 6,206."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 6
       },
-      "thousands is",
-      {
-       "number": 6000
-      },
-      ".",
+      ",",
       {
        "number": 2
       },
-      "hundreds is",
+      ",",
       {
-       "number": 200
+       "number": 0
       },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 6206
       },
       "."
-     ],
-     "steps": [
-      "6 thousands is 6,000. 2 hundreds is 200. 6 ones is 6.",
-      "That makes 6,206."
      ],
      "visual": {
       "kind": "text",
@@ -1982,6 +2069,9 @@
         "number": 6206
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -2038,8 +2128,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2 thousands, 0 hundreds, 9 tens, 4 ones. What number is this?",
+     "text": "What number has 2 thousands, 0 hundreds, 9 tens and 4 ones?",
      "speak": [
+      "What number has",
       {
        "number": 2
       },
@@ -2051,49 +2142,49 @@
       {
        "number": 9
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 4
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 2, 0, 9, 4.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 2,094."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 2
       },
-      "thousands is",
+      ",",
       {
-       "number": 2000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 9
       },
-      "tens is",
-      {
-       "number": 90
-      },
-      ".",
-      {
-       "number": 4
-      },
-      "ones is",
+      ",",
       {
        "number": 4
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 2094
       },
       "."
-     ],
-     "steps": [
-      "2 thousands is 2,000. 9 tens is 90. 4 ones is 4.",
-      "That makes 2,094."
      ],
      "visual": {
       "kind": "text",
@@ -2104,6 +2195,9 @@
         "number": 2094
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -2160,8 +2254,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "3 thousands, 2 hundreds, 5 tens, 1 one. What number is this?",
+     "text": "What number has 3 thousands, 2 hundreds, 5 tens and 1 one?",
      "speak": [
+      "What number has",
       {
        "number": 3
       },
@@ -2173,44 +2268,34 @@
       {
        "number": 5
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 1
       },
       "one",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 3, 2, 5, 1.",
+      "That makes 3,251."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 3
       },
-      "thousands is",
-      {
-       "number": 3000
-      },
-      ".",
+      ",",
       {
        "number": 2
       },
-      "hundreds is",
-      {
-       "number": 200
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "tens is",
-      {
-       "number": 50
-      },
-      ".",
-      {
-       "number": 1
-      },
-      "one is",
+      ",",
       {
        "number": 1
       },
@@ -2221,10 +2306,6 @@
       },
       "."
      ],
-     "steps": [
-      "3 thousands is 3,000. 2 hundreds is 200. 5 tens is 50. 1 one is 1.",
-      "That makes 3,251."
-     ],
      "visual": {
       "kind": "text",
       "value": "3,251",
@@ -2234,6 +2315,9 @@
         "number": 3251
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -2290,8 +2374,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "3 thousands, 5 hundreds, 9 tens, 0 ones. What number is this?",
+     "text": "What number has 3 thousands, 5 hundreds, 9 tens and 0 ones?",
      "speak": [
+      "What number has",
       {
        "number": 3
       },
@@ -2303,49 +2388,49 @@
       {
        "number": 9
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 0
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 3, 5, 9, 0.",
+      "There are 0 ones, so a zero holds the ones place.",
+      "That makes 3,590."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 3
       },
-      "thousands is",
-      {
-       "number": 3000
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "hundreds is",
-      {
-       "number": 500
-      },
-      ".",
+      ",",
       {
        "number": 9
       },
-      "tens is",
+      ",",
       {
-       "number": 90
+       "number": 0
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "ones, so a zero holds the ones place.",
       "That makes",
       {
        "number": 3590
       },
       "."
-     ],
-     "steps": [
-      "3 thousands is 3,000. 5 hundreds is 500. 9 tens is 90.",
-      "That makes 3,590."
      ],
      "visual": {
       "kind": "text",
@@ -2356,6 +2441,9 @@
         "number": 3590
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -2412,8 +2500,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 thousands, 0 hundreds, 1 ten, 6 ones. What number is this?",
+     "text": "What number has 6 thousands, 0 hundreds, 1 ten and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 6
       },
@@ -2425,49 +2514,49 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 6, 0, 1, 6.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 6,016."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 6
       },
-      "thousands is",
+      ",",
       {
-       "number": 6000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 6016
       },
       "."
-     ],
-     "steps": [
-      "6 thousands is 6,000. 1 ten is 10. 6 ones is 6.",
-      "That makes 6,016."
      ],
      "visual": {
       "kind": "text",
@@ -2478,6 +2567,9 @@
         "number": 6016
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "choice",
@@ -2536,8 +2628,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 0 hundreds, 1 ten, 6 ones. What number is this?",
+     "text": "What number has 7 thousands, 0 hundreds, 1 ten and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -2549,49 +2642,49 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 0, 1, 6.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 7,016."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
+      ",",
       {
-       "number": 7000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 7016
       },
       "."
-     ],
-     "steps": [
-      "7 thousands is 7,000. 1 ten is 10. 6 ones is 6.",
-      "That makes 7,016."
      ],
      "visual": {
       "kind": "text",
@@ -2602,6 +2695,9 @@
         "number": 7016
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -2622,8 +2718,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 8 hundreds, 7 tens, 4 ones. What number is this?",
+     "text": "What number has 7 thousands, 8 hundreds, 7 tens and 4 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -2635,44 +2732,34 @@
       {
        "number": 7
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 4
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 8, 7, 4.",
+      "That makes 7,874."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 8
       },
-      "hundreds is",
-      {
-       "number": 800
-      },
-      ".",
+      ",",
       {
        "number": 7
       },
-      "tens is",
-      {
-       "number": 70
-      },
-      ".",
-      {
-       "number": 4
-      },
-      "ones is",
+      ",",
       {
        "number": 4
       },
@@ -2683,10 +2770,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 8 hundreds is 800. 7 tens is 70. 4 ones is 4.",
-      "That makes 7,874."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,874",
@@ -2696,6 +2779,9 @@
         "number": 7874
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -2716,8 +2802,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 7 hundreds, 6 tens, 2 ones. What number is this?",
+     "text": "What number has 7 thousands, 7 hundreds, 6 tens and 2 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -2729,44 +2816,34 @@
       {
        "number": 6
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 2
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 7, 6, 2.",
+      "That makes 7,762."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 7
       },
-      "hundreds is",
-      {
-       "number": 700
-      },
-      ".",
+      ",",
       {
        "number": 6
       },
-      "tens is",
-      {
-       "number": 60
-      },
-      ".",
-      {
-       "number": 2
-      },
-      "ones is",
+      ",",
       {
        "number": 2
       },
@@ -2777,10 +2854,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 7 hundreds is 700. 6 tens is 60. 2 ones is 2.",
-      "That makes 7,762."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,762",
@@ -2790,6 +2863,9 @@
         "number": 7762
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -2810,8 +2886,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "9 thousands, 3 hundreds, 8 tens, 9 ones. What number is this?",
+     "text": "What number has 9 thousands, 3 hundreds, 8 tens and 9 ones?",
      "speak": [
+      "What number has",
       {
        "number": 9
       },
@@ -2823,44 +2900,34 @@
       {
        "number": 8
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 9
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 9, 3, 8, 9.",
+      "That makes 9,389."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 9
       },
-      "thousands is",
-      {
-       "number": 9000
-      },
-      ".",
+      ",",
       {
        "number": 3
       },
-      "hundreds is",
-      {
-       "number": 300
-      },
-      ".",
+      ",",
       {
        "number": 8
       },
-      "tens is",
-      {
-       "number": 80
-      },
-      ".",
-      {
-       "number": 9
-      },
-      "ones is",
+      ",",
       {
        "number": 9
       },
@@ -2871,10 +2938,6 @@
       },
       "."
      ],
-     "steps": [
-      "9 thousands is 9,000. 3 hundreds is 300. 8 tens is 80. 9 ones is 9.",
-      "That makes 9,389."
-     ],
      "visual": {
       "kind": "text",
       "value": "9,389",
@@ -2884,6 +2947,9 @@
         "number": 9389
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -2904,8 +2970,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "7 thousands, 5 hundreds, 1 ten, 8 ones. What number is this?",
+     "text": "What number has 7 thousands, 5 hundreds, 1 ten and 8 ones?",
      "speak": [
+      "What number has",
       {
        "number": 7
       },
@@ -2917,44 +2984,34 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 8
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 7, 5, 1, 8.",
+      "That makes 7,518."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 7
       },
-      "thousands is",
-      {
-       "number": 7000
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "hundreds is",
-      {
-       "number": 500
-      },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 8
-      },
-      "ones is",
+      ",",
       {
        "number": 8
       },
@@ -2965,10 +3022,6 @@
       },
       "."
      ],
-     "steps": [
-      "7 thousands is 7,000. 5 hundreds is 500. 1 ten is 10. 8 ones is 8.",
-      "That makes 7,518."
-     ],
      "visual": {
       "kind": "text",
       "value": "7,518",
@@ -2978,6 +3031,9 @@
         "number": 7518
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -2998,8 +3054,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 thousands, 2 hundreds, 0 tens, 6 ones. What number is this?",
+     "text": "What number has 6 thousands, 2 hundreds, 0 tens and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 6
       },
@@ -3011,49 +3068,49 @@
       {
        "number": 0
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 6, 2, 0, 6.",
+      "There are 0 tens, so a zero holds the tens place.",
+      "That makes 6,206."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 6
       },
-      "thousands is",
-      {
-       "number": 6000
-      },
-      ".",
+      ",",
       {
        "number": 2
       },
-      "hundreds is",
+      ",",
       {
-       "number": 200
+       "number": 0
       },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "tens, so a zero holds the tens place.",
       "That makes",
       {
        "number": 6206
       },
       "."
-     ],
-     "steps": [
-      "6 thousands is 6,000. 2 hundreds is 200. 6 ones is 6.",
-      "That makes 6,206."
      ],
      "visual": {
       "kind": "text",
@@ -3064,6 +3121,9 @@
         "number": 6206
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -3084,8 +3144,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "2 thousands, 0 hundreds, 9 tens, 4 ones. What number is this?",
+     "text": "What number has 2 thousands, 0 hundreds, 9 tens and 4 ones?",
      "speak": [
+      "What number has",
       {
        "number": 2
       },
@@ -3097,49 +3158,49 @@
       {
        "number": 9
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 4
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 2, 0, 9, 4.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 2,094."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 2
       },
-      "thousands is",
+      ",",
       {
-       "number": 2000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 9
       },
-      "tens is",
-      {
-       "number": 90
-      },
-      ".",
-      {
-       "number": 4
-      },
-      "ones is",
+      ",",
       {
        "number": 4
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 2094
       },
       "."
-     ],
-     "steps": [
-      "2 thousands is 2,000. 9 tens is 90. 4 ones is 4.",
-      "That makes 2,094."
      ],
      "visual": {
       "kind": "text",
@@ -3150,6 +3211,9 @@
         "number": 2094
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -3170,8 +3234,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "3 thousands, 2 hundreds, 5 tens, 1 one. What number is this?",
+     "text": "What number has 3 thousands, 2 hundreds, 5 tens and 1 one?",
      "speak": [
+      "What number has",
       {
        "number": 3
       },
@@ -3183,44 +3248,34 @@
       {
        "number": 5
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 1
       },
       "one",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 3, 2, 5, 1.",
+      "That makes 3,251."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 3
       },
-      "thousands is",
-      {
-       "number": 3000
-      },
-      ".",
+      ",",
       {
        "number": 2
       },
-      "hundreds is",
-      {
-       "number": 200
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "tens is",
-      {
-       "number": 50
-      },
-      ".",
-      {
-       "number": 1
-      },
-      "one is",
+      ",",
       {
        "number": 1
       },
@@ -3231,10 +3286,6 @@
       },
       "."
      ],
-     "steps": [
-      "3 thousands is 3,000. 2 hundreds is 200. 5 tens is 50. 1 one is 1.",
-      "That makes 3,251."
-     ],
      "visual": {
       "kind": "text",
       "value": "3,251",
@@ -3244,6 +3295,9 @@
         "number": 3251
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -3264,8 +3318,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "3 thousands, 5 hundreds, 9 tens, 0 ones. What number is this?",
+     "text": "What number has 3 thousands, 5 hundreds, 9 tens and 0 ones?",
      "speak": [
+      "What number has",
       {
        "number": 3
       },
@@ -3277,49 +3332,49 @@
       {
        "number": 9
       },
-      "tens,",
+      "tens",
+      "and",
       {
        "number": 0
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 3, 5, 9, 0.",
+      "There are 0 ones, so a zero holds the ones place.",
+      "That makes 3,590."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 3
       },
-      "thousands is",
-      {
-       "number": 3000
-      },
-      ".",
+      ",",
       {
        "number": 5
       },
-      "hundreds is",
-      {
-       "number": 500
-      },
-      ".",
+      ",",
       {
        "number": 9
       },
-      "tens is",
+      ",",
       {
-       "number": 90
+       "number": 0
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "ones, so a zero holds the ones place.",
       "That makes",
       {
        "number": 3590
       },
       "."
-     ],
-     "steps": [
-      "3 thousands is 3,000. 5 hundreds is 500. 9 tens is 90.",
-      "That makes 3,590."
      ],
      "visual": {
       "kind": "text",
@@ -3330,6 +3385,9 @@
         "number": 3590
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -3350,8 +3408,9 @@
    {
     "mode": "look",
     "prompt": {
-     "text": "6 thousands, 0 hundreds, 1 ten, 6 ones. What number is this?",
+     "text": "What number has 6 thousands, 0 hundreds, 1 ten and 6 ones?",
      "speak": [
+      "What number has",
       {
        "number": 6
       },
@@ -3363,49 +3422,49 @@
       {
        "number": 1
       },
-      "ten,",
+      "ten",
+      "and",
       {
        "number": 6
       },
       "ones",
-      ". What number is this?"
+      "?"
      ]
     },
     "explanation": {
+     "steps": [
+      "Write each count as a digit, thousands first: 6, 0, 1, 6.",
+      "There are 0 hundreds, so a zero holds the hundreds place.",
+      "That makes 6,016."
+     ],
      "speak": [
+      "Write each count as a digit, thousands first:",
       {
        "number": 6
       },
-      "thousands is",
+      ",",
       {
-       "number": 6000
+       "number": 0
       },
-      ".",
+      ",",
       {
        "number": 1
       },
-      "ten is",
-      {
-       "number": 10
-      },
-      ".",
-      {
-       "number": 6
-      },
-      "ones is",
+      ",",
       {
        "number": 6
       },
       ".",
+      "There are",
+      {
+       "number": 0
+      },
+      "hundreds, so a zero holds the hundreds place.",
       "That makes",
       {
        "number": 6016
       },
       "."
-     ],
-     "steps": [
-      "6 thousands is 6,000. 1 ten is 10. 6 ones is 6.",
-      "That makes 6,016."
      ],
      "visual": {
       "kind": "text",
@@ -3416,6 +3475,9 @@
         "number": 6016
        }
       ]
+     },
+     "hint": {
+      "text": "Write each count as a digit, thousands first. A zero holds an empty place."
      }
     },
     "type": "numberPad",
@@ -3533,6 +3595,9 @@
         "number": 7016
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -3638,6 +3703,9 @@
         "number": 7874
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -3743,6 +3811,9 @@
         "number": 7762
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -3848,6 +3919,9 @@
         "number": 9389
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -3953,6 +4027,9 @@
         "number": 7518
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -4058,6 +4135,9 @@
         "number": 6206
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -4163,6 +4243,9 @@
         "number": 2094
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -4268,6 +4351,9 @@
         "number": 3251
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -4373,6 +4459,9 @@
         "number": 3590
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",
@@ -4478,6 +4567,9 @@
         "number": 6016
        }
       ]
+     },
+     "hint": {
+      "text": "Find the place the digit is in: thousands, hundreds, tens or ones."
      }
     },
     "skillId": "M-3-A1",

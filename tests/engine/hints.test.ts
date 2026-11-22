@@ -187,7 +187,7 @@ describe('the nudge', () => {
       ['M-2-C12', 1, 1, 'A bed is big: meters.'],
       ['E-K-E4', 1, 1, 'Wheat grows in a field.'],
       ['M-3-C11', 1, 1, 'An even number times any number is even.'],
-      ['M-3-C6', 1, 3, 'Count by 2s to 8: 2, 4, 6, 8.'],
+      ['M-3-C6', 1, 3, 'Count by twos to 8: 2, 4, 6, 8.'],
       // Read questions: the words to read are never said before the child answers.
       ['M-2-A7', 2, 1, 'Six hundred nine is 6 hundreds, 0 tens and 9 ones.'],
       ['M-3-A2', 3, 1, 'six thousand thirty-nine'],
@@ -200,7 +200,8 @@ describe('the nudge', () => {
       const q: Question = reworded.has(skillId) ? { ...now, explanation: { speak: now.explanation.speak, steps: [first, 'Look again.', 'That is it.'] } } : now;
       expect(q.explanation.steps[0], skillId).toBe(first);
       expect(q.explanation.steps.length, skillId).toBeGreaterThanOrEqual(3);
-      expect(nudgeFor(q), `${skillId}: ${first}`).toBeNull();
+      // The guard on the steps: a generator's own hint, when it has one, is left out.
+      expect(nudgeFor(withoutHint(q)), `${skillId}: ${first}`).toBeNull();
     }
     // M-1-C4 now names the coin only in its last step and gives its own hint (round 2). Its old steps, which named
     // the coin first, are put back here, so the guard is still tested on them.
