@@ -1,6 +1,11 @@
 import { act, fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
+import { factAskSay, factMissSay } from '../../src/app/facts';
 import { useAppStore } from '../../src/app/store';
+import { sayWords } from '../../src/audio/say';
+import { sayText } from '../../src/engine/describe';
+import type { Fact, FactOp } from '../../src/engine/facts';
+import { FACT_SETS } from '../../src/engine/facts';
 import type { Child } from '../../src/storage/schema';
 import { advanceClock } from '../../src/lib/clock';
 import { recentErrors } from '../../src/lib/errorLog';
@@ -113,5 +118,30 @@ describe('fast facts for grown-ups', () => {
     fireEvent.click(within(times).getByRole('button', { name: 'Open early' }));
     await waitFor(async () => expect((await repo.listChildren())[0]?.settings.factSets).toEqual(['times2510']));
     await waitFor(() => expect(screen.getByRole('region', { name: 'Times 2, 5 and 10' }).textContent).toContain('0% fast'));
+  });
+});
+
+describe('what the race says', () => {
+  // A fact is asked the way every sum is asked (the owner's choice, Nov 22, 2026): "What is 6 plus 7?", never
+  // "6 plus 7 equals what?". After a miss the right answer is said with the fact.
+  const fact = (a: number, op: FactOp, b: number, answer: number): Fact => ({ id: `${a}${op}${b}`, a, op, b, answer });
+
+  it('asks "What is 6 plus 7?", and the same for minus, times and divided by', () => {
+    expect(sayText(factAskSay(fact(6, '+', 7, 13)))).toBe('What is 6 plus 7?');
+    expect(sayText(factAskSay(fact(13, '-', 6, 7)))).toBe('What is 13 minus 6?');
+    expect(sayText(factAskSay(fact(4, '×', 5, 20)))).toBe('What is 4 times 5?');
+    expect(sayText(factAskSay(fact(20, '÷', 5, 4)))).toBe('What is 20 divided by 5?');
+    expect(sayWords(factAskSay(fact(6, '+', 7, 13)))).toBe('What is six plus seven?');
+    expect(sayText(factMissSay(fact(6, '+', 7, 13)))).toBe('Not quite. 6 plus 7 is 13.');
+  });
+
+  it('every fact of every set is asked that way, never "equals what?"', () => {
+    for (const set of FACT_SETS) {
+      for (const each of set.facts) {
+        const asked = sayText(factAskSay(each));
+        expect(asked, each.id).toMatch(/^What is \d+ (plus|minus|times|divided by) \d+\?$/);
+        expect(asked, each.id).not.toMatch(/equals/);
+      }
+    }
   });
 });

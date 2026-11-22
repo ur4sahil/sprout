@@ -113,6 +113,10 @@ describe('stepSay: a written step, said aloud', () => {
     expect(device('It is 12:00.')).toBe("It is twelve o'clock.");
     expect(device('3 hours after 8:00 is 11:00.')).toBe("three hours after eight o'clock is eleven o'clock.");
     expect(device('It is 9:40.')).toBe('It is nine forty.');
+    // A written time is a time part, so it is said by the same words as one: "eight thirty", never "half past eight".
+    expect(clockSay(8, 30)).toEqual([{ time: { hour: 8, minute: 30 } }]);
+    expect(device('It is 8:30.')).toBe('It is eight thirty.');
+    expect(device('It is 8:45.')).toBe('It is eight forty-five.');
     expect(clockSay(13, 0)).toBeNull();
     expect(clockSay(3, 75)).toBeNull();
     expect(stepSay('It is 13:00.')).toBeNull();

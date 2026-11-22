@@ -12,7 +12,7 @@ import Tabs from '../../components/Tabs';
 import TileGrid from '../../components/TileGrid';
 import { CATALOGUE } from '../../content/catalogue';
 import { allGenerators } from '../../content/registry';
-import { gradeRank } from '../../engine/grades';
+import { gradeRank, offeredTo } from '../../engine/grades';
 import type { Say, SkillGrade } from '../../engine/types';
 import { GRADE_NAME, SUBJECTS } from './Home';
 import styles from './SubjectPage.module.css';
@@ -30,7 +30,9 @@ export default function SubjectPage() {
   if (!subject) return <Navigate to="/home" replace />;
 
   const ready = new Set(allGenerators().map((generator) => generator.skillId));
-  const skills = CATALOGUE.filter((skill) => skill.subject === subject.id && !skill.retired && ready.has(skill.id));
+  // A skill the child's grade is not offered (offeredTo) is not on the page: the page never locks a skill (one above
+  // the child's grade sits under its own grade tab), and Reasoning has no grade tabs, so the word puzzles are left off.
+  const skills = CATALOGUE.filter((skill) => skill.subject === subject.id && !skill.retired && ready.has(skill.id) && offeredTo(skill, child.grade));
   const grades = [...new Set(skills.map((skill) => skill.grade))].sort((a, b) => gradeRank(a) - gradeRank(b));
   // Open on the child's own grade when the subject has it, otherwise on the nearest grade below, otherwise the first.
   const own = grades.filter((grade) => gradeRank(grade, child.grade) <= gradeRank(child.grade)).at(-1) ?? grades[0] ?? null;

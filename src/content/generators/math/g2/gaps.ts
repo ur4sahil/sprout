@@ -59,7 +59,7 @@ export const addManyGenerator: SkillGenerator = {
   lesson: (): LessonStep[] => [
     { beat: 'see', text: 'To add many numbers, add two at a time.', speak: ['To add many numbers, add two at a time.'], visual: { kind: 'equation', parts: [12, '+', 8, '+', 15, '+', 10] } },
     { beat: 'watch', text: '12 + 8 = 20, 20 + 15 = 35, 35 + 10 = 45.', speak: [{ number: 12 }, 'plus', { number: 8 }, 'is', { number: 20 }, '. Then', { number: 35 }, ', then', { number: 45 }, '.'], visual: { kind: 'equation', parts: [12, '+', 8, '+', 15, '+', 10, '=', 45] } },
-    { beat: 'try', text: '4 + 6 + 7 equals what?', speak: [{ number: 4 }, 'plus', { number: 6 }, 'plus', { number: 7 }, 'equals what?'], visual: { kind: 'equation', parts: [4, '+', 6, '+', 7, '=', 'blank'] }, reveal: { text: '4 + 6 = 10, 10 + 7 = 17.', speak: [{ number: 4 }, 'plus', { number: 6 }, 'is', { number: 10 }, '. Plus', { number: 7 }, 'is', { number: 17 }, '.'], visual: { kind: 'equation', parts: [4, '+', 6, '+', 7, '=', 17] } } },
+    { beat: 'try', text: 'What is 4 plus 6 plus 7?', speak: ['What is', { number: 4 }, 'plus', { number: 6 }, 'plus', { number: 7 }, '?'], visual: { kind: 'equation', parts: [4, '+', 6, '+', 7, '=', 'blank'] }, reveal: { text: '4 + 6 = 10, 10 + 7 = 17.', speak: [{ number: 4 }, 'plus', { number: 6 }, 'is', { number: 10 }, '. Plus', { number: 7 }, 'is', { number: 17 }, '.'], visual: { kind: 'equation', parts: [4, '+', 6, '+', 7, '=', 17] } } },
     { beat: 'remember', text: 'Look for numbers that make a ten.', speak: ['Look for numbers that make a ten.'], visual: { kind: 'equation', parts: [4, '+', 6, '=', 10] } },
   ],
   oracle: 'sumList',

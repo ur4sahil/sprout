@@ -52,11 +52,11 @@ export function fractionSay(n: number, d: number): Say | null {
   return names ? [{ number: n }, n === 1 ? names[0] : names[1]] : null;
 }
 
-// 3:30 is "three thirty", 7:05 "seven oh five", 12:00 "twelve o'clock": as the time is written.
+// 3:30 is "three thirty", 7:05 "seven oh five", 12:00 "twelve o'clock": as the time is written. It is a `{ time }`
+// part, so a written time and a time part are said by the same words (`timeWords` in say.ts).
 export function clockSay(hour: number, minute: number): Say | null {
   if (hour < 1 || hour > 12 || minute > 59) return null;
-  if (minute === 0) return [{ number: hour }, "o'clock"];
-  return minute < 10 ? [{ number: hour }, 'oh', { number: minute }] : [{ number: hour }, { number: minute }];
+  return [{ time: { hour, minute } }];
 }
 
 // $1.25 is "one dollar and twenty-five cents", $5 "five dollars", $0.50 "fifty cents".

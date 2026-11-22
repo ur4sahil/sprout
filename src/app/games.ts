@@ -2,6 +2,7 @@ import type { Skill } from '../content/catalogue';
 import { skillById } from '../content/catalogue';
 import { ALPHABET } from '../content/data/letters';
 import { allGenerators, nextQuestion } from '../content/registry';
+import { offeredTo } from '../engine/grades';
 import type { Rng } from '../engine/rng';
 import { seedFor } from '../engine/seed';
 import { lastWasMiss, levelToAsk } from '../engine/skillscore';
@@ -24,7 +25,7 @@ export interface PopTurn {
 // The question a skill would ask next in practice, when that is a choice question.
 export function popTurn(child: Child, state: SkillState, recentKeys: readonly string[] = []): PopTurn | null {
   const skill = skillById(state.skillId);
-  if (!skill || skill.retired || !allGenerators().some((generator) => generator.skillId === skill.id)) return null;
+  if (!skill || skill.retired || !offeredTo(skill, child.grade) || !allGenerators().some((generator) => generator.skillId === skill.id)) return null;
   // In progress: started, and not yet mastered or placed out.
   if (state.attempts === 0 || state.score >= 100 || state.placedOut) return null;
   const level = levelToAsk(state.score, lastWasMiss(state), skill.maxLevel);
@@ -66,7 +67,7 @@ function halves(kind: PairKind, rng: Rng): [{ visual: Visual; name: string }, { 
   }
   const numbers = kind === 'dots' || kind === 'frames' ? rng.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], PAIR_COUNT) : kind === 'teenFrames' ? rng.sample([11, 12, 13, 14, 15, 16, 17, 18, 19, 20], PAIR_COUNT) : rng.sample([2, 3, 4, 5, 6, 7, 8, 9, 10], PAIR_COUNT);
   return numbers.map((n) => {
-    if (kind === 'dots') return [{ visual: numeral(n), name: `the number ${n}` }, { visual: { kind: 'emojiGroup', emoji: '⚫', count: n, layout: 'grid5' }, name: `${n} dots` }];
+    if (kind === 'dots') return [{ visual: numeral(n), name: `the number ${n}` }, { visual: { kind: 'emojiGroup', emoji: '⚫', count: n, layout: 'grid5' }, name: n === 1 ? '1 dot' : `${n} dots` }];
     if (kind === 'doubles') return [{ visual: { kind: 'equation', parts: [n, '+', n] }, name: `${n} plus ${n}` }, { visual: numeral(n * 2), name: `the number ${n * 2}` }];
     return [{ visual: numeral(n), name: `the number ${n}` }, { visual: { kind: 'tenFrame', filled: n, frames: n > 10 ? 2 : 1 }, name: `a ten frame showing ${n}` }];
   });

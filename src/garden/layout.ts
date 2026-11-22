@@ -2,6 +2,7 @@ import type { PlanPart } from '../app/todaysPlan';
 import { nextPart, planProgress } from '../app/todaysPlan';
 import type { Skill } from '../content/catalogue';
 import type { Ladder } from '../content/ladders';
+import { offeredTo } from '../engine/grades';
 import type { Grade, SkillState } from '../storage/schema';
 import type { GrowthStage } from '../worlds/types';
 import { growthStage } from '../worlds/types';
@@ -126,14 +127,14 @@ function steady(text: string): number {
 
 // The skills that are plants in this child's garden: every skill of the child's grade (Reasoning has no grade,
 // so all of it), every skill already started whatever its grade, and any skill today's plan leads to.
-// A retired skill is never shown.
+// A retired skill is never shown, nor one the child's grade is not offered (offeredTo: the word puzzles before grade 1).
 export function gardenSkills(input: Pick<GardenInput, 'grade' | 'states' | 'skills' | 'plan'>): Skill[] {
   const started = new Set(input.states.filter((state) => isStarted(state)).map((state) => state.skillId));
   const planned = new Set<string>();
   for (const part of input.plan) {
     if (part.kind === 'keepGoing' || part.kind === 'new') planned.add(part.skillId);
   }
-  return input.skills.filter((skill) => !skill.retired && (skill.grade === input.grade || skill.grade === 'all' || started.has(skill.id) || planned.has(skill.id)));
+  return input.skills.filter((skill) => !skill.retired && offeredTo(skill, input.grade) && (skill.grade === input.grade || skill.grade === 'all' || started.has(skill.id) || planned.has(skill.id)));
 }
 
 // How many rows deep a bed of n plants is: small beds stay shallow so they look like beds, not columns.

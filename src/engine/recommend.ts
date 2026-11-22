@@ -4,7 +4,7 @@ import { ladderPrerequisite } from '../content/ladders';
 import { daysBetween } from '../lib/clock';
 import type { Grade, Plan, SkillState } from '../storage/schema';
 import { isPlacedPast } from './fastTrack';
-import { gradeRank } from './grades';
+import { gradeRank, offeredTo } from './grades';
 import { isReviewDue } from './review';
 
 // Today's picks and trouble spots (plan section 7). Pure functions.
@@ -51,7 +51,7 @@ export function rankCandidates(input: RecommendInput): TodayPick[] {
 
   const usable = (skillId: string): boolean => {
     const skill = skillById.get(skillId);
-    if (!skill || skill.retired) return false;
+    if (!skill || skill.retired || !offeredTo(skill, input.grade)) return false;
     if (!input.hasGenerator(skillId)) return false;
     return input.canListen || !input.isListenNext(skillId);
   };

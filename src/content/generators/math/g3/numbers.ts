@@ -268,11 +268,18 @@ type Ask = 'most' | 'least' | 'sign';
 const SIGNS = ['>', '<', '='] as const;
 const SIGN_WORDS: Record<string, string> = { '>': 'greater than', '<': 'less than', '=': 'equal to' };
 
+// The hint says where to look, never which number or sign: a sign's hint names no sign, by symbol or by name.
+const COMPARE_HINTS: Record<'number' | 'sign', Hint> = {
+  number: { text: 'Compare the thousands first. If they are the same, compare the hundreds.' },
+  sign: { text: 'Compare the digits from the left, thousands first. Is one number bigger, or are they the same?' },
+};
+
 // The last step answers what was asked: the greater number, the smaller one, or the sign. A sign is read in the
 // question's order, a then b, and named: "1,024 is less than 5,747, so the sign is <."
 function compareExplanation(a: number, b: number, ask: Ask = 'most'): Explanation {
   const visual = equation(written(a), a > b ? '>' : a < b ? '<' : '=', written(b));
-  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal, so the sign is equals.'], steps: [`${written(a)} and ${written(b)} are the same number.`, 'They are equal, so the sign is =.'], visual };
+  const hint = COMPARE_HINTS[ask === 'sign' ? 'sign' : 'number'];
+  if (a === b) return { speak: [{ number: a }, 'and', { number: b }, 'are the same number. They are equal, so the sign is equals.'], steps: [`${written(a)} and ${written(b)} are the same number.`, 'They are equal, so the sign is =.'], visual, hint };
   const [big, small] = a > b ? [a, b] : [b, a];
   const [x, y] = [digitsOf(big), digitsOf(small)];
   const place = PLACES.find((each) => x[each] !== y[each]) ?? 'ones';
@@ -286,7 +293,7 @@ function compareExplanation(a: number, b: number, ask: Ask = 'most'): Explanatio
         ? told(big, 'is greater than', small, '.')
         : told(small, 'is less than', big, '.');
   const lastSay: Say = ask === 'sign' ? [{ number: a }, `is ${relation} than`, { number: b }, `, so the sign is ${relation} than.`] : last.speak;
-  return { speak: [look, { number: big }, `has more ${place}.`, ...lastSay], steps: [look, `${written(big)} has more ${place}.`, last.text], visual };
+  return { speak: [look, { number: big }, `has more ${place}.`, ...lastSay], steps: [look, `${written(big)} has more ${place}.`, last.text], visual, hint };
 }
 
 function fourDigit(sameThousands: boolean, rng: Rng): [number, number] {
@@ -367,7 +374,14 @@ export const compareFourDigitGenerator: SkillGenerator = {
 
 const roundTo = (n: number, to: number): number => Math.floor((n + to / 2) / to) * to;
 
-function roundExplanation(n: number, to: number): Explanation {
+// The rule for which way to round, from the digit that decides it; on the number line, from the middle of the line.
+const ROUND_HINTS: Record<'line' | 'ten' | 'hundred', Hint> = {
+  line: { text: 'Find the middle of the line. A dot at the middle or past it rounds up. A dot before it rounds down.' },
+  ten: { text: 'Look at the ones digit. 5 or more rounds up. Less than 5 rounds down.' },
+  hundred: { text: 'Look at the tens digit. 5 or more rounds up. Less than 5 rounds down.' },
+};
+
+function roundExplanation(n: number, to: number, onLine = false): Explanation {
   const below = Math.floor(n / to) * to;
   const above = below + to;
   const half = below + to / 2;
@@ -379,6 +393,7 @@ function roundExplanation(n: number, to: number): Explanation {
     speak: [{ number: n }, `is between`, { number: below }, 'and', { number: above }, '.', ...where, `It rounds to`, { number: answer }, '.'],
     steps: [`${written(n)} is between ${written(below)} and ${written(above)}.`, whereText, `To the nearest ${unit}, it rounds to ${written(answer)}.`],
     visual: { kind: 'numberLine', min: below, max: above, step: to / 10, marked: [n] },
+    hint: ROUND_HINTS[onLine ? 'line' : to === 10 ? 'ten' : 'hundred'],
   };
 }
 
@@ -391,7 +406,7 @@ function rounding(level: Level, rng: Rng): QuestionDraft {
   const below = Math.floor(n / to) * to;
   const unit = to === 10 ? 'ten' : 'hundred';
   const prompt = { text: `Round ${n} to the nearest ${unit}.`, speak: ['Round', { number: n }, `to the nearest ${unit}.`] as Say };
-  const base = { mode: 'look' as const, prompt, explanation: roundExplanation(n, to) };
+  const base = { mode: 'look' as const, prompt, explanation: roundExplanation(n, to, level === 1) };
   if (level === 4) return { ...base, type: 'numberPad', facts: { n, to }, answer, maxDigits: 4, stimulus: bigNumeral(n, 'xl') };
   // The two round numbers on either side, and one more a step further out, in order.
   // The extra one usually goes on the far side of the answer, so the answer sits in each place about as often.

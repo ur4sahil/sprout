@@ -13,7 +13,7 @@ export const SOUND_KEYS: readonly string[] = [
   'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z',
   'sh', 'ch', 'th', 'wh', 'ng', 'ck',
   'long-a', 'long-e', 'long-i', 'long-o', 'long-u',
-  'ai', 'ay', 'ee', 'ea', 'oa', 'ie', 'igh', 'oi', 'oy', 'ou', 'ow', 'ar', 'er', 'ir', 'ur', 'or',
+  'ai', 'ay', 'ee', 'ea', 'oa', 'ie', 'igh', 'oi', 'oy', 'ou', 'ow', 'oo', 'ar', 'er', 'ir', 'ur', 'or', 'air',
 ];
 export const SOUND_FORMS: readonly string[] = ['once', 'three'];
 

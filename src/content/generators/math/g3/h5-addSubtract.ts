@@ -4,7 +4,7 @@ import type { LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../
 import { STORY_COUNTABLES } from '../../../data/countables';
 import { CONTAINERS, FINDS, STORIES } from '../../../data/h5-stories';
 import type { StoryKind } from '../../../data/h5-stories';
-import { STORY_NAMES } from '../../../data/storyProblems';
+import { PRONOUN_FORMS, STORY_NAMES, STORY_PRONOUNS } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
 import type { Explanation, Prompt } from './h5-parts';
 import { equation, fill, find, numberAnswer, sentenceOption } from './h5-parts';
@@ -113,7 +113,9 @@ export function tellStory(kind: StoryKind, a: number, b: number, rng: Rng, retel
   const box = rng.pick(CONTAINERS);
   const [name, name2] = rng.sample(STORY_NAMES, 2) as [string, string];
   const told = STORIES[kind][template] as string;
-  const story = fill(retell ? retell(told, template) : told, { name, name2, a, b, things: thing.many, thing: thing.one, box: box.one, boxes: box.many });
+  const pronoun = STORY_PRONOUNS[name];
+  const [she, him] = pronoun === undefined ? [name, name] : [pronoun, PRONOUN_FORMS[pronoun].him];
+  const story = fill(retell ? retell(told, template) : told, { name, name2, she, him, a, b, things: thing.many, thing: thing.one, box: box.one, boxes: box.many });
   return { story, template, emoji: thing.emoji };
 }
 
@@ -121,12 +123,14 @@ export function tellStory(kind: StoryKind, a: number, b: number, rng: Rng, retel
 // balloons into 6 boxes, the same number in each. To find how many balloons go in each box, which sign would you use?"
 const askInstead = (kind: StoryKind, ask: string) => (template: string, index: number): string => `${template.replace(/\s*[^.?!]*\?$/, '')} To find ${FINDS[kind][index] as string}, ${ask}`;
 
-function whichExplanation(kind: StoryKind, sign: Sign, a: number, b: number): Explanation {
+// The hint asks what happens in the story, and never names a sign. At level 1 the choice is only times or divide.
+function whichExplanation(kind: StoryKind, sign: Sign, a: number, b: number, twoSigns = false): Explanation {
   const result = work(a, sign, b);
   return {
     speak: [WHY[kind], { number: a }, SIGN_SAY[sign], { number: b }, 'equals', { number: result }, '.'],
     steps: [WHY[kind], `${a} ${sign} ${b} = ${result}.`],
     visual: equation(a, sign === '−' ? '-' : sign, b, '=', result),
+    hint: { text: twoSigns ? 'Does the story put equal groups together, or split a total into equal groups?' : 'What happens in the story? Are things joined, taken out, compared, put in equal groups, or shared out?' },
   };
 }
 
@@ -135,7 +139,7 @@ function whichOperation(level: Level, rng: Rng): QuestionDraft {
   const kind = rng.pick(KINDS[sign]);
   const [a, b] = storyNumbers(kind, rng);
   const { story, template } = tellStory(kind, a, b, rng, askInstead(kind, level === 3 ? 'which number sentence would you use?' : 'which sign would you use?'));
-  const explanation = whichExplanation(kind, sign, a, b);
+  const explanation = whichExplanation(kind, sign, a, b, level === 1);
   if (level === 3) {
     const sentences = rng.shuffle([sign, ...rng.sample(SIGNS.filter((other) => other !== sign), 2)]).map((each) => `${a} ${each} ${b}`);
     return {

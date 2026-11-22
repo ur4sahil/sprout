@@ -1,6 +1,6 @@
 import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
-import type { Blank, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
+import type { Blank, Hint, LessonStep, Level, QuestionDraft, Say, ShapeName, Visual } from '../../../../engine/types';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { numeralChoices } from '../k/numerals';
@@ -10,7 +10,7 @@ import { bigNumeral, written } from './numbers';
 
 // Math grade 3 A.5 number patterns, C.7 times multiples of 10, G.1 quadrilaterals, G.2 equal-area parts.
 
-type Explanation = { speak: Say; steps: string[]; visual: Visual };
+type Explanation = { speak: Say; steps: string[]; visual: Visual; hint?: Hint };
 
 // ---- A.5 Number patterns ----
 // Levels: count on by 2, 5 or 10 / by 3, 4, 6 or 25, up or down / by 50 or 100 to 1,000, typed. Oracle: sequence.
@@ -27,6 +27,8 @@ function patternExplanation(start: number, step: number, length: number, blankIn
     speak: ['Each number', verb, 'by', { number: size }, '. The missing number is', { number: value }, '.'],
     steps: [`Each number ${verb} by ${size}.`, `The missing number is ${written(value)}.`],
     visual: patternVisual(start, step, length, blankIndex, true),
+    // The first step names the jump, which is most of the answer: the hint says how to find it.
+    hint: { text: 'Look at the numbers side by side. How much does the row go up or down each time?' },
   };
 }
 
@@ -163,7 +165,8 @@ function quadrilaterals(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `A shape has ${clue.text}. What is the best name for it?`, speak: ['Read the clue. What is the best name for the shape?'] },
       options: choices.map((each): Visual => ({ kind: 'text', value: each, size: 'l' })),
       answerIndex: choices.indexOf(right),
-      explanation: { speak: [clue.speak], steps: [...clue.steps], visual: shape(right, color, 'l') },
+      // A read question: the hint never says the clue, and names no shape.
+      explanation: { speak: [clue.speak], steps: [...clue.steps], visual: shape(right, color, 'l'), hint: { text: 'Read what the clue says about the sides and the corners. Which shape has all of that?' } },
     };
   }
   const not = level === 2;
@@ -182,6 +185,7 @@ function quadrilaterals(level: Level, rng: Rng): QuestionDraft {
       speak: ['A quadrilateral has four sides.', not ? `The ${right} does not.` : `The ${right} does.`],
       steps: ['A quadrilateral has 4 straight sides.', not ? `The ${right} does not have 4 sides.` : `The ${right} has 4 sides.`],
       visual: shape(right, color, 'l'),
+      hint: { text: not ? 'Count the straight sides of each shape. Which one does not have 4?' : 'Count the straight sides of each shape. A quadrilateral has 4.' },
     },
   };
 }
@@ -216,6 +220,7 @@ function partsExplanation(d: number, form: 'circle' | 'rectangle'): Explanation 
     speak: ['The shape is cut into', { number: d }, 'equal parts. Each part is', ...fractionSay(1, d), 'of the shape.'],
     steps: [`The shape is cut into ${d} equal parts.`, `Each part is ${fractionText(1, d)} of the whole shape.`],
     visual: { kind: 'fraction', shape: form, parts: d, shaded: 1, equal: true },
+    hint: { text: 'Count all the equal parts. That number goes on the bottom of the fraction.' },
   };
 }
 
@@ -239,7 +244,7 @@ function equalParts(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `Which shape is cut into ${name}?`, speak: [`Which shape is cut into ${name}?`] },
       options: order.map((i) => options[i] as Visual),
       answerIndex: order.indexOf(0),
-      explanation: { speak: [`To be ${name}, every part must be the same size.`, 'Only one shape has equal parts.'], steps: [`To be ${name}, every part must be the same size.`, 'Only one shape is cut into equal parts.'], visual: options[0] as Visual },
+      explanation: { speak: [`To be ${name}, every part must be the same size.`, 'Only one shape has equal parts.'], steps: [`To be ${name}, every part must be the same size.`, 'Only one shape is cut into equal parts.'], visual: options[0] as Visual, hint: { text: 'Look at the parts of each shape. Are they all the same size?' } },
     };
   }
   const stimulus: Visual = { kind: 'fraction', shape: form, parts: d, shaded: 1, equal: true };
@@ -251,7 +256,7 @@ function equalParts(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: `Each part is ${fractionText(1, d)} of the shape. How many parts make the whole shape?`, speak: ['Each part is', ...fractionSay(1, d), 'of the shape. How many parts make the whole shape?'] },
       answer: d,
       maxDigits: 1,
-      explanation: { speak: [...fractionSay(1, d), 'means one of', { number: d }, 'equal parts. So', { number: d }, 'parts make the whole.'], steps: [`${fractionText(1, d)} is 1 of ${d} equal parts.`, `${d} parts make the whole.`], visual: { kind: 'fraction', shape: form, parts: d, shaded: d, equal: true } },
+      explanation: { speak: [...fractionSay(1, d), 'means one of', { number: d }, 'equal parts. So', { number: d }, 'parts make the whole.'], steps: [`${fractionText(1, d)} is 1 of ${d} equal parts.`, `${d} parts make the whole.`], visual: { kind: 'fraction', shape: form, parts: d, shaded: d, equal: true }, hint: { text: 'Think: how many parts this size would fill the whole shape?' } },
     };
   }
   // The slips: one part too many or too few, or counting the parts that are not shaded.

@@ -59,7 +59,8 @@ test.describe('Reasoning', () => {
     await expect(page.getByRole('heading', { name: /Reasoning/ })).toBeVisible();
     await expect(page.getByRole('tab')).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(['A. Thinking puzzles']);
-    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('reasoning', 'all'));
+    // A pre-K child is not offered the two word puzzles (the owner's choice, Nov 22, 2026).
+    await expect(page.locator('[data-skill]')).toHaveCount(skillCount('reasoning', 'all', 'PK'));
     await checkScreen(page, 'Reasoning page', 64);
     await shoot(page, 'reasoning-subject');
   });

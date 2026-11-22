@@ -194,7 +194,8 @@ function regroup(level: Level, rng: Rng): QuestionDraft {
   let t: number;
   let o: number;
   if (level === 1) [t, o] = [rng.int(10, 19), 0];
-  else if (rng.bool()) [t, o] = [rng.int(10, 19), rng.int(1, 9)];
+  // Never a single one: "and 1 ones" takes a plural, and "and 1 one" is said "one one" (Nov 22, 2026).
+  else if (rng.bool()) [t, o] = [rng.int(10, 19), rng.int(2, 9)];
   else [t, o] = [rng.int(1, 9), rng.int(10, 19)];
   const n = h * 100 + t * 10 + o;
   const parts = o === 0 ? `${word(h, 'hundreds')} and ${t} tens` : `${word(h, 'hundreds')}, ${word(t, 'tens')} and ${o} ones`;

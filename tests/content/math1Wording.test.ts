@@ -301,7 +301,13 @@ describe('time, measuring and money, C', () => {
       for (const q of all('M-1-C6', level)) {
         const times = q.facts.leftValues as string[];
         expect(q.explanation.steps).toHaveLength(1 + times.length);
-        times.forEach((time, i) => expect(q.explanation.steps[i + 1]).toMatch(new RegExp(`^The (first|second|third) clock shows .*: ${time}\\.$`)));
+        // As a digital clock is read (the owner's choice, Nov 22, 2026): "5 o'clock: 5:00" on the hour, and "5:30",
+        // said "five thirty", on the half hour.
+        times.forEach((time, i) => {
+          const hour = time.split(':')[0] as string;
+          const shows = time.endsWith(':00') ? `${hour} o'clock: ${time}` : time;
+          expect(q.explanation.steps[i + 1]).toBe(`The ${['first', 'second', 'third'][i] as string} clock shows ${shows}.`);
+        });
       }
     }
   });

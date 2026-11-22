@@ -90,6 +90,7 @@ function sideExplanation(length: number, other: number, from: 'perimeter' | 'are
       speak: ['The area is one side times the side next to it.', { number: length }, 'times blank is', { number: area }, ', and', ...times(length, other), 'is', { number: area }, '. So the other side is', { number: other }, 'centimeters.'],
       steps: ['The area is one side times the side next to it.', `${length} × □ = ${area}, and ${length} × ${other} = ${area}.`, `The other side is ${other} centimeters.`],
       visual: grid(length, other),
+      hint: { text: 'Area is a side times the side next to it. What number times the side you know makes the area?' },
     };
   }
   const p = 2 * (length + other);
@@ -97,6 +98,8 @@ function sideExplanation(length: number, other: number, from: 'perimeter' | 'are
     speak: ['Two sides are', { number: length }, 'long, which makes', { number: 2 * length }, '. That leaves', { number: p - 2 * length }, 'for the other two sides, so each is', { number: other }, '.'],
     steps: [`The two ${length} centimeter sides make ${2 * length}.`, `${p} − ${2 * length} = ${p - 2 * length} for the other two sides.`, `${p - 2 * length} ÷ 2 = ${other} centimeters.`],
     visual: grid(length, other),
+    // No number word: the side can be 2.
+    hint: { text: 'Opposite sides of a rectangle are the same length. Take away the sides you know, then halve what is left.' },
   };
 }
 
@@ -186,7 +189,7 @@ function scheduleVisual(slots: Slot[]): Visual {
   };
 }
 
-// When something ends: add the minutes to the start; past the next o'clock, stop there first. The last line, said
+// When something ends: add the minutes to the start; past the next hour, stop there first. The last line, said
 // last, is the end time the question asks for: "Math ends at 8:35."
 function endExplanation(start: number, plus: number, name: string): Explanation {
   const end = start + plus;
@@ -232,7 +235,7 @@ function timeProblems(level: Level, rng: Rng): QuestionDraft {
       stimulus: { kind: 'clock', ...startTime },
       options: choices.map(timeText),
       answerIndex: choices.findIndex((time) => written(time) === written(at(end))),
-      explanation: { ...endExplanation(start, plus, name), hint: { text: "Add the minutes to the start time. If you pass the next hour, count to the o'clock first." } },
+      explanation: { ...endExplanation(start, plus, name), hint: { text: 'Add the minutes to the start time. If you pass the next hour, count up to that hour first.' } },
     };
   }
   const slots = schedule(rng);

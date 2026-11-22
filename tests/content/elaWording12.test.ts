@@ -230,7 +230,9 @@ describe('steps that show how', () => {
       const shown = q.explanation.steps.join(' ');
       expect(['kn', 'wr', 'mb'].filter((group) => shown.includes(` ${group}`))).toHaveLength(1);
     }
-    for (const q of [...all('E-2-B1', 3), ...all('E-2-B2', 3)]) expect(q.explanation.steps[0]).toMatch(/^The (letters|ending) [a-z]+ /);
+    for (const q of all('E-2-B1', 3)) expect(q.explanation.steps[0]).toMatch(/^The (letters|ending) [a-z]+ /);
+    // E-2-B2 gives a real word first, then what its ending adds (the owner's choice, Nov 22, 2026).
+    for (const q of all('E-2-B2', 3)) expect(q.explanation.steps[1]).toMatch(/^The ending [a-z]+ /);
   });
 
   it('E-2-A4: the step gives the rule for where each spelling goes', () => {

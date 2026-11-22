@@ -87,7 +87,10 @@ export const prefixesGenerator: SkillGenerator = {
 // ---- B.2 Suffixes ful, less, er, est ----
 // Levels: what the word means / which word fits the sentence / mixed. Oracle: ela2.
 
-const SUFFIX_RULE = 'ful means full of. less means without. er means more. est means the most.';
+// The lesson teaches each ending through real words (the owner's choice, Nov 22, 2026), so an ending is never said as
+// a bare word.
+const SUFFIX_WORDS = 'Helpful means full of help. Taller means more tall. Tallest means the most tall of all of them.';
+const SUFFIX_REMEMBER = 'Find the base word, then what the ending adds.';
 type Suffixed = (typeof SUFFIXED)[number];
 // What each ending means, said for this word only.
 const SUFFIX_GLOSS: Record<Suffixed['suffix'], string> = { ful: 'full of', less: 'without', er: 'more, when you compare two', est: 'the most, when you compare more than two' };
@@ -96,13 +99,15 @@ function otherMeanings(entry: Suffixed): [string, string] {
   const { base } = entry;
   if (entry.suffix === 'ful') return [`without ${base}`, `a little ${base}`];
   if (entry.suffix === 'less') return [`full of ${base}`, `a little ${base}`];
-  if (entry.suffix === 'er') return [`the most ${base} of all`, `not ${base}`];
-  return [`more ${base} than another`, `not ${base}`];
+  if (entry.suffix === 'er') return [`the most ${base} of all of them`, `not ${base}`];
+  return [`more ${base}`, `not ${base}`];
 }
 
+// A real word first, then what its ending adds (the owner's choice, Nov 22, 2026): "Taller means more tall." and
+// then "The ending er means more, when you compare two."
 function suffixQuestion(entry: Suffixed, toMeaning: boolean, rng: Rng): QuestionDraft {
   const rule = line(`The ending ${entry.suffix} means ${SUFFIX_GLOSS[entry.suffix]}.`, ['The ending', ...spell(entry.suffix), 'means', `${SUFFIX_GLOSS[entry.suffix]}.`]);
-  const lines = [rule, `${cap(entry.word)} means ${entry.meaning}.`];
+  const lines = [`${cap(entry.word)} means ${entry.meaning}.`, rule];
   if (toMeaning) {
     const choices = rng.shuffle([entry.meaning, ...otherMeanings(entry)]);
     return ask(`What does ${entry.word} mean?`, choices, entry.meaning, { target: entry.word, relation: 'suffixMeaning' }, explained(lines, plain(entry.word, 'xl'), hint('Find the base word. What does the ending add?')), plain(entry.word, 'xl'));
@@ -127,10 +132,10 @@ export const suffixesGenerator: SkillGenerator = {
   exampleSeed: 512,
   example: () => suffixes(1, makeRng(512)),
   lesson: (): LessonStep[] => [
-    { beat: 'see', text: SUFFIX_RULE, speak: [SUFFIX_RULE], visual: plain('help + ful = helpful') },
-    { beat: 'watch', text: 'Helpful means full of help. Fearless means without fear.', speak: ['Helpful means full of help. Fearless means without fear.'], visual: plain('fear + less = fearless') },
-    { beat: 'try', text: 'What does tallest mean?', speak: ['What does tallest mean?'], visual: plain('tallest', 'xl'), reveal: { text: 'Tallest means the most tall of all.', speak: ['Tallest means the most tall of all.'], visual: plain('tall + est = tallest') } },
-    { beat: 'remember', text: SUFFIX_RULE, speak: [SUFFIX_RULE], visual: plain('help + ful = helpful') },
+    { beat: 'see', text: SUFFIX_WORDS, speak: [SUFFIX_WORDS], visual: plain('help + ful = helpful') },
+    { beat: 'watch', text: 'Fearless means without fear. Faster means more fast.', speak: ['Fearless means without fear. Faster means more fast.'], visual: plain('fear + less = fearless') },
+    { beat: 'try', text: 'What does tallest mean?', speak: ['What does tallest mean?'], visual: plain('tallest', 'xl'), reveal: { text: 'Tallest means the most tall of all of them.', speak: ['Tallest means the most tall of all of them.'], visual: plain('tall + est = tallest') } },
+    { beat: 'remember', text: SUFFIX_REMEMBER, speak: [SUFFIX_REMEMBER], visual: plain('help + ful = helpful') },
   ],
   oracle: 'ela2',
 };

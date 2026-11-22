@@ -64,9 +64,11 @@ const ROWS_IN: Row[] = [
 
 // Grade 2 rows whose questions changed in the wording audit (Nov 22, 2026), and the version each is on now.
 // Kept apart from VERSIONS below, so changes to pre-K and to grade 2 never touch the same line.
-const GRADE2_VERSIONS: Record<string, number> = Object.fromEntries(
-  ['A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'B12', 'B13', 'B14', 'B15', 'B16', 'C8', 'C9', 'C10', 'C11', 'C12', 'D4'].map((code) => [`M-2-${code}`, 2]),
-);
+const GRADE2_VERSIONS: Record<string, number> = {
+  ...Object.fromEntries(['A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'B12', 'B13', 'B14', 'B15', 'B16', 'C8', 'C9', 'C10', 'C11', 'C12', 'D4'].map((code) => [`M-2-${code}`, 2])),
+  // After the merge (Nov 22, 2026): A.9 never asks about a single one ("and 1 ones").
+  'M-2-A9': 3,
+};
 
 // Skills whose questions have changed since the wave shipped, and the version each is on now.
 const VERSIONS: Record<string, number> = { 'M-PK-C6': 3, 'M-PK-C7': 3, 'M-PK-A9': 2, 'M-PK-A10': 2, 'M-PK-A11': 2, 'M-PK-A12': 2, 'M-PK-A13': 2, 'M-PK-B3': 2, 'M-PK-B4': 2, 'M-PK-C4': 2, 'M-PK-C5': 2, 'M-PK-C8': 2, 'M-PK-C9': 2, 'M-PK-D4': 2, 'M-PK-D5': 2, 'M-PK-D6': 2 };

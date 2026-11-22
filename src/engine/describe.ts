@@ -94,14 +94,17 @@ export function describeVisual(visual: Visual | 'blank'): string {
       return `line plot of ${visual.unit}: ${visual.counts.map((count, i) => `${partLabel(visual.min + i, visual.denominator)}, ${count}`).join('; ')}`;
     case 'ruler':
       return `${visual.object} on a ruler from ${visual.startUnit} to ${visual.startUnit + visual.lengthUnits}`;
-    case 'fraction':
-      return `${visual.shape} in ${visual.parts} ${visual.equal ? 'equal' : 'unequal'} parts, ${visual.shaded} shaded`;
+    case 'fraction': {
+      const kind = visual.equal ? 'equal' : 'unequal';
+      return `${visual.shape} in ${plural(visual.parts, `${kind} part`, `${kind} parts`)}, ${visual.shaded} shaded`;
+    }
     case 'row':
       return visual.children.map((child) => describeVisual(child)).join(' and ');
     case 'bar':
       return `${visual.color} bar ${plural(visual.length, 'unit', 'units')} long`;
     case 'array':
-      return `${visual.rows} rows of ${visual.cols} ${visual.emoji}`;
+      // One row is "1 row of 7", never "1 rows of 7".
+      return `${plural(visual.rows, 'row', 'rows')} of ${visual.cols} ${visual.emoji}`;
     case 'tally':
       return `${plural(visual.count, 'tally mark', 'tally marks')}`;
     case 'figure': {
@@ -114,7 +117,7 @@ export function describeVisual(visual: Visual | 'blank'): string {
     case 'scale':
       return `balance scale: ${visual.left.map((n) => (n === 'blank' ? '□' : n)).join(' and ')} on the left, ${visual.right.join(' and ')} on the right`;
     case 'foldPunch':
-      return `${visual.state} paper, ${visual.fold} fold, holes at ${visual.holes.map((hole) => `(${hole.col},${hole.row})`).join(' ')}`;
+      return `${visual.state} paper, ${visual.fold} fold, ${visual.holes.length === 1 ? 'hole' : 'holes'} at ${visual.holes.map((hole) => `(${hole.col},${hole.row})`).join(' ')}`;
   }
 }
 

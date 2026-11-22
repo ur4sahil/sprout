@@ -116,8 +116,10 @@ describe('numbers to 1,000', () => {
       const value = (question.facts.values as number[])[0] as number;
       expect(question.explanation.steps[0]).toMatch(/^Count by 2s: 2(, \d+)*\.$/);
       expect(question.explanation.steps[1]).toBe(`${value} is ${value % 2 === 0 ? '' : 'not '}in the count.`);
-      expect(question.explanation.hint?.text).toBe(`Draw ${value} dots in pairs. Is one left over?`);
+      // A count of 1 never takes a plural (Nov 22, 2026): one dot has no partner.
+      expect(question.explanation.hint?.text).toBe(value === 1 ? 'Draw 1 dot. Does it have a partner?' : `Draw ${value} dots in pairs. Is one left over?`);
     }
+    expect(all('M-2-A5', 2).some((question) => (question.facts.values as number[])[0] === 1)).toBe(true);
     for (const question of all('M-2-A5', 1)) expect(question.explanation.steps[0]).toBe('Make pairs.');
   });
 

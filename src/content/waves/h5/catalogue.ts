@@ -7,10 +7,12 @@ import type { Skill } from '../../catalogue';
 const CATEGORIES = { B: 'B. Adding and subtracting', C: 'C. Multiplication', D: 'D. Division', E: 'E. Fractions', F: 'F. Measurement and data' } as const;
 
 // Skills whose questions have changed since the wave shipped, and the version each is on now. The wording audit,
-// round 2 (Nov 22, 2026), changed every skill but C.11; C.10 and E.6 read data/h5-stories.ts, which changed.
+// round 2 (Nov 22, 2026), changed every skill but C.11; C.10 and E.6 read data/h5-stories.ts, which changed. After the
+// merge (Nov 22, 2026), the stories name a person once and B.6, C.8, C.10, C.11, E.5, E.6, F.9 and F.10 have their own
+// hints, so every reader of h5-stories.ts and those skills went up one more.
 const VERSIONS: Record<string, number> = {
-  'M-3-B5': 2, 'M-3-B6': 2, 'M-3-C8': 2, 'M-3-C9': 2, 'M-3-C10': 2, 'M-3-C12': 2, 'M-3-D4': 2, 'M-3-D5': 2,
-  'M-3-E5': 2, 'M-3-E6': 2, 'M-3-E7': 2, 'M-3-F8': 2, 'M-3-F9': 2, 'M-3-F10': 2,
+  'M-3-B5': 2, 'M-3-B6': 3, 'M-3-C8': 3, 'M-3-C9': 3, 'M-3-C10': 3, 'M-3-C12': 3, 'M-3-D4': 3, 'M-3-D5': 2,
+  'M-3-E5': 3, 'M-3-E6': 3, 'M-3-E7': 3, 'M-3-F8': 3, 'M-3-F9': 3, 'M-3-F10': 3, 'M-3-C11': 2,
 };
 
 function row(code: string, name: string, speakName: Say, strand: string, ladder: string, icon: Visual, itemTypes: ItemType[], ccss: string): Skill {

@@ -4,14 +4,17 @@ import { allGenerators } from '../content/registry';
 import type { AwardDef } from '../engine/awards';
 import { allAwards, evaluateAwards, isQuietAward } from '../engine/awards';
 import type { Repo } from '../storage/repo';
-import type { AwardEarned, Child } from '../storage/schema';
+import { offeredTo } from '../engine/grades';
+import type { AwardEarned, Child, Grade } from '../storage/schema';
 
 // Awards between the pure rules in engine/awards.ts and the screens.
 
-// The skills that count toward awards: the ones a child can practise.
-export function awardSkills(): Skill[] {
+// The skills that count toward awards: the ones a child can practise. Given the child's grade, only the skills that
+// grade is offered (offeredTo), so a sticker or certificate for every Reasoning skill never waits on a word puzzle a
+// pre-K or kindergarten child is not offered. Left out (a plan for several children, a list to choose from): all.
+export function awardSkills(grade?: Grade): Skill[] {
   const ready = new Set(allGenerators().map((generator) => generator.skillId));
-  return CATALOGUE.filter((skill) => !skill.retired && ready.has(skill.id));
+  return CATALOGUE.filter((skill) => !skill.retired && ready.has(skill.id) && (grade === undefined || offeredTo(skill, grade)));
 }
 
 export interface AwardsNow {
@@ -23,7 +26,7 @@ export interface AwardsNow {
 // An award is never taken back: what was saved before stays. A category sticker earned only by
 // placing out of every skill in it is saved quietly.
 export async function syncAwards(repo: Repo, child: Child, nowIso: string): Promise<AwardsNow> {
-  const skills = awardSkills();
+  const skills = awardSkills(child.grade);
   const [states, attempts, saved, math, ela] = await Promise.all([
     repo.getSkillStates(child.id),
     repo.listAttempts(child.id, {}),

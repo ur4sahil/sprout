@@ -26,8 +26,9 @@ describe('the wave', () => {
     for (const row of ROWS) {
       // Version 1 as shipped; 2 for the two whose wording changed (color, American spelling); one more for every
       // pre-K skill after the wording audit (Nov 22, 2026), and 2 for every grade 2 row, reworded in the same audit.
+      // A.9 went up one more after the merge (Nov 22, 2026): it never asks about a single one.
       const preK = ['M-PK-C6', 'M-PK-C7'].includes(row.id) ? 3 : 2;
-      expect(row.version).toBe(row.grade === 'PK' ? preK : 2);
+      expect(row.version).toBe(row.grade === 'PK' ? preK : row.id === 'M-2-A9' ? 3 : 2);
       expect(row.maxLevel).toBe(3);
       expect(CATALOGUE.filter((skill) => skill.id === row.id)).toHaveLength(1);
       if (row.grade === '2') expect(row.ccss, row.id).toMatch(/^2\./);

@@ -1207,7 +1207,7 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | A.6 | Missing number | CC | choice, numberPad | Row of 4, blank at end, to 10 / blank anywhere, to 20 / to 50 / typed, to 100 |
 | A.7 | Count by tens | CC | choice | Next ten to 50 / to 100 / missing ten anywhere |
 | B.1 | More, fewer or equal | CC | choice | Two groups to 5 / to 10 / includes equal groups |
-| B.2 | Compare numbers | CC | choice | "Which is greater" to 5 / to 10 / greater or less to 20 |
+| B.2 | Compare numbers | CC | choice | "Which number is greater?" to 5 / to 10 / greater or less to 20 |
 | B.3 | Put numbers in order | CC | order | 3 numbers to 5 / 3 numbers to 10 / 4 numbers to 20 |
 | C.1 | Add with pictures to 5 | OA | choice | Two picture groups, sums to 3 / to 5 |
 | C.2 | Add to 5 | OA | choice, numberPad | Equation, sums to 5 / with zero / typed |
@@ -1217,10 +1217,10 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | C.6 | Subtract to 5 | OA | choice, numberPad | Equation within 5 / with zero / typed |
 | C.7 | Subtract to 10 | OA | choice, numberPad | Within 7 / within 10 / typed |
 | C.8 | Make 10 | OA | choice, numberPad | Ten frame with 5 to 9 filled / 1 to 9 filled / equation only, typed |
-| C.9 | Break apart numbers | OA | choice | 5 is 2 and blank, totals to 5 / to 8 / to 10 |
+| C.9 | Break apart numbers | OA | choice | "2 and what make 5?", totals to 5 / to 8 / to 10 |
 | C.10 | Addition stories | OA | choice, numberPad | Spoken story with pictures, sums to 5 / to 10 / no pictures, typed |
 | C.11 | Subtraction stories | OA | choice, numberPad | Within 5 / within 10 / no pictures, typed |
-| D.1 | Teen numbers | NBT | choice | Ten frame plus ones to numeral / 10 plus 4 equals blank / 16 is 10 and blank |
+| D.1 | Teen numbers | NBT | choice | Ten frame plus ones to numeral / "What is 10 plus 4?" / "10 and what make 16?" |
 | E.1 | Name flat shapes | G | choice | Hear a name, tap the shape: 3 basic / adds hexagon, oval, diamond / turned shapes |
 | E.2 | Name solid shapes | G | choice | Cube and sphere / adds cone and cylinder / flat or solid |
 | E.3 | Sides and corners | G | choice, numberPad | Count sides of triangle, square / adds rectangle, hexagon / count corners, typed |
@@ -1234,14 +1234,14 @@ Standards note: Virginia does not use Common Core. It uses its own Standards of 
 | --- | --- | --- | --- | --- |
 | A.1 | Count to 120 | CC | choice, numberPad | Next number to 50 / to 100 / across 100, typed / before and after to 120, typed |
 | A.2 | Skip count by 2s, 5s, 10s | CC | choice, numberPad | By 10s / by 5s / by 2s / missing number anywhere, typed |
-| A.3 | Tens and ones | NBT | choice, numberPad | Blocks to numeral, to 30 / to 99 / typed / "how many tens in 47", typed |
+| A.3 | Tens and ones | NBT | choice, numberPad | Blocks to numeral, to 30 / to 99 / typed / "How many tens are in 47?", typed |
 | A.4 | Compare two-digit numbers | NBT | choice | Greater of two, different tens / same tens / pick the sign: greater, less, equal |
 | A.5 | Ten more, ten less | NBT | choice, numberPad | Ten more / ten less / typed, either |
 | B.1 | Add within 20 | OA | choice, numberPad | Sums to 12 / to 20 / typed |
 | B.2 | Subtract within 20 | OA | choice, numberPad | From 12 or less / from 20 or less / typed |
 | B.3 | Doubles and near doubles | OA | choice, numberPad | Doubles to 5 plus 5 / to 10 plus 10 / near doubles, typed |
 | B.4 | Make ten to add | OA | choice | Two ten frames, 9 plus n / 8 plus n / 7 plus n, pick the matching ten-and-some |
-| B.5 | Missing number in an equation | OA | choice, numberPad | 3 plus blank equals 7, to 10 / to 20 / subtraction blanks, typed |
+| B.5 | Missing number in an equation | OA | choice, numberPad | "3 plus what equals 7?", to 10 / to 20 / subtraction blanks, typed |
 | B.6 | True or false equations | OA | choice | 4 plus 1 equals 5 / 3 plus 2 equals 2 plus 3 / mixed operations to 20 |
 | B.7 | Add three numbers | OA | choice, numberPad | Sums to 10 / to 20 with a ten pair / typed |
 | B.8 | Add two-digit and one-digit | NBT | choice, numberPad | No regrouping / regrouping / typed |
@@ -1293,7 +1293,7 @@ Strands: LT letters, PH sounds and phonics, WD words, GR grammar, RD reading.
 | A.3 | Match uppercase and lowercase | LT | match | 3 pairs, different shapes (A a, B b) / 3 pairs with look-alikes |
 | A.4 | Find the same letter | LT | choice | See a letter, tap its twin: 2 options / 3 options / look-alikes |
 | A.5 | Letter or number | LT | sort | 4 items / 6 items. Never the look-alikes listed under Distractor rules |
-| B.1 | Starts with the same sound | PH | choice | "Which one starts like ball?" 2 spoken pictures / 3 pictures |
+| B.1 | Starts with the same sound | PH | choice | "Which one starts with the same sound as ball?" 2 spoken pictures / 3 pictures |
 | B.2 | Rhymes | PH | choice | "Which one rhymes with cat?" 2 spoken pictures / 3 pictures |
 | B.3 | Count syllables | PH | choice | Spoken word, 1 or 2 claps / 1 to 3 claps |
 | C.1 | Word groups | WD | choice | "Which one is an animal?" 2 pictures / 3 pictures / mixed groups |
@@ -1366,7 +1366,7 @@ Added on Nov 17, 2026, at the owner's request, to raise the ceiling for a child 
 | E.2 | Fractions on a number line | NF | choice | Halves and fourths / thirds and sixths / eighths |
 | E.3 | Compare fractions | NF | choice | Same bottom number / same top number / pick the sign |
 | E.4 | Equal fractions | NF | choice | Pictures side by side / on number lines / pick the equal one |
-| F.1 | Time to the minute | MD | choice | Read the clock / match time to clock / quarter past and quarter to |
+| F.1 | Time to the minute | MD | choice | Read the clock / match time to clock / 15 or 30 minutes after an hour, or 15 before the next |
 | F.2 | Elapsed time | MD | choice, numberPad | Whole hours later / half hours / minutes later, typed |
 | F.3 | Area | MD | choice, numberPad | Count square units / rows times columns / typed |
 | F.4 | Perimeter | MD | choice, numberPad | Add the sides on a grid / rectangle with two sides given / typed |
@@ -1419,7 +1419,7 @@ Built on Nov 17, 2026 (phase G):
 | M-K-E4 | Position words (K.G.A.1) | Above or below / above, below or next to / which picture shows it |
 | M-K-E5 | Shapes made from shapes (K.G.B.6) | Two pieces make which shape / up to six pieces / which pieces make it |
 | M-K-F3 | What can be measured (K.MD.A.1) | What a ruler or scale tells / and a measuring cup / which tool to use |
-| M-1-B11 | Order does not matter (1.OA.B.3) | 3 + 5 = 5 + ? / which is the same as 4 + 7 / typed, to 20 |
+| M-1-B11 | Order does not matter (1.OA.B.3) | 3 + 5 = 5 + ? / which one has the same answer as 4 + 7 / typed, to 20 |
 | M-1-B12 | Subtract by thinking of adding (1.OA.B.4) | With a picture, to 10 / without, to 20 / typed |
 | M-1-B13 | Count on to add (1.OA.C.5) | Count on 1 or 2 on a number line / count on 3 / typed |
 | M-1-C5 | Measure with paper clips (1.MD.A.2) | Count the clips / which row is lined up right / how many clips longer, typed |
@@ -1453,7 +1453,7 @@ These follow the figure-based style of gifted-screening tests. All share the str
 | --- | --- | --- | --- |
 | A.1 | Odd one out | choice | 3 pictures, one from another group / 3 pictures from closer groups / 4 shapes, three the same and one differing by one attribute (`twins`) / 4 different shapes, three sharing a hidden rule: corners, colour or shape |
 | A.2 | Which belongs | choice | Two examples from a group, pick a third / closer distractors / three examples, 4 options: two close, one far |
-| A.3 | Figure analogies | choice | Big red circle is to small red circle as big blue square is to blank: one attribute changes / two change / three of four change (shape, colour, size, how many) |
+| A.3 | Figure analogies | choice | "The top shape changes. Change the bottom shape the same way. Which one is it?": one attribute changes / two change / three of four change (shape, colour, size, how many) |
 | A.4 | Figure matrices | choice | 2 by 2 grid, rows share shape and columns share colour / size and count / rotation / 3 by 3, rows share colour, each row and column holds every shape once |
 | A.5 | Turning shapes | choice | Next quarter turn of an arrow / of an L shape / skipping a turn / a quarter turn and a change of colour each step. Colour and starting turn vary |
 | A.6 | Mirror images | choice | Pick the mirror of a flag / of an L shape / the wrong options are turned copies / two pieces in two colours: they swap and each flips |
@@ -1470,7 +1470,7 @@ Six more skills round out the reasoning set to cover picture, number and spatial
 
 | Code | Skill | Type | Rule by level |
 | --- | --- | --- | --- |
-| A.9 | Picture analogies | choice | "Sock is to foot as glove is to blank": wrong options from other relations / from the same relation / backwards ("Foot is to sock as hand is to blank"), 4 options |
+| A.9 | Picture analogies | choice | "A sock goes with a foot. A glove goes with what?": wrong options from other relations / from the same relation / backwards ("A foot is to a sock as a hand is to what?"), 4 options |
 | A.10 | Number series | choice, numberPad | Plus 1 or plus 2 / plus 5, plus 10 or minus 1 / steps that alternate, typed / jumps that grow, or times 2 or 3, typed |
 | A.11 | Number puzzles | choice, numberPad | Balance scale: 3 and blank balance 5 / both pans hold sums / typed / two or three boxes that hold the same number, typed |
 | A.12 | Paper folding | choice | One fold, one hole at an outer corner / one hole next to the fold / two holes / three holes |
@@ -1483,46 +1483,46 @@ Every generator uses its family's wording. Text in braces is filled from `facts`
 
 | Family | Prompt | Explanation | Remember |
 | --- | --- | --- | --- |
-| Count objects | How many {things} are there? | Let's count. {1, 2, ... n}. There are {n} {things}. | Touch each one once and say one number. |
-| Tap that many | Tap {n} {things}. | Count as you tap. {1, 2, ... n}. Stop at {n}. | Stop when you say the number. |
+| Count objects | How many {things} are there? | Let's count: {1, 2, ... n}. There are {n} {things}. | Touch each one once and say one number. |
+| Tap that many | Tap {n} {things}. | Count as you tap: {1, 2, ... n}. Stop at {n}. | Stop when you say the number. |
 | Find the number | Spoken: Find the number {n}. On screen: Find the number. | This is {n}. | Every number has its own shape. |
-| More or fewer | Which group has more? | This group has {a}. This group has {b}. {a} is more than {b}. | More means a bigger count. |
+| More or fewer | Which group has more? | One group has {a} {things}. The other group has {b} {things}. {a} {things} are more than {b} {things}. | More means a bigger count. |
 | Find the shape | Find the {shape}. | This is a {shape}. {shape fact}. | Count the sides and corners. |
 | Find the colour | Find the {colour} one. | This one is {colour}. | Colours have names. |
 | Big and small | Which one is {size word}? | This one is {size word}. | Look at them side by side. |
-| Different one | Which one is different? | These two are both {same}. This one is {different}. | Look for what does not match. |
+| Different one | Which one is different? | Two of them are {same}. One is {different}. It is different. | Look for what does not match. |
 | Patterns | What comes next? | The pattern is {unit}, and it repeats. After {last} comes {answer}. | Find the part that repeats. |
 | Next, before, after | What number comes after {n}? | Count {n-1}, {n}, {n+1}. {n+1} comes after {n}. | Counting goes up by one. |
-| Ten frames | How many counters? | A full row is 5. {5 and k more} makes {n}. | A full frame is 10. |
+| Ten frames | How many dots are in the ten frame? | A full row is 5. {5 and k more} makes {n}. | A full frame is 10. |
 | Compare numbers | Which number is greater? | {a} comes after {b} when we count. {a} is greater. | Later numbers are bigger. |
-| Add with pictures | How many in all? | {a} and {b} more. Count them all. {sum}. | Adding puts groups together. |
-| Add | {a} plus {b} equals what? | Within 20: Start at {bigger}. Count on {smaller} more. {sum}. Larger numbers use the place-value rows in the next table. | Start with the bigger number. |
-| Subtract | {a} take away {b} equals what? Grade 1 and up say "minus". | Within 20: Start with {a}. Take away {b}. {difference} are left. Larger numbers use the place-value rows in the next table. | Subtracting takes some away. |
+| Add with pictures | How many in all? | {a} and {b} more. Count them all: {1, 2, ... sum}. | Adding puts groups together. |
+| Add | What is {a} plus {b}? | Within 20: Start at {bigger}. Count on {smaller} more: {bigger+1, ... sum}. {a} + {b} = {sum}. Kindergarten says "Start at the bigger number, {bigger}." Larger numbers use the place-value rows in the next table. | Start with the bigger number. |
+| Subtract | What is {a} take away {b}? Grade 1 and up say "minus". | Within 20: Start with {a}. Take away {b}. {difference} are left. Grade 1 says "Start at {a}. Count back {b}: {a-1, ... difference}. {a} − {b} = {difference}." Larger numbers use the place-value rows in the next table. | Subtracting takes some away. |
 | Make 10 | How many more to make 10? | {a} boxes are full. {b} are empty. {a} and {b} make 10. | Know your pairs that make 10. |
-| Break apart | {n} is {a} and what? | {a} and {b} make {n}. | A number can split in many ways. |
+| Break apart | {a} and what make {n}? | {a} and {b} make {n}. | A number can split in many ways. |
 | Teen numbers | 10 and {k} more is what number? | A full ten and {k} more is {10+k}. | Teen numbers are ten and some more. |
 | Stories | The story from section 9. | {a} {plus or take away} {b} is {answer}. | Listen for joining or taking away. |
-| Tens and ones | What number is this? | {t} tens is {10t}. {o} more ones makes {n}. | Count tens first, then ones. |
-| Time | What time is it? | On the hour: The long hand points to 12. The short hand points to {h}. It is {h} o'clock. Half past: The long hand points to 6. The short hand is halfway between {h} and {h+1}. It is half past {h}. Other times: The short hand is just past {h}. The long hand points to {k}. Count by fives to {m}. It is {h} {m}. | Short hand shows the hour. |
-| Coins | Which coin is this? | This is a {coin}. It is worth {v} cents. Look at its size, its colour and its picture. | Each coin has its own size and value. |
-| Graphs | How many chose {x}? | Find {x}. Count its row. {n}. | Read one row at a time. |
+| Tens and ones | What number is this? | {t} tens make {10t}. {10t} and {o} more is {n}. | Count tens first, then ones. |
+| Time | What time is it? | On the hour: The long hand points to 12. The short hand points to {h}. It is {h} o'clock. We write {h}:00 (said "We write {h}, then two zeros."). On the half hour: The long hand points to 6. That means 30 minutes. The short hand is halfway between {h} and {h+1}, so the hour is {h}. It is {h}:30. Other times: The long hand points to {k}. Count by fives up to the {k}: {m} minutes. The short hand is just past {h}, or past {h} but not yet at {h+1}, so the hour is {h}. It is {h}:{m}. | Short hand shows the hour. |
+| Coins | Which coin is this? | Look at its color, its size and its picture. {What it looks like}. This is a {coin}. It is worth {v} cents. | Each coin has its own size and value. |
+| Graphs | Children chose their favorite thing. How many chose {x}? Bar graphs (grade 2): Kids picked their favorite thing. How many kids picked {x}? | Find the {x} row. Count its pictures: {1, 2, ... n}. {n} chose {x}. Bar graphs: Find {x}. Read the end of its bar: {n}. | Read one row at a time. |
 | Equal shares | Which shape shows {halves}? | {halves} are {k} equal parts. | Equal parts are the same size. |
-| Find the letter | Spoken: Find the letter {L}. On screen: Find the letter. | This is the letter {L}. | Every letter has a name. |
-| First sound | Which one starts like {word}? | {word} and {answer} start with the same sound. | Listen to the very start. |
+| Find the letter | Spoken: Find the letter {L}. On screen: Listen. Find the letter. | This is the letter {L}. | Every letter has a name. |
+| First sound | Which one starts with the same sound as {word}? | {word} and {answer} both start with {/m/}. | Listen to the very start. |
 | Rhymes | Which one rhymes with {word}? | {word} and {answer} end the same way. They rhyme. | Rhymes sound the same at the end. |
-| Syllables | How many claps in {word}? | The whole word is spoken. The screen shows it split into its parts, with one clap sound for each part. {n} claps. | Each clap has one vowel sound. |
-| Sight words | Spoken: Find the word {w}. On screen: Find the word. | This word is {w}. | Some words we know by sight. |
-| Read a word | Which picture matches this word? | The letters {c, a, t} spell {cat}. | Read left to right. |
-| Spell a word | Spell {word}. | {word} is spelled {c, a, t}. | Say it slowly and listen. |
-| Sorting | Put each one in its group. | {item} is {group}, for each item. | Things in a group share something. |
+| Syllables | Clap the word {word}. How many claps? | The first step shows the word split into its parts, {ap · ple}, and says "Say it and clap: {word}." Then: {word} has {n} claps. | Each clap has one vowel sound. |
+| Sight words | Spoken: Tap the word {w}. On screen: Listen. Tap the word. | This word is {w}. | Look at the whole word. |
+| Read a word | Read the word. Which picture matches? | Say each sound: {/k/ /a/ /t/}. Put the sounds together: {cat}. | Look at every letter. |
+| Spell a word | Spoken: Tap the letters to spell {word}. On screen: Listen. Tap the letters to spell the word. | Say {word} slowly: {/k/ /a/ /t/}. {word} is spelled {c, a, t}. | First sound, middle sound, last sound. |
+| Sorting | Put each one in its group. Math says "Tap a shape, then tap its group." | The {group} are {items}, for each group. Math: The {kind} go in the {group} group, for each group. | Things in a group share something. |
 | Opposites | Which one is the opposite of {word}? | {word} and {answer} are opposites. | Opposites are as different as can be. |
-| Analogies | Look at the first pair. Which one finishes the second pair the same way? | The first pair changes {attribute} from {x} to {y}. Do the same here. | Find what changed, then do it again. |
-| Matrices | Which one goes in the empty box? | Each row has the same {row attribute}. Each column has the same {column attribute}. The box needs {answer}. | Check across, then check down. |
-| Turning shapes | What comes next? | It makes a quarter turn each step. | Follow the turn. |
-| Mirror images | Which one is the mirror picture? | A mirror flips left and right. | Left becomes right. |
-| Paper folding | The paper is folded and punched. How does it look unfolded? | One punch goes through both layers. The holes sit the same distance from the fold. | Each layer gets a hole. |
+| Analogies | The top shape changes. Change the bottom shape the same way. Which one is it? | The {attribute} changes from {x} to {y} (a line for each change). So the {bottom shape} becomes {answer}. | Find what changed, then do it again. |
+| Matrices | Which one goes in the empty box? | Across each row, the {row attribute} is the same. Down each column, the {column attribute} is the same. The box needs {answer}. | Check across, then check down. |
+| Turning shapes | What comes next? | The {arrow} points {up}, then {right}, then {down}. It turns the same way each time, so next it points {left}. | Follow the turn. |
+| Mirror images | Which one shows this picture in a mirror? | A mirror flips left and right. The {flag} points {right}, so in a mirror it points {left}. | Left becomes right. |
+| Paper folding | We fold the paper and make a hole. Which one shows it opened up? | The hole goes through both halves of the paper. Opened up, there are 2 holes, one on each side of the fold. The new hole is just as far from the fold. | Each half gets a hole. |
 
-Shape facts: a circle is round with no corners. A square has 4 equal sides. A triangle has 3 sides. A rectangle has 2 long sides and 2 short sides. A hexagon has 6 sides. A star has 5 points. An oval is a stretched circle. A diamond has four sides, with a point at the top and a point at the bottom.
+Shape facts: a circle is round with no corners. A square has 4 equal sides (pre-K: 4 sides that are all the same). A triangle has 3 sides. A rectangle has 2 long sides and 2 short sides. A hexagon has 6 sides. A star has 5 points. An oval is a stretched circle. A diamond has 4 sides, with a point at the top and at the bottom.
 
 Praise phrases, chosen at random: Great job. You got it. Nice work. That's right. Well done.
 
@@ -1532,57 +1532,57 @@ These cover every family the first table leaves out. Solid facts: a cube has 6 s
 
 | Family | Prompt | Explanation | Remember |
 | --- | --- | --- | --- |
-| Put numbers in order | Put the numbers in order, smallest first. | {a} is the smallest. Then {b}. Then {c}. | Smaller numbers come first when we count. |
-| Order by length | Put them in order, shortest first. | This one is the shortest. This one is the longest. | Line up one end, then look at the other. |
+| Put numbers in order | Tap the numbers from smallest to biggest. | {a} is the smallest. Then {b}. Then {c}. In order: {a}, {b}, {c}. | Smaller numbers come first when we count. |
+| Order by length | Put the bars in order, shortest first. | Find the shortest bar. It goes first. The middle bar comes next. The longest bar goes last. | Line up one end, then look at the other. |
 | Skip counting | What comes next? | We are counting by {step}s. {..., ...}. Next is {answer}. | Add the same amount each time. |
-| Missing number in a row | Which number is missing? | Count along the row. The missing number is {answer}. | Count on from a number you know. |
-| Missing part | {a} plus what equals {total}? | Start at {a}. Count up to {total}. That is {answer} more. | Count up to find the missing part. |
-| True or false | Is this true? | The left side is {x}. The right side is {y}. They are {the same or not the same}. | Both sides must be the same amount. |
-| Doubles | {a} plus {a} equals what? | Two groups of {a} make {sum}. | Doubles are two of the same. |
-| Make ten to add | {a} plus {b}. Make a ten first. Which one is the same? | Move {k} from the {b} to the {a}. Now it is 10 and {r}. | Fill the ten first. |
-| Hundreds, tens, ones | What number is this? | {h} hundreds is {100h}. {t} tens is {10t}. {o} ones. That makes {n}. | Hundreds, then tens, then ones. |
-| Expanded form | {300} plus {40} plus {2} is what number? | {h} hundreds, {t} tens and {o} ones is {n}. | Each digit has its own place. |
-| Compare with signs | Which sign goes between {a} and {b}? | Look at the biggest place first. {a} has more {hundreds or tens}. {a} is greater than {b}. | Compare the biggest place first. |
-| Add, no regrouping | {a} plus {b} equals what? | Add the ones: {x} plus {y} is {z}. Add the tens. The answer is {sum}. | Ones with ones, tens with tens. |
-| Add, regrouping | {a} plus {b} equals what? | Add the ones: {x} plus {y} is {z}. That is 1 ten and {r} ones. Add the tens and the extra ten. {sum}. | Ten ones make one ten. |
-| Subtract, no regrouping | {a} minus {b} equals what? | Take away the ones. Take away the tens. {difference}. | Ones from ones, tens from tens. |
-| Subtract, regrouping | {a} minus {b} equals what? | There are not enough ones. Trade 1 ten for 10 ones. Take away the ones, then the tens. {difference}. | Trade a ten when you need more ones. |
-| Ten or a hundred more or less | What is {10} more than {n}? | Only the {tens} digit changes. {answer}. | Ten more changes the tens. |
+| Missing number in a row | Which number is missing? | Count along the row: {..., ...}. The missing number is {answer}. | Count on from a number you know. |
+| Missing part | {a} plus what equals {total}? | Start at {a}. Count up to {total}. That is {answer} more. So {a} + {answer} = {total}. | Count up to find the missing part. |
+| True or false | Is this true? | The left side is {x}. The right side is {y}. {Both sides are x, so it is true, or x and y are not the same, so it is false}. | Both sides must be the same amount. |
+| Doubles | What is {a} plus {a}? | {a} + {a} is a double: two {a}s. Double {a} is {sum}. | Doubles are two of the same. |
+| Make ten to add | Make a ten first. Which one has the same answer as {a} + {b}? | Move {k} from the {b} to the {a}. Now it is 10 and {r}. 10 plus {r} is {sum}. | Fill the ten first. |
+| Hundreds, tens, ones | What number is this? | {h} big squares are {100h}. {t} long blocks are {10t}. {o} small blocks are {o}. That makes {n}. | Hundreds, then tens, then ones. |
+| Expanded form | What is {300} plus {40} plus {2}? | {300} gives the hundreds digit: {3}. {40} gives the tens digit: {4}. {2} gives the ones digit: {2}. The number is {n}. | Each digit has its own place. |
+| Compare with signs | Which sign goes between {a} and {b}? | {Compare the hundreds first, or The hundreds are the same. Compare the tens.} {a} has more {hundreds or tens}. {a} is greater than {b}, so the sign is >. | Compare the biggest place first. |
+| Add, no regrouping | What is {a} plus {b}? | Add the ones: {x} + {y} = {z}. Add the tens: {p} + {q} = {r}. The answer is {sum}. Adding a one-digit number: Only the ones change. Add the ones: {x} + {y} = {z}. The answer is {sum}. | Ones with ones, tens with tens. |
+| Add, regrouping | What is {a} plus {b}? | Add the ones: {x} + {y} = {z}. That is 1 ten and {r} ones. Add the tens and the new ten: {p} + {q} + 1 = {t}. The answer is {sum}. | Ten ones make a new ten. |
+| Subtract, no regrouping | What is {a} minus {b}? | Subtract the ones: {x} − {y} = {z}. Subtract the tens: {p} − {q} = {r}. The answer is {difference}. | Ones from ones, tens from tens. |
+| Subtract, regrouping | What is {a} minus {b}? | There are not enough ones, so break a ten. Now there are {x} ones: {x} − {y} = {z}. Now there are {t} tens. Subtract the tens: {t} − {q} = {r}. The answer is {difference}. | Not enough ones? Break a ten. |
+| Ten or a hundred more or less | What is {10} more than {n}? | {n} has {t} tens. 10 more makes {t+1} tens. The ones stay {o}. 10 more than {n} is {answer}. | Ten more changes the tens. |
 | Even and odd | Is {n} even or odd? | Make pairs. {Every one has a partner, or one is left over}. {n} is {even or odd}. | Even numbers make pairs with none left over. |
-| Number line | Which number is at the dot? | The marks go up by {step}. Count along. The dot is at {answer}. | Find the size of each jump first. |
-| Arrays | How many in all? | There are {rows} rows of {cols}. {cols} plus {cols} is {total}. | Rows of the same size can be added. |
-| Two-step stories | The story from section 9. | First, {a} {plus or minus} {b} is {x}. Then, {x} {plus or minus} {c} is {answer}. | Do one step at a time. |
-| Ruler | How long is the {object}? | It starts at {s} and ends at {e}. Count the spaces between: {n}. | Count the spaces, not the marks. |
-| How many more | How many more chose {x} than {y}? | {x} has {a}. {y} has {b}. {a} minus {b} is {n}. | "How many more" means subtract. |
-| Count coins | How much money is this? | Start with the biggest coin and count on. {total} cents. | Start with the coin worth the most. |
-| Sides and corners | How many sides does this shape have? | Count each side once. {n}. | Trace round the shape and count. |
+| Number line | Which number is at the dot? | The marks go up by {step}. Count by {step}s from {start}: {..., ...}. The dot is at {answer}. | Find the size of each jump first. |
+| Arrays | How many are there in all? | There are {rows} rows with {cols} in each row. {cols} + {cols} = {total}. | Add one row at a time. |
+| Two-step stories | The story from section 9. | First step: {a} {+ or −} {b} = {x}. Second step: {x} {+ or −} {c} = {answer}. | One step, then the next. |
+| Ruler | How many centimeters long is the {object}? | The {object} starts at {s} and ends at {e}. Count the spaces from {s} to {e}: {1, 2, ... n}. The {object} is {n} centimeters long. | Count the spaces, not the marks. |
+| How many more | Children chose their favorite thing. How many more chose {x} than {y}? | The {x} row has {a}. The {y} row has {b}. {a} − {b} = {n}, so {n} more chose {x}. | "How many more" means subtract. |
+| Count coins | How much money is this? | A {coin} is {v} cents, for each kind of coin. Start with the coin worth the most, then count on: {..., ...}. That is {total} cents. | Start with the coin worth the most. |
+| Sides and corners | How many sides does this shape have? | Count each side once. A {shape} has {n} sides. | Trace round the shape and count. |
 | Name shapes by sides | Which shape is a {name}? | A {name} has {n} sides. | The number of sides gives the name. |
 | Solid shapes | Find the {solid}. | This is a {solid}. {solid fact}. | Solid shapes are not flat. |
 | Name a fraction | What part is shaded? | The shape has {k} equal parts. {s} is shaded. That is {name}. | Count the equal parts. |
 | ABC order | Which letter comes next? | {A, B, C}. After {B} comes {C}. | Sing the alphabet to check. |
 | Match letters | Match each big letter to its small letter. | Big {A} goes with small {a}, for each pair. | Every letter has a big shape and a small shape. |
-| First, last or middle letter | Which letter does {word} start with? | {word} starts with the letter {L}. | Say the word slowly and listen. |
-| Word families | Put each word in its family. | {cat} and {hat} both end in {at}. | Words in a family end the same way. |
-| Digraphs and blends | Which letters are missing? | {ship} starts with {sh}. | Two letters can work together. |
-| Silent e | Spoken: Find the word {cape}. On screen: Find the word. | The e at the end makes the {a} say its name. | An e at the end can change the vowel. |
-| Vowel teams | Which letters are missing? | {rain} has {ai} in the middle. | Two vowels can make one sound. |
-| Short or long vowel | Put each word in its group. | {cap} has a short vowel. {cape} has a long vowel. | A long vowel says its name. |
-| Compound words | Build the word {sunflower}. | {sun} and {flower} make {sunflower}. | Two small words can make one big word. |
-| Capitals and periods | Which sentence is written correctly? | A sentence starts with a capital letter and ends with a period. | Capital at the start, period at the end. |
+| First, last or middle letter | Spoken: Which letter does {word} start with? On screen: Listen. Which letter does it start with? | {word} starts with {/k/}. The letter {c} says {/k/}. | Say the word slowly and listen. |
+| Word families | Put each word in its family. | {cat} and {hat} both end with -{at}. | Words in a family end the same way. |
+| Digraphs and blends | Which letters are missing? | {ship} starts with {sh}: {/sh/}. | Two letters can work together. |
+| Silent e | Spoken: Tap the word {cape}. On screen: Listen. Tap the word. | The e at the end makes the {a} say its name: {/ā/}. The word is {cape}. | An e at the end can change the vowel. |
+| Vowel teams | Which letters are missing? | {rain} has {ai} in the middle: {/ā/}. | Two vowels can make one sound. |
+| Short or long vowel | Put each word in its group. | {cap} has no e at the end, so the {a} is short: {/a/}. {cape} ends with e, so the {a} says its name: {/ā/}. | A long vowel says its name. |
+| Compound words | Spoken: Tap the two words that make {sunflower}. On screen: Listen. Tap the two words that make the word. | {sun} and {flower} make {sunflower}. | Two small words can make one big word. |
+| Capitals and periods | Which one is written the right way? | A sentence starts with a capital letter. It ends with a period. Only one has both: {sentence}. | Capital at the start, period at the end. |
 | End marks | Which mark goes at the end? | A telling sentence ends with a period. An asking sentence ends with a question mark. A shout ends with an exclamation mark. Use the line that fits. | Asking sentences end with a question mark. |
 | One and more than one | Which word matches the picture? | There {is one or are more than one}. We say {word}. | Add s for more than one. |
 | Naming, action and describing words | Put each word in its group. | {dog} names something. {run} is something you do. | Naming words are people, animals and things. |
-| Read a sentence | Which picture matches the sentence? | The sentence says {key word}. | Read every word. |
+| Read a sentence | Which picture matches the sentence? | The sentence has the word {key word}. The picture shows a {key word}. | Read every word. |
 | Read a story | The question for that story. | The story says: {the sentence that holds the answer}. | Look back at the story. |
-| Odd one out | Which one does not belong? | These are all {group}. This one is not. | Find what the others share. |
-| Which belongs | Which one belongs with these? | These are both {group}. So is {answer}. | Find what they share. |
+| Odd one out | Which one does not belong? | {The others} are {group}. {The odd one} is not. | Find what the others share. |
+| Which belongs | Which one belongs with these? | {The two shown} are {group}. So is {answer}. | Find what they share. |
 | Two-rule patterns | What comes next? | The colour goes {rule one}. The size goes {rule two}. Next is {answer}. | Follow one rule at a time. |
-| Number analogies | Look at the pairs. What number finishes the last pair? | Each pair {adds n or doubles}. {base} becomes {answer}. | Find the rule that fits every pair. |
+| Number analogies | Each number changes the same way. What does {base} change to? | Each number {goes up by n or doubles}. {base} {goes up to or doubles to} {answer}. | Find the rule that fits every pair. |
 | Number series | What comes next? | The numbers go {up by n}. Next is {answer}. | Find the jump. |
-| Number puzzles | What number makes the scale balance? | This side is {total}. The other side needs {answer} more. | Both sides must weigh the same. |
-| Picture analogies | {Sock} goes with {foot}. {Glove} goes with what? | A {sock} goes on a {foot}. A {glove} goes on a {hand}. | Find how the first two go together. |
-| Pattern completion | Which piece finishes the picture? | Follow the lines and colours into the gap. | The piece must match every edge. |
-| Picture riddles | The riddle from section 9. | {answer} is the one that {riddle fact}. | Listen to every clue. |
+| Number puzzles | Which number makes both sides the same? | The right side is {total}. {a} and {answer} make {total}, so the box is {answer}. | Both sides must be the same. |
+| Picture analogies | A {sock} goes with a {foot}. A {glove} goes with what? | A {sock} goes on a {foot}. A {glove} goes on a {hand}. | Find how the first two go together. |
+| Pattern completion | Which one goes in the empty box? | The stripe {at the bottom} is all {colour}. So the box needs a {colour} square. | The box must match the squares around it. |
+| Picture riddles | The riddle from section 9. | {The reason the answer fits}, such as "Snow is made of ice." | Listen to every clue. |
 
 ### Lesson beats
 
@@ -1605,16 +1605,16 @@ M-K-C8 Make 10, level 1                facts { a: 7, b: 3 }
   explanation  7 boxes are full. 3 are empty. 7 and 3 make 10.
 
 M-1-B4 Make ten to add, level 1        facts { a: 9, b: 4 }
-  prompt       9 plus 4. Make a ten first. Which one is the same?
+  prompt       Make a ten first. Which one has the same answer as 9 + 4?
   stimulus     two ten frames: 9 filled, 4 filled
-  options      "10 plus 3", "10 plus 4", "9 plus 3"     answer "10 plus 3"
+  options      "10 + 3", "10 + 4", "9 + 3"     answer "10 + 3"
   explanation  Move 1 from the 4 to the 9. Now it is 10 and 3. 10 plus 3 is 13.
 
 R-A4 Figure matrices, level 1          facts { rowAttrs: [circle, square], colAttrs: [red, blue], blank: 3 }
   stimulus     matrix [red circle, blue circle, red square, blank]
   options      blue square, blue circle, red square     answer blue square
-  explanation  The top row is circles. The bottom row is squares. The first column is
-               red. The second column is blue. The box needs a blue square.
+  explanation  Across each row, the shape is the same. Down each column, the color is the
+               same. The box needs a blue square.
 
 R-A12 Paper folding, level 1           facts { fold: vertical, holes: [{ col: 0, row: 0 }] }
   stimulus     foldPunch folded: the right half lies over the left, one hole at the top left
@@ -1624,22 +1624,22 @@ R-A12 Paper folding, level 1           facts { fold: vertical, holes: [{ col: 0,
   note         a vertical fold copies each hole to column 3 minus its column
 
 R-A8 Number analogies, level 1         facts { examples: [[2, 5], [4, 7]], base: 6 }
-  prompt       Look at the pairs. What number finishes the last pair?
-  stimulus     2 and 5, 4 and 7, 6 and blank
+  prompt       Each number changes the same way. What does 6 change to?
+  stimulus     2 → 5, 4 → 7, 6 → blank
   options      8, 9, 12                 answer 9
   note         one pair such as [2, 4] is never enough: it fits both plus 2 and double
 
 E-PK-A1 Find the uppercase letter, level 1   mode listen   facts { target: B }
-  prompt.text  Find the letter.
+  prompt.text  Listen. Find the letter.
   prompt.speak "Find the letter", then the letter part B
   options      B, M                     no spoken labels
   explanation  This is the letter B.
 
 M-1-C1 Tell time, level 2              facts { hour: 3, minute: 30 }
   stimulus     clock, short hand halfway between 3 and 4, long hand on 6
-  options      half past 3, half past 4, 3 o'clock      answer half past 3
-  explanation  The long hand points to 6. The short hand is halfway between 3 and 4.
-               It is half past 3.
+  options      3:30, 4:30, 3:00         answer 3:30, said "three thirty"
+  explanation  The long hand points to 6. That means 30 minutes. The short hand is
+               halfway between 3 and 4, so the hour is 3. It is 3:30.
 
 E-PK-C2 Opposites, level 2             facts { target: hot, relation: opposite }
   prompt       Which one is the opposite of hot?
@@ -1690,10 +1690,10 @@ Claude Code writes 20 original stories into `src/content/banks/readingStories.js
 
 ```text
 Sam has a red hat. The hat is too big. Sam gives the hat to Max.
-  Who gets the hat?  Max / Sam / Mia        Why does Sam give it away?  It is too big / It is red / It is wet
+  Who gets the hat?  Max / Sam / Mia        Why does Sam give the hat away?  It is too big / It is red / It is wet
 
 Mia can see a frog. The frog jumps on her hat. Now Mia has a wet hat.
-  What jumps?  the frog / the dog / Mia     How did the hat get wet?  The frog jumped on it / Mia ran / It was hot
+  What jumps on the hat?  the frog / the dog / the cat     How did the hat get wet?  The frog jumped on it / Mia ran in the rain / It was in the tub
 ```
 
 ## 9. Content data
@@ -1812,7 +1812,7 @@ Open and closed is left out, because the lock picture is already "lock" in the r
 ```ts
 a: cat 🐱, hat 🎩, bat 🦇, van 🚐, pan 🍳, map 🗺️, bag 👜
 e: bed 🛏️, hen 🐔, pen 🖊️, web 🕸️, leg 🦵
-i: pig 🐷, pin 📌, lip 👄
+i: pig 🐷, pin 📌, bin 🗑️
 o: dog 🐶, fox 🦊, box 📦
 u: sun ☀️, bus 🚌, bug 🐛, cup 🥤, nut 🥜
 ```
@@ -1864,7 +1864,7 @@ nouns:            dog ball tree bed girl car      verbs: run jump eat sing read 
 adjectives:       big red soft tall cold happy loud tiny
 describing pictures: cold ❄️, happy 😀, loud 🔊, red 🍎, big 🐘, tiny 🐜, tall 🦒, soft 🧸
 opposites:        big/small, hot/cold, up/down, fast/slow, happy/sad, open/shut, wet/dry, day/night
-same:             big/large, small/little, happy/glad, fast/quick, shut/close, start/begin
+same:             big/large, small/little, happy/glad, fast/quick, shut/closed, start/begin
 ```
 
 - Digraph ends has 7 words, so that level declares a pool of 7.
@@ -1879,7 +1879,7 @@ telling:  "The cat is big."  "I see a red hat."  "We can run."  "The dog can jum
           "The pig is big."  "I have a cup."  "The fox ran."  "We go to the bus."
 asking:   "Can you see the cat?"  "Where is my hat?"  "Is the sun hot?"  "Who has the cup?"
           "Do you like the dog?"  "What is in the box?"  "Can we go?"  "Is it a bug?"
-shouting: "Look out!"  "Stop!"  "Help!"  "Oh no!"  "Wow!"  "We did it!"
+shouting: "Look out!"  "Hooray!"  "Help!"  "Oh no!"  "Wow!"  "Ouch!"
 ```
 
 - Kindergarten D.1 takes a telling sentence and builds the wrong options by lowering the first letter, dropping the period, or both.
@@ -1909,41 +1909,49 @@ The options are words from the same sentence: the describing word, one naming wo
 ### Story templates (storyProblems.ts)
 
 ```ts
-names: Sam, Mia, Leo, Ava, Max, Zoe
-add:      "{name} has {a} {things}. {name} gets {b} more. How many {things} does {name} have now?"
-add:      "{a} {things} are on the table. {b} more are in the box. How many {things} are there in all?"
-subtract: "{name} has {a} {things}. {name} gives away {b}. How many {things} are left?"
-subtract: "There are {a} {things}. {name} takes {b}. How many are left?"
-compare:  "{name} has {a} {things}. {name2} has {b}. How many more does {name} have?"
-addAdd:   "{name} has {a} {things}. {name} gets {b} more. Then {name} gets {c} more. How many {things} does {name} have now?"
-addSub:   "{name} has {a} {things}. {name} gets {b} more. Then {name} gives away {c}. How many {things} does {name} have now?"
+names: Sam (he), Mia (she), Leo (he), Ava (she), Max (he), Zoe (she)
+add:      "{name} has {a} {thingsA}. {She} gets {b} more. How many {things} does {she} have now?"
+add:      "{a} {thingsA} {areA} on the table. {b} more {areB} in the box. How many {things} are there in all?"
+subtract: "{name} has {a} {thingsA}. {She} gives away {b}. How many {things} are left?"
+subtract: "There {areA} {a} {thingsA}. {name} takes {b}. How many are left?"
+compare:  "{name} has {a} {thingsA}. {name2} has {b}. How many more does {name} have?"
+addAdd:   "{name} has {a} {thingsA}. {She} gets {b} more. Then {she} gets {c} more. How many {things} does {she} have now?"
+addSub:   "{name} has {a} {thingsA}. {She} gets {b} more. Then {she} gives away {c}. How many {things} does {she} have now?"
 ```
 
-- Use the plural from the countables list, and the singular when the number is 1.
+- `{things}` is the plural from the countables list. `{thingsA}` is the word that fits the number a ("1 apple", "2 apples"), and `{areA}` and `{areB}` are "is" when that number is 1, otherwise "are".
+- `{She}` and `{she}` are the name's he or she, with a capital at the start of a sentence. A story names a person once, then says he or she. A compare story keeps both names.
 - In a compare story the first number is always the bigger one.
 - A story is spoken one sentence at a time, each as its own utterance, so no single utterance runs past 12 seconds.
 
 ### A voice cannot say letter sounds
 
-Browser speech cannot reliably pronounce a lone sound such as the first sound in ball. Every phonics prompt therefore uses whole words: "Which one starts like ball?" and "Which letter does sun start with?" Skills that need pure sounds, such as blending, wait for recorded audio on the roadmap.
+Neither the device voice nor the recorded voice can reliably say a lone sound, such as the first sound in ball. So each letter sound is recorded once, on its own, and spoken text names it with the `{ sound }` part. `src/engine/letterSounds.ts` is the one list of sounds, each with its letters, how it is shown and a word that has it (b is /b/, as in bat; long-a is /ā/, as in cake). Phonics questions, lessons, tapped letters, hints and wrong-answer steps use them. On screen a sound is written /b/. It is said from its recording: once inside a sentence, three times when it is all that is said, as when a letter is tapped. Until the recordings exist, and wherever one cannot be had, a sound is said by its letters: "the sound of B", "the sound of S, H", "the sound of long A". `soundFallback` in `src/audio/say.ts` is the one place that decides it. Most phonics prompts name a word: "Which one starts with the same sound as ball?" and "Which letter does sun start with?" The steps say the sound, then the letter: "Octopus starts with /o/. The letter o says /o/."
 
 ### How things are said aloud (src/audio/say.ts)
 
 A voice reading a lone letter often says the wrong thing, such as "uh" for a. Spoken text is therefore never one plain string. It is a list of `Say` parts (section 5), and `say.ts` turns each part into words a voice reads correctly. Because each part says what it is, the letter a, the word "a" and the "a" inside "Tap a balloon" can never be mixed up.
 
 ```ts
-letter parts: a 'ay', b 'bee', c 'see', d 'dee', e 'ee', f 'eff', g 'jee', h 'aitch', i 'eye',
+letter parts: the recorded voice is sent the capital ('A'), which it reads as the letter's name.
+              The device voice is sent the name spelled out:
+              a 'ay', b 'bee', c 'see', d 'dee', e 'ee', f 'eff', g 'jee', h 'aitch', i 'eye',
               j 'jay', k 'kay', l 'el', m 'em', n 'en', o 'oh', p 'pee', q 'cue', r 'are',
               s 'ess', t 'tee', u 'you', v 'vee', w 'double you', x 'ex', y 'why', z 'zee'
 word parts:   passed to the voice as written
-number parts: written as words by a function, 0 to 1,000 ('forty-seven')
-time parts:   3:00 'three o'clock', 3:30 'half past three', 3:15 'three fifteen'
-cents parts:  25 'twenty-five cents'
+number parts: written as words by a function, 0 to 10,000 ('forty-seven', 'two thousand four hundred six')
+time parts:   as a digital clock is read: 8:00 'eight o'clock', 8:05 'eight oh five', 8:15 'eight fifteen',
+              8:30 'eight thirty', 8:45 'eight forty-five'. Never 'half past', 'quarter past' or 'quarter to'
+cents parts:  25 'twenty-five cents', 1 'one cent'
+sound parts:  a letter sound from letterSounds.ts, shown /b/: its recording, or its letters ('the sound of B')
 plain strings: must not contain digits or symbols. Write 'plus', 'take away' (K) or 'minus'
-               (grade 1 up), 'equals', 'blank', 'is greater than', 'is less than'
+               (grade 1 up), 'times', 'divided by', 'equals', 'what' or 'blank' for a missing number,
+               'is greater than', 'is less than'
 ```
 
-Lookup order for a letter or number part: a voice-pack clip, then the spelling above through the device voice. Uppercase and lowercase use the same name. Parts are played one after another, so a clip can sit in the middle of a spoken sentence. With no voice pack on the device, everything goes through the device voice and nothing breaks.
+A written step is read by `stepSay` (`src/audio/stepSay.ts`), which turns it into these parts: numbers to 10,000 ("4,306" is "four thousand three hundred six"); "10s" as "tens" and "5s" as "fives"; a lone "?" as "what" and "□" as "blank"; a sign inside a number sentence by its word ("2/6 < 4/6" is "two sixths is less than four sixths"), and named on its own ("The sign is <." is "The sign is less than."); fractions ("1/2" "one half", "5/8" "five eighths", "7/1" "seven over one") and mixed numbers ("8 1/2" "eight and a half"); clock times as written, through the time part ("3:30" "three thirty", "7:05" "seven oh five", "12:00" "twelve o'clock"); money ("$1.25" "one dollar and twenty-five cents", "25¢" "twenty-five cents"). Quotation marks and brackets are left out, and what is inside them is read. A lone letter is its name ("H, a, N, D"), but a lone a or I used as a word is the word ("This is a square."). A step it cannot read safely is shown and not said. A step that needs other words, such as a letter group or a word ending, carries its own speech in `explanation.stepsSay`.
+
+The recorded voice says each sentence: letters are sent to it as capitals, and numbers, times and cents as the words above. A letter sound with a recording is played from it, in its place in the sentence. The device voice says a piece only when its recording cannot come (no network, a server error, a sentence it cannot take), with the spelled letter names above. Uppercase and lowercase use the same name. With no network, everything goes through the device voice and nothing breaks.
 
 ### Analogy pairs (analogies.ts)
 
@@ -1951,8 +1959,7 @@ Lookup order for a letter or number part: a voice-pack clip, then the spelling a
 wornOn:   sock 🧦 : foot 🦶,  glove 🧤 : hand ✋,  glasses 👓 : eyes 👀
 makes:    bee 🐝 : honey 🍯,  cow 🐄 : milk 🥛,  hen 🐔 : egg 🥚
 usedWith: key 🔑 : lock 🔒,  pencil ✏️ : paper 📄,  spoon 🥄 : soup 🍲
-livesIn:  fish 🐟 : water 🌊,  bird 🐦 : tree 🌳,  spider 🕷️ : web 🕸️
-weather:  rain 🌧️ : umbrella ☂️,  sun ☀️ : sunglasses 🕶️,  snow ❄️ : scarf 🧣
+livesIn:  fish 🐟 : water 🌊,  bird 🐦 : nest 🪺,  spider 🕷️ : web 🕸️
 ```
 
 An analogy uses two pairs from one relation. Every picture is spoken when tapped. At level 2 the wrong options come from the same relation: the second half of the third pair, and the second half of the example pair.
@@ -1960,18 +1967,18 @@ An analogy uses two pairs from one relation. Every picture is spoken when tapped
 ### Picture riddles (riddles.ts)
 
 ```ts
-'Which one do you wear on your foot?'      shoe 👟
-'Which one tells the time?'                clock 🕐
-'Which one do you eat soup with?'          spoon 🥄
-'Which one lives in water?'                fish 🐟
-'Which one gives us milk?'                 cow 🐄
-'Which one keeps you dry in the rain?'     umbrella ☂️
-'Which one has wheels?'                    car 🚗
-'Which one is very cold?'                  snow ❄️
-'Which one opens a lock?'                  key 🔑
-'Which one do you sleep in?'               bed 🛏️
-'Which one can you read?'                  book 📖
-'Which one can fly?'                       bird 🐦
+'Which one do you wear on your foot?'                  shoe 👟
+'Which one tells the time?'                            clock 🕐
+'Which one do you eat soup with?'                      spoon 🥄
+'Which one lives in water?'                            fish 🐟
+'Which one gives us milk?'                             cow 🐄
+'Which one do you hold over your head in the rain?'    umbrella ☂️
+'Which one has wheels?'                                car 🚗
+'Which one is very cold?'                              snow ❄️
+'Which one opens a lock?'                              key 🔑
+'Which one do you sleep in?'                           bed 🛏️
+'Which one has pages to read?'                         book 📖
+'Which one can fly?'                                   bird 🐦
 ```
 
 Wrong options are the answers to other riddles. No answer on this list fits a second riddle, and any addition must keep that true.

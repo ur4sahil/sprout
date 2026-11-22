@@ -58,7 +58,9 @@ export default function Awards() {
   }, [child]);
   const { placed, onPlace } = usePlacedStickers(child?.id, earned ?? NO_AWARDS, child?.stickersPlaced ?? NO_PLACED, savePlaced);
 
-  const awards = useMemo(() => allAwards(awardSkills()), []);
+  // The child's own skills: a pre-K or kindergarten child is not offered the word puzzles (offeredTo).
+  const grade = child?.grade;
+  const awards = useMemo(() => allAwards(awardSkills(grade)), [grade]);
   const pages = useMemo(() => [...new Set(awards.map((award) => award.board))].map((id) => ({ id, awards: awards.filter((award) => award.board === id) })), [awards]);
   const loose = useMemo(() => looseStickers(earned ?? [], placed), [earned, placed]);
 

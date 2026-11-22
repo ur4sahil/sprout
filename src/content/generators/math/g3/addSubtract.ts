@@ -2,7 +2,7 @@ import type { Rng } from '../../../../engine/rng';
 import { makeRng } from '../../../../engine/rng';
 import type { Hint, LessonStep, Level, QuestionDraft, Say, Visual } from '../../../../engine/types';
 import { STORY_COUNTABLES } from '../../../data/countables';
-import { STORY_NAMES } from '../../../data/storyProblems';
+import { PRONOUN_FORMS, STORY_NAMES, STORY_PRONOUNS } from '../../../data/storyProblems';
 import type { SkillGenerator } from '../../../generator';
 import { numeral } from '../../../generator';
 import { addExplanation, addQuestion, borrows, carries, equation, minusPrompt, plusPrompt, subtractExplanation, subtractQuestion } from '../g2/addSubtract';
@@ -135,7 +135,9 @@ function estimating(level: Level, rng: Rng): QuestionDraft {
     const safeClaim = claim > 0 ? claim : exact + rng.int(25, 30) * 10;
     // Reasonable means close to the estimate: within one hundred of it. A right answer is always less than 100
     // away (each number moves less than 50 when it is rounded); a wrong one is always more than 100 away.
-    const prompt = `Sam says ${a} ${signWord(op)} ${b} is ${safeClaim}. Use an estimate to check. Is Sam's answer reasonable?`;
+    // Sam is named once, then "his" (the owner's choice, Nov 22, 2026: a story names a person once).
+    const his = PRONOUN_FORMS[STORY_PRONOUNS.Sam ?? 'he'].his;
+    const prompt = `Sam says ${a} ${signWord(op)} ${b} is ${safeClaim}. Use an estimate to check. Is ${his} answer reasonable?`;
     const isReasonable = Math.abs(safeClaim - guess) <= to;
     const [ra, rb] = [roundTo(a, to), roundTo(b, to)];
     const verdict = isReasonable
@@ -146,7 +148,7 @@ function estimating(level: Level, rng: Rng): QuestionDraft {
       mode: 'look',
       fixedOrder: true,
       facts: { a, b, to, op, ask: 'reasonable', claim: safeClaim, options: [true, false] },
-      prompt: { text: prompt, speak: ['Sam says', { number: a }, signWord(op), { number: b }, 'is', { number: safeClaim }, ". Use an estimate to check. Is Sam's answer reasonable?"] },
+      prompt: { text: prompt, speak: ['Sam says', { number: a }, signWord(op), { number: b }, 'is', { number: safeClaim }, `. Use an estimate to check. Is ${his} answer reasonable?`] },
       stimulus: equation(a, op, b, '=', safeClaim),
       options: [
         { kind: 'text', value: 'Yes', size: 'l', speak: ['Yes'] },
@@ -240,10 +242,11 @@ function story(level: Level, rng: Rng): Story {
     const a = rng.int(120, 480);
     const b = rng.int(25, 240);
     const c = rng.int(15, Math.min(a + b - 10, 260));
-    // The name once at the start and once in the question, so it never sounds like a list.
+    // The name once at the start, then "he" or "she" in the question (the owner's choice, Nov 22, 2026).
+    const she = STORY_PRONOUNS[name] ?? name;
     return {
-      text: `${name} has ${a} ${things}, gets ${b} more, then gives away ${c}. How many ${things} does ${name} have now?`,
-      speak: [`${name} has`, { number: a }, `${things}, gets`, { number: b }, 'more, then gives away', { number: c }, '.', `How many ${things} does ${name} have now?`],
+      text: `${name} has ${a} ${things}, gets ${b} more, then gives away ${c}. How many ${things} does ${she} have now?`,
+      speak: [`${name} has`, { number: a }, `${things}, gets`, { number: b }, 'more, then gives away', { number: c }, '.', `How many ${things} does ${she} have now?`],
       a, op1: '+', b, op2: '-', c,
       // No number in it: when as many are given away as there were at the start, the answer is the number gotten.
       hint: { text: `First find how many ${things} ${name} has after getting more.` },

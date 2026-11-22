@@ -73,12 +73,28 @@ describe('story templates', () => {
   const apple = STORY_COUNTABLES[0]!;
 
   it('uses the one-thing word and "is" for 1, and the plural everywhere else', () => {
-    expect(tellStory({ kind: 'gets', name: 'Sam', thing: apple, a: 1, b: 1 }).text).toBe('Sam has 1 apple. Sam gets 1 more. How many apples does Sam have now?');
-    expect(tellStory({ kind: 'gets', name: 'Mia', thing: apple, a: 3, b: 2 }).text).toBe('Mia has 3 apples. Mia gets 2 more. How many apples does Mia have now?');
+    // A story names a person once, then says he or she (the owner's choice, Nov 22, 2026).
+    expect(tellStory({ kind: 'gets', name: 'Sam', thing: apple, a: 1, b: 1 }).text).toBe('Sam has 1 apple. He gets 1 more. How many apples does he have now?');
+    expect(tellStory({ kind: 'gets', name: 'Mia', thing: apple, a: 3, b: 2 }).text).toBe('Mia has 3 apples. She gets 2 more. How many apples does she have now?');
     expect(tellStory({ kind: 'table', name: 'Sam', thing: apple, a: 1, b: 1 }).text).toBe('1 apple is on the table. 1 more is in the box. How many apples are there in all?');
     expect(tellStory({ kind: 'table', name: 'Sam', thing: apple, a: 2, b: 3 }).text).toBe('2 apples are on the table. 3 more are in the box. How many apples are there in all?');
-    expect(tellStory({ kind: 'givesAway', name: 'Leo', thing: apple, a: 4, b: 1 }).text).toBe('Leo has 4 apples. Leo gives away 1. How many apples are left?');
+    expect(tellStory({ kind: 'givesAway', name: 'Leo', thing: apple, a: 4, b: 1 }).text).toBe('Leo has 4 apples. He gives away 1. How many apples are left?');
     expect(tellStory({ kind: 'takes', name: 'Zoe', thing: apple, a: 5, b: 2 }).text).toBe('There are 5 apples. Zoe takes 2. How many are left?');
+  });
+
+  it('names a person once, then says he or she; two people keep their names', () => {
+    expect(tellStory({ kind: 'addAdd', name: 'Ava', thing: apple, a: 2, b: 3, c: 4 }).text).toBe('Ava has 2 apples. She gets 3 more. Then she gets 4 more. How many apples does she have now?');
+    expect(tellStory({ kind: 'addSub', name: 'Max', thing: apple, a: 6, b: 3, c: 4 }).text).toBe('Max has 6 apples. He gets 3 more. Then he gives away 4. How many apples does he have now?');
+    expect(tellStory({ kind: 'compare', name: 'Sam', name2: 'Leo', thing: apple, a: 5, b: 2 }).text).toBe('Sam has 5 apples. Leo has 2. How many more does Sam have?');
+    // Every name has its pronoun, and the speech says the same words as the screen.
+    for (const name of STORY_NAMES) {
+      for (const kind of Object.keys(STORY_TEMPLATES) as (keyof typeof STORY_TEMPLATES)[]) {
+        const story = tellStory({ kind, name, name2: name === 'Sam' ? 'Mia' : 'Sam', thing: apple, a: 7, b: 3, c: 2 });
+        const times = (story.text.match(new RegExp(`\\b${name}\\b`, 'g')) ?? []).length;
+        expect(times, `${kind}: ${story.text}`).toBeLessThanOrEqual(kind === 'compare' ? 2 : 1);
+        expect(sayText(story.speak).replace(/\s+/g, ' ').replace(/ \./g, '.')).toBe(story.text);
+      }
+    }
   });
 
   it('says every number as a number part, and the same words as the screen shows', () => {

@@ -36,7 +36,7 @@ export default function Certificate() {
     void (async () => {
       const { repo } = await openRepo();
       const child = (await repo.listChildren()).find((each) => each.id === childId) ?? null;
-      const rows = child ? scoreRows(awardSkills(), await repo.getSkillStates(child.id), []) : [];
+      const rows = child ? scoreRows(awardSkills(child.grade), await repo.getSkillStates(child.id), []) : [];
       if (alive) setFound({ child, rows });
     })().catch(logError);
     return () => {

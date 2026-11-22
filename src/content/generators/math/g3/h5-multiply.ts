@@ -31,11 +31,12 @@ const blankAsk = (sentence: string): Prompt => ({
 // Levels: times 1 and times 0 / grouping three factors either way / the missing number in a property, typed.
 // Oracle: expression3.
 
-function onesZerosExplanation(a: number, other: 0 | 1): Explanation {
+// The hints for times 0 and times 1 never say the answer's number, 0 or 1, in digits or in words.
+function onesZerosExplanation(a: number, other: 0 | 1, hint?: Hint): Explanation {
   if (other === 0) {
-    return { speak: ['Any number times zero is zero. Groups with nothing in them make nothing.'], steps: ['Any number times 0 is 0.', `${a} × 0 = 0 and 0 × ${a} = 0.`], visual: equation(a, '×', 0, '=', 0) };
+    return { speak: ['Any number times zero is zero. Groups with nothing in them make nothing.'], steps: ['Any number times 0 is 0.', `${a} × 0 = 0 and 0 × ${a} = 0.`], visual: equation(a, '×', 0, '=', 0), hint: hint ?? { text: 'Think: groups with nothing in them, or no groups at all. How many is that?' } };
   }
-  return { speak: ['Any number times one is that same number. One group of', { number: a }, 'is', { number: a }, '.'], steps: ['Any number times 1 is that same number.', `${a} × 1 = ${a} and 1 × ${a} = ${a}.`], visual: equation(a, '×', 1, '=', a) };
+  return { speak: ['Any number times one is that same number. One group of', { number: a }, 'is', { number: a }, '.'], steps: ['Any number times 1 is that same number.', `${a} × 1 = ${a} and 1 × ${a} = ${a}.`], visual: equation(a, '×', 1, '=', a), hint: hint ?? { text: 'Think: just one group of the other number. How many is that?' } };
 }
 
 function groupingExplanation(a: number, b: number, c: number): Explanation {
@@ -43,6 +44,7 @@ function groupingExplanation(a: number, b: number, c: number): Explanation {
     speak: ['You can group the factors either way. The product stays the same:', { number: a * b * c }, '.'],
     steps: ['Group the factors either way. The product stays the same.', `(${a} × ${b}) × ${c} = ${a * b} × ${c} = ${a * b * c}.`, `${a} × (${b} × ${c}) = ${a} × ${b * c} = ${a * b * c}.`],
     visual: sentencePicture(`(${a} × ${b}) × ${c} = ${a} × (${b} × ${c})`),
+    hint: { text: 'Look for the same three numbers, all multiplied, with the brackets moved.' },
   };
 }
 
@@ -92,10 +94,10 @@ function properties(level: Level, rng: Rng): QuestionDraft {
   const answer = form === 'order' ? b : form === 'group' ? c : form === 'one' ? 1 : 0;
   const explanation: Explanation =
     form === 'order'
-      ? { speak: ['Changing the order of the factors does not change the product.', ...times(b, a), 'is the same as', ...times(a, b), '.'], steps: ['Changing the order of the factors does not change the product.', `${b} × ${a} = ${a} × ${b}.`, `The missing number is ${b}.`], visual: equation(b, '×', a, '=', a, '×', b) }
+      ? { speak: ['Changing the order of the factors does not change the product.', ...times(b, a), 'is the same as', ...times(a, b), '.'], steps: ['Changing the order of the factors does not change the product.', `${b} × ${a} = ${a} × ${b}.`, `The missing number is ${b}.`], visual: equation(b, '×', a, '=', a, '×', b), hint: { text: 'Both sides have the same factors in another order. Which factor is missing?' } }
       : form === 'group'
-        ? { speak: ['Grouping the factors another way does not change the product. The same three factors are on both sides, so the missing number is', { number: c }, '.'], steps: ['Grouping the factors another way does not change the product.', `Both sides use ${a}, ${c} and ${b}.`, `The missing number is ${c}.`], visual: sentencePicture(`(${a} × ${c}) × ${b} = ${a} × (${c} × ${b})`) }
-        : onesZerosExplanation(a, form === 'one' ? 1 : 0);
+        ? { speak: ['Grouping the factors another way does not change the product. The same three factors are on both sides, so the missing number is', { number: c }, '.'], steps: ['Grouping the factors another way does not change the product.', `Both sides use ${a}, ${c} and ${b}.`, `The missing number is ${c}.`], visual: sentencePicture(`(${a} × ${c}) × ${b} = ${a} × (${c} × ${b})`), hint: { text: 'Both sides use the same factors. Which factor is missing?' } }
+        : onesZerosExplanation(a, form === 'one' ? 1 : 0, form === 'one' ? { text: 'Which number can you multiply by and keep a number the same?' } : { text: 'Which number, times any number, makes nothing at all?' });
   return { type: 'numberPad', mode: 'look', facts: { expr: sentence, ask: 'missing' }, prompt: blankAsk(sentence), stimulus: sentencePicture(sentence), answer, maxDigits: 2, explanation };
 }
 
@@ -120,11 +122,14 @@ export const propertiesGenerator: SkillGenerator = {
 // Levels: split an array's rows: pick the matching sum / the missing factor in a split / the missing product, typed.
 // Oracle: expression3.
 
+// A split of 6 rows leaves 1 row, never "1 rows".
+const rowWord = (n: number): string => (n === 1 ? 'row' : 'rows');
+
 function splitExplanation(rows: number, cols: number, emoji: string): Explanation {
   const rest = rows - 5;
   return {
-    speak: ['Split the', { number: rows }, 'rows into', { number: 5 }, 'rows and', { number: rest }, 'rows.', ...times(5, cols), 'is', { number: 5 * cols }, '.', ...times(rest, cols), 'is', { number: rest * cols }, '. Together they make', { number: rows * cols }, '.'],
-    steps: [`Split ${rows} rows into 5 rows and ${rest} rows.`, `5 × ${cols} = ${5 * cols}. ${rest} × ${cols} = ${rest * cols}.`, `${5 * cols} + ${rest * cols} = ${rows * cols}, so ${rows} × ${cols} = ${rows * cols}.`],
+    speak: ['Split the', { number: rows }, 'rows into', { number: 5 }, 'rows and', { number: rest }, `${rowWord(rest)}.`, ...times(5, cols), 'is', { number: 5 * cols }, '.', ...times(rest, cols), 'is', { number: rest * cols }, '. Together they make', { number: rows * cols }, '.'],
+    steps: [`Split ${rows} rows into 5 rows and ${rest} ${rowWord(rest)}.`, `5 × ${cols} = ${5 * cols}. ${rest} × ${cols} = ${rest * cols}.`, `${5 * cols} + ${rest * cols} = ${rows * cols}, so ${rows} × ${cols} = ${rows * cols}.`],
     visual: { kind: 'row', children: [array(5, cols, emoji), array(rest, cols, emoji)] },
   };
 }
@@ -165,12 +170,12 @@ function distributive(level: Level, rng: Rng): QuestionDraft {
     const worth: Record<string, number> = { [`(5 × ${cols}) + ${rest}`]: 5 * cols + rest, [`5 + (${rest} × ${cols})`]: 5 + rest * cols, [`(5 × ${cols}) + (${rest} × ${cols + 1})`]: 5 * cols + rest * (cols + 1), [`(5 × ${cols}) + (5 × ${cols})`]: 10 * cols };
     const slips = Object.keys(worth).filter((slip) => worth[slip] !== rows * cols);
     const choices = rng.shuffle([right, ...rng.sample(slips, 2)]);
-    const ask = `Split the ${rows} rows into 5 rows and ${rest} rows. Which matches ${rows} × ${cols}?`;
+    const ask = `Split the ${rows} rows into 5 rows and ${rest} ${rowWord(rest)}. Which matches ${rows} × ${cols}?`;
     return {
       type: 'choice',
       mode: 'look',
       facts: { expr: `${rows} × ${cols}`, ask: 'equal', emoji, options: choices },
-      prompt: { text: ask, speak: ['Split the', { number: rows }, 'rows into', { number: 5 }, 'rows and', { number: rest }, 'rows. Which matches', ...times(rows, cols), '?'] },
+      prompt: { text: ask, speak: ['Split the', { number: rows }, 'rows into', { number: 5 }, 'rows and', { number: rest }, `${rowWord(rest)}. Which matches`, ...times(rows, cols), '?'] },
       stimulus: array(rows, cols, emoji),
       options: choices.map((choice) => sentenceOption(choice, 'm')),
       answerIndex: choices.indexOf(right),
@@ -220,6 +225,7 @@ function storyTimesExplanation(kind: 'groups' | 'array', a: number, b: number, e
     speak: ['There are', { number: a }, `${unit} with`, { number: b }, 'in each.', ...times(a, b), 'is', { number: a * b }, '.'],
     steps: [`There are ${a} ${unit} with ${b} in each.`, `${a} × ${b} = ${a * b}.`],
     visual: kind === 'groups' && b <= 6 ? groupsPicture(a, b, emoji) : kind === 'array' ? array(a, b, emoji) : equation(a, '×', b, '=', a * b),
+    hint: { text: `Find how many ${unit} there are, and how many are in each. Then multiply.` },
   };
 }
 
@@ -256,6 +262,9 @@ export const multiplyStoriesGenerator: SkillGenerator = {
 const ODD = [3, 5, 7, 9];
 const EVEN = [2, 4, 6, 8, 10];
 
+// Asked "even or odd?", the hint says neither word: it says how to tell.
+const PARITY_HINT: Hint = { text: 'Look at each factor. Can it be split into pairs, with none left over?' };
+
 function parityExplanation(a: number, b: number): Explanation {
   const p = a * b;
   if (p % 2 === 1) return { speak: ['Odd times odd is always odd.', ...times(a, b), 'is', { number: p }, ', which is odd.'], steps: ['Odd times odd is always odd.', `${a} × ${b} = ${p}, which is odd.`], visual: equation(a, '×', b, '=', p) };
@@ -280,7 +289,7 @@ function timesPatterns(level: Level, rng: Rng): QuestionDraft {
       stimulus: equation(a, '×', b),
       options: words.map((word): Visual => ({ kind: 'text', value: word, size: 'l', speak: [word] })),
       answerIndex: (a * b) % 2,
-      explanation: parityExplanation(a, b),
+      explanation: { ...parityExplanation(a, b), hint: PARITY_HINT },
     };
   }
   if (level === 2) {
@@ -302,7 +311,11 @@ function timesPatterns(level: Level, rng: Rng): QuestionDraft {
       prompt: { text: ask, speak: [ask] },
       options: choices.map((choice) => sentenceOption(choice)),
       answerIndex: choices.indexOf(rightText),
-      explanation: { ...parityExplanation(right[0], right[1]), steps: [want === 'odd' ? 'A product is odd only when both factors are odd.' : 'A product is even when a factor is even.', ...parityExplanation(right[0], right[1]).steps.slice(1)] },
+      explanation: {
+        ...parityExplanation(right[0], right[1]),
+        steps: [want === 'odd' ? 'A product is odd only when both factors are odd.' : 'A product is even when a factor is even.', ...parityExplanation(right[0], right[1]).steps.slice(1)],
+        hint: { text: want === 'odd' ? 'A product is odd only when both factors are odd. Check the factors of each product.' : 'A product is even when a factor is even. Check the factors of each product.' },
+      },
     };
   }
   const a = rng.int(2, 9);
@@ -320,6 +333,7 @@ function timesPatterns(level: Level, rng: Rng): QuestionDraft {
         speak: [...times(a, next), 'is one', up ? 'more' : 'fewer', 'group of', { number: a }, 'than', ...times(a, b), '.', { number: p }, up ? 'plus' : 'minus', { number: a }, 'is', { number: answer }, '.'],
         steps: [`${a} × ${next} is one ${up ? 'more' : 'fewer'} group of ${a} than ${a} × ${b}.`, `${p} ${up ? '+' : '−'} ${a} = ${answer}.`],
         visual: equation(a, '×', next, '=', answer),
+        hint: { text: `${a} × ${next} is one ${up ? 'more' : 'fewer'} group of ${a} than ${a} × ${b}.` },
       },
     },
     { expr: `${a} × ${next}`, ask: 'value', known: p },

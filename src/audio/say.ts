@@ -37,11 +37,13 @@ export function numberWords(n: number): string {
   return rest === 0 ? hundreds : `${hundreds} ${numberWords(rest)}`;
 }
 
-// 3:00 is 'three o'clock', 3:30 is 'half past three', 3:15 is 'three fifteen', 3:05 is 'three oh five'.
+// A time is said as a child reads a digital clock (the owner's choice, Nov 22, 2026): 8:00 is 'eight o'clock', 8:05
+// 'eight oh five', 8:15 'eight fifteen', 8:30 'eight thirty', 8:45 'eight forty-five'; never 'half past', 'quarter
+// past' or 'quarter to'. This is the one place a time is put into words: a `{ time }` part, and a time written in a
+// step ("8:30", read by stepSay as a `{ time }` part), are both said by it.
 export function timeWords(hour: number, minute: number): string {
   const h = numberWords(hour);
   if (minute === 0) return `${h} o'clock`;
-  if (minute === 30) return `half past ${h}`;
   if (minute < 10) return `${h} oh ${numberWords(minute)}`;
   return `${h} ${numberWords(minute)}`;
 }

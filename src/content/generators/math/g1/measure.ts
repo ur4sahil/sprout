@@ -26,8 +26,10 @@ const timeText = (time: Time): Visual => ({ kind: 'text', value: written(time), 
 const nextHour = (hour: number): number => (hour % 12) + 1;
 const hourBefore = (hour: number): number => ((hour + 10) % 12) + 1;
 
-// The last step joins the time in words to the written time the options show: "It is half past 8. We write 8:30."
-// (said "eight thirty", as a child reads it). "8:00" would be said "eight o'clock" twice, so it is said by its digits.
+// A time is said as it is read on a digital clock (the owner's choice, Nov 22, 2026): "eight o'clock", "eight thirty",
+// never "half past eight". On the hour the last step joins the words to the written time the options show: "It is 8
+// o'clock. We write 8:00." ("8:00" would be said "eight o'clock" twice, so it is said by its digits). On the half hour
+// the long hand's 6 is read as 30 minutes, and the time is written as it is said: "It is 8:30." is "eight thirty".
 function timeExplanation(time: Time): Explanation {
   if (time.minute === 0) {
     return explain(
@@ -35,7 +37,7 @@ function timeExplanation(time: Time): Explanation {
       clock(time),
     );
   }
-  return explain(['The long hand points to 6.', `The short hand is halfway between ${time.hour} and ${nextHour(time.hour)}.`, `It is half past ${time.hour}. We write ${written(time)}.`], clock(time));
+  return explain(['The long hand points to 6. That means 30 minutes.', `The short hand is halfway between ${time.hour} and ${nextHour(time.hour)}, so the hour is ${time.hour}.`, `It is ${written(time)}.`], clock(time));
 }
 
 // The times offered beside the right one: the hour before or after, and the same hour at the other half.

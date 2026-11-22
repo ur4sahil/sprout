@@ -42,9 +42,14 @@ describe('describeVisual', () => {
     [{ kind: 'row', children: [{ kind: 'text', value: '1', size: 'l' }, { kind: 'text', value: '2', size: 'l' }] }, '1 and 2'],
     [{ kind: 'bar', length: 1, color: 'red', orientation: 'horizontal' }, 'red bar 1 unit long'],
     [{ kind: 'array', rows: 2, cols: 3, emoji: '⭐' }, '2 rows of 3 ⭐'],
+    // A count of 1 never takes a plural (the owner's list, Nov 22, 2026): "1 row of 7", not "1 rows of 7".
+    [{ kind: 'array', rows: 1, cols: 7, emoji: '🟩' }, '1 row of 7 🟩'],
+    [{ kind: 'fraction', shape: 'rectangle', parts: 1, shaded: 1, equal: true }, 'rectangle in 1 equal part, 1 shaded'],
     [{ kind: 'tally', count: 7 }, '7 tally marks'],
+    [{ kind: 'tally', count: 1 }, '1 tally mark'],
     [{ kind: 'scale', left: [3, 'blank'], right: [8] }, 'balance scale: 3 and □ on the left, 8 on the right'],
-    [{ kind: 'foldPunch', fold: 'vertical', state: 'folded', holes: [{ col: 0, row: 0 }] }, 'folded paper, vertical fold, holes at (0,0)'],
+    [{ kind: 'foldPunch', fold: 'vertical', state: 'folded', holes: [{ col: 0, row: 0 }] }, 'folded paper, vertical fold, hole at (0,0)'],
+    [{ kind: 'foldPunch', fold: 'vertical', state: 'unfolded', holes: [{ col: 0, row: 0 }, { col: 1, row: 0 }] }, 'unfolded paper, vertical fold, holes at (0,0) (1,0)'],
     [{ kind: 'graph', type: 'bar', categories: [{ label: 'cats', emoji: '🐱', value: 3 }, { label: 'dogs', emoji: '🐶', value: 5 }] }, 'bar graph: cats 3, dogs 5'],
     [{ kind: 'matrix', cells: [{ kind: 'text', value: 'a', size: 'm' }, 'blank'] }, 'grid: a | blank'],
   ];

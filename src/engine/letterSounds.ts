@@ -65,11 +65,15 @@ export const SOUNDS = {
   oy: { letters: 'oy', shown: '/oi/', as: 'boy' },
   ou: { letters: 'ou', shown: '/ou/', as: 'out' },
   ow: { letters: 'ow', shown: '/ou/', as: 'cow' },
+  // Added Nov 22, 2026 (the owner's choice), so moon, spoon and shoe can be sounded out.
+  oo: { letters: 'oo', shown: '/oo/', as: 'moon' },
   ar: { letters: 'ar', shown: '/ar/', as: 'car' },
   er: { letters: 'er', shown: '/er/', as: 'her' },
   ir: { letters: 'ir', shown: '/er/', as: 'bird' },
   ur: { letters: 'ur', shown: '/er/', as: 'fur' },
   or: { letters: 'or', shown: '/or/', as: 'corn' },
+  // Added Nov 22, 2026 (the owner's choice), as in chair.
+  air: { letters: 'air', shown: '/air/', as: 'chair' },
 } as const satisfies Record<string, LetterSound>;
 
 export type SoundKey = keyof typeof SOUNDS;

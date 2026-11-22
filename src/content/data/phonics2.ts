@@ -54,8 +54,9 @@ export const PREFIXED: readonly { word: string; prefix: 'un' | 're'; base: strin
 ];
 
 // B.2 Suffixes, with the base word, what the word means and a sentence it fits. Each meaning is the base word
-// with the meaning of its ending: ful "full of", less "without", er "more ... than another", est "the most ... of
-// all". A noun takes ful and less, a describing word takes er and est.
+// with the meaning of its ending: ful "full of", less "without", er "more" and est "the most ... of all of them" (the
+// owner's choice, Nov 22, 2026: "Taller means more tall. Tallest means the most tall of all of them."). A noun takes
+// ful and less, a describing word takes er and est.
 export const SUFFIXED: readonly { word: string; suffix: 'ful' | 'less' | 'er' | 'est'; base: string; meaning: string; sentence: string }[] = [
   { word: 'helpful', suffix: 'ful', base: 'help', meaning: 'full of help', sentence: 'She is ___ and carries my bag.' },
   { word: 'careful', suffix: 'ful', base: 'care', meaning: 'full of care', sentence: 'Be ___ with the hot cup.' },
@@ -63,12 +64,12 @@ export const SUFFIXED: readonly { word: string; suffix: 'ful' | 'less' | 'er' | 
   { word: 'careless', suffix: 'less', base: 'care', meaning: 'without care', sentence: 'He was ___ and dropped the eggs.' },
   { word: 'fearless', suffix: 'less', base: 'fear', meaning: 'without fear', sentence: 'The ___ girl climbs the tall tree.' },
   { word: 'useless', suffix: 'less', base: 'use', meaning: 'without use', sentence: 'A pen with no ink is ___.' },
-  { word: 'taller', suffix: 'er', base: 'tall', meaning: 'more tall than another', sentence: 'My brother is ___ than me.' },
-  { word: 'faster', suffix: 'er', base: 'fast', meaning: 'more fast than another', sentence: 'A car is ___ than a bike.' },
-  { word: 'smaller', suffix: 'er', base: 'small', meaning: 'more small than another', sentence: 'A mouse is ___ than a cat.' },
-  { word: 'tallest', suffix: 'est', base: 'tall', meaning: 'the most tall of all', sentence: 'The giraffe is the ___ animal in the zoo.' },
-  { word: 'fastest', suffix: 'est', base: 'fast', meaning: 'the most fast of all', sentence: 'She is the ___ runner in the class.' },
-  { word: 'smallest', suffix: 'est', base: 'small', meaning: 'the most small of all', sentence: 'The ___ kitten sleeps in the box.' },
+  { word: 'taller', suffix: 'er', base: 'tall', meaning: 'more tall', sentence: 'My brother is ___ than me.' },
+  { word: 'faster', suffix: 'er', base: 'fast', meaning: 'more fast', sentence: 'A car is ___ than a bike.' },
+  { word: 'smaller', suffix: 'er', base: 'small', meaning: 'more small', sentence: 'A mouse is ___ than a cat.' },
+  { word: 'tallest', suffix: 'est', base: 'tall', meaning: 'the most tall of all of them', sentence: 'The giraffe is the ___ animal in the zoo.' },
+  { word: 'fastest', suffix: 'est', base: 'fast', meaning: 'the most fast of all of them', sentence: 'She is the ___ runner in the class.' },
+  { word: 'smallest', suffix: 'est', base: 'small', meaning: 'the most small of all of them', sentence: 'The ___ kitten sleeps in the box.' },
 ];
 
 // B.3 Contractions.
