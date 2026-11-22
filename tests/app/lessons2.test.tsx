@@ -74,7 +74,7 @@ describe.each([false, true])('lessons 2.0 on screen (Calm mode %s)', (isCalm) =>
   });
 
   it('a Math lesson is taught by Sprout at the stall, with Pip beside the words', async () => {
-    const { container } = render(<TeachLesson lesson={rich(plain, 'stall')} rate={0.85} onPractise={() => undefined} />);
+    const { container } = render(<TeachLesson lesson={rich(plain, 'stall')} rate={0.85} who="pip" onPractise={() => undefined} />);
     await waitFor(() => expect(spoken.said).toContain('lesson:["First moment."]'));
     expect(container.querySelector('[data-backdrop="stall"]')).not.toBeNull();
     expect(container.querySelector('[data-lesson-stage] [data-character="sprout"]')).not.toBeNull();
@@ -82,14 +82,14 @@ describe.each([false, true])('lessons 2.0 on screen (Calm mode %s)', (isCalm) =>
   });
 
   it('while a turn is asked, the teacher stays beside the question, listening', async () => {
-    const { container } = render(<TeachLesson lesson={rich(plain, 'pond')} rate={0.85} onPractise={() => undefined} />);
+    const { container } = render(<TeachLesson lesson={rich(plain, 'pond')} rate={0.85} who="finn" onPractise={() => undefined} />);
     await screen.findByText('Your turn!');
     expect(container.querySelector('[data-turn-host="finn"] [data-mood="listen"]')).not.toBeNull();
     expect(screen.getByRole('button', { name: /Check/ })).toBeTruthy();
   });
 
   it('nods and looks up on the moment before a turn', async () => {
-    const { container } = render(<TeachLesson lesson={rich(plain, 'nook')} rate={0.85} onPractise={() => undefined} />);
+    const { container } = render(<TeachLesson lesson={rich(plain, 'nook')} rate={0.85} who="olive" onPractise={() => undefined} />);
     await screen.findByText('Your turn!');
     expect(container.querySelector('[data-turn-host="olive"]')).not.toBeNull();
     const second = spoken.said.indexOf('lesson:["Second moment."]');
@@ -103,14 +103,14 @@ describe.each([false, true])('lessons 2.0 on screen (Calm mode %s)', (isCalm) =>
       { parts: [moment([{ number: 1 }], '1', set(apples, ['a0'], { lit: true })), moment([{ number: 2 }], '2', set(apples, ['a1'], { lit: true })), moment(['Two apples.'], '2 apples', apples)].map((each) => ({ kind: 'show' as const, moment: each })) },
       'picnic',
     );
-    render(<TeachLesson lesson={counting} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={counting} rate={0.85} who="pip" onPractise={() => undefined} />);
     await waitFor(() => expect(spoken.said).toContain('lesson:["Two apples."]'));
     expect(spoken.host.slice(0, 3)).toEqual(['', 'data-hop', '']);
   });
 
   it('chapter dots: one per stretch and per turn, the current one marked; a tap plays from there', async () => {
     const user = userEvent.setup();
-    render(<TeachLesson lesson={rich(plain, 'picnic')} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={rich(plain, 'picnic')} rate={0.85} who="pip" onPractise={() => undefined} />);
     await waitFor(() => expect(spoken.said).toContain('lesson:["First moment."]'));
     const dots = screen.getAllByRole('button', { name: /^Part \d$/ });
     expect(dots.map((dot) => dot.getAttribute('aria-label'))).toEqual(['Part 1', 'Part 2', 'Part 3']);

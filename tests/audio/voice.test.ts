@@ -187,11 +187,77 @@ describe('letter sounds in the recorded voice', () => {
     expect(soundClipOf([{ sound: 'b' }], true)).toBe('sound:b:three');
     expect(soundClipOf([{ sound: 'sh' }], false)).toBeNull();
     expect(soundClipOf(['Bat'], false)).toBeNull();
-    // The words are fetched early as before; the sound itself never is.
+    // The words are fetched early as before; the sound itself is never sent to the voice machine.
     setVoiceOn(true);
     warm(['Bat starts with', { sound: 'b' }, '.']);
     warm([{ sound: 'b' }]);
     await new Promise((resolve) => setTimeout(resolve, 10));
     expect(asked).toEqual(['Bat starts with']);
+  });
+});
+
+describe('who says it', () => {
+  let bodies: { text: string; pace?: string; who?: string }[];
+  beforeEach(() => {
+    bodies = [];
+    vi.stubGlobal('fetch', async (_url: string, init: RequestInit) => {
+      const body = JSON.parse(String(init.body)) as { text: string; pace?: string; who?: string };
+      bodies.push(body);
+      return audio(`${body.who ?? 'sprout'}:${body.text}`);
+    });
+    setVoiceOn(true);
+  });
+  const settle = (): Promise<void> => new Promise((resolve) => setTimeout(resolve, 10));
+
+  it('a question is fetched early in its friend\'s voice, so the early fetch is the one played', async () => {
+    const question = generateQuestion('M-1-B1', 1, 7);
+    warmQuestion(question, 'pip');
+    await settle();
+    expect(bodies).toHaveLength(1 + question.explanation.steps.length);
+    expect(bodies.every((body) => body.who === 'pip' && body.pace === undefined)).toBe(true);
+    const prompt = voiceText(question.prompt.speak) ?? '';
+    // Said by Pip, it is already there: nothing is asked again.
+    expect(text(await readyVoice(question.prompt.speak, 500, 'normal', 'pip'))).toBe(`mp3:pip:${prompt}`);
+    expect(bodies).toHaveLength(1 + question.explanation.steps.length);
+    // Said by Sprout, it is another recording.
+    expect(text(await readyVoice(question.prompt.speak, 500))).toBe(`mp3:sprout:${prompt}`);
+    expect(bodies.at(-1)).toEqual({ text: prompt });
+  });
+
+  it('a warm with no friend named is Sprout\'s, as speech with none named is', async () => {
+    warm(['Next up!']);
+    warmQuestion(generateQuestion('M-1-B1', 1, 8));
+    await settle();
+    expect(bodies.length).toBeGreaterThan(1);
+    expect(bodies.every((body) => body.who === undefined)).toBe(true);
+  });
+
+  it('several sentences are fetched early in one voice and pace', async () => {
+    warmAll([['Five plus three.'], ['Eight.']], 'normal', 'pip');
+    warmAll([['Look at the first picture.']], 'lesson', 'finn');
+    warm(['Once upon a time.'], 'lesson', 'olive');
+    await settle();
+    expect(bodies).toEqual([
+      { text: 'Five plus three.', who: 'pip' },
+      { text: 'Eight.', who: 'pip' },
+      { text: 'Look at the first picture.', pace: 'lesson', who: 'finn' },
+      { text: 'Once upon a time.', pace: 'lesson', who: 'olive' },
+    ]);
+  });
+
+  it('a letter sound with a recording is fetched early from its own source, never from the voice machine', async () => {
+    const fetched: string[] = [];
+    setSoundClips({
+      has: (key) => key.startsWith('sound:b:'),
+      get: async (key) => {
+        fetched.push(key);
+        return new ArrayBuffer(4);
+      },
+    });
+    warm(['Bat starts with', { sound: 'b' }, '.'], 'normal', 'olive');
+    warm([{ sound: 'b' }], 'normal', 'olive');
+    await settle();
+    expect(fetched).toEqual(['sound:b:once', 'sound:b:three']);
+    expect(bodies).toEqual([{ text: 'Bat starts with', who: 'olive' }]);
   });
 });

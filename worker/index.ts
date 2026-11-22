@@ -27,8 +27,9 @@ import { d1DataStore, d1Store, r2BackupStore, r2PackStore } from './store';
 import { voicePack } from './voicePack';
 
 import { memoryVoiceStore, r2VoiceStore } from './store';
-import type { VoiceMaker, VoiceStore } from './voice';
-import { remoteVoiceMaker, voice } from './voice';
+import { SOUND_ROUTE, sound } from './sound';
+import type { PiperMaker, VoiceEngine, VoiceMaker, VoiceStore } from './voice';
+import { piperVoice, remotePiperMaker, remoteVoiceMaker, voice, voiceEngine } from './voice';
 // Routes /api. Everything else is the built app.
 
 export interface Env {
@@ -44,6 +45,8 @@ export interface Env {
   MAIL_FROM?: string;
   VOICE_URL?: string;
   VOICE_KEY?: string;
+  // Which voice machine is at VOICE_URL: "kokoro" (when left out) or "piper" (plan section 20).
+  VOICE_ENGINE?: string;
 }
 
 export interface ApiDeps extends AuthDeps {
@@ -52,8 +55,11 @@ export interface ApiDeps extends AuthDeps {
   backup: BackupStore;
   data: DataStore;
   voice: VoiceStore;
-  // The machine that makes speech, or null where there is none (local runs, tests).
-  voiceMaker: VoiceMaker | null;
+  // Which voice machine makes new sentences, and the machine itself, or null where there is none (local runs,
+  // tests). Only the one for the engine is set.
+  voiceEngine: VoiceEngine;
+  voiceMaker: VoiceMaker | null; // Kokoro
+  piperMaker: PiperMaker | null;
   // Whose records a signed-in parent reads and writes: the first family's, or their own family's (invites).
   // Null when the parent belongs to no family, which a signed-in parent never should.
   familyOf: (email: string) => Promise<string | null>;
@@ -126,11 +132,15 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
         return route === 'GET /api/data' ? await getData(deps.data, family, request) : await postData(deps.data, family, request, deps.now());
       }
       case 'POST /api/voice':
-        return await voice(deps.voice, deps.voiceMaker, request, deps.defer);
+        return deps.voiceEngine === 'piper' ? await piperVoice(deps.voice, deps.piperMaker, request, deps.defer) : await voice(deps.voice, deps.voiceMaker, request, deps.defer);
       case 'GET /api/voice-pack':
         return await voicePack(deps.pack, request);
-      default:
+      default: {
+        // GET /api/sound/<key>/<form>: a recorded letter sound.
+        const asked = request.method === 'GET' ? SOUND_ROUTE.exec(path) : null;
+        if (asked) return await sound(deps.voice, asked[1] ?? '', asked[2] ?? '');
         return json(404, { error: 'not_found' });
+      }
     }
   } catch (error) {
     // Never log an address, a code, a password key or a cookie.
@@ -139,12 +149,14 @@ export async function handleApi(request: Request, deps: ApiDeps): Promise<Respon
   }
 }
 
-function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): ApiDeps | null {
+export function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): ApiDeps | null {
   if (!env.AUTH_PEPPER || env.AUTH_PEPPER.length < 32) return null;
   const dev = env.ENVIRONMENT === 'dev';
   if (!dev && !env.MAIL_FROM) return null;
   const store = d1Store(env.DB);
   const parentEmails = parseParentEmails(env.PARENT_EMAILS);
+  const engine = voiceEngine(env.VOICE_ENGINE);
+  const machine = env.VOICE_URL && env.VOICE_KEY ? { url: env.VOICE_URL, key: env.VOICE_KEY } : null;
   const deps: ApiDeps = {
     store,
     mailer: dev ? consoleMailer() : cloudflareMailer(env.MAIL, env.MAIL_FROM ?? ''),
@@ -157,7 +169,9 @@ function buildDeps(env: Env, ctx: { waitUntil(work: Promise<unknown>): void }): 
     backup: r2BackupStore(env.BACKUPS),
     data: d1DataStore(env.DB),
     voice: env.VOICE ? r2VoiceStore(env.VOICE) : memoryVoiceStore(),
-    voiceMaker: env.VOICE_URL && env.VOICE_KEY ? remoteVoiceMaker(env.VOICE_URL, env.VOICE_KEY) : null,
+    voiceEngine: engine,
+    voiceMaker: machine && engine === 'kokoro' ? remoteVoiceMaker(machine.url, machine.key) : null,
+    piperMaker: machine && engine === 'piper' ? remotePiperMaker(machine.url, machine.key) : null,
     // On the local test server each account keeps to itself, so one test never sees another's children.
     familyOf: (email) => (dev ? Promise.resolve(email) : familyFor(deps, email, FAMILY)),
     dev,

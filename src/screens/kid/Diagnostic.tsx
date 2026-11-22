@@ -15,6 +15,7 @@ import HoldButton from '../../components/HoldButton';
 import KidScreen from '../../components/KidScreen';
 import Notice from '../../components/Notice';
 import QuestionStage from '../../components/QuestionStage';
+import { castFor } from '../../cast';
 import type { Say } from '../../engine/types';
 import type { Child, DiagnosticSubject } from '../../storage/schema';
 import styles from './ReviewSession.module.css';
@@ -33,7 +34,9 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
   const diagnostic = useDiagnostic(child, subject);
   const { phase, question } = diagnostic;
   const rate = child.settings.speechRate;
-  const say = (text: Say): void => void speak(text, rate);
+  // The check-in's questions are said by the subject's friend; its closing sticker lines by Sprout (plan section 20).
+  const friend = castFor(subject);
+  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
   const home = (): void => void navigate('/home', { replace: true });
   useWakeLock();
 
@@ -41,9 +44,9 @@ function Sitting({ child, subject }: { child: Child; subject: DiagnosticSubject 
   useEffect(() => {
     if (!question) return;
     // The recorded voice is fetched as the question appears, whether or not the speaker is tapped.
-    warm(question.prompt.speak);
+    warm(question.prompt.speak, 'normal', friend);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate);
+    void speak(question.prompt.speak, rate, 'normal', friend);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);

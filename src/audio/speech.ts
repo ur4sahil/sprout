@@ -17,8 +17,8 @@ const VOICE_WAIT_MS = 1000;
 // The recorded voice is waited for, even while the voice machine makes a new sentence (the owner's choice,
 // Nov 17, 2026). This is only a safety limit, so a child is never left in silence if the machine hangs.
 export const RECORDED_WAIT_MS = 20_000;
-// In a lesson, the pause between one sentence and the next.
-export const LESSON_PAUSE_MS = 1000;
+// In a lesson, the pause between one sentence and the next: 0.7 s, the owner's one slow pace (plan section 20).
+export const LESSON_PAUSE_MS = 700;
 const UTTERANCE_LIMIT_MS = 12_000; // long utterances cut off on some phones
 const PREFERRED = ['Samantha', 'Ava', 'Allison'];
 

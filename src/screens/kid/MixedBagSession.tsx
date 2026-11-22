@@ -26,15 +26,17 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
   const bag = useMixedBag(child);
   const { phase, question } = bag;
   const rate = child.settings.speechRate;
-  const say = (text: Say): void => void speak(text, rate);
+  // Each question, its steps and hints are said by its skill's subject friend (plan section 20); the end card by Sprout.
+  const friend = bag.skill ? castFor(bag.skill.subject) : 'sprout';
+  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
   useWakeLock();
 
   const questionId = question ? `${question.key}|${question.seed}` : null;
   useEffect(() => {
     if (!question) return;
-    warmQuestion(question);
+    warmQuestion(question, friend);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate);
+    void speak(question.prompt.speak, rate, 'normal', friend);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -103,7 +105,7 @@ export default function MixedBagSession({ child, onDone }: { child: Child; onDon
           />
         </div>
       )}
-      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
       {(phase === 'done' || phase === 'none') && (
         <FullScreenCard
           emoji={phase === 'done' ? '🎒' : '🌱'}

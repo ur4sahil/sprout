@@ -37,16 +37,18 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
   const review = useReview(child, skills);
   const { phase, question } = review;
   const rate = child.settings.speechRate;
-  const say = (text: Say): void => void speak(text, rate);
+  // Each question, its steps and hints are said by its skill's subject friend (plan section 20); the end card by Sprout.
+  const friend = review.skill ? castFor(review.skill.subject) : 'sprout';
+  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
   useWakeLock();
 
   const questionId = question ? `${question.key}|${question.seed}` : null;
   useEffect(() => {
     if (!question) return;
     // What this question may say is fetched now, so the recorded voice is ready when it is wanted.
-    warmQuestion(question);
+    warmQuestion(question, friend);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate);
+    void speak(question.prompt.speak, rate, 'normal', friend);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -125,7 +127,7 @@ export default function ReviewSession({ child, skills, doneLabel, onDone, onLeav
           onSpeak={say}
         />
       )}
-      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
       {phase === 'done' && (
         <FullScreenCard
           emoji={kept === review.results.length && kept > 0 ? '🏅' : '🌱'}

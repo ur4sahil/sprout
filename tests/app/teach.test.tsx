@@ -2,7 +2,9 @@ import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { setTimingForTests } from '../../src/app/timing';
+import { castFor } from '../../src/cast';
 import TeachLesson from '../../src/components/TeachLesson';
+import { skillById } from '../../src/content/catalogue';
 import { generateQuestion } from '../../src/content/registry';
 import { allLessons } from '../../src/lessons';
 import { moment, scene } from '../../src/lessons/build';
@@ -49,7 +51,7 @@ afterEach(() => setTimingForTests({}));
 
 describe('a lesson that teaches', () => {
   it('plays its moments at the lesson pace, moving pieces rather than redrawing them', async () => {
-    render(<TeachLesson lesson={lesson} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={lesson} rate={0.85} who="pip" onPractise={() => undefined} />);
     await waitFor(() => expect(spoken.said[0]).toBe('lesson:["First moment."]'));
     await waitFor(() => expect(spoken.said).toContain('lesson:["Second moment."]'));
     // The turn reads its question at the normal pace.
@@ -59,7 +61,7 @@ describe('a lesson that teaches', () => {
 
   it('a miss plays the why and asks again; a second miss shows the answer and waits for Next', async () => {
     const user = userEvent.setup();
-    render(<TeachLesson lesson={lesson} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={lesson} rate={0.85} who="pip" onPractise={() => undefined} />);
     await screen.findByText('Your turn!');
     const wrongs = (question.facts.options as number[]).filter((value) => value !== n);
     await user.click(optionFor(wrongs[0] ?? n + 1));
@@ -78,7 +80,7 @@ describe('a lesson that teaches', () => {
   it('a right answer chimes, is praised, and the lesson carries on to the end', async () => {
     const user = userEvent.setup();
     const practise = vi.fn();
-    render(<TeachLesson lesson={lesson} rate={0.85} onPractise={practise} />);
+    render(<TeachLesson lesson={lesson} rate={0.85} who="pip" onPractise={practise} />);
     await screen.findByText('Your turn!');
     await user.click(optionFor(n));
     await user.click(screen.getByRole('button', { name: /Check/ }));
@@ -91,7 +93,7 @@ describe('a lesson that teaches', () => {
 
   it('starts again from the beginning', async () => {
     const user = userEvent.setup();
-    render(<TeachLesson lesson={lesson} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={lesson} rate={0.85} who="pip" onPractise={() => undefined} />);
     await screen.findByText('Your turn!');
     await user.click(screen.getByRole('button', { name: 'Start again' }));
     await waitFor(() => expect(spoken.said.filter((each) => each === 'lesson:["First moment."]').length).toBe(2));
@@ -100,10 +102,11 @@ describe('a lesson that teaches', () => {
 
 // Every written lesson: its opening moments play on the real screen and its first turn's question is drawn, whatever
 // kind of question it is (choice, sort, match, tiles ...), and every scene of the lesson can be drawn.
-describe.each(allLessons())('the %s lesson on screen', (_name, _skillId, make) => {
+describe.each(allLessons())('the %s lesson on screen', (_name, skillId, make) => {
+  const who = castFor(skillById(skillId)?.subject ?? 'math');
   it('plays to its first turn and draws that question', async () => {
     const made = make();
-    render(<TeachLesson lesson={made} rate={0.85} onPractise={() => undefined} />);
+    render(<TeachLesson lesson={made} rate={0.85} who={who} onPractise={() => undefined} />);
     await screen.findByText('Your turn!', undefined, { timeout: 8000 });
     expect(document.querySelector('[data-your-turn]')).not.toBeNull();
     expect(screen.getByRole('button', { name: /Check/ })).toBeTruthy();
@@ -111,7 +114,7 @@ describe.each(allLessons())('the %s lesson on screen', (_name, _skillId, make) =
     // The scenes after the first turn, and every why: each one alone as a lesson of one moment.
     const later = made.parts.flatMap((part) => (part.kind === 'show' ? [part.moment] : part.turn.why));
     for (const each of later) {
-      const view = render(<TeachLesson lesson={{ look: made.look, parts: [{ kind: 'show', moment: each }] }} rate={0.85} onPractise={() => undefined} />);
+      const view = render(<TeachLesson lesson={{ look: made.look, parts: [{ kind: 'show', moment: each }] }} rate={0.85} who={who} onPractise={() => undefined} />);
       expect(view.container.querySelector('[data-moment-text]')?.textContent ?? view.container.textContent).toBeTruthy();
       view.unmount();
     }

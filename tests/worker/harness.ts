@@ -74,7 +74,10 @@ export function makeHarness(): Harness {
     backup,
     data,
     voice,
+    // As on the live app: Kokoro, until a test switches to Piper.
+    voiceEngine: 'kokoro',
     voiceMaker: null,
+    piperMaker: null,
     // As the live Worker does: the first family's parents share 'family'; an invited parent has a family of their own.
     familyOf: (email) => familyFor(deps, email, 'family'),
   };

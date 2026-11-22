@@ -94,7 +94,8 @@ describe('the friend says the praise sometimes', () => {
       for (let before = 0; before < FRIEND_PRAISE_AFTER; before += 1) {
         const said = praiseFor(question(seed), before, 'pip', { index: null });
         expect(generic.has(JSON.stringify(said.say))).toBe(true);
-        expect(said.who).toBe('sprout');
+        // Inside a subject its friend says the praise too (plan section 20).
+        expect(said.who).toBe('pip');
       }
     }
   });
@@ -105,8 +106,8 @@ describe('the friend says the praise sometimes', () => {
       const praise = praiseFor(question(seed), 5, 'pip', { index: null });
       const said = JSON.stringify(praise.say);
       expect(generic.has(said) !== cheers.has(said)).toBe(true);
-      // A friend's own words are said in the friend's own voice; the usual praise in Sprout's.
-      expect(praise.who).toBe(cheers.has(said) ? 'pip' : 'sprout');
+      // The friend's own words and the usual praise are both said in the friend's own voice (plan section 20).
+      expect(praise.who).toBe('pip');
       if (cheers.has(said)) friend += 1;
     }
     expect(friend).toBeGreaterThan(150);

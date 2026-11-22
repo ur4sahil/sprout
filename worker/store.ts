@@ -549,26 +549,42 @@ export function d1DataStore(db: D1Database): DataStore {
 
 // ---- The spoken voice: one MP3 for each sentence, in its own R2 bucket ----
 
-export interface MemoryVoiceStore {
+// A Piper sentence also has a timing file beside its MP3 (when the mouth takes each shape, JSON text). The
+// recorded letter sounds are kept in the same bucket, as sound/<key>/<form>.mp3.
+export interface VoiceStore {
   get(key: string): Promise<ArrayBuffer | null>;
   put(key: string, body: ArrayBuffer): Promise<void>;
+  getJson(key: string): Promise<string | null>;
+  putJson(key: string, text: string): Promise<void>;
+}
+
+export interface MemoryVoiceStore extends VoiceStore {
   keys(): string[];
+  typeOf(key: string): string | null; // the content type a file was kept with
 }
 
 export function memoryVoiceStore(): MemoryVoiceStore {
-  const held = new Map<string, ArrayBuffer>();
+  const held = new Map<string, { body: ArrayBuffer; type: string }>();
   return {
     async get(key) {
-      return held.get(key)?.slice(0) ?? null;
+      return held.get(key)?.body.slice(0) ?? null;
     },
     async put(key, body) {
-      held.set(key, body.slice(0));
+      held.set(key, { body: body.slice(0), type: 'audio/mpeg' });
+    },
+    async getJson(key) {
+      const found = held.get(key);
+      return found ? new TextDecoder().decode(found.body) : null;
+    },
+    async putJson(key, text) {
+      held.set(key, { body: new TextEncoder().encode(text).buffer as ArrayBuffer, type: 'application/json' });
     },
     keys: () => [...held.keys()].sort(),
+    typeOf: (key) => held.get(key)?.type ?? null,
   };
 }
 
-export function r2VoiceStore(bucket: R2Bucket): { get(key: string): Promise<ArrayBuffer | null>; put(key: string, body: ArrayBuffer): Promise<void> } {
+export function r2VoiceStore(bucket: R2Bucket): VoiceStore {
   return {
     async get(key) {
       const object = await bucket.get(key);
@@ -576,6 +592,13 @@ export function r2VoiceStore(bucket: R2Bucket): { get(key: string): Promise<Arra
     },
     async put(key, body) {
       await bucket.put(key, body, { httpMetadata: { contentType: 'audio/mpeg' } });
+    },
+    async getJson(key) {
+      const object = await bucket.get(key);
+      return object ? await object.text() : null;
+    },
+    async putJson(key, text) {
+      await bucket.put(key, text, { httpMetadata: { contentType: 'application/json' } });
     },
   };
 }

@@ -4,7 +4,7 @@ import { setMuted } from '../../src/audio/mute';
 import { audioContext, wakeAudioOnTaps } from '../../src/audio/context';
 import { SFX, playSfx, resetAudioContext, unlockAudio } from '../../src/audio/sfx';
 import { LESSON_PAUSE_MS, isSpeechAvailable, pickVoice, resetSpeech, speak, stop } from '../../src/audio/speech';
-import { setSoundClips } from '../../src/audio/soundClips';
+import { serverSoundClips, setSoundClips } from '../../src/audio/soundClips';
 import { openRepo } from '../../src/storage/index';
 
 // A stand-in for the browser's speech and audio, recording everything in one timeline.
@@ -254,6 +254,66 @@ describe('speak', () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+});
+
+describe('recorded letter sounds from the server', () => {
+  let asked: string[];
+  let found: boolean;
+  beforeEach(() => {
+    asked = [];
+    found = true;
+    vi.stubGlobal('fetch', async (url: string) => {
+      asked.push(url);
+      if (!found) return new Response('{"error":"no_sound"}', { status: 404 });
+      return new Response(new ArrayBuffer(url.endsWith('/three') ? 33 : 11), { status: 200, headers: { 'Content-Type': 'audio/mpeg' } });
+    });
+    setSoundClips(serverSoundClips());
+  });
+
+  it('plays the server\'s recording in its place: once inside a sentence, three times on its own, each fetched once', async () => {
+    installSpeech();
+    installAudio();
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'clip:11']);
+    events = [];
+    await speak([{ sound: 'b' }]);
+    expect(events).toEqual(['cancel', 'clip:33']);
+    events = [];
+    await speak(['Ball starts with', { sound: 'b' }, 'too.']);
+    expect(events).toEqual(['cancel', 'say:Ball starts with', 'clip:11', 'say:too.']);
+    expect(asked).toEqual(['/api/sound/b/once', '/api/sound/b/three']);
+  });
+
+  it('a sound the server does not have is said by its letters, and after that its sentences are said whole', async () => {
+    installSpeech();
+    installAudio();
+    found = false;
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with', 'say:the sound of bee']);
+    events = [];
+    await speak(['Bat starts with', { sound: 'b' }, '.']);
+    expect(events).toEqual(['cancel', 'say:Bat starts with the sound of bee.']);
+    expect(asked).toEqual(['/api/sound/b/once']);
+  });
+
+  it('offline, the sound is said by its letters, and the recording is asked for again later', async () => {
+    installSpeech();
+    installAudio();
+    vi.stubGlobal('fetch', async (url: string) => {
+      asked.push(url);
+      throw new TypeError('Failed to fetch');
+    });
+    await speak([{ sound: 'sh' }]);
+    expect(events).toEqual(['cancel', 'say:the sound of ess, aitch']);
+    await speak([{ sound: 'sh' }]);
+    expect(asked).toEqual(['/api/sound/sh/three', '/api/sound/sh/three']);
+  });
+});
+
+describe('the lesson pace', () => {
+  it('pauses 0.7 seconds between sentences, the owner\'s one slow pace', () => {
+    expect(LESSON_PAUSE_MS).toBe(700);
   });
 });
 

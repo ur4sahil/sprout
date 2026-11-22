@@ -1,6 +1,8 @@
+import type { MouthShape } from '../cast/types';
 import type { Question, Say } from '../engine/types';
+import { playingClip } from './playing';
 import { loneSound, sayWords, soundClipKey, soundFallback } from './say';
-import { hasSoundClip } from './soundClips';
+import { hasSoundClip, soundClipBytes } from './soundClips';
 import { openingWords, spokenSteps } from './stepSay';
 
 // The recorded voice. A sentence is asked for from the server, which keeps every sentence it has ever made.
@@ -26,6 +28,72 @@ let gone = false; // this server has no voice machine: stop asking
 const held = new Map<string, Promise<ArrayBuffer | null>>();
 let inFlight = 0;
 const queue: (() => void)[] = [];
+
+// When the mouth takes each shape while a recorded sentence plays (plan section 20): Piper sends it with every
+// sentence, in the reply's X-Timing header, as {"d": seconds, "v": [[seconds, shape], ...]}. `duration` is the
+// sentence's length in seconds; each shape holds from its `at` until the next one starts. The shapes are the four
+// a talking mouth moves through (src/cast/types.ts). Kept with the recording, in memory only.
+export type TalkShape = Extract<MouthShape, 'closed' | 'small' | 'round' | 'wide'>;
+export const TALK_SHAPES: readonly TalkShape[] = ['closed', 'small', 'round', 'wide'];
+export interface SpokenTiming {
+  duration: number;
+  shapes: { at: number; shape: TalkShape }[];
+}
+// Each recording that came with a timing, by the bytes the voice hands over to be played.
+const timings = new WeakMap<ArrayBuffer, SpokenTiming>();
+const isSeconds = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value) && value >= 0;
+const isTalkShape = (value: unknown): value is TalkShape => typeof value === 'string' && (TALK_SHAPES as readonly string[]).includes(value);
+
+// The X-Timing header as the app keeps it, or null when there is none or it is not a timing. Never throws: a
+// sentence without a timing plays all the same, and the friend's mouth then follows the loudness.
+export function parseTiming(header: string | null): SpokenTiming | null {
+  if (header === null || header.length === 0) return null;
+  let value: unknown;
+  try {
+    value = JSON.parse(header);
+  } catch {
+    return null;
+  }
+  if (typeof value !== 'object' || value === null) return null;
+  const { d, v } = value as { d?: unknown; v?: unknown };
+  if (!isSeconds(d) || !Array.isArray(v)) return null;
+  const shapes: SpokenTiming['shapes'] = [];
+  for (const mark of v as unknown[]) {
+    if (!Array.isArray(mark) || mark.length !== 2) return null;
+    const [at, shape] = mark as [unknown, unknown];
+    const before = shapes[shapes.length - 1];
+    if (!isSeconds(at) || !isTalkShape(shape) || (before && at < before.at)) return null;
+    shapes.push({ at, shape });
+  }
+  return { duration: d, shapes };
+}
+
+// The timing that came with a recording, or null.
+export function timingOf(bytes: ArrayBuffer): SpokenTiming | null {
+  return timings.get(bytes) ?? null;
+}
+
+// The mouth's shape `seconds` into a sentence: the last shape that has started. Closed before the first and once
+// the sentence is over.
+export function shapeAt(timing: SpokenTiming, seconds: number): TalkShape {
+  if (seconds >= timing.duration) return 'closed';
+  let shape: TalkShape = 'closed';
+  for (const mark of timing.shapes) {
+    if (mark.at > seconds) break;
+    shape = mark.shape;
+  }
+  return shape;
+}
+
+// The recorded sentence playing now, with its timing and how far into it the voice is (seconds of the recording),
+// for the friend's mouth (plan section 20, phase 2). Null when nothing is playing, or what plays has no timing:
+// a letter sound, a sentence from a voice machine that sends none, or the device's own voice.
+export function playingTiming(): { timing: SpokenTiming; at: number } | null {
+  const clip = playingClip();
+  if (!clip) return null;
+  const timing = timings.get(clip.bytes);
+  return timing ? { timing, at: clip.at } : null;
+}
 
 export function setVoiceOn(value: boolean): void {
   on = value;
@@ -81,7 +149,10 @@ async function send(text: string, pace: Pace, who: Who): Promise<ArrayBuffer | n
     if (reply.status === 503) gone = true;
     if (!reply.ok) return null;
     const body = await reply.arrayBuffer();
-    return body.byteLength > 0 ? body : null;
+    if (body.byteLength === 0) return null;
+    const timing = parseTiming(reply.headers.get('X-Timing'));
+    if (timing) timings.set(body, timing);
+    return body;
   } catch {
     return null;
   }
@@ -173,24 +244,31 @@ function fetchVoice(say: Say, pace: Pace, urgent: boolean, who: Who = 'sprout'):
   return asked;
 }
 
-// Starts fetching a sentence, so it is ready by the time it is wanted. A letter sound with a recording is not fetched.
+// Starts fetching a sentence, so it is ready by the time it is wanted. `who` must be the character who will say it,
+// or the early fetch is of another voice and is wasted. A letter sound with a recording is never sent to the voice
+// machine: its recording is fetched early instead (soundClips.ts holds it in memory).
 export function warm(say: Say, pace: Pace = 'normal', who: Who = 'sprout'): void {
   const alone = loneSound(say) !== null;
-  for (const piece of voicePieces(say, pace)) if (soundClipOf(piece, alone) === null) void fetchVoice(piece, pace, false, who);
+  for (const piece of voicePieces(say, pace)) {
+    const sound = soundClipOf(piece, alone);
+    if (sound === null) void fetchVoice(piece, pace, false, who);
+    else if (on) void soundClipBytes(sound);
+  }
 }
 
-// Starts fetching several sentences, in order.
-export function warmAll(says: readonly Say[], pace: Pace = 'normal'): void {
+// Starts fetching several sentences, in order, all said by `who`.
+export function warmAll(says: readonly Say[], pace: Pace = 'normal', who: Who = 'sprout'): void {
   if (!on || gone) return;
-  for (const say of says) warm(say, pace);
+  for (const say of says) warm(say, pace, who);
 }
 
 // Everything a question may say: its prompt, "Not quite" with the first step, and each later step that is said.
-export function warmQuestion(question: Question): void {
+// `who`: the friend of the question's subject, who says all of it (plan section 20).
+export function warmQuestion(question: Question, who: Who = 'sprout'): void {
   if (!on || gone) return;
-  warm(question.prompt.speak);
-  warm(openingWords(question));
-  for (const step of spokenSteps(question).slice(1)) if (step) warm(step);
+  warm(question.prompt.speak, 'normal', who);
+  warm(openingWords(question), 'normal', who);
+  for (const step of spokenSteps(question).slice(1)) if (step) warm(step, 'normal', who);
 }
 
 // The recorded sentence if it arrives within `waitMs`, otherwise null (and it keeps arriving in the background).

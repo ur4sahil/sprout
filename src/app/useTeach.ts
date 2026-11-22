@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import type { Who } from '../audio/voice';
 import { PRAISE } from '../audio/say';
 import { TIMING } from './timing';
 import { playSfx } from '../audio/sfx';
@@ -43,7 +44,8 @@ export interface Teach {
   cheering: boolean; // a turn was just answered right (the host hops, confetti falls)
 }
 
-export function useTeach(lesson: Lesson, rate: number): Teach {
+// `who`: the friend of the skill's subject, who says every moment, turn and praise (plan section 20).
+export function useTeach(lesson: Lesson, rate: number, who: Who): Teach {
   const [partIndex, setPartIndex] = useState(0);
   const [phase, setPhase] = useState<TeachPhase>(() => (lesson.parts[0]?.kind === 'turn' ? 'asking' : 'showing'));
   const [whyIndex, setWhyIndex] = useState(0);
@@ -68,12 +70,12 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
 
   useEffect(() => {
     alive.current = true;
-    warmAll(lessonSays(lesson), 'lesson');
+    warmAll(lessonSays(lesson), 'lesson', who);
     return () => {
       alive.current = false;
       stop();
     };
-  }, [lesson]);
+  }, [lesson, who]);
 
   const part = lesson.parts[partIndex];
   const turn = part?.kind === 'turn' ? part.turn : null;
@@ -103,7 +105,7 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
     if (paused || (phase !== 'showing' && phase !== 'why') || !current) return;
     let cancelled = false;
     void (async () => {
-      await sayNow(current.say, rate, 'lesson');
+      await sayNow(current.say, rate, 'lesson', who);
       await new Promise((resolve) => setTimeout(resolve, TIMING.momentGapMs));
       if (cancelled || !alive.current) return;
       if (phase === 'showing') goTo(partIndex + 1);
@@ -119,21 +121,21 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
       stop();
     };
     // `attempt` goes up on every jump, so choosing the chapter already on show plays it again.
-  }, [paused, phase, current, partIndex, whyIndex, turn, rate, goTo, sayNow, attempt]);
+  }, [paused, phase, current, partIndex, whyIndex, turn, rate, goTo, sayNow, attempt, who]);
 
   // A turn reads its question aloud as it appears.
   useEffect(() => {
     if (paused || !turn || (phase !== 'asking' && phase !== 'again')) return;
-    void sayNow(turn.question.prompt.speak, rate);
+    void sayNow(turn.question.prompt.speak, rate, 'normal', who);
     return () => stop();
-  }, [paused, phase, turn, attempt, rate, sayNow]);
+  }, [paused, phase, turn, attempt, rate, sayNow, who]);
 
   // The answer after a second miss is said once.
   useEffect(() => {
     if (phase !== 'shown' || !current) return;
-    void sayNow(current.say, rate, 'lesson');
+    void sayNow(current.say, rate, 'lesson', who);
     return () => stop();
-  }, [phase, current, rate, sayNow]);
+  }, [phase, current, rate, sayNow, who]);
 
   const submit = useCallback((): void => {
     if (!turn || !response || praising.current || (phase !== 'asking' && phase !== 'again')) return;
@@ -144,7 +146,7 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
       const praise = makeRng(turn.question.seed + attempt).pick(PRAISE);
       const jump = jumps.current;
       void (async () => {
-        await sayNow(praise.say, rate);
+        await sayNow(praise.say, rate, 'normal', who);
         await new Promise((resolve) => setTimeout(resolve, TIMING.momentGapMs));
         if (jump !== jumps.current) return; // the child chose a chapter meanwhile
         praising.current = false;
@@ -161,7 +163,7 @@ export function useTeach(lesson: Lesson, rate: number): Teach {
     } else {
       setPhase('shown');
     }
-  }, [turn, response, phase, attempt, rate, partIndex, goTo, sayNow]);
+  }, [turn, response, phase, attempt, rate, partIndex, goTo, sayNow, who]);
 
   // The child picks where to play from: whatever was being said stops, and play goes on from there.
   const jumpTo = useCallback(

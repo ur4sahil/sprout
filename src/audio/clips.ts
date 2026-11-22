@@ -1,5 +1,6 @@
 import { logError } from '../lib/errorLog';
 import { openRepo } from '../storage/index';
+import { startPlaying, stopPlaying } from './playing';
 import { audioContext } from './sfx';
 
 // Plays the recorded voice. The old voice pack (letter names, numbers and praise made on a Mac in its
@@ -17,13 +18,20 @@ export async function playBytes(bytes: ArrayBuffer, speed = 1): Promise<boolean>
       source.buffer = buffer;
       source.playbackRate.value = speed;
       source.connect(ctx.destination);
-      const giveUp = setTimeout(() => resolve(false), Math.ceil((buffer.duration / speed) * 1000) + 1500);
+      // Marked as playing from the moment it starts, for the friend's mouth (playing.ts).
+      let over = (): void => undefined;
+      const giveUp = setTimeout(() => {
+        over();
+        resolve(false);
+      }, Math.ceil((buffer.duration / speed) * 1000) + 1500);
       source.onended = () => {
         clearTimeout(giveUp);
+        over();
         resolve(true);
       };
       active = source;
       source.start();
+      over = startPlaying({ bytes, clock: ctx, startedAt: ctx.currentTime, speed });
     });
   } catch (error) {
     logError(error);
@@ -40,6 +48,7 @@ export function stopClip(): void {
     // It had already finished.
   }
   active = null;
+  stopPlaying();
 }
 
 // The old voice pack's clips are no longer used. Removes any this device still holds, to free the space.
@@ -55,4 +64,5 @@ export async function removeOldClips(): Promise<void> {
 // For tests.
 export function resetClips(): void {
   active = null;
+  stopPlaying();
 }

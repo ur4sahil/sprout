@@ -3,6 +3,7 @@ import { useTeach } from '../app/useTeach';
 import { speak } from '../audio/speech';
 import { describeAnswer } from '../engine/describe';
 import Character from '../cast/Character';
+import type { Who } from '../cast/types';
 import type { Say } from '../engine/types';
 import QuestionView from '../items/QuestionView';
 import { castOn, lessonBackdrop } from '../lessons/backdrops';
@@ -21,15 +22,16 @@ import styles from './TeachLesson.module.css';
 interface Props {
   lesson: Lesson;
   rate: number;
+  who: Who; // the friend of the skill's subject, who says the whole lesson (plan section 20)
   onPractise: () => void;
 }
 
 // A lesson that teaches (plan section 16): the moving stage with the words under it, and the child's turns.
-export default function TeachLesson({ lesson, rate, onPractise }: Props) {
-  const teach = useTeach(lesson, rate);
+export default function TeachLesson({ lesson, rate, who, onPractise }: Props) {
+  const teach = useTeach(lesson, rate, who);
   const { phase, moment, turn } = teach;
   const answering = (phase === 'asking' || phase === 'again') && turn !== null;
-  const say = (words: Say): void => void speak(words, rate);
+  const say = (words: Say): void => void speak(words, rate, 'normal', who);
   const rich = lesson.look === 'rich';
   const mood: HostMood = teach.cheering ? 'cheering' : teach.talking ? 'talking' : 'idle';
   // The friend who teaches here (the place says which subject), and Pip beside the words in Math.

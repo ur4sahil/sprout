@@ -171,13 +171,14 @@ export function useMixedBag(child: Child): MixedBag {
       self.states.set(current.id, outcome.state);
       self.keys.set(current.id, [...(self.keys.get(current.id) ?? []), q.key].slice(-6));
       setAsked((n) => n + 1);
+      // The friend in the corner is the one for this question's subject, so it is the one who says what follows.
+      const who = castFor(current.subject);
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(openingWords(q), child.settings.speechRate);
+        void speak(openingWords(q), child.settings.speechRate, 'normal', who);
         return;
       }
-      // The friend in the corner is the one for this question's subject, so it is the one who may cheer.
-      const praise = praiseFor(q, self.right, castFor(current.subject), self.cheer);
+      const praise = praiseFor(q, self.right, who, self.cheer);
       self.right += 1;
       setRight((n) => n + 1);
       setPhase('correct');

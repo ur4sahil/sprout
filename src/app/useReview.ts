@@ -223,12 +223,14 @@ export function useReview(child: Child, skills: readonly Skill[]): Review {
         self.results = [...self.results, { skill: current, right, passed: reviewed.passed }];
         setResults(self.results);
       }
+      // The question's subject friend says what follows it (plan section 20).
+      const who = castFor(current.subject);
       if (!outcome.correct) {
         setPhase('wrong');
-        void speak(openingWords(q), child.settings.speechRate);
+        void speak(openingWords(q), child.settings.speechRate, 'normal', who);
         return;
       }
-      const praise = praiseFor(q, self.rightInAll, castFor(current.subject), self.cheer);
+      const praise = praiseFor(q, self.rightInAll, who, self.cheer);
       self.rightInAll += 1;
       setPhase('correct');
       playSfx('chime');

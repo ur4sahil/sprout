@@ -11,8 +11,8 @@ interface WranglerConfig {
   routes: { pattern: string; custom_domain: boolean }[];
 }
 
-function readConfig(): WranglerConfig {
-  const text = readFileSync('wrangler.jsonc', 'utf8').replace(/^\s*\/\/.*$/gm, '');
+function readConfig(file = 'wrangler.jsonc'): WranglerConfig {
+  const text = readFileSync(file, 'utf8').replace(/^\s*\/\/.*$/gm, '');
   return JSON.parse(text) as WranglerConfig;
 }
 
@@ -24,8 +24,13 @@ describe('wrangler.jsonc', () => {
   it('holds no private setting', () => {
     const vars = Object.keys(readConfig().vars);
     // The voice machine's address is not private: it answers only to a key, and the key is a secret setting.
-    expect(vars.sort()).toEqual(['APP_ORIGIN', 'ENVIRONMENT', 'VOICE_URL']);
+    expect(vars.sort()).toEqual(['APP_ORIGIN', 'ENVIRONMENT', 'VOICE_ENGINE', 'VOICE_URL']);
     expect(vars.some((name) => /KEY|SECRET|TOKEN|PEPPER|PASSWORD/i.test(name))).toBe(false);
+  });
+
+  it('keeps the live app on Kokoro until the owner switches (plan section 20)', () => {
+    expect(readConfig().vars.VOICE_ENGINE).toBe('kokoro');
+    expect(readConfig().vars.VOICE_URL).toBe('https://sprout-voice.logstocks.com');
   });
 
   it('serves the app for deep links and sends /api to the Worker first', () => {
@@ -40,6 +45,17 @@ describe('wrangler.jsonc', () => {
     expect(config.workers_dev).toBe(false);
     expect(config.routes).toEqual([{ pattern: 'sprout.logstocks.com', custom_domain: true }]);
     expect(config.vars.APP_ORIGIN).toBe('https://sprout.logstocks.com');
+  });
+});
+
+describe('wrangler.staging.jsonc', () => {
+  it('is the test copy, which speaks with Piper on its own voice machine and holds no private setting', () => {
+    const config = readConfig('wrangler.staging.jsonc');
+    expect(config.vars.ENVIRONMENT).toBe('dev');
+    expect(config.vars.VOICE_ENGINE).toBe('piper');
+    expect(config.vars.VOICE_URL).toBe('https://sprout-piper.logstocks.com');
+    expect(config.routes).toEqual([{ pattern: 'sprout-staging.logstocks.com', custom_domain: true }]);
+    expect(Object.keys(config.vars).some((name) => /KEY|SECRET|TOKEN|PEPPER|PASSWORD/i.test(name))).toBe(false);
   });
 });
 

@@ -57,7 +57,9 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   };
   // At the end of a sitting (a skill mastered, or known already), a plan run goes on to its next part.
   const finish = play ? play.onNext : run ? run.onDone : goHome;
-  const say = (text: Say): void => void speak(text, rate);
+  // The subject's friend says everything here: the question, its steps, hints and praise (plan section 20).
+  const friend = castFor(skill.subject);
+  const say = (text: Say): void => void speak(text, rate, 'normal', friend);
   useWakeLock();
 
   // The prompt is read aloud when the question appears. Keyed on the question, and cancelled
@@ -66,9 +68,9 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   useEffect(() => {
     if (!question) return;
     // What this question may say is fetched now, so the recorded voice is ready when it is wanted.
-    warmQuestion(question);
+    warmQuestion(question, friend);
     if (!child.settings.autoSpeak) return;
-    void speak(question.prompt.speak, rate);
+    void speak(question.prompt.speak, rate, 'normal', friend);
     return () => stop();
     // eslint-disable-next-line react-hooks/exhaustive-deps -- one reading for each question shown
   }, [questionId]);
@@ -128,7 +130,6 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
   }, [phase, child]);
   // The skill's plant, in the status panel and in the growth show at the end of the sitting (game feel, phase 5).
   const kind = useMemo(() => plantKindFor(skill), [skill]);
-  const friend = castFor(skill.subject);
   const stage = state ? growthStage(state.score, state.masteredAt !== null) : 0;
 
   // The growth show ends a sitting: on the break card, or on the medal at 100. Its last fact is this week's sunny
@@ -223,7 +224,7 @@ export default function PracticeSession({ child, skill, play, run }: Props) {
       )}
       {phase === 'break' && <SoftBreak answered={practice.answered} score={state?.score ?? 0} keepGoingLabel={play ? 'Next one' : 'Keep going'} onKeepGoing={play ? play.onNext : practice.keepGoing} onAllDone={goHome} games={games} growth={growth} />}
       {drawing && phase === 'asking' && <Scratchpad onClose={() => setDrawing(false)} />}
-      {hinting && question && <HintPanel question={question} onClose={closeHint} onSpeak={say} />}
+      {hinting && question && <HintPanel question={question} who={friend} onClose={closeHint} onSpeak={say} />}
     </KidScreen>
   );
 }

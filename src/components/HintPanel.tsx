@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { exampleFor, nudgeFor } from '../app/hints';
 import { LINES } from '../audio/lines';
 import { spokenSteps } from '../audio/stepSay';
+import type { Who } from '../audio/voice';
 import { warmQuestion } from '../audio/voice';
 import { describeAnswer } from '../engine/describe';
 import type { Question, Say } from '../engine/types';
@@ -14,6 +15,7 @@ import styles from './HintPanel.module.css';
 
 interface Props {
   question: Question; // the question the child is on
+  who: Who; // the friend of its subject, who says the hint (through onSpeak) and the example
   onClose: () => void;
   onSpeak: (say: Say) => void;
 }
@@ -21,14 +23,15 @@ interface Props {
 // A hint (the owner's choice, Nov 21, 2026), over the question, which waits underneath. First the opening step of
 // this question's own working, when that cannot give the answer away (`nudgeFor`); then, or straight away when it
 // could, a worked example of a different question of the same skill, its steps one at a time.
-export default function HintPanel({ question, onClose, onSpeak }: Props) {
+export default function HintPanel({ question, who, onClose, onSpeak }: Props) {
   const nudge = useMemo(() => nudgeFor(question), [question]);
   const example = useMemo(() => exampleFor(question), [question]);
   const [stage, setStage] = useState<'nudge' | 'example'>(nudge || !example ? 'nudge' : 'example');
 
+  // The example's steps are fetched early in the voice that will say them.
   useEffect(() => {
-    if (example) warmQuestion(example);
-  }, [example]);
+    if (example) warmQuestion(example, who);
+  }, [example, who]);
 
   // Each stage is said as it opens: the nudge, or the example's question and its first step.
   useEffect(() => {

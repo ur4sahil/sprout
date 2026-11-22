@@ -66,6 +66,8 @@ function Race({ child, setId }: { child: Child; setId: string }) {
   const [feel, setFeel] = useState<{ last: GameBeat; run: number; beat: number }>({ last: null, run: 0, beat: 0 });
   const live = useRef<{ records: Map<string, FactRecord>; startedAt: number; shownAt: number; endedAt: number | null; alive: boolean }>({ records: new Map(), startedAt: 0, shownAt: 0, endedAt: null, alive: true });
   const rate = child.settings.speechRate;
+  // Fast facts are Math: Pip says them (plan section 20).
+  const friend = castFor('math');
   useWakeLock();
   const goHome = (): void => {
     void navigate('/home', { replace: true });
@@ -82,7 +84,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
       const picked = pickRound(set, records, makeRng(now().getTime() % 2147483647));
       setRound(picked);
       // What the race may say about each fact is asked for now, so it is ready the moment it is wanted.
-      warmAll(picked.flatMap((each) => [factAskSay(each), factMissSay(each)]));
+      warmAll(picked.flatMap((each) => [factAskSay(each), factMissSay(each)]), 'normal', friend);
       self.startedAt = now().getTime();
       self.shownAt = self.startedAt;
       setPhase('asking');
@@ -138,7 +140,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
         setPhase('wrong');
         playSound('notyet');
         setFeel((before) => ({ last: 'miss', run: 0, beat: before.beat + 1 }));
-        void speak(factMissSay(fact), rate);
+        void speak(factMissSay(fact), rate, 'normal', friend);
       }
     })();
   }
@@ -185,7 +187,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
             {set.name}
           </h1>
           <span className={styles.spacer} />
-          <GameFriend who={castFor('math')} last={feel.last} run={feel.run} beat={feel.beat} />
+          <GameFriend who={friend} last={feel.last} run={feel.run} beat={feel.beat} />
         </>
       }
     >
@@ -209,7 +211,7 @@ function Race({ child, setId }: { child: Child; setId: string }) {
             <p className={styles.fact} data-fact-text="">
               {factText(fact)} = {phase === 'wrong' ? fact.answer : '?'}
             </p>
-            <IconButton icon="speaker" label="Hear the fact" onClick={() => void speak(factAskSay(fact), rate)} />
+            <IconButton icon="speaker" label="Hear the fact" onClick={() => void speak(factAskSay(fact), rate, 'normal', friend)} />
           </div>
           {phase === 'wrong' ? (
             <div className={styles.miss} data-fact-miss="">
